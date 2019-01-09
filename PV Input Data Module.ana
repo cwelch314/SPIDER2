@@ -1,44 +1,24 @@
-{ From user coryw, Model PV_Input_Data at 9-Dec-2018 10:33:19 AM, encoding="UTF-8" }
+{ From user JamesMilford, Model PV_Input_Data at 18-Dec-2018 2:55:41 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
+{!-40203|Attribute CloudPlayerStyles}
 
 
 LinkModule PV_Input_Data
 Title: PV Input Data
 Author: JamesMilford
 Date: Fri, Aug 17, 2018 11:48 AM
-SaveAuthor: coryw
-SaveDate: Sun, Dec 9, 2018 10:33 AM
+SaveAuthor: JamesMilford
+SaveDate: Tue, Dec 18, 2018 2:55 PM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,362,8,972,702,17
+NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule PV_Input_Data,2,2,0,0,PV Input Data Module.ana
-
-Constant NewCon_Start_Mkt_Sha
-Title: NewCon Start Mkt Share
-Definition: 22%
-NodeLocation: 568,192,1
-NodeSize: 64,40
-Aliases: FormNode Fo1515350098, FormNode Fo1534527654
-NumberFormat: 2,%,4,0,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-
-Constant Historic_NewCon_Syst
-Title: Historic NewCon Systems
-Units: systems
-Description: Historical data on new construction homes built with PV systems.
-Definition: Table(All_Sectors,Building_Stock_Year)(~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,41,1315,2351,2748,4401,6416,8028,10159,13875,18664,21139,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-NodeLocation: 416,192,1
-NodeSize: 64,40
-DefnState: 2,627,52,766,798,,DFNM
-ValueState: 2,296,7,1474,344,0,MIDM
-Aliases: FormNode Fo1534527655
-ReformDef: [All_Sectors,Building_Stock_Year]
-{!50000|Att_ColumnWidths: [,All_Sectors,\([96,,])]}
+{!40400|CloudPlayerStyles: Show_Object:no}
+{!40204-40399|AWP_Attrib:Show_Object:no}
 
 Constant USURDB_Data
 Title: USURDB Data
@@ -46,7 +26,7 @@ Description: Stored USURDB (US Utility Rate Database) data.
 Definition: Table(USURDB_Columns,All_USURDB_Rows)(~
 '555b53aa5457a3e826424478','587931d35457a3ee73dda4d6','5a4fc8075457a3db26fc3f67','JM9','539fc493ec4f024c27d8c8bf','5405faca5257a35326af34b1','555a574f5457a3111042447e','578e905e5457a38a5df1f983','5877d0345457a3a80adda4d8','5a395ee35457a3fa3cd2dd7e','JM10','539f7192ec4f024411ece727','5405e28e5257a33124af34b1','555a4f135457a3ee3742447a','578e93575457a3653af1f984','5877d1d45457a3914edda4d7','5a396f925457a3077cd2dd7e','JM13','539fc2e7ec4f024c27d8b6c5','5405f9bc5257a3b822af34b4','555a564b5457a3ee3742447b','578e91fb5457a3653af1f983','5877d0f55457a3914edda4d6','5a396db15457a3785fd2dd7e','JM11','539fbeb3ec4f024c27d8891d','5405f6ff5257a3ca21af34b1','555a53425457a3f01c424479','578e92c95457a3693af1f983','5877d1735457a36324dda4d7','5a396ebd5457a3d968d2dd7e','JM12','JM1','JM5','JM4','JM8','JM3','JM7','JM2','JM6',~
 16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,16609,~
-'AL-TOU Secondary (0-500 KW)','AL-TOU Secondary (0-500 KW)','AL-TOU Secondary (0-500 KW)','AL-TOU Secondary (0-500 KW)*','DR - Coastal Baseline Region','DR - Coastal Baseline Region','DR - Coastal Baseline Region','DR - Coastal Baseline Region','DR - Coastal Baseline Region','DR - Coastal Baseline Region','DR - Coastal Baseline Region','DR - Desert Baseline Region','DR - Desert Baseline Region','DR - Desert Baseline Region','DR - Desert Baseline Region','DR - Desert Baseline Region','DR - Desert Baseline Region','DR - Desert Baseline Region','DR - Inland Baseline Region','DR - Inland Baseline Region','DR - Inland Baseline Region','DR - Inland Baseline Region','DR - Inland Baseline Region','DR - Inland Baseline Region','DR - Inland Baseline Region','DR - Mountain Baseline Region','DR - Mountain Baseline Region','DR - Mountain Baseline Region','DR - Mountain Baseline Region','DR - Mountain Baseline Region','DR - Mountain Baseline Region','DR - Mountain Baseline Region','TOU-DR1 Coastal (old)','TOU-DR1 Coastal','TOU-DR1 Desert (old)','TOU-DR1 Desert','TOU-DR1 Inland (old)','TOU-DR1 Inland','TOU-DR1 Mountain (old)','TOU-DR1 Mountain',~
+'AL-TOU Secondary (0-500 KW)','AL-TOU Secondary (0-500 KW)','AL-TOU Secondary (0-500 KW) - old','AL-TOU Secondary (0-500 KW)','DR - Coastal Baseline Region','DR - Coastal Baseline Region','DR - Coastal Baseline Region','DR - Coastal Baseline Region','DR - Coastal Baseline Region','DR - Coastal Baseline Region','DR - Coastal Baseline Region','DR - Desert Baseline Region','DR - Desert Baseline Region','DR - Desert Baseline Region','DR - Desert Baseline Region','DR - Desert Baseline Region','DR - Desert Baseline Region','DR - Desert Baseline Region','DR - Inland Baseline Region','DR - Inland Baseline Region','DR - Inland Baseline Region','DR - Inland Baseline Region','DR - Inland Baseline Region','DR - Inland Baseline Region','DR - Inland Baseline Region','DR - Mountain Baseline Region','DR - Mountain Baseline Region','DR - Mountain Baseline Region','DR - Mountain Baseline Region','DR - Mountain Baseline Region','DR - Mountain Baseline Region','DR - Mountain Baseline Region','TOU-DR1 Coastal (old)','TOU-DR1 Coastal','TOU-DR1 Desert (old)','TOU-DR1 Desert','TOU-DR1 Inland (old)','TOU-DR1 Inland','TOU-DR1 Mountain (old)','TOU-DR1 Mountain',~
 1-May-2015,1-Jan-2017,1-Jan-2018,1-Jan-2018,1-Feb-2014 06:00:00,1-Aug-2014,1-May-2015,1-Jul-2016,1-Jan-2017,1-Jan-2018,1-Oct-2018,1-Feb-2014 06:00:00,1-Aug-2014,1-May-2015,1-Jul-2016,1-Jan-2017,1-Jan-2018,1-Oct-2018,1-Feb-2014 06:00:00,1-Aug-2014,1-May-2015,1-Jul-2016,1-Jan-2017,1-Jan-2018,1-Oct-2018,1-Feb-2014 06:00:00,1-Aug-2014,1-May-2015,1-Jul-2016,1-Jan-2017,1-Jan-2018,1-Oct-2018,1-Jan-2018,1-Jan-2018,1-Jan-2018,1-Jan-2018,1-Jan-2018,1-Jan-2018,1-Jan-2018,1-Jan-2018,~
 31-Dec-2016,31-Dec-2017,Null,Null,31-Jul-2014,30-Apr-2015,30-Jun-2016,31-Dec-2016,30-Nov-2017,Null,Null,31-Jul-2014,30-Apr-2015,30-Jun-2016,31-Dec-2016,30-Nov-2017,Null,Null,31-Jul-2014,30-Apr-2015,30-Jun-2016,31-Dec-2016,30-Nov-2017,Null,Null,31-Jul-2014,30-Apr-2015,30-Jun-2016,31-Dec-2016,30-Nov-2017,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 'San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co','San Diego Gas & Electric Co',~
@@ -500,20 +480,20 @@ Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 'kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW','kW',~
-0e+000,0e+000,0e+000,0e+000,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0e+000,0e+000,0e+000,0e+000,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0e+000,0e+000,0e+000,0e+000,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0e+000,0e+000,0e+000,0e+000,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0e+000,0e+000,0e+000,0e+000,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0e+000,0e+000,0e+000,0e+000,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0e+000,0e+000,0e+000,0e+000,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0e+000,0e+000,0e+000,0e+000,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0e+000,0e+000,0e+000,0e+000,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0e+000,0e+000,0e+000,0e+000,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0e+000,0e+000,0e+000,0e+000,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0e+000,0e+000,0e+000,0e+000,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+0,0,0,0,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+0,0,0,0,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+0,0,0,0,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+0,0,0,0,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+0,0,0,0,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+0,0,0,0,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+0,0,0,0,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+0,0,0,0,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+0,0,0,0,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+0,0,0,0,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+0,0,0,0,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+0,0,0,0,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0e+000,0e+000,0e+000,0e+000,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+0,0,0,0,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
@@ -905,10 +885,10 @@ Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-13-Jan-2017 13:00:19,5-Jan-2018 11:46:31,5-Jan-2018 11:55:40.000000,20-Aug-2018 11:55:40,26-Mar-2015 21:26:49,18-May-2015 15:19:11,19-Jul-2016 14:41:02,12-Jan-2017 11:51:32,19-Dec-2017 11:48:03.000000,5-Jan-2018 10:53:11.999999,5-Jan-2018 10:53:11.999999,26-Mar-2015 21:26:32,18-May-2015 14:44:03,19-Jul-2016 14:53:43,12-Jan-2017 11:58:28,19-Dec-2017 12:59:13.999999,5-Jan-2018 10:56:13,5-Jan-2018 10:56:13,26-Mar-2015 21:26:22,18-May-2015 15:14:51.000000,19-Jul-2016 14:47:55.000000,12-Jan-2017 11:54:45,19-Dec-2017 12:51:13,5-Jan-2018 10:53:30,5-Jan-2018 10:53:30,26-Mar-2015 21:26:26,18-May-2015 15:01:54.000000,19-Jul-2016 14:51:21,12-Jan-2017 11:56:51,19-Dec-2017 12:55:41.000000,5-Jan-2018 10:54:51.000000,5-Jan-2018 10:54:51.000000,20-Aug-2018 11:55:40,20-Aug-2018 11:55:40,20-Aug-2018 11:55:40,20-Aug-2018 11:55:40,20-Aug-2018 11:55:40,20-Aug-2018 11:55:40,20-Aug-2018 11:55:40,20-Aug-2018 11:55:40)
+13-Jan-2017 13:00:19,5-Jan-2018 11:46:31,5-Jan-2018 11:55:40,20-Aug-2018 11:55:40,26-Mar-2015 21:26:49,18-May-2015 15:19:11,19-Jul-2016 14:41:02,12-Jan-2017 11:51:32,19-Dec-2017 11:48:03,5-Jan-2018 10:53:11.999999,5-Jan-2018 10:53:11.999999,26-Mar-2015 21:26:32,18-May-2015 14:44:03,19-Jul-2016 14:53:43,12-Jan-2017 11:58:28,19-Dec-2017 12:59:13.999999,5-Jan-2018 10:56:13,5-Jan-2018 10:56:13,26-Mar-2015 21:26:22,18-May-2015 15:14:51,19-Jul-2016 14:47:55,12-Jan-2017 11:54:45,19-Dec-2017 12:51:13,5-Jan-2018 10:53:30,5-Jan-2018 10:53:30,26-Mar-2015 21:26:26,18-May-2015 15:01:54,19-Jul-2016 14:51:21,12-Jan-2017 11:56:51,19-Dec-2017 12:55:41,5-Jan-2018 10:54:51,5-Jan-2018 10:54:51,20-Aug-2018 11:55:40,20-Aug-2018 11:55:40,20-Aug-2018 11:55:40,20-Aug-2018 11:55:40,20-Aug-2018 11:55:40,20-Aug-2018 11:55:40,20-Aug-2018 11:55:40,20-Aug-2018 11:55:40)
 NodeLocation: 112,64,1
 NodeSize: 64,40
-DefnState: 2,86,42,1349,637,0,DFNM
+DefnState: 2,86,42,1681,692,0,DFNM
 ValueState: 2,12,3,1469,674,,MIDM
 Aliases: FormNode Fo1533786962, Alias Al1534527214, FormNode Fo1534527214
 ReformDef: [All_USURDB_Rows,USURDB_Columns]
@@ -1011,7 +991,7 @@ Original: Hourly_Profiles
 Constant Saved_Daily_Profiles
 Title: Saved Daily Profiles
 Units: various
-Description: The average daily profile for a given month and day type. These have been estimated from 8760/8784 hourly profiles.
+Description: The average daily profile for a given month and day type. These have been estimated from 8760/8784 hourly profiles. Residential customer load data is later scaled to ensure that 90% of the gross customer load is met by solar production from average historic system sizes.
 Definition: Table(Month,Time_of_Day,All_Day_Types,Static_Profile_Names)(~
 0,0,0,0,0.5237308,1.4150748,37.9821274,-0.001,-0.001,-0.001,-0.001,-0.0215,-0.0215,-0.0215,-0.0215,~
 0,0,0,0,0.469416,1.3630368,37.9275276,-0.001,-0.001,-0.001,-0.001,-0.0215,-0.0215,-0.0215,-0.0215,~
@@ -3895,15 +3875,15 @@ Definition: Table(Month,Time_of_Day,All_Day_Types,Static_Profile_Names)(~
 0,0,0,0,0.618979,1.442964,43.761315,-0.001,-0.001,-0.001,-0.001,-0.0215,-0.0215,-0.0215,-0.0215)
 NodeLocation: 264,192,1
 NodeSize: 64,40
-DefnState: 2,104,106,1040,569,,DFNM
-ValueState: 2,70,0,1395,699,1,MIDM
-Aliases: FormNode Fo1534307258, Alias Al1534527374, FormNode Fo1534527375, FormNode Fo1534308073
+DefnState: 2,159,264,1412,496,0,DFNM
+ValueState: 2,427,63,1395,699,1,MIDM
+Aliases: FormNode Fo1534307258, FormNode Fo1534308073, Alias Al1534527374, FormNode Fo1534527375
 GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:5
-ReformVal: [Time_of_Day,All_Day_Types]
+ReformVal: [Time_of_Day,Month]
 TableCellDefault: 0
-Att_ResultSliceState: [Month,10,Static_Profile_Names,180,All_Day_Types,1,Time_of_Day,1]
+Att_ResultSliceState: [Static_Profile_Names,10,All_Day_Types,2,Month,10,Time_of_Day,1]
 Att_EditSliceState: [Month,12,All_Day_Types,1,Static_Profile_Names,1,Time_of_Day,1]
 {!40600|Att_ClusterIndex: All_Day_Types}
 
@@ -4058,22 +4038,6 @@ NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Saved_Day_Counts
 
-FormNode Fo1534527654
-Title: NewCon Start Mkt Share
-Definition: 0
-NodeLocation: 576,244,1
-NodeSize: 56,12
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: NewCon_Start_Mkt_Sha
-
-FormNode Fo1534527655
-Title: Historic NewCon Systems
-Definition: 0
-NodeLocation: 424,244,1
-NodeSize: 56,12
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Historic_NewCon_Syst
-
 Module ODBC_Irradiance_Impo
 Title: ODBC Irradiance Import
 Author: JamesMilford
@@ -4082,6 +4046,9 @@ NodeLocation: 112,384,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,1,0,1541,731,17
+NodeColor: 57311,57311,57311
+{!40400|CloudPlayerStyles: Show_Object:no}
+{!40204-40399|AWP_Attrib:Show_Object:no}
 
 Decision ANEC_File_Name
 Title: ANEC File Name
@@ -4386,6 +4353,9 @@ NodeLocation: 112,480,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,35,54,1541,567,17
+NodeColor: 57311,57311,57311
+{!40400|CloudPlayerStyles: Show_Object:no}
+{!40204-40399|AWP_Attrib:Show_Object:no}
 
 Decision Load_File_Name
 Title: Load File Name

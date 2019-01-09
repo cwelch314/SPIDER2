@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Data_Import__Export at 8-Jan-2019 4:29:28 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Data_Import__Export at 7-Jan-2019 4:45:59 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,17 +9,19 @@ Title: Data Import/ Export
 Author: Cory Welch
 Date: Fri, Feb 5, 2016 10:04 AM
 SaveAuthor: JamesMilford
-SaveDate: Tue, Jan 8, 2019 4:29 PM
+SaveDate: Mon, Jan 7, 2019 4:45 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-DiagState: 2,106,49,791,731,17
+DiagState: 2,344,8,791,731,17
 WindState: 2,102,82,720,350
-NodeColor: 65535,65535,65535
+NodeColor: 57311,57311,57311
 Pict: (000000000000003C003C00042204000089504E470D0A1A0A0000000D494844520000003C0000003C08060000003AFCD972000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000000970485973000012740000127401DE661F78000003A7494441546843ED9A4F68D3501CC71D78586FDB6D3BB99DDC6E2B086E17D9C0C38697D5537B5B6FDBC9E2693BB98BF4A05011A1E2C11E1C466110FF41C483F5327A500C2A5A05A1A08C0A821105AB288DFD96FDF425F9A549DBBC365B13F8D0F6F7DEFBBDF749F2922D2F874CD31C28D8A06CAEBE38B779595FCF7265B26183B2397E73B816BF81AF7CB94CD8A06C201B09F70836289B48B887B041D944C23D840DCA2612EE216C503691700F6183B289847B081B244AA5D2ECDADA5A7E6E6EAE34343464FA25168BD5361B1B97137809E772B9CCE8E8A8C1E576231E8FEBE974BA80317339093608F2F9FC2A97D82F90E6F2022FE1C9C9C90A97D32FD96C769DCB0BD8A0AEEB33183025585A5AD270C4DAD98AC5E23C971B7809A3FFBD34BE371C5D51DAAD7F4700A45229058D205D2E97A7B83ADDE025DC29D56A756C7A7ABA8CB12F2C2C14B93A8E00A046894442E5CABB459630A0A9E836A51C01800600A70AC5EACFAF65EAF9A346FDD298E907F34E4A33FFFC1C16F3129EC268B77DBAC8E565B972A4562F5D688EB55028ACD0F82D39F77004002B8CA45C672D303FEEB0F3C853B8D18ECBE705DA06274C49B1E71B7BD393776A52CC29E229DCA0FEFAD60A9BD786793FAD4A156E7622D4ED043FC27E69EE98483812FE8723003A157EFB459FB9F82C93AB7C6D7DEFF623FCED97318287F58F3FA8CB5C39D157E1B34F9655889CB83D62409EAB03BC84219B7C30A3A3CEC9EDB12A5787E8ABF0C38A92249956D2AD84455970FD95FBDFC5A0EF7318D2B494E226ED266C97C51A94BD8E9D505CB47676B5C556D29CF0EEF7CA44E2DE54B91D59100A6160977EF9F9FFFFA97661C89E52272A14DF7A93CB509917A11106A2343EF11B7151D82E7BF77D6185DAFB2154C2E0E9A7E23C8EB0284D72A22CCADA9505A1130698C3A234098BB274F4DB2594C2409416E94616845618D8A5BB9505A11606909E55623F8E6D1DFEDDAD2C08BD70D044C291B015470044C20D0656D87C74A6D07C1A191676CE67A50A87198C333061535B55B84EC2021E1F639CC109EF1322611B8E001818E14E56DEFD809CC82DF665475194E4F8F878956BDF0DF6B7112C9D8A8BE041E3B67C49D012AD2CA81F4BA75488D574ACA007C1C6C64696F26291DA0DDAD9B2FA26475638C8B98B5395F2FAA1D5FB19EDC2CD674B052A0C52B856AB0D63FE22A7D70659C33046B83C9DE0294CA7153A17E3FB154F61CC2514E202A269DA22372FF613F47E19EE12ACB0AAAACBB4470E12E2196B1106380D64DC8BFB01A6A8FD2268911D04D8E0C1C53CF417ED20281D5796B60C0000000049454E44AE426082)
 FontStyle: Arial Narrow,19
 NodeFont: Arial,16
 FileInfo: 0,LinkModule Data_Import__Export,2,2,0,0,Data Import Export Module.ana
+{!40400|CloudPlayerStyles: Show_Object:no}
+{!40204-40399|AWP_Attrib:Show_Object:no}
 
 Module Data
 Title: Data
@@ -78,7 +80,7 @@ Definition: ['Residential','NonResidential','Res + NonRes Combined']
 NodeLocation: 104,64,1
 NodeSize: 64,40
 ValueState: 2,847,306,416,303,,MIDM
-{!40300|Att_SlicerPopupSize: 322,126}
+{!40300|Att_SlicerPopupSize: 337,126}
 Att_PrevIndexValue: ['Residential','NonResidential','Res + NonRes Combined']
 
 Index Selected_Utilities
@@ -269,7 +271,7 @@ Title: All Utilities
 Definition: ['SDGE']
 NodeLocation: 520,56,1
 NodeSize: 56,32
-{!40300|Att_SlicerPopupSize: 242,70}
+{!40300|Att_SlicerPopupSize: 247,70}
 Att_PrevIndexValue: ['SDGE']
 
 Module Bldg_Stock_Data
@@ -311,7 +313,7 @@ NodeSize: 56,32
 Constant Building_Stock
 Title: Building_Stock
 Units: bldg units
-Description: Building stock totals over time.~
+Description: Building stock totals over time. Input values are assumed to be at the end of the input time period. ~
 ~
 Units:~
 Residential: Premises~
@@ -736,11 +738,12 @@ NodeSize: 56,32
 WindState: 2,285,298,815,462
 DefnState: 2,236,53,1355,766,0,DFNM
 ValueState: 2,48,53,848,830,1,MIDM
-Aliases: Alias Al1535645646, FormNode Fo1529597916
+Aliases: FormNode Fo1529597916, Alias Al1535645646
 ReformDef: [Building_Stock_Year,EV_Spatial_ID]
 ReformVal: [Building_Stock_Year,EV_Spatial_ID]
-Att__TotalsIndex: [All_Spatial_ID]
-Att_ResultSliceState: [All_Sectors,2,All_Spatial_ID,0,All_Spatial_ID,0,Building_Stock_Year,1]
+NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
+Att__TotalsIndex: []
+Att_ResultSliceState: [All_Sectors,1,All_Spatial_ID,2,All_Spatial_ID,1,Building_Stock_Year,1]
 Att_EditSliceState: [Sectors,1,Selected_Spatial_ID,1,Building_Stock_Year,1]
 Att_ColorRole: Null
 {!50000|Att_ColumnWidths: [,Building_Stock_Year,\([94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,120,94,94,94,94,94])]}
@@ -831,7 +834,7 @@ SaveDate: Tue, Jan 2, 2018 4:31 PM
 NodeLocation: 136,128,0
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
-DiagState: 2,842,72,928,586,17
+DiagState: 2,30,26,813,556,17
 WindState: 2,355,67,533,321
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
@@ -842,7 +845,7 @@ Pict: (000000000000003B003C00041608000089504E470D0A1A0A0000000D494844520000003C0
 FormNode Fo1544972933
 Title: Path to Test File
 Definition: 0
-NodeLocation: 424,84,1
+NodeLocation: 408,76,1
 NodeSize: 368,20
 NodeInfo: 1,0,0,1,0,0,0,542,0,,0,,,0
 NodeColor: 49344,49344,49344
@@ -851,7 +854,7 @@ Original: Path_to_Spreadsheet
 FormNode Fo1544973917
 Title: Data to Import
 Definition: 0
-NodeLocation: 192,124,1
+NodeLocation: 176,116,1
 NodeSize: 136,20
 NodeColor: 49344,49344,49344
 Original: Data_to_Import
@@ -859,7 +862,7 @@ Original: Data_to_Import
 FormNode Fo1544976101
 Title: Dataset to View
 Definition: 0
-NodeLocation: 256,340,1
+NodeLocation: 240,332,1
 NodeSize: 200,20
 NodeInfo: 1,,,,,,0,239,,,,,,0
 Original: Dataset_to_View
@@ -867,7 +870,7 @@ Original: Dataset_to_View
 FormNode Fo1544976416
 Title: Raw Imported Data
 Definition: 1
-NodeLocation: 256,380,1
+NodeLocation: 240,372,1
 NodeSize: 200,20
 NodeInfo: 1,,,,,,0,72,,,,,,0
 NodeColor: 65278,37008,6168
@@ -876,7 +879,7 @@ Original: Raw_Imported_Data
 FormNode Fo1544976446
 Title: Cleaned Import Data
 Definition: 1
-NodeLocation: 256,420,1
+NodeLocation: 240,412,1
 NodeSize: 200,20
 NodeInfo: 1,,,,,,0,72,,,,,,0
 NodeColor: 65278,37008,6168
@@ -885,7 +888,7 @@ Original: Format_Import_Data
 Button Show_Stored_Imported
 Title: Show Stored Imported Data
 Description: Press to show the variable where the imported dataset has been stored. The stored data has been dimensionalized using fact column indices and a value index (if applicable).
-NodeLocation: 544,416,1
+NodeLocation: 528,408,1
 NodeSize: 64,40
 OnClick: MetaVar varHandle:=Active_StoreLocation;~
 VAR ident:=Identifier of varHandle;~
@@ -894,7 +897,7 @@ Show_Result(ident)
 FormNode Fo1544976532
 Title: Check for Index Errors
 Definition: 1
-NodeLocation: 256,460,1
+NodeLocation: 240,452,1
 NodeSize: 200,20
 NodeInfo: 1,,,,,,0,72,,,,,,0
 NodeColor: 65278,37008,6168
@@ -903,7 +906,7 @@ Original: Check_Index_Errors
 FormNode Fo1544976538
 Title: Check for Data Type Errors
 Definition: 1
-NodeLocation: 256,500,1
+NodeLocation: 240,492,1
 NodeSize: 200,20
 NodeInfo: 1,,,,,,0,72,,,,,,0
 NodeColor: 65278,37008,6168
@@ -912,14 +915,14 @@ Original: Check_DataType_Error
 Alias Al1544976828
 Title: Import from Excel
 Definition: 1
-NodeLocation: 416,168,1
+NodeLocation: 392,160,1
 NodeSize: 64,40
 Original: Import_from_Excel
 
 FormNode Fo1544976861
 Title: Apply Index Checks?
 Definition: 0
-NodeLocation: 192,204,1
+NodeLocation: 176,196,1
 NodeSize: 136,20
 NodeColor: 49344,49344,49344
 Original: Apply_Index_Checks
@@ -927,7 +930,7 @@ Original: Apply_Index_Checks
 FormNode Fo1544976862
 Title: Apply Data Type Checks?
 Definition: 0
-NodeLocation: 192,164,1
+NodeLocation: 176,156,1
 NodeSize: 136,20
 NodeColor: 49344,49344,49344
 Original: Apply_DataType_Check
@@ -935,7 +938,7 @@ Original: Apply_DataType_Check
 Button Release_Spreadsheet
 Title: Release Spreadsheet
 Description: After viewing a specific dataset, it may be necessary to "release" the spreadsheet so it can be opened and viewed (Analytica will open the spreadsheet to perform the import, but the spreadsheet may not be visible on the desktop). Pressing this button will release the spreadsheet, but it will also discard the data chosen for temporary viewing (though it does not discard any of the data stored in the model).
-NodeLocation: 688,416,1
+NodeLocation: 672,408,1
 NodeSize: 64,40
 Aliases: Alias Al1545342717, Alias Al1545352390
 OnClick: (Import_Reset:=NOT Import_Reset)
@@ -944,7 +947,7 @@ Module Structural_Settings_
 Title: Structural Settings for Import
 Author: JamesMilford
 Date: Fri, Dec 21, 2018 10:51 AM
-NodeLocation: 712,168,1
+NodeLocation: 696,160,1
 NodeSize: 64,40
 DiagState: 2,79,189,1415,645,17
 NodeColor: 65535,65535,65535
@@ -968,12 +971,12 @@ NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,260,-10,1433,871,17
 
 Index Import_Fixed_Params
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 Title: Import Fixed Params
 Definition: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 NodeLocation: 88,80,1
 NodeSize: 64,40
 WindState: 2,651,5,720,350
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 
 Decision Max_Imported_Dim
 Title: Max Imported Dimensions
@@ -1538,11 +1541,11 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Max_Imported_Indexes
 
 Index Categ_Index_Params
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Column 1 Index','Column 2 Index','Column 3 Index','Column 4 Index','Column 5 Index','Column 6 Index']
 Title: Categorical Index Parameters
 Definition: Concat(Cat_Index_Fix_Params, Import_Index_Cols)
 NodeLocation: 872,464,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Column 1 Index','Column 2 Index','Column 3 Index','Column 4 Index','Column 5 Index','Column 6 Index']
 
 Decision Categ_Index_Default
 Title: Categorical Index Default
@@ -1574,11 +1577,11 @@ WindState: 2,42,72,720,350
 Aliases: FormNode Fo1545070544, FormNode Fo1545342342
 
 Index Categ_Index_Tabs
-Att_PrevIndexValue: [1]
 Title: Categorical Index Tabs
 Definition: 1..Num_Categ_Index_Tabs
 NodeLocation: 1016,184,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1]
 
 FormNode Fo1545070544
 Title: Number of Imported Datasets
@@ -1641,11 +1644,11 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: CatInd_ImportSetting
 
 Index Cat_Index_Tab_Names
-Att_PrevIndexValue: ['Categorical_Indexes']
 Title: Categ Index Tab Names
 Definition: CopyIndex(Categ_Index_Tab_Opt)
 NodeLocation: 1016,784,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Categorical_Indexes']
 
 Index Categ_Index_Rows
 Title: Categ Index Rows
@@ -1793,11 +1796,11 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Max_Import_Seq_Param
 
 Index Seq_Index_Params
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Row 1 Parameter','Row 2 Parameter','Row 3 Parameter','Row 4 Parameter','Row 5 Parameter','Row 6 Parameter']
 Title: Sequence Index Parameters
 Definition: Concat(Seq_Index_Fix_Param, Import_Seq_Params)
 NodeLocation: 1192,464,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Row 1 Parameter','Row 2 Parameter','Row 3 Parameter','Row 4 Parameter','Row 5 Parameter','Row 6 Parameter']
 
 Decision Seq_Index_Default
 Title: Sequence Index Default
@@ -1829,11 +1832,11 @@ WindState: 2,42,72,720,350
 Aliases: FormNode Fo1545345257, FormNode Fo1545352300
 
 Index Seq_Index_Tabs
-Att_PrevIndexValue: [1]
 Title: Sequence Index Tabs
 Definition: 1..Num_Seq_Index_Tabs
 NodeLocation: 1336,184,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1]
 
 FormNode Fo1545345257
 Title: Number of Imported Datasets
@@ -1894,11 +1897,11 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: SeqInd_ImportSetting
 
 Index Seq_Index_Tab_Names
-Att_PrevIndexValue: ['Sequence_Indexes']
 Title: Sequence Index Tab Names
 Definition: CopyIndex(Seq_Index_Tab_Opt)
 NodeLocation: 1336,784,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Sequence_Indexes']
 
 Index Seq_Index_Rows
 Title: Sequence Index Rows
@@ -3230,7 +3233,7 @@ Close Structural_Settings_
 Button Clear_Imported_Varia
 Title: Clear Imported Variables
 Description: Press this button to clear data that had been previously imported. Only the datasets selected in "Data to Import" (Data_to_Import) will be cleared.
-NodeLocation: 560,168,1
+NodeLocation: 544,160,1
 NodeSize: 64,40
 WindState: 2,238,420,720,350
 OnClick: FOR J:=@Stored_Vars_Selected DO (~
@@ -3241,14 +3244,14 @@ OnClick: FOR J:=@Stored_Vars_Selected DO (~
 
 Text Te1544986631
 Title: Import Data from Spreadsheets
-NodeLocation: 416,148,-1
+NodeLocation: 400,140,-1
 NodeSize: 376,124
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 
 FormNode Fo1544986755
 Title: Last Import Time
 Definition: 1
-NodeLocation: 524,244,1
+NodeLocation: 508,236,1
 NodeSize: 180,20
 NodeInfo: 1,,,,,,0,72,,,,,,0
 NodeColor: 65278,37008,6168
@@ -3256,7 +3259,7 @@ Original: Last_Import_Time
 
 Text Te1544986853
 Title: Inspect Imported Data
-NodeLocation: 416,408,-1
+NodeLocation: 400,400,-1
 NodeSize: 376,128
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 
@@ -3338,6 +3341,8 @@ NodeLocation: 320,128,1
 NodeSize: 80,56
 DiagState: 2,315,40,1165,809,17
 Aliases: Alias Al1538428922
+{!40400|CloudPlayerStyles: Show_Object:no}
+{!40204-40399|AWP_Attrib:Show_Object:no}
 
 Module Aggregate_Interconne
 Title: Aggregate Interconnect Data
@@ -3350,6 +3355,7 @@ NodeSize: 64,40
 DiagState: 2,2018,123,1524,755,17
 
 Index Interconnect_Date
+Att_PrevIndexValue: [1-Sep-1996,1-Oct-1996,1-Nov-1996,1-Dec-1996,1-Jan-1997,1-Feb-1997,1-Mar-1997,1-Apr-1997,1-May-1997,1-Jun-1997,1-Jul-1997,1-Aug-1997,1-Sep-1997,1-Oct-1997,1-Nov-1997,1-Dec-1997,1-Jan-1998,1-Feb-1998,1-Mar-1998,1-Apr-1998,1-May-1998,1-Jun-1998,1-Jul-1998,1-Aug-1998,1-Sep-1998,1-Oct-1998,1-Nov-1998,1-Dec-1998,1-Jan-1999,1-Feb-1999,1-Mar-1999,1-Apr-1999,1-May-1999,1-Jun-1999,1-Jul-1999,1-Aug-1999,1-Sep-1999,1-Oct-1999,1-Nov-1999,1-Dec-1999,1-Jan-2000,1-Feb-2000,1-Mar-2000,1-Apr-2000,1-May-2000,1-Jun-2000,1-Jul-2000,1-Aug-2000,1-Sep-2000,1-Oct-2000,1-Nov-2000,1-Dec-2000,1-Jan-2001,1-Feb-2001,1-Mar-2001,1-Apr-2001,1-May-2001,1-Jun-2001,1-Jul-2001,1-Aug-2001,1-Sep-2001,1-Oct-2001,1-Nov-2001,1-Dec-2001,1-Jan-2002,1-Feb-2002,1-Mar-2002,1-Apr-2002,1-May-2002,1-Jun-2002,1-Jul-2002,1-Aug-2002,1-Sep-2002,1-Oct-2002,1-Nov-2002,1-Dec-2002,1-Jan-2003,1-Feb-2003,1-Mar-2003,1-Apr-2003,1-May-2003,1-Jun-2003,1-Jul-2003,1-Aug-2003,1-Sep-2003,1-Oct-2003,1-Nov-2003,1-Dec-2003,1-Jan-2004,1-Feb-2004,1-Mar-2004,1-Apr-2004,1-May-2004,1-Jun-2004,1-Jul-2004,1-Aug-2004,1-Sep-2004,1-Oct-2004,1-Nov-2004,1-Dec-2004,1-Jan-2005,1-Feb-2005,1-Mar-2005,1-Apr-2005,1-May-2005,1-Jun-2005,1-Jul-2005,1-Aug-2005,1-Sep-2005,1-Oct-2005,1-Nov-2005,1-Dec-2005,1-Jan-2006,1-Feb-2006,1-Mar-2006,1-Apr-2006,1-May-2006,1-Jun-2006,1-Jul-2006,1-Aug-2006,1-Sep-2006,1-Oct-2006,1-Nov-2006,1-Dec-2006,1-Jan-2007,1-Feb-2007,1-Mar-2007,1-Apr-2007,1-May-2007,1-Jun-2007,1-Jul-2007,1-Aug-2007,1-Sep-2007,1-Oct-2007,1-Nov-2007,1-Dec-2007,1-Jan-2008,1-Feb-2008,1-Mar-2008,1-Apr-2008,1-May-2008,1-Jun-2008,1-Jul-2008,1-Aug-2008,1-Sep-2008,1-Oct-2008,1-Nov-2008,1-Dec-2008,1-Jan-2009,1-Feb-2009,1-Mar-2009,1-Apr-2009,1-May-2009,1-Jun-2009,1-Jul-2009,1-Aug-2009,1-Sep-2009,1-Oct-2009,1-Nov-2009,1-Dec-2009,1-Jan-2010,1-Feb-2010,1-Mar-2010,1-Apr-2010,1-May-2010,1-Jun-2010,1-Jul-2010,1-Aug-2010,1-Sep-2010,1-Oct-2010,1-Nov-2010,1-Dec-2010,1-Jan-2011,1-Feb-2011,1-Mar-2011,1-Apr-2011,1-May-2011,1-Jun-2011,1-Jul-2011,1-Aug-2011,1-Sep-2011,1-Oct-2011,1-Nov-2011,1-Dec-2011,1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018]
 Title: Interconnect Date
 Definition: Sequence(Intercon_Strt_Yr,Intercon_End_Yr,Timestep_Months[Timestep_Options=dT_choice],dateUnit: 'M')
 NodeLocation: 1088,808,1
@@ -3358,7 +3364,6 @@ WindState: 2,488,172,1052,350
 ValueState: 2,1366,13,257,658,,MIDM
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"SHORT",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 247,1001}
-Att_PrevIndexValue: [1-Sep-1996,1-Oct-1996,1-Nov-1996,1-Dec-1996,1-Jan-1997,1-Feb-1997,1-Mar-1997,1-Apr-1997,1-May-1997,1-Jun-1997,1-Jul-1997,1-Aug-1997,1-Sep-1997,1-Oct-1997,1-Nov-1997,1-Dec-1997,1-Jan-1998,1-Feb-1998,1-Mar-1998,1-Apr-1998,1-May-1998,1-Jun-1998,1-Jul-1998,1-Aug-1998,1-Sep-1998,1-Oct-1998,1-Nov-1998,1-Dec-1998,1-Jan-1999,1-Feb-1999,1-Mar-1999,1-Apr-1999,1-May-1999,1-Jun-1999,1-Jul-1999,1-Aug-1999,1-Sep-1999,1-Oct-1999,1-Nov-1999,1-Dec-1999,1-Jan-2000,1-Feb-2000,1-Mar-2000,1-Apr-2000,1-May-2000,1-Jun-2000,1-Jul-2000,1-Aug-2000,1-Sep-2000,1-Oct-2000,1-Nov-2000,1-Dec-2000,1-Jan-2001,1-Feb-2001,1-Mar-2001,1-Apr-2001,1-May-2001,1-Jun-2001,1-Jul-2001,1-Aug-2001,1-Sep-2001,1-Oct-2001,1-Nov-2001,1-Dec-2001,1-Jan-2002,1-Feb-2002,1-Mar-2002,1-Apr-2002,1-May-2002,1-Jun-2002,1-Jul-2002,1-Aug-2002,1-Sep-2002,1-Oct-2002,1-Nov-2002,1-Dec-2002,1-Jan-2003,1-Feb-2003,1-Mar-2003,1-Apr-2003,1-May-2003,1-Jun-2003,1-Jul-2003,1-Aug-2003,1-Sep-2003,1-Oct-2003,1-Nov-2003,1-Dec-2003,1-Jan-2004,1-Feb-2004,1-Mar-2004,1-Apr-2004,1-May-2004,1-Jun-2004,1-Jul-2004,1-Aug-2004,1-Sep-2004,1-Oct-2004,1-Nov-2004,1-Dec-2004,1-Jan-2005,1-Feb-2005,1-Mar-2005,1-Apr-2005,1-May-2005,1-Jun-2005,1-Jul-2005,1-Aug-2005,1-Sep-2005,1-Oct-2005,1-Nov-2005,1-Dec-2005,1-Jan-2006,1-Feb-2006,1-Mar-2006,1-Apr-2006,1-May-2006,1-Jun-2006,1-Jul-2006,1-Aug-2006,1-Sep-2006,1-Oct-2006,1-Nov-2006,1-Dec-2006,1-Jan-2007,1-Feb-2007,1-Mar-2007,1-Apr-2007,1-May-2007,1-Jun-2007,1-Jul-2007,1-Aug-2007,1-Sep-2007,1-Oct-2007,1-Nov-2007,1-Dec-2007,1-Jan-2008,1-Feb-2008,1-Mar-2008,1-Apr-2008,1-May-2008,1-Jun-2008,1-Jul-2008,1-Aug-2008,1-Sep-2008,1-Oct-2008,1-Nov-2008,1-Dec-2008,1-Jan-2009,1-Feb-2009,1-Mar-2009,1-Apr-2009,1-May-2009,1-Jun-2009,1-Jul-2009,1-Aug-2009,1-Sep-2009,1-Oct-2009,1-Nov-2009,1-Dec-2009,1-Jan-2010,1-Feb-2010,1-Mar-2010,1-Apr-2010,1-May-2010,1-Jun-2010,1-Jul-2010,1-Aug-2010,1-Sep-2010,1-Oct-2010,1-Nov-2010,1-Dec-2010,1-Jan-2011,1-Feb-2011,1-Mar-2011,1-Apr-2011,1-May-2011,1-Jun-2011,1-Jul-2011,1-Aug-2011,1-Sep-2011,1-Oct-2011,1-Nov-2011,1-Dec-2011,1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018]
 
 Constant Intercon_Strt_Yr
 Title: Intercon Strt Yr
@@ -5315,7 +5320,7 @@ Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 1200,328,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,91,73,1524,547,17
+DiagState: 2,211,14,1524,706,17
 
 Variable PV_AC_SystSize_Econ
 Title: PV AC System Size for Economics
@@ -5790,14 +5795,18 @@ Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,
 NodeLocation: 80,216,1
 NodeSize: 64,36
 DefnState: 2,168,170,1090,629,0,DFNM
-ValueState: 2,197,27,1433,813,1,MIDM
-Aliases: FormNode Fo1535982934, FormNode Fo1537569014
-GraphSetup: Att_AreaFill Graph_Primary_Valdim:1~
-Att_Stacked_Lines Graph_Primary_Valdim:1
-ReformVal: [Interconnect_Date,All_Sectors]
+ValueState: 2,544,30,972,813,1,MIDM
+Aliases: FormNode Fo1537569014, FormNode Fo1544986702
+GraphSetup: ShowKey:1~
+Att_AreaFill Graph_Primary_Valdim:0~
+Att_Stacked_Lines Graph_Primary_Valdim:0~
+Att_GraphIndexRange Interconnect_Date:1,,0,,,,,36.891K,42.369K,0
+ReformVal: [Interconnect_Date,Null]
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [All_Spatial_ID]
-Att_ResultSliceState: [All_Utilities,1,All_Sectors,2,All_Spatial_ID,0,Interconnect_Date,1]
+Att_ResultSliceState: [All_Utilities,1,All_Sectors,1,All_Spatial_ID,0,Interconnect_Date,1]
 Att_EditSliceState: [All_Sectors,1,All_Utilities,1,All_Spatial_ID,1,Interconnect_Date,1]
+Att_ColorRole: Null
 {!40600|Att_StackingIndex: All_Sectors}
 {!40600|Att_ClusterIndex: Null}
 
@@ -6231,18 +6240,21 @@ Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
 NodeLocation: 80,312,1
 NodeSize: 64,36
-DefnState: 2,184,186,635,423,,DFNM
-ValueState: 2,281,61,1238,667,1,MIDM
-Aliases: FormNode Fo1535983847, FormNode Fo1537569015
-GraphSetup: Att_ContLineStyle Graph_Primary_Valdim:1~
-Att_GraphIndexRange Interconnect_Date:1,0~
-Att_Stacked_Lines Graph_Primary_Valdim:1~
-Att_AreaFill Graph_Primary_Valdim:1~
+DefnState: 2,179,125,1172,616,0,DFNM
+ValueState: 2,669,54,866,667,1,MIDM
+Aliases: FormNode Fo1537569015, FormNode Fo1544986703
+GraphSetup: Att_GraphValueRange Stored_Capacity_Inst:1,,,,,,5~
+ShowKey:1~
 Att_CatLineStyle Graph_Primary_Valdim:9~
-ShowKey:2
+Att_AreaFill Graph_Primary_Valdim:1~
+Att_Stacked_Lines Graph_Primary_Valdim:1~
+Att_GraphIndexRange Interconnect_Date:1,0,0,,,,,36.891K,42.369K,0~
+Att_ContLineStyle Graph_Primary_Valdim:1
 ReformVal: [Interconnect_Date,All_Sectors]
+NumberFormat: 2,F,4,1,0,0,4,1,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Interconnect_Date,All_Spatial_ID]
 Att_ResultSliceState: [All_Utilities,1,All_Spatial_ID,0,All_Sectors,1,Interconnect_Date,1]
+Att_EditSliceState: [All_Sectors,1,All_Utilities,1,All_Spatial_ID,1,Interconnect_Date,1]
 {!40600|Att_StackingIndex: All_Sectors}
 {!40600|Att_ClusterIndex: Null}
 
@@ -6254,7 +6266,6 @@ Definition: Divide(Capacity_Installs * kW_per_MW, System_Installations, True)
 NodeLocation: 384,312,1
 NodeSize: 64,40
 ValueState: 2,67,13,1462,840,1,MIDM
-Aliases: FormNode Fo1537463301
 GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_AreaFill Graph_Primary_Valdim:0~
 Graph_AxisTitleFont:Arial,18,1~
@@ -6300,7 +6311,7 @@ ValueState: 2,209,361,845,208,,MIDM
 Variable Cap_Installs_withAgg
 Title: All Capacity Installs w/Agg
 Units: MW-AC/period
-Definition: IF All_Spatial_ID=All_SDGE_Label~
+Definition: IF All_Spatial_ID=Aggregation_2_Label~
 THEN Agg_CapacityInstalls ~
 ELSE Sum(Stored_Capacity_Inst[All_Sectors=PV_Sectors, All_Utilities=Selected_Utilities], Selected_Utilities)   {Sums all installations across all spatial IDs and assigns it to the first element of the All spatial ID index, which is null}
 NodeLocation: 232,408,1
@@ -6310,7 +6321,7 @@ WindState: 2,102,82,1049,350
 Variable All_Installs_w_Agg
 Title: All Installs w/Agg
 Units: MW-AC/period
-Definition: IF All_Spatial_ID=All_SDGE_Label~
+Definition: IF All_Spatial_ID=Aggregation_2_Label~
 THEN Aggregate_System_Ins ~
 ELSE Sum(Stored_PV_Installs[All_Sectors=PV_Sectors, All_Utilities=Selected_Utilities], Selected_Utilities)   {Sums all installations across all spatial IDs and assigns it to the first element of the All spatial ID index, which is null}
 NodeLocation: 232,216,1
@@ -6421,10 +6432,10 @@ Title: Avg DC Syst Size by Zip
 Units: kW-DC/system
 Description: The average kW-DC system size by zip code. Any zip code having a null or zero value is assigned the average across all zip codes.
 Definition: VAR sizes:=Fcst_System_Size_Zip * Fcst_AC_to_DC_Factor[All_Spatial_ID=PV_Spatial_ID, All_Sectors=PV_Sectors];~
-VAR sizesWithAgg:=Find_Aggreg_Wtd_Avg(sizes, Cumul_Cap_Installs[@Interconnect_Date=Size(Interconnect_Date)], All_SDGE_Label, Non_Agg_Spatial_IDs, PV_Spatial_ID);~
+VAR sizesWithAgg:=Find_Aggreg_Wtd_Avg(sizes, Cumul_Cap_Installs[@Interconnect_Date=Size(Interconnect_Date)], Aggregation_2_Label, Non_Agg_Spatial_IDs, PV_Spatial_ID);~
 ~
 IF (sizesWithAgg = Null) OR (sizesWithAgg = 0)~
-THEN sizesWithAgg[PV_Spatial_ID=All_SDGE_Label]~
+THEN sizesWithAgg[PV_Spatial_ID=Aggregation_2_Label]~
 ELSE sizesWithAgg
 NodeLocation: 1008,512,1
 NodeSize: 64,40
@@ -6778,7 +6789,7 @@ Description: The name of the tab on the worksheet of PV Interconnect Data
 Definition: 'NEM_CurrentlyInterconnectedData'
 NodeLocation: 752,96,1
 NodeSize: 64,40
-Aliases: Alias Al1533754985, FormNode Fo1533760894, FormNode Fo1537568729, FormNode Fo1534882593
+Aliases: FormNode Fo1537568729, FormNode Fo1534882593, Alias Al1533754985, FormNode Fo1533760894
 
 Constant Interconnect_Data
 Title: Interconnect Data
