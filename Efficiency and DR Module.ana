@@ -1,0 +1,771 @@
+{ From user coryw, Model Efficiency___DR at 10-Dec-2018 10:54:08 AM, encoding="UTF-8" }
+SoftwareVersion 5.1.6
+
+
+
+LinkModule Efficiency___DR
+Title: Efficiency & DR
+Author: Cory Welch
+Date: Fri, Jun 22, 2018 10:48 AM
+SaveAuthor: coryw
+SaveDate: Mon, Dec 10, 2018 10:54 AM
+DefaultSize: 64,40
+NodeSize: 80,56
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+DiagState: 2,-53,85,1443,725,17
+Aliases: Alias Al1544368972
+NodeColor: 65535,65535,65535
+Pict: (000000000000003D003C00047D04000089504E470D0A1A0A0000000D494844520000003C0000003D0806000000F1A00AD7000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA86400000402494441546843ED9A4F48545114C6AD954B97EE7257ABD0206A11E1C285E0465A4D3B5B04032D921631AB74232E0A0C09260A94D2325198A06042488B3009A5A1FF49C1442153118A45A960EFF5BE8737AEC337E3CCB9F78EF29CC50FF4BB67DEBCEF9D73CF79EF3135BEEFEF2AA81865A81865A8E894F5D55A3F1D1FF1A77B7AE9BA63A8E8126F3E15F32ED7FB207FAD1250D125DE9B3B1D55C315848A2ED95D86D1B08266155DC3CB9F1BBC8FE976FFF1853E6FB46D46198D8EE12083DECB1B718C1DEFFAC15CBE419D7034B16338868A62EE9D4A317321B75A32FEE4F924F630324F3F5F01A8284619BEB26FC5BF7B32EDCDF627FC2FD3CD34769BA0E28E6075B90E37296193FB34D94A63045071DB4093430F4075E8DB61E07096C60BA0624541C9A38BDF3CF66E934945B03DC2ADC13E2B808A4EF9FDAD3E6C5CE8E4C9FD4BD464603EBC08164B594145EB7C7FDD882CA1535383687268782867C71D9C8AC6A886337176B0E03C46162D37A452A0A208987C7EADD31F3F31450DAA2C2226127338BFB3027457E95EDCF16309D9D3B3B8F8E1008D2B46752C0554C7921954B44E752C0554C75265A0A2089B63C9D148025414613A9682F8709FE7BF0A42E9B3782154AC08781D84F75D780B1254C226930A8C247474F679215474863E92608699C4ABA0A094FDDCDC517A0C43A868956024857BB1D0480ABA78D8CDB167830B428F61112A1A51CA4882F9998BDDE1C560C7700815A5A05951832A8B28E712B2A85EF562C4618FB31829541443667059EF9FD1A9F34B1F9D9FC50AA1A2183425DCE863F6EAE58C8CB1781D746DFD0102CD0B1D1C9D9CC50BA1A2156040CDD412B2843DAD625DDE6E52D116387195B12D1BD4C69D5A595B400015AD8107FA0DC361E766311BFC7F54C45D1A59B70515ADA11BDEE28EA9D43853A828E5417624767CB46EA969A8C6B7C191DBB52B5D4F3B06D97749A1A29496F1FA1C3B7153F2BFC7042A4A39F3B0358D136C4B3564AFBEE8EA362176BF318363A162D87749A1A2944B739D7DCA305B2F87738FDA5338168CB37529549432369F8CE324B1F7D87A39A80CC3385B97424529EF17338D3849F0E34FCEE8C947F503540D5B974245293FD796EA905D9CE8F0DB3EF13C9D5E48B7AA0B87AA613152A86882DAC7C8D0DAFA4A2D8BD90AB57F4D8E51082A9AA097757F2651F60F48F5ECDA2E67404553124F6223EAA43162580C0366D596C03832ED030C2A9A82323C3DD13CA54CA344177E650BBE8BC6DE4735E86651292CD6142ADA0026D46851F43C8B27075EF52666BF4E3503343694AD7E3BEAD22CA0A22D9069986A1ADAE3E9C619C82ECCBB28631D2ADA46994299E32E4CFD8F2E7C6878EF5FFC5DACE46D4245DB2883F93A28B6E6022ADA66D719C6982AF4101049C3C52876315C40C52843C52843C5E8E2D7FC038DB5BFD8E7DA5BBD0000000049454E44AE426082)
+FontStyle: Arial Narrow,19
+FileInfo: 0,LinkModule Efficiency___DR,2,2,0,0,Efficiency and DR Module.ana
+
+Module Work_in_Progress
+Title: Work in Progress
+NodeLocation: 112,936,1
+NodeSize: 64,40
+
+Index DER_Types_Subset
+Title: DER Types
+Definition: ['Solar PV','Electric Vehicles']
+NodeLocation: 256,288,1
+NodeSize: 64,40
+
+Variable Energy_Impacts
+Title: Energy Impacts
+Units: GWh/year
+Description: The annual energy impacts of DERs.
+Definition: IF DER_Type_and_Net = Net_Impact_Label~
+THEN Sum(Energy_Impacts_witho, All_DER_Types)~
+ELSE Energy_Impacts_witho[All_DER_Types=DER_Type_and_Net]
+NodeLocation: 808,152,1
+NodeSize: 64,40
+ValueState: 2,72,40,1413,786,1,MIDM
+GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
+Att_AreaFill Graph_Primary_Valdim:0
+ReformVal: [Start_of_Year,DER_Type_and_Net]
+Att__TotalsIndex: [Spatial_IDs]
+Att_ResultSliceState: [Spatial_IDs,0,All_DER_Types,1,Start_of_Year,1]
+
+Variable Hourly_Load_Impacts
+Title: Hourly Load Impacts
+Units: MW
+Description: Average weekly load profiles for the impacts of DERs.
+Definition: Table(All_DER_Types)(-Weekly_Solar_Produc1,Scaled_EV_Profile,-Adopted_EE_Profile,-Adopted_DR_Profile,-Adopted_Battery_Prof)
+NodeLocation: 808,240,1
+NodeSize: 64,40
+WindState: 2,102,82,1208,612
+ValueState: 2,69,9,1364,827,1,MIDM
+GraphSetup: Graph_KeyFont:,20,0~
+Graph_KeyTitleFont:,20,1~
+Graph_AxisTitleFont:Arial,20,1~
+Att_AreaFill Graph_Primary_Valdim:1~
+Att_Stacked_Lines Graph_Primary_Valdim:1~
+Att_CatLineStyle Graph_Primary_Valdim:1~
+Att_StackedBar Graph_Primary_Valdim:1~
+Graph_AxisLabelFont:,18,0
+ReformVal: [Day_and_Hour,All_DER_Types]
+Att__TotalsIndex: [All_DER_Types,Spatial_IDs]
+Att_ResultSliceState: [Spatial_IDs,0,Start_of_Year,18,Month,10,All_DER_Types,0,Day_and_Hour,1]
+{!40600|Att_StackingIndex: All_DER_Types}
+{!40600|Att_ClusterIndex: Null}
+
+Variable Peak_Demand_Impacts
+Title: Peak Demand Impacts
+Units: MW
+Description: The peak period demand impacts from DERs.
+Definition: IF DER_Type_and_Net = Net_Impact_Label~
+THEN Sum(Peak_Demand_Impacts_, All_DER_Types)~
+ELSE Peak_Demand_Impacts_[All_DER_Types=DER_Type_and_Net]
+NodeLocation: 808,328,1
+NodeSize: 64,40
+WindState: 2,102,82,1077,570
+ValueState: 2,66,25,1118,681,1,MIDM
+GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
+Att_AreaFill Graph_Primary_Valdim:0
+ReformVal: [Start_of_Year,DER_Type_and_Net]
+Att__TotalsIndex: [Spatial_IDs,All_DER_Types]
+Att_ResultSliceState: [Spatial_IDs,0,All_DER_Types,0,Start_of_Year,18]
+
+Variable DER_Adoption
+Title: DER Adoption
+Units: units
+Description: Cumulative adoption of DERs.
+Definition: Table(DER_Types_and_Units)(Cumulative_Installed, Cumulative_EV_Adopti)
+NodeLocation: 808,64,1
+NodeSize: 64,40
+ValueState: 2,80,8,1125,785,1,MIDM
+GraphSetup: Att_GraphValueRange DER_Adoption:1,,1,,,,,0,40,0~
+Att_AreaFill Graph_Primary_Valdim:0~
+Att_Stacked_Lines Graph_Primary_Valdim:0
+ReformVal: [Output_Time,Null]
+Att__TotalsIndex: [Spatial_IDs,New_or_Retrofit]
+Att_ResultSliceState: [DER_Types_and_Units,2,Spatial_IDs,0,New_or_Retrofit,0,Output_Time,1]
+Att_ColorRole: Null
+
+Index DER_Types_and_Units
+Att_PrevIndexValue: ['Solar PV (MW-AC)','Electric Vehicles (vehicles)']
+Title: DER Types and Units
+Definition: ['Solar PV (MW-AC)','Electric Vehicles (vehicles)']
+NodeLocation: 256,112,1
+NodeSize: 64,40
+
+Module EE_Impact1
+Title: EE Impact
+Author: CoryWelch
+Date: Mon, Jul 9, 2018 1:00 PM
+NodeLocation: 464,96,1
+NodeSize: 64,40
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+DiagState: 2,175,147,1231,484,17
+
+Decision Select_EE_Techs
+Title: Select EE Techs
+Definition: Table(Static_Profile_Names)(Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
+NodeLocation: 128,72,1
+NodeSize: 64,40
+DefnState: 2,376,0,914,845,,DFNM
+ValueState: 2,296,298,878,547,,MIDM
+Aliases: FormNode Fo1535947398
+TableCellDefault: Checkbox(0)
+
+Index EE_Techs
+Att_PrevIndexValue: []
+Title: EE Techs
+Definition: Subset(Select_EE_Techs)
+NodeLocation: 272,72,1
+NodeSize: 64,40
+{!40300|Att_SlicerPopupSize: 227,322}
+
+FormNode Fo1535947398
+Title: Select EE Techs
+Definition: 0
+NodeLocation: 128,124,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Select_EE_Techs
+
+Variable Annual_EE_Consumptio
+Title: Annual EE Consumption
+Units: GWh/year
+Definition: Sum(Adopted_EE_Profile * Weeks_Per_Month, Day_and_Hour, Month) / 1000
+NodeLocation: 600,184,1
+NodeSize: 64,40
+ValueState: 2,56,13,1319,833,1,MIDM
+ReformVal: [Start_of_Year,Spatial_IDs]
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
+Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,3,Start_of_Year,1]
+
+Variable Adopted_EE_Profile
+Title: Adopted EE Profile
+Units: MW
+Definition: EE_Profile_by_Day_of * EE_Adoption_Rate[Output_Time=Annual_Time_Map] * Zip_Code_Allocation
+NodeLocation: 448,184,1
+NodeSize: 64,40
+WindState: 2,102,82,1021,620
+ValueState: 2,200,19,1309,797,1,MIDM
+GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
+Att_AreaFill Graph_Primary_Valdim:0~
+Att_Stacked_Lines Graph_Primary_Valdim:0
+ReformVal: [Day_and_Hour,Month]
+Att__TotalsIndex: []
+Att_ResultSliceState: [Spatial_IDs,1,Start_of_Year,1,Month,1,Day_and_Hour,1]
+
+Module EE_Load_Shapes
+Title: EE Load Shapes
+Author: JamesMilford
+Date: Sun, Sep 2, 2018 8:15 PM
+NodeLocation: 296,184,1
+NodeSize: 64,40
+DiagState: 2,519,178,944,484,17
+
+Decision EE_Scaling
+Title: EE Scaling
+Definition: Table(EE_Techs)(,,,,,,,,,,,,,,,,,,,,,,,,,,,)
+NodeLocation: 400,256,1
+NodeSize: 64,40
+DefnState: 2,14,233,483,506,0,DFNM
+Aliases: FormNode Fo1535948194
+
+Variable Normalized_EE_Shapes
+Title: Normalized EE Shapes
+Units: kW/(kWh/day)
+Definition: Divide(Saved_Daily_Profiles[Static_Profile_Names=EE_Techs, All_Day_Types=Day_of_Week] , Profile_Annual_Total[Static_Profile_Names=EE_Techs], True)
+NodeLocation: 400,152,1
+NodeSize: 64,40
+WindState: 2,258,323,1242,478
+ValueState: 2,56,58,1416,748,1,MIDM
+GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5
+ReformVal: [Time_of_Day,EE_Techs]
+Att__TotalsIndex: []
+{!40600|Att_ClusterIndex: EE_Techs}
+
+Variable Scaled_Daily_EE
+Title: Scaled Daily EE
+Units: kW
+Definition: Sum(Normalized_EE_Shapes * EE_Scaling, EE_Techs)
+NodeLocation: 552,152,1
+NodeSize: 64,40
+ValueState: 2,168,45,867,712,1,MIDM
+GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:1
+
+Variable EE_Profile_by_Day_of
+Title: EE Profile by Day of Week
+Units: kW/vehicle
+Definition: Reindex_to_Week(Scaled_Daily_EE)
+NodeLocation: 704,152,1
+NodeSize: 64,40
+WindState: 2,178,15,1159,552
+ValueState: 2,128,20,1425,761,1,MIDM
+GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:1
+ReformVal: [Day_and_Hour,Null]
+Att__TotalsIndex: [EE_Techs]
+Att_ResultSliceState: [Month,1,Day_of_Week,7,Day_and_Hour,1]
+Att_ColorRole: Null
+
+FormNode Fo1535948194
+Title: EE Scaling
+Definition: 0
+NodeLocation: 364,312,1
+NodeSize: 100,16
+Original: EE_Scaling
+
+Close EE_Load_Shapes
+
+Variable EE_Peak_Load
+Title: EE Peak Load
+Units: MW
+Definition: Max(Adopted_EE_Profile * Peak_Periods, Month, Day_and_Hour)
+NodeLocation: 448,280,1
+NodeSize: 64,40
+ValueState: 2,224,134,829,627,1,MIDM
+ReformVal: [Start_of_Year,Null]
+Att__TotalsIndex: [Spatial_IDs]
+Att_ResultSliceState: [Spatial_IDs,0,Start_of_Year,1]
+Att_ColorRole: Null
+
+Variable EE_Adoption_Rate
+Title: EE Adoption Rate
+Definition: VAR currentDate:=MakeDate(2018,1,1);~
+VAR pos:=positionInIndex(Output_Time, currentDate, Output_Time);~
+.005*(@Output_Time-pos)+1-.5
+NodeLocation: 448,80,1
+NodeSize: 64,40
+WindState: 2,826,133,720,350
+ValueState: 2,95,215,857,626,0,MIDM
+GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
+Att_AreaFill Graph_Primary_Valdim:0
+
+Variable Zip_Code_Allocation
+Title: Zip Code Allocation
+Units: fraction
+Definition: VAR loadSum:=Sum([PV_Peak_Load[Start_of_Year=2018],EV_Peak_Load][Start_of_Year=2018]);~
+Divide(loadSum, Sum(loadSum, Spatial_IDs), True);
+NodeLocation: 608,80,1
+NodeSize: 64,40
+WindState: 2,200,278,1069,573
+ValueState: 2,232,234,771,527,,MIDM
+ReformVal: [Start_of_Year,Spatial_IDs]
+NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+Att__TotalsIndex: [Spatial_IDs]
+{!40700|Att_CellFormat: Undefined}
+
+Close EE_Impact1
+
+Index All_DER_Types
+Title: All DER Types
+Definition: ['Solar PV','Electric Vehicles','Energy Efficiency','Demand Response','Battery Storage']
+NodeLocation: 256,200,1
+NodeSize: 64,40
+WindState: 2,33,362,720,350
+{!40300|Att_SlicerPopupSize: 237,98}
+Att_PrevIndexValue: ['Solar PV','Electric Vehicles','Energy Efficiency','Demand Response','Battery Storage']
+
+Module DR_Impact1
+Title: DR Impact
+Author: CoryWelch
+Date: Mon, Jul 9, 2018 1:00 PM
+NodeLocation: 464,192,1
+NodeSize: 64,40
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+DiagState: 2,251,1,1231,484,17
+
+Decision Select_DR_Techs
+Title: Select DR Techs
+Definition: Table(Static_Profile_Names)(Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
+NodeLocation: 128,72,1
+NodeSize: 64,40
+DefnState: 2,324,46,914,672,0,DFNM
+ValueState: 2,296,298,878,547,,MIDM
+Aliases: FormNode Fo1535949252
+ReformDef: [Pre_and_Post_System,Static_Profile_Names]
+TableCellDefault: Checkbox(0)
+
+Index DR_Techs
+Att_PrevIndexValue: []
+Title: DR Techs
+Definition: Subset(Select_DR_Techs)
+NodeLocation: 272,72,1
+NodeSize: 64,40
+{!40300|Att_SlicerPopupSize: 227,322}
+
+FormNode Fo1535949252
+Title: Select EE Techs
+Definition: 0
+NodeLocation: 128,124,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Select_DR_Techs
+
+Variable Annual_DR_Consumptio
+Title: Annual DR Consumption
+Units: GWh/year
+Definition: Sum(Adopted_DR_Profile * Weeks_Per_Month, Day_and_Hour, Month) / 1000
+NodeLocation: 608,192,1
+NodeSize: 64,40
+ValueState: 2,56,13,1319,833,1,MIDM
+ReformVal: [Start_of_Year,Spatial_IDs]
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
+Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,3,Start_of_Year,1]
+
+Variable Adopted_DR_Profile
+Title: Adopted DR Profile
+Units: MW
+Definition: DR_Profile_by_Day_of * DR_Adoption_Rate[Output_Time=Annual_Time_Map] * Zip_Code_Allocation
+NodeLocation: 456,192,1
+NodeSize: 64,40
+WindState: 2,102,82,1021,620
+ValueState: 2,200,19,1309,797,1,MIDM
+GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5
+ReformVal: [Day_and_Hour,Start_of_Year]
+Att__TotalsIndex: [Spatial_IDs]
+Att_ResultSliceState: [Spatial_IDs,0,Start_of_Year,1,Day_and_Hour,1]
+
+Module DR_Load_Shapes
+Title: DR Load Shapes
+Author: JamesMilford
+Date: Sun, Sep 2, 2018 8:15 PM
+NodeLocation: 304,192,1
+NodeSize: 64,40
+DiagState: 2,522,322,944,378,17
+
+Decision DR_Scaling
+Title: DR Scaling
+Definition: Table(DR_Techs)(,,,,,,,,,)
+NodeLocation: 400,256,1
+NodeSize: 64,40
+DefnState: 2,15,296,665,506,0,DFNM
+Aliases: FormNode Fo1535949253
+
+Variable Normalized_DR_Shapes
+Title: Normalized DR Shapes
+Units: kW/(kWh/day)
+Definition: VAR profiles:=Saved_Daily_Profiles[Static_Profile_Names=Pre_and_Post_Loadsha, All_Day_Types=Day_of_Week];~
+VAR delta:=IF Pre_and_Post_Loadsha[Pre_and_Post_System=Pre_System_Label] = Pre_and_Post_Loadsha[Pre_and_Post_System=Post_System_Label] ~
+   THEN profiles[Pre_and_Post_System=Pre_System_Label]~
+   ELSE profiles[Pre_and_Post_System=Pre_System_Label] - profiles[Pre_and_Post_System=Post_System_Label];~
+VAR maxLoad:=Max(delta, Time_of_Day, Day_of_Week, Month);~
+~
+Divide(delta, maxLoad, True)
+NodeLocation: 400,152,1
+NodeSize: 64,40
+WindState: 2,215,260,1242,478
+ValueState: 2,56,58,1416,748,1,MIDM
+GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5
+ReformVal: [Time_of_Day,DR_Techs]
+Att__TotalsIndex: [Time_of_Day]
+Att_ResultSliceState: [Month,8,Day_of_Week,6,DR_Techs,6,Time_of_Day,0]
+{!40600|Att_ClusterIndex: DR_Techs}
+
+Variable Scaled_Daily_DR
+Title: Scaled Daily DR
+Units: kW
+Definition: Sum(Normalized_DR_Shapes * DR_Scaling, DR_Techs)
+NodeLocation: 552,152,1
+NodeSize: 64,40
+ValueState: 2,168,45,867,712,1,MIDM
+GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:1
+
+Variable DR_Profile_by_Day_of
+Title: DR Profile by Day of Week
+Units: kW/vehicle
+Definition: Reindex_to_Week(Scaled_Daily_DR)
+NodeLocation: 704,152,1
+NodeSize: 64,40
+WindState: 2,178,15,1159,552
+ValueState: 2,128,20,1425,761,1,MIDM
+GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:1
+ReformVal: [Day_and_Hour,Null]
+Att__TotalsIndex: [DR_Techs]
+Att_ResultSliceState: [Month,8,Day_of_Week,3,Day_and_Hour,1]
+Att_ColorRole: Null
+
+FormNode Fo1535949253
+Title: EE Scaling
+Definition: 0
+NodeLocation: 364,312,1
+NodeSize: 100,16
+Original: DR_Scaling
+
+Decision Pre_and_Post_Loadsha
+Title: Pre and Post Loadshapes
+Definition: Table(DR_Techs,Pre_and_Post_System)(~
+,,,,,,,,,,~
+,,,,,,,,,)
+NodeLocation: 168,152,1
+NodeSize: 64,40
+DefnState: 2,248,178,1453,578,0,DFNM
+Aliases: FormNode Fo1535949562
+ReformDef: [Pre_and_Post_System,DR_Techs]
+TableCellDefault: Choice(Static_Profile_Names,1,0)
+
+FormNode Fo1535949562
+Title: EE Scaling
+Definition: 0
+NodeLocation: 184,208,1
+NodeSize: 152,16
+Original: Pre_and_Post_Loadsha
+
+Close DR_Load_Shapes
+
+Variable DR_Peak_Load
+Title: DR Peak Load
+Units: MW
+Definition: Max(Adopted_DR_Profile * Peak_Periods, Month, Day_and_Hour)
+NodeLocation: 456,288,1
+NodeSize: 64,40
+ValueState: 2,224,134,829,627,1,MIDM
+ReformVal: [Start_of_Year,Null]
+Att__TotalsIndex: [Spatial_IDs]
+Att_ResultSliceState: [Day_of_Week,5,Output_Time,1]
+Att_ColorRole: Null
+
+Variable DR_Adoption_Rate
+Title: DR Adoption Rate
+Definition: VAR currentDate:=MakeDate(2018,1,1);~
+VAR pos:=positionInIndex(Output_Time, currentDate, Output_Time);~
+.006*(@Output_Time-pos)+1
+NodeLocation: 456,88,1
+NodeSize: 64,40
+ValueState: 2,95,215,857,626,1,MIDM
+
+Close DR_Impact1
+
+Module Battery_Impact
+Title: Battery Impact
+Author: CoryWelch
+Date: Mon, Jul 9, 2018 1:00 PM
+NodeLocation: 464,288,1
+NodeSize: 64,40
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+DiagState: 2,314,42,1231,484,17
+
+Decision Select_Battery_Techs
+Title: Select Battery Techs
+Definition: Table(Static_Profile_Names)(Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
+NodeLocation: 128,72,1
+NodeSize: 64,40
+DefnState: 2,324,46,914,672,0,DFNM
+ValueState: 2,296,298,878,547,,MIDM
+Aliases: FormNode Fo1535952177
+ReformDef: [Pre_and_Post_System,Static_Profile_Names]
+TableCellDefault: Checkbox(0)
+
+Index Battery_Techs
+Att_PrevIndexValue: ['2002_Lithium_Ion_Batt_Pre','2002_HPwES_ElectricBatteries_Pre','2002_RNC_ElectricBatteries_Pre','2002_ResElectricBatteries_Pre_July2017update','2012_C&IElectricBatteries_Pre']
+Title: Battery Techs
+Definition: Subset(Select_Battery_Techs)
+NodeLocation: 272,72,1
+NodeSize: 64,40
+{!40300|Att_SlicerPopupSize: 227,322}
+
+FormNode Fo1535952177
+Title: Select EE Techs
+Definition: 0
+NodeLocation: 128,124,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Select_Battery_Techs
+
+Variable Annual_Battery_Consu
+Title: Annual Battery Consumption
+Units: GWh/year
+Definition: Sum(Adopted_Battery_Prof * Weeks_Per_Month, Day_and_Hour, Month) / 1000
+NodeLocation: 608,192,1
+NodeSize: 64,40
+ValueState: 2,56,13,1319,833,1,MIDM
+ReformVal: [Start_of_Year,Spatial_IDs]
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
+Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,3,Start_of_Year,1]
+
+Variable Adopted_Battery_Prof
+Title: Adopted Battery Profile
+Units: MW
+Definition: Battery_Profile_by_D * Battery_Adoption_Rat[Output_Time=Annual_Time_Map] * Zip_Code_Allocation
+NodeLocation: 456,192,1
+NodeSize: 64,40
+WindState: 2,102,82,1021,620
+ValueState: 2,200,19,1309,797,1,MIDM
+GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5
+ReformVal: [Day_and_Hour,Start_of_Year]
+Att__TotalsIndex: [Spatial_IDs]
+Att_ResultSliceState: [Spatial_IDs,0,Start_of_Year,1,Day_and_Hour,1]
+
+Module Battery_Load_Shapes
+Title: Battery Load Shapes
+Author: JamesMilford
+Date: Sun, Sep 2, 2018 8:15 PM
+NodeLocation: 304,192,1
+NodeSize: 64,40
+DiagState: 2,522,322,944,378,17
+
+Decision Battery_Scaling
+Title: Battery Scaling
+Definition: Table(Battery_Techs)(15,15,15,15,15)
+NodeLocation: 400,256,1
+NodeSize: 64,40
+DefnState: 2,15,296,665,506,0,DFNM
+Aliases: FormNode Fo1535952178
+
+Variable Normalized_Battery_S
+Title: Normalized Battery Shapes
+Units: kW/(kWh/day)
+Definition: VAR profiles:=Saved_Daily_Profiles[Static_Profile_Names=Pre_and_Post_Loadsh1, All_Day_Types=Day_of_Week];~
+VAR delta:=IF Pre_and_Post_Loadsh1[Pre_and_Post_System=Pre_System_Label] = Pre_and_Post_Loadsh1[Pre_and_Post_System=Post_System_Label] ~
+   THEN profiles[Pre_and_Post_System=Pre_System_Label]~
+   ELSE profiles[Pre_and_Post_System=Pre_System_Label] - profiles[Pre_and_Post_System=Post_System_Label];~
+VAR maxLoad:=Max(delta, Time_of_Day, Day_of_Week, Month);~
+~
+Divide(delta, maxLoad, True)
+NodeLocation: 400,152,1
+NodeSize: 64,40
+WindState: 2,215,260,1242,478
+ValueState: 2,56,58,1416,748,1,MIDM
+GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5
+ReformVal: [Time_of_Day,Battery_Techs]
+Att__TotalsIndex: [Time_of_Day]
+Att_ResultSliceState: [Month,8,Day_of_Week,6,Battery_Techs,6,Time_of_Day,0]
+{!40600|Att_ClusterIndex: Battery_Techs}
+
+Variable Scaled_Daily_Battery
+Title: Scaled Daily Battery
+Units: kW
+Definition: Sum(Normalized_Battery_S * Battery_Scaling, Battery_Techs)
+NodeLocation: 552,152,1
+NodeSize: 64,40
+ValueState: 2,168,45,867,712,1,MIDM
+GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:1
+
+Variable Battery_Profile_by_D
+Title: Battery Profile by Day of Week
+Units: kW/vehicle
+Definition: Reindex_to_Week(Scaled_Daily_Battery)
+NodeLocation: 704,152,1
+NodeSize: 64,40
+WindState: 2,178,15,1159,552
+ValueState: 2,128,20,1425,761,1,MIDM
+GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:1
+ReformVal: [Day_and_Hour,Null]
+Att__TotalsIndex: [Battery_Techs]
+Att_ResultSliceState: [Month,8,Day_of_Week,3,Day_and_Hour,1]
+Att_ColorRole: Null
+
+FormNode Fo1535952178
+Title: EE Scaling
+Definition: 0
+NodeLocation: 376,312,1
+NodeSize: 112,16
+Original: Battery_Scaling
+
+Decision Pre_and_Post_Loadsh1
+Title: Pre and Post Loadshapes
+Definition: Table(Battery_Techs,Pre_and_Post_System)(~
+Choice(Static_Profile_Names,82,0),Choice(Static_Profile_Names,83,0),~
+Choice(Static_Profile_Names,99,0),Choice(Static_Profile_Names,100,0),~
+Choice(Static_Profile_Names,101,0),Choice(Static_Profile_Names,102,0),~
+Choice(Static_Profile_Names,152,0),Choice(Static_Profile_Names,153,0),~
+Choice(Static_Profile_Names,154,0),Choice(Static_Profile_Names,155,0))
+NodeLocation: 168,152,1
+NodeSize: 64,40
+DefnState: 2,16,135,1453,578,0,DFNM
+Aliases: FormNode Fo1535952179
+ReformDef: [Pre_and_Post_System,Battery_Techs]
+TableCellDefault: Choice(Static_Profile_Names,1,0)
+{!40200|Att_ChoiceIndexes: Index Static_Profile_Names}
+
+FormNode Fo1535952179
+Title: EE Scaling
+Definition: 0
+NodeLocation: 184,208,1
+NodeSize: 152,16
+Original: Pre_and_Post_Loadsh1
+
+Close Battery_Load_Shapes
+
+Variable Battery_Peak_Load
+Title: Battery Peak Load
+Units: MW
+Definition: Max(Adopted_Battery_Prof * Peak_Periods, Month, Day_and_Hour)
+NodeLocation: 456,288,1
+NodeSize: 64,40
+ValueState: 2,224,134,829,627,1,MIDM
+ReformVal: [Start_of_Year,Null]
+Att__TotalsIndex: [Spatial_IDs]
+Att_ResultSliceState: [Day_of_Week,5,Output_Time,1]
+Att_ColorRole: Null
+
+Variable Battery_Adoption_Rat
+Title: Battery Adoption Rate
+Definition: VAR currentDate:=MakeDate(2018,1,1);~
+VAR pos:=positionInIndex(Output_Time, currentDate, Output_Time);~
+.006*(@Output_Time-pos)+1
+NodeLocation: 456,88,1
+NodeSize: 64,40
+WindState: 2,102,82,872,472
+ValueState: 2,95,215,857,626,1,MIDM
+
+Close Battery_Impact
+
+Index DER_Type_and_Net
+Title: DER Type and Net
+Definition: Concat(All_DER_Types, Net_Impact_Label)
+NodeLocation: 256,376,1
+NodeSize: 64,40
+
+Chance Demand_Uncertainty
+Title: Demand Uncertainty
+Definition: Table(All_DER_Types)(LogNormal(mean: 1, stddev: 0.15),LogNormal(mean: 1, stddev: 0.15),LogNormal(mean: 1, stddev: 0.15),LogNormal(mean: 1, stddev: 0.15),LogNormal(mean: 1, stddev: 0.15))
+NodeLocation: 968,424,1
+NodeSize: 64,40
+DefnState: 2,44,148,416,303,,DFNM
+ValueState: 2,216,218,738,524,,PDFP
+
+Variable Peak_Demand_Uncertai
+Title: Peak Demand Uncertainty
+Units: MW
+Description: The peak period demand impacts from DERs expressed probabilistically.
+Definition: VAR impact:=Sum(Peak_Demand_Impacts_, Spatial_IDs) * Demand_Uncertainty;~
+~
+IF DER_Type_and_Net = Net_Impact_Label~
+THEN Sum(impact, All_DER_Types)~
+ELSE impact[All_DER_Types=DER_Type_and_Net]
+NodeLocation: 968,328,1
+NodeSize: 64,40
+ValueState: 2,103,36,1219,735,,PDFP
+GraphSetup: Att_GraphValueRange Peak_Demand_Uncertai:|1:1,,0,,,,,-1500,500,0
+ReformVal: [Undefined,DER_Type_and_Net,Undefined,Undefined,1]
+Att__TotalsIndex: []
+Att_ResultSliceState: [Start_of_Year,18,Spatial_IDs,8,All_DER_Types,1,Sys_LocalIndex('Step'),1]
+Att_XRole: -1
+{!40200|Att_GraphSetupSlices: [3,1,DensityIndex,1]}
+
+Chance Energy_Uncertainty
+Title: Energy Uncertainty
+Definition: Table(All_DER_Types)(LogNormal(mean: 1, stddev: 0.10),LogNormal(mean: 1, stddev: 0.10),LogNormal(mean: 1, stddev: 0.15),LogNormal(mean: 1, stddev: 0.15),LogNormal(mean: 1, stddev: 0.20))
+NodeLocation: 968,240,1
+NodeSize: 64,40
+WindState: 2,46,62,720,350
+ValueState: 2,216,218,738,524,,PDFP
+
+Variable Energy_Uncertainty1
+Title: Energy Uncertainty
+Units: GWh/year
+Description: The annual energy impacts from DERs expressed probabilistically.
+Definition: VAR impact:=Sum(Energy_Impacts_witho, Spatial_IDs) * Energy_Uncertainty;~
+~
+IF DER_Type_and_Net = Net_Impact_Label~
+THEN Sum(impact, All_DER_Types)~
+ELSE impact[All_DER_Types=DER_Type_and_Net]
+NodeLocation: 968,152,1
+NodeSize: 64,40
+ValueState: 2,80,30,1274,759,1,PDFP
+GraphSetup: Att_GraphValueRange Energy_Uncertainty1:|1:1,,0,,,,,-3500,1000,0~
+Att_GraphValueRange Graph_KDE_Valdim:1,0,0,1,,,,0,0.01,0
+ReformVal: [Undefined,DER_Type_and_Net,Undefined,Undefined,1]
+Att_ResultSliceState: [Start_of_Year,18,DER_Type_and_Net,1,Sys_LocalIndex('Step'),1]
+Att_XRole: -1
+{!40200|Att_GraphSetupSlices: [3,1,DensityIndex,1]}
+
+Decision Net_Impact_Label
+Title: Net Impact Label
+Definition: 'Net Impact'
+NodeLocation: 256,464,1
+NodeSize: 64,40
+
+Variable Energy_Impacts_witho
+Title: Energy Impacts without Net
+Units: GWh/year
+Description: The annual energy impacts of DERs.
+Definition: Table(All_DER_Types)(-Annual_Solar_Product, Annual_EV_Consumpti1,-Annual_EE_Consumptio, -Annual_DR_Consumptio, -Annual_Battery_Consu)
+NodeLocation: 664,152,1
+NodeSize: 64,40
+ValueState: 2,72,40,1413,786,1,MIDM
+GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
+Att_AreaFill Graph_Primary_Valdim:0
+ReformVal: [Start_of_Year,All_DER_Types]
+Att__TotalsIndex: [Spatial_IDs]
+Att_ResultSliceState: [Spatial_IDs,0,All_DER_Types,1,Start_of_Year,1]
+
+Variable Peak_Demand_Impacts_
+Title: Peak Demand Impacts without Net
+Units: MW
+Description: The peak period demand impacts from DERs.
+Definition: Table(All_DER_Types)(-PV_Peak_Load, EV_Peak_Load, -EE_Peak_Load, -DR_Peak_Load, -Battery_Peak_Load)
+NodeLocation: 664,328,1
+NodeSize: 64,40
+WindState: 2,102,82,1077,570
+ValueState: 2,66,25,1118,681,1,MIDM
+GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
+Att_AreaFill Graph_Primary_Valdim:0
+ReformVal: [Start_of_Year,All_DER_Types]
+Att__TotalsIndex: [Spatial_IDs,All_DER_Types]
+Att_ResultSliceState: [Spatial_IDs,0,All_DER_Types,0,Start_of_Year,18]
+
+Decision PV_DER_Label
+Title: PV DER Label
+Definition: Choice(All_DER_Types,1,0)
+NodeLocation: 112,200,1
+NodeSize: 64,40
+Aliases: FormNode Fo1543006097
+{!40200|Att_ChoiceIndexes: Index All_DER_Types}
+
+FormNode Fo1543006097
+Title: Solar PV Label
+Definition: 0
+NodeLocation: 112,248,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,86,0,,0,,,0
+Original: PV_DER_Label
+
+Decision EV_DER_Label
+Title: EV DER Label
+Definition: Choice(All_DER_Types,2,0)
+NodeLocation: 112,312,1
+NodeSize: 64,40
+Aliases: FormNode Fo1543009026
+{!40200|Att_ChoiceIndexes: Index All_DER_Types}
+
+FormNode Fo1543009026
+Title: Solar PV Label
+Definition: 0
+NodeLocation: 112,360,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,86,0,,0,,,0
+Original: EV_DER_Label
+
+Close Work_in_Progress
+
+Picture Pi1544411944
+NodeLocation: 588,240,-1
+NodeSize: 76,72
+NodeInfo: 1,,,,,,0,0,,,,,,0
+Pict: (0000000000000088009600046F0C000089504E470D0A1A0A0000000D494844520000009600000088080600000005DD1209000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA86400000BF449444154785EED9D4DA8555514C71D454367394B6890A3B041E420C28103C38905814DC20682D02069108ED24938283022300A943ECD7A605FF0224A8BB0472449DF45C18B225E5F68169541DCD3F9EFDEDEDD8EFFF3EE5D6B9FE75D6B9F33F8A1FCCFBEE77EEC75F75E5FFBBE3555550D8CF3FB0FEBAA6F4F6D1E7D35BF7DB470FF7E50BD70DB7C3577CBC971E2B5D127CFEEC4F8EAFC37EBE9FD7A0A15FBC6E8EB135BABB7EE3D387A7ACB99D183EB2A3587AF5BAC4EDC7368F4C5F11DD585F36BD973F5052A16CFDF172E1F7DF8F86EAC441719C7C357FE19562518485CB1B0223518BDF7D0DE70AD36C8B0823D76CDD245F782A1620C5641F63A0A868AC502837AFFD13D1719416D00D5A9FB0E84958B3D6E5A7EFC78230C2E18DAF8FD61AC30C01E1918158B8319145613F847AB35D978CEDA4FFB9F91F5C8C0A85812F0772E32284C3819BB6A60FB6C185858D9D8D842A06211D42B46F0936669504D1A0616A2CD429D7C2ABAA70EFD47C7B62DA4D5015B1E1B372BE0FCC755B4FEB75A3ABD898E730C153D13F24F87AE3E1726ED891B3EABCE7EB9818D9B39F0B3E2EA05E3AF7D403ACE2954F40A520861A26AAAD7EE3A12B64332CE1221A5115F73BD75B3311EA1A247C24AB53C41214745C698055B635C6591F762639C41456F20FF14B6134C8C357F6A5A605CF13D78FB6210A8E80A24250BF9B6872F08DE074059888CF10215DD503BC0D1A842E2918D710656DC6058F5EA15D213648C07A8E88697EF381E8C6A7EF7517ADD2B282FC1B810D53A08401854F440DA36EA15ABC4124948E8E2FD39CDD053D13CA8C3D5DFE6F0C11796FF49C099C7FBC396E8F08B4345EB8496157CE8E84A20D78BA1DEE2F13E3D6EF554340D1CF6E5B0DCB3733B158EDF2B152D1333D570DCD9F5D288ABB3B7558B8A9649BE556E539E175050C7FB85AFE52842A4A259CE7EB9217CC888049D86E11A52A786A3A42915AD92B6411498C9F55209DDAF78DFE8DF22D72D4245ABF46E1B8CC089C7FBC676E8A431908A26E9E9369888278A9C6C8754B4486C8B29AE7C3325A96FCB49A19D8A16894D7CA5149BA5C4E2B49766402A9A2416664B2DE14C62B9C4E3C581A7A249EA483018D6AC4FDACC8A98CF7252C6A2A249960F1E9478A2652A50788761217861D78D414573C4D56AA0AA80033F938AE6586EE81B58362C070E3C15CD517F43C307DB57C73D124F763BF81CA8688D946A28E8DC9D8654337410C050D11CCE42EDD5221ECB377BBA7B0C2A9A23D6CAF03B07EC7A1FB8707E6DF80C502F64D78D41458BA4635E7DAC1382A5D39B82610D79ACEE081FE8C0BF11A1935A2915ADC13EE43E02C3F2721C8C8A1649D57DCD078B68B28B2DB48B06439466341D0AB16DC649498B8A16093FF9886FAD622BE8EA77B2C2F3135D4268525444B79E2242404593E0C73FF08D3DB66D815E5F89B95B4E76717CAA13C3C22FC948F371CE2242404593C40F57538445ADB1839F37EAC2B042FB8F743B8F5F2A470774A96895B41D48FBBE359349E8C4B014469EDC00476729A9681665EB4CA8AD75D011D0896169B6E5E52647FC4BAF1B848A66894558C537BE8BFC4F178615FEDE8EF40F3AC5EE8EE15CE1EA90CED749BFB95821B052B06B023A312CC53DE2B137F85AECBA45A86895745247EA6B20778495825D13906D58A8794AEB9DB17314CFEDA89C4545B3C4B385D2E80893D341A89E6D58A8F749D3253122442E8E5D370A152D133E648591843445E629E25CC3D2F87A1E23424045CB247F43E80077917DCF362C45749A7EC6C8514408A8689A1821497FBFA183EC7BAE6185166B695B71BDC285F7EB28220454348DB6FFBD83EC7BB661E14B212C22C39F0CCFEB28220454B48CFAA87D07D9F75CC30A8EBB34B95BFB93E17933FDC34B0D154DA3EC7FEF22FB9E6D584835FC2EF805E418053B6CC9A6A26962FFBB302F15B6A0CCC82ACBB014298F94B7737888848AD649DB832461A8C92135C8322C4592364584992BED2CA0A275540E6D07D9F72CC3D294956244E8F0AF8151D13CF10397465839865193F3F810910A5B9BE30155A9C36F012A9A67B98D441AE5899DE7065986859E7D61AF7B3AF2E62C220454B44E2A73485700D41833F2413986155A7E245B9AF343BA54340F1C717CE852671C275D327E7139CBB084CF8DB1E1F91C4684808AE6D1F6BF6766DF730C4B5AAB4CBD670E234240450F608B081FBCC0FFD0F839E3641996B4BB2276CB4A4B5746A0A207341193EAE8D5186AC3C20A2B5C5DE3FBCBD9BA6709155DA0E87FCFCDBEAB0D0BCD7AC2E6C414116644B1B3848A1E50F5296566DFB58615561D8913AEF5210D41450FA43A9AA4233333FBAE362CE916AC8D7A0D41451728FBDFB5C601D48F15B6ECA4D6A00C7F70D650D105F1F48AB4632023FBAE362C699A43DBCC68082A7A21F5BF0B0C256C2FCADA9BDAB0A46DD148A6C2B09C4684808A6ED04C80A23D38A235ACE0D7090E7FA41C9DD3881050D10D71CB90D4E090A6908C1F436D5892C7151011022A7A2139B982B2474EF65D655828264B0AC93122140625D6A0A21734855A4D5F54446558C2DC59EADC101E6CB50615DD80D500DF6EC1F17371B2720C8D61894F3F2B7BCDAC41454F88FBDF15E59588CAB0A4A783E2815C658061052A7A024612267CDA9614A9CF3386C6B0428021C847A5144AE6CF01CC1A2ABA42D1FFAE32901AD5E324E90D65D2D722547485C22791E695221AC3122564B14DE3BD388F0801153D91A228415D4D9B7D571996A084544A4408A8E88A98F791740228B3EF62C3929E7E2E242204547445CC544B1C7265F65D6C58D2361D85BF68152A7A23D5D6A6EC29D766DFC586253CFD9C22DC8C236A56A0A237B00D860999D26FD266DFA586257D1ED56F5218858AEEC0D6564F48C872B3EB0DB4D977B1614956C6D8B828A82258868ADE10F7BF6312151328352C892F07BF2ADC3FE3B08725A8E88D3429D386E98AE358406C58E8179BB2574CFCE5300E15DDA1E87F0F6900A12F2335ACB02A4E5B9A8911E194DBB975A8E88D135F3F77EBAEB9AB16AF7D724DE5995D872FABF6BE7ED3AB3FFFB1040BA6EFD50B54F4C4A9EFE6B7B249F2CC8E57360E259D5983496093E39DE6FBF406153D51A2615DFFCCE54377C3ACD9F7CECE236C723C73F34B1BDCE7B2A8E889A73E3DB8874D0E56B2473ED8B7DF32BB5EDB7C92BDF6BBDFDCEE3E9745454FBCF7FDC9CD5E27E781D37B0EB2D70E9D8DF704153DF1EB5FE7D6B2C9F11059DDF9C6D679F6DAB10AB3F19EA0A237B6CCAD5B6A4E8E070718BE54F37503A450D8784F50D11B6DDF7CEB8946183F7BDD8BBF7CE6FA2005A0A237DA7C950F7F5A50FDF8C7A5E0BBDF16D7B3D70CFEFAFBCFA16DC602CF7F7168379BA057178F9AADBBB5051DD8D6D9786F50D11B9F9F3DB3914D12427A36DE022F7E7564277BCD4841B0F1DEA0A237B075789BA4B6C4EE7DEFEE76FB2B7EE350D1232C3204161D61A448DA1CF7C31F1D707F420750D1230F9DD97B804D94C564635BB500C0A9678FF106153DD2E6676165B03459D8B6DB5657A44DD8633C4245AFB4251C2D4D585B6A04588E62A550D12B6D9116B03069C8ABB5F95628419590BF8A50D1336DFD5998D059264C5105D8767C7D6BFB34F25AEC715EA1A267DA128FE0C6636BCFCDC2DFC24A74FBFCA605F69A00520FEC719EA1A277F6BEBDE3289B4000C7F952AE5C482DAC645458C54A383CD1848ADE99B442605B843FC61EDB25885457DAFEB082620C7BAC77A858025829569A5480687135B6461836CA496D8E3AC0B5D2FCAA71A8580A309A49C68509861174B51D21FA9CE6394BE8B95A092A96040C66DA933C70A235AB080C18C6D996F81CE752FB78B3828AA581AD093DF06CA2231B9FF8EFFF585150C086B1A02507C6360E56255CC33DB7CC5DF17DBACF53FFDD830103B75405584DA8582AA8D1C1610E13CD8C6082616881A1A2965952027412542C1938F5A1ACB24A46D404AB5A5F56A971A8D8079811740972697DF0A5DAA0621F60C6D01525263CA550B10F30830027BE39BE1DFE109CF795D20688EEDA4E32379FAB8F50B10F308300CD7193E8E21E2542C53EC00C0234C74DA28B7B940815FB003308D01C37892EEE512254EC03CC204073DC24BAB8478950B10F308300CD7193E8E21E2542C53E9032F0632043CEC6AE44F33E9A7B940815FB003BD4A0392CDA3C788AC4281BD737A8D80750B71B370A34066A4A2F2811C57C16725BA536EE49A1E2C0402E541C18C8858A0303B950716020172A0E0CE442C581815CA838309047B5E61F14745E0A6D4E07F30000000049454E44AE426082)
+
+Text Te1544411976
+Title: UNDER CONSTRUCTION
+NodeLocation: 612,128,-1
+NodeSize: 220,48
+NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
+NodeFont: Arial Narrow,35
+
+Close Efficiency___DR
+

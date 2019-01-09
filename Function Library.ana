@@ -1,0 +1,676 @@
+{ From user JamesMilford, Model Function_Library_Cus at 11-Dec-2018 2:25:13 PM, encoding="UTF-8" }
+SoftwareVersion 5.1.6
+
+Attribute UnoptimizedDef
+
+
+AskAttribute UnoptimizedDef,Function,Yes
+AskAttribute UnoptimizedDef,Module,Yes
+AskAttribute UnoptimizedDef,Variable,Yes
+
+LinkLibrary Function_Library_Cus
+Title: Functions
+Author: (c) 2018 Lumidyne Consulting LLC
+Date: Mon, Jan 8, 2018 10:24 AM
+SaveAuthor: JamesMilford
+SaveDate: Tue, Dec 11, 2018 2:25 PM
+DefaultSize: 64,40
+NodeSize: 80,56
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+DiagState: 2,147,309,944,480,17
+Pict: (000000000000003B003C00043C04000089504E470D0A1A0A0000000D494844520000003C0000003B080600000027F9E9CA000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA864000003C1494441546843ED9B3F6813511CC7DBADDDDAAD994CA7B65B338816445A70687169B666B21D841697D641DAC96E5D84A828E7D4808AB128444538106C04910C0AC17F8D42E144908842A38B51A839F38DFD9D3F1FBFBBC4EBE5923357F850F2BD77EFBD4FDE9FCBF0AECB34CD8E420C9DD0757D72B5FA37313191EDEDED2D7777779BAD00ED2F2D2D2553A9D4ACD44F3BC450A2582C0E4C4D4DE952E3AD666C6C2C57281486A57EAB88A18A6118D1FEFEFE123530323252482412698C74ABFE161616B4582C96A73E61B6E572B9C352FF3962A8C247168D49655A05A6340D06BE8072B9DC239523C49093C964A65559E34B6178F9F14CFA78266AC4AE75997E72ECF640F1F4A3E9CC8BCF7F4613FB0AF531994C2E522E21861C6C0CA808D3189FDFECE4470FDDE8294B9DF19B271FF449EA279618FA198FC73394498821071B022AC29AC1E7530F2775347674A3AF74EED962F2CAF3B3AB7E7231BFBC46332B7E6FB8360840D3B479F433128914299310430E3D7A50213E43148DA161B5AC5FDC7AABCDD3285396CD66C7D14F4099841872A8127ADE5143F8B6D5B27E71773B351B0A87C23262C8E978617A24758CF0CCFDD13C1AC22301CFC1A71FB3E37E73F2C178167DC01383FAD934E1EB5BC945FA765B0D7F34364D18ACBF5C5B6EF5AF2DC8FED8FDF3BBB9A9C2ED48286C8318723A52585A43ED4A28AC20861C5400BC9CD2D43935DF0F6DBD8643610F08856D10434E23C295F30326A15E9308853D2014B6410C3976C25CD20E5E9EE3242CD523A1DE170ADB20869C5058C0A923124EC26E09856D10434E28EC016D2F4C1D0C02A1B08218723A521874D41A0E85F749708577BFF7989B6734F3D3AB5131FFFA3EFA57BE477085F5F974ED07873654B2A4217B27A1D7F2AB47AC33189CE00A5747B0B27ED0B0A477B6872CD94B07CA95779BD6291B8E9370EDDE0650EFF36F0D3369F372F45BAD430EB220D8C200234BB2172295CAD6C609B1DC1E4EC26EF14F98AFD9AAEC4FFCAF8EB8DD8605822BCC65417564AD35ED20ED246CD55507F53E7F84699706AF6FFEBECE373217BBB4555F1DD4FBFC11865C55CA9255F320EED238548A4A5656563C3B6AE824EC96743A3D837EE228B1749D10430E9D52C59969E9BA1B9A214CA77EF16A80749D10430ECE1FA32280692395F957BC16E627F6212E9521C4908313E6838383062AC3D1DC468ED9D7C34B61BCEB40AF02401AEF6648E5083154E11B02C0D9691C2746EE061296AE350AD62C4693BF59E3F8E3680F3194C0317B8C3017770B094BD7DC80916D441688A11DA552A90FBB353606A961BFC1549E9B9B4BD59BC61C31FC7F31BB7E010A91BCB7FC870B240000000049454E44AE426082)
+FontStyle: Arial Narrow,19
+FileInfo: 0,LinkLibrary Function_Library_Cus,2,2,0,0,Function Library.ana
+
+Function ZIDZ(numerator, denominator)
+Title: ZIDZ
+Description: Returns the division of the numerator by the denominator. ~
+~
+If denominator is zero, returns zero. 
+Definition: IF denominator=0 THEN 0 ELSE numerator/denominator
+NodeLocation: 104,56,1
+NodeSize: 64,40
+
+{!40404|FreePassObjectCount cO_G1L_bxFPkadPBse$Voq1zvyAqAb19BDQoc6hPv5BHXLMwaBeuGhHNVMJR3j$U8IUNOaG_X4oyojnd9b1d04GNW1ZGi0TxE633jd1eGacr$AlN6czHPPcYUJFvK_AShq1V5ymAckxHPDxfX1csDDQf3yUzRl6TsccTOyr0pcRn8XwLmCf7c6c8gEoN_aCrV9rXFziSD_nbPF5zrkeZVRPONNPRUYdjqx4DNZlyAPfvBTn6Qm7VuIj8b2X0W1Z6fEpQ1fJzeK0kTCzkWJ7zofXPID841$__$036BGMTcku2ERes5MdvBVqAWtGf3UwMqIoIqMvT2eFs}
+Library Optimization_functio
+Title: Optimization Functions
+Description: This library contains various functions for optimization and equation solving.
+Author: Lonnie Chrisman, Ph.D.~
+Lumina Decision Systems
+Date: Fri, Apr 25, 2003 10:23 PM
+SaveAuthor: Lonnie
+SaveDate: Thu, Jan 26, 2017 12:02 PM
+DefaultSize: 48,24
+NodeLocation: 232,144,0
+NodeSize: 64,40
+NodeInfo: 1,1,1,1,1,1,0,0,0,0,,,,0
+DiagState: 2,40,184,408,229,17
+FontStyle: Arial, 15
+Att_PreLoadScript: {!40404|FreePassObjectCount cO_G1L_bxFPkadPBse$Voq1zvyAqAb19BDQoc6hPv5BHXLMwaBeuGhHNVMJR3j$U8IUNOaG_X4oyojnd9b1d04GNW1ZGi0TxE633jd1eGacr$AlN6czHPPcYUJFvK_AShq1V5ymAckxHPDxfX1csDDQf3yUzRl6TsccTOyr0pcRn8XwLmCf7c6c8gEoN_aCrV9rXFziSD_nbPF5zrkeZVRPONNPRUYdjqx4DNZlyAPfvBTn6Qm7VuIj8b2X0W1Z6fEpQ1fJzeK0kTCzkWJ7zofXPID841$__$036BGMTcku2ERes5MdvBVqAWtGf3UwMqIoIqMvT2eFs}
+{!40400|Att_clearTypeFonts: -1}
+
+Function Goalseek(Y,X:varType;goal:atomic)
+Title: GoalSeek( Y, X, g)
+Description: Finds the value of X that makes Y=goal.~
+Based on a Newton-Rapshon method starting at the current value of X.
+Definition: var z[]:=whatif(X,X,x);  /* trick to get the value of X */~
+var maxIter := Max_goal_seek_iterat;~
+var curY := Y;~
+var ans := z;~
+while any (abs(curY-goal)>1e-6 and maxIter>0) ( ~
+    z := whatif( ~
+        curY := Y;~
+        ans := z;~
+        var m:=Dydx(Y,X);~
+        if (abs(m)<1e-20) then Z else Z - (Y-goal)/m~
+        , X, z) ;~
+    maxIter := maxIter - 1~
+);~
+ans
+NodeLocation: 72,40,1
+NodeSize: 48,24
+WindState: 2,179,87,818,498
+
+Module Goal_seek_examples
+Title: Goal Seek Example -- Target interest rate
+Description: This module demonstrates the use of the goal-seek function.~
+The problem considered in this example is this:  What interest rate would I need to invest my principal at in order to attain my target value at the end of my investment period.~
+~
+This example can obviously be solved in closed form with simple algebra, but it serves as a understandable example of the use fo goal seek, which generalizes to cases that aren't solvable in closed form.
+Author: Lonnie Chrisman, Ph.D.~
+Lumina Decision Systems, Inc.
+Date: Fri, Apr 25, 2003 10:23 PM
+DefaultSize: 48,24
+NodeLocation: 72,128,1
+NodeSize: 48,56
+DiagState: 1,104,213,299,437,17
+WindState: 1,36,452
+
+Variable Gs_p
+Title: Principal
+Units: $
+Definition: 10K
+NodeLocation: 80,56,1
+NodeSize: 48,24
+NodeInfo: 1,1,1,1,1,1,0,0,0,0
+ValueState: 1,40,50,416,303,0,MIDM
+NumberFormat: 1,D,4,2,0,1
+
+Variable Gs_i
+Title: Interest
+Units: %/yr
+Definition: 4%
+NodeLocation: 200,136,1
+NodeSize: 48,24
+NodeInfo: 1,1,1,1,1,1,0,0,0,0
+ValueState: 1,40,50,416,303,0,MIDM
+NumberFormat: 1,%,4,2,0,0
+
+Variable Gs_n
+Title: Years to maturity
+Units: yrs
+Definition: 20
+NodeLocation: 200,56,1
+NodeSize: 48,24
+NodeInfo: 1,1,1,1,1,1,0,0,0,0
+ValueState: 1,40,50,416,303,0,MIDM
+
+Variable Gs_v
+Title: Value at Maturity
+Units: $
+Definition: Gs_p*(1+Gs_i)^Gs_n
+NodeLocation: 80,136,1
+NodeSize: 48,24
+ValueState: 1,56,66,416,303,0,MIDM
+NumberFormat: 1,F,4,2,0,1
+
+Objective Goal_seek_test
+Title: Target Interest
+Units: %/yr
+Description: This example demonstrates the use of goal seek to compute the interest rate that one would need on a one-time investment to attain a given target principle goal.  It is set up to compute this across a range of goals, so it is actually carrying out a whole series of optimizations when computing this node.
+Definition: GoalSeek(Gs_v,Gs_i,Target_value_at_matu)
+NodeLocation: 80,224,1
+NodeSize: 48,24
+WindState: 1,128,273
+ValueState: 1,52,48,533,509,0,MIDM
+GraphSetup: Graphtool:0~
+Distresol:10~
+Diststeps:1~
+Cdfresol:5~
+Cdfsteps:1~
+Symbolsize:6~
+Baroverlap:0~
+Linestyle:10~
+Frame:1~
+Grid:3~
+Ticks:1~
+Mesh:1~
+Scales:1~
+Rotation:45~
+Tilt:0~
+Depth:70~
+Frameauto:1~
+Showkey:1~
+Xminimum:10K~
+Xmaximum:20K~
+Yminimum:0~
+Ymaximum:0.04~
+Zminimum:1~
+Zmaximum:1~
+Xintervals:0~
+Yintervals:0~
+Includexzero:0~
+Includeyzero:0~
+Includezzero:0~
+Statsselect:[1, 1, 1, 1, 1, 0, 0, 0]~
+Probindex:[5%, 25%, 50%, 75%, 95%]~
+Fontstyle: Arial, 8
+NumberFormat: 1,%,4,2,0,1
+
+Index Target_value_at_matu
+Title: Target Value at Maturity
+Definition: Sequence( 10K, 40K, 1000 )
+NodeLocation: 200,224,1
+NodeSize: 48,32
+
+Variable Verification_of_corr
+Title: Verified Mature Value
+Definition: Gs_p*(1+Goal_seek_test)^Gs_n
+NodeLocation: 80,296,1
+NodeSize: 48,32
+ValueState: 1,204,76,439,458,0,MIDM
+
+Close Goal_seek_examples
+
+Constant Max_goal_seek_iterat
+Title: Max Goal Seek Iterations
+Definition: 200
+NodeLocation: 192,40,1
+NodeSize: 48,29
+
+Function Gradient(Y:varType;X:varType; I:IndexType)
+Title: Gradient(Y,X,I)
+Description: Computes the gradient of «y» with respect to vector x, where x is indexed by I.  The gradient is evaluated at the value that «x» currently has.  «y» would depend on «x».
+Definition: If AnalyticaVersion >= 50000 Then~
+	DyDx(y,x,I)~
+Else (~
+	var epsilon := 1e-6;~
+	for j:=I do ~
+	  (whatif( Y, X, if j=I then X+epsilon else X ) - Y) / epsilon~
+)
+NodeLocation: 200,112,1
+NodeSize: 48,24
+WindState: 2,663,200,682,443
+
+Function Solve(Y,X:varType;I:IndexType)
+Title: Solve(Y,X,I)
+Description: This finds a vector, X, indexed by I, which makes Y=0.~
+Uses a newton-raphson style search.  Y should depend on X, and X should be indexed by I.
+Definition: var z:=whatif(X,X,x);  /* trick to get the value of X */~
+var maxIter := Max_goal_seek_iterat;~
+var curY := Y;~
+var newY := Y;~
+var nextZ := z;~
+var grad := Gradient(Y,X,I);~
+var c := 1;  /* brazenness factor */~
+while (abs(curY)>1e-6 and maxIter>0) ( ~
+    var mag := sum(grad^2,I);    ~
+    var newZ := (if abs(mag)<1e-20 then Z else Z-c*y*grad/mag);~
+    newY := WhatIf( Y,X,newZ);~
+    if abs(newY)<=abs(curY) then (~
+        /* Improvement.  We'll take it */~
+        curY := newY;~
+        Z := newZ;~
+        c := c * 1.5;  /* Gain momentum */~
+        grad := WhatIf(Gradient(Y,X,I),X,Z);~
+~
+     ) else (~
+        c := c * 0.7   /* try a smaller step */~
+     );~
+    maxIter := maxIter - 1~
+);~
+z
+NodeLocation: 320,40,1
+NodeSize: 48,24
+WindState: 2,188,21,636,677
+
+Close Optimization_functio
+
+{!40404|FreePassObjectCount 7iWMKiP_Wg$FMAtr7kJvu6EDDGgApTGOOOSG4nTBIe4qvy1VFhNNi$JmYCsa2WtDcLB92mRpRCIGEG2qVHCSdw2RMn7VtHh6Z0UySzU1a8kKxZCrWBubJ2oZL8xmcSJC4_vsomkkklnruz39HQZjv5IWl$FXp7Rm6TrEd2UwNr}
+Library Structured_Opt_Tools
+Title: Structured Opt Tools
+Description: Library of functions of use for Structured Optimization models.~
+~
+Structured optimization functionality requires Analytica Optimizer.
+Author: Lonnie Chrisman, Ph.D.~
+Lumina Decision Systems
+Date: Sat, Oct 30, 2010 5:49 PM
+SaveAuthor: Lonnie
+SaveDate: Fri, Mar 13, 2015 4:49 PM
+DefaultSize: 48,24
+NodeLocation: 104,144,0
+NodeSize: 64,40
+NodeInfo: 1,1,1,1,1,1,0,0,0,0,,,,0
+DiagState: 2,79,9,534,165,17
+WindState: 2,98,83,476,224
+FontStyle: Arial, 15
+Att_PreLoadScript: {!40404|FreePassObjectCount 7iWMKiP_Wg$FMAtr7kJvu6EDDGgApTGOOOSG4nTBIe4qvy1VFhNNi$JmYCsa2WtDcLB92mRpRCIGEG2qVHCSdw2RMn7VtHh6Z0UySzU1a8kKxZCrWBubJ2oZL8xmcSJC4_vsomkkklnruz39HQZjv5IWl$FXp7Rm6TrEd2UwNr}
+{!40400|Att_clearTypeFonts: -1}
+
+Function Set_Decisions_To_Opt(optdef : Optimization)
+Title: Set Decisions To Opt
+Description: Sets the definitions of all the decisions that appear in an Optimization to their optimal solution.  This must be called from a Button Script.  The parameter, «optdef», must be a variable defined by a call to DefineOptimization.~
+~
+This does not preserve the original definitions - see Use_opt_decisions for that.~
+This must be run from a button script.
+Definition: var soln := OptSolution(optDef);~
+metavar x[] := OptInfo(optDef,"Decisions").Decision;~
+if IsHandle(x) Then (~
+  LocalAlias d := x;~
+  d := OptScalarToDecision(optDef,x,soln,soln.DecisionVector)~
+);~
+null
+NodeLocation: 104,64,1
+NodeSize: 48,31
+WindState: 2,7,197,570,454
+
+Function Use_Opt_Decisions(optdef : Optimization)
+Title: Use Opt Decisions
+Description: This preserves the original definition (in the event that it isn't already preserved) for each decision node, and then sets each decision to its optimized value.~
+~
+This must be used from a button script.~
+~
+Optdef must be the variable that is defined using DefineOptimization.
+Definition: var soln := OptSolution(optDef);~
+metavar x[] := OptInfo(optDef,"Decisions").Decision;~
+if IsHandle(x) Then (~
+  LocalAlias d := x;~
+  If IsNull(UnoptimizedDef of d) Then~
+     UnOptimizedDef of d := Definition of d;~
+  d := OptScalarToDecision(optDef,x,soln,soln.DecisionVector)~
+);~
+null
+NodeLocation: 240,64,1
+NodeSize: 48,31
+WindState: 2,638,148,724,425
+
+Function Restore_Decision_Def(optdef : Variable)
+Title: Restore Decision Defs
+Description: This restores all the decisions to their original definitions, after they have previous been set to optimized values with the Use_opt_decisions function.~
+~
+This must be used from a button script.
+Definition: metavar x[] := OptInfo(optDef,"Decisions").Decision;~
+if IsHandle(x) Then (~
+  LocalAlias d := x;~
+   if not IsNull(UnoptimizedDef of d) then  (    ~
+       Definition of d := UnoptimizedDef of d;~
+       UnoptimizedDef of d := Undefined~
+   )~
+);~
+null
+NodeLocation: 368,65,1
+NodeSize: 48,31
+WindState: 2,786,27,554,469
+
+Close Structured_Opt_Tools
+
+Function Divide(num, denom; preventINF: Optional Boolean = False)
+Title: Divide
+Description: This performs division and always prevents NAN results. If preventINF (an optional parameter that defaults to False) is set to True, then +/- INF results will be forced to zero. If preventINF is set to False, +/- INF results are allowed.~
+~
+[num]: the numerator~
+[denom]: the denominator~
+[preventINF]: optional boolean parameter indicating (when True) that INF values should be prevented
+Definition: num:=IF preventINF = False   {If INF results are allowed}~
+   THEN num~
+   ELSE IF denom <> 0~
+   THEN num~
+   ELSE 0;~
+VAR quotient:=num / denom;~
+~
+IF IsNaN(quotient)~
+   THEN 0~
+   ELSE quotient;~
+~
+   ~
+
+NodeLocation: 440,72,1
+NodeSize: 64,40
+
+Function Replace_X_with_Y(data, x, y)
+Title: Replace X with Y
+Description: This looks for values of x within data and replaces them with y.~
+~
+[data]: a set of data~
+[x]: the old values that will be replaced~
+[y]: the new values used to replace the old values
+Definition: IF data = x~
+THEN y~
+ELSE data
+NodeLocation: 584,72,1
+NodeSize: 64,40
+
+Function Sum_Over_All(values)
+Title: Sum Over All
+Description: This function takes an array and finds the sum over all indices. It returns an atomic summation.~
+~
+[values]: any array
+Definition: INDEX indexHandles:=IndexesOf(values);   {Create a list of indices used by values}~
+VAR sum_val:=values;   {Initialize sum_val to values}~
+~
+FOR K:=indexHandles DO (   {For each index}~
+  sum_val:=Sum(sum_val, K)   {Find the sum of sum_vals over index K}~
+);~
+~
+sum_val   {Return the atomic summation}
+NodeLocation: 584,160,1
+NodeSize: 64,40
+
+Function Logit_Market_Share(utility, eligibility; options: INDEX)
+Title: Logit Market Share
+Description: This return the logit market share for an option providing a given utility.~
+~
+[utility]: the utility gained from a given option~
+[eligibility]: a binary flag indicating whether an option is eligible for market share~
+[options]: an index of options that can gain market share
+Definition: VAR util:=utility * eligibility;~
+VAR exp_util:=Exp(util);~
+VAR tot_exp_util:=Sum(exp_util, options);~
+tot_exp_util:= IF tot_exp_util = INF   {If the denominator becomes so large that it appears to be infinite}~
+   THEN 10^64   {Then scale it down to a very large but non-infinite value}~
+   ELSE tot_exp_util;   {Else use the denominator as is}~
+~
+Divide(exp_util, tot_exp_util, True)
+NodeLocation: 440,160,1
+NodeSize: 64,40
+WindState: 2,575,216,720,496
+
+Function Min_Over_All(values)
+Title: Min Over All
+Description: This function takes an array and finds the minimum over all indices. It returns an atomic minimum.~
+~
+[values]: any array
+Definition: INDEX indexHandles:=IndexesOf(values);   {Create a list of indices used by values}~
+VAR min_val:=values;   {Initialize min_val to values}~
+~
+FOR K:=indexHandles DO (   {For each index}~
+  min_val:=MIN(min_val, K)   {Find the min of min_vals over index K}~
+);~
+~
+min_val   {Return the atomic minimum}
+NodeLocation: 584,248,1
+NodeSize: 64,40
+
+Function Max_Over_All(values)
+Title: Max Over All
+Description: This function takes an array and finds the max over all indices. It returns an atomic maximum.~
+~
+[values]: any array
+Definition: INDEX indexHandles:=IndexesOf(values);   {Create a list of indices used by values}~
+VAR max_val:=values;   {Initialize max_val to values}~
+~
+FOR K:=indexHandles DO (   {For each index}~
+  max_val:=MAX(max_val, K)   {Find the max of max_vals over index K}~
+);~
+~
+max_val   {Return the atomic maximum}
+NodeLocation: 440,248,1
+NodeSize: 64,40
+
+Function Find_Aggreg_Sum(values, agLabel, nonAgMap; spatial_index: INDEX)
+Title: Find Aggreg Sum
+Description: Sums over non-aggregate spatial IDs to find the value for the specified aggregate item, then returns the values with the aggregate item now populated with the sum.~
+~
+[values]: an array of values indexed by spatial_index that will be summed in order to find the aggregate value~
+[agLabel]: the label in the spatial_index that corresponds to the aggregate~
+[nonAgMap]: a map indexed by spatial_index that flags non-aggregate items with 1's and aggregate items with 0's~
+[spatial_index]: an index for spatial IDs that includes labels for aggregated values
+Definition: VAR sumNonAg:= Sum(values * nonAgMap, spatial_index);~
+~
+IF spatial_index = agLabel~
+THEN sumNonAg~
+ELSE values
+NodeLocation: 440,336,1
+NodeSize: 64,40
+WindState: 2,5,42,781,523
+
+Function Find_Aggreg_Wtd_Avg(values, weights, agLabel, nonAgMap; spatial_index: INDEX)
+Title: Find Aggreg Wtd Avg
+Description: Weights values over non-aggregate spatial IDs to find the weighted average value for the specified aggregate item, then returns the values with the aggregate item now populated with the weighted average.~
+~
+[values]: an array of values indexed by spatial_index that will be weighted in order to find the weighted average aggregate value~
+[weights]: an array of weights indexed by spatial_index~
+[agLabel]: the label in the spatial_index that corresponds to the aggregate~
+[nonAgMap]: a map indexed by spatial_index that flags non-aggregate items with 1's and aggregate items with 0's~
+[spatial_index]: an index for spatial IDs that includes labels for aggregated values
+Definition: VAR wtdVals:= values * weights * nonAgMap;~
+VAR totWtdVals:=Sum(wtdVals, spatial_index);~
+VAR totWeight:=Sum(weights * nonAgMap, spatial_index);~
+~
+IF spatial_index = agLabel~
+THEN Divide(totWtdVals, totWeight, True)~
+ELSE values
+NodeLocation: 584,336,1
+NodeSize: 64,40
+WindState: 2,83,214,944,677
+
+{!40404|FreePassObjectCount NFuk$KoNg0JRHEwYQ1a_9HMEDGnHuMwCUfrqYEiIxzED36qoV8ev7IGMV$lS5l8TfcWN1aOw9QWUnyQFmCl$8YhmiP3g4cDiZVqxM7l8Unt4K7riAg7b6x68xhOuV9MUkeUN0W7kEnhry$3rKrBPo4ODJMjQ_Jbqs$BygEpAgDr4DE0bT2KisGBNVM9pEcB4JPG4rP1MjG7KOD$kGe5Szs_1xnMsN1JQpWMJ_iNt5QUUkjeQzTwAYzkccI7zY3RagjZWXlCwMZ$EB3$zc6PsyDVH3JHUrCb_PqGjBf9gCkHsR1eGvYDubI1mWH3sgUKA1wpjeZWUTSSUWZdinu09ITeq1FUk_GYsAVrBZyMmCe5a3Z4c9jHtT4iL$fL2mUE_lXL9_pgYQKEA531$$0148CHNUclv3FRft6MdvDWrAXuGg4VxOrKpKrNwU4fGuWAqWBvdM6seRE2tkbTMGB630$__$147CIOVenx6IUixARi_HbxGd$NnCd3W_TzT$Y5gFrS4jN2jQ7sbL6uhVK90umfZUQNLJJJLNQVagmu1BLWiw8}
+Library Performance_profiler
+Title: Performance Profiler
+Description: Use this library to see which variables and functions are taking most of the computation time or memory when running your model. You need Analytica Enterprise, Power Player, or ADE - it will not work for lesser editions of Analytica.  Here's how to use it:~
+~
+1. First run your model, i.e. show (and therefore compute) results for the outputs you are interested in timing.~
+~
+2. Click the "Performance profiles" button to display the Bytes (memory used) and CPU msecs (milliseconds of computation time by the computers "Central Processing Unit") for each object (variable or function).  ~
+~
+NOTES:~
+A. Select option from "Sort objects by" to control how results are sorted.~
+~
+B. It omits objects with negligible CPU time (less than 1 millisecond) AND less than 25 Bytes memory.~
+~
+C. "msecs w. ancestors" means the CPU time to compute the object PLUS all its ancestors or predecessors.~
+~
+D. "Bytes" shows the memory usage after computing the variable. Some objects with complex expressions may use much more memory during the computation.~
+~
+E. In Performance Profiles, double-click on an Object title (in Object_ID index or its Module title to open its Object window.~
+~
+If you want to add in the time for further calculations:~
+~
+3. Make those calculations by showing results for those variables.~
+~
+4. Click button "Update Profiles"~
+~
+5. Click the "Performance profiles" button again.~
+~
+If you want to time some different calculations:~
+~
+6. Click "Zero out times"~
+~
+7. Change relevant inputs to cause their dependents to need to be recomputed.~
+~
+8. Show results for outputs of interest.~
+~
+9. Click button "Update Profiles"~
+~
+10. Click the "Performance profiles" button to see the new timings and memory usage.~
+~
+Copyright 2007 Lumina Decision Systems, Inc
+Author: Lonnie Chrisman & Alex Graham
+Date: Sun, Jul 13, 2003 12:18 PM
+SaveAuthor: Lonnie
+SaveDate: Fri, Sep 7, 2012 2:08 PM
+DefaultSize: 48,24
+NodeLocation: 240,232,1
+NodeSize: 64,32
+NodeInfo: 1,1,1,1,1,1,0,0,0,0,,,,0
+DiagState: 2,714,292,611,320,21
+WindState: 2,372,189,507,744
+FontStyle: Arial, 15
+Att_PreLoadScript: {!40404|FreePassObjectCount NFuk$KoNg0JRHEwYQ1a_9HMEDGnHuMwCUfrqYEiIxzED36qoV8ev7IGMV$lS5l8TfcWN1aOw9QWUnyQFmCl$8YhmiP3g4cDiZVqxM7l8Unt4K7riAg7b6x68xhOuV9MUkeUN0W7kEnhry$3rKrBPo4ODJMjQ_Jbqs$BygEpAgDr4DE0bT2KisGBNVM9pEcB4JPG4rP1MjG7KOD$kGe5Szs_1xnMsN1JQpWMJ_iNt5QUUkjeQzTwAYzkccI7zY3RagjZWXlCwMZ$EB3$zc6PsyDVH3JHUrCb_PqGjBf9gCkHsR1eGvYDubI1mWH3sgUKA1wpjeZWUTSSUWZdinu09ITeq1FUk_GYsAVrBZyMmCe5a3Z4c9jHtT4iL$fL2mUE_lXL9_pgYQKEA531$$0148CHNUclv3FRft6MdvDWrAXuGg4VxOrKpKrNwU4fGuWAqWBvdM6seRE2tkbTMGB630$__$147CIOVenx6IUixARi_HbxGd$NnCd3W_TzT$Y5gFrS4jN2jQ7sbL6uhVK90umfZUQNLJJJLNQVagmu1BLWiw8}
+{!40400|Att_clearTypeFonts: 1}
+
+Button Zero_out_times
+Title: Zero out times
+Description: Zeros all computation times, so that only the times of subsequent computations will be shown.
+NodeLocation: 248,40,1
+NodeSize: 48,24
+Script: ResetEvalTimes~
+Reset_profiler := 1~
+
+
+Button Update_profiles
+Title: Update profiles
+Description: Sets the profiles to recompute, adding in any further computation time since profiles were last generated.
+NodeLocation: 64,40,1
+NodeSize: 48,24
+WindState: 2,39,304,476,224
+Script: (Reset_profiler := Reset_profiler+1)
+
+FormNode Sort_profiled_objec1
+Title: Sort profiled objects by
+Definition: 0
+NodeLocation: 175,84,1
+NodeSize: 161,12
+NodeInfo: 0,0,0,0,0,0,0,170
+Original: Sort_objects_by
+
+FormNode Ordered_profiles1
+Title: Ordered profiles
+Definition: 1
+NodeLocation: 175,112,1
+NodeSize: 161,12
+NodeInfo: 1,0,0,1,0,0,0,120,0,
+Original: Performance_profiles
+
+Text Te7
+NodeLocation: 176,68,-1
+NodeSize: 168,60
+NodeInfo: 1,0,0,0,1,1,0,,0,
+
+Module Profiler_details
+Title: Profiler details
+Author: Max Henrion
+Date: Wed 03-Oct-07 8:20 AM
+DefaultSize: 48,24
+NodeLocation: 168,168,1
+NodeSize: 48,24
+DiagState: 2,377,221,438,285,21
+
+Function Profiler_descendants(m: Object)
+Title: Profiler_Descendants(m)
+Description: Returns a list including module m and all its descendants, i.e. objects (variables, functions, and modules)  contained in m - and in any modules it contains, recursively -- excluding this Profiling module.
+Definition: METAVAR res := [Handle(m)];~
+METAVAR c := contains OF  m ;~
+IFONLY IsNull(c) OR  Identifier m  = Id_of_this_library THEN res~
+ELSE BEGIN ~
+  FOR v := c Do BEGIN~
+     METAVAR d := Profiler_descendants(v);~
+     res := Concat(res, d);~
+     0~
+  END; ~
+  res~
+END
+NodeLocation: 152,184,1
+NodeSize: 104,24
+WindState: 2,47,141,580,585
+Recursive: 1
+
+Decision Sort_objects_by
+Title: Sort objects by
+Description: Select field to sort profiled objects. "CPU secs" or "KBytes" are most useful. "Class" doesn't work.
+Definition: Choice(Profiler_fields,1,0)
+NodeLocation: 336,248,1
+NodeSize: 48,24
+WindState: 2,102,90,523,465
+Aliases: FormNode Sort_profiled_objec1
+{!40200|Att_ChoiceIndexes: Index Profiler_fields}
+
+Index Profiler_fields
+Att_PrevIndexValue: ['Class','Module','Bytes','CPU msecs','msecs w ancestors']
+Title: Profiler fields
+Definition: ['Class','Module','Bytes','CPU msecs','msecs w ancestors']
+NodeLocation: 96,54,1
+NodeSize: 48,24
+
+Variable Attrib_name_by_profi
+Title: Attrib name by profile field
+Definition: Table(Profiler_fields)(~
+'Class',0,'Memory','EvaluationTime','EvaluationTimeAll')
+NodeLocation: 208,55,1
+NodeSize: 48,31
+DefnState: 2,352,26,430,218,0,MIDM
+
+Function Profileobj(o: atomic handle)
+Title: ProfileObj(o)
+Description: Returns a profile (with Class, Bytes, Memory, CPU seconds, CPU seconds w ancestors) for  the object with identifier o.
+Definition: FOR field := Profiler_fields DO~
+     IFONLY field = 'Module' THEN (Isin OF o)~
+     ELSE IF field = 'Bytes' THEN MemoryInUseBy(Handle(o))~
+     ELSE (VAR attrib := Attrib_name_by_profi[Profiler_fields=field]; ~
+              IF attrib ='Class' THEN  (attrib OF o) ELSE (attrib OF o)*1000)
+NodeLocation: 336,54,1
+NodeSize: 56,24
+WindState: 2,432,9,541,583
+
+Function Profileall()
+Title: ProfileAll()
+Description: Returns a profile (with Class, Bytes, CPU msecs, msecs w ancestors) for all the variables in this model whose CPU msecs>0 or Bytes > 24, excluding those in the Profiler.
+Definition: MetaVar top := topmodel_id;~
+MetaIndex allobjs := Profiler_descendants(top);~
+METAVAR allProfiles := Profileobj(allobjs);~
+MetaIndex Objs := Subset(allProfiles[Profiler_fields='CPU msecs'] > 0 OR~
+                                           allProfiles[Profiler_fields='Bytes'] > 24 OR~
+                                           allProfiles[Profiler_fields='msecs w ancestors']);~
+allProfiles[allobjs = Objs]
+NodeLocation: 336,120,1
+NodeSize: 56,24
+WindState: 2,438,69,525,397
+
+Variable Topmodel_id
+Title: TopModel ID
+Definition: Reset_profiler; METAVAR m := Isin OF Self;~
+WHILE (NOT IsUndef(Isin OF  m )) DO m := Isin OF  m
+NodeLocation: 208,118,1
+NodeSize: 48,24
+
+Variable Performance_profiles
+Title: Performance profiles
+Description: Shows the Class, Kbytes (memory used), CPU secs (to compute this object), CPU secs w. ancestors (time to compute this variable and all its predecessors) for all objects (variables and functions) with non-zero computation time, sorted as requested.
+Definition: VAR Profiles := Profileall();~
+var sortField := Profiles[Profiler_fields=Sort_objects_by];~
+if Sort_objects_by<>"Class" then sortField := -sortField;~
+MetaIndex object_id := SortIndex(sortField, Profiles.Objs);~
+Profiles[.Objs = object_id]
+NodeLocation: 336,184,1
+NodeSize: 56,24
+WindState: 2,102,90,497,494
+ValueState: 2,350,75,1085,737,0,MIDM
+Aliases: FormNode Ordered_profiles1
+GraphSetup: {!40000|Att_graphvaluerange Performance_profiles:1,,,,,,10}~
+{!40000|Att_graphindexrange Profiler_fields:1,,,,,,10}~
+{!40000|Flip:8}~
+{!40000|Att_catlinestyle Graph_primary_valdim:9}
+ReformVal: [Profiler_fields,Sys_LocalIndex('OBJECT_ID')]
+NumberFormat: 1,I,6,3,1,0
+Att__TotalsIndex: [Sys_LocalIndex('object_id')]
+Att_ResultSliceState: [Profiler_fields,2,Sys_LocalIndex('OBJECTS_IDS'),1]
+
+Variable Reset_profiler
+Title: Reset Profiler
+Description: Used to reset the computations for profiling.
+Definition: 2
+NodeLocation: 96,118,1
+NodeSize: 48,24
+
+Variable Id_of_this_library
+Title: ID of this library
+Definition: Identifier(Isin OF (Isin OF Self))
+NodeLocation: 152,248,1
+NodeSize: 48,24
+
+Close Profiler_details
+
+Close Performance_profiler
+
+Close Function_Library_Cus
+

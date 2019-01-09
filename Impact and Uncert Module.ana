@@ -1,0 +1,114 @@
+{ From user coryw, Model Impact___Uncertainty at 30-Nov-2018 1:50:55 PM, encoding="UTF-8" }
+SoftwareVersion 5.1.6
+
+
+
+LinkModule Impact___Uncertainty
+Title: Impact & Uncertainty
+Author: CoryWelch
+Date: Mon, Jul 9, 2018 1:00 PM
+SaveAuthor: coryw
+SaveDate: Fri, Nov 30, 2018 1:50 PM
+DefaultSize: 64,40
+NodeSize: 80,56
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+DiagState: 2,497,81,944,484,17
+Pict: (000000000000002D003900046901000089504E470D0A1A0A0000000D49484452000000390000002D0806000000145FC308000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA864000000EE494441546843ED8FBBB1023110041506693C833C8900E705462688C210B5B535AC465F438CD1C6CDED5D75A79CF3F1A4E7ED92DFF81727A1C85350E42928B295BFFF94BFE16F77A2C85650902237A1C8561469B6DD28B215459A6D37DD91451ED173B712454620D1916D258A8C60E5D96D258A8C60E5D96D258A8C60E5A30D61EF66A1C80824357B9B85222358D1916D168A8C604547B65928D252243CE8A6672B1E087BD783222D5E0C898E6CC88375ABA1488B1743A2231BF260DD6AC01F150984BF29CFA31BF2281BC2DED55064B431372D1BF260B71A8A8C36E6A665431EEC56E3F3D191DCAF8F1F89CCE90506011C2C460ACD4A0000000049454E44AE426082)
+FontStyle: Arial Narrow,19
+FileInfo: 0,LinkModule Impact___Uncertainty,2,2,0,0,Impact and Uncert Module.ana
+
+Variable Impact_by_DER
+Title: Impact by DER
+Units: MW
+Description: placeholder to create output graphics
+Definition: Table(DER)(PV_Impact,Cumul_EV_Impact[Time_vehicles=Time],Storage_Impact,EE_Impact,DR_Impact)
+NodeLocation: 216,128,1
+NodeSize: 56,32
+ValueState: 2,344,33,1117,743,1,PDFP
+NodeColor: 65535,1,1
+GraphSetup: Graph_FillTransparen:172~
+{!40400|Sys_PdfSmoothMethod:1}~
+Att_GraphIndexRange Time:1,,0,,,,,36.891K,46.022K,0~
+Att_AreaFill Graph_KDE_Valdim:0
+ReformVal: [DER,Null,Undefined,Undefined,1]
+NumberFormat: 2,F,1,0,1,0,1,0,$,0,"ABBREV",0,,,0,0,15
+Att_ResultSliceState: [Time,251,Selected_Spatial_ID,1,DER,1,Sys_LocalIndex('Step'),1]
+Att_XRole: -1
+Att_ColorRole: DER
+{!40600|Att_ClusterIndex: Time}
+
+Chance EE_Impact
+Title: EE Impact
+Definition: Normal(-6400,600)
+NodeLocation: 216,232,1
+NodeSize: 56,32
+
+Chance Storage_Impact
+Title: Storage Impact
+Definition: LogNormal(mean:2000,stddev:600) * -1
+NodeLocation: 216,320,1
+NodeSize: 56,32
+
+Chance DR_Impact
+Title: DR Impact
+Definition: Lognormal(mean:1000,stddev:300) * -1
+NodeLocation: 216,400,1
+NodeSize: 56,32
+
+Variable Net_Impact
+Title: Net Impact
+Units: MW
+Definition: sum(Impact_by_DER,DER)*(Net_Impact1=Net_Impact1)
+NodeLocation: 400,128,1
+NodeSize: 56,32
+ValueState: 2,443,-13,1035,777,,PDFP
+GraphSetup: {!40400|Sys_PdfSmoothMethod:1}
+ReformVal: [Undefined,Null,Undefined,Undefined,1]
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
+Att_ResultSliceState: [Time,251,Selected_Spatial_ID,1,Sys_LocalIndex('Step'),1]
+Att_XRole: -1
+Att_ColorRole: Null
+
+Index DER_Net
+Att_PrevIndexValue: ['Solar PV','Electric Vehicles','Battery Storage','Energy Efficiency','Demand Response','Net Impact']
+Title: DER+Net
+Definition: concat(DER,['Net Impact'])
+NodeLocation: 400,232,1
+NodeSize: 56,32
+{!40600|Att_ColorSequence: [0xfffe9018,0xff31a300,0xffff0000,0xff0000ff,0xff000000,0xff72d1dc,0xff000000]}
+
+Variable All_Impacts
+Title: All Impacts
+Units: MW
+Definition: concat(Impact_by_DER,Net_Impact,DER,Net_Impact1,DER_Net) * Illustration_Scale_F
+NodeLocation: 560,128,1
+NodeSize: 56,32
+ValueState: 2,245,13,966,702,1,PDFP
+GraphSetup: Grid:0~
+Att_GraphValueRange All_Impacts:|1:1,,0,,,,10,-1400,400,0~
+{!40400|Sys_PdfSmoothMethod:1}
+ReformVal: [Undefined,DER_Net,Undefined,Undefined,1]
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
+Att_ResultSliceState: [Time,251,Selected_Spatial_ID,1,DER_Net,1,Sys_LocalIndex('Step'),1]
+Att_XRole: -1
+{!40200|Att_GraphSetupSlices: [3,1,DensityIndex,1]}
+
+Index Net_Impact1
+Title: Net Impact
+Definition: ['Net Impact']
+NodeLocation: 400,312,1
+NodeSize: 56,32
+
+Constant Illustration_Scale_F
+Title: Illustration Scale Factor
+Definition: 0.1
+NodeLocation: 560,40,1
+NodeSize: 56,40
+
+Text Te1531083473
+Title: All of this is for graphics illustration only
+NodeLocation: 696,264,-1
+NodeSize: 56,48
+
+Close Impact___Uncertainty
+
