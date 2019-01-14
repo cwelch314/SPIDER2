@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Outputs_for_Tableau at 9-Jan-2019 1:25:01 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Outputs_for_Tableau at 11-Jan-2019 10:50:53 AM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Outputs for Tableau
 Author: JamesMilford
 Date: Tue, Nov 13, 2018 7:23 PM
 SaveAuthor: JamesMilford
-SaveDate: Wed, Jan 9, 2019 1:25 PM
+SaveDate: Fri, Jan 11, 2019 10:50 AM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
@@ -525,7 +525,7 @@ Variable PV_Cumulative
 Title: PV Cumulative
 Units: MW-AC
 Description: Nameplate MW-AC from Solar PV, cumulative for all time. Excludes any T&D losses. Values are End of Period.
-Definition: Selected_Sequential_[Output_DER_Types=Solar_PV_Label, Sequential_Outputs='Cumulative MW-AC', All_Sectors=PV_Sectors]
+Definition: ==
 NodeLocation: 1184,440,1
 NodeSize: 64,40
 WindState: 2,102,82,1261,505
@@ -560,13 +560,13 @@ Definition: Selected_Sequential_[Output_DER_Types=Solar_PV_Label, Sequential_Out
 NodeLocation: 1032,536,1
 NodeSize: 64,40
 WindState: 2,102,82,1095,453
-ValueState: 2,504,220,994,688,1,MIDM
+ValueState: 2,235,74,994,688,1,MIDM
 Aliases: FormNode Fo1544918827, FormNode Fo1544456702
 GraphSetup: ShowKey:1~
 Graph_HLabelRotation:45
 ReformVal: [Output_Periods,Act_vs_Sim]
 Att__TotalsIndex: [Spatial_ID]
-Att_ResultSliceState: [PV_Sectors,1,Spatial_ID,0,Act_vs_Sim,2,Output_Periods,1]
+Att_ResultSliceState: [PV_Sectors,2,Spatial_ID,0,Act_vs_Sim,2,Output_Periods,1]
 
 Variable Cumulative_EV_Stock
 Title: Cumulative EV Stock
