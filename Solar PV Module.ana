@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Solar_PV at 15-Jan-2019 10:43:00 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Solar_PV at 16-Jan-2019 4:41:34 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -14,7 +14,7 @@ Title: Solar PV
 Author: Cory Welch
 Date: Mon, Jan 8, 2018 10:24 AM
 SaveAuthor: JamesMilford
-SaveDate: Tue, Jan 15, 2019 10:43 PM
+SaveDate: Wed, Jan 16, 2019 4:41 PM
 DefaultSize: 64,40
 NodeSize: 88,64
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -3221,10 +3221,10 @@ increm~
 NodeLocation: 352,96,1
 NodeSize: 64,40
 WindState: 2,102,82,1052,482
-ValueState: 2,174,153,1125,636,,MIDM
-ReformVal: [Tiers,Month]
+ValueState: 2,174,153,1125,636,0,MIDM
+ReformVal: [Month,Tiers]
 Att__TotalsIndex: [Tiers,Month]
-Att_ResultSliceState: [PV_Sectors,1,Pre_and_Post_System,1,PV_Climate_Zone,1,PV_Operating_Year,1,Rate_Vintage,7,Month,1,Tiers,1]
+Att_ResultSliceState: [PV_Sectors,1,Pre_and_Post_System,2,PV_Climate_Zone,1,PV_Operating_Year,1,Rate_Vintage,4,System_Types,1,Tiers,1,Month,1]
 
 Variable Pct_Consump_by_Tier
 Title: Pct Consumption by Tier
@@ -3234,8 +3234,8 @@ Definition: Divide(Monthly_Consumption_, Sum(Monthly_Consumption_, Tiers), True)
 NodeLocation: 504,96,1
 NodeSize: 64,40
 ValueState: 2,117,80,928,554,0,MIDM
-ReformVal: [Tiers,Rate_Names]
-Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,4,PV_Climate_Zone,1,Pre_and_Post_System,2,Month,2,System_Types,2,PV_Operating_Year,1,Tiers,1]
+ReformVal: [Null,Tiers]
+Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,4,PV_Climate_Zone,1,Pre_and_Post_System,2,Month,1,System_Types,1,PV_Operating_Year,1,Tiers,1]
 
 Variable Monthly_Consumption1
 Title: Monthly Consumption by Tier
@@ -3243,10 +3243,10 @@ Units: kWh/month
 Definition: Mthly_Consump_by_Day * Pct_Consump_by_Tier
 NodeLocation: 616,200,1
 NodeSize: 64,40
-ValueState: 2,572,256,1206,608,0,MIDM
-ReformVal: [Tiers,Pre_and_Post_System]
-Att__TotalsIndex: [Day_and_Hour,Month]
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Month,0,Day_and_Hour,0,PV_Operating_Year,1,Rate_Vintage,2,Pre_and_Post_System,2,Tiers,2]
+ValueState: 2,23,95,1206,801,0,MIDM
+ReformVal: [Day_and_Hour,Tiers]
+Att__TotalsIndex: [Day_and_Hour]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Month,1,PV_Operating_Year,1,Rate_Vintage,4,System_Types,1,Pre_and_Post_System,2,Tiers,2,Day_and_Hour,0]
 
 Variable Monthly_Consumption
 Title: Monthly Consumption
@@ -3413,7 +3413,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 256,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,699,12,1452,638,17
+DiagState: 2,664,77,1452,829,17
 {!40400|CloudPlayerStyles: FrameNode: FrameNode_1544920029}
 {!40204-40399|AWP_Attrib:FrameNode: FrameNode_1544920029}
 
@@ -3423,10 +3423,11 @@ Units: $
 Definition: Monthly_Consumption1 * Energy_Price
 NodeLocation: 256,208,1
 NodeSize: 64,40
-ValueState: 2,41,113,1189,659,1,MIDM
+ValueState: 2,1683,28,1189,659,0,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5
-ReformVal: [Day_and_Hour,Pre_and_Post_System]
-Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,4,PV_Climate_Zone,1,PV_Operating_Year,1,Tiers,1,Month,1,Pre_and_Post_System,1,Day_and_Hour,1]
+ReformVal: [Day_and_Hour,Tiers]
+Att__TotalsIndex: [Tiers]
+Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,4,PV_Climate_Zone,1,PV_Operating_Year,1,Month,1,System_Types,1,Pre_and_Post_System,2,Tiers,2,Day_and_Hour,1]
 
 Variable Monthly_Energy_Cost
 Title: Monthly Energy Cost
@@ -3485,10 +3486,10 @@ VAR adjData:=Replace_X_with_Y(Weekly_Rate_Data[Rate_Names=Selected_Cust_Rates, D
 NodeLocation: 256,312,1
 NodeSize: 64,40
 WindState: 2,102,82,1080,350
-ValueState: 2,18,37,1556,768,0,MIDM
+ValueState: 2,24,91,1556,768,0,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:6
-ReformVal: [Day_and_Hour,Rate_Vintage]
-Att_ResultSliceState: [PV_Sectors,1,Tiers,2,Pre_and_Post_System,1,PV_Climate_Zone,1,Month,10,PV_Operating_Year,1,Rate_Vintage,1,Day_and_Hour,1]
+ReformVal: [Day_and_Hour,Tiers]
+Att_ResultSliceState: [PV_Sectors,1,Pre_and_Post_System,2,PV_Climate_Zone,1,Month,1,PV_Operating_Year,1,Rate_Vintage,4,Tiers,2,Day_and_Hour,1]
 
 Variable Non_Coincident_Deman
 Title: Non-Coincident Demand Price
@@ -15878,7 +15879,6 @@ NodeColor: 57311,57311,57311
 {!40204-40399|AWP_Attrib:Show_Object:no}
 
 Index PV_Sectors
-Att_PrevIndexValue: ['Residential','NonResidential']
 Title: PV Sectors
 Description: The sectors selected for the PV analysis.
 Definition: MultiChoice(All_Sectors,1,2,returnList:1)
@@ -15890,6 +15890,7 @@ NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 {!40200|Att_ChoiceIndexes: Index All_Sectors}
 {!40300|Att_SlicerPopupSize: 357,42}
 {!40600|Att_ColorSequence: [0xff319500,0xfffe9018,0xff31a300]}
+Att_PrevIndexValue: ['Residential','NonResidential']
 
 FormNode Fo1539140368
 Title: PV Sectors
@@ -16073,20 +16074,20 @@ NodeLocation: 1248,64,1
 NodeSize: 64,40
 
 Index PV_Operating_Year
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 Title: PV Operating Year
 Definition: 1..Economic_Lifetime
 NodeLocation: 384,680,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 257,294}
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
 Index All_Equipment_Types
-Att_PrevIndexValue: ['Solar PV','Battery Storage']
 Title: All Equipment Types
 Definition: ['Solar PV','Battery Storage']
 NodeLocation: 1104,64,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 227,28}
+Att_PrevIndexValue: ['Solar PV','Battery Storage']
 
 Index Equipment_Types
 Title: Equipment Types
@@ -16150,12 +16151,12 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Map_Costs_to_Sector
 
 Index All_System_Types
-Att_PrevIndexValue: ['Solar PV Retrofit','Solar PV NewConstruct','Solar + Storage Retrofit','Solar + Storage NewConstruct','Storage Added to Exist Solar','Storage Only Retrofit','Storage Only NewConstruct']
 Title: All System Types
 Definition: ['Solar PV Retrofit','Solar PV NewConstruct','Solar + Storage Retrofit','Solar + Storage NewConstruct','Storage Added to Exist Solar','Storage Only Retrofit','Storage Only NewConstruct']
 NodeLocation: 240,64,1
 NodeSize: 64,40
 ValueState: 2,315,16,416,303,,MIDM
+Att_PrevIndexValue: ['Solar PV Retrofit','Solar PV NewConstruct','Solar + Storage Retrofit','Solar + Storage NewConstruct','Storage Added to Exist Solar','Storage Only Retrofit','Storage Only NewConstruct']
 
 Decision Select_System_Types
 Title: Select System Types
@@ -16993,12 +16994,12 @@ NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
 Original: Power_kW_Label
 
 Index Storage_Systems
-Att_PrevIndexValue: ['Solar + Storage Retrofit']
 Title: Storage Systems
 Definition: Subset(Equip_Install_Map[All_System_Types=System_Types, All_Equipment_Types=Battery_Strg_Label])
 NodeLocation: 1104,936,1
 NodeSize: 64,40
 WindState: 2,102,82,955,798
+Att_PrevIndexValue: ['Solar + Storage Retrofit']
 
 Variable System_with_Storage
 Title: System with Storage
@@ -17010,11 +17011,11 @@ NodeSize: 64,40
 WindState: 2,73,563,720,350
 
 Index All_Storage_Systems
-Att_PrevIndexValue: ['Solar + Storage Retrofit','Solar + Storage NewConstruct','Storage Added to Exist Solar','Storage Only Retrofit','Storage Only NewConstruct']
 Title: All Storage Systems
 Definition: Subset(Equip_Install_Map[All_Equipment_Types=Battery_Strg_Label])
 NodeLocation: 1104,848,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Solar + Storage Retrofit','Solar + Storage NewConstruct','Storage Added to Exist Solar','Storage Only Retrofit','Storage Only NewConstruct']
 
 Variable System_with_PV
 Title: System with PV
