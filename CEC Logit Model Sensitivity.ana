@@ -1,4 +1,4 @@
-{ From user coryw, Model CEC_Logit_Model_Sens at 20-Dec-2018 3:14:45 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model CEC_Logit_Model_Sens at 17-Jan-2019 9:54:23 AM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -8,12 +8,12 @@ LinkModule CEC_Logit_Model_Sens
 Title: CEC Logit Model Sensitivity
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
-SaveAuthor: coryw
-SaveDate: Thu, Dec 20, 2018 3:14 PM
+SaveAuthor: JamesMilford
+SaveDate: Thu, Jan 17, 2019 9:54 AM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,,,,,,0,0,,,,,,0
-DiagState: 2,164,24,1500,763,17
+DiagState: 2,160,72,1500,763,17
 WindState: 2,-7,51,720,350
 DiagramColor: 65535,65535,65535
 FontStyle: Arial Narrow,19
@@ -324,7 +324,7 @@ Graph_HLabelRotation:0~
 Graph_3DEffects:0
 ReformVal: [Simulated_Vehicle,All_Veh_Util_Attribu]
 Att__TotalsIndex: []
-Att_ResultSliceState: [EV_Price,5,EV_Range,5,All_Veh_Util_Attribu,1,Simulated_Vehicle,1]
+Att_ResultSliceState: [EV_Price,3,EV_Range,6,All_Veh_Util_Attribu,1,Simulated_Vehicle,1]
 {!40400|CloudPlayerStyles: Show_Object: Yes}
 {!40204-40399|AWP_Attrib:Show_Object: Yes}
 
@@ -829,12 +829,12 @@ NodeSize: 64,40
 Att_PrevIndexValue: ['High','Low','Default']
 
 Index Elec__Non_Elec
+Att_PrevIndexValue: ['EV','Non-EV']
 Title: Elec, Non-Elec
 Definition: ['EV','Non-EV']
 NodeLocation: 792,152,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 227,56}
-Att_PrevIndexValue: ['EV','Non-EV']
 
 Function Vehicle_Data_Transfo(input, trans_type)
 Title: Vehicle Data Transformation

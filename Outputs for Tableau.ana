@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Outputs_for_Tableau at 11-Jan-2019 10:50:53 AM, encoding="UTF-8" }
+{ From user JamesMilford, Model Outputs_for_Tableau at 17-Jan-2019 5:03:59 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Outputs for Tableau
 Author: JamesMilford
 Date: Tue, Nov 13, 2018 7:23 PM
 SaveAuthor: JamesMilford
-SaveDate: Fri, Jan 11, 2019 10:50 AM
+SaveDate: Thu, Jan 17, 2019 5:03 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
@@ -61,7 +61,7 @@ Author: JamesMilford
 Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 736,792,1
 NodeSize: 64,40
-DiagState: 2,130,52,1570,651,17
+DiagState: 2,163,184,1570,569,17
 
 Variable Cumulative_Data_Plus
 Title: Cumulative Data Plus
@@ -525,7 +525,7 @@ Variable PV_Cumulative
 Title: PV Cumulative
 Units: MW-AC
 Description: Nameplate MW-AC from Solar PV, cumulative for all time. Excludes any T&D losses. Values are End of Period.
-Definition: ==
+Definition: Selected_Sequential_[Output_DER_Types=Solar_PV_Label, Sequential_Outputs='Cumulative MW-AC', All_Sectors=PV_Sectors]
 NodeLocation: 1184,440,1
 NodeSize: 64,40
 WindState: 2,102,82,1261,505
@@ -4067,12 +4067,12 @@ Att_ColorRole: Null
 Close Deltas_from_Base_Per
 
 Index Output_DER_Types
-Att_PrevIndexValue: ['Solar PV','Electric Vehicles']
 Title: Output DER Types
 Definition: Subset(DER_Types_to_Output)
 NodeLocation: 888,1288,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 232,56}
+Att_PrevIndexValue: ['Solar PV','Electric Vehicles']
 
 Decision DER_Types_to_Output
 Title: DER Types to Output
