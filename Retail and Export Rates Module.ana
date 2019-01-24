@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Electric_Rates1 at 18-Jan-2019 10:48:28 AM, encoding="UTF-8" }
+{ From user JamesMilford, Model Electric_Rates1 at 21-Jan-2019 5:27:32 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Electric Rates
 Author: JamesMilford
 Date: Wed, Aug 8, 2018 7:49 AM
 SaveAuthor: JamesMilford
-SaveDate: Fri, Jan 18, 2019 10:48 AM
+SaveDate: Mon, Jan 21, 2019 5:27 PM
 DefaultSize: 64,40
 NodeSize: 88,64
 NodeInfo: 1,1,1,1,1,1,1,,0,,0,,,
@@ -852,11 +852,11 @@ NodeSize: 64,40
 ValueState: 2,12,5,416,585,,MIDM
 
 Index Periods
-Att_PrevIndexValue: ['period0','period1','period2','period3','period4','period5']
 Title: Periods
 Definition: #Find_Valid_TiersPrds[.subscripts='periods']
 NodeLocation: 832,272,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['period0','period1','period2','period3','period4','period5']
 
 Index Tiers
 Title: Tiers
@@ -1510,14 +1510,14 @@ Title: Rate GUI
 NodeLocation: 128,296,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,12,-5,1550,891,17
+DiagState: 2,220,2,1553,891,17
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
 
 Text Te1547482992
 Title: Retail Rate Viewing and Editing
-NodeLocation: 540,428,-1
-NodeSize: 532,420
+NodeLocation: 540,444,-1
+NodeSize: 532,436
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 
 FormNode Fo1547663058
@@ -1532,7 +1532,7 @@ Original: Rate_Description
 FormNode Fo1547663079
 Title: Select an Existing Rate
 Definition: 0
-NodeLocation: 292,696,1
+NodeLocation: 292,728,1
 NodeSize: 260,16
 NodeInfo: 1,,,,,,0,310,,,,,,0
 Original: Select_Existing_Rate
@@ -1540,7 +1540,7 @@ Original: Select_Existing_Rate
 Alias Al1547663095
 Title: Populate with Existing Rate
 Definition: 1
-NodeLocation: 672,696,1
+NodeLocation: 672,728,1
 NodeSize: 120,16
 Original: Populate_with_Exist
 
@@ -1574,7 +1574,7 @@ Original: Energy_TOU_Schedule
 FormNode Fo1547663178
 Title: Flat Demand Rates
 Definition: 0
-NodeLocation: 204,396,1
+NodeLocation: 204,428,1
 NodeSize: 164,20
 NodeInfo: 1,,,,,,,72,,,,,
 NodeColor: 49344,49344,49344
@@ -1583,7 +1583,7 @@ Original: Flat_Demand_Rates
 FormNode Fo1547663179
 Title: Demand TOU Rates
 Definition: 0
-NodeLocation: 540,396,1
+NodeLocation: 540,428,1
 NodeSize: 164,20
 NodeInfo: 1,,,,,,,72,,,,,
 NodeColor: 49344,49344,49344
@@ -1592,7 +1592,7 @@ Original: Demand_TOU_Rates
 FormNode Fo1547663180
 Title: Energy TOU Rates
 Definition: 0
-NodeLocation: 876,396,1
+NodeLocation: 876,428,1
 NodeSize: 164,20
 NodeInfo: 1,,,,,,,72,,,,,
 NodeColor: 49344,49344,49344
@@ -1601,8 +1601,8 @@ Original: Energy_TOU_Rates
 Text Te1547663357
 Title: Rate Definitions
 Description: Define a new rate or view an existing rate. To view an existing rate, use the 'Populate with Existing Rate' button below. That button is also useful if you want to define a new rate by starting with an existing rate and making modifications to it. Note: If an input cell is not applicable, its value must be Null (eg, type Null into the cell).
-NodeLocation: 540,272,-1
-NodeSize: 516,224
+NodeLocation: 540,288,-1
+NodeSize: 516,240
 NodeInfo: 1,0,0,1,1,0,1,,0,,0,,,
 NodeFont: Arial Narrow,16
 
@@ -1678,14 +1678,14 @@ NodeFont: Arial Narrow,16
 
 Text Te1547664306
 Title: Populate Tables with Existing Rate Data
-NodeLocation: 540,636,-1
+NodeLocation: 540,668,-1
 NodeSize: 516,12
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
 NodeFont: Arial Narrow,16
 
 Text Te1547664407
 Title: Save Rate Data to New Rate Name or Existing Rate Name
-NodeLocation: 540,524,-1
+NodeLocation: 540,556,-1
 NodeSize: 516,12
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
 NodeFont: Arial Narrow,16
@@ -1693,20 +1693,20 @@ NodeFont: Arial Narrow,16
 Alias Al1547664530
 Title: Save New Rate
 Definition: 1
-NodeLocation: 672,584,1
+NodeLocation: 672,616,1
 NodeSize: 120,16
 Original: Save_New_Rate
 
 Alias Al1547664536
 Title: Delete Existing Rate
 Definition: 1
-NodeLocation: 672,808,1
+NodeLocation: 672,840,1
 NodeSize: 120,16
 Original: Delete_Existing_Rate
 
 Text Te1547664566
 Title: Delete Existing Rate from Model
-NodeLocation: 536,748,-1
+NodeLocation: 536,780,-1
 NodeSize: 520,12
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
 NodeFont: Arial Narrow,16
@@ -1714,7 +1714,7 @@ NodeFont: Arial Narrow,16
 FormNode Fo1547664907
 Title: Select an Existing Rate
 Definition: 0
-NodeLocation: 292,808,1
+NodeLocation: 292,840,1
 NodeSize: 260,16
 NodeInfo: 1,,,,,,0,310,,,,,,0
 Original: Select_Existing_Rate
@@ -1722,7 +1722,7 @@ Original: Select_Existing_Rate
 FormNode Fo1547666967
 Title: View Saved Rates
 Definition: 1
-NodeLocation: 924,584,1
+NodeLocation: 924,616,1
 NodeSize: 124,16
 NodeColor: 65278,37008,6168
 Original: View_Saved_Rates
@@ -1730,7 +1730,7 @@ Original: View_Saved_Rates
 FormNode Fo1547666968
 Title: View Existing Rates
 Definition: 1
-NodeLocation: 920,696,1
+NodeLocation: 920,728,1
 NodeSize: 128,16
 NodeColor: 65278,37008,6168
 Original: View_Existing_Rates
@@ -1738,7 +1738,7 @@ Original: View_Existing_Rates
 FormNode Fo1547671387
 Title: Basic Service Fees
 Definition: 0
-NodeLocation: 204,468,1
+NodeLocation: 204,500,1
 NodeSize: 164,20
 NodeColor: 49344,49344,49344
 Original: Basic_Service_Fees1
@@ -1746,7 +1746,7 @@ Original: Basic_Service_Fees1
 FormNode Fo1547671388
 Title: Minimum Charges
 Definition: 0
-NodeLocation: 540,468,1
+NodeLocation: 540,500,1
 NodeSize: 164,20
 NodeColor: 49344,49344,49344
 Original: Minimum_Charges1
@@ -1774,28 +1774,28 @@ Original: Reset_Rate_Definit
 
 Text Te1547672366
 Title: Other Charges
-NodeLocation: 192,440,-1
+NodeLocation: 192,472,-1
 NodeSize: 152,16
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
 NodeFont: Arial Narrow,16
 
 Text Te1547673217
-NodeLocation: 876,332,-1
-NodeSize: 164,84
+NodeLocation: 876,348,-1
+NodeSize: 164,100
 NodeInfo: 1,0,0,0,1,0,0,,0,,0,,,
 
 Text Te1547673250
-NodeLocation: 540,332,-1
-NodeSize: 164,84
+NodeLocation: 540,348,-1
+NodeSize: 164,100
 NodeInfo: 1,0,0,0,1,0,0,,0,,0,,,
 
 Text Te1547673258
-NodeLocation: 204,332,-1
-NodeSize: 164,84
+NodeLocation: 204,348,-1
+NodeSize: 164,100
 NodeInfo: 1,0,0,0,1,0,0,,0,,0,,,
 
 Text Te1547673283
-NodeLocation: 372,468,-1
+NodeLocation: 372,500,-1
 NodeSize: 332,20
 NodeInfo: 1,0,0,0,1,0,0,,0,,0,,,
 
@@ -1805,37 +1805,37 @@ NodeSize: 164,20
 NodeInfo: 1,0,0,0,1,0,0,,0,,0,,,
 
 Text Te1547676804
-NodeLocation: 540,684,-1
+NodeLocation: 540,716,-1
 NodeSize: 516,36
 NodeInfo: 1,0,0,0,1,0,0,,0,,0,,,
 
 Text Te1547676850
-NodeLocation: 540,796,-1
+NodeLocation: 540,828,-1
 NodeSize: 516,36
 NodeInfo: 1,0,0,0,1,0,0,,0,,0,,,
 
 Text Te1547676875
-NodeLocation: 540,572,-1
+NodeLocation: 540,604,-1
 NodeSize: 516,36
 NodeInfo: 1,0,0,0,1,0,0,,0,,0,,,
 
 Text Te1547677047
-Description: !! Warning: This action can change downstream settings if the deleted rate is being used !!
-NodeLocation: 300,772,-1
-NodeSize: 276,12
+Description: !! Warning: This action can change downstream settings if the deleted rate is being used (in "Select Customer Rate", for example) !!
+NodeLocation: 540,808,-1
+NodeSize: 516,16
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
 NodeFont: Arial Narrow,16
 
 Text Te1547677153
 Description: This will save the rate data above to the rate name specified in the 'Rate Description'. Warning: If you overwrite an existing rate name, the original rate data will be lost !!
-NodeLocation: 540,548,-1
+NodeLocation: 540,580,-1
 NodeSize: 516,12
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
 NodeFont: Arial Narrow,16
 
 Module Rate_Saving_Details
 Title: Rate Saving Details
-NodeLocation: 1256,800,1
+NodeLocation: 1008,936,1
 NodeSize: 64,40
 DiagState: 2,1,0,1255,860,17
 
@@ -1982,10 +1982,10 @@ Dec		0
 Definition: Table(Month)(Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
 NodeLocation: 456,296,1
 NodeSize: 64,40
-WindState: 2,330,84,942,460
+WindState: 2,330,84,942,601
 DefnState: 2,54,123,463,431,0,DFNM
 ValueState: 2,448,284,416,303,0,MIDM
-Aliases: FormNode Fo1547504238, FormNode Fo1547663175
+Aliases: FormNode Fo1547504238, FormNode Fo1547663175, FormNode Fo1547834265
 ReformDef: [Flat_Demand_Tiers,Month]
 Domain: DomDiscreteNumeric
 {!40300|DomainExpr: Integer(0,Num_Flat_Dmd_Periods-1)}
@@ -1996,7 +1996,7 @@ OnChange: Check_Flat_Demand_Pe
 Decision Rate_Description
 Title: Rate Description
 Description: Provide a name and start date (required) and other supplemental information (optional) about the rate. Ensure that dates are entered in one of the following formats: 1/31/2019 (month/day/year) or 31-Jan-2019 (day-monthAbbreviation-year). If one of the optional input cells is not applicable, give it a value of Null (eg, type Null into the cell).
-Definition: Table(Rate_Info)('TOU-DR2 Coastal',1-Jan-2020,Null,'San Diego Gas & Electric Co','Residential','http://regarchive.sdge.com/tm2/pdf/ELEC_ELEC-SCHEDS_TOU-DR1.pdf')
+Definition: Table(Rate_Info)('TOU-DR1 Coastal',1-Jan-2020,Null,'San Diego Gas & Electric Co','Residential','http://regarchive.sdge.com/tm2/pdf/ELEC_ELEC-SCHEDS_TOU-DR1.pdf')
 NodeLocation: 120,176,1
 NodeSize: 64,40
 WindState: 2,767,38,943,350
@@ -2360,7 +2360,7 @@ NodeSize: 64,40
 WindState: 2,7,66,1120,667
 DefnState: 2,-21,299,1160,766,0,DFNM
 ValueState: 2,295,172,931,541,0,MIDM
-Aliases: FormNode Fo1547504905, FormNode Fo1547663176
+Aliases: FormNode Fo1547504905, FormNode Fo1547663176, FormNode Fo1547834266
 ReformDef: [Month,Time_of_Day]
 ReformVal: [Month,Time_of_Day]
 Domain: DomDiscreteNumeric
@@ -2694,7 +2694,7 @@ NodeSize: 64,40
 WindState: 2,285,270,1030,626
 DefnState: 2,618,102,1160,766,0,DFNM
 ValueState: 2,299,160,931,541,0,MIDM
-Aliases: FormNode Fo1547506171, FormNode Fo1547663177
+Aliases: FormNode Fo1547506171, FormNode Fo1547663177, FormNode Fo1547834267
 ReformDef: [Month,Time_of_Day]
 ReformVal: [Month,Time_of_Day]
 Domain: DomDiscreteNumeric
@@ -3479,7 +3479,7 @@ Original: Select_Customer_Rate
 FormNode Fo1547828217
 Title: Number of Rate Vintages
 Definition: 0
-NodeLocation: 228,904,1
+NodeLocation: 228,968,1
 NodeSize: 188,16
 NodeColor: 49344,49344,49344
 Original: Num_of_Rate_Vintages
@@ -3487,7 +3487,7 @@ Original: Num_of_Rate_Vintages
 FormNode Fo1547828218
 Title: Non-Coinc Demand Rate Attributes
 Definition: 0
-NodeLocation: 228,1000,1
+NodeLocation: 228,1032,1
 NodeSize: 188,16
 NodeColor: 49344,49344,49344
 Original: NonCoincDmd_Attribs
@@ -3495,7 +3495,7 @@ Original: NonCoincDmd_Attribs
 FormNode Fo1547828219
 Title: On-Peak Demand Rate Attributes
 Definition: 0
-NodeLocation: 228,1032,1
+NodeLocation: 228,1064,1
 NodeSize: 188,16
 NodeColor: 49344,49344,49344
 Original: OnPeak_Dmd_Attribs
@@ -3503,7 +3503,7 @@ Original: OnPeak_Dmd_Attribs
 FormNode Fo1547828220
 Title: Energy Rate Attributes
 Definition: 0
-NodeLocation: 228,968,1
+NodeLocation: 228,1000,1
 NodeSize: 188,16
 NodeColor: 49344,49344,49344
 Original: Energy_Rate_Attribs
@@ -3515,7 +3515,7 @@ NodeInfo: 1,0,0,0,1,0,0,,0,,0,,,
 
 Text Te1547832821
 Description: Use these features to populate the rate definition tables above with an existing rate. You can make modifications to that rate and save it as the same name or a new name.
-NodeLocation: 540,660,-1
+NodeLocation: 540,692,-1
 NodeSize: 516,12
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
 NodeFont: Arial Narrow,16
@@ -3523,7 +3523,7 @@ NodeFont: Arial Narrow,16
 FormNode Fo1547833110
 Title: Applied New Rate Name
 Definition: 1
-NodeLocation: 292,584,1
+NodeLocation: 292,616,1
 NodeSize: 260,16
 NodeInfo: 1,,,,,,,310,,,,,
 NodeColor: 65278,37008,6168
@@ -3531,9 +3531,36 @@ Original: Rate_Name_to_Save
 
 Text Te1547833539
 Title: Specify Rates Used in the Simulation
-NodeLocation: 220,956,-1
+NodeLocation: 220,988,-1
 NodeSize: 212,100
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+
+FormNode Fo1547834265
+Title: Flat Demand Schedule
+Definition: 1
+NodeLocation: 204,388,1
+NodeSize: 164,20
+NodeInfo: 1,0,0,0,0,0,0,72,0,,0,,,
+NodeColor: 65278,37008,6168
+Original: Flat_Demand_Schedule
+
+FormNode Fo1547834266
+Title: Demand TOU Schedule
+Definition: 1
+NodeLocation: 540,388,1
+NodeSize: 164,20
+NodeInfo: 1,0,0,0,0,0,0,72,0,,0,,,
+NodeColor: 65278,37008,6168
+Original: Demand_TOU_Sched
+
+FormNode Fo1547834267
+Title: Energy TOU Schedule
+Definition: 1
+NodeLocation: 876,388,1
+NodeSize: 164,20
+NodeInfo: 1,0,0,0,0,0,0,72,0,,0,,,
+NodeColor: 65278,37008,6168
+Original: Energy_TOU_Schedule
 
 Close Rate_GUI
 
