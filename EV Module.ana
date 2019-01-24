@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Electric_Vehicles at 7-Jan-2019 4:46:00 PM, encoding="UTF-8" }
+{ From user coryw, Model Electric_Vehicles at 11-Jan-2019 10:30:45 AM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -13,8 +13,8 @@ LinkModule Electric_Vehicles
 Title: Electric Vehicles
 Author: Cory Welch
 Date: Fri, Jun 22, 2018 10:48 AM
-SaveAuthor: JamesMilford
-SaveDate: Mon, Jan 7, 2019 4:46 PM
+SaveAuthor: coryw
+SaveDate: Fri, Jan 11, 2019 10:30 AM
 DefaultSize: 64,40
 NodeSize: 88,64
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -1263,7 +1263,6 @@ NodeSize: 56,40
 NodeColor: 65535,1,1
 
 Index Vehicle_Stock_DataYr
-Att_PrevIndexValue: [1-Jan-2010,1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030]
 Title: Vehicle Stock Data Year
 Definition: Sequence(Vehicle_Stk_Start_Yr, Vehicle_Stock_End_Yr, step:Timestep_Months[Timestep_Options=Vehicle_Data_dT_Choi], dateUnit: 'M')
 NodeLocation: 96,64,1
@@ -1271,6 +1270,7 @@ NodeSize: 56,40
 WindState: 2,102,82,1112,582
 ValueState: 2,1104,163,226,726,,MIDM
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
+Att_PrevIndexValue: [1-Jan-2010,1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030]
 
 Constant Vehicle_Stk_Start_Yr
 Title: Vehicle Stock Start Year
@@ -1327,7 +1327,6 @@ Aliases: FormNode Fo1543022789, FormNode Fo1529509651, FormNode Fo1530223615
 {!40200|Att_ChoiceIndexes: Index Veh_Sim_Strt_Yr_Opti}
 
 Index Veh_Sim_Strt_Yr_Opti
-Att_PrevIndexValue: [1-Jan-2010,1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030]
 Title: Veh Sim Strt Yr Option
 Description: The options permissible for when the vehicle simulation can be started.
 Definition: Sequence(Vehicle_Stk_Start_Yr, Vehicle_Stock_End_Yr, step: Timestep_Months[Timestep_Options=Vehicle_Data_dT_Choi], dateUnit: 'M')
@@ -1335,6 +1334,7 @@ NodeLocation: 88,488,1
 NodeSize: 64,40
 WindState: 2,515,239,720,350
 ValueState: 2,903,363,258,345,,MIDM
+Att_PrevIndexValue: [1-Jan-2010,1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030]
 
 Decision Vehicle_Sim_End_Yr
 Title: Vehicle Sim End Year
@@ -1347,7 +1347,6 @@ Aliases: FormNode Fo1543022790, FormNode Fo1529509652, FormNode Fo1530223614
 {!40200|Att_ChoiceIndexes: Index Veh_Sim_End_Yr_Opt}
 
 Index Veh_Sim_End_Yr_Opt
-Att_PrevIndexValue: [1-Jan-2010,1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030,1-Jan-2031,1-Jul-2031,1-Jan-2032,1-Jul-2032,1-Jan-2033,1-Jul-2033,1-Jan-2034,1-Jul-2034,1-Jan-2035,1-Jul-2035,1-Jan-2036,1-Jul-2036,1-Jan-2037,1-Jul-2037,1-Jan-2038,1-Jul-2038,1-Jan-2039,1-Jul-2039,1-Jan-2040,1-Jul-2040,1-Jan-2041,1-Jul-2041,1-Jan-2042,1-Jul-2042,1-Jan-2043,1-Jul-2043,1-Jan-2044,1-Jul-2044,1-Jan-2045,1-Jul-2045,1-Jan-2046,1-Jul-2046,1-Jan-2047,1-Jul-2047,1-Jan-2048,1-Jul-2048,1-Jan-2049,1-Jul-2049,1-Jan-2050,1-Jul-2050]
 Title: Veh Sim End Yr Option
 Units: Year
 Description: The options permissible for when the vehicle simulation can be ended.
@@ -1355,6 +1354,7 @@ Definition: Sequence(Vehicle_Stk_Start_Yr, Max_Simulation_Year, step: Timestep_M
 NodeLocation: 224,488,1
 NodeSize: 64,40
 ValueState: 2,152,154,537,537,,MIDM
+Att_PrevIndexValue: [1-Jan-2010,1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030,1-Jan-2031,1-Jul-2031,1-Jan-2032,1-Jul-2032,1-Jan-2033,1-Jul-2033,1-Jan-2034,1-Jul-2034,1-Jan-2035,1-Jul-2035,1-Jan-2036,1-Jul-2036,1-Jan-2037,1-Jul-2037,1-Jan-2038,1-Jul-2038,1-Jan-2039,1-Jul-2039,1-Jan-2040,1-Jul-2040,1-Jan-2041,1-Jul-2041,1-Jan-2042,1-Jul-2042,1-Jan-2043,1-Jul-2043,1-Jan-2044,1-Jul-2044,1-Jan-2045,1-Jul-2045,1-Jan-2046,1-Jul-2046,1-Jan-2047,1-Jul-2047,1-Jan-2048,1-Jul-2048,1-Jan-2049,1-Jul-2049,1-Jan-2050,1-Jul-2050]
 
 FormNode Fo1529509651
 Title: Vehicle Sim Start Year
@@ -1379,7 +1379,6 @@ NodeLocation: 216,264,-1
 NodeSize: 176,40
 
 Index Time_Vehicles
-Att_PrevIndexValue: [1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030]
 Title: Time-Vehicles
 Units: Years
 Description: Ths is the time index used for simulating vehicle adoption. It is allowed to be different from other DERs, for instance, due to differences in the granularity of available historical data on adoption (e.g., solar PV data are monthly, whereas vehicle data are, at best, quarterly, or in some cases, annual)
@@ -1391,6 +1390,7 @@ ValueState: 2,799,36,293,764,,MIDM
 Aliases: Alias Al1535002229
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 302,742}
+Att_PrevIndexValue: [1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030]
 
 Index Annual_EV_Time
 Title: Annual EV Time
@@ -1972,7 +1972,6 @@ Aliases: FormNode Fo1515352433, Alias Al1535052941, FormNode Fo1532639701
 TableCellDefault: checkbox(0)
 
 Index EV_Sectors
-Att_PrevIndexValue: ['Res + NonRes Combined']
 Title: EV Sectors
 Description: The
 Definition: MultiChoice(All_Sectors,3,returnList:1)
@@ -1983,6 +1982,7 @@ Aliases: Alias Al1535053028, FormNode Fo1533480688, FormNode Fo1532640207, FormN
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 {!40200|Att_ChoiceIndexes: Index All_Sectors}
 {!40300|Att_SlicerPopupSize: 242,42}
+Att_PrevIndexValue: ['Res + NonRes Combined']
 
 Index Act_vs_Sim
 Title: Act vs Sim
