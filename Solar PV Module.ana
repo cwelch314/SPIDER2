@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Solar_PV at 30-Jan-2019 8:24:49 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Solar_PV at 30-Jan-2019 9:24:59 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -14,7 +14,7 @@ Title: Solar PV
 Author: Cory Welch
 Date: Mon, Jan 8, 2018 10:24 AM
 SaveAuthor: JamesMilford
-SaveDate: Wed, Jan 30, 2019 8:24 PM
+SaveDate: Wed, Jan 30, 2019 9:24 PM
 DefaultSize: 64,40
 NodeSize: 88,64
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -456,7 +456,7 @@ Variable Payback_Time
 Title: Payback Time
 Units: years
 Description: The simple payback time by spatial ID.
-Definition: Mthly_Simple_Payback[PV_Climate_Zone=Climate_Zone_Map]
+Definition: Original_Monthly_Pay[PV_Climate_Zone=Climate_Zone_Map]
 NodeLocation: 288,296,1
 NodeSize: 64,40
 ValueState: 2,439,30,1078,819,1,MIDM
@@ -621,7 +621,7 @@ Decision Mkt_Share_Fin_Year
 Title: Mkt Share Fin Year
 Units: date
 Description: The finish date for the assumed ramp up of market share over time
-Definition: Choice(Time_Solar_PV,230,0)
+Definition: Choice(Time_Solar_PV,218,0)
 NodeLocation: 256,256,1
 NodeSize: 64,40
 Aliases: FormNode Fo1535473810
@@ -655,7 +655,7 @@ Variable Payback_Time_by_ID
 Title: Payback Time by ID
 Units: years
 Description: The simple payback time by spatial ID.
-Definition: Mthly_Simple_Payback[PV_Climate_Zone=Climate_Zone_Map]
+Definition: Original_Monthly_Pay[PV_Climate_Zone=Climate_Zone_Map]
 NodeLocation: 112,64,1
 NodeSize: 64,40
 WindState: 2,573,262,720,350
@@ -1910,7 +1910,6 @@ NodeSize: 64,40
 NodeColor: 65535,1,1
 
 Index Time_Solar_PV
-Att_PrevIndexValue: [1-Jan-2009,1-Feb-2009,1-Mar-2009,1-Apr-2009,1-May-2009,1-Jun-2009,1-Jul-2009,1-Aug-2009,1-Sep-2009,1-Oct-2009,1-Nov-2009,1-Dec-2009,1-Jan-2010,1-Feb-2010,1-Mar-2010,1-Apr-2010,1-May-2010,1-Jun-2010,1-Jul-2010,1-Aug-2010,1-Sep-2010,1-Oct-2010,1-Nov-2010,1-Dec-2010,1-Jan-2011,1-Feb-2011,1-Mar-2011,1-Apr-2011,1-May-2011,1-Jun-2011,1-Jul-2011,1-Aug-2011,1-Sep-2011,1-Oct-2011,1-Nov-2011,1-Dec-2011,1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018,1-Sep-2018,1-Oct-2018,1-Nov-2018,1-Dec-2018,1-Jan-2019,1-Feb-2019,1-Mar-2019,1-Apr-2019,1-May-2019,1-Jun-2019,1-Jul-2019,1-Aug-2019,1-Sep-2019,1-Oct-2019,1-Nov-2019,1-Dec-2019,1-Jan-2020,1-Feb-2020,1-Mar-2020,1-Apr-2020,1-May-2020,1-Jun-2020,1-Jul-2020,1-Aug-2020,1-Sep-2020,1-Oct-2020,1-Nov-2020,1-Dec-2020,1-Jan-2021,1-Feb-2021,1-Mar-2021,1-Apr-2021,1-May-2021,1-Jun-2021,1-Jul-2021,1-Aug-2021,1-Sep-2021,1-Oct-2021,1-Nov-2021,1-Dec-2021,1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023,1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030]
 Title: Time-Solar PV
 Description: Ths is the time index used for simulating vehicle adoption. It is allowed to be different from other DERs, for instance, due to differences in the granularity of available historical data on adoption (e.g., solar PV data are monthly, whereas vehicle data are, at best, quarterly, or in some cases, annual)
 Definition: Sequence(PV_Sim_Start_Year, PV_Sim_End_Year,step: Timestep_Months[Timestep_Options=PV_Data_dT_Choice],dateUnit: 'M')
@@ -1920,6 +1919,7 @@ WindState: 2,289,23,1168,700
 ValueState: 2,859,158,300,585,,MIDM
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"SHORT",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 337,742}
+Att_PrevIndexValue: [1-Jan-2010,1-Feb-2010,1-Mar-2010,1-Apr-2010,1-May-2010,1-Jun-2010,1-Jul-2010,1-Aug-2010,1-Sep-2010,1-Oct-2010,1-Nov-2010,1-Dec-2010,1-Jan-2011,1-Feb-2011,1-Mar-2011,1-Apr-2011,1-May-2011,1-Jun-2011,1-Jul-2011,1-Aug-2011,1-Sep-2011,1-Oct-2011,1-Nov-2011,1-Dec-2011,1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018,1-Sep-2018,1-Oct-2018,1-Nov-2018,1-Dec-2018,1-Jan-2019,1-Feb-2019,1-Mar-2019,1-Apr-2019,1-May-2019,1-Jun-2019,1-Jul-2019,1-Aug-2019,1-Sep-2019,1-Oct-2019,1-Nov-2019,1-Dec-2019,1-Jan-2020,1-Feb-2020,1-Mar-2020,1-Apr-2020,1-May-2020,1-Jun-2020,1-Jul-2020,1-Aug-2020,1-Sep-2020,1-Oct-2020,1-Nov-2020,1-Dec-2020,1-Jan-2021,1-Feb-2021,1-Mar-2021,1-Apr-2021,1-May-2021,1-Jun-2021,1-Jul-2021,1-Aug-2021,1-Sep-2021,1-Oct-2021,1-Nov-2021,1-Dec-2021,1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023,1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030]
 
 Index PV_Stock_Data_Year
 Title: PV Stock Data Year
@@ -3835,7 +3835,7 @@ ValueState: 2,21,412,1577,444,0,MIDM
 NumberFormat: 2,G,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Rate_Vintage]
 Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,3,Pre_and_Post_System,1,Rate_Vintage,1,Static_PV_Time,1]
-{!50000|Att_ColumnWidths: [,Annual_PV_Time,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
+{!50000|Att_ColumnWidths: [,Annual_PV_Time,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
 
 Variable Rate_Escalate_byVint
 Title: Rate Escalation by Vintage
@@ -4999,7 +4999,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 280,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,12,-5,1524,675,17
+DiagState: 2,12,-5,1524,578,17
 {!40400|CloudPlayerStyles: FrameNode: FrameNode_1544920201}
 {!40204-40399|AWP_Attrib:FrameNode: FrameNode_1544920201}
 
@@ -5039,7 +5039,7 @@ Definition: VAR ITC:=Invest_Tax_Credit[Static_PV_Time=Annual_PV_Time,ITC_Scenari
 Val_by_Install_Event(ITC, 1, Annual_PV_Time)
 NodeLocation: 280,96,1
 NodeSize: 64,40
-ValueState: 2,131,17,1031,569,1,MIDM
+ValueState: 2,299,45,1031,569,1,MIDM
 ReformVal: [Annual_PV_Time,Installation_Event]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_ResultSliceState: [Equipment_Types,2,PV_Sectors,1,Installation_Event,1,Annual_PV_Time,1]
@@ -5063,9 +5063,9 @@ Description: The total investment tax credit (eg, initial installation + discoun
 Definition: Sum_Initial_Repl_Val(ITC_for_System_Event)
 NodeLocation: 720,96,1
 NodeSize: 64,40
-ValueState: 2,712,121,825,444,0,MIDM
-ReformVal: [Equipment_Types,System_Types]
-Att_ResultSliceState: [PV_Sectors,2,Annual_PV_Time,14,PV_Climate_Zone,1,System_Types,1,Equipment_Types,1]
+ValueState: 2,477,2,894,598,1,MIDM
+ReformVal: [Annual_PV_Time,Equipment_Types]
+Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,System_Types,2,Equipment_Types,1,Annual_PV_Time,14]
 
 Text FrameNode_1544920201
 NodeLocation: 1168,320,-20
@@ -5208,7 +5208,7 @@ Description: The federal investment tax credit based on the equipment sizes used
 Definition: Per_Unit_Federal_ITC * Equipment_Sizes
 NodeLocation: 720,200,1
 NodeSize: 64,40
-WindState: 2,21,31,720,350
+WindState: 2,129,187,720,350
 ValueState: 2,483,368,825,444,0,MIDM
 ReformVal: [Equipment_Types,System_Types]
 
@@ -5570,9 +5570,9 @@ ELSE 0
 NodeLocation: 1176,304,1
 NodeSize: 64,40
 WindState: 2,19,99,1140,548
-ValueState: 2,400,136,1176,593,1,MIDM
+ValueState: 2,260,95,1176,593,1,MIDM
 ReformVal: [Time_Solar_PV,Installation_Event]
-Att_ResultSliceState: [PV_Sectors,1,Equipment_Types,2,System_Types,2,Installation_Event,1,PV_Climate_Zone,1,Time_Solar_PV,1]
+Att_ResultSliceState: [PV_Sectors,2,Equipment_Types,2,System_Types,2,PV_Climate_Zone,1,Installation_Event,1,Time_Solar_PV,1]
 
 Index Historic_Incent_Yrs
 Title: Historic Incentive Years
@@ -6025,7 +6025,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 584,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-44,27,1524,771,17
+DiagState: 2,-121,184,1524,771,17
 {!40400|CloudPlayerStyles: FrameNode: FrameNode_1544920267}
 {!40204-40399|AWP_Attrib:FrameNode: FrameNode_1544920267}
 
@@ -6318,7 +6318,7 @@ Description: The total price of installed equipment (initial installation + disc
 Definition: Sum_Initial_Repl_Val(Install_Equip_Price)
 NodeLocation: 744,96,1
 NodeSize: 64,40
-WindState: 2,10,68,720,350
+WindState: 2,13,222,720,350
 ValueState: 2,315,2,939,740,1,MIDM
 ReformVal: [Annual_PV_Time,System_Types]
 NumberFormat: 2,F,4,2,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
@@ -6509,7 +6509,7 @@ Description: The price of installed equipment, based on the sizing of each equip
 Definition: Per_Unit_Equip_Price * Equipment_Sizes
 NodeLocation: 744,200,1
 NodeSize: 64,40
-WindState: 2,16,13,720,350
+WindState: 2,385,170,720,350
 ValueState: 2,19,30,939,740,1,MIDM
 ReformVal: [Annual_PV_Time,System_Types]
 NumberFormat: 2,F,4,2,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
@@ -6702,7 +6702,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 736,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-83,13,1474,570,17
+DiagState: 2,68,7,1474,570,17
 BalloonHelp: FrameNode: FrameNode_1544920329
 {!40400|CloudPlayerStyles: FrameNode: FrameNode_1544920329}
 {!40204-40399|AWP_Attrib:FrameNode: FrameNode_1544920329}
@@ -6715,7 +6715,9 @@ Definition: Annual_Loan_Factor * Syst_Price_after_ITC
 NodeLocation: 256,96,1
 NodeSize: 64,40
 WindState: 2,102,82,981,463
-ValueState: 2,11,151,1158,484,,MIDM
+ValueState: 2,359,16,1158,482,,MIDM
+ReformVal: [Annual_PV_Time,System_Types]
+Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,System_Types,1,Annual_PV_Time,1]
 
 Variable Annual_Deprec_Benef
 Title: Annual Depreciation Benefit
@@ -6759,9 +6761,9 @@ Definition: Sum(Tot_Equipment_Price - Total_ITC_for_System - Taxable_Incent_Year
 NodeLocation: 104,96,1
 NodeSize: 64,40
 WindState: 2,286,158,896,454
-ValueState: 2,-3,4,1540,807,1,MIDM
+ValueState: 2,-10,36,1540,807,1,MIDM
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [PV_Sectors,1,System_Types,2,PV_Climate_Zone,1,Annual_PV_Time,1]
+Att_ResultSliceState: [PV_Sectors,2,System_Types,2,PV_Climate_Zone,1,Annual_PV_Time,1]
 
 Alias Al1538108980
 Title: Annual Bill Expense Benefit
@@ -6860,7 +6862,7 @@ Aliases: FormNode Fo1539221811
 GraphSetup: Att_GraphValueRange Simple_Payback_Time:1,,1,,,,,0,10,0
 ReformVal: [Annual_PV_Time,System_Types]
 NumberFormat: 2,F,4,1,0,0,4,1,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [PV_Sectors,1,System_Types,1,Annual_PV_Time,1,PV_Climate_Zone,1]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,System_Types,1,Annual_PV_Time,1]
 
 Objective Cost_of_Elect_Compon
 Title: Cost of Electricity Components
@@ -6886,7 +6888,7 @@ THEN IF PositionInIndex(Pre_and_Post_System, System_Comparison, Pre_and_Post_Sys
 ELSE CostOf_ElectCompare[System_Types=SystType_for_System]
 NodeLocation: 720,624,1
 NodeSize: 64,40
-ValueState: 2,407,85,1104,818,1,MIDM
+ValueState: 2,207,-9,1104,720,1,MIDM
 Aliases: FormNode Fo1539221825, FormNode Fo1544373674, FormNode Fo1546384744
 GraphSetup: Att_GraphIndexRange Annual_PV_Time:1,0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
@@ -6901,7 +6903,7 @@ Att_ForceCategorical Graph_Primary_Valdim:
 ReformVal: [System_Type,Cost_Component]
 NumberFormat: 2,I,4,0,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Bill_Components,Month,Cost_Component]
-Att_ResultSliceState: [PV_Sectors,2,System_Comparison,2,PV_Climate_Zone,1,Annual_PV_Time,2,Cost_Component,0,System_Type,1]
+Att_ResultSliceState: [PV_Sectors,2,System_Comparison,2,PV_Climate_Zone,1,Annual_PV_Time,10,Cost_Component,0,System_Type,1]
 {!40600|Att_StackingIndex: Cost_Component}
 {!40600|Att_ClusterIndex: Cost_Component}
 
@@ -6923,42 +6925,13 @@ NodeLocation: 256,384,1
 NodeSize: 64,40
 Original: Lev_Interconnect_Fee
 
-Variable Mthly_Simple_Payback
-Title: Monthly Simple Payback Time
-Units: years
-Description: The simple payback time interpolated to the monthly level.
-Definition: VAR ITC_Fract:=StepInterp(BOY_Date_for_PV_Year, ITC_Fraction, Time_Solar_PV, Annual_PV_Time, True) * Val_by_Install_Event(Allowed_ITC_Pct_Time, PV_Timesteps_PerYear, Time_Solar_PV);~
-VAR equipPrice:=LinearInterp(MOY_Date_for_PV_Year, Tot_Equipment_Price, Time_Solar_PV, Annual_PV_Time);~
-VAR priceEscalation:=Divide(Tot_Equipment_Price[Annual_PV_Time=Max(Annual_PV_Time)], Tot_Equipment_Price[Annual_PV_Time=Max(Annual_PV_Time)-1], True) - 1;   {Annual end-of-simulation escalation rate}~
-VAR equivEscalation:=(1+priceEscalation)^(1/Months_per_Year)-1;   {The compounding monthly equivalent of the annual escalation rate}~
-VAR escalatFactor:=CumProduct(IF Time_Solar_PV <= MOY_Date_for_PV_Year[Annual_PV_Time=Max(Annual_PV_Time)] THEN 1 ELSE 1 + equivEscalation, Time_Solar_PV);   {Escalation factor to account for final months for which mid-year interpolation is flat}~
-VAR extendedPrice:=IF Time_Solar_PV <= MOY_Date_for_PV_Year[Annual_PV_Time=Max(Annual_PV_Time)]   {For all but the final 6 months of simulation}~
-   THEN equipPrice    {Then use the mid-year interpolated values}~
-   ELSE equipPrice * escalatFactor;   {Otherwise extend the price escalation to the final 6 months}~
-VAR ITC_Amt:=ITC_Fract * extendedPrice;~
-VAR priceAfterITC:=Sum(Sum_Initial_Repl_Val(extendedPrice - ITC_Amt {- Taxable_Incent_Event}), Equipment_Types);~
-VAR fees:=LinearInterp(EOY_Date_for_PV_Year, Interconnect_Fees, Time_Solar_PV, Annual_PV_Time);~
-~
-Divide(priceAfterITC + fees, FirstYr_BillSav_Time, True)~
-
-NodeLocation: 560,96,1
-NodeSize: 64,40
-WindState: 2,10,68,1361,658
-ValueState: 2,52,27,1469,681,1,MIDM
-Aliases: FormNode Fo1547065406, FormNode Fo1547229287
-GraphSetup: Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,40.543K,42.369K,0
-ReformVal: [Time_Solar_PV,System_Types]
-Att__TotalsIndex: [Self]
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,System_Types,1,Time_Solar_PV,1]
-{!40300|Att_SlicerPopupSize: 227,70}
-
 Variable Middle_of_Year_Month
 Title: Middle of Year Monthly Payback
 Units: years
 Description: The mid-year value from the monthly payback times.
 Definition: VAR MOPdate:=MakeDate(Annual_PV_Time, 7, 1);~
 ~
-Mthly_Simple_Payback[Time_Solar_PV=MOPdate]
+Original_Monthly_Pay[Time_Solar_PV=MOPdate]
 NodeLocation: 712,96,1
 NodeSize: 64,40
 ValueState: 2,98,160,1164,433,,MIDM
@@ -6996,7 +6969,7 @@ ELSE Cost_of_Elect_Compon[Pre_and_Post_System=System_Comparison]~
 
 NodeLocation: 648,520,1
 NodeSize: 64,40
-ValueState: 2,253,8,1006,638,1,MIDM
+ValueState: 2,473,19,1006,638,1,MIDM
 GraphSetup: Att_GraphIndexRange Annual_PV_Time:1,0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 {!40600|Att_WaterfallBar Graph_Primary_Valdim:1}~
@@ -7007,12 +6980,181 @@ Graph_AxisLabelFont:,18,0~
 Graph_AxisTitleFont:Arial,18,1~
 Att_StackedBar Graph_Primary_Valdim:1~
 Att_ForceCategorical Graph_Primary_Valdim:
-ReformVal: [System_Type,Cost_Component]
+ReformVal: [Annual_PV_Time,Cost_Component]
 NumberFormat: 2,I,4,0,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Bill_Components,Month,Cost_Component]
-Att_ResultSliceState: [PV_Sectors,1,System_Comparison,2,PV_Climate_Zone,1,Annual_PV_Time,8,Cost_Component,0,System_Type,1]
+Att_ResultSliceState: [PV_Sectors,2,System_Comparison,2,PV_Climate_Zone,1,System_Types,2,Cost_Component,0,Annual_PV_Time,8]
 {!40600|Att_StackingIndex: Cost_Component}
 {!40600|Att_ClusterIndex: Cost_Component}
+
+Module Monthly_Payback_Logi
+Title: Monthly Payback Logic
+NodeLocation: 656,200,1
+NodeSize: 64,40
+DiagState: 2,50,50,1429,425,17
+
+Variable Original_Monthly_Pay
+Title: Original Monthly Payback Calc
+Units: years
+Description: The simple payback time interpolated to the monthly level.
+Definition: VAR ITC_Fract:=StepInterp(BOY_Date_for_PV_Year, ITC_Fraction, Time_Solar_PV, Annual_PV_Time, True) * Val_by_Install_Event(Allowed_ITC_Pct_Time, PV_Timesteps_PerYear, Time_Solar_PV);~
+VAR equipPrice:=LinearInterp(MOY_Date_for_PV_Year, Tot_Equipment_Price, Time_Solar_PV, Annual_PV_Time);~
+VAR priceEscalation:=Divide(Tot_Equipment_Price[Annual_PV_Time=Max(Annual_PV_Time)], Tot_Equipment_Price[Annual_PV_Time=Max(Annual_PV_Time)-1], True) - 1;   {Annual end-of-simulation escalation rate}~
+VAR equivEscalation:=(1+priceEscalation)^(1/Months_per_Year)-1;   {The compounding monthly equivalent of the annual escalation rate}~
+VAR escalatFactor:=CumProduct(IF Time_Solar_PV <= MOY_Date_for_PV_Year[Annual_PV_Time=Max(Annual_PV_Time)] THEN 1 ELSE 1 + equivEscalation, Time_Solar_PV);   {Escalation factor to account for final months for which mid-year interpolation is flat}~
+VAR extendedPrice:=IF Time_Solar_PV <= MOY_Date_for_PV_Year[Annual_PV_Time=Max(Annual_PV_Time)]   {For all but the final 6 months of simulation}~
+   THEN equipPrice    {Then use the mid-year interpolated values}~
+   ELSE equipPrice * escalatFactor;   {Otherwise extend the price escalation to the final 6 months}~
+VAR ITC_Amt:=ITC_Fract * extendedPrice;~
+VAR priceAfterITC:=Sum(Sum_Initial_Repl_Val(extendedPrice - ITC_Amt {- Taxable_Incent_Event}), Equipment_Types);~
+VAR fees:=LinearInterp(EOY_Date_for_PV_Year, Interconnect_Fees, Time_Solar_PV, Annual_PV_Time);~
+~
+Divide(priceAfterITC + fees, FirstYr_BillSav_Time, True)~
+
+NodeLocation: 1248,240,1
+NodeSize: 64,40
+WindState: 2,10,68,1361,658
+ValueState: 2,37,8,1469,681,1,MIDM
+Aliases: FormNode Fo1547065406, FormNode Fo1547229287
+GraphSetup: Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,40.543K,42.369K,0
+ReformVal: [Time_Solar_PV,System_Types]
+Att__TotalsIndex: [Self]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,System_Types,1,Time_Solar_PV,1]
+{!40300|Att_SlicerPopupSize: 227,70}
+
+Variable Mthly_Simple_Paybac1
+Title: Monthly Simple Payback Time
+Units: years
+Description: The simple payback time interpolated to the monthly level.
+Definition: Divide(Tot_Price_Aft_Incent + Monthly_Fees, FirstYr_BillSav_Time, True)~
+
+NodeLocation: 1240,144,1
+NodeSize: 64,40
+WindState: 2,10,68,1361,658
+ValueState: 2,59,8,1469,681,1,MIDM
+GraphSetup: Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,40.543K,42.369K,0
+ReformVal: [Time_Solar_PV,System_Types]
+Att__TotalsIndex: [Self]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,3,System_Types,1,Time_Solar_PV,1]
+{!40300|Att_SlicerPopupSize: 227,70}
+
+Variable Monthly_ITC_Fraction
+Title: Monthly ITC Fraction
+Units: fraction
+Description: Investment tax credit expressed as a percentage of the upfront capital costs.
+Definition: StepInterp(BOY_Date_for_PV_Year, ITC_Fraction, Time_Solar_PV, Annual_PV_Time, True) * Val_by_Install_Event(Allowed_ITC_Pct_Time, PV_Timesteps_PerYear, Time_Solar_PV);
+NodeLocation: 808,48,1
+NodeSize: 64,40
+WindState: 2,553,20,720,356
+ValueState: 2,394,52,1064,627,,MIDM
+ReformVal: [Time_Solar_PV,Installation_Event]
+Att_ResultSliceState: [PV_Sectors,1,Equipment_Types,2,System_Types,1,Installation_Event,2,PV_Climate_Zone,1,Time_Solar_PV,1]
+
+Variable Monthly_Equip_Price
+Title: Monthly Equip Price
+Units: $/system
+Description: The total price of installed equipment (initial installation + discounted replacement), based on the sizing of each equipment type. The last six months are not valid since mid-year interpolation is performed, which results in a six-month look-ahead beyond the end of the data availability.
+Definition: LinearInterp(MOY_Date_for_PV_Year, Tot_Equipment_Price, Time_Solar_PV, Annual_PV_Time);
+NodeLocation: 88,144,1
+NodeSize: 64,40
+WindState: 2,172,150,720,350
+ValueState: 2,663,4,831,556,0,MIDM
+
+Variable Annual_Cost_Escalat
+Title: Annual Cost Escalation
+Units: fraction/year
+Description: The cost escalation at the end of the simulation horizon. This will be used to estimate costs 6-months beyond the end of simulation horizon. 
+Definition: Divide(Tot_Equipment_Price[Annual_PV_Time=Max(Annual_PV_Time)], Tot_Equipment_Price[Annual_PV_Time=Max(Annual_PV_Time)-1], True) - 1;   {Annual end-of-simulation escalation rate}
+NodeLocation: 232,144,1
+NodeSize: 64,40
+WindState: 2,484,102,720,350
+ValueState: 2,561,46,416,497,0,MIDM
+NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
+
+Variable Monthly_Cost_Escalat
+Title: Monthly Cost Escalation
+Units: fraction/month
+Description: The compounding monthly equivalent of the annual cost escalation at the end of the simulation horizon. This will be used to estimate costs six months beyond the simulation horizon.
+Definition: (1+Annual_Cost_Escalat)^(1/Months_per_Year)-1;   {The compounding monthly equivalent of the annual escalation rate}
+NodeLocation: 376,144,1
+NodeSize: 64,40
+WindState: 2,562,119,720,350
+ValueState: 2,426,154,609,523,0,MIDM
+NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
+Att_ResultSliceState: [Equipment_Types,2,System_Types,2,PV_Sectors,1,PV_Climate_Zone,1]
+
+Variable Mthly_Escal_Factors
+Title: Monthly Escalation Factors
+Units: fraction
+Description: Escalation factors to estimate the equipment costs for the final months of the simulation.
+Definition: CumProduct(IF Time_Solar_PV <= MOY_Date_for_PV_Year[Annual_PV_Time=Max(Annual_PV_Time)] THEN 1 ELSE 1 + Monthly_Cost_Escalat, Time_Solar_PV);   {Escalation factor to account for final months for which mid-year interpolation is flat}
+NodeLocation: 520,144,1
+NodeSize: 64,40
+WindState: 2,272,184,720,350
+ValueState: 2,245,69,1056,593,1,MIDM
+NumberFormat: 2,%,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+
+Variable Extended_Equip_Price
+Title: Extended Equip Price
+Units: $/system
+Description: The total price of installed equipment (initial installation + discounted replacement), based on the sizing of each equipment type. The last six months are estimated from the escalation rates in the previous months. Replacement costs have not yet been discounted and proportioned to the remaining years in the economic horizon, so it is inappropriate to sum over Installation Events (ie, initial installation and future replacement).
+Definition: VAR price:=IF Time_Solar_PV <= MOY_Date_for_PV_Year[Annual_PV_Time=Max(Annual_PV_Time)]   {For all but the final 6 months of simulation}~
+   THEN Monthly_Equip_Price    {Then use the mid-year interpolated values}~
+   ELSE Monthly_Equip_Price * Mthly_Escal_Factors;   {Otherwise extend the price escalation to the final 6 months}~
+~
+Val_by_Install_Event(price, PV_Timesteps_PerYear, Time_Solar_PV)
+NodeLocation: 664,144,1
+NodeSize: 64,40
+ValueState: 2,126,29,1025,684,,MIDM
+ReformVal: [Time_Solar_PV,Installation_Event]
+Att_ResultSliceState: [PV_Sectors,2,Equipment_Types,2,System_Types,2,PV_Climate_Zone,1,Time_Solar_PV,1]
+
+Variable Monthly_ITC_Amount
+Title: Monthly ITC Amount
+Units: $/system
+Description: The federal investment tax credit based on the equipment sizes used for each system type. Replacement costs have not yet been discounted and proportioned to the remaining years in the economic horizon, so it is inappropriate to sum over Installation Events (ie, initial installation and future replacement).
+Definition: Monthly_ITC_Fraction * Extended_Equip_Price
+NodeLocation: 808,144,1
+NodeSize: 64,40
+WindState: 2,335,290,720,350
+ValueState: 2,372,49,1052,552,,MIDM
+ReformVal: [Time_Solar_PV,Installation_Event]
+Att_ResultSliceState: [PV_Sectors,1,Equipment_Types,2,System_Types,2,Installation_Event,1,PV_Climate_Zone,1,Time_Solar_PV,1]
+
+Variable Price_After_Incent
+Title: Price After Incentives
+Units: $/system
+Description: The price of installed equipment, based on the sizing of each equipment type. Replacement costs have not yet been discounted and proportioned to the remaining years in the economic horizon, so it is inappropriate to sum over Installation Events (ie, initial installation and future replacement).
+Definition: Extended_Equip_Price - Monthly_ITC_Amount - Taxable_Incent_Event
+NodeLocation: 952,144,1
+NodeSize: 64,40
+WindState: 2,43,47,1456,350
+ValueState: 2,276,11,1152,660,,MIDM
+ReformVal: [Time_Solar_PV,Installation_Event]
+Att__TotalsIndex: []
+Att_ResultSliceState: [PV_Sectors,1,Equipment_Types,2,System_Types,1,PV_Climate_Zone,1,Installation_Event,2,Time_Solar_PV,1]
+
+Variable Tot_Price_Aft_Incent
+Title: Total Price After Incentives
+Units: $/system
+Description: The total price of installed equipment (initial installation + discounted replacement), based on the sizing of each equipment type.
+Definition: Sum(Sum_Initial_Repl_Val(Price_After_Incent), Equipment_Types)
+NodeLocation: 1096,144,1
+NodeSize: 64,40
+ValueState: 2,287,6,1167,698,,MIDM
+Att_ResultSliceState: [PV_Sectors,2,System_Types,2,PV_Climate_Zone,1,Time_Solar_PV,1]
+
+Variable Monthly_Fees
+Title: Monthly Fees
+Units: $/system
+Description: Interconnection fees interpolated to monthly values.
+Definition: LinearInterp(EOY_Date_for_PV_Year, Interconnect_Fees, Time_Solar_PV, Annual_PV_Time)
+NodeLocation: 1096,240,1
+NodeSize: 64,40
+WindState: 2,345,91,720,350
+ValueState: 2,360,182,416,483,,MIDM
+
+Close Monthly_Payback_Logi
 
 Close Annual_Cost_of_Syste
 
@@ -17000,7 +17142,6 @@ WindState: 2,102,82,783,447
 {!40300|Att_SlicerPopupSize: 227,42}
 
 Index Annual_PV_Time
-Att_PrevIndexValue: [2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 Title: Annual PV Time
 Description: Starts one year prior to the PV simulation start year, so that annual economic calculations can be treated as middle-of-year values.
 Definition: (MIN(PV_Year_Map, Time_Solar_PV)-1)..MAX(PV_Year_Map, Time_Solar_PV)
@@ -17008,7 +17149,8 @@ NodeLocation: 384,328,1
 NodeSize: 64,40
 WindState: 2,87,128,1018,645
 ValueState: 2,472,240,416,411,,MIDM
-{!40300|Att_SlicerPopupSize: 262,336}
+{!40300|Att_SlicerPopupSize: 267,336}
+Att_PrevIndexValue: [2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 
 Variable BOY_Date_for_PV_Year
 Title: BOY Date for PV Year
@@ -18100,7 +18242,7 @@ Title: Installation Event
 Definition: ['Initial Install','Future Replacement']
 NodeLocation: 1824,64,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 227,56}
+{!40300|Att_SlicerPopupSize: 232,56}
 Att_PrevIndexValue: ['Initial Install','Future Replacement']
 
 Decision Init_Install_Label
@@ -21572,7 +21714,7 @@ Att_ResultSliceState: [Sectors_Selected,1,New_Construction_Sce,2,Jobs_per_MW_Ins
 Decision Time_for_Constraint
 Title: Time for Constraint
 Description: Sets the time period at which the slope constraint applies
-Definition: Choice(Time_Solar_PV,237,0)
+Definition: Choice(Time_Solar_PV,225,0)
 NodeLocation: 912,152,1
 NodeSize: 56,32
 Aliases: FormNode Fo1519347366
@@ -22811,7 +22953,7 @@ Definition: 1
 NodeLocation: 832,420,1
 NodeSize: 256,20
 NodeColor: 65278,37008,6168
-Original: Mthly_Simple_Payback
+Original: Original_Monthly_Pay
 
 Close Solar_PV
 
