@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Loadshapes at 30-Jan-2019 3:35:15 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Loadshapes at 4-Feb-2019 1:42:21 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Loadshapes
 Author: JamesMilford
 Date: Fri, Aug 10, 2018 2:24 PM
 SaveAuthor: JamesMilford
-SaveDate: Wed, Jan 30, 2019 3:35 PM
+SaveDate: Mon, Feb 4, 2019 1:42 PM
 DefaultSize: 64,40
 NodeSize: 88,64
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -910,7 +910,7 @@ Title: Month
 Definition: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 NodeLocation: 248,448,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 532,196}
+{!40300|Att_SlicerPopupSize: 537,196}
 Att_PrevIndexValue: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 
 Index Time_of_Day
@@ -1307,7 +1307,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 640,584,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,664,210,1010,575,17
+DiagState: 2,419,239,1010,575,17
 
 Variable Day_by_Day_and_Hr
 Title: Day by Day & Hour
@@ -1353,8 +1353,10 @@ Definition: ignorewarnings(Period_String & Reindex_to_Week(Periods_by_TOU_Sched[
 NodeLocation: 416,64,1
 NodeSize: 64,40
 WindState: 2,102,82,1239,565
-ValueState: 2,747,44,561,841,0,MIDM
-Att_ResultSliceState: [Data_Type,2,Pre_and_Post_System,1,PV_Sectors,2,PV_Climate_Zone,1,Month,7,Day_and_Hour,1,Rate_Vintage,1]
+ValueState: 2,451,3,1008,841,0,MIDM
+ReformVal: [Month,Day_and_Hour]
+Att_ResultSliceState: [Data_Type,2,Pre_and_Post_System,1,PV_Sectors,2,PV_Climate_Zone,1,Rate_Vintage,3,Day_and_Hour,1,Month,7]
+{!50000|Att_ColumnWidths: [,Month,\([,,,61])]}
 
 Function Reindex_to_Week(data)
 Title: Reindex to Week
