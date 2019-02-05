@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Solar_PV at 5-Feb-2019 12:19:21 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Solar_PV at 5-Feb-2019 3:53:57 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -14,7 +14,7 @@ Title: Solar PV
 Author: Cory Welch
 Date: Mon, Jan 8, 2018 10:24 AM
 SaveAuthor: JamesMilford
-SaveDate: Tue, Feb 5, 2019 12:19 PM
+SaveDate: Tue, Feb 5, 2019 3:53 PM
 DefaultSize: 64,40
 NodeSize: 88,64
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -2720,7 +2720,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-91,-1,1524,688,17
+DiagState: 2,0,7,1524,566,17
 {!40400|CloudPlayerStyles: FrameNode: FrameNode_1}
 {!40204-40399|AWP_Attrib:FrameNode: FrameNode_1}
 
@@ -2730,7 +2730,7 @@ Units: kW-hr/customer
 Description: The imported customer load profile prior to any scaling.
 Definition: Saved_Daily_Profiles[Static_Profile_Names=Select_Customer_Load[All_Sectors=PV_Sectors], All_Day_Types=Day_of_Week]~
 
-NodeLocation: 136,168,1
+NodeLocation: 88,152,1
 NodeSize: 64,40
 WindState: 2,107,230,720,350
 ValueState: 2,152,0,1286,641,1,MIDM
@@ -2742,7 +2742,7 @@ Decision Select_Customer_Load
 Title: Select Customer Loadshape
 Description: Select the customer load profile associated with each sector.
 Definition: Table(All_Sectors)(Choice(Static_Profile_Names,5,0),Choice(Static_Profile_Names,7,0),Choice(Static_Profile_Names,5,0))
-NodeLocation: 136,280,1
+NodeLocation: 88,264,1
 NodeSize: 64,40
 DefnState: 2,120,122,644,420,,DFNM
 TableCellDefault: Choice(Static_Profile_Names,1,0)
@@ -2751,10 +2751,11 @@ TableCellDefault: Choice(Static_Profile_Names,1,0)
 Variable Scaled_Customer_Load
 Title: Scaled Weekly Customer Load
 Units: kW-hr/customer
+Description: The customer load scaled to its final assumed levels.
 Definition: Reindex_to_Week(Cust_Load_Profile) * Load_Scaling_Factor
-NodeLocation: 440,168,1
+NodeLocation: 392,152,1
 NodeSize: 64,40
-WindState: 2,102,82,1099,350
+WindState: 2,102,81,1099,351
 ValueState: 2,9,4,1487,691,1,MIDM
 GraphSetup: Graph_AxisTitleFont:Arial,18,1~
 Graph_KeyFont:,18,0~
@@ -2769,7 +2770,7 @@ Title: Load Net of Solar
 Units: kW-hr/customer
 Description: The load net of solar per system.
 Definition: Scaled_Customer_Load - PerSyst_Weekly_Solar
-NodeLocation: 488,64,1
+NodeLocation: 392,48,1
 NodeSize: 64,40
 WindState: 2,102,82,1190,503
 ValueState: 2,9,4,1487,691,1,MIDM
@@ -2787,11 +2788,11 @@ Objective Pre_and_Post_Custome
 Title: Pre and Post Customer Load
 Units: kW-hr/customer
 Description: Customer load before and after installation of a system. The PV Operating Year index captures PV system degradation over the life of the system, consistent with the input for PV_degradation_rate.
-Definition: Table(Pre_and_Post_System)(Scaled_Customer_Load,Net_Load)
-NodeLocation: 744,168,1
+Definition: Table(Pre_and_Post_System)(Pre_System_Load,Net_Load)
+NodeLocation: 696,152,1
 NodeSize: 64,40
 WindState: 2,546,219,720,350
-ValueState: 2,197,1,1064,756,1,MIDM
+ValueState: 2,178,29,1064,611,1,MIDM
 Aliases: FormNode Fo1534438380
 NodeColor: 19661,48336,65535
 GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
@@ -2804,14 +2805,14 @@ Graph_KeyFont:,18,0~
 ShowKey:1
 ReformVal: [Day_and_Hour,Pre_and_Post_System]
 Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Month,10,PV_Operating_Year,1,System_Types,3,Pre_and_Post_System,2,Day_and_Hour,1]
+Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Month,10,PV_Operating_Year,1,System_Types,1,Rate_Vintage,1,Pre_and_Post_System,2,Day_and_Hour,1]
 
 Variable Scaled_Annual_Load
 Title: Scaled Annual Load
 Units: kWh/year-customer
 Description: The annual consumption per customer.
 Definition: Sum(Scaled_Customer_Load * Weeks_Per_Month, Day_and_Hour, Month)
-NodeLocation: 592,280,1
+NodeLocation: 544,264,1
 NodeSize: 64,40
 ValueState: 2,465,358,416,303,,MIDM
 Aliases: Alias Al1534881034
@@ -2819,14 +2820,14 @@ Aliases: Alias Al1534881034
 Alias Al1538669850
 Title: Energy Met by Solar
 Definition: 1
-NodeLocation: 288,384,1
+NodeLocation: 240,368,1
 NodeSize: 64,40
 Original: Energy_Met_by_Solar
 
 FormNode Fo1538669850
 Title: Energy Met by Solar
 Definition: 0
-NodeLocation: 288,432,1
+NodeLocation: 240,416,1
 NodeSize: 56,16
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Energy_Met_by_Solar
@@ -2836,7 +2837,7 @@ Title: Weekly Customer Load
 Units: kW-hr/customer
 Description: A representative week of customer load for each month.
 Definition: Reindex_to_Week(Cust_Load_Profile)
-NodeLocation: 288,168,1
+NodeLocation: 240,152,1
 NodeSize: 64,40
 WindState: 2,102,82,1527,555
 ValueState: 2,9,4,1487,691,1,MIDM
@@ -2853,19 +2854,20 @@ Title: Annual Load
 Units: kWh/year-customer
 Description: The annual consumption per customer.
 Definition: Sum(Weekly_Cust_Load * Weeks_Per_Month, Day_and_Hour, Month)
-NodeLocation: 288,280,1
+NodeLocation: 240,264,1
 NodeSize: 64,40
 ValueState: 2,122,236,416,303,,MIDM
 
 Variable Load_Scaling_Factor
 Title: Load Scaling Factor
 Units: dmnls
+Description: A scaling factor used to scale the customer load. Load is scaled to ensure that historically observed PV system sizes produce some percentage (as specified in Energy Met by Solar) of the total customer load.
 Definition: IF PV_Sectors=Residential_Label~
 THEN Divide(FirstYr_Annual_Solar / Energy_Met_by_Solar, Annual_Load, True)~
 ELSE Meter_Per_Premise_CZ
-NodeLocation: 440,280,1
+NodeLocation: 392,264,1
 NodeSize: 64,40
-WindState: 2,994,377,720,350
+WindState: 2,468,285,720,350
 Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,PV_Spatial_ID,1]
 
 Variable Scaled_Ann_Net_Load
@@ -2873,7 +2875,7 @@ Title: Scaled Annual Net Load
 Units: kWh/year-cust
 Description: The annual net consumption per customer per year of the system lifetime.
 Definition: Sum(Pre_and_Post_Custome * Weeks_Per_Month, Day_and_Hour, Month)
-NodeLocation: 744,280,1
+NodeLocation: 696,264,1
 NodeSize: 64,40
 ValueState: 2,94,131,791,671,0,MIDM
 Aliases: FormNode Fo1539221213
@@ -2889,7 +2891,7 @@ Title: Levelized Annual Net Load
 Units: kWh/year-customer
 Description: The annual net consumption per customer levelized over the system lifetime.
 Definition: PMT(Nominal_Equity_Rate, Economic_Lifetime, -NPV(Nominal_Equity_Rate, Scaled_Ann_Net_Load, PV_Operating_Year))
-NodeLocation: 896,280,1
+NodeLocation: 848,264,1
 NodeSize: 64,40
 ValueState: 2,568,165,747,387,,MIDM
 ReformVal: [Pre_and_Post_System,PV_Sectors]
@@ -2901,10 +2903,10 @@ Description: The average daily customer load within a given month.
 Definition: VAR dayCnt_weight:=Divide(Day_Counts, Sum(Day_Counts, Day_of_Week), True);   {Weights representing the number of times a particular day shows up in a month}~
 ~
 Sum(Expand_Week_Index(Pre_and_Post_Custome) * dayCnt_weight, Day_of_Week)
-NodeLocation: 896,168,1
+NodeLocation: 848,152,1
 NodeSize: 64,40
-WindState: 2,241,362,720,350
-ValueState: 2,323,190,859,681,1,MIDM
+WindState: 2,245,275,720,350
+ValueState: 2,333,30,859,681,1,MIDM
 GraphSetup: Att_GraphValueRange Avg_DailyLoad_by_Mth:1,,1,,,,,0,0.7000000000000001,0
 ReformVal: [Time_of_Day,Month]
 Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,PV_Operating_Year,1,Pre_and_Post_System,2,Month,7,Time_of_Day,1]
@@ -3056,7 +3058,7 @@ Definition: Table(All_Spatial_ID,All_Sectors)(~
 0,3,0,~
 11922,1056,0,~
 0,1,0)
-NodeLocation: 440,488,1
+NodeLocation: 392,472,1
 NodeSize: 64,40
 DefnState: 2,592,83,664,702,0,DFNM
 ValueState: 2,312,34,558,798,,MIDM
@@ -3070,7 +3072,7 @@ Title: Meters Per Premise
 Units: premises/meter
 Description: The number of premises per meter.
 Definition: Divide(Meter_Counts, Premise_Counts, True)
-NodeLocation: 592,488,1
+NodeLocation: 544,472,1
 NodeSize: 64,40
 WindState: 2,273,234,720,350
 ValueState: 2,56,58,609,815,0,MIDM
@@ -3083,7 +3085,7 @@ Description: The number of meters per premise aggregated to the climate zone lev
 Definition: VAR meters:=Aggregate(Meter_Counts[All_Spatial_ID=PV_Spatial_ID, All_Sectors=PV_Sectors], Climate_Zone_Map, PV_Spatial_ID, PV_Climate_Zone);~
 VAR premise:=Aggregate(Premise_Counts[All_Spatial_ID=PV_Spatial_ID, All_Sectors=PV_Sectors], Climate_Zone_Map, PV_Spatial_ID, PV_Climate_Zone);~
 Divide(meters, premise, True)
-NodeLocation: 440,384,1
+NodeLocation: 392,368,1
 NodeSize: 64,40
 WindState: 2,102,82,896,482
 ValueState: 2,276,375,689,380,,MIDM
@@ -3092,7 +3094,7 @@ Att__TotalsIndex: [PV_Climate_Zone]
 FormNode Fo1541463954
 Title: Meter Counts
 Definition: 0
-NodeLocation: 448,532,1
+NodeLocation: 400,516,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Meter_Counts
@@ -3108,11 +3110,15 @@ Show_description:20}
 
 Variable Load_Net_of_Storage
 Title: Load Net of Storage
-Definition: StorageSyst_Net_Load[@Ext_Day_and_Hour=Day_and_Hour_Ext_Pos]
-NodeLocation: 632,64,1
+Definition: IF Estim_Storage_Add_On AND (Storage_Systems = Storage_Added_Label)~
+THEN StorageSyst_Net_Load[@Ext_Day_and_Hour=Day_and_Hour_Ext_Pos, Storage_Systems=PV_Strg_Retro_Label]~
+ELSE StorageSyst_Net_Load[@Ext_Day_and_Hour=Day_and_Hour_Ext_Pos]
+NodeLocation: 696,48,1
 NodeSize: 64,40
-ValueState: 2,152,140,930,726,,MIDM
-ReformVal: [Day_and_Hour,Rate_Vintage]
+WindState: 2,152,10,1284,472
+ValueState: 2,342,8,930,604,,MIDM
+ReformVal: [Day_and_Hour,Storage_Systems]
+Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Month,7,Rate_Vintage,1,Day_and_Hour,1]
 
 Variable Net_Load
 Title: Net Load
@@ -3120,7 +3126,7 @@ Units: kW-hr/customer
 Definition: IF System_with_Storage AND (NOT Decouple_Rates)~
 THEN Load_Net_of_Storage[Storage_Systems=System_Types]~
 ELSE Load_Net_of_Solar
-NodeLocation: 592,168,1
+NodeLocation: 544,48,1
 NodeSize: 64,40
 WindState: 2,717,6,720,350
 ValueState: 2,15,11,1118,870,,MIDM
@@ -3132,7 +3138,7 @@ Title: Pre and Post Customer Load
 Units: kW-hr/customer
 Description: Customer load before and after installation of a system. The PV Operating Year index captures PV system degradation over the life of the system, consistent with the input for PV_degradation_rate.
 Definition: Pre_and_Post_Custome[Rate_Vintage=RateVint_by_RateName, Pre_and_Post_System=Pre_or_Post_by_Syst, System_Types=SystType_for_System]
-NodeLocation: 784,64,1
+NodeLocation: 848,48,1
 NodeSize: 64,40
 WindState: 2,242,3,1122,599
 ValueState: 2,56,20,1183,617,1,MIDM
@@ -3149,6 +3155,19 @@ ShowKey:1
 ReformVal: [Day_and_Hour,System_Type]
 Att__TotalsIndex: []
 Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Month,10,PV_Operating_Year,1,Rate_Names_and_Start,16,System_Type,1,Day_and_Hour,1]
+
+Variable Pre_System_Load
+Title: Pre System Load
+Units: kW-hr/customer
+Description: The customer load prior to installing the system specified.
+Definition: IF System_Types = Storage_Added_Label~
+THEN Load_Net_of_Solar~
+ELSE Scaled_Customer_Load
+NodeLocation: 544,152,1
+NodeSize: 64,40
+WindState: 2,17,317,720,350
+ValueState: 2,198,21,924,575,,MIDM
+ReformVal: [Day_and_Hour,System_Types]
 
 Close Customer_Load
 
@@ -3421,7 +3440,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 256,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-23,6,1524,743,17
+DiagState: 2,-38,223,1524,743,17
 Aliases: Alias Al1548967139
 {!40400|CloudPlayerStyles: FrameNode: FrameNode_1544920029}
 {!40204-40399|AWP_Attrib:FrameNode: FrameNode_1544920029}
@@ -3436,7 +3455,7 @@ ValueState: 2,1683,28,1189,659,0,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [Day_and_Hour,Tiers]
 Att__TotalsIndex: [Tiers]
-Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,4,PV_Climate_Zone,1,PV_Operating_Year,1,Month,1,System_Types,1,Pre_and_Post_System,2,Tiers,2,Day_and_Hour,1]
+Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,4,PV_Climate_Zone,1,PV_Operating_Year,1,Month,1,System_Types,3,Pre_and_Post_System,2,Tiers,2,Day_and_Hour,1]
 
 Variable Monthly_Energy_Cost
 Title: Monthly Energy Cost
@@ -3492,7 +3511,7 @@ Definition: Replace_X_with_Y(Sum(Weekly_Rate_Data[Rate_Names=Selected_Cust_Rates
 NodeLocation: 256,312,1
 NodeSize: 64,40
 WindState: 2,102,82,1080,350
-ValueState: 2,24,91,1556,768,0,MIDM
+ValueState: 2,-54,91,1540,768,0,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:6
 ReformVal: [Day_and_Hour,Rate_Vintage]
 Att_ResultSliceState: [PV_Sectors,2,Pre_and_Post_System,1,PV_Climate_Zone,1,Month,1,PV_Operating_Year,1,Tiers,1,Rate_Vintage,4,Day_and_Hour,1]
@@ -4780,7 +4799,7 @@ Subset(sorted <> None_Label)
 NodeLocation: 88,376,1
 NodeSize: 64,40
 ValueState: 2,536,157,988,684,0,MIDM
-{!40300|Att_SlicerPopupSize: 567,308}
+{!40300|Att_SlicerPopupSize: 582,308}
 
 Variable FirstYr_Bill_Compar1
 Title: First-Year Bill Comparison
@@ -4793,8 +4812,8 @@ THEN IF PositionInIndex(Pre_and_Post_System, System_Comparison, Pre_and_Post_Sys
 ELSE FirstYr_Bill_Compare[Rate_Vintage=RateVint_by_RateName, System_Types=SystType_for_System]
 NodeLocation: 392,376,1
 NodeSize: 64,40
-WindState: 2,169,230,897,461
-ValueState: 2,223,-1,1131,695,1,MIDM
+WindState: 2,26,31,897,461
+ValueState: 2,368,7,1131,662,1,MIDM
 Aliases: FormNode Fo1545086902, FormNode Fo1546384746
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9~
 {!40600|Att_WaterfallBar Graph_Primary_Valdim:1}~
@@ -4807,7 +4826,7 @@ Att_StackedBar Graph_Primary_Valdim:1
 ReformVal: [System_Type,Bill_Components]
 NumberFormat: 2,F,2,0,1,1,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Bill_Components,Month]
-Att_ResultSliceState: [PV_Sectors,2,Month,0,PV_Climate_Zone,1,Rate_Names_and_Start,3,System_Comparison,2,Bill_Components,1,System_Type,3]
+Att_ResultSliceState: [PV_Sectors,1,Month,0,PV_Climate_Zone,1,Rate_Names_and_Start,16,System_Comparison,2,Bill_Components,1,System_Type,3]
 {!40600|Att_StackingIndex: Bill_Components}
 {!40600|Att_ClusterIndex: Bill_Components}
 {!40700|Att_CellFormat: Undefined}
@@ -4849,7 +4868,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 400,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,248,114,981,504,17
+DiagState: 2,522,1,981,504,17
 Aliases: Alias Al1548967117
 
 Module Financing
@@ -5003,7 +5022,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 280,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-126,397,1524,578,17
+DiagState: 2,12,18,1524,555,17
 {!40400|CloudPlayerStyles: FrameNode: FrameNode_1544920201}
 {!40204-40399|AWP_Attrib:FrameNode: FrameNode_1544920201}
 
@@ -5056,8 +5075,8 @@ Definition: Per_Unit_Equip_Price * ITC_Fraction * Val_By_Install_Event(Allowed_I
 NodeLocation: 568,96,1
 NodeSize: 64,40
 WindState: 2,527,2,833,494
-ValueState: 2,12,30,1183,799,1,MIDM
-ReformVal: [Annual_PV_Time,Installation_Event]
+ValueState: 2,96,12,1183,799,0,MIDM
+ReformVal: [Annual_PV_Time,System_Types]
 Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,System_Types,2,Equipment_Types,2,Installation_Event,1,Annual_PV_Time,4]
 
 Variable Total_ITC_for_System
@@ -5067,9 +5086,9 @@ Description: The total investment tax credit (eg, initial installation + discoun
 Definition: Sum_Initial_Repl_Val(ITC_for_System_Event)
 NodeLocation: 720,96,1
 NodeSize: 64,40
-ValueState: 2,477,2,894,598,1,MIDM
-ReformVal: [Annual_PV_Time,Equipment_Types]
-Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,System_Types,2,Equipment_Types,1,Annual_PV_Time,14]
+ValueState: 2,477,2,894,598,0,MIDM
+ReformVal: [Annual_PV_Time,System_Types]
+Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Equipment_Types,2,System_Types,2,Annual_PV_Time,14]
 
 Text FrameNode_1544920201
 NodeLocation: 1168,320,-20
@@ -5167,9 +5186,13 @@ Variable Pct_of_ITC_Strg_w_PV
 Title: Pct of ITC for Storage with PV
 Units: fraction
 Description: The portion of the full ITC that can be claimed by storage systems. A storage system must be charged by a minimum percentage (75%) of electricity coming from PV to qualify for the ITC. If it does not meet that minimum percentage, then none of the ITC can be claimed. If the minimum is met, then the percentage of battery charge from PV is used as the portion of the full ITC that can be claimed. 
-Definition: IF PV_Pct_of_Charge < Stored_PV_Pct_ITC~
+Definition: VAR pct:=IF PV_Pct_of_Charge < Stored_PV_Pct_ITC~
 THEN 0~
-ELSE PV_Pct_of_Charge 
+ELSE PV_Pct_of_Charge;~
+~
+IF Estim_Storage_Add_On AND (Storage_Systems = Storage_Added_Label)~
+THEN pct[Storage_Systems=PV_Strg_Retro_Label]~
+ELSE pct
 NodeLocation: 272,376,1
 NodeSize: 64,40
 WindState: 2,19,40,720,350
@@ -5203,9 +5226,10 @@ ELSE yearly  {Else use the proper year's simulated values}
 NodeLocation: 568,240,1
 NodeSize: 64,40
 WindState: 2,112,499,720,350
-ValueState: 2,446,25,905,728,1,MIDM
+ValueState: 2,283,7,1139,605,0,MIDM
+ReformVal: [Annual_PV_Time,System_Types]
 NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [PV_Sectors,1,Equipment_Types,2,System_Types,2,PV_Climate_Zone,1,Annual_PV_Time,1]
+Att_ResultSliceState: [PV_Sectors,2,Equipment_Types,2,PV_Climate_Zone,1,System_Types,2,Annual_PV_Time,1]
 
 Variable ITC_for_System_Event
 Title: ITC for System by Event
@@ -5223,7 +5247,7 @@ Title: Taxable Incentives
 NodeLocation: 272,512,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,34,15,1399,641,17
+DiagState: 2,10,51,1399,641,17
 
 Decision Num_Incent_Dur_Steps
 Title: Number of Incentive Duration Steps
@@ -5250,7 +5274,12 @@ Original: Num_Incent_Dur_Steps
 
 Constant Incent_Durat_Derate
 Title: Incentive Derate for Duration
-Description: The amount by which the incentive "base rate" is derated to account for different storage durations. This is a multiplier applied to the base rate incentive (eg, 100% = no derate).~
+Description: The amount by which the incentive "base rate" is derated to account for different storage durations. This is a multiplier applied to the base rate incentive (eg, 100% = no derate). The duration lower bound refers to the minimum storage duration for which the derate is applicable. For example, let's say the derate multiplier is 100% for durations greater than or equal to zero and less than or equal to 2 hours; the multiplier is 50% for durations greater than 2 hours; and the multiplier is 0% for durations greater than 4 hours. The input table associated with this situation would look like the example below.~
+~
+Step	Lower Bound (hours)	Derate Multiplier (%)~
+1		0						100%~
+2		2						50%~
+3		4						0%~
 ~
 Source: ~
 SGIP Handbook, Section 5.2.1~
@@ -5262,9 +5291,9 @@ Definition: Table(Incent_Duration_Step,Incent_Durat_Inputs)(~
 6,0)
 NodeLocation: 256,184,1
 NodeSize: 64,40
-WindState: 2,330,158,720,350
-DefnState: 2,89,161,776,379,0,DFNM
-Aliases: FormNode Fo1548707006
+WindState: 2,98,210,720,350
+DefnState: 2,17,24,776,379,0,DFNM
+Aliases: FormNode Fo1548707006, FormNode Fo1549396622
 ReformDef: [Incent_Durat_Inputs,Incent_Duration_Step]
 {!40700|Att_CellFormat: CellSpan(Incent_Durat_Inputs,CellNumberFormat('Percentage',2,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0),2,header:0)}
 
@@ -5352,7 +5381,12 @@ Original: Num_Incent_Cap_Steps
 
 Constant Incent_Derate_Cap
 Title: Incentive Derate for Capacity
-Description: The amount by which the incentive "base rate" is derated to account for different storage capacities. This is a multiplier applied to the base rate incentive (eg, 100% = no derate).~
+Description: The amount by which the incentive "base rate" is derated to account for different storage capacities. This is a multiplier applied to the base rate incentive (eg, 100% = no derate). The capacity lower bound refers to the minimum capacity size for which the derate is applicable. For example, let's say the derate multiplier is 100% for capacity values greater than or equal to zero and less than or equal to 2 MWh; the multiplier is 50% for capacity values greater than 2 MWh; and the multiplier is 0% for capacity values greater than 4 MWh. The input table associated with this situation would look like the example below.~
+~
+Step	Lower Bound (MWh)	Derate Multiplier (%)~
+1		0						100%~
+2		2						50%~
+3		4						0%~
 ~
 Source: ~
 SGIP Handbook, Section 5.2.2~
@@ -5365,10 +5399,10 @@ Definition: Table(Incent_Capacity_Step,Incent_Cap_Inputs)(~
 0e+000,0e+000)
 NodeLocation: 256,304,1
 NodeSize: 64,40
-WindState: 2,66,130,842,495
+WindState: 2,514,117,959,608
 DefnState: 2,80,140,776,379,0,DFNM
-ValueState: 2,296,298,530,303,,MIDM
-Aliases: FormNode Fo1548708354
+ValueState: 2,27,372,530,303,0,MIDM
+Aliases: FormNode Fo1548708354, FormNode Fo1549396623
 ReformDef: [Incent_Cap_Inputs,Incent_Capacity_Step]
 {!40700|Att_CellFormat: CellSpan(Incent_Cap_Inputs,CellNumberFormat('Percentage',2,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0),2,header:0)}
 
@@ -5423,7 +5457,7 @@ Definition: Table(Incentive_Steps,ITC_Applied,All_Sectors)(~
 NodeLocation: 568,64,1
 NodeSize: 64,40
 WindState: 2,13,323,720,350
-DefnState: 2,116,125,956,518,0,DFNM
+DefnState: 2,10,17,956,518,0,DFNM
 ValueState: 2,88,90,952,554,0,MIDM
 Aliases: FormNode Fo1548723041, FormNode Fo1548967331
 ReformDef: [Incentive_Steps,ITC_Applied]
@@ -5463,7 +5497,7 @@ Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incenti
 NodeLocation: 720,64,1
 NodeSize: 64,40
 WindState: 2,319,85,829,414
-DefnState: 2,299,367,552,310,0,DFNM
+DefnState: 2,935,62,552,310,0,DFNM
 Aliases: FormNode Fo1548796240, FormNode Fo1548967332
 ReformDef: [All_Sectors,Incentive_Steps]
 TableCellDefault: Choice(Incentive_Start_Time,1,0)
@@ -6040,7 +6074,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 584,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,7,30,1524,518,17
+DiagState: 2,0,12,1524,518,17
 {!40400|CloudPlayerStyles: FrameNode: FrameNode_1544920267}
 {!40204-40399|AWP_Attrib:FrameNode: FrameNode_1544920267}
 
@@ -6529,11 +6563,11 @@ Definition: Per_Unit_Equip_Price * Equipment_Sizes
 NodeLocation: 704,168,1
 NodeSize: 64,40
 WindState: 2,385,170,720,350
-ValueState: 2,19,30,939,740,1,MIDM
+ValueState: 2,246,28,939,652,1,MIDM
 ReformVal: [Annual_PV_Time,System_Types]
 NumberFormat: 2,F,4,2,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [Equipment_Types,Installation_Event]
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Equipment_Types,0,Installation_Event,0,System_Types,1,Annual_PV_Time,1]
+Att__TotalsIndex: [Equipment_Types]
+Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Equipment_Types,0,Installation_Event,1,System_Types,1,Annual_PV_Time,1]
 
 Index Storage_Cost_Scen
 Title: Storage Cost Scenario
@@ -6820,7 +6854,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 736,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1,4,1494,666,17
+DiagState: 2,1,4,1298,569,17
 BalloonHelp: FrameNode: FrameNode_1544920329
 {!40400|CloudPlayerStyles: FrameNode: FrameNode_1544920329}
 {!40204-40399|AWP_Attrib:FrameNode: FrameNode_1544920329}
@@ -6993,7 +7027,7 @@ ValueState: 2,252,-16,834,711,1,MIDM
 NodeColor: 19661,48336,65535
 ReformVal: [Annual_PV_Time,Cost_Component]
 Att__TotalsIndex: [Cost_Component]
-Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,System_Types,2,Pre_and_Post_System,2,Cost_Component,0,Annual_PV_Time,1]
+Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,System_Types,3,Pre_and_Post_System,2,Cost_Component,0,Annual_PV_Time,1]
 
 Variable CostOf_Elect_Compare
 Title: Cost of Electricity Comparison
@@ -7006,7 +7040,7 @@ THEN IF PositionInIndex(Pre_and_Post_System, System_Comparison, Pre_and_Post_Sys
 ELSE CostOf_ElectCompare[System_Types=SystType_for_System]
 NodeLocation: 720,624,1
 NodeSize: 64,40
-ValueState: 2,85,4,1104,698,1,MIDM
+ValueState: 2,172,4,1104,698,1,MIDM
 Aliases: FormNode Fo1539221825, FormNode Fo1544373674, FormNode Fo1546384744
 GraphSetup: Att_GraphIndexRange Annual_PV_Time:1,0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
@@ -7021,7 +7055,7 @@ Att_ForceCategorical Graph_Primary_Valdim:
 ReformVal: [System_Type,Cost_Component]
 NumberFormat: 2,I,4,0,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Bill_Components,Month,Cost_Component]
-Att_ResultSliceState: [PV_Sectors,1,System_Comparison,2,PV_Climate_Zone,1,Annual_PV_Time,10,Cost_Component,0,System_Type,1]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Annual_PV_Time,10,System_Comparison,3,Cost_Component,0,System_Type,4]
 {!40600|Att_StackingIndex: Cost_Component}
 {!40600|Att_ClusterIndex: Cost_Component}
 
@@ -7292,23 +7326,6 @@ NodeLocation: 560,96,1
 NodeSize: 64,40
 Original: Mthly_Simple_Payback
 
-Decision Estim_Storage_Add_On
-Title: Estimate Storage Add-On Impacts
-Description: Check this setting if you wish to calculate the impacts of storage retrofits added to existing solar installations from the difference in impacts between a solar+storage and a solar only system. If a storage retrofit added to an existing solar installation would have different equipment cost implications or retail rate implications relative to the solar+storage and solar only systems, then the storage retrofit on an existing solar installation must be modeled separately, which would require optimizing the storage dispatch for that unique system configuration.
-Definition: Checkbox(0)
-NodeLocation: 680,768,1
-NodeSize: 64,40
-WindState: 2,102,82,1011,477
-Aliases: FormNode Fo1549394317
-
-FormNode Fo1549394317
-Title: Estimate Storage Add-On Impacts
-Definition: 0
-NodeLocation: 740,796,1
-NodeSize: 28,12
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Estim_Storage_Add_On
-
 Close Annual_Cost_of_Syste
 
 Close System_Economics
@@ -7320,7 +7337,7 @@ Date: Wed, Oct 10, 2018 9:00 AM
 NodeLocation: 544,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-15,134,1524,734,17
+DiagState: 2,3,27,1524,439,17
 Aliases: Alias Al1548967120
 {!40400|CloudPlayerStyles: FrameNode: FrameNode_1544919879}
 {!40204-40399|AWP_Attrib:FrameNode: FrameNode_1544919879}
@@ -7346,7 +7363,7 @@ Description: The solar PV DC system sized used for PV economics.
 Definition: PV_AC_SystSize_Econ * PV_AC_to_DC_Factor
 NodeLocation: 288,448,1
 NodeSize: 64,40
-ValueState: 2,72,74,584,303,,MIDM
+ValueState: 2,72,74,638,555,,MIDM
 
 Constant Battery_Storage_Spec
 Title: Battery Storage Specs
@@ -7360,7 +7377,7 @@ Definition: Table(Energy_and_Power,All_Sectors)(~
 NodeLocation: 136,96,1
 NodeSize: 64,40
 WindState: 2,923,527,720,350
-DefnState: 2,637,161,789,743,0,DFNM
+DefnState: 2,639,48,789,743,0,DFNM
 ValueState: 2,152,86,821,620,1,MIDM
 Aliases: FormNode Fo1542305979, FormNode Fo1548967561
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
@@ -7423,7 +7440,7 @@ NodeColor: 19661,48336,65535
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [PV_Sectors,PV_Climate_Zone]
-Att_ResultSliceState: [Equipment_Types,1,System_Types,2,PV_Climate_Zone,1,PV_Sectors,2]
+Att_ResultSliceState: [Equipment_Types,1,System_Types,4,PV_Climate_Zone,1,PV_Sectors,2]
 {!50000|Att_ColumnWidths: [,All_Equipment_Types,\([179])]}
 
 Variable PV_DC_Size_by_System
@@ -17218,7 +17235,7 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 264,408,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-29,47,1524,674,17
+DiagState: 2,-86,55,1524,674,17
 NodeColor: 57311,57311,57311
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
@@ -17506,7 +17523,7 @@ Att_PrevIndexValue: ['Solar PV Retrofit','Solar PV NewConstruct','Solar + Storag
 Decision Select_System_Types
 Title: Select System Types
 Description: Select the system types considered in the analysis.
-Definition: Table(All_System_Types)(Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(0))
+Definition: Table(All_System_Types)(Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(0))
 NodeLocation: 240,152,1
 NodeSize: 64,40
 Aliases: FormNode Fo1539019857, FormNode Fo1540238860
@@ -17518,7 +17535,7 @@ Definition: Subset(Select_System_Types)
 NodeLocation: 240,256,1
 NodeSize: 64,40
 WindState: 2,102,82,720,635
-{!40300|Att_SlicerPopupSize: 267,112}
+{!40300|Att_SlicerPopupSize: 282,112}
 
 Index New_or_Retrofit
 Title: NewConstr or Retrofit
@@ -17561,7 +17578,7 @@ Checkbox(1),Checkbox(0),~
 Checkbox(0),Checkbox(1),~
 Checkbox(0),Checkbox(1),~
 Checkbox(1),Checkbox(0))
-NodeLocation: 240,968,1
+NodeLocation: 240,1192,1
 NodeSize: 64,40
 WindState: 2,102,82,916,508
 DefnState: 2,600,388,416,517,,DFNM
@@ -17607,7 +17624,7 @@ Original: Select_System_Types
 FormNode Fo1539020467
 Title: Construction Type Map
 Definition: 0
-NodeLocation: 240,1020,1
+NodeLocation: 240,1244,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Construct_Type_Map
@@ -17627,7 +17644,7 @@ Definition: VAR nullText:=IF Construct_Type_Map[All_System_Types=System_Types]~
    THEN New_or_Retrofit~
    ELSE Null;~
 JoinText(nullText, New_or_Retrofit)
-NodeLocation: 240,1088,1
+NodeLocation: 240,1312,1
 NodeSize: 64,40
 ValueState: 2,296,298,481,419,0,MIDM
 
@@ -17643,14 +17660,14 @@ ValueState: 2,360,196,416,469,0,MIDM
 Index NewConstr_System_Typ
 Title: NewConstr System Type
 Definition: Subset(Construct_Type_Map[All_System_Types=System_Types, New_or_Retrofit=NewConstr_Label])
-NodeLocation: 240,1176,1
+NodeLocation: 240,1400,1
 NodeSize: 64,40
 ValueState: 2,520,434,416,391,0,MIDM
 
 Index Retrofit_System_Type
 Title: Retrofit System Type
 Definition: Subset(Construct_Type_Map[All_System_Types=System_Types, New_or_Retrofit=Retrofit_Label])
-NodeLocation: 240,1264,1
+NodeLocation: 240,1488,1
 NodeSize: 64,40
 WindState: 2,12,328,720,350
 ValueState: 2,377,480,416,303,0,MIDM
@@ -18345,7 +18362,7 @@ NodeLocation: 1104,936,1
 NodeSize: 64,40
 WindState: 2,102,82,955,798
 {!40300|Att_SlicerPopupSize: 237,42}
-Att_PrevIndexValue: ['Solar + Storage Retrofit','Storage Only Retrofit']
+Att_PrevIndexValue: ['Solar + Storage Retrofit','Storage Added to Exist Solar','Storage Only Retrofit']
 
 Variable System_with_Storage
 Title: System with Storage
@@ -18475,24 +18492,24 @@ WindState: 2,285,56,800,434
 
 Index System_Type
 Title: System Type
-Definition: ['No System','Solar PV','Solar PV + Storage','Storage Only']
-NodeLocation: 240,456,1
+Definition: ['No System','Solar PV','Solar PV + Storage','Storage Only','Storage Added to Existing PV']
+NodeLocation: 240,680,1
 NodeSize: 64,40
 WindState: 2,2,228,720,350
 {!40300|Att_SlicerPopupSize: 227,70}
-Att_PrevIndexValue: ['No System','Solar PV','Solar PV + Storage','Storage Only']
+Att_PrevIndexValue: ['No System','Solar PV','Solar PV + Storage','Storage Only','Storage Added to Existing PV']
 
 Index Bill_Components1
 Title: Bill Components
 Definition: ['Minimum Charges','Summer On-Peak Energy','Summer Off-Peak Energy','Summer Super-Off Peak Energy','Summer Semi-Peak Energy','Winter On-Peak Energy','Winter Off-Peak Energy','Winter Super-Off Peak Energy','Winter Semi-Peak Energy','Net Total']
-NodeLocation: 240,544,1
+NodeLocation: 240,768,1
 NodeSize: 64,40
 
 Decision Pre_or_Post_by_Syst
 Title: Pre or Post by System
 Description: Assigns the pre- or post-system results to each system type.
-Definition: Table(System_Type)(Choice(Pre_and_Post_System,1,0),Choice(Pre_and_Post_System,2,0),Choice(Pre_and_Post_System,2,0),Choice(Pre_and_Post_System,2,0))
-NodeLocation: 240,632,1
+Definition: Table(System_Type)(Choice(Pre_and_Post_System,1,0),Choice(Pre_and_Post_System,2,0),Choice(Pre_and_Post_System,2,0),Choice(Pre_and_Post_System,2,0),Choice(Pre_and_Post_System,1,0))
+NodeLocation: 240,856,1
 NodeSize: 64,40
 Aliases: FormNode Fo1546900065
 TableCellDefault: Choice(Pre_and_Post_System,1,0)
@@ -18501,7 +18518,7 @@ TableCellDefault: Choice(Pre_and_Post_System,1,0)
 FormNode Fo1546900065
 Title: Pre or Post by System
 Definition: 0
-NodeLocation: 240,684,1
+NodeLocation: 240,908,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Pre_or_Post_by_Syst
@@ -18509,8 +18526,8 @@ Original: Pre_or_Post_by_Syst
 Decision SystType_for_System
 Title: System Type for System
 Description: Assigns an element of the system types index each system type.
-Definition: Table(System_Type)(Choice(All_System_Types,1,0),Choice(All_System_Types,1,0),Choice(All_System_Types,3,0),Choice(All_System_Types,6,0))
-NodeLocation: 240,744,1
+Definition: Table(System_Type)(Choice(All_System_Types,1,0),Choice(All_System_Types,1,0),Choice(All_System_Types,3,0),Choice(All_System_Types,6,0),Choice(All_System_Types,5,0))
+NodeLocation: 240,968,1
 NodeSize: 64,40
 Aliases: FormNode Fo1546900097
 TableCellDefault: Choice(All_System_Types,1,0)
@@ -18519,7 +18536,7 @@ TableCellDefault: Choice(All_System_Types,1,0)
 FormNode Fo1546900097
 Title: Pre or Post by System
 Definition: 0
-NodeLocation: 240,796,1
+NodeLocation: 240,1020,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: SystType_for_System
@@ -18528,7 +18545,7 @@ Decision No_System_Label
 Title: No System Label
 Description: Assigns the pre- or post-system results to each system type.
 Definition: Choice(System_Type,1,0)
-NodeLocation: 240,856,1
+NodeLocation: 240,1080,1
 NodeSize: 64,40
 Aliases: FormNode Fo1546900379
 TableCellDefault: Choice(Pre_and_Post_System,1,0)
@@ -18537,7 +18554,7 @@ TableCellDefault: Choice(Pre_and_Post_System,1,0)
 FormNode Fo1546900379
 Title: Pre or Post by System
 Definition: 0
-NodeLocation: 248,904,1
+NodeLocation: 248,1128,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,110,0,,0,,,0
 Original: No_System_Label
@@ -18577,6 +18594,42 @@ Definition: Subset(Rate_Attribute_Setti<>Rate_Structure_Label)
 NodeLocation: 1824,808,1
 NodeSize: 64,40
 Att_PrevIndexValue: ['Include ''rate'' Attribute','Include ''adj'' Attribute','Include ''sell'' Attribute']
+
+Decision Storage_Added_Label
+Title: Storage Added Label
+Definition: Choice(All_System_Types,5,0)
+NodeLocation: 240,456,1
+NodeSize: 64,40
+DefnState: 2,248,250,964,440,,DFNM
+Aliases: FormNode Fo1549394953
+TableCellDefault: Choice(Static_Profile_Names,1,0)
+{!40200|Att_ChoiceIndexes: Index All_System_Types}
+
+FormNode Fo1549394953
+Title: Period Label
+Definition: 0
+NodeLocation: 240,504,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
+Original: Storage_Added_Label
+
+Decision PV_Strg_Retro_Label
+Title: PV+Strg Retro Label
+Definition: Choice(All_System_Types,3,0)
+NodeLocation: 240,568,1
+NodeSize: 64,40
+DefnState: 2,248,250,964,440,,DFNM
+Aliases: FormNode Fo1549395305
+TableCellDefault: Choice(Static_Profile_Names,1,0)
+{!40200|Att_ChoiceIndexes: Index All_System_Types}
+
+FormNode Fo1549395305
+Title: Period Label
+Definition: 0
+NodeLocation: 240,616,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
+Original: PV_Strg_Retro_Label
 
 Close PV_Auxiliary_Variabl
 
