@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Solar_PV at 4-Feb-2019 5:31:19 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Solar_PV at 5-Feb-2019 12:19:21 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -14,7 +14,7 @@ Title: Solar PV
 Author: Cory Welch
 Date: Mon, Jan 8, 2018 10:24 AM
 SaveAuthor: JamesMilford
-SaveDate: Mon, Feb 4, 2019 5:31 PM
+SaveDate: Tue, Feb 5, 2019 12:19 PM
 DefaultSize: 64,40
 NodeSize: 88,64
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -2720,7 +2720,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,25,23,1524,688,17
+DiagState: 2,-91,-1,1524,688,17
 {!40400|CloudPlayerStyles: FrameNode: FrameNode_1}
 {!40204-40399|AWP_Attrib:FrameNode: FrameNode_1}
 
@@ -3159,13 +3159,13 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,146,21,1253,627,17
+DiagState: 2,75,82,1253,627,17
 Aliases: Alias Al1548967138
 {!40400|CloudPlayerStyles: FrameNode: FrameNode_1544919985}
 {!40204-40399|AWP_Attrib:FrameNode: FrameNode_1544919985}
 
 Text Te1534877580
-Title: This is not robust to intra-day changes in the max attribute associated with tier levels
+Description: This is not robust to intra-day changes in the max attribute associated with tier levels
 NodeLocation: 716,56,2
 NodeSize: 100,32
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -3382,7 +3382,7 @@ NodeSize: 352,160
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 
 Text Te1534993872
-Title: This is not robust to intra-day changes in the max attribute associated with tier levels
+Description: This is not robust to intra-day changes in the max attribute associated with tier levels
 NodeLocation: 156,360,2
 NodeSize: 100,32
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -4780,7 +4780,7 @@ Subset(sorted <> None_Label)
 NodeLocation: 88,376,1
 NodeSize: 64,40
 ValueState: 2,536,157,988,684,0,MIDM
-{!40300|Att_SlicerPopupSize: 562,308}
+{!40300|Att_SlicerPopupSize: 567,308}
 
 Variable FirstYr_Bill_Compar1
 Title: First-Year Bill Comparison
@@ -4794,7 +4794,7 @@ ELSE FirstYr_Bill_Compare[Rate_Vintage=RateVint_by_RateName, System_Types=SystTy
 NodeLocation: 392,376,1
 NodeSize: 64,40
 WindState: 2,169,230,897,461
-ValueState: 2,88,3,1131,702,1,MIDM
+ValueState: 2,223,-1,1131,695,1,MIDM
 Aliases: FormNode Fo1545086902, FormNode Fo1546384746
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9~
 {!40600|Att_WaterfallBar Graph_Primary_Valdim:1}~
@@ -4807,7 +4807,7 @@ Att_StackedBar Graph_Primary_Valdim:1
 ReformVal: [System_Type,Bill_Components]
 NumberFormat: 2,F,2,0,1,1,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Bill_Components,Month]
-Att_ResultSliceState: [PV_Sectors,1,Month,0,PV_Climate_Zone,1,Rate_Names_and_Start,16,System_Comparison,2,Bill_Components,1,System_Type,3]
+Att_ResultSliceState: [PV_Sectors,2,Month,0,PV_Climate_Zone,1,Rate_Names_and_Start,3,System_Comparison,2,Bill_Components,1,System_Type,3]
 {!40600|Att_StackingIndex: Bill_Components}
 {!40600|Att_ClusterIndex: Bill_Components}
 {!40700|Att_CellFormat: Undefined}
@@ -5003,7 +5003,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 280,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-529,57,1524,578,17
+DiagState: 2,-126,397,1524,578,17
 {!40400|CloudPlayerStyles: FrameNode: FrameNode_1544920201}
 {!40204-40399|AWP_Attrib:FrameNode: FrameNode_1544920201}
 
@@ -5223,7 +5223,7 @@ Title: Taxable Incentives
 NodeLocation: 272,512,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,12,9,1399,641,17
+DiagState: 2,34,15,1399,641,17
 
 Decision Num_Incent_Dur_Steps
 Title: Number of Incentive Duration Steps
@@ -5668,6 +5668,15 @@ ValueState: 2,316,1,1152,701,1,MIDM
 ReformVal: [Time_Solar_PV,Installation_Event]
 Att_ResultSliceState: [PV_Sectors,1,Storage_Systems,1,Equipment_Types,1,PV_Climate_Zone,1,Installation_Event,2,Time_Solar_PV,1]
 
+Text FrameNode_1549389474
+NodeLocation: 1776,320,-20
+NodeSize: 360,304
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+{!40400|CloudPlayerStyles: Show_index_menus: yes~
+Show_description:20}
+{!40204-40399|AWP_Attrib:Show_index_menus: yes~
+Show_description:20}
+
 Close Taxable_Incents
 
 Close Incentives
@@ -6031,7 +6040,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 584,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,7,2,1524,518,17
+DiagState: 2,7,30,1524,518,17
 {!40400|CloudPlayerStyles: FrameNode: FrameNode_1544920267}
 {!40204-40399|AWP_Attrib:FrameNode: FrameNode_1544920267}
 
@@ -6414,7 +6423,7 @@ NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Variable Installed_Price
 Title: Installed Price
 Units: $/kW-DC, $/kWh
-Description: Historical & forecast installed equipment price (all-in retail price) to the customer.
+Description: Historical & forecast installed equipment price (all-in retail price) to the customer prior to incentives.
 Definition: VAR baseYear:=IF All_Equipment_Types = Solar_PV_Label~
    THEN BaseYr_for_PV_Costs~
    ELSE BaseYr_Strg_Costs;~
@@ -6424,7 +6433,7 @@ THEN Installed_EquipPrice[Static_PV_Time=baseYear] * Price_Escalation~
 ELSE Installed_EquipPrice;
 NodeLocation: 416,56,1
 NodeSize: 64,40
-WindState: 2,102,82,1264,521
+WindState: 2,4,56,1264,521
 ValueState: 2,20,44,953,729,1,MIDM
 Aliases: FormNode Fo1544463099, FormNode Fo1544635738, FormNode Fo1548966983, FormNode Fo1548968037
 GraphSetup: Att_GraphIndexRange Static_PV_Time:1,,1,,,,,2016,2030,0
@@ -6615,6 +6624,16 @@ NodeSize: 64,40
 ValueState: 2,40,50,1158,541,1,MIDM
 NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
+Text Te1549390762
+Description: Not sure if interconnect fees will apply to a storage only system, or if additional interconnect fees apply to solar+storage system. Might need to reindex by equipment type or system type to capture nuances
+NodeLocation: 624,816,2
+NodeSize: 104,48
+NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
+NodeColor: 57311,57311,57311
+NodeFont: Arial Narrow,13
+{!40400|CloudPlayerStyles: Show_Object:no}
+{!40204-40399|AWP_Attrib:Show_Object:no}
+
 Close Equipment_Costs
 
 Module Variables_for_Future
@@ -6801,7 +6820,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 736,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,7,7,1474,570,17
+DiagState: 2,1,4,1494,666,17
 BalloonHelp: FrameNode: FrameNode_1544920329
 {!40400|CloudPlayerStyles: FrameNode: FrameNode_1544920329}
 {!40204-40399|AWP_Attrib:FrameNode: FrameNode_1544920329}
@@ -6970,11 +6989,11 @@ Definition: Table(Cost_Component)(Lev_Ann_Bill_byYr,Annual_Loan_Payments * (Pre_
 NodeLocation: 496,520,1
 NodeSize: 64,40
 DefnState: 2,154,432,861,448,,DFNM
-ValueState: 2,252,159,834,711,1,MIDM
+ValueState: 2,252,-16,834,711,1,MIDM
 NodeColor: 19661,48336,65535
 ReformVal: [Annual_PV_Time,Cost_Component]
 Att__TotalsIndex: [Cost_Component]
-Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,System_Types,1,Pre_and_Post_System,2,Cost_Component,0,Annual_PV_Time,1]
+Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,System_Types,2,Pre_and_Post_System,2,Cost_Component,0,Annual_PV_Time,1]
 
 Variable CostOf_Elect_Compare
 Title: Cost of Electricity Comparison
@@ -7090,7 +7109,7 @@ Module Monthly_Payback_Logi
 Title: Monthly Payback Logic
 NodeLocation: 656,200,1
 NodeSize: 64,40
-DiagState: 2,38,31,1361,447,17
+DiagState: 2,38,31,1343,502,17
 
 Variable Mthly_Simple_Payback
 Title: Monthly Simple Payback Time
@@ -7098,7 +7117,7 @@ Units: years
 Description: The simple payback time interpolated to the monthly level.
 Definition: Divide(Tot_Price_Aft_Incent + Monthly_Fees, FirstYr_BillSav_Time, False)~
 
-NodeLocation: 1240,144,1
+NodeLocation: 928,168,1
 NodeSize: 64,40
 WindState: 2,10,68,1361,658
 ValueState: 2,7,0,1469,681,1,MIDM
@@ -7114,7 +7133,7 @@ Title: Monthly ITC Fraction
 Units: fraction
 Description: Investment tax credit expressed as a percentage of the upfront capital costs.
 Definition: StepInterp(BOY_Date_for_PV_Year, ITC_Fraction, Time_Solar_PV, Annual_PV_Time, True) * Val_by_Install_Event(Allowed_ITC_Pct_Time, PV_Timesteps_PerYear, Time_Solar_PV);
-NodeLocation: 808,48,1
+NodeLocation: 408,272,1
 NodeSize: 64,40
 WindState: 2,553,20,720,356
 ValueState: 2,429,24,1064,627,,MIDM
@@ -7126,17 +7145,18 @@ Title: Monthly Equip Price
 Units: $/system
 Description: The total price of installed equipment (initial installation + discounted replacement), based on the sizing of each equipment type. The last six months are not valid since mid-year interpolation is performed, which results in a six-month look-ahead beyond the end of the data availability.
 Definition: LinearInterp(MOY_Date_for_PV_Year, Tot_Equipment_Price, Time_Solar_PV, Annual_PV_Time);
-NodeLocation: 88,144,1
+NodeLocation: 88,168,1
 NodeSize: 64,40
-WindState: 2,172,150,720,350
-ValueState: 2,663,4,831,556,0,MIDM
+WindState: 2,172,150,986,474
+ValueState: 2,312,-18,831,556,1,MIDM
+Att_ResultSliceState: [PV_Sectors,1,Equipment_Types,2,System_Types,3,PV_Climate_Zone,1,Time_Solar_PV,1]
 
 Variable Annual_Cost_Escalat
 Title: Annual Cost Escalation
 Units: fraction/year
 Description: The cost escalation at the end of the simulation horizon. This will be used to estimate costs 6-months beyond the end of simulation horizon. 
 Definition: Divide(Tot_Equipment_Price[Annual_PV_Time=Max(Annual_PV_Time)], Tot_Equipment_Price[Annual_PV_Time=Max(Annual_PV_Time)-1], True) - 1;   {Annual end-of-simulation escalation rate}
-NodeLocation: 232,144,1
+NodeLocation: 88,64,1
 NodeSize: 64,40
 WindState: 2,484,102,720,350
 ValueState: 2,561,46,416,497,0,MIDM
@@ -7147,7 +7167,7 @@ Title: Monthly Cost Escalation
 Units: fraction/month
 Description: The compounding monthly equivalent of the annual cost escalation at the end of the simulation horizon. This will be used to estimate costs six months beyond the simulation horizon.
 Definition: (1+Annual_Cost_Escalat)^(1/Months_per_Year)-1;   {The compounding monthly equivalent of the annual escalation rate}
-NodeLocation: 376,144,1
+NodeLocation: 240,64,1
 NodeSize: 64,40
 WindState: 2,562,119,720,350
 ValueState: 2,426,154,609,523,0,MIDM
@@ -7159,7 +7179,7 @@ Title: Monthly Escalation Factors
 Units: fraction
 Description: Escalation factors to estimate the equipment costs for the final months of the simulation.
 Definition: CumProduct(IF Time_Solar_PV <= MOY_Date_for_PV_Year[Annual_PV_Time=Max(Annual_PV_Time)] THEN 1 ELSE 1 + Monthly_Cost_Escalat, Time_Solar_PV);   {Escalation factor to account for final months for which mid-year interpolation is flat}
-NodeLocation: 520,144,1
+NodeLocation: 392,64,1
 NodeSize: 64,40
 WindState: 2,272,184,720,350
 ValueState: 2,245,69,1056,593,1,MIDM
@@ -7174,7 +7194,7 @@ Definition: VAR price:=IF Time_Solar_PV <= MOY_Date_for_PV_Year[Annual_PV_Time=M
    ELSE Monthly_Equip_Price * Mthly_Escal_Factors;   {Otherwise extend the price escalation to the final 6 months}~
 ~
 Val_by_Install_Event(price, PV_Timesteps_PerYear, Time_Solar_PV)
-NodeLocation: 664,144,1
+NodeLocation: 480,168,1
 NodeSize: 64,40
 ValueState: 2,80,10,1025,684,,MIDM
 ReformVal: [Time_Solar_PV,Installation_Event]
@@ -7186,7 +7206,7 @@ Title: Monthly ITC Amount
 Units: $/system
 Description: The federal investment tax credit based on the equipment sizes used for each system type. Replacement costs have not yet been discounted and proportioned to the remaining years in the economic horizon, so it is inappropriate to sum over Installation Events (ie, initial installation and future replacement).
 Definition: Monthly_ITC_Fraction * Extended_Equip_Price
-NodeLocation: 808,144,1
+NodeLocation: 560,272,1
 NodeSize: 64,40
 WindState: 2,335,290,720,350
 ValueState: 2,343,8,1052,689,,MIDM
@@ -7198,7 +7218,7 @@ Title: Price After Incentives
 Units: $/system
 Description: The price of installed equipment, based on the sizing of each equipment type. Replacement costs have not yet been discounted and proportioned to the remaining years in the economic horizon, so it is inappropriate to sum over Installation Events (ie, initial installation and future replacement).
 Definition: Extended_Equip_Price - Monthly_ITC_Amount - Taxable_Incent_Event
-NodeLocation: 952,144,1
+NodeLocation: 632,168,1
 NodeSize: 64,40
 WindState: 2,43,47,1456,350
 ValueState: 2,194,60,1152,690,,MIDM
@@ -7211,7 +7231,7 @@ Title: Total Price After Incentives
 Units: $/system
 Description: The total price of installed equipment (initial installation + discounted replacement), based on the sizing of each equipment type.
 Definition: Sum(Sum_Initial_Repl_Val(Price_After_Incent), Equipment_Types)
-NodeLocation: 1096,144,1
+NodeLocation: 784,168,1
 NodeSize: 64,40
 ValueState: 2,287,6,1167,698,,MIDM
 Att_ResultSliceState: [PV_Sectors,2,System_Types,2,PV_Climate_Zone,1,Time_Solar_PV,1]
@@ -7221,7 +7241,7 @@ Title: Monthly Fees
 Units: $/system
 Description: Interconnection fees interpolated to monthly values.
 Definition: LinearInterp(EOY_Date_for_PV_Year, Interconnect_Fees, Time_Solar_PV, Annual_PV_Time)
-NodeLocation: 1096,240,1
+NodeLocation: 784,272,1
 NodeSize: 64,40
 WindState: 2,345,91,720,350
 ValueState: 2,360,182,416,483,,MIDM
@@ -7244,7 +7264,7 @@ VAR fees:=LinearInterp(EOY_Date_for_PV_Year, Interconnect_Fees, Time_Solar_PV, A
 ~
 Divide(priceAfterITC + fees, FirstYr_BillSav_Time, True)~
 
-NodeLocation: 1248,368,1
+NodeLocation: 928,392,1
 NodeSize: 64,40
 WindState: 2,10,68,1361,658
 ValueState: 2,79,14,1469,681,1,MIDM
@@ -7254,6 +7274,15 @@ Att__TotalsIndex: [Self]
 Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,System_Types,1,Time_Solar_PV,1]
 {!40300|Att_SlicerPopupSize: 227,70}
 
+Text FrameNode_1549389509
+NodeLocation: 1384,320,-20
+NodeSize: 360,304
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+{!40400|CloudPlayerStyles: Show_index_menus: yes~
+Show_description:20}
+{!40204-40399|AWP_Attrib:Show_index_menus: yes~
+Show_description:20}
+
 Close Monthly_Payback_Logi
 
 Alias Al1548956516
@@ -7262,6 +7291,23 @@ Definition: 1
 NodeLocation: 560,96,1
 NodeSize: 64,40
 Original: Mthly_Simple_Payback
+
+Decision Estim_Storage_Add_On
+Title: Estimate Storage Add-On Impacts
+Description: Check this setting if you wish to calculate the impacts of storage retrofits added to existing solar installations from the difference in impacts between a solar+storage and a solar only system. If a storage retrofit added to an existing solar installation would have different equipment cost implications or retail rate implications relative to the solar+storage and solar only systems, then the storage retrofit on an existing solar installation must be modeled separately, which would require optimizing the storage dispatch for that unique system configuration.
+Definition: Checkbox(0)
+NodeLocation: 680,768,1
+NodeSize: 64,40
+WindState: 2,102,82,1011,477
+Aliases: FormNode Fo1549394317
+
+FormNode Fo1549394317
+Title: Estimate Storage Add-On Impacts
+Definition: 0
+NodeLocation: 740,796,1
+NodeSize: 28,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Estim_Storage_Add_On
 
 Close Annual_Cost_of_Syste
 
