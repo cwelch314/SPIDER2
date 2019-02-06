@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Data_Import__Export at 5-Feb-2019 3:53:57 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Data_Import__Export at 5-Feb-2019 5:33:59 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Data Import/ Export
 Author: Cory Welch
 Date: Fri, Feb 5, 2016 10:04 AM
 SaveAuthor: JamesMilford
-SaveDate: Tue, Feb 5, 2019 3:53 PM
+SaveDate: Tue, Feb 5, 2019 5:33 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -855,7 +855,7 @@ Author: JamesMilford
 Date: Thu, Jan 24, 2019 11:22 AM
 NodeLocation: 432,272,1
 NodeSize: 64,40
-DiagState: 2,-8,99,1524,677,17
+DiagState: 2,11,2,1524,677,17
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
 
@@ -1609,7 +1609,7 @@ Definition: Table(SGIP_Data_Rows,SGIP_Data_Columns)(~
 'Center for Sustainable Energy','SD-SGIP-2018-3385',2018,'3','Large-Scale Storage','Payment Completed','Electrochemical Storage',20,52.8,Null,Null,Null,1,'Photovoltaic','Tesla',Null,Null,'$11,600.00',Null,'Paid',Null,Null,'$38,750.00','Solare Energy, Inc.','Residential',Null,'Escondido','San Diego','92029',Null,'San Diego Gas and Electric',Null,'Solare Energy','06/13/18 09:56:30.251821 PDT',12-Sep-2018,'01/09/19',Null)
 NodeLocation: 96,296,1
 NodeSize: 64,40
-ValueState: 2,147,17,1616,706,0,MIDM
+ValueState: 2,7,11,1540,706,0,MIDM
 
 Decision SGIP_Interconn_Date
 Title: SGIP Interconn Date
@@ -2141,7 +2141,7 @@ Aliases: FormNode Fo1548287317
 Domain: ['All','Aggregate','Budget Category','Step','Rated Capacity [kW]','Energy Storage Capacity (kWh)','Current Incentive ($)','Total Eligible Costs','Project Count','Incentive Rate ($/kWh)','Equip. Costs ($/kWh)','Matched Energy Rating (kWh)','Estimated Energy Rating (kWh)','kWh/kW']
 {!40300|DomainExpr: Concat(All_and_Aggreg_Label, SGIP_Value_Cols)}
 {!40200|Att_ChoiceIndexes: Keyword Self}
-{!40300|Att_SlicerPopupSize: 237,84}
+{!40300|Att_SlicerPopupSize: 242,84}
 
 FormNode Fo1548287317
 Title: Histogram Sector
@@ -2153,7 +2153,7 @@ Original: Histogram_Result
 
 Decision Histogram_Year
 Title: Histogram Year
-Definition: MultiChoice(Self,1,returnList:1)
+Definition: MultiChoice(Self,2,returnList:1)
 NodeLocation: 2048,464,1
 NodeSize: 64,40
 Aliases: FormNode Fo1548287408
@@ -2230,9 +2230,9 @@ Title: SGIP Stats
 Definition: Statistics(Histogram_Sample_Dat, SGIP_Data_Rows)
 NodeLocation: 1776,800,1
 NodeSize: 64,40
-ValueState: 2,11,204,1151,530,0,MIDM
-ReformVal: [All_Sectors,SGIP_Years]
-Att_ResultSliceState: [Sys_LocalIndex('Statistics'),3,Histogram_Result,4,SGIP_Years,1,All_Sectors,2]
+ValueState: 2,324,83,1151,530,0,MIDM
+ReformVal: [SGIP_Years,Sys_LocalIndex('Statistics')]
+Att_ResultSliceState: [Histogram_Result,1,All_Sectors,2,Sys_LocalIndex('Statistics'),1,SGIP_Years,1]
 
 Decision Incentive_Rate
 Title: Incentive Rate
