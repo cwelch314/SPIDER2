@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Loadshapes at 4-Feb-2019 1:42:21 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Loadshapes at 7-Feb-2019 12:50:25 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Loadshapes
 Author: JamesMilford
 Date: Fri, Aug 10, 2018 2:24 PM
 SaveAuthor: JamesMilford
-SaveDate: Mon, Feb 4, 2019 1:42 PM
+SaveDate: Thu, Feb 7, 2019 12:50 PM
 DefaultSize: 64,40
 NodeSize: 88,64
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -1034,11 +1034,11 @@ NodeLocation: 248,160,1
 NodeSize: 64,40
 
 Index Day_Type_Granularity
+Att_PrevIndexValue: ['Day of Week','Weekday/Weekend','Both']
 Title: Day Type Granularity
 Definition: ['Day of Week','Weekday/Weekend','Both']
 NodeLocation: 384,160,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Day of Week','Weekday/Weekend','Both']
 
 Decision Weekday_end_Label
 Title: Weekday/end Label
@@ -1307,14 +1307,14 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 640,584,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,419,239,1010,575,17
+DiagState: 2,419,239,640,419,17
 
 Variable Day_by_Day_and_Hr
 Title: Day by Day & Hour
 Description: The day for each day/hour in a week.
 Definition: INDEX component:=1..2;~
 SplitText(Day_and_Hour, Time_Separator, resultIndex: component)[@component=1]
-NodeLocation: 120,64,1
+NodeLocation: 120,160,1
 NodeSize: 64,40
 ValueState: 2,168,0,1351,473,,MIDM
 
@@ -1323,7 +1323,7 @@ Title: Hour by Day & Hour
 Description: The hour for each day/hour in a week.
 Definition: INDEX component:=1..2;~
 SplitText(Day_and_Hour, Time_Separator, resultIndex: component)[@component=2]
-NodeLocation: 416,168,1
+NodeLocation: 120,264,1
 NodeSize: 64,40
 ValueState: 2,168,0,1351,473,,MIDM
 Aliases: Alias Al1535743645
@@ -1333,7 +1333,7 @@ Title: Day Type by Weekday
 Definition: IF Weekend_Days ~
 THEN Weekend_Label~
 ELSE Weekday_Label
-NodeLocation: 272,64,1
+NodeLocation: 120,56,1
 NodeSize: 64,40
 ValueState: 2,184,77,416,412,,MIDM
 
@@ -1341,7 +1341,7 @@ Variable DayType_by_DayAndHr
 Title:  Day Type by Day & Hour
 Description: The day type for each day/hour in a week.
 Definition: Day_Type_by_Weekday[Day_of_Week=Day_by_Day_and_Hr]
-NodeLocation: 272,168,1
+NodeLocation: 272,56,1
 NodeSize: 64,40
 ValueState: 2,184,77,416,412,,MIDM
 Aliases: Alias Al1535743646
@@ -1350,7 +1350,7 @@ Variable Period_by_Day_and_Hr
 Title: Period by Day and Hour
 Description: The time-of-use period for each day/hour in a week.
 Definition: ignorewarnings(Period_String & Reindex_to_Week(Periods_by_TOU_Sched[Rate_Names=Selected_Cust_Rates]))
-NodeLocation: 416,64,1
+NodeLocation: 424,56,1
 NodeSize: 64,40
 WindState: 2,102,82,1239,565
 ValueState: 2,451,3,1008,841,0,MIDM
@@ -1371,7 +1371,7 @@ ELSE IF PositionInIndex(indexHandles, Handle(Weekday_or_Weekend), indexHandles)~
 THEN data[Time_of_Day=Hour_by_Day_and_Hr, Weekday_or_Weekend=DayType_by_DayAndHr]~
 ELSE IF PositionInIndex(indexHandles, Handle(All_Day_Types), indexHandles)~
 THEN data[Time_of_Day=Hour_by_Day_and_Hr, All_Day_Types=Day_by_Day_and_Hr]
-NodeLocation: 136,272,1
+NodeLocation: 424,160,1
 NodeSize: 64,40
 WindState: 2,237,131,785,575
 
@@ -1381,7 +1381,7 @@ Description: Reindexes a dataset from the weekly day and hour index to the time 
 ~
 [data]: the array indexed by weekly day and hour
 Definition: Sum(data * Week_to_DaysTime_Map, Day_and_Hour)
-NodeLocation: 272,272,1
+NodeLocation: 424,264,1
 NodeSize: 64,40
 WindState: 2,1026,37,720,350
 
@@ -1390,9 +1390,16 @@ Title: Week to Days and Time Map
 Units: boolean
 Description: Maps the weekly day and hour index to the time of day and day of week indices.
 Definition: (Day_by_Day_and_Hr = Day_of_Week) AND (Hour_by_Day_and_Hr = Time_of_Day)
-NodeLocation: 120,168,1
+NodeLocation: 272,264,1
 NodeSize: 64,40
 ValueState: 2,156,184,828,689,,MIDM
+
+Variable Week_DayTypTime_Map
+Title: Week to Day Type & Time Map
+Definition: Aggregate(Week_to_DaysTime_Map, Day_Type_by_Weekday, Day_of_Week, Weekday_or_Weekend, type: 'Max')
+NodeLocation: 272,160,1
+NodeSize: 64,40
+WindState: 2,102,82,720,350
 
 Close Day_and_Hour_Mapping
 
