@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Solar_PV at 7-Feb-2019 12:50:25 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Solar_PV at 8-Feb-2019 10:14:23 AM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -14,7 +14,7 @@ Title: Solar PV
 Author: Cory Welch
 Date: Mon, Jan 8, 2018 10:24 AM
 SaveAuthor: JamesMilford
-SaveDate: Thu, Feb 7, 2019 12:50 PM
+SaveDate: Fri, Feb 8, 2019 10:14 AM
 DefaultSize: 64,40
 NodeSize: 88,64
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -3141,7 +3141,7 @@ Definition: Pre_and_Post_Custome[Rate_Vintage=RateVint_by_RateName, Pre_and_Post
 NodeLocation: 848,48,1
 NodeSize: 64,40
 WindState: 2,242,3,1122,599
-ValueState: 2,56,20,1183,617,1,MIDM
+ValueState: 2,56,20,1179,665,1,MIDM
 Aliases: FormNode Fo1546462051, FormNode Fo1546462132
 NodeColor: 19661,48336,65535
 GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
@@ -4827,7 +4827,7 @@ Att_StackedBar Graph_Primary_Valdim:1
 ReformVal: [System_Type,Bill_Components]
 NumberFormat: 2,F,2,0,1,1,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Bill_Components,Month]
-Att_ResultSliceState: [PV_Sectors,1,Month,0,PV_Climate_Zone,1,Rate_Names_and_Start,16,System_Comparison,2,Bill_Components,1,System_Type,3]
+Att_ResultSliceState: [PV_Sectors,1,Month,0,PV_Climate_Zone,1,Rate_Names_and_Start,16,System_Comparison,3,Bill_Components,1,System_Type,3]
 {!40600|Att_StackingIndex: Bill_Components}
 {!40600|Att_ClusterIndex: Bill_Components}
 {!40700|Att_CellFormat: Undefined}
@@ -5261,11 +5261,11 @@ NodeSize: 64,40
 Aliases: FormNode Fo1548706815
 
 Index Incent_Duration_Step
-Att_PrevIndexValue: [1,2,3,4]
 Title: Incentive Duration Step
 Definition: 1..Num_Incent_Dur_Steps
 NodeLocation: 544,520,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2,3,4]
 
 FormNode Fo1548706815
 Title: Number of Incentive Duration Steps
@@ -5368,11 +5368,11 @@ WindState: 2,340,265,720,350
 Aliases: FormNode Fo1548708353
 
 Index Incent_Capacity_Step
-Att_PrevIndexValue: [1,2,3,4,5]
 Title: Incentive Capacity Step
 Definition: 1..Num_Incent_Cap_Steps
 NodeLocation: 256,520,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2,3,4,5]
 
 FormNode Fo1548708353
 Title: Number of Incentive Duration Steps
@@ -5469,18 +5469,18 @@ Att_EditSliceState: [All_Sectors,1,ITC_Applied,1,Incentive_Steps,1]
 {!50000|Att_ColumnWidths: [,Incentive_Steps,\([61,,,,,])]}
 
 Index Incentive_Steps
-Att_PrevIndexValue: [1,2,3,4,5,6]
 Title: Incentive Steps
 Definition: 1..Num_Incentive_Steps
 NodeLocation: 256,432,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2,3,4,5,6]
 
 Index ITC_Applied
-Att_PrevIndexValue: ['Yes','No']
 Title: ITC Applied
 Definition: ['Yes','No']
 NodeLocation: 400,432,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Yes','No']
 
 FormNode Fo1548723041
 Title: Storage Incentives
@@ -5507,11 +5507,11 @@ TableCellDefault: Choice(Incentive_Start_Time,1,0)
 {!40200|Att_ChoiceIndexes: Index Incentive_Start_Time}
 
 Index Incentive_Start_Time
-Att_PrevIndexValue: ['None',1-Jan-2009,1-Feb-2009,1-Mar-2009,1-Apr-2009,1-May-2009,1-Jun-2009,1-Jul-2009,1-Aug-2009,1-Sep-2009,1-Oct-2009,1-Nov-2009,1-Dec-2009,1-Jan-2010,1-Feb-2010,1-Mar-2010,1-Apr-2010,1-May-2010,1-Jun-2010,1-Jul-2010,1-Aug-2010,1-Sep-2010,1-Oct-2010,1-Nov-2010,1-Dec-2010,1-Jan-2011,1-Feb-2011,1-Mar-2011,1-Apr-2011,1-May-2011,1-Jun-2011,1-Jul-2011,1-Aug-2011,1-Sep-2011,1-Oct-2011,1-Nov-2011,1-Dec-2011,1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018,1-Sep-2018,1-Oct-2018,1-Nov-2018,1-Dec-2018,1-Jan-2019,1-Feb-2019,1-Mar-2019,1-Apr-2019,1-May-2019,1-Jun-2019,1-Jul-2019,1-Aug-2019,1-Sep-2019,1-Oct-2019,1-Nov-2019,1-Dec-2019,1-Jan-2020,1-Feb-2020,1-Mar-2020,1-Apr-2020,1-May-2020,1-Jun-2020,1-Jul-2020,1-Aug-2020,1-Sep-2020,1-Oct-2020,1-Nov-2020,1-Dec-2020,1-Jan-2021,1-Feb-2021,1-Mar-2021,1-Apr-2021,1-May-2021,1-Jun-2021,1-Jul-2021,1-Aug-2021,1-Sep-2021,1-Oct-2021,1-Nov-2021,1-Dec-2021,1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023,1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030,1-Jan-2031]
 Title: Incentive Start Times
 Definition: Concat(None_Label, PV_Sim_Strt_Yr_Opt)
 NodeLocation: 544,432,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['None',1-Jan-2009,1-Feb-2009,1-Mar-2009,1-Apr-2009,1-May-2009,1-Jun-2009,1-Jul-2009,1-Aug-2009,1-Sep-2009,1-Oct-2009,1-Nov-2009,1-Dec-2009,1-Jan-2010,1-Feb-2010,1-Mar-2010,1-Apr-2010,1-May-2010,1-Jun-2010,1-Jul-2010,1-Aug-2010,1-Sep-2010,1-Oct-2010,1-Nov-2010,1-Dec-2010,1-Jan-2011,1-Feb-2011,1-Mar-2011,1-Apr-2011,1-May-2011,1-Jun-2011,1-Jul-2011,1-Aug-2011,1-Sep-2011,1-Oct-2011,1-Nov-2011,1-Dec-2011,1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018,1-Sep-2018,1-Oct-2018,1-Nov-2018,1-Dec-2018,1-Jan-2019,1-Feb-2019,1-Mar-2019,1-Apr-2019,1-May-2019,1-Jun-2019,1-Jul-2019,1-Aug-2019,1-Sep-2019,1-Oct-2019,1-Nov-2019,1-Dec-2019,1-Jan-2020,1-Feb-2020,1-Mar-2020,1-Apr-2020,1-May-2020,1-Jun-2020,1-Jul-2020,1-Aug-2020,1-Sep-2020,1-Oct-2020,1-Nov-2020,1-Dec-2020,1-Jan-2021,1-Feb-2021,1-Mar-2021,1-Apr-2021,1-May-2021,1-Jun-2021,1-Jul-2021,1-Aug-2021,1-Sep-2021,1-Oct-2021,1-Nov-2021,1-Dec-2021,1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023,1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030,1-Jan-2031]
 
 Constant Hist_Storage_Incent
 Title: Historic Storage Incentives
@@ -5618,11 +5618,11 @@ ReformVal: [Time_Solar_PV,Installation_Event]
 Att_ResultSliceState: [PV_Sectors,1,Equipment_Types,2,System_Types,2,PV_Climate_Zone,1,Installation_Event,1,Time_Solar_PV,1]
 
 Index Historic_Incent_Yrs
-Att_PrevIndexValue: [2009,2010,2011,2012,2013,2014,2015,2016,2017,2018]
 Title: Historic Incentive Years
 Definition: 2009..Final_Hist_Incent_Yr
 NodeLocation: 256,608,1
 NodeSize: 64,40
+Att_PrevIndexValue: [2009,2010,2011,2012,2013,2014,2015,2016,2017,2018]
 
 FormNode Fo1548883568
 Title: Historic Storage Incentives
@@ -5639,7 +5639,6 @@ Description: The applicable incentive step for each time period.
 Definition: FOR J:=PV_Sectors DO (~
    INDEX steps:=Subset(Incentive_Step_Start[All_Sectors=J] <> None_Label);~
    VAR dates:=Incentive_Step_Start[All_Sectors=J, Incentive_Steps=steps];~
-msgbox(dates);~
    StepInterp(dates, steps, Time_Solar_PV, steps, LeftLookup: True)~
 )~
 
@@ -7043,7 +7042,7 @@ THEN IF PositionInIndex(Pre_and_Post_System, System_Comparison, Pre_and_Post_Sys
 ELSE CostOf_ElectCompare[System_Types=SystType_for_System]
 NodeLocation: 720,624,1
 NodeSize: 64,40
-ValueState: 2,172,4,1104,698,1,MIDM
+ValueState: 2,281,15,1104,698,1,MIDM
 Aliases: FormNode Fo1539221825, FormNode Fo1544373674, FormNode Fo1546384744
 GraphSetup: Att_GraphIndexRange Annual_PV_Time:1,0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
@@ -7058,7 +7057,7 @@ Att_ForceCategorical Graph_Primary_Valdim:
 ReformVal: [System_Type,Cost_Component]
 NumberFormat: 2,I,4,0,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Bill_Components,Month,Cost_Component]
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Annual_PV_Time,10,System_Comparison,3,Cost_Component,0,System_Type,4]
+Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Annual_PV_Time,10,System_Comparison,3,Cost_Component,0,System_Type,4]
 {!40600|Att_StackingIndex: Cost_Component}
 {!40600|Att_ClusterIndex: Cost_Component}
 
@@ -17435,19 +17434,19 @@ NodeLocation: 96,152,1
 NodeSize: 64,40
 
 Index Tax_Entity
-Att_PrevIndexValue: ['State','Federal']
 Title: Tax Entity
 Definition: ['State','Federal']
 NodeLocation: 1248,64,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['State','Federal']
 
 Index PV_Operating_Year
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 Title: PV Operating Year
 Definition: 1..Economic_Lifetime
 NodeLocation: 384,680,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 257,294}
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
 Index All_Equipment_Types
 Title: All Equipment Types
@@ -17487,13 +17486,13 @@ NodeLocation: 96,240,1
 NodeSize: 64,40
 
 Index Cost_Component
-Att_PrevIndexValue: ['Utility Bill','Loan Payments','O&M','Interconnect Fee','Depreciation Deduction','Interest Deduction','OpEx Deductions','Net Costs']
 Title: Cost Component
 Definition: ['Utility Bill','Loan Payments','O&M','Interconnect Fee','Depreciation Deduction','Interest Deduction','OpEx Deductions','Net Costs']
 IndexVals: ['item 1']
 NodeLocation: 96,376,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 272,140}
+Att_PrevIndexValue: ['Utility Bill','Loan Payments','O&M','Interconnect Fee','Depreciation Deduction','Interest Deduction','OpEx Deductions','Net Costs']
 
 Decision Map_Costs_to_Sector
 Title: Map Costs to Sector
@@ -17544,12 +17543,12 @@ WindState: 2,102,82,720,635
 {!40300|Att_SlicerPopupSize: 282,112}
 
 Index New_or_Retrofit
-Att_PrevIndexValue: ['NewConstr','Retrofit']
 Title: NewConstr or Retrofit
 Definition: ['NewConstr','Retrofit']
 NodeLocation: 528,64,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 242,56}
+Att_PrevIndexValue: ['NewConstr','Retrofit']
 
 Index System_Configuration
 Title: System Configuration
@@ -17558,11 +17557,11 @@ NodeLocation: 672,152,1
 NodeSize: 64,40
 
 Index Energy_and_Power
-Att_PrevIndexValue: ['Energy (kWh)','Power (kW)']
 Title: Energy and Power
 Definition: ['Energy (kWh)','Power (kW)']
 NodeLocation: 816,64,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Energy (kWh)','Power (kW)']
 
 Decision Energy_kWh_Label
 Title: Energy kWh Label
@@ -17703,7 +17702,6 @@ NodeSize: 64,40
 Att_PrevIndexValue: ['Pre-System','Post-System']
 
 Index Bill_Components
-Att_PrevIndexValue: ['Basic Service Fees','Minimum Charges','Summer On-Peak Energy','Summer Off-Peak Energy','Summer Super-Off Peak Energy','Summer Semi-Peak Energy','Winter On-Peak Energy','Winter Off-Peak Energy','Winter Super-Off Peak Energy','Winter Semi-Peak Energy','Non-Coincident Demand','Summer On-Peak Demand','Winter On-Peak Demand','Net Total']
 Title: Bill Components
 Definition: ['Basic Service Fees','Minimum Charges','Summer On-Peak Energy','Summer Off-Peak Energy','Summer Super-Off Peak Energy','Summer Semi-Peak Energy','Winter On-Peak Energy','Winter Off-Peak Energy','Winter Super-Off Peak Energy','Winter Semi-Peak Energy','Non-Coincident Demand','Summer On-Peak Demand','Winter On-Peak Demand','Net Total']
 NodeLocation: 96,616,1
@@ -17711,6 +17709,7 @@ NodeSize: 64,40
 WindState: 2,102,82,752,502
 ValueState: 2,853,-1,416,303,,MIDM
 {!40300|Att_SlicerPopupSize: 227,210}
+Att_PrevIndexValue: ['Basic Service Fees','Minimum Charges','Summer On-Peak Energy','Summer Off-Peak Energy','Summer Super-Off Peak Energy','Summer Semi-Peak Energy','Winter On-Peak Energy','Winter Off-Peak Energy','Winter Super-Off Peak Energy','Winter Semi-Peak Energy','Non-Coincident Demand','Summer On-Peak Demand','Winter On-Peak Demand','Net Total']
 
 Decision Pre_System_Label
 Title: Pre-System Label
@@ -18425,12 +18424,12 @@ NodeLocation: 1104,1024,1
 NodeSize: 64,40
 
 Index Installation_Event
-Att_PrevIndexValue: ['Initial Install','Future Replacement']
 Title: Installation Event
 Definition: ['Initial Install','Future Replacement']
 NodeLocation: 1824,64,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 232,56}
+Att_PrevIndexValue: ['Initial Install','Future Replacement']
 
 Decision Init_Install_Label
 Title: Initial Install Label
@@ -18566,12 +18565,12 @@ NodeInfo: 1,0,0,0,0,0,0,110,0,,0,,,0
 Original: No_System_Label
 
 Index Rate_Attribute_Setti
-Att_PrevIndexValue: ['Structure Type','Include ''rate'' Attribute','Include ''adj'' Attribute','Include ''sell'' Attribute']
 Title: Rate Attribute Settings
 Definition: ['Structure Type',"Include 'rate' Attribute","Include 'adj' Attribute","Include 'sell' Attribute"]
 NodeLocation: 1824,608,1
 NodeSize: 64,40
 ValueState: 2,56,58,478,378,,MIDM
+Att_PrevIndexValue: ['Structure Type','Include ''rate'' Attribute','Include ''adj'' Attribute','Include ''sell'' Attribute']
 
 Decision Rate_Structure_Label
 Title: Rate Structure Label
@@ -18595,11 +18594,11 @@ NodeInfo: 1,0,0,0,0,0,0,110,0,,0,,,0
 Original: Rate_Structure_Label
 
 Index Included_Attributes
-Att_PrevIndexValue: ['Include ''rate'' Attribute','Include ''adj'' Attribute','Include ''sell'' Attribute']
 Title: Included Attributes
 Definition: Subset(Rate_Attribute_Setti<>Rate_Structure_Label)
 NodeLocation: 1824,808,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Include ''rate'' Attribute','Include ''adj'' Attribute','Include ''sell'' Attribute']
 
 Decision Storage_Added_Label
 Title: Storage Added Label
