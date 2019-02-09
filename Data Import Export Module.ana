@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Data_Import__Export at 7-Feb-2019 12:50:24 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Data_Import__Export at 9-Feb-2019 1:08:00 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Data Import/ Export
 Author: Cory Welch
 Date: Fri, Feb 5, 2016 10:04 AM
 SaveAuthor: JamesMilford
-SaveDate: Thu, Feb 7, 2019 12:50 PM
+SaveDate: Sat, Feb 9, 2019 1:08 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -1810,6 +1810,7 @@ NodeLocation: 96,392,1
 NodeSize: 64,40
 
 Index SGIP_Sector_Options
+Att_PrevIndexValue: ['Commercial','Government','Non-Profit','Residential']
 Title: SGIP Sector Options
 Definition: INDEX all_sect:=CopyIndex(SGIP_Sectors);~
 INDEX uniq:=Unique(all_sect);~
@@ -1817,7 +1818,6 @@ SortIndex(uniq)
 NodeLocation: 688,496,1
 NodeSize: 64,40
 ValueState: 2,408,410,416,303,0,MIDM
-Att_PrevIndexValue: ['Commercial','Government','Non-Profit','Residential']
 
 Decision SGIP_Sector_Map
 Title: SGIP Sector Map
@@ -1876,11 +1876,11 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Select_SGIP_Fact_Col
 
 Index SGIP_Fact_Cols
+Att_PrevIndexValue: ['Interconnection date','Zip','Host Customer Sector','Paired With']
 Title: SGIP Fact Cols
 Definition: Subset(Select_SGIP_Fact_Col)
 NodeLocation: 256,784,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Interconnection date','Zip','Host Customer Sector','Paired With']
 
 Index SGIP_Value_Cols
 Title: SGIP Value Cols
@@ -3143,12 +3143,12 @@ NodeLocation: 88,272,1
 NodeSize: 64,40
 
 Index Excel_Import_Params
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index','Fact Column Index 1','Fact Column Index 2']
 Title: Excel Import Parameters
 Definition: Concat(Import_Fixed_Params, Fact_Col_Index_Param)
 NodeLocation: 88,360,1
 NodeSize: 64,40
 ValueState: 2,104,106,406,324,,MIDM
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index','Fact Column Index 1','Fact Column Index 2']
 
 Variable Variable_Identifier
 Title: Variable Identifier
@@ -3245,11 +3245,11 @@ WindState: 2,42,72,720,350
 Aliases: FormNode Fo1542127076, FormNode Fo1544985279
 
 Index Imported_Dataset_Num
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11]
 Title: Imported Dataset Number
 Definition: 1..Number_of_Datasets
 NodeLocation: 240,184,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11]
 
 Index Selected_Import_Data
 Title: Selected Import Datasets
@@ -3507,11 +3507,11 @@ NodeSize: 64,40
 WindState: 2,-3,6,720,350
 
 Index Import_Data_Types
+Att_PrevIndexValue: ['Any','Number','Text','Date']
 Title: Import Data Types
 Definition: ['Any','Number','Text','Date']
 NodeLocation: 688,696,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Any','Number','Text','Date']
 
 Decision Data_Type_Label
 Title: Data Type Label
@@ -3596,11 +3596,11 @@ Aliases: FormNode Fo1544986731, FormNode Fo1544986755
 NumberFormat: 3,F,4,4,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 
 Index Tab_Names
+Att_PrevIndexValue: ['FactCol1IncorrLabel','FactCol2MissLabel','FactCol2ValueInd','AtomicCols','AtomicRows','SingleCell','FactCol2RepeatLabel','FactCol2ValueIndNotNum','FactCol2ValueIndNotText','FactCol2ValueIndNotDate','SGIP_Data']
 Title: Tab Names
 Definition: CopyIndex(Tab_Names_by_Number)
 NodeLocation: 240,872,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['FactCol1IncorrLabel','FactCol2MissLabel','FactCol2ValueInd','AtomicCols','AtomicRows','SingleCell','FactCol2RepeatLabel','FactCol2ValueIndNotNum','FactCol2ValueIndNotText','FactCol2ValueIndNotDate','SGIP_Data']
 
 Decision Import_in_Progress
 Title: Import in Progress
@@ -9133,10 +9133,12 @@ Close Import_Interconnecti
 
 Module Net_Load_576
 Title: Net Load 576
+Author: JamesMilford
+Date: Fri, Feb 8, 2019 8:50 PM
 NodeLocation: 112,408,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,90,227,944,484,17
+DiagState: 2,39,65,944,484,17
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
 
@@ -9171,7 +9173,9 @@ Units: kW-hr/customer
 Definition: Sum(Res_Dispatch * Week_DayTypTime_Map, Day_and_Hour)[@Time_of_Day=@Hour1] / DaysPerWeek_DayType
 NodeLocation: 568,88,1
 NodeSize: 64,40
-ValueState: 2,152,154,416,303,,MIDM
+ValueState: 2,389,55,858,531,,MIDM
+ReformVal: [Hour1,System_Type1]
+Att_ResultSliceState: [PV_Climate_Zone,1,Month,3,Weekday_or_Weekend,1,System_Type1,1,Hour1,1]
 
 Index Hour1
 Title: Hour
@@ -9230,7 +9234,7 @@ Title: System Type
 Definition: Subset(Export_Systems)
 NodeLocation: 112,184,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 227,84}
+{!40300|Att_SlicerPopupSize: 232,84}
 
 Variable NonRes_Dispatch
 Title: NonRes Dispatch
@@ -9264,8 +9268,8 @@ Definition: Sum(NonRes_Dispatch * Week_DayTypTime_Map, Day_and_Hour)[@Time_of_Da
 NodeLocation: 568,304,1
 NodeSize: 64,40
 ValueState: 2,298,33,775,601,,MIDM
-ReformVal: [Hour1,System_Type1]
-Att_ResultSliceState: [PV_Climate_Zone,1,Month,10,Weekday_or_Weekend,1,System_Type1,1,Hour1,1]
+ReformVal: [Hour1,Month]
+Att_ResultSliceState: [PV_Climate_Zone,1,Weekday_or_Weekend,2,System_Type1,4,Month,10,Hour1,1]
 
 Index Res_Export_Cols1
 Title: NonRes Export Cols
@@ -9297,6 +9301,32 @@ NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: NonRes_Rates
 
+Variable Res_Delta
+Title: Res Delta
+Definition: IF System_Type1 = 'Solar PV + Storage'~
+THEN Res_Dispatch_576 - Res_Dispatch_576[System_Type1='Solar PV']~
+ELSE IF System_Type1 = 'Storage Only'~
+THEN Res_Dispatch_576 - Res_Dispatch_576[System_Type1='No System']~
+ELSE Null
+NodeLocation: 720,184,1
+NodeSize: 64,40
+ValueState: 2,447,21,952,638,,MIDM
+ReformVal: [Hour1,Month]
+Att_ResultSliceState: [PV_Climate_Zone,1,Weekday_or_Weekend,1,System_Type1,4,Month,2,Hour1,1]
+
+Variable NonRes_Delta
+Title: NonRes Delta
+Definition: IF System_Type1 = 'Solar PV + Storage'~
+THEN NonRes_Dispatch_576 - NonRes_Dispatch_576[System_Type1='Solar PV']~
+ELSE IF System_Type1 = 'Storage Only'~
+THEN NonRes_Dispatch_576 - NonRes_Dispatch_576[System_Type1='No System']~
+ELSE Null
+NodeLocation: 568,400,1
+NodeSize: 64,40
+ValueState: 2,346,33,952,638,1,MIDM
+ReformVal: [Hour1,Month]
+Att_ResultSliceState: [PV_Climate_Zone,1,Weekday_or_Weekend,2,System_Type1,4,Month,7,Hour1,1]
+
 Close Net_Load_576
 
 Text Te1549568568
@@ -9310,6 +9340,8 @@ NodeColor: 58982,58982,58982
 
 Module Excel_Data_Export
 Title: Excel Data Export
+Author: JamesMilford
+Date: Fri, Feb 8, 2019 8:50 PM
 NodeLocation: 504,128,1
 NodeSize: 80,56
 DiagState: 2,49,81,749,447,17
@@ -9344,30 +9376,30 @@ NodeLocation: 424,176,1
 NodeSize: 64,40
 WindState: 2,1763,83,720,350
 DefnState: 2,23,265,1724,333,0,DFNM
-Aliases: FormNode New1543613103, FormNode Fo1543021295, FormNode Fo1549568883
+Aliases: FormNode Fo1543021295, FormNode New1543613103, FormNode Fo1549568883
 ReformDef: [Export_Parameter,Export_Dataset_Num]
 TableCellDefault: Default_ExportConfig
 
 Index Export_Parameter
+Att_PrevIndexValue: ['Include?','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 Title: Export Parameter
 Definition: ['Include?','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 NodeLocation: 112,64,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Include?','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 
 Index Export_Dataset_Num
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10]
 Title: Export Dataset Number
 Definition: 1..10
 NodeLocation: 272,176,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10]
 
 Decision Num_Export_Datasets
 Title: Number of Export Datasets
 Definition: 10
 NodeLocation: 272,64,1
 NodeSize: 64,40
-Aliases: FormNode New1543613102, FormNode Fo1543021306, FormNode Fo1549568884
+Aliases: FormNode Fo1543021306, FormNode New1543613102, FormNode Fo1549568884
 
 Decision Default_ExportConfig
 Title: Default Export Config
@@ -9673,11 +9705,11 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Cleared_Range_Mult
 
 Index Range_Parameters
+Att_PrevIndexValue: ['Full Range','Clear Range']
 Title: Range Parameters
 Definition: ['Full Range','Clear Range']
 NodeLocation: 272,368,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Full Range','Clear Range']
 
 Decision Clear_Range_Label
 Title: Clear Range Label
@@ -9732,7 +9764,7 @@ NodeLocation: 576,304,1
 NodeSize: 64,40
 NodeInfo: 1,1,1,1,1,1,0,0,0,0,,0,1,0
 WindState: 2,102,82,1189,350
-Aliases: FormNode Fo1544725853, FormNode Fo1544582166, FormNode Fo1549568882
+Aliases: FormNode Fo1544582166, FormNode Fo1544725853, FormNode Fo1549568882
 OnChange: MsgBox("NOTE: ACP read/write won't currently work if this name is changed. Do so only with full knowledge of the implications, or change the Download Tableau Datafile and Download Forecast Summary button scripts to use the appropriate name -- a variable name does not seem to work with currently ACP Cloud Player Styles syntax." , 1)
 
 FormNode Fo1544725853
@@ -9757,7 +9789,7 @@ Definition: 'DER_Forecast_Results.xlsx'
 NodeLocation: 576,400,1
 NodeSize: 64,40
 NodeInfo: 1,1,1,1,1,1,0,0,0,0,,0,1,0
-Aliases: FormNode Fo1544825656, FormNode Fo1544825832, FormNode Fo1549568886
+Aliases: FormNode Fo1544825832, FormNode Fo1544825656, FormNode Fo1549568886
 OnChange: MsgBox("NOTE: ACP read/write won't currently work if this name is changed. Do so only with full knowledge of the implications, or change the Download Tableau Datafile and Download Forecast Summary button scripts to use the appropriate name -- a variable name does not seem to work with currently ACP Cloud Player Styles syntax." , 1)
 
 FormNode Fo1544825656
