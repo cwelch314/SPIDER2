@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Data_Import__Export at 9-Feb-2019 1:08:00 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Data_Import__Export at 11-Feb-2019 10:10:25 AM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Data Import/ Export
 Author: Cory Welch
 Date: Fri, Feb 5, 2016 10:04 AM
 SaveAuthor: JamesMilford
-SaveDate: Sat, Feb 9, 2019 1:08 PM
+SaveDate: Mon, Feb 11, 2019 10:10 AM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -9138,7 +9138,7 @@ Date: Fri, Feb 8, 2019 8:50 PM
 NodeLocation: 112,408,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,39,65,944,484,17
+DiagState: 2,6,19,944,484,17
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
 
@@ -9174,6 +9174,7 @@ Definition: Sum(Res_Dispatch * Week_DayTypTime_Map, Day_and_Hour)[@Time_of_Day=@
 NodeLocation: 568,88,1
 NodeSize: 64,40
 ValueState: 2,389,55,858,531,,MIDM
+Aliases: FormNode Fo1549820243
 ReformVal: [Hour1,System_Type1]
 Att_ResultSliceState: [PV_Climate_Zone,1,Month,3,Weekday_or_Weekend,1,System_Type1,1,Hour1,1]
 
@@ -9268,6 +9269,7 @@ Definition: Sum(NonRes_Dispatch * Week_DayTypTime_Map, Day_and_Hour)[@Time_of_Da
 NodeLocation: 568,304,1
 NodeSize: 64,40
 ValueState: 2,298,33,775,601,,MIDM
+Aliases: FormNode Fo1549820244
 ReformVal: [Hour1,Month]
 Att_ResultSliceState: [PV_Climate_Zone,1,Weekday_or_Weekend,2,System_Type1,4,Month,10,Hour1,1]
 
@@ -9310,9 +9312,10 @@ THEN Res_Dispatch_576 - Res_Dispatch_576[System_Type1='No System']~
 ELSE Null
 NodeLocation: 720,184,1
 NodeSize: 64,40
-ValueState: 2,447,21,952,638,,MIDM
+ValueState: 2,571,8,952,638,,MIDM
+Aliases: FormNode Fo1549820245
 ReformVal: [Hour1,Month]
-Att_ResultSliceState: [PV_Climate_Zone,1,Weekday_or_Weekend,1,System_Type1,4,Month,2,Hour1,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,Weekday_or_Weekend,1,System_Type1,3,Month,2,Hour1,1]
 
 Variable NonRes_Delta
 Title: NonRes Delta
@@ -9323,9 +9326,10 @@ THEN NonRes_Dispatch_576 - NonRes_Dispatch_576[System_Type1='No System']~
 ELSE Null
 NodeLocation: 568,400,1
 NodeSize: 64,40
-ValueState: 2,346,33,952,638,1,MIDM
+ValueState: 2,533,43,952,638,1,MIDM
+Aliases: FormNode Fo1549820246
 ReformVal: [Hour1,Month]
-Att_ResultSliceState: [PV_Climate_Zone,1,Weekday_or_Weekend,2,System_Type1,4,Month,7,Hour1,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,Weekday_or_Weekend,1,System_Type1,3,Month,7,Hour1,1]
 
 Close Net_Load_576
 
