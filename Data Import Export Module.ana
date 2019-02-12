@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Data_Import__Export at 11-Feb-2019 10:18:03 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Data_Import__Export at 12-Feb-2019 1:19:44 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Data Import/ Export
 Author: Cory Welch
 Date: Fri, Feb 5, 2016 10:04 AM
 SaveAuthor: JamesMilford
-SaveDate: Mon, Feb 11, 2019 10:18 PM
+SaveDate: Tue, Feb 12, 2019 1:19 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -9140,53 +9140,35 @@ SaveDate: Mon, Feb 11, 2019 8:21 PM
 NodeLocation: 112,408,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,83,5,1293,444,17
+DiagState: 2,33,13,1097,527,17
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
 
-Variable Res_Dispatch
-Title: Res Dispatch
-Units: kW-hr/customer
-Definition: Net_Load_by_System_T[Rate_Vintage=Res_Rates, PV_Sectors=Residential_Label, System_Type=System_Type]
-NodeLocation: 416,88,1
-NodeSize: 64,40
-WindState: 2,702,43,720,350
-ValueState: 2,-1,17,1250,620,1,MIDM
-ReformVal: [Day_and_Hour,System_Type]
-Att_ResultSliceState: [PV_Climate_Zone,1,Month,6,Rate_Names_and_Start,16,System_Type,1,Day_and_Hour,1]
-
-Decision Res_Rates
-Title: Res Rates
-Definition: Choice(Rate_Vintage,4,0)
-NodeLocation: 264,88,1
-NodeSize: 64,40
-DefnState: 2,364,328,416,303,,DFNM
-Aliases: FormNode Fo1549566755, FormNode New1549936773
-TableCellDefault: Choice(Rate_Names_and_Start,1,0)
-{!40200|Att_ChoiceIndexes: Index Rate_Vintage}
-
 Index Res_Flat_Cols
 Title: Res Flat Cols
-Definition: Concat(IndexesOf(Aggreg_Res_Delta), 'Value')
-NodeLocation: 568,184,1
+Definition: Concat(IndexesOf(Agg_Norm_Load_Delta), 'Value')
+NodeLocation: 128,424,1
 NodeSize: 64,40
 
-Variable Res_Dispatch_576
-Title: Res Dispatch 576
+Variable Week_Abs_Load_Delta
+Title: Weekly Absolute Load Delta
 Units: kW-hr/customer
-Definition: Sum(Res_Dispatch * Week_DayTypTime_Map, Day_and_Hour)[@Time_of_Day=@Hour1] / DaysPerWeek_DayType
-NodeLocation: 568,88,1
+Description: The absolute load delta between a system with a storage device and its no-storage counterfactual.
+Definition: IF Rates_Included[All_Sectors=PV_Sectors] AND Months_Included[All_Sectors=PV_Sectors] AND StorageSyst_Included[All_Sectors=PV_Sectors, System_Type=Storage_System_Type]~
+THEN Levelized_Net_Load[System_Type=Storage_System_Type] - Levelized_Net_Load[System_Type=Baseline_System[System_Type=Storage_System_Type]]~
+ELSE Null
+NodeLocation: 280,200,1
 NodeSize: 64,40
 WindState: 2,102,82,720,350
-ValueState: 2,302,15,1159,659,1,MIDM
+ValueState: 2,163,12,1159,659,1,MIDM
 Aliases: FormNode Fo1549820243
-ReformVal: [Hour1,System_Type1]
-Att_ResultSliceState: [PV_Climate_Zone,1,Weekday_or_Weekend,1,Month,8,System_Type1,1,Hour1,1]
+ReformVal: [Day_and_Hour,Storage_System_Type]
+Att_ResultSliceState: [PV_Climate_Zone,1,Month,8,PV_Sectors,1,Rate_Vintage,4,System_Type,1,Day_and_Hour,1]
 
 Index Hour1
 Title: Hour
 Definition: ['00:00-01:00','01:00-02:00','02:00-03:00','03:00-04:00','04:00-05:00','05:00-06:00','06:00-07:00','07:00-08:00','08:00-09:00','09:00-10:00','10:00-11:00','11:00-12:00','12:00-13:00','13:00-14:00','14:00-15:00','15:00-16:00','16:00-17:00','17:00-18:00','18:00-19:00','19:00-20:00','20:00-21:00','21:00-22:00','22:00-23:00','23:00-00:00']
-NodeLocation: 416,184,1
+NodeLocation: 128,520,1
 NodeSize: 64,40
 
 Index Res_Export_Cols
@@ -9200,214 +9182,148 @@ Definition: VAR titles:=FOR J:=@Res_Flat_Cols DO (~
 );~
 ~
 CopyIndex(titles)
-NodeLocation: 264,184,1
+NodeLocation: 264,424,1
 NodeSize: 64,40
 
-Variable Flat_Res_Dispatch
-Title: Flat Res Dispatch
-Units: kW-hr/customer
-Definition: MdArrayToTable(Aggreg_Res_Delta, Col: Res_Flat_Cols,  omitZero: False, omitNull: True)[@Res_Flat_Cols=@Res_Export_Cols]
-NodeLocation: 1024,88,1
+Variable Flat_Load_Delta
+Title: Flat Load Delta
+Units: kW-hr/rated kW
+Description: The storage system normalized load deltas (eg, impacts) flattened for export.
+Definition: MdArrayToTable(Aggreg_Abs_LoadDelta, Col: Res_Flat_Cols,  omitZero: False, omitNull: True)[@Res_Flat_Cols=@Res_Export_Cols]
+NodeLocation: 896,200,1
 NodeSize: 64,40
 ValueState: 2,205,11,992,703,0,MIDM
 
-Decision Export_Systems
-Title: Export Systems
-Definition: Table(System_Type)(Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(0),Checkbox(0))
-NodeLocation: 112,88,1
+Decision StorageSyst_Included
+Title: Storage Systems Included
+Description: The storage systems to include in an output for storage load deltas.
+Definition: Table(System_Type,All_Sectors)(~
+Checkbox(0),Checkbox(0),Checkbox(0),~
+Checkbox(0),Checkbox(0),Checkbox(0),~
+Checkbox(1),Checkbox(0),Checkbox(0),~
+Checkbox(0),Checkbox(1),Checkbox(0),~
+Checkbox(0),Checkbox(0),Checkbox(0))
+NodeLocation: 128,200,1
 NodeSize: 64,40
+WindState: 2,-9,204,720,350
+DefnState: 2,168,170,602,365,,DFNM
 Aliases: FormNode Fo1549566756, FormNode New1549936774
+ReformDef: [All_Sectors,System_Type]
 TableCellDefault: Checkbox(0)
-
-FormNode Fo1549566755
-Title: Res Rates
-Definition: 0
-NodeLocation: 264,36,1
-NodeSize: 56,12
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Res_Rates
 
 FormNode Fo1549566756
 Title: Export Systems
 Definition: 0
-NodeLocation: 112,36,1
+NodeLocation: 128,148,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Export_Systems
+Original: StorageSyst_Included
 
-Index System_Type1
-Title: System Type
-Definition: Subset(Export_Systems)
-NodeLocation: 112,184,1
+Index Storage_System_Type
+Title: Storage System Type
+Definition: Subset(Sum(StorageSyst_Included[All_Sectors=PV_Sectors], PV_Sectors))
+NodeLocation: 264,520,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 247,84}
 
-Variable NonRes_Dispatch
-Title: NonRes Dispatch
-Units: kW-hr/customer
-Definition: {Pre_Post_Cust_Load[System_Type=System_Type1, PV_Sectors=Non_Res_Label, Rate_Names_and_Start=NonRes_Rates, PV_Operating_Year=1]}~
-Net_Load_by_System_T[Rate_Vintage=NonRes_Rates, PV_Sectors=Non_Res_Label, System_Type=System_Type]
-NodeLocation: 416,304,1
+Decision Rates_Included
+Title: Rates Included
+Units: boolean
+Description: The rates to include in an output for storage load deltas.
+Definition: Table(All_Sectors,Rate_Vintage)(~
+Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),~
+Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(0),~
+Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
+NodeLocation: 128,88,1
 NodeSize: 64,40
-ValueState: 2,-1,17,1250,620,1,MIDM
-ReformVal: [Day_and_Hour,System_Type1]
-Att_ResultSliceState: [PV_Climate_Zone,1,System_Type,5,Month,1,Day_and_Hour,1]
-
-Decision NonRes_Rates
-Title: NonRes Rates
-Definition: Choice(Rate_Vintage,3,0)
-NodeLocation: 264,304,1
-NodeSize: 64,40
-DefnState: 2,364,328,416,303,,DFNM
+WindState: 2,10,75,719,350
+DefnState: 2,316,152,464,479,0,DFNM
 Aliases: FormNode Fo1549567156, FormNode New1549936775
-TableCellDefault: Choice(Rate_Names_and_Start,1,0)
-{!40200|Att_ChoiceIndexes: Index Rate_Vintage}
-
-Index NonRes_Flat_Cols
-Title: NonRes Flat Cols
-Definition: Concat(IndexesOf(Aggreg_NonRes_Delta), 'Value')
-NodeLocation: 416,400,1
-NodeSize: 64,40
-
-Variable NonRes_Dispatch_576
-Title: NonRes Dispatch 576
-Units: kW-hr/customer
-Definition: Sum(NonRes_Dispatch * Week_DayTypTime_Map, Day_and_Hour)[@Time_of_Day=@Hour1] / DaysPerWeek_DayType
-NodeLocation: 568,304,1
-NodeSize: 64,40
-ValueState: 2,298,33,775,601,,MIDM
-Aliases: FormNode Fo1549820244
-ReformVal: [Hour1,System_Type]
-Att_ResultSliceState: [PV_Climate_Zone,1,Weekday_or_Weekend,2,Month,12,System_Type,1,Hour1,1]
-
-Index Res_Export_Cols1
-Title: NonRes Export Cols
-Definition: VAR titles:=FOR J:=@NonRes_Flat_Cols DO (~
-  MetaVar ind:=Slice(NonRes_Flat_Cols, J);~
-  VAR indTitle:=Title of ind;~
-  IF indTitle = Null~
-  THEN ind~
-   ELSE indTitle~
-);~
-~
-CopyIndex(titles)
-NodeLocation: 264,400,1
-NodeSize: 64,40
-
-Variable Flat_NonRes_Dispatch
-Title: Flat NonRes Dispatch
-Units: kW-hr/customer
-Definition: MdArrayToTable(Aggreg_NonRes_Delta, Col: NonRes_Flat_Cols,  omitZero: False, omitNull: True)[@NonRes_Flat_Cols=@Res_Export_Cols1]
-NodeLocation: 1024,304,1
-NodeSize: 64,40
-ValueState: 2,110,0,992,703,0,MIDM
+ReformDef: [All_Sectors,Rate_Vintage]
+TableCellDefault: Checkbox(0)
 
 FormNode Fo1549567156
 Title: Res Rates
 Definition: 0
-NodeLocation: 264,252,1
+NodeLocation: 128,36,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: NonRes_Rates
+Original: Rates_Included
 
-Variable Res_Delta
-Title: Res Delta
-Units: kW/rated kW
-Definition: VAR x:=IF System_Type = 'Solar PV + Storage'~
-THEN Res_Dispatch_576 - Res_Dispatch_576[System_Type='Solar PV']~
-ELSE IF System_Type = 'Storage Only'~
-THEN Res_Dispatch_576 - Res_Dispatch_576[System_Type='No System']~
-ELSE Null;~
-~
-Divide(x[System_Type=System_Type1], Storage_Max_Power[System_Types=System_Type_Map[System_Type=System_Type1], PV_Sectors=Residential_Label], True)
-NodeLocation: 720,88,1
+Variable Abs_Load_Delta_576
+Title: Absolute Load Delta 576
+Units: kW-hr/customer
+Description: The absolute load delta between a system with a storage device and its no-storage counterfactual in a 576 hour form (eg, 24 hours, month, weekday/weekend).
+Definition: Sum(Week_Abs_Load_Delta * Week_DayTypTime_Map, Day_and_Hour)[@Time_of_Day=@Hour1] / DaysPerWeek_DayType
+NodeLocation: 432,200,1
 NodeSize: 64,40
 WindState: 2,40,18,1407,439
-ValueState: 2,263,-5,992,671,1,MIDM
+ValueState: 2,499,20,992,671,1,MIDM
 Aliases: FormNode Fo1549820245
 ReformVal: [Hour1,Null]
-Att_ResultSliceState: [Weekday_or_Weekend,2,System_Type1,1,PV_Climate_Zone,1,Month,6,Hour1,1]
+Att_ResultSliceState: [Storage_System_Type,1,PV_Sectors,1,Rate_Vintage,4,PV_Climate_Zone,1,Month,6,Weekday_or_Weekend,1,Hour1,1]
 Att_ColorRole: Null
 
-Variable NonRes_Delta
-Title: NonRes Delta
-Definition: VAR x:=IF System_Type = 'Solar PV + Storage'~
-THEN NonRes_Dispatch_576 - NonRes_Dispatch_576[System_Type='Solar PV']~
-ELSE IF System_Type = 'Storage Only'~
-THEN NonRes_Dispatch_576 - NonRes_Dispatch_576[System_Type='No System']~
-ELSE Null;~
-~
-Divide(x[System_Type=System_Type1], Storage_Max_Power[System_Types=System_Type_Map[System_Type=System_Type1], PV_Sectors=Non_Res_Label], True)
-NodeLocation: 720,304,1
+Decision Baseline_System
+Title: Baseline System
+Description: The baseline or counterfactual system used to determine the isolated impacts of a storage system.
+Definition: Table(System_Type)(Null,Choice(System_Type,1,0),Choice(System_Type,2,0),Choice(System_Type,1,0),Choice(System_Type,2,0))
+NodeLocation: 280,304,1
 NodeSize: 64,40
-ValueState: 2,291,15,1013,638,1,MIDM
-Aliases: FormNode Fo1549820246
-ReformVal: [Hour1,Month]
-Att_ResultSliceState: [Weekday_or_Weekend,1,System_Type1,1,PV_Climate_Zone,1,Month,10,Hour1,1]
-Att_ColorRole: Null
-
-Decision System_Type_Map
-Title: System Type Map
-Definition: Table(System_Type)(Choice(All_System_Types,6,0),Choice(All_System_Types,3,0),Choice(All_System_Types,3,0),Choice(All_System_Types,6,0),Choice(All_System_Types,3,0))
-NodeLocation: 720,184,1
-NodeSize: 64,40
-DefnState: 2,362,20,416,303,0,DFNM
+WindState: 2,267,280,720,350
+DefnState: 2,19,9,574,303,0,DFNM
 ValueState: 2,-4,361,416,303,,MIDM
 Aliases: FormNode New1549946500
 TableCellDefault: Choice(All_System_Types,1,0)
-{!40200|Att_ChoiceIndexes: Index All_System_Types}
+{!40200|Att_ChoiceIndexes: Index System_Type}
 
-Objective Net_Load_by_System_T
-Title: Net Load by System Type
+Objective Levelized_Net_Load
+Title: Levelized Net Load
+Units: kW-hr/customer
+Description: The net load by system type (when levelized over the economic horizon).
 Definition: Table(System_Type)(Ext_Customer_Load[Storage_Systems=PV_Strg_Retro_Label, @Ext_Day_and_Hour=Day_and_Hour_Ext_Pos],(Ext_Customer_Load-Ext_Solar_Output)[Storage_Systems=PV_Strg_Retro_Label, @Ext_Day_and_Hour=Day_and_Hour_Ext_Pos],Load_Net_of_Storage[Storage_Systems=SystType_for_System],Load_Net_of_Storage[Storage_Systems=SystType_for_System],Load_Net_of_Storage[Storage_Systems=SystType_for_System])
-NodeLocation: 96,304,1
+NodeLocation: 128,304,1
 NodeSize: 64,40
 WindState: 2,17,279,1520,648
-DefnState: 2,495,424,979,303,0,DFNM
+DefnState: 2,5,366,979,303,0,DFNM
 ValueState: 2,200,11,986,695,,MIDM
+NodeColor: 19661,48336,65535
 ReformVal: [Day_and_Hour,System_Type]
 Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,3,PV_Climate_Zone,1,Month,1,System_Type,1,Day_and_Hour,1]
-
-FormNode New1549936773
-Title: Res Rates
-Definition: 0
-NodeLocation: 264,36,1
-NodeSize: 56,12
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Res_Rates
 
 FormNode New1549936774
 Title: Export Systems
 Definition: 0
-NodeLocation: 112,36,1
+NodeLocation: 128,148,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Export_Systems
+Original: StorageSyst_Included
 
 FormNode New1549936775
 Title: Res Rates
 Definition: 0
-NodeLocation: 264,252,1
+NodeLocation: 128,36,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: NonRes_Rates
+Original: Rates_Included
 
 FormNode New1549946500
 Title: Export Systems
 Definition: 0
-NodeLocation: 720,228,1
+NodeLocation: 280,348,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: System_Type_Map
+Original: Baseline_System
 
-Decision Climate_Zone_Inclusi
-Title: Climate Zone Inclusion
+Decision ClimZones_Included
+Title: Climate Zones Included
+Description: The climate zones to include in an output for storage load deltas.
 Definition: Table(PV_Climate_Zone,All_Sectors)(~
 Checkbox(1),Checkbox(1),Checkbox(0),~
 Checkbox(0),Checkbox(0),Checkbox(0),~
 Checkbox(1),Checkbox(1),Checkbox(0),~
 Checkbox(0),Checkbox(0),Checkbox(0))
-NodeLocation: 1024,184,1
+NodeLocation: 432,304,1
 NodeSize: 64,40
 DefnState: 2,20,3,596,450,0,DFNM
 Aliases: FormNode Fo1549939307
@@ -9415,45 +9331,86 @@ TableCellDefault: Checkbox(0)
 
 Variable Climate_Zone_Weights
 Title: Climate Zone Weights
-Definition: VAR installed_kW:=Sum(SGIP_Data_by_Year_an[SGIP_Value_Cols='Rated Capacity [kW]'] * Climate_Zone_Inclusi, SGIP_Years, With_PV_System, SGIP_Data_Rows);~
+Units: fraction
+Description: The percentage of installed storage kW capacity by climate zone. This comes from SGIP data.
+Definition: VAR installed_kW:=Sum(SGIP_Data_by_Year_an[SGIP_Value_Cols='Rated Capacity [kW]'] * ClimZones_Included, SGIP_Years, With_PV_System, SGIP_Data_Rows);~
 VAR total_kW:=Sum(installed_kW , PV_Climate_Zone);~
 Divide(installed_kW, total_kW, True)
-NodeLocation: 872,184,1
+NodeLocation: 584,304,1
 NodeSize: 64,40
-ValueState: 2,30,108,582,500,0,MIDM
+ValueState: 2,20,31,582,500,0,MIDM
+NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [With_PV_System,PV_Climate_Zone]
 Att_ResultSliceState: [PV_Sectors,2,All_Sectors,1,PV_Climate_Zone,1]
 
-Variable Aggreg_NonRes_Delta
-Title: Aggreg NonRes Delta
-Definition: Sum(NonRes_Delta * Climate_Zone_Weights[All_Sectors=Non_Res_Label], PV_Climate_Zone)
-NodeLocation: 872,304,1
+Variable Aggreg_Abs_LoadDelta
+Title: Aggreg Abs Load Delta
+Units: kW-hr/customer
+Description: The storage systems net load delta aggregated over climate zones using weights specific to the amount of installed kW storage capacity installed in each climate zone.
+Definition: Sum(Abs_Load_Delta_576 * Climate_Zone_Weights[All_Sectors=Residential_Label], PV_Climate_Zone)
+NodeLocation: 584,200,1
 NodeSize: 64,40
 ValueState: 2,277,68,842,597,,MIDM
-Att_ResultSliceState: [System_Type1,1,Weekday_or_Weekend,1,Month,1,Hour1,1]
-
-Variable Aggreg_Res_Delta
-Title: Aggreg Res Delta
-Definition: Sum(Res_Delta * Climate_Zone_Weights[All_Sectors=Residential_Label] * Months_Included, PV_Climate_Zone)
-NodeLocation: 872,88,1
-NodeSize: 64,40
-ValueState: 2,277,68,842,597,,MIDM
-Att_ResultSliceState: [System_Type1,1,Weekday_or_Weekend,2,Month,1,Hour1,1]
+ReformVal: [Hour1,Storage_System_Type]
+Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,4,Month,7,Weekday_or_Weekend,1,Storage_System_Type,1,Hour1,1]
 
 FormNode Fo1549939307
 Title: Climate Zone Inclusion
 Definition: 0
-NodeLocation: 1024,228,1
+NodeLocation: 432,348,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Climate_Zone_Inclusi
+Original: ClimZones_Included
 
 Decision Months_Included
 Title: Months Included
-Definition: Table(Month)(Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0))
-NodeLocation: 1176,88,1
+Description: The months to include in an output for storage load deltas.
+Definition: Table(Month,All_Sectors)(~
+Checkbox(0),Checkbox(1),Checkbox(0),~
+Checkbox(0),Checkbox(1),Checkbox(0),~
+Checkbox(0),Checkbox(1),Checkbox(0),~
+Checkbox(0),Checkbox(1),Checkbox(0),~
+Checkbox(0),Checkbox(1),Checkbox(0),~
+Checkbox(1),Checkbox(1),Checkbox(0),~
+Checkbox(1),Checkbox(1),Checkbox(0),~
+Checkbox(1),Checkbox(1),Checkbox(0),~
+Checkbox(1),Checkbox(1),Checkbox(0),~
+Checkbox(1),Checkbox(1),Checkbox(0),~
+Checkbox(0),Checkbox(1),Checkbox(0),~
+Checkbox(0),Checkbox(1),Checkbox(0))
+NodeLocation: 280,88,1
 NodeSize: 64,40
+Aliases: FormNode Fo1549999153
+ReformDef: [All_Sectors,Month]
 TableCellDefault: Checkbox(0)
+
+FormNode Fo1549999153
+Title: Months Included
+Definition: 0
+NodeLocation: 280,36,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Months_Included
+
+Variable Agg_Norm_Load_Delta
+Title: Aggreg Normalized Load Delta
+Units: kW-hr/rated kW
+Description: The storage system load deltas normalized by the storage system's power rating.
+Definition: Divide(Aggreg_Abs_LoadDelta, Size_for_Normaliz, True)
+NodeLocation: 744,200,1
+NodeSize: 64,40
+ValueState: 2,218,13,933,642,,MIDM
+ReformVal: [Hour1,Storage_System_Type]
+Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,4,Month,7,Weekday_or_Weekend,1,Storage_System_Type,1,Hour1,1]
+
+Variable Size_for_Normaliz
+Title: Size for Normalization
+Units: kW
+Description: The storage devices' charge/discharge rated power.
+Definition: Storage_Max_Power[System_Types=SystType_for_System[System_Type=Storage_System_Type]]
+NodeLocation: 744,304,1
+NodeSize: 64,40
+ValueState: 2,9,30,587,629,0,MIDM
 
 Close Net_Load_576
 
