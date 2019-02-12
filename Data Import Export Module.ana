@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Data_Import__Export at 11-Feb-2019 10:10:25 AM, encoding="UTF-8" }
+{ From user JamesMilford, Model Data_Import__Export at 11-Feb-2019 10:18:03 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,11 +9,11 @@ Title: Data Import/ Export
 Author: Cory Welch
 Date: Fri, Feb 5, 2016 10:04 AM
 SaveAuthor: JamesMilford
-SaveDate: Mon, Feb 11, 2019 10:10 AM
+SaveDate: Mon, Feb 11, 2019 10:18 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-DiagState: 2,936,27,817,742,17
+DiagState: 2,545,6,817,571,17
 WindState: 2,102,82,720,350
 NodeColor: 57311,57311,57311
 Pict: (000000000000003C003C00042204000089504E470D0A1A0A0000000D494844520000003C0000003C08060000003AFCD972000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000000970485973000012740000127401DE661F78000003A7494441546843ED9A4F68D3501CC71D78586FDB6D3BB99DDC6E2B086E17D9C0C38697D5537B5B6FDBC9E2693BB98BF4A05011A1E2C11E1C466110FF41C483F5327A500C2A5A05A1A08C0A821105AB288DFD96FDF425F9A549DBBC365B13F8D0F6F7DEFBBDF749F2922D2F874CD31C28D8A06CAEBE38B779595FCF7265B26183B2397E73B816BF81AF7CB94CD8A06C201B09F70836289B48B887B041D944C23D840DCA2612EE216C503691700F6183B289847B081B244AA5D2ECDADA5A7E6E6EAE34343464FA25168BD5361B1B97137809E772B9CCE8E8A8C1E576231E8FEBE974BA80317339093608F2F9FC2A97D82F90E6F2022FE1C9C9C90A97D32FD96C769DCB0BD8A0AEEB33183025585A5AD270C4DAD98AC5E23C971B7809A3FFBD34BE371C5D51DAAD7F4700A45229058D205D2E97A7B83ADDE025DC29D56A756C7A7ABA8CB12F2C2C14B93A8E00A046894442E5CABB459630A0A9E836A51C01800600A70AC5EACFAF65EAF9A346FDD298E907F34E4A33FFFC1C16F3129EC268B77DBAC8E565B972A4562F5D688EB55028ACD0F82D39F77004002B8CA45C672D303FEEB0F3C853B8D18ECBE705DA06274C49B1E71B7BD393776A52CC29E229DCA0FEFAD60A9BD786793FAD4A156E7622D4ED043FC27E69EE98483812FE8723003A157EFB459FB9F82C93AB7C6D7DEFF623FCED97318287F58F3FA8CB5C39D157E1B34F9655889CB83D62409EAB03BC84219B7C30A3A3CEC9EDB12A5787E8ABF0C38A92249956D2AD84455970FD95FBDFC5A0EF7318D2B494E226ED266C97C51A94BD8E9D505CB47676B5C556D29CF0EEF7CA44E2DE54B91D59100A6160977EF9F9FFFFA97661C89E52272A14DF7A93CB509917A11106A2343EF11B7151D82E7BF77D6185DAFB2154C2E0E9A7E23C8EB0284D72A22CCADA9505A1130698C3A234098BB274F4DB2594C2409416E94616845618D8A5BB9505A11606909E55623F8E6D1DFEDDAD2C08BD70D044C291B015470044C20D0656D87C74A6D07C1A191676CE67A50A87198C333061535B55B84EC2021E1F639CC109EF1322611B8E001818E14E56DEFD809CC82DF665475194E4F8F878956BDF0DF6B7112C9D8A8BE041E3B67C49D012AD2CA81F4BA75488D574ACA007C1C6C64696F26291DA0DDAD9B2FA26475638C8B98B5395F2FAA1D5FB19EDC2CD674B052A0C52B856AB0D63FE22A7D70659C33046B83C9DE0294CA7153A17E3FB154F61CC2514E202A269DA22372FF613F47E19EE12ACB0AAAACBB4470E12E2196B1106380D64DC8BFB01A6A8FD2268911D04D8E0C1C53CF417ED20281D5796B60C0000000049454E44AE426082)
@@ -1810,7 +1810,6 @@ NodeLocation: 96,392,1
 NodeSize: 64,40
 
 Index SGIP_Sector_Options
-Att_PrevIndexValue: ['Commercial','Government','Non-Profit','Residential']
 Title: SGIP Sector Options
 Definition: INDEX all_sect:=CopyIndex(SGIP_Sectors);~
 INDEX uniq:=Unique(all_sect);~
@@ -1818,6 +1817,7 @@ SortIndex(uniq)
 NodeLocation: 688,496,1
 NodeSize: 64,40
 ValueState: 2,408,410,416,303,0,MIDM
+Att_PrevIndexValue: ['Commercial','Government','Non-Profit','Residential']
 
 Decision SGIP_Sector_Map
 Title: SGIP Sector Map
@@ -1876,18 +1876,18 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Select_SGIP_Fact_Col
 
 Index SGIP_Fact_Cols
-Att_PrevIndexValue: ['Interconnection date','Zip','Host Customer Sector','Paired With']
 Title: SGIP Fact Cols
 Definition: Subset(Select_SGIP_Fact_Col)
 NodeLocation: 256,784,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Interconnection date','Zip','Host Customer Sector','Paired With']
 
 Index SGIP_Value_Cols
 Title: SGIP Value Cols
 Definition: Subset(NOT Select_SGIP_Fact_Col)
 NodeLocation: 400,784,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 318,297}
+{!40300|Att_SlicerPopupSize: 323,297}
 
 Variable Multi_D_SGIP_Data
 Title: Multi-D SGIP Data
@@ -2261,14 +2261,14 @@ Title: SGIP Data by Year and CZ
 Definition: Aggregate(SGIP_Data_by_Year, Spatial_ID_to_CZ_Map, All_Spatial_ID, PV_Climate_Zone)
 NodeLocation: 1304,592,1
 NodeSize: 64,40
-ValueState: 2,40,5,1039,854,0,MIDM
+ValueState: 2,234,11,1039,478,0,MIDM
 GraphSetup: Att_GraphIndexRange SGIP_Years:1,0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_ForceCategorical Graph_Primary_Valdim:~
 Att_StackedBar Graph_Primary_Valdim:0
 ReformVal: [SGIP_Years,PV_Climate_Zone]
-Att__TotalsIndex: [SGIP_Data_Rows,With_PV_System]
-Att_ResultSliceState: [SGIP_Data_Rows,0,SGIP_Value_Cols,7,With_PV_System,0,All_Sectors,1,PV_Climate_Zone,1,SGIP_Years,1]
+Att__TotalsIndex: [SGIP_Data_Rows,With_PV_System,SGIP_Years]
+Att_ResultSliceState: [SGIP_Data_Rows,0,SGIP_Value_Cols,3,With_PV_System,0,All_Sectors,1,PV_Climate_Zone,1,SGIP_Years,1]
 
 Decision Cost_per_kWh
 Title: Cost per kWh
@@ -9135,35 +9135,39 @@ Module Net_Load_576
 Title: Net Load 576
 Author: JamesMilford
 Date: Fri, Feb 8, 2019 8:50 PM
+SaveAuthor: JamesMilford
+SaveDate: Mon, Feb 11, 2019 8:21 PM
 NodeLocation: 112,408,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,6,19,944,484,17
+DiagState: 2,83,5,1293,444,17
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
 
 Variable Res_Dispatch
 Title: Res Dispatch
 Units: kW-hr/customer
-Definition: Pre_Post_Cust_Load[System_Type=System_Type1, PV_Sectors=Residential_Label, Rate_Names_and_Start=Res_Rates, PV_Operating_Year=1]
+Definition: Net_Load_by_System_T[Rate_Vintage=Res_Rates, PV_Sectors=Residential_Label, System_Type=System_Type]
 NodeLocation: 416,88,1
 NodeSize: 64,40
+WindState: 2,702,43,720,350
 ValueState: 2,-1,17,1250,620,1,MIDM
-Att_ResultSliceState: [PV_Climate_Zone,1,System_Type1,1,Month,1,Day_and_Hour,1]
+ReformVal: [Day_and_Hour,System_Type]
+Att_ResultSliceState: [PV_Climate_Zone,1,Month,6,Rate_Names_and_Start,16,System_Type,1,Day_and_Hour,1]
 
 Decision Res_Rates
 Title: Res Rates
-Definition: Table(PV_Climate_Zone)(Choice(Rate_Names_and_Start,16,0),Choice(Rate_Names_and_Start,17,0),Choice(Rate_Names_and_Start,18,0),Choice(Rate_Names_and_Start,19,0))
+Definition: Choice(Rate_Vintage,4,0)
 NodeLocation: 264,88,1
 NodeSize: 64,40
 DefnState: 2,364,328,416,303,,DFNM
-Aliases: FormNode Fo1549566755
+Aliases: FormNode Fo1549566755, FormNode New1549936773
 TableCellDefault: Choice(Rate_Names_and_Start,1,0)
-{!40200|Att_ChoiceIndexes: Index Rate_Names_and_Start}
+{!40200|Att_ChoiceIndexes: Index Rate_Vintage}
 
 Index Res_Flat_Cols
 Title: Res Flat Cols
-Definition: Concat(IndexesOf(Res_Dispatch_576), 'Value')
+Definition: Concat(IndexesOf(Aggreg_Res_Delta), 'Value')
 NodeLocation: 568,184,1
 NodeSize: 64,40
 
@@ -9173,10 +9177,11 @@ Units: kW-hr/customer
 Definition: Sum(Res_Dispatch * Week_DayTypTime_Map, Day_and_Hour)[@Time_of_Day=@Hour1] / DaysPerWeek_DayType
 NodeLocation: 568,88,1
 NodeSize: 64,40
-ValueState: 2,389,55,858,531,,MIDM
+WindState: 2,102,82,720,350
+ValueState: 2,302,15,1159,659,1,MIDM
 Aliases: FormNode Fo1549820243
 ReformVal: [Hour1,System_Type1]
-Att_ResultSliceState: [PV_Climate_Zone,1,Month,3,Weekday_or_Weekend,1,System_Type1,1,Hour1,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,Weekday_or_Weekend,1,Month,8,System_Type1,1,Hour1,1]
 
 Index Hour1
 Title: Hour
@@ -9201,17 +9206,17 @@ NodeSize: 64,40
 Variable Flat_Res_Dispatch
 Title: Flat Res Dispatch
 Units: kW-hr/customer
-Definition: MdArrayToTable(Res_Dispatch_576, Col: Res_Flat_Cols,  omitZero: False, omitNull: True)[@Res_Flat_Cols=@Res_Export_Cols]
-NodeLocation: 720,88,1
+Definition: MdArrayToTable(Aggreg_Res_Delta, Col: Res_Flat_Cols,  omitZero: False, omitNull: True)[@Res_Flat_Cols=@Res_Export_Cols]
+NodeLocation: 1024,88,1
 NodeSize: 64,40
-ValueState: 2,110,0,992,703,0,MIDM
+ValueState: 2,205,11,992,703,0,MIDM
 
 Decision Export_Systems
 Title: Export Systems
-Definition: Table(System_Type)(Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0))
+Definition: Table(System_Type)(Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(0),Checkbox(0))
 NodeLocation: 112,88,1
 NodeSize: 64,40
-Aliases: FormNode Fo1549566756
+Aliases: FormNode Fo1549566756, FormNode New1549936774
 TableCellDefault: Checkbox(0)
 
 FormNode Fo1549566755
@@ -9235,30 +9240,32 @@ Title: System Type
 Definition: Subset(Export_Systems)
 NodeLocation: 112,184,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 232,84}
+{!40300|Att_SlicerPopupSize: 247,84}
 
 Variable NonRes_Dispatch
 Title: NonRes Dispatch
 Units: kW-hr/customer
-Definition: Pre_Post_Cust_Load[System_Type=System_Type1, PV_Sectors=Non_Res_Label, Rate_Names_and_Start=NonRes_Rates, PV_Operating_Year=1]
+Definition: {Pre_Post_Cust_Load[System_Type=System_Type1, PV_Sectors=Non_Res_Label, Rate_Names_and_Start=NonRes_Rates, PV_Operating_Year=1]}~
+Net_Load_by_System_T[Rate_Vintage=NonRes_Rates, PV_Sectors=Non_Res_Label, System_Type=System_Type]
 NodeLocation: 416,304,1
 NodeSize: 64,40
 ValueState: 2,-1,17,1250,620,1,MIDM
-Att_ResultSliceState: [PV_Climate_Zone,1,System_Type1,1,Month,1,Day_and_Hour,1]
+ReformVal: [Day_and_Hour,System_Type1]
+Att_ResultSliceState: [PV_Climate_Zone,1,System_Type,5,Month,1,Day_and_Hour,1]
 
 Decision NonRes_Rates
 Title: NonRes Rates
-Definition: Table(PV_Climate_Zone)(Choice(Rate_Names_and_Start,3,0),Choice(Rate_Names_and_Start,3,0),Choice(Rate_Names_and_Start,3,0),Choice(Rate_Names_and_Start,3,0))
+Definition: Choice(Rate_Vintage,3,0)
 NodeLocation: 264,304,1
 NodeSize: 64,40
 DefnState: 2,364,328,416,303,,DFNM
-Aliases: FormNode Fo1549567156
+Aliases: FormNode Fo1549567156, FormNode New1549936775
 TableCellDefault: Choice(Rate_Names_and_Start,1,0)
-{!40200|Att_ChoiceIndexes: Index Rate_Names_and_Start}
+{!40200|Att_ChoiceIndexes: Index Rate_Vintage}
 
 Index NonRes_Flat_Cols
 Title: NonRes Flat Cols
-Definition: Concat(IndexesOf(NonRes_Dispatch_576), 'Value')
+Definition: Concat(IndexesOf(Aggreg_NonRes_Delta), 'Value')
 NodeLocation: 416,400,1
 NodeSize: 64,40
 
@@ -9270,8 +9277,8 @@ NodeLocation: 568,304,1
 NodeSize: 64,40
 ValueState: 2,298,33,775,601,,MIDM
 Aliases: FormNode Fo1549820244
-ReformVal: [Hour1,Month]
-Att_ResultSliceState: [PV_Climate_Zone,1,Weekday_or_Weekend,2,System_Type1,4,Month,10,Hour1,1]
+ReformVal: [Hour1,System_Type]
+Att_ResultSliceState: [PV_Climate_Zone,1,Weekday_or_Weekend,2,Month,12,System_Type,1,Hour1,1]
 
 Index Res_Export_Cols1
 Title: NonRes Export Cols
@@ -9290,8 +9297,8 @@ NodeSize: 64,40
 Variable Flat_NonRes_Dispatch
 Title: Flat NonRes Dispatch
 Units: kW-hr/customer
-Definition: MdArrayToTable(NonRes_Dispatch_576, Col: NonRes_Flat_Cols,  omitZero: False, omitNull: True)[@NonRes_Flat_Cols=@Res_Export_Cols1]
-NodeLocation: 720,304,1
+Definition: MdArrayToTable(Aggreg_NonRes_Delta, Col: NonRes_Flat_Cols,  omitZero: False, omitNull: True)[@NonRes_Flat_Cols=@Res_Export_Cols1]
+NodeLocation: 1024,304,1
 NodeSize: 64,40
 ValueState: 2,110,0,992,703,0,MIDM
 
@@ -9305,31 +9312,148 @@ Original: NonRes_Rates
 
 Variable Res_Delta
 Title: Res Delta
-Definition: IF System_Type1 = 'Solar PV + Storage'~
-THEN Res_Dispatch_576 - Res_Dispatch_576[System_Type1='Solar PV']~
-ELSE IF System_Type1 = 'Storage Only'~
-THEN Res_Dispatch_576 - Res_Dispatch_576[System_Type1='No System']~
-ELSE Null
-NodeLocation: 720,184,1
+Units: kW/rated kW
+Definition: VAR x:=IF System_Type = 'Solar PV + Storage'~
+THEN Res_Dispatch_576 - Res_Dispatch_576[System_Type='Solar PV']~
+ELSE IF System_Type = 'Storage Only'~
+THEN Res_Dispatch_576 - Res_Dispatch_576[System_Type='No System']~
+ELSE Null;~
+~
+Divide(x[System_Type=System_Type1], Storage_Max_Power[System_Types=System_Type_Map[System_Type=System_Type1], PV_Sectors=Residential_Label], True)
+NodeLocation: 720,88,1
 NodeSize: 64,40
-ValueState: 2,571,8,952,638,,MIDM
+WindState: 2,40,18,1407,439
+ValueState: 2,263,-5,992,671,1,MIDM
 Aliases: FormNode Fo1549820245
-ReformVal: [Hour1,Month]
-Att_ResultSliceState: [PV_Climate_Zone,1,Weekday_or_Weekend,1,System_Type1,3,Month,2,Hour1,1]
+ReformVal: [Hour1,Null]
+Att_ResultSliceState: [Weekday_or_Weekend,2,System_Type1,1,PV_Climate_Zone,1,Month,6,Hour1,1]
+Att_ColorRole: Null
 
 Variable NonRes_Delta
 Title: NonRes Delta
-Definition: IF System_Type1 = 'Solar PV + Storage'~
-THEN NonRes_Dispatch_576 - NonRes_Dispatch_576[System_Type1='Solar PV']~
-ELSE IF System_Type1 = 'Storage Only'~
-THEN NonRes_Dispatch_576 - NonRes_Dispatch_576[System_Type1='No System']~
-ELSE Null
-NodeLocation: 568,400,1
+Definition: VAR x:=IF System_Type = 'Solar PV + Storage'~
+THEN NonRes_Dispatch_576 - NonRes_Dispatch_576[System_Type='Solar PV']~
+ELSE IF System_Type = 'Storage Only'~
+THEN NonRes_Dispatch_576 - NonRes_Dispatch_576[System_Type='No System']~
+ELSE Null;~
+~
+Divide(x[System_Type=System_Type1], Storage_Max_Power[System_Types=System_Type_Map[System_Type=System_Type1], PV_Sectors=Non_Res_Label], True)
+NodeLocation: 720,304,1
 NodeSize: 64,40
-ValueState: 2,533,43,952,638,1,MIDM
+ValueState: 2,291,15,1013,638,1,MIDM
 Aliases: FormNode Fo1549820246
 ReformVal: [Hour1,Month]
-Att_ResultSliceState: [PV_Climate_Zone,1,Weekday_or_Weekend,1,System_Type1,3,Month,7,Hour1,1]
+Att_ResultSliceState: [Weekday_or_Weekend,1,System_Type1,1,PV_Climate_Zone,1,Month,10,Hour1,1]
+Att_ColorRole: Null
+
+Decision System_Type_Map
+Title: System Type Map
+Definition: Table(System_Type)(Choice(All_System_Types,6,0),Choice(All_System_Types,3,0),Choice(All_System_Types,3,0),Choice(All_System_Types,6,0),Choice(All_System_Types,3,0))
+NodeLocation: 720,184,1
+NodeSize: 64,40
+DefnState: 2,362,20,416,303,0,DFNM
+ValueState: 2,-4,361,416,303,,MIDM
+Aliases: FormNode New1549946500
+TableCellDefault: Choice(All_System_Types,1,0)
+{!40200|Att_ChoiceIndexes: Index All_System_Types}
+
+Objective Net_Load_by_System_T
+Title: Net Load by System Type
+Definition: Table(System_Type)(Ext_Customer_Load[Storage_Systems=PV_Strg_Retro_Label, @Ext_Day_and_Hour=Day_and_Hour_Ext_Pos],(Ext_Customer_Load-Ext_Solar_Output)[Storage_Systems=PV_Strg_Retro_Label, @Ext_Day_and_Hour=Day_and_Hour_Ext_Pos],Load_Net_of_Storage[Storage_Systems=SystType_for_System],Load_Net_of_Storage[Storage_Systems=SystType_for_System],Load_Net_of_Storage[Storage_Systems=SystType_for_System])
+NodeLocation: 96,304,1
+NodeSize: 64,40
+WindState: 2,17,279,1520,648
+DefnState: 2,495,424,979,303,0,DFNM
+ValueState: 2,200,11,986,695,,MIDM
+ReformVal: [Day_and_Hour,System_Type]
+Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,3,PV_Climate_Zone,1,Month,1,System_Type,1,Day_and_Hour,1]
+
+FormNode New1549936773
+Title: Res Rates
+Definition: 0
+NodeLocation: 264,36,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Res_Rates
+
+FormNode New1549936774
+Title: Export Systems
+Definition: 0
+NodeLocation: 112,36,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Export_Systems
+
+FormNode New1549936775
+Title: Res Rates
+Definition: 0
+NodeLocation: 264,252,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: NonRes_Rates
+
+FormNode New1549946500
+Title: Export Systems
+Definition: 0
+NodeLocation: 720,228,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: System_Type_Map
+
+Decision Climate_Zone_Inclusi
+Title: Climate Zone Inclusion
+Definition: Table(PV_Climate_Zone,All_Sectors)(~
+Checkbox(1),Checkbox(1),Checkbox(0),~
+Checkbox(0),Checkbox(0),Checkbox(0),~
+Checkbox(1),Checkbox(1),Checkbox(0),~
+Checkbox(0),Checkbox(0),Checkbox(0))
+NodeLocation: 1024,184,1
+NodeSize: 64,40
+DefnState: 2,20,3,596,450,0,DFNM
+Aliases: FormNode Fo1549939307
+TableCellDefault: Checkbox(0)
+
+Variable Climate_Zone_Weights
+Title: Climate Zone Weights
+Definition: VAR installed_kW:=Sum(SGIP_Data_by_Year_an[SGIP_Value_Cols='Rated Capacity [kW]'] * Climate_Zone_Inclusi, SGIP_Years, With_PV_System, SGIP_Data_Rows);~
+VAR total_kW:=Sum(installed_kW , PV_Climate_Zone);~
+Divide(installed_kW, total_kW, True)
+NodeLocation: 872,184,1
+NodeSize: 64,40
+ValueState: 2,30,108,582,500,0,MIDM
+Att__TotalsIndex: [With_PV_System,PV_Climate_Zone]
+Att_ResultSliceState: [PV_Sectors,2,All_Sectors,1,PV_Climate_Zone,1]
+
+Variable Aggreg_NonRes_Delta
+Title: Aggreg NonRes Delta
+Definition: Sum(NonRes_Delta * Climate_Zone_Weights[All_Sectors=Non_Res_Label], PV_Climate_Zone)
+NodeLocation: 872,304,1
+NodeSize: 64,40
+ValueState: 2,277,68,842,597,,MIDM
+Att_ResultSliceState: [System_Type1,1,Weekday_or_Weekend,1,Month,1,Hour1,1]
+
+Variable Aggreg_Res_Delta
+Title: Aggreg Res Delta
+Definition: Sum(Res_Delta * Climate_Zone_Weights[All_Sectors=Residential_Label] * Months_Included, PV_Climate_Zone)
+NodeLocation: 872,88,1
+NodeSize: 64,40
+ValueState: 2,277,68,842,597,,MIDM
+Att_ResultSliceState: [System_Type1,1,Weekday_or_Weekend,2,Month,1,Hour1,1]
+
+FormNode Fo1549939307
+Title: Climate Zone Inclusion
+Definition: 0
+NodeLocation: 1024,228,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Climate_Zone_Inclusi
+
+Decision Months_Included
+Title: Months Included
+Definition: Table(Month)(Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0))
+NodeLocation: 1176,88,1
+NodeSize: 64,40
+TableCellDefault: Checkbox(0)
 
 Close Net_Load_576
 

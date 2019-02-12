@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Solar_PV at 11-Feb-2019 10:10:25 AM, encoding="UTF-8" }
+{ From user JamesMilford, Model Solar_PV at 11-Feb-2019 6:55:36 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -14,7 +14,7 @@ Title: Solar PV
 Author: Cory Welch
 Date: Mon, Jan 8, 2018 10:24 AM
 SaveAuthor: JamesMilford
-SaveDate: Mon, Feb 11, 2019 10:10 AM
+SaveDate: Mon, Feb 11, 2019 6:55 PM
 DefaultSize: 64,40
 NodeSize: 88,64
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -2489,7 +2489,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 256,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,8,161,1616,605,17
+DiagState: 2,-167,195,1524,605,17
 {!40400|CloudPlayerStyles: FrameNode: FrameNode_1544919837}
 {!40204-40399|AWP_Attrib:FrameNode: FrameNode_1544919837}
 
@@ -2552,7 +2552,7 @@ Description: The annual energy production from a PV system in its first year of 
 Definition: Sum(PerSyst_Weekly_Solar[@PV_Operating_Year=1] * Weeks_Per_Month, Day_and_Hour, Month)
 NodeLocation: 864,208,1
 NodeSize: 64,40
-ValueState: 2,69,6,1353,664,0,MIDM
+ValueState: 2,89,31,1353,664,0,MIDM
 
 Variable Pct_Load_Met_bySolar
 Title: Percent of Load Met by Solar
@@ -2769,17 +2769,17 @@ Variable Load_Net_of_Solar
 Title: Load Net of Solar
 Units: kW-hr/customer
 Description: The load net of solar per system.
-Definition: Scaled_Customer_Load - PerSyst_Weekly_Solar
+Definition: Scaled_Customer_Load - MAX([0,PerSyst_Weekly_Solar])
 NodeLocation: 392,48,1
 NodeSize: 64,40
-WindState: 2,102,82,1190,503
+WindState: 2,139,2,1190,503
 ValueState: 2,9,4,1487,691,1,MIDM
 GraphSetup: Graph_AxisTitleFont:Arial,18,1~
 Graph_KeyFont:,18,0~
 Graph_KeyTitleFont:,18,1~
 Graph_AxisLabelFont:,14,0~
 Att_CatLineStyle Graph_Primary_Valdim:5
-ReformVal: [Month,Null]
+ReformVal: [Day_and_Hour,Null]
 Att__TotalsIndex: [Day_and_Hour]
 Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,PV_Operating_Year,1,Day_and_Hour,0,Month,1]
 Att_ColorRole: Null
@@ -3140,8 +3140,8 @@ Description: Customer load before and after installation of a system. The PV Ope
 Definition: Pre_and_Post_Custome[Rate_Vintage=RateVint_by_RateName, Pre_and_Post_System=Pre_or_Post_by_Syst, System_Types=SystType_for_System]
 NodeLocation: 848,48,1
 NodeSize: 64,40
-WindState: 2,242,3,1122,599
-ValueState: 2,56,20,1179,665,1,MIDM
+WindState: 2,394,15,1122,599
+ValueState: 2,82,8,1179,665,1,MIDM
 Aliases: FormNode Fo1546462051, FormNode Fo1546462132
 NodeColor: 19661,48336,65535
 GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
@@ -3154,7 +3154,7 @@ Graph_KeyFont:,18,0~
 ShowKey:1
 ReformVal: [Day_and_Hour,System_Type]
 Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Month,10,PV_Operating_Year,1,Rate_Names_and_Start,3,System_Type,1,Day_and_Hour,1]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Month,11,PV_Operating_Year,1,Rate_Names_and_Start,16,System_Type,1,Day_and_Hour,1]
 
 Variable Pre_System_Load
 Title: Pre System Load
@@ -4799,7 +4799,7 @@ Subset(sorted <> None_Label)
 NodeLocation: 88,376,1
 NodeSize: 64,40
 ValueState: 2,536,157,988,684,0,MIDM
-{!40300|Att_SlicerPopupSize: 607,308}
+{!40300|Att_SlicerPopupSize: 652,308}
 Att_PrevIndexValue: ['AL-TOU Secondary (0-500 KW) | 2015-05','AL-TOU Secondary (0-500 KW) | 2017-01','AL-TOU Secondary (0-500 KW) | 2018-01','DR - Coastal Baseline Region | 2014-02','DR - Coastal Baseline Region | 2015-05','DR - Coastal Baseline Region | 2017-01','DR - Desert Baseline Region | 2014-02','DR - Desert Baseline Region | 2015-05','DR - Desert Baseline Region | 2017-01','DR - Inland Baseline Region | 2014-02','DR - Inland Baseline Region | 2015-05','DR - Inland Baseline Region | 2017-01','DR - Mountain Baseline Region | 2014-02','DR - Mountain Baseline Region | 2015-05','DR - Mountain Baseline Region | 2017-01','TOU-DR1 Coastal | 2018-01','TOU-DR1 Desert | 2018-01','TOU-DR1 Inland | 2018-01','TOU-DR1 Mountain | 2018-01']
 
 Variable FirstYr_Bill_Compar1
@@ -7378,12 +7378,12 @@ Residential are based on a Tesla Powerwall (Gen 2), while non-commercial are bas
 ~
 210/50
 Definition: Table(Energy_and_Power,All_Sectors)(~
-13.5,60,0,~
+13.5,66,0,~
 5,30,0)
 NodeLocation: 136,96,1
 NodeSize: 64,40
 WindState: 2,297,1,801,442
-DefnState: 2,639,48,789,743,0,DFNM
+DefnState: 2,621,185,789,490,0,DFNM
 ValueState: 2,152,86,821,620,0,MIDM
 Aliases: FormNode Fo1542305979, FormNode Fo1548967561
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
@@ -7667,8 +7667,8 @@ Definition: Battery_Storage_Spec[All_Sectors=PV_Sectors, Energy_and_Power=Power_
 NodeLocation: 288,192,1
 NodeSize: 64,40
 WindState: 2,12,-11,720,350
-ValueState: 2,352,7,632,496,0,MIDM
-ReformVal: [New_or_Retrofit,System_Configuration]
+ValueState: 2,336,9,632,496,0,MIDM
+ReformVal: [PV_Sectors,System_Types]
 Att_ResultSliceState: [PV_Sectors,1,System_Configuration,1,New_or_Retrofit,1]
 
 Variable Hours_of_Storage
@@ -17242,7 +17242,7 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 264,408,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-86,55,1524,674,17
+DiagState: 2,-235,124,1524,674,17
 NodeColor: 57311,57311,57311
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
@@ -17283,11 +17283,11 @@ Aliases: FormNode Fo1535655040, FormNode Fo1542091914
 {!40300|Att_SlicerPopupSize: 645,785}
 
 Index Market_Share_Metric
-Att_PrevIndexValue: ['Cost of Electricity Ratio','Simple Payback Time','Static Long-Run Market Share']
 Title: Market Share Metric
 Definition: ['Cost of Electricity Ratio','Simple Payback Time','Static Long-Run Market Share']
 NodeLocation: 960,384,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Cost of Electricity Ratio','Simple Payback Time','Static Long-Run Market Share']
 
 Decision Payback_Label
 Title: Payback Label
@@ -17352,7 +17352,7 @@ Title: Rate Vintage
 Definition: 1..Num_of_Rate_Vintages
 NodeLocation: 384,800,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 302,140}
+{!40300|Att_SlicerPopupSize: 307,140}
 Att_PrevIndexValue: [1,2,3,4]
 
 Index Rate_Names_with_None
@@ -17436,11 +17436,11 @@ NodeLocation: 96,152,1
 NodeSize: 64,40
 
 Index Tax_Entity
-Att_PrevIndexValue: ['State','Federal']
 Title: Tax Entity
 Definition: ['State','Federal']
 NodeLocation: 1248,64,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['State','Federal']
 
 Index PV_Operating_Year
 Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
@@ -17545,12 +17545,12 @@ WindState: 2,102,82,720,635
 {!40300|Att_SlicerPopupSize: 282,112}
 
 Index New_or_Retrofit
-Att_PrevIndexValue: ['NewConstr','Retrofit']
 Title: NewConstr or Retrofit
 Definition: ['NewConstr','Retrofit']
 NodeLocation: 528,64,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 242,56}
+Att_PrevIndexValue: ['NewConstr','Retrofit']
 
 Index System_Configuration
 Title: System Configuration
@@ -17916,11 +17916,11 @@ NodeLocation: 1392,256,1
 NodeSize: 64,40
 
 Index Building_Size
-Att_PrevIndexValue: ['Small','Medium','Large']
 Title: Building Size
 Definition: ['Small','Medium','Large']
 NodeLocation: 1392,64,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Small','Medium','Large']
 
 Index Lidar_Min_Syst_Sizes
 Att_PrevIndexValue: [0.645,0.9,1.125,1.5,3,4.5]
@@ -18029,11 +18029,11 @@ WindState: 2,444,119,720,350
 {!40300|Att_SlicerPopupSize: 227,70}
 
 Index Impact_Type_MWdc_GWh
-Att_PrevIndexValue: ['Demand (MW-DC)','Energy (GWh)']
 Title: Impact Type
 Definition: ['Demand (MW-DC)','Energy (GWh)']
 NodeLocation: 1536,464,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Demand (MW-DC)','Energy (GWh)']
 
 Variable Aggreg_Spatial_IDs
 Title: Aggreg Spatial IDs
@@ -18368,7 +18368,7 @@ Definition: Subset(Equip_Install_Map[All_System_Types=System_Types, All_Equipmen
 NodeLocation: 1104,936,1
 NodeSize: 64,40
 WindState: 2,102,82,955,798
-{!40300|Att_SlicerPopupSize: 242,42}
+{!40300|Att_SlicerPopupSize: 252,42}
 Att_PrevIndexValue: ['Solar + Storage Retrofit','Storage Added to Exist Solar','Storage Only Retrofit']
 
 Variable System_with_Storage
