@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Solar_PV at 13-Feb-2019 9:35:47 AM, encoding="UTF-8" }
+{ From user JamesMilford, Model Solar_PV at 13-Feb-2019 10:12:34 AM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -14,7 +14,7 @@ Title: Solar PV
 Author: Cory Welch
 Date: Mon, Jan 8, 2018 10:24 AM
 SaveAuthor: JamesMilford
-SaveDate: Wed, Feb 13, 2019 9:35 AM
+SaveDate: Wed, Feb 13, 2019 10:12 AM
 DefaultSize: 64,40
 NodeSize: 88,64
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -7371,20 +7371,20 @@ ValueState: 2,72,74,638,555,,MIDM
 
 Constant Battery_Storage_Spec
 Title: Battery Storage Specs
-Description: The technology specifications for a single unit of the battery storage device.~
+Description: The technology specifications for a single unit of the battery storage device. Note that the energy storage capacity (in kWh) is prior to losses, so the usable energy will be equal to the capacity multiplied by the roundtrip efficiency.~
 ~
 Residential are based on a Tesla Powerwall (Gen 2), while non-commercial are based on a Tesla Power Pack (Gen 2).~
 ~
 Note: Tesla Powerpack specs 210kWh, 50kW, 88% (2hr system) or 89% (4hr system)
 Definition: Table(Battery_Specs,All_Sectors)(~
-13.5,66,0,~
+15,66,0,~
 5,30,0,~
-0.9,0.9,0e+000)
+0.9,0.9,0)
 NodeLocation: 136,176,1
 NodeSize: 64,40
 WindState: 2,297,1,801,442
-DefnState: 2,363,178,789,490,0,DFNM
-ValueState: 2,254,8,821,620,0,MIDM
+DefnState: 2,242,107,910,561,0,DFNM
+ValueState: 2,274,25,821,620,0,MIDM
 Aliases: FormNode Fo1542305979, FormNode Fo1548967561
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9
