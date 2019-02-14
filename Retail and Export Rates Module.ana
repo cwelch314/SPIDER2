@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Electric_Rates1 at 30-Jan-2019 3:35:15 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Electric_Rates1 at 14-Feb-2019 1:03:30 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Electric Rates
 Author: JamesMilford
 Date: Wed, Aug 8, 2018 7:49 AM
 SaveAuthor: JamesMilford
-SaveDate: Wed, Jan 30, 2019 3:35 PM
+SaveDate: Thu, Feb 14, 2019 1:03 PM
 DefaultSize: 64,40
 NodeSize: 88,64
 NodeInfo: 1,1,1,1,1,1,1,,0,,0,,,
@@ -143,13 +143,13 @@ Date: Wed, Aug 8, 2018 1:55 PM
 NodeLocation: 680,944,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1817,389,1025,396,17
+DiagState: 2,59,4,840,427,17
 NodeColor: 57311,57311,57311
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
 
-Decision USUDRB_Path
-Title: USUDRB Path
+Decision USURDB_Path
+Title: USURDB Path
 Description: The file path to the US Utility Rate Database data.
 Definition: 'C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Documents\US_Utility_Rates_DB\usurdb_2018-10-11.xlsx'
 NodeLocation: 120,96,1
@@ -163,7 +163,7 @@ Definition: 0
 NodeLocation: 140,40,1
 NodeSize: 92,16
 NodeInfo: 1,0,0,0,0,0,0,142,0,,0,,,0
-Original: USUDRB_Path
+Original: USURDB_Path
 
 Index USURDB_Columns
 Title: USURDB Columns
@@ -177,11 +177,11 @@ Att_PrevIndexValue: ['label','eiaid','name','startdate','enddate','utility','sec
 Variable Read_USURDB
 Title: Read USURDB
 Description: US Utility Rate Database data read from the spreadsheet.
-Definition: VAR workbook:=SpreadsheetOpen(USUDRB_Path);~
-SpreadsheetRange(workbook, sheet: USUDRB_Tab_Name, howToIndex:4 )
+Definition: VAR workbook:=SpreadsheetOpen(USURDB_Path);~
+SpreadsheetRange(workbook, sheet: USURDB_Tab_Name, howToIndex:4 )
 NodeLocation: 304,152,1
 NodeSize: 64,40
-ValueState: 2,168,122,1125,440,,MIDM
+ValueState: 2,151,108,1125,528,,MIDM
 
 Button Store_Import_USURDB
 Title: Store Imported USURDB Data
@@ -231,8 +231,8 @@ VAR data:=USURDB_Data[All_USURDB_Rows=rows];~
 All_USURDB_Rows := CopyIndex(rows);~
 USURDB_Data := data[rows=All_USURDB_Rows];
 
-Decision USUDRB_Tab_Name
-Title: USUDRB Tab Name
+Decision USURDB_Tab_Name
+Title: USURDB Tab Name
 Description: The file path to the US Utility Rate Database data.
 Definition: 'usurdb'
 NodeLocation: 120,232,1
@@ -245,7 +245,7 @@ Definition: 0
 NodeLocation: 140,176,1
 NodeSize: 92,16
 NodeInfo: 1,0,0,0,0,0,0,142,0,,0,,,0
-Original: USUDRB_Tab_Name
+Original: USURDB_Tab_Name
 
 Close Import_USURDB_Data
 
@@ -257,7 +257,7 @@ NodeLocation: 680,1040,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,1,0,1068,567,17
-NodeColor: 57311,57311,57311
+NodeColor: 58982,58982,58982
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
 
@@ -333,7 +333,7 @@ Date: Wed, Aug 8, 2018 7:26 PM
 NodeLocation: 536,1040,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,414,78,1171,612,17
+DiagState: 2,182,61,1171,612,17
 
 Variable Map_USURDB_Columns
 Title: Map USURDB Columns to Data
@@ -725,6 +725,7 @@ NodeLocation: 536,944,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,2351,15,938,616,17
+NodeColor: 58982,58982,58982
 
 Variable Fixed_Charges_Units
 Title: Fixed Charges Units
@@ -3276,63 +3277,63 @@ NodeSize: 64,40
 ValueState: 2,536,538,416,303,0,MIDM
 
 Index Flat_Demand_Tiers
+Att_PrevIndexValue: ['tier0']
 Title: Flat Demand Tiers
 Definition: Subset(@Flat_Demand_Tier_Opt <= Num_Flat_Dmd_Tiers)
 NodeLocation: 520,64,1
 NodeSize: 64,40
 ValueState: 2,456,302,416,303,0,MIDM
-Att_PrevIndexValue: ['tier0']
 
 Index Demand_TOU_Tiers
+Att_PrevIndexValue: ['tier0']
 Title: Demand TOU Tiers
 Definition: Subset(@Demand_TOU_Tier_Opti <= Num_Dmd_TOU_Tiers)
 NodeLocation: 520,152,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['tier0']
 
 Index Energy_TOU_Tiers
+Att_PrevIndexValue: ['tier0']
 Title: Energy TOU Tiers
 Definition: Subset(@Energy_TOU_Tiers_Opt <= Num_Energy_TOU_Tiers)
 NodeLocation: 520,240,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['tier0']
 
 Index Flat_Demand_Periods
+Att_PrevIndexValue: ['period0']
 Title: Flat Demand Periods
 Definition: Subset(@Flat_Demand_Period_O <= Num_Flat_Dmd_Periods)
 NodeLocation: 248,64,1
 NodeSize: 64,40
 WindState: 2,671,-2,720,350
-Att_PrevIndexValue: ['period0']
 
 Index Demand_TOU_Periods
+Att_PrevIndexValue: ['period0','period1','period2']
 Title: Demand TOU Periods
 Definition: Subset(@Demand_TOU_Period_Op <= Num_Dmd_TOU_Periods)
 NodeLocation: 248,152,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['period0','period1','period2']
 
 Index Energy_TOU_Periods
+Att_PrevIndexValue: ['period0','period1','period2','period3','period4','period5']
 Title: Energy TOU Periods
 Definition: Subset(@Energy_TOU_Period_Op <= Num_EnrgyTOU_Periods)
 NodeLocation: 248,240,1
 NodeSize: 64,40
 ValueState: 2,488,246,416,547,0,MIDM
-Att_PrevIndexValue: ['period0','period1','period2','period3','period4','period5']
 
 Index Demand_Rate_Attribut
+Att_PrevIndexValue: ['max (kW)','rate ($/kW)','adj ($/kW)']
 Title: Demand Rate Attributes
 Definition: ['max (kW)','rate ($/kW)','adj ($/kW)']
 NodeLocation: 656,240,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['max (kW)','rate ($/kW)','adj ($/kW)']
 
 Index Energy_Rate_Attribut
+Att_PrevIndexValue: ['max (kWh/day)','rate ($/kWh)','adj ($/kWh)']
 Title: Energy Rate Attributes
 Definition: ['max (kWh/day)','rate ($/kWh)','adj ($/kWh)']
 NodeLocation: 656,152,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['max (kWh/day)','rate ($/kWh)','adj ($/kWh)']
 
 Variable Map_Dmd_Rate_Attribs
 Title: Map Demand Rate Attributes
