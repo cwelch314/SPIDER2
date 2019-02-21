@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Outputs_for_Tableau at 7-Feb-2019 12:50:24 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Outputs_for_Tableau at 20-Feb-2019 10:26:44 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Outputs for Tableau
 Author: JamesMilford
 Date: Tue, Nov 13, 2018 7:23 PM
 SaveAuthor: JamesMilford
-SaveDate: Thu, Feb 7, 2019 12:50 PM
+SaveDate: Wed, Feb 20, 2019 10:26 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
@@ -303,15 +303,14 @@ ReformVal: [Output_Periods_Plus,Null]
 Att_ResultSliceState: [EV_Sectors,1,EV_Cumul_Data_Type,2,EV_Spatial_ID,2,Output_Periods_Plus,1]
 Att_ColorRole: Null
 
-Decision Final_EV_Hist_Period
+Constant Final_EV_Hist_Period
 Title: Final EV Historic Period
 Description: Specify the final period of historic EV data.
-Definition: Choice(Vehicle_Stock_DataYr,16,0)
+Definition: SubTable(Single_Cell_Inputs[SingCell_Input_Names=Final_EV_Prd_Label])
 NodeLocation: 408,664,1
 NodeSize: 64,40
 ValueState: 2,152,154,1541,615,,MIDM
-Aliases: FormNode Fo1542875895
-{!40200|Att_ChoiceIndexes: Index Vehicle_Stock_DataYr}
+Aliases: FormNode Fo1542875895, Alias Al1550725786, FormNode Fo1550725786
 
 FormNode Fo1542875895
 Title: Final EV Historic Period
@@ -358,13 +357,13 @@ Att__TotalsIndex: [Spatial_ID]
 Att_ResultSliceState: [Sequential_Outputs,1,All_Sectors,3,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
 
 Index Sequential_Outputs
-Att_PrevIndexValue: ['Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 Title: Sequential Outputs
 Definition: ['Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 NodeLocation: 1064,88,1
 NodeSize: 64,40
 Aliases: FormNode Fo1543018175
 {!40300|Att_SlicerPopupSize: 247,84}
+Att_PrevIndexValue: ['Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 
 Decision Map_Seq_Outputs
 Title: Map Sequential Outputs
@@ -4067,12 +4066,12 @@ Att_ColorRole: Null
 Close Deltas_from_Base_Per
 
 Index Output_DER_Types
+Att_PrevIndexValue: ['Solar PV','Electric Vehicles']
 Title: Output DER Types
 Definition: Subset(DER_Types_to_Output)
 NodeLocation: 888,1288,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 232,56}
-Att_PrevIndexValue: ['Solar PV','Electric Vehicles']
 
 Decision DER_Types_to_Output
 Title: DER Types to Output
