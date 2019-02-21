@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Outputs_for_Tableau at 20-Feb-2019 10:26:44 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Outputs_for_Tableau at 20-Feb-2019 11:17:12 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Outputs for Tableau
 Author: JamesMilford
 Date: Tue, Nov 13, 2018 7:23 PM
 SaveAuthor: JamesMilford
-SaveDate: Wed, Feb 20, 2019 10:26 PM
+SaveDate: Wed, Feb 20, 2019 11:17 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
@@ -61,7 +61,7 @@ Author: JamesMilford
 Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 736,792,1
 NodeSize: 64,40
-DiagState: 2,163,184,1570,569,17
+DiagState: 2,206,299,1570,490,17
 
 Variable Cumulative_Data_Plus
 Title: Cumulative Data Plus
@@ -245,7 +245,7 @@ ValueState: 2,242,38,1123,763,1,MIDM
 ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [PV_Spatial_ID]
-Att_ResultSliceState: [EV_Spatial_ID,2,EV_Sectors,1,Sel_Ag_EV_LRMS,1,EV_Adopt_Data_Types,1,Act_vs_Sim,1,Output_Periods,1]
+Att_ResultSliceState: [EV_Spatial_ID,2,EV_Sectors,1,EV_Adopt_Data_Types,2,Act_vs_Sim,1,Output_Periods,1]
 
 Variable Actual_vs_Sim_Map2
 Title: Actual vs Simulated Map
@@ -257,7 +257,7 @@ ELSE Null
 NodeLocation: 720,664,1
 NodeSize: 64,40
 WindState: 2,687,161,720,350
-ValueState: 2,158,131,1224,311,,MIDM
+ValueState: 2,158,131,1224,640,0,MIDM
 
 Alias Al1542873268
 Title: EV Adoption Forecasts
@@ -306,11 +306,12 @@ Att_ColorRole: Null
 Constant Final_EV_Hist_Period
 Title: Final EV Historic Period
 Description: Specify the final period of historic EV data.
-Definition: SubTable(Single_Cell_Inputs[SingCell_Input_Names=Final_EV_Prd_Label])
+Definition: Choice(Vehicle_Stock_DataYr,16,0)
 NodeLocation: 408,664,1
 NodeSize: 64,40
 ValueState: 2,152,154,1541,615,,MIDM
 Aliases: FormNode Fo1542875895, Alias Al1550725786, FormNode Fo1550725786
+{!40200|Att_ChoiceIndexes: Index Vehicle_Stock_DataYr}
 
 FormNode Fo1542875895
 Title: Final EV Historic Period
@@ -3558,7 +3559,6 @@ Att__TotalsIndex: [Spatial_ID]
 Att_ResultSliceState: [All_Sectors,3,Delta_Outputs,4,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
 
 Index Delta_Outputs
-Att_PrevIndexValue: ['Cumulative MW-AC (Delta)']
 Title: Delta Outputs
 Definition: ['Cumulative MW-AC (Delta)']
 IndexVals: ['item 1']
@@ -3567,6 +3567,7 @@ NodeSize: 64,40
 WindState: 2,327,530,720,350
 Aliases: FormNode New1543539730
 {!40300|Att_SlicerPopupSize: 237,56}
+Att_PrevIndexValue: ['Cumulative MW-AC (Delta)']
 
 Decision Map_Delta_Outputs
 Title: Map Delta Outputs
@@ -3726,18 +3727,18 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Default_Delta_Map
 
 Index PV_CumulDataTyp_None
-Att_PrevIndexValue: ['None','Cumulative System Count','Cumulative Nameplate CEC-MW-AC','Cumulative Coincident Peak Avg MW-AC','Cumulative Nameplate MW-DC','Cumulative Non-Coincident Peak MW-AC']
 Title: PV Cumul Data Types with None
 Definition: Concat(None_Label, PV_Cumul_Data_Type)
 NodeLocation: 464,56,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['None','Cumulative System Count','Cumulative Nameplate CEC-MW-AC','Cumulative Coincident Peak Avg MW-AC','Cumulative Nameplate MW-DC','Cumulative Non-Coincident Peak MW-AC']
 
 Index EV_CumulDataTyp_None
-Att_PrevIndexValue: ['None','Cumulative Vehicle Count','Cumulative MW-AC']
 Title: EV Cumul Data Types with None
 Definition: Concat(None_Label, EV_Cumul_Data_Type)
 NodeLocation: 608,56,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['None','Cumulative Vehicle Count','Cumulative MW-AC']
 
 Module Old_Deltas_from_Base
 Title: Old Deltas from Base Period
@@ -4066,12 +4067,12 @@ Att_ColorRole: Null
 Close Deltas_from_Base_Per
 
 Index Output_DER_Types
-Att_PrevIndexValue: ['Solar PV','Electric Vehicles']
 Title: Output DER Types
 Definition: Subset(DER_Types_to_Output)
 NodeLocation: 888,1288,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 232,56}
+Att_PrevIndexValue: ['Solar PV','Electric Vehicles']
 
 Decision DER_Types_to_Output
 Title: DER Types to Output
