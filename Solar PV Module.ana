@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Solar_PV at 20-Feb-2019 10:26:45 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Solar_PV at 21-Feb-2019 12:01:09 AM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -14,7 +14,7 @@ Title: Solar PV
 Author: Cory Welch
 Date: Mon, Jan 8, 2018 10:24 AM
 SaveAuthor: JamesMilford
-SaveDate: Wed, Feb 20, 2019 10:26 PM
+SaveDate: Thu, Feb 21, 2019 12:01 AM
 DefaultSize: 64,40
 NodeSize: 88,64
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -2523,17 +2523,16 @@ Constant PV_Capacity_Factor
 Title: PV Capacity Factor
 Units: (kWh/year)/(kW-DC*8760)
 Description: The PV capacity factor, which indicates the kWh-AC of first-year solar production that can be expected from a system having a 1 kW-DC nameplate rating. 
-Definition: Table(PV_Climate_Zone,All_Sectors)(~
-0.1865,0.1858,0,~
-0.2239,0.2213,0,~
-0.1886,0.1872,0,~
-0.1843,0.1824,0)
+Definition: Table(All_Sectors,PV_Climate_Zone)(~
+0.1865,0.2239,0.1886,0.1843,~
+0.1858,0.2213,0.1872,0.1824,~
+0e+000,0e+000,0e+000,0e+000)
 NodeLocation: 104,304,1
 NodeSize: 64,40
 WindState: 2,9,12,866,441
 DefnState: 2,191,114,967,504,0,DFNM
 ValueState: 2,412,173,567,391,0,MIDM
-Aliases: FormNode Fo1539715674, Alias Al1550179326, FormNode Fo1550179326
+Aliases: Alias Al1550179326, FormNode Fo1550179326, FormNode Fo1539715674
 ReformVal: [All_Sectors,PV_Climate_Zone]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
@@ -2616,7 +2615,7 @@ Definition: SubTable(Single_Cell_Inputs[SingCell_Input_Names=Met_by_Solar_Label]
 NodeLocation: 104,424,1
 NodeSize: 64,40
 WindState: 2,339,274,720,350
-Aliases: FormNode Fo1538669797, Alias Al1538669850, FormNode Fo1538669850, Alias Al1550182568, FormNode Fo1550182568
+Aliases: Alias Al1550182568, FormNode Fo1550182568, FormNode Fo1538669797, Alias Al1538669850, FormNode Fo1538669850
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
 FormNode Fo1538669797
@@ -2642,7 +2641,7 @@ Description: The annual rate at which PV production declines.
 Definition: SubTable(Single_Cell_Inputs[SingCell_Input_Names=Degradation_Label])
 NodeLocation: 512,304,1
 NodeSize: 64,40
-Aliases: FormNode Fo1539715757, Alias Al1550179301, FormNode Fo1550179305
+Aliases: Alias Al1550179301, FormNode Fo1550179305, FormNode Fo1539715757
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
 FormNode Fo1539715674
@@ -2922,149 +2921,149 @@ Source:~
 File from Dan Wilson (posted on Sharepoint).~
 "PremiseAndServiceCountByZipSector102518.xlsx"
 Definition: Table(All_Spatial_ID,All_Sectors)(~
-0,0,0,~
-0,0,0,~
-6665,829,0,~
-6229,529,0,~
-802,225,0,~
-1384,308,0,~
-25698,2703,0,~
-24028,2955,0,~
-16226,616,0,~
-5224,776,0,~
-10069,726,0,~
-753,152,0,~
-263,58,0,~
-105,30,0,~
-10233,570,0,~
-310,61,0,~
-3160,485,0,~
-13272,569,0,~
-17866,2494,0,~
-9218,991,0,~
-202,51,0,~
-16017,3102,0,~
-790,138,0,~
-288,69,0,~
-19117,1406,0,~
-2992,441,0,~
-51,60,0,~
-1831,453,0,~
-2342,456,0,~
-4692,337,0,~
-12608,3716,0,~
-16868,1547,0,~
-6636,888,0,~
-9806,1251,0,~
-6613,897,0,~
-15130,1065,0,~
-21362,3866,0,~
-21937,2192,0,~
-20187,3105,0,~
-16104,3614,0,~
-18603,1340,0,~
-16483,1302,0,~
-16816,2656,0,~
-6920,2197,0,~
-2175,628,0,~
-19895,2569,0,~
-14775,1440,0,~
-16581,2352,0,~
-557,36,0,~
-20460,2163,0,~
-19673,906,0,~
-9995,1072,0,~
-591,202,0,~
-280,76,0,~
-1085,502,0,~
-16095,2909,0,~
-12463,2068,0,~
-189,40,0,~
-3979,833,0,~
-0,1,0,~
-15502,2544,0,~
-393,171,0,~
-20005,2562,0,~
-0,2,0,~
-6299,1243,0,~
-17817,2787,0,~
-11479,2333,0,~
-6252,1348,0,~
-11448,1620,0,~
-15237,1733,0,~
-0,1,0,~
-478,221,0,~
-977,83,0,~
-403,10,0,~
-0,3,0,~
-0,4,0,~
-25573,4297,0,~
-14755,1248,0,~
-19005,2268,0,~
-23732,1379,0,~
-22258,1361,0,~
-8330,1129,0,~
-14607,842,0,~
-14266,2449,0,~
-26311,2516,0,~
-12978,3063,0,~
-16942,3744,0,~
-0,1,0,~
-13150,1474,0,~
-17820,562,0,~
-23722,1864,0,~
-18054,884,0,~
-21086,1331,0,~
-9026,952,0,~
-10142,400,0,~
-12815,1429,0,~
-1968,5952,0,~
-22253,1323,0,~
-12834,3003,0,~
-9612,478,0,~
-25538,3314,0,~
-17100,1752,0,~
-22151,2069,0,~
-18121,898,0,~
-22586,1998,0,~
-12874,1332,0,~
-0,4,0,~
-942,13,0,~
-11233,257,0,~
-134,32,0,~
-0,1,0,~
-21120,3124,0,~
-0,6,0,~
-0,1,0,~
-7045,1097,0,~
-0,7,0,~
-0,3,0,~
-0,4,0,~
-57,44,0,~
-2949,312,0,~
-13525,1289,0,~
-1698,197,0,~
-5871,597,0,~
-2375,178,0,~
-17554,2052,0,~
-10303,1482,0,~
-0,6,0,~
-11626,2178,0,~
-0,1,0,~
-23353,1571,0,~
-3286,249,0,~
-2008,156,0,~
-0,5,0,~
-4017,687,0,~
-6583,643,0,~
-0,3,0,~
-11922,1056,0,~
-0,1,0)
+0e+000,0e+000,0e+000,~
+0e+000,0e+000,0e+000,~
+6665,829,0e+000,~
+6229,529,0e+000,~
+802,225,0e+000,~
+1384,308,0e+000,~
+25698,2703,0e+000,~
+24028,2955,0e+000,~
+16226,616,0e+000,~
+5224,776,0e+000,~
+10069,726,0e+000,~
+753,152,0e+000,~
+263,58,0e+000,~
+105,30,0e+000,~
+10233,570,0e+000,~
+310,61,0e+000,~
+3160,485,0e+000,~
+13272,569,0e+000,~
+17866,2494,0e+000,~
+9218,991,0e+000,~
+202,51,0e+000,~
+16017,3102,0e+000,~
+790,138,0e+000,~
+288,69,0e+000,~
+19117,1406,0e+000,~
+2992,441,0e+000,~
+51,60,0e+000,~
+1831,453,0e+000,~
+2342,456,0e+000,~
+4692,337,0e+000,~
+12608,3716,0e+000,~
+16868,1547,0e+000,~
+6636,888,0e+000,~
+9806,1251,0e+000,~
+6613,897,0e+000,~
+15130,1065,0e+000,~
+21362,3866,0e+000,~
+21937,2192,0e+000,~
+20187,3105,0e+000,~
+16104,3614,0e+000,~
+18603,1340,0e+000,~
+16483,1302,0e+000,~
+16816,2656,0e+000,~
+6920,2197,0e+000,~
+2175,628,0e+000,~
+19895,2569,0e+000,~
+14775,1440,0e+000,~
+16581,2352,0e+000,~
+557,36,0e+000,~
+20460,2163,0e+000,~
+19673,906,0e+000,~
+9995,1072,0e+000,~
+591,202,0e+000,~
+280,76,0e+000,~
+1085,502,0e+000,~
+16095,2909,0e+000,~
+12463,2068,0e+000,~
+189,40,0e+000,~
+3979,833,0e+000,~
+0e+000,1,0e+000,~
+15502,2544,0e+000,~
+393,171,0e+000,~
+20005,2562,0e+000,~
+0e+000,2,0e+000,~
+6299,1243,0e+000,~
+17817,2787,0e+000,~
+11479,2333,0e+000,~
+6252,1348,0e+000,~
+11448,1620,0e+000,~
+15237,1733,0e+000,~
+0e+000,1,0e+000,~
+478,221,0e+000,~
+977,83,0e+000,~
+403,10,0e+000,~
+0e+000,3,0e+000,~
+0e+000,4,0e+000,~
+25573,4297,0e+000,~
+14755,1248,0e+000,~
+19005,2268,0e+000,~
+23732,1379,0e+000,~
+22258,1361,0e+000,~
+8330,1129,0e+000,~
+14607,842,0e+000,~
+14266,2449,0e+000,~
+26311,2516,0e+000,~
+12978,3063,0e+000,~
+16942,3744,0e+000,~
+0e+000,1,0e+000,~
+13150,1474,0e+000,~
+17820,562,0e+000,~
+23722,1864,0e+000,~
+18054,884,0e+000,~
+21086,1331,0e+000,~
+9026,952,0e+000,~
+10142,400,0e+000,~
+12815,1429,0e+000,~
+1968,5952,0e+000,~
+22253,1323,0e+000,~
+12834,3003,0e+000,~
+9612,478,0e+000,~
+25538,3314,0e+000,~
+17100,1752,0e+000,~
+22151,2069,0e+000,~
+18121,898,0e+000,~
+22586,1998,0e+000,~
+12874,1332,0e+000,~
+0e+000,4,0e+000,~
+942,13,0e+000,~
+11233,257,0e+000,~
+134,32,0e+000,~
+0e+000,1,0e+000,~
+21120,3124,0e+000,~
+0e+000,6,0e+000,~
+0e+000,1,0e+000,~
+7045,1097,0e+000,~
+0e+000,7,0e+000,~
+0e+000,3,0e+000,~
+0e+000,4,0e+000,~
+57,44,0e+000,~
+2949,312,0e+000,~
+13525,1289,0e+000,~
+1698,197,0e+000,~
+5871,597,0e+000,~
+2375,178,0e+000,~
+17554,2052,0e+000,~
+10303,1482,0e+000,~
+0e+000,6,0e+000,~
+11626,2178,0e+000,~
+0e+000,1,0e+000,~
+23353,1571,0e+000,~
+3286,249,0e+000,~
+2008,156,0e+000,~
+0e+000,5,0e+000,~
+4017,687,0e+000,~
+6583,643,0e+000,~
+0e+000,3,0e+000,~
+11922,1056,0e+000,~
+0e+000,1,0e+000)
 NodeLocation: 392,472,1
 NodeSize: 64,40
 DefnState: 2,652,0,664,702,0,DFNM
 ValueState: 2,312,34,558,798,,MIDM
-Aliases: FormNode Fo1541463954, Alias Al1550178221, FormNode Fo1550178224
+Aliases: Alias Al1550178221, FormNode Fo1550178224, FormNode Fo1541463954
 ReformDef: [All_Sectors,All_Spatial_ID]
 ReformVal: [All_Sectors,All_Spatial_ID]
 Att__TotalsIndex: [All_Spatial_ID]
@@ -4885,13 +4884,13 @@ The cost of equity financing is the consumer discount rate in the case of a resi
 Definition: Table(All_Sectors,Debt_or_Equity)(~
 0.06,0.2,~
 0.06,0.12,~
-0,0)
+0e+000,0e+000)
 NodeLocation: 112,64,1
 NodeSize: 64,40
 WindState: 2,511,184,720,350
 DefnState: 2,442,3,416,303,,DFNM
 ValueState: 2,363,288,542,312,0,MIDM
-Aliases: FormNode Fo1545167068, Alias Al1550187543, FormNode Fo1550187544
+Aliases: Alias Al1550187543, FormNode Fo1550187544, FormNode Fo1545167068
 ReformDef: [Debt_or_Equity,All_Sectors]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
@@ -4919,7 +4918,7 @@ Description: The rate of inflation.
 Definition: SubTable(Single_Cell_Inputs[SingCell_Input_Names=Inflation_Label])
 NodeLocation: 112,184,1
 NodeSize: 64,40
-Aliases: FormNode Fo1545167070, Alias Al1550187544, FormNode Fo1550187545
+Aliases: Alias Al1550187544, FormNode Fo1550187545, FormNode Fo1545167070
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
 Variable Debt_Rates
@@ -5018,19 +5017,19 @@ Source:~
 http://programs.dsireusa.org/system/program/detail/658
 Definition: Table(All_Sectors,ITC_Scenario,Static_PV_Time)(~
 0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.22,0,0,0,0,0,0,0,0,0,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0,0,0,0,0,0,0,0,0,0,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.22,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,~
 0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
 0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.22,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,~
 0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,~
+0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,~
+0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000)
 NodeLocation: 128,96,1
 NodeSize: 64,40
 DefnState: 2,551,15,518,534,0,DFNM
 ValueState: 2,348,123,427,559,0,MIDM
-Aliases: FormNode Fo1545167107, FormNode Fo1544374717, FormNode Fo1545084105, FormNode Fo1548967094, FormNode Fo1548967851, Alias Al1550189910, FormNode Fo1550189910
+Aliases: Alias Al1550189910, FormNode Fo1550189910, FormNode Fo1545167107, FormNode Fo1544374717, FormNode Fo1545084105, FormNode Fo1548967094, FormNode Fo1548967851
 ReformDef: [All_Sectors,Static_PV_Time]
 ReformVal: [Incentive_Source,Static_PV_Time]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
@@ -5141,7 +5140,7 @@ https://www.energysage.com/solar/solar-energy-storage/energy-storage-tax-credits
 Definition: SubTable(Single_Cell_Inputs[SingCell_Input_Names=PV_Pct_Stored_Label])
 NodeLocation: 120,376,1
 NodeSize: 64,40
-Aliases: FormNode Fo1546192388, Alias Al1550189914, FormNode Fo1550189914
+Aliases: Alias Al1550189914, FormNode Fo1550189914, FormNode Fo1546192388
 NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
 FormNode Fo1546192388
@@ -5241,7 +5240,7 @@ Description: Specify the number of steps (ie, marginal brackets) in the incentiv
 Definition: 4
 NodeLocation: 112,184,1
 NodeSize: 64,40
-Aliases: FormNode Fo1548706815, Alias Al1550726181, FormNode Fo1550726182
+Aliases: Alias Al1550726181, FormNode Fo1550726182, FormNode Fo1548706815
 
 Index Incent_Duration_Step
 Title: Incentive Duration Step
@@ -5271,15 +5270,15 @@ Source: ~
 SGIP Handbook, Section 5.2.1~
 https://www.selfgenca.com/documents/handbook/2017
 Definition: Table(Incent_Duration_Step,Incent_Durat_Inputs)(~
-0,1,~
+0e+000,1,~
 2,0.5,~
 4,0.25,~
-6,0)
+6,0e+000)
 NodeLocation: 256,184,1
 NodeSize: 64,40
 WindState: 2,7,167,720,350
 DefnState: 2,95,10,776,379,0,DFNM
-Aliases: FormNode Fo1548707006, FormNode Fo1549396622, Alias Al1550726183, FormNode Fo1550726184
+Aliases: Alias Al1550726183, FormNode Fo1550726184, FormNode Fo1548707006, FormNode Fo1549396622
 ReformDef: [Incent_Durat_Inputs,Incent_Duration_Step]
 {!40700|Att_CellFormat: CellSpan(Incent_Durat_Inputs,CellNumberFormat('Percentage',2,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0),2,header:0)}
 
@@ -5348,7 +5347,7 @@ Definition: 5
 NodeLocation: 112,304,1
 NodeSize: 64,40
 WindState: 2,340,265,720,350
-Aliases: FormNode Fo1548708353, Alias Al1550726184, FormNode Fo1550726185
+Aliases: Alias Al1550726184, FormNode Fo1550726185, FormNode Fo1548708353
 
 Index Incent_Capacity_Step
 Title: Incentive Capacity Step
@@ -5388,7 +5387,7 @@ NodeSize: 64,40
 WindState: 2,514,117,959,608
 DefnState: 2,80,140,776,379,0,DFNM
 ValueState: 2,27,372,530,303,0,MIDM
-Aliases: FormNode Fo1548708354, FormNode Fo1549396623, Alias Al1550726186, FormNode Fo1550726187
+Aliases: Alias Al1550726186, FormNode Fo1550726187, FormNode Fo1548708354, FormNode Fo1549396623
 ReformDef: [Incent_Cap_Inputs,Incent_Capacity_Step]
 {!40700|Att_CellFormat: CellSpan(Incent_Cap_Inputs,CellNumberFormat('Percentage',2,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0),2,header:0)}
 
@@ -5637,7 +5636,7 @@ Definition: 6
 NodeLocation: 112,424,1
 NodeSize: 64,40
 WindState: 2,27,216,720,350
-Aliases: FormNode Fo1548887199, Alias Al1550726187, FormNode Fo1550726188
+Aliases: Alias Al1550726187, FormNode Fo1550726188, FormNode Fo1548887199
 
 FormNode Fo1548887199
 Title: Number of Incentive Duration Steps
@@ -5653,7 +5652,7 @@ Description: Specify the final year of historic incentive data for storage techs
 Definition: 2018
 NodeLocation: 112,544,1
 NodeSize: 64,40
-Aliases: FormNode Fo1548888565, Alias Al1550726189, FormNode Fo1550726190
+Aliases: Alias Al1550726189, FormNode Fo1550726190, FormNode Fo1548888565
 
 FormNode Fo1548888565
 Title: Number of Incentive Duration Steps
@@ -7363,16 +7362,16 @@ Description: The technology specifications for a single unit of the battery stor
 Residential are based on a Tesla Powerwall (Gen 2), while non-commercial are based on a Tesla Power Pack (Gen 2).~
 ~
 Note: Tesla Powerpack specs 210kWh, 50kW, 88% (2hr system) or 89% (4hr system)
-Definition: Table(Battery_Specs,All_Sectors)(~
-15,66,0,~
-5,30,0,~
-0.9,0.9,0)
+Definition: Table(All_Sectors,Battery_Specs)(~
+15,5,0.9,~
+66,30,0.9,~
+0e+000,0e+000,0e+000)
 NodeLocation: 136,176,1
 NodeSize: 64,40
 WindState: 2,297,1,801,442
 DefnState: 2,242,107,910,561,0,DFNM
 ValueState: 2,274,25,821,620,0,MIDM
-Aliases: FormNode Fo1542305979, FormNode Fo1548967561, Alias Al1550183618, FormNode Fo1550183618
+Aliases: Alias Al1550183618, FormNode Fo1550183618, FormNode Fo1542305979, FormNode Fo1548967561
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9
 ReformDef: [System_Configuration,Battery_Specs]
@@ -7385,14 +7384,14 @@ Title: Number of Storage Units
 Units: units/system
 Description: The number of storage units included in a given system configuration.
 Definition: Table(All_Sectors,All_System_Types)(~
-0,0,1,1,1,1,1,~
-0,0,1,1,1,1,1,~
-0,0,0,0,0,0,0)
+0e+000,0e+000,1,1,1,1,1,~
+0e+000,0e+000,1,1,1,1,1,~
+0e+000,0e+000,0e+000,0e+000,0e+000,0e+000,0e+000)
 NodeLocation: 288,368,1
 NodeSize: 64,40
 DefnState: 2,348,54,661,285,0,DFNM
 ValueState: 2,42,138,1279,556,1,MIDM
-Aliases: FormNode Fo1539014254, FormNode Fo1548967586, Alias Al1550185112, FormNode Fo1550185113
+Aliases: Alias Al1550185112, FormNode Fo1550185113, FormNode Fo1539014254, FormNode Fo1548967586
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9
 ReformDef: [All_Sectors,All_System_Types]
@@ -7470,13 +7469,13 @@ NREL's SAM model, whereby nameplate DC capacity is divided by the hour of max AC
 Definition: Table(All_Sectors,PV_Climate_Zone)(~
 1.247474747,1.247474747,1.258550797,1.266145855,~
 1.235148863,1.235148863,1.240244314,1.247274254,~
-0,0,0,0)
+0e+000,0e+000,0e+000,0e+000)
 NodeLocation: 760,368,1
 NodeSize: 64,40
 WindState: 2,155,1,953,441
 DefnState: 2,425,312,713,303,0,DFNM
 ValueState: 2,20,16,510,189,,MIDM
-Aliases: FormNode Fo1542827262, Alias Al1550183623, FormNode Fo1550183623
+Aliases: Alias Al1550183623, FormNode Fo1550183623, FormNode Fo1542827262
 ReformDef: [All_Sectors,PV_Climate_Zone]
 
 Alias Al1542299851
@@ -7502,17 +7501,16 @@ Source - "Medium" scenario:~
 CEC assumed capacities sized to offset annual energy consumption of prototype homes.~
 Uses a weighted average across homes 2100 and 2700 sqft in size.~
 https://efiling.energy.ca.gov/GetDocument.aspx?tn=221797
-Definition: Table(PV_Climate_Zone,NC_SystSize_Scens)(~
-1.744522753,2.492175361,3.738263042,~
-3.774476138,5.392108768,8.088163152,~
-2.036953385,2.909933407,4.364900111,~
-2.176168702,3.108812431,4.663218647)
+Definition: Table(NC_SystSize_Scens,PV_Climate_Zone)(~
+1.744522753,3.774476138,2.036953385,2.176168702,~
+2.492175361,5.392108768,2.909933407,3.108812431,~
+3.738263042,8.088163152,4.364900111,4.663218647)
 NodeLocation: 760,120,1
 NodeSize: 64,40
 WindState: 2,22,82,720,350
 DefnState: 2,297,24,586,351,0,DFNM
 ValueState: 2,416,209,416,303,,MIDM
-Aliases: FormNode Fo1542305980, FormNode Fo1544638294, Alias Al1550183210, FormNode Fo1550183210
+Aliases: Alias Al1550183210, FormNode Fo1550183210, FormNode Fo1542305980, FormNode Fo1544638294
 ReformDef: [NC_SystSize_Scens,PV_Climate_Zone]
 
 FormNode Fo1542305979
@@ -18028,11 +18026,11 @@ WindState: 2,444,119,720,350
 {!40300|Att_SlicerPopupSize: 227,70}
 
 Index Impact_Type_MWdc_GWh
+Att_PrevIndexValue: ['Demand (MW-DC)','Energy (GWh)']
 Title: Impact Type
 Definition: ['Demand (MW-DC)','Energy (GWh)']
 NodeLocation: 1536,464,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Demand (MW-DC)','Energy (GWh)']
 
 Variable Aggreg_Spatial_IDs
 Title: Aggreg Spatial IDs
@@ -18497,13 +18495,13 @@ NodeSize: 64,40
 WindState: 2,285,56,800,434
 
 Index System_Type
+Att_PrevIndexValue: ['No System','Solar PV','Solar PV + Storage','Storage Only','Storage Added to Existing PV']
 Title: System Type
 Definition: ['No System','Solar PV','Solar PV + Storage','Storage Only','Storage Added to Existing PV']
 NodeLocation: 240,680,1
 NodeSize: 64,40
 WindState: 2,2,228,720,350
 {!40300|Att_SlicerPopupSize: 227,70}
-Att_PrevIndexValue: ['No System','Solar PV','Solar PV + Storage','Storage Only','Storage Added to Existing PV']
 
 Index Bill_Components1
 Title: Bill Components
@@ -18699,7 +18697,7 @@ Definition: 2009
 NodeLocation: 384,64,1
 NodeSize: 64,40
 WindState: 2,485,224,720,350
-Aliases: FormNode Fo1550190554, Alias Al1550726687, FormNode Fo1550726688
+Aliases: Alias Al1550726687, FormNode Fo1550726688, FormNode Fo1550190554
 
 Constant PV_Static_End_Year
 Title: PV Static End Year
@@ -18707,7 +18705,7 @@ Description: The end year for the Static PV Time.
 Definition: 2030
 NodeLocation: 384,168,1
 NodeSize: 64,40
-Aliases: FormNode Fo1550190555, Alias Al1550726688, FormNode Fo1550726689
+Aliases: Alias Al1550726688, FormNode Fo1550726689, FormNode Fo1550190555
 
 FormNode Fo1550190554
 Title: PV Static Start Year

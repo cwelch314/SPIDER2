@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Data_Import__Export at 20-Feb-2019 11:17:13 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Data_Import__Export at 21-Feb-2019 12:01:37 AM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Data Import/ Export
 Author: Cory Welch
 Date: Fri, Feb 5, 2016 10:04 AM
 SaveAuthor: JamesMilford
-SaveDate: Wed, Feb 20, 2019 11:17 PM
+SaveDate: Thu, Feb 21, 2019 12:01 AM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -1740,7 +1740,6 @@ Definition: MultiChoice(Self,2,returnList:1)
 NodeLocation: 2048,464,1
 NodeSize: 64,40
 Aliases: FormNode Fo1548287408
-Domain: ['All','Aggregate',2013,2014,2015,2016,2017,2018]
 {!40300|DomainExpr: Concat(All_and_Aggreg_Label,SGIP_Years) }
 {!40200|Att_ChoiceIndexes: Keyword Self}
 
@@ -3522,7 +3521,7 @@ Checkbox(0),Path_to_Spreadsheet,'FactCol2RepeatLabel','A5',Choice(Import_Data_Ty
 Checkbox(0),Path_to_Spreadsheet,'FactCol2ValueIndNotNum','A5',Choice(Import_Data_Types,2,0),Null,Handle(Sheet8_Stored),Handle(ValueInd),Handle(Header_1),Handle(Header_2),Null,~
 Checkbox(0),Path_to_Spreadsheet,'FactCol2ValueIndNotText','A5',Choice(Import_Data_Types,3,0),Null,Handle(Sheet9_Stored),Handle(ValueInd),Handle(Header_1),Handle(Header_2),Null,~
 Checkbox(0),Path_to_Spreadsheet,'FactCol2ValueIndNotDate','A5',Choice(Import_Data_Types,4,0),Null,Handle(Sheet10_Stored),Handle(ValueInd),Handle(Header_1),Handle(Header_2),Null,~
-Checkbox(0),Path_to_Spreadsheet,'SGIP_Data','A7',Choice(Import_Data_Types,1,0),Null,Handle(SGIP_Data),Handle(SGIP_Data_Columns),Handle(SGIP_Data_Rows),Null,Null,~
+Checkbox(1),Path_to_Spreadsheet,'SGIP_Data','A7',Choice(Import_Data_Types,1,0),Null,Handle(SGIP_Data),Handle(SGIP_Data_Columns),Handle(SGIP_Data_Rows),Null,Null,~
 Checkbox(1),Path_to_Spreadsheet,'Single_Cell_Inputs','A6',Choice(Import_Data_Types,1,0),Null,Handle(Single_Cell_Inputs),Null,Handle(SingCell_Input_Names),Null,Null,~
 Checkbox(1),Path_to_Spreadsheet,'Hourly_Profiles','A7',Choice(Import_Data_Types,1,0),Null,Handle(Hourly_Profile_Data),Handle(Hourly_Profile_Names),Handle(Hourly_Profile_Rows),Null,Null,~
 Checkbox(1),Path_to_Spreadsheet,'Holiday_Dates','A7',Choice(Import_Data_Types,4,0),Null,Handle(Dates_of_Holidays),Handle(Holiday_Name),Handle(Holiday_Years),Null,Null,~
@@ -3814,11 +3813,11 @@ NodeLocation: 688,344,1
 NodeSize: 64,40
 
 Index All_Index_Checks
-Att_PrevIndexValue: ['Missing Subscripts','Incorrect Subscripts','Repeat Subscripts']
 Title: All Index Checks
 Definition: ['Missing Subscripts','Incorrect Subscripts','Repeat Subscripts']
 NodeLocation: 688,520,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Missing Subscripts','Incorrect Subscripts','Repeat Subscripts']
 
 Index Index_Checks
 Title: Index Checks
@@ -3903,11 +3902,11 @@ Aliases: FormNode Fo1544973917, FormNode Fo1544973682, FormNode Fo1550097071
 ReformDef: [Data_Selection_Optio,Imported_Dataset_Num]
 
 Index Data_Selection_Optio
-Att_PrevIndexValue: ['Tab Name','Selected for Import']
 Title: Data Selection Options
 Definition: CopyIndex([Tab_Name_Label,Select_Import_Label])
 NodeLocation: 88,872,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Tab Name','Selected for Import']
 
 FormNode Fo1544973682
 Title: Data to Import
@@ -3919,7 +3918,7 @@ Original: Data_to_Import
 
 Decision Last_Import_Time
 Title: Last Import Time
-Definition: 20-Feb-2019 23:16:32.449000
+Definition: 20-Feb-2019 23:51:59.484000
 NodeLocation: 544,848,1
 NodeSize: 64,40
 Aliases: FormNode Fo1544986731, FormNode Fo1544986755
@@ -4364,7 +4363,7 @@ Checkbox(1),Path_to_Spreadsheet,'Struct_Seq_Index_Inputs','A5',Handle(Num_SGIP_D
 NodeLocation: 1192,664,1
 NodeSize: 64,40
 WindState: 2,26,10,1042,708
-DefnState: 2,314,297,935,585,0,DFNM
+DefnState: 2,249,276,935,585,0,DFNM
 Aliases: FormNode Fo1545345258, FormNode Fo1545352194
 ReformDef: [Seq_Index_Tabs,Seq_Index_Params]
 TableCellDefault: Seq_Index_Default
@@ -4701,7 +4700,7 @@ Description: The raw imported data for the active dataset.
 Definition: SpreadsheetRange(Active_Wkbk_Object, sheet: Active_Tab_Name)
 NodeLocation: 112,112,1
 NodeSize: 64,40
-ValueState: 2,32,21,1249,558,0,MIDM
+ValueState: 2,32,21,1837,558,0,MIDM
 Aliases: FormNode Fo1544976416, FormNode Fo1550096845
 
 Variable End_Row
@@ -4748,7 +4747,7 @@ THEN Atomic_Import~
 ELSE Flat_Import_Data
 NodeLocation: 416,120,1
 NodeSize: 64,40
-ValueState: 2,95,63,779,517,0,MIDM
+ValueState: 2,46,0,779,517,0,MIDM
 Aliases: FormNode Fo1544976446, FormNode Fo1550096846
 ReformVal: [Expected_Cols,Populated_Rows]
 
@@ -4907,7 +4906,7 @@ Original: Path_to_Spreadsheet
 Decision Dataset_to_View
 Title: Dataset to View
 Description: Select the tab name of the dataset you wish to view in greater detail.
-Definition: Choice(Tab_Names,13,0)
+Definition: Choice(Tab_Names,24,0)
 NodeLocation: 112,520,1
 NodeSize: 64,40
 WindState: 2,7,277,720,350
@@ -4998,7 +4997,7 @@ ELSE FOR K:=@Index_Titles DO (~
 
 NodeLocation: 272,304,1
 NodeSize: 64,40
-ValueState: 2,624,112,864,440,,MIDM
+ValueState: 2,624,112,1233,440,0,MIDM
 
 Variable Repeat_Subscripts
 Title: Repeat Subscripts
@@ -5092,15 +5091,17 @@ Original: Apply_Index_Checks
 
 Variable Non_Number_Rows
 Title: Non-Number Rows
-Definition: Subset(Sum((NOT IsNumber(Format_Import_Data[Expected_Cols=Import_Value_Cols])) OR IsDateTime(Format_Import_Data[Expected_Cols=Import_Value_Cols]), Import_Value_Cols))
+Definition: VAR data:=Format_Import_Data[Expected_Cols=Import_Value_Cols];~
+Subset(Sum(((NOT IsNumber(data)) OR IsDateTime(data)) AND (data<>Null), Import_Value_Cols))
 NodeLocation: 112,416,1
 NodeSize: 64,40
-ValueState: 2,37,111,416,303,,MIDM
+WindState: 2,102,82,1479,350
+ValueState: 2,100,575,416,303,0,MIDM
 
 Decision Apply_DataType_Check
 Title: Apply Data Type Checks?
 Description: Check this option to test the data types of the imported data. For example, if a dataset has been specified to be of the "Number" data type, then error messages will be displayed if the imported data is not a number (e.g., text or dates).
-Definition: Checkbox(0)
+Definition: Checkbox(1)
 NodeLocation: 352,64,1
 NodeSize: 64,40
 Aliases: FormNode Fo1544976862, FormNode Fo1544922322, FormNode Fo1550097073
