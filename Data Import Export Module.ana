@@ -8,7 +8,7 @@ LinkModule Data_Import__Export
 Title: Data Import/ Export
 Author: Cory Welch
 Date: Fri, Feb 5, 2016 10:04 AM
-SaveAuthor: JamesMilford
+SaveAuthor: coryw
 SaveDate: Thu, Feb 21, 2019 1:35 PM
 DefaultSize: 64,40
 NodeSize: 80,56
@@ -86,7 +86,6 @@ ValueState: 2,847,306,416,303,0,MIDM
 Att_PrevIndexValue: ['Residential','NonResidential','Res + NonRes Combined']
 
 Index Selected_Utilities
-Att_PrevIndexValue: ['SDGE']
 Title: Selected Utilities
 Description: This index is calculated based on which utilities are included in the dataset provided.
 Definition: subset(Select_Utility)
@@ -95,6 +94,7 @@ NodeSize: 64,40
 WindState: 2,1148,8,720,531
 ValueState: 2,1273,65,250,172,,MIDM
 {!40300|Att_SlicerPopupSize: 367,70}
+Att_PrevIndexValue: ['SDGE']
 
 FormNode Fo1515352433
 Title: Sectors Selected

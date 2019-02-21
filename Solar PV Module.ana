@@ -13,7 +13,7 @@ LinkModule Solar_PV
 Title: Solar PV
 Author: Cory Welch
 Date: Mon, Jan 8, 2018 10:24 AM
-SaveAuthor: JamesMilford
+SaveAuthor: coryw
 SaveDate: Thu, Feb 21, 2019 3:38 PM
 DefaultSize: 64,40
 NodeSize: 88,64
@@ -1920,6 +1920,7 @@ WindState: 2,289,23,1168,700
 ValueState: 2,859,158,300,585,,MIDM
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"SHORT",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 337,742}
+Att_PrevIndexValue: [1-Sep-2018,1-Oct-2018,1-Nov-2018,1-Dec-2018,1-Jan-2019,1-Feb-2019,1-Mar-2019,1-Apr-2019,1-May-2019,1-Jun-2019,1-Jul-2019,1-Aug-2019,1-Sep-2019,1-Oct-2019,1-Nov-2019,1-Dec-2019,1-Jan-2020,1-Feb-2020,1-Mar-2020,1-Apr-2020,1-May-2020,1-Jun-2020,1-Jul-2020,1-Aug-2020,1-Sep-2020,1-Oct-2020,1-Nov-2020,1-Dec-2020,1-Jan-2021,1-Feb-2021,1-Mar-2021,1-Apr-2021,1-May-2021,1-Jun-2021,1-Jul-2021,1-Aug-2021,1-Sep-2021,1-Oct-2021,1-Nov-2021,1-Dec-2021,1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023,1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030]
 
 Index PV_Stock_Data_Year
 Title: PV Stock Data Year
@@ -17255,7 +17256,7 @@ Aliases: FormNode Fo1543157094, FormNode Fo1535066238, FormNode Fo1539140368
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 {!40200|Att_ChoiceIndexes: Index All_Sectors}
 {!40300|Att_SlicerPopupSize: 380,83}
-{!40600|Att_ColorSequence: [0xff319500,0xfffe9018,0xff31a300]}
+{!40600|Att_ColorSequence: [0xff319500,Null,0xff31a300]}
 Att_PrevIndexValue: ['Residential','NonResidential']
 
 FormNode Fo1539140368
@@ -17277,7 +17278,7 @@ DefnState: 2,857,228,346,508,,DFNM
 ValueState: 2,2185,301,416,303,,MIDM
 Aliases: FormNode Fo1535655040, FormNode Fo1542091914
 {!40200|Att_ChoiceIndexes: Index Spatial_ID}
-{!40300|Att_SlicerPopupSize: 645,785}
+{!40300|Att_SlicerPopupSize: 660,785}
 
 Index Market_Share_Metric
 Att_PrevIndexValue: ['Cost of Electricity Ratio','Simple Payback Time','Static Long-Run Market Share']
@@ -17334,6 +17335,7 @@ NodeSize: 64,40
 WindState: 2,87,128,1018,645
 ValueState: 2,472,240,416,411,,MIDM
 {!40300|Att_SlicerPopupSize: 267,336}
+Att_PrevIndexValue: [2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 
 Variable BOY_Date_for_PV_Year
 Title: BOY Date for PV Year
@@ -18228,12 +18230,12 @@ TableCellDefault: Choice(PV_Adopt_Data_Types,1,0)
 {!40200|Att_ChoiceIndexes: Index PV_Adopt_Data_Types}
 
 Index PV_Cumul_Data_Type
-Att_PrevIndexValue: ['Cumulative System Count','Cumulative Nameplate CEC-MW-AC','Cumulative Coincident Peak Avg MW-AC','Cumulative Nameplate MW-DC','Cumulative Non-Coincident Peak MW-AC']
 Title: PV Cumulative Data Types
 Definition: Subset(PV_Map_Increm_Cumul = Null)
 NodeLocation: 672,904,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 232,98}
+Att_PrevIndexValue: ['Cumulative System Count','Cumulative Nameplate CEC-MW-AC','Cumulative Coincident Peak Avg MW-AC','Cumulative Nameplate MW-DC','Cumulative Non-Coincident Peak MW-AC']
 
 FormNode Fo1542351043
 Title: Map Incremental to Cumulative
@@ -18280,12 +18282,12 @@ NodeSize: 64,40
 ValueState: 2,333,24,552,769,,MIDM
 
 Index Installation_Type
-Att_PrevIndexValue: ['NewConstr','Retrofit','N/A']
 Title: Installation Type
 Definition: Concat(New_or_Retrofit, NA_Label)
 NodeLocation: 528,376,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 232,70}
+{!40300|Att_SlicerPopupSize: 237,70}
+Att_PrevIndexValue: ['NewConstr','Retrofit','N/A']
 
 Decision NA_Label
 Title: NA Label
