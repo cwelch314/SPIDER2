@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Outputs_for_Tableau at 20-Feb-2019 11:17:12 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Outputs_for_Tableau at 21-Feb-2019 12:00:12 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Outputs for Tableau
 Author: JamesMilford
 Date: Tue, Nov 13, 2018 7:23 PM
 SaveAuthor: JamesMilford
-SaveDate: Wed, Feb 20, 2019 11:17 PM
+SaveDate: Thu, Feb 21, 2019 12:00 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
@@ -61,7 +61,7 @@ Author: JamesMilford
 Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 736,792,1
 NodeSize: 64,40
-DiagState: 2,206,299,1570,490,17
+DiagState: 2,165,144,1570,474,17
 
 Variable Cumulative_Data_Plus
 Title: Cumulative Data Plus
@@ -362,6 +362,7 @@ Title: Sequential Outputs
 Definition: ['Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 NodeLocation: 1064,88,1
 NodeSize: 64,40
+WindState: 2,837,82,720,350
 Aliases: FormNode Fo1543018175
 {!40300|Att_SlicerPopupSize: 247,84}
 Att_PrevIndexValue: ['Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
@@ -525,7 +526,7 @@ Variable PV_Cumulative
 Title: PV Cumulative
 Units: MW-AC
 Description: Nameplate MW-AC from Solar PV, cumulative for all time. Excludes any T&D losses. Values are End of Period.
-Definition: Selected_Sequential_[Output_DER_Types=Solar_PV_Label, Sequential_Outputs='Cumulative MW-AC', All_Sectors=PV_Sectors]
+Definition: Selected_Sequential_[Output_DER_Types=Solar_PV_Label, Sequential_Outputs=Seq_Cumul_MW_Label, All_Sectors=PV_Sectors]
 NodeLocation: 1184,440,1
 NodeSize: 64,40
 WindState: 2,102,82,1261,505
@@ -541,9 +542,10 @@ Variable EV_Cumulative
 Title: EV Cumulative
 Units: MW-AC
 Description: Coincident peak MW-AC impact of EVs, using CEC assumption of 0.25 kW/vehicle. Values are End of Period.
-Definition: Selected_Sequential_[Output_DER_Types=EV_Out_Label, Sequential_Outputs='Cumulative MW-AC', All_Sectors=EV_Sectors]
+Definition: Selected_Sequential_[Output_DER_Types=EV_Out_Label, Sequential_Outputs=Seq_Cumul_MW_Label, All_Sectors=EV_Sectors]
 NodeLocation: 1184,536,1
 NodeSize: 64,40
+WindState: 2,893,-2,720,350
 ValueState: 2,638,38,894,715,1,MIDM
 Aliases: FormNode Fo1544977998, FormNode Fo1544456701
 GraphSetup: Att_GraphValueRange EV_Cumulative:1,,,,,,5
@@ -556,7 +558,7 @@ Variable PV_Incremental
 Title: PV Incremental
 Units: MW-AC/month
 Description: Incremental (e.g., MW-AC per month) impact of new solar PV installations. Values are End of Period.
-Definition: Selected_Sequential_[Output_DER_Types=Solar_PV_Label, Sequential_Outputs='Incremental MW-AC', All_Sectors=PV_Sectors]
+Definition: Selected_Sequential_[Output_DER_Types=Solar_PV_Label, Sequential_Outputs=Seq_Increm_MW_Label, All_Sectors=PV_Sectors]
 NodeLocation: 1032,536,1
 NodeSize: 64,40
 WindState: 2,102,82,1095,453
@@ -572,7 +574,7 @@ Variable Cumulative_EV_Stock
 Title: Cumulative EV Stock
 Units: vehicles
 Description: Total electric vehicle stock (BEVs + PHEVs). Values are End of Period.
-Definition: Selected_Sequential_[Output_DER_Types=EV_Out_Label, Sequential_Outputs='Cumulative Count', All_Sectors=EV_Sectors]
+Definition: Selected_Sequential_[Output_DER_Types=EV_Out_Label, Sequential_Outputs=Seq_Cumul_Cnt_Label, All_Sectors=EV_Sectors]
 NodeLocation: 1184,632,1
 NodeSize: 64,40
 ValueState: 2,365,87,861,609,1,MIDM
@@ -584,6 +586,54 @@ ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Spatial_ID]
 Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
+
+Decision Seq_Cumul_MW_Label
+Title: Seq Cumul MW Label
+Definition: Choice(Sequential_Outputs,4,0)
+NodeLocation: 1064,200,1
+NodeSize: 64,40
+Aliases: FormNode Fo1550774526
+{!40200|Att_ChoiceIndexes: Index Sequential_Outputs}
+
+FormNode Fo1550774526
+Title: Demo Rate Label
+Definition: 0
+NodeLocation: 1076,240,1
+NodeSize: 68,16
+NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
+Original: Seq_Cumul_MW_Label
+
+Decision Seq_Cumul_Cnt_Label
+Title: Seq Cumul Count Label
+Definition: Choice(Sequential_Outputs,2,0)
+NodeLocation: 1208,200,1
+NodeSize: 64,40
+Aliases: FormNode Fo1550774606
+{!40200|Att_ChoiceIndexes: Index Sequential_Outputs}
+
+FormNode Fo1550774606
+Title: Demo Rate Label
+Definition: 0
+NodeLocation: 1220,240,1
+NodeSize: 68,16
+NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
+Original: Seq_Cumul_Cnt_Label
+
+Decision Seq_Increm_MW_Label
+Title: Seq Increm MW Label
+Definition: Choice(Sequential_Outputs,3,0)
+NodeLocation: 912,88,1
+NodeSize: 64,40
+Aliases: FormNode Fo1550774658
+{!40200|Att_ChoiceIndexes: Index Sequential_Outputs}
+
+FormNode Fo1550774658
+Title: Demo Rate Label
+Definition: 0
+NodeLocation: 924,128,1
+NodeSize: 68,16
+NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
+Original: Seq_Increm_MW_Label
 
 Close Sequential_Historic_
 
@@ -3490,21 +3540,21 @@ SaveAuthor: JamesMilford
 SaveDate: Thu, Nov 29, 2018 5:58 PM
 NodeLocation: 736,984,1
 NodeSize: 64,40
-DiagState: 2,115,131,1477,670,17
+DiagState: 2,0,37,1477,670,17
 
-Decision Base_Period_for_Delt
+Constant Base_Period_Deltas
 Title: Base Period for Deltas
 Definition: Choice(Output_Periods,80,0)
 NodeLocation: 216,168,1
 NodeSize: 64,40
 WindState: 2,102,82,777,429
-Aliases: FormNode New1543539727, FormNode Fo1543023735
+Aliases: FormNode New1543539727, FormNode Fo1543023735, Alias Al1550771575, FormNode Fo1550771576
 {!40200|Att_ChoiceIndexes: Index Output_Periods}
 
 Variable PV_Delta_Data
 Title: PV Delta Data
 Definition: VAR cumulData:=PV_Adoption_Fcst_NR[PV_Adopt_Data_Types=PV_Cumul_Data_Type, Time_Solar_PV=Output_Prd_Plus_Map];~
-VAR deltas:=cumulData[Output_Periods_Plus=Delta_Output_Periods] - cumulData[Output_Periods_Plus=Base_Period_for_Delt];~
+VAR deltas:=cumulData[Output_Periods_Plus=Delta_Output_Periods] - cumulData[Output_Periods_Plus=Base_Period_Deltas];~
 IF Act_vs_Sim=Simulated_Label THEN deltas[New_or_Retrofit=Installation_Type] ELSE Null
 NodeLocation: 216,288,1
 NodeSize: 64,40
@@ -3516,14 +3566,14 @@ Att_ResultSliceState: [PV_Sectors,2,PV_Cumul_Data_Type,2,Installation_Type,2,Act
 
 Index Delta_Output_Periods
 Title: Delta Output Periods
-Definition: Subset(Output_Periods > Base_Period_for_Delt)
-NodeLocation: 464,152,1
+Definition: Subset(Output_Periods > Base_Period_Deltas)
+NodeLocation: 464,168,1
 NodeSize: 64,40
 ValueState: 2,1227,147,284,775,,MIDM
 
 Variable EV_Delta_Data
 Title: EV Delta Data
-Definition: VAR x:=Sum(EV_Adoption_Data[Output_Periods=Delta_Output_Periods, EV_Adopt_Data_Types=EV_Cumul_Data_Type], Act_vs_Sim) - Cumulative_Data_Plu4[Output_Periods_Plus=Base_Period_for_Delt];~
+Definition: VAR x:=Sum(EV_Adoption_Data[Output_Periods=Delta_Output_Periods, EV_Adopt_Data_Types=EV_Cumul_Data_Type], Act_vs_Sim) - Cumulative_Data_Plu4[Output_Periods_Plus=Base_Period_Deltas];~
 IF (Act_vs_Sim=Simulated_Label) AND (Installation_Type=NA_Label)~
 THEN x ~
 ELSE Null
@@ -3562,9 +3612,9 @@ Index Delta_Outputs
 Title: Delta Outputs
 Definition: ['Cumulative MW-AC (Delta)']
 IndexVals: ['item 1']
-NodeLocation: 608,152,1
+NodeLocation: 608,168,1
 NodeSize: 64,40
-WindState: 2,327,530,720,350
+WindState: 2,286,501,720,350
 Aliases: FormNode New1543539730
 {!40300|Att_SlicerPopupSize: 237,56}
 Att_PrevIndexValue: ['Cumulative MW-AC (Delta)']
@@ -3589,7 +3639,7 @@ TableCellDefault: Default_Delta_Map
 Decision Default_Delta_Map
 Title: Default Delta Map
 Definition: Table(All_DER_Types)(Choice(PV_CumulDataTyp_None,1,0),Choice(EV_CumulDataTyp_None,1,0),Null,Null,Null)
-NodeLocation: 752,152,1
+NodeLocation: 752,168,1
 NodeSize: 64,40
 WindState: 2,15,197,720,350
 DefnState: 2,1138,196,416,303,0,DFNM
@@ -3634,7 +3684,7 @@ Index Delta_Columns
 Att_PrevIndexValue: [Delta_Output_Periods,Output_DER_Types,All_Sectors,Installation_Type,Act_vs_Sim,Spatial_ID,'Cumulative MW-AC (Delta)']
 Title: Delta Columns
 Definition: CopyIndex(Flat_Delta_Data.Col)
-NodeLocation: 896,240,1
+NodeLocation: 896,256,1
 NodeSize: 64,40
 ValueState: 2,11,87,416,303,,MIDM
 
@@ -3642,7 +3692,7 @@ Index Delta_Order_Number
 Att_PrevIndexValue: [1,2,3,4,5,6,7]
 Title: Delta Order Number
 Definition: 1..Size(Delta_Columns)
-NodeLocation: 896,152,1
+NodeLocation: 896,168,1
 NodeSize: 64,40
 
 Decision Order_of_Delta_Colum
@@ -3675,7 +3725,7 @@ VAR textParse:=FOR J:=@orderedCols DO (~
    ELSE Slice(orderedCols, J)~
 );~
 CopyIndex(textParse)
-NodeLocation: 1032,152,1
+NodeLocation: 1032,168,1
 NodeSize: 64,40
 ValueState: 2,65,165,1671,511,,MIDM
 ReformVal: [Self,Null]
@@ -3683,16 +3733,16 @@ ReformVal: [Self,Null]
 Index Delta_Row_Num
 Title: Delta Row Number
 Definition: CopyIndex(Flat_Delta_Data.Row)
-NodeLocation: 1032,240,1
+NodeLocation: 1032,256,1
 NodeSize: 64,40
 
 FormNode New1543539727
 Title: Base Period for Deltas
 Definition: 0
-NodeLocation: 220,120,1
-NodeSize: 108,16
-NodeInfo: 1,0,0,0,0,0,0,174,0,,0,,,0
-Original: Base_Period_for_Delt
+NodeLocation: 224,116,1
+NodeSize: 80,12
+NodeInfo: 1,0,0,0,0,0,0,122,0,,0,,,0
+Original: Base_Period_Deltas
 
 FormNode New1543539728
 Title: Map Sequential Outputs
@@ -3713,7 +3763,7 @@ Original: Order_of_Delta_Colum
 FormNode New1543539730
 Title: Sequential Outputs
 Definition: 0
-NodeLocation: 608,204,1
+NodeLocation: 608,220,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Delta_Outputs
@@ -3721,7 +3771,7 @@ Original: Delta_Outputs
 FormNode New1543539731
 Title: Default Sequential Map
 Definition: 0
-NodeLocation: 752,204,1
+NodeLocation: 752,220,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Default_Delta_Map
@@ -4052,17 +4102,35 @@ Variable Cumulative_EV_Delta
 Title: Cumulative EV Delta
 Units: MW-AC
 Description: Cumulative MW-AC delta installations after the input Base Period for Deltas. This value assumes 0.25 kW/vehicle per CEC and is an estimated 1:2 coincident peak impact (different units from cumulative PV delta, which is nameplate). Values are End of Period.
-Definition: Selected_Delta_Data[Act_vs_Sim=Simulated_Label, Output_DER_Types=EV_Out_Label, All_Sectors=EV_Sectors, Installation_Type=NA_Label, Delta_Outputs='Cumulative MW-AC (Delta)', Installation_Type='N/A']
+Definition: Selected_Delta_Data[Act_vs_Sim=Simulated_Label, Output_DER_Types=EV_Out_Label, All_Sectors=EV_Sectors, Installation_Type=NA_Label, Delta_Outputs=Cumul_MW_Delta_Label, Installation_Type=NA_Label]
 NodeLocation: 728,592,1
 NodeSize: 64,40
 WindState: 2,789,352,720,350
-ValueState: 2,2003,61,1201,755,1,MIDM
+ValueState: 2,1038,73,1201,755,1,MIDM
 Aliases: FormNode Fo1544977999, FormNode Fo1544918308
 ReformVal: [Delta_Output_Periods,Null]
 NumberFormat: 2,F,4,1,1,0,4,1,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Spatial_ID]
 Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,0,Delta_Output_Periods,1]
 Att_ColorRole: Null
+
+Decision Cumul_MW_Delta_Label
+Title: Cumul MW Delta Label
+Definition: Choice(Delta_Outputs,1,0)
+NodeLocation: 752,56,1
+NodeSize: 64,40
+WindState: 2,15,197,720,350
+DefnState: 2,1138,196,416,303,0,DFNM
+Aliases: FormNode New1550771263
+{!40200|Att_ChoiceIndexes: Index Delta_Outputs}
+
+FormNode New1550771263
+Title: Default Sequential Map
+Definition: 0
+NodeLocation: 752,108,1
+NodeSize: 72,12
+NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,0
+Original: Cumul_MW_Delta_Label
 
 Close Deltas_from_Base_Per
 
@@ -4651,7 +4719,7 @@ NodeLocation: 896,100,1
 NodeSize: 232,20
 NodeInfo: 1,,,,,1,0,174,,,,,,0
 NodeColor: 65535,32766,1
-Original: Base_Period_for_Delt
+Original: Base_Period_Deltas
 
 FormNode Fo1543023808
 Title: EV LRMS Scenario to Output

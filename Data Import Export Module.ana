@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Data_Import__Export at 21-Feb-2019 12:01:37 AM, encoding="UTF-8" }
+{ From user JamesMilford, Model Data_Import__Export at 21-Feb-2019 12:00:12 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Data Import/ Export
 Author: Cory Welch
 Date: Fri, Feb 5, 2016 10:04 AM
 SaveAuthor: JamesMilford
-SaveDate: Thu, Feb 21, 2019 12:01 AM
+SaveDate: Thu, Feb 21, 2019 12:00 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -31,7 +31,7 @@ Date: Mon, Dec 25, 2017 9:38 AM
 NodeLocation: 128,288,1
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,83,62,1753,797,17
+DiagState: 2,914,-1,1753,774,17
 Pict: (000000000000003C003D0004AB04000089504E470D0A1A0A0000000D494844520000003D0000003C0806000000D53EB24C000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA86400000430494441546843ED9A4D48545118866D67D0C2A5AD74578B7E17154584418BC08D1591ED0C0A8416498B70556DC2450B4D02CBA0A84C932CFB03212A8B30178296F48325D80FA14920266542CCE97C87796FE75EDF99EE8C33676E75170F8CEFF7DDF39D77CEEFC529524AFD7750115C1B69A9DDD25932B5F6729172CDC6F6C5DF2BBBCBC7C667DE95B1BE2D042A820DEDC5B3AC432ED97377F5B3B99FB3C5AC7FD9424580C2871F55759F797EECB84B6CE3F54FAA3B58FFB2858A00456F8D5EA861F17C629B168E3DADB9C0F2B2818A00050B697AF79D95C3F89C2BE35404285648D3D7DFB41E38F8607B0FFE6E1EAA6F60F9994045804285342DB56523B38DCB9A67CF84858AC02ECCE2F924585B8C57DF5D33047D21C6A90882855DC26A7F9D9B2AC985712A0256D815A96AE7C2381541AAC22E4857FBCBF7F152B9AD212753E35404E90AE79B3FD5FE3433566E1B6F7BD558C7F21854047F2A9C4FC2D40E1A0FDB4F2A824C1BCB25616B8B71FBA5284C5FA908326928D7A0B65C4606267A2BD271E3EDB9FD9BAE2E99C133F7DF77ED626D022A02345248D359D1B628C1DA04540468A410A6E5CDCA672413DAA409DEAE404580460A613A1B64AAA3CFC1980D15416C9AC4A3466C9AC40115416C9AC4A3466C9AC40115416C9AC4A3466C9AC40115416C9AC4A3466C9AC40115416C9AC4D5F487F244FFC9E3EADBE7529FFEF3477162A0B95E4DBE58E3D33589C1D63A75675FF7BC67D29018E9AE5637F7F6A8AE9DBDEAF1D146699FE5B931AD3B92682A55892BDB867C7A4F6D87D12F6D7EEDD33589D365B326F6F26AB8D9A34D9A7C9BCECA7E96EBC4B48CA6D791D19E2AA3EB11843133A2C167901FC6B49E295EFEF9756306FC3D7CB13698EF66A4651A9F5B356E3A81D1B646864E6F743A8CE9BE130D26B765D994FA315D62B4E4EC625FA8B38D4CD6B46D24DD289B7C2B97C57DE8364C5BF70E79FFA29519659E274BC79969DF743EBB6212A6D8280B8867645A36315B7F78A4C56C94B6A671675AC0943E95349C6294854C4C7B7B867CA9B2EBEBD382E501B7A6E5F8C1AE2CA6538CB2908969338BF47AF69E91B665AAA738EEDC9AB67659D5B4F4F74E4EF00C84312D48DBF6AE2DC87AC6C666E1D67472ED7904CF6D0B2F27ACE924265F5F4EBCE7E55214C87167DA1EE5B6ADC35EA7528CB6170F635ADA963CFB06868B0FB9A0B8336D8DB29A185C3FEFDC0E80DC50A6D1B6751191CF462BD891658F7272C7965D161A1B6D2F5F5F3CD4C7BE0A1FC1752A4793E4DBA39A1C697642B8318DA9269DD05F80D1EC5B1A9982C8A7E8E77CB918558DD4F2DDC3E508B3720537A6A513FAA832A366E932758D2E6F45966EC04B0A233865E50BD4CB645E9EDECDD99B96BB359D6F64CADBFB864CEB489CD31121364DE2808A20364DE25123364DE2808A20364DE25123364DE2808A000D84F9015B1490DF87E6CCF4DF48D08B0D15C1827EC0564076DC5E3EEFB5D3868AFF36AAE817D3052E280C9B5B310000000049454E44AE426082)
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
@@ -95,16 +95,6 @@ NodeSize: 64,40
 WindState: 2,1148,8,720,531
 ValueState: 2,1273,65,250,172,,MIDM
 {!40300|Att_SlicerPopupSize: 367,70}
-
-Index Building_Stk_Yr_Mnth
-Title: Building Stock Year,Month
-Description: Converts the "Year" of building stock data index into a date format for use in downstream interpolation
-Definition: copyindex(MakeDate(Building_Stock_Year,1,1))~
-
-NodeLocation: 248,64,1
-NodeSize: 64,40
-WindState: 2,102,82,977,350
-ValueState: 2,371,77,832,651,,MIDM
 
 FormNode Fo1515352433
 Title: Sectors Selected
@@ -377,6 +367,15 @@ NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Building_Stock
 
+Variable BuildingYr_EOP_Map
+Title: Building Year EOP Map
+Description: Maps building stock years to end of period dates.
+Definition: MakeDate(Building_Stock_Year,12,31)
+NodeLocation: 240,368,1
+NodeSize: 64,40
+WindState: 2,916,345,1009,499
+ValueState: 2,606,5,510,698,0,MIDM
+
 Close Bldg_Stock_Data
 
 Alias Al1535052941
@@ -392,14 +391,6 @@ Definition: 1
 NodeLocation: 384,64,1
 NodeSize: 64,40
 Original: EV_Sectors
-
-Variable BuildingYr_EOP_Map
-Title: Building Year EOP Map
-Definition: MakeDate(Building_Stock_Year,12,31)
-NodeLocation: 264,160,1
-NodeSize: 64,40
-WindState: 2,557,74,1009,499
-ValueState: 2,606,5,510,698,,MIDM
 
 Decision SDGE_Utility_Label
 Title: SDGE Utility Label
@@ -2604,28 +2595,16 @@ NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Hourly_Profiles
 
-Constant Std_Demolition_Rate
-Title: Standard Demolition Rate
-Units: fraction/year
-Description: The standard building demolition rate used when building stocks are growing, or when building stocks are decaying but at a slower rate than this standard level of decay. If building stocks are decaying at a faster rate than the standard demolition rate, then the faster rate is used.
-Definition: SubTable(Single_Cell_Inputs[SingCell_Input_Names=Demo_Rate_Label])
-NodeLocation: 1168,168,1
-NodeSize: 64,40
-WindState: 2,40,51,940,350
-DefnState: 2,280,282,432,303,,DFNM
-Aliases: FormNode Fo1550099113, FormNode Fo1545167497, Alias Al1550099098
-NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-
 Index SingCell_Input_Names
 Title: Single Cell Input Names
-Definition: ['Standard Demolition Rate','PV Degradation Rate','Residential Load Met by Solar','Inflation Rate','PV Percent of Stored Energy']
+Definition: ['Standard Demolition Rate','PV Degradation Rate','Residential Load Met by Solar','Inflation Rate','PV Percent of Stored Energy','Impact per EV']
 NodeLocation: 728,168,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Standard Demolition Rate','PV Degradation Rate','Residential Load Met by Solar','Inflation Rate','PV Percent of Stored Energy']
+Att_PrevIndexValue: ['Standard Demolition Rate','PV Degradation Rate','Residential Load Met by Solar','Inflation Rate','PV Percent of Stored Energy','Impact per EV']
 
 Constant Single_Cell_Inputs
 Title: Single Cell Inputs
-Definition: Table(SingCell_Input_Names)(0.00625,0.005,0.9,0.021,0.75)
+Definition: Table(SingCell_Input_Names)(0.00625,0.005,0.9,0.021,0.75,0.25)
 NodeLocation: 872,168,1
 NodeSize: 64,40
 Aliases: FormNode Fo1550095424
@@ -2653,14 +2632,6 @@ NodeLocation: 1028,208,1
 NodeSize: 68,16
 NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
 Original: Demo_Rate_Label
-
-FormNode Fo1550099113
-Title: Standard Demolition Rate
-Definition: 0
-NodeLocation: 1168,220,1
-NodeSize: 56,12
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Std_Demolition_Rate
 
 Alias Al1550173428
 Title: Hourly Profile Data
@@ -3260,6 +3231,142 @@ NodeSize: 76,12
 NodeInfo: 1,0,0,0,0,0,0,110,0,,0,,,
 Original: Vehicle_dT_Choice
 
+FormNode Fo1545167497
+Title: Standard Demolition Rate
+Definition: 0
+NodeLocation: 1168,220,2
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Std_Demolition_Rate
+
+Alias Al1550099098
+Title: Standard Demolition Rate
+Definition: 1
+NodeLocation: 1168,168,1
+NodeSize: 64,40
+Original: Std_Demolition_Rate
+
+Decision EV_Impact_Label
+Title: EV Impact Label
+Definition: Choice(SingCell_Input_Names,6,0)
+NodeLocation: 1328,280,1
+NodeSize: 64,40
+Aliases: FormNode Fo1550770650
+{!40200|Att_ChoiceIndexes: Index SingCell_Input_Names}
+
+FormNode Fo1550770650
+Title: Demo Rate Label
+Definition: 0
+NodeLocation: 1340,320,1
+NodeSize: 68,16
+NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
+Original: EV_Impact_Label
+
+Alias Al1550770771
+Title: Impact per EV
+Definition: 1
+NodeLocation: 1472,280,1
+NodeSize: 64,40
+Original: Impact_per_EV
+
+FormNode Fo1550770771
+Title: Impact/EV
+Definition: 0
+NodeLocation: 1476,328,1
+NodeSize: 60,16
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Impact_per_EV
+
+Alias Al1550771575
+Title: Base Period for Deltas
+Definition: 1
+NodeLocation: 1496,768,1
+NodeSize: 64,40
+Original: Base_Period_Deltas
+
+FormNode Fo1550771576
+Title: Base Period for Deltas
+Definition: 0
+NodeLocation: 1504,820,1
+NodeSize: 80,12
+NodeInfo: 1,0,0,0,0,0,0,122,0,,0,,,0
+Original: Base_Period_Deltas
+
+Alias Al1550771680
+Title: Output Start Period
+Definition: 1
+NodeLocation: 1648,768,1
+NodeSize: 64,40
+Original: Output_Start_Period
+
+Alias Al1550771681
+Title: Output End Period
+Definition: 1
+NodeLocation: 1648,880,1
+NodeSize: 64,40
+Original: Output_End_Period
+
+Alias Al1550771683
+Title: Output dT Choice
+Definition: 1
+NodeLocation: 1496,880,1
+NodeSize: 64,40
+Original: Output_dT_Choice
+
+FormNode Fo1550771684
+Title: Output Start Period
+Definition: 0
+NodeLocation: 1652,816,1
+NodeSize: 68,16
+NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,
+Original: Output_Start_Period
+
+FormNode Fo1550771685
+Title: Output End Period
+Definition: 0
+NodeLocation: 1652,928,1
+NodeSize: 68,16
+NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,
+Original: Output_End_Period
+
+FormNode Fo1550771687
+Title: Output dT Choice
+Definition: 0
+NodeLocation: 1496,928,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,
+Original: Output_dT_Choice
+
+Alias Al1550774220
+Title: EV Map Incremental to Cumulative
+Definition: 1
+NodeLocation: 1496,992,1
+NodeSize: 64,40
+Original: EV_Map_Increm_Cumul
+
+FormNode Fo1550774233
+Title: EV Map Incremental to Cumulative
+Definition: 0
+NodeLocation: 1496,1044,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: EV_Map_Increm_Cumul
+
+Alias Al1550775285
+Title: All Aggreg Spatial IDs
+Definition: 1
+NodeLocation: 1344,1008,1
+NodeSize: 64,40
+Original: All_Agg_Spatial_IDs
+
+FormNode Fo1550775287
+Title: All Aggreg Spatial IDs
+Definition: 0
+NodeLocation: 1344,1052,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: All_Agg_Spatial_IDs
+
 Close Data
 
 Text Te1514147845
@@ -3463,10 +3570,10 @@ NodeSize: 64,40
 
 Decision Import_Param_Default
 Title: Import Param Default
-Definition: Table(Excel_Import_Params)(Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A5',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier))
+Definition: Table(Excel_Import_Params)(Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier))
 NodeLocation: 88,448,1
 NodeSize: 64,40
-DefnState: 2,576,268,416,303,0,DFNM
+DefnState: 2,313,331,416,303,0,DFNM
 ValueState: 2,230,172,416,303,,MIDM
 Aliases: FormNode Fo1542127074
 TableCellDefault: Handle(Index_Identifier)
@@ -3511,16 +3618,16 @@ Fact Column Index 1: 	Handle(States)~
 Fact Column Index 2: 	Handle(Land_Type)~
 Fact Column Index 3..N: 	Null
 Definition: Table(Imported_Dataset_Num,Excel_Import_Params)(~
-Checkbox(0),Path_to_Spreadsheet,'FactCol1IncorrLabel','A5',Choice(Import_Data_Types,1,0),Null,Handle(Sheet1_Stored),Null,Handle(Header_1),Null,Null,~
-Checkbox(0),Path_to_Spreadsheet,'FactCol2MissLabel','A5',Choice(Import_Data_Types,1,0),Null,Handle(Sheet2_Stored),Null,Handle(Header_1),Handle(Header_2),Null,~
-Checkbox(0),Path_to_Spreadsheet,'FactCol2ValueInd','A5',Choice(Import_Data_Types,1,0),Null,Handle(Sheet3_Stored),Handle(ValueInd),Handle(Header_1),Handle(Header_2),Null,~
-Checkbox(0),Path_to_Spreadsheet,'AtomicCols','A5',Choice(Import_Data_Types,1,0),Null,Handle(Sheet4_Stored),Null,Null,Null,Null,~
-Checkbox(0),Path_to_Spreadsheet,'AtomicRows','A5',Choice(Import_Data_Types,1,0),Null,Handle(Sheet5_Stored),Null,Null,Null,Null,~
-Checkbox(0),Path_to_Spreadsheet,'SingleCell','A5',Choice(Import_Data_Types,1,0),Null,Handle(Sheet6_Stored),Null,Null,Null,Null,~
-Checkbox(0),Path_to_Spreadsheet,'FactCol2RepeatLabel','A5',Choice(Import_Data_Types,1,0),Null,Handle(Sheet7_Stored),Null,Handle(Header_1),Handle(Header_2),Null,~
-Checkbox(0),Path_to_Spreadsheet,'FactCol2ValueIndNotNum','A5',Choice(Import_Data_Types,2,0),Null,Handle(Sheet8_Stored),Handle(ValueInd),Handle(Header_1),Handle(Header_2),Null,~
-Checkbox(0),Path_to_Spreadsheet,'FactCol2ValueIndNotText','A5',Choice(Import_Data_Types,3,0),Null,Handle(Sheet9_Stored),Handle(ValueInd),Handle(Header_1),Handle(Header_2),Null,~
-Checkbox(0),Path_to_Spreadsheet,'FactCol2ValueIndNotDate','A5',Choice(Import_Data_Types,4,0),Null,Handle(Sheet10_Stored),Handle(ValueInd),Handle(Header_1),Handle(Header_2),Null,~
+Checkbox(0),'Test_File.xslx','FactCol1IncorrLabel','A5',Choice(Import_Data_Types,1,0),Null,Handle(Sheet1_Stored),Null,Handle(Header_1),Null,Null,~
+Checkbox(0),'Test_File.xslx','FactCol2MissLabel','A5',Choice(Import_Data_Types,1,0),Null,Handle(Sheet2_Stored),Null,Handle(Header_1),Handle(Header_2),Null,~
+Checkbox(0),'Test_File.xslx','FactCol2ValueInd','A5',Choice(Import_Data_Types,1,0),Null,Handle(Sheet3_Stored),Handle(ValueInd),Handle(Header_1),Handle(Header_2),Null,~
+Checkbox(0),'Test_File.xslx','AtomicCols','A5',Choice(Import_Data_Types,1,0),Null,Handle(Sheet4_Stored),Null,Null,Null,Null,~
+Checkbox(0),'Test_File.xslx','AtomicRows','A5',Choice(Import_Data_Types,1,0),Null,Handle(Sheet5_Stored),Null,Null,Null,Null,~
+Checkbox(0),'Test_File.xslx','SingleCell','A5',Choice(Import_Data_Types,1,0),Null,Handle(Sheet6_Stored),Null,Null,Null,Null,~
+Checkbox(0),'Test_File.xslx','FactCol2RepeatLabel','A5',Choice(Import_Data_Types,1,0),Null,Handle(Sheet7_Stored),Null,Handle(Header_1),Handle(Header_2),Null,~
+Checkbox(0),'Test_File.xslx','FactCol2ValueIndNotNum','A5',Choice(Import_Data_Types,2,0),Null,Handle(Sheet8_Stored),Handle(ValueInd),Handle(Header_1),Handle(Header_2),Null,~
+Checkbox(0),'Test_File.xslx','FactCol2ValueIndNotText','A5',Choice(Import_Data_Types,3,0),Null,Handle(Sheet9_Stored),Handle(ValueInd),Handle(Header_1),Handle(Header_2),Null,~
+Checkbox(0),'Test_File.xslx','FactCol2ValueIndNotDate','A5',Choice(Import_Data_Types,4,0),Null,Handle(Sheet10_Stored),Handle(ValueInd),Handle(Header_1),Handle(Header_2),Null,~
 Checkbox(1),Path_to_Spreadsheet,'SGIP_Data','A7',Choice(Import_Data_Types,1,0),Null,Handle(SGIP_Data),Handle(SGIP_Data_Columns),Handle(SGIP_Data_Rows),Null,Null,~
 Checkbox(1),Path_to_Spreadsheet,'Single_Cell_Inputs','A6',Choice(Import_Data_Types,1,0),Null,Handle(Single_Cell_Inputs),Null,Handle(SingCell_Input_Names),Null,Null,~
 Checkbox(1),Path_to_Spreadsheet,'Hourly_Profiles','A7',Choice(Import_Data_Types,1,0),Null,Handle(Hourly_Profile_Data),Handle(Hourly_Profile_Names),Handle(Hourly_Profile_Rows),Null,Null,~
@@ -3539,22 +3646,22 @@ Checkbox(1),Path_to_Spreadsheet,'Struct_Single_Cell_Inputs','A7',Choice(Import_D
 Checkbox(1),Path_to_Spreadsheet,'Hist_Vehicle_Growth','A7',Choice(Import_Data_Types,2,0),Null,Handle(Hist_Veh_Growth_Rate),Null,Handle(Vehicle_Types),Null,Null,~
 Checkbox(1),Path_to_Spreadsheet,'EV_MktShare_Mults','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Mkt_Share_Mult),Null,Handle(EV_Mkt_Share_Scen),Null,Null,~
 Checkbox(1),Path_to_Spreadsheet,'Building_Stock','A7',Choice(Import_Data_Types,2,0),Null,Handle(Building_Stock),Handle(Building_Stock_Year),Handle(All_Sectors),Handle(All_Spatial_ID),Null,~
-Checkbox(0),Path_to_Spreadsheet,'SheetName','A5',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
-Checkbox(0),Path_to_Spreadsheet,'SheetName','A5',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
-Checkbox(0),Path_to_Spreadsheet,'SheetName','A5',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
-Checkbox(0),Path_to_Spreadsheet,'SheetName','A5',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A5',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A5',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A5',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A5',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A5',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A5',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A5',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A5',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null)
+Checkbox(1),Path_to_Spreadsheet,'Aggreg_Spatial_ID','A7',Choice(Import_Data_Types,2,0),Null,Handle(All_Agg_Spatial_IDs),Null,Handle(All_Spatial_ID),Null,Null,~
+Checkbox(1),Path_to_Spreadsheet,'EV_Map_Increm_to_Cumul','A7',Choice(Import_Data_Types,1,0),Null,Handle(EV_Map_Increm_Cumul),Null,Handle(EV_Adopt_Data_Types),Null,Null,~
+Checkbox(0),Path_to_Spreadsheet,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),Path_to_Spreadsheet,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null)
 NodeLocation: 88,552,1
 NodeSize: 64,40
 WindState: 2,30,63,1151,780
-DefnState: 2,-761,59,1722,802,0,DFNM
+DefnState: 2,460,-11,1722,802,0,DFNM
 ValueState: 2,120,122,1623,509,,MIDM
 Aliases: FormNode Fo1542127075, FormNode Fo1544973023
 ReformDef: [Excel_Import_Params,Imported_Dataset_Num]
@@ -3929,7 +4036,7 @@ Title: Tab Names
 Definition: CopyIndex(Tab_Names_by_Number)
 NodeLocation: 240,872,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['FactCol1IncorrLabel','FactCol2MissLabel','FactCol2ValueInd','AtomicCols','AtomicRows','SingleCell','FactCol2RepeatLabel','FactCol2ValueIndNotNum','FactCol2ValueIndNotText','FactCol2ValueIndNotDate','SGIP_Data','Single_Cell_Inputs','Hourly_Profiles','Holiday_Dates','Meter_Counts','PV_CapFactor','PV_ResNewConstr_Size','Battery_Specs','Num_Strg_Units','AC-to-DC_Factor','Finance_Rates','Fed_ITC','Strg_Duration_Incent','Vehicle_Stock_Data','Struct_Single_Cell_Inputs','Hist_Vehicle_Growth','EV_MktShare_Mults','Building_Stock','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName']
+Att_PrevIndexValue: ['FactCol1IncorrLabel','FactCol2MissLabel','FactCol2ValueInd','AtomicCols','AtomicRows','SingleCell','FactCol2RepeatLabel','FactCol2ValueIndNotNum','FactCol2ValueIndNotText','FactCol2ValueIndNotDate','SGIP_Data','Single_Cell_Inputs','Hourly_Profiles','Holiday_Dates','Meter_Counts','PV_CapFactor','PV_ResNewConstr_Size','Battery_Specs','Num_Strg_Units','AC-to-DC_Factor','Finance_Rates','Fed_ITC','Strg_Duration_Incent','Vehicle_Stock_Data','Struct_Single_Cell_Inputs','Hist_Vehicle_Growth','EV_MktShare_Mults','Building_Stock','Aggreg_Spatial_ID','EV_Map_Increm_to_Cumul','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName']
 
 Decision Import_in_Progress
 Title: Import in Progress
@@ -4102,12 +4209,12 @@ Column 3 Index: 			Handle(Years)~
 Column 4-N Index:		Null
 Definition: Table(Categ_Index_Tabs,Categ_Index_Params)(~
 Checkbox(0),Path_to_Spreadsheet,'Categorical_Indexes','B5',Handle(Header_1),Handle(Header_2),Handle(ValueInd),Null,Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
-Checkbox(1),Path_to_Spreadsheet,'Categorical_Indexes','A5',Handle(Hourly_Profile_Names),Handle(Holiday_Years),Handle(NC_SystSize_Scens),Handle(ITC_Scenario),Handle(EV_Mkt_Share_Scen),Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Checkbox(1),Path_to_Spreadsheet,'Struct_Categ_Indexes','A5',Handle(SGIP_Data_Columns),Handle(Battery_Specs),Handle(All_System_Types),Handle(Debt_or_Equity),Handle(Incent_Durat_Inputs),Handle(Incent_Cap_Inputs),Handle(Timestep_Options),Handle(StructSingCell_Names),Handle(Vehicle_Types),Handle(All_Spatial_ID),Handle(All_Utilities),Handle(All_Sectors),Handle(PV_Climate_Zone),Handle(SingCell_Input_Names),Handle(Hourly_Profile_Rows),Handle(Holiday_Name),Null,Null,Null,Null)
+Checkbox(1),Path_to_Spreadsheet,'Categorical_Indexes','A5',Handle(Hourly_Profile_Names),Handle(Holiday_Years),Handle(NC_SystSize_Scens),Handle(ITC_Scenario),Handle(EV_Mkt_Share_Scen),Handle(EV_AdEff_Scenario),Handle(EV_WOM_Scen),Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+Checkbox(1),Path_to_Spreadsheet,'Struct_Categ_Indexes','A5',Handle(SGIP_Data_Columns),Handle(Battery_Specs),Handle(All_System_Types),Handle(Debt_or_Equity),Handle(Incent_Durat_Inputs),Handle(Incent_Cap_Inputs),Handle(Timestep_Options),Handle(StructSingCell_Names),Handle(Vehicle_Types),Handle(All_Spatial_ID),Handle(All_Utilities),Handle(All_Sectors),Handle(PV_Climate_Zone),Handle(SingCell_Input_Names),Handle(Hourly_Profile_Rows),Handle(Holiday_Name),Handle(Delta_Outputs),Handle(EV_Adopt_Data_Types),Handle(Sequential_Outputs),Null)
 NodeLocation: 872,664,1
 NodeSize: 64,40
 WindState: 2,102,82,1042,708
-DefnState: 2,831,118,908,755,0,DFNM
+DefnState: 2,865,347,908,526,0,DFNM
 Aliases: FormNode Fo1545070812, FormNode Fo1545342343
 ReformDef: [Categ_Index_Tabs,Categ_Index_Params]
 TableCellDefault: Categ_Index_Default
@@ -4357,13 +4464,13 @@ Row 3 Parameter: 		Handle(Timestep)~
 Row 4 Parameter:		Handle(Num_of_Locations)~
 Row 5-N Parameter:		Null
 Definition: Table(Seq_Index_Tabs,Seq_Index_Params)(~
-Checkbox(0),Path_to_Spreadsheet,'Sequence_Indexes','A5',Handle(Bldg_Stock_Start_Yr),Handle(Bldg_Stock_End_Yr),Handle(Bldg_Stock_Timestep),Handle(Intercon_Start_Yr),Handle(Intercon_End_Yr1),Null,Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),~
-Checkbox(1),Path_to_Spreadsheet,'Sequence_Index_Inputs','A5',Handle(Bldg_Stock_Start_Yea),Handle(Bldg_Stock_End_Year),Handle(Vehicle_Stk_Start_Yr),Handle(Vehicle_Stock_End_Yr),Handle(Vehicle_Sim_Start_Yr),Handle(Vehicle_Sim_End_Yr),Handle(Final_Hist_Incent_Yr),Handle(Final_EV_Hist_Period),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),~
-Checkbox(1),Path_to_Spreadsheet,'Struct_Seq_Index_Inputs','A5',Handle(Num_SGIP_Data_Rows),Handle(PV_Static_Start_Year),Handle(PV_Static_End_Year),Handle(Num_Incent_Dur_Steps),Handle(Num_Incent_Cap_Steps),Handle(Num_Incentive_Steps),Handle(Vehicle_dT_Choice),Handle(Num_Vehicle_Vintages),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier))
+Checkbox(0),Path_to_Spreadsheet,'Sequence_Indexes','A5',Handle(Bldg_Stock_Start_Yr),Handle(Bldg_Stock_End_Yr),Handle(Bldg_Stock_Timestep),Handle(Intercon_Start_Yr),Handle(Intercon_End_Yr1),Null,Null,Null,Null,Null,Null,Null,~
+Checkbox(1),Path_to_Spreadsheet,'Sequence_Index_Inputs','A5',Handle(Bldg_Stock_Start_Yea),Handle(Bldg_Stock_End_Year),Handle(Vehicle_Stk_Start_Yr),Handle(Vehicle_Stock_End_Yr),Handle(Vehicle_Sim_Start_Yr),Handle(Vehicle_Sim_End_Yr),Handle(Final_Hist_Incent_Yr),Handle(Final_EV_Hist_Period),Handle(Base_Period_Deltas),Handle(Output_Start_Period),Handle(Output_End_Period),Null,~
+Checkbox(1),Path_to_Spreadsheet,'Struct_Seq_Index_Inputs','A5',Handle(Num_SGIP_Data_Rows),Handle(PV_Static_Start_Year),Handle(PV_Static_End_Year),Handle(Num_Incent_Dur_Steps),Handle(Num_Incent_Cap_Steps),Handle(Num_Incentive_Steps),Handle(Vehicle_dT_Choice),Handle(Num_Vehicle_Vintages),Handle(Output_dT_Choice),Null,Null,Null)
 NodeLocation: 1192,664,1
 NodeSize: 64,40
 WindState: 2,26,10,1042,708
-DefnState: 2,249,276,935,585,0,DFNM
+DefnState: 2,-35,277,935,585,0,DFNM
 Aliases: FormNode Fo1545345258, FormNode Fo1545352194
 ReformDef: [Seq_Index_Tabs,Seq_Index_Params]
 TableCellDefault: Seq_Index_Default
