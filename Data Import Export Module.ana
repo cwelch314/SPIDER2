@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Data_Import__Export at 28-Feb-2019 9:21:51 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Data_Import__Export at 1-Mar-2019 9:38:52 AM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Data Import/ Export
 Author: Cory Welch
 Date: Fri, Feb 5, 2016 10:04 AM
 SaveAuthor: JamesMilford
-SaveDate: Thu, Feb 28, 2019 9:21 PM
+SaveDate: Fri, Mar 1, 2019 9:38 AM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -259,12 +259,12 @@ ReformVal: [Selected_Utilities,All_Spatial_ID]
 Att__TotalsIndex: [Selected_Utilities,All_Spatial_ID]
 
 Index All_Utilities
-Att_PrevIndexValue: ['SDGE']
 Title: All Utilities
 Definition: ['SDGE']
 NodeLocation: 520,64,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 247,70}
+Att_PrevIndexValue: ['SDGE']
 
 Module Bldg_Stock_Data
 Title: Bldg Stock Data 
@@ -322,13 +322,13 @@ ReformVal: [Building_Stock_Year,EV_Spatial_ID]
 Att_ResultSliceState: [Selected_Spatial_ID,42,Sectors_Selected,1,Building_Stock_Year,1]
 
 Index Building_Stock_Year
-Att_PrevIndexValue: [1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 Title: Building Stock Year
 Definition: Bldg_Stock_Start_Yea..Bldg_Stock_End_Year
 NodeLocation: 240,192,1
 NodeSize: 64,40
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 242,546}
+Att_PrevIndexValue: [1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 
 Constant Bldg_Stock_Start_Yea
 Title: Bldg Stock Start Year
@@ -1693,7 +1693,6 @@ Definition: MultiChoice(Self,2,returnList:1)
 NodeLocation: 1760,464,1
 NodeSize: 64,40
 Aliases: FormNode Fo1548287249
-Domain: ['All','Aggregate','All_CA','All_SDGE',91.901K,91.902K,91.905K,91.906K,91.91K,91.911K,91.913K,91.914K,91.915K,91.916K,91.917K,91.931K,91.932K,91.934K,91.935K,91.941K,91.942K,91.945K,91.948K,91.95K,91.962K,91.963K,91.977K,91.978K,91.98K,92.003K,92.004K,92.007K,92.008K,92.009K,92.01K,92.011K,92.014K,92.019K,92.02K,92.021K,92.024K,92.025K,92.026K,92.027K,92.028K,92.029K,92.036K,92.037K,92.04K,92.054K,92.055K,92.056K,92.057K,92.058K,92.059K,92.06K,92.061K,92.064K,92.065K,92.066K,92.067K,92.068K,92.069K,92.07K,92.071K,92.072K,92.075K,92.078K,92.081K,92.082K,92.083K,92.084K,92.085K,92.086K,92.091K,92.092K,92.093K,92.096K,92.101K,92.102K,92.103K,92.104K,92.105K,92.106K,92.107K,92.108K,92.109K,92.11K,92.111K,92.112K,92.113K,92.114K,92.115K,92.116K,92.117K,92.118K,92.119K,92.12K,92.121K,92.122K,92.123K,92.124K,92.126K,92.127K,92.128K,92.129K,92.13K,92.131K,92.132K,92.136K,92.139K,92.145K,92.152K,92.154K,92.158K,92.161K,92.173K,92.179K,92.182K,92.199K,92.536K,92.624K,92.629K,92.651K,92.653K,92.656K,92.672K,92.673K,92.674K,92.675K,92.676K,92.677K,92.679K,92.688K,92.69K,92.691K,92.692K,92.693K,92.694K,92.697K]
 {!40300|DomainExpr: Concat(All_and_Aggreg_Label, All_Spatial_ID)}
 {!40200|Att_ChoiceIndexes: Keyword Self}
 
@@ -1732,7 +1731,6 @@ Definition: MultiChoice(Self,2,returnList:1)
 NodeLocation: 2048,464,1
 NodeSize: 64,40
 Aliases: FormNode Fo1548287408
-Domain: ['All','Aggregate',2013,2014,2015,2016,2017,2018]
 {!40300|DomainExpr: Concat(All_and_Aggreg_Label,SGIP_Years) }
 {!40200|Att_ChoiceIndexes: Keyword Self}
 
@@ -3402,7 +3400,7 @@ SaveDate: Thu, Feb 28, 2019 4:22 PM
 NodeLocation: 136,128,0
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
-DiagState: 2,776,7,899,653,17
+DiagState: 2,519,41,899,583,17
 WindState: 2,355,67,533,321
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
@@ -3433,7 +3431,7 @@ Author: JamesMilford
 Date: Fri, Dec 21, 2018 10:51 AM
 NodeLocation: 696,168,1
 NodeSize: 64,40
-DiagState: 2,35,103,1848,740,17
+DiagState: 2,38,22,1848,740,17
 NodeColor: 65535,65535,65535
 
 Module Excel_Import_Logic
@@ -3452,15 +3450,15 @@ Date: Sun, Dec 16, 2018 8:07 AM
 NodeLocation: 216,184,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,12,78,1869,645,17
+DiagState: 2,19,16,1869,645,17
 
 Index Import_Fixed_Params
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 Title: Import Fixed Params
 Definition: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 NodeLocation: 88,80,1
 NodeSize: 64,40
 WindState: 2,651,5,720,350
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 
 Decision Max_Imported_Dim
 Title: Max Imported Dimensions
@@ -3708,12 +3706,12 @@ NodeLocation: 544,256,1
 NodeSize: 64,40
 
 Index Excel_Components
-Att_PrevIndexValue: ['Excel Column','Excel Row']
 Title: Excel Components
 Definition: ['Excel Column','Excel Row']
 IndexVals: ['item 1']
 NodeLocation: 544,344,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Excel Column','Excel Row']
 
 Decision Excel_Row_Label
 Title: Excel Row Label
@@ -3757,11 +3755,11 @@ NodeLocation: 688,344,1
 NodeSize: 64,40
 
 Index All_Index_Checks
-Att_PrevIndexValue: ['Missing Subscripts','Incorrect Subscripts','Repeat Subscripts']
 Title: All Index Checks
 Definition: ['Missing Subscripts','Incorrect Subscripts','Repeat Subscripts']
 NodeLocation: 688,520,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Missing Subscripts','Incorrect Subscripts','Repeat Subscripts']
 
 Index Index_Checks
 Title: Index Checks
@@ -3834,7 +3832,7 @@ Definition: MultiTable(Data_Selection_Optio)(Tab_Names_by_Number&"",Import_Selec
 NodeLocation: 88,768,1
 NodeSize: 64,40
 DefnState: 2,123,48,843,561,0,DFNM
-Aliases: FormNode New1551412452, FormNode New1551412473, FormNode New1551412530
+Aliases: FormNode New1551412473, FormNode New1551412530, FormNode New1551412452
 ReformDef: [Data_Selection_Optio,Imported_Dataset_Num]
 
 Index Data_Selection_Optio
@@ -3846,7 +3844,7 @@ Att_PrevIndexValue: ['Tab Name','Selected for Import']
 
 Decision Last_Import_Time
 Title: Last Import Time
-Definition: 28-Feb-2019 16:11:13.435000
+Definition: 1-Mar-2019 09:37:43.769000
 NodeLocation: 544,848,1
 NodeSize: 64,40
 Aliases: FormNode New1551412475, FormNode New1551412538
@@ -3997,6 +3995,7 @@ Title: Categ Index Tab Names
 Definition: CopyIndex(Categ_Index_Tab_Opt)
 NodeLocation: 1016,784,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Categorical_Indexes','Categorical_Indexes','Struct_Categ_Indexes']
 
 Index Categ_Index_Rows
 Title: Categ Index Rows
@@ -4097,11 +4096,11 @@ NodeLocation: 1192,264,1
 NodeSize: 64,40
 
 Index Seq_Index_Params
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Row 1 Parameter','Row 2 Parameter','Row 3 Parameter','Row 4 Parameter','Row 5 Parameter','Row 6 Parameter','Row 7 Parameter','Row 8 Parameter','Row 9 Parameter','Row 10 Parameter','Row 11 Parameter','Row 12 Parameter']
 Title: Sequence Index Parameters
 Definition: Concat(Seq_Index_Fix_Param, Import_Seq_Params)
 NodeLocation: 1192,464,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Row 1 Parameter','Row 2 Parameter','Row 3 Parameter','Row 4 Parameter','Row 5 Parameter','Row 6 Parameter','Row 7 Parameter','Row 8 Parameter','Row 9 Parameter','Row 10 Parameter','Row 11 Parameter','Row 12 Parameter']
 
 Decision Seq_Index_Default
 Title: Sequence Index Default
@@ -4125,11 +4124,11 @@ WindState: 2,42,72,720,350
 Aliases: FormNode New1551412488, FormNode New1551412521
 
 Index Seq_Index_Tabs
-Att_PrevIndexValue: [1,2,3]
 Title: Sequence Index Tabs
 Definition: 1..Num_Seq_Index_Tabs
 NodeLocation: 1336,184,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2,3]
 
 Decision SeqInd_ImportSetting
 Title: Sequence Index Import Settings
@@ -4180,6 +4179,7 @@ Title: Sequence Index Tab Names
 Definition: CopyIndex(Seq_Index_Tab_Opt)
 NodeLocation: 1336,784,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Sequence_Indexes','Sequence_Index_Inputs','Struct_Seq_Index_Inputs']
 
 Index Seq_Index_Rows
 Title: Sequence Index Rows
@@ -4778,7 +4778,7 @@ Date: Fri, Dec 21, 2018 10:51 AM
 NodeLocation: 440,80,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,707,150,1003,605,17
+DiagState: 2,804,72,1003,605,17
 
 Variable Raw_Imported_Data
 Title: Raw Imported Data
@@ -4786,8 +4786,8 @@ Description: The raw imported data for the active dataset.
 Definition: SpreadsheetRange(Active_Wkbk_Object, sheet: Active_Tab_Name)
 NodeLocation: 120,176,1
 NodeSize: 64,40
-ValueState: 2,887,212,1837,558,0,MIDM
-Aliases: FormNode New1551412454, FormNode New1551412525
+ValueState: 2,1,55,1837,558,0,MIDM
+Aliases: FormNode New1551412525, FormNode New1551412454
 
 Variable End_Row
 Title: End Row
@@ -4847,7 +4847,7 @@ ELSE Flat_Import_Data
 NodeLocation: 480,80,1
 NodeSize: 64,40
 ValueState: 2,46,0,779,517,0,MIDM
-Aliases: FormNode New1551412455, FormNode New1551412526
+Aliases: FormNode New1551412526, FormNode New1551412455
 ReformVal: [Expected_Cols,Populated_Rows]
 
 Button Import_Data_Tabs
@@ -4888,7 +4888,7 @@ Module Configuration_Parame
 Title: Configuration Parameters
 Author: JamesMilford
 Date: Sun, Dec 16, 2018 8:07 AM
-NodeLocation: 112,656,1
+NodeLocation: 120,480,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,20,1,842,772,17
@@ -4956,12 +4956,6 @@ NodeLocation: 296,416,1
 NodeSize: 64,40
 WindState: 2,18,191,720,350
 
-Variable Start_Row
-Title: Start Row
-Definition: Excel_Cell_Component(Active_Start_Cell)[Excel_Components=Excel_Row_Label] + 1
-NodeLocation: 448,264,1
-NodeSize: 64,40
-
 Variable Atomic_Flag
 Title: Atomic Flag
 Description: If no fact columns or value index are specified, then the data is assumed to be atomic.
@@ -4992,16 +4986,16 @@ e.g. 'C:\Users\RickyBobby\Documents\Filename.xlsx'
 Definition: 'C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Documents\SDGE_2019_SPIDER\SDGE Global Data.xlsx'
 NodeLocation: 144,224,1
 NodeSize: 64,40
-Aliases: FormNode New1551412451, FormNode New1551412495, FormNode New1551412537
+Aliases: FormNode New1551412495, FormNode New1551412537, FormNode New1551412451
 
 Decision Dataset_to_View
 Title: Dataset to View
 Description: Select the tab name of the dataset you wish to view in greater detail.
-Definition: Choice(Tab_Names,31,0)
+Definition: Choice(Tab_Names,24,0)
 NodeLocation: 112,520,1
 NodeSize: 64,40
 WindState: 2,7,277,720,350
-Aliases: FormNode New1551412453, FormNode New1551412496, FormNode New1551412524
+Aliases: FormNode New1551412496, FormNode New1551412524, FormNode New1551412453
 {!40200|Att_ChoiceIndexes: Index Tab_Names}
 
 Variable Start_Col
@@ -5044,7 +5038,7 @@ Module Import_Error_Checks
 Title: Import Error Checks
 Author: JamesMilford
 Date: Sun, Dec 16, 2018 8:07 AM
-NodeLocation: 264,656,1
+NodeLocation: 272,480,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,217,35,1192,484,17
@@ -5137,7 +5131,7 @@ Definition: Table(All_Index_Checks)(Checkbox(1),Checkbox(1),Checkbox(1))
 NodeLocation: 496,64,1
 NodeSize: 64,40
 WindState: 2,36,91,978,453
-Aliases: FormNode New1551412458, FormNode New1551412498, FormNode New1551412532
+Aliases: FormNode New1551412498, FormNode New1551412532, FormNode New1551412458
 TableCellDefault: Checkbox(1)
 
 Objective Index_Error_Checks
@@ -5172,7 +5166,7 @@ NodeLocation: 584,200,1
 NodeSize: 64,40
 WindState: 2,26,148,1156,489
 ValueState: 2,456,266,719,428,,MIDM
-Aliases: FormNode New1551412456, FormNode New1551412527
+Aliases: FormNode New1551412527, FormNode New1551412456
 
 Decision Msgs_for_Index_Error
 Title: Messages for Index Errors
@@ -5199,7 +5193,7 @@ Description: Check this option to test the data types of the imported data. For 
 Definition: Checkbox(1)
 NodeLocation: 352,64,1
 NodeSize: 64,40
-Aliases: FormNode New1551412459, FormNode New1551412499, FormNode New1551412533
+Aliases: FormNode New1551412499, FormNode New1551412533, FormNode New1551412459
 
 Variable Non_Text_Rows
 Title: Non-Text Rows
@@ -5257,7 +5251,7 @@ NodeLocation: 536,512,1
 NodeSize: 64,40
 WindState: 2,17,273,1522,522
 ValueState: 2,456,266,719,428,,MIDM
-Aliases: FormNode New1551412457, FormNode New1551412528
+Aliases: FormNode New1551412528, FormNode New1551412457
 
 Decision Messages_for_Type_Er
 Title: Messages for Type Errors
@@ -6176,7 +6170,6 @@ NodeSize: 64,40
 DiagState: 2,2018,123,1524,755,17
 
 Index Interconnect_Date
-Att_PrevIndexValue: [1-Sep-1996,1-Oct-1996,1-Nov-1996,1-Dec-1996,1-Jan-1997,1-Feb-1997,1-Mar-1997,1-Apr-1997,1-May-1997,1-Jun-1997,1-Jul-1997,1-Aug-1997,1-Sep-1997,1-Oct-1997,1-Nov-1997,1-Dec-1997,1-Jan-1998,1-Feb-1998,1-Mar-1998,1-Apr-1998,1-May-1998,1-Jun-1998,1-Jul-1998,1-Aug-1998,1-Sep-1998,1-Oct-1998,1-Nov-1998,1-Dec-1998,1-Jan-1999,1-Feb-1999,1-Mar-1999,1-Apr-1999,1-May-1999,1-Jun-1999,1-Jul-1999,1-Aug-1999,1-Sep-1999,1-Oct-1999,1-Nov-1999,1-Dec-1999,1-Jan-2000,1-Feb-2000,1-Mar-2000,1-Apr-2000,1-May-2000,1-Jun-2000,1-Jul-2000,1-Aug-2000,1-Sep-2000,1-Oct-2000,1-Nov-2000,1-Dec-2000,1-Jan-2001,1-Feb-2001,1-Mar-2001,1-Apr-2001,1-May-2001,1-Jun-2001,1-Jul-2001,1-Aug-2001,1-Sep-2001,1-Oct-2001,1-Nov-2001,1-Dec-2001,1-Jan-2002,1-Feb-2002,1-Mar-2002,1-Apr-2002,1-May-2002,1-Jun-2002,1-Jul-2002,1-Aug-2002,1-Sep-2002,1-Oct-2002,1-Nov-2002,1-Dec-2002,1-Jan-2003,1-Feb-2003,1-Mar-2003,1-Apr-2003,1-May-2003,1-Jun-2003,1-Jul-2003,1-Aug-2003,1-Sep-2003,1-Oct-2003,1-Nov-2003,1-Dec-2003,1-Jan-2004,1-Feb-2004,1-Mar-2004,1-Apr-2004,1-May-2004,1-Jun-2004,1-Jul-2004,1-Aug-2004,1-Sep-2004,1-Oct-2004,1-Nov-2004,1-Dec-2004,1-Jan-2005,1-Feb-2005,1-Mar-2005,1-Apr-2005,1-May-2005,1-Jun-2005,1-Jul-2005,1-Aug-2005,1-Sep-2005,1-Oct-2005,1-Nov-2005,1-Dec-2005,1-Jan-2006,1-Feb-2006,1-Mar-2006,1-Apr-2006,1-May-2006,1-Jun-2006,1-Jul-2006,1-Aug-2006,1-Sep-2006,1-Oct-2006,1-Nov-2006,1-Dec-2006,1-Jan-2007,1-Feb-2007,1-Mar-2007,1-Apr-2007,1-May-2007,1-Jun-2007,1-Jul-2007,1-Aug-2007,1-Sep-2007,1-Oct-2007,1-Nov-2007,1-Dec-2007,1-Jan-2008,1-Feb-2008,1-Mar-2008,1-Apr-2008,1-May-2008,1-Jun-2008,1-Jul-2008,1-Aug-2008,1-Sep-2008,1-Oct-2008,1-Nov-2008,1-Dec-2008,1-Jan-2009,1-Feb-2009,1-Mar-2009,1-Apr-2009,1-May-2009,1-Jun-2009,1-Jul-2009,1-Aug-2009,1-Sep-2009,1-Oct-2009,1-Nov-2009,1-Dec-2009,1-Jan-2010,1-Feb-2010,1-Mar-2010,1-Apr-2010,1-May-2010,1-Jun-2010,1-Jul-2010,1-Aug-2010,1-Sep-2010,1-Oct-2010,1-Nov-2010,1-Dec-2010,1-Jan-2011,1-Feb-2011,1-Mar-2011,1-Apr-2011,1-May-2011,1-Jun-2011,1-Jul-2011,1-Aug-2011,1-Sep-2011,1-Oct-2011,1-Nov-2011,1-Dec-2011,1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018]
 Title: Interconnect Date
 Definition: Sequence(Intercon_Strt_Yr,Intercon_End_Yr,Timestep_Months[Timestep_Options=dT_choice],dateUnit: 'M')
 NodeLocation: 1088,808,1
@@ -6185,6 +6178,7 @@ WindState: 2,488,172,1052,350
 ValueState: 2,1366,13,257,658,,MIDM
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"SHORT",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 247,1001}
+Att_PrevIndexValue: [1-Sep-1996,1-Oct-1996,1-Nov-1996,1-Dec-1996,1-Jan-1997,1-Feb-1997,1-Mar-1997,1-Apr-1997,1-May-1997,1-Jun-1997,1-Jul-1997,1-Aug-1997,1-Sep-1997,1-Oct-1997,1-Nov-1997,1-Dec-1997,1-Jan-1998,1-Feb-1998,1-Mar-1998,1-Apr-1998,1-May-1998,1-Jun-1998,1-Jul-1998,1-Aug-1998,1-Sep-1998,1-Oct-1998,1-Nov-1998,1-Dec-1998,1-Jan-1999,1-Feb-1999,1-Mar-1999,1-Apr-1999,1-May-1999,1-Jun-1999,1-Jul-1999,1-Aug-1999,1-Sep-1999,1-Oct-1999,1-Nov-1999,1-Dec-1999,1-Jan-2000,1-Feb-2000,1-Mar-2000,1-Apr-2000,1-May-2000,1-Jun-2000,1-Jul-2000,1-Aug-2000,1-Sep-2000,1-Oct-2000,1-Nov-2000,1-Dec-2000,1-Jan-2001,1-Feb-2001,1-Mar-2001,1-Apr-2001,1-May-2001,1-Jun-2001,1-Jul-2001,1-Aug-2001,1-Sep-2001,1-Oct-2001,1-Nov-2001,1-Dec-2001,1-Jan-2002,1-Feb-2002,1-Mar-2002,1-Apr-2002,1-May-2002,1-Jun-2002,1-Jul-2002,1-Aug-2002,1-Sep-2002,1-Oct-2002,1-Nov-2002,1-Dec-2002,1-Jan-2003,1-Feb-2003,1-Mar-2003,1-Apr-2003,1-May-2003,1-Jun-2003,1-Jul-2003,1-Aug-2003,1-Sep-2003,1-Oct-2003,1-Nov-2003,1-Dec-2003,1-Jan-2004,1-Feb-2004,1-Mar-2004,1-Apr-2004,1-May-2004,1-Jun-2004,1-Jul-2004,1-Aug-2004,1-Sep-2004,1-Oct-2004,1-Nov-2004,1-Dec-2004,1-Jan-2005,1-Feb-2005,1-Mar-2005,1-Apr-2005,1-May-2005,1-Jun-2005,1-Jul-2005,1-Aug-2005,1-Sep-2005,1-Oct-2005,1-Nov-2005,1-Dec-2005,1-Jan-2006,1-Feb-2006,1-Mar-2006,1-Apr-2006,1-May-2006,1-Jun-2006,1-Jul-2006,1-Aug-2006,1-Sep-2006,1-Oct-2006,1-Nov-2006,1-Dec-2006,1-Jan-2007,1-Feb-2007,1-Mar-2007,1-Apr-2007,1-May-2007,1-Jun-2007,1-Jul-2007,1-Aug-2007,1-Sep-2007,1-Oct-2007,1-Nov-2007,1-Dec-2007,1-Jan-2008,1-Feb-2008,1-Mar-2008,1-Apr-2008,1-May-2008,1-Jun-2008,1-Jul-2008,1-Aug-2008,1-Sep-2008,1-Oct-2008,1-Nov-2008,1-Dec-2008,1-Jan-2009,1-Feb-2009,1-Mar-2009,1-Apr-2009,1-May-2009,1-Jun-2009,1-Jul-2009,1-Aug-2009,1-Sep-2009,1-Oct-2009,1-Nov-2009,1-Dec-2009,1-Jan-2010,1-Feb-2010,1-Mar-2010,1-Apr-2010,1-May-2010,1-Jun-2010,1-Jul-2010,1-Aug-2010,1-Sep-2010,1-Oct-2010,1-Nov-2010,1-Dec-2010,1-Jan-2011,1-Feb-2011,1-Mar-2011,1-Apr-2011,1-May-2011,1-Jun-2011,1-Jul-2011,1-Aug-2011,1-Sep-2011,1-Oct-2011,1-Nov-2011,1-Dec-2011,1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018]
 
 Constant Intercon_Strt_Yr
 Title: Intercon Strt Yr
@@ -9306,11 +9300,11 @@ DefnState: 2,6,118,604,466,0,DFNM
 Aliases: FormNode Fo1542232306
 
 Index Min_and_Max
-Att_PrevIndexValue: ['Min','Max']
 Title: Min and Max
 Definition: ['Min','Max']
 NodeLocation: 1272,512,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Min','Max']
 
 Variable Fcst_System_Size_Zip
 Title: Forecast AC System Size by Zip
