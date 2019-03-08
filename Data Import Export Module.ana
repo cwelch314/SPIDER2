@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Data_Import__Export at 8-Mar-2019 2:19:20 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Data_Import__Export at 8-Mar-2019 2:48:02 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Data Import/ Export
 Author: Cory Welch
 Date: Fri, Feb 5, 2016 10:04 AM
 SaveAuthor: JamesMilford
-SaveDate: Fri, Mar 8, 2019 2:19 PM
+SaveDate: Fri, Mar 8, 2019 2:48 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -9820,7 +9820,6 @@ Pict: (000000000000003B003C00041608000089504E470D0A1A0A0000000D494844520000003C0
 
 Module Excel_Export_Logic
 Title: Excel Export Logic
-Description: CurrentModelFolder() & filename
 Author: coryw
 Date: Fri, Nov 23, 2018 9:50 PM
 SaveAuthor: JamesMilford
@@ -9828,23 +9827,223 @@ SaveDate: Fri, Nov 30, 2018 2:10 PM
 NodeLocation: 632,208,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,0,-1,1468,413,17
+DiagState: 2,33,7,1468,591,17
+
+Button Run_Excel_Export
+Title: Run Excel Export
+NodeLocation: 960,168,1
+NodeSize: 64,40
+Aliases: Alias Al1543021300, Alias Al1549568882
+OnClick: IF Auto_assign_sequenti THEN Auto_assign_Seq_Date;~
+(Export_Timestamp:=Today(withTime: 1));~
+Export_Data_to_Files()
+
+FormNode Fo1544725853
+Title: Tableau Output Filename
+Definition: 0
+NodeLocation: 1136,72,1
+NodeSize: 240,16
+NodeInfo: 1,,,,,,0,254,,,,,,0
+Original: Tableau_Output_File
+
+FormNode Fo1544825656
+Title: Output Filename
+Definition: 0
+NodeLocation: 1136,104,1
+NodeSize: 240,16
+NodeInfo: 1,,,,,,,254,,,,,
+Original: Output_Filename
+
+Decision Active_Export_Datase
+Title: Active Export Dataset
+Definition: Choice(Export_Data_Descript,14,0)
+NodeLocation: 96,328,1
+NodeSize: 64,40
+Aliases: FormNode Fo1551980365
+{!40200|Att_ChoiceIndexes: Index Export_Data_Descript}
+
+FormNode Fo1551980365
+Title: Active Export Dataset
+Definition: 0
+NodeLocation: 104,376,1
+NodeSize: 88,16
+NodeInfo: 1,0,0,0,0,0,0,142,0,,0,,,0
+Original: Active_Export_Datase
+
+Variable Active_Export_Number
+Title: Active Export Number
+Definition: Slice(Datasets_to_Export, PositionInIndex(Export_Data_Descript, Active_Export_Datase, Export_Data_Descript))
+NodeLocation: 248,328,1
+NodeSize: 64,40
+ValueState: 2,799,80,416,303,,MIDM
+
+Variable Data_to_Export
+Title: Data to Export
+Definition: VAR data:=Data_Export_Settings[Export_Dataset_Num=Active_Export_Number, Export_Parameter=Handle_to_Variable];   {Have to assign to local variable to convert from a handle to the underlying data}~
+data
+NodeLocation: 424,144,1
+NodeSize: 64,40
+ValueState: 2,140,59,727,616,0,MIDM
+ReformVal: [Allocation_Text_Cols,Allocation_Row_Num]
+
+Variable Handle_to_Rows
+Title: Handle to Rows
+Definition: Data_Export_Settings[Export_Dataset_Num=Active_Export_Number, Export_Parameter=Handle_to_Row_Index]
+NodeLocation: 424,232,1
+NodeSize: 64,40
+
+Variable Handle_to_Cols
+Title: Handle to Cols
+Definition: Data_Export_Settings[Export_Dataset_Num=Active_Export_Number, Export_Parameter=Handle_to_Col_Index]
+NodeLocation: 424,320,1
+NodeSize: 64,40
+
+Variable Export_Path
+Title: Export Path
+Definition: Data_Export_Settings[Export_Dataset_Num=Active_Export_Number, Export_Parameter=Filepath_Label];
+NodeLocation: 424,56,1
+NodeSize: 64,40
+ValueState: 2,56,58,715,303,,MIDM
+
+Variable Export_Sheet
+Title: Export Sheet
+Definition: Data_Export_Settings[Export_Dataset_Num=Active_Export_Number, Export_Parameter=Sheet_Name_Label]
+NodeLocation: 576,528,1
+NodeSize: 64,40
+
+Variable Export_Start_Cell
+Title: Export Start Cell
+Definition: Data_Export_Settings[Export_Dataset_Num=Active_Export_Number, Export_Parameter=Data_Start_Cell]
+NodeLocation: 424,408,1
+NodeSize: 64,40
+
+Variable Clear_Tab
+Title: Clear Tab?
+Definition: Data_Export_Settings[Export_Dataset_Num=Active_Export_Number, Export_Parameter=Clear_Before_Write];
+NodeLocation: 576,616,1
+NodeSize: 64,40
+
+Variable Export_Ranges
+Title: Export Ranges
+Definition: LocalAlias rows:=Handle_to_Rows;~
+LocalAlias cols:=Handle_to_Cols;~
+Find_Excel_Range(Export_Start_Cell, rows, cols, Cleared_Range_Mult)
+NodeLocation: 576,408,1
+NodeSize: 64,40
+ValueState: 2,344,1,464,264,,MIDM
+
+Variable Data_Range
+Title: Data Range
+Definition: Export_Ranges[Range_Parameters=Full_Range_Label]
+NodeLocation: 728,344,1
+NodeSize: 64,40
+ValueState: 2,489,261,416,303,,MIDM
+
+Variable Clear_Range
+Title: Clear Range
+Definition: Export_Ranges[Range_Parameters=Clear_Range_Label]
+NodeLocation: 728,432,1
+NodeSize: 64,40
+
+Decision Applied_Path
+Title: Applied Path
+Definition: 'C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Documents\SDGE_2019_SPIDER\CEC_Forecast_Export.csv'
+NodeLocation: 880,344,1
+NodeSize: 64,40
+
+Variable Export_Workbook_Obj
+Title: Export Workbook Object
+Definition: Reset_Workbook;~
+SpreadsheetOpen(Applied_Path)
+NodeLocation: 1032,392,1
+NodeSize: 64,40
+
+Variable Is_CSV_File
+Title: Is CSV File?
+Definition: TextUpperCase(SelectText(Export_Path, TextLength(Export_Path)-3)) = ".CSV"
+NodeLocation: 576,56,1
+NodeSize: 64,40
+
+Variable Formatted_Export_Dat
+Title: Formatted Export Data
+Definition: LocalAlias rowInd:=IF Handle_to_Rows = Null THEN Return_Not_Specified() ELSE Handle_to_Rows;~
+LocalAlias colInd:=IF Handle_to_Cols = Null THEN Return_Not_Specified() ELSE Handle_to_Cols;~
+~
+IF Is_CSV_File~
+THEN Create_CSV_Text(Data_to_Export, rows: rowInd, cols: colInd, inclRows: Include_Rows_for_CSV)~
+ELSE Data_to_Export
+NodeLocation: 784,232,1
+NodeSize: 64,40
+ValueState: 2,116,113,1216,539,0,MIDM
+
+Decision Include_Rows_for_CSV
+Title: Include Rows for CSV
+Definition: Checkbox(1)
+NodeLocation: 784,136,1
+NodeSize: 64,40
+Aliases: FormNode Fo1551998798
+
+FormNode Fo1551998798
+Title: Include Rows for CSV
+Definition: 0
+NodeLocation: 836,164,1
+NodeSize: 28,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Include_Rows_for_CSV
+
+Variable Next_Path
+Title: Next Path
+Definition: VAR nextPos:=PositionInIndex(Datasets_to_Export, Active_Export_Number, Datasets_to_Export) + 1;~
+VAR nextVal:=IF nextPos > Size(Datasets_to_Export)~
+   THEN Null~
+   ELSE Slice(Datasets_to_Export, nextPos);~
+~
+Data_Export_Settings[Export_Dataset_Num=nextVal, Export_Parameter=Filepath_Label]
+NodeLocation: 424,616,1
+NodeSize: 64,40
+ValueState: 2,88,90,725,330,,MIDM
+
+Variable Reset_Workbook
+Title: Reset Workbook
+Definition: 1
+NodeLocation: 880,432,1
+NodeSize: 64,40
+
+Variable Last_Path
+Title: Last Path
+Definition: VAR lastPos:=PositionInIndex(Datasets_to_Export, Active_Export_Number, Datasets_to_Export) - 1;~
+VAR lastVal:=IF lastPos = 0~
+   THEN Null~
+   ELSE Slice(Datasets_to_Export, lastPos);~
+~
+Data_Export_Settings[Export_Dataset_Num=lastVal, Export_Parameter=Filepath_Label]
+NodeLocation: 424,528,1
+NodeSize: 64,40
+ValueState: 2,232,234,722,395,,MIDM
+
+Module Export_Auxiliary_Var
+Title: Export Auxiliary Variables
+NodeLocation: 104,480,1
+NodeSize: 64,40
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+DiagState: 2,1,0,936,671,17
 
 Decision Data_Export_Settings
 Title: Data Export Settings
+Description: For csv files, the "Sheet Name" and "Data Start Cell" parameters are not required. If "Clear Before Writing?" is not selected for a csv file, then the data will be appended to the bottom of the csv file, rather than overwriting any existing data.
 Definition: Table(Export_Parameter,Export_Dataset_Num)(~
-Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
-'Sequential historic then actual data','Calibration comparison','Deltas from base period','CEC Forecast by Zip','Timestamp','Deliverable sequential historic then actual data','Deliverable calibration comparison','Deliverable deltas from base period','Deliverable CEC Forecast by Zip','Deliverable timestamp','CSV Test','XLSX Test','Sequential historic then actual data','Calibration comparison','Deltas from base period','CEC Forecast by Zip','Timestamp','Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)',~
-Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),Handle(Indexed_Timestamp),Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),Handle(Indexed_Timestamp),Handle(Test_Data),Handle(Format_Sequent_Data),Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),Handle(Indexed_Timestamp),Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),~
-Handle(Sequential_Row_Num),Handle(Comparison_Row_Num),Handle(Delta_Row_Num),Handle(Allocation_Row_Num),Handle(Dummy_Rows),Handle(Sequential_Row_Num),Handle(Comparison_Row_Num),Handle(Delta_Row_Num),Handle(Allocation_Row_Num),Handle(Dummy_Rows),Handle(CSV_Rows),Handle(Sequential_Row_Num),Handle(Sequential_Row_Num),Handle(Comparison_Row_Num),Handle(Delta_Row_Num),Handle(Allocation_Row_Num),Handle(Dummy_Rows),Handle(Sequential_Row_Num),Handle(Comparison_Row_Num),Handle(Delta_Row_Num),Handle(Allocation_Row_Num),~
-Handle(Sequential_Text_Cols),Handle(Comparison_Text_Cols),Handle(Delta_Text_Cols),Handle(Allocation_Text_Cols),Handle(Dummy_Cols),Handle(Sequential_Text_Cols),Handle(Comparison_Text_Cols),Handle(Delta_Text_Cols),Handle(Allocation_Text_Cols),Handle(Dummy_Cols),Handle(CSV_Cols),Handle(Sequential_Text_Cols),Handle(Sequential_Text_Cols),Handle(Comparison_Text_Cols),Handle(Delta_Text_Cols),Handle(Allocation_Text_Cols),Handle(Dummy_Cols),Handle(Sequential_Text_Cols),Handle(Comparison_Text_Cols),Handle(Delta_Text_Cols),Handle(Allocation_Text_Cols),~
-Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path(Output_Filename),CSV_Path,XLSX_Path,Tableau_Test_Path,Tableau_Test_Path,Tableau_Test_Path,Tableau_Test_Path,Tableau_Test_Path,Model_Path('Sequential_Export.csv'),Model_Path('Comparison_Export.csv'),Model_Path('Deltas_Export.csv'),Model_Path('CEC_Forecast_Export.csv'),~
-'Sequential','Comparison','Deltas','CEC Forecasts','Version History','Sequential','Comparison','Deltas','CEC','Contents',Null,'CSV_Import_Test','Sequential','Comparison','Deltas','CEC Forecasts','Version History',Null,Null,Null,Null,~
-'A2','A2','A2','A2','B3','A3','A3','A3','A3','C18',Null,'A2','A2','A2','A2','A2','B3',Null,Null,Null,Null,~
-Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
-NodeLocation: 424,176,1
+Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
+'Sequential historic then actual data','Calibration comparison','Deltas from base period','CEC Forecast by Zip','Timestamp','Deliverable sequential historic then actual data','Deliverable calibration comparison','Deliverable deltas from base period','Deliverable CEC Forecast by Zip','Deliverable timestamp','Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)',~
+Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),Handle(Indexed_Timestamp),Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),Handle(Indexed_Timestamp),Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),~
+Handle(Sequential_Row_Num),Handle(Comparison_Row_Num),Handle(Delta_Row_Num),Handle(Allocation_Row_Num),Handle(Dummy_Rows),Handle(Sequential_Row_Num),Handle(Comparison_Row_Num),Handle(Delta_Row_Num),Handle(Allocation_Row_Num),Handle(Dummy_Rows),Handle(Sequential_Row_Num),Handle(Comparison_Row_Num),Handle(Delta_Row_Num),Handle(Allocation_Row_Num),~
+Handle(Sequential_Text_Cols),Handle(Comparison_Text_Cols),Handle(Delta_Text_Cols),Handle(Allocation_Text_Cols),Handle(Dummy_Cols),Handle(Sequential_Text_Cols),Handle(Comparison_Text_Cols),Handle(Delta_Text_Cols),Handle(Allocation_Text_Cols),Handle(Dummy_Cols),Handle(Sequential_Text_Cols),Handle(Comparison_Text_Cols),Handle(Delta_Text_Cols),Handle(Allocation_Text_Cols),~
+Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path('Sequential_Export.csv'),Model_Path('Comparison_Export.csv'),Model_Path('Deltas_Export.csv'),Model_Path('CEC_Forecast_Export.csv'),~
+'Sequential','Comparison','Deltas','CEC Forecasts','Version History','Sequential','Comparison','Deltas','CEC','Contents',Null,Null,Null,Null,~
+'A2','A2','A2','A2','B3','A3','A3','A3','A3','C18',Null,Null,Null,Null,~
+Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
+NodeLocation: 432,176,1
 NodeSize: 64,40
-WindState: 2,1763,83,720,350
+WindState: 2,265,331,972,490
 DefnState: 2,-30,-2,1540,517,0,DFNM
 Aliases: FormNode Fo1543021295, FormNode New1543613103, FormNode Fo1549568883
 ReformDef: [Export_Parameter,Export_Dataset_Num]
@@ -9853,28 +10052,28 @@ TableCellDefault: Default_ExportConfig
 Index Export_Parameter
 Title: Export Parameter
 Definition: ['Include?','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
-NodeLocation: 112,64,1
+NodeLocation: 120,64,1
 NodeSize: 64,40
 Att_PrevIndexValue: ['Include?','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 
 Index Export_Dataset_Num
 Title: Export Dataset Number
 Definition: 1..Num_Export_Datasets
-NodeLocation: 272,176,1
+NodeLocation: 280,176,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 
 Decision Num_Export_Datasets
 Title: Number of Export Datasets
-Definition: 21
-NodeLocation: 272,64,1
+Definition: 14
+NodeLocation: 280,64,1
 NodeSize: 64,40
 Aliases: FormNode Fo1543021306, FormNode New1543613102, FormNode Fo1549568884
 
 Decision Default_ExportConfig
 Title: Default Export Config
 Definition: Table(Export_Parameter)(Checkbox(0),'Brief Description',Handle(Null),Handle(Null),Handle(Null),'C:\Documents\Filename.xlsx','Sheet1','A1',Checkbox(0))
-NodeLocation: 424,64,1
+NodeLocation: 432,64,1
 NodeSize: 64,40
 DefnState: 2,-105,381,1540,305,0,DFNM
 Aliases: FormNode New1543613111
@@ -9883,13 +10082,13 @@ ReformDef: [Export_Parameter,Undefined]
 Index Datasets_to_Export
 Title: Datasets to Export
 Definition: Subset(Data_Export_Settings[Export_Parameter=Include_in_Export])
-NodeLocation: 272,264,1
+NodeLocation: 280,264,1
 NodeSize: 64,40
 
 Decision Include_in_Export
 Title: Include in Export
 Definition: Choice(Export_Parameter,1,0)
-NodeLocation: 112,152,1
+NodeLocation: 120,152,1
 NodeSize: 64,40
 Aliases: FormNode New1543613104
 {!40200|Att_ChoiceIndexes: Index Export_Parameter}
@@ -9897,7 +10096,7 @@ Aliases: FormNode New1543613104
 Decision Handle_to_Variable
 Title: Handle to Variable
 Definition: Choice(Export_Parameter,3,0)
-NodeLocation: 112,264,1
+NodeLocation: 120,264,1
 NodeSize: 64,40
 Aliases: FormNode New1543613105
 {!40200|Att_ChoiceIndexes: Index Export_Parameter}
@@ -9905,7 +10104,7 @@ Aliases: FormNode New1543613105
 Decision Handle_to_Row_Index
 Title: Handle to Row Index
 Definition: Choice(Export_Parameter,4,0)
-NodeLocation: 112,376,1
+NodeLocation: 120,376,1
 NodeSize: 64,40
 Aliases: FormNode New1543613106
 {!40200|Att_ChoiceIndexes: Index Export_Parameter}
@@ -9913,7 +10112,7 @@ Aliases: FormNode New1543613106
 Decision Handle_to_Col_Index
 Title: Handle to Col Index
 Definition: Choice(Export_Parameter,5,0)
-NodeLocation: 112,488,1
+NodeLocation: 120,488,1
 NodeSize: 64,40
 Aliases: FormNode New1543613107
 {!40200|Att_ChoiceIndexes: Index Export_Parameter}
@@ -9921,7 +10120,7 @@ Aliases: FormNode New1543613107
 Decision Filepath_Label
 Title: Filepath Label
 Definition: Choice(Export_Parameter,6,0)
-NodeLocation: 112,600,1
+NodeLocation: 120,600,1
 NodeSize: 64,40
 Aliases: FormNode New1543613108
 {!40200|Att_ChoiceIndexes: Index Export_Parameter}
@@ -9929,7 +10128,7 @@ Aliases: FormNode New1543613108
 Decision Sheet_Name_Label
 Title: Sheet Name Label
 Definition: Choice(Export_Parameter,7,0)
-NodeLocation: 112,712,1
+NodeLocation: 120,712,1
 NodeSize: 64,40
 Aliases: FormNode New1543613109
 {!40200|Att_ChoiceIndexes: Index Export_Parameter}
@@ -9937,7 +10136,7 @@ Aliases: FormNode New1543613109
 Decision Data_Start_Cell
 Title: Data Start Cell
 Definition: Choice(Export_Parameter,8,0)
-NodeLocation: 112,824,1
+NodeLocation: 120,824,1
 NodeSize: 64,40
 Aliases: FormNode New1543613110
 {!40200|Att_ChoiceIndexes: Index Export_Parameter}
@@ -9945,7 +10144,7 @@ Aliases: FormNode New1543613110
 Index Excel_Columns
 Title: Excel Columns
 Definition: ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','AA','AB','AC','AD','AE','AF','AG','AH','AI','AJ','AK','AL','AM','AN','AO','AP','AQ','AR','AS','AT','AU','AV','AW','AX','AY','AZ','BA','BB','BC','BD','BE','BF','BG','BH','BI','BJ','BK','BL','BM','BN','BO','BP','BQ','BR','BS','BT','BU','BV','BW','BX','BY','BZ','CA','CB','CC','CD','CE','CF','CG','CH','CI','CJ','CK','CL','CM','CN','CO','CP','CQ','CR','CS','CT','CU','CV','CW','CX','CY','CZ','DA','DB','DC','DD','DE','DF','DG','DH','DI','DJ','DK','DL','DM','DN','DO','DP','DQ','DR','DS','DT','DU','DV','DW','DX','DY','DZ','EA','EB','EC','ED','EE','EF','EG','EH','EI','EJ','EK','EL','EM','EN','EO','EP','EQ','ER','ES','ET','EU','EV','EW','EX','EY','EZ','FA','FB','FC','FD','FE','FF','FG','FH','FI','FJ','FK','FL','FM','FN','FO','FP','FQ','FR','FS','FT','FU','FV','FW','FX','FY','FZ','GA','GB','GC','GD','GE','GF','GG','GH','GI','GJ','GK','GL','GM','GN','GO','GP','GQ','GR','GS','GT','GU','GV','GW','GX','GY','GZ','HA','HB','HC','HD','HE','HF','HG','HH','HI','HJ','HK','HL','HM','HN','HO','HP','HQ','HR','HS','HT','HU','HV','HW','HX','HY','HZ','IA','IB','IC','ID','IE','IF','IG','IH','II','IJ','IK','IL','IM','IN','IO','IP','IQ','IR','IS','IT','IU','IV','IW','IX','IY','IZ','JA','JB','JC','JD','JE','JF','JG','JH','JI','JJ','JK','JL','JM','JN','JO','JP','JQ','JR','JS','JT','JU','JV','JW','JX','JY','JZ','KA','KB','KC','KD','KE','KF','KG','KH','KI','KJ','KK','KL','KM','KN','KO','KP','KQ','KR','KS','KT','KU','KV','KW','KX','KY','KZ','LA','LB','LC','LD','LE','LF','LG','LH','LI','LJ','LK','LL','LM','LN','LO','LP','LQ','LR','LS','LT','LU','LV','LW','LX','LY','LZ','MA','MB','MC','MD','ME','MF','MG','MH','MI','MJ','MK','ML','MM','MN','MO','MP','MQ','MR','MS','MT','MU','MV','MW','MX','MY','MZ']
-NodeLocation: 272,696,1
+NodeLocation: 280,696,1
 NodeSize: 64,40
 
 Function Find_Excel_Range(startCell: Text; rows, cols: Optional Index; clearMult)
@@ -9978,87 +10177,21 @@ VAR clearRange:=startCell & ":" & lastCol & lastClearRow;~
 ~
 Array(Range_Parameters, [fullRange, clearRange])~
 
-NodeLocation: 1016,80,1
+NodeLocation: 736,64,1
 NodeSize: 64,40
 WindState: 2,2169,90,857,579
 
 Variable Range_Test
 Title: Range Test
 Definition: Find_Excel_Range('A2', Sequential_Row_Num, Sequential_Text_Cols, Cleared_Range_Mult)
-NodeLocation: 1016,176,1
+NodeLocation: 584,400,1
 NodeSize: 64,40
-ValueState: 2,12,99,699,456,,MIDM
-
-Function Export_to_Excel()
-Title: Export to Excel
-Description: Exports data to excel based on the Data Export Settings.
-Definition: {====Initialize variables====}~
-VAR maxCnt:=Size(Datasets_to_Export);~
-VAR cnt:=0;~
-VAR wkbk:=0;~
-VAR lastPath:=0;~
-~
-{====Loop through each of the datasets that will be exported====}~
-FOR J:=Datasets_to_Export DO (~
-   cnt:=cnt+1;~
-   ShowProgressBar("Data Export Progress", "Exporting dataset " & cnt & " of " & maxCnt & ".", (cnt - 0.1)/maxCnt);~
-~
-{====Grab all of the relevant information about exported datasets====}~
-   VAR data:=Data_Export_Settings[Export_Dataset_Num=J, Export_Parameter=Handle_to_Variable];~
-   MetaVar rows:=Data_Export_Settings[Export_Dataset_Num=J, Export_Parameter=Handle_to_Row_Index];~
-   MetaVar cols:=Data_Export_Settings[Export_Dataset_Num=J, Export_Parameter=Handle_to_Col_Index];~
-   VAR path:=Data_Export_Settings[Export_Dataset_Num=J, Export_Parameter=Filepath_Label];~
-   VAR sheet:=Data_Export_Settings[Export_Dataset_Num=J, Export_Parameter=Sheet_Name_Label];~
-   VAR startCell:=Data_Export_Settings[Export_Dataset_Num=J, Export_Parameter=Data_Start_Cell];~
-   VAR clearFlag:=Data_Export_Settings[Export_Dataset_Num=J, Export_Parameter=Clear_Before_Write];~
-   VAR rangeOutput:=Find_Excel_Range(startCell, rows, cols, Cleared_Range_Mult);~
-   VAR fullRange:=rangeOutput[Range_Parameters=Full_Range_Label];~
-~
-{====Create the spreadsheet object and, if the file path changes, ask whether the previous file should be saved first====}~
-   IF (lastPath <> path) AND (J = Slice(Datasets_to_Export,1))~
-   THEN wkbk:=SpreadsheetOpen(path)~
-   ELSE IF lastPath <> path ~
-   THEN (Save_Excel_File(lastPath, wkbk);~
-            wkbk:=SpreadsheetOpen(path)~
-            )~
-   ELSE Null;~
-~
-   lastPath:=path;~
-~
-{====If clear flags have been set, clear out the tabs before writing====}~
-   IF clearFlag~
-   THEN (VAR clearRange:=rangeOutput[Range_Parameters=Clear_Range_Label];             ~
-             SpreadsheetSetRange(wkbk, clearRange, null, sheet: sheet);~
-             )~
-   ELSE Null;~
-~
-{====Write the data to its associated spreadsheet tab====}~
-   SpreadsheetSetRange(wkbk, fullRange, data, cols, rows, sheet);~
-~
-{====If the final dataset, ask whether the file should be saved====}~
-   IF J = Slice(Datasets_to_Export, Size(Datasets_to_Export))~
-   THEN Save_Excel_File(lastPath, wkbk)~
-   ELSE Null;~
-);~
-~
-wkbk:=0;    {Clear the spreadsheet object in hopes of releasing the spreadsheet file}
-NodeLocation: 872,80,1
-NodeSize: 64,40
-WindState: 2,28,21,1440,726
-
-Button Run_Excel_Export
-Title: Run Excel Export
-NodeLocation: 872,176,1
-NodeSize: 64,40
-Aliases: Alias Al1543021300, Alias Al1549568882
-OnClick: IF Auto_assign_sequenti THEN Auto_assign_Seq_Date;~
-(Export_Timestamp:=Today(withTime: 1));~
-Export_to_Excel()
+ValueState: 2,12,99,699,456,0,MIDM
 
 FormNode New1543613102
 Title: Number of Export Datasets
 Definition: 0
-NodeLocation: 280,116,1
+NodeLocation: 288,116,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Num_Export_Datasets
@@ -10066,7 +10199,7 @@ Original: Num_Export_Datasets
 FormNode New1543613103
 Title: De1
 Definition: 0
-NodeLocation: 432,220,1
+NodeLocation: 440,220,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Data_Export_Settings
@@ -10074,7 +10207,7 @@ Original: Data_Export_Settings
 FormNode New1543613104
 Title: Include in Export Label
 Definition: 0
-NodeLocation: 120,200,1
+NodeLocation: 128,200,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
 Original: Include_in_Export
@@ -10082,7 +10215,7 @@ Original: Include_in_Export
 FormNode New1543613105
 Title: Include in Export Label
 Definition: 0
-NodeLocation: 116,312,1
+NodeLocation: 124,312,1
 NodeSize: 76,16
 NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,0
 Original: Handle_to_Variable
@@ -10090,7 +10223,7 @@ Original: Handle_to_Variable
 FormNode New1543613106
 Title: Include in Export Label
 Definition: 0
-NodeLocation: 120,424,1
+NodeLocation: 128,424,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
 Original: Handle_to_Row_Index
@@ -10098,7 +10231,7 @@ Original: Handle_to_Row_Index
 FormNode New1543613107
 Title: Include in Export Label
 Definition: 0
-NodeLocation: 120,536,1
+NodeLocation: 128,536,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
 Original: Handle_to_Col_Index
@@ -10106,7 +10239,7 @@ Original: Handle_to_Col_Index
 FormNode New1543613108
 Title: Include in Export Label
 Definition: 0
-NodeLocation: 120,648,1
+NodeLocation: 128,648,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
 Original: Filepath_Label
@@ -10114,7 +10247,7 @@ Original: Filepath_Label
 FormNode New1543613109
 Title: Include in Export Label
 Definition: 0
-NodeLocation: 120,760,1
+NodeLocation: 128,760,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
 Original: Sheet_Name_Label
@@ -10122,7 +10255,7 @@ Original: Sheet_Name_Label
 FormNode New1543613110
 Title: Include in Export Label
 Definition: 0
-NodeLocation: 120,872,1
+NodeLocation: 128,872,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
 Original: Data_Start_Cell
@@ -10130,7 +10263,7 @@ Original: Data_Start_Cell
 FormNode New1543613111
 Title: Default Export Config
 Definition: 0
-NodeLocation: 424,108,1
+NodeLocation: 432,108,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Default_ExportConfig
@@ -10138,7 +10271,7 @@ Original: Default_ExportConfig
 Decision Clear_Before_Write
 Title: Clear Before Write
 Definition: Choice(Export_Parameter,9,0)
-NodeLocation: 112,936,1
+NodeLocation: 120,936,1
 NodeSize: 64,40
 Aliases: FormNode Fo1543595729
 {!40200|Att_ChoiceIndexes: Index Export_Parameter}
@@ -10146,7 +10279,7 @@ Aliases: FormNode Fo1543595729
 FormNode Fo1543595729
 Title: Include in Export Label
 Definition: 0
-NodeLocation: 120,984,1
+NodeLocation: 128,984,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
 Original: Clear_Before_Write
@@ -10155,14 +10288,14 @@ Decision Cleared_Range_Mult
 Title: Cleared Range Multiplier
 Description: If a range is cleared before writing, this specifies how much larger the clear range is compared to the calculated data range. For example, if the data range extends from row 2-100 and the multiplier is 1, then the range cleared will be rows 2-100. If the multiplier is 2, then the range cleared will be 2-199. The multiplier does not affect the number of columns that will be cleared, as that number usually does not change as a function of non-null data values.
 Definition: 4
-NodeLocation: 576,176,1
+NodeLocation: 584,280,1
 NodeSize: 64,40
 Aliases: FormNode Fo1543595961
 
 FormNode Fo1543595961
 Title: Cleared Range Multiplier
 Definition: 0
-NodeLocation: 576,228,1
+NodeLocation: 584,332,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Cleared_Range_Mult
@@ -10170,14 +10303,14 @@ Original: Cleared_Range_Mult
 Index Range_Parameters
 Title: Range Parameters
 Definition: ['Full Range','Clear Range']
-NodeLocation: 272,368,1
+NodeLocation: 280,368,1
 NodeSize: 64,40
 Att_PrevIndexValue: ['Full Range','Clear Range']
 
 Decision Clear_Range_Label
 Title: Clear Range Label
 Definition: Choice(Range_Parameters,2,0)
-NodeLocation: 272,568,1
+NodeLocation: 280,568,1
 NodeSize: 64,40
 Aliases: FormNode Fo1543596274
 {!40200|Att_ChoiceIndexes: Index Range_Parameters}
@@ -10185,7 +10318,7 @@ Aliases: FormNode Fo1543596274
 FormNode Fo1543596274
 Title: Start Row Label
 Definition: 0
-NodeLocation: 280,616,1
+NodeLocation: 288,616,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,
 Original: Clear_Range_Label
@@ -10193,7 +10326,7 @@ Original: Clear_Range_Label
 Decision Full_Range_Label
 Title: Full Range Label
 Definition: Choice(Range_Parameters,1,0)
-NodeLocation: 272,456,1
+NodeLocation: 280,456,1
 NodeSize: 64,40
 Aliases: FormNode Fo1543596287
 {!40200|Att_ChoiceIndexes: Index Range_Parameters}
@@ -10201,7 +10334,7 @@ Aliases: FormNode Fo1543596287
 FormNode Fo1543596287
 Title: Start Row Label
 Definition: 0
-NodeLocation: 272,504,1
+NodeLocation: 280,504,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,0
 Original: Full_Range_Label
@@ -10215,7 +10348,7 @@ Description: Saves the spreadsheet at the path specified, if the user chooses to
 Definition: IF {MsgBox("Export process to file '" & path & "' is complete. If the spreadsheet is not currently open, you must allow Analytica to save the data, or else it will be lost. If the spreadsheet is currently open, you can have Analytica save the recently exported data, or you can wait until a later time and manually save the file. Do you want Analytica to save the spreadsheet now?", 4, "Export to File Complete") = 6} 1~
 THEN SpreadsheetSave(wkbk)~
 ELSE Null;
-NodeLocation: 872,272,1
+NodeLocation: 736,240,1
 NodeSize: 64,40
 WindState: 2,102,82,1234,560
 
@@ -10223,50 +10356,34 @@ Decision Tableau_Output_File
 Title: Tableau Output Filename
 Description: Output file is assumed to be located in the working directory of the model file. Note: ACP read/write won't currently work if this name is changed. 
 Definition: 'Tableau_Outputs.xlsx'
-NodeLocation: 576,304,1
+NodeLocation: 432,280,1
 NodeSize: 64,40
 NodeInfo: 1,1,1,1,1,1,0,0,0,0,,0,1,0
 WindState: 2,102,82,1189,350
-Aliases: FormNode Fo1544582166, FormNode Fo1544725853, FormNode Fo1549568882
+Aliases: FormNode Fo1544582166, FormNode Fo1544725853, FormNode Fo1549568882, FormNode Fo1552080775
 OnChange: MsgBox("NOTE: ACP read/write won't currently work if this name is changed. Do so only with full knowledge of the implications, or change the Download Tableau Datafile and Download Forecast Summary button scripts to use the appropriate name -- a variable name does not seem to work with currently ACP Cloud Player Styles syntax." , 1)
-
-FormNode Fo1544725853
-Title: Tableau Output Filename
-Definition: 0
-NodeLocation: 904,352,1
-NodeSize: 240,16
-NodeInfo: 1,,,,,,0,254,,,,,,0
-Original: Tableau_Output_File
 
 Decision Output_Filename
 Title: Output Filename
 Description: Output file is assumed to be located in the working directory of the model file.
 Definition: 'DER_Forecast_Results.xlsx'
-NodeLocation: 576,400,1
+NodeLocation: 432,392,1
 NodeSize: 64,40
 NodeInfo: 1,1,1,1,1,1,0,0,0,0,,0,1,0
-Aliases: FormNode Fo1544825832, FormNode Fo1544825656, FormNode Fo1549568886
+Aliases: FormNode Fo1544825832, FormNode Fo1544825656, FormNode Fo1549568886, FormNode Fo1552080776
 OnChange: MsgBox("NOTE: ACP read/write won't currently work if this name is changed. Do so only with full knowledge of the implications, or change the Download Tableau Datafile and Download Forecast Summary button scripts to use the appropriate name -- a variable name does not seem to work with currently ACP Cloud Player Styles syntax." , 1)
-
-FormNode Fo1544825656
-Title: Output Filename
-Definition: 0
-NodeLocation: 904,384,1
-NodeSize: 240,16
-NodeInfo: 1,,,,,,,254,,,,,
-Original: Output_Filename
 
 Decision Export_Timestamp
 Title: Export Timestamp
 Definition: 8-Mar-2019 14:14:37.279000
-NodeLocation: 576,64,1
+NodeLocation: 584,64,1
 NodeSize: 64,40
 Aliases: FormNode Fo1544827467
 
 FormNode Fo1544827467
 Title: Export Timestamp
 Definition: 0
-NodeLocation: 576,108,1
+NodeLocation: 584,108,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Export_Timestamp
@@ -10276,41 +10393,33 @@ Title: Indexed Timestamp
 Definition: IF @Dummy_Rows AND @Dummy_Cols~
 THEN Export_Timestamp~
 ELSE Null
-NodeLocation: 720,64,1
+NodeLocation: 584,176,1
 NodeSize: 64,40
 
 Index Dummy_Rows
 Title: Dummy Rows
 Definition: ['dummy']
-NodeLocation: 424,504,1
+NodeLocation: 432,504,1
 NodeSize: 64,40
 
 Index Dummy_Cols
 Title: Dummy Cols
 Definition: ['dummy']
-NodeLocation: 424,592,1
+NodeLocation: 432,592,1
 NodeSize: 64,40
-
-Decision Active_Export_Datase
-Title: Active Export Dataset
-Definition: Choice(Export_Data_Descript,9,0)
-NodeLocation: 736,536,1
-NodeSize: 64,40
-Aliases: FormNode Fo1551980365
-{!40200|Att_ChoiceIndexes: Index Export_Data_Descript}
 
 Index Export_Data_Descript
 Title: Export Data Description
 Definition: CopyIndex(Data_Export_Settings[Export_Dataset_Num=Datasets_to_Export, Export_Parameter=Description_Label])
-NodeLocation: 272,784,1
+NodeLocation: 280,784,1
 NodeSize: 64,40
 ValueState: 2,355,193,416,303,,MIDM
-Att_PrevIndexValue: ['Sequential historic then actual data','Calibration comparison','Deltas from base period','CEC Forecast by Zip','Timestamp','Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)']
+Att_PrevIndexValue: ['Sequential historic then actual data','Calibration comparison','Deltas from base period','CEC Forecast by Zip','Timestamp','Deliverable sequential historic then actual data','Deliverable calibration comparison','Deliverable deltas from base period','Deliverable CEC Forecast by Zip','Deliverable timestamp','Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)']
 
 Decision Description_Label
 Title: Description Label
 Definition: Choice(Export_Parameter,2,0)
-NodeLocation: 112,1048,1
+NodeLocation: 120,1048,1
 NodeSize: 64,40
 Aliases: FormNode New1551980287
 {!40200|Att_ChoiceIndexes: Index Export_Parameter}
@@ -10318,164 +10427,15 @@ Aliases: FormNode New1551980287
 FormNode New1551980287
 Title: Include in Export Label
 Definition: 0
-NodeLocation: 120,1096,1
+NodeLocation: 128,1096,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
 Original: Description_Label
 
-FormNode Fo1551980365
-Title: Active Export Dataset
-Definition: 0
-NodeLocation: 744,584,1
-NodeSize: 88,16
-NodeInfo: 1,0,0,0,0,0,0,142,0,,0,,,0
-Original: Active_Export_Datase
-
-Variable Active_Export_Number
-Title: Active Export Number
-Definition: Slice(Datasets_to_Export, PositionInIndex(Export_Data_Descript, Active_Export_Datase, Export_Data_Descript))
-NodeLocation: 888,536,1
-NodeSize: 64,40
-ValueState: 2,799,80,416,303,,MIDM
-
-Variable Data_to_Export
-Title: Data to Export
-Definition: VAR data:=Data_Export_Settings[Export_Dataset_Num=Active_Export_Number, Export_Parameter=Handle_to_Variable];   {Have to assign to local variable to convert from a handle to the underlying data}~
-data
-NodeLocation: 1040,536,1
-NodeSize: 64,40
-ValueState: 2,140,59,727,616,0,MIDM
-ReformVal: [Allocation_Text_Cols,Allocation_Row_Num]
-
-Variable Handle_to_Rows
-Title: Handle to Rows
-Definition: Data_Export_Settings[Export_Dataset_Num=Active_Export_Number, Export_Parameter=Handle_to_Row_Index]
-NodeLocation: 1040,632,1
-NodeSize: 64,40
-
-Variable Handle_to_Cols
-Title: Handle to Cols
-Definition: Data_Export_Settings[Export_Dataset_Num=Active_Export_Number, Export_Parameter=Handle_to_Col_Index]
-NodeLocation: 1184,632,1
-NodeSize: 64,40
-
-Variable Export_Path
-Title: Export Path
-Definition: Data_Export_Settings[Export_Dataset_Num=Active_Export_Number, Export_Parameter=Filepath_Label];
-NodeLocation: 888,632,1
-NodeSize: 64,40
-ValueState: 2,56,58,715,303,,MIDM
-
-Variable Export_Sheet
-Title: Export Sheet
-Definition: Data_Export_Settings[Export_Dataset_Num=Active_Export_Number, Export_Parameter=Sheet_Name_Label]
-NodeLocation: 888,728,1
-NodeSize: 64,40
-
-Variable Export_Start_Cell
-Title: Export Start Cell
-Definition: Data_Export_Settings[Export_Dataset_Num=Active_Export_Number, Export_Parameter=Data_Start_Cell]
-NodeLocation: 1040,728,1
-NodeSize: 64,40
-
-Variable Clear_Tab
-Title: Clear Tab?
-Definition: Data_Export_Settings[Export_Dataset_Num=Active_Export_Number, Export_Parameter=Clear_Before_Write];
-NodeLocation: 1184,728,1
-NodeSize: 64,40
-
-Variable Export_Ranges
-Title: Export Ranges
-Definition: LocalAlias rows:=Handle_to_Rows;~
-LocalAlias cols:=Handle_to_Cols;~
-Find_Excel_Range(Export_Start_Cell, rows, cols, Cleared_Range_Mult)
-NodeLocation: 880,824,1
-NodeSize: 64,40
-ValueState: 2,344,1,464,264,,MIDM
-
-Variable Data_Range
-Title: Data Range
-Definition: Export_Ranges[Range_Parameters=Full_Range_Label]
-NodeLocation: 1040,824,1
-NodeSize: 64,40
-ValueState: 2,489,261,416,303,,MIDM
-
-Variable Clear_Range
-Title: Clear Range
-Definition: Export_Ranges[Range_Parameters=Clear_Range_Label]
-NodeLocation: 1040,920,1
-NodeSize: 64,40
-
-Decision Applied_Path
-Title: Applied Path
-Definition: 'C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Documents\SDGE_2019_SPIDER\CEC_Forecast_Export.csv'
-NodeLocation: 1184,824,1
-NodeSize: 64,40
-
-Variable Export_Workbook_Obj
-Title: Export Workbook Object
-Definition: Reset_Workbook;~
-SpreadsheetOpen(Applied_Path)
-NodeLocation: 1328,824,1
-NodeSize: 64,40
-
-Variable Is_CSV_File
-Title: Is CSV File?
-Definition: TextUpperCase(SelectText(Export_Path, TextLength(Export_Path)-3)) = ".CSV"
-NodeLocation: 728,760,1
-NodeSize: 64,40
-
-Variable CSV_Path1
-Title: CSV Path1
-Definition: "C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Desktop\CSV_Import_Test1.csv"
-NodeLocation: 352,928,1
-NodeSize: 64,40
-
-Variable Read_CSV_data
-Title: Read CSV data
-Definition: ReadTextFile(CSV_Path)
-NodeLocation: 672,968,1
-NodeSize: 64,40
-ValueState: 2,120,122,811,585,,MIDM
-
-Variable Parsed_CSV
-Title: Parsed CSV
-Definition: ParseCSV(Read_CSV_data, CSV_Cols, CSV_Rows)
-NodeLocation: 824,968,1
-NodeSize: 64,40
-ValueState: 2,232,234,577,401,0,MIDM
-ReformVal: [CSV_Cols,CSV_Rows]
-
-Index CSV_Cols
-Title: CSV Cols
-Definition: ['A','B','C']
-NodeLocation: 512,1064,1
-NodeSize: 64,40
-
-Index CSV_Rows
-Title: CSV Rows
-Definition: 1..3
-NodeLocation: 656,1064,1
-NodeSize: 64,40
-
-Variable Write_CSV
-Title: Write CSV
-Definition: WriteTextFile(CSV_Path, Text_Conversion)
-NodeLocation: 864,1096,1
-NodeSize: 64,40
-ValueState: 2,152,154,779,303,,MIDM
-
-Variable ParseCSV_Write
-Title: ParseCSV Write
-Definition: Create_CSV_Text(O_M_Cost, All_Equipment_Types, All_Sectors)
-NodeLocation: 696,1200,1
-NodeSize: 64,40
-ValueState: 2,450,9,811,509,0,MIDM
-
 Decision Comma_Separator
 Title: Comma Separator
 Definition: ","
-NodeLocation: 512,1200,1
+NodeLocation: 280,880,1
 NodeSize: 64,40
 
 Function Create_CSV_Text(data; rows, cols: Optional INDEX; sep: Optional = Comma_Separator; inclRows: Optional = False)
@@ -10538,55 +10498,11 @@ ELSE IF dim = 2~
 THEN IF @extendRows=1 THEN JoinText(extendCols, extendCols, sep) ELSE JoinText(data, cols, sep)[@rows=@extendRows-1]~
 ELSE Null~
 
-NodeLocation: 864,1200,1
+NodeLocation: 736,328,1
 NodeSize: 64,40
 WindState: 2,316,-1,962,672
 NumberFormat: 2,F,4,8,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-
-Variable Test_Data
-Title: Test Data
-Definition: @CSV_Cols*1000/3 + @CSV_Rows + 1/13
-NodeLocation: 1048,1184,1
-NodeSize: 64,40
-ValueState: 2,109,349,416,303,0,MIDM
-ReformVal: [CSV_Cols,Undefined]
-NumberFormat: 2,F,2,2,1,0,2,0,$,0,"ABBREV",0,,,0,0,15
-{!40700|Att_CellFormat: Undefined}
-
-Variable Text_Conversion
-Title: Text Conversion
-Definition: Create_CSV_Text(Test_Data, rows: CSV_Rows, cols: CSV_Cols, inclRows: True)
-NodeLocation: 1208,1184,1
-NodeSize: 64,40
-ValueState: 2,514,182,500,459,0,MIDM
-ReformVal: [CSV_Cols,Sys_LocalIndex('extendRows')]
-
-Variable Formatted_Export_Dat
-Title: Formatted Export Data
-Definition: LocalAlias rowInd:=IF Handle_to_Rows = Null THEN Return_Not_Specified() ELSE Handle_to_Rows;~
-LocalAlias colInd:=IF Handle_to_Cols = Null THEN Return_Not_Specified() ELSE Handle_to_Cols;~
-~
-IF Is_CSV_File~
-THEN Create_CSV_Text(Data_to_Export, rows: rowInd, cols: colInd, inclRows: Include_Rows_for_CSV)~
-ELSE Data_to_Export
-NodeLocation: 1184,536,1
-NodeSize: 64,40
-ValueState: 2,116,113,1216,539,0,MIDM
-
-Decision Include_Rows_for_CSV
-Title: Include Rows for CSV
-Definition: Checkbox(0)
-NodeLocation: 1184,440,1
-NodeSize: 64,40
-Aliases: FormNode Fo1551998798
-
-FormNode Fo1551998798
-Title: Include Rows for CSV
-Definition: 0
-NodeLocation: 1236,468,1
-NodeSize: 28,12
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Include_Rows_for_CSV
+DisplayOutputs: Variable Clipboard_Text_Conve
 
 Function Export_to_Excel2()
 Title: Export to Excel
@@ -10615,58 +10531,9 @@ ELSE Null;~
 ~
 Null;~
 
-NodeLocation: 1552,528,1
+NodeLocation: 736,504,1
 NodeSize: 64,40
 WindState: 2,56,27,1440,726
-
-Variable XLSX_Path
-Title: XLSX Path
-Definition: "C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Desktop\CSV_Import_Test.xlsx"
-NodeLocation: 584,760,1
-NodeSize: 64,40
-
-Button Export_Test
-Title: Export Test
-NodeLocation: 1552,440,1
-NodeSize: 64,40
-OnClick: (Export_Timestamp:=Today(withTime: 1));~
-Export_Data_to_Files()
-
-Variable Next_Path
-Title: Next Path
-Definition: VAR nextPos:=PositionInIndex(Datasets_to_Export, Active_Export_Number, Datasets_to_Export) + 1;~
-VAR nextVal:=IF nextPos > Size(Datasets_to_Export)~
-   THEN Null~
-   ELSE Slice(Datasets_to_Export, nextPos);~
-~
-Data_Export_Settings[Export_Dataset_Num=nextVal, Export_Parameter=Filepath_Label]
-NodeLocation: 728,856,1
-NodeSize: 64,40
-ValueState: 2,88,90,725,330,,MIDM
-
-Variable Reset_Workbook
-Title: Reset Workbook
-Definition: 1
-NodeLocation: 1328,928,1
-NodeSize: 64,40
-
-Variable Tableau_Test_Path
-Title: Tableau Test Path
-Definition: "C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Desktop\Tableau_Outputs.xlsx"
-NodeLocation: 568,864,1
-NodeSize: 64,40
-
-Variable Last_Path
-Title: Last Path
-Definition: VAR lastPos:=PositionInIndex(Datasets_to_Export, Active_Export_Number, Datasets_to_Export) - 1;~
-VAR lastVal:=IF lastPos = 0~
-   THEN Null~
-   ELSE Slice(Datasets_to_Export, lastPos);~
-~
-Data_Export_Settings[Export_Dataset_Num=lastVal, Export_Parameter=Filepath_Label]
-NodeLocation: 728,656,1
-NodeSize: 64,40
-ValueState: 2,232,234,722,395,,MIDM
 
 Function Export_to_CSV()
 Title: Export to CSV
@@ -10683,38 +10550,14 @@ VAR data:=IF Clear_Tab~
 WriteTextFile(Applied_Path, data, append: NOT Clear_Tab, warn: False);~
 ~
 Null;
-NodeLocation: 1552,624,1
+NodeLocation: 736,592,1
 NodeSize: 64,40
 WindState: 2,56,27,1440,726
-
-Variable CSV_Path2
-Title: CSV Path2
-Definition: "C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Desktop\CSV_Import_Test2.csv"
-NodeLocation: 352,1016,1
-NodeSize: 64,40
-
-Variable CSV_Path3
-Title: CSV Path3
-Definition: "C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Desktop\CSV_Import_Test3.csv"
-NodeLocation: 352,1104,1
-NodeSize: 64,40
-
-Variable CSV_Path4
-Title: CSV Path4
-Definition: "C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Desktop\CSV_Import_Test4.csv"
-NodeLocation: 352,1192,1
-NodeSize: 64,40
-
-Variable CSV_Path
-Title: CSV Path
-Definition: "C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Desktop\CSV_Import_Test.csv"
-NodeLocation: 352,832,1
-NodeSize: 64,40
 
 Decision Carriage_Return
 Title: Carriage Return
 Definition: Chr(10)
-NodeLocation: 1336,728,1
+NodeLocation: 280,968,1
 NodeSize: 64,40
 
 Function Export_Data_to_Files()
@@ -10736,19 +10579,9 @@ FOR J:=Export_Data_Descript DO (~
 );~
 ~
 Reset_Workbook:=NOT Reset_Workbook;    {Clear the spreadsheet object in hopes of releasing any spreadsheet file}
-NodeLocation: 1400,528,1
+NodeLocation: 736,416,1
 NodeSize: 64,40
 WindState: 2,56,27,1440,726
-
-Variable Va2
-NodeLocation: 1576,768,1
-NodeSize: 64,40
-
-Variable Va7
-Definition: CurrentModelFolder() 
-NodeLocation: 408,704,1
-NodeSize: 64,40
-ValueState: 2,56,58,722,389,,MIDM
 
 Function Model_Path(filename)
 Title: In Model Path
@@ -10756,8 +10589,26 @@ Description: This takes a file name and prefixes it with the directory path of t
 ~
 [filename]: a text-valued filename that includes the file extension.
 Definition: CurrentModelFolder() & filename
-NodeLocation: 1024,272,1
+NodeLocation: 736,152,1
 NodeSize: 64,40
+
+FormNode Fo1552080775
+Title: Tableau Output Filename
+Definition: 0
+NodeLocation: 444,328,1
+NodeSize: 76,16
+NodeInfo: 1,0,0,0,0,0,0,118,0,,0,,,0
+Original: Tableau_Output_File
+
+FormNode Fo1552080776
+Title: Output Filename
+Definition: 0
+NodeLocation: 444,432,1
+NodeSize: 76,16
+NodeInfo: 1,0,0,0,0,0,0,118,0,,0,,,
+Original: Output_Filename
+
+Close Export_Auxiliary_Var
 
 Close Excel_Export_Logic
 
