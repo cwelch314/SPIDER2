@@ -1,4 +1,4 @@
-{ From user coryw, Model Electric_Vehicles at 14-Mar-2019 2:54:40 PM, encoding="UTF-8" }
+{ From user coryw, Model Electric_Vehicles at 14-Mar-2019 5:04:46 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -14,7 +14,7 @@ Title: Electric Vehicles
 Author: Cory Welch
 Date: Fri, Jun 22, 2018 10:48 AM
 SaveAuthor: coryw
-SaveDate: Thu, Mar 14, 2019 2:54 PM
+SaveDate: Thu, Mar 14, 2019 5:04 PM
 DefaultSize: 64,40
 NodeSize: 88,64
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -1383,6 +1383,7 @@ NodeLocation: 216,264,-1
 NodeSize: 176,40
 
 Index Time_Vehicles
+Att_PrevIndexValue: [1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030]
 Title: Time-Vehicles
 Units: Years
 Description: Ths is the time index used for simulating vehicle adoption. It is allowed to be different from other DERs, for instance, due to differences in the granularity of available historical data on adoption (e.g., solar PV data are monthly, whereas vehicle data are, at best, quarterly, or in some cases, annual)
@@ -1394,7 +1395,6 @@ ValueState: 2,799,36,293,764,,MIDM
 Aliases: Alias Al1535002229
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 302,742}
-Att_PrevIndexValue: [1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030]
 
 Index Annual_EV_Time
 Title: Annual EV Time
@@ -1861,7 +1861,7 @@ Date: Fri, Jun 22, 2018 10:48 AM
 NodeLocation: 519,752,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,60,20,1710,837,17
+DiagState: 2,60,20,1710,806,17
 Aliases: Alias Al1532462587
 NodeColor: 57311,57311,57311
 {!40400|CloudPlayerStyles: Show_Object:no}
@@ -1956,7 +1956,7 @@ Definition: MultiChoice(All_Spatial_ID,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,
 NodeLocation: 80,392,1
 NodeSize: 56,32
 WindState: 2,296,109,1203,350
-ValueState: 2,927,18,370,734,,MIDM
+ValueState: 2,927,18,370,734,0,MIDM
 Aliases: FormNode Fo1533480607, FormNode Fo1531168582, FormNode Fo1531847767
 ReformVal: [Selected_Utilities,All_Spatial_ID]
 Att__TotalsIndex: [All_Spatial_ID]
@@ -1966,7 +1966,7 @@ Att__TotalsIndex: [All_Spatial_ID]
 Decision Select_EV_Sector
 Title: Select EV Sector
 Description: Select the sectors that will be included in the EV adoption simulation.
-Definition: Table(All_Sectors)(Checkbox(0),Checkbox(1),Checkbox(1))
+Definition: Table(All_Sectors)(Checkbox(0),Checkbox(0),Checkbox(1))
 NodeLocation: 80,248,1
 NodeSize: 56,32
 WindState: 2,102,82,810,493
@@ -6653,8 +6653,8 @@ ReformVal: [Time_Vehicles,Sel_Ag_EV_LRMS]
 NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_ResultSliceState: [Sectors_Selected,1,Vehicle_Types,1,Sel_Ag_EV_LRMS,2,Time_Vehicles,1]
 
-Variable A__of_New_Veh_Sales_
-Title: % of New Veh Sales, Aggregated
+Variable A__of_New_Veh_Sales
+Title: % of New Veh Sales
 Units: fraction
 Description: Fraction of new vehicle sales coming from EVs, aggregated over all selected spatial IDs
 Definition: var total_veh_by_type := sum(New_Vehicle_Sales, EV_Spatial_ID);~
@@ -6671,7 +6671,7 @@ Grid:3~
 Att_ContLineStyle Graph_Primary_Valdim:5~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
-Att_GraphValueRange A__of_New_Veh_Sales_:1,,1,,,,5,0,1,0~
+Att_GraphValueRange A__of_New_Veh_Sales:1,,1,,,,5,0,1,0~
 ShowKey:1
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_ResultSliceState: [EV_Sectors,1,Sel_Ag_EV_LRMS,1,Vehicle_Types,1,Time_Vehicles,1]
@@ -7527,7 +7527,7 @@ Definition: 1
 NodeLocation: 832,228,1
 NodeSize: 256,20
 NodeColor: 65278,37008,6168
-Original: A__of_New_Veh_Sales_
+Original: A__of_New_Veh_Sales
 
 FormNode Fo1544977998
 Title: EV Cumulative MW-AC

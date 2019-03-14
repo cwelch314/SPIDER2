@@ -1,4 +1,4 @@
-{ From user coryw, Model PV_Calibration1 at 14-Mar-2019 2:54:40 PM, encoding="UTF-8" }
+{ From user coryw, Model PV_Calibration1 at 14-Mar-2019 5:04:45 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -15,7 +15,7 @@ Description: Fu4()
 Author: Cory Welch
 Date: Fri, Jun 22, 2018 10:48 AM
 SaveAuthor: coryw
-SaveDate: Thu, Mar 14, 2019 2:54 PM
+SaveDate: Thu, Mar 14, 2019 5:04 PM
 DefaultSize: 64,40
 NodeSize: 72,64
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
@@ -819,12 +819,12 @@ NodeSize: 64,40
 WindState: 2,524,317,720,350
 
 Index PV_Calibration_Stage
+Att_PrevIndexValue: [1,2,3,4,5]
 Title: PV Calibration Stage
 Definition: 1..Maximum_PV_Calibrati
 NodeLocation: 720,176,1
 NodeSize: 64,40
 ValueState: 2,792,295,416,303,,MIDM
-Att_PrevIndexValue: [1,2,3,4,5]
 
 Constant PV_Decisions_by_Stg
 Title: PV Decision Variables by Stage
@@ -2262,11 +2262,11 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: PV_Constraints_by_St
 
 Index Tolerance_Input
+Att_PrevIndexValue: ['Slope Tolerance %','Final Cumulative %']
 Title: Tolerance Input
 Definition: ['Slope Tolerance %','Final Cumulative %']
 NodeLocation: 1080,112,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Slope Tolerance %','Final Cumulative %']
 
 Constant PV_Tolerance_by_Stag
 Title: PV Tolerance by Stage
@@ -2741,6 +2741,7 @@ Att_ColorRole: Null
 {!50000|Att_ColumnWidths: [,Stored_Dec_Var_PV,\([,,,,37,33,37,37,174,604])]}
 
 Index Stored_Dec_Var_PV
+Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coefficie,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef,'Opt Status']
 Title: Stored Dec Var
 Definition: Concat(All_PV_Dec_Handle_Li, Opt_Status_Label)
 NodeLocation: 744,344,1
@@ -2748,7 +2749,6 @@ NodeSize: 64,40
 ValueState: 2,46,379,416,303,,MIDM
 MetaOnly: 1
 {!40300|Att_SlicerPopupSize: 242,168}
-Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coefficie,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef,'Opt Status']
 
 FormNode Fo1535066210
 Title: Va10
@@ -4044,7 +4044,7 @@ NodeSize: 72,32
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 NodeColor: 49344,49344,49344
 NodeFont: Calibri,19
-Original: Export_to_Excel1
+Original: Export_to_Tableau1
 
 Alias Al1543514124
 Title: CALIBRATE
@@ -4153,7 +4153,7 @@ OnClick: (PV_Spatial_ID:=Spatial_ID);  {Ensures all spatial IDs are checked}~
 CALIBRATE;~
 (PV_Sectors:=Non_Res_Label);~
 CALIBRATE;~
-Export_to_Excel1
+Export_to_Tableau1
 
 Text Te1544718502
 Title: Add dimensionality checks to calibration scripts

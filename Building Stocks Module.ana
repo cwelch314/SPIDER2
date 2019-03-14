@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Building_Stocks at 1-Mar-2019 9:38:53 AM, encoding="UTF-8" }
+{ From user coryw, Model Building_Stocks at 14-Mar-2019 5:04:46 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -8,8 +8,8 @@ LinkModule Building_Stocks
 Title: Building Stocks
 Author: Cory Welch
 Date: Mon, Jan 8, 2018 10:24 AM
-SaveAuthor: JamesMilford
-SaveDate: Fri, Mar 1, 2019 9:38 AM
+SaveAuthor: coryw
+SaveDate: Thu, Mar 14, 2019 5:04 PM
 DefaultSize: 64,40
 NodeSize: 88,64
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -1134,8 +1134,8 @@ NodeLocation: 416,640,1
 NodeSize: 64,40
 Att_PrevIndexValue: ['Low','Medium','High']
 
-Decision Select_BldgGrwthScen
-Title: Building Growth Rate Scenario
+Decision Building_Growth_Scen
+Title: Building Growth Scenario
 Description: Select the building stock growth rate scenario.
 Definition: Choice(BldgGrowthRate_Scens,2,1)
 NodeLocation: 104,536,1
@@ -1147,7 +1147,7 @@ Variable Superimp_Bldg_Growth
 Title: Superimposed Bldg Growth
 Units: dmnls
 Description: Additional building stock growth multipliers superimposed on top of the CEC building stock forecasts.
-Definition: VAR equivRate:=(1+BldgStk_Growth_Rates[BldgGrowthRate_Scens=Select_BldgGrwthScen])^dT-1;   {The compounding periodic equivalent of the annual growth rate based on the applied timestep for the Time index}~
+Definition: VAR equivRate:=(1+BldgStk_Growth_Rates[BldgGrowthRate_Scens=Building_Growth_Scen])^dT-1;   {The compounding periodic equivalent of the annual growth rate based on the applied timestep for the Time index}~
 VAR periodicChange:=IF Time <= Base_Period_Deltas   {If time is less than the base period for calculating deltas}~
    THEN 1   {Then apply no change}~
    ELSE 1 + equivRate;   {Else apply the periodic change}~
@@ -1196,7 +1196,7 @@ Definition: 0
 NodeLocation: 104,580,1
 NodeSize: 72,12
 NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
-Original: Select_BldgGrwthScen
+Original: Building_Growth_Scen
 
 Close Building_Stocks
 

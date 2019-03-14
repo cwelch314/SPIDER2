@@ -1,4 +1,4 @@
-{ From user coryw, Model Solar_PV at 14-Mar-2019 2:54:40 PM, encoding="UTF-8" }
+{ From user coryw, Model Solar_PV at 14-Mar-2019 5:04:45 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -14,7 +14,7 @@ Title: Solar PV
 Author: Cory Welch
 Date: Mon, Jan 8, 2018 10:24 AM
 SaveAuthor: coryw
-SaveDate: Thu, Mar 14, 2019 2:54 PM
+SaveDate: Thu, Mar 14, 2019 5:04 PM
 DefaultSize: 64,40
 NodeSize: 88,64
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -1512,8 +1512,8 @@ NodeSize: 64,40
 NodeColor: 65535,65535,65535
 Original: Tot_NC_Install_BOP
 
-Variable Share_of_Housing_Uni
-Title: Share of Housing Units (Res)
+Variable Share_of_Housing
+Title: Share of Housing (Res)
 Units: fraction
 Description: Fraction of total housing units with a solar PV system installed
 Definition: var stock:= sum(Total_Building_Stock[Time=Time_Solar_PV,All_Spatial_ID=PV_Spatial_ID,All_Sectors=Residential_Label], PV_Spatial_ID);~
@@ -22999,7 +22999,7 @@ Definition: 0
 NodeLocation: 192,621,4
 NodeSize: 176,20
 NodeInfo: 1,,,,,,0,110,,,,,,0
-Original: Select_BldgGrwthScen
+Original: Building_Growth_Scen
 
 FormNode Fo1544635478
 Title: PV Cost Change Rate
@@ -23124,7 +23124,7 @@ Definition: 1
 NodeLocation: 832,181,1
 NodeSize: 256,20
 NodeColor: 65278,37008,6168
-Original: Share_of_Housing_Uni
+Original: Share_of_Housing
 
 FormNode Fo1544918827
 Title: PV Inremental MW-AC

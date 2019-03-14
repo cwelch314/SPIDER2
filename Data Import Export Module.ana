@@ -1,4 +1,4 @@
-{ From user coryw, Model Data_Import__Export at 14-Mar-2019 2:54:39 PM, encoding="UTF-8" }
+{ From user coryw, Model Data_Import__Export at 14-Mar-2019 5:04:45 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Data Import/ Export
 Author: Cory Welch
 Date: Fri, Feb 5, 2016 10:04 AM
 SaveAuthor: coryw
-SaveDate: Thu, Mar 14, 2019 2:54 PM
+SaveDate: Thu, Mar 14, 2019 5:04 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -3480,12 +3480,12 @@ NodeLocation: 88,272,1
 NodeSize: 64,40
 
 Index Excel_Import_Params
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index','Fact Column Index 1','Fact Column Index 2','Fact Column Index 3']
 Title: Excel Import Parameters
 Definition: Concat(Import_Fixed_Params, Fact_Col_Index_Param)
 NodeLocation: 88,360,1
 NodeSize: 64,40
 ValueState: 2,104,106,406,324,,MIDM
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index','Fact Column Index 1','Fact Column Index 2','Fact Column Index 3']
 
 Variable Variable_Identifier
 Title: Variable Identifier
@@ -3611,11 +3611,11 @@ WindState: 2,42,72,720,350
 Aliases: FormNode New1551412464, FormNode New1551412505
 
 Index Imported_Dataset_Num
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40]
 Title: Imported Dataset Number
 Definition: 1..Number_of_Datasets
 NodeLocation: 240,184,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40]
 
 Index Selected_Import_Data
 Title: Selected Import Datasets
@@ -3778,11 +3778,11 @@ NodeSize: 64,40
 WindState: 2,-3,6,720,350
 
 Index Import_Data_Types
+Att_PrevIndexValue: ['Any','Number','Text','Date']
 Title: Import Data Types
 Definition: ['Any','Number','Text','Date']
 NodeLocation: 688,696,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Any','Number','Text','Date']
 
 Decision Data_Type_Label
 Title: Data Type Label
@@ -3851,11 +3851,11 @@ Aliases: FormNode New1551412475, FormNode New1551412538
 NumberFormat: 3,F,4,4,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 
 Index Tab_Names
+Att_PrevIndexValue: ['FactCol1IncorrLabel','FactCol2MissLabel','FactCol2ValueInd','AtomicCols','AtomicRows','SingleCell','FactCol2RepeatLabel','FactCol2ValueIndNotNum','FactCol2ValueIndNotText','FactCol2ValueIndNotDate','SGIP_Data','Single_Cell_Inputs','Hourly_Profiles','Holiday_Dates','Meter_Counts','PV_CapFactor','PV_ResNewConstr_Size','Battery_Specs','Num_Strg_Units','AC-to-DC_Factor','Finance_Rates','Fed_ITC','Strg_Duration_Incent','Vehicle_Stock_Data','Struct_Single_Cell_Inputs','Hist_Vehicle_Growth','EV_MktShare_Mults','Building_Stock','Aggreg_Spatial_ID','EV_Map_Increm_to_Cumul','Climate_Zone_Map','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName']
 Title: Tab Names
 Definition: CopyIndex(Tab_Names_by_Number)
 NodeLocation: 240,872,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['FactCol1IncorrLabel','FactCol2MissLabel','FactCol2ValueInd','AtomicCols','AtomicRows','SingleCell','FactCol2RepeatLabel','FactCol2ValueIndNotNum','FactCol2ValueIndNotText','FactCol2ValueIndNotDate','SGIP_Data','Single_Cell_Inputs','Hourly_Profiles','Holiday_Dates','Meter_Counts','PV_CapFactor','PV_ResNewConstr_Size','Battery_Specs','Num_Strg_Units','AC-to-DC_Factor','Finance_Rates','Fed_ITC','Strg_Duration_Incent','Vehicle_Stock_Data','Struct_Single_Cell_Inputs','Hist_Vehicle_Growth','EV_MktShare_Mults','Building_Stock','Aggreg_Spatial_ID','EV_Map_Increm_to_Cumul','Climate_Zone_Map','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName']
 
 Decision Import_in_Progress
 Title: Import in Progress
@@ -6582,11 +6582,11 @@ WindState: 2,581,29,720,350
 Aliases: FormNode Fo1535331934, FormNode Fo1537568831
 
 Index Column_Number
+Att_PrevIndexValue: [1,2,3,4,5]
 Title: Column Number
 Definition: 1..Number_of_Data_Colum
 NodeLocation: 208,816,1
 NodeSize: 56,32
-Att_PrevIndexValue: [1,2,3,4,5]
 
 FormNode Fo1535331934
 Title: Number of Data Columns
@@ -6639,11 +6639,11 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Fact_Column_Indices
 
 Index Fact_Col_Fields
+Att_PrevIndexValue: ['Utility','Service Zip','Customer Sector','App Approved Date']
 Title: Fact Col Fields
 Definition: Subset(@dbFields_Ordered<>Size(dbFields_Ordered))
 NodeLocation: 464,816,1
 NodeSize: 56,32
-Att_PrevIndexValue: ['Utility','Service Zip','Customer Sector','App Approved Date']
 
 Index Interconn_Fact_Cols
 Title: Interconnect Fact Cols
@@ -6662,11 +6662,11 @@ TableCellDefault: Choice(All_Sectors,1,0)
 {!40200|Att_ChoiceIndexes: Index All_Sectors}
 
 Index Interconnect_Sectors
+Att_PrevIndexValue: ['Commercial','Educational','Industrial','Military','Non-Profit','Other Government','Residential','RESIDENTIAL']
 Title: Interconnect Sectors
 Definition: ['Commercial','Educational','Industrial','Military','Non-Profit','Other Government','Residential','RESIDENTIAL']
 NodeLocation: 1168,64,1
 NodeSize: 56,40
-Att_PrevIndexValue: ['Commercial','Educational','Industrial','Military','Non-Profit','Other Government','Residential','RESIDENTIAL']
 
 FormNode Fo1535336408
 Title: Map Interconn to Sectors
@@ -9630,19 +9630,19 @@ NodeSize: 156,116
 NodeInfo: 1,0,0,1,1,1,0,,1,,0,,,
 
 Index db_Fields
+Att_PrevIndexValue: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 Title: db Fields
 Definition: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 NodeLocation: 576,416,1
 NodeSize: 56,32
 ValueState: 2,347,400,416,303,,MIDM
-Att_PrevIndexValue: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 
 Index db_Records
+Att_PrevIndexValue: ['Empty']
 Title: db Records
 Definition: ['Empty']
 NodeLocation: 704,416,1
 NodeSize: 56,32
-Att_PrevIndexValue: ['Empty']
 
 FormNode Fo1533508800
 Title: Interconnect Data
@@ -9850,7 +9850,7 @@ Author: JamesMilford
 Date: Fri, Feb 8, 2019 8:50 PM
 NodeLocation: 504,128,1
 NodeSize: 80,56
-DiagState: 2,88,14,1118,655,17
+DiagState: 2,393,210,1118,655,17
 Pict: (000000000000003B003C00041608000089504E470D0A1A0A0000000D494844520000003C0000003B080600000027F9E9CA000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA8640000079B494441546843ED9B795454551CC7473B626569A7B2542C43532B7341105A2C154DCA236E9995A6765C52D1D23A6E95D87A523BA74C5974581C156610064196044713890015640BD9251762534174401878F7D7FD3DA4E6313F4F0E36C368F3C7E7BC99EFFDBD37F7FBEEEF77EF7DC3200380FF15A4889469CFF6FBEEF8329F1509AE71EE47261E3227CBE35DE3D626CE54E75E4A73A0FA763B9022B23D63FD26A768198C3A2003A79FCD488C0C1CC3F9E746CA607AF4E0FCE2EA9C2154FFDA0B29221E49F3F6A0E109A18F577C9E38276843E27B817834251EBFCDDDBB2E615688B3B26B83BD921BDF2F831931CFE61656670FA5FAD81E4811F92A65A1BFF341192C3B3CE130D56E2A7442A38D8BBA67D5C86019A069CCB0A991830A0AAAB38651F1C6428A48ABE1251A975FA8765351A7BBFAE09890872F3BA83AB1259AF147C6F2D7A378A64D8F199CFF5F98264544DF3003D6898A31055A5D6D7734EC1826838842BF4509A5516ECEFBBA3660794D891A58985F9D31823AEF562145A4C30DF3FADD97EFB902B5832541735E5677D3FE3DD2973387B73DEF562145C4120CABF27E5AD9AA1F280E58E018DC5970E2B3B75BE480E2D3ED5CB24811B134C388BA60C752E7902EBA515198DE4F17E55F363EBD4911B144C3C8FE42DFC568DA094D473F5D64ECE68414114B358CB498B669C4CDC9E448BB929C4BA98E541C052922966C185117EC5CE2B8AFB3209A8EEA7FE6F42D9A2645C4D20D2381B93F7E6CAF6AD99CBC11D1EFECEF174F385171FA9022620986D5053ECBA8187D30BD5F09EB5EEB18C167EF98FE67FECD3429221D65F85AE3951EAF863C54E3102A8355F16E5181B93F7CA2C8D9BC8E62CFE9EFD728F3B6AE9A1FFB62F2483ED2B859718DB02D4DAB383686BA36428A484719BEDEACED3621AC57392E3D98AA78C419F966600D3BAA5BCCA2697CDAF2489ABF9BBA36428A484719C6CFDACB47F5836363E31769C61C5B78E8D5847F03E3166BC6C6BB84F6ACC29BF065CA8200EADA0829221D65F876589FF84EB073AC0CB0EF543B428AC89D68784DC24CB5D5701B4811B11A26622C0DAB61025244AC8689184BC36A98801411AB6122C6D2B01A262045C46A988811D1D57523F586ABDD49FD7ACDC3507D6620D97613D8B5325BA8CC72802B7F0CA0DA5B31BDE1F253CEB0DF2D9965EE5A2ED173821641F8A413703ED145A223B1EE4A50D89742D9C9970DDADAC29AEF61A9DB3E05E5E87CF0B6AB638A911784048FAD37BBC9A6379CE6B90EF6D802F319580B35252DA3A6ADE823C8875640A02DC0F11F364AE2055D17E6CBDB76F5014897AF92B411B0E42D5F832F8FF5E7E0D1AFE5B57074BD37156F7AC395990ECCA7BF56EC500AEF1CD7D889AD1BB0638C8F0894A74BBF5F42C3FEF61740DE1B20C3FF43495B5B6A8A0731EF01D730961D987D909D8D7705CD4A05ECE4EF3D9F6C60159906DF529AA586D991D57271C4768D2A613CC559D0F84C50F0F79A8F1406F1683860E479D1706680F877A39B92A79E0B727E1D9E11ECCAF9A744ADF16A77E6FB7C2504709D38DF3C86719477F051F6EA054C39211D3C7B01783DA163A5C75F318837C6709AD75A4C63B6CBA9049A1BBAB6EA2CF19B2DA0187C0572540B24F11CB3184658F4C2304C35F0E260CA452D0807A1F91E8358630C17FD3C037CF8B57CFA360927B77DCA6E98668CF70527CBA6EBF7B53DC76C86A12CF5255EB3F5689879E2E8A6188E2E628CE1C6AB3D986A629A383F6CE759A374C982A46F37F3256D1019CF319F615C5BFD1DCEC18EDE20E08C5D57C97B48C4196318A9CAB6672A6E146B79379FF579EDB280A195AC386E2A156F3EC3B97C82F1EE23601D83776F26A4FBD27F2231D630A2D33EC0327C5741EC6235F37AAA5E5C967C879781B69CDF0569AC790CF35A624A9E7ABC76859F7A33B18683C667E08C6A106B544AD7F680D2A4B192EB14C5CC603BF872C76B1B7243E64BE2396631CC8A0F4E839D7D9BD876DB26217EC336E6CD4781A736CB512E3488D7379CBD67A941BB1E2C4BE18EEBB910B762AFBE2EEC1E9D276E4052F9A6474F474C6F5868B46161338E8AF5153A25915DAF7E4488783716D76121705C96C14CAA67989DDCBE5EACFDFACB8F42FDA59EAC9EBFD68FC565079725F97317415BC9EF10D77037277FA65A9CBDF3D4EF49E239A6375CCC970E5C8A70447343E6895A7EF86C31E5502F8C7A4B128F86FD86FF2976D87F442953BD768A29C767B2C071D92C74E22921DDEF9FDAAF2E7A46DCAD61A9EC9FA5116F50C8E464BC09827C4815ABBDD04F726D8EC90D33DC1EE25E5AE59ACA3707F78ABAA0B31182271DC7BD344BF3592D3987099D05F5B404712786BB25CC0C05078FC17DF9FA3DFF807E3C3BB9ED3331FD3116D31867699F3E02CBDEBB443FAE15D31BC694E435CC6ADA3CEEE1635C49EC345677F131898E605A96F0BA2FE6ED37C0D77086537BCE4E128B4F4B38B9A9C66583DFB07216FEE65128889C2589D1C32C93965968D6D94053FDFD982164FB0DEE1EC3B788D53001292256C3448CA561354C408A88BE61AADD12F94F0CBB1F7E4D43B55B22EB7E7D7B5FBB0D7F91FCBE027F023439DCAE6467D6975FF8667FED21CFFE6AA34592D5C2CCE82139F843F276FD8A67D389E55ECE712DBF9542E37702D857678D0C36F2C1A23C21A4886455A5BCB0F2985B94FBD18987DC7FB973C0FF794A2A8B7D9DF28490E2DD0BC8FE02F4F4ECCE4B813A9D0000000049454E44AE426082)
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
@@ -9864,10 +9864,11 @@ NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,33,7,1468,752,17
 
-Button Run_Excel_Export
-Title: Run Excel Export
+Button Run_Data_Export
+Title: Run Data Export
 NodeLocation: 960,168,1
 NodeSize: 64,40
+WindState: 2,427,238,720,350
 Aliases: Alias Al1543021300, Alias Al1549568882
 OnClick: IF Auto_assign_sequenti THEN Auto_assign_Seq_Date;~
 (Export_Timestamp:=Today(withTime: 1));~
@@ -9891,7 +9892,7 @@ Original: Output_Filename
 
 Decision Active_Export_Datase
 Title: Active Export Dataset
-Definition: Choice(Export_Data_Descript,4,0)
+Definition: Choice(Export_Data_Descript,5,0)
 NodeLocation: 96,328,1
 NodeSize: 64,40
 Aliases: FormNode Fo1551980365
@@ -9982,7 +9983,7 @@ NodeSize: 64,40
 
 Decision Applied_Path
 Title: Applied Path
-Definition: 'C:\Users\coryw\OneDrive - Lumidyne Consulting LLC\Repos\SDGE_2019_SPIDER\CSV Files\CEC_Forecast_Export.csv'
+Definition: 'C:\Users\coryw\OneDrive - Lumidyne Consulting LLC\Repos\SDGE_2019_SPIDER\DER_Forecast_Results.xlsx'
 NodeLocation: 880,344,1
 NodeSize: 64,40
 
@@ -10040,7 +10041,7 @@ ValueState: 2,88,90,725,330,,MIDM
 
 Variable Reset_Workbook
 Title: Reset Workbook
-Definition: 0
+Definition: 1
 NodeLocation: 880,432,1
 NodeSize: 64,40
 
@@ -10063,13 +10064,14 @@ Date: Wed, Mar 13, 2019 1:27 PM
 NodeLocation: 104,480,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1,0,1308,843,17
+DiagState: 2,220,46,1308,780,17
 
 Decision Data_Export_Settings
 Title: Data Export Settings
 Description: For csv files, the "Sheet Name" and "Data Start Cell" parameters are not required. If "Clear Before Writing?" is not selected for a csv file, then the data will be appended to the bottom of the csv file, rather than overwriting any existing data.
 Definition: Table(Export_Parameter,Export_Dataset_Num)(~
-Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
+Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),~
+Choice(Output_Data_Type,3,0),Choice(Output_Data_Type,3,0),Choice(Output_Data_Type,3,0),Choice(Output_Data_Type,3,0),Choice(Output_Data_Type,3,0),Choice(Output_Data_Type,2,0),Choice(Output_Data_Type,2,0),Choice(Output_Data_Type,2,0),Choice(Output_Data_Type,2,0),Choice(Output_Data_Type,2,0),Choice(Output_Data_Type,1,0),Choice(Output_Data_Type,1,0),Choice(Output_Data_Type,1,0),Choice(Output_Data_Type,1,0),~
 'Sequential historic then actual data','Calibration comparison','Deltas from base period','CEC Forecast by Zip','Timestamp','Deliverable sequential historic then actual data','Deliverable calibration comparison','Deliverable deltas from base period','Deliverable CEC Forecast by Zip','Deliverable timestamp','Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)',~
 Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),Handle(Indexed_Timestamp),Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),Handle(Indexed_Timestamp),Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),~
 Handle(Sequential_Row_Num),Handle(Comparison_Row_Num),Handle(Delta_Row_Num),Handle(Allocation_Row_Num),Handle(Dummy_Rows),Handle(Sequential_Row_Num),Handle(Comparison_Row_Num),Handle(Delta_Row_Num),Handle(Allocation_Row_Num),Handle(Dummy_Rows),Handle(Sequential_Row_Num),Handle(Comparison_Row_Num),Handle(Delta_Row_Num),Handle(Allocation_Row_Num),~
@@ -10081,17 +10083,18 @@ Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox
 NodeLocation: 432,176,1
 NodeSize: 64,40
 WindState: 2,265,331,972,490
-DefnState: 2,68,153,1785,493,0,DFNM
+DefnState: 2,36,107,1785,493,0,DFNM
 Aliases: FormNode Fo1543021295, FormNode New1543613103, FormNode Fo1549568883
 ReformDef: [Export_Parameter,Export_Dataset_Num]
 TableCellDefault: Default_ExportConfig
+{!40200|Att_ChoiceIndexes: Index Output_Data_Type}
 
 Index Export_Parameter
 Title: Export Parameter
-Definition: ['Include?','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
+Definition: ['Exclude?','Data Type','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 NodeLocation: 120,64,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Include?','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
+Att_PrevIndexValue: ['Exclude?','Data Type','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 
 Index Export_Dataset_Num
 Title: Export Dataset Number
@@ -10109,7 +10112,7 @@ Aliases: FormNode Fo1543021306, FormNode New1543613102, FormNode Fo1549568884
 
 Decision Default_ExportConfig
 Title: Default Export Config
-Definition: Table(Export_Parameter)(Checkbox(0),'Brief Description',Handle(Null),Handle(Null),Handle(Null),'C:\Documents\Filename.xlsx','Sheet1','A1',Checkbox(0))
+Definition: Table(Export_Parameter)(Checkbox(0),'Data Type Here','Brief Description',Handle(Null),Handle(Null),Handle(Null),'C:\Documents\Filename.xlsx','Sheet1','A1',Checkbox(0))
 NodeLocation: 432,64,1
 NodeSize: 64,40
 DefnState: 2,-105,381,1540,305,0,DFNM
@@ -10118,12 +10121,14 @@ ReformDef: [Export_Parameter,Undefined]
 
 Index Datasets_to_Export
 Title: Datasets to Export
-Definition: Subset(Data_Export_Settings[Export_Parameter=Include_in_Export])
+Definition: Subset(NOT Data_Export_Settings[Export_Parameter=Exclude_from_Export] AND Data_export_settings[Export_Parameter=Export_Data_Type_Lab]=Select_Data_Export_T)
 NodeLocation: 280,264,1
 NodeSize: 64,40
+WindState: 2,662,182,720,350
+ValueState: 2,645,308,416,303,0,MIDM
 
-Decision Include_in_Export
-Title: Include in Export
+Decision Exclude_from_Export
+Title: Exclude from Export
 Definition: Choice(Export_Parameter,1,0)
 NodeLocation: 120,152,1
 NodeSize: 64,40
@@ -10132,48 +10137,48 @@ Aliases: FormNode New1543613104
 
 Decision Handle_to_Variable
 Title: Handle to Variable
-Definition: Choice(Export_Parameter,3,0)
-NodeLocation: 120,264,1
+Definition: Choice(Export_Parameter,4,0)
+NodeLocation: 120,368,1
 NodeSize: 64,40
 Aliases: FormNode New1543613105
 {!40200|Att_ChoiceIndexes: Index Export_Parameter}
 
 Decision Handle_to_Row_Index
 Title: Handle to Row Index
-Definition: Choice(Export_Parameter,4,0)
-NodeLocation: 120,376,1
+Definition: Choice(Export_Parameter,5,0)
+NodeLocation: 120,480,1
 NodeSize: 64,40
 Aliases: FormNode New1543613106
 {!40200|Att_ChoiceIndexes: Index Export_Parameter}
 
 Decision Handle_to_Col_Index
 Title: Handle to Col Index
-Definition: Choice(Export_Parameter,5,0)
-NodeLocation: 120,488,1
+Definition: Choice(Export_Parameter,6,0)
+NodeLocation: 120,592,1
 NodeSize: 64,40
 Aliases: FormNode New1543613107
 {!40200|Att_ChoiceIndexes: Index Export_Parameter}
 
 Decision Filepath_Label
 Title: Filepath Label
-Definition: Choice(Export_Parameter,6,0)
-NodeLocation: 120,600,1
+Definition: Choice(Export_Parameter,7,0)
+NodeLocation: 120,704,1
 NodeSize: 64,40
 Aliases: FormNode New1543613108
 {!40200|Att_ChoiceIndexes: Index Export_Parameter}
 
 Decision Sheet_Name_Label
 Title: Sheet Name Label
-Definition: Choice(Export_Parameter,7,0)
-NodeLocation: 120,712,1
+Definition: Choice(Export_Parameter,8,0)
+NodeLocation: 120,816,1
 NodeSize: 64,40
 Aliases: FormNode New1543613109
 {!40200|Att_ChoiceIndexes: Index Export_Parameter}
 
 Decision Data_Start_Cell
 Title: Data Start Cell
-Definition: Choice(Export_Parameter,8,0)
-NodeLocation: 120,824,1
+Definition: Choice(Export_Parameter,9,0)
+NodeLocation: 120,928,1
 NodeSize: 64,40
 Aliases: FormNode New1543613110
 {!40200|Att_ChoiceIndexes: Index Export_Parameter}
@@ -10247,12 +10252,12 @@ Definition: 0
 NodeLocation: 128,200,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
-Original: Include_in_Export
+Original: Exclude_from_Export
 
 FormNode New1543613105
 Title: Include in Export Label
 Definition: 0
-NodeLocation: 124,312,1
+NodeLocation: 124,416,1
 NodeSize: 76,16
 NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,0
 Original: Handle_to_Variable
@@ -10260,7 +10265,7 @@ Original: Handle_to_Variable
 FormNode New1543613106
 Title: Include in Export Label
 Definition: 0
-NodeLocation: 128,424,1
+NodeLocation: 128,528,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
 Original: Handle_to_Row_Index
@@ -10268,7 +10273,7 @@ Original: Handle_to_Row_Index
 FormNode New1543613107
 Title: Include in Export Label
 Definition: 0
-NodeLocation: 128,536,1
+NodeLocation: 128,640,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
 Original: Handle_to_Col_Index
@@ -10276,7 +10281,7 @@ Original: Handle_to_Col_Index
 FormNode New1543613108
 Title: Include in Export Label
 Definition: 0
-NodeLocation: 128,648,1
+NodeLocation: 128,752,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
 Original: Filepath_Label
@@ -10284,7 +10289,7 @@ Original: Filepath_Label
 FormNode New1543613109
 Title: Include in Export Label
 Definition: 0
-NodeLocation: 128,760,1
+NodeLocation: 128,864,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
 Original: Sheet_Name_Label
@@ -10292,7 +10297,7 @@ Original: Sheet_Name_Label
 FormNode New1543613110
 Title: Include in Export Label
 Definition: 0
-NodeLocation: 128,872,1
+NodeLocation: 128,976,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
 Original: Data_Start_Cell
@@ -10307,8 +10312,8 @@ Original: Default_ExportConfig
 
 Decision Clear_Before_Write
 Title: Clear Before Write
-Definition: Choice(Export_Parameter,9,0)
-NodeLocation: 120,936,1
+Definition: Choice(Export_Parameter,10,0)
+NodeLocation: 120,1040,1
 NodeSize: 64,40
 Aliases: FormNode Fo1543595729
 {!40200|Att_ChoiceIndexes: Index Export_Parameter}
@@ -10316,7 +10321,7 @@ Aliases: FormNode Fo1543595729
 FormNode Fo1543595729
 Title: Include in Export Label
 Definition: 0
-NodeLocation: 128,984,1
+NodeLocation: 128,1088,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
 Original: Clear_Before_Write
@@ -10412,7 +10417,7 @@ OnChange: MsgBox("NOTE: ACP read/write won't currently work if this name is chan
 
 Decision Export_Timestamp
 Title: Export Timestamp
-Definition: 14-Mar-2019 11:16:08.176000
+Definition: 14-Mar-2019 16:35:21.045000
 NodeLocation: 584,64,1
 NodeSize: 64,40
 Aliases: FormNode Fo1544827467
@@ -10446,17 +10451,18 @@ NodeLocation: 432,592,1
 NodeSize: 64,40
 
 Index Export_Data_Descript
+Att_PrevIndexValue: ['Deliverable sequential historic then actual data','Deliverable calibration comparison','Deliverable deltas from base period','Deliverable CEC Forecast by Zip','Deliverable timestamp']
 Title: Export Data Description
 Definition: CopyIndex(Data_Export_Settings[Export_Dataset_Num=Datasets_to_Export, Export_Parameter=Description_Label])
 NodeLocation: 280,784,1
 NodeSize: 64,40
-ValueState: 2,355,193,416,303,,MIDM
-Att_PrevIndexValue: ['Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)']
+WindState: 2,789,122,720,350
+ValueState: 2,335,482,416,220,0,MIDM
 
 Decision Description_Label
 Title: Description Label
-Definition: Choice(Export_Parameter,2,0)
-NodeLocation: 120,1048,1
+Definition: Choice(Export_Parameter,3,0)
+NodeLocation: 120,1152,1
 NodeSize: 64,40
 Aliases: FormNode New1551980287
 {!40200|Att_ChoiceIndexes: Index Export_Parameter}
@@ -10464,7 +10470,7 @@ Aliases: FormNode New1551980287
 FormNode New1551980287
 Title: Include in Export Label
 Definition: 0
-NodeLocation: 128,1096,1
+NodeLocation: 128,1200,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
 Original: Description_Label
@@ -10645,6 +10651,23 @@ NodeSize: 76,16
 NodeInfo: 1,0,0,0,0,0,0,118,0,,0,,,
 Original: Output_Filename
 
+Decision Export_Data_Type_Lab
+Title: Export Data Type Label
+Definition: Choice(Export_Parameter,2,0)
+NodeLocation: 120,264,1
+NodeSize: 64,32
+NodeInfo: 1,1,1,1,1,1,0,0,0,0,,0,1,0
+Aliases: FormNode Fo1552601987
+{!40200|Att_ChoiceIndexes: Index Export_Parameter}
+
+FormNode Fo1552601987
+Title: Export Data Type Label
+Definition: 0
+NodeLocation: 124,304,1
+NodeSize: 84,16
+NodeInfo: 1,0,0,0,0,0,0,118,0,,0,,,0
+Original: Export_Data_Type_Lab
+
 Close Export_Auxiliary_Var
 
 Close Excel_Export_Logic
@@ -10672,7 +10695,7 @@ Title: Run Excel Export
 Definition: 1
 NodeLocation: 416,384,1
 NodeSize: 96,16
-Original: Run_Excel_Export
+Original: Run_Data_Export
 
 FormNode Fo1549568884
 Title: Number of Export Datasets
