@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Data_Import__Export at 8-Mar-2019 2:48:02 PM, encoding="UTF-8" }
+{ From user coryw, Model Data_Import__Export at 14-Mar-2019 2:54:39 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -8,8 +8,8 @@ LinkModule Data_Import__Export
 Title: Data Import/ Export
 Author: Cory Welch
 Date: Fri, Feb 5, 2016 10:04 AM
-SaveAuthor: JamesMilford
-SaveDate: Fri, Mar 8, 2019 2:48 PM
+SaveAuthor: coryw
+SaveDate: Thu, Mar 14, 2019 2:54 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -86,7 +86,6 @@ ValueState: 2,847,306,416,303,0,MIDM
 Att_PrevIndexValue: ['Residential','NonResidential','Res + NonRes Combined']
 
 Index Selected_Utilities
-Att_PrevIndexValue: ['SDGE']
 Title: Selected Utilities
 Description: This index is calculated based on which utilities are included in the dataset provided.
 Definition: subset(Select_Utility)
@@ -95,6 +94,7 @@ NodeSize: 64,40
 WindState: 2,1148,8,720,531
 ValueState: 2,1273,65,250,172,,MIDM
 {!40300|Att_SlicerPopupSize: 367,70}
+Att_PrevIndexValue: ['SDGE']
 
 FormNode Fo1515352433
 Title: Sectors Selected
@@ -263,7 +263,7 @@ Title: All Utilities
 Definition: ['SDGE']
 NodeLocation: 520,64,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 247,70}
+{!40300|Att_SlicerPopupSize: 252,70}
 Att_PrevIndexValue: ['SDGE']
 
 Module Bldg_Stock_Data
@@ -3397,12 +3397,10 @@ Title: Import Worksheets
 Description: Module for importing data into an Analytica model from an Excel spreadsheet template. It imports from each specified sheet (tab) into a corresponding Analytica variable (Constant) transforming it from a relational table (or fact table) form into a multidimensional table with specified indexes.
 Author: Max Henrion & Paul Sanford
 Date: Sun, Jul 27, 2014 2:56 PM
-SaveAuthor: JamesMilford
-SaveDate: Thu, Feb 28, 2019 4:22 PM
 NodeLocation: 136,128,0
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
-DiagState: 2,519,41,899,583,17
+DiagState: 2,747,38,899,657,17
 WindState: 2,355,67,533,321
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
@@ -3455,12 +3453,12 @@ NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,-193,125,1524,645,17
 
 Index Import_Fixed_Params
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 Title: Import Fixed Params
 Definition: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 NodeLocation: 88,80,1
 NodeSize: 64,40
 WindState: 2,651,5,720,350
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 
 Decision Max_Imported_Dim
 Title: Max Imported Dimensions
@@ -3708,12 +3706,12 @@ NodeLocation: 544,256,1
 NodeSize: 64,40
 
 Index Excel_Components
+Att_PrevIndexValue: ['Excel Column','Excel Row']
 Title: Excel Components
 Definition: ['Excel Column','Excel Row']
 IndexVals: ['item 1']
 NodeLocation: 544,344,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Excel Column','Excel Row']
 
 Decision Excel_Row_Label
 Title: Excel Row Label
@@ -3912,11 +3910,11 @@ NodeLocation: 872,264,1
 NodeSize: 64,40
 
 Index Categ_Index_Params
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Column 1 Index','Column 2 Index','Column 3 Index','Column 4 Index','Column 5 Index','Column 6 Index','Column 7 Index','Column 8 Index','Column 9 Index','Column 10 Index','Column 11 Index','Column 12 Index','Column 13 Index','Column 14 Index','Column 15 Index','Column 16 Index','Column 17 Index','Column 18 Index','Column 19 Index','Column 20 Index']
 Title: Categorical Index Parameters
 Definition: Concat(Cat_Index_Fix_Params, Import_Index_Cols)
 NodeLocation: 872,464,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Column 1 Index','Column 2 Index','Column 3 Index','Column 4 Index','Column 5 Index','Column 6 Index','Column 7 Index','Column 8 Index','Column 9 Index','Column 10 Index','Column 11 Index','Column 12 Index','Column 13 Index','Column 14 Index','Column 15 Index','Column 16 Index','Column 17 Index','Column 18 Index','Column 19 Index','Column 20 Index']
 
 Decision Categ_Index_Default
 Title: Categorical Index Default
@@ -3940,11 +3938,11 @@ WindState: 2,42,72,720,350
 Aliases: FormNode New1551412479, FormNode New1551412511
 
 Index Categ_Index_Tabs
+Att_PrevIndexValue: [1,2,3]
 Title: Categorical Index Tabs
 Definition: 1..Num_Categ_Index_Tabs
 NodeLocation: 1016,184,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3]
 
 Decision CatInd_ImportSetting
 Title: Categorical Index Import Settings
@@ -3993,11 +3991,11 @@ ReformDef: [Categ_Index_Tabs,Categ_Index_Params]
 TableCellDefault: Categ_Index_Default
 
 Index Cat_Index_Tab_Names
+Att_PrevIndexValue: ['Categorical_Indexes','Categorical_Indexes','Struct_Categ_Indexes']
 Title: Categ Index Tab Names
 Definition: CopyIndex(Categ_Index_Tab_Opt)
 NodeLocation: 1016,784,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Categorical_Indexes','Categorical_Indexes','Struct_Categ_Indexes']
 
 Index Categ_Index_Rows
 Title: Categ Index Rows
@@ -4098,11 +4096,11 @@ NodeLocation: 1192,264,1
 NodeSize: 64,40
 
 Index Seq_Index_Params
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Row 1 Parameter','Row 2 Parameter','Row 3 Parameter','Row 4 Parameter','Row 5 Parameter','Row 6 Parameter','Row 7 Parameter','Row 8 Parameter','Row 9 Parameter','Row 10 Parameter','Row 11 Parameter','Row 12 Parameter']
 Title: Sequence Index Parameters
 Definition: Concat(Seq_Index_Fix_Param, Import_Seq_Params)
 NodeLocation: 1192,464,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Row 1 Parameter','Row 2 Parameter','Row 3 Parameter','Row 4 Parameter','Row 5 Parameter','Row 6 Parameter','Row 7 Parameter','Row 8 Parameter','Row 9 Parameter','Row 10 Parameter','Row 11 Parameter','Row 12 Parameter']
 
 Decision Seq_Index_Default
 Title: Sequence Index Default
@@ -4126,11 +4124,11 @@ WindState: 2,42,72,720,350
 Aliases: FormNode New1551412488, FormNode New1551412521
 
 Index Seq_Index_Tabs
+Att_PrevIndexValue: [1,2,3]
 Title: Sequence Index Tabs
 Definition: 1..Num_Seq_Index_Tabs
 NodeLocation: 1336,184,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3]
 
 Decision SeqInd_ImportSetting
 Title: Sequence Index Import Settings
@@ -4177,11 +4175,11 @@ ReformDef: [Seq_Index_Tabs,Seq_Index_Params]
 TableCellDefault: Seq_Index_Default
 
 Index Seq_Index_Tab_Names
+Att_PrevIndexValue: ['Sequence_Indexes','Sequence_Index_Inputs','Struct_Seq_Index_Inputs']
 Title: Sequence Index Tab Names
 Definition: CopyIndex(Seq_Index_Tab_Opt)
 NodeLocation: 1336,784,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Sequence_Indexes','Sequence_Index_Inputs','Struct_Seq_Index_Inputs']
 
 Index Seq_Index_Rows
 Title: Sequence Index Rows
@@ -4236,7 +4234,7 @@ Description: Check this box to import categorical indexes prior to importing dat
 Definition: Checkbox(1)
 NodeLocation: 1520,80,1
 NodeSize: 64,40
-Aliases: FormNode Fo1550776273, FormNode Fo1550776232, FormNode Fo1550776579
+Aliases: FormNode New1551412493, FormNode New1551412534, FormNode New1551412539
 
 Decision Import_Sequent_Index
 Title: Import Sequential Indexes?
@@ -6133,8 +6131,6 @@ Unlike deletion, Binned items can be retrieved, and  "Undo" (control-Z) works fo
 When the Bin is full of stuff you are sure you don't need, you can get rid of it permanently: Open the Bin, select all its contents (with Control-A), and delete it (press Delete key).
 Author: Max
 Date: Thu, Jul 31, 2003 3:34 PM
-SaveAuthor: Lonnie
-SaveDate: Fri, Sep 7, 2012 2:08 PM
 DefaultSize: 48,24
 NodeLocation: 296,128,0
 NodeSize: 56,32
@@ -6586,11 +6582,11 @@ WindState: 2,581,29,720,350
 Aliases: FormNode Fo1535331934, FormNode Fo1537568831
 
 Index Column_Number
-Att_PrevIndexValue: [1,2,3,4,5]
 Title: Column Number
 Definition: 1..Number_of_Data_Colum
 NodeLocation: 208,816,1
 NodeSize: 56,32
+Att_PrevIndexValue: [1,2,3,4,5]
 
 FormNode Fo1535331934
 Title: Number of Data Columns
@@ -6643,11 +6639,11 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Fact_Column_Indices
 
 Index Fact_Col_Fields
-Att_PrevIndexValue: ['Utility','Service Zip','Customer Sector','App Approved Date']
 Title: Fact Col Fields
 Definition: Subset(@dbFields_Ordered<>Size(dbFields_Ordered))
 NodeLocation: 464,816,1
 NodeSize: 56,32
+Att_PrevIndexValue: ['Utility','Service Zip','Customer Sector','App Approved Date']
 
 Index Interconn_Fact_Cols
 Title: Interconnect Fact Cols
@@ -6666,11 +6662,11 @@ TableCellDefault: Choice(All_Sectors,1,0)
 {!40200|Att_ChoiceIndexes: Index All_Sectors}
 
 Index Interconnect_Sectors
-Att_PrevIndexValue: ['Commercial','Educational','Industrial','Military','Non-Profit','Other Government','Residential','RESIDENTIAL']
 Title: Interconnect Sectors
 Definition: ['Commercial','Educational','Industrial','Military','Non-Profit','Other Government','Residential','RESIDENTIAL']
 NodeLocation: 1168,64,1
 NodeSize: 56,40
+Att_PrevIndexValue: ['Commercial','Educational','Industrial','Military','Non-Profit','Other Government','Residential','RESIDENTIAL']
 
 FormNode Fo1535336408
 Title: Map Interconn to Sectors
@@ -9634,19 +9630,19 @@ NodeSize: 156,116
 NodeInfo: 1,0,0,1,1,1,0,,1,,0,,,
 
 Index db_Fields
-Att_PrevIndexValue: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 Title: db Fields
 Definition: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 NodeLocation: 576,416,1
 NodeSize: 56,32
 ValueState: 2,347,400,416,303,,MIDM
+Att_PrevIndexValue: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 
 Index db_Records
-Att_PrevIndexValue: ['Empty']
 Title: db Records
 Definition: ['Empty']
 NodeLocation: 704,416,1
 NodeSize: 56,32
+Att_PrevIndexValue: ['Empty']
 
 FormNode Fo1533508800
 Title: Interconnect Data
@@ -9863,12 +9859,10 @@ Module Excel_Export_Logic
 Title: Excel Export Logic
 Author: coryw
 Date: Fri, Nov 23, 2018 9:50 PM
-SaveAuthor: JamesMilford
-SaveDate: Fri, Nov 30, 2018 2:10 PM
 NodeLocation: 632,208,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,33,7,1468,591,17
+DiagState: 2,33,7,1468,752,17
 
 Button Run_Excel_Export
 Title: Run Excel Export
@@ -9897,7 +9891,7 @@ Original: Output_Filename
 
 Decision Active_Export_Datase
 Title: Active Export Dataset
-Definition: Choice(Export_Data_Descript,14,0)
+Definition: Choice(Export_Data_Descript,4,0)
 NodeLocation: 96,328,1
 NodeSize: 64,40
 Aliases: FormNode Fo1551980365
@@ -9988,7 +9982,7 @@ NodeSize: 64,40
 
 Decision Applied_Path
 Title: Applied Path
-Definition: 'C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Documents\SDGE_2019_SPIDER\CEC_Forecast_Export.csv'
+Definition: 'C:\Users\coryw\OneDrive - Lumidyne Consulting LLC\Repos\SDGE_2019_SPIDER\CSV Files\CEC_Forecast_Export.csv'
 NodeLocation: 880,344,1
 NodeSize: 64,40
 
@@ -10015,7 +10009,7 @@ THEN Create_CSV_Text(Data_to_Export, rows: rowInd, cols: colInd, inclRows: Inclu
 ELSE Data_to_Export
 NodeLocation: 784,232,1
 NodeSize: 64,40
-ValueState: 2,116,113,1216,539,0,MIDM
+ValueState: 2,285,73,955,771,0,MIDM
 
 Decision Include_Rows_for_CSV
 Title: Include Rows for CSV
@@ -10046,7 +10040,7 @@ ValueState: 2,88,90,725,330,,MIDM
 
 Variable Reset_Workbook
 Title: Reset Workbook
-Definition: 1
+Definition: 0
 NodeLocation: 880,432,1
 NodeSize: 64,40
 
@@ -10064,28 +10058,30 @@ ValueState: 2,232,234,722,395,,MIDM
 
 Module Export_Auxiliary_Var
 Title: Export Auxiliary Variables
+Author: coryw
+Date: Wed, Mar 13, 2019 1:27 PM
 NodeLocation: 104,480,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1,0,936,671,17
+DiagState: 2,1,0,1308,843,17
 
 Decision Data_Export_Settings
 Title: Data Export Settings
 Description: For csv files, the "Sheet Name" and "Data Start Cell" parameters are not required. If "Clear Before Writing?" is not selected for a csv file, then the data will be appended to the bottom of the csv file, rather than overwriting any existing data.
 Definition: Table(Export_Parameter,Export_Dataset_Num)(~
-Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
+Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
 'Sequential historic then actual data','Calibration comparison','Deltas from base period','CEC Forecast by Zip','Timestamp','Deliverable sequential historic then actual data','Deliverable calibration comparison','Deliverable deltas from base period','Deliverable CEC Forecast by Zip','Deliverable timestamp','Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)',~
 Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),Handle(Indexed_Timestamp),Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),Handle(Indexed_Timestamp),Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),~
 Handle(Sequential_Row_Num),Handle(Comparison_Row_Num),Handle(Delta_Row_Num),Handle(Allocation_Row_Num),Handle(Dummy_Rows),Handle(Sequential_Row_Num),Handle(Comparison_Row_Num),Handle(Delta_Row_Num),Handle(Allocation_Row_Num),Handle(Dummy_Rows),Handle(Sequential_Row_Num),Handle(Comparison_Row_Num),Handle(Delta_Row_Num),Handle(Allocation_Row_Num),~
 Handle(Sequential_Text_Cols),Handle(Comparison_Text_Cols),Handle(Delta_Text_Cols),Handle(Allocation_Text_Cols),Handle(Dummy_Cols),Handle(Sequential_Text_Cols),Handle(Comparison_Text_Cols),Handle(Delta_Text_Cols),Handle(Allocation_Text_Cols),Handle(Dummy_Cols),Handle(Sequential_Text_Cols),Handle(Comparison_Text_Cols),Handle(Delta_Text_Cols),Handle(Allocation_Text_Cols),~
-Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path('Sequential_Export.csv'),Model_Path('Comparison_Export.csv'),Model_Path('Deltas_Export.csv'),Model_Path('CEC_Forecast_Export.csv'),~
+Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path('CSV Files\Sequential_Export.csv'),Model_Path('CSV Files\Comparison_Export.csv'),Model_Path('CSV Files\Deltas_Export.csv'),Model_Path('CSV Files\CEC_Forecast_Export.csv'),~
 'Sequential','Comparison','Deltas','CEC Forecasts','Version History','Sequential','Comparison','Deltas','CEC','Contents',Null,Null,Null,Null,~
 'A2','A2','A2','A2','B3','A3','A3','A3','A3','C18',Null,Null,Null,Null,~
 Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
 NodeLocation: 432,176,1
 NodeSize: 64,40
 WindState: 2,265,331,972,490
-DefnState: 2,-30,-2,1540,517,0,DFNM
+DefnState: 2,68,153,1785,493,0,DFNM
 Aliases: FormNode Fo1543021295, FormNode New1543613103, FormNode Fo1549568883
 ReformDef: [Export_Parameter,Export_Dataset_Num]
 TableCellDefault: Default_ExportConfig
@@ -10401,7 +10397,7 @@ NodeLocation: 432,280,1
 NodeSize: 64,40
 NodeInfo: 1,1,1,1,1,1,0,0,0,0,,0,1,0
 WindState: 2,102,82,1189,350
-Aliases: FormNode Fo1544582166, FormNode Fo1544725853, FormNode Fo1549568882, FormNode Fo1552080775
+Aliases: FormNode Fo1544582166, FormNode Fo1544725853, FormNode Fo1552080775, FormNode Fo1549568882
 OnChange: MsgBox("NOTE: ACP read/write won't currently work if this name is changed. Do so only with full knowledge of the implications, or change the Download Tableau Datafile and Download Forecast Summary button scripts to use the appropriate name -- a variable name does not seem to work with currently ACP Cloud Player Styles syntax." , 1)
 
 Decision Output_Filename
@@ -10411,12 +10407,12 @@ Definition: 'DER_Forecast_Results.xlsx'
 NodeLocation: 432,392,1
 NodeSize: 64,40
 NodeInfo: 1,1,1,1,1,1,0,0,0,0,,0,1,0
-Aliases: FormNode Fo1544825832, FormNode Fo1544825656, FormNode Fo1549568886, FormNode Fo1552080776
+Aliases: FormNode Fo1544825832, FormNode Fo1544825656, FormNode Fo1552080776, FormNode Fo1549568886
 OnChange: MsgBox("NOTE: ACP read/write won't currently work if this name is changed. Do so only with full knowledge of the implications, or change the Download Tableau Datafile and Download Forecast Summary button scripts to use the appropriate name -- a variable name does not seem to work with currently ACP Cloud Player Styles syntax." , 1)
 
 Decision Export_Timestamp
 Title: Export Timestamp
-Definition: 8-Mar-2019 14:14:37.279000
+Definition: 14-Mar-2019 11:16:08.176000
 NodeLocation: 584,64,1
 NodeSize: 64,40
 Aliases: FormNode Fo1544827467
@@ -10455,7 +10451,7 @@ Definition: CopyIndex(Data_Export_Settings[Export_Dataset_Num=Datasets_to_Export
 NodeLocation: 280,784,1
 NodeSize: 64,40
 ValueState: 2,355,193,416,303,,MIDM
-Att_PrevIndexValue: ['Sequential historic then actual data','Calibration comparison','Deltas from base period','CEC Forecast by Zip','Timestamp','Deliverable sequential historic then actual data','Deliverable calibration comparison','Deliverable deltas from base period','Deliverable CEC Forecast by Zip','Deliverable timestamp','Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)']
+Att_PrevIndexValue: ['Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)']
 
 Decision Description_Label
 Title: Description Label
