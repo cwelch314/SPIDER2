@@ -1,4 +1,4 @@
-{ From user coryw, Model Data_Import__Export at 14-Mar-2019 5:04:45 PM, encoding="UTF-8" }
+{ From user coryw, Model Data_Import__Export at 14-Mar-2019 8:24:24 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Data Import/ Export
 Author: Cory Welch
 Date: Fri, Feb 5, 2016 10:04 AM
 SaveAuthor: coryw
-SaveDate: Thu, Mar 14, 2019 5:04 PM
+SaveDate: Thu, Mar 14, 2019 8:24 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -86,6 +86,7 @@ ValueState: 2,847,306,416,303,0,MIDM
 Att_PrevIndexValue: ['Residential','NonResidential','Res + NonRes Combined']
 
 Index Selected_Utilities
+Att_PrevIndexValue: ['SDGE']
 Title: Selected Utilities
 Description: This index is calculated based on which utilities are included in the dataset provided.
 Definition: subset(Select_Utility)
@@ -94,7 +95,6 @@ NodeSize: 64,40
 WindState: 2,1148,8,720,531
 ValueState: 2,1273,65,250,172,,MIDM
 {!40300|Att_SlicerPopupSize: 367,70}
-Att_PrevIndexValue: ['SDGE']
 
 FormNode Fo1515352433
 Title: Sectors Selected
@@ -9983,7 +9983,7 @@ NodeSize: 64,40
 
 Decision Applied_Path
 Title: Applied Path
-Definition: 'C:\Users\coryw\OneDrive - Lumidyne Consulting LLC\Repos\SDGE_2019_SPIDER\DER_Forecast_Results.xlsx'
+Definition: 'C:\Users\coryw\OneDrive - Lumidyne Consulting LLC\Repos\SDGE_2019_SPIDER\Excel Files\DER_Forecast_Results.xlsx'
 NodeLocation: 880,344,1
 NodeSize: 64,40
 
@@ -10417,7 +10417,7 @@ OnChange: MsgBox("NOTE: ACP read/write won't currently work if this name is chan
 
 Decision Export_Timestamp
 Title: Export Timestamp
-Definition: 14-Mar-2019 16:35:21.045000
+Definition: 14-Mar-2019 17:30:37.570000
 NodeLocation: 584,64,1
 NodeSize: 64,40
 Aliases: FormNode Fo1544827467
