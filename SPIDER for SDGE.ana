@@ -1,4 +1,4 @@
-{ From user coryw, Model Main_Interface at 14-Mar-2019 8:24:24 PM, encoding="UTF-8" }
+{ From user coryw, Model Main_Interface at 15-Mar-2019 9:38:09 AM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 
@@ -88,7 +88,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 SaveAuthor: coryw
-SaveDate: Thu, Mar 14, 2019 8:24 PM
+SaveDate: Fri, Mar 15, 2019 9:38 AM
 DefaultSize: 64,40
 DiagState: 2,40,7,1752,791,17
 WindState: 2,540,59,720,350
@@ -100,28 +100,28 @@ FileInfo: 0,Model Main_Interface,2,2,0,0,C:\Users\coryw\OneDrive - Lumidyne Cons
 show_diagram_title:no~
 show_outline:no~
 Navigation_style:top_tabs~
-show_banner:no~
-show_tabs:no~
-show_parent_diagram_button:no~
 Add_Scroll_Bars:Yes~
 Show_As_Tab:Yes~
 Use_flash_buttons:no~
 show_id_in_balloon:yes~
 show_definition_in_balloon:yes~
-Tab_color: background}
+Tab_color: background~
+show_banner:no~
+show_tabs:no~
+show_parent_diagram_button:no}
 {!40204-40399|AWP_Attrib:FrameNode:MainInterfaceFrame~
 show_diagram_title:no~
 show_outline:no~
 Navigation_style:top_tabs~
-show_banner:no~
-show_tabs:no~
-show_parent_diagram_button:no~
 Add_Scroll_Bars:Yes~
 Show_As_Tab:Yes~
 Use_flash_buttons:no~
 show_id_in_balloon:yes~
 show_definition_in_balloon:yes~
-Tab_color: background}
+Tab_color: background~
+show_banner:no~
+show_tabs:no~
+show_parent_diagram_button:no}
 
 Text Te1408408460
 NodeLocation: 444,64,-13
@@ -1197,13 +1197,13 @@ NodeColor: 65535,65535,65535
 OnChange: ACP_Set_hover_balloo(ACP_Balloon_delay)
 
 Index ACP_Balloon_delay_ch
+Att_PrevIndexValue: [0,0.1,0.2,0.3,0.4,0.5,0.6,0.8,1,1.2,1.5,2]
 Title: balloon delay choices
 Definition: [0,0.1,0.2,0.3,0.4,0.5,0.6,0.8,1,1.2,1.5,2]
 NodeLocation: 680,257,1
 NodeSize: 80,16
 WindState: 2,94,83,476,454
 NodeColor: 65535,65535,65535
-Att_PrevIndexValue: [0,0.1,0.2,0.3,0.4,0.5,0.6,0.8,1,1.2,1.5,2]
 
 Function ACP_Set_hover_balloo(d)
 Title: Set_hover_balloon_delay(d: Positive)
@@ -2837,6 +2837,7 @@ DiagState: 2,442,61,514,497,17
 FontStyle: Arial,15
 
 Index ACP_Screen_Resolutio
+Att_PrevIndexValue: ['1920 x 1080','1600 x 900','1366 x 768','1280 x 1024','1280 x 800','1024 x 768','2400 x 1200']
 Title: Screen Resolution
 Units: pixels
 Description: List of preset screen resolutions for minimum ACP diagram size
@@ -2844,7 +2845,6 @@ Definition: ['1920 x 1080','1600 x 900','1366 x 768','1280 x 1024','1280 x 800',
 NodeLocation: 56,88,1
 NodeSize: 48,24
 WindState: 2,102,82,720,600
-Att_PrevIndexValue: ['1920 x 1080','1600 x 900','1366 x 768','1280 x 1024','1280 x 800','1024 x 768','2400 x 1200']
 
 Variable ACP_Maximum_Size
 Title: Maximum Size
@@ -2875,12 +2875,12 @@ ReformVal: [ACP_Dimension,ACP_Screen_Resolutio]
 Att_EditSliceState: [ACP_Navigation_styl1,5,ACP_Screen_Resolutio,1,ACP_Dimension,1]
 
 Index ACP_Dimension
+Att_PrevIndexValue: ['Width','Height']
 Title: Dimension
 Description: Screen dimension for minimum ACP diagram size
 Definition: ['Width','Height']
 NodeLocation: 56,32,1
 NodeSize: 48,24
-Att_PrevIndexValue: ['Width','Height']
 
 Index ACP_Resolution_Choic
 Title: Resolution Choices
@@ -5947,6 +5947,7 @@ NodeLocation: 736,64,1
 NodeSize: 64,40
 
 Index Output_Titles
+Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 Title: Output Titles
 Definition: VAR display:=FOR J:=@Outputs1 DO (~
    MetaVar varHandle:=Slice(Outputs1, J);~
@@ -5959,7 +5960,6 @@ CopyINdex(display)~
 
 NodeLocation: 744,400,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 
 Decision Select_Output
 Title: Select Output
