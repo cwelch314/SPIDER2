@@ -1,4 +1,4 @@
-{ From user coryw, Model Data_Import__Export at 15-Mar-2019 1:10:46 PM, encoding="UTF-8" }
+{ From user coryw, Model Data_Import__Export at 15-Mar-2019 2:06:32 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Data Import/ Export
 Author: Cory Welch
 Date: Fri, Feb 5, 2016 10:04 AM
 SaveAuthor: coryw
-SaveDate: Fri, Mar 15, 2019 1:10 PM
+SaveDate: Fri, Mar 15, 2019 2:06 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -9868,7 +9868,7 @@ Date: Fri, Nov 23, 2018 9:50 PM
 NodeLocation: 632,208,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,33,7,1468,489,17
+DiagState: 2,163,27,1468,576,17
 
 Button Run_Data_Export
 Title: Run Data Export
@@ -9898,7 +9898,7 @@ Original: Output_Filename
 
 Decision Active_Export_Datase
 Title: Active Export Dataset
-Definition: Choice(Export_Data_Descript,4,0)
+Definition: Choice(Export_Data_Descript,1,0)
 NodeLocation: 96,328,1
 NodeSize: 64,40
 Aliases: FormNode Fo1551980365
@@ -10089,7 +10089,7 @@ Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox
 NodeLocation: 432,176,1
 NodeSize: 64,40
 WindState: 2,265,331,972,490
-DefnState: 2,36,107,1785,493,0,DFNM
+DefnState: 2,82,63,1785,493,0,DFNM
 Aliases: FormNode Fo1543021295, FormNode New1543613103, FormNode Fo1549568883
 ReformDef: [Export_Parameter,Export_Dataset_Num]
 TableCellDefault: Default_ExportConfig
@@ -10124,6 +10124,7 @@ NodeSize: 64,40
 DefnState: 2,-105,381,1540,305,0,DFNM
 Aliases: FormNode New1543613111
 ReformDef: [Export_Parameter,Undefined]
+{!40200|Att_ChoiceIndexes: Index Output_Data_Type}
 
 Index Datasets_to_Export
 Title: Datasets to Export
