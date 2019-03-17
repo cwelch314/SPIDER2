@@ -1,4 +1,4 @@
-{ From user coryw, Model Main_Interface at 15-Mar-2019 2:06:32 PM, encoding="UTF-8" }
+{ From user coryw, Model Main_Interface at 16-Mar-2019 7:22:24 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 
@@ -88,9 +88,9 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 SaveAuthor: coryw
-SaveDate: Fri, Mar 15, 2019 2:06 PM
+SaveDate: Sat, Mar 16, 2019 7:22 PM
 DefaultSize: 64,40
-DiagState: 2,40,7,1752,791,17
+DiagState: 2,12,51,1752,744,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
@@ -135,7 +135,7 @@ Date: Mon, Aug 18, 2014 9:09 PM
 NodeLocation: 968,88,7
 NodeSize: 72,64
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-DiagState: 2,150,8,1905,810,17
+DiagState: 2,-154,169,1905,810,17
 WindState: 2,102,82,476,224
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
@@ -5910,20 +5910,20 @@ Module HOlder_for_GUI_in_ou
 Title: Holder for GUI in/out
 Author: coryw
 Date: Sun, Dec 16, 2018 8:10 AM
-NodeLocation: 1128,512,1
+NodeLocation: 752,656,1
 NodeSize: 72,64
 NodeInfo: 1,1,1,1,1,1,1,,0,,0,,,
-DiagState: 2,399,101,996,469,17
+DiagState: 2,37,76,1667,683,17
 NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,19
-{!40400|CloudPlayerStyles: Show_object: no}
-{!40204-40399|AWP_Attrib:Show_object: no}
+{!40400|CloudPlayerStyles: Show_object: yes}
+{!40204-40399|AWP_Attrib:Show_object: yes}
 
 Index Outputs1
 Att_PrevIndexValue: [PV_Cumulative,PV_Incremental,Cumulative_PV_Delta,Share_of_Housing]
 Title: Outputs
 Definition: [PV_Cumulative,PV_Incremental,Cumulative_PV_Delta,Share_of_Housing]
-NodeLocation: 888,400,1
+NodeLocation: 712,384,1
 NodeSize: 64,40
 MetaOnly: 1
 
@@ -5944,12 +5944,12 @@ Definition: VAR display:=FOR J:=@Outputs1 DO (~
 ~
 CopyINdex(display)~
 
-NodeLocation: 744,400,1
+NodeLocation: 696,288,1
 NodeSize: 64,40
 
 Decision Select_Output
 Title: Select Output
-Definition: Choice(Output_Titles,2,0)
+Definition: Choice(Output_Titles,1,0)
 NodeLocation: 262,269,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -6011,6 +6011,14 @@ Button Bu2
 NodeLocation: 596,176,1
 NodeSize: 64,40
 OnClick: NodeColor of Main_Interface := '57311,57311,57311'
+
+Text Te1552694449
+NodeLocation: 1184,304,-1
+NodeSize: 360,288
+{!40400|CloudPlayerStyles: FrameNode:Te1552694449~
+}
+{!40204-40399|AWP_Attrib:FrameNode:Te1552694449~
+}
 
 Close HOlder_for_GUI_in_ou
 
