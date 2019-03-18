@@ -1,0 +1,124 @@
+{ From user coryw, Model GUI_Dropdowns at 18-Mar-2019 1:53:45 PM, encoding="UTF-8" }
+SoftwareVersion 5.1.6
+
+{!-40203|Attribute CloudPlayerStyles}
+
+
+LinkLibrary GUI_Dropdowns
+Title: GUI Dropdowns
+SaveAuthor: coryw
+SaveDate: Mon, Mar 18, 2019 1:53 PM
+DefaultSize: 64,40
+NodeSize: 64,40
+DiagState: 2,446,86,962,523,17
+FontStyle: Arial Narrow,19
+FileInfo: 0,LinkLibrary GUI_Dropdowns,2,2,0,0,GUI Dropdowns.ana
+
+Function Show_ACP_Window(nodeList: variable, nodeTitles: variable, nodeSelected: variable, Type)
+Title: Show ACP Window
+Description: nodeList: an index containing the identifers of every output to be selected from~
+nodeSelected: variable containing a dropdown of nodeTitles~
+nodeTitles: an index containing the list of titles for each of the nodes in the nodeList~
+inOrOut: 'Result' if you want to show output, 'Definition' if you want to show input
+Definition: MetaVar varHandle:=Slice(nodeList, PositionInIndex(nodeTitles, nodeSelected , nodeTitles));~
+ShowWindow(varHandle, Type  )
+NodeLocation: 784,80,1
+NodeSize: 64,40
+WindState: 2,507,168,994,350
+
+Function Create_Titles_List(nodeList: variable)
+Title: Create Titles List
+Description: nodeList: an index containing the identifiers of each node included in the list of possible outputs
+Definition: VAR display:=FOR J:=@nodeList DO (~
+   MetaVar varHandle:=Slice(nodeList, J);~
+   VAR title:=Title of varHandle;~
+   VAR units:= IF (Units of varHandle)=Null THEN '' ELSE " (" & (Units of varHandle) & ")";~
+   title & units;{ & " (" & units & ")"}~
+);~
+~
+CopyIndex(display)
+NodeLocation: 784,176,1
+NodeSize: 64,40
+
+FormNode Fo1552937777
+Title: Select Output
+Definition: 0
+NodeLocation: 284,112,1
+NodeSize: 244,16
+NodeInfo: 1,,,,,,0,310,,,,,,0
+Original: Select_Output1
+
+FormNode Fo1552937778
+Title: Output Ident
+Definition: 0
+NodeLocation: 292,224,4
+NodeSize: 60,16
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Output_Ident1
+
+Index Output_Ident1
+Title: Output Ident
+Definition: [Output3,Output4,Output5]
+NodeLocation: 296,184,1
+NodeSize: 64,40
+Aliases: FormNode Clipboard_Fo15528722, FormNode Fo1552937778
+MetaOnly: 1
+
+Index Output_Titles1
+Title: Output Titles
+Definition: Create_Titles_List(Output_Ident1)~
+
+NodeLocation: 160,184,1
+NodeSize: 64,40
+Att_PrevIndexValue: ['Output1 (MW)','Output2 (MWh)','Output3']
+
+Button Result1
+Title: Result
+Description: Press this button to view the output of the selected variable on the left.
+NodeLocation: 573,112,3
+NodeSize: 45,16
+NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
+WindState: 2,2424,68,720,350
+NodeColor: 65278,37008,6168
+NodeFont: Arial,19
+OnClick: Show_ACP_Window(Output_Ident1,Output_Titles1,Select_Output1, 'Result')   {For an input node that you wish to view as an editable input table, input 'Definition' rather than 'Result' for the WindowType. }
+
+Decision Select_Output1
+Title: Select Output
+Description: Choose which variable you wish to view.
+Definition: Choice(Output_Titles1,3,0)
+NodeLocation: 608,192,1
+NodeSize: 64,40
+WindState: 2,102,82,720,646
+Aliases: FormNode Clipboard_Fo15450799, FormNode Fo1552937777
+{!40200|Att_ChoiceIndexes: Index Output_Titles1}
+OnChange: Result1
+
+Text Te1552937777
+Title: Copy these nodes to create a new ShowWindow dropdown.
+NodeLocation: 360,136,-1
+NodeSize: 336,112
+NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
+
+Variable Output3
+Title: Output1
+Units: MW
+Definition: 1
+NodeLocation: 104,312,1
+NodeSize: 64,40
+
+Variable Output4
+Title: Output2
+Units: MWh
+Definition: 1
+NodeLocation: 264,312,1
+NodeSize: 64,40
+
+Variable Output5
+Title: Output3
+Definition: 3
+NodeLocation: 416,312,1
+NodeSize: 64,40
+
+Close GUI_Dropdowns
+

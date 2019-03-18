@@ -1,4 +1,4 @@
-{ From user coryw, Model Data_Import__Export at 17-Mar-2019 8:06:57 PM, encoding="UTF-8" }
+{ From user coryw, Model Data_Import__Export at 18-Mar-2019 1:27:15 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Data Import/ Export
 Author: Cory Welch
 Date: Fri, Feb 5, 2016 10:04 AM
 SaveAuthor: coryw
-SaveDate: Sun, Mar 17, 2019 8:06 PM
+SaveDate: Mon, Mar 18, 2019 1:27 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -6589,11 +6589,11 @@ WindState: 2,581,29,720,350
 Aliases: FormNode Fo1535331934, FormNode Fo1537568831
 
 Index Column_Number
+Att_PrevIndexValue: [1,2,3,4,5]
 Title: Column Number
 Definition: 1..Number_of_Data_Colum
 NodeLocation: 208,816,1
 NodeSize: 56,32
-Att_PrevIndexValue: [1,2,3,4,5]
 
 FormNode Fo1535331934
 Title: Number of Data Columns
@@ -8616,7 +8616,7 @@ NodeLocation: 80,216,1
 NodeSize: 64,36
 DefnState: 2,168,170,1090,629,0,DFNM
 ValueState: 2,544,30,972,813,1,MIDM
-Aliases: FormNode Fo1537569014, FormNode Fo1544986702
+Aliases: FormNode Fo1537569014
 GraphSetup: Att_AreaFill Graph_Primary_Valdim:0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_GraphIndexRange Interconnect_Date:1,,0,,,,,36.891K,42.369K,0
@@ -9063,7 +9063,7 @@ NodeLocation: 80,312,1
 NodeSize: 64,36
 DefnState: 2,179,125,1172,616,0,DFNM
 ValueState: 2,669,54,866,667,1,MIDM
-Aliases: FormNode Fo1537569015, FormNode Fo1544986703
+Aliases: FormNode Fo1537569015
 GraphSetup: Att_GraphValueRange Stored_Capacity_Inst:1,,,,,,5~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_AreaFill Graph_Primary_Valdim:1~
@@ -9637,12 +9637,12 @@ NodeSize: 156,116
 NodeInfo: 1,0,0,1,1,1,0,,1,,0,,,
 
 Index db_Fields
+Att_PrevIndexValue: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 Title: db Fields
 Definition: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 NodeLocation: 576,416,1
 NodeSize: 56,32
 ValueState: 2,347,400,416,303,,MIDM
-Att_PrevIndexValue: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 
 Index db_Records
 Att_PrevIndexValue: ['Empty']
@@ -10097,18 +10097,18 @@ TableCellDefault: Default_ExportConfig
 {!40200|Att_ChoiceIndexes: Index Output_Data_Type}
 
 Index Export_Parameter
-Att_PrevIndexValue: ['Exclude?','Data Type','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 Title: Export Parameter
 Definition: ['Exclude?','Data Type','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 NodeLocation: 120,64,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Exclude?','Data Type','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 
 Index Export_Dataset_Num
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 Title: Export Dataset Number
 Definition: 1..Num_Export_Datasets
 NodeLocation: 280,176,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 
 Decision Num_Export_Datasets
 Title: Number of Export Datasets
@@ -10425,7 +10425,7 @@ OnChange: MsgBox("NOTE: ACP read/write won't currently work if this name is chan
 
 Decision Export_Timestamp
 Title: Export Timestamp
-Definition: 16-Mar-2019 19:39:25.332000
+Definition: 18-Mar-2019 12:59:51.221000
 NodeLocation: 584,64,1
 NodeSize: 64,40
 Aliases: FormNode Fo1544827467
@@ -10459,13 +10459,13 @@ NodeLocation: 432,592,1
 NodeSize: 64,40
 
 Index Export_Data_Descript
-Att_PrevIndexValue: ['Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)']
 Title: Export Data Description
 Definition: CopyIndex(Data_Export_Settings[Export_Dataset_Num=Datasets_to_Export, Export_Parameter=Description_Label])
 NodeLocation: 280,784,1
 NodeSize: 64,40
 WindState: 2,789,122,720,350
 ValueState: 2,335,482,416,220,0,MIDM
+Att_PrevIndexValue: ['Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)']
 
 Decision Description_Label
 Title: Description Label

@@ -1,4 +1,4 @@
-{ From user coryw, Model Function_Library_Cus at 17-Mar-2019 7:57:41 PM, encoding="UTF-8" }
+{ From user coryw, Model Function_Library_Cus at 18-Mar-2019 1:45:46 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -14,7 +14,7 @@ Title: Functions
 Author: (c) 2018 Lumidyne Consulting LLC
 Date: Mon, Jan 8, 2018 10:24 AM
 SaveAuthor: coryw
-SaveDate: Sun, Mar 17, 2019 7:57 PM
+SaveDate: Mon, Mar 18, 2019 1:45 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
@@ -672,32 +672,6 @@ NodeSize: 48,24
 Close Profiler_details
 
 Close Performance_profiler
-
-Function Show_ACP_Window(nodeList: variable, nodeTitles: variable, nodeSelected: variable, Type)
-Title: Show ACP Window
-Description: nodeList: an index containing the identifers of every output to be selected from~
-nodeSelected: variable containing a dropdown of nodeTitles~
-nodeTitles: an index containing the list of titles for each of the nodes in the nodeList~
-inOrOut: 'Result' if you want to show output, 'Definition' if you want to show input
-Definition: MetaVar varHandle:=Slice(nodeList, PositionInIndex(nodeTitles, nodeSelected , nodeTitles));~
-ShowWindow(varHandle, Type )
-NodeLocation: 440,424,1
-NodeSize: 64,40
-WindState: 2,2529,22,720,350
-
-Function Create_Titles_List(nodeList: variable)
-Title: Create Titles List
-Description: nodeList: an index containing the identifiers of each node included in the list of possible outputs
-Definition: VAR display:=FOR J:=@nodeList DO (~
-   MetaVar varHandle:=Slice(nodeList, J);~
-   VAR title:=Title of varHandle;~
-   VAR units:= Units of varHandle;~
-   title & " (" & units & ")"~
-);~
-~
-CopyIndex(display)
-NodeLocation: 584,424,1
-NodeSize: 64,40
 
 Close Function_Library_Cus
 
