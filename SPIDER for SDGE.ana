@@ -1,4 +1,4 @@
-{ From user coryw, Model Main_Interface at 18-Mar-2019 1:53:46 PM, encoding="UTF-8" }
+{ From user coryw, Model Main_Interface at 18-Mar-2019 5:41:31 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 
@@ -88,7 +88,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 SaveAuthor: coryw
-SaveDate: Mon, Mar 18, 2019 1:53 PM
+SaveDate: Mon, Mar 18, 2019 5:41 PM
 DefaultSize: 64,40
 DiagState: 2,15,16,1752,746,17
 WindState: 2,540,59,720,350
@@ -4196,7 +4196,6 @@ NodeColor: 65535,65535,65535
 OnChange: ACP_Toggle_awp_flag('Show_title:No', not ACP_ShowTitle, ACP_Select_frame_no1);
 
 Index ACP_Frame_nodes
-Att_PrevIndexValue: [Te1544831972]
 Title: Frame nodes
 Description: List of Text nodes in the selected module, which are candidates to be Frame nodes.
 Definition: ~
@@ -4220,12 +4219,13 @@ NodeLocation: 176,600,1
 NodeSize: 48,24
 DiagState: 1
 WindState: 2,58,108,611,608
+Att_PrevIndexValue: [Te1552674989,Te1552852181,Te1552852182,GUI_Frame,Te1552852189,Te1552852190,Te1552874970,Te1552875046,Te1552875297]
 
 Decision ACP_Select_module
 Title: Select module
 Units: id
 Description: Choose the module for which you want to configure a frame node.
-Definition: Choice(ACP_Modules,2,0,result:ACP_Modules)
+Definition: Choice(ACP_Modules,1,0,result:ACP_Modules)
 NodeLocation: 128,48,1
 NodeSize: 68,24
 WindState: 2,762,90,656,749
@@ -4238,7 +4238,7 @@ Decision ACP_Select_frame_no1
 Title: Select frame node
 Units: id
 Description: Select a text node that you would like to use as a frame node.
-Definition: Choice(ACP_Frame_nodes,1,0,result:ACP_Frame_nodes)
+Definition: Choice(ACP_Frame_nodes,4,0,result:ACP_Frame_nodes)
 NodeLocation: 128,96,1
 NodeSize: 68,24
 WindState: 2,132,47,746,588
@@ -4254,6 +4254,7 @@ NodeLocation: 88,600,1
 NodeSize: 48,24
 WindState: 2,483,255,476,224
 ValueState: 2,448,461,403,411,0,MIDM
+Att_PrevIndexValue: [Main_Interface,Model_Details,Illustrative_Nodes,Parameter_Optimizati,Sensitivity1,GUI_Definitions,Old_GUI]
 
 Decision ACP_border_
 Title: No border?
@@ -4267,7 +4268,7 @@ NodeColor: 65535,65535,65535
 Decision ACP_Description_leng
 Title: Description length
 Description: Set the height of the area used to display the description of variable as a percent of Frame height.  If the description is too long to fit, last part will be truncated.
-Definition: Choice(self,2,0)
+Definition: Choice(self,3,0)
 NodeLocation: 128,336,1
 NodeSize: 68,24
 WindState: 2,69,44,708,513
@@ -4303,7 +4304,7 @@ WindState: 2,144,102,611,599
 Decision ACP_Set_as_a_frame_n
 Title: Set as a frame node
 Description: Set the text node selected in the listing above to be a Frame Node.
-Definition: Checkbox(0)
+Definition: Checkbox(1)
 NodeLocation: 128,144,-5
 NodeSize: 68,24
 WindState: 2,434,46,726,579
@@ -4517,12 +4518,12 @@ NodeSize: 80,24
 WindState: 2,22,6,823,538
 
 Index ACP_table_or_graph_o
-Att_PrevIndexValue: ['As saved in Analytica','Graph','Table','Table above graph','Graph above table']
 Title: table or graph opts
 Definition: ['As saved in Analytica','Graph','Table','Table above graph','Graph above table']
 NodeLocation: 264,600,1
 NodeSize: 48,24
 WindState: 2,-11,89,476,224
+Att_PrevIndexValue: ['As saved in Analytica','Graph','Table','Table above graph','Graph above table']
 
 Decision ACP_Table_or_graph_
 Title: Table and/or graph
@@ -4712,7 +4713,7 @@ Close ACP_Frame_setting_de
 
 FormNode ACP_HideTitleFormNod
 Definition: 0
-NodeLocation: 544,640,-5
+NodeLocation: 544,640,5
 NodeSize: 104,16
 NodeInfo: 1,0,0,1,0,1,0,15,0,,0
 WindState: 2,125,125,1132,405
@@ -4720,7 +4721,7 @@ Original: ACP_ShowTitle
 
 FormNode ACP_ShowDescFormNode
 Definition: 0
-NodeLocation: 768,608,-5
+NodeLocation: 768,608,5
 NodeSize: 120,16
 NodeInfo: 1,0,0,1,0,0,0,22,0,,,
 Original: ACP_ShowDescription
@@ -4735,7 +4736,7 @@ Original: ACP_Select_module
 
 FormNode ACP_DescLengthFormNo
 Definition: 0
-NodeLocation: 768,640,-5
+NodeLocation: 768,640,5
 NodeSize: 120,16
 NodeInfo: 1,0,0,1,0,0,0,78,0,,,
 WindState: 2,603,130,476,224
@@ -4770,7 +4771,7 @@ Original: ACP_Set_as_a_frame_n
 FormNode ACP_TableOrGraphInpu
 Title: Table or graph?
 Definition: 0
-NodeLocation: 664,672,-5
+NodeLocation: 664,672,5
 NodeSize: 224,16
 NodeInfo: 1,0,0,1,0,0,0,230,0,
 WindState: 2,221,73,476,224
@@ -4798,7 +4799,7 @@ WindState: 2,567,62,627,433
 
 Text ACP_Set_Frame_Node_S
 Description: Set Frame Node Styles
-NodeLocation: 536,580,-5
+NodeLocation: 536,580,5
 NodeSize: 112,12
 NodeInfo: 1,0,0,1,0,0,1,,0,,0
 WindState: 2,807,436,476,224
@@ -4840,7 +4841,7 @@ Closewindow(ACP_Frame_node_style, 'Diagram');
 FormNode ACP_IndexMenusFormNo
 Title: Show Index Menus
 Definition: 0
-NodeLocation: 544,608,-5
+NodeLocation: 544,608,5
 NodeSize: 104,16
 NodeInfo: 1,0,0,1,0,0,0,15,0,,,
 WindState: 2,33,555,476,224
@@ -6638,7 +6639,7 @@ Text Te1552852182
 NodeLocation: 392,288,-18
 NodeSize: 384,280
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-NodeColor: 12593,41891,6168
+NodeColor: 12593,41891,0
 
 Text GUI_Frame
 NodeLocation: 1236,360,-24
@@ -6646,6 +6647,10 @@ NodeSize: 460,352
 NodeInfo: 1,0,0,0,0,1,1,,0,,0,,,
 WindState: 2,102,83,476,224
 NodeFont: Arial,24
+{!40400|CloudPlayerStyles: Show_description:30~
+Show_index_menus:yes}
+{!40204-40399|AWP_Attrib:Show_description:30~
+Show_index_menus:yes}
 
 Text Te1552852189
 NodeLocation: 456,288,-1
