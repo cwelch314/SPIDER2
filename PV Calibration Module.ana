@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model PV_Calibration1 at 19-Mar-2019 11:25:23 AM, encoding="UTF-8" }
+{ From user JamesMilford, Model PV_Calibration1 at 19-Mar-2019 11:29:07 AM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -15,7 +15,7 @@ Description: Fu4()
 Author: Cory Welch
 Date: Fri, Jun 22, 2018 10:48 AM
 SaveAuthor: JamesMilford
-SaveDate: Tue, Mar 19, 2019 11:25 AM
+SaveDate: Tue, Mar 19, 2019 11:29 AM
 DefaultSize: 64,40
 NodeSize: 72,64
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
@@ -749,7 +749,7 @@ Date: Sun, Aug 5, 2018 8:27 AM
 NodeLocation: 120,112,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,194,49,1730,697,17
+DiagState: 2,77,5,1730,697,17
 
 Button CALIBRATE
 Title: CALIBRATE One Sector
@@ -1384,10 +1384,8 @@ Index stage:=CopyIndex(select_stages);~
 			(decis_in_opt:=decis_by_stage[all_stages=i]); {Selects only those decision variables used in the given calibration stage}~
 			(setting_in_opt:=setting_by_stage[all_stages=i]); {Adjusts the optimization engine settings per the calibration stage}~
 			IF (size(failed_id)<>0 OR curr_stage=1 OR size(select_stages)=1) ~
-                    THEN Sequential_Opt_PV3(i,  select_decis, decis_handles, all_spatial_id, der_spatial_id, all_sectors ,aggreg_level, der_sectors, stored_decis, stored_status, decis_switch, optDef_handle) {Runs the optimization and assigns best fit coefficients to the stored coefficients, but only if there are spatial IDs that have failed the goodness of fit test}~
-                    ELSE Null;~
+                    THEN Sequential_Opt_PV3(i,  select_decis, decis_handles, all_spatial_id, der_spatial_id, all_sectors ,aggreg_level, der_sectors, stored_decis, stored_status, decis_switch, optDef_handle); {Runs the optimization and assigns best fit coefficients to the stored coefficients, but only if there are spatial IDs that have failed the goodness of fit test}~
 			IF i=1 THEN Set_Starting_Coeff2(all_sectors, all_spatial_id, der_spatial_id, aggreg_level, der_sectors, stored_decis, stored_status); {Sets starting coefficients for all spatial IDs to the value just calculated for the aggregate spatial ID that will be used for setting default coefficients. }~
-			(der_spatial_id:=Subset(@origIDs<>aggreg_level)); {Selects all non-aggregated spatial IDs. STILL NECESSARY?}~
 			IF i>=2 THEN Set_Spat_ID_Fail_R2(failed_id, der_spatial_id); {Set the spatial ID selector to all spatial IDs that failed the goodness of fit test, except for the "aggregate" calibration and for the very first calibration (stage 2) of all spatial IDs}	~
 		);~
 ~
