@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Main_Interface at 18-Mar-2019 6:30:09 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Main_Interface at 19-Mar-2019 11:25:23 AM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 
@@ -88,7 +88,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 SaveAuthor: JamesMilford
-SaveDate: Mon, Mar 18, 2019 6:30 PM
+SaveDate: Tue, Mar 19, 2019 11:25 AM
 DefaultSize: 64,40
 DiagState: 2,129,4,1766,765,17
 WindState: 2,540,59,720,350
@@ -5968,12 +5968,12 @@ Aliases: FormNode Fo1552872215
 MetaOnly: 1
 
 Index PV_Econ_Titles1
+Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Cost of Electricity Ratio (post/pre ratio)','Monthly Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
 Title: PV Econ Titles
 Definition: Create_Titles_List(PV_Econ_Out1)~
 
 NodeLocation: 160,912,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Cost of Electricity Ratio (post/pre ratio)','Monthly Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
 
 Decision PV_Economics
 Title: PV Economics
@@ -6284,12 +6284,12 @@ NodeFont: Arial,16
 OnClick: Show_ACP_Window(Storage_Input1,Storage_Input_Titles,Storage_Input, (IF Show_Input_as_Graph_ THEN 'Graph' ELSE 'Definition'))
 
 Index Storage_Input_Titles
+Att_PrevIndexValue: ['Start Time for Dispatch','End Time for Dispatch','Flows to View','Battery Storage Specs','Number of Storage Units (units/system)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (fraction)','Allowed ITC Pct by Time (fraction)','Storage Incentive Base Rate ($/kWh)','Incentive Step Start Month','Incentive Derate for Duration','Incentive Derate for Capacity','Historic Storage Incentives ($/kWh)']
 Title: Storage Input Titles
 Definition: Create_Titles_List(Storage_Input1)~
 
 NodeLocation: 848,912,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Start Time for Dispatch','End Time for Dispatch','Flows to View','Battery Storage Specs','Number of Storage Units (units/system)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (fraction)','Allowed ITC Pct by Time (fraction)','Storage Incentive Base Rate ($/kWh)','Incentive Step Start Month','Incentive Derate for Duration','Incentive Derate for Capacity','Historic Storage Incentives ($/kWh)']
 
 FormNode Fo1552872728
 Title: Select Output
@@ -6363,12 +6363,12 @@ NodeFont: Arial,16
 OnClick: Show_ACP_Window(Storage_Dispatch_Out,Storage_Dispatch_Tit,Storage_Dispatch, 'Result')
 
 Index Storage_Dispatch_Tit
+Att_PrevIndexValue: ['Dispatch Flows (kW-hr/customer)','Rates for Dispatch','Battery Charge for Dispatch (kWh)','Pct of Stored Electricity from PV (fraction)']
 Title: Storage Dispatch Titles
 Definition: Create_Titles_List(Storage_Dispatch_Out)~
 
 NodeLocation: 160,1152,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Dispatch Flows (kW-hr/customer)','Rates for Dispatch','Battery Charge for Dispatch (kWh)','Pct of Stored Electricity from PV (fraction)']
 
 Text Te1552872981
 Title: Storage Dispatch Output
