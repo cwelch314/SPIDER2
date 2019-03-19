@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model PV_Calibration1 at 19-Mar-2019 5:34:14 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model PV_Calibration1 at 19-Mar-2019 5:37:41 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -15,7 +15,7 @@ Description: Fu4()
 Author: Cory Welch
 Date: Fri, Jun 22, 2018 10:48 AM
 SaveAuthor: JamesMilford
-SaveDate: Tue, Mar 19, 2019 5:34 PM
+SaveDate: Tue, Mar 19, 2019 5:37 PM
 DefaultSize: 64,40
 NodeSize: 72,64
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
@@ -1088,7 +1088,6 @@ Description: This function is called by a button script and sequentially optimiz
 [decis_switch]: a boolean flag indicating whether decision nodes or stored results will be used in the model logic (true=use decision nodes).~
 [optDef]: the handle to the variable where the optimization is defined.
 Definition: (decis_switch:=1); {Ensures the optimization uses the actual decision variables when calculating the objective, rather than the stored coefficients}~
-msgbox(Use_PV_Decision_Var);~
 Check_Sector(all_sectors, der_sectors);  {Checks to ensure only one sector is selected for the diffusion parameter calibration}~
 {Check_Cost_Scenario(); }{Checks to ensure only one cost scenario is selected for the diffusion parameter calibration}~
 ~
@@ -2071,6 +2070,7 @@ NodeSize: 64,40
 ValueState: 2,631,354,702,381,,MIDM
 
 Decision Opt_Settings_PV
+Att_PrevIndexValue: ['Multistart','MaxTime']
 Title: Opt Settings PV
 Description: Settings for the PV optimization engine. ~
 ~
@@ -2085,7 +2085,6 @@ DefnState: 2,789,495,596,188,0,DFNM
 Aliases: FormNode Fo1535066203
 DisplayInputs: Function Multi_Stage_Calibrat
 {!40700|Att_CellFormat: CellSpan(Opt_Settings_PV,CellAlignment('Center'),2,header:0)}
-Att_PrevIndexValue: ['Multistart','MaxTime']
 
 FormNode Fo1535066203
 Title: Opt Settings EVs
@@ -2222,12 +2221,12 @@ ValueState: 2,990,418,416,303,,MIDM
 ReformVal: [0,PV_Sectors]
 
 Index Optimization_Method1
+Att_PrevIndexValue: ['Stock Delta']
 Title: Optimization Methods
 Definition: ['Stock Delta']
 NodeLocation: 1032,168,1
 NodeSize: 64,40
 ValueState: 2,505,196,416,303,,MIDM
-Att_PrevIndexValue: ['Stock Delta']
 
 Text Te1535066204
 Title: Change this to be indexed by a static time index
@@ -2448,11 +2447,11 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: PV_Constraints_by_St
 
 Index Tolerance_Input
+Att_PrevIndexValue: ['Slope Tolerance %','Final Cumulative %']
 Title: Tolerance Input
 Definition: ['Slope Tolerance %','Final Cumulative %']
 NodeLocation: 1080,112,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Slope Tolerance %','Final Cumulative %']
 
 Constant PV_Tolerance_by_Stag
 Title: PV Tolerance by Stage
