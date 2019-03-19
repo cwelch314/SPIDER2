@@ -1,4 +1,4 @@
-{ From user coryw, Model Electric_Vehicles at 17-Mar-2019 6:43:24 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Electric_Vehicles at 18-Mar-2019 6:30:09 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -13,10 +13,10 @@ LinkModule Electric_Vehicles
 Title: Electric Vehicles
 Author: Cory Welch
 Date: Fri, Jun 22, 2018 10:48 AM
-SaveAuthor: coryw
-SaveDate: Sun, Mar 17, 2019 6:43 PM
+SaveAuthor: JamesMilford
+SaveDate: Mon, Mar 18, 2019 6:30 PM
 DefaultSize: 64,40
-NodeSize: 72,64
+NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
 DiagState: 2,184,169,1503,610,17
 NodeColor: 65535,65535,65535
@@ -2256,6 +2256,7 @@ ValueState: 2,622,436,1007,173,,MIDM
 Aliases: FormNode Fo1529703822
 
 Variable Opt_Settings_EVs
+Att_PrevIndexValue: ['Multistart','MaxTime']
 Title: Opt Settings EVs
 Description: Settings for the optimization engine. ~
 ~
@@ -2269,7 +2270,6 @@ WindState: 2,277,431,720,350
 DefnState: 2,709,439,596,188,0,DFNM
 Aliases: FormNode Fo1529692308, FormNode Fo1530224330
 {!40700|Att_CellFormat: CellSpan(Opt_Settings_EVs,CellAlignment('Center'),2,header:0)}
-Att_PrevIndexValue: ['Multistart','MaxTime']
 
 FormNode Fo1529692308
 Title: Opt Settings EVs
@@ -5633,7 +5633,7 @@ Description: This function is called by a button script and sequentially optimiz
 input stage = atomic, optional (which stage of the calibration, when running script from a multistage calibration script)~
 
 Definition: (Use_EV_Decision_Vars:=1); {Ensures the optimization uses the actual decision variables when calculating the objective, rather than the stored coefficients}~
-Check_Sector();  {Checks to ensure only one sector is selected for the diffusion parameter calibration}~
+Check_Sector_EV();  {Checks to ensure only one sector is selected for the diffusion parameter calibration}~
 Check_EV_LRMS_Scenar(); {Checks to ensure only one EV long run market share scenario is selected for the diffusion parameter calibration}~
 local AdEff := Array(All_Spatial_ID,1);~
 local LRMS := Array(All_Spatial_ID,1);~
@@ -5686,7 +5686,7 @@ NodeLocation: 1152,776,1
 NodeSize: 64,32
 WindState: 2,52,42,1540,764
 
-Function Check_Sector()
+Function Check_Sector_EV()
 Title: Check Sector
 Description: This function checks to ensure that only one sector is chosen at a time when attempting to run the parameter calibration scripts. If more than one is selected, it returns an error message with instructions to only select one at a time.
 Definition: var x:=[];~
@@ -5762,11 +5762,11 @@ ValueState: 2,1304,333,416,303,,MIDM
 ReformVal: [EV_Spatial_ID,EV_Sectors]
 
 Index Optimization_Methods
+Att_PrevIndexValue: ['Stock Delta','Sales Delta','RSquared']
 Title: Optimization Methods
 Definition: ['Stock Delta','Sales Delta','RSquared']
 NodeLocation: 1696,48,1
 NodeSize: 56,32
-Att_PrevIndexValue: ['Stock Delta','Sales Delta','RSquared']
 
 Index Sel_Ag_EV_LRMS
 Title: Selected Aggregate EV LRMS Scen
@@ -6073,7 +6073,7 @@ Function Assign_Stored_Coeffs()
 Title: Assign Stored Coefficients
 Description: Takes the value of the stored coefficients, for the user selected spatial ID, sector, and aggregate EV long run market share scenario, and assigns them to the default value for the decision variables and to the decision variable itself.
 Definition: ~
-Check_Sector(); {ensures only one sector is selected}~
+Check_Sector_EV(); {ensures only one sector is selected}~
 Check_EV_LRMS_Scenar(); {ensures only one aggregate EV long run market share scenario is selected}~
 Check_Spatial_ID_Sel(); {ensures only one spatial ID is selected}~
 local Spat_ID_Sel:=Slice(EV_Spatial_ID,1); {returns a scalar rather than a list, since only one element was selected}~
@@ -6114,7 +6114,7 @@ Title: Set Starting Coeff
 Description: This function sets the values of the starting coefficients for all Spatial IDs. This function is typically called AFTER calibrating aggregate adoption.~
 ~
 This function must be called from within an optimization script to ensure that only one Sector & only one EV long run market share scenario are selected.
-Definition: Check_Sector();~
+Definition: Check_Sector_EV();~
 Check_EV_LRMS_Scenar();~
 ~
 local EVAdEff:=Stored_AdEff_EV;~

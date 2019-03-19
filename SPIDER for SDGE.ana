@@ -1,4 +1,4 @@
-{ From user coryw, Model Main_Interface at 18-Mar-2019 1:53:46 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Main_Interface at 18-Mar-2019 6:30:09 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 
@@ -87,15 +87,15 @@ Model Main_Interface
 Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
-SaveAuthor: coryw
-SaveDate: Mon, Mar 18, 2019 1:53 PM
+SaveAuthor: JamesMilford
+SaveDate: Mon, Mar 18, 2019 6:30 PM
 DefaultSize: 64,40
-DiagState: 2,15,16,1752,746,17
+DiagState: 2,129,4,1766,765,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
 FontStyle: Arial Narrow,19
-FileInfo: 0,Model Main_Interface,2,2,0,0,C:\Users\coryw\OneDrive - Lumidyne Consulting LLC\Repos\SDGE_2019_SPIDER\SPIDER for SDGE.ana
+FileInfo: 0,Model Main_Interface,2,2,0,0,C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Documents\SDGE_2019_SPIDER\SPIDER for SDGE.ana
 {!40400|CloudPlayerStyles: FrameNode:GUI_Frame~
 show_diagram_title:no~
 show_outline:no~
@@ -5741,12 +5741,12 @@ Aliases: FormNode Fo1552872208
 MetaOnly: 1
 
 Index Output_Titles
+Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 Title: Output Titles
 Definition: Create_Titles_List(Output_Ident)~
 
 NodeLocation: 160,184,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 
 Decision Select_Output
 Title: Select Output
@@ -5829,12 +5829,12 @@ Aliases: FormNode Fo1552872205
 MetaOnly: 1
 
 Index PV_Impact_Titles
+Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 Title: PV Impact Titles
 Definition: Create_Titles_List(PV_Impact_Out)~
 
 NodeLocation: 160,432,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 
 Button PV_Econ_Output_But
 Title: Result
@@ -5866,12 +5866,12 @@ NodeSize: 336,112
 NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
 
 Index EV_Scenario_Variable
-Att_PrevIndexValue: ['EV Market Share','EV Word of Mouth','EV Ad Effectiveness']
 Title: EV Scenario Variables
 Definition: ['EV Market Share','EV Word of Mouth','EV Ad Effectiveness']
 NodeLocation: 1112,176,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552873760
+Att_PrevIndexValue: ['EV Market Share','EV Word of Mouth','EV Ad Effectiveness']
 
 Variable EV_Scenario_Selector
 Title: EV Scenario Selector
@@ -5915,12 +5915,12 @@ Aliases: FormNode Fo1552872202
 MetaOnly: 1
 
 Index EV_Impact_Titles
+Att_PrevIndexValue: ['EV Cumulative (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Simulated EV Stock (Vehicles.)','Vehicle Stock Share - Aggregated (fraction)','% of New Veh Sales (fraction)','New Vehicle Sales (Vehicles/Year)']
 Title: EV Impact Titles
 Definition: Create_Titles_List(EV_Impact_Out)~
 
 NodeLocation: 160,672,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['EV Cumulative (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Simulated EV Stock (Vehicles.)','Vehicle Stock Share - Aggregated (fraction)','% of New Veh Sales (fraction)','New Vehicle Sales (Vehicles/Year)']
 
 Decision EV_Impact
 Title: EV Impact
@@ -5978,7 +5978,7 @@ Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year B
 Decision PV_Economics
 Title: PV Economics
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Econ_Titles1,6,0)
+Definition: Choice(PV_Econ_Titles1,5,0)
 NodeLocation: 608,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -6003,7 +6003,7 @@ Original: PV_Input
 Decision PV_Input
 Title: PV Input
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Input_Titles,6,0)
+Definition: Choice(PV_Input_Titles,5,0)
 NodeLocation: 1288,440,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -6033,12 +6033,12 @@ NodeFont: Arial,16
 OnClick: Show_ACP_Window(PV_Input1,PV_Input_Titles,PV_Input, (IF Show_Input_as_Graph_ THEN 'Graph' ELSE 'Definition'))
 
 Index PV_Input_Titles
+Att_PrevIndexValue: ['Historic PV Capacity Installations (MW-AC/period)','Historic PV Installations (systems/period)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (fraction)','Saved Daily Profiles (various)','Per-kW Weekly Solar Profile (kW-hr/kW-DC)','Payback Acceptance Curve (market share)']
 Title: PV Input Titles
 Definition: Create_Titles_List(PV_Input1)~
 
 NodeLocation: 848,432,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Historic PV Capacity Installations (MW-AC/period)','Historic PV Installations (systems/period)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (fraction)','Saved Daily Profiles (various)','Per-kW Weekly Solar Profile (kW-hr/kW-DC)','Payback Acceptance Curve (market share)']
 
 Text Te1552865477
 Title: PV Input
@@ -6080,9 +6080,8 @@ Definition: MultiTable(PV_Scenario_Variable)(Select_PV_Cost_Scen,BaseYr_for_PV_C
 NodeLocation: 960,72,1
 NodeSize: 64,40
 WindState: 2,1861,82,720,350
-DefnState: 2,2717,88,698,343,0,DFNM
+DefnState: 2,805,4,698,343,0,DFNM
 Aliases: FormNode Fo1552868509
-{!40200|Att_ChoiceIndexes: Index PV_Cost_Scenario}
 {!50000|Att_ColumnWidths: [215]}
 
 Index PV_Scenario_Variable
@@ -6435,12 +6434,12 @@ NodeFont: Arial,16
 OnClick: Show_ACP_Window(Storage_Econ_Out,Storage_Econ_Titles,Storage_Economics, 'Result')
 
 Index Storage_Econ_Titles
+Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Monthly Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
 Title: Storage Econ Titles
 Definition: Create_Titles_List(Storage_Econ_Out)~
 
 NodeLocation: 160,1392,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Monthly Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
 
 Text Te1552873476
 Title: Storage Economic Output
@@ -6453,7 +6452,7 @@ Title: Storage Scenario Selector
 Description: Select which scenario you wish to run for each scenario variable. ~
 ~
 CAUTION: Selecting "All" for more than one scenario variable may result in exceeding server memory, resulting in an error.
-Definition: MultiTable(Storg_Scenario_Varia)(Select_StrgCost_Scen, Select_Rate_Escalate, Selected_ITC_Scen)
+Definition: MultiTable(Storg_Scenario_Varia)(Select_StrgCost_Scen,Select_Rate_Escalate,Selected_ITC_Scen)
 NodeLocation: 1272,72,1
 NodeSize: 64,40
 WindState: 2,1861,82,720,350
@@ -6462,13 +6461,13 @@ Aliases: FormNode Fo1552873973
 {!50000|Att_ColumnWidths: [215]}
 
 Index Storg_Scenario_Varia
-Att_PrevIndexValue: ['Storage Cost','Elec Rate Escalation','ITC Phase-Out']
 Title: Storg Scenario Variables
 Definition: ['Storage Cost','Elec Rate Escalation','ITC Phase-Out']
 IndexVals: ['item 1']
 NodeLocation: 1272,176,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552873762
+Att_PrevIndexValue: ['Storage Cost','Elec Rate Escalation','ITC Phase-Out']
 
 FormNode Fo1552873760
 Title: EV Scenario Variables
