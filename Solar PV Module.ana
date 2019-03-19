@@ -1,4 +1,4 @@
-{ From user coryw, Model Solar_PV at 18-Mar-2019 1:53:45 PM, encoding="UTF-8" }
+{ From user coryw, Model Solar_PV at 18-Mar-2019 8:00:20 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -14,7 +14,7 @@ Title: Solar PV
 Author: Cory Welch
 Date: Mon, Jan 8, 2018 10:24 AM
 SaveAuthor: coryw
-SaveDate: Mon, Mar 18, 2019 1:53 PM
+SaveDate: Mon, Mar 18, 2019 8:00 PM
 DefaultSize: 64,40
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -1887,7 +1887,6 @@ NodeSize: 64,40
 NodeColor: 65535,1,1
 
 Index Time_Solar_PV
-Att_PrevIndexValue: [1-Sep-2018,1-Oct-2018,1-Nov-2018,1-Dec-2018,1-Jan-2019,1-Feb-2019,1-Mar-2019,1-Apr-2019,1-May-2019,1-Jun-2019,1-Jul-2019,1-Aug-2019,1-Sep-2019,1-Oct-2019,1-Nov-2019,1-Dec-2019,1-Jan-2020,1-Feb-2020,1-Mar-2020,1-Apr-2020,1-May-2020,1-Jun-2020,1-Jul-2020,1-Aug-2020,1-Sep-2020,1-Oct-2020,1-Nov-2020,1-Dec-2020,1-Jan-2021,1-Feb-2021,1-Mar-2021,1-Apr-2021,1-May-2021,1-Jun-2021,1-Jul-2021,1-Aug-2021,1-Sep-2021,1-Oct-2021,1-Nov-2021,1-Dec-2021,1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023,1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030]
 Title: Time-Solar PV
 Description: Ths is the time index used for simulating vehicle adoption. It is allowed to be different from other DERs, for instance, due to differences in the granularity of available historical data on adoption (e.g., solar PV data are monthly, whereas vehicle data are, at best, quarterly, or in some cases, annual)
 Definition: Sequence(PV_Sim_Start_Year, PV_Sim_End_Year,step: Timestep_Months[Timestep_Options=PV_Data_dT_Choice],dateUnit: 'M')
@@ -1897,6 +1896,7 @@ WindState: 2,289,23,1168,700
 ValueState: 2,859,158,300,585,,MIDM
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"SHORT",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 337,742}
+Att_PrevIndexValue: [1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018]
 
 Index PV_Stock_Data_Year
 Title: PV Stock Data Year
@@ -1954,7 +1954,7 @@ Units: Year
 Description: The year in which you want the adoption simulation to start. The simulation will then use the appropriate starting point for instalaltions at this point in time. In some cases, depending on the data, you may not want to start the simulation as early as the stock data are available. Typically for PV, you will want to start the PV simulation exactly one period (e.g., month) after the latest reliable data are available regarding historical installations.  ~
 ~
 During calibration, this time is set to an earlier period to "back cast" adoption and compare it with actual adoption for purposes of estimating diffusion coefficients.
-Definition: Choice(PV_Sim_Strt_Yr_Opt,117,0)
+Definition: Choice(PV_Sim_Strt_Yr_Opt,37,0)
 NodeLocation: 88,376,1
 NodeSize: 64,40
 ValueState: 2,795,362,320,151,,MIDM
@@ -1976,7 +1976,7 @@ Decision PV_Sim_End_Year
 Title: PV Sim End Year
 Units: Year
 Description: The final year of the vehicle simulated forecast.
-Definition: Choice(PV_Sim_End_Yr_Option,264,0)
+Definition: Choice(PV_Sim_End_Yr_Option,116,0)
 NodeLocation: 240,376,1
 NodeSize: 64,40
 WindState: 2,102,82,1083,701
@@ -17431,12 +17431,12 @@ NodeSize: 64,40
 Att_PrevIndexValue: ['State','Federal']
 
 Index PV_Operating_Year
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 Title: PV Operating Year
 Definition: 1..Economic_Lifetime
 NodeLocation: 384,896,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 257,294}
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
 Index All_Equipment_Types
 Title: All Equipment Types
