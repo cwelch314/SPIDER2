@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model PV_Calibration1 at 19-Mar-2019 9:46:18 AM, encoding="UTF-8" }
+{ From user JamesMilford, Model PV_Calibration1 at 19-Mar-2019 9:59:05 AM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -15,7 +15,7 @@ Description: Fu4()
 Author: Cory Welch
 Date: Fri, Jun 22, 2018 10:48 AM
 SaveAuthor: JamesMilford
-SaveDate: Tue, Mar 19, 2019 9:46 AM
+SaveDate: Tue, Mar 19, 2019 9:59 AM
 DefaultSize: 64,40
 NodeSize: 72,64
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
@@ -767,7 +767,7 @@ NodeColor: 49344,49344,49344
 NodeFont: Calibri,24
 OnClick: {Check_Calib_Dimensio(Indexes_of_Sim_vs_Ac,Required_Indexes_of_); }{checks to ensure extra dimensions are not contained in the output used for calibration, which would increase the dimensionality of stored coefficients}~
 Check_Stage_1(PV_Spatial_ID, Spatial_ID, Stages_to_Calibrate); {checks whether all spatial IDs are selected if stage 1 is included in the calibration}~
-Multi_Stage_Calibra3(Stages_to_Calibrate, PV_Calibration_Stage, All_Spatial_ID, PV_Spatial_ID, Failed_Spat_ID, Time_PV_Calibration, Time_Solar_PV, Selected_PV_Decision, All_PV_Decisions, All_PV_Dec_Handles, All_Sectors, PV_Sectors, Use_Trace_Log, Current_Stage, PV_Sim_Start_Year, PV_Calibration_Start, PV_Sim_End_Year, PV_Calibration_End, Use_PV_Decision_Var, PV_Dates_Incl_by_Stg, Dates_Incl_in_PV_Opt, Stored_PV_Dec_Vars, PV_Decisions_by_Stg, PV_Decis_Vars_in_Opt, PV_OptSettings_byStg, Opt_Settings_PV, Stored_Opt_Status_PV, Optimization_PV, Ag_Level_for_PV_Coef)
+Multi_Stage_Calibra3(Stages_to_Calibrate, PV_Calibration_Stage, All_Spatial_ID, PV_Spatial_ID, Failed_Spat_ID, Time_PV_Calibration, Time_Solar_PV, Selected_PV_Decision, All_PV_Decisions, All_PV_Dec_Handles, All_Sectors, PV_Sectors, Use_Trace_Log, Current_Stage, PV_Sim_Start_Year, PV_Calibration_Start, PV_Sim_End_Year, PV_Calibration_End, Use_PV_Decision_Var, PV_Dates_Incl_by_Stg, Dates_Incl_in_PV_Opt, Stored_PV_Dec_Vars, PV_Decisions_by_Stg, PV_Decis_Vars_in_Opt, PV_OptSettings_byStg, Opt_Settings_PV, Stored_Opt_Status_PV, Ag_Level_for_PV_Coef, Handle(Optimization_PV))
 
 Button Set_Spatial_ID_to_Fa
 Title: Set Spatial ID to Failed Calib
@@ -1284,9 +1284,10 @@ For i:=orig_ID DO~
 		~
 		{Updates the local variable's stored decision value to the optimized solution, only for the slice that is the current spatial ID}~
 		Local x[]:=select_decis DO~
-			( solution := OptSolution(IF stage=1 THEN optDef ELSE optDef[der_spatial_id=i], x);~
-			status[all_spatial_id=i, all_sectors=der_sectors[@der_sectors=1]] := OptStatusText(IF stage=1 THEN optDef ELSE optDef[der_spatial_id=i]);~
-			IF solution <> null THEN temp_stored_coeff[decis_handles=x, all_spatial_id=i, all_sectors=der_sectors[@der_sectors=1]] := solution~
+			(LocalAlias optDefn:=optDef;   {Assign the result, rather than the handle, of the optimization definition to this local Alias}~
+                     solution := OptSolution(IF stage=1 THEN optDefn ELSE optDefn[der_spatial_id=i], x);~
+			 status[all_spatial_id=i, all_sectors=der_sectors[@der_sectors=1]] := OptStatusText(IF stage=1 THEN optDefn ELSE optDefn[der_spatial_id=i]);~
+			 IF solution <> null THEN temp_stored_coeff[decis_handles=x, all_spatial_id=i, all_sectors=der_sectors[@der_sectors=1]] := solution~
 			);~
 		(stored_decis:=temp_stored_coeff); {assigns the new solution for each spatial ID to ensure solutions are captured in the event of an abort}~
 		(stored_status := status); ~
@@ -1332,7 +1333,7 @@ NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Handles_for_PV_Decis
 
-Function Multi_Stage_Calibra3(select_stages, all_stages, all_spatial_id, der_spatial_id, failed_id, calib_time, sim_time, select_decis, all_decis, decis_handles, all_sectors, der_sectors: Index; trace_flag, curr_stage, sim_start, calib_start, sim_end, calib_end, decis_switch, dates_by_stage, dates_in_opt, decis_by_stage, decis_in_opt, stored_decis, setting_by_stage, setting_in_opt, stored_status, optDef, aggreg_level )
+Function Multi_Stage_Calibra3(select_stages, all_stages, all_spatial_id, der_spatial_id, failed_id, calib_time, sim_time, select_decis, all_decis, decis_handles, all_sectors, der_sectors: Index; trace_flag, curr_stage, sim_start, calib_start, sim_end, calib_end, decis_switch, dates_by_stage, dates_in_opt, decis_by_stage, decis_in_opt, stored_decis, setting_by_stage, setting_in_opt, stored_status, aggreg_level; optDef: Handle)
 Title: Multi-Stage Calibration3
 Description: This script specifies the multi-state sequence of calibration scripts as follows: ~
 ~
@@ -1384,9 +1385,7 @@ Index stage:=CopyIndex(select_stages);~
 			(decis_in_opt:=decis_by_stage[all_stages=i]); {Selects only those decision variables used in the given calibration stage}~
 			(setting_in_opt:=setting_by_stage[all_stages=i]); {Adjusts the optimization engine settings per the calibration stage}~
 			IF (size(failed_id)<>0 OR curr_stage=1 OR size(select_stages)=1) ~
-                    THEN ((decis_switch:=1);   {Have to set the switch before feeding the optDef parameter to the Sequential_Opt function, otherwise a warning message is generated by the objective calculation}~
-                              Sequential_Opt_PV3(i,  select_decis, decis_handles, all_spatial_id, der_spatial_id, all_sectors, der_sectors, stored_decis, stored_status, optDef, decis_switch, aggreg_level) {Runs the optimization and assigns best fit coefficients to the stored coefficients, but only if there are spatial IDs that have failed the goodness of fit test}~
-                             )  ~
+                    THEN Sequential_Opt_PV3(i,  select_decis, decis_handles, all_spatial_id, der_spatial_id, all_sectors, der_sectors, stored_decis, stored_status, optDef, decis_switch, aggreg_level) {Runs the optimization and assigns best fit coefficients to the stored coefficients, but only if there are spatial IDs that have failed the goodness of fit test}~
                     ELSE Null;~
 			IF i=1 THEN Set_Starting_Coeff2(all_sectors, der_sectors, all_spatial_id, der_spatial_id, stored_decis, stored_status, aggreg_level); {Sets starting coefficients for all spatial IDs to the value just calculated for the aggregate spatial ID that will be used for setting default coefficients. }~
 			(der_spatial_id:=Subset(@origIDs<>aggreg_level)); {Selects all non-aggregated spatial IDs. STILL NECESSARY?}~
@@ -1397,7 +1396,7 @@ Index stage:=CopyIndex(select_stages);~
 (decis_in_opt:=@all_decis > 0);   {Select all decision variables again so that model can be manually forced to use decision variables by simply checking the box}
 NodeLocation: 400,440,1
 NodeSize: 64,40
-WindState: 2,307,-19,1655,922
+WindState: 2,6,1,1655,922
 NodeColor: 65535,1,1
 DisplayOutputs: Decision Dates_Incl_in_PV_Opt, Decision Opt_Settings_PV
 
