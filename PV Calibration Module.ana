@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model PV_Calibration1 at 19-Mar-2019 5:37:41 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model PV_Calibration1 at 19-Mar-2019 10:10:43 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -15,7 +15,7 @@ Description: Fu4()
 Author: Cory Welch
 Date: Fri, Jun 22, 2018 10:48 AM
 SaveAuthor: JamesMilford
-SaveDate: Tue, Mar 19, 2019 5:37 PM
+SaveDate: Tue, Mar 19, 2019 10:10 PM
 DefaultSize: 64,40
 NodeSize: 72,64
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
@@ -937,13 +937,13 @@ NodeInfo: 1,0,0,0,0,0,0,125,0,,0,,,0
 Original: PV_Calibration_End
 
 Index Time_PV_Calibration
-Att_PrevIndexValue: [1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018]
 Title: Time PV Calibration
 Definition: Sequence(PV_Calibration_Start, PV_Calibration_End,step: Timestep_Months[Timestep_Options=PV_Data_dT_Choice],dateUnit: 'M')
 NodeLocation: 848,176,1
 NodeSize: 64,40
 ValueState: 2,76,132,334,354,,MIDM
 DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
+Att_PrevIndexValue: [1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018]
 
 Constant PV_OptSettings_byStg
 Title: PV Opt Settings by Stage
@@ -2070,7 +2070,6 @@ NodeSize: 64,40
 ValueState: 2,631,354,702,381,,MIDM
 
 Decision Opt_Settings_PV
-Att_PrevIndexValue: ['Multistart','MaxTime']
 Title: Opt Settings PV
 Description: Settings for the PV optimization engine. ~
 ~
@@ -2085,6 +2084,7 @@ DefnState: 2,789,495,596,188,0,DFNM
 Aliases: FormNode Fo1535066203
 DisplayInputs: Function Multi_Stage_Calibrat
 {!40700|Att_CellFormat: CellSpan(Opt_Settings_PV,CellAlignment('Center'),2,header:0)}
+Att_PrevIndexValue: ['Multistart','MaxTime']
 
 FormNode Fo1535066203
 Title: Opt Settings EVs
@@ -2120,7 +2120,7 @@ Units: normally unchecked
 Description: The normal value for this box is UNCHECKED. ~
 ~
 Only check this box to use Decision Variables, rather than the stored coefficients, in running the model. This box must be checked to run the optimization of coefficients, and the scripts for running the optimization automatically check this box and then un-check it after the optimization is complete, so that the stored results of the optimization are used in running the model forecast.
-Definition: Checkbox(1)
+Definition: Checkbox(0)
 NodeLocation: 880,360,1
 NodeSize: 64,40
 WindState: 2,20,81,1176,579
@@ -2364,13 +2364,13 @@ ValueState: 2,24,267,416,566,,MIDM
 ReformVal: [PV_Sectors,PV_Spatial_ID]
 
 Index All_PV_Constraints
-Att_PrevIndexValue: ['PV Slope','PV Final Cumulative']
 Title: All PV Constraints
 Description: List of all possible PV constraints for the calibration
 Definition: ['PV Slope','PV Final Cumulative']
 NodeLocation: 808,112,1
 NodeSize: 64,40
 ValueState: 2,2020,154,658,303,,MIDM
+Att_PrevIndexValue: ['PV Slope','PV Final Cumulative']
 
 Index Selected_PV_Constrai
 Title: Selected PV Constraints
@@ -2447,11 +2447,11 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: PV_Constraints_by_St
 
 Index Tolerance_Input
-Att_PrevIndexValue: ['Slope Tolerance %','Final Cumulative %']
 Title: Tolerance Input
 Definition: ['Slope Tolerance %','Final Cumulative %']
 NodeLocation: 1080,112,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Slope Tolerance %','Final Cumulative %']
 
 Constant PV_Tolerance_by_Stag
 Title: PV Tolerance by Stage
