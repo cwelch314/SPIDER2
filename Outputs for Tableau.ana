@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Outputs_for_Tableau at 19-Mar-2019 10:28:35 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Outputs_for_Tableau at 19-Mar-2019 10:55:55 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Outputs for Tableau
 Author: JamesMilford
 Date: Tue, Nov 13, 2018 7:23 PM
 SaveAuthor: JamesMilford
-SaveDate: Tue, Mar 19, 2019 10:28 PM
+SaveDate: Tue, Mar 19, 2019 10:55 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
@@ -547,9 +547,9 @@ Aliases: FormNode Fo1544456700, FormNode Fo1552937206
 GraphSetup: Att_GraphValueRange PV_Cumulative:1,,,,,0
 ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [Spatial_ID,PV_Sectors]
+Att__TotalsIndex: [Spatial_ID]
 Att_GraphTemplate: Lumidyne_Template
-Att_ResultSliceState: [Spatial_ID,0,PV_Sectors,0,Act_vs_Sim,2,Output_Periods,1]
+Att_ResultSliceState: [Spatial_ID,0,PV_Sectors,2,Act_vs_Sim,2,Output_Periods,1]
 
 Variable EV_Cumulative
 Title: EV Cumulative
@@ -576,13 +576,13 @@ Definition: Selected_Sequential_[Output_DER_Types=Solar_PV_Label, Sequential_Out
 NodeLocation: 1032,536,1
 NodeSize: 64,40
 WindState: 2,102,82,1095,453
-ValueState: 2,235,74,994,688,1,MIDM
+ValueState: 2,491,32,994,688,1,MIDM
 Aliases: FormNode Fo1544456702
 ReformVal: [Output_Periods,Act_vs_Sim]
 Att__TotalsIndex: [Spatial_ID]
 Att_GraphValueRange: 1,,,,,,10
 Att_GraphTemplate: Lumidyne_Template
-Att_ResultSliceState: [PV_Sectors,1,Spatial_ID,0,Installation_Types,1,Act_vs_Sim,2,Output_Periods,1]
+Att_ResultSliceState: [PV_Sectors,2,Spatial_ID,0,Act_vs_Sim,2,Output_Periods,1]
 
 Variable Cumulative_EV_Stock
 Title: Cumulative EV Stock
@@ -4158,12 +4158,12 @@ Original: Cumul_MW_Delta_Label
 Close Deltas_from_Base_Per
 
 Index Output_DER_Types
+Att_PrevIndexValue: ['Solar PV','Electric Vehicles']
 Title: Output DER Types
 Definition: Subset(DER_Types_to_Output)
 NodeLocation: 888,1288,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 237,56}
-Att_PrevIndexValue: ['Solar PV','Electric Vehicles']
 
 Decision DER_Types_to_Output
 Title: DER Types to Output
