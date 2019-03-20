@@ -1,4 +1,4 @@
-{ From user coryw, Model Outputs_for_Tableau at 18-Mar-2019 7:01:16 PM, encoding="UTF-8" }
+{ From user coryw, Model Outputs_for_Tableau at 19-Mar-2019 11:48:42 AM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Outputs for Tableau
 Author: JamesMilford
 Date: Tue, Nov 13, 2018 7:23 PM
 SaveAuthor: coryw
-SaveDate: Mon, Mar 18, 2019 7:01 PM
+SaveDate: Tue, Mar 19, 2019 11:48 AM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
@@ -59,7 +59,7 @@ Author: JamesMilford
 Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 736,792,1
 NodeSize: 64,40
-DiagState: 2,21,58,1758,654,17
+DiagState: 2,33,68,1758,654,17
 
 Variable Cumulative_Data_Plus
 Title: Cumulative Data Plus
@@ -452,19 +452,19 @@ Definition: CopyIndex(Flat_Sequential_Data.Col)
 NodeLocation: 1352,176,1
 NodeSize: 64,40
 ValueState: 2,11,87,1013,488,0,MIDM
-Att_PrevIndexValue: [Output_DER_Types,All_Sectors,Output_Periods,Act_vs_Sim,Spatial_ID,'Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
+Att_PrevIndexValue: [Output_DER_Types,All_Sectors,PV_Cost_Scenario,Output_Periods,Act_vs_Sim,Spatial_ID,'Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 
 Index Sequential_Order_Num
 Title: Sequential Order Number
 Definition: 1..Size(Sequential_Columns)
 NodeLocation: 1352,88,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9]
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10]
 
 Decision Order_of_Seq_Cols
 Title: Order of Sequential Columns
 Description: Specify the order in which columns will appear in the output results for sequential (historic then simulated) results.
-Definition: Table(Sequential_Columns)(Choice(Sequential_Order_Num,2,0),Choice(Sequential_Order_Num,3,0),Choice(Sequential_Order_Num,5,0),Choice(Sequential_Order_Num,4,0),Choice(Sequential_Order_Num,1,0),Choice(Sequential_Order_Num,6,0),Choice(Sequential_Order_Num,7,0),Choice(Sequential_Order_Num,8,0),Choice(Sequential_Order_Num,9,0))
+Definition: Table(Sequential_Columns)(Choice(Sequential_Order_Num,2,0),Choice(Sequential_Order_Num,3,0),Choice(Sequential_Order_Num,1,0),Choice(Sequential_Order_Num,5,0),Choice(Sequential_Order_Num,4,0),Choice(Sequential_Order_Num,1,0),Choice(Sequential_Order_Num,6,0),Choice(Sequential_Order_Num,7,0),Choice(Sequential_Order_Num,8,0),Choice(Sequential_Order_Num,9,0))
 NodeLocation: 1408,432,1
 NodeSize: 64,40
 DefnState: 2,12,315,501,447,0,DFNM
@@ -576,13 +576,13 @@ Definition: Selected_Sequential_[Output_DER_Types=Solar_PV_Label, Sequential_Out
 NodeLocation: 1032,536,1
 NodeSize: 64,40
 WindState: 2,102,82,1095,453
-ValueState: 2,235,74,994,688,1,MIDM
+ValueState: 2,627,59,994,688,1,MIDM
 Aliases: FormNode Fo1544456702
-ReformVal: [Output_Periods,Act_vs_Sim]
-Att__TotalsIndex: [Spatial_ID]
+ReformVal: [Output_Periods,PV_Cost_Scenario]
+Att__TotalsIndex: [Act_vs_Sim,Spatial_ID]
 Att_GraphValueRange: 1,,,,,,10
 Att_GraphTemplate: Lumidyne_Template
-Att_ResultSliceState: [PV_Sectors,1,Spatial_ID,0,Installation_Types,1,Act_vs_Sim,2,Output_Periods,1]
+Att_ResultSliceState: [PV_Sectors,1,Spatial_ID,0,Act_vs_Sim,0,PV_Cost_Scenario,1,Output_Periods,1]
 
 Variable Cumulative_EV_Stock
 Title: Cumulative EV Stock
@@ -3702,19 +3702,19 @@ NodeSize: 64,40
 ValueState: 2,2085,28,1474,742,,MIDM
 
 Index Delta_Columns
+Att_PrevIndexValue: [Delta_Output_Periods,Output_DER_Types,All_Sectors,Installation_Type,Act_vs_Sim,Spatial_ID,'Cumulative MW-AC (Delta)']
 Title: Delta Columns
 Definition: CopyIndex(Flat_Delta_Data.Col)
 NodeLocation: 896,256,1
 NodeSize: 64,40
 ValueState: 2,11,87,416,303,,MIDM
-Att_PrevIndexValue: [Delta_Output_Periods,Output_DER_Types,All_Sectors,Installation_Type,Act_vs_Sim,Spatial_ID,'Cumulative MW-AC (Delta)']
 
 Index Delta_Order_Number
+Att_PrevIndexValue: [1,2,3,4,5,6,7]
 Title: Delta Order Number
 Definition: 1..Size(Delta_Columns)
 NodeLocation: 896,168,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6,7]
 
 Decision Order_of_Delta_Colum
 Title: Order of Delta Columns
@@ -4158,12 +4158,12 @@ Original: Cumul_MW_Delta_Label
 Close Deltas_from_Base_Per
 
 Index Output_DER_Types
+Att_PrevIndexValue: ['Solar PV','Electric Vehicles']
 Title: Output DER Types
 Definition: Subset(DER_Types_to_Output)
 NodeLocation: 888,1288,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 237,56}
-Att_PrevIndexValue: ['Solar PV','Electric Vehicles']
 
 Decision DER_Types_to_Output
 Title: DER Types to Output
@@ -5296,19 +5296,19 @@ NodeSize: 64,40
 ValueState: 2,1612,25,1474,742,,MIDM
 
 Index Allocation_Columns
+Att_PrevIndexValue: [Output_DER_Types,CEC_Forecast_Years,Spatial_ID,'Value']
 Title: Allocation Columns
 Definition: CopyIndex(Flat_Allocation_Data.Col)
 NodeLocation: 1232,264,1
 NodeSize: 64,40
 ValueState: 2,11,87,416,303,,MIDM
-Att_PrevIndexValue: [Output_DER_Types,CEC_Forecast_Years,Spatial_ID,'Value']
 
 Index Allocation_Order_Num
+Att_PrevIndexValue: [1,2,3,4]
 Title: Allocation Order Number
 Definition: 1..Size(Allocation_Columns)
 NodeLocation: 1232,176,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4]
 
 Decision Order_of_Alloc_Cols
 Title: Order of Allocation Columns
@@ -5518,7 +5518,7 @@ Decision Select_Data_Export_T
 Title: Select Data Export Type
 Description: Used by export scripts to determine which data should be exported.~
 Choice(Output_Data_Type,1,0)
-Definition: Choice(Output_Data_Type,2,0)
+Definition: Choice(Output_Data_Type,1,0)
 NodeLocation: 1480,888,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552601603
