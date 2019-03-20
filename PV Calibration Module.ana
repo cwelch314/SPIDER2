@@ -1,4 +1,4 @@
-{ From user coryw, Model PV_Calibration1 at 18-Mar-2019 8:00:20 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model PV_Calibration1 at 19-Mar-2019 10:55:56 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -14,8 +14,8 @@ Title: Calibration
 Description: Fu4()
 Author: Cory Welch
 Date: Fri, Jun 22, 2018 10:48 AM
-SaveAuthor: coryw
-SaveDate: Mon, Mar 18, 2019 8:00 PM
+SaveAuthor: JamesMilford
+SaveDate: Tue, Mar 19, 2019 10:55 PM
 DefaultSize: 64,40
 NodeSize: 72,64
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
@@ -211,8 +211,8 @@ NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,2659,9,1046,774,17
 
-Decision Select_PV_Decisions
-Title: Select PV Decision Vars
+Decision PV_Decis_Vars_in_Opt
+Title: PV Decision Vars in Opt
 Description: The decision variables considered in the current PV optimization. Certain functions called by the optimization routine will automatically change these selections.
 Definition: Table(All_PV_Decisions)(Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1))
 NodeLocation: 96,352,1
@@ -226,13 +226,14 @@ TableCellDefault: Checkbox(1)
 Index Selected_PV_Decision
 Title: Selected PV Decision Variables
 Description: The handles to decision variables selected for the current optimization.
-Definition: INDEX selectDecisions:=Subset(Select_PV_Decisions);~
+Definition: INDEX selectDecisions:=Subset(PV_Decis_Vars_in_Opt);~
 CopyIndex(Handles_for_PV_Decis[All_PV_Decisions=selectDecisions])
 NodeLocation: 256,64,1
 NodeSize: 64,40
 WindState: 2,425,97,720,350
-ValueState: 2,1969,376,332,309,,MIDM
+ValueState: 2,1969,376,332,309,0,MIDM
 Aliases: Alias Al1542407785
+DisplayOutputs: Function OG_Multi_Stage_Calib
 MetaOnly: 1
 
 FormNode Fo1535066211
@@ -241,41 +242,45 @@ Definition: 0
 NodeLocation: 104,396,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Select_PV_Decisions
+Original: PV_Decis_Vars_in_Opt
 
 Variable Include_Ad_Effect
 Title: Include Ad Effect
 Units: binary
 Description: This node evaluates to 1.0 if the Ad Effectiveness decision variable is selected to be included in the optimization, and to 0.0 otherwise.
-Definition: Select_PV_Decisions[All_PV_Decisions=PVAdEff_Label];
+Definition: PV_Decis_Vars_in_Opt[All_PV_Decisions=PVAdEff_Label];
 NodeLocation: 256,176,1
 NodeSize: 64,40
 WindState: 2,2240,72,720,350
+DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
 
 Variable Include_Start_WOM
 Title: Include Start WOM
 Units: binary
 Description: This node evaluates to 1.0 if the Word of Mouth decision variable is selected to be included in the optimization, and to 0.0 otherwise.
-Definition: Select_PV_Decisions[All_PV_Decisions=PVStartWOM_Label];
+Definition: PV_Decis_Vars_in_Opt[All_PV_Decisions=PVStartWOM_Label];
 NodeLocation: 256,272,1
 NodeSize: 64,40
+DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
 
 Variable Include_LRMS
 Title: Include LRMS
 Units: binary
 Description: This node evaluates to 1.0 if the long run market share decision variable is selected to be included in the optimization, and to 0.0 otherwise.
-Definition: Select_PV_Decisions[All_PV_Decisions=PVLRMS_Label];
+Definition: PV_Decis_Vars_in_Opt[All_PV_Decisions=PVLRMS_Label];
 NodeLocation: 256,368,1
 NodeSize: 64,40
 WindState: 2,102,82,720,350
+DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
 
 Variable Include_End_WOM
 Title: Include End WOM
 Units: binary
 Description: This node evaluates to 1.0 if the ending word-of-mouth decision variable is selected to be included in the optimization, and to 0.0 otherwise.
-Definition: Select_PV_Decisions[All_PV_Decisions=PVEndWOM_Label];
+Definition: PV_Decis_Vars_in_Opt[All_PV_Decisions=PVEndWOM_Label];
 NodeLocation: 256,464,1
 NodeSize: 64,40
+DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
 
 Constant PV_Dec_Var_Bounds
 Title: PV Dec Var Bounds
@@ -460,9 +465,10 @@ Variable IncludeLogitPrice_Co
 Title: IncludeLogitPrice Coeff
 Units: binary
 Description: This node evaluates to 1.0 if the decision variable is selected to be included in the optimization, and to 0.0 otherwise.
-Definition: Select_PV_Decisions[All_PV_Decisions=PVLogitPriceCoef_Lab];
+Definition: PV_Decis_Vars_in_Opt[All_PV_Decisions=PVLogitPriceCoef_Lab];
 NodeLocation: 256,560,1
 NodeSize: 80,40
+DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
 
 Variable PV_PriceCoef_Lwr_Bnd
 Title: PV PriceCoef Lwr Bnd
@@ -500,9 +506,10 @@ Variable IncludeLogSpatial_Co
 Title: IncludeLogSpatial Coeff
 Units: binary
 Description: This node evaluates to 1.0 if the decision variable is selected to be included in the optimization, and to 0.0 otherwise.
-Definition: Select_PV_Decisions[All_PV_Decisions=PVLogSpatCoef_Label];
+Definition: PV_Decis_Vars_in_Opt[All_PV_Decisions=PVLogSpatCoef_Label];
 NodeLocation: 256,656,1
 NodeSize: 80,40
+DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
 
 Variable PVLogSpatCoef_Lwr_Bn
 Title: PVLogSpatCoef Lwr Bnd
@@ -540,9 +547,10 @@ Variable IncludeLogTech_Coeff
 Title: IncludeLogTech Coeff
 Units: binary
 Description: This node evaluates to 1.0 if the decision variable is selected to be included in the optimization, and to 0.0 otherwise.
-Definition: Select_PV_Decisions[All_PV_Decisions=PVLogTechCoef_Label];
+Definition: PV_Decis_Vars_in_Opt[All_PV_Decisions=PVLogTechCoef_Label];
 NodeLocation: 256,752,1
 NodeSize: 72,40
+DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
 
 Variable PVLogTechCoef_Lwr_Bn
 Title: PVLogTechCoef Lwr Bnd
@@ -651,10 +659,11 @@ Variable Include_Payback_Spat
 Title: Include Payback Spat Coeff
 Units: binary
 Description: This node evaluates to 1.0 if the decision variable is selected to be included in the optimization, and to 0.0 otherwise.
-Definition: Select_PV_Decisions[All_PV_Decisions=PVPaybkCoef_Spat_Lab];
+Definition: PV_Decis_Vars_in_Opt[All_PV_Decisions=PVPaybkCoef_Spat_Lab];
 NodeLocation: 256,856,1
 NodeSize: 64,40
 WindState: 2,102,82,720,478
+DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
 
 Variable PV_PaybkSpCoef_Lwr_B
 Title: PV PaybkSpCoef Lwr Bnd
@@ -707,9 +716,10 @@ Aliases: FormNode Fo1542129973
 
 Variable Include_Payback_Coef
 Title: Include Payback Coeff
-Definition: Select_PV_Decisions[All_PV_Decisions=PV_PybkCoef_Label];
+Definition: PV_Decis_Vars_in_Opt[All_PV_Decisions=PV_PybkCoef_Label];
 NodeLocation: 256,960,1
 NodeSize: 64,40
+DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
 
 Variable PV_PaybkCoef_Upr_Bn1
 Title: PV PaybkCoef Upr Bnd
@@ -737,7 +747,7 @@ Date: Sun, Aug 5, 2018 8:27 AM
 NodeLocation: 120,112,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,50,34,1730,697,17
+DiagState: 2,77,5,1730,743,17
 
 Button CALIBRATE
 Title: CALIBRATE One Sector
@@ -749,40 +759,46 @@ Step 2: .....
 NodeLocation: 984,528,1
 NodeSize: 72,32
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
-WindState: 2,102,82,1000,391
+WindState: 2,27,233,1902,588
 Aliases: Alias Al1543514124
 NodeColor: 49344,49344,49344
 NodeFont: Calibri,24
 OnClick: {Check_Calib_Dimensio(Indexes_of_Sim_vs_Ac,Required_Indexes_of_); }{checks to ensure extra dimensions are not contained in the output used for calibration, which would increase the dimensionality of stored coefficients}~
-Check_Stage_1(); {checks whether all spatial IDs are selected if stage 1 is included in the calibration}~
-Multi_Stage_Calibra3()
+Check_Stage_1(PV_Spatial_ID, Spatial_ID, Stages_to_Calibrate); {checks whether all spatial IDs are selected if stage 1 is included in the calibration}~
+Multi_Stage_Calibrat(Stages_to_Calibrate, PV_Calibration_Stage, All_Spatial_ID, Failed_Spat_ID, Time_PV_Calibration, Time_Solar_PV, Selected_PV_Decision, All_PV_Decisions, All_PV_Dec_Handles, All_Sectors, Use_Trace_Log, PV_Calibration_Start, PV_Calibration_End, PV_Dates_Incl_by_Stg, PV_Decisions_by_Stg, PV_OptSettings_byStg, Ag_Level_for_PV_Coef, PV_Spatial_ID, PV_Sectors, Current_Stage, PV_Sim_Start_Year, PV_Sim_End_Year, Use_PV_Decision_Var, Dates_Incl_in_PV_Opt, PV_Decis_Vars_in_Opt, Stored_PV_Dec_Vars, Opt_Settings_PV, Stored_Opt_Status_PV, Handle(Optimization_PV))
 
 Button Set_Spatial_ID_to_Fa
 Title: Set Spatial ID to Failed Calib
 NodeLocation: 984,448,1
 NodeSize: 72,32
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
+WindState: 2,675,5,720,350
 Aliases: Alias Al1543514125
 NodeColor: 49344,49344,49344
 NodeFont: Calibri,19
-OnClick: Check_Sector_PV(); {checks to ensure only only sector is selected}~
+OnClick: Check_Sector(All_Sectors, PV_Sectors); {checks to ensure only only sector is selected}~
 {Check_Calib_Dimensio( Indexes_of_Sim_vs_Ac, Required_Indexes_of_);} {checks to ensure extra dimensions are not contained in the output used for calibration, which would increase the dimensionality of stored coefficients}~
 {Check_Cost_Scenario(); }{checks to ensure only one cost scenario is selected}~
 (Current_Stage:=2); {sets current stage to 2 so that the R^2 calculations vary by spatial ID, since stage 1 is an aggregate calculation}~
 IF size(Failed_Spat_ID)<>0 ~
 THEN (PV_Spatial_ID:=Failed_Spat_ID)
 
-Function Check_Sector_PV()
+Function Check_Sector(all_sectors: Index; der_sectors: Variable)
 Title: Check Sector
-Description: This function checks to ensure that only one sector is chosen at a time when attempting to run the parameter calibration scripts. If more than one is selected, it returns an error message with instructions to only select one at a time.
+Description: This function checks to ensure that only one sector is chosen at a time when attempting to run the parameter calibration scripts. If more than one is selected, it returns an error message with instructions to only select one at a time.~
+~
+[all_sectors]: the index for all sectors.~
+[der_sectors]: the sector index for the DER considered in the calibration.
 Definition: var x:=[];~
-IF size(PV_Sectors)>1 THEN ~
-	((x:=AskMsgChoice('Please select only one sector using the "PV Sectors" input setting before attempting to calibrate diffusion parameters.','Sector Selector Message', All_Sectors,All_Sectors[@All_Sectors=1],False,False));~
-	(PV_Sectors := x))~
+VAR ind_title:=Title of der_sectors;~
+IF size(der_sectors)>1 THEN ~
+	((x:=AskMsgChoice('Please select only one sector using the "' & der_sectors & '" input setting before attempting to calibrate diffusion parameters.','Sector Selector Message', all_sectors, all_sectors[@all_sectors=1],False,False));~
+	(der_sectors := x))~
 
 NodeLocation: 264,528,1
 NodeSize: 64,40
-WindState: 2,108,115,1335,651
+WindState: 2,171,237,1335,651
+DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 
 Function Check_PV_LRMS_Scen()
 Title: Check PV LRMS Scenario
@@ -805,7 +821,7 @@ IF size(PV_Spatial_ID)>1 THEN ~
 
 NodeLocation: 128,440,1
 NodeSize: 64,40
-WindState: 2,102,82,929,350
+WindState: 2,36,127,929,350
 
 Variable Qty_Fail_Spat_ID_PV
 Title: Qty of Failed Spatial IDs
@@ -814,6 +830,7 @@ Definition: sum(R2_Fails_PV[@PV_Sectors=1],PV_Spatial_ID)
 NodeLocation: 688,304,1
 NodeSize: 64,40
 WindState: 2,524,317,720,350
+DisplayOutputs: Function MultiStage_CalibrPV0
 
 Index PV_Calibration_Stage
 Title: PV Calibration Stage
@@ -821,6 +838,7 @@ Definition: 1..Maximum_PV_Calibrati
 NodeLocation: 720,176,1
 NodeSize: 64,40
 ValueState: 2,792,295,416,303,,MIDM
+DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 Att_PrevIndexValue: [1,2,3,4,5]
 
 Constant PV_Decisions_by_Stg
@@ -844,6 +862,7 @@ DefnState: 2,764,255,658,291,0,DFNM
 ValueState: 2,2228,362,870,303,,MIDM
 Aliases: FormNode Fo9, FormNode Fo1535066242
 ReformDef: [PV_Calibration_Stage,All_PV_Decisions]
+DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 TableCellDefault: checkbox(0)
 
 FormNode Fo1535066242
@@ -865,9 +884,10 @@ Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox
 Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
 NodeLocation: 264,64,1
 NodeSize: 64,40
-DefnState: 2,637,79,723,877,0,DFNM
+DefnState: 2,761,-18,723,877,0,DFNM
 Aliases: FormNode Fo1535660189, FormNode Fo1535066243
 ReformDef: [PV_Calibration_Stage,0]
+DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 TableCellDefault: Checkbox(1)
 
 FormNode Fo1535066243
@@ -885,6 +905,7 @@ Definition: Choice(PV_Sim_Strt_Yr_Opt,37,0)
 NodeLocation: 112,176,1
 NodeSize: 64,40
 Aliases: FormNode Fo1542054649, FormNode Fo1535066244
+DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 {!40200|Att_ChoiceIndexes: Index PV_Sim_Strt_Yr_Opt}
 
 FormNode Fo1535066244
@@ -902,6 +923,7 @@ Definition: Choice(PV_Sim_End_Yr_Option,116,0)
 NodeLocation: 256,176,1
 NodeSize: 64,40
 Aliases: FormNode Fo1542054650, FormNode Fo1535066245
+DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 {!40200|Att_ChoiceIndexes: Index PV_Sim_End_Yr_Option}
 
 FormNode Fo1535066245
@@ -913,12 +935,13 @@ NodeInfo: 1,0,0,0,0,0,0,125,0,,0,,,0
 Original: PV_Calibration_End
 
 Index Time_PV_Calibration
+Att_PrevIndexValue: [1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018]
 Title: Time PV Calibration
 Definition: Sequence(PV_Calibration_Start, PV_Calibration_End,step: Timestep_Months[Timestep_Options=PV_Data_dT_Choice],dateUnit: 'M')
 NodeLocation: 848,176,1
 NodeSize: 64,40
 ValueState: 2,76,132,334,354,,MIDM
-Att_PrevIndexValue: [1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018]
+DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 
 Constant PV_OptSettings_byStg
 Title: PV Opt Settings by Stage
@@ -931,6 +954,7 @@ NodeSize: 64,40
 WindState: 2,102,82,720,541
 DefnState: 2,644,333,556,180,0,DFNM
 Aliases: FormNode Fo1535602755, FormNode Fo1535066246
+DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 TableCellDefault: PV_OptSetting_Deflt
 
 FormNode Fo1535066246
@@ -941,14 +965,19 @@ NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: PV_OptSettings_byStg
 
-Function Set_Spat_ID_Fail_R2_()
+Function Set_Spat_ID_Fail_R2(failed_id: Index; der_spatial_id: Variable)
 Title: Set Spat ID Fail R2 or Infeas
-Description: Sets the Multichoice selector on Selected Spatial ID to all Spatial IDs that failed the goodness of fit R^2 test, or if a spatial ID has not yet returned a feasible solution from the optimization.
-Definition: IF size(Failed_Spat_ID)<>0 ~
-THEN (PV_Spatial_ID:=Failed_Spat_ID)
+Description: Sets the Multichoice selector on Selected Spatial ID to all Spatial IDs that failed the goodness of fit R^2 test, or if a spatial ID has not yet returned a feasible solution from the optimization.~
+~
+[failed_id]: the spatial IDs that failed the goodness of fit test.~
+[der_spatial_id]: the spatial ID index used for the DER considered in the calibration.
+Definition: IF size(failed_id)<>0 ~
+THEN (der_spatial_id:=failed_id)~
+ELSE Null
 NodeLocation: 264,440,1
 NodeSize: 64,40
-WindState: 2,485,178,951,499
+WindState: 2,118,70,951,499
+DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 
 Index Spatial_ID_PV
 Title: Spatial ID PV
@@ -984,6 +1013,7 @@ NodeLocation: 544,304,1
 NodeSize: 64,40
 WindState: 2,325,429,720,350
 Aliases: FormNode Fo1542064848, Alias Al1542089624, FormNode Fo1542096039, FormNode Fo1544581665
+DisplayOutputs: Function OG_Multi_Stage_Calib
 {!40200|Att_ChoiceIndexes: Index PV_Sim_Strt_Yr_Optio}
 
 FormNode Fo1542064848
@@ -1002,13 +1032,14 @@ NodeLocation: 400,176,1
 NodeSize: 64,40
 WindState: 2,-22,397,720,350
 
-Decision Element_for_Storing_
-Title: Element for Storing Aggregate PV Coeff
-Description: Select which element you wish to use to store the "aggregate" pv calibration coefficietns. 
+Decision Ag_Level_for_PV_Coef
+Title: Ag Level for PV Coeff
+Description: Select which element you wish to use to store the "aggregate" pv calibration coefficients.
 Definition: Choice(All_Spatial_ID,2,0)
 NodeLocation: 112,296,1
 NodeSize: 64,40
 Aliases: FormNode Fo1542127131
+DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
 {!40200|Att_ChoiceIndexes: Index All_Spatial_ID}
 
 FormNode Fo1542127131
@@ -1017,15 +1048,17 @@ Definition: 0
 NodeLocation: 120,340,1
 NodeSize: 80,20
 NodeInfo: 1,0,0,0,0,0,0,117,0,,0,,,
-Original: Element_for_Storing_
+Original: Ag_Level_for_PV_Coef
 
 Index Stages_to_Calibrate
 Title: Stages to Calibrate
 Description: This input allows you to run only certain stages of the multi-stage calibration. For instance, if you've already run stage 1, you need not re-run that stage if you want to keep those coefficients and only focus on subsequent stages for each spatial ID
-Definition: MultiChoice(PV_Calibration_Stage,5,returnList:1)
+Definition: MultiChoice(PV_Calibration_Stage,returnList:1)
 NodeLocation: 856,64,1
 NodeSize: 64,40
+WindState: 2,104,268,720,350
 Aliases: FormNode Fo1542155941, FormNode Fo1542155775
+DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 {!40200|Att_ChoiceIndexes: Index PV_Calibration_Stage}
 
 FormNode Fo1542155775
@@ -1036,29 +1069,214 @@ NodeSize: 60,20
 NodeInfo: 1,0,0,0,0,0,0,78,0,,0,,,
 Original: Stages_to_Calibrate
 
+Function Sequential_Opt(stage: Atom; select_decis, decis_handles, all_spatial_id, der_spatial_id, all_sectors: Index; aggreg_level; der_sectors, stored_decis, stored_status, decis_switch: Variable; optDef_handle: Handle)
+Title: Sequential Optimization
+Description: This function is called by a button script and sequentially optimizes each selected spatial ID's diffusion coefficients. This sequential operation facilitates interruption of the script during the optimization, if desired, and stores each value after its optimization, to avoid losing any coefficients already calculated (e.g., in the event of an abort of the optimization). It only walks through each selected spatial ID relevant to that DER. A separate function is called for the "aggregate calibration" step, which differs by DER. This function can be used for any DER. ~
+~
+[stage]: the current stage of the multistage calibration being called (an integer).~
+[select_decis]: an index of the handles to only the decision variables used in this particular optimization (which can be a subset of all possible decision variables).~
+[decis_handles]: an index of the handles of all possible decision variables in the optimization.~
+[all_spatial_id]: the index of all spatial IDs.~
+[der_spatial_id]: the spatial ID index used for the DER considered in the calibration.~
+[all_sectors]: the index for all sectors.~
+[aggreg_level]: the label within the spatial ID index indicating the appropriate level of aggregation for the first stage of the calibration.~
+[der_sectors]: the sector index for the DER considered in the calibration.~
+[stored_decis]: the node where calibrated decision variables will be stored.~
+[stored_status]: the node where the optimization status will be stored.~
+[decis_switch]: a boolean flag indicating whether decision nodes or stored results will be used in the model logic (true=use decision nodes).~
+[optDef]: the handle to the variable where the optimization is defined.
+Definition: (decis_switch:=1); {Ensures the optimization uses the actual decision variables when calculating the objective, rather than the stored coefficients}~
+Check_Sector(all_sectors, der_sectors);  {Checks to ensure only one sector is selected for the diffusion parameter calibration}~
+{Check_Cost_Scenario(); }{Checks to ensure only one cost scenario is selected for the diffusion parameter calibration}~
+~
+{assign local variables for use in the function}~
+local counter:=1;~
+local maxcount:=size(der_spatial_id);~
+local temp_stored_coeff:=stored_decis;~
+local status:=stored_status;~
+local solution :=0; {initializes a local variable storing an individual coefficient}~
+~
+{assign local indexes for use in the function}~
+Index orig_ID := IF stage = 1~
+   THEN CopyIndex([aggreg_level])~
+   ELSE CopyIndex(der_spatial_id);~
+~
+For i:=orig_ID DO~
+	(	ShowProgressBar('Parameter Optimization Status Bar', 'Calibration Stage: ' & stage & '.   Optimizing diffusion parameters for Spatial ID = ' & i & ':  Calculating ID # ' & counter & ' of ' & maxcount, p: ((counter - 0.01) / maxcount));~
+		~
+		{Updates the local variable's stored decision value to the optimized solution, only for the slice that is the current spatial ID}~
+		Local x[]:=select_decis DO~
+			(LocalAlias optDefn:=optDef_handle;   {Assign the result, rather than the handle, of the optimization definition to this local Alias}~
+                     solution := IgnoreWarnings(OptSolution(IF stage=1 THEN optDefn ELSE optDefn[der_spatial_id=i], x));~
+			 status[all_spatial_id=i, all_sectors=der_sectors[@der_sectors=1]] := OptStatusText(IF stage=1 THEN optDefn ELSE optDefn[der_spatial_id=i]);~
+			 IF solution <> null THEN temp_stored_coeff[decis_handles=x, all_spatial_id=i, all_sectors=der_sectors[@der_sectors=1]] := solution~
+			);~
+		(stored_decis:=temp_stored_coeff); {assigns the new solution for each spatial ID to ensure solutions are captured in the event of an abort}~
+		(stored_status := status); ~
+		counter:=counter+1;	 {increments a counter only for purposes of the ShowProgressBar calculation}~
+	);~
+~
+(decis_switch:=0); {Returns the value of this input to zero to ensure stored coefficients are used in model calculations}
+NodeLocation: 400,528,1
+NodeSize: 64,40
+WindState: 2,511,15,1167,738
+DisplayOutputs: Function OG_Multi_Stage_Calib
+
+Index All_PV_Dec_Handles
+Title: All PV Dec Handles
+Definition: CopyIndex(Handles_for_PV_Decis)
+NodeLocation: 992,64,1
+NodeSize: 64,40
+WindState: 2,480,227,720,505
+ValueState: 2,2404,182,416,303,,MIDM
+DisplayOutputs: Function OG_Multi_Stage_Calib
+MetaOnly: 1
+Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coefficie,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef]
+
+Alias Al1542407785
+Title: Selected PV Decision Variables
+Definition: 1
+NodeLocation: 1000,176,1
+NodeSize: 64,40
+Original: Selected_PV_Decision
+
+Alias Al1542407786
+Title: Handles for PV Decisions
+Definition: 1
+NodeLocation: 256,296,1
+NodeSize: 64,40
+Original: Handles_for_PV_Decis
+
+FormNode Fo1542407786
+Title: Select Decision Vars
+Definition: 0
+NodeLocation: 256,340,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Handles_for_PV_Decis
+
+Function Multi_Stage_Calibrat(select_stages, all_stages, all_spatial_id, failed_id, calib_time, sim_time, select_decis, all_decis, decis_handles, all_sectors: Index; trace_flag, calib_start, calib_end, dates_by_stage, decis_by_stage, setting_by_stage, aggreg_level; der_spatial_id, der_sectors, curr_stage, sim_start, sim_end, decis_switch, dates_in_opt, decis_in_opt, stored_decis, setting_in_opt, stored_status: Variable; optDef_handle: Handle)
+Title: Multi-Stage Calibration
+Description: This script specifies the multi-state sequence of calibration scripts as follows:~
+Step 1: start with calibrating the most aggregate data available (e.g., statewide, or service territory wide), using all historical dates (more data typically available at the aggregate level). Calculation diffusion coefficients (ad eff & WOM) for an assumed aggregate long run market share~
+~
+Step 2: .....~
+~
+[select_stages]: the calibration stages selected for the current calibration.~
+[all_stages]: an index of all the calibration stages, not just those selected for this calibration.~
+[all_spatial_id]: the index of all spatial IDs.~
+[failed_id]: the spatial IDs that failed the goodness of fit test.~
+[calib_time]: the calibration time index used for the DER considered in the calibration.~
+[sim_time]: the simulation time index used for the DER considered in the calibration.~
+[select_decis]: an index of handles to the decision variables selected for the optimization.~
+[all_decis]: an index of the names of all decision variables.~
+[decis_handles]: an index of handles to all decision variables that could be selected.~
+[all_sectors]: the index for all sectors.~
+[trace_flag]: a boolean flag indicating whether the model will write to trace log during the calibration/optimization process (true=write).~
+[calib_start]: the start period for the calibration time.~
+[calib_end]: the end period for the calibration time.~
+[dates_by_stage]: the dates that will be included in the objective function for each stage of the calibration.~
+[decis_by_stage]: the decisions that will be included in the optimization for each stage of the calibration.~
+[setting_by_stage]: the optimization engine settings for each stage of the calibration.~
+[aggreg_level]: the label within the spatial ID index indicating the appropriate level of aggregation for the first stage of the calibration.~
+[der_spatial_id]: the spatial ID index used for the DER considered in the calibration.~
+[der_sectors]: the sector index for the DER considered in the calibration.~
+[curr_stage]: the current stage being evaluated.~
+[sim_start]: the start period for the simulation time of the DER considered in the calibration.~
+[sim_end]: the end period for the simulation time of the DER considered in the calibration.~
+[decis_switch]: a boolean flag indicating whether decision nodes or stored results will be used in the model logic (true=use decision nodes).~
+[dates_in_opt]: the dates used in the current optimization.~
+[decis_in_opt]: the decisions that are used in the current optimization.~
+[stored_decis]: the node where calibrated decision variables will be stored.~
+[setting_in_opt]: the optimization engine settings applied to the current optimization.~
+[stored_status]: the node where the optimization status will be stored.~
+[optDef_handle]: the handle to the variable where the optimization is defined.
+Definition: IF (trace_flag AND size(select_stages)>1) THEN MsgBox('Optimization text trace is on. It will not work when optimizing more than one stage. Please turn it off and then re-run the calibration, or run only one stage.', 5, 'Optimization Trace Message' ) ;~
+INDEX origIDs:=CopyIndex(der_spatial_id);   {Temporarily store the selected IDs}~
+(sim_start:=calib_start); {Sets the start year for the simulation to the start time for the EV calibration}~
+(sim_end:=calib_end); {Sets the end year for the simulation to the end time for the EV calibration}~
+(decis_switch:=0); {Deselects the input that uses the decision variables in the model, so that R^2 failures can be calculated}~
+Index stage:=CopyIndex(select_stages);~
+~
+For i:=stage DO (~
+   (curr_stage:=i);   {Store the current stage in a global variable}~
+   (dates_in_opt:=dates_by_stage[all_stages=i, calib_time=sim_time]); {Selects all dates for use in the calibration}~
+   (decis_in_opt:=decis_by_stage[all_stages=i]); {Selects only those decision variables used in the given calibration stage}~
+   (setting_in_opt:=setting_by_stage[all_stages=i]); {Adjusts the optimization engine settings per the calibration stage}~
+   IF (size(failed_id)<>0 OR curr_stage=1 OR size(select_stages)=1) ~
+   THEN Sequential_Opt(i,  select_decis, decis_handles, all_spatial_id, der_spatial_id, all_sectors ,aggreg_level, der_sectors, stored_decis, stored_status, decis_switch, optDef_handle); {Runs the optimization and assigns best fit coefficients to the stored coefficients, but only if there are spatial IDs that have failed the goodness of fit test}~
+   IF i=1 THEN Set_Starting_Coeff(all_sectors, all_spatial_id, der_spatial_id, aggreg_level, der_sectors, stored_decis, stored_status); {Sets starting coefficients for all spatial IDs to the value just calculated for the aggregate spatial ID that will be used for setting default coefficients. }~
+   IF i>=2 THEN Set_Spat_ID_Fail_R2(failed_id, der_spatial_id); {Set the spatial ID selector to all spatial IDs that failed the goodness of fit test, except for the "aggregate" calibration and for the very first calibration (stage 2) of all spatial IDs}	~
+);~
+~
+(der_spatial_id:=CopyIndex(origIDs));   {Set the selected IDs back to their original values}~
+(decis_in_opt:=@all_decis > 0);   {Select all decision variables again so that model can be manually forced to use decision variables by simply checking the box}
+NodeLocation: 400,440,1
+NodeSize: 64,40
+WindState: 2,41,-1,1370,922
+DisplayOutputs: Decision Dates_Incl_in_PV_Opt, Decision Opt_Settings_PV
+
+Function Set_Starting_Coeff(all_sectors, all_spatial_id, der_spatial_id: Index; aggreg_level; der_sectors, stored_decis, stored_status: Variable)
+Title: Set Starting Coeff
+Description: This function sets the values of the starting coefficients for all Spatial IDs. This function is typically called AFTER calibrating aggregate adoption.~
+~
+This function must be called from within an optimization script to ensure that only one Sector & only one EV long run market share scenario are selected.~
+~
+[all_sectors]: the index for all sectors.~
+[all_spatial_id]: the index for all spatial IDs.~
+[der_spatial_id]: the spatial ID index used for the DER considered in the calibration.~
+[aggreg_level]: the label within the spatial ID index indicating the appropriate level of aggregation for the first stage of the calibration.~
+[der_sectors]: the sector index for the DER considered in the calibration.~
+[stored_decis]: the node where calibrated decision variables will be stored.~
+[stored_status]: the node where the optimization status will be stored.
+Definition: Check_Sector(all_sectors, der_sectors);~
+~
+local coeff:=stored_decis;~
+local status:=stored_status;~
+~
+local active_sector:=Slice(der_sectors,1);~
+~
+(coeff[all_sectors=active_sector, all_spatial_id=der_spatial_id]:=stored_decis[all_spatial_id=aggreg_level, all_sectors=active_sector]);~
+(status[all_sectors=active_sector, all_spatial_id=der_spatial_id]:='Not Yet Calibrated');~
+~
+(stored_decis:=coeff);~
+(stored_status:=status);~
+
+NodeLocation: 528,440,1
+NodeSize: 64,40
+WindState: 2,58,81,1322,764
+DisplayOutputs: Function OG_Multi_Stage_Calib
+
+Module OLD1
+Title: OLD
+Author: coryw
+Date: Mon, Nov 19, 2018 11:20 AM
+NodeLocation: 128,760,1
+NodeSize: 64,40
+
 Module Old
 Title: Old
 Author: coryw
 Date: Wed, Nov 14, 2018 4:10 PM
-NodeLocation: 264,760,1
+NodeLocation: 144,80,1
 NodeSize: 64,40
 
 Button Set_ID_to_FailR2_PV
 Title: Set Spatial ID Selected to Failed R2
 Description: Sets the Multichoice selector on Selected Spatial ID to all Spatial IDs that failed the goodness of fit R^2 test.
-NodeLocation: 112,64,1
+NodeLocation: 464,64,1
 NodeSize: 64,40
-WindState: 2,102,82,720,350
-OnClick: Set_Spat_ID_Fail_R2_()
+WindState: 2,32,478,720,350
+OnClick: Set_Spat_ID_Fail_R2(Failed_Spat_ID, PV_Spatial_ID)
 
-Function Sequential_Opt_PV(stage: optional number)
+Function Sequential_Opt_PV0(stage: optional number)
 Title: Sequential Optimization
 Description: This function is called by a button script and sequentially optimizes each selected spatial ID's diffusion coefficients. This sequential operation facilitates interruption of the script during the optimization, if desired, and stores each value after its optimization, to avoid losing any coefficients already calculated (e.g., in the event of an abort of the optimization). ~
 ~
 input stage = atomic, optional (which stage of the calibration, when running script from a multistage calibration script)~
 
 Definition: (Use_PV_Decision_Var:=1); {Ensures the optimization uses the actual decision variables when calculating the objective, rather than the stored coefficients}~
-Check_Sector_PV();  {Checks to ensure only one sector is selected for the diffusion parameter calibration}~
+Check_Sector();  {Checks to ensure only one sector is selected for the diffusion parameter calibration}~
 local AdEff := Stored_AdEff_PV;~
 local LRMS := Stored_LRMS_PV;~
 local WOM := Stored_WOM_PV;~
@@ -1073,7 +1291,7 @@ All_Stored_Coeffs_PV;  {Forces recompute of all stored decision variables}~
 local counter:=1;~
 Index orig_ID := CopyIndex(PV_Spatial_ID);~
 Index ID := IF stage = 1~
-   THEN CopyIndex([Element_for_Storing_])~
+   THEN CopyIndex([Ag_Level_for_PV_Coef])~
    ELSE CopyIndex(PV_Spatial_ID);~
 local maxcount:=size(ID);~
 ~
@@ -1115,9 +1333,10 @@ For i:=ID DO~
 (PV_Spatial_ID:=CopyIndex(orig_ID)); {sets the selected spatial ID back to its original value at the beginning of the optimization}~
 (Use_PV_Decision_Var:=0); {Returns the value of this input to zero to ensure stored coefficients are used in model calculations}~
 
-NodeLocation: 112,64,1
+NodeLocation: 608,288,1
 NodeSize: 64,40
 WindState: 2,124,16,1552,780
+DisplayInputs: Index All_Spatial_ID, Index All_Sectors, Variable Include_Ad_Effect, Variable Include_Start_WOM, Variable Include_LRMS, Variable Include_End_WOM, Variable IncludeLogitPrice_Co, Variable IncludeLogSpatial_Co, Variable IncludeLogTech_Coeff, Variable Include_Payback_Spat, Variable Include_Payback_Coef, Function Check_Sector, Decision Ag_Level_for_PV_Coef, Variable Optimization_PV, Variable Stored_AdEff_PV, Variable Stored_LRMS_PV, Variable Stored_WOM_PV, Variable Stored_End_WOM_PV, Variable All_Stored_Coeffs_PV, Constant Stored_Opt_Status_PV, Variable Stored_Spatial_Coeff, Variable Stored_Logit_Price_C, Variable Stored_Tech_Coeff, Variable Stored_Pybk_SpatCoef, Variable Stored_Payback_Coeff, Index PV_Sectors, Index PV_Spatial_ID
 
 Function Aggregate_Optimizati()
 Title: Aggregate Optimization
@@ -1128,9 +1347,9 @@ Description: This function is called by a button script and optimizes a single s
 ~
 
 Definition: (Use_PV_Decision_Var:=1); {Ensures the optimization uses the actual decision variables when calculating the objective, rather than the stored coefficients}~
-Check_Sector_PV();  {Checks to ensure only one sector is selected for the diffusion parameter calibration}~
+Check_Sector(All_Sectors, PV_Sectors);  {Checks to ensure only one sector is selected for the diffusion parameter calibration}~
 (Current_Stage:=1); {Sets current stage to 1 to ensure that the objective function sums over all selected PV spatial IDs}~
-(Select_PV_Decisions:= PV_Decisions_by_Stg[PV_Calibration_Stage=1]);  {assigns which decision variables are to be used in the aggregate calibration, which is the first stage of the optimization}~
+(PV_Decis_Vars_in_Opt:= PV_Decisions_by_Stg[PV_Calibration_Stage=1]);  {assigns which decision variables are to be used in the aggregate calibration, which is the first stage of the optimization}~
 Index orig_ID := CopyIndex(PV_Spatial_ID);  {temporarily stores the originally selected PV spatial ID elements, for re-assignment later}~
 (PV_Spatial_ID:=Spatial_ID_PV);  {Selects all non-aggregate spatial ID elements. This could be changed in the future if we want to use a different set of spatial IDs for the aggregate calibration step}~
 (Opt_Settings_PV:=PV_OptSettings_byStg[PV_Calibration_Stage=1]); {Adjusts the optimization engine settings per the calibration stage}~
@@ -1147,7 +1366,7 @@ local paybkSpatCoef := Stored_Pybk_SpatCoef;~
 local paybkCoef := Stored_Payback_Coeff;~
 local Status := Stored_Opt_Status_PV;~
 All_Stored_Coeffs_PV;  {Forces recompute of all stored decision variables}~
-local i:= Element_for_Storing_; {just to simplify the code below, assigns to a local variable the value of the element selected for storing the aggregate coefficients}~
+local i:= Ag_Level_for_PV_Coef; {just to simplify the code below, assigns to a local variable the value of the element selected for storing the aggregate coefficients}~
 		~
 {Updates the local variable's stored decision value to the optimized solution, only for the slice that is the selected element for storing the aggregate solution}~
 IF Include_Ad_Effect THEN (AdEff[All_Spatial_ID=i, All_Sectors=PV_Sectors[@PV_Sectors=1]] := OptSolution(Optimization_PV, PV_Ad_Effectiveness)) ;~
@@ -1176,7 +1395,7 @@ Status[All_Spatial_ID=i, All_Sectors=PV_Sectors[@PV_Sectors=1]] := OptStatusText
 (PV_Spatial_ID:=CopyIndex(orig_ID)); {sets the selected spatial ID back to its original value at the beginning of the optimization}~
 (Use_PV_Decision_Var:=0); {Returns the value of this input to zero to ensure stored coefficients are used in model calculations}~
 
-NodeLocation: 112,64,1
+NodeLocation: 448,288,1
 NodeSize: 64,40
 WindState: 2,125,10,1511,758
 
@@ -1188,11 +1407,11 @@ OnClick: Aggregate_Optimizati()
 
 Button Run_1_Cal_PV
 Title: Run 1 Cal PV
-NodeLocation: 112,64,1
+NodeLocation: 304,256,1
 NodeSize: 64,40
-OnClick: ~
-{runs through an optimization for each spatial ID and assigned the results to the relevant stored coefficient node}~
-Sequential_Opt_PV3(Current_Stage, Selected_PV_Decision,  All_PV_Dec_Handle_Li, PV_Spatial_ID );~
+WindState: 2,130,373,1271,381
+OnClick: {runs through an optimization for each spatial ID and assigned the results to the relevant stored coefficient node}~
+Sequential_Opt(Current_Stage, Selected_PV_Decision,  All_PV_Dec_Handles, All_Spatial_ID, PV_Spatial_ID, All_Sectors, Ag_Level_for_PV_Coef, PV_Sectors, Stored_PV_Dec_Vars, Stored_Opt_Status_PV, Use_PV_Decision_Var, Handle(Optimization_PV));~
 ~
 
 
@@ -1200,163 +1419,19 @@ Button Run_Single_Optimizat
 Title: Run Single Optimization
 NodeLocation: 112,152,1
 NodeSize: 64,40
-OnClick: Sequential_Opt_PV3(Current_Stage, Selected_PV_Decision, All_PV_Dec_Handle_Li, PV_Spatial_ID, Stored_PV_Dec_Vars, Stored_Opt_Status_PV)
+WindState: 2,12,349,1352,535
+OnClick: Sequential_Opt(Current_Stage, Selected_PV_Decision,  All_PV_Dec_Handles, All_Spatial_ID, PV_Spatial_ID, All_Sectors, Ag_Level_for_PV_Coef, PV_Sectors, Stored_PV_Dec_Vars, Stored_Opt_Status_PV, Use_PV_Decision_Var, Handle(Optimization_PV));
 
 Button Set_Starting_Coeff1
 Title: Set Starting Coeff
-NodeLocation: 112,64,1
+NodeLocation: 288,144,1
 NodeSize: 64,40
-OnClick: Set_Starting_Coeff2()
+WindState: 2,932,27,720,350
+OnClick: Set_Starting_Coeff(All_Sectors, All_Spatial_ID, PV_Spatial_ID, Ag_Level_for_PV_Coef, PV_Sectors, Stored_PV_Dec_Vars, Stored_Opt_Status_PV)
 
 Close Old
 
-Function Sequential_Opt_PV3(stage: atom; decision_vars, decision_var_super, der_spatial_id: index, stored_coeff: variable, stored_status: variable)
-Title: Sequential Optimization3
-Description: This function is called by a button script and sequentially optimizes each selected spatial ID's diffusion coefficients. This sequential operation facilitates interruption of the script during the optimization, if desired, and stores each value after its optimization, to avoid losing any coefficients already calculated (e.g., in the event of an abort of the optimization). It only walks through each selected spatial ID relevant to that DER. A separate function is called for the "aggregate calibration" step, which differs by DER. This function can be used for any DER. ~
-~
-~
-stage = which stage of the multistage calibration is being called (an integer)~
-decision_vars = an index of the handles to only the decision variables used in this particular optimization (which can be a subset of all possible decision variables)~
-decision_var_superset = an index of the handles of all possible decision variables in the optimization~
-der_spatial_ID = a subset of All_spatial_ID specific to that particular DER; ~
-use_dec_var =  handle of a boolean input determining whether the decision variables or the stored coefficients are used in the simulation for a given DER~
-stored_coeff = handle of constant node containing a table of stored coefficients indexed by he decision_var_superset index (a list of all handles), All_Spatial_ID, and All_Sectors~
-~
-~
-
-Definition: (Use_PV_Decision_Var:=1); {Ensures the optimization uses the actual decision variables when calculating the objective, rather than the stored coefficients}~
-Check_Sector_PV();  {Checks to ensure only one sector is selected for the diffusion parameter calibration}~
-{Check_Cost_Scenario(); }{Checks to ensure only one cost scenario is selected for the diffusion parameter calibration}~
-~
-{assign local variables for use in the function}~
-local counter:=1;~
-local maxcount:=size(der_spatial_id);~
-local temp_stored_coeff:=Stored_PV_Dec_Vars;~
-local status:=Stored_Opt_Status_PV;~
-local solution :=0; {initializes a local variable storing an individual coefficient}~
-~
-{assign local indexes for use in the function}~
-Index orig_ID := IF stage = 1~
-   THEN CopyIndex([Element_for_Storing_])~
-   ELSE CopyIndex(der_spatial_id);~
-~
-For i:=orig_ID DO~
-	(	ShowProgressBar('Parameter Optimization Status Bar', 'Calibration Stage: ' & stage & '.   Optimizing diffusion parameters for Spatial ID = ' & i & ':  Calculating ID # ' & counter & ' of ' & maxcount, p: ((counter - 0.01) / maxcount));~
-		~
-		{Updates the local variable's stored decision value to the optimized solution, only for the slice that is the current spatial ID}~
-		Local x[]:=decision_vars DO~
-			( solution := OptSolution(IF stage=1 THEN Optimization_PV ELSE Optimization_PV[PV_Spatial_ID=i], x);~
-			status[All_Spatial_ID=i, All_Sectors=PV_Sectors[@PV_Sectors=1]] := OptStatusText(IF stage=1 THEN Optimization_PV ELSE Optimization_PV[PV_Spatial_ID=i]);~
-			IF solution <> null THEN 	temp_stored_coeff[decision_var_super=x, All_Spatial_ID=i, All_Sectors=PV_Sectors[@PV_Sectors=1]] := solution~
-			);~
-		(stored_coeff:=temp_stored_coeff); {assigns the new solution for each spatial ID to ensure solutions are captured in the event of an abort}~
-		(stored_status := status); ~
-		counter:=counter+1;	 {increments a counter only for purposes of the ShowProgressBar calculation}~
-	);~
-~
-(Use_PV_Decision_Var:=0); {Returns the value of this input to zero to ensure stored coefficients are used in model calculations}
-NodeLocation: 400,528,1
-NodeSize: 64,40
-WindState: 2,25,-1,926,920
-
-Index All_PV_Dec_Handle_Li
-Title: All PV Dec Handle List
-Definition: CopyIndex(Handles_for_PV_Decis)
-NodeLocation: 992,64,1
-NodeSize: 64,40
-WindState: 2,480,227,720,505
-ValueState: 2,3112,43,416,303,,MIDM
-MetaOnly: 1
-Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coefficie,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef]
-
-Alias Al1542407785
-Title: Selected PV Decision Variables
-Definition: 1
-NodeLocation: 1000,176,1
-NodeSize: 64,40
-Original: Selected_PV_Decision
-
-Alias Al1542407786
-Title: Handles for PV Decisions
-Definition: 1
-NodeLocation: 256,296,1
-NodeSize: 64,40
-Original: Handles_for_PV_Decis
-
-FormNode Fo1542407786
-Title: Select Decision Vars
-Definition: 0
-NodeLocation: 256,340,1
-NodeSize: 56,12
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Handles_for_PV_Decis
-
-Function Multi_Stage_Calibra3()
-Title: Multi-Stage Calibration3
-Description: This script specifies the multi-state sequence of calibration scripts as follows: ~
-~
-Step 1: start with calibrating the most aggregate data available (e.g., statewide, or service territory wide), using all historical dates (more data typically available at the aggregate level). Calculation diffusion coefficients (ad eff & WOM) for an assumed aggregate long run market share~
-~
-Step 2: .....~
-
-Definition: IF (Use_Analytica_Text_T AND size(Stages_to_Calibrate)>1) THEN MsgBox('Optimization text trace is on. It will not work when optimizing more than one stage. Please turn it off and then re-run the calibration, or run only one stage.', 5, 'Optimization Trace Message' ) ;~
-INDEX origIDs:=CopyIndex(PV_Spatial_ID);   {Temporarily store the selected IDs}~
-(PV_Sim_Start_Year:=PV_Calibration_Start); {Sets the start year for the simulation to the start time for the EV calibration}~
-(PV_Sim_End_Year:=PV_Calibration_End); {Sets the end year for the simulation to the end time for the EV calibration}~
-(Use_PV_Decision_Var:=0); {Deselects the input that uses the decision variables in the model, so that R^2 failures can be calculated}~
-Index stage:=CopyIndex(Stages_to_Calibrate);~
-~
-		For i:=stage DO~
-		(~
-                    (Current_Stage:=i);   {Store the current stage in a global variable}~
-			(Dates_Incl_in_PV_Opt:=PV_Dates_Incl_by_Stg[PV_Calibration_Stage=i, Time_PV_Calibration=Time_Solar_PV]); {Selects all dates for use in the calibration}~
-			(Select_PV_Decisions:=PV_Decisions_by_Stg[PV_Calibration_Stage=i]); {Selects only those decision variables used in the given calibration stage}~
-			(Opt_Settings_PV:=PV_OptSettings_byStg[PV_Calibration_Stage=i]); {Adjusts the optimization engine settings per the calibration stage}~
-			IF (size(Failed_Spat_ID)<>0 OR Current_Stage=1 OR size(Stages_to_Calibrate)=1) THEN (Sequential_Opt_PV3(i,  Selected_PV_Decision, All_PV_Dec_Handle_Li, PV_Spatial_ID, Stored_PV_Dec_Vars, Stored_Opt_Status_PV  )); {Runs the optimization and assigns best fit coefficients to the stored coefficients, but only if there are spatial IDs that have failed the goodness of fit test}~
-			IF i=1 THEN Set_Starting_Coeff2(); {Sets starting coefficients for all spatial IDs to the value just calculated for the aggregate spatial ID that will be used for setting default coefficients. }~
-			(PV_Spatial_ID:=Subset(@origIDs<>Element_for_Storing_)); {Selects all non-aggregated spatial IDs. STILL NECESSARY?}~
-			IF i>=2 THEN Set_Spat_ID_Fail_R2_(); {Set the spatial ID selector to all spatial IDs that failed the goodness of fit test, except for the "aggregate" calibration and for the very first calibration (stage 2) of all spatial IDs}	~
-		);~
-~
-(PV_Spatial_ID:=CopyIndex(origIDs));   {Set the selected IDs back to their original values}~
-(Select_PV_Decisions:=@All_PV_Decisions > 0);   {Select all decision variables again so that model can be manually forced to use decision variables by simply checking the box}~
-
-NodeLocation: 400,440,1
-NodeSize: 64,40
-WindState: 2,977,1,848,922
-NodeColor: 65535,1,1
-DisplayOutputs: Decision Dates_Incl_in_PV_Opt, Decision Opt_Settings_PV
-
-Function Set_Starting_Coeff2()
-Title: Set Starting Coeff2
-Description: This function sets the values of the starting coefficients for all Spatial IDs. This function is typically called AFTER calibrating aggregate adoption.~
-~
-This function must be called from within an optimization script to ensure that only one Sector & only one EV long run market share scenario are selected.
-Definition: Check_Sector_PV();~
-~
-local coeff:=Stored_PV_Dec_Vars;~
-local status:=Stored_Opt_Status_PV;~
-~
-local Sector_Sel:=Slice(PV_Sectors,1);~
-~
-(coeff[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_PV_Dec_Vars[All_Spatial_ID=Element_for_Storing_, All_Sectors=Sector_Sel]);~
-(status[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:='Not Yet Calibrated');~
-~
-(Stored_PV_Dec_Vars:=coeff);~
-(Stored_Opt_Status_PV:=status);~
-
-NodeLocation: 528,440,1
-NodeSize: 64,40
-WindState: 2,229,108,1322,764
-
-Module OLD1
-Title: OLD
-Author: coryw
-Date: Mon, Nov 19, 2018 11:20 AM
-NodeLocation: 264,848,1
-NodeSize: 64,40
-
-Function MultiStage_Calibr_PV()
+Function MultiStage_CalibrPV0()
 Title: Multi-Stage Calibration
 Description: This script specifies the multi-state sequence of calibration scripts as follows: ~
 ~
@@ -1374,20 +1449,21 @@ Index stage:=CopyIndex(Stages_to_Calibrate);~
 		(~
                     (Current_Stage:=i);   {Store the current stage in a global variable}~
 			(Dates_Incl_in_PV_Opt:=PV_Dates_Incl_by_Stg[PV_Calibration_Stage=i, Time_PV_Calibration=Time_Solar_PV]); {Selects all dates for use in the calibration}~
-			(Select_PV_Decisions:=PV_Decisions_by_Stg[PV_Calibration_Stage=i]); {Selects only those decision variables used in the given calibration stage}~
+			(PV_Decis_Vars_in_Opt:=PV_Decisions_by_Stg[PV_Calibration_Stage=i]); {Selects only those decision variables used in the given calibration stage}~
 			(Opt_Settings_PV:=PV_OptSettings_byStg[PV_Calibration_Stage=i]); {Adjusts the optimization engine settings per the calibration stage}~
 			IF Qty_Fail_Spat_ID_PV<>0 THEN Sequential_Opt_PV2(i); {Runs the optimization and assigns best fit coefficients to the stored coefficients, but only if there are spatial IDs that have failed the goodness of fit test}~
 			IF i=1 THEN Set_Start_Coeff_PV(); {Sets starting coefficients for all spatial IDs to the value just calculated for the aggregate spatial ID that will be used for setting default coefficients. }~
 			(PV_Spatial_ID:=Subset(@origIDs<>Aggregation_2_Label)); {Selects all non-aggregated spatial IDs}~
-			IF i>=2 THEN Set_Spat_ID_Fail_R2_(); {Set the spatial ID selector to all spatial IDs that failed the goodness of fit test, except for the "aggregate" calibration and for the very first calibration (stage 2) of all spatial IDs}	~
+			IF i>=2 THEN Set_Spat_ID_Fail_R2(); {Set the spatial ID selector to all spatial IDs that failed the goodness of fit test, except for the "aggregate" calibration and for the very first calibration (stage 2) of all spatial IDs}	~
 		);~
 ~
 (PV_Spatial_ID:=CopyIndex(origIDs));   {Set the selected IDs back to their original values}~
-(Select_PV_Decisions:=@All_PV_Decisions > 0);   {Select all decision variables again so that model can be manually forced to use decision variables by simply checking the box}~
+(PV_Decis_Vars_in_Opt:=@All_PV_Decisions > 0);   {Select all decision variables again so that model can be manually forced to use decision variables by simply checking the box}~
 
 NodeLocation: 128,336,1
 NodeSize: 64,40
 WindState: 2,6,58,888,787
+DisplayInputs: Decision Aggregation_2_Label, Variable Qty_Fail_Spat_ID_PV, Index PV_Calibration_Stage, Constant PV_Decisions_by_Stg, Constant PV_Dates_Incl_by_Stg, Decision PV_Calibration_Start, Decision PV_Calibration_End, Index Time_PV_Calibration, Constant PV_OptSettings_byStg, Function Set_Spat_ID_Fail_R2, Index Stages_to_Calibrate, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Index All_PV_Decisions, Index Time_Solar_PV, Index PV_Spatial_ID
 
 Button Run_MultistgCalib_PV
 Title: Run Multistage Calibration
@@ -1396,11 +1472,11 @@ Description: This script specifies the multi-state sequence of calibration scrip
 Step 1: start with calibrating the most aggregate data available (e.g., statewide, or service territory wide), using all historical dates (more data typically available at the aggregate level). Calculation diffusion coefficients (ad eff & WOM) for an assumed aggregate long run market share~
 ~
 Step 2: .....
-NodeLocation: 384,32,1
+NodeLocation: 680,136,1
 NodeSize: 64,40
 WindState: 2,102,82,1000,391
 OnClick: {Reset_All_Coeffs_PV;}~
-MultiStage_Calibr_PV()
+MultiStage_CalibrPV0()
 
 Button Set_Start_Coeffs_PV
 Title: Set Starting Coeff
@@ -1409,14 +1485,14 @@ Description: This function sets the values of the starting coefficients for all 
 This function must be called from within an optimization script to ensure that only one Sector & only one PV long run market share scenario are selected.
 NodeLocation: 512,136,1
 NodeSize: 64,40
-OnClick: Set_Start_Coeff_PV()
+OnClick: Set_Start_Coeff_PV0()
 
-Function Set_Start_Coeff_PV()
+Function Set_Start_Coeff_PV0()
 Title: Set Starting Coeff
 Description: This function sets the values of the starting coefficients for all Spatial IDs. This function is typically called AFTER calibrating aggregate adoption.~
 ~
 This function must be called from within an optimization script to ensure that only one Sector & only one EV long run market share scenario are selected.
-Definition: Check_Sector_PV();~
+Definition: Check_Sector();~
 ~
 local AdEff:=Stored_AdEff_PV;~
 local StartWOM:=Stored_WOM_PV;~
@@ -1432,18 +1508,18 @@ local status:=Stored_Opt_Status_PV;~
 ~
 local Sector_Sel:=Slice(PV_Sectors,1);~
 ~
-(AdEff[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_AdEff_PV[All_Spatial_ID=Element_for_Storing_, All_Sectors=Sector_Sel]);~
-(StartWOM[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_WOM_PV[ All_Spatial_ID=Element_for_Storing_, All_Sectors=Sector_Sel]);~
-(EndWOM[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_End_WOM_PV[ All_Spatial_ID=Element_for_Storing_, All_Sectors=Sector_Sel]);~
-(InitFam[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_End_WOM_PV[All_Spatial_ID=Element_for_Storing_, All_Sectors=Sector_Sel]);~
-(LRMS[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_LRMS_PV[All_Spatial_ID=Element_for_Storing_, All_Sectors=Sector_Sel]);~
-(priceCoef[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_Logit_Price_C[All_Spatial_ID=Element_for_Storing_, All_Sectors=Sector_Sel]);~
-(techCoef[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_Tech_Coeff[All_Spatial_ID=Element_for_Storing_, All_Sectors=Sector_Sel]);~
-(spatialCoef[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_Spatial_Coeff[All_Spatial_ID=Element_for_Storing_, All_Sectors=Sector_Sel]);~
-(paybkSpatCoef[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_Pybk_SpatCoef[All_Spatial_ID=Element_for_Storing_, All_Sectors=Sector_Sel]);~
-(paybkCoef[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_Payback_Coeff[All_Spatial_ID=Element_for_Storing_, All_Sectors=Sector_Sel]);~
+(AdEff[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_AdEff_PV[All_Spatial_ID=Ag_Level_for_PV_Coef, All_Sectors=Sector_Sel]);~
+(StartWOM[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_WOM_PV[ All_Spatial_ID=Ag_Level_for_PV_Coef, All_Sectors=Sector_Sel]);~
+(EndWOM[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_End_WOM_PV[ All_Spatial_ID=Ag_Level_for_PV_Coef, All_Sectors=Sector_Sel]);~
+(InitFam[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_End_WOM_PV[All_Spatial_ID=Ag_Level_for_PV_Coef, All_Sectors=Sector_Sel]);~
+(LRMS[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_LRMS_PV[All_Spatial_ID=Ag_Level_for_PV_Coef, All_Sectors=Sector_Sel]);~
+(priceCoef[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_Logit_Price_C[All_Spatial_ID=Ag_Level_for_PV_Coef, All_Sectors=Sector_Sel]);~
+(techCoef[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_Tech_Coeff[All_Spatial_ID=Ag_Level_for_PV_Coef, All_Sectors=Sector_Sel]);~
+(spatialCoef[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_Spatial_Coeff[All_Spatial_ID=Ag_Level_for_PV_Coef, All_Sectors=Sector_Sel]);~
+(paybkSpatCoef[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_Pybk_SpatCoef[All_Spatial_ID=Ag_Level_for_PV_Coef, All_Sectors=Sector_Sel]);~
+(paybkCoef[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_Payback_Coeff[All_Spatial_ID=Ag_Level_for_PV_Coef, All_Sectors=Sector_Sel]);~
 ~
-(status[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_Opt_Status_PV[All_Spatial_ID=Element_for_Storing_, All_Sectors=Sector_Sel]);~
+(status[All_Sectors=Sector_Sel, All_Spatial_ID=PV_Spatial_ID]:=Stored_Opt_Status_PV[All_Spatial_ID=Ag_Level_for_PV_Coef, All_Sectors=Sector_Sel]);~
 ~
 (Stored_AdEff_PV:=AdEff);~
 (Stored_WOM_PV:=StartWOM);~
@@ -1460,6 +1536,8 @@ local Sector_Sel:=Slice(PV_Sectors,1);~
 NodeLocation: 272,216,1
 NodeSize: 64,40
 WindState: 2,229,108,1322,764
+DisplayInputs: Index All_Spatial_ID, Index All_Sectors, Function Check_Sector, Decision Ag_Level_for_PV_Coef, Variable Stored_AdEff_PV, Variable Stored_LRMS_PV, Variable Stored_WOM_PV, Variable Stored_End_WOM_PV, Constant Stored_Opt_Status_PV, Variable Stored_Spatial_Coeff, Variable Stored_Logit_Price_C, Variable Stored_Tech_Coeff, Variable Stored_Pybk_SpatCoef, Variable Stored_Payback_Coeff, Index PV_Sectors, Index PV_Spatial_ID
+DisplayOutputs: Function MultiStage_CalibrPV0
 
 Function Sequential_Opt_PV2(stage: optional number)
 Title: Sequential Optimization2
@@ -1468,7 +1546,7 @@ Description: This function is called by a button script and sequentially optimiz
 input stage = atomic, optional (which stage of the calibration, when running script from a multistage calibration script)~
 
 Definition: (Use_PV_Decision_Var:=1); {Ensures the optimization uses the actual decision variables when calculating the objective, rather than the stored coefficients}~
-Check_Sector_PV();  {Checks to ensure only one sector is selected for the diffusion parameter calibration}~
+Check_Sector();  {Checks to ensure only one sector is selected for the diffusion parameter calibration}~
 local AdEff := Stored_AdEff_PV;~
 local LRMS := Stored_LRMS_PV;~
 local WOM := Stored_WOM_PV;~
@@ -1483,7 +1561,7 @@ All_Stored_Coeffs_PV;  {Forces recompute of all stored decision variables}~
 local counter:=1;~
 Index orig_ID := CopyIndex(PV_Spatial_ID);~
 Index ID := IF stage = 1~
-   THEN CopyIndex([Element_for_Storing_])~
+   THEN CopyIndex([Ag_Level_for_PV_Coef])~
    ELSE CopyIndex(PV_Spatial_ID);~
 local maxcount:=size(ID);~
 ~
@@ -1534,6 +1612,94 @@ For i:=ID DO~
 NodeLocation: 112,208,1
 NodeSize: 64,40
 WindState: 2,21,23,1717,780
+DisplayInputs: Index All_Spatial_ID, Index All_Sectors, Variable Include_Ad_Effect, Variable Include_Start_WOM, Variable Include_LRMS, Variable Include_End_WOM, Variable IncludeLogitPrice_Co, Variable IncludeLogSpatial_Co, Variable IncludeLogTech_Coeff, Variable Include_Payback_Spat, Variable Include_Payback_Coef, Function Check_Sector, Decision Ag_Level_for_PV_Coef, Variable Optimization_PV, Variable Stored_AdEff_PV, Variable Stored_LRMS_PV, Variable Stored_WOM_PV, Variable Stored_End_WOM_PV, Variable All_Stored_Coeffs_PV, Constant Stored_Opt_Status_PV, Variable Stored_Spatial_Coeff, Variable Stored_Logit_Price_C, Variable Stored_Tech_Coeff, Variable Stored_Pybk_SpatCoef, Variable Stored_Payback_Coeff, Index PV_Sectors, Index PV_Spatial_ID
+DisplayOutputs: Function MultiStage_CalibrPV0
+
+Function OG_Multi_Stage_Calib()
+Title: OG Multi-Stage Calibration3
+Description: This script specifies the multi-state sequence of calibration scripts as follows: ~
+~
+Step 1: start with calibrating the most aggregate data available (e.g., statewide, or service territory wide), using all historical dates (more data typically available at the aggregate level). Calculation diffusion coefficients (ad eff & WOM) for an assumed aggregate long run market share~
+~
+Step 2: .....~
+
+Definition: IF (Use_Trace_Log AND size(Stages_to_Calibrate)>1) THEN MsgBox('Optimization text trace is on. It will not work when optimizing more than one stage. Please turn it off and then re-run the calibration, or run only one stage.', 5, 'Optimization Trace Message' ) ;~
+INDEX origIDs:=CopyIndex(PV_Spatial_ID);   {Temporarily store the selected IDs}~
+(PV_Sim_Start_Year:=PV_Calibration_Start); {Sets the start year for the simulation to the start time for the EV calibration}~
+(PV_Sim_End_Year:=PV_Calibration_End); {Sets the end year for the simulation to the end time for the EV calibration}~
+(Use_PV_Decision_Var:=0); {Deselects the input that uses the decision variables in the model, so that R^2 failures can be calculated}~
+Index stage:=CopyIndex(Stages_to_Calibrate);~
+~
+		For i:=stage DO~
+		(~
+                    (Current_Stage:=i);   {Store the current stage in a global variable}~
+			(Dates_Incl_in_PV_Opt:=PV_Dates_Incl_by_Stg[PV_Calibration_Stage=i, Time_PV_Calibration=Time_Solar_PV]); {Selects all dates for use in the calibration}~
+			(PV_Decis_Vars_in_Opt:=PV_Decisions_by_Stg[PV_Calibration_Stage=i]); {Selects only those decision variables used in the given calibration stage}~
+			(Opt_Settings_PV:=PV_OptSettings_byStg[PV_Calibration_Stage=i]); {Adjusts the optimization engine settings per the calibration stage}~
+			IF (size(Failed_Spat_ID)<>0 OR Current_Stage=1 OR size(Stages_to_Calibrate)=1) THEN (Sequential_Opt_PV3(i,  Selected_PV_Decision, All_PV_Dec_Handles, PV_Spatial_ID, Stored_PV_Dec_Vars, Stored_Opt_Status_PV  )); {Runs the optimization and assigns best fit coefficients to the stored coefficients, but only if there are spatial IDs that have failed the goodness of fit test}~
+			IF i=1 THEN Set_Starting_Coeff2(); {Sets starting coefficients for all spatial IDs to the value just calculated for the aggregate spatial ID that will be used for setting default coefficients. }~
+			(PV_Spatial_ID:=Subset(@origIDs<>Ag_Level_for_PV_Coef)); {Selects all non-aggregated spatial IDs. STILL NECESSARY?}~
+			IF i>=2 THEN Set_Spat_ID_Fail_R2(); {Set the spatial ID selector to all spatial IDs that failed the goodness of fit test, except for the "aggregate" calibration and for the very first calibration (stage 2) of all spatial IDs}	~
+		);~
+~
+(PV_Spatial_ID:=CopyIndex(origIDs));   {Set the selected IDs back to their original values}~
+(PV_Decis_Vars_in_Opt:=@All_PV_Decisions > 0);   {Select all decision variables again so that model can be manually forced to use decision variables by simply checking the box}~
+
+NodeLocation: 416,336,1
+NodeSize: 64,40
+WindState: 2,548,7,1208,922
+NodeColor: 65535,1,1
+DisplayInputs: Index Selected_PV_Decision, Index PV_Calibration_Stage, Constant PV_Decisions_by_Stg, Constant PV_Dates_Incl_by_Stg, Decision PV_Calibration_Start, Decision PV_Calibration_End, Index Time_PV_Calibration, Constant PV_OptSettings_byStg, Function Set_Spat_ID_Fail_R2, Decision Current_Stage, Decision Ag_Level_for_PV_Coef, Index Stages_to_Calibrate, Function Sequential_Opt, Index All_PV_Dec_Handles, Function Set_Starting_Coeff, Index All_PV_Decisions, Index Failed_Spat_ID, Decision Use_Trace_Log, Constant Stored_Opt_Status_PV, Constant Stored_PV_Dec_Vars, Index Time_Solar_PV, Index PV_Spatial_ID
+
+Function OG_Sequential_Optimi(stage: atom; decision_vars, decision_var_super, der_spatial_id: index, stored_coeff: variable, stored_status: variable)
+Title: OG Sequential Optimization3
+Description: This function is called by a button script and sequentially optimizes each selected spatial ID's diffusion coefficients. This sequential operation facilitates interruption of the script during the optimization, if desired, and stores each value after its optimization, to avoid losing any coefficients already calculated (e.g., in the event of an abort of the optimization). It only walks through each selected spatial ID relevant to that DER. A separate function is called for the "aggregate calibration" step, which differs by DER. This function can be used for any DER. ~
+~
+~
+stage = which stage of the multistage calibration is being called (an integer)~
+decision_vars = an index of the handles to only the decision variables used in this particular optimization (which can be a subset of all possible decision variables)~
+decision_var_superset = an index of the handles of all possible decision variables in the optimization~
+der_spatial_ID = a subset of All_spatial_ID specific to that particular DER; ~
+use_dec_var =  handle of a boolean input determining whether the decision variables or the stored coefficients are used in the simulation for a given DER~
+stored_coeff = handle of constant node containing a table of stored coefficients indexed by he decision_var_superset index (a list of all handles), All_Spatial_ID, and All_Sectors~
+~
+~
+
+Definition: (Use_PV_Decision_Var:=1); {Ensures the optimization uses the actual decision variables when calculating the objective, rather than the stored coefficients}~
+Check_Sector();  {Checks to ensure only one sector is selected for the diffusion parameter calibration}~
+{Check_Cost_Scenario(); }{Checks to ensure only one cost scenario is selected for the diffusion parameter calibration}~
+~
+{assign local variables for use in the function}~
+local counter:=1;~
+local maxcount:=size(der_spatial_id);~
+local temp_stored_coeff:=Stored_PV_Dec_Vars;~
+local status:=Stored_Opt_Status_PV;~
+local solution :=0; {initializes a local variable storing an individual coefficient}~
+~
+{assign local indexes for use in the function}~
+Index orig_ID := IF stage = 1~
+   THEN CopyIndex([Ag_Level_for_PV_Coef])~
+   ELSE CopyIndex(der_spatial_id);~
+~
+For i:=orig_ID DO~
+	(	ShowProgressBar('Parameter Optimization Status Bar', 'Calibration Stage: ' & stage & '.   Optimizing diffusion parameters for Spatial ID = ' & i & ':  Calculating ID # ' & counter & ' of ' & maxcount, p: ((counter - 0.01) / maxcount));~
+		~
+		{Updates the local variable's stored decision value to the optimized solution, only for the slice that is the current spatial ID}~
+		Local x[]:=decision_vars DO~
+			( solution := OptSolution(IF stage=1 THEN Optimization_PV ELSE Optimization_PV[PV_Spatial_ID=i], x);~
+			status[All_Spatial_ID=i, All_Sectors=PV_Sectors[@PV_Sectors=1]] := OptStatusText(IF stage=1 THEN Optimization_PV ELSE Optimization_PV[PV_Spatial_ID=i]);~
+			IF solution <> null THEN 	temp_stored_coeff[decision_var_super=x, All_Spatial_ID=i, All_Sectors=PV_Sectors[@PV_Sectors=1]] := solution~
+			);~
+		(stored_coeff:=temp_stored_coeff); {assigns the new solution for each spatial ID to ensure solutions are captured in the event of an abort}~
+		(stored_status := status); ~
+		counter:=counter+1;	 {increments a counter only for purposes of the ShowProgressBar calculation}~
+	);~
+~
+(Use_PV_Decision_Var:=0); {Returns the value of this input to zero to ensure stored coefficients are used in model calculations}
+NodeLocation: 280,336,1
+NodeSize: 64,40
+WindState: 2,25,-1,926,920
+DisplayInputs: Index All_Spatial_ID, Index All_Sectors, Function Check_Sector, Decision Ag_Level_for_PV_Coef, Variable Optimization_PV, Constant Stored_Opt_Status_PV, Constant Stored_PV_Dec_Vars, Index PV_Sectors, Index PV_Spatial_ID
 
 Close OLD1
 
@@ -1544,6 +1710,7 @@ NodeLocation: 1128,64,1
 NodeSize: 64,40
 WindState: 2,246,-2,924,825
 ValueState: 2,1020,194,416,303,,MIDM
+DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 Att_PrevIndexValue: ['PV Ad Effectiveness','PV WOM','PV Ending WOM','PV Payback Coefficient','PV Long Run Mkt Share','PV Logit Price Coeff','PV Logit Tech Coeff','PV Logit Spat Coeff','PV Payback Spat Coeff']
 
 Decision Infeasible_Label
@@ -1584,11 +1751,7 @@ NodeSize: 64,40
 WindState: 2,110,89,720,350
 ValueState: 2,889,132,889,629,0,MIDM
 Aliases: FormNode Fo1542904764
-
-Variable Va9
-Definition: size(Failed_Spat_ID)
-NodeLocation: 1256,280,1
-NodeSize: 64,40
+DisplayOutputs: Function OG_Multi_Stage_Calib
 
 Function Check_Cost_Scenario()
 Title: Check Cost Scenario
@@ -1598,48 +1761,53 @@ IF size(Selected_PV_Cost_Sce)>1 THEN ~
 	(PV_Cost_Scenario := x))
 NodeLocation: 528,528,1
 NodeSize: 64,40
-WindState: 2,842,287,993,350
+WindState: 2,385,353,993,350
 
-Variable Va12
-Definition: Choice(Cost_Scenario1,1,1)
-NodeLocation: 1312,472,1
-NodeSize: 64,40
-{!40200|Att_ChoiceIndexes: Index Cost_Scenario1}
-
-Function Check_Stage_1()
+Function Check_Stage_1(der_spatial_id, nonAg_spatial_id, select_stages: Index)
 Title: Check Stage 1
-Description: Checks whether the user wishes to continue if stage 1 is included in the Stages to Calibration input AND not all relevant PV_Spatial_IDs are selected.
-Definition: IF (size(PV_Spatial_ID)<>size(Spatial_ID) AND  SetContains(\Stages_to_Calibrate,1)) THEN MsgBox('You have selected to apply Calibration Stage 1, but fewer than all relevant spatial IDs are selected (normally all spatial IDs are selected for stage 1). Are you sure you wish to continue? If so, click OK. Otherwise, click Cancel.',1,'Stage 1 Message' )
+Description: Checks whether the user wishes to continue if stage 1 is included in the Stages to Calibration input AND not all relevant PV_Spatial_IDs are selected.~
+~
+[der_spatial_id]: the index of spatial IDs for the DER considered in the calibration.~
+[nonAg_spatial_id]: a list of all non-aggregate spatial IDs.~
+[select_stages]: a list of calibration stages selected for the calibration process.
+Definition: IF (size(der_spatial_id)<>size(nonAg_spatial_id) AND PositionInIndex(select_stages,1, select_stages))~
+THEN MsgBox('You have selected to apply Calibration Stage 1, but fewer than all relevant spatial IDs are selected (normally all spatial IDs are selected for stage 1). Are you sure you wish to continue? If so, click OK. Otherwise, click Cancel.',1,'Stage 1 Message' )~
+ELSE Null
 NodeLocation: 656,440,1
 NodeSize: 64,40
-WindState: 2,2711,142,720,350
+WindState: 2,1986,61,1007,504
 
 Button Set_PV_Time_to_Cali1
 Title: Set PV Time to Calib Time
 NodeLocation: 832,440,1
 NodeSize: 64,40
+WindState: 2,22,479,720,350
 Aliases: Alias Al1542999373
-OnClick: Set_PV_Time_to_Calib()
+OnClick: Set_SimTime_CalTime(PV_Calibration_Start, PV_Calibration_End, PV_Sim_Start_Year, PV_Sim_End_Year)
 
-Function Set_PV_Time_to_Calib()
-Title: Set PV Time to Calibration Time
-Definition: (PV_Sim_Start_Year:=PV_Calibration_Start); {Sets the start year for the simulation to the start time for the EV calibration}~
-(PV_Sim_End_Year:=PV_Calibration_End); {Sets the end year for the simulation to the end time for the EV calibration}
+Function Set_SimTime_CalTime(calib_start, calib_end; sim_start, sim_end: Variable)
+Title: Set Time to Calibration Time
+Description: This sets the simulation start and end time periods to the calibration start and end time periods, respectively.
+Definition: (sim_start:=calib_start); {Sets the start year for the simulation to the start time for the calibration}~
+(sim_end:=calib_end); {Sets the end year for the simulation to the end time for the calibration}
 NodeLocation: 128,616,1
 NodeSize: 64,40
+WindState: 2,39,215,1015,411
 
 Function Set_PV_Time_to_Forec(param1)
 Title: Set PV Time to Forecast Only
 NodeLocation: 264,616,1
 NodeSize: 64,40
 
-Function Check_of_Use_PV_Dec_()
-Title: Check of Use PV Dec Var
-Description: The Use PV Decision Variables box is typically only TRUE (checked) when the calibration scripts are physically running. If this box is inadvertently left checked (e.g., in the event of a calibration abort), this function will warn the user, who is most likely expecting to see the simulation results using stored coefficients, rather than whatever default value is in the Decision Variables (which are all scalars, not indexed by Spatial ID). 
-Definition: IF Use_PV_Decision_Var=1 THEN MsgBox('WARNING: The "Use PV Decision Variables" box is checked (normally unchecked except in the middle of a calibration routine). This means that the simulation results shown in this output will not use the stored coefficients (which vary by Sector & Spatial ID) but rather a scalar default value. Click OK to proceed anyway, or click Cancel and then uncheck the Use PV Decision Variables input in the PV Calibration Module ', 1, 'Decision Variable Warning')
+Function Check_DecVar_Switch(decis_switch: Variable)
+Title: Check DecisVar Switch
+Description: The Use DER Decision Variables box is typically only TRUE (checked) when the calibration scripts are physically running. If this box is inadvertently left checked (e.g., in the event of a calibration abort), this function will warn the user, who is most likely expecting to see the simulation results using stored coefficients, rather than whatever default value is in the Decision Variables (which are all scalars, not indexed by Spatial ID).
+Definition: VAR var_title:=Title of decis_switch;~
+~
+IF decis_switch=1 THEN MsgBox('WARNING: The "' & var_title & '" box is checked (normally unchecked except in the middle of a calibration routine). This means that the simulation results shown in this output will not use the stored coefficients (which vary by Sector & Spatial ID) but rather a scalar default value. Click OK to proceed anyway, or click Cancel and then uncheck the"' & var_title & '" input in the appropriate Calibration Module ', 1, 'Decision Variable Warning')
 NodeLocation: 400,616,1
 NodeSize: 64,40
-WindState: 2,102,82,923,303
+WindState: 2,39,89,1410,586
 
 Button Calibrate_All_PV_Sec
 Title: Calibrate All PV Sectors
@@ -1663,7 +1831,7 @@ Author: JamesMilford
 Date: Wed, Aug 29, 2018 10:08 AM
 NodeLocation: 264,112,1
 NodeSize: 64,40
-DiagState: 2,250,88,1503,707,17
+DiagState: 2,273,148,1503,707,17
 
 Variable Act_PV_Install_Rate
 Title: Actual PV Install Rate
@@ -1757,7 +1925,7 @@ WindState: 2,435,78,1025,623
 DefnState: 2,928,38,455,804,0,DFNM
 ValueState: 2,2493,180,263,582,,MIDM
 Aliases: FormNode Fo1535066204
-DisplayInputs: Function Multi_Stage_Calibra3
+DisplayInputs: Function Multi_Stage_Calibrat
 TableCellDefault: checkbox(1)
 
 Objective Sales_Delta1
@@ -1818,6 +1986,7 @@ NodeLocation: 1032,264,1
 NodeSize: 64,40
 ValueState: 2,1427,177,274,280,0,MIDM
 ReformVal: [0,Aggreg_PV_LRMS]
+DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 
 Variable Opt_Solution_PV
 Title: Opt Solution PV
@@ -1836,7 +2005,7 @@ Description: Compares the simulated vs. actual historical PV systems~
 Units:~
 Residential: # of systems~
 Commercial: MW-AC
-Definition: Check_of_Use_PV_Dec_(); {checks whether the stored decision variables will actually be shown in the output}~
+Definition: Check_DecVar_Switch(Use_PV_Decision_Var); {checks whether the stored decision variables will actually be shown in the output}~
 VAR actual:=IF PositionInIndex(Interconnect_Date, Time_Solar_PV, Interconnect_Date)~
    THEN Actual_Cumul_PV_Syst~
    ELSE Null;~
@@ -1870,7 +2039,7 @@ Description: Compares actual vs simulated rate of PV system installations.~
 Units:~
 Residential: # of systems/year~
 Commercial: MW-AC/year
-Definition: Check_of_Use_PV_Dec_(); {checks whether the stored decision variables will actually be shown in the output}~
+Definition: Check_DecVar_Switch(Use_PV_Decision_Var); {checks whether the stored decision variables will actually be shown in the output}~
 VAR actual:=IF PositionInIndex(Interconnect_Date, Time_Solar_PV, Interconnect_Date)~
    THEN Act_PV_Install_Rate~
    ELSE Null;~
@@ -1878,7 +2047,7 @@ VAR actual:=IF PositionInIndex(Interconnect_Date, Time_Solar_PV, Interconnect_Da
 Array(Act_vs_Sim, [actual ,Sim_PV_Install_Rate])
 NodeLocation: 424,504,1
 NodeSize: 64,40
-WindState: 2,274,176,1170,556
+WindState: 2,49,333,1170,556
 ValueState: 2,550,28,874,840,1,MIDM
 Aliases: FormNode Fo1535066207
 GraphSetup: Grid:0~
@@ -1899,6 +2068,7 @@ NodeSize: 64,40
 ValueState: 2,631,354,702,381,,MIDM
 
 Decision Opt_Settings_PV
+Att_PrevIndexValue: ['Multistart','MaxTime']
 Title: Opt Settings PV
 Description: Settings for the PV optimization engine. ~
 ~
@@ -1911,9 +2081,8 @@ NodeSize: 64,40
 WindState: 2,379,220,720,350
 DefnState: 2,789,495,596,188,0,DFNM
 Aliases: FormNode Fo1535066203
-DisplayInputs: Function Multi_Stage_Calibra3
+DisplayInputs: Function Multi_Stage_Calibrat
 {!40700|Att_CellFormat: CellSpan(Opt_Settings_PV,CellAlignment('Center'),2,header:0)}
-Att_PrevIndexValue: ['Multistart','MaxTime']
 
 FormNode Fo1535066203
 Title: Opt Settings EVs
@@ -1949,7 +2118,7 @@ Units: normally unchecked
 Description: The normal value for this box is UNCHECKED. ~
 ~
 Only check this box to use Decision Variables, rather than the stored coefficients, in running the model. This box must be checked to run the optimization of coefficients, and the scripts for running the optimization automatically check this box and then un-check it after the optimization is complete, so that the stored results of the optimization are used in running the model forecast.
-Definition: Checkbox(1)
+Definition: Checkbox(0)
 NodeLocation: 880,360,1
 NodeSize: 64,40
 WindState: 2,20,81,1176,579
@@ -2041,6 +2210,7 @@ The "Use PV Decision Variables" checkbox must be selected for the optimization t
 Definition: IF size(PV_Sectors)>1 THEN MsgBox('When running an optimization, only one sector can be selected. You have more than one selected, so this node will slice out the first element. Please select only one Sector and recalculate.',1);~
 ~
 IF Use_PV_Decision_Var=0 THEN msgbox( 'You must first check the Use PV Decision Variables box before this optimization definition has any meaning. Otherwise, it will not use the decision variables, but rather only stored coefficients.', 1, 'Decision Variable Message');~
+~
 Objective_PV[Optimization_Method1=Select_PV_Opt_Method, @PV_Sectors=1]
 NodeLocation: 880,264,1
 NodeSize: 64,40
@@ -2049,12 +2219,12 @@ ValueState: 2,990,418,416,303,,MIDM
 ReformVal: [0,PV_Sectors]
 
 Index Optimization_Method1
+Att_PrevIndexValue: ['Stock Delta']
 Title: Optimization Methods
 Definition: ['Stock Delta']
 NodeLocation: 1032,168,1
 NodeSize: 64,40
 ValueState: 2,505,196,416,303,,MIDM
-Att_PrevIndexValue: ['Stock Delta']
 
 Text Te1535066204
 Title: Change this to be indexed by a static time index
@@ -2192,13 +2362,13 @@ ValueState: 2,24,267,416,566,,MIDM
 ReformVal: [PV_Sectors,PV_Spatial_ID]
 
 Index All_PV_Constraints
+Att_PrevIndexValue: ['PV Slope','PV Final Cumulative']
 Title: All PV Constraints
 Description: List of all possible PV constraints for the calibration
 Definition: ['PV Slope','PV Final Cumulative']
 NodeLocation: 808,112,1
 NodeSize: 64,40
 ValueState: 2,2020,154,658,303,,MIDM
-Att_PrevIndexValue: ['PV Slope','PV Final Cumulative']
 
 Index Selected_PV_Constrai
 Title: Selected PV Constraints
@@ -2370,18 +2540,19 @@ Original: Current_Stage
 
 Variable Tracefile_Name
 Title: Tracefile Name
-Definition: IF Use_Analytica_Text_T THEN "trace.log" ELSE Undefined
+Definition: IF Use_Trace_Log THEN "trace.log" ELSE Undefined
 NodeLocation: 880,472,1
 NodeSize: 64,40
 
-Decision Use_Analytica_Text_T
-Title: Use Analytica Text Trace Log
+Decision Use_Trace_Log
+Title: Use Trace Log
 Description: Check this box only if you want to trace each guess of the calibration optimizer. This is used primarily for debugging of calibration scripts or to better understand why a calibration may not be providing good results.
 Definition: Checkbox(0)
 NodeLocation: 880,584,1
 NodeSize: 64,32
 NodeInfo: 1,1,1,1,1,1,0,0,0,0,,0,1,0
 Aliases: FormNode Fo1542218103, FormNode Fo1542767189
+DisplayOutputs: Function OG_Multi_Stage_Calib
 
 FormNode Fo1542218103
 Title: Use Analytica Text Trace Log
@@ -2389,7 +2560,7 @@ Definition: 0
 NodeLocation: 924,600,1
 NodeSize: 36,16
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Use_Analytica_Text_T
+Original: Use_Trace_Log
 
 Objective R_2_Stock_Delta_for_
 Title: R^2 Stock Delta for Aggregate
@@ -2659,7 +2830,7 @@ Variable Stored_AdEff_PV
 Title: Stored AdEff PV
 Units: fraction/year
 Description: Stored optimal solutions for the corresponding decision variables.
-Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handle_Li=Handle(PV_Ad_Effectiveness)]
+Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(PV_Ad_Effectiveness)]
 NodeLocation: 592,72,1
 NodeSize: 64,40
 WindState: 2,273,212,1028,559
@@ -2668,6 +2839,7 @@ ValueState: 2,400,276,868,601,,MIDM
 Aliases: Alias Al1535520388
 ReformDef: [All_Sectors,All_Spatial_ID]
 ReformVal: [0,0]
+DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: Default_PVAdEff
 Att_ResultSliceState: [All_Sectors,3,All_Spatial_ID,1,Aggregate_EV_LRMS,1]
 Att_EditSliceState: [All_Sectors,3,All_Spatial_ID,1,Aggregate_EV_LRMS,1]
@@ -2677,7 +2849,7 @@ Variable Stored_LRMS_PV
 Title: Stored LRMS PV
 Units: fraction
 Description: Stored optimal solutions for the corresponding decision variables.
-Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handle_Li=Handle(PV_LongRun_Mkt_Share)]
+Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(PV_LongRun_Mkt_Share)]
 NodeLocation: 592,168,1
 NodeSize: 64,40
 DefnState: 2,244,90,987,486,0,DFNM
@@ -2686,6 +2858,7 @@ Aliases: Alias Al1535520789
 ReformDef: [All_Sectors,All_Spatial_ID]
 ReformVal: [All_Sectors,All_Spatial_ID]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: Default_PV_LRMS
 Att_ResultSliceState: [All_Sectors,3,All_Spatial_ID,1,EV_Mkt_Share_Scen,1]
 Att_EditSliceState: [All_Sectors,3,All_Spatial_ID,1,Aggregate_EV_LRMS,1]
@@ -2697,13 +2870,14 @@ Variable Stored_WOM_PV
 Title: Stored WOM PV
 Units: fraction/year
 Description: Stored optimal solutions for the corresponding decision variables.
-Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handle_Li=Handle(PV_Word_of_Mouth)]
+Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(PV_Word_of_Mouth)]
 NodeLocation: 592,264,1
 NodeSize: 64,40
 DefnState: 2,737,161,597,632,0,DFNM
 ValueState: 2,374,399,972,303,,MIDM
 Aliases: Alias Al1535520633
 ReformDef: [All_Sectors,All_Spatial_ID]
+DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: Default_PV_WOM
 {!40700|CellFormatExpression: IF Self<>Self[@All_Spatial_ID=1] THEN CellFont(color: 'Red')}
 
@@ -2711,12 +2885,13 @@ Variable Stored_End_WOM_PV
 Title: Stored End WOM PV
 Units: 1/year
 Description: Stored optimal solutions for the corresponding decision variables.
-Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handle_Li=Handle(PV_Ending_WOM)]
+Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(PV_Ending_WOM)]
 NodeLocation: 592,360,1
 NodeSize: 64,40
 DefnState: 2,1250,263,394,507,,DFNM
 Aliases: Alias Al1535665647
 ReformDef: [All_Sectors,All_Spatial_ID]
+DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: Default_PV_End_WOM
 {!40700|CellFormatExpression: IF Self<>Self[@All_Spatial_ID=1] THEN CellFont(color: 'Red')}
 
@@ -2728,7 +2903,7 @@ IF isnull(self) THEN CellFont(color: 'Red') ELSE~
 	(IF Relevant_Decision_Va=0 THEN CellFont(color: 'White') ELSE ~
 		(IF self<>self[All_Spatial_ID=Element_for_Storing_] THEN CellFont(color: 'Blue'))~
 )
-Definition: Concat(Stored_PV_Dec_Vars, Stored_Opt_Status_PV, All_PV_Dec_Handle_Li, Opt_Status_Label, Stored_Dec_Var_PV)
+Definition: Concat(Stored_PV_Dec_Vars, Stored_Opt_Status_PV, All_PV_Dec_Handles, Opt_Status_Label, Stored_Dec_Var_PV)
 NodeLocation: 744,224,1
 NodeSize: 64,40
 WindState: 2,239,96,1095,616
@@ -2742,8 +2917,9 @@ Att_CatLineStyle Graph_Primary_Valdim:4~
 Att_GraphIndexRange All_Spatial_ID:1,1
 ReformDef: [Stored_Dec_Var_PV,All_Spatial_ID]
 ReformVal: [Stored_Dec_Var_PV,All_Spatial_ID]
+DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
 Att__TotalsIndex: []
-Att_ResultSliceState: [All_Sectors,1,All_Spatial_ID,1,Stored_Dec_Var_PV,9]
+Att_ResultSliceState: [All_Sectors,3,All_Spatial_ID,1,Stored_Dec_Var_PV,9]
 Att_EditSliceState: [All_Sectors,1,All_Spatial_ID,91,Stored_Dec_Var_PV,1]
 Att_ColorRole: Null
 {!40700|CellFormatExpression: ~
@@ -2755,7 +2931,7 @@ Att_ColorRole: Null
 
 Index Stored_Dec_Var_PV
 Title: Stored Dec Var
-Definition: Concat(All_PV_Dec_Handle_Li, Opt_Status_Label)
+Definition: Concat(All_PV_Dec_Handles, Opt_Status_Label)
 NodeLocation: 744,344,1
 NodeSize: 64,40
 ValueState: 2,46,379,416,303,,MIDM
@@ -2919,6 +3095,7 @@ DefnState: 2,377,97,1359,664,0,DFNM
 ValueState: 2,221,72,1159,702,,MIDM
 ReformDef: [All_Sectors,All_Spatial_ID]
 ReformVal: [Undefined,All_Spatial_ID]
+DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
 TableCellDefault: 'Not Yet Solved.'
 {!40700|CellFormatExpression: IF Self<>Self[@All_Spatial_ID=1] THEN CellFont(color: 'Red')}
 
@@ -2964,22 +3141,24 @@ Variable Stored_Spatial_Coeff
 Title: Stored Spatial Coefficient
 Units: utility
 Description: The amount of utility that describes geographic differences in adoption regardless of relative economics. These are stored values found by the calibration optimization.
-Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handle_Li=Handle(Logit_Spatial_Coeff)]
+Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(Logit_Spatial_Coeff)]
 NodeLocation: 592,648,1
 NodeSize: 64,40
 ValueState: 2,2416,554,1061,303,,MIDM
 Aliases: Alias Al1539126685
+DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: 0
 
 Variable Stored_Logit_Price_C
 Title: Stored Logit Price Coefficient
 Units: utility/ratio
 Description: The amount of utility derived per unit of the cost of electricity ratio. These are stored values found by the calibration optimization.
-Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handle_Li=Handle(Logit_Price_Coeff)]
+Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(Logit_Price_Coeff)]
 NodeLocation: 592,456,1
 NodeSize: 64,40
 DefnState: 2,2256,394,1178,303,,DFNM
 Aliases: Alias Al1539126686
+DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: 0
 
 Decision Logit_Tech_Coeff
@@ -2999,10 +3178,11 @@ Variable Stored_Tech_Coeff
 Title: Stored Tech Coefficient
 Units: utility
 Description: The amount of utility explained by preference for a particular technology regardless of differences in economics. These are stored values found by the calibration optimization.
-Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handle_Li=Handle(Logit_Tech_Coeff)]
+Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(Logit_Tech_Coeff)]
 NodeLocation: 592,552,1
 NodeSize: 64,40
 Aliases: Alias Al1539126688
+DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: 0
 
 Constant Default_PV_PriceCoef
@@ -3110,7 +3290,7 @@ Variable Stored_Pybk_SpatCoef
 Title: Stored Payback Spat Coefficient
 Units: years
 Description: A payback adder that describes geographic differences in payback adoption regardless of relative economics. These are stored values found by the calibration optimization.
-Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handle_Li=Handle(Payback_Spatial_Coef)]
+Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(Payback_Spatial_Coef)]
 NodeLocation: 592,744,1
 NodeSize: 64,40
 DefnState: 2,653,19,559,803,0,DFNM
@@ -3121,6 +3301,7 @@ Att_CatLineStyle Graph_Primary_Valdim:4~
 Att_ContLineStyle Graph_Primary_Valdim:4
 ReformDef: [All_Sectors,All_Spatial_ID]
 ReformVal: [All_Spatial_ID,All_Sectors]
+DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: 0
 
 FormNode Fo1542088631
@@ -3168,7 +3349,7 @@ Variable Stored_Payback_Coeff
 Title: Stored Payback Coefficient
 Units: years
 Description: A payback adder that describes geographic differences in payback adoption regardless of relative economics. These are stored values found by the calibration optimization.
-Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handle_Li=Handle(PV_Payback_Coefficie)]
+Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(PV_Payback_Coefficie)]
 NodeLocation: 592,840,1
 NodeSize: 64,40
 DefnState: 2,653,19,559,803,0,DFNM
@@ -3176,6 +3357,7 @@ ValueState: 2,350,113,699,665,0,MIDM
 Aliases: Alias Al1542302597
 ReformDef: [All_Sectors,All_Spatial_ID]
 ReformVal: [All_Sectors,All_Spatial_ID]
+DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: 0
 
 FormNode Fo1542131035
@@ -3196,432 +3378,433 @@ Original: Default_PV_Pybk_Coef
 
 Constant Stored_PV_Dec_Vars
 Title: Stored PV Dec Vars
-Definition: Table(All_Spatial_ID,All_Sectors,All_PV_Dec_Handle_Li)(~
+Definition: Table(All_Spatial_ID,All_Sectors,All_PV_Dec_Handles)(~
 0,0,0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,0,0,~
-0.014746382372574227,0.7252880274247999,0,-0.2999995650865975,0,0,0,0,0,~
-0.0010476829039247188,0.2758962629607406,0,-0.2070920858414789,0,0,0,0,0,~
+0.014746382,0.725288027,0,-0.299999565,0,0,0,0,0,~
+0.001047683,0.275896263,0,-0.207092086,0,0,0,0,0,~
 0,0,0,0,0,0,0,0,0,~
-0.02864845250077121,0.17093247780573867,0,-0.2999995650865975,0,0,0,0,-6.234708514807537,~
-0.0027042067429349165,0.469575052358062,0,-0.2070920858414789,0,0,0,0,6.531893258562655,~
+0.001005299,0.915276939,0,-0.299999565,0,0,0,0,-0.949126306,~
+0.002704207,0.469575052,0,-0.207092086,0,0,0,0,6.531893259,~
 0,0,0,0,0,0,0,0,0,~
-0.001004522292769186,0.8355177795762763,0,-0.2999995650865975,0,0,0,0,-0.9556092044410825,~
-0.03,2,0,-0.2070920858414789,0,0,0,0,7.3035859164992925,~
+0.001004977,0.829471985,0,-0.299999565,0,0,0,0,-0.987333641,~
+0.03,2,0,-0.207092086,0,0,0,0,7.303585916,~
 0,0,0,0,0,0,0,0,0,~
-0.0010026259337128367,0.5124581455789953,0,-0.2999995650865975,0,0,0,0,-0.040805257525343024,~
-0.028723889088628062,2,0,-0.2070920858414789,0,0,0,0,-0.14183954676147964,~
+0,1.346368897,0,-0.299999565,0,0,0,0,2.530586086,~
+0.028723889,2,0,-0.207092086,0,0,0,0,-0.141839547,~
 0,0,0,0,0,0,0,0,0,~
-0.0009966356634278524,0.8355352219732217,0,-0.2999995650865975,0,0,0,0,1.6221279269241324,~
-0.03,2,0,-0.2070920858414789,0,0,0,0,-2.5936199821363606,~
+0.000996636,0.835535222,0,-0.299999565,0,0,0,0,1.622127927,~
+0.03,2,0,-0.207092086,0,0,0,0,-2.593619982,~
 0,0,0,0,0,0,0,0,0,~
-0.001007414966571295,0.644933743611717,0,-0.2999995650865975,0,0,0,0,0.35002945612088227,~
-0.001025845355201067,1.5900600109273,0,-0.2070920858414789,0,0,0,0,2.6369055133858414,~
+0.001007415,0.644933744,0,-0.299999565,0,0,0,0,0.350029456,~
+0.001025845,1.590060011,0,-0.207092086,0,0,0,0,2.636905513,~
 0,0,0,0,0,0,0,0,0,~
-0.0010101781424679825,0.6272962473272301,0,-0.2999995650865975,0,0,0,0,0.3665482462774385,~
-0,0.18011804045680846,0,-0.2070920858414789,0,0,0,0,-4.1732727637512355,~
+0.001010178,0.627296247,0,-0.299999565,0,0,0,0,0.366548246,~
+0,0.18011804,0,-0.207092086,0,0,0,0,-4.173272764,~
 0,0,0,0,0,0,0,0,0,~
-0.0010070593505532002,1.0184107994333198,0,-0.2999995650865975,0,0,0,0,0.7143614700255365,~
-0.03,2,0,-0.2070920858414789,0,0,0,0,-4.323534152249983,~
+0.001007059,1.018410799,0,-0.299999565,0,0,0,0,0.71436147,~
+0.03,2,0,-0.207092086,0,0,0,0,-4.323534152,~
 0,0,0,0,0,0,0,0,0,~
-0.0010122009012552484,1.0927047329579431,0,-0.2999995650865975,0,0,0,0,-0.4334622874542847,~
-0.0022409958515429824,1.0077397290634067,0,-0.2070920858414789,0,0,0,0,1.7906672640012222,~
+0.001012201,1.092704733,0,-0.299999565,0,0,0,0,-0.433462287,~
+0.002240996,1.007739729,0,-0.207092086,0,0,0,0,1.790667264,~
 0,0,0,0,0,0,0,0,0,~
-0,1.1550938899235992,0,-0.2999995650865975,0,0,0,0,1.5470216219746664,~
-0.0010018583071297678,0.5485060251544773,0,-0.2070920858414789,0,0,0,0,-1.8414378713377844,~
+0,1.15509389,0,-0.299999565,0,0,0,0,1.547021622,~
+0.001001858,0.548506025,0,-0.207092086,0,0,0,0,-1.841437871,~
 0,0,0,0,0,0,0,0,0,~
-0.0010202336864982187,0.7734450534423578,0,-0.2999995650865975,0,0,0,0,1.1361723000650787,~
-0.0009786167263824347,0.5332830149149383,0,-0.2070920858414789,0,0,0,0,1.5755594321176354,~
+0.001020234,0.773445053,0,-0.299999565,0,0,0,0,1.1361723,~
+0.000978617,0.533283015,0,-0.207092086,0,0,0,0,1.575559432,~
 0,0,0,0,0,0,0,0,0,~
-0.0009737214856509547,0.8675232012999867,0,-0.2999995650865975,0,0,0,0,1.8730877960369035,~
-0.0017263085174778555,2,0,-0.2070920858414789,0,0,0,0,0.9633904266493087,~
+0.000973721,0.867523201,0,-0.299999565,0,0,0,0,1.873087796,~
+0.001726309,2,0,-0.207092086,0,0,0,0,0.963390427,~
 0,0,0,0,0,0,0,0,0,~
-0.0033286166778488395,0,0,-0.2999995650865975,0,0,0,0,-8.184395435177732,~
-0.001627481436683666,2,0,-0.2070920858414789,0,0,0,0,-2.3917301030830287,~
+0.003328617,0,0,-0.299999565,0,0,0,0,-8.184395435,~
+0.001627481,2,0,-0.207092086,0,0,0,0,-2.391730103,~
 0,0,0,0,0,0,0,0,0,~
-0.0009410635872052856,0.9263688550141943,0,-0.2999995650865975,0,0,0,0,2.1149866290176127,~
-0.01645005823623402,0,0,-0.2070920858414789,0,0,0,0,-12.693306808727318,~
+0.000941064,0.926368855,0,-0.299999565,0,0,0,0,2.114986629,~
+0.016450058,0,0,-0.207092086,0,0,0,0,-12.69330681,~
 0,0,0,0,0,0,0,0,0,~
-0.009583871754461595,0.0425304585211804,0,-0.2999995650865975,0,0,0,0,-5.469483049633989,~
-0,0,0,-0.2070920858414789,0,0,0,0,15,~
+0.009583872,0.042530459,0,-0.299999565,0,0,0,0,-5.46948305,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.0010041928770379471,0.8769676031645344,0,-0.2999995650865975,0,0,0,0,-1.5562651372663185,~
-0.0009636519825536712,0,0,-0.2070920858414789,0,0,0,0,0.3613111872500656,~
+0.001004193,0.876967603,0,-0.299999565,0,0,0,0,-1.556265137,~
+0.000963652,0,0,-0.207092086,0,0,0,0,0.361311187,~
 0,0,0,0,0,0,0,0,0,~
-0.0003076181940525571,0.9375933813788043,0,-0.2999995650865975,0,0,0,0,-0.3164297451208954,~
-0,0,0,-0.2070920858414789,0,0,0,0,-6.145446474733272,~
+0.000307618,0.937593381,0,-0.299999565,0,0,0,0,-0.316429745,~
+0,0,0,-0.207092086,0,0,0,0,-6.145446475,~
 0,0,0,0,0,0,0,0,0,~
-1.2842718732663455e-007,0.7434589470451531,0,-0.2999995650865975,0,0,0,0,0.5414325598257308,~
-0,0,0,-0.2070920858414789,0,0,0,0,-8.082098281814448,~
+1.28e-007,0.743458947,0,-0.299999565,0,0,0,0,0.54143256,~
+0,0,0,-0.207092086,0,0,0,0,-8.082098282,~
 0,0,0,0,0,0,0,0,0,~
-0.0010025803380343643,0.7446639632493868,0,-0.2999995650865975,0,0,0,0,0.45335645397836893,~
-0,0,0,-0.2070920858414789,0,0,0,0,-7.8045442195865515,~
+0.00100258,0.744663963,0,-0.299999565,0,0,0,0,0.453356454,~
+0,0,0,-0.207092086,0,0,0,0,-7.80454422,~
 0,0,0,0,0,0,0,0,0,~
-0,0,0,-0.2999995650865975,0,0,0,0,-10.754896107015618,~
-0,0,0,-0.2070920858414789,0,0,0,0,15,~
+0,0,0,-0.299999565,0,0,0,0,-10.75489611,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.001245963203699558,0.7306260092472507,0,-0.2999995650865975,0,0,0,0,2.1517222327666565,~
-0.00125950910217404,0.8623159295546174,0,-0.2070920858414789,0,0,0,0,5.9520326325038875,~
+0.001245963,0.730626009,0,-0.299999565,0,0,0,0,2.151722233,~
+0.001259509,0.86231593,0,-0.207092086,0,0,0,0,5.952032633,~
 0,0,0,0,0,0,0,0,0,~
-0.0010095926061229248,0.6726428994180629,0,-0.2999995650865975,0,0,0,0,0.16513961332760901,~
-0,0,0,-0.2070920858414789,0,0,0,0,15,~
+0.001009593,0.672642899,0,-0.299999565,0,0,0,0,0.165139613,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.01835463273356363,0,0,-0.2999995650865975,0,0,0,0,-8.500896026646032,~
-0.00005175393434573187,1.9999982339981353,0,-0.2070920858414789,0,0,0,0,-1.1593435869085933,~
+0.018354633,0,0,-0.299999565,0,0,0,0,-8.500896027,~
+0.0000517539,1.999998234,0,-0.207092086,0,0,0,0,-1.159343587,~
 0,0,0,0,0,0,0,0,0,~
-0.0009853345571635627,0.7244567658051466,0,-0.2999995650865975,0,0,0,0,-0.5658725148265563,~
-0,0.7071897060677269,0,-0.2070920858414789,0,0,0,0,3.118950175908115,~
+0.000985335,0.724456766,0,-0.299999565,0,0,0,0,-0.565872515,~
+0,0.707189706,0,-0.207092086,0,0,0,0,3.118950176,~
 0,0,0,0,0,0,0,0,0,~
-0.0010016812129454496,0.630869190675066,0,-0.2999995650865975,0,0,0,0,-0.42563249856891683,~
-0,0.42484368823679547,0,-0.2070920858414789,0,0,0,0,-4.330279500840788,~
+0.001001681,0.630869191,0,-0.299999565,0,0,0,0,-0.425632499,~
+0,0.424843688,0,-0.207092086,0,0,0,0,-4.330279501,~
 0,0,0,0,0,0,0,0,0,~
-0,0,0,-0.2999995650865975,0,0,0,0,-11.355494952926177,~
-0,0,0,-0.2070920858414789,0,0,0,0,4.931042509662195,~
+0,0,0,-0.299999565,0,0,0,0,-11.35549495,~
+0,0,0,-0.207092086,0,0,0,0,4.93104251,~
 0,0,0,0,0,0,0,0,0,~
-0.0010011630984743352,0.7664049770853345,0,-0.2999995650865975,0,0,0,0,-1.0987015112421994,~
-0.022670597206967385,2,0,-0.2070920858414789,0,0,0,0,0.690626688666359,~
+0.001001163,0.766404977,0,-0.299999565,0,0,0,0,-1.098701511,~
+0.022670597,2,0,-0.207092086,0,0,0,0,0.690626689,~
 0,0,0,0,0,0,0,0,0,~
-0.0009890446823555606,0.4308343105769808,0,-0.2999995650865975,0,0,0,0,-1.2386437563452328,~
-0.008464022249738638,0.7413922305718779,0,-0.2070920858414789,0,0,0,0,-3.568729308364897,~
+0.000989045,0.430834311,0,-0.299999565,0,0,0,0,-1.238643756,~
+0.008464022,0.741392231,0,-0.207092086,0,0,0,0,-3.568729308,~
 0,0,0,0,0,0,0,0,0,~
-0.0010033796922241701,0.6058744427651213,0,-0.2999995650865975,0,0,0,0,0.993676828893954,~
-0,0.08579094702113538,0,-0.2070920858414789,0,0,0,0,6.016530651678085,~
+0.00100338,0.605874443,0,-0.299999565,0,0,0,0,0.993676829,~
+0,0.085790947,0,-0.207092086,0,0,0,0,6.016530652,~
 0,0,0,0,0,0,0,0,0,~
-0.001002710553836615,0.6957215915347571,0,-0.2999995650865975,0,0,0,0,0.9878242224468381,~
-0,0.469194378226052,0,-0.2070920858414789,0,0,0,0,6.183757334578655,~
+0.001002711,0.695721592,0,-0.299999565,0,0,0,0,0.987824222,~
+0,0.469194378,0,-0.207092086,0,0,0,0,6.183757335,~
 0,0,0,0,0,0,0,0,0,~
-0.0010052096931927519,0.8209372908814772,0,-0.2999995650865975,0,0,0,0,-0.1960537948387557,~
-0.003678411758365895,0.8695243833211068,0,-0.2070920858414789,0,0,0,0,3.444528461932403,~
+0.00100521,0.820937291,0,-0.299999565,0,0,0,0,-0.196053795,~
+0.003678412,0.869524383,0,-0.207092086,0,0,0,0,3.444528462,~
 0,0,0,0,0,0,0,0,0,~
-0.0025671239683907536,0.7080311923991672,0,-0.2999995650865975,0,0,0,0,0.9824058391154048,~
-0.0010071905271466523,1.0739451784181133,0,-0.2070920858414789,0,0,0,0,3.0095094623489604,~
+0.002567124,0.708031192,0,-0.299999565,0,0,0,0,0.982405839,~
+0.001007191,1.073945178,0,-0.207092086,0,0,0,0,3.009509462,~
 0,0,0,0,0,0,0,0,0,~
-0.001003353354353367,0.7438124296958204,0,-0.2999995650865975,0,0,0,0,1.013062149530971,~
-0,0,0,-0.2070920858414789,0,0,0,0,1.0250346293208943,~
+0.001003353,0.74381243,0,-0.299999565,0,0,0,0,1.01306215,~
+0,0,0,-0.207092086,0,0,0,0,1.025034629,~
 0,0,0,0,0,0,0,0,0,~
-0.0010013180634431925,0.5110180909547027,0,-0.2999995650865975,0,0,0,0,0.3254049032091543,~
-0.000965522720198346,0.3377906058108664,0,-0.2070920858414789,0,0,0,0,2.824363540581106,~
+0.001001318,0.511018091,0,-0.299999565,0,0,0,0,0.325404903,~
+0.000965523,0.337790606,0,-0.207092086,0,0,0,0,2.824363541,~
 0,0,0,0,0,0,0,0,0,~
-0.0010068843336194107,0.9604403187165382,0,-0.2999995650865975,0,0,0,0,-0.608848044922831,~
-0,0.3370767520076572,0,-0.2070920858414789,0,0,0,0,-4.894457562792096,~
+0.001006884,0.960440319,0,-0.299999565,0,0,0,0,-0.608848045,~
+0,0.337076752,0,-0.207092086,0,0,0,0,-4.894457563,~
 0,0,0,0,0,0,0,0,0,~
-0.0009996825600733195,0.6884544861963033,0,-0.2999995650865975,0,0,0,0,-0.9381796267340776,~
-0.001360077745186573,0.3270390256948845,0,-0.2070920858414789,0,0,0,0,2.9073560036852677,~
+0.000999683,0.688454486,0,-0.299999565,0,0,0,0,-0.938179627,~
+0.001360078,0.327039026,0,-0.207092086,0,0,0,0,2.907356004,~
 0,0,0,0,0,0,0,0,0,~
-0.001000056563569202,0.7303581099394816,0,-0.2999995650865975,0,0,0,0,-1.2162463714276353,~
-0.0010476829039247188,0.2758962629607406,0,-0.2070920858414789,0,0,0,0,0,~
+0.001000057,0.73035811,0,-0.299999565,0,0,0,0,-1.216246371,~
+0.001047683,0.275896263,0,-0.207092086,0,0,0,0,0,~
 0,0,0,0,0,0,0,0,0,~
-0.00013327187151939064,0.6496152676206263,0,-0.2999995650865975,0,0,0,0,0.18233834921641714,~
-0.0010003520604672316,0.4116886060028474,0,-0.2070920858414789,0,0,0,0,-0.0010890243128733993,~
+0.000133272,0.649615268,0,-0.299999565,0,0,0,0,0.182338349,~
+0.001000352,0.411688606,0,-0.207092086,0,0,0,0,-0.001089024,~
 0,0,0,0,0,0,0,0,0,~
-0.0010027631962504107,0.735165146407985,0,-0.2999995650865975,0,0,0,0,-1.1939799273414444,~
-0.0010476829039247188,0.2758962629607406,0,-0.2070920858414789,0,0,0,0,0,~
+0.001002763,0.735165146,0,-0.299999565,0,0,0,0,-1.193979927,~
+0.001047683,0.275896263,0,-0.207092086,0,0,0,0,0,~
 0,0,0,0,0,0,0,0,0,~
-0.0009990092339596194,0.7079952852637408,0,-0.2999995650865975,0,0,0,0,-0.5485544780180803,~
-0,0.7436762816223107,0,-0.2070920858414789,0,0,0,0,1.2089696799508134,~
+0.000999009,0.707995285,0,-0.299999565,0,0,0,0,-0.548554478,~
+0,0.743676282,0,-0.207092086,0,0,0,0,1.20896968,~
 0,0,0,0,0,0,0,0,0,~
-0.0009945123332992314,0.7320870054555111,0,-0.2999995650865975,0,0,0,0,-1.310476297569173,~
-0.0008430134827451556,0.23769459712247493,0,-0.2070920858414789,0,0,0,0,-2.9745112130437343,~
+0.000994512,0.732087005,0,-0.299999565,0,0,0,0,-1.310476298,~
+0.000843013,0.237694597,0,-0.207092086,0,0,0,0,-2.974511213,~
 0,0,0,0,0,0,0,0,0,~
-0.0010044316072050895,0.6380431872172077,0,-0.2999995650865975,0,0,0,0,-1.6244012285355618,~
-0.019496956755409755,0.7124838231084447,0,-0.2070920858414789,0,0,0,0,-1.9131334501423636,~
+0.001004432,0.638043187,0,-0.299999565,0,0,0,0,-1.624401229,~
+0.019496957,0.712483823,0,-0.207092086,0,0,0,0,-1.91313345,~
 0,0,0,0,0,0,0,0,0,~
-0.0009980248489720612,0.6057196317107676,0,-0.2999995650865975,0,0,0,0,-1.7765480814714751,~
-0.0015198307064898415,0.6328684523316883,0,-0.2070920858414789,0,0,0,0,5.327596844863788,~
+0.000998025,0.605719632,0,-0.299999565,0,0,0,0,-1.776548081,~
+0.001519831,0.632868452,0,-0.207092086,0,0,0,0,5.327596845,~
 0,0,0,0,0,0,0,0,0,~
-0.0030401848376726956,0.12368012456868407,0,-0.2999995650865975,0,0,0,0,-15,~
-0,0,0,-0.2070920858414789,0,0,0,0,-8.669800798731012,~
+0.003040185,0.123680125,0,-0.299999565,0,0,0,0,-15,~
+0,0,0,-0.207092086,0,0,0,0,-8.669800799,~
 0,0,0,0,0,0,0,0,0,~
-0.000958789190644887,0.7760805346735676,0,-0.2999995650865975,0,0,0,0,1.4210797272495443,~
-0,0.12394256851847905,0,-0.2070920858414789,0,0,0,0,-0.1424817140115472,~
+0.000958789,0.776080535,0,-0.299999565,0,0,0,0,1.421079727,~
+0,0.123942569,0,-0.207092086,0,0,0,0,-0.142481714,~
 0,0,0,0,0,0,0,0,0,~
-0.001005251903970922,1.0699842756561069,0,-0.2999995650865975,0,0,0,0,-1.072666791795266,~
-0.0009316895367799304,0.821664348426891,0,-0.2070920858414789,0,0,0,0,10.570588800163451,~
+0.001005252,1.069984276,0,-0.299999565,0,0,0,0,-1.072666792,~
+0.00093169,0.821664348,0,-0.207092086,0,0,0,0,10.5705888,~
 0,0,0,0,0,0,0,0,0,~
-0.0009990598977724276,0.4825808890569241,0,-0.2999995650865975,0,0,0,0,-0.14169544952969565,~
-0.0007289297367765911,1.6458135012166961,0,-0.2070920858414789,0,0,0,0,6.063369839696423,~
+0.00099906,0.482580889,0,-0.299999565,0,0,0,0,-0.14169545,~
+0.00072893,1.645813501,0,-0.207092086,0,0,0,0,6.06336984,~
 0,0,0,0,0,0,0,0,0,~
-0,0,0,-0.2999995650865975,0,0,0,0,-13.756317165101095,~
-0.00315375380128937,2,0,-0.2070920858414789,0,0,0,0,6.940281611716126,~
+0,0,0,-0.299999565,0,0,0,0,-13.75631717,~
+0.003153754,2,0,-0.207092086,0,0,0,0,6.940281612,~
 0,0,0,0,0,0,0,0,0,~
-0.0009937320971583165,0.7198298537280565,0,-0.2999995650865975,0,0,0,0,0.8986363483831082,~
-0,1.4306694906605142,0,-0.2070920858414789,0,0,0,0,3.809100687306145,~
+0.000993732,0.719829854,0,-0.299999565,0,0,0,0,0.898636348,~
+0,1.430669491,0,-0.207092086,0,0,0,0,3.809100687,~
 0,0,0,0,0,0,0,0,0,~
-0.0010013027316649122,0.7513206302993128,0,-0.2999995650865975,0,0,0,0,0.49218516663904915,~
-0.0008239730962625467,0.1509471848011571,0,-0.2070920858414789,0,0,0,0,-1.2979305418645537,~
+0.001001303,0.75132063,0,-0.299999565,0,0,0,0,0.492185167,~
+0.000823973,0.150947185,0,-0.207092086,0,0,0,0,-1.297930542,~
 0,0,0,0,0,0,0,0,0,~
-0.0009943707816621968,0.6697916543684597,0,-0.2999995650865975,0,0,0,0,0.4245939089031814,~
-0.025125629632803168,2,0,-0.2070920858414789,0,0,0,0,5.532346160016484,~
+0.000994371,0.669791654,0,-0.299999565,0,0,0,0,0.424593909,~
+0.02512563,2,0,-0.207092086,0,0,0,0,5.53234616,~
 0,0,0,0,0,0,0,0,0,~
-0.0010045049750764768,0.8357860763124902,0,-0.2999995650865975,0,0,0,0,-0.6369392894121694,~
-0.00005073235651279959,0.3114823137875958,0,-0.2070920858414789,0,0,0,0,-1.676983115814813,~
+0.001004505,0.835786076,0,-0.299999565,0,0,0,0,-0.636939289,~
+0.0000507324,0.311482314,0,-0.207092086,0,0,0,0,-1.676983116,~
 0,0,0,0,0,0,0,0,0,~
-0.001447439708839154,0.5477113820140266,0,-0.2999995650865975,0,0,0,0,5.966586439163852,~
-0.00002919932697906152,2,0,-0.2070920858414789,0,0,0,0,7.84735317721632,~
+0.00144744,0.547711382,0,-0.299999565,0,0,0,0,5.966586439,~
+0.0000291993,2,0,-0.207092086,0,0,0,0,7.847353177,~
 0,0,0,0,0,0,0,0,0,~
-0.0010235760303227575,0.7210835115636596,0,-0.2999995650865975,0,0,0,0,-2.848081608931068,~
-0.000988112853198494,0.8960345632958806,0,-0.2070920858414789,0,0,0,0,-4.73021887225841,~
+0.001023576,0.721083512,0,-0.299999565,0,0,0,0,-2.848081609,~
+0.000988113,0.896034563,0,-0.207092086,0,0,0,0,-4.730218872,~
 0,0,0,0,0,0,0,0,0,~
-0.0010006658115861444,0.7757239539923273,0,-0.2999995650865975,0,0,0,0,-1.3694258972066304,~
-0.02077107268042892,0.21044819910181134,0,-0.2070920858414789,0,0,0,0,-0.6299405546012362,~
+0.001000666,0.775723954,0,-0.299999565,0,0,0,0,-1.369425897,~
+0.020771073,0.210448199,0,-0.207092086,0,0,0,0,-0.629940555,~
 0,0,0,0,0,0,0,0,0,~
-0.0010081764206126326,0.9296584417495851,0,-0.2999995650865975,0,0,0,0,-1.5476771219736862,~
-0.005074073249781572,0,0,-0.2070920858414789,0,0,0,0,-15,~
+0.001008176,0.929658442,0,-0.299999565,0,0,0,0,-1.547677122,~
+0.005074073,0,0,-0.207092086,0,0,0,0,-15,~
 0,0,0,0,0,0,0,0,0,~
-0.023494392833717105,0,0,-0.2999995650865975,0,0,0,0,-7.6947731007150555,~
-0.000013000782124220468,1.9999891771789315,0,-0.2070920858414789,0,0,0,0,-9.272808664900971,~
+0.023494393,0,0,-0.299999565,0,0,0,0,-7.694773101,~
+0.0000130008,1.999989177,0,-0.207092086,0,0,0,0,-9.272808665,~
 0,0,0,0,0,0,0,0,0,~
-0.0010021811153146972,0.6167502270235616,0,-0.2999995650865975,0,0,0,0,-1.0457825047563631,~
-0.0010407258344274683,0.4054161509057595,0,-0.2070920858414789,0,0,0,0,1.0414867355679847,~
+0.001002181,0.616750227,0,-0.299999565,0,0,0,0,-1.045782505,~
+0.001040726,0.405416151,0,-0.207092086,0,0,0,0,1.041486736,~
 0,0,0,0,0,0,0,0,0,~
-0.005374300938739581,1.5336358479846435,0,-0.2999995650865975,0,0,0,0,-10.442245628425034,~
-0,0,0,-0.2070920858414789,0,0,0,0,15,~
+0.005374301,1.533635848,0,-0.299999565,0,0,0,0,-10.44224563,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.0010059363819498487,0.8330670938011343,0,-0.2999995650865975,0,0,0,0,-0.41607427477368253,~
-0,0,0,-0.2070920858414789,0,0,0,0,-7.792144264578976,~
+0.001005936,0.833067094,0,-0.299999565,0,0,0,0,-0.416074275,~
+0,0,0,-0.207092086,0,0,0,0,-7.792144265,~
 0,0,0,0,0,0,0,0,0,~
-0.029176195968963432,0.4255884153812344,0,-0.2999995650865975,0,0,0,0,-0.1005979694774111,~
-0.005921568705875482,0.7257798646960586,0,-0.2070920858414789,0,0,0,0,14.989678096101457,~
+0.029176196,0.425588415,0,-0.299999565,0,0,0,0,-0.100597969,~
+0.005921569,0.725779865,0,-0.207092086,0,0,0,0,14.9896781,~
 0,0,0,0,0,0,0,0,0,~
-0.001005243113350676,0.8362923665923407,0,-0.2999995650865975,0,0,0,0,-0.2512152411096586,~
-0.0009987394669702643,0.30726155905574676,0,-0.2070920858414789,0,0,0,0,-0.46131083350121743,~
+0.001005243,0.836292367,0,-0.299999565,0,0,0,0,-0.251215241,~
+0.000998739,0.307261559,0,-0.207092086,0,0,0,0,-0.461310834,~
 0,0,0,0,0,0,0,0,0,~
-0.020302879223741067,0.7010355120063925,0,-0.2999995650865975,0,0,0,0,-9.684212708233023,~
-0,0,0,-0.2070920858414789,0,0,0,0,15,~
+0.020302879,0.701035512,0,-0.299999565,0,0,0,0,-9.684212708,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.001003689803355446,0.5921364351240712,0,-0.2999995650865975,0,0,0,0,0.542453262099123,~
-0,0,0,-0.2070920858414789,0,0,0,0,-6.116422367836102,~
+0.00100369,0.592136435,0,-0.299999565,0,0,0,0,0.542453262,~
+0,0,0,-0.207092086,0,0,0,0,-6.116422368,~
 0,0,0,0,0,0,0,0,0,~
-0.0009909683458484177,0.49656822365182773,0,-0.2999995650865975,0,0,0,0,-1.2343264916902226,~
-0.006213611163382366,0.3987613723918748,0,-0.2070920858414789,0,0,0,0,4.542615132815714,~
+0.000990968,0.496568224,0,-0.299999565,0,0,0,0,-1.234326492,~
+0.006213611,0.398761372,0,-0.207092086,0,0,0,0,4.542615133,~
 0,0,0,0,0,0,0,0,0,~
-0.00042292702969743936,0.7060156900147723,0,-0.2999995650865975,0,0,0,0,0.5388753710402665,~
-0.0010373201599039534,0.5908304412224695,0,-0.2070920858414789,0,0,0,0,2.286866879388461,~
+0.000422927,0.70601569,0,-0.299999565,0,0,0,0,0.538875371,~
+0.00103732,0.590830441,0,-0.207092086,0,0,0,0,2.286866879,~
 0,0,0,0,0,0,0,0,0,~
-0.001005312018827875,0.8235462608530336,0,-0.2999995650865975,0,0,0,0,-1.554893545354534,~
-0,0.10402548537997053,0,-0.2070920858414789,0,0,0,0,-4.3537793628761,~
+0.001005312,0.823546261,0,-0.299999565,0,0,0,0,-1.554893545,~
+0,0.104025485,0,-0.207092086,0,0,0,0,-4.353779363,~
 0,0,0,0,0,0,0,0,0,~
-0.0009569336729747004,0.7305460296155153,0,-0.2999995650865975,0,0,0,0,-0.06982695646460993,~
-0,1.2589053324148591,0,-0.2070920858414789,0,0,0,0,6.015795527012762,~
+0.000956934,0.73054603,0,-0.299999565,0,0,0,0,-0.069826956,~
+0,1.258905332,0,-0.207092086,0,0,0,0,6.015795527,~
 0,0,0,0,0,0,0,0,0,~
-0.0010014178908098494,0.6752098055474415,0,-0.2999995650865975,0,0,0,0,-1.202705666733784,~
-0,0.2689374104392054,0,-0.2070920858414789,0,0,0,0,-4.646904411803862,~
+0.001001418,0.675209806,0,-0.299999565,0,0,0,0,-1.202705667,~
+0,0.26893741,0,-0.207092086,0,0,0,0,-4.646904412,~
 0,0,0,0,0,0,0,0,0,~
-0.0061704508290488505,1.79568982580476,0,-0.2999995650865975,0,0,0,0,-0.6203845588585288,~
-0,0,0,-0.2070920858414789,0,0,0,0,15,~
+0.006170451,1.795689826,0,-0.299999565,0,0,0,0,-0.620384559,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.016158396256318323,0.0007321030256445353,0,-0.2999995650865975,0,0,0,0,-10.200196772053928,~
-0.024704441998481954,1.7038236631563972,0,-0.2070920858414789,0,0,0,0,1.8666808553193224,~
+0.016158396,0.000732103,0,-0.299999565,0,0,0,0,-10.20019677,~
+0.024704442,1.703823663,0,-0.207092086,0,0,0,0,1.866680855,~
 0,0,0,0,0,0,0,0,0,~
-0.005138071769412413,0.1858453858475363,0,-0.2999995650865975,0,0,0,0,-6.916430625611212,~
-0.007004338866584546,2,0,-0.2070920858414789,0,0,0,0,10.24111762149843,~
+0.005138072,0.185845386,0,-0.299999565,0,0,0,0,-6.916430626,~
+0.007004339,2,0,-0.207092086,0,0,0,0,10.24111762,~
 0,0,0,0,0,0,0,0,0,~
-0,0,0,-0.2999995650865975,0,0,0,0,-12.020897100223646,~
-0,0,0,-0.2070920858414789,0,0,0,0,14.999999999999998,~
+0,0,0,-0.299999565,0,0,0,0,-12.0208971,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.02414355613484213,1.0875574020145262,0,-0.2999995650865975,0,0,0,0,-1.6891236355011916,~
-0,0,0,-0.2070920858414789,0,0,0,0,15,~
+0.024143556,1.087557402,0,-0.299999565,0,0,0,0,-1.689123636,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.012056545914177106,0.6709661123673274,0,-0.2999995650865975,0,0,0,0,-0.6203845588585288,~
-0,0,0,-0.2070920858414789,0,0,0,0,15,~
+0.012056546,0.670966112,0,-0.299999565,0,0,0,0,-0.620384559,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0,0,0,-0.2999995650865975,0,0,0,0,-12.053068185715503,~
-0.010175990845776195,0,0,-0.2070920858414789,0,0,0,0,-2.0578571316576713,~
+0,0,0,-0.299999565,0,0,0,0,-12.05306819,~
+0.010175991,0,0,-0.207092086,0,0,0,0,-2.057857132,~
 0,0,0,0,0,0,0,0,0,~
-0.0010022610347142948,0.5477617223719102,0,-0.2999995650865975,0,0,0,0,0.3692711677031439,~
-0.0009905892326298855,0.05686877435582576,0,-0.2070920858414789,0,0,0,0,0.11344318385935916,~
+0.001002261,0.547761722,0,-0.299999565,0,0,0,0,0.369271168,~
+0.000990589,0.056868774,0,-0.207092086,0,0,0,0,0.113443184,~
 0,0,0,0,0,0,0,0,0,~
-0.001224308487120274,0.8001815674510437,0,-0.2999995650865975,0,0,0,0,1.9579604467080869,~
-0.02566143492043491,2,0,-0.2070920858414789,0,0,0,0,9.548135667164857,~
+0.001224308,0.800181567,0,-0.299999565,0,0,0,0,1.957960447,~
+0.025661435,2,0,-0.207092086,0,0,0,0,9.548135667,~
 0,0,0,0,0,0,0,0,0,~
-0.0009975143224976901,0.3766945020240313,0,-0.2999995650865975,0,0,0,0,-0.568157435377945,~
-0.025202314231905314,1.2971451185291754,0,-0.2070920858414789,0,0,0,0,9.130054732218735,~
+0.000997514,0.376694502,0,-0.299999565,0,0,0,0,-0.568157435,~
+0.025202314,1.297145119,0,-0.207092086,0,0,0,0,9.130054732,~
 0,0,0,0,0,0,0,0,0,~
-0.001000942848664846,0.4811254003717407,0,-0.2999995650865975,0,0,0,0,-0.11350709289388397,~
-0.0009449234652206136,0.733418460036241,0,-0.2070920858414789,0,0,0,0,2.339107565683631,~
+0.001000943,0.4811254,0,-0.299999565,0,0,0,0,-0.113507093,~
+0.000944923,0.73341846,0,-0.207092086,0,0,0,0,2.339107566,~
 0,0,0,0,0,0,0,0,0,~
-0.0010019139227446748,0.7839477607248242,0,-0.2999995650865975,0,0,0,0,0.5153001300064882,~
-0.0008287009311049157,0.05628673237653349,0,-0.2070920858414789,0,0,0,0,-2.200499892278264,~
+0.001001914,0.783947761,0,-0.299999565,0,0,0,0,0.51530013,~
+0.000828701,0.056286732,0,-0.207092086,0,0,0,0,-2.200499892,~
 0,0,0,0,0,0,0,0,0,~
-0.0009934977396805363,0.4529779221774901,0,-0.2999995650865975,0,0,0,0,0.6264650724489169,~
-0,0,0,-0.2070920858414789,0,0,0,0,0.35957314658030043,~
+0.000993498,0.452977922,0,-0.299999565,0,0,0,0,0.626465072,~
+0,0,0,-0.207092086,0,0,0,0,0.359573147,~
 0,0,0,0,0,0,0,0,0,~
-0.0027368794901675604,0,0,-0.2999995650865975,0,0,0,0,-13.463990831963713,~
-0.02386315718146945,0,0,-0.2070920858414789,0,0,0,0,-0.3602249319235168,~
+0.002736879,0,0,-0.299999565,0,0,0,0,-13.46399083,~
+0.023863157,0,0,-0.207092086,0,0,0,0,-0.360224932,~
 0,0,0,0,0,0,0,0,0,~
-0.0010018816334453424,0.46396995170208233,0,-0.2999995650865975,0,0,0,0,0.12557742477981723,~
-0.013432428342756915,0.052559823175683654,0,-0.2070920858414789,0,0,0,0,6.613733210983496,~
+0.001001882,0.463969952,0,-0.299999565,0,0,0,0,0.125577425,~
+0.013432428,0.052559823,0,-0.207092086,0,0,0,0,6.613733211,~
 0,0,0,0,0,0,0,0,0,~
-0.0008902492130554275,1.1433172076954583,0,-0.2999995650865975,0,0,0,0,1.621884950961788,~
-0.0006961282272383192,0.0431326048913229,0,-0.2070920858414789,0,0,0,0,1.1969531275144547,~
+0.000890249,1.143317208,0,-0.299999565,0,0,0,0,1.621884951,~
+0.000696128,0.043132605,0,-0.207092086,0,0,0,0,1.196953128,~
 0,0,0,0,0,0,0,0,0,~
-0.0009255710072549503,0.6371944588100835,0,-0.2999995650865975,0,0,0,0,0.5970595124231063,~
-0.0010035828556422186,0.469289143332895,0,-0.2070920858414789,0,0,0,0,2.1106135748943506,~
+0.000925571,0.637194459,0,-0.299999565,0,0,0,0,0.597059512,~
+0.001003583,0.469289143,0,-0.207092086,0,0,0,0,2.110613575,~
 0,0,0,0,0,0,0,0,0,~
-0.00676795687841622,1.500553664518778,0,-0.2999995650865975,0,0,0,0,-14.98880176338777,~
-0.0014221786610853736,2,0,-0.2070920858414789,0,0,0,0,6.130303921206558,~
+0.006767957,1.500553665,0,-0.299999565,0,0,0,0,-14.98880176,~
+0.001422179,2,0,-0.207092086,0,0,0,0,6.130303921,~
 0,0,0,0,0,0,0,0,0,~
-0,0.4608682126639762,0,-0.2999995650865975,0,0,0,0,-0.7250259513852111,~
-0.0010476829039247188,0.2758962629607406,0,-0.2070920858414789,0,0,0,0,0,~
+0,0.460868213,0,-0.299999565,0,0,0,0,-0.725025951,~
+0.001047683,0.275896263,0,-0.207092086,0,0,0,0,0,~
 0,0,0,0,0,0,0,0,0,~
-0.0001407098900421719,0.8918454746233708,0,-0.2999995650865975,0,0,0,0,0.28382914124696945,~
-0,0.5102102515672987,0,-0.2070920858414789,0,0,0,0,-7.666325537120264,~
+0.00014071,0.891845475,0,-0.299999565,0,0,0,0,0.283829141,~
+0,0.510210252,0,-0.207092086,0,0,0,0,-7.666325537,~
 0,0,0,0,0,0,0,0,0,~
-0.0009981651746809154,0.6267398498735198,0,-0.2999995650865975,0,0,0,0,-0.2412277292581357,~
-0.000993969486101815,0.891896082501583,0,-0.2070920858414789,0,0,0,0,3.645377798094811,~
+0.000998165,0.62673985,0,-0.299999565,0,0,0,0,-0.241227729,~
+0.000993969,0.891896083,0,-0.207092086,0,0,0,0,3.645377798,~
 0,0,0,0,0,0,0,0,0,~
-0.0009043811152001597,0.7235033140409934,0,-0.2999995650865975,0,0,0,0,1.51083015821686,~
-0.029477458960375617,2,0,-0.2070920858414789,0,0,0,0,5.1302609675505195,~
+0.000904381,0.723503314,0,-0.299999565,0,0,0,0,1.510830158,~
+0.029477459,2,0,-0.207092086,0,0,0,0,5.130260968,~
 0,0,0,0,0,0,0,0,0,~
-0.0009991346546103506,0.5377188125487056,0,-0.2999995650865975,0,0,0,0,-0.12215174164495517,~
-0.0005698777368308085,0.6711020988256506,0,-0.2070920858414789,0,0,0,0,7.905803683753738,~
+0.000999135,0.537718813,0,-0.299999565,0,0,0,0,-0.122151742,~
+0.000569878,0.671102099,0,-0.207092086,0,0,0,0,7.905803684,~
 0,0,0,0,0,0,0,0,0,~
-0.0009795584662897223,1.3790244713015918,0,-0.2999995650865975,0,0,0,0,1.4344310878202746,~
-0.01917307669542946,0.9846835381701645,0,-0.2070920858414789,0,0,0,0,9.015914465098303,~
+0.000979558,1.379024471,0,-0.299999565,0,0,0,0,1.434431088,~
+0.019173077,0.984683538,0,-0.207092086,0,0,0,0,9.015914465,~
 0,0,0,0,0,0,0,0,0,~
-0.0010057255717922401,0.7747807098040176,0,-0.2999995650865975,0,0,0,0,-0.25628342132011606,~
-0.001340417146397167,0.8036630637658772,0,-0.2070920858414789,0,0,0,0,3.2101033293353525,~
+0.001005726,0.77478071,0,-0.299999565,0,0,0,0,-0.256283421,~
+0.001340417,0.803663064,0,-0.207092086,0,0,0,0,3.210103329,~
 0,0,0,0,0,0,0,0,0,~
-0.0010035127439322075,0.7005939008817885,0,-0.2999995650865975,0,0,0,0,-0.279301731304367,~
-0.0009975090704863992,0.16592052942662605,0,-0.2070920858414789,0,0,0,0,0.2669571972159617,~
+0.001003513,0.700593901,0,-0.299999565,0,0,0,0,-0.279301731,~
+0.000997509,0.165920529,0,-0.207092086,0,0,0,0,0.266957197,~
 0,0,0,0,0,0,0,0,0,~
-0.001026209896794113,1.3623729298895102,0,-0.2999995650865975,0,0,0,0,0.4556854088433923,~
-0,0,0,-0.2070920858414789,0,0,0,0,0.02882744224759021,~
+0.00102621,1.36237293,0,-0.299999565,0,0,0,0,0.455685409,~
+0,0,0,-0.207092086,0,0,0,0,0.028827442,~
 0,0,0,0,0,0,0,0,0,~
-0.0010040153237094202,0.8166113602189823,0,-0.2999995650865975,0,0,0,0,1.21196352009206,~
-0,0.12062735355844754,0,-0.2070920858414789,0,0,0,0,-1.665049122650715,~
+0.001004015,0.81661136,0,-0.299999565,0,0,0,0,1.21196352,~
+0,0.120627354,0,-0.207092086,0,0,0,0,-1.665049123,~
 0,0,0,0,0,0,0,0,0,~
-0,1.452393688479919,0,-0.2999995650865975,0,0,0,0,0.4241238389009276,~
-0.029421028662536083,0.369837373337601,0,-0.2070920858414789,0,0,0,0,6.2908961723776295,~
+0,1.452393688,0,-0.299999565,0,0,0,0,0.424123839,~
+0.029421029,0.369837373,0,-0.207092086,0,0,0,0,6.290896172,~
 0,0,0,0,0,0,0,0,0,~
-0.0010124232007112225,1.7369190275786803,0,-0.2999995650865975,0,0,0,0,0.1514273085826292,~
-0.0011775235243958223,0,0,-0.2070920858414789,0,0,0,0,-9.332898305415538,~
+0.001012423,1.736919028,0,-0.299999565,0,0,0,0,0.151427309,~
+0.001177524,0,0,-0.207092086,0,0,0,0,-9.332898305,~
 0,0,0,0,0,0,0,0,0,~
-0.0010105695931642766,0.9322837464220735,0,-0.2999995650865975,0,0,0,0,0.8007715231766018,~
-0.000999539094962632,0.3327987973981224,0,-0.2070920858414789,0,0,0,0,0.7176277898245822,~
+0.00101057,0.932283746,0,-0.299999565,0,0,0,0,0.800771523,~
+0.000999539,0.332798797,0,-0.207092086,0,0,0,0,0.71762779,~
 0,0,0,0,0,0,0,0,0,~
-0.0009996974011482723,0.6666409943075943,0,-0.2999995650865975,0,0,0,0,-1.239399049230477,~
-0.02617127585921129,0.6663435592901626,0,-0.2070920858414789,0,0,0,0,7.755608139533775,~
+0.000999697,0.666640994,0,-0.299999565,0,0,0,0,-1.239399049,~
+0.026171276,0.666343559,0,-0.207092086,0,0,0,0,7.75560814,~
 0,0,0,0,0,0,0,0,0,~
-0.001029627387775776,0.8016908546629811,0,-0.2999995650865975,0,0,0,0,1.2186367235900424,~
-5.364242641075677e-010,0,0,-0.2070920858414789,0,0,0,0,-0.5401810912896313,~
+0.001029627,0.801690855,0,-0.299999565,0,0,0,0,1.218636724,~
+5.36e-010,0,0,-0.207092086,0,0,0,0,-0.540181091,~
 0,0,0,0,0,0,0,0,0,~
-0.0010043695576317689,0.7952136775713389,0,-0.2999995650865975,0,0,0,0,-0.4636243654452531,~
-0,0,0,-0.2070920858414789,0,0,0,0,-4.269455768130313,~
+0.00100437,0.795213678,0,-0.299999565,0,0,0,0,-0.463624365,~
+0,0,0,-0.207092086,0,0,0,0,-4.269455768,~
 0,0,0,0,0,0,0,0,0,~
-0.001002238645505908,0.6452165834885715,0,-0.2999995650865975,0,0,0,0,-0.08240787322921878,~
-0,0,0,-0.2070920858414789,0,0,0,0,-8.170601092534687,~
+0.001002239,0.645216583,0,-0.299999565,0,0,0,0,-0.082407873,~
+0,0,0,-0.207092086,0,0,0,0,-8.170601093,~
 0,0,0,0,0,0,0,0,0,~
-0.0010039433637091578,0.7920271778776856,0,-0.2999995650865975,0,0,0,0,-0.7607108191228463,~
-0.029019265083309532,2,0,-0.2070920858414789,0,0,0,0,6.318364155066806,~
+0.001003943,0.792027178,0,-0.299999565,0,0,0,0,-0.760710819,~
+0.029019265,2,0,-0.207092086,0,0,0,0,6.318364155,~
 0,0,0,0,0,0,0,0,0,~
-0.025470015348619788,1.7554762762763894,0,-0.2999995650865975,0,0,0,0,11.558420744984605,~
-0,0,0,-0.2070920858414789,0,0,0,0,14.999999999999998,~
+0.025470015,1.755476276,0,-0.299999565,0,0,0,0,11.55842074,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.00017027613637039422,2,0,-0.2999995650865975,0,0,0,0,10.965010213547929,~
-0.000430959283346821,2,0,-0.2070920858414789,0,0,0,0,-3.375653237001101,~
+0.000170276,2,0,-0.299999565,0,0,0,0,10.96501021,~
+0.000430959,2,0,-0.207092086,0,0,0,0,-3.375653237,~
 0,0,0,0,0,0,0,0,0,~
-0.0010085377340347053,1.106132944656471,0,-0.2999995650865975,0,0,0,0,1.1653069897907977,~
-0.00018673672410587596,1.5468465410784162,0,-0.2070920858414789,0,0,0,0,-4.583812973897844,~
+0.001008538,1.106132945,0,-0.299999565,0,0,0,0,1.16530699,~
+0.000186737,1.546846541,0,-0.207092086,0,0,0,0,-4.583812974,~
 0,0,0,0,0,0,0,0,0,~
-0.03,2,0,-0.2999995650865975,0,0,0,0,7.164699890409772,~
-0.00029720676995387036,2,0,-0.2070920858414789,0,0,0,0,12.902820167506652,~
+0.03,2,0,-0.299999565,0,0,0,0,7.16469989,~
+0.000297207,2,0,-0.207092086,0,0,0,0,12.90282017,~
 0,0,0,0,0,0,0,0,0,~
-0.0010706338058554723,1.6094916675284001,0,-0.2999995650865975,0,0,0,0,-4.3852523106081644,~
-0,0,0,-0.2070920858414789,0,0,0,0,15,~
+0.001070634,1.609491668,0,-0.299999565,0,0,0,0,-4.385252311,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.0008188876206021468,0.6957523790817913,0,-0.2999995650865975,0,0,0,0,0.2928220672034639,~
-0.0010073154905368463,0.6844463513222747,0,-0.2070920858414789,0,0,0,0,2.6877556112498073,~
+0.000818888,0.695752379,0,-0.299999565,0,0,0,0,0.292822067,~
+0.001007315,0.684446351,0,-0.207092086,0,0,0,0,2.687755611,~
 0,0,0,0,0,0,0,0,0,~
-0.018049577138409753,1.950620638183607,0,-0.2999995650865975,0,0,0,0,-13.291507679173494,~
-0,0,0,-0.2070920858414789,0,0,0,0,14.999999999999998,~
+0.018049577,1.950620638,0,-0.299999565,0,0,0,0,-13.29150768,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.0096770008419068,1.8747674887417,0,-0.2999995650865975,0,0,0,0,-3.1956654266434,~
-0,0,0,-0.2070920858414789,0,0,0,0,14.999999999999998,~
+0.009677001,1.874767489,0,-0.299999565,0,0,0,0,-3.195665427,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.0010042364545162358,0.657804647186913,0,-0.2999995650865975,0,0,0,0,0.9525063693189011,~
-0,0,0,-0.2070920858414789,0,0,0,0,-6.426617879886021,~
+0.001004236,0.657804647,0,-0.299999565,0,0,0,0,0.952506369,~
+0,0,0,-0.207092086,0,0,0,0,-6.42661788,~
 0,0,0,0,0,0,0,0,0,~
-0.018267679413905,1.7073764408507,0,-0.2999995650865975,0,0,0,0,8.0068231294895,~
-0.00007532976833412314,2,0,-0.2070920858414789,0,0,0,0,3.645698298226144,~
+0.018267679,1.707376441,0,-0.299999565,0,0,0,0,8.006823129,~
+0.0000753298,2,0,-0.207092086,0,0,0,0,3.645698298,~
 0,0,0,0,0,0,0,0,0,~
-0.015766203620362,1.008510121614,0,-0.2999995650865975,0,0,0,0,-9.6473860482906,~
-0.005583444650090972,0.5927606432664956,0,-0.2070920858414789,0,0,0,0,15,~
+0.015766204,1.008510122,0,-0.299999565,0,0,0,0,-9.647386048,~
+0.005583445,0.592760643,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.013924877901527,0.15567699175127,0,-0.2999995650865975,0,0,0,0,-8.0519945468064,~
-0,0,0,-0.2070920858414789,0,0,0,0,15,~
+0.013924878,0.155676992,0,-0.299999565,0,0,0,0,-8.051994547,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.0069157823932673055,0.14516830085564605,0,-0.2999995650865975,0,0,0,0,-12.039282609261239,~
-0.03,2,0,-0.2070920858414789,0,0,0,0,0.5314478395240358,~
+0.006915782,0.145168301,0,-0.299999565,0,0,0,0,-12.03928261,~
+0.03,2,0,-0.207092086,0,0,0,0,0.53144784,~
 0,0,0,0,0,0,0,0,0,~
-0.0011925961869798827,0.4551184771045267,0,-0.2999995650865975,0,0,0,0,2.610284766271266,~
-0,0,0,-0.2070920858414789,0,0,0,0,15,~
+0.001192596,0.455118477,0,-0.299999565,0,0,0,0,2.610284766,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.0016034489613505683,0.700674557549704,0,-0.2999995650865975,0,0,0,0,4.780825664609755,~
-0.012987860363081267,0,0,-0.2070920858414789,0,0,0,0,7.870462731829425,~
+0.001603449,0.700674558,0,-0.299999565,0,0,0,0,4.780825665,~
+0.01298786,0,0,-0.207092086,0,0,0,0,7.870462732,~
 0,0,0,0,0,0,0,0,0,~
-0.0011081136729064744,0.947006903518349,0,-0.2999995650865975,0,0,0,0,3.8944691458014207,~
-0.009476335490209535,1.0673748116984403,0,-0.2070920858414789,0,0,0,0,15,~
+0.001108114,0.947006904,0,-0.299999565,0,0,0,0,3.894469146,~
+0.009476335,1.067374812,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.0006992653005034363,0.7373379023916806,0,-0.2999995650865975,0,0,0,0,-0.4529956874995524,~
-0,1.1487018752111346,0,-0.2070920858414789,0,0,0,0,3.090291300827452,~
+0.000699265,0.737337902,0,-0.299999565,0,0,0,0,-0.452995687,~
+0,1.148701875,0,-0.207092086,0,0,0,0,3.090291301,~
 0,0,0,0,0,0,0,0,0,~
-0,0,0,-0.2999995650865975,0,0,0,0,-10.778165890731927,~
-0.03,2,0,-0.2070920858414789,0,0,0,0,0.7578941911127486,~
+0,0,0,-0.299999565,0,0,0,0,-10.77816589,~
+0.03,2,0,-0.207092086,0,0,0,0,0.757894191,~
 0,0,0,0,0,0,0,0,0,~
-0.0013858421453700892,0.5998714526745675,0,-0.2999995650865975,0,0,0,0,4.0108066377591856,~
-0.000016708109962502527,1.3715483801956234,0,-0.2070920858414789,0,0,0,0,1.3131249287508178,~
+0.001385842,0.599871453,0,-0.299999565,0,0,0,0,4.010806638,~
+0.0000167081,1.37154838,0,-0.207092086,0,0,0,0,1.313124929,~
 0,0,0,0,0,0,0,0,0,~
-0.0010049884503622291,0.80172181170947,0,-0.2999995650865975,0,0,0,0,0.9528968411573655,~
-0.025292488034455145,2,0,-0.2070920858414789,0,0,0,0,3.2251873657218493,~
+0.001004988,0.801721812,0,-0.299999565,0,0,0,0,0.952896841,~
+0.025292488,2,0,-0.207092086,0,0,0,0,3.225187366,~
 0,0,0,0,0,0,0,0,0,~
-0.021114344038588,1.3656663332906,0,-0.2999995650865975,0,0,0,0,4.7718547143842,~
-0,0,0,-0.2070920858414789,0,0,0,0,15,~
+0.021114344,1.365666333,0,-0.299999565,0,0,0,0,4.771854714,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.0009784374983369663,0.45586228185709915,0,-0.2999995650865975,0,0,0,0,-0.10906590119593966,~
-0.0003983313277965906,0.7785963782946788,0,-0.2070920858414789,0,0,0,0,5.403352423987112,~
+0.000978437,0.455862282,0,-0.299999565,0,0,0,0,-0.109065901,~
+0.000398331,0.778596378,0,-0.207092086,0,0,0,0,5.403352424,~
 0,0,0,0,0,0,0,0,0,~
-0.025613212313323,0.80793738123399,0,-0.2999995650865975,0,0,0,0,-12.471682740129,~
-0,0,0,-0.2070920858414789,0,0,0,0,15,~
+0.025613212,0.807937381,0,-0.299999565,0,0,0,0,-12.47168274,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.0011127149891379286,0.66526509794265,0,-0.2999995650865975,0,0,0,0,2.8145261349980184,~
-0,0.7556283435961948,0,-0.2070920858414789,0,0,0,0,9.814640904295322,~
+0.001112715,0.665265098,0,-0.299999565,0,0,0,0,2.814526135,~
+0,0.755628344,0,-0.207092086,0,0,0,0,9.814640904,~
 0,0,0,0,0,0,0,0,0,~
-0.001011530162933129,0.8721863284065684,0,-0.2999995650865975,0,0,0,0,-0.8082984627018754,~
-0,0,0,-0.2070920858414789,0,0,0,0,15,~
+0.00101153,0.872186328,0,-0.299999565,0,0,0,0,-0.808298463,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0,0.6884541838086964,0,-0.2999995650865975,0,0,0,0,-0.7206346648478646,~
-0.009014503811745888,2,0,-0.2070920858414789,0,0,0,0,1.3644752502556365,~
+0,0.688454184,0,-0.299999565,0,0,0,0,-0.720634665,~
+0.009014504,2,0,-0.207092086,0,0,0,0,1.36447525,~
 0,0,0,0,0,0,0,0,0,~
-0.021555344658697,1.425512425334,0,-0.2999995650865975,0,0,0,0,-12.573452497634,~
-0,0,0,-0.2070920858414789,0,0,0,0,15,~
+0.021555345,1.425512425,0,-0.299999565,0,0,0,0,-12.5734525,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.0012590642585722563,0.9553678586902706,0,-0.2999995650865975,0,0,0,0,2.3146738291970195,~
-0,0.5664277398199518,0,-0.2070920858414789,0,0,0,0,0.932589581619309,~
+0.001259064,0.955367859,0,-0.299999565,0,0,0,0,2.314673829,~
+0,0.56642774,0,-0.207092086,0,0,0,0,0.932589582,~
 0,0,0,0,0,0,0,0,0,~
-0.0010107386002915287,0.833369899313442,0,-0.2999995650865975,0,0,0,0,1.4352701626603173,~
-0,0.4813499346396234,0,-0.2070920858414789,0,0,0,0,9.063413460814262,~
+0.001010739,0.833369899,0,-0.299999565,0,0,0,0,1.435270163,~
+0,0.481349935,0,-0.207092086,0,0,0,0,9.063413461,~
 0,0,0,0,0,0,0,0,0,~
-0.0063991716487329,1.1052008453315,0,-0.2999995650865975,0,0,0,0,4.0946091195078,~
-0,0,0,-0.2070920858414789,0,0,0,0,15,~
+0.006399172,1.105200845,0,-0.299999565,0,0,0,0,4.09460912,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0,~
-0.0010013462633097232,0.5380805743289736,0,-0.2999995650865975,0,0,0,0,-0.3604227689934666,~
-0.028736385655545683,0.3024895419968381,0,-0.2070920858414789,0,0,0,0,3.3547151577392076,~
+0.001001346,0.538080574,0,-0.299999565,0,0,0,0,-0.360422769,~
+0.028736386,0.302489542,0,-0.207092086,0,0,0,0,3.354715158,~
 0,0,0,0,0,0,0,0,0,~
-0.0033999056617729,1.5854678776048,0,-0.2999995650865975,0,0,0,0,-8.0294573414277,~
-0,0,0,-0.2070920858414789,0,0,0,0,15,~
+0.003399906,1.585467878,0,-0.299999565,0,0,0,0,-8.029457341,~
+0,0,0,-0.207092086,0,0,0,0,15,~
 0,0,0,0,0,0,0,0,0)
 NodeLocation: 432,64,1
 NodeSize: 64,40
 WindState: 2,12,101,720,350
-DefnState: 2,121,75,1659,813,0,DFNM
+DefnState: 2,144,44,1659,813,0,DFNM
 ValueState: 2,223,145,1355,686,,MIDM
 Aliases: FormNode Fo1543522440
 ReformDef: [0,All_Spatial_ID]
-ReformVal: [All_PV_Dec_Handle_Li,All_Spatial_ID]
+ReformVal: [All_PV_Dec_Handles,All_Spatial_ID]
+DisplayOutputs: Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
 Att_ResultSliceState: [All_Sectors,1,All_Spatial_ID,6,All_PV_Dec_Handle_Li,1]
-Att_EditSliceState: [All_Sectors,2,All_Spatial_ID,1,All_PV_Dec_Handle_Li,1]
-{!50000|Att_ColumnWidths: [,All_PV_Dec_Handle_Li,\([,,,,92]),All_Spatial_ID,\([,,,,,,,,64])]}
+Att_EditSliceState: [All_Sectors,2,All_Spatial_ID,1,All_PV_Dec_Handles,1]
+{!50000|Att_ColumnWidths: [,All_PV_Dec_Handles,\([,,,,92]),All_Spatial_ID,\([,,,,,,,,64])]}
 
 Variable Stored_Coeff_for_PV_
 Title: Stored Coeff for PV Spat ID
@@ -3977,7 +4160,7 @@ Title: Use Analytica Text Trace Log
 Definition: 0
 NodeLocation: 252,348,1
 NodeSize: 212,20
-Original: Use_Analytica_Text_T
+Original: Use_Trace_Log
 
 FormNode Fo1542903863
 Title: Share of Res Housing Units
