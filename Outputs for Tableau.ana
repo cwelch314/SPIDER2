@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Outputs_for_Tableau at 22-Mar-2019 2:50:08 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Outputs_for_Tableau at 22-Mar-2019 5:46:43 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Outputs for Tableau
 Author: JamesMilford
 Date: Tue, Nov 13, 2018 7:23 PM
 SaveAuthor: JamesMilford
-SaveDate: Fri, Mar 22, 2019 2:50 PM
+SaveDate: Fri, Mar 22, 2019 5:46 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
@@ -591,15 +591,15 @@ Description: Total electric vehicle stock (BEVs + PHEVs). Values are End of Peri
 Definition: Selected_Sequential_[Output_DER_Types=EV_Out_Label, Sequential_Outputs=Seq_Cumul_Cnt_Label, All_Sectors=EV_Sectors]
 NodeLocation: 1184,632,1
 NodeSize: 64,40
-ValueState: 2,365,87,861,609,1,MIDM
+ValueState: 2,536,143,861,609,1,MIDM
 Aliases: FormNode Fo1544983402
 GraphSetup: Graph_LineThickness:5
 ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: []
+Att__TotalsIndex: [Spatial_ID]
 Att_GraphValueRange: 1,,,,,,10
 Att_GraphTemplate: Lumidyne_Template
-Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,1,Act_vs_Sim,1,Output_Periods,1]
+Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
 
 Decision Seq_Cumul_MW_Label
 Title: Seq Cumul MW Label
@@ -5507,12 +5507,12 @@ ReformDef: [Export_Parameter,Export_Dataset_Num]
 TableCellDefault: Default_ExportConfig
 
 Index Output_Data_Type
+Att_PrevIndexValue: ['CSV Tableau','Excel Deliverable','Excel Tableau']
 Title: Output Data Type
 Description: A list of the types of data that can be output, for use in export scripts
 Definition: ['CSV Tableau','Excel Deliverable','Excel Tableau']
 NodeLocation: 1480,1096,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['CSV Tableau','Excel Deliverable','Excel Tableau']
 
 Decision Select_Data_Export_T
 Title: Select Data Export Type
