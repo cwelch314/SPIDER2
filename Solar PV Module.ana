@@ -1,5 +1,5 @@
-{ From user JamesMilford, Model Solar_PV at 19-Mar-2019 10:28:37 PM, encoding="UTF-8" }
-SoftwareVersion 5.1.6
+{ Analytica Model Solar_PV, encoding="UTF-8" }
+SoftwareVersion 5.2.8
 
 {!-40203|Attribute CloudPlayerStyles}
 Attribute UnoptimizedDef
@@ -13,8 +13,6 @@ LinkModule Solar_PV
 Title: Solar PV
 Author: Cory Welch
 Date: Mon, Jan 8, 2018 10:24 AM
-SaveAuthor: JamesMilford
-SaveDate: Tue, Mar 19, 2019 10:28 PM
 DefaultSize: 64,40
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -244,12 +242,12 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: NewConstr_Mkt_Share
 
 Index Title24_Comply_Scens
+Att_PrevIndexValue: ['Low','Medium','High']
 Title: Title 24 Compliance Scenarios
 Definition: ['Low','Medium','High']
 NodeLocation: 104,400,1
 NodeSize: 64,40
 Aliases: FormNode Fo1544631407
-Att_PrevIndexValue: ['Low','Medium','High']
 
 Decision New_Constr_Ramp_Scen
 Title: New Constr Ramp Scenario
@@ -278,12 +276,12 @@ NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
 Original: New_Constr_Ramp_Scen
 
 Index NC_Suitability_Scens
+Att_PrevIndexValue: ['Low','Medium','High']
 Title: NewConstr Suitability Scenarios
 Definition: ['Low','Medium','High']
 NodeLocation: 104,192,1
 NodeSize: 64,40
 Aliases: FormNode Fo1544641445
-Att_PrevIndexValue: ['Low','Medium','High']
 
 Decision Sel_NC_Suitable_Scen
 Title: NewConst Applic Scenario
@@ -3898,12 +3896,12 @@ Aliases: FormNode Fo1544567172, FormNode Fo1544570136, FormNode Fo1548967848
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
 Index Rate_Escalation_Scen
+Att_PrevIndexValue: ['Low','Medium','High']
 Title: Rate Escalation Scenarios
 Definition: ['Low','Medium','High']
 NodeLocation: 96,704,1
 NodeSize: 64,40
 Aliases: FormNode Fo1544567481
-Att_PrevIndexValue: ['Low','Medium','High']
 
 Decision Select_Rate_Escalate
 Title: Rate Escalation Scenario
@@ -5059,12 +5057,12 @@ Show_description:20}
 Show_description:20}
 
 Index ITC_Scenario
+Att_PrevIndexValue: ['Extended','Baseline','Reduced']
 Title: ITC Scenario
 Definition: ['Extended','Baseline','Reduced']
 NodeLocation: 128,216,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 232,42}
-Att_PrevIndexValue: ['Extended','Baseline','Reduced']
 
 Decision Selected_ITC_Scen
 Title: ITC Scenario
@@ -6375,13 +6373,13 @@ Aliases: FormNode Fo1544633537
 TableCellDefault: 0
 
 Index PV_Cost_Scenario
+Att_PrevIndexValue: ['Low','Medium','High']
 Title: PV Cost Scenario
 Definition: ['Low','Medium','High']
 IndexVals: ['item 1']
 NodeLocation: 560,168,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 227,70}
-Att_PrevIndexValue: ['Low','Medium','High']
 
 Decision BaseYr_for_PV_Costs
 Title: Base Yr: PV Cost Decline
@@ -6535,13 +6533,13 @@ Att__TotalsIndex: [Equipment_Types]
 Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Equipment_Types,0,Installation_Event,1,System_Types,1,Annual_PV_Time,1]
 
 Index Storage_Cost_Scen
+Att_PrevIndexValue: ['Low','Medium','High']
 Title: Storage Cost Scenario
 Definition: ['Low','Medium','High']
 IndexVals: ['item 1']
 NodeLocation: 560,288,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 227,70}
-Att_PrevIndexValue: ['Low','Medium','High']
 
 Decision BaseYr_Strg_Costs
 Title: Base Yr: Storage Cost Decline
@@ -7593,12 +7591,12 @@ NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
 NodeFont: Arial Narrow,15
 
 Index NC_SystSize_Scens
+Att_PrevIndexValue: ['Low','Medium','High']
 Title: NewConstr System Size Scenarios
 Definition: ['Low','Medium','High']
 NodeLocation: 1056,312,1
 NodeSize: 64,40
 Aliases: FormNode Fo1544637809
-Att_PrevIndexValue: ['Low','Medium','High']
 
 FormNode Fo1544637809
 Title: NewConstr System Size Scenarios
@@ -17405,12 +17403,12 @@ NodeLocation: 672,64,1
 NodeSize: 64,40
 
 Index Static_PV_Time
+Att_PrevIndexValue: [2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 Title: Static PV Time
 Definition: PV_Static_Start_Year..PV_Static_End_Year
 NodeLocation: 384,272,1
 NodeSize: 64,40
 Att_GraphIndexRange: 1,,,,,,10
-Att_PrevIndexValue: [2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 
 Index Incentive_Source
 Att_PrevIndexValue: ['Local','State','Federal','Utility']

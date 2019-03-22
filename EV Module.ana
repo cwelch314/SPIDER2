@@ -1,5 +1,5 @@
-{ From user JamesMilford, Model Electric_Vehicles at 19-Mar-2019 5:10:52 PM, encoding="UTF-8" }
-SoftwareVersion 5.1.6
+{ Analytica Model Electric_Vehicles, encoding="UTF-8" }
+SoftwareVersion 5.2.8
 
 {!-40203|Attribute CloudPlayerStyles}
 Attribute UnoptimizedDef
@@ -13,8 +13,6 @@ LinkModule Electric_Vehicles
 Title: Electric Vehicles
 Author: Cory Welch
 Date: Fri, Jun 22, 2018 10:48 AM
-SaveAuthor: JamesMilford
-SaveDate: Tue, Mar 19, 2019 5:10 PM
 DefaultSize: 64,40
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -1331,6 +1329,7 @@ Aliases: FormNode Fo1543022789, FormNode Fo1529509651, FormNode Fo1530223615
 {!40200|Att_ChoiceIndexes: Index Veh_Sim_Strt_Yr_Opti}
 
 Index Veh_Sim_Strt_Yr_Opti
+Att_PrevIndexValue: [1-Jan-2010,1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030]
 Title: Veh Sim Strt Yr Option
 Description: The options permissible for when the vehicle simulation can be started.
 Definition: Sequence(Vehicle_Stk_Start_Yr, Vehicle_Stock_End_Yr, step: Timestep_Months[Timestep_Options=Vehicle_dT_Choice], dateUnit: 'M')
@@ -1338,7 +1337,6 @@ NodeLocation: 88,488,1
 NodeSize: 64,40
 WindState: 2,515,239,720,350
 ValueState: 2,903,363,258,345,,MIDM
-Att_PrevIndexValue: [1-Jan-2010,1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030]
 
 Decision Vehicle_Sim_End_Yr
 Title: Vehicle Sim End Year
@@ -1351,6 +1349,7 @@ Aliases: FormNode Fo1543022790, FormNode Fo1529509652, FormNode Fo1530223614
 {!40200|Att_ChoiceIndexes: Index Veh_Sim_End_Yr_Opt}
 
 Index Veh_Sim_End_Yr_Opt
+Att_PrevIndexValue: [1-Jan-2010,1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030,1-Jan-2031,1-Jul-2031,1-Jan-2032,1-Jul-2032,1-Jan-2033,1-Jul-2033,1-Jan-2034,1-Jul-2034,1-Jan-2035,1-Jul-2035,1-Jan-2036,1-Jul-2036,1-Jan-2037,1-Jul-2037,1-Jan-2038,1-Jul-2038,1-Jan-2039,1-Jul-2039,1-Jan-2040,1-Jul-2040,1-Jan-2041,1-Jul-2041,1-Jan-2042,1-Jul-2042,1-Jan-2043,1-Jul-2043,1-Jan-2044,1-Jul-2044,1-Jan-2045,1-Jul-2045,1-Jan-2046,1-Jul-2046,1-Jan-2047,1-Jul-2047,1-Jan-2048,1-Jul-2048,1-Jan-2049,1-Jul-2049,1-Jan-2050,1-Jul-2050]
 Title: Veh Sim End Yr Option
 Units: Year
 Description: The options permissible for when the vehicle simulation can be ended.
@@ -1358,7 +1357,6 @@ Definition: Sequence(Vehicle_Stk_Start_Yr, Max_Simulation_Year, step: Timestep_M
 NodeLocation: 224,488,1
 NodeSize: 64,40
 ValueState: 2,152,154,537,537,,MIDM
-Att_PrevIndexValue: [1-Jan-2010,1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030,1-Jan-2031,1-Jul-2031,1-Jan-2032,1-Jul-2032,1-Jan-2033,1-Jul-2033,1-Jan-2034,1-Jul-2034,1-Jan-2035,1-Jul-2035,1-Jan-2036,1-Jul-2036,1-Jan-2037,1-Jul-2037,1-Jan-2038,1-Jul-2038,1-Jan-2039,1-Jul-2039,1-Jan-2040,1-Jul-2040,1-Jan-2041,1-Jul-2041,1-Jan-2042,1-Jul-2042,1-Jan-2043,1-Jul-2043,1-Jan-2044,1-Jul-2044,1-Jan-2045,1-Jul-2045,1-Jan-2046,1-Jul-2046,1-Jan-2047,1-Jul-2047,1-Jan-2048,1-Jul-2048,1-Jan-2049,1-Jul-2049,1-Jan-2050,1-Jul-2050]
 
 FormNode Fo1529509651
 Title: Vehicle Sim Start Year
@@ -1992,13 +1990,13 @@ NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 252,42}
 
 Index Act_vs_Sim
+Att_PrevIndexValue: ['Actual','Simulated']
 Title: Act vs Sim
 Definition: ['Actual','Simulated']
 IndexVals: ['item 1']
 NodeLocation: 1072,48,1
 NodeSize: 56,32
 {!40300|Att_SlicerPopupSize: 282,56}
-Att_PrevIndexValue: ['Actual','Simulated']
 
 Variable Actual_EV_Stock_Chg
 Title: Actual EV Stock Change Rate
@@ -5023,12 +5021,12 @@ NodeSize: 56,40
 ValueState: 2,2195,68,361,588,,MIDM
 
 Index Aggregate_EV_LRMS
+Att_PrevIndexValue: [0.25,0.5,0.75]
 Title: Aggregate EV Long Run Mkt Share
 Description: This is the scenario for assumed long run market share of the most aggregated output used for establishing default diffusion parameters. It is not necessarily the long run market share for any given spatial ID.
 Definition: [0.25,0.5,0.75]
 NodeLocation: 1400,480,1
 NodeSize: 72,32
-Att_PrevIndexValue: [0.25,0.5,0.75]
 
 Decision Spatial_ID_for_Assig
 Title: Spatial ID for Assigning Default Coeff
@@ -6100,6 +6098,7 @@ NodeSize: 56,40
 WindState: 2,102,82,1267,602
 
 Index Spatial_ID
+Att_PrevIndexValue: [91.901K,91.902K,91.905K,91.906K,91.91K,91.911K,91.913K,91.914K,91.915K,91.916K,91.917K,91.931K,91.932K,91.934K,91.935K,91.941K,91.942K,91.945K,91.948K,91.95K,91.962K,91.963K,91.977K,91.978K,91.98K,92.003K,92.004K,92.007K,92.008K,92.009K,92.01K,92.011K,92.014K,92.019K,92.02K,92.021K,92.024K,92.025K,92.026K,92.027K,92.028K,92.029K,92.036K,92.037K,92.04K,92.054K,92.055K,92.056K,92.057K,92.058K,92.059K,92.06K,92.061K,92.064K,92.065K,92.066K,92.067K,92.068K,92.069K,92.07K,92.071K,92.072K,92.075K,92.078K,92.081K,92.082K,92.083K,92.084K,92.085K,92.086K,92.091K,92.092K,92.093K,92.096K,92.101K,92.102K,92.103K,92.104K,92.105K,92.106K,92.107K,92.108K,92.109K,92.11K,92.111K,92.112K,92.113K,92.114K,92.115K,92.116K,92.117K,92.118K,92.119K,92.12K,92.121K,92.122K,92.123K,92.124K,92.126K,92.127K,92.128K,92.129K,92.13K,92.131K,92.132K,92.136K,92.139K,92.145K,92.152K,92.154K,92.158K,92.161K,92.173K,92.179K,92.182K,92.199K,92.536K,92.624K,92.629K,92.651K,92.653K,92.656K,92.672K,92.673K,92.674K,92.675K,92.676K,92.677K,92.679K,92.688K,92.69K,92.691K,92.692K,92.693K,92.694K,92.697K]
 Title: Spatial ID
 Description: This index represents all spatial IDs excluding the "aggregate" spatial ID (e.g., statewide or service territory wide) that is used for calibration purposes).
 Definition: subset(NOT All_Agg_Spatial_IDs)
@@ -6107,7 +6106,6 @@ NodeLocation: 760,64,1
 NodeSize: 56,40
 ValueState: 2,120,122,427,484,,MIDM
 {!40300|Att_SlicerPopupSize: 422,785}
-Att_PrevIndexValue: [91.901K,91.902K,91.905K,91.906K,91.91K,91.911K,91.913K,91.914K,91.915K,91.916K,91.917K,91.931K,91.932K,91.934K,91.935K,91.941K,91.942K,91.945K,91.948K,91.95K,91.962K,91.963K,91.977K,91.978K,91.98K,92.003K,92.004K,92.007K,92.008K,92.009K,92.01K,92.011K,92.014K,92.019K,92.02K,92.021K,92.024K,92.025K,92.026K,92.027K,92.028K,92.029K,92.036K,92.037K,92.04K,92.054K,92.055K,92.056K,92.057K,92.058K,92.059K,92.06K,92.061K,92.064K,92.065K,92.066K,92.067K,92.068K,92.069K,92.07K,92.071K,92.072K,92.075K,92.078K,92.081K,92.082K,92.083K,92.084K,92.085K,92.086K,92.091K,92.092K,92.093K,92.096K,92.101K,92.102K,92.103K,92.104K,92.105K,92.106K,92.107K,92.108K,92.109K,92.11K,92.111K,92.112K,92.113K,92.114K,92.115K,92.116K,92.117K,92.118K,92.119K,92.12K,92.121K,92.122K,92.123K,92.124K,92.126K,92.127K,92.128K,92.129K,92.13K,92.131K,92.132K,92.136K,92.139K,92.145K,92.152K,92.154K,92.158K,92.161K,92.173K,92.179K,92.182K,92.199K,92.536K,92.624K,92.629K,92.651K,92.653K,92.656K,92.672K,92.673K,92.674K,92.675K,92.676K,92.677K,92.679K,92.688K,92.69K,92.691K,92.692K,92.693K,92.694K,92.697K]
 
 Function Set_Start_Coeff_EV()
 Title: Set Starting Coeff

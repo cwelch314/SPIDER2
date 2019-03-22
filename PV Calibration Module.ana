@@ -1,5 +1,5 @@
-{ From user JamesMilford, Model PV_Calibration1 at 19-Mar-2019 10:55:56 PM, encoding="UTF-8" }
-SoftwareVersion 5.1.6
+{ Analytica Model PV_Calibration1, encoding="UTF-8" }
+SoftwareVersion 5.2.8
 
 {!-40203|Attribute CloudPlayerStyles}
 Attribute UnoptimizedDef
@@ -14,8 +14,6 @@ Title: Calibration
 Description: Fu4()
 Author: Cory Welch
 Date: Fri, Jun 22, 2018 10:48 AM
-SaveAuthor: JamesMilford
-SaveDate: Tue, Mar 19, 2019 10:55 PM
 DefaultSize: 64,40
 NodeSize: 72,64
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
@@ -833,13 +831,13 @@ WindState: 2,524,317,720,350
 DisplayOutputs: Function MultiStage_CalibrPV0
 
 Index PV_Calibration_Stage
+Att_PrevIndexValue: [1,2,3,4,5]
 Title: PV Calibration Stage
 Definition: 1..Maximum_PV_Calibrati
 NodeLocation: 720,176,1
 NodeSize: 64,40
 ValueState: 2,792,295,416,303,,MIDM
 DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
-Att_PrevIndexValue: [1,2,3,4,5]
 
 Constant PV_Decisions_by_Stg
 Title: PV Decision Variables by Stage
@@ -1123,6 +1121,7 @@ WindState: 2,511,15,1167,738
 DisplayOutputs: Function OG_Multi_Stage_Calib
 
 Index All_PV_Dec_Handles
+Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coefficie,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef]
 Title: All PV Dec Handles
 Definition: CopyIndex(Handles_for_PV_Decis)
 NodeLocation: 992,64,1
@@ -1131,7 +1130,6 @@ WindState: 2,480,227,720,505
 ValueState: 2,2404,182,416,303,,MIDM
 DisplayOutputs: Function OG_Multi_Stage_Calib
 MetaOnly: 1
-Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coefficie,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef]
 
 Alias Al1542407785
 Title: Selected PV Decision Variables
@@ -2930,6 +2928,7 @@ Att_ColorRole: Null
 {!50000|Att_ColumnWidths: [,Stored_Dec_Var_PV,\([,,,,37,33,37,37,174,604])]}
 
 Index Stored_Dec_Var_PV
+Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coefficie,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef,'Opt Status']
 Title: Stored Dec Var
 Definition: Concat(All_PV_Dec_Handles, Opt_Status_Label)
 NodeLocation: 744,344,1
@@ -2937,7 +2936,6 @@ NodeSize: 64,40
 ValueState: 2,46,379,416,303,,MIDM
 MetaOnly: 1
 {!40300|Att_SlicerPopupSize: 242,168}
-Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coefficie,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef,'Opt Status']
 
 FormNode Fo1535066210
 Title: Va10

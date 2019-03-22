@@ -1,5 +1,5 @@
-{ From user coryw, Model Building_Stocks at 20-Mar-2019 10:47:02 AM, encoding="UTF-8" }
-SoftwareVersion 5.1.6
+{ Analytica Model Building_Stocks, encoding="UTF-8" }
+SoftwareVersion 5.2.8
 
 {!-40203|Attribute CloudPlayerStyles}
 
@@ -8,8 +8,6 @@ LinkModule Building_Stocks
 Title: Building Stocks
 Author: Cory Welch
 Date: Mon, Jan 8, 2018 10:24 AM
-SaveAuthor: coryw
-SaveDate: Wed, Mar 20, 2019 10:47 AM
 DefaultSize: 64,40
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -1128,11 +1126,11 @@ Aliases: FormNode Fo1544635313, FormNode Fo1545167499
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
 Index BldgGrowthRate_Scens
+Att_PrevIndexValue: ['Low','Medium','High']
 Title: Building Growth Rate Scenarios
 Definition: ['Low','Medium','High']
 NodeLocation: 416,640,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Low','Medium','High']
 
 Decision Building_Growth_Scen
 Title: Building Growth Scenario
