@@ -9895,7 +9895,7 @@ Original: Output_Filename
 
 Decision Active_Export_Datase
 Title: Active Export Dataset
-Definition: Choice(Export_Data_Descript,5,0)
+Definition: Choice(Export_Data_Descript,4,0)
 NodeLocation: 96,328,1
 NodeSize: 64,40
 Aliases: FormNode Fo1551980365
@@ -9987,7 +9987,7 @@ NodeSize: 64,40
 
 Decision Applied_Path
 Title: Applied Path
-Definition: 'C:\Users\coryw\OneDrive - Lumidyne Consulting LLC\Repos\SDGE_2019_SPIDER\DER_Forecast_Results.xlsx'
+Definition: 'C:\Users\coryw\OneDrive - Lumidyne Consulting LLC\Repos\SDGE_2019_SPIDER\CSV Files\CEC_Forecast_Export.csv'
 NodeLocation: 880,344,1
 NodeSize: 64,40
 ValueState: 2,168,170,1015,303,,MIDM
@@ -10047,7 +10047,7 @@ ValueState: 2,88,90,725,330,,MIDM
 
 Variable Reset_Workbook
 Title: Reset Workbook
-Definition: 0
+Definition: 1
 NodeLocation: 880,432,1
 NodeSize: 64,40
 
@@ -10426,7 +10426,7 @@ OnChange: MsgBox("NOTE: ACP read/write won't currently work if this name is chan
 
 Decision Export_Timestamp
 Title: Export Timestamp
-Definition: 18-Mar-2019 18:29:48.342000
+Definition: 19-Mar-2019 11:45:24.496000
 NodeLocation: 584,64,1
 NodeSize: 64,40
 Aliases: FormNode Fo1544827467
@@ -10467,6 +10467,7 @@ NodeLocation: 280,784,1
 NodeSize: 64,40
 WindState: 2,789,122,720,350
 ValueState: 2,335,482,416,220,0,MIDM
+Att_PrevIndexValue: ['Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)']
 
 Decision Description_Label
 Title: Description Label
