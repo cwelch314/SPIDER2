@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Solar_PV at 21-Mar-2019 3:36:54 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Solar_PV at 21-Mar-2019 5:28:56 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -14,7 +14,7 @@ Title: Solar PV
 Author: Cory Welch
 Date: Mon, Jan 8, 2018 10:24 AM
 SaveAuthor: JamesMilford
-SaveDate: Thu, Mar 21, 2019 3:36 PM
+SaveDate: Thu, Mar 21, 2019 5:28 PM
 DefaultSize: 64,40
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -1384,7 +1384,7 @@ NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DefnState: 2,390,229,416,303,,DFNM
 ValueState: 2,269,118,1506,782,1,MIDM
-Aliases: FormNode Fo1519235914, FormNode Fo1542903862, FormNode Fo1519238307, FormNode Fo1553197532
+Aliases: FormNode Fo1519235914, FormNode Fo1542903862, FormNode Fo1519238307
 GraphSetup: Att_ContLineStyle Graph_Primary_Valdim:5~
 Att_Stacked_Lines Graph_Primary_Valdim:1~
 Att_AreaFill Graph_Primary_Valdim:1~
@@ -1415,7 +1415,7 @@ IF stock=0 AND Sim_Cumulative_PV[PV_Sectors=Residential_Label]=0 THEN 0 ELSE Sim
 NodeLocation: 304,336,1
 NodeSize: 64,40
 ValueState: 2,241,65,1365,735,1,MIDM
-Aliases: FormNode Fo1542903863, FormNode Fo1553197530
+Aliases: FormNode Fo1542903863
 GraphSetup: Att_GraphValueRange Share_of_Res_Housing:1,,0,,,,,0,1,0
 ReformVal: [Time_Solar_PV,Null]
 NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
@@ -1461,7 +1461,7 @@ Definition: Table(Install_Type)(TotRetro_Install_EOP,Tot_NC_Install_EOP)
 NodeLocation: 488,64,1
 NodeSize: 64,40
 ValueState: 2,373,74,1076,692,1,MIDM
-Aliases: FormNode Fo1542903864, FormNode Fo1553197531
+Aliases: FormNode Fo1542903864
 GraphSetup: Att_AreaFill Graph_Primary_Valdim:0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_ContLineStyle Graph_Primary_Valdim:5
@@ -1951,7 +1951,6 @@ Original: PV_Data_dT_Choice
 
 Decision PV_Sim_Start_Year
 Title: PV Sim Start Year
-Units: Year
 Description: The year in which you want the adoption simulation to start. The simulation will then use the appropriate starting point for instalaltions at this point in time. In some cases, depending on the data, you may not want to start the simulation as early as the stock data are available. Typically for PV, you will want to start the PV simulation exactly one period (e.g., month) after the latest reliable data are available regarding historical installations.  ~
 ~
 During calibration, this time is set to an earlier period to "back cast" adoption and compare it with actual adoption for purposes of estimating diffusion coefficients.
@@ -1959,7 +1958,7 @@ Definition: Choice(PV_Sim_Strt_Yr_Opt,117,0)
 NodeLocation: 88,376,1
 NodeSize: 64,40
 ValueState: 2,795,362,320,151,,MIDM
-Aliases: FormNode Fo1542740904, FormNode Fo1543023336, FormNode Fo1542137499, FormNode Fo1534871512, FormNode Fo1553197524
+Aliases: FormNode Fo1542740904, FormNode Fo1543023336, FormNode Fo1542137499, FormNode Fo1534871512
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
 {!40200|Att_ChoiceIndexes: Index PV_Sim_Strt_Yr_Opt}
 
@@ -1975,14 +1974,13 @@ Att_PrevIndexValue: [1-Jan-2009,1-Feb-2009,1-Mar-2009,1-Apr-2009,1-May-2009,1-Ju
 
 Decision PV_Sim_End_Year
 Title: PV Sim End Year
-Units: Year
 Description: The final year of the vehicle simulated forecast.
 Definition: Choice(PV_Sim_End_Yr_Option,264,0)
 NodeLocation: 240,376,1
 NodeSize: 64,40
 WindState: 2,102,82,1083,701
 ValueState: 2,72,74,416,303,,MIDM
-Aliases: FormNode Fo1542740903, FormNode Fo1543023335, FormNode Fo1542137498, FormNode Fo1534871513, FormNode Fo1553197523
+Aliases: FormNode Fo1542740903, FormNode Fo1543023335, FormNode Fo1542137498, FormNode Fo1534871513
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
 {!40200|Att_ChoiceIndexes: Index PV_Sim_End_Yr_Option}
 
@@ -17239,7 +17237,7 @@ Definition: MultiChoice(All_Sectors,1,2,returnList:1)
 NodeLocation: 1536,352,1
 NodeSize: 64,40
 WindState: 2,303,78,1255,632
-Aliases: FormNode Fo1543157094, FormNode Fo1535066238, FormNode Fo1539140368, FormNode Fo1553197513
+Aliases: FormNode Fo1543157094, FormNode Fo1535066238, FormNode Fo1539140368
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 {!40200|Att_ChoiceIndexes: Index All_Sectors}
@@ -17264,7 +17262,7 @@ NodeSize: 64,40
 WindState: 2,46,71,816,730
 DefnState: 2,857,228,346,508,,DFNM
 ValueState: 2,2185,301,416,303,,MIDM
-Aliases: FormNode Fo1535655040, FormNode Fo1542091914, FormNode Fo1553197519
+Aliases: FormNode Fo1535655040, FormNode Fo1542091914
 DisplayOutputs: Function Sequential_Opt_PV0, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
 {!40200|Att_ChoiceIndexes: Index Spatial_ID}
 {!40300|Att_SlicerPopupSize: 660,785}
