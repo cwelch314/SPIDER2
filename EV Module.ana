@@ -1,5 +1,5 @@
-{ From user JamesMilford, Model Electric_Vehicles at 22-Mar-2019 5:46:43 PM, encoding="UTF-8" }
-SoftwareVersion 5.1.6
+{ Analytica Model Electric_Vehicles, encoding="UTF-8" }
+SoftwareVersion 5.2.8
 
 {!-40203|Attribute CloudPlayerStyles}
 Attribute UnoptimizedDef
@@ -13,8 +13,6 @@ LinkModule Electric_Vehicles
 Title: Electric Vehicles
 Author: Cory Welch
 Date: Fri, Jun 22, 2018 10:48 AM
-SaveAuthor: JamesMilford
-SaveDate: Fri, Mar 22, 2019 5:46 PM
 DefaultSize: 64,40
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -1602,6 +1600,7 @@ Att_ResultSliceState: [Vehicle_Types,1,Vehicle_Vintage,5,EV_Spatial_ID,0,EV_Sect
 Att_ColorRole: Null
 
 Module Familiarity
+Att_PrevIndexValue: ['EV Combined']
 Title: Familiarity
 Author: Cory Welch
 Date: Fri, Jun 22, 2018 10:48 AM
@@ -1854,7 +1853,6 @@ Original: EV_AdEff_Scen
 
 Close Familiarity
 
-Att_PrevIndexValue: ['EV Combined']
 Alias Al1529533205
 Title: Long-Run Mkt Share
 Definition: 1
@@ -2663,6 +2661,7 @@ Att__TotalsIndex: [All_Spatial_ID]
 {!40300|Att_SlicerPopupSize: 1402,785}
 
 Index EV_Sectors
+Att_PrevIndexValue: ['EV Combined']
 Title: EV Sectors
 Description: The
 Definition: MultiChoice(All_Sectors,3,returnList:1)
@@ -2673,7 +2672,6 @@ Aliases: Alias Al1535053028, FormNode Fo1533480688, FormNode Fo1553210568, FormN
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 {!40200|Att_ChoiceIndexes: Index All_Sectors}
 {!40300|Att_SlicerPopupSize: 252,42}
-Att_PrevIndexValue: ['EV Combined']
 
 FormNode Fo1553210567
 Title: EV Spatial ID
@@ -3111,11 +3109,11 @@ NodeSize: 64,40
 ValueState: 2,995,312,416,303,,MIDM
 
 Index EV_Calibration_Stage
+Att_PrevIndexValue: [1,2,3,4,5,6]
 Title: EV Calibration Stage
 Definition: 1..Max_EV_Calib_Stages
 NodeLocation: 664,176,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6]
 
 Constant EV_Decisions_by_Stg
 Title: EV Decision Variables by Stage
@@ -4553,6 +4551,7 @@ NodeSize: 64,40
 ValueState: 2,622,436,1007,173,,MIDM
 
 Decision Opt_Settings_EVs
+Att_PrevIndexValue: ['Multistart','MaxTime']
 Title: Opt Settings EVs
 Description: Settings for the optimization engine. ~
 ~
@@ -4566,7 +4565,6 @@ WindState: 2,277,431,720,350
 DefnState: 2,709,439,596,188,0,DFNM
 Aliases: FormNode Fo1530224330, FormNode Fo1529692308
 {!40700|Att_CellFormat: CellSpan(Opt_Settings_EVs,CellAlignment('Center'),2,header:0)}
-Att_PrevIndexValue: ['Multistart','MaxTime']
 
 FormNode Fo1529692308
 Title: Opt Settings EVs

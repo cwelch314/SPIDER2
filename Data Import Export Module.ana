@@ -1,5 +1,5 @@
-{ From user JamesMilford, Model Data_Import__Export at 21-Mar-2019 5:39:00 PM, encoding="UTF-8" }
-SoftwareVersion 5.1.6
+{ Analytica Model Data_Import__Export, encoding="UTF-8" }
+SoftwareVersion 5.2.8
 
 {!-40203|Attribute CloudPlayerStyles}
 
@@ -8,8 +8,6 @@ LinkModule Data_Import__Export
 Title: Data Import/ Export
 Author: Cory Welch
 Date: Fri, Feb 5, 2016 10:04 AM
-SaveAuthor: JamesMilford
-SaveDate: Thu, Mar 21, 2019 5:39 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
@@ -10460,14 +10458,13 @@ NodeLocation: 432,592,1
 NodeSize: 64,40
 
 Index Export_Data_Descript
-Att_PrevIndexValue: ['Deliverable sequential historic then actual data','Deliverable calibration comparison','Deliverable deltas from base period','Deliverable CEC Forecast by Zip','Deliverable timestamp']
+Att_PrevIndexValue: ['Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)']
 Title: Export Data Description
 Definition: CopyIndex(Data_Export_Settings[Export_Dataset_Num=Datasets_to_Export, Export_Parameter=Description_Label])
 NodeLocation: 280,784,1
 NodeSize: 64,40
 WindState: 2,789,122,720,350
 ValueState: 2,335,482,416,220,0,MIDM
-Att_PrevIndexValue: ['Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)']
 
 Decision Description_Label
 Title: Description Label

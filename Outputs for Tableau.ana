@@ -1,5 +1,5 @@
-{ From user JamesMilford, Model Outputs_for_Tableau at 22-Mar-2019 6:02:51 PM, encoding="UTF-8" }
-SoftwareVersion 5.1.6
+{ Analytica Model Outputs_for_Tableau, encoding="UTF-8" }
+SoftwareVersion 5.2.8
 
 {!-40203|Attribute CloudPlayerStyles}
 
@@ -8,8 +8,6 @@ LinkModule Outputs_for_Tableau
 Title: Outputs for Tableau
 Author: JamesMilford
 Date: Tue, Nov 13, 2018 7:23 PM
-SaveAuthor: JamesMilford
-SaveDate: Fri, Mar 22, 2019 6:02 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
@@ -576,8 +574,11 @@ Definition: Selected_Sequential_[Output_DER_Types=Solar_PV_Label, Sequential_Out
 NodeLocation: 1032,536,1
 NodeSize: 64,40
 WindState: 2,102,82,1095,453
-ValueState: 2,427,-1,1158,796,1,MIDM
+ValueState: 2,427,0,1158,796,1,MIDM
 Aliases: FormNode Fo1544456702
+GraphSetup: Att_GraphValueRange PV_Incremental:1,,1,,,,10,1.038821429014206,3.2670102417469025,0~
+Att_GraphIndexRange Output_Periods:1,,1,,,,10,40322.05666282028,42513.92516282201,0~
+Flip:0
 ReformVal: [Output_Periods,Act_vs_Sim]
 Att__TotalsIndex: [Act_vs_Sim,Spatial_ID,PV_Sectors]
 Att_GraphValueRange: 1,,,,,,10
@@ -3555,8 +3556,6 @@ Module Deltas_from_Base_Per
 Title: Deltas from Base Period
 Author: coryw
 Date: Fri, Nov 23, 2018 10:59 AM
-SaveAuthor: JamesMilford
-SaveDate: Thu, Nov 29, 2018 5:58 PM
 NodeLocation: 736,984,1
 NodeSize: 64,40
 DiagState: 2,0,37,1477,670,17
@@ -3815,8 +3814,6 @@ Module Old_Deltas_from_Base
 Title: Old Deltas from Base Period
 Author: coryw
 Date: Fri, Nov 23, 2018 10:59 AM
-SaveAuthor: JamesMilford
-SaveDate: Thu, Nov 29, 2018 5:58 PM
 NodeLocation: 216,624,1
 NodeSize: 64,40
 DiagState: 2,80,11,1294,680,17
@@ -4304,8 +4301,6 @@ Library Odbc_library
 Title: ODBC Library
 Author: Lonnie
 Date: Thu, Sep 11, 1997 2:15 PM
-SaveAuthor: Lonnie
-SaveDate: Fri, Sep 1, 2017 2:27 PM
 DefaultSize: 48,24
 NodeLocation: 240,448,1
 NodeSize: 64,32
