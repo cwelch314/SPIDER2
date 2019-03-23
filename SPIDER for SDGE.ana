@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Main_Interface at 22-Mar-2019 2:50:09 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Main_Interface at 22-Mar-2019 6:02:51 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 
@@ -90,7 +90,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 SaveAuthor: JamesMilford
-SaveDate: Fri, Mar 22, 2019 2:50 PM
+SaveDate: Fri, Mar 22, 2019 6:02 PM
 DefaultSize: 64,40
 DiagState: 2,35,10,1300,768,17
 WindState: 2,540,59,720,350
@@ -1202,13 +1202,13 @@ NodeColor: 65535,65535,65535
 OnChange: ACP_Set_hover_balloo(ACP_Balloon_delay)
 
 Index ACP_Balloon_delay_ch
+Att_PrevIndexValue: [0,0.1,0.2,0.3,0.4,0.5,0.6,0.8,1,1.2,1.5,2]
 Title: balloon delay choices
 Definition: [0,0.1,0.2,0.3,0.4,0.5,0.6,0.8,1,1.2,1.5,2]
 NodeLocation: 680,257,1
 NodeSize: 80,16
 WindState: 2,94,83,476,454
 NodeColor: 65535,65535,65535
-Att_PrevIndexValue: [0,0.1,0.2,0.3,0.4,0.5,0.6,0.8,1,1.2,1.5,2]
 
 Function ACP_Set_hover_balloo(d)
 Title: Set_hover_balloon_delay(d: Positive)
@@ -1445,13 +1445,13 @@ NodeSize: 88,32
 DiagState: 2,419,90,941,526,19
 
 Index ACP_Navigation_styl1
+Att_PrevIndexValue: ['Outline','Top diagram only','Top tabs','Side tabs','Two top tabs','Two side tabs']
 Title: Navigation styles
 Definition: CopyIndex(ACP_All_nav_styles)
 NodeLocation: 304,200,1
 NodeSize: 48,24
 WindState: 2,777,123,476,401
 ValueState: 2,240,251,416,303,0,MIDM
-Att_PrevIndexValue: ['Outline','Top diagram only','Top tabs','Side tabs','Two top tabs','Two side tabs']
 
 Module ACP_Diagram_preview_
 Title: Diagram preview functions
@@ -2842,6 +2842,7 @@ DiagState: 2,442,61,514,497,17
 FontStyle: Arial,15
 
 Index ACP_Screen_Resolutio
+Att_PrevIndexValue: ['1920 x 1080','1600 x 900','1366 x 768','1280 x 1024','1280 x 800','1024 x 768','2400 x 1200']
 Title: Screen Resolution
 Units: pixels
 Description: List of preset screen resolutions for minimum ACP diagram size
@@ -2849,7 +2850,6 @@ Definition: ['1920 x 1080','1600 x 900','1366 x 768','1280 x 1024','1280 x 800',
 NodeLocation: 56,88,1
 NodeSize: 48,24
 WindState: 2,102,82,720,600
-Att_PrevIndexValue: ['1920 x 1080','1600 x 900','1366 x 768','1280 x 1024','1280 x 800','1024 x 768','2400 x 1200']
 
 Variable ACP_Maximum_Size
 Title: Maximum Size
@@ -2880,14 +2880,15 @@ ReformVal: [ACP_Dimension,ACP_Screen_Resolutio]
 Att_EditSliceState: [ACP_Navigation_styl1,5,ACP_Screen_Resolutio,1,ACP_Dimension,1]
 
 Index ACP_Dimension
+Att_PrevIndexValue: ['Width','Height']
 Title: Dimension
 Description: Screen dimension for minimum ACP diagram size
 Definition: ['Width','Height']
 NodeLocation: 56,32,1
 NodeSize: 48,24
-Att_PrevIndexValue: ['Width','Height']
 
 Index ACP_Resolution_Choic
+Att_PrevIndexValue: ['1920 x 1080','1600 x 900','1366 x 768','1280 x 1024','1280 x 800','1024 x 768','2400 x 1200','Custom']
 Title: Resolution Choices
 Units: pixels
 Description: List of preset screen resolutions including 'Custom' for minimum ACP diagram size
@@ -2895,7 +2896,6 @@ Definition: Concat(ACP_Screen_Resolutio,['Custom'])
 NodeLocation: 184,32,1
 NodeSize: 48,24
 WindState: 2,506,359,476,363
-Att_PrevIndexValue: ['1920 x 1080','1600 x 900','1366 x 768','1280 x 1024','1280 x 800','1024 x 768','2400 x 1200','Custom']
 
 Function ACP_Set_Diag_Size(m : object ; w, h: scalar)
 Title: Set_Diag_Size(m, w, h)
@@ -5744,12 +5744,12 @@ Aliases: FormNode Fo1552872208
 MetaOnly: 1
 
 Index Output_Titles
+Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 Title: Output Titles
 Definition: Create_Titles_List(Output_Ident)~
 
 NodeLocation: 160,184,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 
 Decision Select_Output
 Title: Select Output
@@ -5869,12 +5869,12 @@ NodeSize: 336,112
 NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
 
 Index EV_Scenario_Variable
+Att_PrevIndexValue: ['EV Market Share','EV Word of Mouth','EV Ad Effectiveness']
 Title: EV Scenario Variables
 Definition: ['EV Market Share','EV Word of Mouth','EV Ad Effectiveness']
 NodeLocation: 1112,176,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552873760
-Att_PrevIndexValue: ['EV Market Share','EV Word of Mouth','EV Ad Effectiveness']
 
 Variable EV_Scenario_Selector
 Title: EV Scenario Selector
@@ -6086,17 +6086,16 @@ NodeSize: 64,40
 WindState: 2,665,222,915,591
 DefnState: 2,805,4,698,343,0,DFNM
 Aliases: FormNode Fo1552868509
-{!40200|Att_ChoiceIndexes: Index PV_Cost_Scenario, Index BldgGrowthRate_Scens}
 {!50000|Att_ColumnWidths: [215]}
 
 Index PV_Scenario_Variable
+Att_PrevIndexValue: ['PV Cost','Base Yr for PV Cost Decline','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 Title: PV Scenario Variables
 Definition: ['PV Cost','Base Yr for PV Cost Decline','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 IndexVals: ['item 1']
 NodeLocation: 960,176,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552873761
-Att_PrevIndexValue: ['PV Cost','Base Yr for PV Cost Decline','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 
 Alias Al1552872113
 Title: Result
@@ -6466,13 +6465,13 @@ Aliases: FormNode Fo1552873973
 {!50000|Att_ColumnWidths: [215]}
 
 Index Storg_Scenario_Varia
+Att_PrevIndexValue: ['Storage Cost','Elec Rate Escalation','ITC Phase-Out']
 Title: Storg Scenario Variables
 Definition: ['Storage Cost','Elec Rate Escalation','ITC Phase-Out']
 IndexVals: ['item 1']
 NodeLocation: 1272,176,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552873762
-Att_PrevIndexValue: ['Storage Cost','Elec Rate Escalation','ITC Phase-Out']
 
 FormNode Fo1552873760
 Title: EV Scenario Variables

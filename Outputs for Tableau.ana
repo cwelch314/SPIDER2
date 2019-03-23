@@ -1,4 +1,4 @@
-{ From user JamesMilford, Model Outputs_for_Tableau at 22-Mar-2019 5:46:43 PM, encoding="UTF-8" }
+{ From user JamesMilford, Model Outputs_for_Tableau at 22-Mar-2019 6:02:51 PM, encoding="UTF-8" }
 SoftwareVersion 5.1.6
 
 {!-40203|Attribute CloudPlayerStyles}
@@ -9,7 +9,7 @@ Title: Outputs for Tableau
 Author: JamesMilford
 Date: Tue, Nov 13, 2018 7:23 PM
 SaveAuthor: JamesMilford
-SaveDate: Fri, Mar 22, 2019 5:46 PM
+SaveDate: Fri, Mar 22, 2019 6:02 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
@@ -447,21 +447,19 @@ NodeSize: 64,40
 ValueState: 2,1612,25,1474,742,,MIDM
 
 Index Sequential_Columns
-Att_PrevIndexValue: [Output_DER_Types,All_Sectors,Output_Periods,Act_vs_Sim,Spatial_ID,'Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
+Att_PrevIndexValue: [Output_DER_Types,All_Sectors,PV_Cost_Scenario,Output_Periods,Act_vs_Sim,Spatial_ID,'Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 Title: Sequential Columns
 Definition: CopyIndex(Flat_Sequential_Data.Col)
 NodeLocation: 1352,176,1
 NodeSize: 64,40
 ValueState: 2,11,87,1013,488,0,MIDM
-Att_PrevIndexValue: [Output_DER_Types,All_Sectors,PV_Cost_Scenario,Output_Periods,Act_vs_Sim,Spatial_ID,'Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 
 Index Sequential_Order_Num
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9]
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10]
 Title: Sequential Order Number
 Definition: 1..Size(Sequential_Columns)
 NodeLocation: 1352,88,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10]
 
 Decision Order_of_Seq_Cols
 Title: Order of Sequential Columns
@@ -578,13 +576,13 @@ Definition: Selected_Sequential_[Output_DER_Types=Solar_PV_Label, Sequential_Out
 NodeLocation: 1032,536,1
 NodeSize: 64,40
 WindState: 2,102,82,1095,453
-ValueState: 2,627,59,994,688,1,MIDM
+ValueState: 2,427,-1,1158,796,1,MIDM
 Aliases: FormNode Fo1544456702
-ReformVal: [Output_Periods,PV_Cost_Scenario]
-Att__TotalsIndex: [Act_vs_Sim,Spatial_ID]
+ReformVal: [Output_Periods,Act_vs_Sim]
+Att__TotalsIndex: [Act_vs_Sim,Spatial_ID,PV_Sectors]
 Att_GraphValueRange: 1,,,,,,10
 Att_GraphTemplate: Lumidyne_Template
-Att_ResultSliceState: [PV_Sectors,1,Spatial_ID,0,Act_vs_Sim,0,PV_Cost_Scenario,1,Output_Periods,1]
+Att_ResultSliceState: [PV_Sectors,0,Spatial_ID,0,Act_vs_Sim,0,Output_Periods,1]
 
 Variable Cumulative_EV_Stock
 Title: Cumulative EV Stock
