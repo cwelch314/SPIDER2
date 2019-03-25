@@ -11,7 +11,7 @@ Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,,,,,,0,0,,,,,,0
-DiagState: 2,154,41,1500,702,17
+DiagState: 2,-81,75,1500,702,17
 WindState: 2,-7,51,720,350
 DiagramColor: 65535,65535,65535
 FontStyle: Arial Narrow,19
@@ -720,12 +720,12 @@ ValueState: 2,1140,233,229,300,,MIDM
 Att_PrevIndexValue: ['Gasoline, Fixed ','HEV ','PHEV ','E85 ','Diesel ','Diesel Hybrid ','CNG ','CNG Hybrid ','BEV ','Hydrogen ']
 
 Index Vehicle_Type
-Att_PrevIndexValue: ['Subcompact, Fixed ','Compact ','Midsize ','Large ','Sports ','Crossover, Small ','Crossover, Midsize ','SUV, Small/Midsize ','SUV, Large ','Pickup Truck, Small ','Pickup Truck, Full Size','Van, Small ','Van, Full-Size ']
 Title: Vehicle Type
 Definition: ['Subcompact, Fixed ','Compact ','Midsize ','Large ','Sports ','Crossover, Small ','Crossover, Midsize ','SUV, Small/Midsize ','SUV, Large ','Pickup Truck, Small ','Pickup Truck, Full Size','Van, Small ','Van, Full-Size ']
 NodeLocation: 256,64,1
 NodeSize: 64,40
 ValueState: 2,646,394,433,432,,MIDM
+Att_PrevIndexValue: ['Subcompact, Fixed ','Compact ','Midsize ','Large ','Sports ','Crossover, Small ','Crossover, Midsize ','SUV, Small/Midsize ','SUV, Large ','Pickup Truck, Small ','Pickup Truck, Full Size','Van, Small ','Van, Full-Size ']
 
 Index Age_of_Purchased_Veh
 Att_PrevIndexValue: ['New','1-2 Years','3+ Years']
@@ -735,11 +735,11 @@ NodeLocation: 392,64,1
 NodeSize: 64,40
 
 Index Number_of_Vehicles
-Att_PrevIndexValue: [1,2,3]
 Title: Number of Vehicles
 Definition: [1,2,3]
 NodeLocation: 520,152,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2,3]
 
 Index Purchase_Incentive
 Att_PrevIndexValue: ['HOV Lane Access (0,1)','Cash Rebate ($)','Tax Credit ($)']
@@ -785,7 +785,6 @@ NodeLocation: 664,64,1
 NodeSize: 64,40
 
 Index Simulated_Vehicle
-Att_PrevIndexValue: ['BEV','PHEV','Gasoline']
 Title: Simulated Vehicle
 Description: To add a vehicle for simulating market share, simple type in any descriptive name (after adding another comma after 'Gasoline'), surrounded by single quotes, and press OK.~
 ~
@@ -801,9 +800,9 @@ NodeSize: 64,40
 WindState: 2,787,100,720,438
 Aliases: FormNode Fo1540425983
 {!40300|Att_SlicerPopupSize: 237,70}
+Att_PrevIndexValue: ['BEV','PHEV','Gasoline']
 
 Index Sim_Veh_Attributes
-Att_PrevIndexValue: ['Price ($)','HOV Lane Access (0,1)','Cash Rebate ($)','Tax Credit ($)','Range (miles)','Models (integer)','Maintenance ($/year)','Fuel Cost (cents/mile)','MPGGE (miles per GGE)','Acceleration (sec, 0-60 mph)','Refuel Time (min)']
 Title: Sim Veh Attributes
 Definition: Concat(Concat(Price_List, Purchase_Incentive), Other_Vehicle_Attrib)
 NodeLocation: 256,448,1
@@ -811,6 +810,7 @@ NodeSize: 64,40
 NodeInfo: 1,1,1,1,1,1,0,,0,,0,,,
 WindState: 2,102,82,720,470
 ValueState: 2,1394,341,362,386,,MIDM
+Att_PrevIndexValue: ['Price ($)','HOV Lane Access (0,1)','Cash Rebate ($)','Tax Credit ($)','Range (miles)','Models (integer)','Maintenance ($/year)','Fuel Cost (cents/mile)','MPGGE (miles per GGE)','Acceleration (sec, 0-60 mph)','Refuel Time (min)']
 
 Index AltFuelSize___Conven
 Title: AltFuelSize + Conventional
@@ -819,12 +819,12 @@ NodeLocation: 384,152,1
 NodeSize: 64,40
 
 Index Scenario
-Att_PrevIndexValue: ['High','Low','Default']
 Title: Scenario
 Description: Scenario for vehicle attibutes
 Definition: ['High','Low','Default']
 NodeLocation: 800,64,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['High','Low','Default']
 
 Index Elec__Non_Elec
 Att_PrevIndexValue: ['EV','Non-EV']
