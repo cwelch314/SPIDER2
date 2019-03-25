@@ -89,7 +89,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,35,10,1200,738,17
+DiagState: 2,97,-2,1200,738,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
@@ -5729,12 +5729,12 @@ Aliases: FormNode Fo1552872208
 MetaOnly: 1
 
 Index Output_Titles
+Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 Title: Output Titles
 Definition: Create_Titles_List(Output_Ident)~
 
 NodeLocation: 160,184,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 
 Decision Select_Output
 Title: Select Output
@@ -6423,12 +6423,12 @@ NodeFont: Arial,16
 OnClick: Show_ACP_Window(Storage_Econ_Out,Storage_Econ_Titles,Storage_Economics, 'Result')
 
 Index Storage_Econ_Titles
+Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Monthly Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
 Title: Storage Econ Titles
 Definition: Create_Titles_List(Storage_Econ_Out)~
 
 NodeLocation: 160,1392,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Monthly Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
 
 Text Te1552873476
 Title: Storage Economic Output
