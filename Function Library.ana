@@ -1,5 +1,5 @@
-{ From user JamesMilford, Model Function_Library_Cus at 22-Mar-2019 2:46:45 PM, encoding="UTF-8" }
-SoftwareVersion 5.1.6
+{ Analytica Model Function_Library_Cus, encoding="UTF-8" }
+SoftwareVersion 5.2.8
 
 {!-40203|Attribute CloudPlayerStyles}
 Attribute UnoptimizedDef
@@ -13,8 +13,6 @@ LinkLibrary Function_Library_Cus
 Title: Functions
 Author: (c) 2018 Lumidyne Consulting LLC
 Date: Mon, Jan 8, 2018 10:24 AM
-SaveAuthor: JamesMilford
-SaveDate: Fri, Mar 22, 2019 2:46 PM
 DefaultSize: 64,40
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
@@ -39,8 +37,6 @@ Description: This library contains various functions for optimization and equati
 Author: Lonnie Chrisman, Ph.D.~
 Lumina Decision Systems
 Date: Fri, Apr 25, 2003 10:23 PM
-SaveAuthor: Lonnie
-SaveDate: Thu, Jan 26, 2017 12:02 PM
 DefaultSize: 48,24
 NodeLocation: 232,144,0
 NodeSize: 64,40
@@ -246,8 +242,6 @@ Structured optimization functionality requires Analytica Optimizer.
 Author: Lonnie Chrisman, Ph.D.~
 Lumina Decision Systems
 Date: Sat, Oct 30, 2010 5:49 PM
-SaveAuthor: Lonnie
-SaveDate: Fri, Mar 13, 2015 4:49 PM
 DefaultSize: 48,24
 NodeLocation: 104,144,0
 NodeSize: 64,40
@@ -375,7 +369,7 @@ Description: This return the logit market share for an option providing a given 
 [eligibility]: a binary flag indicating whether an option is eligible for market share~
 [options]: an index of options that can gain market share
 Definition: VAR util:=utility * eligibility;~
-VAR exp_util:=Exp(util);~
+VAR exp_util:=Exp(utility) * eligibility;~
 VAR tot_exp_util:=Sum(exp_util, options);~
 tot_exp_util:= IF tot_exp_util = INF   {If the denominator becomes so large that it appears to be infinite}~
    THEN 10^64   {Then scale it down to a very large but non-infinite value}~
@@ -498,8 +492,6 @@ If you want to time some different calculations:~
 Copyright 2007 Lumina Decision Systems, Inc
 Author: Lonnie Chrisman & Alex Graham
 Date: Sun, Jul 13, 2003 12:18 PM
-SaveAuthor: Lonnie
-SaveDate: Fri, Sep 7, 2012 2:08 PM
 DefaultSize: 48,24
 NodeLocation: 240,232,1
 NodeSize: 64,32
@@ -587,11 +579,11 @@ Aliases: FormNode Sort_profiled_objec1
 {!40200|Att_ChoiceIndexes: Index Profiler_fields}
 
 Index Profiler_fields
+Att_PrevIndexValue: ['Class','Module','Bytes','CPU msecs','msecs w ancestors']
 Title: Profiler fields
 Definition: ['Class','Module','Bytes','CPU msecs','msecs w ancestors']
 NodeLocation: 96,54,1
 NodeSize: 48,24
-Att_PrevIndexValue: ['Class','Module','Bytes','CPU msecs','msecs w ancestors']
 
 Variable Attrib_name_by_profi
 Title: Attrib name by profile field
