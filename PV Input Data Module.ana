@@ -1,5 +1,5 @@
-{ From user JamesMilford, Model PV_Input_Data at 14-Feb-2019 1:03:29 PM, encoding="UTF-8" }
-SoftwareVersion 5.1.6
+{ Analytica Model PV_Input_Data, encoding="UTF-8" }
+SoftwareVersion 5.2.8
 
 {!-40203|Attribute CloudPlayerStyles}
 
@@ -8,8 +8,6 @@ LinkModule PV_Input_Data
 Title: PV Input Data
 Author: JamesMilford
 Date: Fri, Aug 17, 2018 11:48 AM
-SaveAuthor: JamesMilford
-SaveDate: Thu, Feb 14, 2019 1:03 PM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
@@ -910,7 +908,7 @@ Date: Wed, Aug 8, 2018 1:55 PM
 NodeLocation: 112,384,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1,0,1541,731,17
+DiagState: 2,1,0,1524,731,17
 NodeColor: 57311,57311,57311
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
@@ -939,7 +937,7 @@ ValueState: 2,354,30,565,634,,MIDM
 Decision Driver_Info2
 Title: Driver Info
 Definition:  "Driver=Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb); ReadOnly=0;DBQ="
-NodeLocation: 144,192,1
+NodeLocation: 144,200,1
 NodeSize: 64,40
 ValueState: 2,152,154,1039,303,,MIDM
 
@@ -1050,11 +1048,11 @@ WindState: 2,854,497,720,350
 ValueState: 2,248,176,565,634,,MIDM
 
 Index Irradiance_Columns
+Att_PrevIndexValue: ['Location','Date','Radiation']
 Title: Irradiance Columns
 Definition: ['Location','Date','Radiation']
 NodeLocation: 496,256,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Location','Date','Radiation']
 
 Objective All_Irradiance_Data
 Title: All Irradiance Data
@@ -1217,7 +1215,7 @@ Date: Wed, Aug 8, 2018 1:55 PM
 NodeLocation: 112,480,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-46,57,1524,567,17
+DiagState: 2,65,18,1524,567,17
 NodeColor: 57311,57311,57311
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
@@ -1248,7 +1246,7 @@ ValueState: 2,188,25,1225,773,,MIDM
 Decision Driver_Info3
 Title: Driver Info
 Definition:  "Driver=Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb); ReadOnly=0;DBQ="
-NodeLocation: 144,192,1
+NodeLocation: 144,200,1
 NodeSize: 64,40
 ValueState: 2,152,154,1039,303,,MIDM
 
