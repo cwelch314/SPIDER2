@@ -110,7 +110,6 @@ NodeInfo: 1,1,1,1,1,1,0,0,0,0,,0,1,0
 {!40200|Att_ChoiceIndexes: Index Vehicle_Types}
 
 Index Vehicle_Types
-Att_PrevIndexValue: ['Electric (BEV or PHEV)','Non-Electric']
 Title: Vehicle Types
 Description: The different vehicle classifications to be modeled for marketshare and stock tracking calculations.
 Definition: ['Electric (BEV or PHEV)','Non-Electric']
@@ -118,6 +117,7 @@ NodeLocation: 184,400,1
 NodeSize: 56,32
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 272,28}
+Att_PrevIndexValue: ['Electric (BEV or PHEV)','Non-Electric']
 
 Index Vehicle_Vintage
 Title: Vehicle Vintage
@@ -2571,12 +2571,12 @@ Show_description:20}
 Show_description:20}
 
 Index EV_Mkt_Share_Scen
-Att_PrevIndexValue: ['Low','Medium','High']
 Title: EV Mkt Share Scenario
 Definition: ['Low','Medium','High']
 NodeLocation: 272,608,1
 NodeSize: 64,40
 Aliases: FormNode Fo1545336351
+Att_PrevIndexValue: ['Low','Medium','High']
 
 Constant EV_Mkt_Share_Mult
 Title: EV Mkt Share Multiplier
@@ -2697,7 +2697,7 @@ Author: JamesMilford
 Date: Mon, Mar 25, 2019 8:59 PM
 NodeLocation: 376,752,1
 NodeSize: 64,40
-DiagState: 2,28,-22,1435,562,17
+DiagState: 2,28,0,1435,562,17
 
 Index Fuel_Types
 Title: Fuel Types
@@ -2725,14 +2725,14 @@ Constant Veh_Input_Start_Yr
 Title: Vehicle Input Start Year
 Description: The start year for the Vehicle Input Years index.
 Definition: 2010
-NodeLocation: 112,216,1
+NodeLocation: 112,344,1
 NodeSize: 64,40
 Aliases: Alias Al1553483942, FormNode Fo1553483942, FormNode Fo1553480912
 
 FormNode Fo1553480912
 Title: Vehicle Input Start Year
 Definition: 0
-NodeLocation: 112,268,1
+NodeLocation: 112,396,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Veh_Input_Start_Yr
@@ -2787,7 +2787,7 @@ Date: Mon, Mar 25, 2019 8:59 PM
 NodeLocation: 632,248,1
 NodeSize: 64,40
 NodeInfo: 1,0,1,1,1,1,0,,0,,0,,,
-DiagState: 2,-6,208,1336,514,17
+DiagState: 2,4,56,1336,514,17
 
 Constant Fuel_Prices
 Title: Fuel Prices
@@ -3121,7 +3121,7 @@ Date: Mon, Mar 25, 2019 8:59 PM
 NodeLocation: 456,248,1
 NodeSize: 64,40
 NodeInfo: 1,0,1,1,1,1,0,,0,,0,,,
-DiagState: 2,-123,185,1375,517,17
+DiagState: 2,3,54,1375,517,17
 
 Constant Vehicle_Price
 Title: Vehicle Price
@@ -3468,7 +3468,7 @@ Module Vehicle_Choice_Logit
 Title: Vehicle Choice Logit
 NodeLocation: 808,352,1
 NodeSize: 64,40
-DiagState: 2,234,0,1186,573,17
+DiagState: 2,97,8,1344,476,17
 
 Variable Applied_Range_Coeff
 Title: Applied Range Coeff
@@ -3550,11 +3550,11 @@ NodeLocation: 120,392,1
 NodeSize: 64,40
 ValueState: 2,191,-3,1038,648,,MIDM
 
-Constant Veh_Comp_Groups
-Title: Vehicle Competition Groups
+Constant Comp_Group_Map
+Title: Competition Group Map
 Description: Assign each vehicle technology to a competition group, or to "None" if not in a group.
 Definition: Table(All_Vehicle_Techs)(Choice(Vehicle_Comp_Groups,1,0),Choice(Vehicle_Comp_Groups,2,0),Choice(Vehicle_Comp_Groups,2,0),Choice(Vehicle_Comp_Groups,2,0),Choice(Vehicle_Comp_Groups,1,0),Choice(Vehicle_Comp_Groups,1,0),Choice(Vehicle_Comp_Groups,1,0),Choice(Vehicle_Comp_Groups,1,0),Choice(Vehicle_Comp_Groups,1,0),Choice(Vehicle_Comp_Groups,3,0),Choice(Vehicle_Comp_Groups,3,0),Choice(Vehicle_Comp_Groups,1,0),Choice(Vehicle_Comp_Groups,1,0))
-NodeLocation: 792,512,1
+NodeLocation: 760,512,1
 NodeSize: 64,40
 WindState: 2,450,262,720,350
 DefnState: 2,692,117,416,426,0,DFNM
@@ -3566,10 +3566,10 @@ TableCellDefault: Choice(Vehicle_Comp_Groups,1,0)
 FormNode Fo1553551862
 Title: Vehicle Input Start Year
 Definition: 0
-NodeLocation: 792,564,1
+NodeLocation: 760,564,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Veh_Comp_Groups
+Original: Comp_Group_Map
 
 Index Vehicle_Comp_Groups
 Title: Vehicle Comp Groups
@@ -3603,7 +3603,7 @@ WindState: 2,176,12,720,350
 Index Logit_Attributes
 Title: Logit Attributes
 Definition: ['Cost','Acceleration','Range']
-NodeLocation: 320,512,1
+NodeLocation: 288,512,1
 NodeSize: 64,40
 Att_PrevIndexValue: ['Cost','Acceleration','Range']
 
@@ -3626,11 +3626,16 @@ NodeColor: 19661,48336,65535
 Variable Logit_Equiv_Cost
 Title: Logit Equiv Cost by Attribute
 Units: $ equivalence/vehicle
-Description: This shows the relative weight of the various logit attributes, and it shows how each technology compares in terms of attractiveness. The utility from non-monetary attributes are converted into an equivalent dollar value based on their importance to the overally utility derived by the consumer.
-Definition: Divide(Logit_Attrib_Utility, Logit_Attrib_Utility[Logit_Attributes=Cost_Attrib_Label, Vehicle_Techs=Baseline_Veh_Tech], True) * Veh_Ownership_Cost[Vehicle_Techs=Baseline_Veh_Tech]
+Description: This shows the relative weight of the various logit attributes, and it shows how each technology compares in terms of attractiveness. The utility from non-monetary attributes are converted into an equivalent dollar value based on their importance to the overally utility derived by the consumer. For non-monetary attributes the incremental cost penalty is shown relative to the technology with the most attractive attribute. Thus, the technology with the most attractive non-monetary attribute will have a zero-value cost penalty.
+Definition: VAR abs_cost:=Divide(Logit_Attrib_Utility, Logit_Attrib_Utility[Logit_Attributes=Cost_Attrib_Label, Vehicle_Techs=Baseline_Veh_Tech], True) * Veh_Ownership_Cost[Vehicle_Techs=Baseline_Veh_Tech];   {Utility converted to $ equivalence, which can be negative}~
+VAR increm_cost:=abs_cost - MIN(abs_cost, Vehicle_Techs);   {The incremental cost relative to the least cost technology}~
+~
+IF Logit_Attributes = Cost_Attrib_Label~
+THEN abs_cost~
+ELSE increm_cost
 NodeLocation: 440,392,1
 NodeSize: 64,40
-ValueState: 2,362,16,921,649,1,MIDM
+ValueState: 2,315,3,771,652,1,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [Vehicle_Techs,Logit_Attributes]
 NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
@@ -3643,14 +3648,15 @@ Description: The relative utility (prior to exponentiation) for each technology 
 Definition: Logit_Attribute_Rati * Logit_Coefficients
 NodeLocation: 440,288,1
 NodeSize: 64,40
-ValueState: 2,159,21,754,612,,MIDM
-GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9
+ValueState: 2,159,21,882,671,,MIDM
+GraphSetup: {!40600|Att_WaterfallBar Graph_Primary_Valdim:1}~
+Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [Vehicle_Techs,Logit_Attributes]
 
 Decision Cost_Attrib_Label
 Title: Cost Attrib Label
 Definition: Choice(Logit_Attributes, 1, 0)
-NodeLocation: 480,512,1
+NodeLocation: 440,504,1
 NodeSize: 64,40
 Aliases: FormNode Fo1553573397
 {!40200|Att_ChoiceIndexes: Index Logit_Attributes}
@@ -3658,20 +3664,22 @@ Aliases: FormNode Fo1553573397
 FormNode Fo1553573397
 Title: Cost Attrib Label
 Definition: 0
-NodeLocation: 488,560,1
+NodeLocation: 448,552,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,0
 Original: Cost_Attrib_Label
 
-Variable Scaled_Market_Share_
+Variable Scaled_MktShr_Nest2
 Title: Scaled Market Share Nest 2
+Units: fraction
+Description: The nest 2 market share, which is only relevant to techs within a competition group, scaled by the nest 1 market share, which corresponds to the total market share assigned to that technology's competition group.
 Definition: INDEX comp_group:=Subset(Vehicle_Comp_Groups <> None_Label);   {Remove the 'None' competition group}~
 VAR combined_mktShr:=0;~
 ~
 FOR J:=comp_group DO (   {For each competition group}~
-   INDEX competitors:=Subset(Veh_Comp_Groups[All_Vehicle_Techs=Vehicle_Techs] = J);   {Find the technologies included in comp group J}~
-   VAR nest1_share:=Sum((Market_Share_Nest_1 * Comp_Group_Winner)[Vehicle_Techs=competitors], competitors);   {Find the total comp group market share from nest 1}~
-   VAR mkt_shr:=nest1_share * Market_Share_Nest_2[Vehicle_Techs=competitors];   {Split the nest 1 shares to competitors based on nest 2 shares}~
+   INDEX competitors:=Subset(Comp_Group_Map[All_Vehicle_Techs=Vehicle_Techs] = J);   {Find the technologies included in comp group J}~
+   VAR nest1_share:=Sum((Market_Share_Nest1 * Comp_Group_Winner)[Vehicle_Techs=competitors], competitors);   {Find the total comp group market share from nest 1}~
+   VAR mkt_shr:=nest1_share * Market_Share_Nest2[Vehicle_Techs=competitors];   {Split the nest 1 shares to competitors based on nest 2 shares}~
    combined_mktShr:=IF PositionInIndex(competitors, Vehicle_Techs, competitors)   {If a technology in the current comp group}~
       THEN mkt_shr[competitors=Vehicle_Techs]    {Then use the market share from the current loop}~
       ELSE combined_mktShr {Else use the previous market shares}~
@@ -3680,6 +3688,7 @@ FOR J:=comp_group DO (   {For each competition group}~
 combined_mktShr
 NodeLocation: 912,392,1
 NodeSize: 64,40
+WindState: 2,36,78,720,350
 ValueState: 2,16,7,875,668,0,MIDM
 ReformVal: [Vehicle_Input_Years,Vehicle_Techs]
 
@@ -3691,7 +3700,7 @@ Definition: INDEX comp_group:=Subset(Vehicle_Comp_Groups <> None_Label);   {Remo
 VAR winner_flag:=0;   {Initialize the winner flags}~
 ~
 FOR J:=comp_group DO (   {For each competition group}~
-   INDEX competitors:=Subset(Veh_Comp_Groups[All_Vehicle_Techs=Vehicle_Techs] = J);   {Find the technologies included in comp group J}~
+   INDEX competitors:=Subset(Comp_Group_Map[All_Vehicle_Techs=Vehicle_Techs] = J);   {Find the technologies included in comp group J}~
    VAR best_tech:=ArgMax(Vehicle_Utility[Vehicle_Techs=competitors], competitors);   {Find the competitor with the highest utility}~
    winner_flag:=winner_flag + (best_tech = Vehicle_Techs)   {Reindex to Vehicle Technologies and flag the winner with a 1}~
 );~
@@ -3704,24 +3713,29 @@ WindState: 2,98,82,887,418
 ValueState: 2,84,90,1084,557,0,MIDM
 ReformVal: [Vehicle_Techs,Vehicle_Input_Years]
 
-Variable Market_Share_Nest_1
+Variable Market_Share_Nest1
 Title: Market Share Nest 1
-Definition: VAR eligibility:=(Veh_Comp_Groups[All_Vehicle_Techs=Vehicle_Techs] = None_Label) OR Comp_Group_Winner;   {If not in a comp group or if the comp group winner, then make eligible for market share}~
+Units: fraction
+Description: The market share when the best technology from each competition group is compared against all other technologies. For technologies within a competition group, only the tech with the highest utility will show any market share, and that market share represents the total market share assigned to that competition group.
+Definition: VAR eligibility:=(Comp_Group_Map[All_Vehicle_Techs=Vehicle_Techs] = None_Label) OR Comp_Group_Winner;   {If not in a comp group or if the comp group winner, then make eligible for market share}~
 ~
 Logit_Market_Share(Vehicle_Utility, eligibility, Vehicle_Techs)
 NodeLocation: 760,288,1
 NodeSize: 64,40
+WindState: 2,98,82,1215,308
 ValueState: 2,146,15,909,623,1,MIDM
 ReformVal: [Vehicle_Input_Years,Vehicle_Techs]
 NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
-Variable Market_Share_Nest_2
+Variable Market_Share_Nest2
 Title: Market Share Nest 2
+Units: fraction
+Description: The market share among competing technologies. Technologies that aren't associated with a competition group will show a market share of 0. When summed across all technologies, this will equal N, where N is the number of competition groups. When summed across techs within the same competition group this will equal 1.0.
 Definition: INDEX comp_group:=Subset(Vehicle_Comp_Groups <> None_Label);   {Remove the 'None' competition group}~
 VAR combined_mktShr:=0;~
 ~
 FOR J:=comp_group DO (   {For each competition group}~
-   INDEX competitors:=Subset(Veh_Comp_Groups[All_Vehicle_Techs=Vehicle_Techs] = J);   {Find the technologies included in comp group J}~
+   INDEX competitors:=Subset(Comp_Group_Map[All_Vehicle_Techs=Vehicle_Techs] = J);   {Find the technologies included in comp group J}~
    VAR mkt_shr:=Logit_Market_Share(Vehicle_Utility[Vehicle_Techs=competitors], 1, competitors);   {Find the market share among competitors}~
    combined_mktShr:=IF PositionInIndex(competitors, Vehicle_Techs, competitors)   {If a technology in the current comp group}~
       THEN mkt_shr[competitors=Vehicle_Techs]    {Then use the market share from the current loop}~
@@ -3731,23 +3745,88 @@ FOR J:=comp_group DO (   {For each competition group}~
 combined_mktShr
 NodeLocation: 912,288,1
 NodeSize: 64,40
-ValueState: 2,311,0,932,600,0,MIDM
+WindState: 2,98,82,1011,396
+ValueState: 2,187,51,932,600,1,MIDM
 ReformVal: [Vehicle_Input_Years,Vehicle_Techs]
+NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: []
 
-Variable Vehicle_Market_Share
-Title: Vehicle Market Share
-Definition: IF Veh_Comp_Groups[All_Vehicle_Techs=Vehicle_Techs] = None_Label~
-THEN Market_Share_Nest_1~
-ELSE Scaled_Market_Share_ 
+Variable Veh_Tech_Mkt_Share
+Title: Vehicle Tech Market Share
+Units: fraction
+Description: The final logit market share among vehicle technologies after considering nesting for competition groups.
+Definition: IF Comp_Group_Map[All_Vehicle_Techs=Vehicle_Techs] = None_Label~
+THEN Market_Share_Nest1~
+ELSE Scaled_MktShr_Nest2 
 NodeLocation: 1064,288,1
 NodeSize: 64,40
-ValueState: 2,183,7,996,688,1,MIDM
+ValueState: 2,11,21,837,650,1,MIDM
 ReformVal: [Vehicle_Input_Years,Vehicle_Techs]
 NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Vehicle_Techs]
 
+Constant Vehicle_Type_Map
+Title: Vehicle Type Map
+Description: Assign each vehicle technology to a competition group, or to "None" if not in a group.
+Definition: Table(All_Vehicle_Techs)(Choice(Vehicle_Types,2,0),Choice(Vehicle_Types,1,0),Choice(Vehicle_Types,1,0),Choice(Vehicle_Types,1,0),Choice(Vehicle_Types,2,0),Choice(Vehicle_Types,2,0),Choice(Vehicle_Types,2,0),Choice(Vehicle_Types,2,0),Choice(Vehicle_Types,2,0),Choice(Vehicle_Types,1,0),Choice(Vehicle_Types,1,0),Choice(Vehicle_Types,1,0),Choice(Vehicle_Types,2,0))
+NodeLocation: 1224,392,1
+NodeSize: 64,40
+WindState: 2,41,180,720,350
+DefnState: 2,692,117,416,426,0,DFNM
+ValueState: 2,153,0,1016,682,0,MIDM
+Aliases: FormNode Fo1553608444
+TableCellDefault: Choice(Vehicle_Types,1,0)
+{!40200|Att_ChoiceIndexes: Index Vehicle_Types}
+
+FormNode Fo1553608444
+Title: Vehicle Input Start Year
+Definition: 0
+NodeLocation: 1224,444,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Vehicle_Type_Map
+
+Variable Vehicle_Logit_MktShr
+Title: Vehicle Logit Market Share
+Units: fraction
+Description: The long-run market share for vehicles by electric and non-electric vehicle types.
+Definition: Aggregate(Veh_Tech_Mkt_Share, Vehicle_Type_Map[All_Vehicle_Techs=Vehicle_Techs], Vehicle_Techs, Vehicle_Types)
+NodeLocation: 1224,288,1
+NodeSize: 64,40
+WindState: 2,27,171,720,350
+ValueState: 2,307,10,858,669,,MIDM
+ReformVal: [Vehicle_Input_Years,Vehicle_Types]
+NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+
+Variable EV_Equivalency
+Title: EV Equivalency
+Units: fraction
+Description: The amount of BEV/PHEV charging that is equivalent to a full BEV vehicle. Since PHEVs don't operate entirely on electricity, this discounts the energy/demand impacts of a composite BEV/PHEV vehicle to reflect the smaller impact from PHEVs. For example, if PHEVs have no market share but BEVs do, then this will be 100%. On the other hand, if PHEVs have some market share, then this will be less than 100% to represent that not all BEV/PHEV composite vehicles will be charging at the same level as a BEV.
+Definition: Sum(Fuel_Mix[Fuel_Types=Electric_Fuel_Label, All_Vehicle_Techs=Vehicle_Techs] * Veh_Tech_Mkt_Share, Vehicle_Techs)
+NodeLocation: 1224,192,1
+NodeSize: 64,40
+WindState: 2,28,72,720,350
+ValueState: 2,22,41,1328,564,0,MIDM
+ReformVal: [Vehicle_Input_Years,EV_Spatial_ID]
+NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
+
 Close Vehicle_Choice_Logit
+
+Decision Electric_Fuel_Label
+Title: Electric Fuel Label
+Definition: Choice(Fuel_Types,3,0)
+NodeLocation: 112,216,1
+NodeSize: 64,40
+Aliases: FormNode Fo1553609143
+{!40200|Att_ChoiceIndexes: Index Fuel_Types}
+
+FormNode Fo1553609143
+Title: Electric Fuel Label
+Definition: 0
+NodeLocation: 120,268,1
+NodeSize: 80,12
+NodeInfo: 1,0,0,0,0,0,0,119,0,,0,,,
+Original: Electric_Fuel_Label
 
 Close Vehicle_Choice_Logic
 
@@ -6550,418 +6629,418 @@ Title: Stored EV Dec Vars
 Definition: Table(All_Spatial_ID,All_Sectors,All_EV_Dec_Handles)(~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.5,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.5,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.5,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.5,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.327548776,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.327548776,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.360795783,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.360795783,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.039008473,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.039008473,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.104274157,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.104274157,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.173716061,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.173716061,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.117387992,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.117387992,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.304438476,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.304438476,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.546243065,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.546243065,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.361629448,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.361629448,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.094529496,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.094529496,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.297745616,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.297745616,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.222696051,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.222696051,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.120806745,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.120806745,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.380845346,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.380845346,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.483261577,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.483261577,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.261540718,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.261540718,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.141345865,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.141345865,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.181984432,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.181984432,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.091559642,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.091559642,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.171125244,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.171125244,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.016750862,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.016750862,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.157755434,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.157755434,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.157071991,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.157071991,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.014726752,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.014726752,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.563638593,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.563638593,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.136259002,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.136259002,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.014416384,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.014416384,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.676368865,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.676368865,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01559872,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.01559872,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.015577091,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.015577091,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.015590069,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.015590069,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.027205566,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.027205566,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.258159628,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.258159628,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.180924669,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.180924669,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.16759751,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.16759751,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.015233964,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.015233964,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.272699868,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.272699868,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.311075225,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.311075225,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.248121617,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.248121617,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.318651474,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.318651474,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.516075539,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.516075539,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.129894819,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.129894819,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.022987585,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.022987585,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.184063331,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.184063331,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.380285203,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.380285203,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.047447025,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.047447025,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.316552393,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.316552393,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.338393748,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.338393748,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.287530515,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.287530515,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.096203592,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.096203592,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.210666139,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.210666139,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.215680915,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.215680915,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.586123736,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.586123736,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.308811164,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.308811164,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.033122999,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.033122999,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.314531092,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.314531092,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.087953274,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.087953274,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.23892463,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.23892463,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.30770379,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.30770379,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.016691094,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.016691094,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.682002738,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.682002738,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.219195207,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.219195207,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.350408952,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.350408952,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.198062486,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.198062486,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.306656171,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.306656171,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.069750648,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.069750648,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.18621924,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.18621924,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.048796608,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.048796608,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.325017526,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.325017526,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.1,0.6,0.8,0.812268927,1,-1,0.66,-0.33,1,~
+0.1,0.6,0.8,0.812268927,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.1,0.6,0.8,1,1.823531025,-1,0.66,-0.33,1,~
+0.1,0.6,0.8,1,1.823531025,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.450297678,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.450297678,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.231100768,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.231100768,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.736043063,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.736043063,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.449099321,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.449099321,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.110427532,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.110427532,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.013165794,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.013165794,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.621960197,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.621960197,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.468335992,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.468335992,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.614438656,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.614438656,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.406310034,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.406310034,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.317481411,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.317481411,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.018486458,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.018486458,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.138240539,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.138240539,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.102083385,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.102083385,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.314289106,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.314289106,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.486629977,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.486629977,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.395629481,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.395629481,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.028438475,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.028438475,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.352994388,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.352994388,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.470856835,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.470856835,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.744902733,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.744902733,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.653030648,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.653030648,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.529803984,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.529803984,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.466444824,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.466444824,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.372970394,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.372970394,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.017624839,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.017624839,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.544475358,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.544475358,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.613666941,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.613666941,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.020399415,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.020399415,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.564091371,0.8,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.564091371,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.129086965,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.129086965,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.09419266,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.09419266,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.052317566,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.052317566,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.1,0.6,0.8,0.203650491,1,-1,0.66,-0.33,1,~
+0.1,0.6,0.8,0.203650491,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.119357886,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.119357886,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.04465402,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.04465402,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.030202037,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.030202037,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.142847362,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.142847362,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.66144983,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.66144983,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.015070329,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.015070329,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.033808494,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.033808494,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.013878875,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.013878875,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.014086106,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.014086106,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.018528218,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.018528218,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.019996639,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.019996639,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.556629273,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.556629273,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.77380531,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.77380531,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.015050243,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.015050243,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01533774,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.01533774,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.020094004,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.020094004,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.748847252,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.748847252,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.736365969,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.736365969,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.69373232,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.69373232,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.751872513,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.751872513,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.01302867,0.539945006,0.30978768,0,1,-1,0.66,-0.33,1,~
+0.01302867,0.539945006,0.30978768,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.03071414,0.6,0.8,0,1,-1,0.66,-0.33,1,~
+0.03071414,0.6,0.8,0,1,-1,0.09,-0.72,1,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.077732516,0.6,0.8,0,1,-1,0.66,-0.33,1)
+0.077732516,0.6,0.8,0,1,-1,0.09,-0.72,1)
 NodeLocation: 280,80,1
 NodeSize: 64,40
 DefnState: 2,55,7,1246,741,0,DFNM
