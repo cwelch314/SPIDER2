@@ -83,7 +83,7 @@ Definition: ['Residential','NonResidential','EV Combined']
 NodeLocation: 104,64,1
 NodeSize: 64,40
 ValueState: 2,847,306,416,303,0,MIDM
-DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Variable Applied_Vehicle_Tech
+DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 Att_GraphIndexRange: 1,,,,,,10
 {!40300|Att_SlicerPopupSize: 337,126}
 Att_PrevIndexValue: ['Residential','NonResidential','EV Combined']
@@ -3558,21 +3558,6 @@ NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Vehicle_Maint_Cost
 
-Alias Al1553538928
-Title: Vehicle Acceleration
-Definition: 1
-NodeLocation: 2264,432,1
-NodeSize: 64,40
-Original: Vehicle_Acceleration
-
-FormNode Fo1553538928
-Title: Vehicle Input Start Year
-Definition: 0
-NodeLocation: 2264,484,1
-NodeSize: 56,12
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Vehicle_Acceleration
-
 Close Data
 
 Text Te1514147845
@@ -3618,7 +3603,7 @@ Author: JamesMilford
 Date: Fri, Dec 21, 2018 10:51 AM
 NodeLocation: 696,168,1
 NodeSize: 64,40
-DiagState: 2,33,273,1524,584,17
+DiagState: 2,-28,156,1524,584,17
 NodeColor: 65535,65535,65535
 
 Module Excel_Import_Logic
@@ -3759,7 +3744,7 @@ Checkbox(0),Path_to_Global_Data,'AC-to-DC_Factor','A7',Choice(Import_Data_Types,
 Checkbox(0),Path_to_Global_Data,'Finance_Rates','A7',Choice(Import_Data_Types,2,0),Null,Handle(Debt_Equity_Rates),Handle(All_Sectors),Handle(Debt_or_Equity),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Fed_ITC','A7',Choice(Import_Data_Types,2,0),Null,Handle(Invest_Tax_Credit),Handle(All_Sectors),Handle(ITC_Scenario),Handle(Static_PV_Time),Null,~
 Checkbox(0),Path_to_Global_Data,'Strg_Duration_Incent','A7',Choice(Import_Data_Types,2,0),Null,Handle(Incent_Durat_Derate),Handle(Incent_Durat_Inputs),Handle(Incent_Duration_Step),Null,Null,~
-Checkbox(0),Path_to_Global_Data,'Vehicle_Stock_Data','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Data),Handle(Vehicle_Stock_DataYr),Handle(All_Sectors),Handle(All_Spatial_ID),Handle(Vehicle_Types),~
+Checkbox(1),Path_to_Global_Data,'Vehicle_Stock_Data','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Data),Handle(Vehicle_Stock_DataYr),Handle(All_Sectors),Handle(All_Spatial_ID),Handle(All_Vehicle_Techs),~
 Checkbox(0),Path_to_Global_Data,'Struct_Single_Cell_Inputs','A7',Choice(Import_Data_Types,1,0),Null,Handle(StructSingCell_Input),Null,Handle(StructSingCell_Names),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Hist_Vehicle_Growth','A7',Choice(Import_Data_Types,2,0),Null,Handle(Hist_Veh_Growth_Rate),Null,Handle(Vehicle_Types),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'EV_MktShare_Mults','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Mkt_Share_Mult),Null,Handle(EV_Mkt_Share_Scen),Null,Null,~
@@ -3767,19 +3752,19 @@ Checkbox(0),Path_to_Global_Data,'Building_Stock','A7',Choice(Import_Data_Types,2
 Checkbox(0),Path_to_Global_Data,'Aggreg_Spatial_ID','A7',Choice(Import_Data_Types,2,0),Null,Handle(All_Agg_Spatial_IDs),Null,Handle(All_Spatial_ID),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'EV_Map_Increm_to_Cumul','A7',Choice(Import_Data_Types,1,0),Null,Handle(EV_Map_Increm_Cumul),Null,Handle(EV_Adopt_Data_Types),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Climate_Zone_Map','A7',Choice(Import_Data_Types,3,0),Null,Handle(Spatial_ID_to_CZ_Map),Null,Handle(All_Spatial_ID),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Fuel_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Fuel_Prices),Handle(Vehicle_Input_Years),Handle(Fuel_Types),Handle(Fuel_Price_Scen),Null,~
+Checkbox(0),Path_to_Global_Data,'Fuel_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Fuel_Prices),Handle(Vehicle_Input_Years),Handle(Fuel_Types),Handle(Fuel_Price_Scen),Null,~
 Checkbox(0),Path_to_Global_Data,'MPG','A7',Choice(Import_Data_Types,2,0),Null,Handle(MPG),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'VMT','A7',Choice(Import_Data_Types,2,0),Null,Handle(VMT),Null,Handle(Vehicle_Input_Years),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Fuel_Mix','A7',Choice(Import_Data_Types,2,0),Null,Handle(Fuel_Mix),Handle(Vehicle_Input_Years),Handle(Fuel_Types),Handle(All_Vehicle_Techs),Null,~
 Checkbox(0),Path_to_Global_Data,'Vehicle_Price','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Price),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Vehicle_Range','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Range),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Maint_Costs','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Maint_Cost),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Veh_Type_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Vehicle_Type_Map),Null,Handle(All_Vehicle_Techs),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_Type_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Vehicle_Type_Map),Null,Handle(All_Vehicle_Techs),Null,Null,~
 Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null)
 NodeLocation: 88,552,1
 NodeSize: 64,40
 WindState: 2,30,63,1151,780
-DefnState: 2,-22,-20,1540,725,0,DFNM
+DefnState: 2,0,0,1540,725,0,DFNM
 ValueState: 2,-66,109,1540,509,0,MIDM
 Aliases: FormNode New1551412463, FormNode New1551412503
 ReformDef: [Excel_Import_Params,Imported_Dataset_Num]
@@ -4031,7 +4016,7 @@ NodeSize: 64,40
 
 Decision Last_Import_Time
 Title: Last Import Time
-Definition: 27-Mar-2019 10:00:57.804000
+Definition: 27-Mar-2019 23:27:46.007000
 NodeLocation: 544,848,1
 NodeSize: 64,40
 Aliases: FormNode New1551412475, FormNode New1551412538
@@ -5177,7 +5162,7 @@ Aliases: FormNode New1551412495, FormNode New1551412537, FormNode New1551412451
 Decision Dataset_to_View
 Title: Dataset to View
 Description: Select the tab name of the dataset you wish to view in greater detail.
-Definition: Choice(Tab_Names,39,0)
+Definition: Choice(Tab_Names,24,0)
 NodeLocation: 112,520,1
 NodeSize: 64,40
 WindState: 2,7,277,720,350
@@ -5256,7 +5241,7 @@ ELSE FOR K:=@Index_Titles DO (~
 
 NodeLocation: 272,208,1
 NodeSize: 64,40
-ValueState: 2,309,431,864,440,0,MIDM
+ValueState: 2,206,327,864,440,0,MIDM
 ReformVal: [Sys_LocalIndex('Index_Names'),Sys_LocalIndex('Number_Missing')]
 
 Variable Incorrect_Subscripts
@@ -5302,7 +5287,7 @@ ELSE CopyIndex(repeatSubs)
 NodeLocation: 272,400,1
 NodeSize: 64,40
 WindState: 2,29,62,720,350
-ValueState: 2,45,156,675,474,,MIDM
+ValueState: 2,45,156,675,474,0,MIDM
 
 Decision Apply_Index_Checks
 Title: Apply Index Checks?
