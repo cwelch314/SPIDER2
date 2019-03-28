@@ -46,7 +46,7 @@ NodeLocation: 672,288,1
 NodeSize: 64,40
 NodeInfo: 1,1,1,1,1,1,0,,0,,0,,,
 WindState: 2,226,179,720,350
-ValueState: 2,407,10,1015,774,1,MIDM
+ValueState: 2,285,5,1015,774,1,MIDM
 NodeColor: 65535,65535,65535
 GraphSetup: Graph_SymbolKey:0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
@@ -98,7 +98,7 @@ Date: Fri, Jun 22, 2018 10:48 AM
 NodeLocation: 856,488,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-116,164,1524,549,17
+DiagState: 2,-22,44,1524,549,17
 {!40400|CloudPlayerStyles: FrameNode: EVAdoption1544977779}
 {!40204-40399|AWP_Attrib:FrameNode: EVAdoption1544977779}
 
@@ -116,7 +116,7 @@ Description: The different vehicle classifications to be modeled for marketshare
 Definition: ['Electric (BEV or PHEV)','Non-Electric']
 NodeLocation: 152,400,1
 NodeSize: 64,40
-WindState: 2,399,90,942,595
+WindState: 2,250,69,942,595
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 272,28}
 Att_PrevIndexValue: ['Electric (BEV or PHEV)','Non-Electric']
@@ -172,12 +172,12 @@ Description: The allocation of total vehicle stock, by aging chain vintage. ~
 ~
 The derivation of this formula is presented in Appendix 1 of ~
 Welch, Cory. 2017. Making the Case of Using Analytica for System Dynamics Modeling: A Reference Guide and Comparison with Classical Platform. Presented at the International System Dynamics Conference. Cambridge, MA. July.
-Definition: var Fv:= (1 + Hist_Veh_Growth_Rate * Vehicle_Average_Life / Num_Vehicle_Vintages)^(1-Vehicle_Vintage); ~
+Definition: var Fv:= (1 + Hist_Veh_Growth_Rate[All_Vehicle_Techs=Vehicle_Techs] * Vehicle_Average_Life / Num_Vehicle_Vintages)^(1-Vehicle_Vintage); ~
 ZIDZ(Fv, sum(Fv, Vehicle_Vintage))
 NodeLocation: 800,288,1
 NodeSize: 64,40
-WindState: 2,782,121,720,350
-ValueState: 2,800,344,515,192,,MIDM
+WindState: 2,253,70,720,350
+ValueState: 2,509,93,806,443,,MIDM
 ReformVal: [Vehicle_Types,Vehicle_Vintage]
 
 Constant Vehicle_Average_Life
@@ -17712,6 +17712,7 @@ Title: EV Vehicles
 Definition: Subset(Select_EV_Techs[All_Vehicle_Techs=Vehicle_Techs])
 NodeLocation: 608,72,1
 NodeSize: 64,40
+WindState: 2,98,82,1092,496
 
 Close EV_Stock_Initializat
 
@@ -17719,7 +17720,7 @@ Variable Total_Vehicle_Retire
 Title: Total Vehicle Retirements
 Units: Vehicles
 Description: Total vehicles retired/replaced, across all vehicle types (including electric and non-electric vehicles)
-Definition: sum(Vehicle_Retirements[@Vehicle_Vintage=Num_Vehicle_Vintages], Vehicle_Types)
+Definition: sum(Vehicle_Retirements[@Vehicle_Vintage=Num_Vehicle_Vintages], Vehicle_Techs)
 NodeLocation: 672,392,1
 NodeSize: 64,40
 ValueState: 2,415,147,632,605,1,MIDM
@@ -17734,19 +17735,21 @@ Variable New_Vehicle_Market_S
 Title: New Vehicle Market Share
 Units: fraction
 Description: Market share of electric vehicles as a fraction of new vehicle sales.
-Definition: Table(Vehicle_Types)(Familiar * Applied_LRMS,1-Familiar * Applied_LRMS)
+Definition: IF Select_EV_Techs[All_Vehicle_Techs=Vehicle_Techs]~
+THEN Familiar * Applied_LRMS~
+ELSE 1-Familiar * Applied_LRMS
 NodeLocation: 296,328,1
 NodeSize: 64,40
-WindState: 2,2086,84,720,350
-DefnState: 2,251,356,566,212,0,DFNM
-ValueState: 2,607,64,889,768,1,MIDM
+WindState: 2,331,335,720,350
+DefnState: 2,259,337,566,212,0,DFNM
+ValueState: 2,367,-3,889,768,1,MIDM
 GraphSetup: Att_GraphValueRange New_Vehicle_Market_S:1,,0,1,,,,0,1,0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_ContLineStyle Graph_Primary_Valdim:1
 ReformVal: [Time_Vehicles,EV_Spatial_ID]
 NumberFormat: 2,%,4,0,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [Vehicle_Types,1,EV_Spatial_ID,16,EV_Sectors,1,Sel_Ag_EV_LRMS,1,Time_Vehicles,1]
+Att_ResultSliceState: [EV_Sectors,1,Vehicle_Techs,2,EV_Spatial_ID,16,Time_Vehicles,1]
 {!40600|Att_StackingIndex: Vehicle_Types}
 {!40600|Att_ClusterIndex: Null}
 
@@ -18149,7 +18152,7 @@ Title: Vehicle Stock Share - Simulated
 Units: dmnl
 Description: Market share of the total stock of vehicles, by vehicle type (relative to the total stock of vehicles)
 Definition: var total_veh_by_type := sum(Vehicle_Stock_BOP,Vehicle_Vintage);~
-var total_veh := sum(total_veh_by_type, Vehicle_Types) ;~
+var total_veh := sum(total_veh_by_type, Vehicle_Techs) ;~
 var x:=ZIDZ(total_veh_by_type , total_veh);~
 x
 NodeLocation: 296,64,1
@@ -18198,7 +18201,7 @@ Author: Cory Welch
 Date: Fri, Jun 22, 2018 10:48 AM
 NodeLocation: 120,168,1
 NodeSize: 64,56
-DiagState: 2,106,-4,1610,728,17
+DiagState: 2,12,7,1524,566,17
 Pict: (000000000000003C003C00040605000089504E470D0A1A0A0000000D494844520000003C0000003C08060000003AFCD972000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA8640000048B494441546843ED994F4814511CC73D7AF4E82D6F790A3B449EC28307C18B75DA2E618760A143D221F6A617F1506048B051A0447F4C12B67FB021A441D8124A4B4699246C18B245A159940A32D37C87FD3DDECCFC76E78F33B3AF710F1FF6CD7BBF997DDF79BFF7DEEFF7A649D7F503055B9964D8CA24C3562619B632C9B0954986ADB433BF9EEF197E9DCE9E9BE99A4B3DED281EBDDDA447C5C9C7EDCBF89FCCCBD4E4B3D264EAD7EE660BD7A7A0B095C4D2F742273AC0752C2E4E4CB56C3E5A9DE8E7FA1704B672776FBB79AC9819B1FF394677F055FFC4F5B78343517165716014236CFFEFF3CF7BF23FFE965BB9FEFAC15101B1B2DB764FB796E15AA8B7DB46CDC2D7B9AE33F9CE02F505A35DFAB9DCCED97AC551218F2C4633EC391484F1772399E3F79AB7D127BC00CEC62B960BCC59128B454A6EAB37F032EADB83956C9AB3F18228C0656981821BD7C385DDB8F8A22F87FE61B483CE6751C0D6436F70762DD7271BA90244926B6381E36CDC1005B830BD3DD94035B05AA39F41E7B228D056805FD94035B06DA19F58B1B9763744A137D756C283F040D94035E4C5CBDEE60551A0878419D54401F6E686601F884243B0A23404FB44141A8215A521D827A270E0045350BE9FD42B0E42134CA921927ED94035EE7C181D084530652138DE910D5483B23AC4FE5CBB1BA280FC92DE9C0AC73AD5A0F3361CE372ED6E88C2C78D620709C6B9966CA40AF22145D0C5D57281F98B876101C30B90DBEA0D8E9C2885C528073D82B25CC095719E8587E2444125D7A6B90BF633188E0AD96D201EDB80DD264ED67F97DAE4B3E99AD36DE6C2843E7D6A4E9F1F1ED1567229CEC65101B0F4D3BE0CF07671D2B0DF4370AFE0B00E2F1EE2709443FDC094ABEACA5B6B6DDAD556DDC2546F41DFF864E9B3F526092FDF95B095B9CD258C10F7E9C40F5EBF2F69ABF93E7DF652164285E86B87B6F5F26227D9386E928118BC659AD71CB55C1E738D169A20C0CBB0FD04398386782D7B78D3147DB7BBA8EFED9803C31A7360C41176D2072FEA5435C1A897DD11F7D0073337F06905F7075D8909EDF36C8F18E937370650C71ABA0137AD2518EE476B007E311FED36B1F1F0741E82F5276773B8E68D5CA825588E7531C2F00CB93D6EB485B18C39C2378F9471CD1AB9514DB0FCE511735785E0457B7FBF9FDC1AD7AC911B76C1986B14A5014442B0E1EE8D9BD005E3C31B655A005B904A115AE882E595189F333DADAC7FBEF9DE668212BA60C2F3C1413E3D6976C0D832D8F6908944B09F74124180F9E74644C4B5870DF65F53B01184E09A35F20225E2D886B8F6AA20F4430710FD70ED61632414E60B4652615CF3461122BB18CA9C4D68188903626953B09141A18E378C1811DC23D68D6A2E436C65FA98414765A1E48DA306A95CE5CD9B6F1FE15FE1F290FE65BE8BC596E259B0D99A3133DC587ABE9C1B3B1F10171801398D73C14CEEEDCF30E263CE56608CACDD83AC0FA803DAD2ADB439C2E81CD76909FBCAAE8D1F2B39EC90FF1A0B94E9313B5B8E00C872A124C8632B198F098454DA8460A9CE0DB65239AA884EAE60C0884EB66060172D8967ED19D84AA5E144275A30A8B190B9C156FE174034655E3E4254B632B9E84DFF0053E352ED7ECC3F190000000049454E44AE426082)
 {!40400|CloudPlayerStyles: FrameNode: EVAdoption1544921747}
 {!40204-40399|AWP_Attrib:FrameNode: EVAdoption1544921747}
@@ -18237,11 +18240,12 @@ Att_ResultSliceState: [Sectors_Selected,1,Sel_Ag_EV_LRMS,2,Selected_Spatial_ID,5
 Variable Familiarizing
 Title: Familiarizing
 Definition: Unfamiliar * Ad_Eff_EV_Applied  {Familiarization through external advertising/marketing effects}~
-+ Vehicle_Stock_Share1[Vehicle_Techs=EV_Vehicles] * EV_WOM_Applied * Unfamiliar {Familiarization through word-of-mouth from existing EV owners}
++ Sum(Vehicle_Stock_Share1[Vehicle_Techs=EV_Vehicles], EV_Vehicles) * EV_WOM_Applied * Unfamiliar {Familiarization through word-of-mouth from existing EV owners}
 NodeLocation: 248,224,1
 NodeSize: 64,32
 NodeInfo: 1,1,1,1,1,1,0,,0,,0,,,
-ValueState: 2,512,53,997,640,,MIDM
+WindState: 2,98,82,1335,476
+ValueState: 2,236,53,997,640,,MIDM
 NodeColor: 9,52427,1
 ReformVal: [Time_Vehicles,EV_Spatial_ID]
 
@@ -18251,6 +18255,7 @@ Definition: var x:=IF (Use_EV_Decision_Vars AND includeAdEff) THEN EV_Ad_Effecti
 x * EV_AdEff_Mult_by_Tim[EV_AdEff_Scenario=EV_AdEff_Scen]
 NodeLocation: 88,312,1
 NodeSize: 64,40
+WindState: 2,90,2,720,350
 ValueState: 2,484,113,987,511,,MIDM
 GraphSetup: Att_GraphIndexRange EV_Spatial_ID:1,1~
 Att_CatLineStyle Graph_Primary_Valdim:5
@@ -18467,20 +18472,19 @@ Title: Applied LRMS
 Units: fraction
 Description: Applied long-run market share of electric vehicles. 
 Definition: IF Use_Logit_Market_Sha~
-THEN Vehicle_Logit_MktShr~
-ELSE (VAR x:=IF (Use_EV_Decision_Vars AND includeLRMS_EV) THEN EV_LongRun_Mkt_Share ELSE Stored_LRMS_EV[All_Spatial_ID=EV_Spatial_ID, All_Sectors=EV_Sectors] * EV_Uncertainty;~
-   MIN([1.0, x * EV_MktShr_Mult_by_Ti[EV_Mkt_Share_Scen=EV_Mkt_Share_Scenar1]])~
+THEN Veh_Tech_Mkt_Share~
+ELSE (VAR calib_mktShr:=IF (Use_EV_Decision_Vars AND includeLRMS_EV) THEN EV_LongRun_Mkt_Share ELSE Stored_LRMS_EV[All_Spatial_ID=EV_Spatial_ID, All_Sectors=EV_Sectors] * EV_Uncertainty;~
+   MIN([1.0, calib_mktShr * EV_MktShr_Mult_by_Ti[EV_Mkt_Share_Scen=EV_Mkt_Share_Scenar1]])~
    )
 NodeLocation: 120,328,1
 NodeSize: 64,40
 WindState: 2,102,82,1333,694
-ValueState: 2,376,153,1032,585,1,MIDM
+ValueState: 2,316,103,1032,585,1,MIDM
 GraphSetup: Att_GraphIndexRange EV_Spatial_ID:1,1~
 Att_CatLineStyle Graph_Primary_Valdim:4~
 Att_ContLineStyle Graph_Primary_Valdim:4
-ReformVal: [EV_Spatial_ID,EV_Mkt_Share_Scen]
+ReformVal: [Time_Vehicles,Vehicle_Techs]
 Att_ResultSliceState: [EV_Sectors,1,Time_Vehicles,21,EV_Spatial_ID,44]
-Att_ColorRole: Null
 
 Module EV_Impact1
 Title: EV Impact
@@ -18831,7 +18835,7 @@ Title: Vehicle Stock Share - Aggregated
 Units: fraction
 Description: Share of vehicle stock across all selected Spatial IDs, by vehicle type.
 Definition: var total_veh_by_type := sum(Vehicle_Stock_EOP,Vehicle_Vintage, EV_Spatial_ID);~
-var total_veh := sum(total_veh_by_type, Vehicle_Types) ;~
+var total_veh := sum(total_veh_by_type, Vehicle_Techs) ;~
 var x:=ZIDZ(total_veh_by_type , total_veh);~
 x
 NodeLocation: 512,488,1
@@ -19189,7 +19193,7 @@ Title: EV Mkt Share Scenario
 Description: Select the scenario for long run EV market share multiplier.
 Definition: Choice(EV_Mkt_Share_Scen,2,1)
 IndexVals: ['item 1']
-NodeLocation: 272,520,1
+NodeLocation: 272,504,1
 NodeSize: 64,40
 Aliases: FormNode Fo1545335919, FormNode Fo1545338496, FormNode Fo1545336386
 {!40200|Att_ChoiceIndexes: Index EV_Mkt_Share_Scen}
@@ -19197,7 +19201,7 @@ Aliases: FormNode Fo1545335919, FormNode Fo1545338496, FormNode Fo1545336386
 FormNode Fo1545335919
 Title: EV Mkt Share Scenario
 Definition: 0
-NodeLocation: 280,560,1
+NodeLocation: 280,544,1
 NodeSize: 72,16
 NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
 Original: EV_Mkt_Share_Scenar1
@@ -22239,7 +22243,7 @@ Variable Simul_EV_Stock_Chg
 Title: Simulated EV Stock Change Rate
 Units: vehicles/year
 Description: Simulated EV Sales.
-Definition: Sum(Vehicle_Additions[Vehicle_Types=EV_label] - Vehicle_Removals[Vehicle_Types=EV_label], Vehicle_Vintage)
+Definition: Sum(Vehicle_Additions[Vehicle_Techs=EV_Vehicles] - Vehicle_Removals[Vehicle_Techs=EV_Vehicles], Vehicle_Vintage)
 NodeLocation: 88,496,1
 NodeSize: 64,40
 WindState: 2,453,188,720,350
@@ -22269,7 +22273,7 @@ Variable Simulated_EV_Stock
 Title: Simulated EV Stock
 Units: Vehicles.
 Description: Total Simulated EV Stock, summed across all vehicle vintages. 
-Definition: sum(Vehicle_Stock_EOP[Vehicle_Types=EV_label], Vehicle_Vintage)
+Definition: sum(Vehicle_Stock_EOP[Vehicle_Techs=EV_Vehicles], Vehicle_Vintage)
 NodeLocation: 88,176,1
 NodeSize: 64,40
 ValueState: 2,322,34,965,711,1,MIDM
