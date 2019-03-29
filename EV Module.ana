@@ -17713,7 +17713,7 @@ Definition: Subset(Select_EV_Techs[All_Vehicle_Techs=Vehicle_Techs])
 NodeLocation: 608,72,1
 NodeSize: 64,40
 WindState: 2,98,82,1092,496
-{!40300|Att_SlicerPopupSize: 232,64}
+{!40300|Att_SlicerPopupSize: 237,64}
 
 Close EV_Stock_Initializat
 
@@ -19311,11 +19311,11 @@ Att_PrevIndexValue: [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021
 
 Index All_Vehicle_Techs
 Title: All Vehicle Techs
-Definition: ['Gasoline','PHEV','BEV']
+Definition: ['Non-Electric','PHEV','BEV']
 NodeLocation: 560,80,1
 NodeSize: 64,40
 WindState: 2,68,6,720,679
-Att_PrevIndexValue: ['Gasoline','PHEV','BEV']
+Att_PrevIndexValue: ['Non-Electric','PHEV','BEV']
 
 Constant Veh_Input_Start_Yr
 Title: Vehicle Input Start Year
@@ -19371,6 +19371,7 @@ Title: Logit Attributes
 Definition: ['Cost','Range','Tech Preference']
 NodeLocation: 104,328,1
 NodeSize: 64,40
+{!40300|Att_SlicerPopupSize: 227,80}
 Att_PrevIndexValue: ['Cost','Range','Tech Preference']
 
 Decision Cost_Attrib_Label
@@ -19705,11 +19706,11 @@ Show_description:20}
 
 Index Fuel_Price_Scen
 Title: Fuel Price Scenarios
-Definition: ['Low Electric Demand','Base Electric Demand','High Electric Demand']
+Definition: ['Low Electricity Demand','Base Electricity Demand','High Electricity Demand']
 NodeLocation: 296,80,1
 NodeSize: 64,40
 Aliases: FormNode Fo1553721939
-Att_PrevIndexValue: ['Low Electric Demand','Base Electric Demand','High Electric Demand']
+Att_PrevIndexValue: ['Low Electricity Demand','Base Electricity Demand','High Electricity Demand']
 
 Decision Select_FuelPriceScen
 Title: Selected Fuel Price Scenario
@@ -20030,7 +20031,7 @@ Module Vehicle_Choice_Logit
 Title: Vehicle Choice Logit
 NodeLocation: 440,176,1
 NodeSize: 64,40
-DiagState: 2,-25,108,1497,553,17
+DiagState: 2,6,7,1497,553,17
 
 Constant Vehicle_Range_Coeff
 Title: Vehicle Range Coefficient
@@ -20163,11 +20164,12 @@ THEN abs_cost~
 ELSE increm_cost
 NodeLocation: 424,408,1
 NodeSize: 64,40
-ValueState: 2,341,35,771,652,1,MIDM
+ValueState: 2,79,1,771,652,1,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9
-ReformVal: [Vehicle_Techs,Logit_Attributes]
+ReformVal: [Vehicle_Input_Years,Vehicle_Techs]
 NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [Vehicle_Input_Years,17,Logit_Attributes,1,Vehicle_Techs,1]
+Att__TotalsIndex: [Logit_Attributes]
+Att_ResultSliceState: [Logit_Attributes,0,Vehicle_Techs,3,Vehicle_Input_Years,14]
 
 Variable Logit_Attrib_Utility
 Title: Logit Attribute Utility
@@ -20190,7 +20192,7 @@ Definition: VAR mktShr:=Logit_Market_Share(Vehicle_Utility, 1, Vehicle_Techs);~
 LinearInterp(Vehicle_Input_Years, mktShr, EV_Time_Fract_Year, Vehicle_Input_Years)
 NodeLocation: 728,304,1
 NodeSize: 64,40
-ValueState: 2,3,3,837,650,1,MIDM
+ValueState: 2,551,21,837,650,1,MIDM
 ReformVal: [Time_Vehicles,Vehicle_Techs]
 NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Vehicle_Techs]
@@ -22416,8 +22418,8 @@ SymbolSize:7~
 Graph_LineThickness:2
 ReformVal: [Time_Vehicles,Act_vs_Sim]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: []
-Att_ResultSliceState: [EV_Spatial_ID,1,EV_Sectors,1,EV_Vehicles,1,Vehicle_Range_Coeff,2,Act_vs_Sim,1,Time_Vehicles,1]
+Att__TotalsIndex: [EV_Vehicles]
+Att_ResultSliceState: [EV_Spatial_ID,1,EV_Sectors,1,EV_Vehicles,0,Act_vs_Sim,1,Time_Vehicles,1]
 Att_ColorRole: Act_vs_Sim
 Att_SymbolRole: Act_vs_Sim
 {!40200|Att_GraphSetupSlices: [3,1,Act_vs_Sim,2,2,Act_vs_Sim,1]}
