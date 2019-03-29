@@ -89,7 +89,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,97,0,1200,738,17
+DiagState: 2,129,-4,1200,720,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
@@ -5819,12 +5819,12 @@ Aliases: FormNode Fo1552872205
 MetaOnly: 1
 
 Index PV_Impact_Titles
-Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 Title: PV Impact Titles
 Definition: Create_Titles_List(PV_Impact_Out)~
 
 NodeLocation: 160,432,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 
 Button PV_Econ_Output_But
 Title: Result
@@ -5905,12 +5905,12 @@ Aliases: FormNode Fo1552872202
 MetaOnly: 1
 
 Index EV_Impact_Titles
-Att_PrevIndexValue: ['EV Cumulative (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Simulated EV Stock (Vehicles.)','Vehicle Stock Share - Aggregated (fraction)','% of New Veh Sales (fraction)','New Vehicle Sales (Vehicles/Year)']
 Title: EV Impact Titles
 Definition: Create_Titles_List(EV_Impact_Out)~
 
 NodeLocation: 160,672,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['EV Cumulative (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Simulated EV Stock (Vehicles.)','Vehicle Stock Share - Aggregated (fraction)','% of New Veh Sales (fraction)','New Vehicle Sales (Vehicles/Year)']
 
 Decision EV_Impact
 Title: EV Impact
@@ -6070,7 +6070,7 @@ CAUTION: Selecting "All" for more than one scenario variable may result in excee
 Definition: MultiTable(PV_Scenario_Variable)(Select_PV_Cost_Scen,BaseYr_for_PV_Costs,Select_Rate_Escalate,New_Constr_Ramp_Scen,Building_Growth_Scen,Sel_NC_SystSize_Scen,Sel_NC_Suitable_Scen,Selected_ITC_Scen)
 NodeLocation: 960,72,1
 NodeSize: 64,40
-WindState: 2,665,222,915,591
+WindState: 2,340,155,915,591
 DefnState: 2,805,4,698,343,0,DFNM
 Aliases: FormNode Fo1552868509
 {!50000|Att_ColumnWidths: [215]}

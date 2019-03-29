@@ -1869,7 +1869,7 @@ Date: Fri, Jun 22, 2018 10:48 AM
 NodeLocation: 112,504,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,23,12,1222,714,17
+DiagState: 2,67,65,1222,714,17
 NodeColor: 57311,57311,57311
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
@@ -2024,6 +2024,7 @@ VAR year:=DatePart(Time_Solar_PV, 'Y');~
 year + (month-1)/12
 NodeLocation: 536,488,1
 NodeSize: 64,40
+ValueState: 2,407,220,416,303,0,MIDM
 
 Variable PV_Year_Map
 Title: PV Year Map
@@ -5255,11 +5256,11 @@ ReformDef: [Incent_Durat_Inputs,Incent_Duration_Step]
 {!40700|Att_CellFormat: CellSpan(Incent_Durat_Inputs,CellNumberFormat('Percentage',2,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0),2,header:0)}
 
 Index Incent_Durat_Inputs
+Att_PrevIndexValue: ['Storage Duration Lower Bound (hours)','Incentive Rate (Pct. of Base)']
 Title: Incentive Duration Inputs
 Definition: ['Storage Duration Lower Bound (hours)','Incentive Rate (Pct. of Base)']
 NodeLocation: 400,608,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Storage Duration Lower Bound (hours)','Incentive Rate (Pct. of Base)']
 
 FormNode Fo1548707006
 Title: Incentive Derate for Duration
@@ -5364,12 +5365,12 @@ ReformDef: [Incent_Cap_Inputs,Incent_Capacity_Step]
 {!40700|Att_CellFormat: CellSpan(Incent_Cap_Inputs,CellNumberFormat('Percentage',2,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0),2,header:0)}
 
 Index Incent_Cap_Inputs
+Att_PrevIndexValue: ['Storage Capacity Lower Bound (MWh)','Incentive Rate (Pct. of Base)']
 Title: Incentive Capacity Inputs
 Definition: ['Storage Capacity Lower Bound (MWh)','Incentive Rate (Pct. of Base)']
 IndexVals: ['item 1']
 NodeLocation: 400,520,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Storage Capacity Lower Bound (MWh)','Incentive Rate (Pct. of Base)']
 
 FormNode Fo1548708354
 Title: Incentive Derate for Duration
@@ -17546,12 +17547,12 @@ NodeLocation: 672,152,1
 NodeSize: 64,40
 
 Index Battery_Specs
+Att_PrevIndexValue: ['Energy (kWh/unit)','Power (kW/unit)','Roundtrip Efficiency (%)']
 Title: Battery Specs
 Definition: ['Energy (kWh/unit)','Power (kW/unit)','Roundtrip Efficiency (%)']
 NodeLocation: 816,64,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 227,70}
-Att_PrevIndexValue: ['Energy (kWh/unit)','Power (kW/unit)','Roundtrip Efficiency (%)']
 
 Decision Energy_kWh_Label
 Title: Energy kWh Label

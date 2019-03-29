@@ -592,7 +592,7 @@ Description: Total electric vehicle stock (BEVs + PHEVs). Values are End of Peri
 Definition: Selected_Sequential_[Output_DER_Types=EV_Out_Label, Sequential_Outputs=Seq_Cumul_Cnt_Label, All_Sectors=EV_Sectors]
 NodeLocation: 1184,632,1
 NodeSize: 64,40
-ValueState: 2,536,143,861,609,1,MIDM
+ValueState: 2,317,47,861,609,1,MIDM
 Aliases: FormNode Fo1544983402
 GraphSetup: Graph_LineThickness:5
 ReformVal: [Output_Periods,Act_vs_Sim]
@@ -600,7 +600,7 @@ NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Spatial_ID]
 Att_GraphValueRange: 1,,,,,,10
 Att_GraphTemplate: Lumidyne_Template
-Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
+Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,0,Vehicle_Range_Coeff,1,EV_Vehicles,1,Act_vs_Sim,1,Output_Periods,1]
 
 Decision Seq_Cumul_MW_Label
 Title: Seq Cumul MW Label
