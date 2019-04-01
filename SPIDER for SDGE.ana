@@ -1,5 +1,5 @@
 { Analytica Model Main_Interface, encoding="UTF-8" }
-SoftwareVersion 5.2.9
+SoftwareVersion 5.2.8
 
 
 { System Variables with non-default values: }
@@ -89,12 +89,12 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,60,15,1905,780,17
+DiagState: 2,36,-8,1524,780,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
 FontStyle: Arial Narrow,19
-FileInfo: 0,Model Main_Interface,2,2,0,0,C:\Users\coryw\OneDrive - Lumidyne Consulting LLC\Repos\SDGE_2019_SPIDER\SPIDER for SDGE.ana
+FileInfo: 0,Model Main_Interface,2,2,0,0,C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Documents\SDGE_2019_SPIDER\SPIDER for SDGE.ana
 {!40400|CloudPlayerStyles: FrameNode:GUI_Frame~
 Show_As_Tab:Yes~
 Use_flash_buttons:no~
@@ -131,7 +131,7 @@ Date: Mon, Aug 18, 2014 9:09 PM
 NodeLocation: 864,80,7
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-DiagState: 2,0,64,1905,810,17
+DiagState: 2,11,6,1524,809,17
 WindState: 2,102,82,476,224
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
@@ -4185,7 +4185,7 @@ NodeColor: 65535,65535,65535
 OnChange: ACP_Toggle_awp_flag('Show_title:No', not ACP_ShowTitle, ACP_Select_frame_no1);
 
 Index ACP_Frame_nodes
-Att_PrevIndexValue: [Te1552674989,Te1552852181,Te1552852182,GUI_Frame,Te1552852189,Te1552852190,Clipboard_Te15528749,Te1552875046,Undefined]
+Att_PrevIndexValue: [Te1552674989,Te1552852181,Te1552852182,GUI_Frame,Te1552852189,Te1552852190,Undefined,Te1552875046,Undefined]
 Title: Frame nodes
 Description: List of Text nodes in the selected module, which are candidates to be Frame nodes.
 Definition: ~
@@ -5913,7 +5913,7 @@ Att_PrevIndexValue: ['EV Cumulative (MW-AC)','Cumulative EV Delta (MW-AC)','Cumu
 Decision EV_Impact
 Title: EV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(EV_Impact_Titles,3,0)
+Definition: Choice(EV_Impact_Titles,1,0)
 NodeLocation: 608,680,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
