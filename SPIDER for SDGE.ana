@@ -89,7 +89,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,36,-8,1524,780,17
+DiagState: 2,-104,7,1524,780,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
@@ -5817,12 +5817,12 @@ Aliases: FormNode Fo1552872205
 MetaOnly: 1
 
 Index PV_Impact_Titles
+Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 Title: PV Impact Titles
 Definition: Create_Titles_List(PV_Impact_Out)~
 
 NodeLocation: 160,432,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 
 Button PV_Econ_Output_But
 Title: Result
@@ -5903,17 +5903,17 @@ Aliases: FormNode Fo1552872202
 MetaOnly: 1
 
 Index EV_Impact_Titles
+Att_PrevIndexValue: ['EV Cumulative (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Simulated EV Stock (Vehicles.)','Vehicle Stock Share - Aggregated (fraction)','% of New Veh Sales (fraction)','New Vehicle Sales (Vehicles/Year)']
 Title: EV Impact Titles
 Definition: Create_Titles_List(EV_Impact_Out)~
 
 NodeLocation: 160,672,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['EV Cumulative (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Simulated EV Stock (Vehicles.)','Vehicle Stock Share - Aggregated (fraction)','% of New Veh Sales (fraction)','New Vehicle Sales (Vehicles/Year)']
 
 Decision EV_Impact
 Title: EV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(EV_Impact_Titles,1,0)
+Definition: Choice(EV_Impact_Titles,3,0)
 NodeLocation: 608,680,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646

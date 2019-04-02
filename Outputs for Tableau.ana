@@ -356,6 +356,7 @@ Att__TotalsIndex: [Spatial_ID]
 Att_ResultSliceState: [Sequential_Outputs,4,All_Sectors,3,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
 
 Index Sequential_Outputs
+Att_PrevIndexValue: ['Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 Title: Sequential Outputs
 Definition: ['Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 NodeLocation: 1064,88,1
@@ -363,7 +364,6 @@ NodeSize: 64,40
 WindState: 2,837,82,720,350
 Aliases: FormNode Fo1543018175
 {!40300|Att_SlicerPopupSize: 257,84}
-Att_PrevIndexValue: ['Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 
 Decision Map_Seq_Outputs
 Title: Map Sequential Outputs
@@ -598,10 +598,10 @@ Aliases: FormNode Fo1544983402
 GraphSetup: Graph_LineThickness:5
 ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [Spatial_ID]
+Att__TotalsIndex: []
 Att_GraphValueRange: 1,,,,,,10
 Att_GraphTemplate: Lumidyne_Template
-Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,0,Vehicle_Range_Coeff,1,EV_Vehicles,1,Act_vs_Sim,1,Output_Periods,1]
+Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,37,Act_vs_Sim,1,Output_Periods,1]
 
 Decision Seq_Cumul_MW_Label
 Title: Seq Cumul MW Label
@@ -805,11 +805,11 @@ OnClick: IF Auto_assign_calibrat THEN Auto_assign_Cal_Date;~
 
 
 Index PV_Compare_Time_Plus
+Att_PrevIndexValue: [31-Jan-2012,28-Feb-2012,31-Mar-2012,30-Apr-2012,31-May-2012,30-Jun-2012,31-Jul-2012,31-Aug-2012,30-Sep-2012,31-Oct-2012,30-Nov-2012,31-Dec-2012,31-Jan-2013,28-Feb-2013,31-Mar-2013,30-Apr-2013,31-May-2013,30-Jun-2013,31-Jul-2013,31-Aug-2013,30-Sep-2013,31-Oct-2013,30-Nov-2013,31-Dec-2013,31-Jan-2014,28-Feb-2014,31-Mar-2014,30-Apr-2014,31-May-2014,30-Jun-2014,31-Jul-2014,31-Aug-2014,30-Sep-2014,31-Oct-2014,30-Nov-2014,31-Dec-2014,31-Jan-2015,28-Feb-2015,31-Mar-2015,30-Apr-2015,31-May-2015,30-Jun-2015,31-Jul-2015,31-Aug-2015,30-Sep-2015,31-Oct-2015,30-Nov-2015,31-Dec-2015,31-Jan-2016,28-Feb-2016,31-Mar-2016,30-Apr-2016,31-May-2016,30-Jun-2016,31-Jul-2016,31-Aug-2016,30-Sep-2016,31-Oct-2016,30-Nov-2016,31-Dec-2016,31-Jan-2017,28-Feb-2017,31-Mar-2017,30-Apr-2017,31-May-2017,30-Jun-2017,31-Jul-2017,31-Aug-2017,30-Sep-2017,31-Oct-2017,30-Nov-2017,31-Dec-2017,31-Jan-2018,28-Feb-2018,31-Mar-2018,30-Apr-2018,31-May-2018,30-Jun-2018,31-Jul-2018,31-Aug-2018]
 Title: PV Comparison Time Plus
 Definition: [31-Jan-2012,28-Feb-2012,31-Mar-2012,30-Apr-2012,31-May-2012,30-Jun-2012,31-Jul-2012,31-Aug-2012,30-Sep-2012,31-Oct-2012,30-Nov-2012,31-Dec-2012,31-Jan-2013,28-Feb-2013,31-Mar-2013,30-Apr-2013,31-May-2013,30-Jun-2013,31-Jul-2013,31-Aug-2013,30-Sep-2013,31-Oct-2013,30-Nov-2013,31-Dec-2013,31-Jan-2014,28-Feb-2014,31-Mar-2014,30-Apr-2014,31-May-2014,30-Jun-2014,31-Jul-2014,31-Aug-2014,30-Sep-2014,31-Oct-2014,30-Nov-2014,31-Dec-2014,31-Jan-2015,28-Feb-2015,31-Mar-2015,30-Apr-2015,31-May-2015,30-Jun-2015,31-Jul-2015,31-Aug-2015,30-Sep-2015,31-Oct-2015,30-Nov-2015,31-Dec-2015,31-Jan-2016,28-Feb-2016,31-Mar-2016,30-Apr-2016,31-May-2016,30-Jun-2016,31-Jul-2016,31-Aug-2016,30-Sep-2016,31-Oct-2016,30-Nov-2016,31-Dec-2016,31-Jan-2017,28-Feb-2017,31-Mar-2017,30-Apr-2017,31-May-2017,30-Jun-2017,31-Jul-2017,31-Aug-2017,30-Sep-2017,31-Oct-2017,30-Nov-2017,31-Dec-2017,31-Jan-2018,28-Feb-2018,31-Mar-2018,30-Apr-2018,31-May-2018,30-Jun-2018,31-Jul-2018,31-Aug-2018]
 NodeLocation: 272,64,1
 NodeSize: 64,40
-Att_PrevIndexValue: [31-Jan-2012,28-Feb-2012,31-Mar-2012,30-Apr-2012,31-May-2012,30-Jun-2012,31-Jul-2012,31-Aug-2012,30-Sep-2012,31-Oct-2012,30-Nov-2012,31-Dec-2012,31-Jan-2013,28-Feb-2013,31-Mar-2013,30-Apr-2013,31-May-2013,30-Jun-2013,31-Jul-2013,31-Aug-2013,30-Sep-2013,31-Oct-2013,30-Nov-2013,31-Dec-2013,31-Jan-2014,28-Feb-2014,31-Mar-2014,30-Apr-2014,31-May-2014,30-Jun-2014,31-Jul-2014,31-Aug-2014,30-Sep-2014,31-Oct-2014,30-Nov-2014,31-Dec-2014,31-Jan-2015,28-Feb-2015,31-Mar-2015,30-Apr-2015,31-May-2015,30-Jun-2015,31-Jul-2015,31-Aug-2015,30-Sep-2015,31-Oct-2015,30-Nov-2015,31-Dec-2015,31-Jan-2016,28-Feb-2016,31-Mar-2016,30-Apr-2016,31-May-2016,30-Jun-2016,31-Jul-2016,31-Aug-2016,30-Sep-2016,31-Oct-2016,30-Nov-2016,31-Dec-2016,31-Jan-2017,28-Feb-2017,31-Mar-2017,30-Apr-2017,31-May-2017,30-Jun-2017,31-Jul-2017,31-Aug-2017,30-Sep-2017,31-Oct-2017,30-Nov-2017,31-Dec-2017,31-Jan-2018,28-Feb-2018,31-Mar-2018,30-Apr-2018,31-May-2018,30-Jun-2018,31-Jul-2018,31-Aug-2018]
 
 Constant Stored_PV_Comparison
 Title: Stored PV Comparison Results
@@ -3373,6 +3373,7 @@ Att__TotalsIndex: [Spatial_ID]
 Att_ResultSliceState: [All_Sectors,3,Comparison_Outputs,2,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
 
 Index Comparison_Outputs
+Att_PrevIndexValue: ['Incremental Count (Calibration)','Cumulative Count (Calibration)','Incremental MW-AC (Calibration)','Cumulative MW-AC (Calibration)']
 Title: Comparison Outputs
 Definition: ['Incremental Count (Calibration)','Cumulative Count (Calibration)','Incremental MW-AC (Calibration)','Cumulative MW-AC (Calibration)']
 IndexVals: ['item 1']
@@ -3381,7 +3382,6 @@ NodeSize: 64,40
 WindState: 2,2104,168,720,350
 Aliases: FormNode Fo1543018416
 {!40300|Att_SlicerPopupSize: 232,84}
-Att_PrevIndexValue: ['Incremental Count (Calibration)','Cumulative Count (Calibration)','Incremental MW-AC (Calibration)','Cumulative MW-AC (Calibration)']
 
 Decision Map_Compare_Output
 Title: Map Comparison Outputs
@@ -3451,19 +3451,19 @@ NodeSize: 64,40
 ValueState: 2,1612,25,1474,742,,MIDM
 
 Index Comparison_Columns
+Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Output_DER_Types,All_Sectors,Output_Periods,'Incremental Count (Calibration)','Cumulative Count (Calibration)','Incremental MW-AC (Calibration)','Cumulative MW-AC (Calibration)']
 Title: Comparison Columns
 Definition: CopyIndex(Flat_Comparison_Data.Col)
 NodeLocation: 1200,176,1
 NodeSize: 64,40
 ValueState: 2,11,87,416,303,,MIDM
-Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Output_DER_Types,All_Sectors,Output_Periods,'Incremental Count (Calibration)','Cumulative Count (Calibration)','Incremental MW-AC (Calibration)','Cumulative MW-AC (Calibration)']
 
 Index Comparison_Order_Num
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9]
 Title: Comparison Order Number
 Definition: 1..Size(Comparison_Columns)
 NodeLocation: 1200,88,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9]
 
 Decision Order_Compare_Cols
 Title: Order of Comparison Columns
@@ -3646,6 +3646,7 @@ Att__TotalsIndex: [Spatial_ID]
 Att_ResultSliceState: [All_Sectors,3,Delta_Outputs,4,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
 
 Index Delta_Outputs
+Att_PrevIndexValue: ['Cumulative MW-AC (Delta)']
 Title: Delta Outputs
 Definition: ['Cumulative MW-AC (Delta)']
 IndexVals: ['item 1']
@@ -3654,7 +3655,6 @@ NodeSize: 64,40
 WindState: 2,286,501,720,350
 Aliases: FormNode New1543539730
 {!40300|Att_SlicerPopupSize: 237,56}
-Att_PrevIndexValue: ['Cumulative MW-AC (Delta)']
 
 Decision Map_Delta_Outputs
 Title: Map Delta Outputs
@@ -3718,19 +3718,19 @@ NodeSize: 64,40
 ValueState: 2,2085,28,1474,742,,MIDM
 
 Index Delta_Columns
+Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Delta_Output_Periods,Output_DER_Types,All_Sectors,Installation_Type,'Cumulative MW-AC (Delta)']
 Title: Delta Columns
 Definition: CopyIndex(Flat_Delta_Data.Col)
 NodeLocation: 896,256,1
 NodeSize: 64,40
 ValueState: 2,11,87,416,303,,MIDM
-Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Delta_Output_Periods,Output_DER_Types,All_Sectors,Installation_Type,'Cumulative MW-AC (Delta)']
 
 Index Delta_Order_Number
+Att_PrevIndexValue: [1,2,3,4,5,6,7]
 Title: Delta Order Number
 Definition: 1..Size(Delta_Columns)
 NodeLocation: 896,168,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6,7]
 
 Decision Order_of_Delta_Colum
 Title: Order of Delta Columns
@@ -3814,18 +3814,18 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Default_Delta_Map
 
 Index PV_CumulDataTyp_None
+Att_PrevIndexValue: ['None','Cumulative System Count','Cumulative Nameplate CEC-MW-AC','Cumulative Coincident Peak Avg MW-AC','Cumulative Nameplate MW-DC','Cumulative Non-Coincident Peak MW-AC']
 Title: PV Cumul Data Types with None
 Definition: Concat(None_Label, PV_Cumul_Data_Type)
 NodeLocation: 464,56,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['None','Cumulative System Count','Cumulative Nameplate CEC-MW-AC','Cumulative Coincident Peak Avg MW-AC','Cumulative Nameplate MW-DC','Cumulative Non-Coincident Peak MW-AC']
 
 Index EV_CumulDataTyp_None
+Att_PrevIndexValue: ['None','Cumulative Vehicle Count','Cumulative MW-AC']
 Title: EV Cumul Data Types with None
 Definition: Concat(None_Label, EV_Cumul_Data_Type)
 NodeLocation: 608,56,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['None','Cumulative Vehicle Count','Cumulative MW-AC']
 
 Module Old_Deltas_from_Base
 Title: Old Deltas from Base Period
@@ -4172,12 +4172,12 @@ Original: Cumul_MW_Delta_Label
 Close Deltas_from_Base_Per
 
 Index Output_DER_Types
+Att_PrevIndexValue: ['Solar PV','Electric Vehicles']
 Title: Output DER Types
 Definition: Subset(DER_Types_to_Output)
 NodeLocation: 888,1288,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 237,56}
-Att_PrevIndexValue: ['Solar PV','Electric Vehicles']
 
 Decision DER_Types_to_Output
 Title: DER Types to Output
@@ -5519,12 +5519,12 @@ ReformDef: [Export_Parameter,Export_Dataset_Num]
 TableCellDefault: Default_ExportConfig
 
 Index Output_Data_Type
+Att_PrevIndexValue: ['CSV Tableau','Excel Deliverable','Excel Tableau']
 Title: Output Data Type
 Description: A list of the types of data that can be output, for use in export scripts
 Definition: ['CSV Tableau','Excel Deliverable','Excel Tableau']
 NodeLocation: 1480,1096,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['CSV Tableau','Excel Deliverable','Excel Tableau']
 
 Decision Select_Data_Export_T
 Title: Select Data Export Type
