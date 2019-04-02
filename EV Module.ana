@@ -19425,7 +19425,7 @@ Date: Mon, Mar 25, 2019 8:59 PM
 NodeLocation: 376,752,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-4,6,869,390,17
+DiagState: 2,218,269,869,390,17
 
 Variable Veh_Ownership_Cost
 Title: Vehicle Ownership Cost
@@ -19758,7 +19758,7 @@ Date: Mon, Mar 25, 2019 8:59 PM
 NodeLocation: 280,280,1
 NodeSize: 64,40
 NodeInfo: 1,0,1,1,1,1,0,,0,,0,,,
-DiagState: 2,-12,338,1375,484,17
+DiagState: 2,70,19,1375,594,17
 
 Constant Vehicle_Price
 Title: Vehicle Price
@@ -19813,7 +19813,7 @@ Variable Vehicle_Incentives
 Title: Vehicle Incentives
 Units: $/vehicle
 Description: Incentives provided for vehicles for the selected incentive scenario(s).
-Definition: Sum(Vehicle_Incentives1[All_Vehicle_Techs=Vehicle_Techs, EV_Incentive_Scenari=Selected_EV_Incentiv], Veh_Incentive_Type)
+Definition: Sum(Vehicle_Incentives1[All_Vehicle_Techs=Vehicle_Techs, EV_Incent_Scenario=Selected_EV_Incentiv], Veh_Incentive_Type)
 NodeLocation: 280,176,1
 NodeSize: 64,40
 
@@ -19831,7 +19831,7 @@ Constant Vehicle_Finance_Rate
 Title: Vehicle Financing Rate
 Units: fraction/year
 Description: The nominal consumer financing rate for purchasing new vehicles.
-Definition: 5%
+Definition: 4.21%
 NodeLocation: 120,360,1
 NodeSize: 64,40
 Aliases: FormNode Fo2
@@ -19849,7 +19849,7 @@ Constant Vehicle_Finance_Term
 Title: Vehicle Financing Term
 Units: years
 Description: The term of a vehicle loan.
-Definition: 6
+Definition: 5.75
 NodeLocation: 120,480,1
 NodeSize: 64,40
 Aliases: FormNode Fo3
@@ -19917,7 +19917,7 @@ Show_description:20}
 Constant Vehicle_Incentives1
 Title: Vehicle Incentives
 Units: $/vehicle
-Definition: Table(Veh_Incentive_Type,Vehicle_Input_Years,EV_Incentive_Scenari,All_Vehicle_Techs)(~
+Definition: Table(Veh_Incentive_Type,Vehicle_Input_Years,EV_Incent_Scenario,All_Vehicle_Techs)(~
 0,7500,7500,~
 0,7087,7087,~
 0,7087,7500,~
@@ -20109,22 +20109,23 @@ Definition: Table(Veh_Incentive_Type,Vehicle_Input_Years,EV_Incentive_Scenari,Al
 0,400,400)
 NodeLocation: 120,184,1
 NodeSize: 64,40
-DefnState: 2,210,4,1101,626,0,DFNM
+DefnState: 2,265,70,1101,626,0,DFNM
 ValueState: 2,1,33,1460,645,0,MIDM
 Aliases: FormNode Fo1554146281
-ReformDef: [Veh_Incentive_Type,Vehicle_Input_Years]
+ReformDef: [Vehicle_Input_Years,Veh_Incentive_Type]
 Att__TotalsIndex: [Veh_Incentive_Type]
 TableCellDefault: 0
 Att_ResultSliceState: [Veh_Incentive_Type,0,EV_Incentive_Scenari,2,All_Vehicle_Techs,1,Vehicle_Input_Years,1]
-Att_EditSliceState: [EV_Incentive_Scenari,1,All_Vehicle_Techs,2,Vehicle_Input_Years,1,Veh_Incentive_Type,1]
+Att_EditSliceState: [EV_Incent_Scenario,3,All_Vehicle_Techs,3,Veh_Incentive_Type,1,Vehicle_Input_Years,1]
 {!50000|Att_ColumnWidths: [,Veh_Incentive_Type,\([,63])]}
 
-Index EV_Incentive_Scenari
+Index EV_Incent_Scenario
 Title: EV Incentive Scenario
 Definition: ['Low','Medium','High']
 NodeLocation: 416,272,1
 NodeSize: 64,40
 Aliases: FormNode Fo1554146303
+{!40300|Att_SlicerPopupSize: 227,48}
 Att_PrevIndexValue: ['Low','Medium','High']
 
 FormNode Fo1554146281
@@ -20141,15 +20142,15 @@ Definition: 0
 NodeLocation: 416,316,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: EV_Incentive_Scenari
+Original: EV_Incent_Scenario
 
 Decision Selected_EV_Incentiv
 Title: Selected EV Incentive Scenario
-Definition: Choice(EV_Incentive_Scenari,2,1)
+Definition: Choice(EV_Incent_Scenario,2,1)
 NodeLocation: 272,272,1
 NodeSize: 64,40
 Aliases: FormNode Fo1554147365
-{!40200|Att_ChoiceIndexes: Index EV_Incentive_Scenari}
+{!40200|Att_ChoiceIndexes: Index EV_Incent_Scenario}
 
 FormNode Fo1554147365
 Title: Selected EV Incentive Scenario
@@ -20294,7 +20295,8 @@ Title: Range Value
 Units: $/vehicle
 Description: The additional value in MSRP that a customer is willing to pay for extra vehicle range.~
 ~
-Source: NREL ADOPT Model, Figure 3, https://www.nrel.gov/docs/fy15osti/63608.pdf
+Source: NREL ADOPT Model, Figure 3, https://www.nrel.gov/docs/fy15osti/63608.pdf~
+Originally the lowest value was -10,000, but was changed to -6,000 to dampen response to range.
 Definition: Table(Range_Val)(-6000,0,1000)
 NodeLocation: 112,192,1
 NodeSize: 64,40
@@ -20525,7 +20527,7 @@ WindState: 2,176,12,720,350
 ValueState: 2,260,266,634,303,0,MIDM
 Aliases: FormNode Fo1553707672
 
-Decision Baseline_Veh_Tech
+Constant Baseline_Veh_Tech
 Title: Baseline Vehicle Tech
 Description: Select a vehicle technology to use as the baseline. This will impact the ratios used in the logit model.
 Definition: Choice(Vehicle_Techs, 1, 0)
@@ -20925,7 +20927,7 @@ Variable Vehicle_Incentives2
 Title: Vehicle Incentives
 Units: $/vehicle
 Description: Incentives provided for vehicles for the selected incentive scenario(s).
-Definition: Sum(Vehicle_Incentives1[All_Vehicle_Techs=Vehicle_Techs, Vehicle_Input_Years=Vehicle_Sensit_Yr, EV_Incentive_Scenari=Selected_EV_Incentiv], Veh_Incentive_Type)
+Definition: Sum(Vehicle_Incentives1[All_Vehicle_Techs=Vehicle_Techs, Vehicle_Input_Years=Vehicle_Sensit_Yr, EV_Incent_Scenario=Selected_EV_Incentiv], Veh_Incentive_Type)
 NodeLocation: 280,176,1
 NodeSize: 64,40
 
