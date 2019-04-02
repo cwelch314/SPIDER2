@@ -6176,8 +6176,9 @@ NodeLocation: 120,56,1
 NodeSize: 64,40
 WindState: 2,734,179,720,617
 DefnState: 2,485,11,918,596,0,DFNM
-ValueState: 2,356,33,997,663,1,MIDM
+ValueState: 2,156,17,997,663,1,MIDM
 Aliases: FormNode Fo1539276353, FormNode Fo1544633533
+GraphSetup: Att_GraphIndexRange Static_PV_Time:1,,0,,,,10,2016.6065129041672,2030,0
 ReformDef: [All_Sectors,Static_PV_Time]
 ReformVal: [Static_PV_Time,All_Sectors]
 Att_ResultSliceState: [All_Equipment_Types,2,New_or_Retrofit,2,All_Sectors,1,Static_PV_Time,1]
@@ -6372,13 +6373,13 @@ Aliases: FormNode Fo1544633537
 TableCellDefault: 0
 
 Index PV_Cost_Scenario
-Att_PrevIndexValue: ['Low','Medium','High']
 Title: PV Cost Scenario
 Definition: ['Low','Medium','High']
 IndexVals: ['item 1']
 NodeLocation: 560,168,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 227,70}
+Att_PrevIndexValue: ['Low','Medium','High']
 
 Decision BaseYr_for_PV_Costs
 Title: Base Yr: PV Cost Decline
@@ -6532,13 +6533,13 @@ Att__TotalsIndex: [Equipment_Types]
 Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Equipment_Types,0,Installation_Event,1,System_Types,1,Annual_PV_Time,1]
 
 Index Storage_Cost_Scen
-Att_PrevIndexValue: ['Low','Medium','High']
 Title: Storage Cost Scenario
 Definition: ['Low','Medium','High']
 IndexVals: ['item 1']
 NodeLocation: 560,288,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 227,70}
+Att_PrevIndexValue: ['Low','Medium','High']
 
 Decision BaseYr_Strg_Costs
 Title: Base Yr: Storage Cost Decline
@@ -17402,12 +17403,12 @@ NodeLocation: 672,64,1
 NodeSize: 64,40
 
 Index Static_PV_Time
-Att_PrevIndexValue: [2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 Title: Static PV Time
 Definition: PV_Static_Start_Year..PV_Static_End_Year
 NodeLocation: 384,272,1
 NodeSize: 64,40
 Att_GraphIndexRange: 1,,,,,,10
+Att_PrevIndexValue: [2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 
 Index Incentive_Source
 Att_PrevIndexValue: ['Local','State','Federal','Utility']
@@ -17439,12 +17440,12 @@ NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 257,294}
 
 Index All_Equipment_Types
-Att_PrevIndexValue: ['Solar PV','Battery Storage']
 Title: All Equipment Types
 Definition: ['Solar PV','Battery Storage']
 NodeLocation: 1104,64,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 227,28}
+Att_PrevIndexValue: ['Solar PV','Battery Storage']
 
 Index Equipment_Types
 Title: Equipment Types
@@ -17533,12 +17534,12 @@ WindState: 2,102,82,720,635
 {!40300|Att_SlicerPopupSize: 287,112}
 
 Index New_or_Retrofit
-Att_PrevIndexValue: ['NewConstr','Retrofit']
 Title: NewConstr or Retrofit
 Definition: ['NewConstr','Retrofit']
 NodeLocation: 528,64,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 242,56}
+Att_PrevIndexValue: ['NewConstr','Retrofit']
 
 Index System_Configuration
 Title: System Configuration

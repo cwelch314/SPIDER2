@@ -19445,7 +19445,7 @@ Date: Mon, Mar 25, 2019 8:59 PM
 NodeLocation: 280,72,1
 NodeSize: 64,40
 NodeInfo: 1,0,1,1,1,1,0,,0,,0,,,
-DiagState: 2,-471,165,1336,514,17
+DiagState: 2,27,23,1336,514,17
 
 Constant Fuel_Prices
 Title: Fuel Prices
@@ -19497,8 +19497,10 @@ Definition: Table(Fuel_Types,Vehicle_Input_Years,Fuel_Price_Scen)(~
 NodeLocation: 432,80,1
 NodeSize: 64,40
 DefnState: 2,244,250,1084,326,0,DFNM
-ValueState: 2,443,77,983,504,,MIDM
+ValueState: 2,303,10,983,504,,MIDM
 Aliases: Alias Al1553483944, FormNode Fo1553483944, FormNode Fo1553481172
+ReformVal: [Vehicle_Input_Years,Fuel_Types]
+Att_ResultSliceState: [Fuel_Price_Scen,2,Fuel_Types,1,Vehicle_Input_Years,1]
 
 FormNode Fo1553481172
 Title: Vehicle Input Start Year
@@ -19620,7 +19622,7 @@ ValueState: 2,102,73,718,640,,MIDM
 Aliases: Alias Al1553483947, FormNode Fo1553483947, FormNode Fo1553481318
 ReformVal: [Vehicle_Input_Years,Fuel_Types]
 NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [All_Vehicle_Techs,12,Fuel_Types,1,Vehicle_Input_Years,1]
+Att_ResultSliceState: [All_Vehicle_Techs,2,Fuel_Types,1,Vehicle_Input_Years,1]
 
 FormNode Fo1553481318
 Title: Vehicle Input Start Year
@@ -19676,7 +19678,7 @@ Definition: PV(Veh_Real_Discnt_Rate, Veh_Ownership_Years, -Annuel_Fuel_Cost)
 NodeLocation: 680,184,1
 NodeSize: 64,40
 WindState: 2,38,81,879,438
-ValueState: 2,769,45,660,624,,MIDM
+ValueState: 2,339,28,857,624,,MIDM
 NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
 Constant Veh_Discount_Rate
@@ -20293,7 +20295,7 @@ Units: $/vehicle
 Description: The additional value in MSRP that a customer is willing to pay for extra vehicle range.~
 ~
 Source: NREL ADOPT Model, Figure 3, https://www.nrel.gov/docs/fy15osti/63608.pdf
-Definition: Table(Range_Val)(-10000,0,1000)
+Definition: Table(Range_Val)(-6000,0,1000)
 NodeLocation: 112,192,1
 NodeSize: 64,40
 DefnState: 2,561,1,416,303,0,DFNM
@@ -20357,7 +20359,7 @@ Description: The cost of vehicle range relative to the technology with the best 
 Definition: MAX(Range_Value_by_Tech, Vehicle_Techs) - Range_Value_by_Tech
 NodeLocation: 736,192,1
 NodeSize: 64,40
-ValueState: 2,199,3,850,585,,MIDM
+ValueState: 2,217,6,850,585,,MIDM
 
 Module Curve_Fitting
 Title: Curve Fitting
@@ -20444,6 +20446,19 @@ NodeLocation: 692,84,-1
 NodeSize: 172,44
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 
+Index Range_Values
+Title: Range Values
+Definition: Sequence(50,800,50)
+NodeLocation: 424,392,1
+NodeSize: 64,40
+
+Variable Range_Value_Sensitiv
+Title: Range Value Sensitivity
+Definition: Find_Range_Value(Range_Values)
+NodeLocation: 576,392,1
+NodeSize: 64,40
+ValueState: 2,126,122,893,563,,MIDM
+
 Close Nonlinear_Range_Resp
 
 Variable Range_Value_by_Tech
@@ -20464,7 +20479,7 @@ Definition: Vehicle_StickerPrice[Vehicle_Techs=Baseline_Veh_Tech] + Range_Value_
 NodeLocation: 552,208,1
 NodeSize: 64,40
 WindState: 2,5,5,720,350
-ValueState: 2,286,81,628,505,,MIDM
+ValueState: 2,267,7,628,537,,MIDM
 
 Close Vehicle_Maint_Costs_
 
@@ -20474,13 +20489,13 @@ Author: JamesMilford
 Date: Fri, Mar 29, 2019 12:10 AM
 NodeLocation: 440,176,1
 NodeSize: 64,40
-DiagState: 2,-130,52,1497,553,17
+DiagState: 2,-33,20,1497,553,17
 
 Constant Vehicle_Range_Coeff
 Title: Vehicle Range Coefficient
 Units: utility/ratio
 Description: The coefficient representing consumer preferences for vehicle range.
-Definition: 10.1
+Definition: 9
 NodeLocation: 424,96,1
 NodeSize: 64,40
 WindState: 2,176,12,720,350
@@ -20491,12 +20506,12 @@ Constant Vehicle_Tech_Pref
 Title: Vehicle Tech Preference
 Units: utility
 Description: The logit intercept adjustment representing technology-specific utility.
-Definition: Table(All_Vehicle_Techs)(0,-0.7,-0.5)
+Definition: Table(All_Vehicle_Techs)(0,-3,-1.5)
 NodeLocation: 576,96,1
 NodeSize: 64,40
 WindState: 2,663,-15,720,350
-DefnState: 2,849,50,416,303,0,DFNM
-ValueState: 2,92,54,520,451,,MIDM
+DefnState: 2,837,-2,416,303,0,DFNM
+ValueState: 2,92,54,520,451,0,MIDM
 Aliases: FormNode Fo1553720068
 
 Constant Vehicle_Cost_Coeff
@@ -20640,11 +20655,12 @@ Definition: VAR mktShr:=Logit_Market_Share(Vehicle_Utility, 1, Vehicle_Techs);~
 LinearInterp(Vehicle_Input_Years, mktShr, EV_Time_Fract_Year, Vehicle_Input_Years)
 NodeLocation: 728,304,1
 NodeSize: 64,40
-ValueState: 2,551,21,837,650,1,MIDM
+ValueState: 2,33,36,671,650,1,MIDM
+GraphSetup: Att_GraphIndexRange Time_Vehicles:1,,1,,,,10,43217.98895764351,45403.90490710735,0
 ReformVal: [Time_Vehicles,Vehicle_Techs]
 NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: []
-Att_ResultSliceState: [Vehicle_Techs,3,EV_Spatial_ID,1,EV_Sectors,1,Vehicle_Range_Coeff,1,Time_Vehicles,1]
+Att_ResultSliceState: [EV_Spatial_ID,1,EV_Sectors,1,BEV_Tech_Pref,1,PHEV_Tech_Pref,1,Vehicle_Techs,3,Time_Vehicles,1]
 
 Constant Vehicle_Type_Map
 Title: Vehicle Type Map
@@ -20678,7 +20694,7 @@ WindState: 2,27,171,720,350
 ValueState: 2,390,5,858,669,,MIDM
 ReformVal: [Time_Vehicles,Vehicle_Types]
 NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [Applied_Veh_SpatCoef,3,Vehicle_Types,1,Time_Vehicles,1]
+Att_ResultSliceState: [EV_Spatial_ID,1,EV_Sectors,1,BEV_Tech_Pref,1,PHEV_Tech_Pref,1,Vehicle_Types,1,Time_Vehicles,1]
 
 Variable BEV_Equivalency
 Title: BEV Equivalency
@@ -20756,8 +20772,8 @@ Description: The net present value of owning a vehicle, which includes loan paym
 Definition: Vehicle_Payment_NPV1 + Fuel_Cost_NPV1 + Maint_Cost_NPV1
 NodeLocation: 280,168,1
 NodeSize: 64,40
-WindState: 2,98,82,1062,350
-ValueState: 2,34,4,1135,628,1,MIDM
+WindState: 2,98,82,1062,593
+ValueState: 2,47,37,1135,628,1,MIDM
 NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
 Module Vehicle_Fuel_Cost1
@@ -20767,7 +20783,7 @@ Date: Mon, Mar 25, 2019 8:59 PM
 NodeLocation: 280,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,1,1,1,1,0,,0,,0,,,
-DiagState: 2,0,47,1336,474,17
+DiagState: 2,110,14,1336,474,17
 
 Variable Annual_Fuel_Consump1
 Title: Annual Fuel Consumption
@@ -20776,11 +20792,12 @@ Description: The annual fuel consumption in gallons of gasoline equivalent per y
 Definition: VAR MPG_vals:=IF Vehicle_Techs = Baseline_Veh_Tech~
    THEN MPG[All_Vehicle_Techs=Baseline_Veh_Tech, Vehicle_Input_Years=Vehicle_Sensit_Yr]~
    ELSE MPG_Scale;~
-Divide(VMT[Vehicle_Input_Years=Vehicle_Sensit_Yr], MPG_vals, True) * Fuel_Mix[All_Vehicle_Techs=Vehicle_Techs, Vehicle_Input_Years=Vehicle_Sensit_Yr];~
-MPG[All_Vehicle_Techs=Vehicle_Techs, Vehicle_Input_Years=Vehicle_Sensit_Yr]
+MPG_vals:=MPG[All_Vehicle_Techs=Vehicle_Techs, Vehicle_Input_Years=Vehicle_Sensit_Yr];~
+Divide(VMT[Vehicle_Input_Years=Vehicle_Sensit_Yr], MPG_vals, True) * Fuel_Mix[All_Vehicle_Techs=Vehicle_Techs, Vehicle_Input_Years=Vehicle_Sensit_Yr];
 NodeLocation: 376,184,1
 NodeSize: 64,40
-ValueState: 2,18,9,1338,591,1,MIDM
+WindState: 2,98,82,1261,569
+ValueState: 2,18,9,1338,591,0,MIDM
 Att_ResultSliceState: [Fuel_Types,1,Vehicle_Techs,1,Sensitivity_Scale,1,Vehicle_Input_Years,1]
 
 Variable Annuel_Fuel_Cost1
@@ -20800,7 +20817,7 @@ Definition: PV(Veh_Real_Discnt_Rate, Veh_Ownership_Years, -Annuel_Fuel_Cost1)
 NodeLocation: 680,184,1
 NodeSize: 64,40
 WindState: 2,38,81,879,438
-ValueState: 2,544,45,885,624,,MIDM
+ValueState: 2,305,6,885,624,1,MIDM
 NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
 Text EVAdoption1554180638
@@ -20843,7 +20860,7 @@ Sequence(low_val, hi_val, steps)
 NodeLocation: 376,88,1
 NodeSize: 64,40
 NumberFormat: 2,F,4,0,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-{!40300|Att_SlicerPopupSize: 247,182}
+{!40300|Att_SlicerPopupSize: 262,182}
 
 Constant MPG2
 Title: MPG
@@ -20901,7 +20918,7 @@ THEN Vehicle_Price[All_Vehicle_Techs=Baseline_Veh_Tech, Vehicle_Input_Years=Vehi
 ELSE Price_Scale
 NodeLocation: 280,64,1
 NodeSize: 64,40
-WindState: 2,418,-4,720,350
+WindState: 2,418,0,846,350
 ValueState: 2,52,58,783,645,,MIDM
 
 Variable Vehicle_Incentives2
@@ -21104,13 +21121,13 @@ Constant Vehicle_Range_Coeff1
 Title: Vehicle Range Coefficient
 Units: utility/ratio
 Description: The coefficient representing consumer preferences for vehicle range.
-Definition: Sequence(9, 11, .1)
+Definition: Sequence(5, 11, .5)
 NodeLocation: 424,96,1
 NodeSize: 64,40
 WindState: 2,176,12,720,350
 ValueState: 2,408,209,416,303,0,MIDM
 Aliases: FormNode Fo1554180658, FormNode Fo1554183644
-{!40300|Att_SlicerPopupSize: 267,462}
+{!40300|Att_SlicerPopupSize: 317,462}
 
 Constant Vehicle_Tech_Pref1
 Title: Vehicle Tech Preference
@@ -21135,7 +21152,7 @@ NodeSize: 64,40
 WindState: 2,176,12,720,350
 ValueState: 2,260,266,634,303,0,MIDM
 Aliases: FormNode Fo1554180659, FormNode Fo1554183646
-{!40300|Att_SlicerPopupSize: 252,322}
+{!40300|Att_SlicerPopupSize: 282,322}
 
 Variable Vehicle_Cost_Ratio1
 Title: Vehicle Cost Ratio
@@ -21520,35 +21537,36 @@ Title: Compare Response
 Definition: [CEC_Response,Logit_Response]
 NodeLocation: 80,440,1
 NodeSize: 64,40
-ValueState: 2,90,49,1046,631,,MIDM
+ValueState: 2,388,26,837,631,,MIDM
 GraphSetup: Graph_SymbolKey:1
 ReformVal: [Price_Scale,Range_Scale]
-Att_ResultSliceState: [Vehicle_Range_Coeff1,10,Vehicle_Cost_Coeff1,8,BEV_Tech_Pref,10,PHEV_Tech_Pref,11,Range_Scale,1,Price_Scale,1]
+Att_ResultSliceState: [Vehicle_Range_Coeff1,9,Vehicle_Cost_Coeff1,10,BEV_Tech_Pref,1,PHEV_Tech_Pref,1,Self,2,Range_Scale,1,Price_Scale,1]
 Att_ColorRole: Range_Scale
-Att_SymbolRole: Compare_Response
+Att_SymbolRole: Null
 
 Index BEV_Tech_Pref
 Title: BEV Tech Pref
 Definition: Sequence(-1.5,.5,.1)
 NodeLocation: 224,632,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 252,322}
+{!40300|Att_SlicerPopupSize: 287,322}
 
 Index PHEV_Tech_Pref
 Title: PHEV Tech Pref
-Definition: Sequence(-1,0,.1)
+Definition: Sequence(-3,-1,.4);
 NodeLocation: 80,632,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 257,322}
+{!40300|Att_SlicerPopupSize: 297,322}
 
 Variable BEV_Share_of_EVs
 Title: BEV Share of EVs
 Definition: Divide(Veh_Tech_Mkt_Share1[Vehicle_Techs='BEV'], Sum(Veh_Tech_Mkt_Share1[Vehicle_Techs=EV_Vehicles], EV_Vehicles), True)
 NodeLocation: 232,440,1
 NodeSize: 64,40
-ValueState: 2,480,5,1022,569,,MIDM
+ValueState: 2,420,4,1022,569,,MIDM
+GraphSetup: Att_GraphValueRange BEV_Share_of_EVs:1,,,1
 ReformVal: [Price_Scale,Range_Scale]
-Att_ResultSliceState: [Vehicle_Range_Coeff1,7,Vehicle_Cost_Coeff1,10,BEV_Tech_Pref,9,PHEV_Tech_Pref,6,Range_Scale,1,Price_Scale,1]
+Att_ResultSliceState: [Vehicle_Range_Coeff1,12,Vehicle_Cost_Coeff1,10,BEV_Tech_Pref,9,PHEV_Tech_Pref,6,Range_Scale,1,Price_Scale,1]
 
 Close Vehicle_Logit_Sensit
 
@@ -21731,10 +21749,10 @@ Units: various
 Description: This input contains the upper and lower bounds on decision variables used in the parameter calibration process.
 Definition: Table(Upper_Lower,All_EV_Decisions)(~
 0,0.2,0,0,0,10,~
-0.1,0.6,0.8,1,2,10)
+0.1,2,0.8,1,2,10)
 NodeLocation: 496,72,1
 NodeSize: 64,40
-DefnState: 2,18,212,748,273,0,DFNM
+DefnState: 2,15,152,748,273,0,DFNM
 ValueState: 2,2029,186,592,304,,MIDM
 Aliases: FormNode Fo1533745897, FormNode Fo1533758797, FormNode Fo1553205379
 ReformDef: [Upper_Lower,Decision_Var_List]
@@ -22148,7 +22166,7 @@ Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),~
 Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
 NodeLocation: 128,96,1
 NodeSize: 64,40
-DefnState: 2,1071,68,658,207,0,DFNM
+DefnState: 2,383,48,658,207,0,DFNM
 Aliases: FormNode Fo1533395711, FormNode Fo1533422432, FormNode Fo1553205304
 TableCellDefault: checkbox(0)
 
@@ -23519,23 +23537,21 @@ Definition: Table(Act_vs_Sim)(Actual_EV_Stock,Simulated_EV_Stock)
 NodeLocation: 248,176,1
 NodeSize: 64,40
 WindState: 2,448,302,1000,350
-ValueState: 2,184,23,1182,675,1,MIDM
+ValueState: 2,238,4,1072,675,1,MIDM
 Aliases: FormNode Fo1530222085, FormNode Fo1553205593, FormNode Fo1554147790
 GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_ContLineStyle Graph_Primary_Valdim:5~
 Grid:0~
-Graph_SymbolSizeKey:0~
 Graph_SymbolKey:1~
 Att_GraphValueRange Sim_vs_Act_EV_Stock:1,,1,,,,,0,400K,0|1:1,,0,,,,,0,400,0|2:1,,0,,,,,0,400,0~
-Att_GraphIndexRange Time_Vehicles:1,0,1,,,,,38.717K,41.639K,0~
-SymbolSize:7~
+Att_GraphIndexRange Time_Vehicles:1,0,1,,,,,38719.574578399595,42097.421451956034,0~
 Graph_LineThickness:2
 ReformVal: [Time_Vehicles,Act_vs_Sim]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: []
-Att_ResultSliceState: [EV_Spatial_ID,1,EV_Sectors,1,EV_Vehicles,1,Act_vs_Sim,1,Time_Vehicles,1]
-Att_ColorRole: Act_vs_Sim
+Att_ResultSliceState: [EV_Spatial_ID,1,EV_Sectors,1,BEV_Tech_Pref,1,PHEV_Tech_Pref,1,Act_vs_Sim,2,Act_vs_Sim,2,Time_Vehicles,1]
+Att_ColorRole: EV_Vehicles
 Att_SymbolRole: Act_vs_Sim
 {!40200|Att_GraphSetupSlices: [3,1,Act_vs_Sim,2,2,Act_vs_Sim,1]}
 
@@ -23860,7 +23876,6 @@ NodeSize: 64,40
 WindState: 2,266,232,1180,547
 DefnState: 2,992,310,295,412,0,DFNM
 Aliases: Alias Al1529533184, FormNode Fo1530222092, FormNode Fo1530049195
-Domain: DomContinuous
 {!40300|DomainExpr: Continuous(EV_AdEff_Lwr_Bnd, EV_AdEff_Upr_Bnd)}
 TableCellDefault: Default_EVAdEff
 {!40300|OptInitialGuess: 0.001}
@@ -23878,7 +23893,6 @@ NodeSize: 64,40
 WindState: 2,102,82,720,350
 DefnState: 2,1002,261,455,530,0,DFNM
 Aliases: Alias Al1529533185, FormNode Fo1530222093, FormNode Fo1530049196
-Domain: DomContinuous
 {!40300|DomainExpr: Continuous(EV_WOM_Lwr_Bnd, EV_WOM_Upr_Bnd)}
 TableCellDefault: Default_EV_WOM
 {!40300|OptInitialGuess: 0.4}
@@ -23897,7 +23911,6 @@ WindState: 2,84,343,736,426
 DefnState: 2,419,199,359,678,,DFNM
 Aliases: Alias Al1529692129, FormNode Fo1530222094, FormNode Fo1530049197
 NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Domain: DomContinuous
 {!40300|DomainExpr: Continuous(EV_InitFam_Lwr_Bnd, EV_InitFam_Upr_Bnd)}
 TableCellDefault: Default_EV_InitFam
 {!40300|OptInitialGuess: 0}
@@ -23915,7 +23928,6 @@ NodeSize: 64,40
 WindState: 2,634,239,720,398
 Aliases: Alias Al1529533205, FormNode Fo1530222091, FormNode Fo1530049142
 NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Domain: DomContinuous
 {!40300|DomainExpr: Continuous(EV_LRMS_Lwr_Bnd, EV_LRMS_Upr_Bnd)}
 TableCellDefault: Default_EV_LRMS
 {!40300|OptInitialGuess: 0.6}
@@ -24013,6 +24025,7 @@ Att_ColorRole: Null
 {!50000|Att_ColumnWidths: [,EV_Stored_Decisions,\([,,,,,,,,604])]}
 
 Index EV_Stored_Decisions
+Att_PrevIndexValue: [EV_Ad_Effectiveness,EV_Word_of_Mouth,EV_LongRun_Mkt_Share,EV_Init_Familiarity,Early_Retiremnt_Mult,EV_Spatial_Coeff,'Opt Status']
 Title: EV Stored Dec Var
 Description: A list of handles to each of the decision variables.
 Definition: Concat(All_EV_Dec_Handles, Opt_Status_Label)
@@ -24020,7 +24033,6 @@ NodeLocation: 608,472,1
 NodeSize: 64,40
 WindState: 2,1881,31,720,350
 MetaOnly: 1
-Att_PrevIndexValue: [EV_Ad_Effectiveness,EV_Word_of_Mouth,EV_LongRun_Mkt_Share,EV_Init_Familiarity,Early_Retiremnt_Mult,EV_Spatial_Coeff,'Opt Status']
 
 Constant Stored_Opt_Status_EV
 Title: Stored Opt Status EV
@@ -24243,7 +24255,6 @@ NodeLocation: 112,464,1
 NodeSize: 64,40
 WindState: 2,1885,82,1107,350
 Aliases: Alias Al1532472384, FormNode Fo1532472362
-Domain: DomContinuous
 {!40300|DomainExpr: Continuous(EV_ErlRet_Lwr_Bnd, EV_ErlRet_Upr_Bnd)}
 {!40300|OptInitialGuess: 1}
 {!40400|CloudPlayerStyles: Show_Object:no}
@@ -24709,7 +24720,6 @@ NodeLocation: 112,560,1
 NodeSize: 64,40
 WindState: 2,1885,82,1107,350
 Aliases: FormNode Fo1553719157
-Domain: DomContinuous
 {!40300|DomainExpr: Continuous(EV_SpatCoeff_Lwr_Bnd,EV_SpatCoeff_Upr_Bnd)}
 {!40300|OptInitialGuess: 1}
 {!40400|CloudPlayerStyles: Show_Object:no}
