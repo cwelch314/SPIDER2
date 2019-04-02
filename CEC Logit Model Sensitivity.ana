@@ -74,7 +74,7 @@ Definition: exp(Total_Vehicle_Utilit) {exponentiated utility of each simulated v
 sum(exp(Total_Vehicle_Utilit ), Simulated_Vehicle)   {total of all exponentiated utility values across all simulated vehicles}
 NodeLocation: 1008,344,2
 NodeSize: 64,40
-ValueState: 2,282,138,1123,625,1,MIDM
+ValueState: 2,275,48,1123,625,1,MIDM
 Aliases: FormNode Fo1540495636
 GraphSetup: ShowKey:2~
 Att_GraphIndexRange EV_Price:1,0~
@@ -110,7 +110,8 @@ Definition: var y:=Aggregate(Market_Share1, Electric__Non_Map[Fuel_Type=Simulate
 y[Elec__Non_Elec='EV']  {slices out just the aggregated EV market share}
 NodeLocation: 1008,80,1
 NodeSize: 64,40
-ValueState: 2,815,26,984,703,1,MIDM
+WindState: 2,7,12,875,345
+ValueState: 2,23,-5,984,703,1,MIDM
 Aliases: FormNode Fo1540495637
 GraphSetup: ShowKey:2~
 Att_AreaFill Graph_Primary_Valdim:0~
@@ -504,7 +505,7 @@ Decision Price_Coeff_Mult
 Title: Price Coeff Mult
 Units: dmnl
 Description: Dimensionless multiplier of the default price sensitivity coefficient. Use this input to test different values for the price sensitivity in the default logit model.
-Definition: Choice(Self,1,1)
+Definition: Choice(Self,7,1)
 NodeLocation: 432,56,1
 NodeSize: 64,40
 WindState: 2,1061,85,720,510
@@ -545,7 +546,7 @@ Decision Range_Coeff_Mult1
 Title: Range Coeff Mult
 Units: dmnl
 Description: Dimensionless multiplier of the default range sensitivity coefficient. Use this input to test different values for the range sensitivity in the default logit model.
-Definition: Choice(Self,2,1)
+Definition: Choice(Self,8,1)
 NodeLocation: 584,56,1
 NodeSize: 64,40
 WindState: 2,452,90,720,570
@@ -711,21 +712,21 @@ TableCellDefault: Choice(Elec__Non_Elec,1,0)
 {!40200|Att_ChoiceIndexes: Index Elec__Non_Elec}
 
 Index Fuel_Type
-Att_PrevIndexValue: ['Gasoline, Fixed ','HEV ','PHEV ','E85 ','Diesel ','Diesel Hybrid ','CNG ','CNG Hybrid ','BEV ','Hydrogen ']
 Title: Fuel Type 
 Definition: ['Gasoline, Fixed ','HEV ','PHEV ','E85 ','Diesel ','Diesel Hybrid ','CNG ','CNG Hybrid ','BEV ','Hydrogen ']
 NodeLocation: 120,64,1
 NodeSize: 64,40
 ValueState: 2,1140,233,229,300,,MIDM
 {!40300|Att_SlicerPopupSize: 232,154}
+Att_PrevIndexValue: ['Gasoline, Fixed ','HEV ','PHEV ','E85 ','Diesel ','Diesel Hybrid ','CNG ','CNG Hybrid ','BEV ','Hydrogen ']
 
 Index Vehicle_Type
-Att_PrevIndexValue: ['Subcompact, Fixed ','Compact ','Midsize ','Large ','Sports ','Crossover, Small ','Crossover, Midsize ','SUV, Small/Midsize ','SUV, Large ','Pickup Truck, Small ','Pickup Truck, Full Size','Van, Small ','Van, Full-Size ']
 Title: Vehicle Type
 Definition: ['Subcompact, Fixed ','Compact ','Midsize ','Large ','Sports ','Crossover, Small ','Crossover, Midsize ','SUV, Small/Midsize ','SUV, Large ','Pickup Truck, Small ','Pickup Truck, Full Size','Van, Small ','Van, Full-Size ']
 NodeLocation: 256,64,1
 NodeSize: 64,40
 ValueState: 2,646,394,433,432,,MIDM
+Att_PrevIndexValue: ['Subcompact, Fixed ','Compact ','Midsize ','Large ','Sports ','Crossover, Small ','Crossover, Midsize ','SUV, Small/Midsize ','SUV, Large ','Pickup Truck, Small ','Pickup Truck, Full Size','Van, Small ','Van, Full-Size ']
 
 Index Age_of_Purchased_Veh
 Att_PrevIndexValue: ['New','1-2 Years','3+ Years']
@@ -735,41 +736,41 @@ NodeLocation: 392,64,1
 NodeSize: 64,40
 
 Index Number_of_Vehicles
-Att_PrevIndexValue: [1,2,3]
 Title: Number of Vehicles
 Definition: [1,2,3]
 NodeLocation: 520,152,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2,3]
 
 Index Purchase_Incentive
-Att_PrevIndexValue: ['HOV Lane Access (0,1)','Cash Rebate ($)','Tax Credit ($)']
 Title: Purchase Incentive
 Definition: ['HOV Lane Access (0,1)','Cash Rebate ($)','Tax Credit ($)']
 NodeLocation: 104,544,1
 NodeSize: 64,40
 NodeInfo: 1,1,1,1,1,1,0,,0,,0,,,
+Att_PrevIndexValue: ['HOV Lane Access (0,1)','Cash Rebate ($)','Tax Credit ($)']
 
 Index Other_Vehicle_Attrib
-Att_PrevIndexValue: ['Range (miles)','Models (integer)','Maintenance ($/year)','Fuel Cost (cents/mile)','MPGGE (miles per GGE)','Acceleration (sec, 0-60 mph)','Refuel Time (min)']
 Title: Other Vehicle Attributes
 Definition: ['Range (miles)','Models (integer)','Maintenance ($/year)','Fuel Cost (cents/mile)','MPGGE (miles per GGE)','Acceleration (sec, 0-60 mph)','Refuel Time (min)']
 NodeLocation: 104,640,1
 NodeSize: 64,40
 NodeInfo: 1,1,1,1,1,1,0,,0,,0,,,
+Att_PrevIndexValue: ['Range (miles)','Models (integer)','Maintenance ($/year)','Fuel Cost (cents/mile)','MPGGE (miles per GGE)','Acceleration (sec, 0-60 mph)','Refuel Time (min)']
 
 Index Vehicle_Price_Attrib
-Att_PrevIndexValue: ['Vehicle Price ($)','Price ($) * Natural Log of Income ($)']
 Title: Vehicle Price Attributes
 Definition: ['Vehicle Price ($)','Price ($) * Natural Log of Income ($)']
 NodeLocation: 528,64,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Vehicle Price ($)','Price ($) * Natural Log of Income ($)']
 
 Index Vehicle_Size
-Att_PrevIndexValue: ['Small','Medium','Large']
 Title: Vehicle Size
 Definition: ['Small','Medium','Large']
 NodeLocation: 112,248,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Small','Medium','Large']
 
 Index FuelType_Veh_Interac
 Title: FuelType Veh Interaction
@@ -785,7 +786,6 @@ NodeLocation: 664,64,1
 NodeSize: 64,40
 
 Index Simulated_Vehicle
-Att_PrevIndexValue: ['BEV','PHEV','Gasoline']
 Title: Simulated Vehicle
 Description: To add a vehicle for simulating market share, simple type in any descriptive name (after adding another comma after 'Gasoline'), surrounded by single quotes, and press OK.~
 ~
@@ -801,9 +801,9 @@ NodeSize: 64,40
 WindState: 2,787,100,720,438
 Aliases: FormNode Fo1540425983
 {!40300|Att_SlicerPopupSize: 237,70}
+Att_PrevIndexValue: ['BEV','PHEV','Gasoline']
 
 Index Sim_Veh_Attributes
-Att_PrevIndexValue: ['Price ($)','HOV Lane Access (0,1)','Cash Rebate ($)','Tax Credit ($)','Range (miles)','Models (integer)','Maintenance ($/year)','Fuel Cost (cents/mile)','MPGGE (miles per GGE)','Acceleration (sec, 0-60 mph)','Refuel Time (min)']
 Title: Sim Veh Attributes
 Definition: Concat(Concat(Price_List, Purchase_Incentive), Other_Vehicle_Attrib)
 NodeLocation: 256,448,1
@@ -811,6 +811,7 @@ NodeSize: 64,40
 NodeInfo: 1,1,1,1,1,1,0,,0,,0,,,
 WindState: 2,102,82,720,470
 ValueState: 2,1394,341,362,386,,MIDM
+Att_PrevIndexValue: ['Price ($)','HOV Lane Access (0,1)','Cash Rebate ($)','Tax Credit ($)','Range (miles)','Models (integer)','Maintenance ($/year)','Fuel Cost (cents/mile)','MPGGE (miles per GGE)','Acceleration (sec, 0-60 mph)','Refuel Time (min)']
 
 Index AltFuelSize___Conven
 Title: AltFuelSize + Conventional
@@ -819,20 +820,20 @@ NodeLocation: 384,152,1
 NodeSize: 64,40
 
 Index Scenario
-Att_PrevIndexValue: ['High','Low','Default']
 Title: Scenario
 Description: Scenario for vehicle attibutes
 Definition: ['High','Low','Default']
 NodeLocation: 800,64,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['High','Low','Default']
 
 Index Elec__Non_Elec
-Att_PrevIndexValue: ['EV','Non-EV']
 Title: Elec, Non-Elec
 Definition: ['EV','Non-EV']
 NodeLocation: 792,152,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 227,56}
+Att_PrevIndexValue: ['EV','Non-EV']
 
 Function Vehicle_Data_Transfo(input, trans_type)
 Title: Vehicle Data Transformation
@@ -842,11 +843,11 @@ NodeLocation: 528,248,1
 NodeSize: 72,40
 
 Index Transform_Type
-Att_PrevIndexValue: ['None','Divide by 1000','Natural Log']
 Title: Transform Type
 Definition: ['None','Divide by 1000','Natural Log']
 NodeLocation: 112,152,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['None','Divide by 1000','Natural Log']
 
 Decision LN_Label
 Title: LN Label
@@ -1078,12 +1079,12 @@ Att__CloakDefn: 0
 Close Concatenation_udfs
 
 Index Veh_Fuel_Type_List
-Att_PrevIndexValue: ['Vehicle Type','Fuel Type','Veh Fuel Type Interaction']
 Title: Veh Fuel Type List
 Definition: ['Vehicle Type','Fuel Type','Veh Fuel Type Interaction']
 NodeLocation: 256,352,1
 NodeSize: 64,40
 NodeInfo: 1,1,1,1,1,1,0,,0,,0,,,
+Att_PrevIndexValue: ['Vehicle Type','Fuel Type','Veh Fuel Type Interaction']
 
 Index Price_List
 Title: Price List
@@ -1136,10 +1137,10 @@ Definition: Table(Simulated_Vehicle,Sim_Veh_Attributes,Scenario)(~
 NodeLocation: 112,80,1
 NodeSize: 64,40
 WindState: 2,500,106,720,350
-DefnState: 2,747,159,550,335,0,DFNM
+DefnState: 2,8,4,550,335,0,DFNM
 Aliases: FormNode Fo1540594642, FormNode Fo1540597196, FormNode Fo1540747148
 ReformDef: [Scenario,Sim_Veh_Attributes]
-Att_EditSliceState: [Simulated_Vehicle,2,Sim_Veh_Attributes,1,Scenario,1]
+Att_EditSliceState: [Simulated_Vehicle,1,Sim_Veh_Attributes,1,Scenario,1]
 
 Decision Input_Scenario
 Title: Input Scenario
