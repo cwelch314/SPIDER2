@@ -111,6 +111,7 @@ WindState: 2,53,232,720,350
 {!40200|Att_ChoiceIndexes: Index Vehicle_Types}
 
 Index Vehicle_Types
+Att_PrevIndexValue: ['Electric (BEV or PHEV)','Non-Electric']
 Title: Vehicle Types
 Description: The different vehicle classifications to be modeled for marketshare and stock tracking calculations.
 Definition: ['Electric (BEV or PHEV)','Non-Electric']
@@ -119,7 +120,6 @@ NodeSize: 64,40
 WindState: 2,250,69,942,595
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 272,28}
-Att_PrevIndexValue: ['Electric (BEV or PHEV)','Non-Electric']
 
 Index Vehicle_Vintage
 Title: Vehicle Vintage
@@ -17708,13 +17708,13 @@ NodeSize: 64,40
 TableCellDefault: Checkbox(0)
 
 Index EV_Vehicles
+Att_PrevIndexValue: ['PHEV','BEV']
 Title: EV Vehicles
 Definition: Subset(Select_EV_Techs[All_Vehicle_Techs=Vehicle_Techs])
 NodeLocation: 608,72,1
 NodeSize: 64,40
 WindState: 2,98,82,1092,496
 {!40300|Att_SlicerPopupSize: 247,64}
-Att_PrevIndexValue: ['PHEV','BEV']
 
 Close EV_Stock_Initializat
 
@@ -17852,6 +17852,7 @@ NodeSize: 64,40
 NodeColor: 65535,1,1
 
 Index Vehicle_Stock_DataYr
+Att_PrevIndexValue: [1-Jan-2010,1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030]
 Title: Vehicle Stock Data Year
 Definition: Sequence(Vehicle_Stk_Start_Yr, Vehicle_Stock_End_Yr, step:Timestep_Months[Timestep_Options=Vehicle_dT_Choice], dateUnit: 'M')
 NodeLocation: 96,64,1
@@ -17859,7 +17860,6 @@ NodeSize: 64,40
 WindState: 2,102,82,1112,582
 ValueState: 2,212,11,1000,827,0,MIDM
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att_PrevIndexValue: [1-Jan-2010,1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030]
 
 Constant Vehicle_Stk_Start_Yr
 Title: Vehicle Stock Start Year
@@ -19046,13 +19046,13 @@ NodeSize: 64,40
 Original: Simul_EV_Stock_Chg
 
 Index EV_Adopt_Data_Types
+Att_PrevIndexValue: ['Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 Title: EV Adoption Data Types
 Definition: ['Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 NodeLocation: 72,504,1
 NodeSize: 64,40
 WindState: 2,1475,82,720,350
 {!40300|Att_SlicerPopupSize: 227,84}
-Att_PrevIndexValue: ['Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 
 Text Te1542844956
 Title: If the EV simulation period starts after the first historic data year, this will need to be updated to properly initialize the capacity stocks
@@ -19132,11 +19132,11 @@ NodeSize: 64,40
 ValueState: 2,169,98,1049,737,,MIDM
 
 Index EV_Adopt_Types_None
+Att_PrevIndexValue: ['None','Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 Title: EV Adopt Data Types with None
 Definition: Concat(None_Label, EV_Adopt_Data_Types)
 NodeLocation: 344,504,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['None','Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 
 Text EVAdoption1544921592
 NodeLocation: 1088,300,-1
@@ -19295,28 +19295,28 @@ NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,0
 Original: EV_Sectors
 
 Index Fuel_Types
+Att_PrevIndexValue: ['Electricity','Gasoline']
 Title: Fuel Types
 Definition: ['Electricity','Gasoline']
 NodeLocation: 416,80,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 227,128}
-Att_PrevIndexValue: ['Electricity','Gasoline']
 
 Index Vehicle_Input_Years
+Att_PrevIndexValue: [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 Title: Vehicle Input Years
 Definition: Sequence(Veh_Input_Start_Yr, Veh_Input_End_Yr, 1)
 NodeLocation: 264,312,1
 NodeSize: 64,40
 DisplayOutputs: Variable Accel_Metric_Diff
-Att_PrevIndexValue: [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 
 Index All_Vehicle_Techs
+Att_PrevIndexValue: ['Non-Electric','PHEV','BEV']
 Title: All Vehicle Techs
 Definition: ['Non-Electric','PHEV','BEV']
 NodeLocation: 568,80,1
 NodeSize: 64,40
 WindState: 2,68,6,720,679
-Att_PrevIndexValue: ['Non-Electric','PHEV','BEV']
 
 Constant Veh_Input_Start_Yr
 Title: Vehicle Input Start Year
@@ -19351,6 +19351,7 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Veh_Input_End_Yr
 
 Index Vehicle_Techs
+Att_PrevIndexValue: ['Non-Electric','PHEV','BEV']
 Title: Vehicle Techs
 Definition: MultiChoice(All_Vehicle_Techs, allowNone: False, returnList: True)
 NodeLocation: 568,176,1
@@ -19358,7 +19359,6 @@ NodeSize: 64,40
 Aliases: FormNode Fo1553484312
 DisplayOutputs: Variable Accel_Metric_Diff
 {!40200|Att_ChoiceIndexes: Index All_Vehicle_Techs}
-Att_PrevIndexValue: ['Non-Electric','PHEV','BEV']
 
 FormNode Fo1553484312
 Title: Vehicle Technologies
@@ -19369,12 +19369,12 @@ NodeInfo: 1,0,0,0,0,0,0,118,0,,0,,,0
 Original: Vehicle_Techs
 
 Index Logit_Attributes
+Att_PrevIndexValue: ['Cost','Range','Tech Preference']
 Title: Logit Attributes
 Definition: ['Cost','Range','Tech Preference']
 NodeLocation: 104,328,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 227,80}
-Att_PrevIndexValue: ['Cost','Range','Tech Preference']
 
 Decision Cost_Attrib_Label
 Title: Cost Attrib Label
@@ -19409,12 +19409,12 @@ NodeInfo: 1,0,0,0,0,0,0,119,0,,0,,,
 Original: Electric_Fuel_Label
 
 Index Veh_Incentive_Type
+Att_PrevIndexValue: ['Federal','State','Utility']
 Title: Vehicle Incentive Type
 Definition: ['Federal','State','Utility']
 NodeLocation: 568,288,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 227,64}
-Att_PrevIndexValue: ['Federal','State','Utility']
 
 Close EV_Auxiliary_Variabl
 
@@ -19688,7 +19688,7 @@ Description: The nominal consumer discount rate applied to vehicle economics.
 Definition: SubTable(Single_Cell_Inputs[SingCell_Input_Names=Veh_Dscnt_Rate_Label])
 NodeLocation: 376,312,1
 NodeSize: 64,40
-Aliases: FormNode Fo1553485500, Alias Al1554254269, FormNode Fo1554254269
+Aliases: Alias Al1554254269, FormNode Fo1554254269, FormNode Fo1553485500
 NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
 FormNode Fo1553485500
@@ -19717,12 +19717,12 @@ Show_description:20}
 Show_description:20}
 
 Index Fuel_Price_Scen
+Att_PrevIndexValue: ['Low Electric Demand','Base Electric Demand','High Electric Demand']
 Title: Fuel Price Scenarios
 Definition: ['Low Electric Demand','Base Electric Demand','High Electric Demand']
 NodeLocation: 296,80,1
 NodeSize: 64,40
 Aliases: FormNode Fo1553721939
-Att_PrevIndexValue: ['Low Electric Demand','Base Electric Demand','High Electric Demand']
 
 Decision Select_FuelPriceScen
 Title: Selected Fuel Price Scenario
@@ -19834,7 +19834,7 @@ Description: The nominal consumer financing rate for purchasing new vehicles.
 Definition: SubTable(Single_Cell_Inputs[SingCell_Input_Names=Veh_FinRate_Label])
 NodeLocation: 120,360,1
 NodeSize: 64,40
-Aliases: FormNode Fo2, Alias Al1554253793, FormNode Fo1554253793
+Aliases: Alias Al1554253793, FormNode Fo1554253793, FormNode Fo2
 NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
 FormNode Fo2
@@ -19852,7 +19852,7 @@ Description: The term of a vehicle loan.
 Definition: SubTable(Single_Cell_Inputs[SingCell_Input_Names=Veh_FinTerm_Label])
 NodeLocation: 120,480,1
 NodeSize: 64,40
-Aliases: FormNode Fo3, Alias Al1554253794, FormNode Fo1554253794
+Aliases: Alias Al1554253794, FormNode Fo1554253794, FormNode Fo3
 NumberFormat: 2,F,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
 FormNode Fo3
@@ -20112,7 +20112,7 @@ NodeSize: 64,40
 WindState: 2,444,4,720,350
 DefnState: 2,265,70,1101,626,0,DFNM
 ValueState: 2,1,33,1460,645,0,MIDM
-Aliases: FormNode Fo1554146281, Alias Al1554253795, FormNode Fo1554253795
+Aliases: Alias Al1554253795, FormNode Fo1554253795, FormNode Fo1554146281
 ReformDef: [Vehicle_Input_Years,Veh_Incentive_Type]
 Att__TotalsIndex: [Veh_Incentive_Type]
 TableCellDefault: 0
@@ -20121,13 +20121,13 @@ Att_EditSliceState: [EV_Incent_Scenario,3,All_Vehicle_Techs,3,Veh_Incentive_Type
 {!50000|Att_ColumnWidths: [,Veh_Incentive_Type,\([,,])]}
 
 Index EV_Incent_Scenario
+Att_PrevIndexValue: ['Low','Medium','High']
 Title: EV Incentive Scenario
 Definition: ['Low','Medium','High']
 NodeLocation: 416,272,1
 NodeSize: 64,40
 Aliases: FormNode Fo1554146303
 {!40300|Att_SlicerPopupSize: 227,48}
-Att_PrevIndexValue: ['Low','Medium','High']
 
 FormNode Fo1554146281
 Title: EV Incentives
@@ -20285,11 +20285,11 @@ NodeSize: 64,40
 DiagState: 2,308,0,1160,489,17
 
 Index Range_Val
+Att_PrevIndexValue: [62,381,700]
 Title: Range Val
 Definition: [62,381,700]
 NodeLocation: 120,88,1
 NodeSize: 64,40
-Att_PrevIndexValue: [62,381,700]
 
 Constant Range_Value
 Title: Range Value
@@ -20503,7 +20503,7 @@ NodeLocation: 424,96,1
 NodeSize: 64,40
 WindState: 2,176,12,720,350
 ValueState: 2,408,209,416,303,0,MIDM
-Aliases: FormNode Fo1553707671, Alias Al1554253399, FormNode Fo1554253400
+Aliases: Alias Al1554253399, FormNode Fo1554253400, FormNode Fo1553707671
 
 Constant Vehicle_Tech_Pref
 Title: Vehicle Tech Preference
@@ -20515,7 +20515,7 @@ NodeSize: 64,40
 WindState: 2,663,-15,720,350
 DefnState: 2,837,-2,416,303,0,DFNM
 ValueState: 2,92,54,520,451,0,MIDM
-Aliases: FormNode Fo1553720068, Alias Al1554253400, FormNode Fo1554253401
+Aliases: Alias Al1554253400, FormNode Fo1554253401, FormNode Fo1553720068
 
 Constant Vehicle_Cost_Coeff
 Title: Vehicle Cost Coefficient
@@ -20526,7 +20526,7 @@ NodeLocation: 280,96,1
 NodeSize: 64,40
 WindState: 2,176,12,720,350
 ValueState: 2,260,266,634,303,0,MIDM
-Aliases: FormNode Fo1553707672, Alias Al1554253377, FormNode Fo1554253377
+Aliases: Alias Al1554253377, FormNode Fo1554253377, FormNode Fo1553707672
 
 Decision Baseline_Veh_Tech
 Title: Baseline Vehicle Tech
@@ -20763,6 +20763,8 @@ ValueState: 2,385,36,897,489,,MIDM
 
 Module Vehicle_Logit_Sensit
 Title: Vehicle Logit Sensitivity
+Author: JamesMilford
+Date: Tue, Apr 2, 2019 11:18 PM
 NodeLocation: 576,512,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
@@ -21329,11 +21331,11 @@ ValueState: 2,385,36,897,489,,MIDM
 Close Vehicle_Choice_Logi1
 
 Index Low_or_High
+Att_PrevIndexValue: ['Low','High']
 Title: Low or High
 Definition: ['Low','High']
 NodeLocation: 688,656,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Low','High']
 
 Decision Vehicle_Sensit_Yr
 Title: Vehicle Sensitivity Year
@@ -22226,7 +22228,7 @@ Original: EV_Calibration_Start
 Decision EV_Calibration_End
 Title: EV Calibration End
 Description: The time period for which calibration end.
-Definition: Choice(Veh_Sim_Strt_Yr_Opti,16,0)
+Definition: Choice(Veh_Sim_Strt_Yr_Opti,17,0)
 NodeLocation: 272,208,1
 NodeSize: 64,40
 Aliases: FormNode Fo1533396652, FormNode Fo1533422435, FormNode Fo1553204966
@@ -22400,7 +22402,7 @@ Step 2: .....
 NodeLocation: 576,520,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,1,,0,,,
-WindState: 2,151,48,1716,588
+WindState: 2,-114,45,1540,588
 Aliases: Alias Al1553204911
 NodeColor: 49344,49344,49344
 NodeFont: Calibri,16
@@ -23541,7 +23543,7 @@ NodeLocation: 248,176,1
 NodeSize: 64,40
 WindState: 2,448,302,1000,350
 ValueState: 2,238,4,1072,675,1,MIDM
-Aliases: FormNode Fo1530222085, FormNode Fo1553205593, FormNode Fo1554147790
+Aliases: FormNode Fo1554147790, FormNode Fo1530222085, FormNode Fo1553205593
 GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_ContLineStyle Graph_Primary_Valdim:5~
@@ -23848,6 +23850,7 @@ ValueState: 2,29,138,416,303,,MIDM
 TableCellDefault: Handle(Null)
 
 Index All_EV_Dec_Handles
+Att_PrevIndexValue: [EV_Ad_Effectiveness,EV_Word_of_Mouth,EV_LongRun_Mkt_Share,EV_Init_Familiarity,Early_Retiremnt_Mult,EV_Spatial_Coeff]
 Title: All EV Dec Handles
 Description: A superset of all possible decision variables to be used in the optimization.
 Definition: CopyIndex(Handles_for_EV_Decis)
@@ -23857,7 +23860,6 @@ WindState: 2,593,95,720,350
 ValueState: 2,1948,362,416,303,0,MIDM
 DisplayInputs: Index All_EV_Decisions
 MetaOnly: 1
-Att_PrevIndexValue: [EV_Ad_Effectiveness,EV_Word_of_Mouth,EV_LongRun_Mkt_Share,EV_Init_Familiarity,Early_Retiremnt_Mult,EV_Spatial_Coeff]
 
 Index All_EV_Decisions
 Title: All EV Decisions
@@ -23879,6 +23881,7 @@ NodeSize: 64,40
 WindState: 2,266,232,1180,547
 DefnState: 2,992,310,295,412,0,DFNM
 Aliases: Alias Al1529533184, FormNode Fo1530222092, FormNode Fo1530049195
+Domain: DomContinuous
 {!40300|DomainExpr: Continuous(EV_AdEff_Lwr_Bnd, EV_AdEff_Upr_Bnd)}
 TableCellDefault: Default_EVAdEff
 {!40300|OptInitialGuess: 0.001}
@@ -23896,6 +23899,7 @@ NodeSize: 64,40
 WindState: 2,102,82,720,350
 DefnState: 2,1002,261,455,530,0,DFNM
 Aliases: Alias Al1529533185, FormNode Fo1530222093, FormNode Fo1530049196
+Domain: DomContinuous
 {!40300|DomainExpr: Continuous(EV_WOM_Lwr_Bnd, EV_WOM_Upr_Bnd)}
 TableCellDefault: Default_EV_WOM
 {!40300|OptInitialGuess: 0.4}
@@ -23914,6 +23918,7 @@ WindState: 2,84,343,736,426
 DefnState: 2,419,199,359,678,,DFNM
 Aliases: Alias Al1529692129, FormNode Fo1530222094, FormNode Fo1530049197
 NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+Domain: DomContinuous
 {!40300|DomainExpr: Continuous(EV_InitFam_Lwr_Bnd, EV_InitFam_Upr_Bnd)}
 TableCellDefault: Default_EV_InitFam
 {!40300|OptInitialGuess: 0}
@@ -23931,6 +23936,7 @@ NodeSize: 64,40
 WindState: 2,634,239,720,398
 Aliases: Alias Al1529533205, FormNode Fo1530222091, FormNode Fo1530049142
 NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+Domain: DomContinuous
 {!40300|DomainExpr: Continuous(EV_LRMS_Lwr_Bnd, EV_LRMS_Upr_Bnd)}
 TableCellDefault: Default_EV_LRMS
 {!40300|OptInitialGuess: 0.6}
@@ -24258,6 +24264,7 @@ NodeLocation: 112,464,1
 NodeSize: 64,40
 WindState: 2,1885,82,1107,350
 Aliases: Alias Al1532472384, FormNode Fo1532472362
+Domain: DomContinuous
 {!40300|DomainExpr: Continuous(EV_ErlRet_Lwr_Bnd, EV_ErlRet_Upr_Bnd)}
 {!40300|OptInitialGuess: 1}
 {!40400|CloudPlayerStyles: Show_Object:no}
@@ -24723,6 +24730,7 @@ NodeLocation: 112,560,1
 NodeSize: 64,40
 WindState: 2,1885,82,1107,350
 Aliases: FormNode Fo1553719157
+Domain: DomContinuous
 {!40300|DomainExpr: Continuous(EV_SpatCoeff_Lwr_Bnd,EV_SpatCoeff_Upr_Bnd)}
 {!40300|OptInitialGuess: 1}
 {!40400|CloudPlayerStyles: Show_Object:no}
