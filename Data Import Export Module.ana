@@ -34,7 +34,7 @@ Date: Mon, Dec 25, 2017 9:38 AM
 NodeLocation: 128,288,1
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-287,111,1524,605,17
+DiagState: 2,34,40,1524,548,17
 Pict: (000000000000003C003D0004AB04000089504E470D0A1A0A0000000D494844520000003D0000003C0806000000D53EB24C000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA86400000430494441546843ED9A4D48545118866D67D0C2A5AD74578B7E17154584418BC08D1591ED0C0A8416498B70556DC2450B4D02CBA0A84C932CFB03212A8B30178296F48325D80FA14920266542CCE97C87796FE75EDF99EE8C33676E75170F8CEFF7DDF39D77CEEFC529524AFD7750115C1B69A9DDD25932B5F6729172CDC6F6C5DF2BBBCBC7C667DE95B1BE2D042A820DEDC5B3AC432ED97377F5B3B99FB3C5AC7FD9424580C2871F55759F797EECB84B6CE3F54FAA3B58FFB2858A00456F8D5EA861F17C629B168E3DADB9C0F2B2818A00050B697AF79D95C3F89C2BE35404285648D3D7DFB41E38F8607B0FFE6E1EAA6F60F9994045804285342DB56523B38DCB9A67CF84858AC02ECCE2F924585B8C57DF5D33047D21C6A90882855DC26A7F9D9B2AC985712A0256D815A96AE7C2381541AAC22E4857FBCBF7F152B9AD212753E35404E90AE79B3FD5FE3433566E1B6F7BD558C7F21854047F2A9C4FC2D40E1A0FDB4F2A824C1BCB25616B8B71FBA5284C5FA908326928D7A0B65C4606267A2BD271E3EDB9FD9BAE2E99C133F7DF77ED626D022A02345248D359D1B628C1DA04540468A410A6E5CDCA672413DAA409DEAE404580460A613A1B64AAA3CFC1980D15416C9AC4A3466C9AC40115416C9AC4A3466C9AC40115416C9AC4A3466C9AC40115416C9AC4A3466C9AC40115416C9AC4D5F487F244FFC9E3EADBE7529FFEF3477162A0B95E4DBE58E3D33589C1D63A75675FF7BC67D29018E9AE5637F7F6A8AE9DBDEAF1D146699FE5B931AD3B92682A55892BDB867C7A4F6D87D12F6D7EEDD33589D365B326F6F26AB8D9A34D9A7C9BCECA7E96EBC4B48CA6D791D19E2AA3EB11843133A2C167901FC6B49E295EFEF9756306FC3D7CB13698EF66A4651A9F5B356E3A81D1B646864E6F743A8CE9BE130D26B765D994FA315D62B4E4EC625FA8B38D4CD6B46D24DD289B7C2B97C57DE8364C5BF70E79FFA29519659E274BC79969DF743EBB6212A6D8280B8867645A36315B7F78A4C56C94B6A671675AC0943E95349C6294854C4C7B7B867CA9B2EBEBD382E501B7A6E5F8C1AE2CA6538CB2908969338BF47AF69E91B665AAA738EEDC9AB67659D5B4F4F74E4EF00C84312D48DBF6AE2DC87AC6C666E1D67472ED7904CF6D0B2F27ACE924265F5F4EBCE7E55214C87167DA1EE5B6ADC35EA7528CB6170F635ADA963CFB06868B0FB9A0B8336D8DB29A185C3FEFDC0E80DC50A6D1B6751191CF462BD891658F7272C7965D161A1B6D2F5F5F3CD4C7BE0A1FC1752A4793E4DBA39A1C697642B8318DA9269DD05F80D1EC5B1A9982C8A7E8E77CB918558DD4F2DDC3E508B3720537A6A513FAA832A366E932758D2E6F45966EC04B0A233865E50BD4CB645E9EDECDD99B96BB359D6F64CADBFB864CEB489CD31121364DE2808A20364DE25123364DE2808A20364DE25123364DE2808A000D84F9015B1490DF87E6CCF4DF48D08B0D15C1827EC0564076DC5E3EEFB5D3868AFF36AAE817D3052E280C9B5B310000000049454E44AE426082)
 
 Decision Residential_Label
@@ -2588,15 +2588,15 @@ Original: Hourly_Profiles
 
 Index SingCell_Input_Names
 Title: Single Cell Input Names
-Definition: ['Standard Demolition Rate','PV Degradation Rate','Residential Load Met by Solar','Inflation Rate','PV Percent of Stored Energy','Impact per EV','Years of Vehicle Ownership']
+Definition: ['Standard Demolition Rate','PV Degradation Rate','Residential Load Met by Solar','Inflation Rate','PV Percent of Stored Energy','Impact per EV','Years of Vehicle Ownership','Vehicle Financing Rate','Vehicle Financing Term','Vehicle Consumer Discount Rate']
 NodeLocation: 728,168,1
 NodeSize: 64,40
 WindState: 2,0,0,720,350
-Att_PrevIndexValue: ['Standard Demolition Rate','PV Degradation Rate','Residential Load Met by Solar','Inflation Rate','PV Percent of Stored Energy','Impact per EV','Years of Vehicle Ownership']
+Att_PrevIndexValue: ['Standard Demolition Rate','PV Degradation Rate','Residential Load Met by Solar','Inflation Rate','PV Percent of Stored Energy','Impact per EV','Years of Vehicle Ownership','Vehicle Financing Rate','Vehicle Financing Term','Vehicle Consumer Discount Rate']
 
 Constant Single_Cell_Inputs
 Title: Single Cell Inputs
-Definition: Table(SingCell_Input_Names)(0.00625,0.005,0.9,0.021,0.75,0.25,6.58)
+Definition: Table(SingCell_Input_Names)(0.00625,0.005,0.9,0.021,0.75,0.25,6.58,0.0421,5.75,0.2)
 NodeLocation: 872,168,1
 NodeSize: 64,40
 Aliases: FormNode Fo1550095424
@@ -2886,23 +2886,23 @@ Original: PV_Pct_Stored_Label
 
 Index StructSingCell_Names
 Title: Structural Single Cell Input Names
-Definition: ['Vehicle Average Lifetime']
+Definition: ['Vehicle Average Lifetime','Vehicle Cost Logit Coefficient','Vehicle Range Logit Coefficient']
 IndexVals: ['item 1']
-NodeLocation: 312,512,1
+NodeLocation: 88,496,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Vehicle Average Lifetime']
+Att_PrevIndexValue: ['Vehicle Average Lifetime','Vehicle Cost Logit Coefficient','Vehicle Range Logit Coefficient']
 
 Constant StructSingCell_Input
 Title: Structural Single Cell Inputs
-Definition: Table(StructSingCell_Names)(15.5)
-NodeLocation: 312,392,1
+Definition: Table(StructSingCell_Names)(15.5,-4.1,9)
+NodeLocation: 232,496,1
 NodeSize: 64,40
 Aliases: FormNode Fo1550721449
 
 FormNode Fo1550721449
 Title: Single Cell Inputs
 Definition: 0
-NodeLocation: 312,436,1
+NodeLocation: 232,540,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: StructSingCell_Input
@@ -2910,7 +2910,7 @@ Original: StructSingCell_Input
 Decision Veh_Lifetime_Label
 Title: Vehicle Lifetime Label
 Definition: Choice(StructSingCell_Names,1,0)
-NodeLocation: 456,392,1
+NodeLocation: 376,496,1
 NodeSize: 64,40
 Aliases: FormNode Fo1550721450
 {!40200|Att_ChoiceIndexes: Index StructSingCell_Names}
@@ -2918,7 +2918,7 @@ Aliases: FormNode Fo1550721450
 FormNode Fo1550721450
 Title: Demo Rate Label
 Definition: 0
-NodeLocation: 468,432,1
+NodeLocation: 388,536,1
 NodeSize: 68,16
 NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
 Original: Veh_Lifetime_Label
@@ -2926,14 +2926,14 @@ Original: Veh_Lifetime_Label
 Alias Al1550725165
 Title: Vehicle Average Lifetime
 Definition: 1
-NodeLocation: 600,392,1
+NodeLocation: 520,496,1
 NodeSize: 64,40
 Original: Vehicle_Average_Life
 
 FormNode Fo1550725180
 Title: Vehicle Average Lifetime
 Definition: 0
-NodeLocation: 600,444,1
+NodeLocation: 520,548,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Vehicle_Average_Life
@@ -3136,7 +3136,7 @@ Original: EV_Mkt_Share_Mult
 Alias Al1550726584
 Title: Bldg Stock Start Year
 Definition: 1
-NodeLocation: 248,704,1
+NodeLocation: 392,816,1
 NodeSize: 64,40
 Original: Bldg_Stock_Start_Yea
 
@@ -3150,14 +3150,14 @@ Original: Bldg_Stock_End_Year
 Alias Al1550726590
 Title: Building Stock
 Definition: 1
-NodeLocation: 408,704,1
+NodeLocation: 536,816,1
 NodeSize: 64,40
 Original: Building_Stock
 
 FormNode Fo1550726591
 Title: Building_Stock
 Definition: 0
-NodeLocation: 416,748,1
+NodeLocation: 544,860,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Building_Stock
@@ -3165,7 +3165,7 @@ Original: Building_Stock
 FormNode Fo1550726600
 Title: Bldg Stock Start Year
 Definition: 0
-NodeLocation: 248,748,1
+NodeLocation: 392,860,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Bldg_Stock_Start_Yea
@@ -3558,6 +3558,191 @@ NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Vehicle_Maint_Cost
 
+Decision Cost_Coeff_Label
+Title: Cost Coeff Label
+Definition: Choice(StructSingCell_Names,2,0)
+NodeLocation: 88,608,1
+NodeSize: 64,40
+Aliases: FormNode Fo1554253306
+{!40200|Att_ChoiceIndexes: Index StructSingCell_Names}
+
+FormNode Fo1554253306
+Title: Demo Rate Label
+Definition: 0
+NodeLocation: 100,648,1
+NodeSize: 68,16
+NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
+Original: Cost_Coeff_Label
+
+Alias Al1554253377
+Title: Vehicle Cost Coefficient
+Definition: 1
+NodeLocation: 232,608,1
+NodeSize: 64,40
+Original: Vehicle_Cost_Coeff
+
+FormNode Fo1554253377
+Title: Vehicle Cost Coefficient
+Definition: 0
+NodeLocation: 232,660,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Vehicle_Cost_Coeff
+
+Alias Al1554253399
+Title: Vehicle Range Coefficient
+Definition: 1
+NodeLocation: 520,608,1
+NodeSize: 64,40
+Original: Vehicle_Range_Coeff
+
+Alias Al1554253400
+Title: Vehicle Tech Preference
+Definition: 1
+NodeLocation: 608,1120,1
+NodeSize: 64,40
+Original: Vehicle_Tech_Pref
+
+FormNode Fo1554253400
+Title: Vehicle Range Coefficient
+Definition: 0
+NodeLocation: 520,660,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Vehicle_Range_Coeff
+
+FormNode Fo1554253401
+Title: Vehicle Tech Preference
+Definition: 0
+NodeLocation: 608,1172,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,70,0,,0,,,0
+Original: Vehicle_Tech_Pref
+
+Decision Range_Coeff_Label
+Title: Range Coeff Label
+Definition: Choice(StructSingCell_Names,3,0)
+NodeLocation: 376,608,1
+NodeSize: 64,40
+Aliases: FormNode Fo1554253524
+{!40200|Att_ChoiceIndexes: Index StructSingCell_Names}
+
+FormNode Fo1554253524
+Title: Demo Rate Label
+Definition: 0
+NodeLocation: 388,648,1
+NodeSize: 68,16
+NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
+Original: Range_Coeff_Label
+
+Alias Al1554253793
+Title: Vehicle Financing Rate
+Definition: 1
+NodeLocation: 1488,520,1
+NodeSize: 64,40
+Original: Vehicle_Finance_Rate
+
+FormNode Fo1554253793
+Title: Vehicle Input Start Year
+Definition: 0
+NodeLocation: 1488,572,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Vehicle_Finance_Rate
+
+Alias Al1554253794
+Title: Vehicle Financing Term
+Definition: 1
+NodeLocation: 1800,568,1
+NodeSize: 64,40
+Original: Vehicle_Finance_Term
+
+FormNode Fo1554253794
+Title: Vehicle Input Start Year
+Definition: 0
+NodeLocation: 1800,620,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Vehicle_Finance_Term
+
+Alias Al1554253795
+Title: Vehicle Incentives
+Definition: 1
+NodeLocation: 752,1120,1
+NodeSize: 64,40
+Original: Vehicle_Incents
+
+FormNode Fo1554253795
+Title: EV Incentives
+Definition: 0
+NodeLocation: 760,1164,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Vehicle_Incents
+
+Decision Veh_FinRate_Label
+Title: Veh Finance Rate Label
+Definition: Choice(SingCell_Input_Names,8,0)
+NodeLocation: 1336,520,1
+NodeSize: 64,40
+Aliases: FormNode Fo1554254097
+{!40200|Att_ChoiceIndexes: Index SingCell_Input_Names}
+
+FormNode Fo1554254097
+Title: Demo Rate Label
+Definition: 0
+NodeLocation: 1348,560,1
+NodeSize: 68,16
+NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
+Original: Veh_FinRate_Label
+
+Decision Veh_FinTerm_Label
+Title: Veh Finance Term Label
+Definition: Choice(SingCell_Input_Names,9,0)
+NodeLocation: 1648,568,1
+NodeSize: 64,40
+Aliases: FormNode Fo1554254168
+{!40200|Att_ChoiceIndexes: Index SingCell_Input_Names}
+
+FormNode Fo1554254168
+Title: Demo Rate Label
+Definition: 0
+NodeLocation: 1660,608,1
+NodeSize: 68,16
+NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
+Original: Veh_FinTerm_Label
+
+Decision Veh_Dscnt_Rate_Label
+Title: Veh Dscnt Rate Label
+Definition: Choice(SingCell_Input_Names,10,0)
+NodeLocation: 1952,568,1
+NodeSize: 64,40
+Aliases: FormNode Fo1554254226
+{!40200|Att_ChoiceIndexes: Index SingCell_Input_Names}
+
+FormNode Fo1554254226
+Title: Demo Rate Label
+Definition: 0
+NodeLocation: 1964,608,1
+NodeSize: 68,16
+NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
+Original: Veh_Dscnt_Rate_Label
+
+Alias Al1554254269
+Title: Vehicle Consumer Discount Rate
+Definition: 1
+NodeLocation: 2104,568,1
+NodeSize: 64,40
+Original: Veh_Discount_Rate
+
+FormNode Fo1554254269
+Title: Vehicle Input Start Year
+Definition: 0
+NodeLocation: 2104,620,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Veh_Discount_Rate
+
 Close Data
 
 Text Te1514147845
@@ -3603,7 +3788,7 @@ Author: JamesMilford
 Date: Fri, Dec 21, 2018 10:51 AM
 NodeLocation: 696,168,1
 NodeSize: 64,40
-DiagState: 2,14,4,1524,584,17
+DiagState: 2,55,55,1524,584,17
 NodeColor: 65535,65535,65535
 
 Module Excel_Import_Logic
@@ -3625,12 +3810,12 @@ NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,-193,125,1524,645,17
 
 Index Import_Fixed_Params
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 Title: Import Fixed Params
 Definition: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 NodeLocation: 88,80,1
 NodeSize: 64,40
 WindState: 2,651,5,720,350
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 
 Decision Max_Imported_Dim
 Title: Max Imported Dimensions
@@ -3652,12 +3837,12 @@ NodeLocation: 88,272,1
 NodeSize: 64,40
 
 Index Excel_Import_Params
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index','Fact Column Index 1','Fact Column Index 2','Fact Column Index 3']
 Title: Excel Import Parameters
 Definition: Concat(Import_Fixed_Params, Fact_Col_Index_Param)
 NodeLocation: 88,360,1
 NodeSize: 64,40
 ValueState: 2,104,106,406,324,,MIDM
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index','Fact Column Index 1','Fact Column Index 2','Fact Column Index 3']
 
 Variable Variable_Identifier
 Title: Variable Identifier
@@ -3750,11 +3935,16 @@ Checkbox(1),Path_to_Global_Data,'Vehicle_Price','A7',Choice(Import_Data_Types,2,
 Checkbox(1),Path_to_Global_Data,'Vehicle_Range','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Range),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,~
 Checkbox(1),Path_to_Global_Data,'Maint_Costs','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Maint_Cost),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,~
 Checkbox(1),Path_to_Global_Data,'Veh_Type_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Vehicle_Type_Map),Null,Handle(All_Vehicle_Techs),Null,Null,~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null)
+Checkbox(1),Path_to_Global_Data,'Vehicle_Tech_Pref','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Tech_Pref),Null,Handle(All_Vehicle_Techs),Null,Null,~
+Checkbox(1),Path_to_Global_Data,'Veh_Incentives','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Incents),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Handle(Veh_Incentive_Type),Handle(EV_Incent_Scenario),~
+Checkbox(0),Path_to_Global_Data,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier))
 NodeLocation: 88,552,1
 NodeSize: 64,40
 WindState: 2,30,63,1151,780
-DefnState: 2,-46,18,1540,725,0,DFNM
+DefnState: 2,-11,-2,1540,699,0,DFNM
 ValueState: 2,-66,109,1540,509,0,MIDM
 Aliases: FormNode New1551412463, FormNode New1551412503
 ReformDef: [Excel_Import_Params,Imported_Dataset_Num]
@@ -3766,18 +3956,18 @@ Title: Number of Imported Datasets
 Description: WARNING: Reducing this number may result in a loss of data.~
 ~
 The number of datasets whose import configuration can be specified. This determines the size of the Excel Import Settings table. When reducing this number, ensure that it will not result in discarding previously defined dataset import configurations.
-Definition: 30
+Definition: 35
 NodeLocation: 240,80,1
 NodeSize: 64,40
 WindState: 2,42,72,720,350
 Aliases: FormNode New1551412464, FormNode New1551412505
 
 Index Imported_Dataset_Num
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
 Title: Imported Dataset Number
 Definition: 1..Number_of_Datasets
 NodeLocation: 240,184,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35]
 
 Index Selected_Import_Data
 Title: Selected Import Datasets
@@ -3940,11 +4130,11 @@ NodeSize: 64,40
 WindState: 2,-3,6,720,350
 
 Index Import_Data_Types
-Att_PrevIndexValue: ['Any','Number','Text','Date']
 Title: Import Data Types
 Definition: ['Any','Number','Text','Date']
 NodeLocation: 688,696,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Any','Number','Text','Date']
 
 Decision Data_Type_Label
 Title: Data Type Label
@@ -4013,11 +4203,11 @@ Aliases: FormNode New1551412475, FormNode New1551412538
 NumberFormat: 3,F,4,4,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 
 Index Tab_Names
-Att_PrevIndexValue: ['SGIP_Data','Single_Cell_Inputs','Hourly_Profiles','Holiday_Dates','Meter_Counts','PV_CapFactor','PV_ResNewConstr_Size','Battery_Specs','Num_Strg_Units','AC-to-DC_Factor','Finance_Rates','Fed_ITC','Strg_Duration_Incent','Vehicle_Stock_Data','Struct_Single_Cell_Inputs','Hist_Vehicle_Growth','EV_MktShare_Mults','Building_Stock','Aggreg_Spatial_ID','EV_Map_Increm_to_Cumul','Climate_Zone_Map','Fuel_Prices','MPG','VMT','Fuel_Mix','Vehicle_Price','Vehicle_Range','Maint_Costs','Veh_Type_Map','SheetName']
 Title: Tab Names
 Definition: CopyIndex(Tab_Names_by_Number)
 NodeLocation: 240,872,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['SGIP_Data','Single_Cell_Inputs','Hourly_Profiles','Holiday_Dates','Meter_Counts','PV_CapFactor','PV_ResNewConstr_Size','Battery_Specs','Num_Strg_Units','AC-to-DC_Factor','Finance_Rates','Fed_ITC','Strg_Duration_Incent','Vehicle_Stock_Data','Struct_Single_Cell_Inputs','Hist_Vehicle_Growth','EV_MktShare_Mults','Building_Stock','Aggreg_Spatial_ID','EV_Map_Increm_to_Cumul','Climate_Zone_Map','Fuel_Prices','MPG','VMT','Fuel_Mix','Vehicle_Price','Vehicle_Range','Maint_Costs','Veh_Type_Map','Vehicle_Tech_Pref','Veh_Incentives','SheetName','SheetName','SheetName','SheetName']
 
 Decision Import_in_Progress
 Title: Import in Progress
@@ -4072,11 +4262,11 @@ NodeLocation: 872,264,1
 NodeSize: 64,40
 
 Index Categ_Index_Params
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Column 1 Index','Column 2 Index','Column 3 Index','Column 4 Index','Column 5 Index','Column 6 Index','Column 7 Index','Column 8 Index','Column 9 Index','Column 10 Index','Column 11 Index','Column 12 Index','Column 13 Index','Column 14 Index','Column 15 Index','Column 16 Index','Column 17 Index','Column 18 Index','Column 19 Index','Column 20 Index','Column 21 Index']
 Title: Categorical Index Parameters
 Definition: Concat(Cat_Index_Fix_Params, Import_Index_Cols)
 NodeLocation: 872,464,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Column 1 Index','Column 2 Index','Column 3 Index','Column 4 Index','Column 5 Index','Column 6 Index','Column 7 Index','Column 8 Index','Column 9 Index','Column 10 Index','Column 11 Index','Column 12 Index','Column 13 Index','Column 14 Index','Column 15 Index','Column 16 Index','Column 17 Index','Column 18 Index','Column 19 Index','Column 20 Index','Column 21 Index']
 
 Decision Categ_Index_Default
 Title: Categorical Index Default
@@ -4100,11 +4290,11 @@ WindState: 2,42,72,720,350
 Aliases: FormNode New1551412479, FormNode New1551412511
 
 Index Categ_Index_Tabs
-Att_PrevIndexValue: [1,2]
 Title: Categorical Index Tabs
 Definition: 1..Num_Categ_Index_Tabs
 NodeLocation: 1016,184,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2]
 
 Decision CatInd_ImportSetting
 Title: Categorical Index Import Settings
@@ -4141,22 +4331,22 @@ Column 2 Index: 			Handle(Land_Type)~
 Column 3 Index: 			Handle(Years)~
 Column 4-N Index:		Null
 Definition: Table(Categ_Index_Tabs,Categ_Index_Params)(~
-Checkbox(1),Path_to_Global_Data,'Categorical_Indexes','A5',Handle(Hourly_Profile_Names),Handle(Holiday_Years),Handle(NC_SystSize_Scens),Handle(ITC_Scenario),Handle(EV_Mkt_Share_Scen),Handle(EV_AdEff_Scenario),Handle(EV_WOM_Scen),Handle(Fuel_Types),Handle(All_Vehicle_Techs),Handle(Fuel_Price_Scen),Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Checkbox(0),Path_to_Global_Data,'Struct_Categ_Indexes','A5',Handle(SGIP_Data_Columns),Handle(Battery_Specs),Handle(All_System_Types),Handle(Debt_or_Equity),Handle(Incent_Durat_Inputs),Handle(Incent_Cap_Inputs),Handle(Timestep_Options),Handle(StructSingCell_Names),Handle(Vehicle_Types),Handle(All_Spatial_ID),Handle(All_Utilities),Handle(All_Sectors),Handle(PV_Climate_Zone),Handle(SingCell_Input_Names),Handle(Hourly_Profile_Rows),Handle(Holiday_Name),Handle(Delta_Outputs),Handle(EV_Adopt_Data_Types),Handle(Sequential_Outputs),Null,Null)
+Checkbox(1),Path_to_Global_Data,'Categorical_Indexes','A5',Handle(Hourly_Profile_Names),Handle(Holiday_Years),Handle(NC_SystSize_Scens),Handle(ITC_Scenario),Handle(EV_Mkt_Share_Scen),Handle(EV_AdEff_Scenario),Handle(EV_WOM_Scen),Handle(Fuel_Types),Handle(All_Vehicle_Techs),Handle(Fuel_Price_Scen),Handle(EV_Incent_Scenario),Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data,'Struct_Categ_Indexes','A5',Handle(SGIP_Data_Columns),Handle(Battery_Specs),Handle(All_System_Types),Handle(Debt_or_Equity),Handle(Incent_Durat_Inputs),Handle(Incent_Cap_Inputs),Handle(Timestep_Options),Handle(StructSingCell_Names),Handle(Vehicle_Types),Handle(All_Spatial_ID),Handle(All_Utilities),Handle(All_Sectors),Handle(PV_Climate_Zone),Handle(SingCell_Input_Names),Handle(Hourly_Profile_Rows),Handle(Holiday_Name),Handle(Delta_Outputs),Handle(EV_Adopt_Data_Types),Handle(Sequential_Outputs),Handle(Veh_Incentive_Type),Null)
 NodeLocation: 872,664,1
 NodeSize: 64,40
 WindState: 2,102,82,1042,708
-DefnState: 2,404,99,763,607,0,DFNM
+DefnState: 2,198,74,763,607,0,DFNM
 Aliases: FormNode New1551412480, FormNode New1551412512
 ReformDef: [Categ_Index_Tabs,Categ_Index_Params]
 TableCellDefault: Categ_Index_Default
 
 Index Cat_Index_Tab_Names
-Att_PrevIndexValue: ['Categorical_Indexes','Struct_Categ_Indexes']
 Title: Categ Index Tab Names
 Definition: CopyIndex(Categ_Index_Tab_Opt)
 NodeLocation: 1016,784,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Categorical_Indexes','Struct_Categ_Indexes']
 
 Index Categ_Index_Rows
 Title: Categ Index Rows
@@ -4257,11 +4447,11 @@ NodeLocation: 1192,264,1
 NodeSize: 64,40
 
 Index Seq_Index_Params
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Row 1 Parameter','Row 2 Parameter','Row 3 Parameter','Row 4 Parameter','Row 5 Parameter','Row 6 Parameter','Row 7 Parameter','Row 8 Parameter','Row 9 Parameter','Row 10 Parameter','Row 11 Parameter','Row 12 Parameter','Row 13 Parameter']
 Title: Sequence Index Parameters
 Definition: Concat(Seq_Index_Fix_Param, Import_Seq_Params)
 NodeLocation: 1192,464,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Row 1 Parameter','Row 2 Parameter','Row 3 Parameter','Row 4 Parameter','Row 5 Parameter','Row 6 Parameter','Row 7 Parameter','Row 8 Parameter','Row 9 Parameter','Row 10 Parameter','Row 11 Parameter','Row 12 Parameter','Row 13 Parameter']
 
 Decision Seq_Index_Default
 Title: Sequence Index Default
@@ -4285,11 +4475,11 @@ WindState: 2,42,72,720,350
 Aliases: FormNode New1551412488, FormNode New1551412521
 
 Index Seq_Index_Tabs
-Att_PrevIndexValue: [1,2]
 Title: Sequence Index Tabs
 Definition: 1..Num_Seq_Index_Tabs
 NodeLocation: 1336,184,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2]
 
 Decision SeqInd_ImportSetting
 Title: Sequence Index Import Settings
@@ -4325,7 +4515,7 @@ Row 4 Parameter:		Handle(Num_of_Locations)~
 Row 5-N Parameter:		Null
 Definition: Table(Seq_Index_Tabs,Seq_Index_Params)(~
 Checkbox(1),Path_to_Global_Data,'Sequence_Index_Inputs','A5',Handle(Bldg_Stock_Start_Yea),Handle(Bldg_Stock_End_Year),Handle(Vehicle_Stk_Start_Yr),Handle(Vehicle_Stock_End_Yr),Handle(Vehicle_Sim_Start_Yr),Handle(Vehicle_Sim_End_Yr),Handle(Final_Hist_Incent_Yr),Handle(Final_EV_Hist_Period),Handle(Base_Period_Deltas),Handle(Output_Start_Period),Handle(Output_End_Period),Handle(Veh_Input_Start_Yr),Handle(Veh_Input_End_Yr),~
-Checkbox(0),Path_to_Global_Data,'Struct_Seq_Index_Inputs','A5',Handle(Num_SGIP_Data_Rows),Handle(PV_Static_Start_Year),Handle(PV_Static_End_Year),Handle(Num_Incent_Dur_Steps),Handle(Num_Incent_Cap_Steps),Handle(Num_Incentive_Steps),Handle(Vehicle_dT_Choice),Handle(Num_Vehicle_Vintages),Handle(Output_dT_Choice),Null,Null,Null,Null)
+Checkbox(1),Path_to_Global_Data,'Struct_Seq_Index_Inputs','A5',Handle(Num_SGIP_Data_Rows),Handle(PV_Static_Start_Year),Handle(PV_Static_End_Year),Handle(Num_Incent_Dur_Steps),Handle(Num_Incent_Cap_Steps),Handle(Num_Incentive_Steps),Handle(Vehicle_dT_Choice),Handle(Num_Vehicle_Vintages),Handle(Output_dT_Choice),Handle(Baseline_Veh_Tech),Null,Null,Null)
 NodeLocation: 1192,664,1
 NodeSize: 64,40
 WindState: 2,26,10,1042,708
@@ -4335,11 +4525,11 @@ ReformDef: [Seq_Index_Tabs,Seq_Index_Params]
 TableCellDefault: Seq_Index_Default
 
 Index Seq_Index_Tab_Names
-Att_PrevIndexValue: ['Sequence_Index_Inputs','Struct_Seq_Index_Inputs']
 Title: Sequence Index Tab Names
 Definition: CopyIndex(Seq_Index_Tab_Opt)
 NodeLocation: 1336,784,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Sequence_Index_Inputs','Struct_Seq_Index_Inputs']
 
 Index Seq_Index_Rows
 Title: Sequence Index Rows

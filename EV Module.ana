@@ -17884,7 +17884,7 @@ Title: Vehicle Data dT Choice
 Definition: Choice(Timestep_Options,3,0)
 NodeLocation: 672,480,1
 NodeSize: 64,40
-WindState: 2,818,6,720,350
+WindState: 2,541,8,720,350
 Aliases: Alias Al1550726767, FormNode Fo1550726780, FormNode Fo1529435271
 {!40200|Att_ChoiceIndexes: Index Timestep_Options}
 
@@ -19425,7 +19425,7 @@ Date: Mon, Mar 25, 2019 8:59 PM
 NodeLocation: 376,752,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,218,269,869,390,17
+DiagState: 2,203,254,869,390,17
 
 Variable Veh_Ownership_Cost
 Title: Vehicle Ownership Cost
@@ -19685,10 +19685,10 @@ Constant Veh_Discount_Rate
 Title: Vehicle Consumer Discount Rate
 Units: fraction
 Description: The nominal consumer discount rate applied to vehicle economics.
-Definition: 20%
+Definition: SubTable(Single_Cell_Inputs[SingCell_Input_Names=Veh_Dscnt_Rate_Label])
 NodeLocation: 376,312,1
 NodeSize: 64,40
-Aliases: FormNode Fo1553485500
+Aliases: FormNode Fo1553485500, Alias Al1554254269, FormNode Fo1554254269
 NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
 FormNode Fo1553485500
@@ -19758,7 +19758,7 @@ Date: Mon, Mar 25, 2019 8:59 PM
 NodeLocation: 280,280,1
 NodeSize: 64,40
 NodeInfo: 1,0,1,1,1,1,0,,0,,0,,,
-DiagState: 2,70,19,1375,594,17
+DiagState: 2,58,43,1375,594,17
 
 Constant Vehicle_Price
 Title: Vehicle Price
@@ -19813,7 +19813,7 @@ Variable Vehicle_Incentives
 Title: Vehicle Incentives
 Units: $/vehicle
 Description: Incentives provided for vehicles for the selected incentive scenario(s).
-Definition: Sum(Vehicle_Incentives1[All_Vehicle_Techs=Vehicle_Techs, EV_Incent_Scenario=Selected_EV_Incentiv], Veh_Incentive_Type)
+Definition: Sum(Vehicle_Incents[All_Vehicle_Techs=Vehicle_Techs, EV_Incent_Scenario=Selected_EV_Incentiv], Veh_Incentive_Type)
 NodeLocation: 280,176,1
 NodeSize: 64,40
 
@@ -19831,10 +19831,10 @@ Constant Vehicle_Finance_Rate
 Title: Vehicle Financing Rate
 Units: fraction/year
 Description: The nominal consumer financing rate for purchasing new vehicles.
-Definition: 4.21%
+Definition: SubTable(Single_Cell_Inputs[SingCell_Input_Names=Veh_FinRate_Label])
 NodeLocation: 120,360,1
 NodeSize: 64,40
-Aliases: FormNode Fo2
+Aliases: FormNode Fo2, Alias Al1554253793, FormNode Fo1554253793
 NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
 FormNode Fo2
@@ -19849,10 +19849,10 @@ Constant Vehicle_Finance_Term
 Title: Vehicle Financing Term
 Units: years
 Description: The term of a vehicle loan.
-Definition: 5.75
+Definition: SubTable(Single_Cell_Inputs[SingCell_Input_Names=Veh_FinTerm_Label])
 NodeLocation: 120,480,1
 NodeSize: 64,40
-Aliases: FormNode Fo3
+Aliases: FormNode Fo3, Alias Al1554253794, FormNode Fo1554253794
 NumberFormat: 2,F,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
 FormNode Fo3
@@ -19914,7 +19914,7 @@ Show_description:20}
 {!40204-40399|AWP_Attrib:Show_index_menus:yes~
 Show_description:20}
 
-Constant Vehicle_Incentives1
+Constant Vehicle_Incents
 Title: Vehicle Incentives
 Units: $/vehicle
 Definition: Table(Veh_Incentive_Type,Vehicle_Input_Years,EV_Incent_Scenario,All_Vehicle_Techs)(~
@@ -20109,9 +20109,10 @@ Definition: Table(Veh_Incentive_Type,Vehicle_Input_Years,EV_Incent_Scenario,All_
 0,400,400)
 NodeLocation: 120,184,1
 NodeSize: 64,40
+WindState: 2,444,4,720,350
 DefnState: 2,265,70,1101,626,0,DFNM
 ValueState: 2,1,33,1460,645,0,MIDM
-Aliases: FormNode Fo1554146281
+Aliases: FormNode Fo1554146281, Alias Al1554253795, FormNode Fo1554253795
 ReformDef: [Vehicle_Input_Years,Veh_Incentive_Type]
 Att__TotalsIndex: [Veh_Incentive_Type]
 TableCellDefault: 0
@@ -20134,7 +20135,7 @@ Definition: 0
 NodeLocation: 128,228,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Vehicle_Incentives1
+Original: Vehicle_Incents
 
 FormNode Fo1554146303
 Title: EV Incentive Scenario
@@ -20491,18 +20492,18 @@ Author: JamesMilford
 Date: Fri, Mar 29, 2019 12:10 AM
 NodeLocation: 440,176,1
 NodeSize: 64,40
-DiagState: 2,-33,20,1497,553,17
+DiagState: 2,-64,-1,1113,553,17
 
 Constant Vehicle_Range_Coeff
 Title: Vehicle Range Coefficient
 Units: utility/ratio
 Description: The coefficient representing consumer preferences for vehicle range.
-Definition: 9
+Definition: SubTable(StructSingCell_Input[StructSingCell_Names=Range_Coeff_Label])
 NodeLocation: 424,96,1
 NodeSize: 64,40
 WindState: 2,176,12,720,350
 ValueState: 2,408,209,416,303,0,MIDM
-Aliases: FormNode Fo1553707671
+Aliases: FormNode Fo1553707671, Alias Al1554253399, FormNode Fo1554253400
 
 Constant Vehicle_Tech_Pref
 Title: Vehicle Tech Preference
@@ -20514,20 +20515,20 @@ NodeSize: 64,40
 WindState: 2,663,-15,720,350
 DefnState: 2,837,-2,416,303,0,DFNM
 ValueState: 2,92,54,520,451,0,MIDM
-Aliases: FormNode Fo1553720068
+Aliases: FormNode Fo1553720068, Alias Al1554253400, FormNode Fo1554253401
 
 Constant Vehicle_Cost_Coeff
 Title: Vehicle Cost Coefficient
 Units: utility/ratio
 Description: The coefficient representing consumer preferences for vehicle ownership costs (capital+fuel+maintenance).
-Definition: -4.1
+Definition: SubTable(StructSingCell_Input[StructSingCell_Names=Cost_Coeff_Label])
 NodeLocation: 280,96,1
 NodeSize: 64,40
 WindState: 2,176,12,720,350
 ValueState: 2,260,266,634,303,0,MIDM
-Aliases: FormNode Fo1553707672
+Aliases: FormNode Fo1553707672, Alias Al1554253377, FormNode Fo1554253377
 
-Constant Baseline_Veh_Tech
+Decision Baseline_Veh_Tech
 Title: Baseline Vehicle Tech
 Description: Select a vehicle technology to use as the baseline. This will impact the ratios used in the logit model.
 Definition: Choice(Vehicle_Techs, 1, 0)
@@ -20927,7 +20928,7 @@ Variable Vehicle_Incentives2
 Title: Vehicle Incentives
 Units: $/vehicle
 Description: Incentives provided for vehicles for the selected incentive scenario(s).
-Definition: Sum(Vehicle_Incentives1[All_Vehicle_Techs=Vehicle_Techs, Vehicle_Input_Years=Vehicle_Sensit_Yr, EV_Incent_Scenario=Selected_EV_Incentiv], Veh_Incentive_Type)
+Definition: Sum(Vehicle_Incents[All_Vehicle_Techs=Vehicle_Techs, Vehicle_Input_Years=Vehicle_Sensit_Yr, EV_Incent_Scenario=Selected_EV_Incentiv], Veh_Incentive_Type)
 NodeLocation: 280,176,1
 NodeSize: 64,40
 
