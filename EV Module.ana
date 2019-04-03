@@ -19046,13 +19046,13 @@ NodeSize: 64,40
 Original: Simul_EV_Stock_Chg
 
 Index EV_Adopt_Data_Types
-Att_PrevIndexValue: ['Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 Title: EV Adoption Data Types
 Definition: ['Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 NodeLocation: 72,504,1
 NodeSize: 64,40
 WindState: 2,1475,82,720,350
 {!40300|Att_SlicerPopupSize: 227,84}
+Att_PrevIndexValue: ['Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 
 Text Te1542844956
 Title: If the EV simulation period starts after the first historic data year, this will need to be updated to properly initialize the capacity stocks
@@ -19132,11 +19132,11 @@ NodeSize: 64,40
 ValueState: 2,169,98,1049,737,,MIDM
 
 Index EV_Adopt_Types_None
-Att_PrevIndexValue: ['None','Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 Title: EV Adopt Data Types with None
 Definition: Concat(None_Label, EV_Adopt_Data_Types)
 NodeLocation: 344,504,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['None','Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 
 Text EVAdoption1544921592
 NodeLocation: 1088,300,-1
@@ -19718,11 +19718,11 @@ Show_description:20}
 
 Index Fuel_Price_Scen
 Title: Fuel Price Scenarios
-Definition: ['Low Electricity Demand','Base Electricity Demand','High Electricity Demand']
+Definition: ['Low Electric Demand','Base Electric Demand','High Electric Demand']
 NodeLocation: 296,80,1
 NodeSize: 64,40
 Aliases: FormNode Fo1553721939
-Att_PrevIndexValue: ['Low Electricity Demand','Base Electricity Demand','High Electricity Demand']
+Att_PrevIndexValue: ['Low Electric Demand','Base Electric Demand','High Electric Demand']
 
 Decision Select_FuelPriceScen
 Title: Selected Fuel Price Scenario
@@ -19917,196 +19917,196 @@ Show_description:20}
 Constant Vehicle_Incents
 Title: Vehicle Incentives
 Units: $/vehicle
-Definition: Table(Veh_Incentive_Type,Vehicle_Input_Years,EV_Incent_Scenario,All_Vehicle_Techs)(~
-0,7500,7500,~
-0,7087,7087,~
-0,7087,7500,~
-0,7500,7500,~
-0,7087,7087,~
-0,7087,7500,~
-0,7500,7500,~
-0,7087,7087,~
-0,7087,7500,~
-0,7500,7500,~
-0,7295,7295,~
-0,7295,7500,~
-0,7500,7500,~
-0,7295,7295,~
-0,7295,7500,~
-0,7500,7500,~
-0,7500,7500,~
-0,7500,7500,~
-0,7500,7500,~
-0,7500,7500,~
-0,7500,7500,~
-0,7500,7500,~
-0,7500,7500,~
-0,7500,7500,~
-0,7500,7500,~
-0,7500,7500,~
-0,7500,7500,~
-0,7500,7500,~
-0,7500,7500,~
-0,7500,7500,~
-0,7500,7500,~
-0,7500,7500,~
-0,7500,7500,~
+Definition: Table(Vehicle_Input_Years,All_Vehicle_Techs,Veh_Incentive_Type,EV_Incent_Scenario)(~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+7500,7087,7087,~
+1500,1500,1500,~
+0,0,0,~
+7500,7087,7500,~
+2500,2500,2500,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+7500,7087,7087,~
+1500,1500,1500,~
+0,0,0,~
+7500,7087,7500,~
+2500,2500,2500,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+7500,7087,7087,~
+1500,1500,1500,~
+0,0,0,~
+7500,7087,7500,~
+2500,2500,2500,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+7500,7295,7295,~
+1500,1500,1500,~
+0,0,0,~
+7500,7295,7500,~
+2500,2500,2500,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+7500,7295,7295,~
+1500,1500,1500,~
+0,0,0,~
+7500,7295,7500,~
+2500,2500,2500,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+7500,7500,7500,~
+1500,1500,1500,~
+0,0,0,~
+7500,7500,7500,~
+2500,2500,2500,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+7500,7500,7500,~
+1500,1500,1500,~
+0,0,0,~
+7500,7500,7500,~
+2500,2500,2500,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+7500,7500,7500,~
+1500,1500,1500,~
+500,500,500,~
+7500,7500,7500,~
+2500,2500,2500,~
+500,500,500,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+7500,7500,7500,~
+1500,1500,1500,~
+500,500,500,~
+7500,7500,7500,~
+2500,2500,2500,~
+500,500,500,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+7500,7500,7500,~
+1500,1500,1500,~
+800,800,800,~
+7500,7500,7500,~
+2500,2500,2500,~
+800,800,800,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+7500,7500,7500,~
+1500,1500,1500,~
+800,800,800,~
+7500,7500,7500,~
+2500,2500,2500,~
+800,800,800,~
+0,0,0,~
+0,0,0,~
 0,0,0,~
 0,6950,6950,~
+0,0,1250,~
+0,0,400,~
 0,6950,7500,~
+0,0,1250,~
+0,0,400,~
+0,0,0,~
+0,0,0,~
 0,0,0,~
 0,6400,6400,~
+0,0,1250,~
+0,0,400,~
 0,6400,7500,~
+0,0,1250,~
+0,0,400,~
+0,0,0,~
+0,0,0,~
 0,0,0,~
 0,5850,5850,~
+0,0,1250,~
+0,0,400,~
 0,5850,7500,~
+0,0,1250,~
+0,0,400,~
+0,0,0,~
+0,0,0,~
 0,0,0,~
 0,5300,5300,~
+0,0,1250,~
+0,0,400,~
 0,5300,7500,~
+0,0,1250,~
+0,0,400,~
+0,0,0,~
+0,0,0,~
 0,0,0,~
 0,4750,4750,~
+0,0,1250,~
+0,0,400,~
 0,4750,7500,~
+0,0,1250,~
+0,0,400,~
+0,0,0,~
+0,0,0,~
 0,0,0,~
 0,4200,4200,~
+0,0,1250,~
+0,0,400,~
 0,4200,7500,~
+0,0,1250,~
+0,0,400,~
+0,0,0,~
+0,0,0,~
 0,0,0,~
 0,3650,3650,~
+0,0,1250,~
+0,0,400,~
 0,3650,7500,~
+0,0,1250,~
+0,0,400,~
+0,0,0,~
+0,0,0,~
 0,0,0,~
 0,3100,3100,~
+0,0,1250,~
+0,0,400,~
 0,3100,7500,~
+0,0,1250,~
+0,0,400,~
+0,0,0,~
+0,0,0,~
 0,0,0,~
 0,2550,2550,~
+0,0,1250,~
+0,0,400,~
 0,2550,7500,~
+0,0,1250,~
+0,0,400,~
+0,0,0,~
+0,0,0,~
 0,0,0,~
 0,2000,2000,~
+0,0,1250,~
+0,0,400,~
 0,2000,7500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,1500,2500,~
-0,0,0,~
-0,0,0,~
-0,1250,1250,~
-0,0,0,~
-0,0,0,~
-0,1250,1250,~
-0,0,0,~
-0,0,0,~
-0,1250,1250,~
-0,0,0,~
-0,0,0,~
-0,1250,1250,~
-0,0,0,~
-0,0,0,~
-0,1250,1250,~
-0,0,0,~
-0,0,0,~
-0,1250,1250,~
-0,0,0,~
-0,0,0,~
-0,1250,1250,~
-0,0,0,~
-0,0,0,~
-0,1250,1250,~
-0,0,0,~
-0,0,0,~
-0,1250,1250,~
-0,0,0,~
-0,0,0,~
-0,1250,1250,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,500,500,~
-0,500,500,~
-0,500,500,~
-0,500,500,~
-0,500,500,~
-0,500,500,~
-0,800,800,~
-0,800,800,~
-0,800,800,~
-0,800,800,~
-0,800,800,~
-0,800,800,~
-0,0,0,~
-0,0,0,~
-0,400,400,~
-0,0,0,~
-0,0,0,~
-0,400,400,~
-0,0,0,~
-0,0,0,~
-0,400,400,~
-0,0,0,~
-0,0,0,~
-0,400,400,~
-0,0,0,~
-0,0,0,~
-0,400,400,~
-0,0,0,~
-0,0,0,~
-0,400,400,~
-0,0,0,~
-0,0,0,~
-0,400,400,~
-0,0,0,~
-0,0,0,~
-0,400,400,~
-0,0,0,~
-0,0,0,~
-0,400,400,~
-0,0,0,~
-0,0,0,~
-0,400,400)
+0,0,1250,~
+0,0,400)
 NodeLocation: 120,184,1
 NodeSize: 64,40
 WindState: 2,444,4,720,350
@@ -20118,7 +20118,7 @@ Att__TotalsIndex: [Veh_Incentive_Type]
 TableCellDefault: 0
 Att_ResultSliceState: [Veh_Incentive_Type,0,EV_Incentive_Scenari,2,All_Vehicle_Techs,1,Vehicle_Input_Years,1]
 Att_EditSliceState: [EV_Incent_Scenario,3,All_Vehicle_Techs,3,Veh_Incentive_Type,1,Vehicle_Input_Years,1]
-{!50000|Att_ColumnWidths: [,Veh_Incentive_Type,\([,63])]}
+{!50000|Att_ColumnWidths: [,Veh_Incentive_Type,\([,,])]}
 
 Index EV_Incent_Scenario
 Title: EV Incentive Scenario
@@ -20531,7 +20531,7 @@ Aliases: FormNode Fo1553707672, Alias Al1554253377, FormNode Fo1554253377
 Decision Baseline_Veh_Tech
 Title: Baseline Vehicle Tech
 Description: Select a vehicle technology to use as the baseline. This will impact the ratios used in the logit model.
-Definition: Choice(Vehicle_Techs, 1, 0)
+Definition: Choice(Vehicle_Techs,1,0)
 NodeLocation: 104,512,1
 NodeSize: 64,40
 Aliases: FormNode Fo1553544150
