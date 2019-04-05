@@ -668,7 +668,7 @@ NodeLocation: 376,152,1
 NodeSize: 64,40
 WindState: 2,557,1,720,350
 ValueState: 2,32,55,450,292,0,MIDM
-{!40300|Att_SlicerPopupSize: 412,785}
+{!40300|Att_SlicerPopupSize: 417,785}
 
 Module Global_Calibration_L
 Title: Global Calibration Logic
@@ -742,7 +742,7 @@ Description: This function is called by a button script and sequentially optimiz
 Definition: (decis_switch:=1); {Ensures the optimization uses the actual decision variables when calculating the objective, rather than the stored coefficients}~
 Check_Sector(all_sectors, der_sectors);  {Checks to ensure only one sector is selected for the diffusion parameter calibration}~
 {Check_Cost_Scenario(); }{Checks to ensure only one cost scenario is selected for the diffusion parameter calibration}~
-msgbox('made it');~
+~
 {assign local variables for use in the function}~
 local temp_stored_coeff:=stored_decis;~
 local status:=stored_status;~
@@ -816,7 +816,7 @@ Step 2: .....~
 [optDef_handle]: the handle to the variable where the optimization is defined.
 Definition: IF (trace_flag AND Size(select_stages)>1) THEN MsgBox('Optimization text trace is on. It will not work when optimizing more than one stage. Please turn it off and then re-run the calibration, or run only one stage.', 5, 'Optimization Trace Message' ) ;~
 INDEX origIDs:=CopyIndex(der_spatial_id);   {Temporarily store the selected IDs}~
-IF (ag_stage1 AND curr_stage=1) THEN (der_spatial_id:=aggreg_level) ELSE Null;   {If stage1 uses an aggregate element of the spatial ID, then select that aggregate level}~
+IF ag_stage1 AND (Slice(select_stages,1)=1) THEN (der_spatial_id:=aggreg_level) ELSE Null;   {If stage1 uses an aggregate element of the spatial ID and stage1 is included in calibration, then select that aggregate level}~
 (sim_start:=calib_start); {Sets the start year for the simulation to the start time for the EV calibration}~
 (sim_end:=calib_end); {Sets the end year for the simulation to the end time for the EV calibration}~
 (decis_switch:=0); {Deselects the input that uses the decision variables in the model, so that R^2 failures can be calculated}~
@@ -827,8 +827,6 @@ For i:=stage DO (~
    (dates_in_opt:=dates_by_stage[all_stages=i, calib_time=sim_time]); {Selects all dates for use in the calibration}~
    (decis_in_opt:=decis_by_stage[all_stages=i]); {Selects only those decision variables used in the given calibration stage}~
    (setting_in_opt:=setting_by_stage[all_stages=i]); {Adjusts the optimization engine settings per the calibration stage}~
-   msgbox(der_spatial_id );~
-msgbox(failed_id);~
    IF (Size(failed_id)<>0 OR curr_stage=1 OR Size(select_stages)=1) ~
    THEN Sequential_Opt(i,  select_decis, decis_handles, all_spatial_id, der_spatial_id, all_sectors, ag_stage1, aggreg_level, der_sectors, stored_decis, stored_status, decis_switch, optDef_handle); {Runs the optimization and assigns best fit coefficients to the stored coefficients, but only if there are spatial IDs that have failed the goodness of fit test}~
    IF (ag_stage1 AND i=1) THEN (der_spatial_id:=nonAg_id) ELSE Null;   {If stage 1 uses an aggregate element of the spatial ID, then select all of the non-aggregate spatial IDs before calculating R2}~
@@ -840,7 +838,7 @@ msgbox(failed_id);~
 (decis_in_opt:=@all_decis > 0);   {Select all decision variables again so that model can be manually forced to use decision variables by simply checking the box}
 NodeLocation: 384,64,1
 NodeSize: 64,40
-WindState: 2,950,0,1370,922
+WindState: 2,105,13,1370,845
 DisplayOutputs: Decision Dates_Incl_in_PV_Opt, Decision Opt_Settings_PV
 
 Function Set_Starting_Coeff(all_sectors, all_spatial_id, der_spatial_id: Index; aggreg_level; der_sectors, stored_decis, stored_status: Variable)

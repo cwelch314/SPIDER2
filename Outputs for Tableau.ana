@@ -57,7 +57,7 @@ Author: JamesMilford
 Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 736,792,1
 NodeSize: 64,40
-DiagState: 2,33,68,1758,654,17
+DiagState: 2,6,27,1524,567,17
 
 Variable Cumulative_Data_Plus
 Title: Cumulative Data Plus
@@ -259,7 +259,7 @@ NodeColor: 65535,1,1
 Alias Al1542873268
 Title: EV Adoption Forecasts
 Definition: 1
-NodeLocation: 112,560,1
+NodeLocation: 104,656,1
 NodeSize: 64,40
 NodeColor: 19661,48336,65535
 Original: EV_Adoption_Forecast
@@ -267,14 +267,14 @@ Original: EV_Adoption_Forecast
 Alias Al1542873284
 Title: Historic EV Adoption
 Definition: 1
-NodeLocation: 112,456,1
+NodeLocation: 104,352,1
 NodeSize: 64,40
 NodeColor: 19661,48336,65535
 Original: Historic_EV_Adoption
 
 Variable Interp_Sim_EV_Adopt
 Title: Interp Simulated EV Adoption
-Definition: LinearInterp(EV_Time_EOP_Map, EV_Adoption_Forecast[EV_Adopt_Data_Types=EV_Cumul_Data_Type], Equal_Prd_Output_Map, Time_Vehicles)
+Definition: LinearInterp(EV_Time_EOP_Map, Total_EV_Forecasts[EV_Adopt_Data_Types=EV_Cumul_Data_Type], Equal_Prd_Output_Map, Time_Vehicles)
 NodeLocation: 256,560,1
 NodeSize: 64,40
 WindState: 2,269,323,720,445
@@ -289,12 +289,13 @@ Variable Interp_Hist_EV_Adopt
 Title: Interp Historic EV Adoption
 Definition: IF EV_Spatial_ID = Aggregation_1_Label ~
 THEN IF Output_Periods_Plus <= VehStk_Year_EOP_Map[Vehicle_Stock_DataYr=Final_EV_Hist_Period]~
-   THEN LinearInterp(VehStk_Year_EOP_Map, Historic_EV_Adoption[EV_Adopt_Data_Types=EV_Cumul_Data_Type], Equal_Prd_Output_Map, Vehicle_Stock_DataYr)~
+   THEN LinearInterp(VehStk_Year_EOP_Map, Total_Historic_EVs[EV_Adopt_Data_Types=EV_Cumul_Data_Type], Equal_Prd_Output_Map, Vehicle_Stock_DataYr)~
    ELSE Null~
-ELSE Historic_EV_Adoption[EV_Adopt_Data_Types=EV_Cumul_Data_Type, Vehicle_Stock_DataYr=SubIndex(VehStk_Year_EOP_Map, Output_Periods_Plus, Vehicle_Stock_DataYr)]
+ELSE Total_Historic_EVs[EV_Adopt_Data_Types=EV_Cumul_Data_Type, Vehicle_Stock_DataYr=SubIndex(VehStk_Year_EOP_Map, Output_Periods_Plus, Vehicle_Stock_DataYr)]
 NodeLocation: 256,456,1
 NodeSize: 64,40
-ValueState: 2,30,15,1315,832,1,MIDM
+WindState: 2,98,82,1082,287
+ValueState: 2,73,14,1315,721,1,MIDM
 Aliases: Alias Al1542998771
 ReformVal: [Output_Periods_Plus,Null]
 Att_ResultSliceState: [EV_Sectors,1,EV_Cumul_Data_Type,2,EV_Spatial_ID,2,Output_Periods_Plus,1]
@@ -303,7 +304,7 @@ Att_ColorRole: Null
 Constant Final_EV_Hist_Period
 Title: Final EV Historic Period
 Description: Specify the final period of historic EV data.
-Definition: Choice(Vehicle_Stock_DataYr,16,0)
+Definition: Choice(Vehicle_Stock_DataYr,17,0)
 NodeLocation: 408,664,1
 NodeSize: 64,40
 ValueState: 2,152,154,1541,615,,MIDM
@@ -349,10 +350,10 @@ Definition: EV_Adoption_Data[EV_Adopt_Data_Types=Map_Seq_Outputs[All_DER_Types=E
 NodeLocation: 872,528,1
 NodeSize: 64,40
 WindState: 2,1300,82,1463,748
-ValueState: 2,102,22,1343,761,1,MIDM
+ValueState: 2,86,9,1343,761,1,MIDM
 ReformVal: [Output_Periods,Act_vs_Sim]
 Att__TotalsIndex: [Spatial_ID]
-Att_ResultSliceState: [Sequential_Outputs,3,All_Sectors,3,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
+Att_ResultSliceState: [Sequential_Outputs,4,All_Sectors,3,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
 
 Index Sequential_Outputs
 Title: Sequential Outputs
@@ -540,14 +541,14 @@ Definition: Selected_Sequential_[Output_DER_Types=Solar_PV_Label, Sequential_Out
 NodeLocation: 1184,440,1
 NodeSize: 64,40
 WindState: 2,102,82,1261,505
-ValueState: 2,534,96,859,592,1,MIDM
+ValueState: 2,518,69,859,592,1,MIDM
 Aliases: FormNode Fo1544456700, FormNode Fo1552937206
 GraphSetup: Att_GraphValueRange PV_Cumulative:1,,,,,0
 ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [Spatial_ID]
+Att__TotalsIndex: [Spatial_ID,PV_Sectors]
 Att_GraphTemplate: Lumidyne_Template
-Att_ResultSliceState: [Spatial_ID,0,PV_Sectors,2,Act_vs_Sim,2,Output_Periods,1]
+Att_ResultSliceState: [Spatial_ID,0,PV_Sectors,0,Act_vs_Sim,2,Output_Periods,1]
 
 Variable EV_Cumulative
 Title: EV Cumulative
@@ -557,7 +558,7 @@ Definition: Selected_Sequential_[Output_DER_Types=EV_Out_Label, Sequential_Outpu
 NodeLocation: 1184,536,1
 NodeSize: 64,40
 WindState: 2,893,-2,720,350
-ValueState: 2,638,38,894,715,1,MIDM
+ValueState: 2,349,2,894,715,1,MIDM
 Aliases: FormNode Fo1544977998, FormNode Fo1544456701
 GraphSetup: Att_GraphValueRange EV_Cumulative:1,,,,,1,5
 ReformVal: [Output_Periods,Act_vs_Sim]
@@ -600,7 +601,7 @@ NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Spatial_ID]
 Att_GraphValueRange: 1,,,,,,10
 Att_GraphTemplate: Lumidyne_Template
-Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,0,Vehicle_Range_Coeff,1,EV_Vehicles,1,Act_vs_Sim,1,Output_Periods,1]
+Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
 
 Decision Seq_Cumul_MW_Label
 Title: Seq Cumul MW Label
@@ -655,6 +656,22 @@ Title: Need to change this to have nulls before PV simulation start
 NodeLocation: 960,676,-1
 NodeSize: 128,52
 
+Variable Total_Historic_EVs
+Title: Total Historic EVs
+Description: The total historic EV adoption summed over EV types.
+Definition: Sum(Historic_EV_Adoption, EV_Vehicles)
+NodeLocation: 104,448,1
+NodeSize: 64,40
+WindState: 2,203,1,720,350
+ValueState: 2,212,136,788,570,,MIDM
+
+Variable Total_EV_Forecasts
+Title: Total EV Forecasts
+Description: The total forecasted EV adoption summed over EV types.
+Definition: Sum(EV_Adoption_Forecast, EV_Vehicles)
+NodeLocation: 104,560,1
+NodeSize: 64,40
+
 Close Sequential_Historic_
 
 Module Compare_Actual_vs_Si
@@ -663,7 +680,7 @@ Author: JamesMilford
 Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 736,888,1
 NodeSize: 64,40
-DiagState: 2,73,74,1599,722,17
+DiagState: 2,-24,4,1524,722,17
 
 Variable Cumulative_Data_Plu1
 Title: Cumulative Data Plus
@@ -3350,7 +3367,7 @@ Definition: EV_Adoption_Compare[EV_Adopt_Data_Types=Map_Compare_Output[All_DER_T
 NodeLocation: 728,552,1
 NodeSize: 64,40
 WindState: 2,1751,13,1463,748
-ValueState: 2,2395,33,1161,734,1,MIDM
+ValueState: 2,61,-11,1161,734,1,MIDM
 ReformVal: [Output_Periods,Act_vs_Sim]
 Att__TotalsIndex: [Spatial_ID]
 Att_ResultSliceState: [All_Sectors,3,Comparison_Outputs,2,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
@@ -3434,7 +3451,7 @@ NodeSize: 64,40
 ValueState: 2,1612,25,1474,742,,MIDM
 
 Index Comparison_Columns
-Att_PrevIndexValue: [Output_DER_Types,All_Sectors,Output_Periods,Act_vs_Sim,Spatial_ID,'Incremental Count (Calibration)','Cumulative Count (Calibration)','Incremental MW-AC (Calibration)','Cumulative MW-AC (Calibration)']
+Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Output_DER_Types,All_Sectors,Output_Periods,'Incremental Count (Calibration)','Cumulative Count (Calibration)','Incremental MW-AC (Calibration)','Cumulative MW-AC (Calibration)']
 Title: Comparison Columns
 Definition: CopyIndex(Flat_Comparison_Data.Col)
 NodeLocation: 1200,176,1
@@ -3451,7 +3468,7 @@ NodeSize: 64,40
 Decision Order_Compare_Cols
 Title: Order of Comparison Columns
 Description: Specify the order in which columns will appear in the output results for sequential (historic then simulated) results.
-Definition: Table(Comparison_Columns)(Choice(Comparison_Order_Num,2,0),Choice(Comparison_Order_Num,3,0),Choice(Comparison_Order_Num,5,0),Choice(Comparison_Order_Num,4,0),Choice(Comparison_Order_Num,1,0),Choice(Comparison_Order_Num,6,0),Choice(Comparison_Order_Num,7,0),Choice(Comparison_Order_Num,8,0),Choice(Comparison_Order_Num,9,0))
+Definition: Table(Comparison_Columns)(Choice(Comparison_Order_Num,1,0),Choice(Comparison_Order_Num,4,0),Choice(Comparison_Order_Num,2,0),Choice(Comparison_Order_Num,3,0),Choice(Comparison_Order_Num,5,0),Choice(Comparison_Order_Num,6,0),Choice(Comparison_Order_Num,7,0),Choice(Comparison_Order_Num,8,0),Choice(Comparison_Order_Num,9,0))
 NodeLocation: 1256,432,1
 NodeSize: 64,40
 DefnState: 2,3117,138,501,447,0,DFNM
@@ -3558,7 +3575,7 @@ Author: coryw
 Date: Fri, Nov 23, 2018 10:59 AM
 NodeLocation: 736,984,1
 NodeSize: 64,40
-DiagState: 2,0,37,1477,670,17
+DiagState: 2,42,-4,1477,670,17
 
 Constant Base_Period_Deltas
 Title: Base Period for Deltas
@@ -3589,7 +3606,7 @@ NodeLocation: 464,168,1
 NodeSize: 64,40
 ValueState: 2,1227,147,284,775,,MIDM
 Att_GraphIndexRange: 1,,,,,,10
-{!40300|Att_SlicerPopupSize: 227,1041}
+{!40300|Att_SlicerPopupSize: 232,785}
 
 Variable EV_Delta_Data
 Title: EV Delta Data
@@ -3687,11 +3704,11 @@ Definition: FOR J:=Output_DER_Types DO (~
 
 NodeLocation: 728,392,1
 NodeSize: 64,40
-ValueState: 2,357,52,1320,753,0,MIDM
+ValueState: 2,93,-16,1320,753,1,MIDM
 Aliases: Alias Al1543025086
 ReformVal: [Null,Spatial_ID]
 Att__TotalsIndex: [Spatial_ID,Installation_Type]
-Att_ResultSliceState: [All_Sectors,1,Output_DER_Types,1,Act_vs_Sim,2,Delta_Outputs,1,Installation_Type,0,Delta_Output_Periods,51,Spatial_ID,0]
+Att_ResultSliceState: [All_Sectors,3,Output_DER_Types,2,Act_vs_Sim,2,Delta_Outputs,1,Installation_Type,0,Delta_Output_Periods,1,Spatial_ID,0]
 
 Variable Flat_Delta_Data
 Title: Flat Delta Data
@@ -3701,7 +3718,7 @@ NodeSize: 64,40
 ValueState: 2,2085,28,1474,742,,MIDM
 
 Index Delta_Columns
-Att_PrevIndexValue: [Delta_Output_Periods,Output_DER_Types,All_Sectors,Installation_Type,Act_vs_Sim,Spatial_ID,'Cumulative MW-AC (Delta)']
+Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Delta_Output_Periods,Output_DER_Types,All_Sectors,Installation_Type,'Cumulative MW-AC (Delta)']
 Title: Delta Columns
 Definition: CopyIndex(Flat_Delta_Data.Col)
 NodeLocation: 896,256,1
@@ -3718,7 +3735,7 @@ NodeSize: 64,40
 Decision Order_of_Delta_Colum
 Title: Order of Delta Columns
 Description: Specify the order in which columns will appear in the output results for sequential (historic then simulated) results.
-Definition: Table(Delta_Columns)(Choice(Delta_Order_Number,3,0),Choice(Delta_Order_Number,4,0),Choice(Delta_Order_Number,5,0),Choice(Delta_Order_Number,6,0),Choice(Delta_Order_Number,2,0),Choice(Delta_Order_Number,1,0),Choice(Delta_Order_Number,7,0))
+Definition: Table(Delta_Columns)(Choice(Delta_Order_Number,1,0),Choice(Delta_Order_Number,2,0),Choice(Delta_Order_Number,3,0),Choice(Delta_Order_Number,4,0),Choice(Delta_Order_Number,5,0),Choice(Delta_Order_Number,6,0),Choice(Delta_Order_Number,7,0))
 NodeLocation: 952,488,1
 NodeSize: 64,40
 DefnState: 2,581,20,606,410,0,DFNM
@@ -3733,7 +3750,7 @@ Definition: INDEX orderedCols:=CopyIndex(SubIndex(Order_of_Delta_Colum, @Delta_C
 Flat_Delta_Data[.Row=Delta_Row_Num, .Col=orderedCols, @orderedCols=@Delta_Text_Cols]
 NodeLocation: 1024,392,1
 NodeSize: 64,40
-ValueState: 2,208,69,1367,845,0,MIDM
+ValueState: 2,77,11,1367,845,0,MIDM
 ReformVal: [Delta_Text_Cols,Delta_Row_Num]
 
 Index Delta_Text_Cols
