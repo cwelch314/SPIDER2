@@ -7297,6 +7297,19 @@ NodeLocation: 560,96,1
 NodeSize: 64,40
 Original: Mthly_Simple_Payback
 
+Variable Simple_Payback_Time1
+Title: Simple Payback Time
+Units: years
+Description: The simple payback time interpolated to the monthly level.
+Definition: VAR numerator:=Tot_Price_Aft_Incent - Monthly_Fees;~
+IF (numerator < 0) AND (FirstYr_BillSav_Time > 0)~
+THEN 0~
+ELSE IF (numerator > 0) AND (FirstYr_BillSav_Time < 0)~
+THEN INF~
+ELSE Divide(Tot_Price_Aft_Incent - Monthly_Fees, FirstYr_BillSav_Time, False)
+NodeLocation: 816,200,1
+NodeSize: 64,40
+
 Close Annual_Cost_of_Syste
 
 Close System_Economics
@@ -17547,12 +17560,12 @@ NodeLocation: 672,152,1
 NodeSize: 64,40
 
 Index Battery_Specs
+Att_PrevIndexValue: ['Energy (kWh/unit)','Power (kW/unit)','Roundtrip Efficiency (%)']
 Title: Battery Specs
 Definition: ['Energy (kWh/unit)','Power (kW/unit)','Roundtrip Efficiency (%)']
 NodeLocation: 816,64,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 227,70}
-Att_PrevIndexValue: ['Energy (kWh/unit)','Power (kW/unit)','Roundtrip Efficiency (%)']
 
 Decision Energy_kWh_Label
 Title: Energy kWh Label
