@@ -1,5 +1,5 @@
 { Analytica Model Main_Interface, encoding="UTF-8" }
-SoftwareVersion 5.2.8
+SoftwareVersion 5.2.9
 
 
 { System Variables with non-default values: }
@@ -89,12 +89,12 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,0,7,1524,780,17
+DiagState: 2,49,10,1805,751,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
 FontStyle: Arial Narrow,19
-FileInfo: 0,Model Main_Interface,2,2,0,0,C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Documents\SDGE_2019_SPIDER\SPIDER for SDGE.ana
+FileInfo: 0,Model Main_Interface,2,2,0,0,C:\Users\coryw\OneDrive - Lumidyne Consulting LLC\Repos\SDGE_2019_SPIDER\SPIDER Model.ana
 {!40400|CloudPlayerStyles: FrameNode:GUI_Frame~
 Show_As_Tab:Yes~
 Use_flash_buttons:no~
@@ -133,7 +133,7 @@ Date: Mon, Aug 18, 2014 9:09 PM
 NodeLocation: 864,80,7
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-DiagState: 2,11,6,1524,809,17
+DiagState: 2,11,6,1524,780,17
 WindState: 2,102,82,476,224
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
@@ -2988,7 +2988,7 @@ Close ACP_Minimum_Resoluti
 Decision ACP_Minimum_Resolut1
 Title: Minimum Resolution
 Description: Select the minimum resolution the ACP diagram will be viewed in. This will resize your top-level diagram window to the appropriate size. Custom allows you to manually size the window to whatever dimensions you desire.
-Definition: Choice(ACP_Resolution_Choic,1,0)
+Definition: Choice(ACP_Resolution_Choic,8,0)
 NodeLocation: 288,368,1
 NodeSize: 68,16
 WindState: 2,416,202,662,479
@@ -5731,12 +5731,12 @@ Aliases: FormNode Fo1552872208
 MetaOnly: 1
 
 Index Output_Titles
-Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 Title: Output Titles
 Definition: Create_Titles_List(Output_Ident)~
 
 NodeLocation: 160,184,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 
 Decision Select_Output
 Title: Select Output
@@ -5915,7 +5915,7 @@ Att_PrevIndexValue: ['EV Cumulative (MW-AC)','Cumulative EV Delta (MW-AC)','Cumu
 Decision EV_Impact
 Title: EV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(EV_Impact_Titles,3,0)
+Definition: Choice(EV_Impact_Titles,4,0)
 NodeLocation: 608,680,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -5951,10 +5951,11 @@ OnClick: Show_ACP_Window(PV_Econ_Out1,PV_Econ_Titles1,PV_Economics, 'Result')
 
 Index PV_Econ_Out1
 Title: PV Econ Out
-Definition: [Pre_and_Post_Custome,FirstYr_Bill_Compar1,CostOf_Elect_Compare,Cost_of_Elect_Ratio,Simple_Payback_Time1,Installed_Price]
+Definition: [Pre_and_Post_Custom1,FirstYr_Bill_Compar1,CostOf_Elect_Compare,Cost_of_Elect_Ratio,Simple_Payback_Time1,Installed_Price]
 NodeLocation: 296,912,1
 NodeSize: 64,40
 WindState: 2,98,82,720,350
+ValueState: 2,52,58,416,303,,MIDM
 Aliases: FormNode Fo1552872215
 MetaOnly: 1
 
@@ -5964,7 +5965,7 @@ Definition: Create_Titles_List(PV_Econ_Out1)~
 
 NodeLocation: 160,912,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Cost of Electricity Ratio (post/pre ratio)','Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
+Att_PrevIndexValue: ['Pre and Post Customer Load','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Cost of Electricity Ratio (post/pre ratio)','Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
 
 Decision PV_Economics
 Title: PV Economics
@@ -6247,7 +6248,7 @@ Original: Storag_Input_Button
 Decision Storage_Input
 Title: Storage Input
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Input_Titles,4,0)
+Definition: Choice(Storage_Input_Titles,14,0)
 NodeLocation: 1296,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -6339,6 +6340,7 @@ Title: Storage Dispatch Out
 Definition: [Dispatch_Flows,Rates_for_Dispatch,Battery_Charge_Disp,Pct_Stored_PV_Elect]
 NodeLocation: 296,1152,1
 NodeSize: 64,40
+WindState: 2,98,82,720,518
 Aliases: FormNode Fo1552872982
 MetaOnly: 1
 
@@ -6571,20 +6573,6 @@ Graph_KeyTitleFont:,20,1~
 Graph_KeyFont:,18,1~
 Graph_AxisTitleFont:Arial,20,1
 
-Button Download_Summary
-Title: Download Summary
-Description: Press this button to download a user-friendly Excel file showing key model output with graphics & pivot tables.~
-~
-NOTE: You must first hit the "Write to Excel" button to ensure that you are downloading the latest set of output that is consistent with your current model input settings.
-NodeLocation: 77,362,1
-NodeSize: 48,32
-NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
-WindState: 2,102,82,1188,508
-NodeColor: 65535,65535,65535
-NodeFont: Arial,16
-{!40400|CloudPlayerStyles: download_spreadsheet: DER_Forecast_Results.xlsx}
-{!40204-40399|AWP_Attrib:download_spreadsheet: DER_Forecast_Results.xlsx}
-
 Button Export_to_Tableau2
 Title: Export to Tableau
 Description: Press this button to write key output to two different Excel files - one used for Tableau data viewing, and the other more user-friendly file that is used as an Excel viewer of the key output data.~
@@ -6633,8 +6621,8 @@ NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 NodeColor: 12593,41891,0
 
 Text GUI_Frame
-NodeLocation: 1240,392,-24
-NodeSize: 464,384
+NodeLocation: 1244,380,-24
+NodeSize: 460,372
 NodeInfo: 1,0,0,0,0,1,1,,0,,0,,,
 WindState: 2,102,83,476,224
 NodeFont: Arial,24
@@ -6656,19 +6644,6 @@ NodeLocation: 468,600,-25
 NodeSize: 228,24
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
 NodeFont: Arial Narrow,16
-
-Button Write_to_Excel1
-Title: Write to Excel
-Description: Press this button to download a user-friendly Excel file showing key model output with graphics & pivot tables.~
-~
-NOTE: You must first hit the "Write to Excel" button to ensure that you are downloading the latest set of output that is consistent with your current model input settings.
-NodeLocation: 77,286,1
-NodeSize: 48,32
-NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
-WindState: 2,102,82,1188,508
-NodeColor: 65535,65535,65535
-NodeFont: Arial,16
-OnClick: Write_to_Excel
 
 FormNode Fo1552852282
 Title: Select Output
@@ -6783,36 +6758,6 @@ NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
 NodeFont: Arial,16
 Original: Inputs_only_for_view
 
-Button Get_Data__Template
-Title: Get Data  Template
-Description: Press this button to download a user-friendly Excel file showing key model output with graphics & pivot tables.~
-~
-NOTE: You must first hit the "Write to Excel" button to ensure that you are downloading the latest set of output that is consistent with your current model input settings.
-NodeLocation: 77,438,1
-NodeSize: 48,32
-NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
-WindState: 2,102,82,1188,508
-NodeColor: 65535,65535,65535
-NodeFont: Arial,16
-{!40400|CloudPlayerStyles: download_spreadsheet: DER_Forecast_Results.xlsx}
-{!40204-40399|AWP_Attrib:download_spreadsheet: DER_Forecast_Results.xlsx}
-
-Button Upload_Data_Template
-Title: Upload Data Template
-Description: Press this button to download a user-friendly Excel file showing key model output with graphics & pivot tables.~
-~
-NOTE: You must first hit the "Write to Excel" button to ensure that you are downloading the latest set of output that is consistent with your current model input settings.
-NodeLocation: 77,516,1
-NodeSize: 48,32
-NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
-WindState: 2,102,82,1188,508
-NodeColor: 65535,65535,65535
-NodeFont: Arial,16
-{!40400|CloudPlayerStyles: upload_spreadsheet~
-Upload_filename_variable: Path_to_Global_Data}
-{!40204-40399|AWP_Attrib:upload_spreadsheet~
-Upload_filename_variable: Path_to_Global_Data}
-
 FormNode Fo1552868509
 Title: PV Scenario Selector
 Definition: 0
@@ -6836,7 +6781,7 @@ Date: Mon, Mar 18, 2019 12:52 PM
 NodeLocation: 1032,496,1
 NodeSize: 72,56
 NodeInfo: 1,1,1,1,1,1,1,,0,,0,,,
-DiagState: 2,1861,0,1905,810,17
+DiagState: 2,1861,0,1524,780,17
 NodeColor: 65535,65535,65535
 NodeFont: Arial,16
 {!40400|CloudPlayerStyles: Show_Object:no}
@@ -7232,13 +7177,6 @@ NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 NodeColor: 12593,41891,0
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
-
-FormNode Fo1552937206
-Title: PV Cumulative
-Definition: 1
-NodeLocation: 176,984,1
-NodeSize: 152,16
-Original: PV_Cumulative
 
 Close Main_Interface
 
