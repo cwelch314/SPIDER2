@@ -1,5 +1,5 @@
 { Analytica Model Main_Interface, encoding="UTF-8" }
-SoftwareVersion 5.2.9
+SoftwareVersion 5.2.8
 
 
 { System Variables with non-default values: }
@@ -89,12 +89,12 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,49,10,1805,751,17
+DiagState: 2,19,0,1524,751,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
 FontStyle: Arial Narrow,19
-FileInfo: 0,Model Main_Interface,2,2,0,0,C:\Users\coryw\OneDrive - Lumidyne Consulting LLC\Repos\SDGE_2019_SPIDER\SPIDER Model.ana
+FileInfo: 0,Model Main_Interface,2,2,0,0,C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Documents\SDGE_2019_SPIDER\SPIDER Model.ana
 {!40400|CloudPlayerStyles: FrameNode:GUI_Frame~
 Show_As_Tab:Yes~
 Use_flash_buttons:no~
@@ -133,7 +133,7 @@ Date: Mon, Aug 18, 2014 9:09 PM
 NodeLocation: 864,80,7
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-DiagState: 2,11,6,1524,780,17
+DiagState: 2,-46,36,1524,780,17
 WindState: 2,102,82,476,224
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
@@ -1442,13 +1442,13 @@ NodeSize: 88,32
 DiagState: 2,419,90,941,526,19
 
 Index ACP_Navigation_styl1
+Att_PrevIndexValue: ['Outline','Top diagram only','Top tabs','Side tabs','Two top tabs','Two side tabs']
 Title: Navigation styles
 Definition: CopyIndex(ACP_All_nav_styles)
 NodeLocation: 304,200,1
 NodeSize: 48,24
 WindState: 2,777,123,476,401
 ValueState: 2,240,251,416,303,0,MIDM
-Att_PrevIndexValue: ['Outline','Top diagram only','Top tabs','Side tabs','Two top tabs','Two side tabs']
 
 Module ACP_Diagram_preview_
 Title: Diagram preview functions
@@ -2883,6 +2883,7 @@ NodeLocation: 56,32,1
 NodeSize: 48,24
 
 Index ACP_Resolution_Choic
+Att_PrevIndexValue: ['1920 x 1080','1600 x 900','1366 x 768','1280 x 1024','1280 x 800','1024 x 768','2400 x 1200','Custom']
 Title: Resolution Choices
 Units: pixels
 Description: List of preset screen resolutions including 'Custom' for minimum ACP diagram size
@@ -2890,7 +2891,6 @@ Definition: Concat(ACP_Screen_Resolutio,['Custom'])
 NodeLocation: 184,32,1
 NodeSize: 48,24
 WindState: 2,506,359,476,363
-Att_PrevIndexValue: ['1920 x 1080','1600 x 900','1366 x 768','1280 x 1024','1280 x 800','1024 x 768','2400 x 1200','Custom']
 
 Function ACP_Set_Diag_Size(m : object ; w, h: scalar)
 Title: Set_Diag_Size(m, w, h)
@@ -5717,7 +5717,7 @@ Date: Sun, Dec 16, 2018 8:10 AM
 NodeLocation: 112,392,1
 NodeSize: 80,56
 NodeInfo: 1,1,1,1,1,1,1,,0,,0,,,
-DiagState: 2,12,25,1748,723,17
+DiagState: 2,12,25,1524,548,17
 NodeFont: Arial Narrow,19
 {!40400|CloudPlayerStyles: Show_object: no}
 {!40204-40399|AWP_Attrib:Show_object: no}
@@ -5898,7 +5898,7 @@ OnClick: Show_ACP_Window(EV_Impact_Out,EV_Impact_Titles,EV_Impact, 'Result')
 
 Index EV_Impact_Out
 Title: EV Impact Out
-Definition: [EV_Cumulative,Cumulative_EV_Delta,Cumulative_EV_Stock,Simulated_EV_Stock,Vehicle_Stock_Share_,Pct_New_Veh_Sales,Aggreg_New_Veh_Sales]
+Definition: [EV_Cumulative,Cumulative_EV_Delta,Cumulative_EV_Stock,Vehicle_Stock_Share_,Pct_New_Veh_Sales,Aggreg_New_Veh_Sales]
 NodeLocation: 296,672,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552872202
@@ -5910,12 +5910,12 @@ Definition: Create_Titles_List(EV_Impact_Out)~
 
 NodeLocation: 160,672,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['EV Cumulative (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Simulated EV Stock (Vehicles.)','Vehicle Stock Share - Aggregated (fraction)','% of New Veh Sales (fraction)','Aggreg New Vehicle Sales (vehicles/year)']
+Att_PrevIndexValue: ['EV Cumulative (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Vehicle Stock Share - Aggregated (fraction)','% of New Veh Sales (fraction)','Aggreg New Vehicle Sales (vehicles/year)']
 
 Decision EV_Impact
 Title: EV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(EV_Impact_Titles,4,0)
+Definition: Choice(EV_Impact_Titles,6,0)
 NodeLocation: 608,680,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -6428,12 +6428,12 @@ NodeFont: Arial,16
 OnClick: Show_ACP_Window(Storage_Econ_Out,Storage_Econ_Titles,Storage_Economics, 'Result')
 
 Index Storage_Econ_Titles
+Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
 Title: Storage Econ Titles
 Definition: Create_Titles_List(Storage_Econ_Out)~
 
 NodeLocation: 160,1392,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
 
 Text Te1552873476
 Title: Storage Economic Output

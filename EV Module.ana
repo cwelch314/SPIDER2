@@ -111,7 +111,6 @@ WindState: 2,53,232,720,350
 {!40200|Att_ChoiceIndexes: Index Vehicle_Types}
 
 Index Vehicle_Types
-Att_PrevIndexValue: ['Electric (BEV or PHEV)','Non-Electric']
 Title: Vehicle Types
 Description: The different vehicle classifications to be modeled for marketshare and stock tracking calculations.
 Definition: ['Electric (BEV or PHEV)','Non-Electric']
@@ -120,6 +119,7 @@ NodeSize: 64,40
 WindState: 2,250,69,942,595
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 272,28}
+Att_PrevIndexValue: ['Electric (BEV or PHEV)','Non-Electric']
 
 Index Vehicle_Vintage
 Title: Vehicle Vintage
@@ -18198,6 +18198,8 @@ Description: Rate of sales of new vehicles.
 Definition: Aggregate(New_Vehicle_Sales, Vehicle_Type_Map[All_Vehicle_Techs=Vehicle_Techs], Vehicle_Techs, Vehicle_Types)
 NodeLocation: 616,56,1
 NodeSize: 64,40
+ValueState: 2,170,47,1101,619,,MIDM
+ReformVal: [Time_Vehicles,Vehicle_Types]
 
 Close EV_Misc
 
@@ -23625,7 +23627,7 @@ Description: Total Simulated EV Stock, summed across all vehicle vintages.
 Definition: sum(Vehicle_Stock_EOP[Vehicle_Techs=EV_Vehicles], Vehicle_Vintage)
 NodeLocation: 88,176,1
 NodeSize: 64,40
-ValueState: 2,322,34,965,711,1,MIDM
+ValueState: 2,315,8,965,711,1,MIDM
 Aliases: Alias Al1533741055, Alias Al1535751578, Alias Al1542844479, FormNode Fo1544977996
 GraphSetup: Graph_LineThickness:5~
 Att_ContLineStyle Graph_Primary_Valdim:1
@@ -24031,6 +24033,21 @@ NodeLocation: 764,512,1
 NodeSize: 36,16
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Use_Trace_Log_EV
+
+Variable Agg_Sim_EV_Stock
+Title: Aggreg Simulated EV Stock
+Units: vehicles
+Description: Total Simulated EV Stock, summed across all vehicle vintages.
+Definition: Sum(Simulated_EV_Stock, EV_Vehicles)
+NodeLocation: 88,272,1
+NodeSize: 64,40
+ValueState: 2,315,8,965,711,1,MIDM
+GraphSetup: Graph_LineThickness:5~
+Att_ContLineStyle Graph_Primary_Valdim:1
+ReformVal: [Time_Vehicles,EV_Vehicles]
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
+Att__TotalsIndex: [EV_Spatial_ID]
+Att_ResultSliceState: [EV_Sectors,1,EV_Spatial_ID,0,EV_Vehicles,1,Time_Vehicles,2]
 
 Close EV_Objective
 

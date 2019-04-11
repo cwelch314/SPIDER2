@@ -17256,7 +17256,6 @@ NodeColor: 57311,57311,57311
 {!40204-40399|AWP_Attrib:Show_Object:no}
 
 Index PV_Sectors
-Att_PrevIndexValue: ['Residential','NonResidential']
 Title: PV Sectors
 Description: The sectors selected for the PV analysis.
 Definition: MultiChoice(All_Sectors,1,2,returnList:1)
@@ -17269,6 +17268,7 @@ DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Funct
 {!40200|Att_ChoiceIndexes: Index All_Sectors}
 {!40300|Att_SlicerPopupSize: 395,83}
 {!40600|Att_ColorSequence: [0xff319500,Null,0xff31a300]}
+Att_PrevIndexValue: ['Residential','NonResidential']
 
 FormNode Fo1539140368
 Title: PV Sectors
