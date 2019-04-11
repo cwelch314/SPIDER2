@@ -1,5 +1,5 @@
 { Analytica Model Electric_Vehicles, encoding="UTF-8" }
-SoftwareVersion 5.2.8
+SoftwareVersion 5.2.9
 
 {!-40203|Attribute CloudPlayerStyles}
 Attribute UnoptimizedDef
@@ -19054,13 +19054,13 @@ NodeSize: 64,40
 Original: Simul_EV_Stock_Chg
 
 Index EV_Adopt_Data_Types
-Att_PrevIndexValue: ['Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 Title: EV Adoption Data Types
 Definition: ['Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 NodeLocation: 72,504,1
 NodeSize: 64,40
 WindState: 2,1475,82,720,350
 {!40300|Att_SlicerPopupSize: 227,84}
+Att_PrevIndexValue: ['Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 
 Text Te1542844956
 Title: If the EV simulation period starts after the first historic data year, this will need to be updated to properly initialize the capacity stocks
@@ -19140,11 +19140,11 @@ NodeSize: 64,40
 ValueState: 2,169,98,1049,737,,MIDM
 
 Index EV_Adopt_Types_None
-Att_PrevIndexValue: ['None','Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 Title: EV Adopt Data Types with None
 Definition: Concat(None_Label, EV_Adopt_Data_Types)
 NodeLocation: 344,504,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['None','Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 
 Text EVAdoption1544921592
 NodeLocation: 1088,300,-1
@@ -19183,12 +19183,12 @@ Show_description:20}
 Show_description:20}
 
 Index EV_Mkt_Share_Scen
+Att_PrevIndexValue: ['Low','Medium','High']
 Title: EV Mkt Share Scenario
 Definition: ['Low','Medium','High']
 NodeLocation: 432,520,1
 NodeSize: 64,40
 Aliases: FormNode Fo1545336351
-Att_PrevIndexValue: ['Low','Medium','High']
 
 Constant EV_Mkt_Share_Mult
 Title: EV Mkt Share Multiplier
@@ -22187,11 +22187,11 @@ NodeSize: 64,40
 ValueState: 2,995,312,416,303,,MIDM
 
 Index EV_Calibration_Stage
+Att_PrevIndexValue: [1,2,3,4,5,6]
 Title: EV Calibration Stage
 Definition: 1..Max_EV_Calib_Stages
 NodeLocation: 664,176,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6]
 
 Constant EV_Decisions_by_Stg
 Title: EV Decision Variables by Stage
@@ -23461,11 +23461,10 @@ ValueState: 2,322,34,965,711,1,MIDM
 Aliases: Alias Al1533741055, Alias Al1535751578, Alias Al1542844479, FormNode Fo1544977996
 GraphSetup: Graph_LineThickness:5~
 Att_ContLineStyle Graph_Primary_Valdim:1
-ReformVal: [Time_Vehicles,Null]
+ReformVal: [Time_Vehicles,EV_Vehicles]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [EV_Spatial_ID]
-Att_ResultSliceState: [EV_Sectors,1,EV_Spatial_ID,0,Time_Vehicles,2]
-Att_ColorRole: Null
+Att_ResultSliceState: [EV_Sectors,1,EV_Spatial_ID,0,EV_Vehicles,1,Time_Vehicles,2]
 
 Variable Delta_EV_Stock
 Title: Delta EV Stock
