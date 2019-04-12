@@ -89,7 +89,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,19,0,1524,751,17
+DiagState: 2,41,9,1266,679,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
@@ -5731,12 +5731,12 @@ Aliases: FormNode Fo1552872208
 MetaOnly: 1
 
 Index Output_Titles
+Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 Title: Output Titles
 Definition: Create_Titles_List(Output_Ident)~
 
 NodeLocation: 160,184,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 
 Decision Select_Output
 Title: Select Output
@@ -5856,23 +5856,25 @@ NodeSize: 336,112
 NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
 
 Index EV_Scenario_Variable
-Att_PrevIndexValue: ['EV Market Share','EV Word of Mouth','EV Ad Effectiveness']
 Title: EV Scenario Variables
-Definition: ['EV Market Share','EV Word of Mouth','EV Ad Effectiveness']
+Definition: ['EV Vehicle Price','EV Incentives','EV Vehicle Range','Gasoline Price','Electricity Price']
+IndexVals: ['item 1']
 NodeLocation: 1112,176,1
 NodeSize: 64,40
+WindState: 2,4,33,720,350
 Aliases: FormNode Fo1552873760
+Att_PrevIndexValue: ['EV Vehicle Price','EV Incentives','EV Vehicle Range','Gasoline Price','Electricity Price']
 
 Variable EV_Scenario_Selector
 Title: EV Scenario Selector
 Description: Select which scenario you wish to run for each scenario variable. ~
 ~
 CAUTION: Selecting "All" for more than one scenario variable may result in exceeding server memory, resulting in an error.
-Definition: MultiTable(EV_Scenario_Variable)(EV_Mkt_Share_Scenar1,EV_WOM_Scenario,EV_AdEff_Scen)
+Definition: MultiTable(EV_Scenario_Variable)(Sel_Veh_Price_Scen,Sel_EV_Incent_Scen,Sel_Veh_Range_Scen,Sel_Gasol_Price_Scen,Sel_ElectPrice_Scen)
 NodeLocation: 1112,72,1
 NodeSize: 64,40
-WindState: 2,2073,115,720,350
-DefnState: 2,663,189,514,243,0,DFNM
+WindState: 2,21,318,958,453
+DefnState: 2,530,160,514,243,0,DFNM
 Aliases: FormNode Fo1552855792
 {!50000|Att_ColumnWidths: [215]}
 
@@ -5898,7 +5900,7 @@ OnClick: Show_ACP_Window(EV_Impact_Out,EV_Impact_Titles,EV_Impact, 'Result')
 
 Index EV_Impact_Out
 Title: EV Impact Out
-Definition: [EV_Cumulative,Cumulative_EV_Delta,Cumulative_EV_Stock,Vehicle_Stock_Share_,Pct_New_Veh_Sales,Aggreg_New_Veh_Sales]
+Definition: [EV_Cumulative,Cumulative_EV_Delta,Cumulative_EV_Stock,Vehicle_Stock_Share_,Aggreg_New_Veh_Sales,Pct_New_Veh_Sales,Logit_Response]
 NodeLocation: 296,672,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552872202
@@ -5910,12 +5912,12 @@ Definition: Create_Titles_List(EV_Impact_Out)~
 
 NodeLocation: 160,672,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['EV Cumulative (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Vehicle Stock Share - Aggregated (fraction)','% of New Veh Sales (fraction)','Aggreg New Vehicle Sales (vehicles/year)']
+Att_PrevIndexValue: ['EV Cumulative (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Vehicle Stock Share - Aggregated (fraction)','Aggreg New Vehicle Sales (vehicles/year)','% of New Veh Sales (fraction)','Logit Response']
 
 Decision EV_Impact
 Title: EV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(EV_Impact_Titles,6,0)
+Definition: Choice(EV_Impact_Titles,7,0)
 NodeLocation: 608,680,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -6107,7 +6109,7 @@ Original: EV_Input
 Decision EV_Input
 Title: EV Input
 Description: Choose which variable you wish to view.
-Definition: Choice(EV_Input_Titles,1,0)
+Definition: Choice(EV_Input_Titles,4,0)
 NodeLocation: 1296,680,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -6117,9 +6119,10 @@ OnChange: EV_Input_Button1
 
 Index EV_Input1
 Title: EV Input
-Definition: [Vehicle_Stock_Data,Vehicle_Average_Life,Num_Vehicle_Vintages,Impact_per_EV]
+Definition: [Vehicle_Stock_Data,Vehicle_Price,VehPrice_Adj_byScen,Vehicle_Incents,Vehicle_Range,VehRange_Adj_byScen,VMT,MPG,Fuel_Mix,Fuel_Prices,Elec_PriceAdj_byScen,Gas_Price_Adj_byScen,Vehicle_Maint_Cost,Impact_per_EV,Vehicle_Average_Life,Num_Vehicle_Vintages]
 NodeLocation: 984,672,1
 NodeSize: 64,40
+WindState: 2,-4,-3,720,350
 Aliases: FormNode Fo1552872198
 MetaOnly: 1
 
@@ -6141,7 +6144,7 @@ Definition: Create_Titles_List(EV_Input1)~
 
 NodeLocation: 848,672,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Vehicle Stock Data (vehicles)','Vehicle Average Lifetime (Years)','Num Vehicle Vintages (dmnl)','Impact per EV (kW/vehicle)']
+Att_PrevIndexValue: ['Vehicle Stock Data (vehicles)','Vehicle Price ($/vehicle)','Vehicle Price Adjustment by Scenario (fraction)','Vehicle Incentives ($/vehicle)','Vehicle Range (miles/refueling)','Vehicle Range Adjustment by Scenario (fraction)','VMT (miles/year-vehicle)','MPG (miles/GGE)','Fuel Mix (fraction)','Fuel Prices ($/GGE)','Electricity Price Adjustment by Scenario (fraction)','Gasoline Price Adjustment by Scenario (fraction)','Vehicle Maintenance Cost ($/year-vehicle)','Impact per EV (kW/vehicle)','Vehicle Average Lifetime (Years)','Num Vehicle Vintages (dmnl)']
 
 Text Te1552872113
 Title: EV Input

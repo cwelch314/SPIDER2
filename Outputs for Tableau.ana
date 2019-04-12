@@ -560,7 +560,7 @@ NodeSize: 64,40
 WindState: 2,893,-2,720,350
 ValueState: 2,349,2,894,715,1,MIDM
 Aliases: FormNode Fo1544977998, FormNode Fo1544456701
-GraphSetup: Att_GraphValueRange EV_Cumulative:1,,,,,1,5
+GraphSetup: Att_GraphValueRange EV_Cumulative:1,,,,,0,5
 ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,1,1,0,4,1,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Act_vs_Sim,Spatial_ID]
@@ -3646,7 +3646,6 @@ Att__TotalsIndex: [Spatial_ID]
 Att_ResultSliceState: [All_Sectors,3,Delta_Outputs,4,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
 
 Index Delta_Outputs
-Att_PrevIndexValue: ['Cumulative MW-AC (Delta)']
 Title: Delta Outputs
 Definition: ['Cumulative MW-AC (Delta)']
 IndexVals: ['item 1']
@@ -3655,6 +3654,7 @@ NodeSize: 64,40
 WindState: 2,286,501,720,350
 Aliases: FormNode New1543539730
 {!40300|Att_SlicerPopupSize: 237,56}
+Att_PrevIndexValue: ['Cumulative MW-AC (Delta)']
 
 Decision Map_Delta_Outputs
 Title: Map Delta Outputs
@@ -3814,18 +3814,18 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Default_Delta_Map
 
 Index PV_CumulDataTyp_None
-Att_PrevIndexValue: ['None','Cumulative System Count','Cumulative Nameplate CEC-MW-AC','Cumulative Coincident Peak Avg MW-AC','Cumulative Nameplate MW-DC','Cumulative Non-Coincident Peak MW-AC']
 Title: PV Cumul Data Types with None
 Definition: Concat(None_Label, PV_Cumul_Data_Type)
 NodeLocation: 464,56,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['None','Cumulative System Count','Cumulative Nameplate CEC-MW-AC','Cumulative Coincident Peak Avg MW-AC','Cumulative Nameplate MW-DC','Cumulative Non-Coincident Peak MW-AC']
 
 Index EV_CumulDataTyp_None
-Att_PrevIndexValue: ['None','Cumulative Vehicle Count','Cumulative MW-AC']
 Title: EV Cumul Data Types with None
 Definition: Concat(None_Label, EV_Cumul_Data_Type)
 NodeLocation: 608,56,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['None','Cumulative Vehicle Count','Cumulative MW-AC']
 
 Module Old_Deltas_from_Base
 Title: Old Deltas from Base Period
@@ -4140,9 +4140,9 @@ Definition: Selected_Delta_Data[Act_vs_Sim=Simulated_Label, Output_DER_Types=EV_
 NodeLocation: 728,592,1
 NodeSize: 64,40
 WindState: 2,789,352,720,350
-ValueState: 2,629,92,1201,755,1,MIDM
+ValueState: 2,334,-7,1201,755,1,MIDM
 Aliases: FormNode Fo1544977999, FormNode Fo1544918308
-GraphSetup: Att_GraphValueRange Cumulative_EV_Delta:1,,,,,1,10
+GraphSetup: Att_GraphValueRange Cumulative_EV_Delta:1,,,,,0,10
 ReformVal: [Delta_Output_Periods,Null]
 NumberFormat: 2,F,4,1,1,0,4,1,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Spatial_ID]
@@ -5519,12 +5519,12 @@ ReformDef: [Export_Parameter,Export_Dataset_Num]
 TableCellDefault: Default_ExportConfig
 
 Index Output_Data_Type
+Att_PrevIndexValue: ['CSV Tableau','Excel Deliverable','Excel Tableau']
 Title: Output Data Type
 Description: A list of the types of data that can be output, for use in export scripts
 Definition: ['CSV Tableau','Excel Deliverable','Excel Tableau']
 NodeLocation: 1480,1096,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['CSV Tableau','Excel Deliverable','Excel Tableau']
 
 Decision Select_Data_Export_T
 Title: Select Data Export Type
