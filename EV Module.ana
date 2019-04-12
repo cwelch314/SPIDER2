@@ -17708,13 +17708,13 @@ NodeSize: 64,40
 TableCellDefault: Checkbox(0)
 
 Index EV_Vehicles
-Att_PrevIndexValue: ['PHEV','BEV']
 Title: EV Vehicles
 Definition: Subset(Select_EV_Techs[All_Vehicle_Techs=Vehicle_Techs])
 NodeLocation: 608,72,1
 NodeSize: 64,40
 WindState: 2,98,82,1092,496
 {!40300|Att_SlicerPopupSize: 247,64}
+Att_PrevIndexValue: ['PHEV','BEV']
 
 Close EV_Stock_Initializat
 
@@ -21040,7 +21040,7 @@ Definition: VAR cost:=Vehicle_Payment_NPV1 + Fuel_Cost_NPV1 + Maint_Cost_NPV1;~
 ~
 IF Vehicle_Techs = Baseline_Veh_Tech~
 THEN cost[All_Vehicle_Techs=Baseline_Veh_Tech, Vehicle_Input_Years=Vehicle_Sensit_Yr]~
-ELSE Cost_NPV_Scale
+ELSE NPV_of_EV_Costs
 NodeLocation: 280,168,1
 NodeSize: 64,40
 WindState: 2,98,82,1062,593
@@ -21321,7 +21321,7 @@ Variable Miles_of_Range1
 Title: Miles of Range
 Definition: IF Vehicle_Techs = Baseline_Veh_Tech~
 THEN Vehicle_Range[All_Vehicle_Techs=Baseline_Veh_Tech, Vehicle_Input_Years=Vehicle_Sensit_Yr]~
-ELSE Range_Scale
+ELSE EV_Range1
 NodeLocation: 248,208,1
 NodeSize: 64,40
 WindState: 2,89,7,1179,625
@@ -21355,8 +21355,8 @@ WindState: 2,5,5,720,350
 ValueState: 2,286,81,628,505,,MIDM
 Att_ResultSliceState: [Vehicle_Techs,1,Price_Scale,1,Range_Scale,1]
 
-Index Range_Scale
-Title: Range Scale
+Index EV_Range1
+Title: EV Range
 Units: miles
 Definition: VAR low_val:=MIN(Vehicle_Range1[Low_or_High=Low_Label], EV_Vehicles);~
 VAR hi_val:=MAX(Vehicle_Range1[Low_or_High=High_Label], EV_Vehicles);~
@@ -21539,7 +21539,7 @@ NodeLocation: 728,304,1
 NodeSize: 64,40
 ValueState: 2,613,18,837,675,1,MIDM
 Aliases: FormNode Fo1554183716
-ReformVal: [Range_Scale,Vehicle_Techs]
+ReformVal: [EV_Range1,Vehicle_Techs]
 NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: []
 Att_ResultSliceState: [Vehicle_Range_Coeff1,11,Vehicle_Cost_Coeff1,1,BEV_Tech_Pref,6,PHEV_Tech_Pref,4,Cost_NPV_Scale,4,Vehicle_Techs,3,Range_Scale,1]
@@ -21554,7 +21554,7 @@ NodeSize: 64,40
 WindState: 2,27,171,720,350
 ValueState: 2,459,2,858,669,,MIDM
 Aliases: FormNode Fo1554183717
-ReformVal: [Price_Scale,Range_Scale]
+ReformVal: [Price_Scale,EV_Range1]
 NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_ResultSliceState: [MPG_Scale,5,Vehicle_Types,1,Range_Scale,1,Price_Scale,5]
 
@@ -21602,11 +21602,11 @@ ValueState: 2,385,36,897,489,,MIDM
 Close Vehicle_Choice_Logi1
 
 Index Low_or_High
-Att_PrevIndexValue: ['Low','High']
 Title: Low or High
 Definition: ['Low','High']
 NodeLocation: 688,656,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Low','High']
 
 Decision Vehicle_Sensit_Yr
 Title: Vehicle Sensitivity Year
@@ -21773,17 +21773,17 @@ Original: Vehicle_Logit_MktSh1
 Variable CEC_Response
 Title: CEC Response
 Definition: VAR priceInterp:=LinearInterp(EV_Price, EV_Mkt_Share, Price_Scale, EV_Price);~
-LinearInterp(EV_Range, priceInterp, Range_Scale, EV_Range)
+LinearInterp(EV_Range, priceInterp, EV_Range1, EV_Range)
 NodeLocation: 80,536,1
 NodeSize: 64,40
 ValueState: 2,85,50,695,626,,MIDM
-ReformVal: [Price_Scale,Range_Scale]
+ReformVal: [Price_Scale,EV_Range1]
 
 Variable RMSE1
 Title: RMSE
-Definition: VAR fit_delta:=Logit_Response - CEC_Response;~
+Definition: VAR fit_delta:=EV_Long_Run_Mkt_Shr - CEC_Response;~
 VAR ev_delta:=Veh_Tech_Mkt_Share1[Vehicle_Techs='PHEV'] - Veh_Tech_Mkt_Share1[Vehicle_Techs='BEV'];   {To find 50/50 split between PHEV and BEV}~
-Sqrt(Sum(fit_delta^2 + ev_delta^2, Price_Scale, Range_Scale))
+Sqrt(Sum(fit_delta^2 + ev_delta^2, Price_Scale, EV_Range1))
 NodeLocation: 376,536,1
 NodeSize: 64,40
 WindState: 2,63,3,986,422
@@ -21801,28 +21801,29 @@ NodeLocation: 528,536,1
 NodeSize: 64,40
 ValueState: 2,9,70,857,309,0,MIDM
 
-Variable Logit_Response
-Title: Logit Response
+Variable EV_Long_Run_Mkt_Shr
+Title: EV Long-Run Market Share
 Units: market share
+Description: The long-run market share estimated by the logit model.
 Definition: Vehicle_Logit_MktSh1[Vehicle_Types=EV_Label]
 NodeLocation: 224,536,1
 NodeSize: 64,40
 ValueState: 2,285,30,980,679,,MIDM
-GraphSetup: Att_GraphValueRange Logit_Response:1,,1,,,,,-0.0009490334428846836,0.1989806681871414,0
-ReformVal: [Cost_NPV_Scale,Range_Scale]
+GraphSetup: Att_GraphValueRange EV_Long_Run_Mkt_Shr:1,,1,,,,,-0.0009490334428846836,0.1989806681871414,0
+ReformVal: [NPV_of_EV_Costs,EV_Range1]
 NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_ResultSliceState: [Vehicle_Range_Coeff1,13,Vehicle_Cost_Coeff1,1,BEV_Tech_Pref,12,PHEV_Tech_Pref,1,Range_Scale,1,Cost_NPV_Scale,1]
 
 Variable Compare_Response
 Title: Compare Response
-Definition: [CEC_Response,Logit_Response]
+Definition: [CEC_Response,EV_Long_Run_Mkt_Shr]
 NodeLocation: 80,440,1
 NodeSize: 64,40
 ValueState: 2,388,26,837,631,,MIDM
 GraphSetup: Graph_SymbolKey:1
-ReformVal: [Price_Scale,Range_Scale]
+ReformVal: [Price_Scale,EV_Range1]
 Att_ResultSliceState: [Vehicle_Range_Coeff1,9,Vehicle_Cost_Coeff1,10,BEV_Tech_Pref,1,PHEV_Tech_Pref,1,Self,2,Range_Scale,1,Price_Scale,1]
-Att_ColorRole: Range_Scale
+Att_ColorRole: EV_Range1
 Att_SymbolRole: Null
 
 Index BEV_Tech_Pref
@@ -21847,11 +21848,11 @@ NodeLocation: 232,440,1
 NodeSize: 64,40
 ValueState: 2,420,4,1022,569,,MIDM
 GraphSetup: Att_GraphValueRange BEV_Share_of_EVs:1,,,1
-ReformVal: [Price_Scale,Range_Scale]
+ReformVal: [Price_Scale,EV_Range1]
 Att_ResultSliceState: [Vehicle_Range_Coeff1,12,Vehicle_Cost_Coeff1,10,BEV_Tech_Pref,9,PHEV_Tech_Pref,6,Range_Scale,1,Price_Scale,1]
 
-Index Cost_NPV_Scale
-Title: Cost NPV Scale
+Index NPV_of_EV_Costs
+Title: NPV of EV Costs
 Units: $/vehicle
 Definition: VAR low_val:=17000;~
 VAR hi_val:=55000;~
@@ -21859,6 +21860,7 @@ VAR steps:=(hi_val - low_val) / Steps_in_Sensitivity;~
 Sequence(low_val, hi_val, steps)
 NodeLocation: 136,272,1
 NodeSize: 64,40
+WindState: 2,195,7,720,350
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 237,182}
 
