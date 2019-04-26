@@ -2894,7 +2894,7 @@ Att_PrevIndexValue: ['Vehicle Average Lifetime','Vehicle Cost Logit Coefficient'
 
 Constant StructSingCell_Input
 Title: Structural Single Cell Inputs
-Definition: Table(StructSingCell_Names)(15.5,-4.1,9,6)
+Definition: Table(StructSingCell_Names)(15.5,-5,11,6)
 NodeLocation: 232,496,1
 NodeSize: 64,40
 Aliases: FormNode Fo1550721449
@@ -3841,12 +3841,12 @@ NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,-193,125,1524,645,17
 
 Index Import_Fixed_Params
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 Title: Import Fixed Params
 Definition: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 NodeLocation: 88,80,1
 NodeSize: 64,40
 WindState: 2,651,5,720,350
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 
 Decision Max_Imported_Dim
 Title: Max Imported Dimensions
@@ -3868,12 +3868,12 @@ NodeLocation: 88,272,1
 NodeSize: 64,40
 
 Index Excel_Import_Params
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index','Fact Column Index 1','Fact Column Index 2','Fact Column Index 3']
 Title: Excel Import Parameters
 Definition: Concat(Import_Fixed_Params, Fact_Col_Index_Param)
 NodeLocation: 88,360,1
 NodeSize: 64,40
 ValueState: 2,104,106,406,324,,MIDM
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index','Fact Column Index 1','Fact Column Index 2','Fact Column Index 3']
 
 Variable Variable_Identifier
 Title: Variable Identifier
@@ -3975,7 +3975,7 @@ Checkbox(1),Path_to_Global_Data,'Veh_CalibDates','A7',Choice(Import_Data_Types,2
 Checkbox(1),Path_to_Global_Data,'Veh_CalibDecisions','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Decisions_by_Stg),Handle(EV_Calibration_Stage),Handle(All_EV_Decisions),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Veh_OptSetting','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_OptSettings_byStg),Handle(EV_Calibration_Stage),Handle(Opt_Settings_EVs),Null,Null,~
 Checkbox(1),Path_to_Global_Data,'Veh_DecisBounds','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Dec_Var_Bounds),Handle(Upper_Lower),Handle(All_EV_Decisions),Null,Null,~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(1),Path_to_Global_Data,'Veh_Stock_Mults','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Multip),Null,Handle(All_Spatial_ID),Null,Null,~
 Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier))
 NodeLocation: 88,552,1
 NodeSize: 64,40
@@ -3999,11 +3999,11 @@ WindState: 2,42,72,720,350
 Aliases: FormNode New1551412464, FormNode New1551412505
 
 Index Imported_Dataset_Num
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40]
 Title: Imported Dataset Number
 Definition: 1..Number_of_Datasets
 NodeLocation: 240,184,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40]
 
 Index Selected_Import_Data
 Title: Selected Import Datasets
@@ -4094,12 +4094,12 @@ NodeLocation: 544,256,1
 NodeSize: 64,40
 
 Index Excel_Components
-Att_PrevIndexValue: ['Excel Column','Excel Row']
 Title: Excel Components
 Definition: ['Excel Column','Excel Row']
 IndexVals: ['item 1']
 NodeLocation: 544,344,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Excel Column','Excel Row']
 
 Decision Excel_Row_Label
 Title: Excel Row Label
@@ -4166,11 +4166,11 @@ NodeSize: 64,40
 WindState: 2,-3,6,720,350
 
 Index Import_Data_Types
-Att_PrevIndexValue: ['Any','Number','Text','Date']
 Title: Import Data Types
 Definition: ['Any','Number','Text','Date']
 NodeLocation: 688,696,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Any','Number','Text','Date']
 
 Decision Data_Type_Label
 Title: Data Type Label
