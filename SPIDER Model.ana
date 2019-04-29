@@ -89,7 +89,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,39,15,1711,758,17
+DiagState: 2,-318,196,1711,758,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
@@ -133,7 +133,7 @@ Date: Mon, Aug 18, 2014 9:09 PM
 NodeLocation: 864,80,7
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-DiagState: 2,0,36,1524,754,17
+DiagState: 2,21,16,1524,754,17
 WindState: 2,102,82,476,224
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
@@ -5731,12 +5731,12 @@ Aliases: FormNode Fo1552872208
 MetaOnly: 1
 
 Index Output_Titles
+Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 Title: Output Titles
 Definition: Create_Titles_List(Output_Ident)~
 
 NodeLocation: 160,184,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 
 Decision Select_Output
 Title: Select Output
@@ -5858,7 +5858,6 @@ NodeSize: 336,112
 NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
 
 Index EV_Scenario_Variable
-Att_PrevIndexValue: ['EV Vehicle Price','EV Incentives','EV Vehicle Range','Gasoline Price','Electricity Price']
 Title: EV Scenario Variables
 Definition: ['EV Vehicle Price','EV Incentives','EV Vehicle Range','Gasoline Price','Electricity Price']
 IndexVals: ['item 1']
@@ -5866,6 +5865,7 @@ NodeLocation: 1112,176,1
 NodeSize: 64,40
 WindState: 2,4,33,720,350
 Aliases: FormNode Fo1552873760
+Att_PrevIndexValue: ['EV Vehicle Price','EV Incentives','EV Vehicle Range','Gasoline Price','Electricity Price']
 
 Variable EV_Scenario_Selector
 Title: EV Scenario Selector
@@ -5876,8 +5876,9 @@ Definition: MultiTable(EV_Scenario_Variable)(Sel_Veh_Price_Scen,Sel_EV_Incent_Sc
 NodeLocation: 1112,72,1
 NodeSize: 64,40
 WindState: 2,21,318,958,453
-DefnState: 2,530,160,514,243,0,DFNM
+DefnState: 2,31,224,514,243,0,DFNM
 Aliases: FormNode Fo1552855792
+{!40200|Att_ChoiceIndexes: Index Vehicle_Price_Scens, Index Vehicle_Range_Scens}
 {!50000|Att_ColumnWidths: [215]}
 
 FormNode Fo1552861680
@@ -6088,13 +6089,13 @@ Aliases: FormNode Fo1552868509
 {!50000|Att_ColumnWidths: [215]}
 
 Index PV_Scenario_Variable
-Att_PrevIndexValue: ['PV Cost','Base Yr for PV Cost Decline','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 Title: PV Scenario Variables
 Definition: ['PV Cost','Base Yr for PV Cost Decline','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 IndexVals: ['item 1']
 NodeLocation: 960,176,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552873761
+Att_PrevIndexValue: ['PV Cost','Base Yr for PV Cost Decline','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 
 Alias Al1552872113
 Title: Result
@@ -6445,12 +6446,12 @@ NodeFont: Arial,16
 OnClick: Show_ACP_Window(Storage_Econ_Out,Storage_Econ_Titles,Storage_Economics, 'Result')
 
 Index Storage_Econ_Titles
+Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
 Title: Storage Econ Titles
 Definition: Create_Titles_List(Storage_Econ_Out)~
 
 NodeLocation: 160,1392,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
 
 Text Te1552873476
 Title: Storage Economic Output
@@ -6578,11 +6579,11 @@ OnClick: FOR J:=@Dropdown_Vars DO (~
 
 
 Index Not_Applicable
+Att_PrevIndexValue: ['Not Applicable to Study']
 Title: Not Applicable
 Definition: ['Not Applicable to Study']
 NodeLocation: 1920,584,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Not Applicable to Study']
 
 Decision Hidden_Dropdown
 Title: Hidden Dropdown

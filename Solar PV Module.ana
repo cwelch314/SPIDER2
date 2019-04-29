@@ -18248,12 +18248,12 @@ TableCellDefault: Choice(PV_Adopt_Data_Types,1,0)
 {!40200|Att_ChoiceIndexes: Index PV_Adopt_Data_Types}
 
 Index PV_Cumul_Data_Type
-Att_PrevIndexValue: ['Cumulative System Count','Cumulative Nameplate CEC-MW-AC','Cumulative Coincident Peak Avg MW-AC','Cumulative Nameplate MW-DC','Cumulative Non-Coincident Peak MW-AC']
 Title: PV Cumulative Data Types
 Definition: Subset(PV_Map_Increm_Cumul = Null)
 NodeLocation: 672,904,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 237,98}
+Att_PrevIndexValue: ['Cumulative System Count','Cumulative Nameplate CEC-MW-AC','Cumulative Coincident Peak Avg MW-AC','Cumulative Nameplate MW-DC','Cumulative Non-Coincident Peak MW-AC']
 
 FormNode Fo1542351043
 Title: Map Incremental to Cumulative
@@ -18300,12 +18300,12 @@ NodeSize: 64,40
 ValueState: 2,333,24,552,769,,MIDM
 
 Index Installation_Type
-Att_PrevIndexValue: ['NewConstr','Retrofit','N/A']
 Title: Installation Type
 Definition: Concat(New_or_Retrofit, NA_Label)
 NodeLocation: 528,376,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 242,70}
+Att_PrevIndexValue: ['NewConstr','Retrofit','N/A']
 
 Decision NA_Label
 Title: NA Label
