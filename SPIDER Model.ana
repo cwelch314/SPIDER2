@@ -5856,6 +5856,7 @@ NodeSize: 336,112
 NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
 
 Index EV_Scenario_Variable
+Att_PrevIndexValue: ['EV Vehicle Price','EV Incentives','EV Vehicle Range','Gasoline Price','Electricity Price']
 Title: EV Scenario Variables
 Definition: ['EV Vehicle Price','EV Incentives','EV Vehicle Range','Gasoline Price','Electricity Price']
 IndexVals: ['item 1']
@@ -5863,7 +5864,6 @@ NodeLocation: 1112,176,1
 NodeSize: 64,40
 WindState: 2,4,33,720,350
 Aliases: FormNode Fo1552873760
-Att_PrevIndexValue: ['EV Vehicle Price','EV Incentives','EV Vehicle Range','Gasoline Price','Electricity Price']
 
 Variable EV_Scenario_Selector
 Title: EV Scenario Selector
@@ -5912,12 +5912,12 @@ Definition: Create_Titles_List(EV_Impact_Out)~
 
 NodeLocation: 160,672,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['EV Cumulative (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Cumul Vehicle Stock - BEV/PHEV (vehicles)','Tech Share of Vehicle Stock (fraction)','Aggreg New Vehicle Sales (vehicles/year)','Tech Share of New Vehicle Sales (fraction)','EV Long-Run Market Share (market share)','Vehicle Sticker Price ($/vehicle)','Miles of Range','Applied Fuel Prices ($/GGE)']
+Att_PrevIndexValue: ['EV Cumulative (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Cumul Vehicle Stock - BEV/PHEV (vehicles)','Tech Share of Vehicle Stock (fraction)','Aggreg New Vehicle Sales (vehicles/year)','Tech Share of New Vehicle Sales (fraction)','EV Long-Run Market Share (market share)','Vehicle Sticker Price ($/vehicle)','Miles of Range (miles)','Applied Fuel Prices ($/GGE)']
 
 Decision EV_Impact
 Title: EV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(EV_Impact_Titles,11,0)
+Definition: Choice(EV_Impact_Titles,9,0)
 NodeLocation: 608,680,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
