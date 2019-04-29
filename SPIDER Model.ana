@@ -89,7 +89,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,41,9,1711,758,17
+DiagState: 2,39,15,1711,758,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
@@ -5717,7 +5717,7 @@ Date: Sun, Dec 16, 2018 8:10 AM
 NodeLocation: 112,392,1
 NodeSize: 80,56
 NodeInfo: 1,1,1,1,1,1,1,,0,,0,,,
-DiagState: 2,12,25,1524,548,17
+DiagState: 2,82,6,1820,702,17
 NodeFont: Arial Narrow,19
 {!40400|CloudPlayerStyles: Show_object: no}
 {!40204-40399|AWP_Attrib:Show_object: no}
@@ -5731,12 +5731,12 @@ Aliases: FormNode Fo1552872208
 MetaOnly: 1
 
 Index Output_Titles
-Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 Title: Output Titles
 Definition: Create_Titles_List(Output_Ident)~
 
 NodeLocation: 160,184,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 
 Decision Select_Output
 Title: Select Output
@@ -5836,7 +5836,9 @@ WindState: 2,2424,68,720,350
 Aliases: Alias Al1552872555, Alias Al1552852361
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
-OnClick: Show_ACP_Window(PV_Impact_Out,PV_Impact_Titles,PV_Impact1, 'Result')
+OnClick: IF PV_Impact1 = Hidden_Dropdown~
+THEN Null~
+ELSE Show_ACP_Window(PV_Impact_Out,PV_Impact_Titles,PV_Impact1, 'Result')
 
 Decision PV_Impact1
 Title: PV Impact
@@ -5896,7 +5898,9 @@ WindState: 2,2424,68,720,350
 Aliases: Alias Al1552872556, Alias Al1552861973
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
-OnClick: Show_ACP_Window(EV_Impact_Out,EV_Impact_Titles,EV_Impact, 'Result')
+OnClick: IF EV_Impact = Hidden_Dropdown~
+THEN Null~
+ELSE Show_ACP_Window(EV_Impact_Out,EV_Impact_Titles,EV_Impact, 'Result')
 
 Index EV_Impact_Out
 Title: EV Impact Out
@@ -5917,7 +5921,7 @@ Att_PrevIndexValue: ['EV Cumulative (MW-AC)','Cumulative EV Delta (MW-AC)','Cumu
 Decision EV_Impact
 Title: EV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(EV_Impact_Titles,9,0)
+Definition: Choice(EV_Impact_Titles,7,0)
 NodeLocation: 608,680,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -5949,7 +5953,9 @@ WindState: 2,2424,68,720,350
 Aliases: Alias Al1552872557, Alias Al1552863909
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
-OnClick: Show_ACP_Window(PV_Econ_Out1,PV_Econ_Titles1,PV_Economics, 'Result')
+OnClick: IF PV_Economics = Hidden_Dropdown~
+THEN Null~
+ELSE Show_ACP_Window(PV_Econ_Out1,PV_Econ_Titles1,PV_Economics, 'Result')
 
 Index PV_Econ_Out1
 Title: PV Econ Out
@@ -6021,11 +6027,13 @@ Description: Press this button to view the output of the selected variable on th
 NodeLocation: 1264,320,2
 NodeSize: 40,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
-WindState: 2,2424,68,720,350
+WindState: 2,-6,300,720,350
 Aliases: Alias Al1552866520, Alias Al1552866538
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
-OnClick: Show_ACP_Window(PV_Input1,PV_Input_Titles,PV_Input, IF Inputs_only_for_view THEN 'Result' ELSE 'Definition' )
+OnClick: IF PV_Input = Hidden_Dropdown~
+THEN Null~
+ELSE Show_ACP_Window(PV_Input1,PV_Input_Titles,PV_Input, IF Inputs_only_for_view THEN 'Result' ELSE 'Definition' )
 
 Index PV_Input_Titles
 Title: PV Input Titles
@@ -6136,7 +6144,9 @@ WindState: 2,2424,68,720,350
 Aliases: Alias Al1552872113, Alias Al1552872598
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
-OnClick: Show_ACP_Window(EV_Input1,EV_Input_Titles,EV_Input,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
+OnClick: IF EV_Input = Hidden_Dropdown~
+THEN Null~
+ELSE Show_ACP_Window(EV_Input1,EV_Input_Titles,EV_Input,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
 
 Index EV_Input_Titles
 Title: EV Input Titles
@@ -6277,7 +6287,9 @@ WindState: 2,2424,68,720,350
 Aliases: Alias Al1552872727, Alias Al1552873172
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
-OnClick: Show_ACP_Window(Storage_Input1,Storage_Input_Titles,Storage_Input,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
+OnClick: IF Storage_Input = Hidden_Dropdown~
+THEN Null~
+ELSE Show_ACP_Window(Storage_Input1,Storage_Input_Titles,Storage_Input,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
 
 Index Storage_Input_Titles
 Title: Storage Input Titles
@@ -6357,7 +6369,9 @@ WindState: 2,2424,68,720,350
 Aliases: Alias Al1552872981, Alias Al1552873387
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
-OnClick: Show_ACP_Window(Storage_Dispatch_Out,Storage_Dispatch_Tit,Storage_Dispatch, 'Result')
+OnClick: IF Storage_Dispatch = Hidden_Dropdown~
+THEN Null~
+ELSE Show_ACP_Window(Storage_Dispatch_Out,Storage_Dispatch_Tit,Storage_Dispatch, 'Result')
 
 Index Storage_Dispatch_Tit
 Title: Storage Dispatch Titles
@@ -6431,12 +6445,12 @@ NodeFont: Arial,16
 OnClick: Show_ACP_Window(Storage_Econ_Out,Storage_Econ_Titles,Storage_Economics, 'Result')
 
 Index Storage_Econ_Titles
-Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
 Title: Storage Econ Titles
 Definition: Create_Titles_List(Storage_Econ_Out)~
 
 NodeLocation: 160,1392,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
 
 Text Te1552873476
 Title: Storage Economic Output
@@ -6501,6 +6515,133 @@ Include 0,LinkLibrary GUI_Dropdowns,2,2,0,0,GUI Dropdowns.ana
 NodeLocation GUI_Dropdowns: 1464,344,1
 NodeSize GUI_Dropdowns: 64,40
 
+
+Text Te1556500893
+NodeLocation: 2344,1316,2
+NodeSize: 936,636
+NodeInfo: 1,0,0,1,0,1,0,,0,,0,,,
+
+Text Te1556502575
+Title: Thanks for exploring! However, this logic is not applicable to the current study.
+NodeLocation: 2004,984,3
+NodeSize: 356,32
+NodeInfo: 1,0,0,1,0,1,0,,0,,0,,,
+
+Variable Hidden_Definition
+Title: Hidden Definition
+Description: The definition of the hidden dropdown menu.
+Definition: Definition of Hidden_Dropdown
+NodeLocation: 2072,496,1
+NodeSize: 64,40
+ValueState: 2,580,352,416,537,0,MIDM
+
+Index Dropdown_Vars
+Att_PrevIndexValue: [PV_Impact1,PV_Input,EV_Impact,EV_Input,PV_Economics,Storage_Input,Storage_Dispatch]
+Title: Dropdown Vars
+Description: Populate this list with all dropdown menus included on the main GUI.
+Definition: [PV_Impact1,PV_Input,EV_Impact,EV_Input,PV_Economics,Storage_Input,Storage_Dispatch]
+NodeLocation: 1632,496,1
+NodeSize: 64,40
+Aliases: FormNode Fo1556512901
+MetaOnly: 1
+
+Decision Dropdowns_to_Show
+Title: Dropdowns to Show
+Units: boolean
+Description: Select the dropdowns to show in the main GUI. Those that aren't selected will show a "Not Applicable" message.
+Definition: Table(Dropdown_Vars)(Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
+NodeLocation: 1632,592,1
+NodeSize: 64,40
+Aliases: FormNode Fo1556511379
+TableCellDefault: Checkbox(1)
+
+Constant Saved_Dropdown_Defn
+Title: Saved Dropdown Defn
+Description: The saved definitions of the dropdown menus on the main GUI.
+Definition: Table(Dropdown_Vars)('Choice(PV_Impact_Titles,1,0)','Choice(PV_Input_Titles,1,0)','Choice(EV_Impact_Titles,9,0)','Choice(EV_Input_Titles,4,0)','Choice(PV_Econ_Titles1,1,0)','Choice(Storage_Input_Titles,14,0)','Choice(Storage_Dispatch_Tit,1,0)')
+NodeLocation: 1776,496,1
+NodeSize: 64,40
+
+Button Update_Dropdown_Menu
+Title: Update Dropdown Menus
+Description: Press this button to update the GUI dropdowns based on the current selection of dropdowns to hide/show.
+NodeLocation: 1488,592,1
+NodeSize: 64,40
+OnClick: FOR J:=@Dropdown_Vars DO (~
+   LocalAlias storeVar:=Slice(Dropdown_Vars,1);~
+   IF Dropdowns_to_Show[@Dropdown_Vars=J]~
+   THEN (Definition of StoreVar:= Saved_Dropdown_Defn[@Dropdown_Vars=J];~
+             OnChange of storeVar:= Saved_Dropdown_OnChg[@Dropdown_Vars=J])~
+   ELSE (OnChange of storeVar:= Null;~
+              Definition of storeVar:= Hidden_Definition)~
+)~
+
+
+Index Not_Applicable
+Title: Not Applicable
+Definition: ['Not Applicable to Study']
+NodeLocation: 1920,584,1
+NodeSize: 64,40
+Att_PrevIndexValue: ['Not Applicable to Study']
+
+Decision Hidden_Dropdown
+Title: Hidden Dropdown
+Description: The default dropdown for hidden menus on the main GUI.
+Definition: Choice(Not_Applicable,1,0)
+NodeLocation: 1920,496,1
+NodeSize: 64,40
+{!40200|Att_ChoiceIndexes: Index Not_Applicable}
+
+Button Save_GUI_DropdwnMenu
+Title: Save GUI Dropdown Menus
+Description: WARNING: do not press this button unless all dropdowns are unhidden, otherwise the dropdowns will be permanently overwritten with the hidden settings.~
+~
+Press this button to save the Definition and OnChange attributes of the main GUI dropdown menus.
+NodeLocation: 1488,496,1
+NodeSize: 64,40
+OnClick: {===Save and store OnChange attributes===}~
+VAR onChangeTable := FOR J:=@Dropdown_Vars DO (~
+   MetaVar ind:=Slice(Dropdown_Vars, J);~
+   OnChange of ind~
+);~
+Saved_Dropdown_OnChg := onChangeTable;~
+~
+{===Save and store Definition attributes===}~
+VAR dropdownTable := FOR J:=@Dropdown_Vars DO (~
+   MetaVar ind:=Slice(Dropdown_Vars, J);~
+   Definition of ind~
+);~
+Saved_Dropdown_Defn := dropdownTable;
+
+FormNode Fo1556511379
+Title: Dropdowns to Show
+Definition: 0
+NodeLocation: 1632,636,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Dropdowns_to_Show
+
+Constant Saved_Dropdown_OnChg
+Title: Saved Dropdown OnChange
+Description: The saved OnChange attributes of the dropdown menus on the main GUI.
+Definition: Table(Dropdown_Vars)('PV_Econ_Output_But','PV_Input_Button','EV_Imp_Output_But1','EV_Input_Button1','PV_Econ_Output_But1','Storag_Input_Button','Storage_Disptch_But2')
+NodeLocation: 1776,584,1
+NodeSize: 64,40
+ValueState: 2,1495,239,416,303,0,MIDM
+
+FormNode Fo1556512901
+Title: Dropdown Vars
+Definition: 0
+NodeLocation: 1632,532,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Dropdown_Vars
+
+Text Te1556513116
+Title: Hide/Show Options for GUI Dropdowns
+NodeLocation: 1780,540,-1
+NodeSize: 372,124
+NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
 
 Close GUI_Definitions
 
