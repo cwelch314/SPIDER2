@@ -89,7 +89,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,-318,196,1711,758,17
+DiagState: 2,139,60,1711,587,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
@@ -164,7 +164,7 @@ DefaultSize: 48,24
 NodeLocation: 848,264,1
 NodeSize: 80,56
 NodeInfo: 1,1,1,1,1,1,0,0,0,0,,,,0
-DiagState: 2,627,66,561,536,17
+DiagState: 2,627,66,792,781,17
 WindState: 2,17,115,687,406
 DiagramColor: 55705,55705,55705
 FontStyle: Arial, 15
@@ -1199,13 +1199,13 @@ NodeColor: 65535,65535,65535
 OnChange: ACP_Set_hover_balloo(ACP_Balloon_delay)
 
 Index ACP_Balloon_delay_ch
-Att_PrevIndexValue: [0,0.1,0.2,0.3,0.4,0.5,0.6,0.8,1,1.2,1.5,2]
 Title: balloon delay choices
 Definition: [0,0.1,0.2,0.3,0.4,0.5,0.6,0.8,1,1.2,1.5,2]
 NodeLocation: 680,257,1
 NodeSize: 80,16
 WindState: 2,94,83,476,454
 NodeColor: 65535,65535,65535
+Att_PrevIndexValue: [0,0.1,0.2,0.3,0.4,0.5,0.6,0.8,1,1.2,1.5,2]
 
 Function ACP_Set_hover_balloo(d)
 Title: Set_hover_balloon_delay(d: Positive)
@@ -1442,13 +1442,13 @@ NodeSize: 88,32
 DiagState: 2,419,90,941,526,19
 
 Index ACP_Navigation_styl1
-Att_PrevIndexValue: ['Outline','Top diagram only','Top tabs','Side tabs','Two top tabs','Two side tabs']
 Title: Navigation styles
 Definition: CopyIndex(ACP_All_nav_styles)
 NodeLocation: 304,200,1
 NodeSize: 48,24
 WindState: 2,777,123,476,401
 ValueState: 2,240,251,416,303,0,MIDM
+Att_PrevIndexValue: ['Outline','Top diagram only','Top tabs','Side tabs','Two top tabs','Two side tabs']
 
 Module ACP_Diagram_preview_
 Title: Diagram preview functions
@@ -2883,7 +2883,6 @@ NodeLocation: 56,32,1
 NodeSize: 48,24
 
 Index ACP_Resolution_Choic
-Att_PrevIndexValue: ['1920 x 1080','1600 x 900','1366 x 768','1280 x 1024','1280 x 800','1024 x 768','2400 x 1200','Custom']
 Title: Resolution Choices
 Units: pixels
 Description: List of preset screen resolutions including 'Custom' for minimum ACP diagram size
@@ -2891,6 +2890,7 @@ Definition: Concat(ACP_Screen_Resolutio,['Custom'])
 NodeLocation: 184,32,1
 NodeSize: 48,24
 WindState: 2,506,359,476,363
+Att_PrevIndexValue: ['1920 x 1080','1600 x 900','1366 x 768','1280 x 1024','1280 x 800','1024 x 768','2400 x 1200','Custom']
 
 Function ACP_Set_Diag_Size(m : object ; w, h: scalar)
 Title: Set_Diag_Size(m, w, h)
@@ -4134,7 +4134,7 @@ DefaultSize: 48,24
 NodeLocation: 464,56,1
 NodeSize: 72,32
 NodeInfo: 1,0,0,1,1,1,0,,0,
-DiagState: 2,340,84,1043,800,17
+DiagState: 2,478,10,1043,800,17
 WindState: 2,301,187,519,257
 
 Module ACP_Frame_setting_de
@@ -4187,7 +4187,6 @@ NodeColor: 65535,65535,65535
 OnChange: ACP_Toggle_awp_flag('Show_title:No', not ACP_ShowTitle, ACP_Select_frame_no1);
 
 Index ACP_Frame_nodes
-Att_PrevIndexValue: [Te1552674989,Te1552852181,Te1552852182,GUI_Frame,Te1552852189,Te1552852190,Undefined,Te1552875046,Undefined]
 Title: Frame nodes
 Description: List of Text nodes in the selected module, which are candidates to be Frame nodes.
 Definition: ~
@@ -4211,12 +4210,13 @@ NodeLocation: 176,600,1
 NodeSize: 48,24
 DiagState: 1
 WindState: 2,58,108,611,608
+Att_PrevIndexValue: [Te1544831972]
 
 Decision ACP_Select_module
 Title: Select module
 Units: id
 Description: Choose the module for which you want to configure a frame node.
-Definition: Choice(ACP_Modules,1,0,result:ACP_Modules)
+Definition: Choice(ACP_Modules,2,0,result:ACP_Modules)
 NodeLocation: 128,48,1
 NodeSize: 68,24
 WindState: 2,762,90,656,749
@@ -4239,13 +4239,13 @@ Aliases: FormNode ACP_Select_frame_nod
 OnChange: ACP_onSelectFrameNod()
 
 Index ACP_Modules
-Att_PrevIndexValue: [Undefined,Undefined,Undefined,Undefined,Undefined,Undefined,Undefined]
 Title: Modules
 Definition: ACP_Submodules( ACP_of_top_model )
 NodeLocation: 88,600,1
 NodeSize: 48,24
 WindState: 2,483,255,476,224
 ValueState: 2,448,461,403,411,0,MIDM
+Att_PrevIndexValue: [Main_Interface,Model_Details,Illustrative_Nodes,Parameter_Optimizati,Sensitivity1,GUI_Definitions,Old_GUI]
 
 Decision ACP_border_
 Title: No border?
@@ -4295,7 +4295,7 @@ WindState: 2,144,102,611,599
 Decision ACP_Set_as_a_frame_n
 Title: Set as a frame node
 Description: Set the text node selected in the listing above to be a Frame Node.
-Definition: Checkbox(1)
+Definition: Checkbox(0)
 NodeLocation: 128,144,-5
 NodeSize: 68,24
 WindState: 2,434,46,726,579
@@ -4509,12 +4509,12 @@ NodeSize: 80,24
 WindState: 2,22,6,823,538
 
 Index ACP_table_or_graph_o
-Att_PrevIndexValue: ['As saved in Analytica','Graph','Table','Table above graph','Graph above table']
 Title: table or graph opts
 Definition: ['As saved in Analytica','Graph','Table','Table above graph','Graph above table']
 NodeLocation: 264,600,1
 NodeSize: 48,24
 WindState: 2,-11,89,476,224
+Att_PrevIndexValue: ['As saved in Analytica','Graph','Table','Table above graph','Graph above table']
 
 Decision ACP_Table_or_graph_
 Title: Table and/or graph
@@ -4704,7 +4704,7 @@ Close ACP_Frame_setting_de
 
 FormNode ACP_HideTitleFormNod
 Definition: 0
-NodeLocation: 544,640,5
+NodeLocation: 544,640,-5
 NodeSize: 104,16
 NodeInfo: 1,0,0,1,0,1,0,15,0,,0
 WindState: 2,125,125,1132,405
@@ -4712,7 +4712,7 @@ Original: ACP_ShowTitle
 
 FormNode ACP_ShowDescFormNode
 Definition: 0
-NodeLocation: 768,608,5
+NodeLocation: 768,608,-5
 NodeSize: 120,16
 NodeInfo: 1,0,0,1,0,0,0,22,0,,,
 Original: ACP_ShowDescription
@@ -4727,7 +4727,7 @@ Original: ACP_Select_module
 
 FormNode ACP_DescLengthFormNo
 Definition: 0
-NodeLocation: 768,640,5
+NodeLocation: 768,640,-5
 NodeSize: 120,16
 NodeInfo: 1,0,0,1,0,0,0,78,0,,,
 WindState: 2,603,130,476,224
@@ -4762,7 +4762,7 @@ Original: ACP_Set_as_a_frame_n
 FormNode ACP_TableOrGraphInpu
 Title: Table or graph?
 Definition: 0
-NodeLocation: 664,672,5
+NodeLocation: 664,672,-5
 NodeSize: 224,16
 NodeInfo: 1,0,0,1,0,0,0,230,0,
 WindState: 2,221,73,476,224
@@ -4790,7 +4790,7 @@ WindState: 2,567,62,627,433
 
 Text ACP_Set_Frame_Node_S
 Description: Set Frame Node Styles
-NodeLocation: 536,580,5
+NodeLocation: 536,580,-5
 NodeSize: 112,12
 NodeInfo: 1,0,0,1,0,0,1,,0,,0
 WindState: 2,807,436,476,224
@@ -4832,7 +4832,7 @@ Closewindow(ACP_Frame_node_style, 'Diagram');
 FormNode ACP_IndexMenusFormNo
 Title: Show Index Menus
 Definition: 0
-NodeLocation: 544,608,5
+NodeLocation: 544,608,-5
 NodeSize: 104,16
 NodeInfo: 1,0,0,1,0,0,0,15,0,,,
 WindState: 2,33,555,476,224
@@ -5731,12 +5731,12 @@ Aliases: FormNode Fo1552872208
 MetaOnly: 1
 
 Index Output_Titles
-Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 Title: Output Titles
 Definition: Create_Titles_List(Output_Ident)~
 
 NodeLocation: 160,184,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 
 Decision Select_Output
 Title: Select Output
@@ -5858,6 +5858,7 @@ NodeSize: 336,112
 NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
 
 Index EV_Scenario_Variable
+Att_PrevIndexValue: ['EV Vehicle Price','EV Incentives','EV Vehicle Range','Gasoline Price','Electricity Price']
 Title: EV Scenario Variables
 Definition: ['EV Vehicle Price','EV Incentives','EV Vehicle Range','Gasoline Price','Electricity Price']
 IndexVals: ['item 1']
@@ -5865,7 +5866,6 @@ NodeLocation: 1112,176,1
 NodeSize: 64,40
 WindState: 2,4,33,720,350
 Aliases: FormNode Fo1552873760
-Att_PrevIndexValue: ['EV Vehicle Price','EV Incentives','EV Vehicle Range','Gasoline Price','Electricity Price']
 
 Variable EV_Scenario_Selector
 Title: EV Scenario Selector
@@ -5878,7 +5878,6 @@ NodeSize: 64,40
 WindState: 2,21,318,958,453
 DefnState: 2,31,224,514,243,0,DFNM
 Aliases: FormNode Fo1552855792
-{!40200|Att_ChoiceIndexes: Index Vehicle_Price_Scens, Index Vehicle_Range_Scens}
 {!50000|Att_ColumnWidths: [215]}
 
 FormNode Fo1552861680
@@ -5922,7 +5921,7 @@ Att_PrevIndexValue: ['EV Cumulative (MW-AC)','Cumulative EV Delta (MW-AC)','Cumu
 Decision EV_Impact
 Title: EV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(EV_Impact_Titles,7,0)
+Definition: Choice(EV_Impact_Titles,3,0)
 NodeLocation: 608,680,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -6089,13 +6088,13 @@ Aliases: FormNode Fo1552868509
 {!50000|Att_ColumnWidths: [215]}
 
 Index PV_Scenario_Variable
+Att_PrevIndexValue: ['PV Cost','Base Yr for PV Cost Decline','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 Title: PV Scenario Variables
 Definition: ['PV Cost','Base Yr for PV Cost Decline','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 IndexVals: ['item 1']
 NodeLocation: 960,176,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552873761
-Att_PrevIndexValue: ['PV Cost','Base Yr for PV Cost Decline','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 
 Alias Al1552872113
 Title: Result
@@ -6579,11 +6578,11 @@ OnClick: FOR J:=@Dropdown_Vars DO (~
 
 
 Index Not_Applicable
-Att_PrevIndexValue: ['Not Applicable to Study']
 Title: Not Applicable
 Definition: ['Not Applicable to Study']
 NodeLocation: 1920,584,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Not Applicable to Study']
 
 Decision Hidden_Dropdown
 Title: Hidden Dropdown
