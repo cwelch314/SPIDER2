@@ -360,7 +360,7 @@ Date: Sun, Dec 16, 2018 8:10 AM
 NodeLocation: 112,392,1
 NodeSize: 80,56
 NodeInfo: 1,1,1,1,1,1,1,,0,,0,,,
-DiagState: 2,82,6,1820,702,17
+DiagState: 2,14,147,1820,702,17
 NodeFont: Arial Narrow,19
 {!40400|CloudPlayerStyles: Show_object: no}
 {!40204-40399|AWP_Attrib:Show_object: no}
@@ -549,7 +549,7 @@ ELSE Show_ACP_Window(EV_Impact_Out,EV_Impact_Titles,EV_Impact, 'Result')
 
 Index EV_Impact_Out
 Title: EV Impact Out
-Definition: MultiChoice(All_EV_Impact_Out,3,4,5,6,7,8,9,10,11,allowNone:0,returnList:1)
+Definition: MultiChoice(All_EV_Impact_Out,allowNone:0,returnList:1)
 NodeLocation: 296,672,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552872202
@@ -562,12 +562,12 @@ Definition: Create_Titles_List(EV_Impact_Out)~
 
 NodeLocation: 160,672,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Cumulative EV Stock (vehicles)','Cumul Vehicle Stock - BEV/PHEV (vehicles)','Tech Share of Vehicle Stock (fraction)','Aggreg New Vehicle Sales (vehicles/year)','Tech Share of New Vehicle Sales (fraction)','EV Long-Run Market Share (market share)','Vehicle Sticker Price ($/vehicle)','Miles of Range (miles)','Applied Fuel Prices ($/GGE)']
+Att_PrevIndexValue: ['EV Cumulative (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Cumul Vehicle Stock - BEV/PHEV (vehicles)','Tech Share of Vehicle Stock (fraction)','Aggreg New Vehicle Sales (vehicles/year)','Tech Share of New Vehicle Sales (fraction)','EV Long-Run Market Share (market share)','Vehicle Sticker Price ($/vehicle)','Miles of Range (miles)','Applied Fuel Prices ($/GGE)']
 
 Decision EV_Impact
 Title: EV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(EV_Impact_Titles,2,0)
+Definition: Choice(EV_Impact_Titles,4,0)
 NodeLocation: 608,680,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
