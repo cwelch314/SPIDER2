@@ -34,7 +34,7 @@ Date: Mon, Dec 25, 2017 9:38 AM
 NodeLocation: 128,288,1
 NodeSize: 80,56
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,69,34,1887,751,17
+DiagState: 2,-19,21,1887,751,17
 Pict: (000000000000003C003D0004AB04000089504E470D0A1A0A0000000D494844520000003D0000003C0806000000D53EB24C000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA86400000430494441546843ED9A4D48545118866D67D0C2A5AD74578B7E17154584418BC08D1591ED0C0A8416498B70556DC2450B4D02CBA0A84C932CFB03212A8B30178296F48325D80FA14920266542CCE97C87796FE75EDF99EE8C33676E75170F8CEFF7DDF39D77CEEFC529524AFD7750115C1B69A9DDD25932B5F6729172CDC6F6C5DF2BBBCBC7C667DE95B1BE2D042A820DEDC5B3AC432ED97377F5B3B99FB3C5AC7FD9424580C2871F55759F797EECB84B6CE3F54FAA3B58FFB2858A00456F8D5EA861F17C629B168E3DADB9C0F2B2818A00050B697AF79D95C3F89C2BE35404285648D3D7DFB41E38F8607B0FFE6E1EAA6F60F9994045804285342DB56523B38DCB9A67CF84858AC02ECCE2F924585B8C57DF5D33047D21C6A90882855DC26A7F9D9B2AC985712A0256D815A96AE7C2381541AAC22E4857FBCBF7F152B9AD212753E35404E90AE79B3FD5FE3433566E1B6F7BD558C7F21854047F2A9C4FC2D40E1A0FDB4F2A824C1BCB25616B8B71FBA5284C5FA908326928D7A0B65C4606267A2BD271E3EDB9FD9BAE2E99C133F7DF77ED626D022A02345248D359D1B628C1DA04540468A410A6E5CDCA672413DAA409DEAE404580460A613A1B64AAA3CFC1980D15416C9AC4A3466C9AC40115416C9AC4A3466C9AC40115416C9AC4A3466C9AC40115416C9AC4A3466C9AC40115416C9AC4D5F487F244FFC9E3EADBE7529FFEF3477162A0B95E4DBE58E3D33589C1D63A75675FF7BC67D29018E9AE5637F7F6A8AE9DBDEAF1D146699FE5B931AD3B92682A55892BDB867C7A4F6D87D12F6D7EEDD33589D365B326F6F26AB8D9A34D9A7C9BCECA7E96EBC4B48CA6D791D19E2AA3EB11843133A2C167901FC6B49E295EFEF9756306FC3D7CB13698EF66A4651A9F5B356E3A81D1B646864E6F743A8CE9BE130D26B765D994FA315D62B4E4EC625FA8B38D4CD6B46D24DD289B7C2B97C57DE8364C5BF70E79FFA29519659E274BC79969DF743EBB6212A6D8280B8867645A36315B7F78A4C56C94B6A671675AC0943E95349C6294854C4C7B7B867CA9B2EBEBD382E501B7A6E5F8C1AE2CA6538CB2908969338BF47AF69E91B665AAA738EEDC9AB67659D5B4F4F74E4EF00C84312D48DBF6AE2DC87AC6C666E1D67472ED7904CF6D0B2F27ACE924265F5F4EBCE7E55214C87167DA1EE5B6ADC35EA7528CB6170F635ADA963CFB06868B0FB9A0B8336D8DB29A185C3FEFDC0E80DC50A6D1B6751191CF462BD891658F7272C7965D161A1B6D2F5F5F3CD4C7BE0A1FC1752A4793E4DBA39A1C697642B8318DA9269DD05F80D1EC5B1A9982C8A7E8E77CB918558DD4F2DDC3E508B3720537A6A513FAA832A366E932758D2E6F45966EC04B0A233865E50BD4CB645E9EDECDD99B96BB359D6F64CADBFB864CEB489CD31121364DE2808A20364DE25123364DE2808A20364DE25123364DE2808A000D84F9015B1490DF87E6CCF4DF48D08B0D15C1827EC0564076DC5E3EEFB5D3868AFF36AAE817D3052E280C9B5B310000000049454E44AE426082)
 
 Decision Residential_Label
@@ -3322,6 +3322,7 @@ Title: PV Input Data
 NodeLocation: 928,464,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+DiagState: 2,0,0,1284,785,17
 
 Alias Al1550178221
 Title: Meter Counts
@@ -3521,6 +3522,491 @@ NodeSize: 64,16
 NodeInfo: 1,0,0,0,0,0,0,86,0,,0,,,
 Original: Spatial_ID_to_CZ_Map
 
+Text Te1568695988
+NodeLocation: 1012,268,-1
+NodeSize: 188,252
+NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
+
+Alias Al1568696041
+Title: Installed Equipment Price
+Definition: 1
+NodeLocation: 936,80,1
+NodeSize: 64,40
+Original: Installed_EquipPrice
+
+Alias Al1568696042
+Title: Equipment Lifetime
+Definition: 1
+NodeLocation: 936,432,1
+NodeSize: 64,40
+Original: Equipment_Lifetime
+
+Alias Al1568696043
+Title: PV Cost Change Rate
+Definition: 1
+NodeLocation: 936,192,1
+NodeSize: 64,40
+Original: PV_Cost_Change_Rate
+
+FormNode Fo1568696041
+Title: Installed Equipment Price
+Definition: 0
+NodeLocation: 944,132,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,72,0,,0,,,0
+Original: Installed_EquipPrice
+
+FormNode Fo1568696042
+Title: PV Cost Change Rate
+Definition: 0
+NodeLocation: 944,244,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: PV_Cost_Change_Rate
+
+Alias Al1568696044
+Title: Storage Cost Change Rate
+Definition: 1
+NodeLocation: 936,312,1
+NodeSize: 64,40
+Original: Strg_Cost_Chg_Rate
+
+FormNode Fo1568696043
+Title: PV Cost Change Rate
+Definition: 0
+NodeLocation: 944,364,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Strg_Cost_Chg_Rate
+
+FormNode Fo1568696044
+Title: Equipment Lifetime
+Definition: 0
+NodeLocation: 944,476,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Equipment_Lifetime
+
+Alias Al1568696050
+Title: O&M Cost
+Definition: 1
+NodeLocation: 1096,80,1
+NodeSize: 64,40
+Original: O_M_Cost
+
+FormNode Fo1568696050
+Title: O&M Cost
+Definition: 0
+NodeLocation: 1104,132,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: O_M_Cost
+
+Alias Al1568696122
+Title: Interconnect Fee
+Definition: 1
+NodeLocation: 1104,192,1
+NodeSize: 64,40
+Original: Interconnect_Fee
+
+FormNode Fo1568696122
+Title: Interconnect Fee
+Definition: 0
+NodeLocation: 1112,244,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Interconnect_Fee
+
+Alias Al1568696228
+Title: Title 24 Compliance Date
+Definition: 1
+NodeLocation: 1104,320,1
+NodeSize: 64,40
+Original: Title_24_Compl_Date
+
+FormNode Fo1568696228
+Title: Title 24 Compliance Date
+Definition: 0
+NodeLocation: 1100,368,1
+NodeSize: 92,16
+NodeInfo: 1,0,0,0,0,0,0,134,0,,0,,,0
+Original: Title_24_Compl_Date
+
+Alias Al1568696273
+Title: New Construction Suitability
+Definition: 1
+NodeLocation: 1256,424,1
+NodeSize: 64,40
+Original: NewConst_Suitability
+
+FormNode Fo1568696273
+Title: New Construction Suitability
+Definition: 0
+NodeLocation: 1264,476,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: NewConst_Suitability
+
+Alias Al1568696278
+Title: Minimum Assumed Eligibility
+Definition: 1
+NodeLocation: 1256,312,1
+NodeSize: 64,40
+Original: Min_Assumed_Eligible
+
+FormNode Fo1568696278
+Title: Minimum Assumed Eligibility
+Definition: 0
+NodeLocation: 1248,364,1
+NodeSize: 64,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Min_Assumed_Eligible
+
+Alias Al1568696295
+Title: Lidar Detailed Data
+Definition: 1
+NodeLocation: 1256,88,1
+NodeSize: 64,40
+Original: Lidar_Detailed_Data
+
+Alias Al1568696301
+Title: Distribution of Historic System Sizes
+Definition: 1
+NodeLocation: 1256,192,1
+NodeSize: 64,40
+Original: Distrib_Hist_SysSize
+
+FormNode Fo1568696322
+Title: Lidar Detailed Data
+Definition: 0
+NodeLocation: 1264,132,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Lidar_Detailed_Data
+
+FormNode Fo1568696323
+Title: Distribution of Historic System Sizes
+Definition: 0
+NodeLocation: 1264,236,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Distrib_Hist_SysSize
+
+Alias Al1568696393
+Title: Small Commercial Fraction
+Definition: 1
+NodeLocation: 936,544,1
+NodeSize: 64,40
+Original: Small_Comm_Fraction
+
+FormNode Fo1568696393
+Title: Small Commercial Fraction
+Definition: 0
+NodeLocation: 936,596,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Small_Comm_Fraction
+
+Alias Al1568696403
+Title: NREL Tech Potential Pct
+Definition: 1
+NodeLocation: 1096,424,1
+NodeSize: 64,40
+Original: NREL_TechPotent_Pct
+
+FormNode Fo1568696403
+Title: NREL Tech Potential Pct
+Definition: 0
+NodeLocation: 1096,468,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: NREL_TechPotent_Pct
+
+Alias Al1568696410
+Title: Total Commercial Load
+Definition: 1
+NodeLocation: 1096,536,1
+NodeSize: 64,40
+Original: Total_Comm_Load
+
+FormNode Fo1568696416
+Title: Total Commercial Load
+Definition: 0
+NodeLocation: 1104,588,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Total_Comm_Load
+
+Alias Al1568696441
+Title: Year of Consumption Data
+Definition: 1
+NodeLocation: 1256,536,1
+NodeSize: 64,40
+Original: Year_of_Consump_Data
+
+FormNode Fo1568696452
+Title: Year of Consumption Data
+Definition: 0
+NodeLocation: 1264,588,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Year_of_Consump_Data
+
+FormNode Fo1568696510
+Title: Size Map
+Definition: 0
+NodeLocation: 944,716,2
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Size_Map
+
+Alias Al1568696515
+Title: Size Map
+Definition: 1
+NodeLocation: 936,664,1
+NodeSize: 64,40
+Original: Size_Map
+
+Alias Al1568696589
+Title: Med/Lrg Pct of Non-Res Premises
+Definition: 1
+NodeLocation: 1096,664,1
+NodeSize: 64,40
+Original: MedLrg_Pct_of_NonRes
+
+FormNode Fo1568696589
+Title: Med/Lrg Pct of Non-Res Premises
+Definition: 0
+NodeLocation: 1100,716,1
+NodeSize: 60,12
+NodeInfo: 1,0,0,0,0,0,0,82,0,,0,,,
+Original: MedLrg_Pct_of_NonRes
+
+Alias Al1568696621
+Title: Use CEC Forecast
+Definition: 1
+NodeLocation: 1264,664,1
+NodeSize: 64,40
+Original: Use_CEC_Forecast
+
+Alias Al1568696633
+Title: CEC Consumption Forecast
+Definition: 1
+NodeLocation: 1400,544,1
+NodeSize: 64,40
+Original: CEC_Consumption_Fcst
+
+FormNode Fo1568696633
+Title: CEC Consumption Forecast
+Definition: 0
+NodeLocation: 1408,596,1
+NodeSize: 56,12
+NodeInfo: 1,0,1,0,0,0,0,,0,,0,,,
+Original: CEC_Consumption_Fcst
+
+FormNode Fo1568696644
+Title: Use CEC Forecast
+Definition: 0
+NodeLocation: 1316,692,1
+NodeSize: 28,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Use_CEC_Forecast
+
+Alias Al1568696677
+Title: Single-Family Home Percentage
+Definition: 1
+NodeLocation: 1400,320,1
+NodeSize: 64,40
+Original: SingleFam_Home_Pct
+
+FormNode Fo1568696677
+Title: Single-Family Home Percentage
+Definition: 0
+NodeLocation: 1408,364,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: SingleFam_Home_Pct
+
+Alias Al1568696685
+Title: Home Ownership Rate
+Definition: 1
+NodeLocation: 1400,432,1
+NodeSize: 64,40
+Original: Home_Ownership_Rate
+
+FormNode Fo1568696685
+Title: Home Ownership Rate
+Definition: 0
+NodeLocation: 1400,484,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Home_Ownership_Rate
+
+Alias Al1568696692
+Title: Include Homeowner Fraction
+Definition: 1
+NodeLocation: 1400,88,1
+NodeSize: 64,40
+Original: Incl_Homeowner_Fract
+
+FormNode Fo1568696692
+Title: Include Homeowner Fraction
+Definition: 0
+NodeLocation: 1400,140,1
+NodeSize: 56,12
+NodeInfo: 1,1,1,0,0,0,0,,0,,0,,,
+Original: Incl_Homeowner_Fract
+
+Alias Al1568696701
+Title: Include Premise Suitability
+Definition: 1
+NodeLocation: 1400,208,1
+NodeSize: 64,40
+Original: Incl_Premise_Suitab
+
+FormNode Fo1568696701
+Title: Include Premise Suitability
+Definition: 0
+NodeLocation: 1400,260,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Incl_Premise_Suitab
+
+Alias Al1568696777
+Title: Power Density
+Definition: 1
+NodeLocation: 1544,88,1
+NodeSize: 64,40
+Original: Power_Density
+
+Alias Al1568696778
+Title: Module to Roof Area Ratio
+Definition: 1
+NodeLocation: 1544,328,1
+NodeSize: 64,40
+Original: Module_to_Roof_Area_
+
+Alias Al1568696779
+Title: Pct of Bldgs with Roof Type
+Definition: 1
+NodeLocation: 1544,208,1
+NodeSize: 64,40
+Original: Pct_Bldgs_Roof_Type
+
+FormNode Fo1568696778
+Title: Power Density
+Definition: 0
+NodeLocation: 1544,140,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Power_Density
+
+FormNode Fo1568696779
+Title: Module to Roof Area Ratio
+Definition: 0
+NodeLocation: 1544,380,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Module_to_Roof_Area_
+
+FormNode Fo1568696780
+Title: Pct of Bldgs with Roof Type
+Definition: 0
+NodeLocation: 1544,260,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Pct_Bldgs_Roof_Type
+
+Alias Al1568696807
+Title: System Size per Roofspace
+Definition: 1
+NodeLocation: 1552,560,1
+NodeSize: 64,40
+Original: SystSize_per_Roofspc
+
+Alias Al1568696808
+Title: Lidar Estimated Bldg Suitability
+Definition: 1
+NodeLocation: 1552,440,1
+NodeSize: 64,40
+Original: Lidar_Estimated_Bldg
+
+FormNode Fo1568696807
+Title: System Size per Roofspace
+Definition: 0
+NodeLocation: 1552,612,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: SystSize_per_Roofspc
+
+FormNode Fo1568696808
+Title: Lidar Estimated Bldg Suitability
+Definition: 0
+NodeLocation: 1552,492,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Lidar_Estimated_Bldg
+
+Alias Al1568696874
+Title: Stock Basis by Sector
+Definition: 1
+NodeLocation: 1408,664,1
+NodeSize: 64,40
+Original: Stock_Basis_by_Sect
+
+FormNode Fo1568696942
+Title: Stock Basis by Sector
+Definition: 0
+NodeLocation: 1416,716,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Stock_Basis_by_Sect
+
+Alias Al1568697942
+Title: PV Data dT Choice
+Definition: 1
+NodeLocation: 1256,800,1
+NodeSize: 64,40
+Original: PV_Data_dT_Choice
+
+Alias Al1568697943
+Title: PV Sim Start Year
+Definition: 1
+NodeLocation: 936,800,1
+NodeSize: 64,40
+Original: PV_Sim_Start_Year
+
+Alias Al1568697944
+Title: PV Sim End Year
+Definition: 1
+NodeLocation: 1096,800,1
+NodeSize: 64,40
+Original: PV_Sim_End_Year
+
+FormNode Fo1568697970
+Title: PV Data dT Choice
+Definition: 0
+NodeLocation: 1268,852,1
+NodeSize: 76,12
+NodeInfo: 1,0,0,0,0,0,0,110,0,,0,,,
+Original: PV_Data_dT_Choice
+
+FormNode Fo1568697971
+Title: PV Sim Start Year
+Definition: 0
+NodeLocation: 948,852,1
+NodeSize: 76,12
+NodeInfo: 1,0,0,0,0,0,0,114,0,,0,,,
+Original: PV_Sim_Start_Year
+
+FormNode Fo1568697972
+Title: PV Sim End Year
+Definition: 0
+NodeLocation: 1108,852,1
+NodeSize: 76,12
+NodeInfo: 1,0,0,0,0,0,0,114,0,,0,,,
+Original: PV_Sim_End_Year
+
 Close PV_Input_Data1
 
 Module Storage_Input_Data
@@ -3528,6 +4014,7 @@ Title: Storage Input Data
 NodeLocation: 784,272,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+DiagState: 2,8,384,944,480,17
 
 Alias Al1550183618
 Title: Battery Storage Specs
@@ -3679,6 +4166,56 @@ NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Final_Hist_Incent_Yr
 
+Alias Al1568695724
+Title: Storage Incentive Base Rate
+Definition: 1
+NodeLocation: 736,56,1
+NodeSize: 64,40
+Original: Strg_Incent_BaseRate
+
+FormNode Fo1568695724
+Title: Storage Incentives
+Definition: 0
+NodeLocation: 744,100,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Strg_Incent_BaseRate
+
+Alias Al1568695749
+Title: Historic Storage Incentives
+Definition: 1
+NodeLocation: 736,168,1
+NodeSize: 64,40
+Original: Hist_Storage_Incent
+
+FormNode Fo1568695749
+Title: Historic Storage Incentives
+Definition: 0
+NodeLocation: 736,220,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Hist_Storage_Incent
+
+Alias Al1568695821
+Title: Incentive Step Start Month
+Definition: 1
+NodeLocation: 744,288,1
+NodeSize: 64,40
+Original: Incentive_Step_Start
+
+FormNode Fo1568695821
+Title: Start Time for Incentive Step
+Definition: 0
+NodeLocation: 752,332,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Incentive_Step_Start
+
+Text Te1568695970
+NodeLocation: 740,196,-1
+NodeSize: 108,188
+NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
+
 Close Storage_Input_Data
 
 Module Financial_Input_Data
@@ -3686,6 +4223,7 @@ Title: Financial Input Data
 NodeLocation: 928,272,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+DiagState: 2,892,4,944,480,17
 
 Alias Al1550187543
 Title: Debt and Equity Rates
@@ -3704,7 +4242,7 @@ Original: Inflation_Rate
 FormNode Fo1550187544
 Title: Debt Rate
 Definition: 0
-NodeLocation: 400,112,1
+NodeLocation: 408,112,1
 NodeSize: 56,16
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Debt_Equity_Rates
@@ -3712,7 +4250,7 @@ Original: Debt_Equity_Rates
 FormNode Fo1550187545
 Title: Inflation Rate
 Definition: 0
-NodeLocation: 240,112,1
+NodeLocation: 248,112,1
 NodeSize: 56,16
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Inflation_Rate
@@ -3743,10 +4281,75 @@ Original: Invest_Tax_Credit
 FormNode Fo1550189910
 Title: Investment Tax Credit
 Definition: 0
-NodeLocation: 544,112,1
+NodeLocation: 552,112,1
 NodeSize: 56,16
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Invest_Tax_Credit
+
+Alias Al1568695862
+Title: MACRS Schedule
+Definition: 1
+NodeLocation: 752,56,1
+NodeSize: 64,40
+Original: MACRS_Schedule
+
+Alias Al1568695863
+Title: Bonus Depreciation Schedule
+Definition: 1
+NodeLocation: 752,296,1
+NodeSize: 64,40
+Original: Bonus_Deprec_Sched
+
+FormNode Fo1568695862
+Title: MACRS Schedule
+Definition: 0
+NodeLocation: 760,112,1
+NodeSize: 56,16
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: MACRS_Schedule
+
+FormNode Fo1568695863
+Title: Bonus Depreciation Schedule
+Definition: 0
+NodeLocation: 760,352,1
+NodeSize: 56,16
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Bonus_Deprec_Sched
+
+Alias Al1568695868
+Title: Tax Rates
+Definition: 1
+NodeLocation: 752,176,1
+NodeSize: 64,40
+Original: Tax_Rates
+
+FormNode Fo1568695868
+Title: Tax Rates
+Definition: 0
+NodeLocation: 760,232,1
+NodeSize: 56,16
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Tax_Rates
+
+Text Te1568695949
+NodeLocation: 756,196,-1
+NodeSize: 108,188
+NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
+
+Alias Al1568696089
+Title: Economic Lifetime
+Definition: 1
+NodeLocation: 896,56,1
+NodeSize: 64,40
+Original: Economic_Lifetime
+
+FormNode Fo1568696089
+Title: Economic Lifetime
+Definition: 0
+NodeLocation: 904,108,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Economic_Lifetime
 
 Close Financial_Input_Data
 
