@@ -889,7 +889,7 @@ Att_ColorRole: Null
 Variable New_Building_Stock
 Title: New Building Stock
 Units: bldg units
-Description: This is the total newly built stock starting from the beginning of the simulation, expressed as end-of-period values.
+Description: This is the total cumulative newly built stock starting from the beginning of the simulation, expressed as end-of-period values.
 Definition: Cumulate(Construction *  dT, Time)
 NodeLocation: 762,515,1
 NodeSize: 64,33
@@ -907,7 +907,7 @@ Title: Change in Stock
 Units: bldg units/year
 Description: The rate of change in the building stock. This is positive when stocks are growing and negative when stocks are declining.
 Definition: IF @Time=1~
-THEN (Bldg_Stock_by_Time - Bldg_Stock_in_T_1) / dT    {Find the growth relative to the T-1 (the year prior to the simulation start year) building stock}~
+THEN (Bldg_Stock_by_Time - Init_Building_Stock) / dT    {Find the growth relative to the T-1 (the year prior to the simulation start year) building stock}~
 ELSE (Bldg_Stock_by_Time - Bldg_Stock_by_Time[@Time=@Time-1]) / dT
 NodeLocation: 416,424,1
 NodeSize: 64,40
@@ -934,7 +934,7 @@ Variable Exist_Bldg_Stock_BOP
 Title: Existing Bldg Stock BOP
 Units: bldg units
 Description: Total stock of existing buildings at the beginning of the period (BOP), which decays over time. This stock does not include any new builds, and will only decrease over time due to demolitions.
-Definition: Dynamic(Bldg_Stock_in_T_1,~
+Definition: Dynamic(Init_Building_Stock,~
    Self[Time-1] - Total_Demolitions[Time-1] * dT~
 )
 NodeLocation: 416,196,1
@@ -1011,10 +1011,10 @@ DiagState: 2,-37,59,1457,544,17
 {!40400|CloudPlayerStyles: FrameNode: FrameNode_1544921077}
 {!40204-40399|AWP_Attrib:FrameNode: FrameNode_1544921077}
 
-Variable Bldg_Stock_in_T_1
-Title: Building Stock in T-1
+Variable Init_Building_Stock
+Title: Initial Building Stock
 Units: bldg units
-Description: The estimated building stock in the period prior to first Time period.
+Description: The estimated building stock in the period prior to first time period.
 Definition: VAR periodOneStock:=Bldg_Stock_by_Time[@Time=1];~
 VAR periodTwoStock:=Bldg_Stock_by_Time[@Time=2];~
  ~
@@ -1031,8 +1031,8 @@ Definition: Cumulate(Total_Demolitions * dT, Time)
 NodeLocation: 288,104,1
 NodeSize: 64,40
 
-Variable Effective_Demo_Rate
-Title: Effective Demolition Rate
+Variable Realized_Demo_Rate
+Title: Realized Demolition Rate
 Units: fraction/year
 Description: The effective demolition rate per year.
 Definition: Divide(Total_Demolitions * dT, Exist_Bldg_Stock_BOP, True) / dT

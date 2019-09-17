@@ -317,13 +317,13 @@ ReformVal: [Building_Stock_Year,EV_Spatial_ID]
 Att_ResultSliceState: [Selected_Spatial_ID,42,Sectors_Selected,1,Building_Stock_Year,1]
 
 Index Building_Stock_Year
+Att_PrevIndexValue: [1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 Title: Building Stock Year
 Definition: Bldg_Stock_Start_Yea..Bldg_Stock_End_Year
 NodeLocation: 240,192,1
 NodeSize: 64,40
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 242,546}
-Att_PrevIndexValue: [1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 
 Constant Bldg_Stock_Start_Yea
 Title: Bldg Stock Start Year
@@ -3841,12 +3841,12 @@ NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,-193,125,1524,645,17
 
 Index Import_Fixed_Params
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 Title: Import Fixed Params
 Definition: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 NodeLocation: 88,80,1
 NodeSize: 64,40
 WindState: 2,651,5,720,350
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 
 Decision Max_Imported_Dim
 Title: Max Imported Dimensions
@@ -3868,12 +3868,12 @@ NodeLocation: 88,272,1
 NodeSize: 64,40
 
 Index Excel_Import_Params
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index','Fact Column Index 1','Fact Column Index 2','Fact Column Index 3']
 Title: Excel Import Parameters
 Definition: Concat(Import_Fixed_Params, Fact_Col_Index_Param)
 NodeLocation: 88,360,1
 NodeSize: 64,40
 ValueState: 2,104,106,406,324,,MIDM
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index','Fact Column Index 1','Fact Column Index 2','Fact Column Index 3']
 
 Variable Variable_Identifier
 Title: Variable Identifier
@@ -3999,11 +3999,11 @@ WindState: 2,42,72,720,350
 Aliases: FormNode New1551412464, FormNode New1551412505
 
 Index Imported_Dataset_Num
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40]
 Title: Imported Dataset Number
 Definition: 1..Number_of_Datasets
 NodeLocation: 240,184,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40]
 
 Index Selected_Import_Data
 Title: Selected Import Datasets
@@ -4166,11 +4166,11 @@ NodeSize: 64,40
 WindState: 2,-3,6,720,350
 
 Index Import_Data_Types
+Att_PrevIndexValue: ['Any','Number','Text','Date']
 Title: Import Data Types
 Definition: ['Any','Number','Text','Date']
 NodeLocation: 688,696,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Any','Number','Text','Date']
 
 Decision Data_Type_Label
 Title: Data Type Label
@@ -4239,11 +4239,11 @@ Aliases: FormNode New1551412475, FormNode New1551412538
 NumberFormat: 3,F,4,4,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 
 Index Tab_Names
+Att_PrevIndexValue: ['SGIP_Data','Single_Cell_Inputs','Hourly_Profiles','Holiday_Dates','Meter_Counts','PV_CapFactor','PV_ResNewConstr_Size','Battery_Specs','Num_Strg_Units','AC-to-DC_Factor','Finance_Rates','Fed_ITC','Strg_Duration_Incent','Vehicle_Stock_Data','Struct_Single_Cell_Inputs','Hist_Vehicle_Growth','EV_MktShare_Mults','Building_Stock','Aggreg_Spatial_ID','EV_Map_Increm_to_Cumul','Climate_Zone_Map','Fuel_Prices','MPG','VMT','Fuel_Mix','Vehicle_Price','Vehicle_Range','Maint_Costs','Veh_Type_Map','Vehicle_Tech_Pref','Veh_Incentives','Veh_DecisionVars','Veh_OptStatus','Veh_R2Thresh','Veh_CalibDates','Veh_CalibDecisions','Veh_OptSetting','Veh_DecisBounds','Veh_Stock_Mults','SheetName']
 Title: Tab Names
 Definition: CopyIndex(Tab_Names_by_Number)
 NodeLocation: 240,872,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['SGIP_Data','Single_Cell_Inputs','Hourly_Profiles','Holiday_Dates','Meter_Counts','PV_CapFactor','PV_ResNewConstr_Size','Battery_Specs','Num_Strg_Units','AC-to-DC_Factor','Finance_Rates','Fed_ITC','Strg_Duration_Incent','Vehicle_Stock_Data','Struct_Single_Cell_Inputs','Hist_Vehicle_Growth','EV_MktShare_Mults','Building_Stock','Aggreg_Spatial_ID','EV_Map_Increm_to_Cumul','Climate_Zone_Map','Fuel_Prices','MPG','VMT','Fuel_Mix','Vehicle_Price','Vehicle_Range','Maint_Costs','Veh_Type_Map','Vehicle_Tech_Pref','Veh_Incentives','Veh_DecisionVars','Veh_OptStatus','Veh_R2Thresh','Veh_CalibDates','Veh_CalibDecisions','Veh_OptSetting','Veh_DecisBounds','Veh_Stock_Mults','SheetName']
 
 Decision Import_in_Progress
 Title: Import in Progress
@@ -4298,11 +4298,11 @@ NodeLocation: 872,264,1
 NodeSize: 64,40
 
 Index Categ_Index_Params
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Column 1 Index','Column 2 Index','Column 3 Index','Column 4 Index','Column 5 Index','Column 6 Index','Column 7 Index','Column 8 Index','Column 9 Index','Column 10 Index','Column 11 Index','Column 12 Index','Column 13 Index','Column 14 Index','Column 15 Index','Column 16 Index','Column 17 Index','Column 18 Index','Column 19 Index','Column 20 Index','Column 21 Index']
 Title: Categorical Index Parameters
 Definition: Concat(Cat_Index_Fix_Params, Import_Index_Cols)
 NodeLocation: 872,464,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Column 1 Index','Column 2 Index','Column 3 Index','Column 4 Index','Column 5 Index','Column 6 Index','Column 7 Index','Column 8 Index','Column 9 Index','Column 10 Index','Column 11 Index','Column 12 Index','Column 13 Index','Column 14 Index','Column 15 Index','Column 16 Index','Column 17 Index','Column 18 Index','Column 19 Index','Column 20 Index','Column 21 Index']
 
 Decision Categ_Index_Default
 Title: Categorical Index Default
@@ -4326,11 +4326,11 @@ WindState: 2,42,72,720,350
 Aliases: FormNode New1551412479, FormNode New1551412511
 
 Index Categ_Index_Tabs
+Att_PrevIndexValue: [1,2]
 Title: Categorical Index Tabs
 Definition: 1..Num_Categ_Index_Tabs
 NodeLocation: 1016,184,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2]
 
 Decision CatInd_ImportSetting
 Title: Categorical Index Import Settings
@@ -4378,11 +4378,11 @@ ReformDef: [Categ_Index_Tabs,Categ_Index_Params]
 TableCellDefault: Categ_Index_Default
 
 Index Cat_Index_Tab_Names
+Att_PrevIndexValue: ['Categorical_Indexes','Struct_Categ_Indexes']
 Title: Categ Index Tab Names
 Definition: CopyIndex(Categ_Index_Tab_Opt)
 NodeLocation: 1016,784,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Categorical_Indexes','Struct_Categ_Indexes']
 
 Index Categ_Index_Rows
 Title: Categ Index Rows
@@ -4483,11 +4483,11 @@ NodeLocation: 1192,264,1
 NodeSize: 64,40
 
 Index Seq_Index_Params
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Row 1 Parameter','Row 2 Parameter','Row 3 Parameter','Row 4 Parameter','Row 5 Parameter','Row 6 Parameter','Row 7 Parameter','Row 8 Parameter','Row 9 Parameter','Row 10 Parameter','Row 11 Parameter','Row 12 Parameter','Row 13 Parameter','Row 14 Parameter','Row 15 Parameter','Row 16 Parameter','Row 17 Parameter','Row 18 Parameter','Row 19 Parameter','Row 20 Parameter']
 Title: Sequence Index Parameters
 Definition: Concat(Seq_Index_Fix_Param, Import_Seq_Params)
 NodeLocation: 1192,464,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Row 1 Parameter','Row 2 Parameter','Row 3 Parameter','Row 4 Parameter','Row 5 Parameter','Row 6 Parameter','Row 7 Parameter','Row 8 Parameter','Row 9 Parameter','Row 10 Parameter','Row 11 Parameter','Row 12 Parameter','Row 13 Parameter','Row 14 Parameter','Row 15 Parameter','Row 16 Parameter','Row 17 Parameter','Row 18 Parameter','Row 19 Parameter','Row 20 Parameter']
 
 Decision Seq_Index_Default
 Title: Sequence Index Default
@@ -4511,11 +4511,11 @@ WindState: 2,42,72,720,350
 Aliases: FormNode New1551412488, FormNode New1551412521
 
 Index Seq_Index_Tabs
+Att_PrevIndexValue: [1,2]
 Title: Sequence Index Tabs
 Definition: 1..Num_Seq_Index_Tabs
 NodeLocation: 1336,184,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2]
 
 Decision SeqInd_ImportSetting
 Title: Sequence Index Import Settings
@@ -4561,11 +4561,11 @@ ReformDef: [Seq_Index_Tabs,Seq_Index_Params]
 TableCellDefault: Seq_Index_Default
 
 Index Seq_Index_Tab_Names
+Att_PrevIndexValue: ['Sequence_Index_Inputs','Struct_Seq_Index_Inputs']
 Title: Sequence Index Tab Names
 Definition: CopyIndex(Seq_Index_Tab_Opt)
 NodeLocation: 1336,784,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Sequence_Index_Inputs','Struct_Seq_Index_Inputs']
 
 Index Seq_Index_Rows
 Title: Sequence Index Rows
