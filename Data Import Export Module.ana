@@ -4414,7 +4414,7 @@ Title: Storage Input Data
 NodeLocation: 784,272,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,746,329,1101,542,17
+DiagState: 2,727,66,1101,542,17
 
 Alias Al1550183618
 Title: Battery Storage Specs
@@ -4912,7 +4912,7 @@ Author: JamesMilford
 Date: Fri, Dec 21, 2018 10:51 AM
 NodeLocation: 696,168,1
 NodeSize: 64,40
-DiagState: 2,-1,10,1847,637,17
+DiagState: 2,30,37,1847,637,17
 NodeColor: 65535,65535,65535
 
 Module Excel_Import_Logic
@@ -5031,7 +5031,7 @@ Fact Column Index 2: 	Handle(Land_Type)~
 Fact Column Index 3..N: 	Null
 Definition: Table(Imported_Dataset_Num,Excel_Import_Params)(~
 Checkbox(0),Path_to_Global_Data,'SGIP_Data','A7',Choice(Import_Data_Types,1,0),Null,Handle(SGIP_Data),Handle(SGIP_Data_Columns),Handle(SGIP_Data_Rows),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Single_Cell_Inputs','A7',Choice(Import_Data_Types,1,0),Null,Handle(Single_Cell_Inputs),Null,Handle(SingCell_Input_Names),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Single_Cell_Inputs','A7',Choice(Import_Data_Types,1,0),Null,Handle(Single_Cell_Inputs),Null,Handle(SingCell_Input_Names),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Hourly_Profiles','A7',Choice(Import_Data_Types,1,0),Null,Handle(Hourly_Profile_Data),Handle(Hourly_Profile_Names),Handle(Hourly_Profile_Rows),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Holiday_Dates','A7',Choice(Import_Data_Types,4,0),Null,Handle(Dates_of_Holidays),Handle(Holiday_Name),Handle(Holiday_Years),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Meter_Counts','A7',Choice(Import_Data_Types,2,0),Null,Handle(Meter_Counts),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,~
@@ -5043,32 +5043,32 @@ Checkbox(0),Path_to_Global_Data,'AC-to-DC_Factor','A7',Choice(Import_Data_Types,
 Checkbox(0),Path_to_Global_Data,'Finance_Rates','A7',Choice(Import_Data_Types,2,0),Null,Handle(Debt_Equity_Rates),Handle(All_Sectors),Handle(Debt_or_Equity),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Fed_ITC','A7',Choice(Import_Data_Types,2,0),Null,Handle(Invest_Tax_Credit),Handle(All_Sectors),Handle(ITC_Scenario),Handle(Static_PV_Time),Null,~
 Checkbox(0),Path_to_Global_Data,'Strg_Duration_Incent','A7',Choice(Import_Data_Types,2,0),Null,Handle(Incent_Durat_Derate),Handle(Incent_Durat_Inputs),Handle(Incent_Duration_Step),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Vehicle_Stock_Data','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Data),Handle(Vehicle_Stock_DataYr),Handle(All_Sectors),Handle(All_Spatial_ID),Handle(All_Vehicle_Techs),~
-Checkbox(1),Path_to_Global_Data,'Struct_Single_Cell_Inputs','A7',Choice(Import_Data_Types,1,0),Null,Handle(StructSingCell_Input),Null,Handle(StructSingCell_Names),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Hist_Vehicle_Growth','A7',Choice(Import_Data_Types,2,0),Null,Handle(Hist_Veh_Growth_Rate),Null,Handle(All_Vehicle_Techs),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'EV_MktShare_Mults','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Mkt_Share_Mult),Null,Handle(EV_Mkt_Share_Scen),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Building_Stock','A7',Choice(Import_Data_Types,2,0),Null,Handle(Building_Stock),Handle(Building_Stock_Year),Handle(All_Sectors),Handle(All_Spatial_ID),Null,~
-Checkbox(1),Path_to_Global_Data,'Aggreg_Spatial_ID','A7',Choice(Import_Data_Types,2,0),Null,Handle(All_Agg_Spatial_IDs),Null,Handle(All_Spatial_ID),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'EV_Map_Increm_to_Cumul','A7',Choice(Import_Data_Types,1,0),Null,Handle(EV_Map_Increm_Cumul),Null,Handle(EV_Adopt_Data_Types),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Climate_Zone_Map','A7',Choice(Import_Data_Types,3,0),Null,Handle(Spatial_ID_to_CZ_Map),Null,Handle(All_Spatial_ID),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Fuel_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Fuel_Prices),Handle(Vehicle_Input_Years),Handle(Fuel_Types),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'MPG','A7',Choice(Import_Data_Types,2,0),Null,Handle(MPG),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Handle(Fuel_Types),Null,~
-Checkbox(1),Path_to_Global_Data,'VMT','A7',Choice(Import_Data_Types,2,0),Null,Handle(VMT),Null,Handle(Vehicle_Input_Years),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Fuel_Mix','A7',Choice(Import_Data_Types,2,0),Null,Handle(Fuel_Mix),Handle(Vehicle_Input_Years),Handle(Fuel_Types),Handle(All_Vehicle_Techs),Null,~
-Checkbox(1),Path_to_Global_Data,'Vehicle_Price','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Price),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Vehicle_Range','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Range),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Maint_Costs','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Maint_Cost),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Veh_Type_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Vehicle_Type_Map),Null,Handle(All_Vehicle_Techs),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Vehicle_Tech_Pref','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Tech_Pref),Null,Handle(All_Vehicle_Techs),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Veh_Incentives','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Incents),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Handle(Veh_Incentive_Type),Handle(EV_Incent_Scenario),~
-Checkbox(1),Path_to_Global_Data,'Veh_DecisionVars','A7',Choice(Import_Data_Types,2,0),Null,Handle(Stored_EV_Dec_Vars),Handle(All_EV_Dec_Handles),Handle(All_Spatial_ID),Handle(All_Sectors),Null,~
-Checkbox(1),Path_to_Global_Data,'Veh_OptStatus','A7',Choice(Import_Data_Types,3,0),Null,Handle(Stored_Opt_Status_EV),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Veh_R2Thresh','A7',Choice(Import_Data_Types,2,0),Null,Handle(R2_Threshold),Null,Handle(EV_Calibration_Stage),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Veh_CalibDates','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Dates_Incl_by_Stg),Handle(EV_Calibration_Stage),Handle(Time_EV_Calibration),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Veh_CalibDecisions','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Decisions_by_Stg),Handle(EV_Calibration_Stage),Handle(All_EV_Decisions),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Vehicle_Stock_Data','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Data),Handle(Vehicle_Stock_DataYr),Handle(All_Sectors),Handle(All_Spatial_ID),Handle(All_Vehicle_Techs),~
+Checkbox(0),Path_to_Global_Data,'Struct_Single_Cell_Inputs','A7',Choice(Import_Data_Types,1,0),Null,Handle(StructSingCell_Input),Null,Handle(StructSingCell_Names),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Hist_Vehicle_Growth','A7',Choice(Import_Data_Types,2,0),Null,Handle(Hist_Veh_Growth_Rate),Null,Handle(All_Vehicle_Techs),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'EV_MktShare_Mults','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Mkt_Share_Mult),Null,Handle(EV_Mkt_Share_Scen),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Building_Stock','A7',Choice(Import_Data_Types,2,0),Null,Handle(Building_Stock),Handle(Building_Stock_Year),Handle(All_Sectors),Handle(All_Spatial_ID),Null,~
+Checkbox(0),Path_to_Global_Data,'Aggreg_Spatial_ID','A7',Choice(Import_Data_Types,2,0),Null,Handle(All_Agg_Spatial_IDs),Null,Handle(All_Spatial_ID),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'EV_Map_Increm_to_Cumul','A7',Choice(Import_Data_Types,1,0),Null,Handle(EV_Map_Increm_Cumul),Null,Handle(EV_Adopt_Data_Types),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Climate_Zone_Map','A7',Choice(Import_Data_Types,3,0),Null,Handle(Spatial_ID_to_CZ_Map),Null,Handle(All_Spatial_ID),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Fuel_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Fuel_Prices),Handle(Vehicle_Input_Years),Handle(Fuel_Types),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'MPG','A7',Choice(Import_Data_Types,2,0),Null,Handle(MPG),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Handle(Fuel_Types),Null,~
+Checkbox(0),Path_to_Global_Data,'VMT','A7',Choice(Import_Data_Types,2,0),Null,Handle(VMT),Null,Handle(Vehicle_Input_Years),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Fuel_Mix','A7',Choice(Import_Data_Types,2,0),Null,Handle(Fuel_Mix),Handle(Vehicle_Input_Years),Handle(Fuel_Types),Handle(All_Vehicle_Techs),Null,~
+Checkbox(0),Path_to_Global_Data,'Vehicle_Price','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Price),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Vehicle_Range','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Range),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Maint_Costs','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Maint_Cost),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_Type_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Vehicle_Type_Map),Null,Handle(All_Vehicle_Techs),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Vehicle_Tech_Pref','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Tech_Pref),Null,Handle(All_Vehicle_Techs),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_Incentives','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Incents),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Handle(Veh_Incentive_Type),Handle(EV_Incent_Scenario),~
+Checkbox(0),Path_to_Global_Data,'Veh_DecisionVars','A7',Choice(Import_Data_Types,2,0),Null,Handle(Stored_EV_Dec_Vars),Handle(All_EV_Dec_Handles),Handle(All_Spatial_ID),Handle(All_Sectors),Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_OptStatus','A7',Choice(Import_Data_Types,3,0),Null,Handle(Stored_Opt_Status_EV),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_R2Thresh','A7',Choice(Import_Data_Types,2,0),Null,Handle(R2_Threshold),Null,Handle(EV_Calibration_Stage),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_CalibDates','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Dates_Incl_by_Stg),Handle(EV_Calibration_Stage),Handle(Time_EV_Calibration),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_CalibDecisions','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Decisions_by_Stg),Handle(EV_Calibration_Stage),Handle(All_EV_Decisions),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Veh_OptSetting','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_OptSettings_byStg),Handle(EV_Calibration_Stage),Handle(Opt_Settings_EVs),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Veh_DecisBounds','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Dec_Var_Bounds),Handle(Upper_Lower),Handle(All_EV_Decisions),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Veh_Stock_Mults','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Multip),Null,Handle(All_Spatial_ID),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_DecisBounds','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Dec_Var_Bounds),Handle(Upper_Lower),Handle(All_EV_Decisions),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_Stock_Mults','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Multip),Null,Handle(All_Spatial_ID),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Equip_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Installed_EquipPrice),Handle(All_Sectors),Handle(All_Equipment_Types),Handle(New_or_Retrofit),Handle(Static_PV_Time),~
 Checkbox(0),Path_to_Global_Data,'PV_PriceChangeRate','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Cost_Change_Rate),Handle(All_Sectors),Handle(PV_Cost_Scenario),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Equip_Lifetime','A7',Choice(Import_Data_Types,2,0),Null,Handle(Equipment_Lifetime),Null,Handle(All_Equipment_Types),Null,Null,~
@@ -5093,12 +5093,12 @@ Checkbox(0),Path_to_Global_Data,'PV_Constraints','A7',Choice(Import_Data_Types,2
 Checkbox(0),Path_to_Global_Data,'PV_CalibDates','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Dates_Incl_by_Stg),Handle(PV_Calibration_Stage),Handle(Time_PV_Calibration),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'PV_R2Thresh','A7',Choice(Import_Data_Types,2,0),Null,Handle(R2_Threshold1),Handle(PV_Calibration_Stage),Handle(All_Sectors),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'PV_CalibToler','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Tolerance_by_Stag),Handle(PV_Calibration_Stage),Handle(Tolerance_Input),Null,Null,~
-Checkbox(0),Path_to_Global_Data,'PV_OptSettings','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_OptSettings_byStg),Handle(PV_Calibration_Stage),Handle(Opt_Settings_PV),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'PV_OptSetting','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_OptSettings_byStg),Handle(PV_Calibration_Stage),Handle(Opt_Settings_PV),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'PV_DecisBounds','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Dec_Var_Bounds),Handle(Upper_Lower),Handle(All_PV_Decisions),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'PV_DecisionVars','A7',Choice(Import_Data_Types,2,0),Null,Handle(Stored_PV_Dec_Vars),Handle(All_PV_Dec_Handles),Handle(All_Spatial_ID),Handle(All_Sectors),Null,~
-Checkbox(0),Path_to_Global_Data,'PV_OptStatus','A7',Choice(Import_Data_Types,3,0),Null,Handle(PV_OptSettings_byStg),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'PV_OptStatus','A7',Choice(Import_Data_Types,3,0),Null,Handle(Stored_Opt_Status_PV),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Strg_Cap_Derate','A7',Choice(Import_Data_Types,2,0),Null,Handle(Incent_Derate_Cap),Handle(Incent_Cap_Inputs),Handle(Incent_Capacity_Step),Null,Null,~
-Checkbox(0),Path_to_Global_Data,'Strg_IncentBaseRate','A7',Choice(Import_Data_Types,2,0),Null,Handle(Strg_Incent_BaseRate),Handle(Incentive_Steps),Handle(ITC_Applied),Handle(All_Sectors),Null,~
+Checkbox(0),Path_to_Global_Data,'Strg_Incent_BaseRate','A7',Choice(Import_Data_Types,2,0),Null,Handle(Strg_Incent_BaseRate),Handle(Incentive_Steps),Handle(ITC_Applied),Handle(All_Sectors),Null,~
 Checkbox(0),Path_to_Global_Data,'Strg_Hist_Incent','A7',Choice(Import_Data_Types,2,0),Null,Handle(Hist_Storage_Incent),Handle(All_Sectors),Handle(Historic_Incent_Yrs),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Strg_PriceChangeRate','A7',Choice(Import_Data_Types,2,0),Null,Handle(Strg_Cost_Chg_Rate),Handle(All_Sectors),Handle(Storage_Cost_Scen),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Incent_StartMonth','A7',Choice(Import_Data_Types,1,0),Null,Handle(Incentive_Step_Start),Handle(Incentive_Steps),Handle(All_Sectors),Null,Null,~
@@ -5286,11 +5286,11 @@ NodeLocation: 688,344,1
 NodeSize: 64,40
 
 Index All_Index_Checks
-Att_PrevIndexValue: ['Missing Subscripts','Incorrect Subscripts','Repeat Subscripts']
 Title: All Index Checks
 Definition: ['Missing Subscripts','Incorrect Subscripts','Repeat Subscripts']
 NodeLocation: 688,520,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Missing Subscripts','Incorrect Subscripts','Repeat Subscripts']
 
 Index Index_Checks
 Title: Index Checks
@@ -5375,7 +5375,7 @@ Att_PrevIndexValue: ['Tab Name','Selected for Import']
 
 Decision Last_Import_Time
 Title: Last Import Time
-Definition: 11-Apr-2019 14:23:00.494000
+Definition: 23-Sep-2019 10:20:18.111000
 NodeLocation: 544,848,1
 NodeSize: 64,40
 Aliases: FormNode New1551412475, FormNode New1551412538
@@ -5386,7 +5386,7 @@ Title: Tab Names
 Definition: CopyIndex(Tab_Names_by_Number)
 NodeLocation: 240,872,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['SGIP_Data','Single_Cell_Inputs','Hourly_Profiles','Holiday_Dates','Meter_Counts','PV_CapFactor','PV_ResNewConstr_Size','Battery_Specs','Num_Strg_Units','AC-to-DC_Factor','Finance_Rates','Fed_ITC','Strg_Duration_Incent','Vehicle_Stock_Data','Struct_Single_Cell_Inputs','Hist_Vehicle_Growth','EV_MktShare_Mults','Building_Stock','Aggreg_Spatial_ID','EV_Map_Increm_to_Cumul','Climate_Zone_Map','Fuel_Prices','MPG','VMT','Fuel_Mix','Vehicle_Price','Vehicle_Range','Maint_Costs','Veh_Type_Map','Vehicle_Tech_Pref','Veh_Incentives','Veh_DecisionVars','Veh_OptStatus','Veh_R2Thresh','Veh_CalibDates','Veh_CalibDecisions','Veh_OptSetting','Veh_DecisBounds','Veh_Stock_Mults','Equip_Prices','PV_PriceChangeRate','Equip_Lifetime','OM_Cost','Interconn_Fee','Commercial_Load','Detailed_LIDAR','LIDAR_Bldg_Suitability','PV_Size_Distrib','Min_Eligibility','NewConstr_Suitability','Apply_Homeowner_Fract','Apply_Premise_Suitability','Homeowner_Fract','Consump_Fcst','Stock_Basis','Power_Density','Pct_by_RoofType','Module_Roof_Ratio','PV_CalibDecis','PV_Constraints','PV_CalibDates','PV_R2Thresh','PV_CalibToler','PV_OptSettings','PV_DecisBounds','PV_DecisionVars','PV_OptStatus','Strg_Cap_Derate','Strg_IncentBaseRate','Strg_Hist_Incent','Strg_PriceChangeRate','Incent_StartMonth','MACRS','Tax_Rates','Bonus_Deprec','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName']
+Att_PrevIndexValue: ['SGIP_Data','Single_Cell_Inputs','Hourly_Profiles','Holiday_Dates','Meter_Counts','PV_CapFactor','PV_ResNewConstr_Size','Battery_Specs','Num_Strg_Units','AC-to-DC_Factor','Finance_Rates','Fed_ITC','Strg_Duration_Incent','Vehicle_Stock_Data','Struct_Single_Cell_Inputs','Hist_Vehicle_Growth','EV_MktShare_Mults','Building_Stock','Aggreg_Spatial_ID','EV_Map_Increm_to_Cumul','Climate_Zone_Map','Fuel_Prices','MPG','VMT','Fuel_Mix','Vehicle_Price','Vehicle_Range','Maint_Costs','Veh_Type_Map','Vehicle_Tech_Pref','Veh_Incentives','Veh_DecisionVars','Veh_OptStatus','Veh_R2Thresh','Veh_CalibDates','Veh_CalibDecisions','Veh_OptSetting','Veh_DecisBounds','Veh_Stock_Mults','Equip_Prices','PV_PriceChangeRate','Equip_Lifetime','OM_Cost','Interconn_Fee','Commercial_Load','Detailed_LIDAR','LIDAR_Bldg_Suitability','PV_Size_Distrib','Min_Eligibility','NewConstr_Suitability','Apply_Homeowner_Fract','Apply_Premise_Suitability','Homeowner_Fract','Consump_Fcst','Stock_Basis','Power_Density','Pct_by_RoofType','Module_Roof_Ratio','PV_CalibDecis','PV_Constraints','PV_CalibDates','PV_R2Thresh','PV_CalibToler','PV_OptSetting','PV_DecisBounds','PV_DecisionVars','PV_OptStatus','Strg_Cap_Derate','Strg_Incent_BaseRate','Strg_Hist_Incent','Strg_PriceChangeRate','Incent_StartMonth','MACRS','Tax_Rates','Bonus_Deprec','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName']
 
 Decision Import_in_Progress
 Title: Import in Progress
@@ -5698,7 +5698,7 @@ Checkbox(1),Path_to_Global_Data,'Struct_Seq_Index_Inputs','A5',Handle(Num_SGIP_D
 NodeLocation: 1192,664,1
 NodeSize: 64,40
 WindState: 2,26,10,1042,708
-DefnState: 2,1068,51,805,645,0,DFNM
+DefnState: 2,474,10,805,645,0,DFNM
 Aliases: FormNode New1551412489, FormNode New1551412515
 ReformDef: [Seq_Index_Tabs,Seq_Index_Params]
 TableCellDefault: Seq_Index_Default
@@ -6520,7 +6520,7 @@ Aliases: FormNode New1551412495, FormNode New1551412537, FormNode New1551412451
 Decision Dataset_to_View
 Title: Dataset to View
 Description: Select the tab name of the dataset you wish to view in greater detail.
-Definition: Choice(Tab_Names,37,0)
+Definition: Choice(Tab_Names,64,0)
 NodeLocation: 112,520,1
 NodeSize: 64,40
 WindState: 2,7,277,720,350
