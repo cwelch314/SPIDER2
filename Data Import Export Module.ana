@@ -5069,7 +5069,7 @@ Checkbox(0),Path_to_Global_Data,'Veh_CalibDecisions','A7',Choice(Import_Data_Typ
 Checkbox(0),Path_to_Global_Data,'Veh_OptSetting','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_OptSettings_byStg),Handle(EV_Calibration_Stage),Handle(Opt_Settings_EVs),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Veh_DecisBounds','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Dec_Var_Bounds),Handle(Upper_Lower),Handle(All_EV_Decisions),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Veh_Stock_Mults','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Multip),Null,Handle(All_Spatial_ID),Null,Null,~
-Checkbox(0),Path_to_Global_Data,'Equip_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Installed_EquipPrice),Handle(All_Sectors),Handle(All_Equipment_Types),Handle(New_or_Retrofit),Handle(Static_PV_Time),~
+Checkbox(1),Path_to_Global_Data,'Equip_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Installed_EquipPrice),Handle(All_Sectors),Handle(All_Equipment_Types),Handle(New_or_Retrofit),Handle(Static_PV_Time),~
 Checkbox(0),Path_to_Global_Data,'PV_PriceChangeRate','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Cost_Change_Rate),Handle(All_Sectors),Handle(PV_Cost_Scenario),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Equip_Lifetime','A7',Choice(Import_Data_Types,2,0),Null,Handle(Equipment_Lifetime),Null,Handle(All_Equipment_Types),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'OM_Cost','A7',Choice(Import_Data_Types,2,0),Null,Handle(O_M_Cost),Handle(All_Sectors),Handle(All_Equipment_Types),Null,Null,~
@@ -5375,18 +5375,18 @@ Att_PrevIndexValue: ['Tab Name','Selected for Import']
 
 Decision Last_Import_Time
 Title: Last Import Time
-Definition: 23-Sep-2019 10:20:18.111000
+Definition: 23-Sep-2019 12:42:20.273000
 NodeLocation: 544,848,1
 NodeSize: 64,40
 Aliases: FormNode New1551412475, FormNode New1551412538
 NumberFormat: 3,F,4,4,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 
 Index Tab_Names
+Att_PrevIndexValue: ['SGIP_Data','Single_Cell_Inputs','Hourly_Profiles','Holiday_Dates','Meter_Counts','PV_CapFactor','PV_ResNewConstr_Size','Battery_Specs','Num_Strg_Units','AC-to-DC_Factor','Finance_Rates','Fed_ITC','Strg_Duration_Incent','Vehicle_Stock_Data','Struct_Single_Cell_Inputs','Hist_Vehicle_Growth','EV_MktShare_Mults','Building_Stock','Aggreg_Spatial_ID','EV_Map_Increm_to_Cumul','Climate_Zone_Map','Fuel_Prices','MPG','VMT','Fuel_Mix','Vehicle_Price','Vehicle_Range','Maint_Costs','Veh_Type_Map','Vehicle_Tech_Pref','Veh_Incentives','Veh_DecisionVars','Veh_OptStatus','Veh_R2Thresh','Veh_CalibDates','Veh_CalibDecisions','Veh_OptSetting','Veh_DecisBounds','Veh_Stock_Mults','Equip_Prices','PV_PriceChangeRate','Equip_Lifetime','OM_Cost','Interconn_Fee','Commercial_Load','Detailed_LIDAR','LIDAR_Bldg_Suitability','PV_Size_Distrib','Min_Eligibility','NewConstr_Suitability','Apply_Homeowner_Fract','Apply_Premise_Suitability','Homeowner_Fract','Consump_Fcst','Stock_Basis','Power_Density','Pct_by_RoofType','Module_Roof_Ratio','PV_CalibDecis','PV_Constraints','PV_CalibDates','PV_R2Thresh','PV_CalibToler','PV_OptSetting','PV_DecisBounds','PV_DecisionVars','PV_OptStatus','Strg_Cap_Derate','Strg_Incent_BaseRate','Strg_Hist_Incent','Strg_PriceChangeRate','Incent_StartMonth','MACRS','Tax_Rates','Bonus_Deprec','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName']
 Title: Tab Names
 Definition: CopyIndex(Tab_Names_by_Number)
 NodeLocation: 240,872,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['SGIP_Data','Single_Cell_Inputs','Hourly_Profiles','Holiday_Dates','Meter_Counts','PV_CapFactor','PV_ResNewConstr_Size','Battery_Specs','Num_Strg_Units','AC-to-DC_Factor','Finance_Rates','Fed_ITC','Strg_Duration_Incent','Vehicle_Stock_Data','Struct_Single_Cell_Inputs','Hist_Vehicle_Growth','EV_MktShare_Mults','Building_Stock','Aggreg_Spatial_ID','EV_Map_Increm_to_Cumul','Climate_Zone_Map','Fuel_Prices','MPG','VMT','Fuel_Mix','Vehicle_Price','Vehicle_Range','Maint_Costs','Veh_Type_Map','Vehicle_Tech_Pref','Veh_Incentives','Veh_DecisionVars','Veh_OptStatus','Veh_R2Thresh','Veh_CalibDates','Veh_CalibDecisions','Veh_OptSetting','Veh_DecisBounds','Veh_Stock_Mults','Equip_Prices','PV_PriceChangeRate','Equip_Lifetime','OM_Cost','Interconn_Fee','Commercial_Load','Detailed_LIDAR','LIDAR_Bldg_Suitability','PV_Size_Distrib','Min_Eligibility','NewConstr_Suitability','Apply_Homeowner_Fract','Apply_Premise_Suitability','Homeowner_Fract','Consump_Fcst','Stock_Basis','Power_Density','Pct_by_RoofType','Module_Roof_Ratio','PV_CalibDecis','PV_Constraints','PV_CalibDates','PV_R2Thresh','PV_CalibToler','PV_OptSetting','PV_DecisBounds','PV_DecisionVars','PV_OptStatus','Strg_Cap_Derate','Strg_Incent_BaseRate','Strg_Hist_Incent','Strg_PriceChangeRate','Incent_StartMonth','MACRS','Tax_Rates','Bonus_Deprec','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName']
 
 Decision Import_in_Progress
 Title: Import in Progress
@@ -5704,11 +5704,11 @@ ReformDef: [Seq_Index_Tabs,Seq_Index_Params]
 TableCellDefault: Seq_Index_Default
 
 Index Seq_Index_Tab_Names
+Att_PrevIndexValue: ['Sequence_Index_Inputs','Struct_Seq_Index_Inputs']
 Title: Sequence Index Tab Names
 Definition: CopyIndex(Seq_Index_Tab_Opt)
 NodeLocation: 1336,784,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Sequence_Index_Inputs','Struct_Seq_Index_Inputs']
 
 Index Seq_Index_Rows
 Title: Sequence Index Rows
@@ -6503,7 +6503,7 @@ WindState: 2,18,191,720,350
 
 Variable Import_Reset
 Title: Import Reset
-Definition: 1
+Definition: 0
 NodeLocation: 144,128,1
 NodeSize: 64,40
 
@@ -6520,7 +6520,7 @@ Aliases: FormNode New1551412495, FormNode New1551412537, FormNode New1551412451
 Decision Dataset_to_View
 Title: Dataset to View
 Description: Select the tab name of the dataset you wish to view in greater detail.
-Definition: Choice(Tab_Names,64,0)
+Definition: Choice(Tab_Names,40,0)
 NodeLocation: 112,520,1
 NodeSize: 64,40
 WindState: 2,7,277,720,350
@@ -10873,11 +10873,11 @@ DefnState: 2,6,118,604,466,0,DFNM
 Aliases: FormNode Fo1542232306
 
 Index Min_and_Max
-Att_PrevIndexValue: ['Min','Max']
 Title: Min and Max
 Definition: ['Min','Max']
 NodeLocation: 1272,512,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Min','Max']
 
 Variable Fcst_System_Size_Zip
 Title: Forecast AC System Size by Zip
@@ -11272,7 +11272,7 @@ Aliases: FormNode Fo1538495811
 Decision PV_Path
 Title: PV Path
 Description: The path and filename of the PV interconnection data.
-Definition: 'C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Documents\SDGE_DER_Forecasting_2018\DG_Stats_Data\NEM_CurrentlyInterconnectedDataset_2018-09-30.xlsx'
+Definition: 'C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Documents\SDGE_DER_Forecasting_2018\DG_Stats_Data\NEM_CurrentlyInterconnectedDataset_2019-06-30.xlsx'
 NodeLocation: 408,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo1537564208, FormNode Fo1534882592
@@ -11330,12 +11330,12 @@ Aliases: Alias Al1537564184
 OnClick: (All_InterconnectCols:=CopyIndex(Raw_PV_Intercon_Data.cols));
 
 Index All_InterconnectCols
-Att_PrevIndexValue: ['Application Id','Matched CSI Application Number','Application Status','Utility','Service City','Service Zip','Service County','Technology Type','System Size DC','System Size AC','Tilt','Azimuth','Mounting Method','Tracking','Customer Sector','App Received Date','App Complete Date','App Approved Date','Self Installer','Installer Name','Installer Phone','Installer City','Installer State','Installer Zip','CSLB Number','Third Party Owned','Third Party Owned Type','Third Party Name','Pace Financed','Pace Financier','Electric Vehicle','Electric Vehicle Count','System Output Monitoring','System Output Reports To Vendor?','System Output Monitoring Provider','Total System Cost','Itc Cost Basis','Previous Application','Previous Application Ids','NEM Tariff','VNEM, NEM-V, NEM-Agg','Project is VNEM, NEM-V, NEM-Agg?','Module Model 1','Module Manufacturer 1','Module Quantity 1','Module Model 2','Module Manufacturer 2','Module Quantity 2','Module Model 3','Module Manufacturer 3','Module Quantity 3','Module Model 4','Module Manufacturer 4','Module Quantity 4','Module Model 5','Module Manufacturer 5','Module Quantity 5','Module Model 6','Module Manufacturer 6','Module Quantity 6','Module Model 7','Module Manufacturer 7','Module Quantity 7','Module Model 8','Module Manufacturer 8','Module Quantity 8','Module Model 9','Module Manufacturer 9','Module Quantity 9','Module Model 10','Module Manufacturer 10','Module Quantity 10','Inverter Model 1','Inverter Manufacturer 1','Inverter Quantity 1','Inverter Model 2','Inverter Manufacturer 2','Inverter Quantity 2','Inverter Model 3','Inverter Manufacturer 3','Inverter Quantity 3','Inverter Model 4','Inverter Manufacturer 4','Inverter Quantity 4','Inverter Model 5','Inverter Manufacturer 5','Inverter Quantity 5','Inverter Model 6','Inverter Manufacturer 6','Inverter Quantity 6','Inverter Model 7','Inverter Manufacturer 7','Inverter Quantity 7','Inverter Model 8','Inverter Manufacturer 8','Inverter Quantity 8','Inverter Model 9','Inverter Manufacturer 9','Inverter Quantity 9','Inverter Model 10','Inverter Manufacturer 10','Inverter Quantity 10','Inverter Model 11','Inverter Manufacturer 11','Inverter Quantity 11','Inverter Model 12','Inverter Manufacturer 12','Inverter Quantity 12','Inverter Model 13','Inverter Manufacturer 13','Inverter Quantity 13','Inverter Model 14','Inverter Manufacturer 14','Inverter Quantity 14']
 Title: All Interconnect Columns
 Definition: ['Application Id','Matched CSI Application Number','Application Status','Utility','Service City','Service Zip','Service County','Technology Type','System Size DC','System Size AC','Tilt','Azimuth','Mounting Method','Tracking','Customer Sector','App Received Date','App Complete Date','App Approved Date','Self Installer','Installer Name','Installer Phone','Installer City','Installer State','Installer Zip','CSLB Number','Third Party Owned','Third Party Owned Type','Third Party Name','Pace Financed','Pace Financier','Electric Vehicle','Electric Vehicle Count','System Output Monitoring','System Output Reports To Vendor?','System Output Monitoring Provider','Total System Cost','Itc Cost Basis','Previous Application','Previous Application Ids','NEM Tariff','VNEM, NEM-V, NEM-Agg','Project is VNEM, NEM-V, NEM-Agg?','Module Model 1','Module Manufacturer 1','Module Quantity 1','Module Model 2','Module Manufacturer 2','Module Quantity 2','Module Model 3','Module Manufacturer 3','Module Quantity 3','Module Model 4','Module Manufacturer 4','Module Quantity 4','Module Model 5','Module Manufacturer 5','Module Quantity 5','Module Model 6','Module Manufacturer 6','Module Quantity 6','Module Model 7','Module Manufacturer 7','Module Quantity 7','Module Model 8','Module Manufacturer 8','Module Quantity 8','Module Model 9','Module Manufacturer 9','Module Quantity 9','Module Model 10','Module Manufacturer 10','Module Quantity 10','Inverter Model 1','Inverter Manufacturer 1','Inverter Quantity 1','Inverter Model 2','Inverter Manufacturer 2','Inverter Quantity 2','Inverter Model 3','Inverter Manufacturer 3','Inverter Quantity 3','Inverter Model 4','Inverter Manufacturer 4','Inverter Quantity 4','Inverter Model 5','Inverter Manufacturer 5','Inverter Quantity 5','Inverter Model 6','Inverter Manufacturer 6','Inverter Quantity 6','Inverter Model 7','Inverter Manufacturer 7','Inverter Quantity 7','Inverter Model 8','Inverter Manufacturer 8','Inverter Quantity 8','Inverter Model 9','Inverter Manufacturer 9','Inverter Quantity 9','Inverter Model 10','Inverter Manufacturer 10','Inverter Quantity 10','Inverter Model 11','Inverter Manufacturer 11','Inverter Quantity 11','Inverter Model 12','Inverter Manufacturer 12','Inverter Quantity 12','Inverter Model 13','Inverter Manufacturer 13','Inverter Quantity 13','Inverter Model 14','Inverter Manufacturer 14','Inverter Quantity 14']
 NodeLocation: 736,192,1
 NodeSize: 64,40
 ValueState: 2,200,202,416,568,,MIDM
+Att_PrevIndexValue: ['Application Id','Matched CSI Application Number','Application Status','Utility','Service City','Service Zip','Service County','Technology Type','System Size DC','System Size AC','Tilt','Azimuth','Mounting Method','Tracking','Customer Sector','App Received Date','App Complete Date','App Approved Date','Self Installer','Installer Name','Installer Phone','Installer City','Installer State','Installer Zip','CSLB Number','Third Party Owned','Third Party Owned Type','Third Party Name','Pace Financed','Pace Financier','Electric Vehicle','Electric Vehicle Count','System Output Monitoring','System Output Reports To Vendor?','System Output Monitoring Provider','Total System Cost','Itc Cost Basis','Previous Application','Previous Application Ids','NEM Tariff','VNEM, NEM-V, NEM-Agg','Project is VNEM, NEM-V, NEM-Agg?','Module Model 1','Module Manufacturer 1','Module Quantity 1','Module Model 2','Module Manufacturer 2','Module Quantity 2','Module Model 3','Module Manufacturer 3','Module Quantity 3','Module Model 4','Module Manufacturer 4','Module Quantity 4','Module Model 5','Module Manufacturer 5','Module Quantity 5','Module Model 6','Module Manufacturer 6','Module Quantity 6','Module Model 7','Module Manufacturer 7','Module Quantity 7','Module Model 8','Module Manufacturer 8','Module Quantity 8','Module Model 9','Module Manufacturer 9','Module Quantity 9','Module Model 10','Module Manufacturer 10','Module Quantity 10','Inverter Model 1','Inverter Manufacturer 1','Inverter Quantity 1','Inverter Model 2','Inverter Manufacturer 2','Inverter Quantity 2','Inverter Model 3','Inverter Manufacturer 3','Inverter Quantity 3','Inverter Model 4','Inverter Manufacturer 4','Inverter Quantity 4','Inverter Model 5','Inverter Manufacturer 5','Inverter Quantity 5','Inverter Model 6','Inverter Manufacturer 6','Inverter Quantity 6','Inverter Model 7','Inverter Manufacturer 7','Inverter Quantity 7','Inverter Model 8','Inverter Manufacturer 8','Inverter Quantity 8','Inverter Model 9','Inverter Manufacturer 9','Inverter Quantity 9','Inverter Model 10','Inverter Manufacturer 10','Inverter Quantity 10','Inverter Model 11','Inverter Manufacturer 11','Inverter Quantity 11','Inverter Model 12','Inverter Manufacturer 12','Inverter Quantity 12','Inverter Model 13','Inverter Manufacturer 13','Inverter Quantity 13','Inverter Model 14','Inverter Manufacturer 14','Inverter Quantity 14']
 
 Decision Sel_Interconn_Fields
 Title: Select Interconn Fields

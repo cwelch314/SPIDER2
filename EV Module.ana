@@ -19375,13 +19375,13 @@ WindState: 2,98,82,1092,496
 {!40300|Att_SlicerPopupSize: 262,64}
 
 Index EV_Adopt_Data_Types
-Att_PrevIndexValue: ['Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 Title: EV Adoption Data Types
 Definition: ['Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 NodeLocation: 1024,80,1
 NodeSize: 64,40
 WindState: 2,1475,82,720,350
 {!40300|Att_SlicerPopupSize: 227,84}
+Att_PrevIndexValue: ['Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 
 Constant EV_Map_Increm_Cumul
 Title: EV Map Incremental to Cumulative
@@ -19404,11 +19404,11 @@ NodeSize: 64,40
 WindState: 2,1358,183,720,350
 
 Index EV_Adopt_Types_None
-Att_PrevIndexValue: ['None','Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 Title: EV Adopt Data Types with None
 Definition: Concat(None_Label, EV_Adopt_Data_Types)
 NodeLocation: 1024,256,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['None','Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 
 Index EV_Spatial_ID
 Title: EV Spatial ID
@@ -24325,7 +24325,6 @@ ValueState: 2,29,138,416,303,,MIDM
 TableCellDefault: Handle(Null)
 
 Index All_EV_Dec_Handles
-Att_PrevIndexValue: [EV_Ad_Effectiveness,EV_Word_of_Mouth,EV_LongRun_Mkt_Share,EV_Init_Familiarity,Early_Retiremnt_Mult,EV_Spatial_Coeff]
 Title: All EV Dec Handles
 Description: A superset of all possible decision variables to be used in the optimization.
 Definition: CopyIndex(Handles_for_EV_Decis)
@@ -24335,6 +24334,7 @@ WindState: 2,593,95,720,350
 ValueState: 2,1948,362,416,303,0,MIDM
 DisplayInputs: Index All_EV_Decisions
 MetaOnly: 1
+Att_PrevIndexValue: [EV_Ad_Effectiveness,EV_Word_of_Mouth,EV_LongRun_Mkt_Share,EV_Init_Familiarity,Early_Retiremnt_Mult,EV_Spatial_Coeff]
 
 Index All_EV_Decisions
 Title: All EV Decisions
