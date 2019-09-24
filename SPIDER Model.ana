@@ -1026,12 +1026,12 @@ THEN Null~
 ELSE Show_ACP_Window(Storage_Dispatch_Out,Storage_Dispatch_Tit,Storage_Dispatch, 'Result')
 
 Index Storage_Dispatch_Tit
+Att_PrevIndexValue: ['Dispatch Flows (kW-hr/customer)','Rates for Dispatch','Battery Charge for Dispatch (kWh)','Pct of Stored Electricity from PV (fraction)']
 Title: Storage Dispatch Titles
 Definition: Create_Titles_List(Storage_Dispatch_Out)~
 
 NodeLocation: 160,1152,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Dispatch Flows (kW-hr/customer)','Rates for Dispatch','Battery Charge for Dispatch (kWh)','Pct of Stored Electricity from PV (fraction)']
 
 Text Te1552872981
 Title: Storage Dispatch Output
@@ -1367,7 +1367,6 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_PV_Impact_Out
 
 Index All_PV_Input
-Att_PrevIndexValue: [Stored_Capacity_Inst,Stored_PV_Installs,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve]
 Title: All PV Input
 Definition: [Stored_Capacity_Inst,Stored_PV_Installs,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve]
 NodeLocation: 1120,432,1
@@ -1375,6 +1374,7 @@ NodeSize: 64,40
 WindState: 2,2234,82,720,350
 Aliases: FormNode Fo1557511154
 MetaOnly: 1
+Att_PrevIndexValue: [Stored_Capacity_Inst,Stored_PV_Installs,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve]
 
 FormNode Fo1557511154
 Title: PV Input
@@ -1385,7 +1385,6 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_PV_Input
 
 Index All_PV_Econ_Out
-Att_PrevIndexValue: [Pre_and_Post_Custom1,FirstYr_Bill_Compar1,CostOf_Elect_Compare,Cost_of_Elect_Ratio,Simple_Payback_Time1,Installed_Price]
 Title: All PV Econ Out
 Definition: [Pre_and_Post_Custom1,FirstYr_Bill_Compar1,CostOf_Elect_Compare,Cost_of_Elect_Ratio,Simple_Payback_Time1,Installed_Price]
 NodeLocation: 432,912,1
@@ -1394,6 +1393,7 @@ WindState: 2,98,82,720,350
 ValueState: 2,52,58,416,303,,MIDM
 Aliases: FormNode Fo1557511198
 MetaOnly: 1
+Att_PrevIndexValue: [Pre_and_Post_Custom1,FirstYr_Bill_Compar1,CostOf_Elect_Compare,Cost_of_Elect_Ratio,Simple_Payback_Time1,Installed_Price]
 
 FormNode Fo1557511198
 Title: PV Econ Out
@@ -1412,13 +1412,13 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_Storage_Input
 
 Index All_Storage_Input
-Att_PrevIndexValue: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View,Battery_Storage_Spec,Num_Storage_Units,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Time,Strg_Incent_BaseRate,Incentive_Step_Start,Incent_Durat_Derate,Incent_Derate_Cap,Hist_Storage_Incent]
 Title: All Storage Input
 Definition: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View,Battery_Storage_Spec,Num_Storage_Units,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Time,Strg_Incent_BaseRate,Incentive_Step_Start,Incent_Durat_Derate,Incent_Derate_Cap,Hist_Storage_Incent]
 NodeLocation: 1120,912,1
 NodeSize: 64,40
 Aliases: FormNode Fo1557511241
 MetaOnly: 1
+Att_PrevIndexValue: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View,Battery_Storage_Spec,Num_Storage_Units,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Time,Strg_Incent_BaseRate,Incentive_Step_Start,Incent_Durat_Derate,Incent_Derate_Cap,Hist_Storage_Incent]
 
 FormNode Fo1557511281
 Title: PV Econ Out
@@ -7163,7 +7163,7 @@ Date: Mon, Mar 18, 2019 12:52 PM
 NodeLocation: 912,496,1
 NodeSize: 72,56
 NodeInfo: 1,1,1,1,1,1,1,,0,,0,,,
-DiagState: 2,1861,0,1708,756,17
+DiagState: 2,77,85,1708,756,17
 NodeColor: 65535,65535,65535
 NodeFont: Arial,16
 {!40400|CloudPlayerStyles: Show_Object:no}
