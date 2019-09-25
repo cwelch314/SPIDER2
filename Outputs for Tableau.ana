@@ -57,7 +57,7 @@ Author: JamesMilford
 Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 736,792,1
 NodeSize: 64,40
-DiagState: 2,-954,218,1835,549,17
+DiagState: 2,992,-12,1864,519,17
 
 Variable Cumulative_Data_Plus
 Title: Cumulative Data Plus
@@ -66,8 +66,10 @@ THEN Replace_X_with_Y(Historic_PV_Adoption[Interconnect_Date=Output_Prd_Plus_Map
 ELSE PV_Adoption_Forecast[Time_Solar_PV=Output_Prd_Plus_Map, System_Types=PV_Retrofit_Label, PV_Adopt_Data_Types=PV_Cumul_Data_Type]
 NodeLocation: 264,216,1
 NodeSize: 64,40
-ValueState: 2,15,14,1489,815,1,MIDM
-Att_ResultSliceState: [PV_Sectors,1,PV_Cumul_Data_Type,1,PV_Spatial_ID,1,Output_Periods_Plus,1]
+ValueState: 2,15,14,1489,815,0,MIDM
+ReformVal: [Output_Periods_Plus,Null]
+Att__TotalsIndex: [PV_Sectors,PV_Spatial_ID]
+Att_ResultSliceState: [PV_Sectors,0,PV_Cumul_Data_Type,2,PV_Spatial_ID,0,Output_Periods_Plus,1]
 
 Alias Al1542347463
 Title: PV Adoption Forecasts
@@ -95,7 +97,7 @@ ELSE Uncumulate(Cumulative_Data_Plus, Output_Periods_Plus)[Output_Periods_Plus=O
 NodeLocation: 416,320,1
 NodeSize: 64,40
 WindState: 2,1840,105,808,428
-ValueState: 2,1716,16,1282,720,0,MIDM
+ValueState: 2,432,79,1282,720,0,MIDM
 ReformVal: [Output_Periods,PV_Spatial_ID]
 Att__TotalsIndex: [Spatial_ID]
 Att_ResultSliceState: [PV_Sectors,1,PV_Cumul_Data_Type,2,PV_Spatial_ID,1,Output_Periods,1]
@@ -118,8 +120,8 @@ NodeSize: 64,40
 ValueState: 2,17,-1,1443,836,1,MIDM
 NodeColor: 65535,19661,50247
 ReformVal: [Output_Periods,Self]
-Att__TotalsIndex: [Spatial_ID,Output_Periods,PV_Spatial_ID]
-Att_ResultSliceState: [PV_Spatial_ID,0,PV_Sectors,1,Cumulative_Data_Type,1,Self,1,Output_Periods,0]
+Att__TotalsIndex: [Spatial_ID,Output_Periods,PV_Spatial_ID,PV_Sectors]
+Att_ResultSliceState: [PV_Sectors,0,PV_Spatial_ID,0,PV_Cumul_Data_Type,2,Self,1,Output_Periods,1]
 
 Variable Cumulative_Data
 Title: Cumulative Data
@@ -140,8 +142,8 @@ WindState: 2,1300,82,952,350
 ValueState: 2,21,76,1292,693,0,MIDM
 ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Sectors,1,PV_Adopt_Data_Types,4,PV_Spatial_ID,1,Act_vs_Sim,2,Output_Periods,1]
+Att__TotalsIndex: [PV_Spatial_ID,PV_Sectors]
+Att_ResultSliceState: [PV_Sectors,0,PV_Adopt_Data_Types,5,PV_Spatial_ID,0,Act_vs_Sim,2,Output_Periods,1]
 
 Alias Al1542351006
 Title: Map Incremental to Cumulative
@@ -339,10 +341,10 @@ Title: PV Sequential Outputs
 Definition: PV_Adoption_Data[PV_Adopt_Data_Types=Map_Seq_Outputs[All_DER_Types=PV_DER_Label], PV_Spatial_ID = Spatial_ID, PV_Sectors=All_Sectors]
 NodeLocation: 728,184,1
 NodeSize: 64,40
-ValueState: 2,190,119,1523,855,1,MIDM
+ValueState: 2,153,14,1523,855,1,MIDM
 ReformVal: [Output_Periods,Act_vs_Sim]
-Att__TotalsIndex: [Spatial_ID]
-Att_ResultSliceState: [Sequential_Outputs,3,All_Sectors,2,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
+Att__TotalsIndex: [Spatial_ID,All_Sectors]
+Att_ResultSliceState: [Sequential_Outputs,4,All_Sectors,0,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
 
 Variable EV_Sequent_Outputs
 Title: EV Sequential Outputs
@@ -369,7 +371,7 @@ Decision Map_Seq_Outputs
 Title: Map Sequential Outputs
 Description: Maps DER-specific outputs to the output names associated with sequential (eg, historic then simulated) outputs.
 Definition: Table(All_DER_Types,Sequential_Outputs)(~
-Choice(PV_Adopt_Types_None,2,0),Choice(PV_Adopt_Types_None,5,0),Choice(PV_Adopt_Types_None,4,0),Choice(PV_Adopt_Types_None,7,0),~
+Choice(PV_Adopt_Types_None,2,0),Choice(PV_Adopt_Types_None,5,0),Choice(PV_Adopt_Types_None,3,0),Choice(PV_Adopt_Types_None,6,0),~
 Choice(EV_Adopt_Types_None,2,0),Choice(EV_Adopt_Types_None,4,0),Choice(EV_Adopt_Types_None,3,0),Choice(EV_Adopt_Types_None,5,0),~
 Null,Null,Null,Null,~
 Null,Null,Null,Null,~
@@ -436,7 +438,7 @@ Att_GraphValueRange Sel_Sequential_Data:1,,,,,,10~
 Graph_3DEffects:0
 ReformVal: [Output_Periods,Output_DER_Types]
 Att__TotalsIndex: [All_Sectors,Spatial_ID]
-Att_ResultSliceState: [All_Sectors,0,Spatial_ID,0,Sequential_Outputs,4,Act_vs_Sim,2,Output_DER_Types,1,Output_Periods,1]
+Att_ResultSliceState: [All_Sectors,0,Spatial_ID,0,Sequential_Outputs,4,Act_vs_Sim,1,Output_DER_Types,1,Output_Periods,1]
 
 Variable Flat_Sequential_Data
 Title: Flat Sequential Data
@@ -446,19 +448,19 @@ NodeSize: 64,40
 ValueState: 2,1612,25,1474,742,,MIDM
 
 Index Sequential_Columns
-Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Output_DER_Types,All_Sectors,Output_Periods,'Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 Title: Sequential Columns
 Definition: CopyIndex(Flat_Sequential_Data.Col)
 NodeLocation: 1352,176,1
 NodeSize: 64,40
-ValueState: 2,11,87,1013,488,0,MIDM
+ValueState: 2,0,24,1013,488,0,MIDM
+Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Output_DER_Types,All_Sectors,Output_Periods,'Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 
 Index Sequential_Order_Num
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9]
 Title: Sequential Order Number
 Definition: 1..Size(Sequential_Columns)
 NodeLocation: 1352,88,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9]
 
 Decision Order_of_Seq_Cols
 Title: Order of Sequential Columns
@@ -501,6 +503,7 @@ NodeLocation: 1488,88,1
 NodeSize: 64,40
 ValueState: 2,12,79,1235,511,0,MIDM
 ReformVal: [Self,Undefined]
+Att_PrevIndexValue: ['Spatial ID','Output DER Types','All Sectors','Act vs Sim','Output Periods','Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 
 Index Sequential_Row_Num
 Title: Sequential Row Number
@@ -541,7 +544,7 @@ Definition: Sel_Sequential_Data[Output_DER_Types=Solar_PV_Label, Sequential_Outp
 NodeLocation: 1184,440,1
 NodeSize: 64,40
 WindState: 2,102,82,1261,505
-ValueState: 2,518,69,859,592,1,MIDM
+ValueState: 2,369,143,952,737,1,MIDM
 Aliases: FormNode Fo1544456700
 GraphSetup: Att_GraphValueRange PV_Cumulative:1,,,,,0
 ReformVal: [Output_Periods,Act_vs_Sim]
@@ -5470,12 +5473,12 @@ ReformDef: [Export_Parameter,Export_Dataset_Num]
 TableCellDefault: Default_ExportConfig
 
 Index Output_Data_Type
-Att_PrevIndexValue: ['CSV Tableau','Excel Deliverable','Excel Tableau']
 Title: Output Data Type
 Description: A list of the types of data that can be output, for use in export scripts
 Definition: ['CSV Tableau','Excel Deliverable','Excel Tableau']
 NodeLocation: 1480,1096,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['CSV Tableau','Excel Deliverable','Excel Tableau']
 
 Decision Select_Data_Export_T
 Title: Select Data Export Type

@@ -24044,7 +24044,6 @@ NodeSize: 64,40
 ValueState: 2,622,436,1007,173,,MIDM
 
 Decision Opt_Settings_EVs
-Att_PrevIndexValue: ['Multistart','MaxTime']
 Title: Opt Settings EVs
 Description: Settings for the optimization engine. ~
 ~
@@ -24059,6 +24058,7 @@ DefnState: 2,709,439,596,188,0,DFNM
 ValueState: 2,269,146,416,303,,MIDM
 Aliases: FormNode Fo1530224330, FormNode Fo1529692308
 {!40700|Att_CellFormat: CellSpan(Opt_Settings_EVs,CellAlignment('Center'),2,header:0)}
+Att_PrevIndexValue: ['Multistart','MaxTime']
 
 FormNode Fo1529692308
 Title: Opt Settings EVs
@@ -24142,7 +24142,7 @@ THEN 0   {Then set R^2 to 0, so that continual calibration improvements are perf
 ELSE  1 - Divide(SS_Residuals , SS_total, True)   {Else use the R^2 value}
 NodeLocation: 408,80,1
 NodeSize: 64,40
-WindState: 2,1901,82,1125,350
+WindState: 2,12,82,1186,488
 ValueState: 2,1373,7,433,913,0,MIDM
 Aliases: FormNode Fo1532541918, FormNode Fo1553207553
 ReformVal: [EV_LRMS_Scenario,EV_Spatial_ID]
