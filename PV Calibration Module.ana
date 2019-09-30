@@ -299,7 +299,7 @@ NodeSize: 64,40
 WindState: 2,229,513,720,350
 DefnState: 2,1167,31,629,341,0,DFNM
 ValueState: 2,2029,186,592,304,,MIDM
-Aliases: FormNode Fo1535644418, FormNode Fo1535066214, Alias Al1568908468, FormNode Fo1568908468
+Aliases: Alias Al1568908468, FormNode Fo1568908468, FormNode Fo1535644418, FormNode Fo1535066214
 ReformDef: [Upper_Lower,All_PV_Decisions]
 ReformVal: [0,0]
 
@@ -794,13 +794,13 @@ WindState: 2,524,317,720,350
 DisplayOutputs: Function MultiStage_CalibrPV0
 
 Index PV_Calibration_Stage
+Att_PrevIndexValue: [1,2,3,4,5]
 Title: PV Calibration Stage
 Definition: 1..Max_PV_Calib_Stages
 NodeLocation: 568,176,1
 NodeSize: 64,40
 ValueState: 2,792,295,416,303,,MIDM
 DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
-Att_PrevIndexValue: [1,2,3,4,5]
 
 Constant PV_Decisions_by_Stg
 Title: PV Decision Variables by Stage
@@ -817,7 +817,7 @@ NodeSize: 64,40
 WindState: 2,349,491,720,394
 DefnState: 2,793,4,658,291,0,DFNM
 ValueState: 2,12,362,870,303,0,MIDM
-Aliases: FormNode Fo9, FormNode Fo1535066242, Alias Al1568908167, FormNode Fo1568908167
+Aliases: Alias Al1568908167, FormNode Fo1568908167, FormNode Fo9, FormNode Fo1535066242
 ReformDef: [PV_Calibration_Stage,All_PV_Decisions]
 DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 TableCellDefault: checkbox(0)
@@ -844,7 +844,7 @@ NodeSize: 64,40
 WindState: 2,182,503,720,350
 DefnState: 2,761,-18,723,877,0,DFNM
 ValueState: 2,902,161,889,579,0,MIDM
-Aliases: FormNode Fo1535660189, FormNode Fo1535066243, Alias Al1568908168, FormNode Fo1568908168
+Aliases: Alias Al1568908168, FormNode Fo1568908168, FormNode Fo1535660189, FormNode Fo1535066243
 ReformDef: [PV_Calibration_Stage,0]
 ReformVal: [PV_Calibration_Stage,Time_PV_Calibration]
 DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
@@ -864,7 +864,7 @@ Description: The time period for which PV calibration begin.
 Definition: Choice(PV_Sim_Strt_Yr_Opt,37,0)
 NodeLocation: 112,176,1
 NodeSize: 64,40
-Aliases: FormNode Fo1542054649, FormNode Fo1535066244, Alias Al1568908169, FormNode Fo1568908169
+Aliases: Alias Al1568908169, FormNode Fo1568908169, FormNode Fo1542054649, FormNode Fo1535066244
 DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 {!40200|Att_ChoiceIndexes: Index PV_Sim_Strt_Yr_Opt}
 
@@ -882,7 +882,7 @@ Description: The time period for which PV calibration end.
 Definition: Choice(PV_Sim_End_Yr_Option,125,0)
 NodeLocation: 256,176,1
 NodeSize: 64,40
-Aliases: FormNode Fo1542054650, FormNode Fo1535066245, Alias Al1568908170, FormNode Fo1568908170
+Aliases: Alias Al1568908170, FormNode Fo1568908170, FormNode Fo1542054650, FormNode Fo1535066245
 DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 {!40200|Att_ChoiceIndexes: Index PV_Sim_End_Yr_Option}
 
@@ -917,7 +917,7 @@ NodeSize: 64,40
 WindState: 2,202,371,720,541
 DefnState: 2,874,259,556,180,0,DFNM
 ValueState: 2,484,490,416,303,0,MIDM
-Aliases: FormNode Fo1535602755, FormNode Fo1535066246, Alias Al1568908171, FormNode Fo1568908171
+Aliases: Alias Al1568908171, FormNode Fo1568908171, FormNode Fo1535602755, FormNode Fo1535066246
 DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 TableCellDefault: PV_OptSettingDefault
 
@@ -943,7 +943,7 @@ Description: The maximum possible number of PV Calibration stages. Not all of th
 Definition: 5
 NodeLocation: 400,176,1
 NodeSize: 64,40
-Aliases: FormNode Fo1542729201, FormNode Fo1535641468, Alias Al1568908172, FormNode Fo1568908172
+Aliases: Alias Al1568908172, FormNode Fo1568908172, FormNode Fo1542729201, FormNode Fo1535641468
 {!40200|Att_ChoiceIndexes: Index PV_Sim_Strt_Yr_Optio}
 
 FormNode Fo1535641468
@@ -1879,7 +1879,7 @@ Description: Select the method used for the PV optimization's objective function
 Definition: Choice(Optimization_Method1,1,0)
 NodeLocation: 736,176,1
 NodeSize: 64,40
-Aliases: FormNode Fo1535066202, Alias Al1568908290, FormNode Fo1568908291
+Aliases: Alias Al1568908290, FormNode Fo1568908291, FormNode Fo1535066202
 {!40200|Att_ChoiceIndexes: Index Optimization_Method1}
 
 Variable Objective_PV
@@ -1998,6 +1998,7 @@ NodeSize: 64,40
 ValueState: 2,631,354,702,381,,MIDM
 
 Decision Opt_Settings_PV
+Att_PrevIndexValue: ['Multistart','MaxTime']
 Title: Opt Settings PV
 Description: Settings for the PV optimization engine. ~
 ~
@@ -2012,7 +2013,6 @@ DefnState: 2,789,495,596,188,0,DFNM
 Aliases: FormNode Fo1535066203
 DisplayInputs: Function Multi_Stage_Calibrat
 {!40700|Att_CellFormat: CellSpan(Opt_Settings_PV,CellAlignment('Center'),2,header:0)}
-Att_PrevIndexValue: ['Multistart','MaxTime']
 
 FormNode Fo1535066203
 Title: Opt Settings EVs
@@ -2086,7 +2086,7 @@ NodeLocation: 736,80,1
 NodeSize: 64,40
 WindState: 2,317,127,1114,627
 DefnState: 2,823,429,882,172,0,DFNM
-Aliases: FormNode Fo1535641289, FormNode Fo1535066231, Alias Al1568908291, FormNode Fo1568908292
+Aliases: Alias Al1568908291, FormNode Fo1568908292, FormNode Fo1535641289, FormNode Fo1535066231
 NumberFormat: 2,F,4,7,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 {!50000|Att_ColumnWidths: [,PV_Calibration_Stage,\([,,,64])]}
 
@@ -2153,12 +2153,12 @@ ValueState: 2,990,418,416,303,,MIDM
 ReformVal: [0,PV_Sectors]
 
 Index Optimization_Method1
+Att_PrevIndexValue: ['Stock Delta']
 Title: Optimization Methods
 Definition: ['Stock Delta']
 NodeLocation: 888,176,1
 NodeSize: 64,40
 ValueState: 2,505,196,416,303,,MIDM
-Att_PrevIndexValue: ['Stock Delta']
 
 Alias Al1535486018
 Title: Total PV Install Rate
@@ -2227,7 +2227,7 @@ Definition: SubTable(StructSingCell_Input[StructSingCell_Names=PV_Avg_Period_Lab
 NodeLocation: 88,192,1
 NodeSize: 64,40
 WindState: 2,0,264,720,350
-Aliases: FormNode Fo1, Alias Al1568908394, FormNode Fo1568908393
+Aliases: Alias Al1568908394, FormNode Fo1568908393, FormNode Fo1
 
 FormNode Fo1
 Title: Time for Constraint
@@ -2288,13 +2288,13 @@ ValueState: 2,24,267,416,566,,MIDM
 ReformVal: [PV_Sectors,PV_Spatial_ID]
 
 Index All_PV_Constraints
+Att_PrevIndexValue: ['PV Slope','PV Final Cumulative']
 Title: All PV Constraints
 Description: List of all possible PV constraints for the calibration
 Definition: ['PV Slope','PV Final Cumulative']
 NodeLocation: 808,112,1
 NodeSize: 64,40
 ValueState: 2,2020,154,658,303,,MIDM
-Att_PrevIndexValue: ['PV Slope','PV Final Cumulative']
 
 Index Selected_PV_Constrai
 Title: Selected PV Constraints
@@ -2352,7 +2352,7 @@ NodeSize: 64,40
 WindState: 2,337,534,720,350
 DefnState: 2,1015,202,380,297,0,DFNM
 ValueState: 2,276,282,416,303,0,MIDM
-Aliases: FormNode Fo1542219554, FormNode Fo1542207817, Alias Al1568908395, FormNode Fo1568908394
+Aliases: Alias Al1568908395, FormNode Fo1568908394, FormNode Fo1542219554, FormNode Fo1542207817
 ReformDef: [PV_Calibration_Stage,All_PV_Constraints]
 TableCellDefault: checkbox(1)
 
@@ -2372,11 +2372,11 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: PV_Constraints_by_St
 
 Index Tolerance_Input
+Att_PrevIndexValue: ['Slope Tolerance %','Final Cumulative %']
 Title: Tolerance Input
 Definition: ['Slope Tolerance %','Final Cumulative %']
 NodeLocation: 1080,112,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Slope Tolerance %','Final Cumulative %']
 
 Constant PV_Tolerance_by_Stag
 Title: PV Tolerance by Stage
@@ -2390,7 +2390,7 @@ NodeLocation: 712,360,1
 NodeSize: 64,40
 WindState: 2,153,476,720,350
 DefnState: 2,1082,31,680,188,0,DFNM
-Aliases: FormNode Fo1542404245, FormNode Fo1542733351, Alias Al1568908396, FormNode Fo1568908395
+Aliases: Alias Al1568908396, FormNode Fo1568908395, FormNode Fo1542404245, FormNode Fo1542733351
 NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 TableCellDefault: Default_PV_Tolerance
 
@@ -2438,7 +2438,7 @@ Description: User defined offset that can be used to adjust the final slope tole
 Definition: SubTable(StructSingCell_Input[StructSingCell_Names=PV_Slope_Label])
 NodeLocation: 392,360,1
 NodeSize: 64,40
-Aliases: FormNode Fo1544716614, Alias Al1568908397, FormNode Fo1568908396
+Aliases: Alias Al1568908397, FormNode Fo1568908396, FormNode Fo1544716614
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
 FormNode Fo1544716614
@@ -2794,6 +2794,7 @@ Att_ColorRole: Null
 {!50000|Att_ColumnWidths: [,PV_Stored_Decisions,\([,,,,37,33,37,37,174,604])]}
 
 Index PV_Stored_Decisions
+Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coeff,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef,'Opt Status']
 Title: PV Stored Decisions
 Definition: Concat(All_PV_Dec_Handles, Opt_Status_Label)
 NodeLocation: 608,552,1
@@ -2801,7 +2802,6 @@ NodeSize: 64,40
 ValueState: 2,46,379,416,303,0,MIDM
 MetaOnly: 1
 {!40300|Att_SlicerPopupSize: 242,168}
-Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coeff,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef,'Opt Status']
 
 Constant Stored_Opt_Status_PV
 Title: Stored Opt Status PV
@@ -3570,7 +3570,7 @@ NodeSize: 64,40
 WindState: 2,164,579,720,350
 DefnState: 2,144,44,1659,813,0,DFNM
 ValueState: 2,223,6,1355,891,0,MIDM
-Aliases: FormNode Fo1543522440, Alias Al1568908502, FormNode Fo1568908568
+Aliases: Alias Al1568908502, FormNode Fo1568908568, FormNode Fo1543522440
 ReformDef: [0,All_Spatial_ID]
 ReformVal: [All_PV_Dec_Handles,All_Spatial_ID]
 DisplayOutputs: Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi

@@ -19245,13 +19245,13 @@ Show_description:20}
 Show_description:20}
 
 Index EV_Mkt_Share_Scen
+Att_PrevIndexValue: ['Low','Medium','High']
 Title: EV Mkt Share Scenario
 Description: Names for the EV market share scenarios.
 Definition: ['Low','Medium','High']
 NodeLocation: 400,520,1
 NodeSize: 64,40
 Aliases: FormNode Fo1545336351
-Att_PrevIndexValue: ['Low','Medium','High']
 
 Constant EV_Mkt_Share_Mult
 Title: EV Mkt Share Multiplier
@@ -24044,6 +24044,7 @@ NodeSize: 64,40
 ValueState: 2,622,436,1007,173,,MIDM
 
 Decision Opt_Settings_EVs
+Att_PrevIndexValue: ['Multistart','MaxTime']
 Title: Opt Settings EVs
 Description: Settings for the optimization engine. ~
 ~
@@ -24058,7 +24059,6 @@ DefnState: 2,709,439,596,188,0,DFNM
 ValueState: 2,269,146,416,303,,MIDM
 Aliases: FormNode Fo1530224330, FormNode Fo1529692308
 {!40700|Att_CellFormat: CellSpan(Opt_Settings_EVs,CellAlignment('Center'),2,header:0)}
-Att_PrevIndexValue: ['Multistart','MaxTime']
 
 FormNode Fo1529692308
 Title: Opt Settings EVs
@@ -24224,11 +24224,11 @@ ValueState: 2,354,39,904,656,0,MIDM
 ReformVal: [EV_Spatial_ID,EV_Sectors]
 
 Index Optimization_Methods
+Att_PrevIndexValue: ['Stock Delta','Sales Delta','RSquared']
 Title: Optimization Methods
 Definition: ['Stock Delta','Sales Delta','RSquared']
 NodeLocation: 1032,80,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Stock Delta','Sales Delta','RSquared']
 
 Module EV_Constraints
 Title: EV Constraints
