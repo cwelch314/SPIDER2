@@ -448,19 +448,19 @@ NodeSize: 64,40
 ValueState: 2,1612,25,1474,742,,MIDM
 
 Index Sequential_Columns
+Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Output_DER_Types,All_Sectors,Output_Periods,'Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 Title: Sequential Columns
 Definition: CopyIndex(Flat_Sequential_Data.Col)
 NodeLocation: 1352,176,1
 NodeSize: 64,40
 ValueState: 2,0,24,1013,488,0,MIDM
-Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Output_DER_Types,All_Sectors,Output_Periods,'Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 
 Index Sequential_Order_Num
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9]
 Title: Sequential Order Number
 Definition: 1..Size(Sequential_Columns)
 NodeLocation: 1352,88,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9]
 
 Decision Order_of_Seq_Cols
 Title: Order of Sequential Columns
@@ -491,6 +491,7 @@ ValueState: 2,12,39,1410,681,0,MIDM
 ReformVal: [Sequential_Text_Cols,Sequential_Row_Num]
 
 Index Sequential_Text_Cols
+Att_PrevIndexValue: ['Spatial ID','Output DER Types','All Sectors','Act vs Sim','Output Periods','Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 Title: Sequential Text Columns
 Definition: INDEX orderedCols:=CopyIndex(SubIndex(Order_of_Seq_Cols, @Sequential_Columns, Sequential_Columns));~
 VAR textParse:=FOR J:=@orderedCols DO (~
@@ -503,7 +504,6 @@ NodeLocation: 1488,88,1
 NodeSize: 64,40
 ValueState: 2,12,79,1235,511,0,MIDM
 ReformVal: [Self,Undefined]
-Att_PrevIndexValue: ['Spatial ID','Output DER Types','All Sectors','Act vs Sim','Output Periods','Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 
 Index Sequential_Row_Num
 Title: Sequential Row Number
@@ -5473,12 +5473,12 @@ ReformDef: [Export_Parameter,Export_Dataset_Num]
 TableCellDefault: Default_ExportConfig
 
 Index Output_Data_Type
+Att_PrevIndexValue: ['CSV Tableau','Excel Deliverable','Excel Tableau']
 Title: Output Data Type
 Description: A list of the types of data that can be output, for use in export scripts
 Definition: ['CSV Tableau','Excel Deliverable','Excel Tableau']
 NodeLocation: 1480,1096,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['CSV Tableau','Excel Deliverable','Excel Tableau']
 
 Decision Select_Data_Export_T
 Title: Select Data Export Type
