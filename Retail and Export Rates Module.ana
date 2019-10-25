@@ -626,7 +626,7 @@ Date: Fri, Aug 10, 2018 2:24 PM
 NodeLocation: 968,1040,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,405,4,1177,535,17
+DiagState: 2,405,4,1382,535,17
 NodeColor: 57311,57311,57311
 
 Decision TOU_Schedule_Labels
@@ -809,6 +809,16 @@ ValueState: 2,101,174,1008,841,0,MIDM
 ReformVal: [Month,Day_and_Hour]
 Att_ResultSliceState: [Pre_and_Post_System,1,PV_Sectors,2,PV_Climate_Zone,1,Time_of_Day,1,Weekday_or_Weekend,1,Data_Types,1,Rate_Vintage,3,Month,7]
 {!50000|Att_ColumnWidths: [,Month,[,,,61]]}
+
+Variable Periods_by_ProfileHr
+Title: Periods by Profile Hr
+Description: The TOU period for each profile hour.
+Definition: Period_by_DayType_Hr[Time_of_Day=TimeOfDay_ProfileHrs, Weekday_or_Weekend=Day_Type_for_Profile]
+NodeLocation: 1080,232,1
+NodeSize: 64,40
+WindState: 2,120,8,720,350
+ValueState: 2,132,38,868,756,0,MIDM
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Pre_and_Post_System,1,Data_Types,3,Month,1,Profile_Hours,1,Rate_Vintage,1]
 
 Close Find_TOU_Schedules
 
