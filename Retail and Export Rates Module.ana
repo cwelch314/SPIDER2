@@ -29,7 +29,7 @@ Date: Wed, Aug 8, 2018 1:55 PM
 NodeLocation: 968,944,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,2245,62,832,400,17
+DiagState: 2,995,23,832,485,17
 NodeColor: 57311,57311,57311
 
 Decision Tier_Period_Labels
@@ -96,8 +96,8 @@ VAR components:=SplitText(colLabels, sepStr, resultIndex: subscripts);   {Split 
 FOR J:=subscripts DO (~
   INDEX all_vals:=CopyIndex(components[subscripts=J]);   {Turn the Jth component column into an index}~
   INDEX uniq_vals:=Unique(all_vals, all_vals);   {Find the unique elements}~
-  \SortIndex(uniq_vals)   {Sort the unique elements alphabetically and return a reference to the index}~
-) 
+  \Sort_Alpha_Numeric(uniq_vals)   {Sort the unique elements alphabetically and return a reference to the index}~
+)
 NodeLocation: 584,296,1
 NodeSize: 64,40
 WindState: 2,44,17,798,395
@@ -133,6 +133,17 @@ NodeLocation: 520,40,1
 NodeSize: 64,16
 NodeInfo: 1,0,0,0,0,0,0,86,0,,0,,,
 Original: Period_String
+
+Function Sort_Alpha_Numeric(ind: Index)
+Title: Sort Alpha Numeric
+Description: Sorts an index of alpha numeric text strings such as ['a1' 'a2', 'a10'] assuming they all have the same alphabetic component.~
+~
+[ind]: an index of alpha numeric text strings
+Definition: INDEX sorted:=SortIndex(ind);~
+VAR len:=TextLength(sorted);~
+SortIndex(len)
+NodeLocation: 424,296,1
+NodeSize: 64,40
 
 Close Find_Periods_Tiers
 
@@ -346,12 +357,12 @@ Date: Wed, Aug 8, 2018 7:26 PM
 NodeLocation: 536,1040,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,182,61,1171,612,17
+DiagState: 2,610,14,1171,612,17
 
 Variable Map_USURDB_Columns
 Title: Map USURDB Columns to Data
 Description: Maps the columns included in the USURDB data to the dimensionalized data fields.
-Definition: Data_Type & Tier_Period_Separat & Periods & Tier_Period_Separat & Tiers & Data_Attribute
+Definition: All_Data_Types & Tier_Period_Separat & All_Periods & Tier_Period_Separat & All_Tiers & Data_Attribute
 NodeLocation: 104,72,1
 NodeSize: 64,40
 WindState: 2,102,82,898,350
@@ -362,7 +373,7 @@ Variable Check_Map
 Title: Check Map
 Description: Returns the USURDB column position matching the text string used in the map. If this returns a zero, then the text string does not match any column headers.
 Definition: PositionInIndex(USURDB_Columns, Map_USURDB_Columns, USURDB_Columns) 
-NodeLocation: 256,160,1
+NodeLocation: 104,176,1
 NodeSize: 64,40
 ValueState: 2,216,218,974,450,,MIDM
 Att_ResultSliceState: [Tiers,1,Data_Type,3,Data_Attribute,1,Periods,1]
@@ -374,15 +385,15 @@ Description: USURDB data for rates and rate attributes (eg, max, adj, sell) mapp
 Definition: IgnoreWarnings(Stored_Filtered_USUR[USURDB_Columns=Map_USURDB_Columns])
 NodeLocation: 256,72,1
 NodeSize: 64,40
-ValueState: 2,1741,361,826,539,0,MIDM
+ValueState: 2,113,364,826,539,0,MIDM
 ReformVal: [Tiers,Periods]
-Att_ResultSliceState: [Data_Type,3,Rate_Names,4,Data_Attribute,3,Periods,1,Tiers,2]
+Att_ResultSliceState: [All_Data_Types,4,Rate_Names,4,Data_Attribute,3,Periods,1,Tiers,2]
 
 Decision Map_USURDB_Units_to_
 Title: Map USURDB Units to Type
 Description: Map the USURDB column names associated with unit types to each of the data types.
-Definition: Table(Data_Type)(Choice(USURDB_Columns,27,0),Choice(USURDB_Columns,118,0),Choice(USURDB_Columns,498,0),Choice(USURDB_Columns,506,0))
-NodeLocation: 104,272,1
+Definition: Table(All_Data_Types)(Choice(USURDB_Columns,27,0),Choice(USURDB_Columns,118,0),Choice(USURDB_Columns,498,0),Choice(USURDB_Columns,506,0))
+NodeLocation: 104,472,1
 NodeSize: 64,40
 DefnState: 2,612,618,735,303,0,DFNM
 Aliases: FormNode Fo1533747258
@@ -391,7 +402,7 @@ Aliases: FormNode Fo1533747258
 FormNode Fo1533747258
 Title: Map USURDB Units to Type
 Definition: 0
-NodeLocation: 104,220,1
+NodeLocation: 104,420,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Map_USURDB_Units_to_
@@ -399,17 +410,17 @@ Original: Map_USURDB_Units_to_
 Variable Units_for_Data_Types
 Title: Units for Data Types
 Description: The units associated with the rates for each data type.
-Definition: IF Data_Type = Energy_Rate_Label~
+Definition: IF All_Data_Types = Energy_Rate_Label~
 THEN Energy_Units_Label~
 ELSE Stored_Filtered_USUR[USURDB_Columns=Map_USURDB_Units_to_]
-NodeLocation: 256,272,1
+NodeLocation: 256,472,1
 NodeSize: 64,40
 ValueState: 2,104,106,1014,357,,MIDM
 
 Variable Rate_Data_TOU_Sched
 Title: Rate Data by TOU Schedule
 Description: USURDB data for rates and rate attributes (eg, max, adj, sell) mapped to months and time of day.
-Definition: IgnoreWarnings(Data_by_Tier_Period[Periods = Period_String & Periods_by_TOU_Sched])
+Definition: IgnoreWarnings(Data_by_Tier_Period[All_Periods = Period_String & Periods_by_TOU_Sched])
 NodeLocation: 416,72,1
 NodeSize: 64,40
 WindState: 2,102,82,720,427
@@ -417,7 +428,7 @@ ValueState: 2,2182,57,1043,683,0,MIDM
 Aliases: FormNode Fo1534435166
 ReformVal: [Month,Time_of_Day]
 Att__TotalsIndex: []
-Att_ResultSliceState: [Rate_Names,4,Tiers,1,Data_Attribute,1,Data_Type,3,Weekday_or_Weekend,1,Time_of_Day,1,Month,1]
+Att_ResultSliceState: [Rate_Names,187,Tiers,1,Data_Attribute,1,All_Data_Types,3,Weekday_or_Weekend,1,Time_of_Day,1,Month,1]
 {!40700|CellFormatExpression: {CellFill(IF RateCellTransparency < 0 THEN 'Green' ELSE 'Red', .2+.6*Abs(RateCellTransparency))}}
 {!50000|Att_ColumnWidths: [,Month,\([,,,,,,,68])]}
 
@@ -428,22 +439,22 @@ Description: This finds the transparency level used in the cell formatting of re
 -1.0 = The lowest rate~
 -0.001 = The median rate~
 +1.0 = The highest rate
-Definition: VAR periodFlags:=Sum((Period_String & Periods_by_TOU_Sched) = Periods, Time_of_Day, Month);~
+Definition: VAR periodFlags:=Sum((Period_String & Periods_by_TOU_Sched) = All_Periods, Time_of_Day, Month);~
 VAR periodMap:=IF periodFlags~
-   THEN periods~
+   THEN All_Periods~
    ELSE Null;~
-VAR validRates:=Data_by_Tier_Period[Periods=periodMap];~
-VAR medianRate:=Median(validRates, Periods);~
+VAR validRates:=Data_by_Tier_Period[All_Periods=periodMap];~
+VAR medianRate:=Median(validRates, All_Periods);~
 VAR delta:=validRates - medianRate;~
-VAR lowMax:=MAX(IF delta >= 0 THEN -INF ELSE delta, Periods);~
-VAR lowDelta:=MIN(delta, Periods) - lowMax;~
-VAR highDelta:=MAX(delta, Periods);~
+VAR lowMax:=MAX(IF delta >= 0 THEN -INF ELSE delta, All_Periods);~
+VAR lowDelta:=MIN(delta, All_Periods) - lowMax;~
+VAR highDelta:=MAX(delta, All_Periods);~
 VAR percentage:=IF delta <= 0    {If rate is less than or equal to the median}~
    THEN MIN([-Divide(delta - lowMax, lowDelta), -.001])   {Then return a negative percentage}~
    ELSE Divide(delta, highDelta);   {Else return a positive percentage}~
 ~
-IgnoreWarnings(percentage[Periods=Period_String & Periods_by_TOU_Sched]);
-NodeLocation: 416,160,1
+IgnoreWarnings(percentage[All_Periods=Period_String & Periods_by_TOU_Sched]);
+NodeLocation: 416,184,1
 NodeSize: 64,40
 WindState: 2,592,254,1009,528
 ValueState: 2,59,14,1304,640,0,MIDM
@@ -453,7 +464,7 @@ Att_ResultSliceState: [Data_Type,3,Weekday_or_Weekend,2,Tiers,1,Data_Attribute,1
 Variable Weekly_Rate_Data
 Title: Weekly Rate Data
 Definition: Reindex_to_Week(Rate_Data_TOU_Sched)
-NodeLocation: 576,72,1
+NodeLocation: 736,72,1
 NodeSize: 64,40
 WindState: 2,-3,37,720,350
 ValueState: 2,134,21,1643,820,0,MIDM
@@ -468,7 +479,7 @@ Att_ResultSliceState: [Tiers,1,Data_Attribute,1,Data_Type,3,Rate_Names,2,Day_and
 Variable Rates
 Title: Rates
 Definition: Sum([Rate_Data_TOU_Sched[Data_Attribute=Rate_Attribute_Label], Rate_Data_TOU_Sched[Data_Attribute=Adj_Attribute_Label]])   {Use Sum function to deal with Nulls}
-NodeLocation: 576,160,1
+NodeLocation: 576,184,1
 NodeSize: 64,40
 ValueState: 2,118,13,1382,779,,MIDM
 ReformVal: [Time_of_Day,Month]
@@ -478,8 +489,8 @@ Variable Electric_Rates
 Title: Electric Rates
 Description: Energy in $/kWh~
 Demand in $/kW
-Definition: Rates[Rate_Names=Rate_Names_and_Start, Data_Type=DataType_by_RateType] * Rate_Compon_Scaling
-NodeLocation: 576,272,1
+Definition: Rates[Rate_Names=Rate_Names_and_Start, All_Data_Types=DataType_by_RateType] * Rate_Compon_Scaling
+NodeLocation: 576,296,1
 NodeSize: 64,40
 WindState: 2,102,82,1339,449
 ValueState: 2,280,28,934,631,1,MIDM
@@ -493,7 +504,7 @@ Att_StackedBar Graph_Primary_Valdim:0~
 ReformVal: [Time_of_Day,Rate_Component]
 NumberFormat: 2,F,4,2,0,0,4,1,$,0,"ABBREV",0,,,0,0,14
 Att_ResultSliceState: [Tiers,1,Month,8,Weekday_or_Weekend,1,Rate_Names_and_Start,3,Rate_Component,1,Time_of_Day,1]
-{!40700|CellFormatExpression: CellFill(IF RatesOnlyTransp[Rate_Names=Rate_to_View, Data_Type=Data_Type_to_View] < 0 THEN 'Green' ELSE 'Red', .2+.6*Abs(RatesOnlyTransp[Rate_Names=Rate_to_View, Data_Type=Data_Type_to_View] ))}
+{!40700|CellFormatExpression: CellFill(IF RatesOnlyTransp[Rate_Names=Rate_to_View, All_Data_Types=Data_Type_to_View] < 0 THEN 'Green' ELSE 'Red', .2+.6*Abs(RatesOnlyTransp[Rate_Names=Rate_to_View, All_Data_Types=Data_Type_to_View] ))}
 
 Variable RatesOnlyTransp
 Title: Rates Only Transparency
@@ -502,22 +513,22 @@ Description: This finds the transparency level used in the cell formatting of re
 -1.0 = The lowest rate~
 -0.001 = The median rate~
 +1.0 = The highest rate
-Definition: VAR periodFlags:=Sum((Period_String & Periods_by_TOU_Sched) = Periods, Time_of_Day, Month);~
+Definition: VAR periodFlags:=Sum((Period_String & Periods_by_TOU_Sched) = All_Periods, Time_of_Day, Month);~
 VAR periodMap:=IF periodFlags~
-   THEN periods~
+   THEN All_Periods~
    ELSE Null;~
-VAR validRates:=Sum([Data_by_Tier_Period[Periods=periodMap, Data_Attribute=Rate_Attribute_Label], Data_by_Tier_Period[Periods=periodMap, Data_Attribute=Adj_Attribute_Label]]);~
-VAR medianRate:=Median(validRates, Periods);~
+VAR validRates:=Sum([Data_by_Tier_Period[All_Periods=periodMap, Data_Attribute=Rate_Attribute_Label], Data_by_Tier_Period[All_Periods=periodMap, Data_Attribute=Adj_Attribute_Label]]);~
+VAR medianRate:=Median(validRates, All_Periods);~
 VAR delta:=validRates - medianRate;~
-VAR lowMax:=MAX(IF delta >= 0 THEN -INF ELSE delta, Periods);~
-VAR lowDelta:=MIN(delta, Periods) - lowMax;~
-VAR highDelta:=MAX(delta, Periods);~
+VAR lowMax:=MAX(IF delta >= 0 THEN -INF ELSE delta, All_Periods);~
+VAR lowDelta:=MIN(delta, All_Periods) - lowMax;~
+VAR highDelta:=MAX(delta, All_Periods);~
 VAR percentage:=IF delta <= 0    {If rate is less than or equal to the median}~
    THEN MIN([-Divide(delta - lowMax, lowDelta), -.001])   {Then return a negative percentage}~
    ELSE Divide(delta, highDelta);   {Else return a positive percentage}~
 ~
-IgnoreWarnings(percentage[Periods=Period_String & Periods_by_TOU_Sched]);
-NodeLocation: 416,272,1
+IgnoreWarnings(percentage[All_Periods=Period_String & Periods_by_TOU_Sched]);
+NodeLocation: 416,296,1
 NodeSize: 64,40
 WindState: 2,179,310,1009,528
 ValueState: 2,59,14,1304,640,0,MIDM
@@ -527,18 +538,18 @@ Att_ResultSliceState: [Data_Type,3,Weekday_or_Weekend,2,Tiers,2,Rate_Names,34,Ti
 Decision DataType_by_RateType
 Title: Data Type for Rate Type
 Description: The data type for each rate component.
-Definition: Table(Rate_Component)(Choice(Data_Type,3,0),Choice(Data_Type,2,0),Choice(Data_Type,1,0))
-NodeLocation: 432,376,1
+Definition: Table(Rate_Component)(Choice(All_Data_Types,3,0),Choice(All_Data_Types,2,0),Choice(All_Data_Types,1,0))
+NodeLocation: 432,400,1
 NodeSize: 64,40
 WindState: 2,157,9,720,350
 Aliases: FormNode Fo1546448242
-TableCellDefault: Choice(Data_Type,3,0)
-{!40200|Att_ChoiceIndexes: Index Data_Type}
+TableCellDefault: Choice(All_Data_Types,3,0)
+{!40200|Att_ChoiceIndexes: Index All_Data_Types}
 
 FormNode Fo1546448242
 Title: Data Type for Rate Type
 Definition: 0
-NodeLocation: 432,428,1
+NodeLocation: 432,452,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: DataType_by_RateType
@@ -548,7 +559,7 @@ Title: Rate Component Scaling
 Units: scalar
 Description: Scaling to convert imported rates into the units displayed for the Rate Component index.
 Definition: Table(Rate_Component)(100,1,1)
-NodeLocation: 576,376,1
+NodeLocation: 576,400,1
 NodeSize: 64,40
 Aliases: FormNode Fo1546448678
 TableCellDefault: 1
@@ -556,10 +567,55 @@ TableCellDefault: 1
 FormNode Fo1546448678
 Title: Rate Component Scaling
 Definition: 0
-NodeLocation: 576,428,1
+NodeLocation: 576,452,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Rate_Compon_Scaling
+
+Variable Rate_Data_by_Day_Typ
+Title: Rate Data by Day Type
+Description: The rate data reindexed to the Day Type and Hour index.
+Definition: Rate_Data_TOU_Sched[Time_of_Day=Hour_for_Type_and_Hr, Weekday_or_Weekend=DayType_for_Type_Hr]
+NodeLocation: 576,72,1
+NodeSize: 64,40
+WindState: 2,-3,37,720,350
+ValueState: 2,134,21,1643,820,1,MIDM
+GraphSetup: Graph_KeyFont:,18,0~
+Graph_KeyTitleFont:,18,1~
+Graph_AxisLabelFont:,14,0~
+Graph_AxisTitleFont:Arial,18,1~
+Att_CatLineStyle Graph_Primary_Valdim:6
+ReformVal: [Day_Type_and_Hour,Month]
+Att_ResultSliceState: [Data_Attribute,1,All_Data_Types,3,Rate_Names,187,All_Tiers,1,Month,10,Day_Type_and_Hour,1]
+
+Variable Active_Data_Types
+Title: Active Data Types
+Units: boolean
+Description: Identifies rate data types that are relevant to the modeled rate names.
+Definition: Sum(Data_by_Tier_Period[Rate_Names=Rate_Names_and_Start], Data_Attribute, All_Periods, All_Tiers, Rate_Names_and_Start) > 0
+NodeLocation: 256,176,1
+NodeSize: 64,40
+ValueState: 2,468,346,653,431,0,MIDM
+
+Variable Active_Periods
+Title: Active Periods
+Units: boolean
+Description: Identifies rate periods that are relevant to the modeled rate names.
+Definition: Sum(Data_by_Tier_Period[Rate_Names=Rate_Names_and_Start], Data_Attribute, All_Data_Types, All_Tiers, Rate_Names_and_Start) > 0
+NodeLocation: 256,272,1
+NodeSize: 64,40
+WindState: 2,137,388,1101,486
+ValueState: 2,468,346,653,431,0,MIDM
+
+Variable Active_Tiers
+Title: Active Tiers
+Units: boolean
+Description: Identifies rate tiers that are relevant to the modeled rate names.
+Definition: Sum(Data_by_Tier_Period[Rate_Names=Rate_Names_and_Start], Data_Attribute, All_Data_Types, All_Periods, Rate_Names_and_Start) > 0
+NodeLocation: 256,368,1
+NodeSize: 64,40
+WindState: 2,137,388,1101,486
+ValueState: 2,468,346,653,431,0,MIDM
 
 Close Rate_Values_by_Perio
 
@@ -570,7 +626,7 @@ Date: Fri, Aug 10, 2018 2:24 PM
 NodeLocation: 968,1040,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,61,264,1237,588,17
+DiagState: 2,405,4,1177,535,17
 NodeColor: 57311,57311,57311
 
 Decision TOU_Schedule_Labels
@@ -594,7 +650,7 @@ Original: TOU_Schedule_Labels
 Decision Map_Schedules
 Title: Map Schedules
 Description: Maps USURDB columns to weekday or weekend designations. Rate types without a TOU or seasonal structure should use the "None" option.
-Definition: Table(Data_Type,Weekday_or_Weekend)(~
+Definition: Table(All_Data_Types,Weekday_or_Weekend)(~
 Choice(Schedules_with_None,1,0),Choice(Schedules_with_None,1,0),~
 Choice(Schedules_with_None,2,0),Choice(Schedules_with_None,3,0),~
 Choice(Schedules_with_None,4,0),Choice(Schedules_with_None,5,0),~
@@ -623,7 +679,7 @@ NodeLocation: 416,184,1
 NodeSize: 64,40
 WindState: 2,431,266,1039,350
 ValueState: 2,410,229,1361,511,0,MIDM
-ReformVal: [Null,Data_Type]
+ReformVal: [Null,All_Data_Types]
 Att_ResultSliceState: [Weekday_or_Weekend,1,Rate_Names,2,Data_Type,1]
 
 Function Parse_USURDB_Sched(sched, monthSep, hourSep; months, hours, excludeStr: Index)
@@ -718,15 +774,41 @@ ValueState: 2,1742,313,1119,421,0,MIDM
 Variable Periods_by_TOU_Sched
 Title: Periods by TOU Schedule
 Description: Time of use and seasonal schedules for the given rates.
-Definition: IF Data_Type = Flat_Demand_Label~
+Definition: IF All_Data_Types = Flat_Demand_Label~
 THEN Flat_Periods~
 ELSE TOU_Periods
 NodeLocation: 768,280,1
 NodeSize: 64,40
-ValueState: 2,1748,94,1005,635,0,MIDM
+ValueState: 2,893,25,1005,635,0,MIDM
 ReformVal: [Month,Time_of_Day]
-Att_ResultSliceState: [Rate_Names,4,Data_Type,3,Weekday_or_Weekend,2,Time_of_Day,1,Month,1]
+Att_ResultSliceState: [Rate_Names,187,All_Data_Types,3,Weekday_or_Weekend,2,Time_of_Day,1,Month,1]
 {!40700|CellFormatExpression: CellFill(SubIndex(@Cell_Colors, Self + 10, Cell_Colors), .3)}
+
+Variable Period_by_Day_and_Hr
+Title: Period by Day and Hour
+Description: The time-of-use period for each day/hour in a week.
+Definition: VAR periodString:=ignorewarnings(Period_String & Reindex_to_Week(Periods_by_TOU_Sched[All_Data_Types=Data_Types, Rate_Names=Selected_Cust_Rates]));~
+Replace_X_with_Y(periodString, Period_String & Null, Null)
+NodeLocation: 928,328,1
+NodeSize: 64,40
+WindState: 2,102,82,1239,565
+ValueState: 2,451,3,1008,841,0,MIDM
+ReformVal: [Month,Day_and_Hour]
+Att_ResultSliceState: [All_Data_Types,1,Pre_and_Post_System,1,PV_Sectors,2,PV_Climate_Zone,1,Rate_Vintage,3,Day_and_Hour,1,Month,7]
+{!50000|Att_ColumnWidths: [,Month,\([,,,61])]}
+
+Variable Period_by_DayType_Hr
+Title: Period by DayType & Hour
+Description: The time-of-use period for each day type and hour..
+Definition: VAR periodString:=ignorewarnings(Period_String & Periods_by_TOU_Sched[All_Data_Types=Data_Types, Rate_Names=Selected_Cust_Rates]);~
+Replace_X_with_Y(periodString, Period_String & Null, Null)
+NodeLocation: 928,232,1
+NodeSize: 64,40
+WindState: 2,102,82,1239,565
+ValueState: 2,101,174,1008,841,0,MIDM
+ReformVal: [Month,Day_and_Hour]
+Att_ResultSliceState: [Pre_and_Post_System,1,PV_Sectors,2,PV_Climate_Zone,1,Time_of_Day,1,Weekday_or_Weekend,1,Data_Types,1,Rate_Vintage,3,Month,7]
+{!50000|Att_ColumnWidths: [,Month,[,,,61]]}
 
 Close Find_TOU_Schedules
 
@@ -844,7 +926,7 @@ Author: JamesMilford
 Date: Wed, Oct 31, 2018 10:11 AM
 NodeLocation: 824,1040,1
 NodeSize: 64,40
-DiagState: 2,-174,146,1240,715,17
+DiagState: 2,592,8,1240,615,17
 NodeColor: 57311,57311,57311
 
 Index Rate_Names
@@ -855,7 +937,7 @@ NodeLocation: 976,88,1
 NodeSize: 64,40
 WindState: 2,102,82,1272,359
 ValueState: 2,104,106,705,637,,MIDM
-{!40300|Att_SlicerPopupSize: 436,717}
+{!40300|Att_SlicerPopupSize: 456,717}
 Att_PrevIndexValue: ['A (Primary) | 2014-01','A (Secondary) | 2014-01','A (Secondary) | 2014-08','A (Secondary) | 2015-04','A Primary (CLOSED Rate) | 2017-01','A Primary | 2016-08','A Secondary (CLOSED Rate) | 2017-01','A Secondary | 2016-08','A6 Primary | 2016-08','A6-TOU (Primary) | 2014-01','A6-TOU (Primary) | 2014-08','A6-TOU (Primary) | 2015-05','A6-TOU Primary | 2017-01','A6-TOU Primary | 2018-01','A6-TOU Primary Substation | 2017-01','A6-TOU Primary Substation | 2018-01','A6-TOU Transmission | 2017-01','A6-TOU Transmission | 2018-01','AL-TOU Primary (0-500 KW) | 2017-01','AL-TOU Primary (0-500 KW) | 2018-01','AL-TOU Primary (Above 500 KW) | 2017-01','AL-TOU Primary (Above 500 KW) | 2018-01','AL-TOU Primary (Above 500kW) | 2018-06','AL-TOU Primary | 2016-08','AL-TOU Primary Substation | 2017-01','AL-TOU Primary Substation | 2018-01','AL-TOU Secondary (0-500 KW) | 2015-05','AL-TOU Secondary (0-500 KW) | 2017-01','AL-TOU Secondary (0-500 KW) | 2018-01','AL-TOU Secondary (0-500 KW) | 2019-01','AL-TOU Secondary (Above 500 KW) | 2017-01','AL-TOU Secondary (Above 500 KW) | 2018-01','AL-TOU Secondary (Above 500kW) | 2018-07','AL-TOU Secondary | 2014-01','AL-TOU Secondary | 2014-08','AL-TOU Secondary | 2016-08','AL-TOU Secondary >500KW | 2014-01','AL-TOU Secondary 500KW | 2014-08','AL-TOU Secondary Substation | 2017-01','AL-TOU Secondary Substation | 2018-01','AL-TOU Transmission (0-500 KW) | 2017-01','AL-TOU Transmission (0-500 KW) | 2018-01','AL-TOU Transmission (Above 500 KW) | 2017-01','AL-TOU Transmission (Above 500 KW) | 2018-01','AL-TOU2 Primary (0-500kW) | 2018-06','AL-TOU2 Primary (Above 500kW) | 2018-06','AL-TOU2 Secondary (0-500kW) | 2018-06','AL-TOU2 Secondary (Above 500kW) | 2018-06','DG-R Primary (0-500 KW) | 2017-01','DG-R Primary (0-500 KW) | 2018-01','DG-R Primary (Above 500 KW) | 2017-01','DG-R Primary (Above 500 KW) | 2018-01','DG-R Primary | 2016-08','DG-R Primary | 2018-06','DG-R Primary Substation | 2017-01','DG-R Primary Substation | 2018-01','DG-R Secondary (0-500 KW) | 2017-01','DG-R Secondary (0-500 KW) | 2018-01','DG-R Secondary (0-500kW) | 2018-06','DG-R Secondary (Above 500 KW) | 2017-01','DG-R Secondary (Above 500 KW) | 2018-01','DG-R Secondary (Above 500kW) | 2018-06','DG-R Secondary | 2016-08','DG-R Secondary | 2019-01','DG-R Secondary Substation | 2017-01','DG-R Secondary Substation | 2018-01','DG-R Transmission (0-500 KW) | 2017-01','DG-R Transmission (0-500 KW) | 2018-01','DG-R Transmission (Above 500 KW) | 2017-01','DG-R Transmission (Above 500 KW) | 2018-01','DR - Coastal Baseline Region | 2014-02','DR - Coastal Baseline Region | 2014-08','DR - Coastal Baseline Region | 2015-05','DR - Coastal Baseline Region | 2016-07','DR - Coastal Baseline Region | 2017-01','DR - Coastal Baseline Region | 2018-01','DR - Coastal Baseline Region | 2018-10','DR - Desert Baseline Region | 2014-02','DR - Desert Baseline Region | 2014-08','DR - Desert Baseline Region | 2015-05','DR - Desert Baseline Region | 2016-07','DR - Desert Baseline Region | 2017-01','DR - Desert Baseline Region | 2018-01','DR - Desert Baseline Region | 2018-10','DR - Inland Baseline Region | 2014-02','DR - Inland Baseline Region | 2014-08','DR - Inland Baseline Region | 2015-05','DR - Inland Baseline Region | 2016-07','DR - Inland Baseline Region | 2017-01','DR - Inland Baseline Region | 2018-01','DR - Inland Baseline Region | 2018-10','DR - Mountain Baseline Region | 2014-02','DR - Mountain Baseline Region | 2014-08','DR - Mountain Baseline Region | 2015-05','DR - Mountain Baseline Region | 2016-07','DR - Mountain Baseline Region | 2017-01','DR - Mountain Baseline Region | 2018-01','DR - Mountain Baseline Region | 2018-10','DR- TOU- Coastal Baseline Region | 2014-02','DR- TOU- Coastal Baseline Region | 2014-08','DR- TOU- Coastal Baseline Region | 2015-05','DR- TOU- Desert Baseline Region | 2014-02','DR- TOU- Desert Baseline Region | 2014-08','DR- TOU- Desert Baseline Region | 2015-05','DR- TOU- Inland Baseline Region | 2014-02','DR- TOU- Inland Baseline Region | 2014-08','DR- TOU- Inland Baseline Region | 2015-05','DR- TOU- Mountain Baseline Region | 2014-02','DR- TOU- Mountain Baseline Region | 2014-08','DR- TOU- Mountain Baseline Region | 2015-05','DR-LI - Coastal Baseline Region | 2014-07','DR-LI - Coastal Baseline Region | 2015-05','DR-LI - Coastal Baseline Region | 2016-07','DR-LI - Coastal Baseline Region | 2017-01','DR-LI - Coastal Baseline Region | 2018-01','DR-LI - Desert Baseline Region | 2014-07','DR-LI - Desert Baseline Region | 2015-05','DR-LI - Desert Baseline Region | 2016-07','DR-LI - Desert Baseline Region | 2017-01','DR-LI - Desert Baseline Region | 2018-01','DR-LI - Inland Baseline Region | 2014-07','DR-LI - Inland Baseline Region | 2015-05','DR-LI - Inland Baseline Region | 2016-07','DR-LI - Inland Baseline Region | 2017-01','DR-LI - Inland Baseline Region | 2018-01','DR-LI - Mountain Baseline Region | 2014-07','DR-LI - Mountain Baseline Region | 2015-05','DR-LI - Mountain Baseline Region | 2016-07','DR-LI - Mountain Baseline Region | 2017-01','DR-LI - Mountain Baseline Region | 2018-01','DR-SES (Solar Energy Systems) | 2014-05','DR-SES (Solar Energy Systems) | 2014-08','DR-SES (Solar Energy Systems) | 2015-05','DR-SES (Solar Energy Systems) | 2016-07','DR-SES (Solar Energy Systems) | 2017-01','DR-SES (Solar Energy Systems) | 2018-01','EV-GIR1 (Experimental) | 2018-06','EV-GIR2 (Experimental) | 2018-06','EV-TOU | 2014-07','EV-TOU | 2015-05','EV-TOU | 2017-01','EV-TOU | 2018-01','EV-TOU-2 | 2014-07','EV-TOU-2 | 2015-05','EV-TOU-2 | 2017-01','EV-TOU-2 | 2018-01','TOU-A Primary (0-5kW) | 2018-06','TOU-A Primary (20-50kW) | 2018-06','TOU-A Primary (5-20kW) | 2018-06','TOU-A Primary | 2017-01','TOU-A Primary | 2018-01','TOU-A Secondary (0-5kW) | 2018-06','TOU-A Secondary (20-50kW) | 2018-06','TOU-A Secondary (5-20kW) | 2018-06','TOU-A Secondary (Above 50kW) | 2018-06','TOU-A Secondary | 2017-01','TOU-A Secondary | 2018-01','TOU-A-2 Primary (0-5kW) | 2018-06','TOU-A-2 Primary (20-50kW) | 2018-06','TOU-A-2 Primary (5-20kW) | 2018-06','TOU-A-2 Primary (Above 50kW) | 2018-06','TOU-A-2 Secondary (0-5kW) | 2018-06','TOU-A-2 Secondary (20-50kW) | 2018-06','TOU-A-2 Secondary (5-20kW) | 2018-06','TOU-A-3 Primary (0-5kW) | 2018-06','TOU-A-3 Primary (20-50kW) | 2018-06','TOU-A-3 Primary (5-20kW) | 2018-06','TOU-A-3 Primary (Above 50kW) | 2018-06','TOU-A-3 Secondary (0-5kW) | 2018-06','TOU-A-3 Secondary (20-50kW) | 2018-06','TOU-A-3 Secondary (5-20kW) | 2018-06','TOU-A-P Primary | 2016-08','TOU-A-P Secondary | 2016-08','TOU-DR Coastal Baseline Region | 2016-07','TOU-DR Coastal Baseline Region | 2017-01','TOU-DR Coastal Baseline Region | 2018-01','TOU-DR Desert Baseline Region | 2016-07','TOU-DR Desert Baseline Region | 2017-01','TOU-DR Desert Baseline Region | 2018-01','TOU-DR Inland Baseline Region | 2016-07','TOU-DR Inland Baseline Region | 2017-01','TOU-DR Inland Baseline Region | 2018-01','TOU-DR Mountain Baseline Region | 2016-07','TOU-DR Mountain Baseline Region | 2017-01','TOU-DR Mountain Baseline Region | 2018-01','TOU-DR1 Coastal | 2018-01','TOU-DR1 Coastal | 2019-06','TOU-DR1 Desert | 2018-01','TOU-DR1 Desert | 2019-06','TOU-DR1 Inland | 2018-01','TOU-DR1 Inland | 2019-06','TOU-DR1 Mountain | 2018-01','TOU-DR1 Mountain | 2019-06','TOU-M | 2018-06']
 
 Index Tier_Period_Column
@@ -867,16 +949,19 @@ ValueState: 2,12,5,416,585,,MIDM
 
 Index Periods
 Title: Periods
-Definition: #Find_Valid_TiersPrds[.subscripts='periods']
-NodeLocation: 832,272,1
+Definition: Subset(Active_Periods)
+NodeLocation: 976,272,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['period0','period1','period10','period11','period12','period13','period14','period2','period3','period4','period5','period6','period7','period8','period9']
+WindState: 2,29,67,1217,840
+ValueState: 2,548,427,416,430,0,MIDM
+{!40300|Att_SlicerPopupSize: 227,238}
 
 Index Tiers
 Title: Tiers
-Definition: #Find_Valid_TiersPrds[.subscripts='tiers']
-NodeLocation: 832,184,1
+Definition: Subset(Active_Tiers)
+NodeLocation: 976,184,1
 NodeSize: 64,40
+WindState: 2,297,6,1230,840
 {!40300|Att_SlicerPopupSize: 257,56}
 
 Index Data_Attribute
@@ -887,27 +972,27 @@ NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 322,70}
 Att_PrevIndexValue: ['rate','max','adj','sell']
 
-Index Data_Type
-Title: Data Type
+Index All_Data_Types
+Title: All Data Types
 Definition: ['flatdemandstructure','demandratestructure','energyratestructure','coincidentratestructure']
 NodeLocation: 256,88,1
 NodeSize: 64,40
-WindState: 2,591,1,720,350
+WindState: 2,40,131,720,350
 {!40300|Att_SlicerPopupSize: 392,70}
 Att_PrevIndexValue: ['flatdemandstructure','demandratestructure','energyratestructure','coincidentratestructure']
 
 Decision Energy_Rate_Label
 Title: Energy Rate Label
-Definition: Choice(Data_Type,3,0)
-NodeLocation: 256,488,1
+Definition: Choice(All_Data_Types,3,0)
+NodeLocation: 256,576,1
 NodeSize: 64,40
 Aliases: FormNode Fo1533827453
-{!40200|Att_ChoiceIndexes: Index Data_Type}
+{!40200|Att_ChoiceIndexes: Index All_Data_Types}
 
 FormNode Fo1533827453
 Title: Tier Label
 Definition: 0
-NodeLocation: 256,536,1
+NodeLocation: 256,624,1
 NodeSize: 64,16
 NodeInfo: 1,0,0,0,0,0,0,86,0,,0,,,0
 Original: Energy_Rate_Label
@@ -921,32 +1006,32 @@ Aliases: FormNode Fo1540241523
 
 Decision Demand_Rate_Label
 Title: Demand Rate Label
-Definition: Choice(Data_Type,2,0)
-NodeLocation: 256,264,1
+Definition: Choice(All_Data_Types,2,0)
+NodeLocation: 256,352,1
 NodeSize: 64,40
 Aliases: FormNode Fo1534882918
-{!40200|Att_ChoiceIndexes: Index Data_Type}
+{!40200|Att_ChoiceIndexes: Index All_Data_Types}
 
 FormNode Fo1534882918
 Title: Tier Label
 Definition: 0
-NodeLocation: 256,312,1
+NodeLocation: 256,400,1
 NodeSize: 64,16
 NodeInfo: 1,0,0,0,0,0,0,86,0,,0,,,0
 Original: Demand_Rate_Label
 
 Decision Flat_Demand_Label
 Title: Flat Demand Label
-Definition: Choice(Data_Type,1,0)
-NodeLocation: 256,376,1
+Definition: Choice(All_Data_Types,1,0)
+NodeLocation: 256,464,1
 NodeSize: 64,40
 Aliases: FormNode Fo1533739020
-{!40200|Att_ChoiceIndexes: Index Data_Type}
+{!40200|Att_ChoiceIndexes: Index All_Data_Types}
 
 FormNode Fo1533739020
 Title: Tier Label
 Definition: 0
-NodeLocation: 256,424,1
+NodeLocation: 256,512,1
 NodeSize: 64,16
 NodeInfo: 1,0,0,0,0,0,0,86,0,,0,,,0
 Original: Flat_Demand_Label
@@ -1020,7 +1105,7 @@ Original: Adj_Attribute_Label
 
 Decision Assign_Name_to_Perio
 Title: Assign Name to Period
-Definition: Table(Periods,Rate_Names)(~
+Definition: Table(All_Periods,Rate_Names)(~
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
@@ -1038,13 +1123,14 @@ Definition: Table(Periods,Rate_Names)(~
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 NodeLocation: 688,200,1
 NodeSize: 64,40
-DefnState: 2,110,53,1345,301,,DFNM
+DefnState: 2,43,408,1345,301,0,DFNM
 
 Index Demand_Data_Types
 Title: Demand Data Types
-Definition: Subset(Data_Type <> Energy_Rate_Label)
+Definition: Subset((All_Data_Types <> Energy_Rate_Label) AND Active_Data_Types)
 NodeLocation: 256,176,1
 NodeSize: 64,40
+WindState: 2,98,82,1084,833
 
 FormNode Fo1540241523
 Title: Energy Units Label
@@ -1053,6 +1139,66 @@ NodeLocation: 688,136,1
 NodeSize: 64,16
 NodeInfo: 1,0,0,0,0,0,0,86,0,,0,,,
 Original: Energy_Units_Label
+
+Function Aggreg_ProfHrs_TOU(data; type: Optional = 'Sum')
+Title: Aggreg Profile Hrs to TOU
+Description: Aggregates data indexed by Profile Hours to the TOU indices ("Weekday or Weekend" & "Time of Day"). The aggregation type can be specified to find the sum of the data in each TOU period, or find the maximum of the data in the TOU periods.~
+~
+[data]: a dataset indexed by Profile_Hours~
+[type]: the aggregation method: 'Sum' (which is the default) or 'Max'
+Definition: FOR J:=Weekday_or_Weekend DO (   {Loop thru weekend/weekday and time of day to avoid massive dimensionality}~
+   FOR K:=Time_of_Day DO (~
+      VAR map:=Map_Prof_DayTyp_Time[Weekday_or_Weekend=J, Time_of_Day=K];   {A boolean map of profile associated with the Jth and Kth elements of the looping indices}~
+      IF type = 'Sum'~
+      THEN Sum(data * map, Profile_Hours)~
+      ELSE MAX(data * map, Profile_Hours)~
+   )~
+)~
+
+NodeLocation: 832,368,1
+NodeSize: 64,40
+WindState: 2,105,29,1335,513
+
+Function Aggreg_to_Periods(data, rateStruct; type: Optional = 'Sum')
+Title: Aggreg to Periods
+Description: Aggregates data indexed by TOU indices ("Weekday or Weekend" & "Time of Day") to TOU Periods. The aggregation type can be specified to find the sum of the data in each TOU period, or find the maximum of the data in the TOU periods.~
+~
+[data]: a dataset indexed by Profile_Hours~
+[rateStruct]: the rate structure data type for which TOU periods will be determined (eg, elements of the Data_Type index: 'energyratestructure', demandratestructure")~
+[type]: the aggregation method: 'Sum' (which is the default) or 'Max'
+Definition: FOR J:=Periods DO (   {Loop thru each period to avoid massive dimensionality}~
+   VAR map:=Period_by_DayType_Hr[Data_Types=rateStruct] = J;   {A boolean map of profile associated with the Jth period}~
+   IF type = 'Sum'~
+   THEN Sum(data * map, Weekday_or_Weekend, Time_of_Day)~
+   ELSE MAX(data * map, Weekday_or_Weekend, Time_of_Day)~
+)
+NodeLocation: 976,368,1
+NodeSize: 64,40
+WindState: 2,513,361,1345,455
+
+Index Data_Types
+Title: Data Types
+Description: Relevant data types to the rates included in the simulation. 
+Definition: Subset(Active_Data_Types)
+NodeLocation: 256,264,1
+NodeSize: 64,40
+
+Index All_Periods
+Title: All Periods
+Definition: #Find_Valid_TiersPrds[.subscripts='periods']
+NodeLocation: 832,272,1
+NodeSize: 64,40
+WindState: 2,98,82,1217,840
+ValueState: 2,548,427,416,430,,MIDM
+{!40300|Att_SlicerPopupSize: 227,238}
+Att_PrevIndexValue: ['period0','period1','period2','period3','period4','period5','period6','period7','period8','period9','period10','period11','period12','period13','period14']
+
+Index All_Tiers
+Title: All Tiers
+Definition: #Find_Valid_TiersPrds[.subscripts='tiers']
+NodeLocation: 832,184,1
+NodeSize: 64,40
+{!40300|Att_SlicerPopupSize: 257,56}
 
 Close Rates_Auxiliary_Vari
 
@@ -2952,15 +3098,15 @@ Original: Select_Existing_Rate
 Function Populate_Flat_Demand()
 Title: Populate Flat Demand
 Description: Populates the rate structure inputs for flat demand rates.
-Definition: VAR data:=Data_by_Tier_Period[Rate_Names=Select_Existing_Rate, Data_Type=Flat_Demand_Label];~
+Definition: VAR data:=Data_by_Tier_Period[Rate_Names=Select_Existing_Rate, All_Data_Types=Flat_Demand_Label];~
 VAR nonNull:=data <> Null;~
-INDEX validTiers:=Subset(Sum(nonNull, Periods, Data_Attribute));~
-INDEX validPeriods:=Subset(Sum(nonNull, Tiers, Data_Attribute));~
+INDEX validTiers:=Subset(Sum(nonNull, All_Periods, Data_Attribute));~
+INDEX validPeriods:=Subset(Sum(nonNull, All_Tiers, Data_Attribute));~
 ~
 Num_Flat_Dmd_Tiers:=Size(validTiers);~
 Num_Flat_Dmd_Periods:=Size(validPeriods);~
 Flat_Demand_Schedule:=Flat_Periods[Rate_Names=Select_Existing_Rate];~
-Flat_Demand_Rates:=data[Data_Attribute=Map_Dmd_Rate_Attribs, Periods=Flat_Demand_Periods, Tiers=Flat_Demand_Tiers];
+Flat_Demand_Rates:=data[Data_Attribute=Map_Dmd_Rate_Attribs, All_Periods=Flat_Demand_Periods, All_Tiers=Flat_Demand_Tiers];
 NodeLocation: 120,632,1
 NodeSize: 64,40
 WindState: 2,102,82,781,457
@@ -2980,32 +3126,34 @@ Populate_TOU_Energy();
 Function Populate_TOU_Demand()
 Title: Populate TOU Demand
 Description: Populates the rate structure inputs for time-of-use demand rates.
-Definition: VAR data:=Data_by_Tier_Period[Rate_Names=Select_Existing_Rate, Data_Type=Demand_Rate_Label];~
+Definition: VAR data:=Data_by_Tier_Period[Rate_Names=Select_Existing_Rate, All_Data_Types=Demand_Rate_Label];~
 VAR nonNull:=data <> Null;~
-INDEX validTiers:=Subset(Sum(nonNull, Periods, Data_Attribute));~
-INDEX validPeriods:=Subset(Sum(nonNull, Tiers, Data_Attribute));~
+INDEX validTiers:=Subset(Sum(nonNull, All_Periods, Data_Attribute));~
+INDEX validPeriods:=Subset(Sum(nonNull, All_Tiers, Data_Attribute));~
 ~
 Num_Dmd_TOU_Tiers:=Size(validTiers);~
 Num_Dmd_TOU_Periods:=Size(validPeriods);~
-Demand_TOU_Sched:=TOU_Periods[Rate_Names=Select_Existing_Rate, Data_Type=Demand_Rate_Label];~
-Demand_TOU_Rates:=data[Data_Attribute=Map_Dmd_Rate_Attribs, Periods=Demand_TOU_Periods, Tiers=Demand_TOU_Tiers];
+Demand_TOU_Sched:=TOU_Periods[Rate_Names=Select_Existing_Rate, All_Data_Types=Demand_Rate_Label];~
+Demand_TOU_Rates:=data[Data_Attribute=Map_Dmd_Rate_Attribs, All_Periods=Demand_TOU_Periods, All_Tiers=Demand_TOU_Tiers];
 NodeLocation: 256,632,1
 NodeSize: 64,40
+WindState: 2,98,82,936,524
 
 Function Populate_TOU_Energy()
 Title: Populate TOU Energy
 Description: Populates the rate structure inputs for time-of-use energy rates.
-Definition: VAR data:=Data_by_Tier_Period[Rate_Names=Select_Existing_Rate, Data_Type=Energy_Rate_Label];~
+Definition: VAR data:=Data_by_Tier_Period[Rate_Names=Select_Existing_Rate, All_Data_Types=Energy_Rate_Label];~
 VAR nonNull:=data <> Null;~
-INDEX validTiers:=Subset(Sum(nonNull, Periods, Data_Attribute));~
-INDEX validPeriods:=Subset(Sum(nonNull, Tiers, Data_Attribute));~
+INDEX validTiers:=Subset(Sum(nonNull, All_Periods, Data_Attribute));~
+INDEX validPeriods:=Subset(Sum(nonNull, All_Tiers, Data_Attribute));~
 ~
 Num_Energy_TOU_Tiers:=Size(validTiers);~
 Num_EnrgyTOU_Periods:=Size(validPeriods);~
-Energy_TOU_Schedule:=TOU_Periods[Rate_Names=Select_Existing_Rate, Data_Type=Energy_Rate_Label];~
-Energy_TOU_Rates:=data[Data_Attribute=Map_EnrgyRate_Attrib, Periods=Energy_TOU_Periods, Tiers=Energy_TOU_Tiers];
+Energy_TOU_Schedule:=TOU_Periods[Rate_Names=Select_Existing_Rate, All_Data_Types=Energy_Rate_Label];~
+Energy_TOU_Rates:=data[Data_Attribute=Map_EnrgyRate_Attrib, All_Periods=Energy_TOU_Periods, All_Tiers=Energy_TOU_Tiers];
 NodeLocation: 392,632,1
 NodeSize: 64,40
+WindState: 2,98,82,1055,619
 
 Function Populate_Info_FixChg()
 Title: Populate Info and Fixed Charges
@@ -3127,7 +3275,7 @@ Function Flatten_Schedules(sched, dataType, writeData)
 Title: Flatten Schedules
 Definition: VAR hourJoin:=JoinText(sched, Time_of_Day, Hour_Separator);~
 VAR monthJoin:=JoinText("[" & hourJoin & "]", Month, Hour_Separator);~
-INDEX labels:=CopyIndex(Map_Schedules[Data_Type=dataType]);~
+INDEX labels:=CopyIndex(Map_Schedules[All_Data_Types=dataType]);~
 VAR finalText:="[" & monthJoin[@Weekday_or_Weekend=@labels] & "]";~
 ~
 IF PositionInIndex(labels, USURDB_Columns, labels)~
@@ -3241,7 +3389,7 @@ Date: Thu, Jan 24, 2019 11:22 AM
 NodeLocation: 960,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1,0,795,441,17
+DiagState: 2,1,0,831,535,17
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
 
@@ -3355,11 +3503,11 @@ NodeLocation: 656,240,1
 NodeSize: 64,40
 
 Index Energy_Rate_Attribut
-Att_PrevIndexValue: ['max (kWh/day)','rate ($/kWh)','adj ($/kWh)']
 Title: Energy Rate Attributes
 Definition: ['max (kWh/day)','rate ($/kWh)','adj ($/kWh)']
 NodeLocation: 656,152,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['max (kWh/day)','rate ($/kWh)','adj ($/kWh)']
 
 Variable Map_Dmd_Rate_Attribs
 Title: Map Demand Rate Attributes
@@ -3388,7 +3536,8 @@ Title: Day Type and Hour
 Definition: CopyIndex(ConcatRows(Weekday_or_Weekend & Time_Separator & Time_of_Day, Weekday_or_Weekend, Time_of_Day))
 NodeLocation: 112,328,1
 NodeSize: 64,40
-ValueState: 2,1644,8,1353,854,0,MIDM
+WindState: 2,98,82,1184,680
+ValueState: 2,490,25,1353,854,0,MIDM
 
 Close Rate_Save_Auxiliary_
 
@@ -3407,7 +3556,7 @@ Variable View_Saved_Rates
 Title: View Saved Rates
 Description: View the hourly rates associated with the rate that was just saved.
 Definition: IF PositionInIndex(Rate_Names, Rate_Name_to_Save, Rate_Names)~
-THEN Sum(Rate_Data_TOU_Sched[Rate_Names=Rate_Name_to_Save, Data_Type=DataType_by_RateType, Time_of_Day=Hour_for_Type_and_Ho, Weekday_or_Weekend=Day_Type_for_Type_an] * Rate_and_Adj_Attribs, Data_Attribute) * Rate_Compon_Scaling~
+THEN Sum(Rate_Data_TOU_Sched[Rate_Names=Rate_Name_to_Save, All_Data_Types=DataType_by_RateType, Time_of_Day=Hour_for_Type_and_Hr, Weekday_or_Weekend=DayType_for_Type_Hr] * Rate_and_Adj_Attribs, Data_Attribute) * Rate_Compon_Scaling~
 ELSE (MsgBox("The rate name currently specified in the 'Rate Description' table has not yet been saved, and thus cannot be viewed. Once the new rate has been saved, it can be viewed from this output result.", 0, "Rate Not Yet Saved");~
    "N/A")
 NodeLocation: 280,200,1
@@ -3424,26 +3573,29 @@ Graph_KeyFont:,18,0
 ReformVal: [Day_Type_and_Hour,Rate_Component]
 Att_ResultSliceState: [Tiers,1,Month,1,Rate_Component,1,Day_Type_and_Hour,1]
 
-Variable Day_Type_for_Type_an
+Variable DayType_for_Type_Hr
 Title: Day Type for Type and Hour
+Description: The day type for the Day Type and Hour index.
 Definition: SelectText(Day_Type_and_Hour, 1, FindInText(Time_Separator, Day_Type_and_Hour)-1)
 NodeLocation: 128,200,1
 NodeSize: 64,40
-ValueState: 2,1645,74,645,822,,MIDM
+ValueState: 2,876,97,645,822,,MIDM
 
-Variable Hour_for_Type_and_Ho
+Variable Hour_for_Type_and_Hr
 Title: Hour for Type and Hour
+Description: The hour for each element of the Day Type and Hour index.
 Definition: SelectText(Day_Type_and_Hour,FindInText(Time_Separator, Day_Type_and_Hour)+1)
 NodeLocation: 128,296,1
 NodeSize: 64,40
-ValueState: 2,1645,74,645,822,0,MIDM
+ValueState: 2,1055,45,645,822,0,MIDM
 
 Variable View_Existing_Rates
 Title: View Existing Rates
 Description: View the hourly rates associated with the existing rate that has been selected.
-Definition: Sum(Rate_Data_TOU_Sched[Rate_Names=Select_Existing_Rate, Data_Type=DataType_by_RateType, Time_of_Day=Hour_for_Type_and_Ho, Weekday_or_Weekend=Day_Type_for_Type_an] * Rate_and_Adj_Attribs, Data_Attribute) * Rate_Compon_Scaling
+Definition: Sum(Rate_Data_TOU_Sched[Rate_Names=Select_Existing_Rate, All_Data_Types=DataType_by_RateType, Time_of_Day=Hour_for_Type_and_Hr, Weekday_or_Weekend=DayType_for_Type_Hr] * Rate_and_Adj_Attribs, Data_Attribute) * Rate_Compon_Scaling
 NodeLocation: 280,296,1
 NodeSize: 64,40
+WindState: 2,98,82,1526,709
 ValueState: 2,17,-12,1495,845,1,MIDM
 Aliases: FormNode Fo1547666968
 GraphSetup: Graph_HLabelRotation:90~
