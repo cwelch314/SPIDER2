@@ -159,7 +159,7 @@ NodeSize: 64,40
 WindState: 2,412,69,902,569
 ValueState: 2,1275,23,429,412,0,MIDM
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
-DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
+DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Function Sequential_Opt_PV1, Function Set_Start_Coeff_PV1, Function Sequential_Opt_PV3, Function OG_Sequential_Optim1
 {!40300|Att_SlicerPopupSize: 458,784}
 Att_PrevIndexValue: ['Statewide','All_Utility',91.901K,91.902K,91.905K,91.906K,91.91K,91.911K,91.913K,91.914K,91.915K,91.916K,91.917K,91.931K,91.932K,91.934K,91.935K,91.941K,91.942K,91.945K,91.948K,91.95K,91.962K,91.963K,91.977K,91.978K,91.98K,92.003K,92.004K,92.007K,92.008K,92.009K,92.01K,92.011K,92.014K,92.019K,92.02K,92.021K,92.024K,92.025K,92.026K,92.027K,92.028K,92.029K,92.036K,92.037K,92.04K,92.054K,92.055K,92.056K,92.057K,92.058K,92.059K,92.06K,92.061K,92.064K,92.065K,92.066K,92.067K,92.068K,92.069K,92.07K,92.071K,92.072K,92.075K,92.078K,92.081K,92.082K,92.083K,92.084K,92.085K,92.086K,92.091K,92.092K,92.093K,92.096K,92.101K,92.102K,92.103K,92.104K,92.105K,92.106K,92.107K,92.108K,92.109K,92.11K,92.111K,92.112K,92.113K,92.114K,92.115K,92.116K,92.117K,92.118K,92.119K,92.12K,92.121K,92.122K,92.123K,92.124K,92.126K,92.127K,92.128K,92.129K,92.13K,92.131K,92.132K,92.136K,92.139K,92.145K,92.152K,92.154K,92.158K,92.161K,92.173K,92.179K,92.182K,92.199K,92.536K,92.624K,92.629K,92.651K,92.653K,92.656K,92.672K,92.673K,92.674K,92.675K,92.676K,92.677K,92.679K,92.688K,92.69K,92.691K,92.692K,92.693K,92.694K,92.697K]
 
@@ -389,7 +389,7 @@ NodeLocation: 232,368,1
 NodeSize: 64,40
 WindState: 2,542,374,720,350
 Aliases: FormNode Fo1535656789
-DisplayOutputs: Function MultiStage_CalibrPV0
+DisplayOutputs: Function MultiStage_CalibrPV0, Function MultiStage_CalibrPV1
 {!40200|Att_ChoiceIndexes: Index All_Spatial_ID}
 
 FormNode Fo1535656789
@@ -709,7 +709,7 @@ Date: Fri, Mar 22, 2019 10:15 AM
 NodeLocation: 592,456,1
 NodeSize: 64,40
 DiagState: 2,2149,284,944,463,17
-Aliases: Alias Al1553196427, Alias Al1553196433
+Aliases: Alias Al1553196427, Alias Al1553196433, Alias Al1572476319
 
 Function Check_Sector(all_sectors: Index; der_sectors: Variable)
 Title: Check Sector
@@ -726,7 +726,7 @@ IF size(der_sectors)>1 THEN ~
 NodeLocation: 248,152,1
 NodeSize: 64,40
 WindState: 2,171,237,1335,651
-DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
+DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Function Sequential_Opt_PV1, Function Set_Start_Coeff_PV1, Function Sequential_Opt_PV3, Function OG_Sequential_Optim1
 
 Function Check_SpatID_Sel_PV()
 Title: Check Spatial ID Selection
@@ -752,7 +752,7 @@ ELSE Null
 NodeLocation: 248,64,1
 NodeSize: 64,40
 WindState: 2,118,70,951,499
-DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
+DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib, Function MultiStage_CalibrPV1, Function OG_Multi_Stage_Cali1
 
 Function Sequential_Opt(stage: Atom; select_decis, decis_handles, all_spatial_id, der_spatial_id, all_sectors: Index; ag_stage1, aggreg_level; der_sectors, stored_decis, stored_status, decis_switch: Variable; optDef_handle: Handle)
 Title: Sequential Optimization
@@ -806,7 +806,7 @@ For i:=remaining_IDs DO (	~
 NodeLocation: 384,152,1
 NodeSize: 64,40
 WindState: 2,2007,26,1167,738
-DisplayOutputs: Function OG_Multi_Stage_Calib
+DisplayOutputs: Function OG_Multi_Stage_Calib, Function OG_Multi_Stage_Cali1
 
 Function Multi_Stage_Calibrat(select_stages, all_stages, all_spatial_id, nonAg_id, failed_id, calib_time, sim_time, select_decis, all_decis, decis_handles, all_sectors: Index; ag_stage1, trace_flag, calib_start, calib_end, dates_by_stage, decis_by_stage, setting_by_stage, aggreg_level; der_spatial_id, der_sectors, curr_stage, sim_start, sim_end, decis_switch, dates_in_opt, decis_in_opt, stored_decis, setting_in_opt, stored_status: Variable; optDef_handle: Handle)
 Title: Multi-Stage Calibration
@@ -871,7 +871,7 @@ For i:=stage DO (~
 NodeLocation: 384,64,1
 NodeSize: 64,40
 WindState: 2,105,13,1370,845
-DisplayOutputs: Decision Dates_Incl_in_PV_Opt, Decision Opt_Settings_PV
+DisplayOutputs: Decision Dates_Incl_in_PV_Opt, Decision Opt_Settings_PV, Decision Dates_Incl_in_PV_Op1, Decision Opt_Settings_PV1
 
 Function Set_Starting_Coeff(all_sectors, all_spatial_id, der_spatial_id: Index; aggreg_level; der_sectors, stored_decis, stored_status: Variable)
 Title: Set Starting Coeff
@@ -902,7 +902,7 @@ local active_sector:=Slice(der_sectors,1);~
 NodeLocation: 520,64,1
 NodeSize: 64,40
 WindState: 2,58,81,1322,764
-DisplayOutputs: Function OG_Multi_Stage_Calib
+DisplayOutputs: Function OG_Multi_Stage_Calib, Function OG_Multi_Stage_Cali1
 
 Decision Infeasible_Label
 Title: Infeasible Label
@@ -946,13 +946,13 @@ NodeSize: 64,40
 WindState: 2,39,89,1410,586
 
 Index Act_vs_Sim
-Att_PrevIndexValue: ['Actual','Simulated']
 Title: Act vs Sim
 Definition: ['Actual','Simulated']
 IndexVals: ['item 1']
 NodeLocation: 112,256,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 277,56}
+Att_PrevIndexValue: ['Actual','Simulated']
 
 Decision Actual_Label
 Title: Actual Label
