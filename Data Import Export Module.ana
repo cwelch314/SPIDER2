@@ -318,13 +318,13 @@ ReformVal: [Building_Stock_Year,EV_Spatial_ID]
 Att_ResultSliceState: [Selected_Spatial_ID,42,Sectors_Selected,1,Building_Stock_Year,1]
 
 Index Building_Stock_Year
-Att_PrevIndexValue: [1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 Title: Building Stock Year
 Definition: Bldg_Stock_Start_Yea..Bldg_Stock_End_Year
 NodeLocation: 240,192,1
 NodeSize: 64,40
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 242,546}
+Att_PrevIndexValue: [1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 
 Constant Bldg_Stock_Start_Yea
 Title: Bldg Stock Start Year
@@ -5613,7 +5613,7 @@ Author: JamesMilford
 Date: Fri, Feb 8, 2019 8:50 PM
 NodeLocation: 312,288,1
 NodeSize: 80,56
-DiagState: 2,213,20,1165,810,17
+DiagState: 2,662,24,1165,810,17
 Aliases: Alias Al1538428922
 ReformVal: [Hour1,System_Type1]
 Att_ResultSliceState: [PV_Climate_Zone,1,Month,3,Weekday_or_Weekend,1,System_Type1,1,Hour1,1]
@@ -6045,11 +6045,11 @@ WindState: 2,581,29,720,350
 Aliases: FormNode Fo1535331934, FormNode Fo1537568831
 
 Index Column_Number
-Att_PrevIndexValue: [1,2,3,4,5]
 Title: Column Number
 Definition: 1..Number_of_Data_Colum
 NodeLocation: 208,816,1
 NodeSize: 56,32
+Att_PrevIndexValue: [1,2,3,4,5]
 
 FormNode Fo1535331934
 Title: Number of Data Columns
@@ -7736,7 +7736,7 @@ Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 1200,328,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,33,9,1705,706,17
+DiagState: 2,81,101,1705,706,17
 
 Variable PV_AC_SystSize_Econ
 Title: PV AC System Size for Economics
@@ -8915,11 +8915,11 @@ Aliases: FormNode Fo1542232306
 ReformDef: [All_Sectors,Min_and_Max]
 
 Index Min_and_Max
-Att_PrevIndexValue: ['Min','Max']
 Title: Min and Max
 Definition: ['Min','Max']
 NodeLocation: 1272,512,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Min','Max']
 
 Variable Fcst_System_Size_Zip
 Title: Forecast AC System Size by Zip
@@ -9040,13 +9040,13 @@ Definition: Table(PV_Adopt_Data_Types)(System_Installations,Capacity_Installs,Hi
 NodeLocation: 712,608,1
 NodeSize: 64,40
 DefnState: 2,1807,110,872,620,0,DFNM
-ValueState: 2,35,0,1540,845,1,MIDM
+ValueState: 2,713,50,1169,845,1,MIDM
 Aliases: Alias Al1542347481, Alias Al1542352235
 NodeColor: 19661,48336,65535
 GraphSetup: Att_GraphValueRange Historic_PV_Adoption:1,,1,,,,,0,30,0
 ReformVal: [Interconnect_Date,Null]
-Att__TotalsIndex: [PV_Spatial_ID,PV_Sectors]
-Att_ResultSliceState: [PV_Sectors,0,PV_Spatial_ID,0,PV_Adopt_Data_Types,5,Interconnect_Date,1]
+Att__TotalsIndex: [PV_Spatial_ID]
+Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,0,PV_Adopt_Data_Types,1,Interconnect_Date,1]
 Att_ColorRole: Null
 
 Variable Avg_System_Size_Prd1
@@ -9319,13 +9319,13 @@ NodeSize: 156,116
 NodeInfo: 1,0,0,1,1,1,0,,1,,0,,,
 
 Index db_Fields
-Att_PrevIndexValue: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 Title: db Fields
 Definition: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 NodeLocation: 576,416,1
 NodeSize: 56,32
 ValueState: 2,347,400,416,303,,MIDM
 {!40300|Att_SlicerPopupSize: 227,112}
+Att_PrevIndexValue: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 
 Index db_Records
 Att_PrevIndexValue: ['Empty']
