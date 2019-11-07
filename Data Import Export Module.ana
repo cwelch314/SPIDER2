@@ -5613,7 +5613,7 @@ Author: JamesMilford
 Date: Fri, Feb 8, 2019 8:50 PM
 NodeLocation: 312,288,1
 NodeSize: 80,56
-DiagState: 2,662,24,1165,810,17
+DiagState: 2,664,3,1165,810,17
 Aliases: Alias Al1538428922
 ReformVal: [Hour1,System_Type1]
 Att_ResultSliceState: [PV_Climate_Zone,1,Month,3,Weekday_or_Weekend,1,System_Type1,1,Hour1,1]
@@ -5626,7 +5626,7 @@ Author: Cory Welch
 Date: Fri, Jun 22, 2018 10:48 AM
 NodeLocation: 840,640,1
 NodeSize: 64,40
-DiagState: 2,155,81,1524,631,17
+DiagState: 2,186,89,1524,631,17
 
 Index Interconnect_Date
 Title: Interconnect Date
@@ -6004,10 +6004,10 @@ NodeSize: 144,112
 Function Store_Agg_PV_Data()
 Title: Store Aggregate PV Data
 Description: This stores the formatted interconnect data (# of installations and amount of capacity) after aggregating to the spatial ID, utility, and sector.
-Definition: (Stored_PV_Installs:=All_System_Installs);~
-(Stored_ID_Interconn:=Copyindex(Spatial_ID_Interconn)); ~
+Definition: (Stored_ID_Interconn:=Copyindex(Spatial_ID_Interconn)); ~
 (Intercon_End_Yr:=Max(Year_SubYear_of_Inst,db_Records));~
 (Intercon_Strt_Yr:=Min(Year_SubYear_of_Inst,db_Records));~
+(Stored_PV_Installs:=All_System_Installs);~
 (Stored_Capacity_Inst:=Capacity_Installat);~
 (Stored_DC_CapInstall:=DC_Capacity_Install1);~
 (Stored_AC_CapInstall:=AC_Capacity_Install1);~
@@ -7736,7 +7736,7 @@ Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 1200,328,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,81,101,1705,706,17
+DiagState: 2,85,46,1705,706,17
 
 Variable PV_AC_SystSize_Econ
 Title: PV AC System Size for Economics
@@ -9046,7 +9046,7 @@ NodeColor: 19661,48336,65535
 GraphSetup: Att_GraphValueRange Historic_PV_Adoption:1,,1,,,,,0,30,0
 ReformVal: [Interconnect_Date,Null]
 Att__TotalsIndex: [PV_Spatial_ID]
-Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,0,PV_Adopt_Data_Types,1,Interconnect_Date,1]
+Att_ResultSliceState: [PV_Sectors,2,PV_Spatial_ID,0,PV_Adopt_Data_Types,1,Interconnect_Date,1]
 Att_ColorRole: Null
 
 Variable Avg_System_Size_Prd1
