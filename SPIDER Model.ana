@@ -89,7 +89,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,398,26,1290,751,17
+DiagState: 2,287,1,1290,751,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
@@ -684,12 +684,12 @@ THEN Null~
 ELSE Show_ACP_Window(PV_Input1,PV_Input_Titles,PV_Input, IF Inputs_only_for_view THEN 'Result' ELSE 'Definition' )
 
 Index PV_Input_Titles
+Att_PrevIndexValue: ['Historic PV Capacity Installations (MW-AC/period)','Historic PV Installations (systems/period)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (fraction)','Saved Daily Profiles (various)','Per-kW Weekly Solar Profile (kW-hr/kW-DC)','Payback Acceptance Curve (market share)']
 Title: PV Input Titles
 Definition: Create_Titles_List(PV_Input1)~
 
 NodeLocation: 848,432,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Historic PV Capacity Installations (MW-AC/period)','Historic PV Installations (systems/period)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (fraction)','Saved Daily Profiles (various)','Per-kW Weekly Solar Profile (kW-hr/kW-DC)','Payback Acceptance Curve (market share)']
 
 Text Te1552865477
 Title: PV Input
@@ -1367,6 +1367,7 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_PV_Impact_Out
 
 Index All_PV_Input
+Att_PrevIndexValue: [Stored_Capacity_Inst,Stored_PV_Installs,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve]
 Title: All PV Input
 Definition: [Stored_Capacity_Inst,Stored_PV_Installs,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve]
 NodeLocation: 1120,432,1
@@ -1374,7 +1375,6 @@ NodeSize: 64,40
 WindState: 2,2234,82,720,350
 Aliases: FormNode Fo1557511154
 MetaOnly: 1
-Att_PrevIndexValue: [Stored_Capacity_Inst,Stored_PV_Installs,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve]
 
 FormNode Fo1557511154
 Title: PV Input

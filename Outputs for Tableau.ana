@@ -57,7 +57,7 @@ Author: JamesMilford
 Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 736,792,1
 NodeSize: 64,40
-DiagState: 2,10,119,1644,755,17
+DiagState: 2,199,42,1644,755,17
 
 Variable Cumulative_Data_Plus
 Title: Cumulative Data Plus
@@ -358,7 +358,6 @@ Att__TotalsIndex: [Spatial_ID]
 Att_ResultSliceState: [Sequential_Outputs,4,All_Sectors,3,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
 
 Index Sequential_Outputs
-Att_PrevIndexValue: ['Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 Title: Sequential Outputs
 Definition: ['Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 NodeLocation: 1064,88,1
@@ -366,6 +365,7 @@ NodeSize: 64,40
 WindState: 2,837,82,720,350
 Aliases: FormNode Fo1543018175
 {!40300|Att_SlicerPopupSize: 257,84}
+Att_PrevIndexValue: ['Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 
 Decision Map_Seq_Outputs
 Title: Map Sequential Outputs
@@ -437,8 +437,8 @@ Att_ForceCategorical Graph_Primary_Valdim:1~
 Att_GraphValueRange Sel_Sequential_Data:1,,,,,,10~
 Graph_3DEffects:0
 ReformVal: [Output_Periods,Output_DER_Types]
-Att__TotalsIndex: [All_Sectors,Spatial_ID]
-Att_ResultSliceState: [All_Sectors,0,Spatial_ID,0,Sequential_Outputs,4,Act_vs_Sim,1,Output_DER_Types,1,Output_Periods,1]
+Att__TotalsIndex: [Spatial_ID]
+Att_ResultSliceState: [All_Sectors,1,Spatial_ID,0,Sequential_Outputs,3,Act_vs_Sim,2,Output_DER_Types,1,Output_Periods,1]
 
 Variable Flat_Sequential_Data
 Title: Flat Sequential Data
@@ -4177,12 +4177,12 @@ Original: Cumul_MW_Delta_Label
 Close Deltas_from_Base_Per
 
 Index Output_DER_Types
-Att_PrevIndexValue: ['Solar PV','Electric Vehicles']
 Title: Output DER Types
 Definition: Subset(DER_Types_to_Output)
 NodeLocation: 888,1288,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 237,56}
+Att_PrevIndexValue: ['Solar PV','Electric Vehicles']
 
 Decision DER_Types_to_Output
 Title: DER Types to Output
