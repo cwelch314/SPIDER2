@@ -85,7 +85,7 @@ NodeSize: 64,40
 ValueState: 2,847,306,416,303,0,MIDM
 DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Function Sequential_Opt_PV1, Function Set_Start_Coeff_PV1, Function Sequential_Opt_PV3, Function OG_Sequential_Optim1
 Att_GraphIndexRange: 1,,,,,,10
-{!40300|Att_SlicerPopupSize: 412,126}
+{!40300|Att_SlicerPopupSize: 422,126}
 Att_PrevIndexValue: ['Residential','NonResidential','EV Combined']
 
 Index Selected_Utilities
@@ -5987,11 +5987,11 @@ DefnState: 2,685,141,447,377,,DFNM
 ReformDef: [Timestep_Options,Month_of_Year]
 
 Index Month_of_Year
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12]
 Title: Month of Year
 Definition: 1..12
 NodeLocation: 1024,584,1
 NodeSize: 56,32
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12]
 
 Text Te1533480983
 Title: Notes: 
@@ -6045,11 +6045,11 @@ WindState: 2,581,29,720,350
 Aliases: FormNode Fo1535331934, FormNode Fo1537568831
 
 Index Column_Number
+Att_PrevIndexValue: [1,2,3,4,5]
 Title: Column Number
 Definition: 1..Number_of_Data_Colum
 NodeLocation: 208,816,1
 NodeSize: 56,32
-Att_PrevIndexValue: [1,2,3,4,5]
 
 FormNode Fo1535331934
 Title: Number of Data Columns
@@ -6102,11 +6102,11 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Fact_Column_Indices
 
 Index Fact_Col_Fields
+Att_PrevIndexValue: ['Utility','Service Zip','Customer Sector','App Approved Date']
 Title: Fact Col Fields
 Definition: Subset(dbFields_Ordered<>Size_Label)
 NodeLocation: 464,816,1
 NodeSize: 56,32
-Att_PrevIndexValue: ['Utility','Service Zip','Customer Sector','App Approved Date']
 
 Index Interconn_Fact_Cols
 Title: Interconnect Fact Cols
@@ -6125,11 +6125,11 @@ TableCellDefault: Choice(All_Sectors,1,0)
 {!40200|Att_ChoiceIndexes: Index All_Sectors}
 
 Index Interconnect_Sectors
+Att_PrevIndexValue: ['','Commercial','Educational','Industrial','Military','Non-Profit','Other Government','Residential']
 Title: Interconnect Sectors
 Definition: ['','Commercial','Educational','Industrial','Military','Non-Profit','Other Government','Residential']
 NodeLocation: 1168,64,1
 NodeSize: 56,40
-Att_PrevIndexValue: ['','Commercial','Educational','Industrial','Military','Non-Profit','Other Government','Residential']
 
 FormNode Fo1535336408
 Title: Map Interconn to Sectors
@@ -8241,7 +8241,7 @@ Att__TotalsIndex: [Interconnect_Date,PV_Sectors]
 Constant Stored_Capacity_Inst
 Title: Historic PV Capacity Installations
 Units: MW-AC/period
-Description: Historic installed PV capacity from interconnection data.
+Description: Historic installed PV capacity from interconnection data. These are End-of-Period values (e.g., end-of-month).
 Definition: Table(All_Spatial_ID,All_Sectors,All_Utilities,Interconnect_Date)(~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
@@ -8660,19 +8660,21 @@ Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,
 NodeLocation: 80,312,1
 NodeSize: 64,36
 DefnState: 2,179,125,1172,616,0,DFNM
-ValueState: 2,133,30,1325,667,1,MIDM
+ValueState: 2,230,6,1626,806,1,MIDM
 Aliases: FormNode Fo1537569015
-GraphSetup: Att_GraphIndexRange Interconnect_Date:1,0,1,,,,,41307.37939667702,42369,0~
+GraphSetup: Att_GraphIndexRange Interconnect_Date:1,0,0,,,,,39841.607442855835,42302.489927351475,0~
 Att_Stacked_Lines Graph_Primary_Valdim:1~
 Att_AreaFill Graph_Primary_Valdim:1~
 Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_GraphValueRange Stored_Capacity_Inst:1,,0,,,,5,-0.0030681119824294,24.21456277370453,0
-ReformVal: [Interconnect_Date,All_Sectors]
+Att_GraphValueRange Stored_Capacity_Inst:1,,0,,,,5,-0.45334592461586,24.884825944900513,0~
+Att_ContLineStyle Graph_Primary_Valdim:5
+ReformVal: [Interconnect_Date,Null]
 NumberFormat: 2,F,4,1,0,0,4,1,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [All_Spatial_ID,Interconnect_Date,All_Sectors]
 Att_GraphTemplate: Lumidyne_Template
-Att_ResultSliceState: [All_Utilities,1,All_Spatial_ID,0,All_Sectors,2,Interconnect_Date,1]
+Att_ResultSliceState: [All_Utilities,1,All_Spatial_ID,0,All_Sectors,0,Interconnect_Date,1]
 Att_EditSliceState: [All_Sectors,1,All_Utilities,1,All_Spatial_ID,1,Interconnect_Date,1]
+Att_ColorRole: Null
 {!40600|Att_StackingIndex: All_Sectors}
 {!40600|Att_ClusterIndex: Null}
 
@@ -9331,20 +9333,20 @@ NodeSize: 156,116
 NodeInfo: 1,0,0,1,1,1,0,,1,,0,,,
 
 Index db_Fields
+Att_PrevIndexValue: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 Title: db Fields
 Definition: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 NodeLocation: 576,416,1
 NodeSize: 56,32
 ValueState: 2,347,400,416,303,,MIDM
 {!40300|Att_SlicerPopupSize: 227,112}
-Att_PrevIndexValue: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 
 Index db_Records
+Att_PrevIndexValue: ['Empty']
 Title: db Records
 Definition: ['Empty']
 NodeLocation: 704,416,1
 NodeSize: 56,32
-Att_PrevIndexValue: ['Empty']
 
 FormNode Fo1533508800
 Title: Interconnect Data
@@ -9458,12 +9460,12 @@ Aliases: Alias Al1537564184
 OnClick: (All_InterconnectCols:=CopyIndex(Raw_PV_Intercon_Data.cols));
 
 Index All_InterconnectCols
+Att_PrevIndexValue: ['Application Id','Matched CSI Application Number','Application Status','Utility','Service City','Service Zip','Service County','Technology Type','System Size DC','System Size AC','Tilt','Azimuth','Mounting Method','Tracking','Customer Sector','App Received Date','App Complete Date','App Approved Date','Self Installer','Installer Name','Installer Phone','Installer City','Installer State','Installer Zip','CSLB Number','Third Party Owned','Third Party Owned Type','Third Party Name','Pace Financed','Pace Financier','Electric Vehicle','Electric Vehicle Count','System Output Monitoring','System Output Reports To Vendor?','System Output Monitoring Provider','Total System Cost','Itc Cost Basis','Previous Application','Previous Application Ids','NEM Tariff','VNEM, NEM-V, NEM-Agg','Project is VNEM, NEM-V, NEM-Agg?','Module Model 1','Module Manufacturer 1','Module Quantity 1','Module Model 2','Module Manufacturer 2','Module Quantity 2','Module Model 3','Module Manufacturer 3','Module Quantity 3','Module Model 4','Module Manufacturer 4','Module Quantity 4','Module Model 5','Module Manufacturer 5','Module Quantity 5','Module Model 6','Module Manufacturer 6','Module Quantity 6','Module Model 7','Module Manufacturer 7','Module Quantity 7','Module Model 8','Module Manufacturer 8','Module Quantity 8','Module Model 9','Module Manufacturer 9','Module Quantity 9','Module Model 10','Module Manufacturer 10','Module Quantity 10','Inverter Model 1','Inverter Manufacturer 1','Inverter Quantity 1','Inverter Model 2','Inverter Manufacturer 2','Inverter Quantity 2','Inverter Model 3','Inverter Manufacturer 3','Inverter Quantity 3','Inverter Model 4','Inverter Manufacturer 4','Inverter Quantity 4','Inverter Model 5','Inverter Manufacturer 5','Inverter Quantity 5','Inverter Model 6','Inverter Manufacturer 6','Inverter Quantity 6','Inverter Model 7','Inverter Manufacturer 7','Inverter Quantity 7','Inverter Model 8','Inverter Manufacturer 8','Inverter Quantity 8','Inverter Model 9','Inverter Manufacturer 9','Inverter Quantity 9','Inverter Model 10','Inverter Manufacturer 10','Inverter Quantity 10','Inverter Model 11','Inverter Manufacturer 11','Inverter Quantity 11']
 Title: All Interconnect Columns
 Definition: ['Application Id','Matched CSI Application Number','Application Status','Utility','Service City','Service Zip','Service County','Technology Type','System Size DC','System Size AC','Tilt','Azimuth','Mounting Method','Tracking','Customer Sector','App Received Date','App Complete Date','App Approved Date','Self Installer','Installer Name','Installer Phone','Installer City','Installer State','Installer Zip','CSLB Number','Third Party Owned','Third Party Owned Type','Third Party Name','Pace Financed','Pace Financier','Electric Vehicle','Electric Vehicle Count','System Output Monitoring','System Output Reports To Vendor?','System Output Monitoring Provider','Total System Cost','Itc Cost Basis','Previous Application','Previous Application Ids','NEM Tariff','VNEM, NEM-V, NEM-Agg','Project is VNEM, NEM-V, NEM-Agg?','Module Model 1','Module Manufacturer 1','Module Quantity 1','Module Model 2','Module Manufacturer 2','Module Quantity 2','Module Model 3','Module Manufacturer 3','Module Quantity 3','Module Model 4','Module Manufacturer 4','Module Quantity 4','Module Model 5','Module Manufacturer 5','Module Quantity 5','Module Model 6','Module Manufacturer 6','Module Quantity 6','Module Model 7','Module Manufacturer 7','Module Quantity 7','Module Model 8','Module Manufacturer 8','Module Quantity 8','Module Model 9','Module Manufacturer 9','Module Quantity 9','Module Model 10','Module Manufacturer 10','Module Quantity 10','Inverter Model 1','Inverter Manufacturer 1','Inverter Quantity 1','Inverter Model 2','Inverter Manufacturer 2','Inverter Quantity 2','Inverter Model 3','Inverter Manufacturer 3','Inverter Quantity 3','Inverter Model 4','Inverter Manufacturer 4','Inverter Quantity 4','Inverter Model 5','Inverter Manufacturer 5','Inverter Quantity 5','Inverter Model 6','Inverter Manufacturer 6','Inverter Quantity 6','Inverter Model 7','Inverter Manufacturer 7','Inverter Quantity 7','Inverter Model 8','Inverter Manufacturer 8','Inverter Quantity 8','Inverter Model 9','Inverter Manufacturer 9','Inverter Quantity 9','Inverter Model 10','Inverter Manufacturer 10','Inverter Quantity 10','Inverter Model 11','Inverter Manufacturer 11','Inverter Quantity 11']
 NodeLocation: 736,192,1
 NodeSize: 64,40
 ValueState: 2,200,202,416,568,,MIDM
-Att_PrevIndexValue: ['Application Id','Matched CSI Application Number','Application Status','Utility','Service City','Service Zip','Service County','Technology Type','System Size DC','System Size AC','Tilt','Azimuth','Mounting Method','Tracking','Customer Sector','App Received Date','App Complete Date','App Approved Date','Self Installer','Installer Name','Installer Phone','Installer City','Installer State','Installer Zip','CSLB Number','Third Party Owned','Third Party Owned Type','Third Party Name','Pace Financed','Pace Financier','Electric Vehicle','Electric Vehicle Count','System Output Monitoring','System Output Reports To Vendor?','System Output Monitoring Provider','Total System Cost','Itc Cost Basis','Previous Application','Previous Application Ids','NEM Tariff','VNEM, NEM-V, NEM-Agg','Project is VNEM, NEM-V, NEM-Agg?','Module Model 1','Module Manufacturer 1','Module Quantity 1','Module Model 2','Module Manufacturer 2','Module Quantity 2','Module Model 3','Module Manufacturer 3','Module Quantity 3','Module Model 4','Module Manufacturer 4','Module Quantity 4','Module Model 5','Module Manufacturer 5','Module Quantity 5','Module Model 6','Module Manufacturer 6','Module Quantity 6','Module Model 7','Module Manufacturer 7','Module Quantity 7','Module Model 8','Module Manufacturer 8','Module Quantity 8','Module Model 9','Module Manufacturer 9','Module Quantity 9','Module Model 10','Module Manufacturer 10','Module Quantity 10','Inverter Model 1','Inverter Manufacturer 1','Inverter Quantity 1','Inverter Model 2','Inverter Manufacturer 2','Inverter Quantity 2','Inverter Model 3','Inverter Manufacturer 3','Inverter Quantity 3','Inverter Model 4','Inverter Manufacturer 4','Inverter Quantity 4','Inverter Model 5','Inverter Manufacturer 5','Inverter Quantity 5','Inverter Model 6','Inverter Manufacturer 6','Inverter Quantity 6','Inverter Model 7','Inverter Manufacturer 7','Inverter Quantity 7','Inverter Model 8','Inverter Manufacturer 8','Inverter Quantity 8','Inverter Model 9','Inverter Manufacturer 9','Inverter Quantity 9','Inverter Model 10','Inverter Manufacturer 10','Inverter Quantity 10','Inverter Model 11','Inverter Manufacturer 11','Inverter Quantity 11']
 
 Decision Sel_Interconn_Fields
 Title: Select Interconn Fields
