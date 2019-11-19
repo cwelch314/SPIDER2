@@ -85,7 +85,7 @@ NodeSize: 64,40
 ValueState: 2,847,306,416,303,0,MIDM
 DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Function Sequential_Opt_PV1, Function Set_Start_Coeff_PV1, Function Sequential_Opt_PV3, Function OG_Sequential_Optim1
 Att_GraphIndexRange: 1,,,,,,10
-{!40300|Att_SlicerPopupSize: 422,126}
+{!40300|Att_SlicerPopupSize: 442,126}
 Att_PrevIndexValue: ['Residential','NonResidential','EV Combined']
 
 Index Selected_Utilities
@@ -9603,7 +9603,7 @@ Original: Output_Filename
 
 Decision Active_Export_Datase
 Title: Active Export Dataset
-Definition: Choice(Export_Data_Descript,4,0)
+Definition: Choice(Export_Data_Descript,5,0)
 NodeLocation: 96,328,1
 NodeSize: 64,40
 Aliases: FormNode Fo1551980365
@@ -9695,7 +9695,7 @@ NodeSize: 64,40
 
 Decision Applied_Path
 Title: Applied Path
-Definition: 'C:\Users\coryw\OneDrive - Lumidyne Consulting LLC\Repos\SDGE_2019_SPIDER\CSV Files\CEC_Forecast_Export.csv'
+Definition: 'C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Documents\SDGE_2019_SPIDER\DER_Forecast_Results.xlsx'
 NodeLocation: 880,344,1
 NodeSize: 64,40
 ValueState: 2,168,170,1015,303,,MIDM
@@ -9755,7 +9755,7 @@ ValueState: 2,88,90,725,330,,MIDM
 
 Variable Reset_Workbook
 Title: Reset Workbook
-Definition: 1
+Definition: 0
 NodeLocation: 880,432,1
 NodeSize: 64,40
 
@@ -9778,13 +9778,13 @@ Date: Wed, Mar 13, 2019 1:27 PM
 NodeLocation: 104,480,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,363,6,979,655,17
+DiagState: 2,363,6,1157,655,17
 
 Decision Data_Export_Settings
 Title: Data Export Settings
 Description: For csv files, the "Sheet Name" and "Data Start Cell" parameters are not required. If "Clear Before Writing?" is not selected for a csv file, then the data will be appended to the bottom of the csv file, rather than overwriting any existing data.
 Definition: Table(Export_Parameter,Export_Dataset_Num)(~
-Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),~
+Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
 Choice(Output_Data_Type,3,0),Choice(Output_Data_Type,3,0),Choice(Output_Data_Type,3,0),Choice(Output_Data_Type,3,0),Choice(Output_Data_Type,3,0),Choice(Output_Data_Type,2,0),Choice(Output_Data_Type,2,0),Choice(Output_Data_Type,2,0),Choice(Output_Data_Type,2,0),Choice(Output_Data_Type,2,0),Choice(Output_Data_Type,1,0),Choice(Output_Data_Type,1,0),Choice(Output_Data_Type,1,0),Choice(Output_Data_Type,1,0),~
 'Sequential historic then actual data','Calibration comparison','Deltas from base period','CEC Forecast by Zip','Timestamp','Deliverable sequential historic then actual data','Deliverable calibration comparison','Deliverable deltas from base period','Deliverable CEC Forecast by Zip','Deliverable timestamp','Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)',~
 Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),Handle(Indexed_Timestamp),Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),Handle(Indexed_Timestamp),Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),~
@@ -9797,7 +9797,7 @@ Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox
 NodeLocation: 432,176,1
 NodeSize: 64,40
 WindState: 2,265,331,972,490
-DefnState: 2,82,63,1785,521,0,DFNM
+DefnState: 2,86,362,1785,521,0,DFNM
 ValueState: 2,338,311,1341,362,0,MIDM
 Aliases: FormNode Fo1543021295, FormNode New1543613103, FormNode Fo1549568883
 ReformDef: [Export_Parameter,Export_Dataset_Num]
@@ -9805,18 +9805,18 @@ TableCellDefault: Default_ExportConfig
 {!40200|Att_ChoiceIndexes: Index Output_Data_Type}
 
 Index Export_Parameter
-Att_PrevIndexValue: ['Exclude?','Data Type','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 Title: Export Parameter
 Definition: ['Exclude?','Data Type','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 NodeLocation: 120,64,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Exclude?','Data Type','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 
 Index Export_Dataset_Num
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 Title: Export Dataset Number
 Definition: 1..Num_Export_Datasets
 NodeLocation: 280,176,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 
 Decision Num_Export_Datasets
 Title: Number of Export Datasets
@@ -9840,7 +9840,7 @@ Title: Datasets to Export
 Definition: Subset(NOT Data_Export_Settings[Export_Parameter=Exclude_from_Export] AND Data_export_settings[Export_Parameter=Export_Data_Type_Lab]=Select_Data_Export_T)
 NodeLocation: 280,264,1
 NodeSize: 64,40
-WindState: 2,662,182,720,350
+WindState: 2,992,41,720,350
 ValueState: 2,645,308,416,303,0,MIDM
 
 Decision Exclude_from_Export
@@ -10059,11 +10059,11 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Cleared_Range_Mult
 
 Index Range_Parameters
-Att_PrevIndexValue: ['Full Range','Clear Range']
 Title: Range Parameters
 Definition: ['Full Range','Clear Range']
 NodeLocation: 280,368,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Full Range','Clear Range']
 
 Decision Clear_Range_Label
 Title: Clear Range Label
@@ -10134,7 +10134,7 @@ OnChange: MsgBox("NOTE: ACP read/write won't currently work if this name is chan
 
 Decision Export_Timestamp
 Title: Export Timestamp
-Definition: 19-Mar-2019 11:45:24.496000
+Definition: 18-Nov-2019 14:56:22.229000
 NodeLocation: 584,64,1
 NodeSize: 64,40
 Aliases: FormNode Fo1544827467
@@ -10168,7 +10168,7 @@ NodeLocation: 432,592,1
 NodeSize: 64,40
 
 Index Export_Data_Descript
-Att_PrevIndexValue: ['Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)']
+Att_PrevIndexValue: ['Deliverable sequential historic then actual data','Deliverable calibration comparison','Deliverable deltas from base period','Deliverable CEC Forecast by Zip','Deliverable timestamp']
 Title: Export Data Description
 Definition: CopyIndex(Data_Export_Settings[Export_Dataset_Num=Datasets_to_Export, Export_Parameter=Description_Label])
 NodeLocation: 280,784,1
@@ -10293,7 +10293,7 @@ Null;~
 
 NodeLocation: 736,504,1
 NodeSize: 64,40
-WindState: 2,386,158,1688,726
+WindState: 2,181,174,1688,726
 
 Function Export_to_CSV()
 Title: Export to CSV
