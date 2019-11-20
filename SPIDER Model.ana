@@ -89,7 +89,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,287,1,1290,751,17
+DiagState: 2,221,39,1290,751,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
@@ -615,12 +615,12 @@ MetaOnly: 1
 {!40200|Att_ChoiceIndexes: Index All_PV_Econ_Out}
 
 Index PV_Econ_Titles1
-Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Cost of Electricity Ratio (post/pre ratio)','Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
 Title: PV Econ Titles
 Definition: Create_Titles_List(PV_Econ_Out1)~
 
 NodeLocation: 160,912,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Cost of Electricity Ratio (post/pre ratio)','Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
 
 Decision PV_Economics
 Title: PV Economics
@@ -798,13 +798,13 @@ THEN Null~
 ELSE Show_ACP_Window(EV_Input1,EV_Input_Titles,EV_Input,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
 
 Index EV_Input_Titles
+Att_PrevIndexValue: ['Vehicle Stock Data (vehicles)','Vehicle Price ($/vehicle)','Vehicle Price Adjustment by Scenario (fraction)','Vehicle Incentives ($/vehicle)','Vehicle Range (miles/refueling)','Vehicle Range Adjustment by Scenario (fraction)','VMT (miles/year-vehicle)','MPG (miles/GGE)','Fuel Mix (fraction)','Fuel Prices ($/GGE)','Electricity Price Adjustment by Scenario (fraction)','Gasoline Price Adjustment by Scenario (fraction)','Vehicle Maintenance Cost ($/year-vehicle)','Impact per EV (kW/vehicle)','Vehicle Average Lifetime (Years)','Num Vehicle Vintages (dmnl)']
 Title: EV Input Titles
 Definition: Create_Titles_List(EV_Input1)~
 
 NodeLocation: 848,672,1
 NodeSize: 64,40
 ValueState: 2,452,263,416,498,,MIDM
-Att_PrevIndexValue: ['Vehicle Stock Data (vehicles)','Vehicle Price ($/vehicle)','Vehicle Price Adjustment by Scenario (fraction)','Vehicle Incentives ($/vehicle)','Vehicle Range (miles/refueling)','Vehicle Range Adjustment by Scenario (fraction)','VMT (miles/year-vehicle)','MPG (miles/GGE)','Fuel Mix (fraction)','Fuel Prices ($/GGE)','Electricity Price Adjustment by Scenario (fraction)','Gasoline Price Adjustment by Scenario (fraction)','Vehicle Maintenance Cost ($/year-vehicle)','Impact per EV (kW/vehicle)','Vehicle Average Lifetime (Years)','Num Vehicle Vintages (dmnl)']
 
 Text Te1552872113
 Title: EV Input
@@ -943,12 +943,12 @@ THEN Null~
 ELSE Show_ACP_Window(Storage_Input1,Storage_Input_Titles,Storage_Input,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
 
 Index Storage_Input_Titles
-Att_PrevIndexValue: ['Start Time for Dispatch','End Time for Dispatch','Flows to View','Battery Storage Specs','Number of Storage Units (units/system)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (fraction)','Allowed ITC Pct by Time (fraction)','Storage kWh Incent Base Rate ($/kWh)','Incentive Step Start Month','kWh Incent Derate for Duration','kWh Incent Derate for Capacity','Historic Storage Incentives ($/kWh)']
 Title: Storage Input Titles
 Definition: Create_Titles_List(Storage_Input1)~
 
 NodeLocation: 848,912,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Start Time for Dispatch','End Time for Dispatch','Flows to View','Battery Storage Specs','Number of Storage Units (units/system)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (fraction)','Allowed ITC Pct by Time (fraction)','Storage kWh Incent Base Rate ($/kWh)','Incentive Step Start Month','kWh Incent Derate for Duration','kWh Incent Derate for Capacity','Historic Storage Incentives ($/kWh)']
 
 FormNode Fo1552872728
 Title: Select Output
@@ -1314,6 +1314,7 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_EV_Impact_Out
 
 Index All_EV_Input
+Att_PrevIndexValue: [Vehicle_Stock_Data,Vehicle_Price,VehPrice_Adj_byScen,Vehicle_Incents,Vehicle_Range,VehRange_Adj_byScen,VMT,MPG,Fuel_Mix,Fuel_Prices,Elec_PriceAdj_byScen,Gas_Price_Adj_byScen,Vehicle_Maint_Cost,Impact_per_EV,Vehicle_Average_Life,Num_Vehicle_Vintages]
 Title: All EV Input
 Definition: [Vehicle_Stock_Data,Vehicle_Price,VehPrice_Adj_byScen,Vehicle_Incents,Vehicle_Range,VehRange_Adj_byScen,VMT,MPG,Fuel_Mix,Fuel_Prices,Elec_PriceAdj_byScen,Gas_Price_Adj_byScen,Vehicle_Maint_Cost,Impact_per_EV,Vehicle_Average_Life,Num_Vehicle_Vintages]
 NodeLocation: 1120,672,1
@@ -1321,7 +1322,6 @@ NodeSize: 64,40
 WindState: 2,13,219,745,472
 Aliases: FormNode Fo1557510954
 MetaOnly: 1
-Att_PrevIndexValue: [Vehicle_Stock_Data,Vehicle_Price,VehPrice_Adj_byScen,Vehicle_Incents,Vehicle_Range,VehRange_Adj_byScen,VMT,MPG,Fuel_Mix,Fuel_Prices,Elec_PriceAdj_byScen,Gas_Price_Adj_byScen,Vehicle_Maint_Cost,Impact_per_EV,Vehicle_Average_Life,Num_Vehicle_Vintages]
 
 FormNode Fo1557510954
 Title: PV Input
@@ -1385,7 +1385,6 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_PV_Input
 
 Index All_PV_Econ_Out
-Att_PrevIndexValue: [PrePost_Load_Solar,FirstYr_Bill_Compar1,CostOf_Elect_Compare,Cost_of_Elect_Ratio,Simple_Payback_Time1,Installed_Price]
 Title: All PV Econ Out
 Definition: [PrePost_Load_Solar,FirstYr_Bill_Compar1,CostOf_Elect_Compare,Cost_of_Elect_Ratio,Simple_Payback_Time1,Installed_Price]
 NodeLocation: 432,912,1
@@ -1394,6 +1393,7 @@ WindState: 2,98,82,720,350
 ValueState: 2,52,58,416,303,,MIDM
 Aliases: FormNode Fo1557511198
 MetaOnly: 1
+Att_PrevIndexValue: [PrePost_Load_Solar,FirstYr_Bill_Compar1,CostOf_Elect_Compare,Cost_of_Elect_Ratio,Simple_Payback_Time1,Installed_Price]
 
 FormNode Fo1557511198
 Title: PV Econ Out
@@ -1412,13 +1412,13 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_Storage_Input
 
 Index All_Storage_Input
-Att_PrevIndexValue: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View,Battery_Storage_Spec,Num_Storage_Units,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Time,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap,Hist_Storage_Incent]
 Title: All Storage Input
 Definition: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View,Battery_Storage_Spec,Num_Storage_Units,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Time,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap,Hist_Storage_Incent]
 NodeLocation: 1120,912,1
 NodeSize: 64,40
 Aliases: FormNode Fo1557511241
 MetaOnly: 1
+Att_PrevIndexValue: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View,Battery_Storage_Spec,Num_Storage_Units,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Time,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap,Hist_Storage_Incent]
 
 FormNode Fo1557511281
 Title: PV Econ Out
