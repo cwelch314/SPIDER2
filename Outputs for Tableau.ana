@@ -57,7 +57,7 @@ Author: JamesMilford
 Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 736,792,1
 NodeSize: 64,40
-DiagState: 2,129,16,1644,821,17
+DiagState: 2,129,16,1644,703,17
 
 Variable Cumulative_Data_Plus
 Title: Cumulative Data Plus
@@ -179,9 +179,9 @@ THEN Interp_Hist_EV_Adopt~
 ELSE Interp_Sim_EV_Adopt
 NodeLocation: 408,560,1
 NodeSize: 64,40
-ValueState: 2,84,45,1498,819,0,MIDM
+ValueState: 2,84,45,1498,819,1,MIDM
 ReformVal: [Output_Periods_Plus,Null]
-Att_ResultSliceState: [EV_Sectors,1,Sel_Ag_EV_LRMS,1,EV_Cumul_Data_Type,1,EV_Spatial_ID,2,Output_Periods_Plus,1]
+Att_ResultSliceState: [EV_Sectors,1,EV_Cumul_Data_Type,1,EV_Spatial_ID,2,Output_Periods_Plus,1]
 Att_ColorRole: Null
 
 Variable Incremental_Data5
@@ -209,7 +209,7 @@ ELSE Cumulative_Data_Plu4[Output_Periods_Plus=Slice(Output_Periods_Plus,1)] + Cu
 NodeLocation: 560,560,1
 NodeSize: 64,40
 ValueState: 2,416,176,1131,637,1,MIDM
-Att_ResultSliceState: [EV_Sectors,1,Sel_Ag_EV_LRMS,1,EV_Cumul_Data_Type,2,EV_Spatial_ID,1,Output_Periods,1]
+Att_ResultSliceState: [EV_Sectors,1,EV_Cumul_Data_Type,1,EV_Spatial_ID,1,Output_Periods,1]
 
 Variable Cumulative_QC_Check4
 Title: Cumulative QC Check
@@ -247,15 +247,15 @@ Att_ResultSliceState: [EV_Spatial_ID,2,EV_Sectors,1,EV_Adopt_Data_Types,4,Act_vs
 
 Variable Actual_vs_Sim_Map2
 Title: Actual vs Simulated Map
-Definition: IF (Act_vs_Sim = Actual_Label) AND (Output_Periods <= VehStk_Year_EOP_Map[Vehicle_Stock_DataYr=Final_EV_Hist_Period]) AND (Output_Periods <= MAX(Interconnect_Date))~
+Definition: IF (Act_vs_Sim = Actual_Label) AND (Output_Periods <= VehStk_Year_EOP_Map[Vehicle_Stock_DataYr=Final_EV_Hist_Period]) {AND (Output_Periods <= MAX(Interconnect_Date))}~
 THEN 1~
-ELSE IF (Act_vs_Sim = SImulated_Label) AND (Output_Periods > VehStk_Year_EOP_Map[Vehicle_Stock_DataYr=Final_EV_Hist_Period]) AND (Output_Periods >= PV_Sim_Start_Year)~
+ELSE IF (Act_vs_Sim = SImulated_Label) AND (Output_Periods > VehStk_Year_EOP_Map[Vehicle_Stock_DataYr=Final_EV_Hist_Period]) {AND (Output_Periods >= PV_Sim_Start_Year)}~
 THEN 1~
 ELSE Null
 NodeLocation: 720,664,1
 NodeSize: 64,40
 WindState: 2,687,161,720,350
-ValueState: 2,158,131,1224,640,0,MIDM
+ValueState: 2,26,13,1224,640,0,MIDM
 NodeColor: 65535,1,1
 
 Alias Al1542873268
@@ -300,13 +300,13 @@ WindState: 2,98,82,1082,287
 ValueState: 2,73,14,1315,721,1,MIDM
 Aliases: Alias Al1542998771
 ReformVal: [Output_Periods_Plus,Null]
-Att_ResultSliceState: [EV_Sectors,1,EV_Cumul_Data_Type,2,EV_Spatial_ID,2,Output_Periods_Plus,1]
+Att_ResultSliceState: [EV_Sectors,1,EV_Cumul_Data_Type,2,EV_Spatial_ID,5,Output_Periods_Plus,1]
 Att_ColorRole: Null
 
 Constant Final_EV_Hist_Period
 Title: Final EV Historic Period
 Description: Specify the final period of historic EV data.
-Definition: Choice(Vehicle_Stock_DataYr,19,0)
+Definition: Choice(Vehicle_Stock_DataYr,17,0)
 NodeLocation: 408,664,1
 NodeSize: 64,40
 ValueState: 2,152,154,1541,615,,MIDM
@@ -549,9 +549,9 @@ Aliases: FormNode Fo1544456700
 GraphSetup: Att_GraphValueRange PV_Cumulative:1,,,,,0
 ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [Spatial_ID]
+Att__TotalsIndex: [Spatial_ID,PV_Sectors]
 Att_GraphTemplate: Lumidyne_Template
-Att_ResultSliceState: [Spatial_ID,0,PV_Sectors,2,Act_vs_Sim,2,Output_Periods,1]
+Att_ResultSliceState: [Spatial_ID,0,PV_Sectors,0,Act_vs_Sim,2,Output_Periods,1]
 
 Variable EV_Cumulative
 Title: EV Cumulative
@@ -561,14 +561,14 @@ Definition: Sel_Sequential_Data[Output_DER_Types=EV_Out_Label, Sequential_Output
 NodeLocation: 1184,536,1
 NodeSize: 64,40
 WindState: 2,893,-2,720,350
-ValueState: 2,349,2,894,715,1,MIDM
+ValueState: 2,503,17,894,715,1,MIDM
 Aliases: FormNode Fo1544456701, FormNode Fo1544977998
 GraphSetup: Att_GraphValueRange EV_Cumulative:1,,,,,0,5
 ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,1,1,0,4,1,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [Act_vs_Sim,Spatial_ID]
+Att__TotalsIndex: [Spatial_ID]
 Att_GraphTemplate: Lumidyne_Template
-Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
+Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,0,Act_vs_Sim,2,EV_WOM_Scen,1,Output_Periods,1]
 
 Variable PV_Incremental
 Title: PV Incremental
