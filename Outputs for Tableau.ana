@@ -77731,11 +77731,11 @@ ValueState: 2,280,108,913,741,0,MIDM
 Att_ResultSliceState: [Act_vs_Sim,2,Sel_Ag_EV_LRMS,1,CEC_Forecast_Years,1,Spatial_ID,1]
 
 Index CEC_Forecast_Years
-Att_PrevIndexValue: [2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 Title: CEC Forecast Years
 Definition: 2019..2030
 NodeLocation: 80,528,1
 NodeSize: 64,40
+Att_PrevIndexValue: [2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 
 Constant CEC_PV_Forecast
 Title: CEC PV Forecast
@@ -77743,14 +77743,15 @@ Units: MW-AC
 Description: PV forecasts from the CEC. These are coincident peak 1 in 2 (MW) impacts.~
 ~
 Source:~
-2018 CEC Forecast~
-Corrected SDGE Load Modifiers Mid Baseline Mid AAEECEDU 2018 TN-226271 Submitted 1/7/2019.~
+SDGE requested that the AAPV from the low scenario be used in conjunction with the self-gen PV from the mid scenario. The low scenario's AAPV had to be estimated, per the SDGE calculations in "Mid to Low AAEE-AAPV calcs.xlsx" (sent by W. Wood on 11/21/2019).~
+~
+Corrected SDGE Load Modifiers Mid Baseline Mid AAEE/AAPV CEDU 2018 TN-226271 Submitted 1/7/2019.~
 Source: https://ww2.energy.ca.gov/2018_energypolicy/documents/cedu_2018-2030/2018_loadmodifiers.php~
 "TN226271_20190107T134813_Corrected SDGE Load Modifiers Mid Baseline Mid AAEECEDU 2018.xlsx"
-Definition: Table(CEC_Forecast_Years)(693.9914750574892,798.8748108414014,877.4862744454832,923.791515853022,956.4929120011798,989.6302709003392,1024.5003543985456,1063.5089480498016,1108.2999029551788,1160.9890717428048,1224.2283974871514,1301.695166031248)
+Definition: Table(CEC_Forecast_Years)(693.9914750574892,802.8353853155697,887.670249221584,940.9876399277821,982.5740077438475,1024.9495982593396,1069.0875306322512,1116.8191081663372,1169.657014901712,1230.8116631416567,1302.2616558746504,1387.7199235957607)
 NodeLocation: 400,200,1
 NodeSize: 64,40
-WindState: 2,542,530,1119,378
+WindState: 2,60,277,1119,558
 DefnState: 2,340,346,1015,303,0,DFNM
 ValueState: 2,658,478,704,385,0,MIDM
 Aliases: FormNode Fo1543859936
@@ -77762,12 +77763,14 @@ Units: MW-AC
 Description: EV forecasts from the CEC. These are coincident peak 1 in 2 (MW) impacts.~
 ~
 Source:~
-SDGE TAC Peak and Energy Forecasts: CED 2017, Mid Basline-Mid AAEE/AAPV~
-"SDGE_Load_Modifiers_Mid_BaselineMid_AAEEAAPV_CED_2017.xlsx"
+Corrected SDGE Load Modifiers Mid Baseline Mid AAEE/AAPV CEDU 2018 TN-226271 Submitted 1/7/2019.~
+Source: https://ww2.energy.ca.gov/2018_energypolicy/documents/cedu_2018-2030/2018_loadmodifiers.php~
+"TN226271_20190107T134813_Corrected SDGE Load Modifiers Mid Baseline Mid AAEECEDU 2018.xlsx"
 Definition: Table(CEC_Forecast_Years)(46.68442179821734,57.79628148567077,71.01247583054871,82.74039776541743,96.39919562642974,106.68066835648743,118.90472373456683,126.3188735226461,133.25951371142708,139.29934236735028,147.2677693197889,155.703899771694)
 NodeLocation: 400,520,1
 NodeSize: 64,40
-WindState: 2,542,530,720,350
+WindState: 2,542,530,993,350
+DefnState: 2,148,154,1217,446,0,DFNM
 ValueState: 2,138,364,416,548,,MIDM
 Aliases: FormNode Fo1543859937
 ReformDef: [CEC_Forecast_Years,Undefined]
@@ -78150,12 +78153,12 @@ ReformDef: [Export_Parameter,Export_Dataset_Num]
 TableCellDefault: Default_ExportConfig
 
 Index Output_Data_Type
-Att_PrevIndexValue: ['CSV Tableau','Excel Deliverable','Excel Tableau']
 Title: Output Data Type
 Description: A list of the types of data that can be output, for use in export scripts
 Definition: ['CSV Tableau','Excel Deliverable','Excel Tableau']
 NodeLocation: 1480,1096,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['CSV Tableau','Excel Deliverable','Excel Tableau']
 
 Decision Select_Data_Export_T
 Title: Select Data Export Type
