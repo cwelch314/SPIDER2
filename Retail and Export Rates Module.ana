@@ -162,7 +162,7 @@ NodeColor: 57311,57311,57311
 Decision USURDB_Path
 Title: USURDB Path
 Description: The file path to the US Utility Rate Database data.
-Definition: 'C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Documents\US_Utility_Rates_DB\Version_2019-10-01\SDGE_usurdb_2019-11-07.xlsx'
+Definition: 'C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Documents\US_Utility_Rates_DB\Version_2019-10-01\SDGE_usurdb_2019-11-25.xlsx'
 NodeLocation: 120,96,1
 NodeSize: 64,40
 WindState: 2,102,82,982,350
@@ -267,7 +267,7 @@ NodeSize: 80,72
 
 Decision USURDB_Reset
 Title: USURDB Reset
-Definition: 1
+Definition: 0
 NodeLocation: 120,328,1
 NodeSize: 64,40
 
@@ -386,8 +386,9 @@ Definition: IgnoreWarnings(Stored_Filtered_USUR[USURDB_Columns=Map_USURDB_Column
 NodeLocation: 256,72,1
 NodeSize: 64,40
 ValueState: 2,113,364,826,539,0,MIDM
-ReformVal: [Tiers,Periods]
-Att_ResultSliceState: [All_Data_Types,4,Rate_Names,4,Data_Attribute,3,Periods,1,Tiers,2]
+ReformVal: [All_Tiers,All_Periods]
+NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
+Att_ResultSliceState: [All_Data_Types,3,Rate_Names,187,Data_Attribute,1,All_Periods,1,All_Tiers,1]
 
 Decision Map_USURDB_Units_to_
 Title: Map USURDB Units to Type
@@ -947,7 +948,7 @@ NodeLocation: 976,88,1
 NodeSize: 64,40
 WindState: 2,102,82,1272,359
 ValueState: 2,104,106,705,637,,MIDM
-{!40300|Att_SlicerPopupSize: 456,717}
+{!40300|Att_SlicerPopupSize: 471,717}
 Att_PrevIndexValue: ['A (Primary) | 2014-01','A (Secondary) | 2014-01','A (Secondary) | 2014-08','A (Secondary) | 2015-04','A Primary (CLOSED Rate) | 2017-01','A Primary | 2016-08','A Secondary (CLOSED Rate) | 2017-01','A Secondary | 2016-08','A6 Primary | 2016-08','A6-TOU (Primary) | 2014-01','A6-TOU (Primary) | 2014-08','A6-TOU (Primary) | 2015-05','A6-TOU Primary | 2017-01','A6-TOU Primary | 2018-01','A6-TOU Primary Substation | 2017-01','A6-TOU Primary Substation | 2018-01','A6-TOU Transmission | 2017-01','A6-TOU Transmission | 2018-01','AL-TOU Primary (0-500 KW) | 2017-01','AL-TOU Primary (0-500 KW) | 2018-01','AL-TOU Primary (Above 500 KW) | 2017-01','AL-TOU Primary (Above 500 KW) | 2018-01','AL-TOU Primary (Above 500kW) | 2018-06','AL-TOU Primary | 2016-08','AL-TOU Primary Substation | 2017-01','AL-TOU Primary Substation | 2018-01','AL-TOU Secondary (0-500 KW) | 2015-05','AL-TOU Secondary (0-500 KW) | 2017-01','AL-TOU Secondary (0-500 KW) | 2018-01','AL-TOU Secondary (0-500 KW) | 2019-01','AL-TOU Secondary (Above 500 KW) | 2017-01','AL-TOU Secondary (Above 500 KW) | 2018-01','AL-TOU Secondary (Above 500kW) | 2018-07','AL-TOU Secondary | 2014-01','AL-TOU Secondary | 2014-08','AL-TOU Secondary | 2016-08','AL-TOU Secondary >500KW | 2014-01','AL-TOU Secondary 500KW | 2014-08','AL-TOU Secondary Substation | 2017-01','AL-TOU Secondary Substation | 2018-01','AL-TOU Transmission (0-500 KW) | 2017-01','AL-TOU Transmission (0-500 KW) | 2018-01','AL-TOU Transmission (Above 500 KW) | 2017-01','AL-TOU Transmission (Above 500 KW) | 2018-01','AL-TOU2 Primary (0-500kW) | 2018-06','AL-TOU2 Primary (Above 500kW) | 2018-06','AL-TOU2 Secondary (0-500kW) | 2018-06','AL-TOU2 Secondary (Above 500kW) | 2018-06','DG-R Primary (0-500 KW) | 2017-01','DG-R Primary (0-500 KW) | 2018-01','DG-R Primary (Above 500 KW) | 2017-01','DG-R Primary (Above 500 KW) | 2018-01','DG-R Primary | 2016-08','DG-R Primary | 2018-06','DG-R Primary Substation | 2017-01','DG-R Primary Substation | 2018-01','DG-R Secondary (0-500 KW) | 2017-01','DG-R Secondary (0-500 KW) | 2018-01','DG-R Secondary (0-500kW) | 2018-06','DG-R Secondary (Above 500 KW) | 2017-01','DG-R Secondary (Above 500 KW) | 2018-01','DG-R Secondary (Above 500kW) | 2018-06','DG-R Secondary | 2016-08','DG-R Secondary | 2019-01','DG-R Secondary Substation | 2017-01','DG-R Secondary Substation | 2018-01','DG-R Transmission (0-500 KW) | 2017-01','DG-R Transmission (0-500 KW) | 2018-01','DG-R Transmission (Above 500 KW) | 2017-01','DG-R Transmission (Above 500 KW) | 2018-01','DR - Coastal Baseline Region | 2014-02','DR - Coastal Baseline Region | 2014-08','DR - Coastal Baseline Region | 2015-05','DR - Coastal Baseline Region | 2016-07','DR - Coastal Baseline Region | 2017-01','DR - Coastal Baseline Region | 2018-01','DR - Coastal Baseline Region | 2018-10','DR - Desert Baseline Region | 2014-02','DR - Desert Baseline Region | 2014-08','DR - Desert Baseline Region | 2015-05','DR - Desert Baseline Region | 2016-07','DR - Desert Baseline Region | 2017-01','DR - Desert Baseline Region | 2018-01','DR - Desert Baseline Region | 2018-10','DR - Inland Baseline Region | 2014-02','DR - Inland Baseline Region | 2014-08','DR - Inland Baseline Region | 2015-05','DR - Inland Baseline Region | 2016-07','DR - Inland Baseline Region | 2017-01','DR - Inland Baseline Region | 2018-01','DR - Inland Baseline Region | 2018-10','DR - Mountain Baseline Region | 2014-02','DR - Mountain Baseline Region | 2014-08','DR - Mountain Baseline Region | 2015-05','DR - Mountain Baseline Region | 2016-07','DR - Mountain Baseline Region | 2017-01','DR - Mountain Baseline Region | 2018-01','DR - Mountain Baseline Region | 2018-10','DR- TOU- Coastal Baseline Region | 2014-02','DR- TOU- Coastal Baseline Region | 2014-08','DR- TOU- Coastal Baseline Region | 2015-05','DR- TOU- Desert Baseline Region | 2014-02','DR- TOU- Desert Baseline Region | 2014-08','DR- TOU- Desert Baseline Region | 2015-05','DR- TOU- Inland Baseline Region | 2014-02','DR- TOU- Inland Baseline Region | 2014-08','DR- TOU- Inland Baseline Region | 2015-05','DR- TOU- Mountain Baseline Region | 2014-02','DR- TOU- Mountain Baseline Region | 2014-08','DR- TOU- Mountain Baseline Region | 2015-05','DR-LI - Coastal Baseline Region | 2014-07','DR-LI - Coastal Baseline Region | 2015-05','DR-LI - Coastal Baseline Region | 2016-07','DR-LI - Coastal Baseline Region | 2017-01','DR-LI - Coastal Baseline Region | 2018-01','DR-LI - Desert Baseline Region | 2014-07','DR-LI - Desert Baseline Region | 2015-05','DR-LI - Desert Baseline Region | 2016-07','DR-LI - Desert Baseline Region | 2017-01','DR-LI - Desert Baseline Region | 2018-01','DR-LI - Inland Baseline Region | 2014-07','DR-LI - Inland Baseline Region | 2015-05','DR-LI - Inland Baseline Region | 2016-07','DR-LI - Inland Baseline Region | 2017-01','DR-LI - Inland Baseline Region | 2018-01','DR-LI - Mountain Baseline Region | 2014-07','DR-LI - Mountain Baseline Region | 2015-05','DR-LI - Mountain Baseline Region | 2016-07','DR-LI - Mountain Baseline Region | 2017-01','DR-LI - Mountain Baseline Region | 2018-01','DR-SES (Solar Energy Systems) | 2014-05','DR-SES (Solar Energy Systems) | 2014-08','DR-SES (Solar Energy Systems) | 2015-05','DR-SES (Solar Energy Systems) | 2016-07','DR-SES (Solar Energy Systems) | 2017-01','DR-SES (Solar Energy Systems) | 2018-01','EV-GIR1 (Experimental) | 2018-06','EV-GIR2 (Experimental) | 2018-06','EV-TOU | 2014-07','EV-TOU | 2015-05','EV-TOU | 2017-01','EV-TOU | 2018-01','EV-TOU-2 | 2014-07','EV-TOU-2 | 2015-05','EV-TOU-2 | 2017-01','EV-TOU-2 | 2018-01','TOU-A Primary (0-5kW) | 2018-06','TOU-A Primary (20-50kW) | 2018-06','TOU-A Primary (5-20kW) | 2018-06','TOU-A Primary | 2017-01','TOU-A Primary | 2018-01','TOU-A Secondary (0-5kW) | 2018-06','TOU-A Secondary (20-50kW) | 2018-06','TOU-A Secondary (5-20kW) | 2018-06','TOU-A Secondary (Above 50kW) | 2018-06','TOU-A Secondary | 2017-01','TOU-A Secondary | 2018-01','TOU-A-2 Primary (0-5kW) | 2018-06','TOU-A-2 Primary (20-50kW) | 2018-06','TOU-A-2 Primary (5-20kW) | 2018-06','TOU-A-2 Primary (Above 50kW) | 2018-06','TOU-A-2 Secondary (0-5kW) | 2018-06','TOU-A-2 Secondary (20-50kW) | 2018-06','TOU-A-2 Secondary (5-20kW) | 2018-06','TOU-A-3 Primary (0-5kW) | 2018-06','TOU-A-3 Primary (20-50kW) | 2018-06','TOU-A-3 Primary (5-20kW) | 2018-06','TOU-A-3 Primary (Above 50kW) | 2018-06','TOU-A-3 Secondary (0-5kW) | 2018-06','TOU-A-3 Secondary (20-50kW) | 2018-06','TOU-A-3 Secondary (5-20kW) | 2018-06','TOU-A-P Primary | 2016-08','TOU-A-P Secondary | 2016-08','TOU-DR Coastal Baseline Region | 2016-07','TOU-DR Coastal Baseline Region | 2017-01','TOU-DR Coastal Baseline Region | 2018-01','TOU-DR Desert Baseline Region | 2016-07','TOU-DR Desert Baseline Region | 2017-01','TOU-DR Desert Baseline Region | 2018-01','TOU-DR Inland Baseline Region | 2016-07','TOU-DR Inland Baseline Region | 2017-01','TOU-DR Inland Baseline Region | 2018-01','TOU-DR Mountain Baseline Region | 2016-07','TOU-DR Mountain Baseline Region | 2017-01','TOU-DR Mountain Baseline Region | 2018-01','TOU-DR1 Coastal | 2018-01','TOU-DR1 Coastal | 2019-06','TOU-DR1 Desert | 2018-01','TOU-DR1 Desert | 2019-06','TOU-DR1 Inland | 2018-01','TOU-DR1 Inland | 2019-06','TOU-DR1 Mountain | 2018-01','TOU-DR1 Mountain | 2019-06','TOU-DR2 Coastal | 2019-06','TOU-DR2 Desert | 2019-06','TOU-DR2 Inland | 2019-06','TOU-DR2 Mountain | 2019-06','TOU-M | 2018-06']
 
 Index Tier_Period_Column
@@ -1194,7 +1195,6 @@ NodeLocation: 256,264,1
 NodeSize: 64,40
 
 Index All_Periods
-Att_PrevIndexValue: ['period0','period1','period2','period3','period4','period5','period6','period7','period8','period9','period10','period11','period12','period13','period14']
 Title: All Periods
 Definition: #Find_Valid_TiersPrds[.subscripts='periods']
 NodeLocation: 832,272,1
@@ -1202,6 +1202,7 @@ NodeSize: 64,40
 WindState: 2,98,82,1217,840
 ValueState: 2,548,427,416,430,,MIDM
 {!40300|Att_SlicerPopupSize: 227,238}
+Att_PrevIndexValue: ['period0','period1','period2','period3','period4','period5','period6','period7','period8','period9','period10','period11','period12','period13','period14']
 
 Index All_Tiers
 Title: All Tiers
@@ -1513,7 +1514,7 @@ SortIndex(uniq_vals)
 NodeLocation: 400,280,1
 NodeSize: 64,40
 ValueState: 2,975,312,416,303,0,MIDM
-Att_PrevIndexValue: [1-Jan-2014 06:00:00,1-Feb-2014 06:00:00,1-May-2014,31-Jul-2014 23:00:00,1-Aug-2014,30-Apr-2015 23:00:00,1-May-2015,1-Jul-2016,1-Aug-2016,1-Jan-2017,1-Jan-2018,27-Jun-2018,30-Jun-2018 23:00:00,1-Jul-2018,1-Oct-2018,1-Jan-2019,1-Jun-2019]
+Att_PrevIndexValue: [1-Jan-2014 06:00:00,1-Feb-2014 06:00:00,1-May-2014,31-Jul-2014 23:00:00.000000,1-Aug-2014,30-Apr-2015 23:00:00.000000,1-May-2015,1-Jul-2016,1-Aug-2016,1-Jan-2017,1-Jan-2018,27-Jun-2018,30-Jun-2018 23:00:00,1-Jul-2018,1-Oct-2018,1-Jan-2019,1-Jun-2019]
 
 Variable Start_Dates
 Title: Start Dates
@@ -3535,11 +3536,11 @@ NodeLocation: 656,336,1
 NodeSize: 64,40
 
 Index Rate_Info
-Att_PrevIndexValue: ['Rate Name','Start Date (eg, 1/1/2019 or 1-Jan-2019)','End Date (eg, 1/1/2019 or 1-Jan-2019)','Utility','Sector','Source']
 Title: Rate Info
 Definition: ['Rate Name','Start Date (eg, 1/1/2019 or 1-Jan-2019)','End Date (eg, 1/1/2019 or 1-Jan-2019)','Utility','Sector','Source']
 NodeLocation: 656,64,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Rate Name','Start Date (eg, 1/1/2019 or 1-Jan-2019)','End Date (eg, 1/1/2019 or 1-Jan-2019)','Utility','Sector','Source']
 
 Index Day_Type_and_Hour
 Title: Day Type and Hour

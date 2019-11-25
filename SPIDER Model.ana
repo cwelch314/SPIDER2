@@ -89,7 +89,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,276,6,1290,709,17
+DiagState: 2,91,8,1462,811,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
@@ -360,7 +360,7 @@ Date: Sun, Dec 16, 2018 8:10 AM
 NodeLocation: 112,392,1
 NodeSize: 80,56
 NodeInfo: 1,1,1,1,1,1,1,,0,,0,,,
-DiagState: 2,14,147,1820,702,17
+DiagState: 2,51,258,1820,702,17
 NodeFont: Arial Narrow,19
 {!40400|CloudPlayerStyles: Show_object: no}
 {!40204-40399|AWP_Attrib:Show_object: no}
@@ -1098,12 +1098,12 @@ NodeFont: Arial,16
 OnClick: Show_ACP_Window(Storage_Econ_Out,Storage_Econ_Titles,Storage_Economics, 'Result')
 
 Index Storage_Econ_Titles
-Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
 Title: Storage Econ Titles
 Definition: Create_Titles_List(Storage_Econ_Out)~
 
 NodeLocation: 160,1392,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
 
 Text Te1552873476
 Title: Storage Economic Output
@@ -1430,13 +1430,13 @@ Original: All_Storage_Disp_Out
 
 Index All_Storage_Disp_Out
 Title: All Storage Dispatch Out
-Definition: [Dispatch_Flows,Rates_for_Dispatch,Battery_Charge_Disp,Pct_Stored_PV_Elect]
+Definition: [Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Pct_Stored_PV_Elect2]
 NodeLocation: 432,1152,1
 NodeSize: 64,40
-WindState: 2,98,82,720,518
+WindState: 2,8,29,720,518
 Aliases: FormNode Fo1557511281
 MetaOnly: 1
-Att_PrevIndexValue: [Dispatch_Flows,Rates_for_Dispatch,Battery_Charge_Disp,Pct_Stored_PV_Elect]
+Att_PrevIndexValue: [Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Pct_Stored_PV_Elect2]
 
 FormNode Fo1557511325
 Title: PV Econ Out
@@ -1447,13 +1447,14 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_Storage_Econ_Out
 
 Index All_Storage_Econ_Out
-Att_PrevIndexValue: [PrePost_Load_Strg,FirstYr_Bill_Compar1,CostOf_Elect_Compare,Simple_Payback_Time1,Installed_Price]
 Title: All Storage Econ Out
 Definition: [PrePost_Load_Strg,FirstYr_Bill_Compar1,CostOf_Elect_Compare,Simple_Payback_Time1,Installed_Price]
 NodeLocation: 432,1392,1
 NodeSize: 64,40
+WindState: 2,0,65,720,350
 Aliases: FormNode Fo1557511325
 MetaOnly: 1
+Att_PrevIndexValue: [PrePost_Load_Strg,FirstYr_Bill_Compar1,CostOf_Elect_Compare,Simple_Payback_Time1,Installed_Price]
 
 Text Te1568692391
 Description: For more info, please contact <a href="https://www.lumidyneconsulting.com/#Contact-Us">Lumidyne</a>, or explore the <a href="https://www.lumidyneconsulting.com/product/spider">SPIDER</a> web page.
