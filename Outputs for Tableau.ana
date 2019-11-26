@@ -487,6 +487,7 @@ ValueState: 2,12,39,1410,681,0,MIDM
 ReformVal: [Sequential_Text_Cols,Sequential_Row_Num]
 
 Index Sequential_Text_Cols
+Att_PrevIndexValue: ['Spatial ID','Output DER Types','All Sectors','Act vs Sim','Output Periods','Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 Title: Sequential Text Columns
 Definition: INDEX orderedCols:=CopyIndex(SubIndex(Order_of_Seq_Cols, @Sequential_Columns, Sequential_Columns));~
 VAR textParse:=FOR J:=@orderedCols DO (~
@@ -499,7 +500,6 @@ NodeLocation: 1488,88,1
 NodeSize: 64,40
 ValueState: 2,12,79,1235,511,0,MIDM
 ReformVal: [Self,Undefined]
-Att_PrevIndexValue: ['Spatial ID','Output DER Types','All Sectors','Act vs Sim','Output Periods','Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 
 Index Sequential_Row_Num
 Title: Sequential Row Number
@@ -681,7 +681,7 @@ Author: JamesMilford
 Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 736,888,1
 NodeSize: 64,40
-DiagState: 2,30,15,1618,723,17
+DiagState: 2,284,21,1618,723,17
 
 Variable Cumulative_Data_Plu1
 Title: Cumulative Data Plus
@@ -76417,19 +76417,19 @@ NodeSize: 64,40
 ValueState: 2,2085,28,1474,742,,MIDM
 
 Index Delta_Columns
+Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Delta_Output_Periods,Output_DER_Types,All_Sectors,Installation_Type,'Cumulative MW-AC (Delta)']
 Title: Delta Columns
 Definition: CopyIndex(Flat_Delta_Data.Col)
 NodeLocation: 896,256,1
 NodeSize: 64,40
 ValueState: 2,11,87,416,303,,MIDM
-Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Delta_Output_Periods,Output_DER_Types,All_Sectors,Installation_Type,'Cumulative MW-AC (Delta)']
 
 Index Delta_Order_Number
+Att_PrevIndexValue: [1,2,3,4,5,6,7]
 Title: Delta Order Number
 Definition: 1..Size(Delta_Columns)
 NodeLocation: 896,168,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6,7]
 
 Decision Order_of_Delta_Colum
 Title: Order of Delta Columns
@@ -78014,19 +78014,19 @@ NodeSize: 64,40
 ValueState: 2,1612,25,1474,742,,MIDM
 
 Index Allocation_Columns
+Att_PrevIndexValue: [Spatial_ID,Output_DER_Types,CEC_Forecast_Years,'Value']
 Title: Allocation Columns
 Definition: CopyIndex(Flat_Allocation_Data.Col)
 NodeLocation: 1232,264,1
 NodeSize: 64,40
 ValueState: 2,11,87,416,303,,MIDM
-Att_PrevIndexValue: [Spatial_ID,Output_DER_Types,CEC_Forecast_Years,'Value']
 
 Index Allocation_Order_Num
+Att_PrevIndexValue: [1,2,3,4]
 Title: Allocation Order Number
 Definition: 1..Size(Allocation_Columns)
 NodeLocation: 1232,176,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4]
 
 Decision Order_of_Alloc_Cols
 Title: Order of Allocation Columns
@@ -78283,6 +78283,7 @@ NodeSize: 64,40
 Att_PrevIndexValue: ['Index 1','Index 2','Index 3','Index 4','Index 5','Index 6','Index 7']
 
 Index ExpVar_Index_Check
+Att_PrevIndexValue: [Sel_Sequential_Data,Sel_Compare_Data,Selected_Delta_Data,Select_Allocat_Data]
 Title: Export Vars for Index Check
 Description: A list of handles to variables that will be exported and must have a pre-defined collection of indices to ensure Excel and Tableau compatibility.
 Definition: [Sel_Sequential_Data,Sel_Compare_Data,Selected_Delta_Data,Select_Allocat_Data]
@@ -78291,7 +78292,6 @@ NodeSize: 64,40
 WindState: 2,1197,19,720,350
 Aliases: FormNode Fo1556568223
 MetaOnly: 1
-Att_PrevIndexValue: [Sel_Sequential_Data,Sel_Compare_Data,Selected_Delta_Data,Select_Allocat_Data]
 
 Decision Allowed_Indices_Exp
 Title: Allowed Indices for Export Vars
