@@ -57,7 +57,7 @@ Author: JamesMilford
 Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 736,792,1
 NodeSize: 64,40
-DiagState: 2,129,16,1644,703,17
+DiagState: 2,129,16,1646,751,17
 
 Variable Cumulative_Data_Plus
 Title: Cumulative Data Plus
@@ -344,7 +344,7 @@ NodeSize: 64,40
 ValueState: 2,153,14,1523,855,1,MIDM
 ReformVal: [Output_Periods,Act_vs_Sim]
 Att__TotalsIndex: [Spatial_ID]
-Att_ResultSliceState: [Sequential_Outputs,2,All_Sectors,1,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
+Att_ResultSliceState: [Sequential_Outputs,2,All_Sectors,1,Spatial_ID,0,Opt_Storage_Systems,1,Act_vs_Sim,1,Output_Periods,1]
 
 Variable EV_Sequent_Outputs
 Title: EV Sequential Outputs
@@ -364,7 +364,7 @@ NodeLocation: 1064,88,1
 NodeSize: 64,40
 WindState: 2,837,82,720,350
 Aliases: FormNode Fo1543018175
-{!40300|Att_SlicerPopupSize: 262,84}
+{!40300|Att_SlicerPopupSize: 267,84}
 Att_PrevIndexValue: ['Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 
 Decision Map_Seq_Outputs
@@ -376,7 +376,7 @@ Choice(EV_Adopt_Types_None,2,0),Choice(EV_Adopt_Types_None,4,0),Choice(EV_Adopt_
 Null,Null,Null,Null,~
 Null,Null,Null,Null,~
 Null,Null,Null,Null)
-NodeLocation: 880,336,1
+NodeLocation: 872,336,1
 NodeSize: 64,40
 DefnState: 2,466,283,1140,203,0,DFNM
 Aliases: FormNode Fo1543005910
@@ -395,7 +395,7 @@ Aliases: FormNode Fo1543018271
 FormNode Fo1543005910
 Title: Map Sequential Outputs
 Definition: 0
-NodeLocation: 880,388,1
+NodeLocation: 872,388,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Map_Seq_Outputs
@@ -444,27 +444,28 @@ NodeSize: 64,40
 ValueState: 2,1612,25,1474,742,,MIDM
 
 Index Sequential_Columns
-Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Output_DER_Types,All_Sectors,Output_Periods,'Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 Title: Sequential Columns
 Definition: CopyIndex(Flat_Sequential_Data.Col)
 NodeLocation: 1352,176,1
 NodeSize: 64,40
 ValueState: 2,0,24,1013,488,0,MIDM
+Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Output_DER_Types,All_Sectors,Output_Periods,'Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 
 Index Sequential_Order_Num
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9]
 Title: Sequential Order Number
 Definition: 1..Size(Sequential_Columns)
 NodeLocation: 1352,88,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9]
 
 Decision Order_of_Seq_Cols
 Title: Order of Sequential Columns
 Description: Specify the order in which columns will appear in the output results for sequential (historic then simulated) results.
 Definition: Table(Sequential_Columns)(Choice(Sequential_Order_Num,1,0),Choice(Sequential_Order_Num,4,0),Choice(Sequential_Order_Num,2,0),Choice(Sequential_Order_Num,3,0),Choice(Sequential_Order_Num,5,0),Choice(Sequential_Order_Num,6,0),Choice(Sequential_Order_Num,7,0),Choice(Sequential_Order_Num,8,0),Choice(Sequential_Order_Num,9,0))
-NodeLocation: 1408,432,1
+NodeLocation: 1488,432,1
 NodeSize: 64,40
 DefnState: 2,12,315,501,447,0,DFNM
+ValueState: 2,52,58,416,303,0,MIDM
 Aliases: FormNode Fo1543007705
 TableCellDefault: Choice(Sequential_Order_Num,1,0)
 {!40200|Att_ChoiceIndexes: Index Sequential_Order_Num}
@@ -472,7 +473,7 @@ TableCellDefault: Choice(Sequential_Order_Num,1,0)
 FormNode Fo1543007705
 Title: Order of Sequential Columns
 Definition: 0
-NodeLocation: 1408,484,1
+NodeLocation: 1488,484,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Order_of_Seq_Cols
@@ -487,7 +488,6 @@ ValueState: 2,12,39,1410,681,0,MIDM
 ReformVal: [Sequential_Text_Cols,Sequential_Row_Num]
 
 Index Sequential_Text_Cols
-Att_PrevIndexValue: ['Spatial ID','Output DER Types','All Sectors','Act vs Sim','Output Periods','Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 Title: Sequential Text Columns
 Definition: INDEX orderedCols:=CopyIndex(SubIndex(Order_of_Seq_Cols, @Sequential_Columns, Sequential_Columns));~
 VAR textParse:=FOR J:=@orderedCols DO (~
@@ -500,6 +500,7 @@ NodeLocation: 1488,88,1
 NodeSize: 64,40
 ValueState: 2,12,79,1235,511,0,MIDM
 ReformVal: [Self,Undefined]
+Att_PrevIndexValue: ['Spatial ID','Output DER Types','All Sectors','Act vs Sim','Output Periods','Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 
 Index Sequential_Row_Num
 Title: Sequential Row Number
@@ -532,51 +533,51 @@ Interp_Sim_EV_Adopt is now configured so that when EOP stocks are linked to EV_A
 NodeLocation: 180,868,-1
 NodeSize: 148,124
 
-Variable PV_Cumulative
-Title: PV Cumulative
+Variable PV_Cumul_Adoption
+Title: PV Cumulative Adoption
 Units: MW-AC
-Description: Nameplate MW-AC from Solar PV, cumulative for all time. Excludes any T&D losses. Values are End of Period.
+Description: Nameplate MW-AC from Solar PV, cumulative for all time. Excludes any T&D losses. Values are end-of-period.
 Definition: Sel_Sequential_Data[Output_DER_Types=Solar_PV_Label, Sequential_Outputs=Seq_Cumul_MW_Label, All_Sectors=PV_Sectors]
 NodeLocation: 1184,440,1
 NodeSize: 64,40
 WindState: 2,102,82,1261,505
 ValueState: 2,830,67,952,737,1,MIDM
 Aliases: FormNode Fo1544456700
-GraphSetup: Att_GraphValueRange PV_Cumulative:1,,,,,0
+GraphSetup: Att_GraphValueRange PV_Cumul_Adoption:1,,,,,0
 ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Spatial_ID,PV_Sectors]
 Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [Spatial_ID,0,PV_Sectors,0,Act_vs_Sim,2,Output_Periods,1]
 
-Variable EV_Cumulative
-Title: EV Cumulative
+Variable EV_Cumul_MW_Impact
+Title: EV Cumulative MW Impact
 Units: MW-AC
-Description: Coincident peak MW-AC impact of EVs, using CEC assumption of 0.25 kW/vehicle. Values are End of Period.
+Description: Coincident peak MW-AC impact of EVs, using CEC assumption of 0.25 kW/vehicle. Values are end-of-period.
 Definition: Sel_Sequential_Data[Output_DER_Types=EV_Out_Label, Sequential_Outputs=Seq_Cumul_MW_Label, All_Sectors=EV_Sectors]
 NodeLocation: 1184,536,1
 NodeSize: 64,40
 WindState: 2,893,-2,720,350
 ValueState: 2,495,-11,1042,933,1,MIDM
 Aliases: FormNode Fo1544456701, FormNode Fo1544977998
-GraphSetup: Att_GraphValueRange EV_Cumulative:1,,1,,,0,5,0.0018696824554353952,0.45907679200172424,0
+GraphSetup: Att_GraphValueRange EV_Cumul_MW_Impact:1,,1,,,0,5,0.0018696824554353952,0.45907679200172424,0
 ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,1,1,0,4,1,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Spatial_ID]
 Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,0,Act_vs_Sim,2,Output_Periods,1]
 
-Variable PV_Incremental
-Title: PV Incremental
+Variable PV_Increm_Adoption
+Title: PV Incremental Adoption
 Units: MW-AC/month
-Description: Incremental (e.g., MW-AC per month) impact of new solar PV installations. Values are End of Period.
+Description: Incremental (e.g., MW-AC per month) nameplate capacity of new solar PV installations. Values are end-of-period.
 Definition: Sel_Sequential_Data[Output_DER_Types=Solar_PV_Label, Sequential_Outputs=Seq_Increm_MW_Label, All_Sectors=PV_Sectors]
 NodeLocation: 1032,536,1
 NodeSize: 64,40
 WindState: 2,102,82,1095,453
 ValueState: 2,597,96,1158,796,1,MIDM
 Aliases: FormNode Fo1544456702
-GraphSetup: Att_GraphValueRange PV_Incremental:1,,1,,,,10,1.038821429014206,3.2670102417469025,0~
+GraphSetup: Att_GraphValueRange PV_Increm_Adoption:1,,1,,,,10,1.038821429014206,3.2670102417469025,0~
 Att_GraphIndexRange Output_Periods:1,,1,,,,10,40322.05666282028,42513.92516282201,0~
 Flip:0
 ReformVal: [Output_Periods,Act_vs_Sim]
@@ -605,7 +606,7 @@ Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
 Decision Seq_Cumul_MW_Label
 Title: Seq Cumul MW Label
 Definition: Choice(Sequential_Outputs,4,0)
-NodeLocation: 1064,200,1
+NodeLocation: 1344,536,1
 NodeSize: 64,40
 Aliases: FormNode Fo1550774526
 {!40200|Att_ChoiceIndexes: Index Sequential_Outputs}
@@ -613,7 +614,7 @@ Aliases: FormNode Fo1550774526
 FormNode Fo1550774526
 Title: Demo Rate Label
 Definition: 0
-NodeLocation: 1076,240,1
+NodeLocation: 1348,488,1
 NodeSize: 68,16
 NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
 Original: Seq_Cumul_MW_Label
@@ -621,7 +622,7 @@ Original: Seq_Cumul_MW_Label
 Decision Seq_Cumul_Cnt_Label
 Title: Seq Cumul Count Label
 Definition: Choice(Sequential_Outputs,2,0)
-NodeLocation: 1208,200,1
+NodeLocation: 1344,632,1
 NodeSize: 64,40
 Aliases: FormNode Fo1550774606
 {!40200|Att_ChoiceIndexes: Index Sequential_Outputs}
@@ -629,7 +630,7 @@ Aliases: FormNode Fo1550774606
 FormNode Fo1550774606
 Title: Demo Rate Label
 Definition: 0
-NodeLocation: 1220,240,1
+NodeLocation: 1356,672,1
 NodeSize: 68,16
 NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
 Original: Seq_Cumul_Cnt_Label
@@ -637,7 +638,7 @@ Original: Seq_Cumul_Cnt_Label
 Decision Seq_Increm_MW_Label
 Title: Seq Increm MW Label
 Definition: Choice(Sequential_Outputs,3,0)
-NodeLocation: 912,88,1
+NodeLocation: 1032,632,1
 NodeSize: 64,40
 Aliases: FormNode Fo1550774658
 {!40200|Att_ChoiceIndexes: Index Sequential_Outputs}
@@ -645,14 +646,14 @@ Aliases: FormNode Fo1550774658
 FormNode Fo1550774658
 Title: Demo Rate Label
 Definition: 0
-NodeLocation: 924,128,1
+NodeLocation: 1044,672,1
 NodeSize: 68,16
 NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
 Original: Seq_Increm_MW_Label
 
 Text Te1552783382
 Title: Need to change this to have nulls before PV simulation start
-NodeLocation: 948,664,-1
+NodeLocation: 756,752,-1
 NodeSize: 148,40
 
 Variable Total_Historic_EVs
@@ -76126,19 +76127,19 @@ NodeSize: 64,40
 ValueState: 2,1612,25,1474,742,,MIDM
 
 Index Comparison_Columns
+Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Output_DER_Types,All_Sectors,Output_Periods,'Incremental Count (Calibration)','Cumulative Count (Calibration)','Incremental MW-AC (Calibration)','Cumulative MW-AC (Calibration)']
 Title: Comparison Columns
 Definition: CopyIndex(Flat_Comparison_Data.Col)
 NodeLocation: 1200,176,1
 NodeSize: 64,40
 ValueState: 2,11,87,416,303,,MIDM
-Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Output_DER_Types,All_Sectors,Output_Periods,'Incremental Count (Calibration)','Cumulative Count (Calibration)','Incremental MW-AC (Calibration)','Cumulative MW-AC (Calibration)']
 
 Index Comparison_Order_Num
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9]
 Title: Comparison Order Number
 Definition: 1..Size(Comparison_Columns)
 NodeLocation: 1200,88,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9]
 
 Decision Order_Compare_Cols
 Title: Order of Comparison Columns

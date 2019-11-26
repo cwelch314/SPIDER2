@@ -18720,7 +18720,7 @@ Date: Mon, Jul 9, 2018 1:00 PM
 NodeLocation: 640,576,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,41,11,1721,756,17
+DiagState: 2,180,23,1721,756,17
 {!40400|CloudPlayerStyles: FrameNode: EVAdoption1544921631}
 {!40204-40399|AWP_Attrib:FrameNode: EVAdoption1544921631}
 
@@ -18731,7 +18731,7 @@ Description: The impact on coincient peak demand, on average, of a single electr
 Source: Derived from CEC vehicle forecast. CEC used LBNL's V2G model to estimate this impact.~
 ~
 Sign convention: Load REDUCTIONS are positive. Load INCREASES are negative.
-Definition: SubTable(Single_Cell_Inputs[SingCell_Input_Names=EV_Impact_Label])
+Definition: Table(EV_Vehicles)(1.029091894917918,0.13912636148118937)
 NodeLocation: 136,72,1
 NodeSize: 64,40
 Aliases: Alias Al1550770771, FormNode Fo1550770771, FormNode Fo1545177742, FormNode Fo1544975027
@@ -19332,13 +19332,13 @@ Show_description:20}
 Show_description:20}
 
 Index EV_Mkt_Share_Scen
-Att_PrevIndexValue: ['Low','Medium','High']
 Title: EV Mkt Share Scenario
 Description: Names for the EV market share scenarios.
 Definition: ['Low','Medium','High']
 NodeLocation: 400,520,1
 NodeSize: 64,40
 Aliases: FormNode Fo1545336351
+Att_PrevIndexValue: ['Low','Medium','High']
 
 Constant EV_Mkt_Share_Mult
 Title: EV Mkt Share Multiplier
@@ -25932,7 +25932,7 @@ Definition: 1
 NodeLocation: 832,108,1
 NodeSize: 256,20
 NodeColor: 65278,37008,6168
-Original: EV_Cumulative
+Original: EV_Cumul_MW_Impact
 
 FormNode Fo1544977999
 Title: Cumulative EV Delta

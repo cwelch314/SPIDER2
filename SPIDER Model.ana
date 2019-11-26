@@ -135,7 +135,7 @@ Date: Mon, Aug 18, 2014 9:09 PM
 NodeLocation: 744,80,7
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-DiagState: 2,70,69,1708,756,17
+DiagState: 2,93,73,1708,756,17
 WindState: 2,102,82,476,224
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
@@ -469,7 +469,7 @@ Definition: Create_Titles_List(PV_Impact_Out)~
 
 NodeLocation: 160,432,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
+Att_PrevIndexValue: ['PV Cumulative Adoption (MW-AC)','PV Incremental Adoption (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 
 Button PV_Econ_Output_But
 Title: Result
@@ -562,7 +562,7 @@ Definition: Create_Titles_List(EV_Impact_Out)~
 
 NodeLocation: 160,672,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['EV Cumulative (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Cumul Vehicle Stock - BEV/PHEV (vehicles)','Tech Share of Vehicle Stock (fraction)','Aggreg New Vehicle Sales (vehicles/year)','Tech Share of New Vehicle Sales (fraction)','EV Long-Run Market Share (market share)','Vehicle Sticker Price ($/vehicle)','Miles of Range (miles)','Applied Fuel Prices ($/GGE)']
+Att_PrevIndexValue: ['EV Cumulative MW Impact (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Cumul Vehicle Stock - BEV/PHEV (vehicles)','Tech Share of Vehicle Stock (fraction)','Aggreg New Vehicle Sales (vehicles/year)','Tech Share of New Vehicle Sales (fraction)','EV Long-Run Market Share (market share)','Vehicle Sticker Price ($/vehicle)','Miles of Range (miles)','Applied Fuel Prices ($/GGE)']
 
 Decision EV_Impact
 Title: EV Impact
@@ -1298,12 +1298,12 @@ NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
 
 Index All_EV_Impact_Out
 Title: All EV Impact Out
-Definition: [EV_Cumulative,Cumulative_EV_Delta,Cumulative_EV_Stock,Cumul_EV_Stock_byTec,Tech_Share_Veh_Stock,Aggreg_New_Veh_Sales,Share_New_Veh_Sales,EV_Long_Run_Mkt_Shr,Vehicle_StickerPrice,Miles_of_Range,Applied_Fuel_Prices]
+Definition: [EV_Cumul_MW_Impact,Cumulative_EV_Delta,Cumulative_EV_Stock,Cumul_EV_Stock_byTec,Tech_Share_Veh_Stock,Aggreg_New_Veh_Sales,Share_New_Veh_Sales,EV_Long_Run_Mkt_Shr,Vehicle_StickerPrice,Miles_of_Range,Applied_Fuel_Prices]
 NodeLocation: 432,672,1
 NodeSize: 64,40
 Aliases: FormNode Fo1557510211
 MetaOnly: 1
-Att_PrevIndexValue: [EV_Cumulative,Cumulative_EV_Delta,Cumulative_EV_Stock,Cumul_EV_Stock_byTec,Tech_Share_Veh_Stock,Aggreg_New_Veh_Sales,Share_New_Veh_Sales,EV_Long_Run_Mkt_Shr,Vehicle_StickerPrice,Miles_of_Range,Applied_Fuel_Prices]
+Att_PrevIndexValue: [EV_Cumul_MW_Impact,Cumulative_EV_Delta,Cumulative_EV_Stock,Cumul_EV_Stock_byTec,Tech_Share_Veh_Stock,Aggreg_New_Veh_Sales,Share_New_Veh_Sales,EV_Long_Run_Mkt_Shr,Vehicle_StickerPrice,Miles_of_Range,Applied_Fuel_Prices]
 
 FormNode Fo1557510211
 Title: All EV Impact Out
@@ -1332,9 +1332,9 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_EV_Input
 
 Index All_Output_Ident
-Att_PrevIndexValue: [PV_Cumulative,PV_Incremental,Cumulative_PV_Delta,Share_of_Housing]
+Att_PrevIndexValue: [PV_Cumul_Adoption,PV_Increm_Adoption,Cumulative_PV_Delta,Share_of_Housing]
 Title: All Output Ident
-Definition: [PV_Cumulative,PV_Incremental,Cumulative_PV_Delta,Share_of_Housing]
+Definition: [PV_Cumul_Adoption,PV_Increm_Adoption,Cumulative_PV_Delta,Share_of_Housing]
 NodeLocation: 440,184,1
 NodeSize: 64,40
 Aliases: FormNode Fo1557511035
@@ -1350,13 +1350,13 @@ Original: All_Output_Ident
 
 Index All_PV_Impact_Out
 Title: All PV Impact Out
-Definition: [PV_Cumulative,PV_Incremental,Cumulative_PV_Delta,Share_of_Housing]
+Definition: [PV_Cumul_Adoption,PV_Increm_Adoption,Cumulative_PV_Delta,Share_of_Housing]
 NodeLocation: 432,432,1
 NodeSize: 64,40
 WindState: 2,102,82,720,559
 Aliases: FormNode Fo1557511105
 MetaOnly: 1
-Att_PrevIndexValue: [PV_Cumulative,PV_Incremental,Cumulative_PV_Delta,Share_of_Housing]
+Att_PrevIndexValue: [PV_Cumul_Adoption,PV_Increm_Adoption,Cumulative_PV_Delta,Share_of_Housing]
 
 FormNode Fo1557511105
 Title: PV Impact Out
@@ -7001,7 +7001,7 @@ NodeLocation: 688,444,1
 NodeSize: 192,20
 NodeInfo: 1,,,,,,,78,,,,,
 NodeColor: 65278,37008,6168
-Original: EV_Cumulative
+Original: EV_Cumul_MW_Impact
 
 FormNode Fo1544456702
 Title: PV Inremental MW-AC
@@ -7010,7 +7010,7 @@ NodeLocation: 688,268,1
 NodeSize: 192,20
 NodeInfo: 1,,,,,,0,78,,,,,,0
 NodeColor: 65278,37008,6168
-Original: PV_Incremental
+Original: PV_Increm_Adoption
 
 FormNode Fo1544456700
 Title: PV Cumulative MW-AC
@@ -7019,7 +7019,7 @@ NodeLocation: 688,228,1
 NodeSize: 192,20
 NodeInfo: 1,,,,,,0,78,,,,,,0
 NodeColor: 65278,37008,6168
-Original: PV_Cumulative
+Original: PV_Cumul_Adoption
 
 Text Te1544880060
 NodeLocation: 264,268,-1
