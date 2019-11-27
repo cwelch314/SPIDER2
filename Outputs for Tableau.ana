@@ -78160,6 +78160,8 @@ Definition: Check_Export_Indices(Allowed_Indices_Exp, ExpVar_Index_Check);   {Ch
 NodeLocation: 1664,888,1
 NodeSize: 64,40
 WindState: 2,23,231,873,458
+DisplayInputs: Index Spatial_ID, Index ExpVar_Index_Check, Decision Allowed_Indices_Exp, Function Check_Export_Indices
+DisplayOutputs: Index PV_Sectors, Index PV_Spatial_ID
 
 Decision Data_Export_Setting1
 Title: Data Export Settings
@@ -78291,6 +78293,7 @@ NodeLocation: 1152,1624,1
 NodeSize: 64,40
 WindState: 2,1197,19,720,350
 Aliases: FormNode Fo1556568223
+DisplayOutputs: Function Export_Prep
 MetaOnly: 1
 Att_PrevIndexValue: [Sel_Sequential_Data,Sel_Compare_Data,Selected_Delta_Data,Select_Allocat_Data]
 
@@ -78311,6 +78314,7 @@ DefnState: 2,599,287,1120,656,0,DFNM
 ValueState: 2,532,538,1021,384,,MIDM
 Aliases: FormNode Fo1556568212
 ReformDef: [Indices_for_Export,ExpVar_Index_Check]
+DisplayOutputs: Function Export_Prep
 TableCellDefault: Null
 
 Function Create_Index_Warning(indHandles; varHandles: INDEX)
@@ -78364,6 +78368,7 @@ ELSE FOR J:=@varHandles DO (~
 NodeLocation: 1440,1496,1
 NodeSize: 64,40
 WindState: 2,24,159,720,609
+DisplayOutputs: Function Export_Prep
 
 Text Te1556568172
 Title: Index Checking for Exported Results

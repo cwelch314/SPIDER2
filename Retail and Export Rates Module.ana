@@ -357,7 +357,7 @@ Date: Wed, Aug 8, 2018 7:26 PM
 NodeLocation: 536,1040,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,610,14,1171,612,17
+DiagState: 2,700,64,1171,612,17
 
 Variable Map_USURDB_Columns
 Title: Map USURDB Columns to Data
@@ -488,13 +488,13 @@ Att_ResultSliceState: [Rate_Names,33,Tiers,1,Data_Type,3,Weekday_or_Weekend,1,Mo
 
 Variable Electric_Rates
 Title: Electric Rates
-Description: Energy in $/kWh~
-Demand in $/kW
-Definition: Rates[Rate_Names=Rate_Names_and_Start, All_Data_Types=DataType_by_RateType] * Rate_Compon_Scaling
+Units: cents/kWh or $/kW
+Description: The electric rates considered in the simulation.
+Definition: Rates[Rate_Names=Rate_Names_and_Start, All_Data_Types=DataType_by_RateType, Weekday_or_Weekend=DayType_for_Type_Hr,Time_of_Day=Hour_for_Type_and_Hr, All_Tiers=Tiers] * Rate_Compon_Scaling
 NodeLocation: 576,296,1
 NodeSize: 64,40
 WindState: 2,102,82,1339,449
-ValueState: 2,280,28,934,631,1,MIDM
+ValueState: 2,230,15,1390,873,1,MIDM
 GraphSetup: Graph_LineThickness:5~
 Graph_HLabelRotation:90~
 ShowKey:1~
@@ -504,7 +504,7 @@ Att_StackedBar Graph_Primary_Valdim:0~
 {!50007|Graph_BarOutline:0}
 ReformVal: [Time_of_Day,Rate_Component]
 NumberFormat: 2,F,4,2,0,0,4,1,$,0,"ABBREV",0,,,0,0,14
-Att_ResultSliceState: [Tiers,1,Month,8,Weekday_or_Weekend,1,Rate_Names_and_Start,3,Rate_Component,1,Time_of_Day,1]
+Att_ResultSliceState: [Month,8,Rate_Names_and_Start,4,Tiers,1,Rate_Component,1,Day_Type_and_Hour,1]
 {!40700|CellFormatExpression: CellFill(IF RatesOnlyTransp[Rate_Names=Rate_to_View, All_Data_Types=Data_Type_to_View] < 0 THEN 'Green' ELSE 'Red', .2+.6*Abs(RatesOnlyTransp[Rate_Names=Rate_to_View, All_Data_Types=Data_Type_to_View] ))}
 
 Variable RatesOnlyTransp
@@ -806,7 +806,7 @@ Replace_X_with_Y(periodString, Period_String & Null, Null)
 NodeLocation: 928,232,1
 NodeSize: 64,40
 WindState: 2,102,82,1239,565
-ValueState: 2,101,174,1008,841,0,MIDM
+ValueState: 2,-11,121,1008,841,0,MIDM
 ReformVal: [Month,Day_and_Hour]
 Att_ResultSliceState: [Pre_and_Post_System,1,PV_Sectors,2,PV_Climate_Zone,1,Time_of_Day,1,Weekday_or_Weekend,1,Data_Types,1,Rate_Vintage,3,Month,7]
 {!50000|Att_ColumnWidths: [,Month,[,,,61]]}
@@ -1150,42 +1150,6 @@ NodeLocation: 688,136,1
 NodeSize: 64,16
 NodeInfo: 1,0,0,0,0,0,0,86,0,,0,,,
 Original: Energy_Units_Label
-
-Function Aggreg_ProfHrs_TOU(data; type: Optional = 'Sum')
-Title: Aggreg Profile Hrs to TOU
-Description: Aggregates data indexed by Profile Hours to the TOU indices ("Weekday or Weekend" & "Time of Day"). The aggregation type can be specified to find the sum of the data in each TOU period, or find the maximum of the data in the TOU periods.~
-~
-[data]: a dataset indexed by Profile_Hours~
-[type]: the aggregation method: 'Sum' (which is the default) or 'Max'
-Definition: FOR J:=Weekday_or_Weekend DO (   {Loop thru weekend/weekday and time of day to avoid massive dimensionality}~
-   FOR K:=Time_of_Day DO (~
-      VAR map:=Map_Prof_DayTyp_Time[Weekday_or_Weekend=J, Time_of_Day=K];   {A boolean map of profile associated with the Jth and Kth elements of the looping indices}~
-      IF type = 'Sum'~
-      THEN Sum(data * map, Profile_Hours)~
-      ELSE MAX(data * map, Profile_Hours)~
-   )~
-)~
-
-NodeLocation: 832,368,1
-NodeSize: 64,40
-WindState: 2,105,29,1335,513
-
-Function Aggreg_to_Periods(data, rateStruct; type: Optional = 'Sum')
-Title: Aggreg to Periods
-Description: Aggregates data indexed by TOU indices ("Weekday or Weekend" & "Time of Day") to TOU Periods. The aggregation type can be specified to find the sum of the data in each TOU period, or find the maximum of the data in the TOU periods.~
-~
-[data]: a dataset indexed by Profile_Hours~
-[rateStruct]: the rate structure data type for which TOU periods will be determined (eg, elements of the Data_Type index: 'energyratestructure', demandratestructure")~
-[type]: the aggregation method: 'Sum' (which is the default) or 'Max'
-Definition: FOR J:=Periods DO (   {Loop thru each period to avoid massive dimensionality}~
-   VAR map:=Period_by_DayType_Hr[Data_Types=rateStruct] = J;   {A boolean map of profile associated with the Jth period}~
-   IF type = 'Sum'~
-   THEN Sum(data * map, Weekday_or_Weekend, Time_of_Day)~
-   ELSE MAX(data * map, Weekday_or_Weekend, Time_of_Day)~
-)
-NodeLocation: 976,368,1
-NodeSize: 64,40
-WindState: 2,513,361,1345,455
 
 Index Data_Types
 Title: Data Types
@@ -3559,7 +3523,7 @@ Date: Thu, Jan 24, 2019 11:22 AM
 NodeLocation: 960,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,380,15,1040,670,17
+DiagState: 2,7,179,1040,591,17
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
 
@@ -3656,6 +3620,15 @@ NodeLocation: 280,52,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Rate_and_Adj_Attribs
+
+Variable DayType_and_Hour_Map
+Title: Day Type and Hour Map
+Description: Maps the "Day Type and Hour" index to the "Weekday or Weekend" and "Time of Day" indexes.
+Definition: Weekday_or_Weekend & Time_Separator & Time_of_Day
+NodeLocation: 128,392,1
+NodeSize: 64,40
+ValueState: 2,564,47,819,826,0,MIDM
+ReformVal: [Weekday_or_Weekend,Time_of_Day]
 
 Close Rates_to_View
 

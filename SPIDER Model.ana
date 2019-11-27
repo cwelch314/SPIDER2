@@ -89,7 +89,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,91,8,1462,811,17
+DiagState: 2,84,4,1462,811,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
@@ -375,12 +375,12 @@ MetaOnly: 1
 {!40200|Att_ChoiceIndexes: Index All_Output_Ident}
 
 Index Output_Titles
-Att_PrevIndexValue: ['PV Cumulative (MW-AC)','PV Incremental (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 Title: Output Titles
 Definition: Create_Titles_List(Output_Ident)~
 
 NodeLocation: 160,184,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['PV Cumulative Adoption (MW-AC)','PV Incremental Adoption (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 
 Decision Select_Output
 Title: Select Output
@@ -650,7 +650,7 @@ Original: PV_Input
 Decision PV_Input
 Title: PV Input
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Input_Titles,1,0)
+Definition: Choice(PV_Input_Titles,6,0)
 NodeLocation: 1288,440,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -689,7 +689,7 @@ Definition: Create_Titles_List(PV_Input1)~
 
 NodeLocation: 848,432,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Historic PV Capacity Installations (MW-AC/period)','Historic PV Installations (systems/period)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (fraction)','Saved Daily Profiles (various)','Per-kW Weekly Solar Profile (kW-hr/kW-DC)','Payback Acceptance Curve (market share)']
+Att_PrevIndexValue: ['Historic PV Capacity Installations (MW-AC/period)','Historic PV Installations (systems/period)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (fraction)','Electric Rates (cents/kWh or $/kW)','Saved Daily Profiles (various)','Per-kW Weekly Solar Profile (kW-hr/kW-DC)','Payback Acceptance Curve (market share)']
 
 Text Te1552865477
 Title: PV Input
@@ -765,7 +765,7 @@ Original: EV_Input
 Decision EV_Input
 Title: EV Input
 Description: Choose which variable you wish to view.
-Definition: Choice(EV_Input_Titles,1,0)
+Definition: Choice(EV_Input_Titles,8,0)
 NodeLocation: 1296,680,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -911,7 +911,7 @@ Original: Storag_Input_Button
 Decision Storage_Input
 Title: Storage Input
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Input_Titles,14,0)
+Definition: Choice(Storage_Input_Titles,4,0)
 NodeLocation: 1296,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -948,7 +948,7 @@ Definition: Create_Titles_List(Storage_Input1)~
 
 NodeLocation: 848,912,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Start Time for Dispatch','End Time for Dispatch','Flows to View','Battery Storage Specs','Number of Storage Units (units/system)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (fraction)','Allowed ITC Pct by Time (fraction)','Storage kWh Incent Base Rate ($/kWh)','Incentive Step Start Month','kWh Incent Derate for Duration','kWh Incent Derate for Capacity','Historic Storage Incentives ($/kWh)']
+Att_PrevIndexValue: ['Start Time for Dispatch','End Time for Dispatch','Flows to View','Battery Storage Specs','Number of Storage Units (units/system)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (fraction)','Allowed ITC Percent by Year (fraction)','Storage kWh Incent Base Rate ($/kWh)','Incentive Step Start Month','kWh Incent Derate for Duration','kWh Incent Derate for Capacity','Historic Storage Incentives ($/kWh)']
 
 FormNode Fo1552872728
 Title: Select Output
@@ -993,7 +993,7 @@ Original: Storage_Dispatch_Out
 Decision Storage_Dispatch
 Title: Storage Dispatch
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Dispatch_Tit,2,0)
+Definition: Choice(Storage_Dispatch_Tit,1,0)
 NodeLocation: 608,1160,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1332,13 +1332,13 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_EV_Input
 
 Index All_Output_Ident
-Att_PrevIndexValue: [PV_Cumul_Adoption,PV_Increm_Adoption,Cumulative_PV_Delta,Share_of_Housing]
 Title: All Output Ident
 Definition: [PV_Cumul_Adoption,PV_Increm_Adoption,Cumulative_PV_Delta,Share_of_Housing]
 NodeLocation: 440,184,1
 NodeSize: 64,40
 Aliases: FormNode Fo1557511035
 MetaOnly: 1
+Att_PrevIndexValue: [PV_Cumul_Adoption,PV_Increm_Adoption,Cumulative_PV_Delta,Share_of_Housing]
 
 FormNode Fo1557511035
 Title: Output Ident
@@ -1368,13 +1368,13 @@ Original: All_PV_Impact_Out
 
 Index All_PV_Input
 Title: All PV Input
-Definition: [Stored_Capacity_Inst,Stored_PV_Installs,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve]
+Definition: [Stored_Capacity_Inst,Stored_PV_Installs,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Electric_Rates,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve]
 NodeLocation: 1120,432,1
 NodeSize: 64,40
 WindState: 2,2234,82,720,350
 Aliases: FormNode Fo1557511154
 MetaOnly: 1
-Att_PrevIndexValue: [Stored_Capacity_Inst,Stored_PV_Installs,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve]
+Att_PrevIndexValue: [Stored_Capacity_Inst,Stored_PV_Installs,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Electric_Rates,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve]
 
 FormNode Fo1557511154
 Title: PV Input
@@ -1413,12 +1413,12 @@ Original: All_Storage_Input
 
 Index All_Storage_Input
 Title: All Storage Input
-Definition: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View,Battery_Storage_Spec,Num_Storage_Units,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Time,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap,Hist_Storage_Incent]
+Definition: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View,Battery_Storage_Spec,Num_Storage_Units,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Year,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap,Hist_Storage_Incent]
 NodeLocation: 1120,912,1
 NodeSize: 64,40
 Aliases: FormNode Fo1557511241
 MetaOnly: 1
-Att_PrevIndexValue: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View,Battery_Storage_Spec,Num_Storage_Units,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Time,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap,Hist_Storage_Incent]
+Att_PrevIndexValue: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View,Battery_Storage_Spec,Num_Storage_Units,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Year,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap,Hist_Storage_Incent]
 
 FormNode Fo1557511281
 Title: PV Econ Out
