@@ -444,19 +444,19 @@ NodeSize: 64,40
 ValueState: 2,1612,25,1474,742,,MIDM
 
 Index Sequential_Columns
+Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Output_DER_Types,All_Sectors,Output_Periods,'Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 Title: Sequential Columns
 Definition: CopyIndex(Flat_Sequential_Data.Col)
 NodeLocation: 1352,176,1
 NodeSize: 64,40
 ValueState: 2,0,24,1013,488,0,MIDM
-Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Output_DER_Types,All_Sectors,Output_Periods,'Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 
 Index Sequential_Order_Num
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9]
 Title: Sequential Order Number
 Definition: 1..Size(Sequential_Columns)
 NodeLocation: 1352,88,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9]
 
 Decision Order_of_Seq_Cols
 Title: Order of Sequential Columns
@@ -488,6 +488,7 @@ ValueState: 2,12,39,1410,681,0,MIDM
 ReformVal: [Sequential_Text_Cols,Sequential_Row_Num]
 
 Index Sequential_Text_Cols
+Att_PrevIndexValue: ['Spatial ID','Output DER Types','All Sectors','Act vs Sim','Output Periods','Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 Title: Sequential Text Columns
 Definition: INDEX orderedCols:=CopyIndex(SubIndex(Order_of_Seq_Cols, @Sequential_Columns, Sequential_Columns));~
 VAR textParse:=FOR J:=@orderedCols DO (~
@@ -500,7 +501,6 @@ NodeLocation: 1488,88,1
 NodeSize: 64,40
 ValueState: 2,12,79,1235,511,0,MIDM
 ReformVal: [Self,Undefined]
-Att_PrevIndexValue: ['Spatial ID','Output DER Types','All Sectors','Act vs Sim','Output Periods','Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 
 Index Sequential_Row_Num
 Title: Sequential Row Number
@@ -76418,19 +76418,19 @@ NodeSize: 64,40
 ValueState: 2,2085,28,1474,742,,MIDM
 
 Index Delta_Columns
+Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Delta_Output_Periods,Output_DER_Types,All_Sectors,Installation_Type,'Cumulative MW-AC (Delta)']
 Title: Delta Columns
 Definition: CopyIndex(Flat_Delta_Data.Col)
 NodeLocation: 896,256,1
 NodeSize: 64,40
 ValueState: 2,11,87,416,303,,MIDM
-Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Delta_Output_Periods,Output_DER_Types,All_Sectors,Installation_Type,'Cumulative MW-AC (Delta)']
 
 Index Delta_Order_Number
+Att_PrevIndexValue: [1,2,3,4,5,6,7]
 Title: Delta Order Number
 Definition: 1..Size(Delta_Columns)
 NodeLocation: 896,168,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6,7]
 
 Decision Order_of_Delta_Colum
 Title: Order of Delta Columns
@@ -78015,19 +78015,19 @@ NodeSize: 64,40
 ValueState: 2,1612,25,1474,742,,MIDM
 
 Index Allocation_Columns
+Att_PrevIndexValue: [Spatial_ID,Output_DER_Types,CEC_Forecast_Years,'Value']
 Title: Allocation Columns
 Definition: CopyIndex(Flat_Allocation_Data.Col)
 NodeLocation: 1232,264,1
 NodeSize: 64,40
 ValueState: 2,11,87,416,303,,MIDM
-Att_PrevIndexValue: [Spatial_ID,Output_DER_Types,CEC_Forecast_Years,'Value']
 
 Index Allocation_Order_Num
+Att_PrevIndexValue: [1,2,3,4]
 Title: Allocation Order Number
 Definition: 1..Size(Allocation_Columns)
 NodeLocation: 1232,176,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4]
 
 Decision Order_of_Alloc_Cols
 Title: Order of Allocation Columns
