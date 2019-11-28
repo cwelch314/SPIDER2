@@ -375,12 +375,12 @@ MetaOnly: 1
 {!40200|Att_ChoiceIndexes: Index All_Output_Ident}
 
 Index Output_Titles
+Att_PrevIndexValue: ['PV Cumulative Adoption (MW-AC)','PV Incremental Adoption (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 Title: Output Titles
 Definition: Create_Titles_List(Output_Ident)~
 
 NodeLocation: 160,184,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['PV Cumulative Adoption (MW-AC)','PV Incremental Adoption (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 
 Decision Select_Output
 Title: Select Output
@@ -1231,11 +1231,11 @@ OnClick: FOR J:=@Dropdown_Vars DO (~
 
 
 Index Not_Applicable
+Att_PrevIndexValue: ['Not Applicable to Study']
 Title: Not Applicable
 Definition: ['Not Applicable to Study']
 NodeLocation: 1920,584,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Not Applicable to Study']
 
 Decision Hidden_Dropdown
 Title: Hidden Dropdown
@@ -1332,13 +1332,13 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_EV_Input
 
 Index All_Output_Ident
+Att_PrevIndexValue: [PV_Cumul_Adoption,PV_Increm_Adoption,Cumulative_PV_Delta,Share_of_Housing]
 Title: All Output Ident
 Definition: [PV_Cumul_Adoption,PV_Increm_Adoption,Cumulative_PV_Delta,Share_of_Housing]
 NodeLocation: 440,184,1
 NodeSize: 64,40
 Aliases: FormNode Fo1557511035
 MetaOnly: 1
-Att_PrevIndexValue: [PV_Cumul_Adoption,PV_Increm_Adoption,Cumulative_PV_Delta,Share_of_Housing]
 
 FormNode Fo1557511035
 Title: Output Ident
