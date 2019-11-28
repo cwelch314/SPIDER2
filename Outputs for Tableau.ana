@@ -76127,19 +76127,19 @@ NodeSize: 64,40
 ValueState: 2,1612,25,1474,742,,MIDM
 
 Index Comparison_Columns
+Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Output_DER_Types,All_Sectors,Output_Periods,'Incremental Count (Calibration)','Cumulative Count (Calibration)','Incremental MW-AC (Calibration)','Cumulative MW-AC (Calibration)']
 Title: Comparison Columns
 Definition: CopyIndex(Flat_Comparison_Data.Col)
 NodeLocation: 1200,176,1
 NodeSize: 64,40
 ValueState: 2,11,87,416,303,,MIDM
-Att_PrevIndexValue: [Spatial_ID,Act_vs_Sim,Output_DER_Types,All_Sectors,Output_Periods,'Incremental Count (Calibration)','Cumulative Count (Calibration)','Incremental MW-AC (Calibration)','Cumulative MW-AC (Calibration)']
 
 Index Comparison_Order_Num
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9]
 Title: Comparison Order Number
 Definition: 1..Size(Comparison_Columns)
 NodeLocation: 1200,88,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9]
 
 Decision Order_Compare_Cols
 Title: Order of Comparison Columns
@@ -78286,6 +78286,7 @@ NodeSize: 64,40
 Att_PrevIndexValue: ['Index 1','Index 2','Index 3','Index 4','Index 5','Index 6','Index 7']
 
 Index ExpVar_Index_Check
+Att_PrevIndexValue: [Sel_Sequential_Data,Sel_Compare_Data,Selected_Delta_Data,Select_Allocat_Data]
 Title: Export Vars for Index Check
 Description: A list of handles to variables that will be exported and must have a pre-defined collection of indices to ensure Excel and Tableau compatibility.
 Definition: [Sel_Sequential_Data,Sel_Compare_Data,Selected_Delta_Data,Select_Allocat_Data]
@@ -78295,7 +78296,6 @@ WindState: 2,1197,19,720,350
 Aliases: FormNode Fo1556568223
 DisplayOutputs: Function Export_Prep
 MetaOnly: 1
-Att_PrevIndexValue: [Sel_Sequential_Data,Sel_Compare_Data,Selected_Delta_Data,Select_Allocat_Data]
 
 Decision Allowed_Indices_Exp
 Title: Allowed Indices for Export Vars
