@@ -162,7 +162,7 @@ NodeColor: 57311,57311,57311
 Decision USURDB_Path
 Title: USURDB Path
 Description: The file path to the US Utility Rate Database data.
-Definition: 'C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Documents\US_Utility_Rates_DB\Version_2019-10-01\SDGE_usurdb_2019-11-25.xlsx'
+Definition: 'C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Documents\US_Utility_Rates_DB\Version_2019-10-01\SDGE_usurdb_2019-12-18.xlsx'
 NodeLocation: 120,96,1
 NodeSize: 64,40
 WindState: 2,102,82,982,350
@@ -1986,7 +1986,7 @@ NodeColor: 58982,58982,58982
 Decision Num_Flat_Dmd_Tiers
 Title: # of Flat Demand Tiers
 Description: Specify the number of tiers included in the flat demand charges. Tiers represent different kW/customer of demand levels for which different rates apply.
-Definition: Choice(Self,1,0)
+Definition: Choice(Self,2,0)
 NodeLocation: 456,64,1
 NodeSize: 64,40
 WindState: 2,550,143,877,350
@@ -2006,7 +2006,7 @@ Original: Num_Flat_Dmd_Tiers
 Decision Num_Dmd_TOU_Tiers
 Title: # of Demand TOU Tiers
 Description: Specify the number of tiers included in the TOU demand charges. Tiers represent different kW/customer of demand levels for which different rates apply.
-Definition: Choice(Self,1,0)
+Definition: Choice(Self,2,0)
 NodeLocation: 608,64,1
 NodeSize: 64,40
 WindState: 2,707,143,720,350
@@ -2026,7 +2026,7 @@ Original: Num_Dmd_TOU_Tiers
 Decision Num_Energy_TOU_Tiers
 Title: # of Energy TOU Tiers
 Description: Specify the number of tiers included in the TOU energy charges. Tiers represent different kWh/month-customer of energy consumption for which different rates apply.
-Definition: Choice(Self,3,0)
+Definition: Choice(Self,2,0)
 NodeLocation: 760,64,1
 NodeSize: 64,40
 WindState: 2,707,143,720,350
@@ -2046,7 +2046,7 @@ Original: Num_Energy_TOU_Tiers
 Decision Num_Flat_Dmd_Periods
 Title: # of Flat Demand Periods
 Description: Specify the number of time periods included in the flat demand charges. Periods represent different groups of months for which different rates apply.
-Definition: Choice(Self,1,0)
+Definition: Choice(Self,2,0)
 NodeLocation: 456,176,1
 NodeSize: 64,40
 WindState: 2,973,222,720,350
@@ -2066,7 +2066,7 @@ Original: Num_Flat_Dmd_Periods
 Decision Num_Dmd_TOU_Periods
 Title: # of Demand TOU Periods
 Description: Specify the number of time periods included in the TOU demand charges. Periods represent different groups of hours in the year for which different rates apply.
-Definition: Choice(Self,1,0)
+Definition: Choice(Self,4,0)
 NodeLocation: 608,176,1
 NodeSize: 64,40
 WindState: 2,843,173,720,350
@@ -2123,7 +2123,8 @@ Sep		1~
 Oct		0~
 Nov		0~
 Dec		0
-Definition: Table(Month)(Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+Definition: Table(Month)(0,0,0,0,0,0,0,0,0,0,0,0)~
+
 NodeLocation: 456,296,1
 NodeSize: 64,40
 WindState: 2,330,84,942,601
@@ -2140,7 +2141,7 @@ OnChange: Check_Flat_Demand_Pe
 Decision Rate_Description
 Title: Rate Description
 Description: Provide a name and start date (required) and other supplemental information (optional) about the rate. Ensure that dates are entered in one of the following formats: 1/31/2019 (month/day/year) or 31-Jan-2019 (day-monthAbbreviation-year). If one of the optional input cells is not applicable, give it a value of Null (eg, type Null into the cell).
-Definition: Table(Rate_Info)('TOU-DR1 Coastal',1-Jan-2018,Null,'San Diego Gas & Electric Co','Residential','http://regarchive.sdge.com/tm2/pdf/ELEC_ELEC-SCHEDS_TOU-DR1.pdf')
+Definition: Table(Rate_Info)('AL-TOU Secondary (0-500 KW)',1-Jan-2017,31-Dec-2017,'San Diego Gas & Electric Co','Commercial','http://regarchive.sdge.com/tm2/pdf/ELEC_ELEC-SCHEDS_AL-TOU.pdf')
 NodeLocation: 120,176,1
 NodeSize: 64,40
 WindState: 2,767,38,943,350
@@ -2211,294 +2212,295 @@ Oct		0				0			1				1			0				0	~
 Nov		0				0			1				1			0				0	~
 Dec		0				0			1				1			0				0
 Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null,~
-Null,Null)
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+2,0,~
+2,0,~
+2,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+2,0,~
+2,0,~
+2,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+2,0,~
+2,0,~
+2,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+2,0,~
+2,0,~
+2,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+1,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+2,0,~
+2,0,~
+2,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+2,0,~
+2,0,~
+2,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+2,0,~
+2,0,~
+2,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0)~
+
 NodeLocation: 608,296,1
 NodeSize: 64,40
 WindState: 2,7,66,1120,667
@@ -2559,16 +2561,16 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 4,5,~
 4,5,~
 4,5,~
-4,4,~
-4,4,~
-3,3,~
-3,3,~
-3,3,~
-3,3,~
-3,3,~
-4,4,~
-4,4,~
-4,4,~
+4,5,~
+4,5,~
+4,5,~
+3,5,~
+3,5,~
+3,5,~
+4,5,~
+4,5,~
+5,5,~
+5,5,~
 5,5,~
 5,5,~
 5,5,~
@@ -2583,64 +2585,16 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 4,5,~
 4,5,~
 4,5,~
-4,4,~
-4,4,~
-3,3,~
-3,3,~
-3,3,~
-3,3,~
-3,3,~
-4,4,~
-4,4,~
-4,4,~
-5,5,~
-5,5,~
-5,5,~
-5,5,~
-5,5,~
-5,5,~
 4,5,~
 4,5,~
+4,5,~
+3,5,~
+3,5,~
+3,5,~
 4,5,~
 4,5,~
 5,5,~
 5,5,~
-5,5,~
-5,5,~
-4,4,~
-4,4,~
-3,3,~
-3,3,~
-3,3,~
-3,3,~
-3,3,~
-4,4,~
-4,4,~
-4,4,~
-5,5,~
-5,5,~
-5,5,~
-5,5,~
-5,5,~
-5,5,~
-4,5,~
-4,5,~
-4,5,~
-4,5,~
-5,5,~
-5,5,~
-5,5,~
-5,5,~
-4,4,~
-4,4,~
-3,3,~
-3,3,~
-3,3,~
-3,3,~
-3,3,~
-4,4,~
-4,4,~
-4,4,~
 5,5,~
 5,5,~
 5,5,~
@@ -2655,16 +2609,40 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 4,5,~
 4,5,~
 4,5,~
-4,4,~
-4,4,~
-3,3,~
-3,3,~
-3,3,~
-3,3,~
-3,3,~
-4,4,~
-4,4,~
-4,4,~
+4,5,~
+4,5,~
+4,5,~
+3,5,~
+3,5,~
+3,5,~
+4,5,~
+4,5,~
+5,5,~
+5,5,~
+5,5,~
+5,5,~
+5,5,~
+5,5,~
+5,5,~
+5,5,~
+4,5,~
+4,5,~
+4,5,~
+4,5,~
+4,5,~
+4,5,~
+4,5,~
+4,5,~
+4,5,~
+4,5,~
+4,5,~
+3,5,~
+3,5,~
+3,5,~
+4,5,~
+4,5,~
+5,5,~
+5,5,~
 2,2,~
 2,2,~
 2,2,~
@@ -2676,43 +2654,19 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 1,2,~
 1,2,~
 1,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
 1,2,~
 1,2,~
 1,2,~
-1,1,~
-1,1,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-1,1,~
-1,1,~
-1,1,~
+1,2,~
 2,2,~
 2,2,~
-2,2,~
-2,2,~
-2,2,~
-2,2,~
-1,2,~
-1,2,~
-1,2,~
-1,2,~
-1,2,~
-1,2,~
-1,2,~
-1,2,~
-1,1,~
-1,1,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-1,1,~
-1,1,~
-1,1,~
 2,2,~
 2,2,~
 2,2,~
@@ -2724,43 +2678,19 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 1,2,~
 1,2,~
 1,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
 1,2,~
 1,2,~
 1,2,~
-1,1,~
-1,1,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-1,1,~
-1,1,~
-1,1,~
+1,2,~
 2,2,~
 2,2,~
-2,2,~
-2,2,~
-2,2,~
-2,2,~
-1,2,~
-1,2,~
-1,2,~
-1,2,~
-1,2,~
-1,2,~
-1,2,~
-1,2,~
-1,1,~
-1,1,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-1,1,~
-1,1,~
-1,1,~
 2,2,~
 2,2,~
 2,2,~
@@ -2772,19 +2702,91 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 1,2,~
 1,2,~
 1,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
 1,2,~
 1,2,~
 1,2,~
-1,1,~
-1,1,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-1,1,~
-1,1,~
-1,1,~
+1,2,~
+2,2,~
+2,2,~
+2,2,~
+2,2,~
+2,2,~
+2,2,~
+2,2,~
+2,2,~
+1,2,~
+1,2,~
+1,2,~
+1,2,~
+1,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+1,2,~
+1,2,~
+1,2,~
+1,2,~
+2,2,~
+2,2,~
+2,2,~
+2,2,~
+2,2,~
+2,2,~
+2,2,~
+2,2,~
+1,2,~
+1,2,~
+1,2,~
+1,2,~
+1,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+1,2,~
+1,2,~
+1,2,~
+1,2,~
+2,2,~
+2,2,~
+2,2,~
+2,2,~
+2,2,~
+2,2,~
+2,2,~
+2,2,~
+1,2,~
+1,2,~
+1,2,~
+1,2,~
+1,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+0,2,~
+1,2,~
+1,2,~
+1,2,~
+1,2,~
+2,2,~
+2,2,~
 5,5,~
 5,5,~
 5,5,~
@@ -2799,22 +2801,22 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 4,5,~
 4,5,~
 4,5,~
-4,4,~
-4,4,~
-3,3,~
-3,3,~
-3,3,~
-3,3,~
-3,3,~
-4,4,~
-4,4,~
-4,4,~
+4,5,~
+4,5,~
+4,5,~
+3,5,~
+3,5,~
+3,5,~
+4,5,~
+4,5,~
 5,5,~
 5,5,~
 5,5,~
 5,5,~
 5,5,~
 5,5,~
+5,5,~
+5,5,~
 4,5,~
 4,5,~
 4,5,~
@@ -2823,16 +2825,17 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 4,5,~
 4,5,~
 4,5,~
-4,4,~
-4,4,~
-3,3,~
-3,3,~
-3,3,~
-3,3,~
-3,3,~
-4,4,~
-4,4,~
-4,4)
+4,5,~
+4,5,~
+4,5,~
+3,5,~
+3,5,~
+3,5,~
+4,5,~
+4,5,~
+5,5,~
+5,5)~
+
 NodeLocation: 760,296,1
 NodeSize: 64,40
 WindState: 2,285,270,1030,626
@@ -2876,7 +2879,7 @@ Decision Basic_Service_Fees1
 Title: Basic Service Fees
 Units: $/month
 Description: Specify the monthly basic service fees per meter.
-Definition: Null
+Definition: 116.44
 NodeLocation: 152,504,1
 NodeSize: 64,40
 WindState: 2,4,311,720,350
@@ -2886,7 +2889,7 @@ Decision Minimum_Charges1
 Title: Minimum Charges
 Units: $/month
 Description: Specify the monthly minimum utility bill charges.
-Definition: 10
+Definition: Null
 NodeLocation: 304,504,1
 NodeSize: 64,40
 WindState: 2,130,54,720,350
@@ -2932,7 +2935,8 @@ Flat Demand Rates (period1) ->~
 tier0	10			0			Null~
 tier1	15			5			Null~
 tier2	Null			10			Null
-Definition: Table(Flat_Demand_Tiers,Flat_Demand_Periods,Demand_Rate_Attribut)()
+Definition: Table(Flat_Demand_Tiers,Flat_Demand_Periods,Demand_Rate_Attribut)(~
+Null,24.51,Null)
 NodeLocation: 456,504,1
 NodeSize: 64,40
 WindState: 2,377,35,1054,579
@@ -2966,7 +2970,10 @@ Demand TOU Rates (period1) ->~
 tier0	10			0			Null~
 tier1	15			5			Null~
 tier2	Null			10			Null
-Definition: Table(Demand_TOU_Tiers,Demand_TOU_Periods,Demand_Rate_Attribut)()
+Definition: Table(Demand_TOU_Tiers,Demand_TOU_Periods,Demand_Rate_Attribut)(~
+Null,0,Null,~
+Null,10.25,10.59,~
+Null,7.57,Null)
 NodeLocation: 608,504,1
 NodeSize: 64,40
 WindState: 2,565,-8,1071,669
@@ -3005,18 +3012,12 @@ tier1	14.8			0.11			Null~
 tier2	Null				0.16			Null~
 
 Definition: Table(Energy_TOU_Tiers,Energy_TOU_Periods,Energy_Rate_Attribut)(~
-11.53182751540041,0.39616999999999997,Null,~
-11.53182751540041,0.20725,Null,~
-11.53182751540041,0.16358,Null,~
-11.788090349075976,0.21417999999999998,Null,~
-11.788090349075976,0.20738,Null,~
-11.788090349075976,0.19984000000000002,Null,~
-Null,0.58261,Null,~
-Null,0.39369,Null,~
-Null,0.35002,Null,~
-Null,0.36994,Null,~
-Null,0.36314,Null,~
-Null,0.3556,Null)
+Null,0.00239,0.11464,~
+Null,0.00239,0.10517,~
+Null,0.00239,0.07506,~
+Null,0.00239,0.10297,~
+Null,0.00239,0.08786,~
+Null,0.00239,0.06704)
 NodeLocation: 760,504,1
 NodeSize: 64,40
 WindState: 2,194,17,1328,591
@@ -3056,7 +3057,7 @@ Original: Energy_TOU_Rates
 Decision Select_Existing_Rate
 Title: Select an Existing Rate
 Description: Select an existing rate to view, use to populate a new rate, or delete.
-Definition: Choice(Rate_Names,34,0)
+Definition: Choice(Rate_Names,28,0)
 NodeLocation: 120,64,1
 NodeSize: 64,40
 Aliases: FormNode Fo1547663079, FormNode Fo1547664907, FormNode Fo1547572499, Alias Al1547708329, FormNode Fo1547708334
@@ -3426,41 +3427,41 @@ NodeSize: 64,40
 ValueState: 2,536,538,416,303,0,MIDM
 
 Index Flat_Demand_Tiers
-Att_PrevIndexValue: []
 Title: Flat Demand Tiers
 Definition: Subset(@Flat_Demand_Tier_Opt <= Num_Flat_Dmd_Tiers)
 NodeLocation: 520,64,1
 NodeSize: 64,40
 ValueState: 2,456,302,416,303,0,MIDM
+Att_PrevIndexValue: ['tier0']
 
 Index Demand_TOU_Tiers
-Att_PrevIndexValue: []
 Title: Demand TOU Tiers
 Definition: Subset(@Demand_TOU_Tier_Opti <= Num_Dmd_TOU_Tiers)
 NodeLocation: 520,152,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['tier0']
 
 Index Energy_TOU_Tiers
 Title: Energy TOU Tiers
 Definition: Subset(@Energy_TOU_Tiers_Opt <= Num_Energy_TOU_Tiers)
 NodeLocation: 520,240,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['tier0','tier1']
+Att_PrevIndexValue: ['tier0']
 
 Index Flat_Demand_Periods
-Att_PrevIndexValue: []
 Title: Flat Demand Periods
 Definition: Subset(@Flat_Demand_Period_O <= Num_Flat_Dmd_Periods)
 NodeLocation: 248,64,1
 NodeSize: 64,40
 WindState: 2,671,-2,720,350
+Att_PrevIndexValue: ['period0']
 
 Index Demand_TOU_Periods
-Att_PrevIndexValue: []
 Title: Demand TOU Periods
 Definition: Subset(@Demand_TOU_Period_Op <= Num_Dmd_TOU_Periods)
 NodeLocation: 248,152,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['period0','period1','period2']
 
 Index Energy_TOU_Periods
 Title: Energy TOU Periods
@@ -3471,11 +3472,11 @@ ValueState: 2,488,246,416,547,0,MIDM
 Att_PrevIndexValue: ['period0','period1','period2','period3','period4','period5']
 
 Index Demand_Rate_Attribut
-Att_PrevIndexValue: ['max (kW)','rate ($/kW)','adj ($/kW)']
 Title: Demand Rate Attributes
 Definition: ['max (kW)','rate ($/kW)','adj ($/kW)']
 NodeLocation: 656,240,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['max (kW)','rate ($/kW)','adj ($/kW)']
 
 Index Energy_Rate_Attribut
 Title: Energy Rate Attributes

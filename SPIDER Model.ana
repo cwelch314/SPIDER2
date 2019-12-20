@@ -89,7 +89,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,84,4,1462,811,17
+DiagState: 2,83,22,1727,811,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
@@ -464,12 +464,12 @@ MetaOnly: 1
 {!40200|Att_ChoiceIndexes: Index All_PV_Impact_Out}
 
 Index PV_Impact_Titles
+Att_PrevIndexValue: ['PV Cumulative Adoption (MW-AC)','PV Incremental Adoption (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 Title: PV Impact Titles
 Definition: Create_Titles_List(PV_Impact_Out)~
 
 NodeLocation: 160,432,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['PV Cumulative Adoption (MW-AC)','PV Incremental Adoption (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)']
 
 Button PV_Econ_Output_But
 Title: Result
@@ -488,7 +488,7 @@ ELSE Show_ACP_Window(PV_Impact_Out,PV_Impact_Titles,PV_Impact1, 'Result')
 Decision PV_Impact1
 Title: PV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Impact_Titles,4,0)
+Definition: Choice(PV_Impact_Titles,1,0)
 NodeLocation: 616,440,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -567,7 +567,7 @@ Att_PrevIndexValue: ['EV Cumulative MW Impact (MW-AC)','Cumulative EV Delta (MW-
 Decision EV_Impact
 Title: EV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(EV_Impact_Titles,4,0)
+Definition: Choice(EV_Impact_Titles,3,0)
 NodeLocation: 608,680,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -911,7 +911,7 @@ Original: Storag_Input_Button
 Decision Storage_Input
 Title: Storage Input
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Input_Titles,4,0)
+Definition: Choice(Storage_Input_Titles,3,0)
 NodeLocation: 1296,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1231,11 +1231,11 @@ OnClick: FOR J:=@Dropdown_Vars DO (~
 
 
 Index Not_Applicable
+Att_PrevIndexValue: ['Not Applicable to Study']
 Title: Not Applicable
 Definition: ['Not Applicable to Study']
 NodeLocation: 1920,584,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Not Applicable to Study']
 
 Decision Hidden_Dropdown
 Title: Hidden Dropdown
@@ -1413,12 +1413,13 @@ Original: All_Storage_Input
 
 Index All_Storage_Input
 Title: All Storage Input
-Definition: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View,Battery_Storage_Spec,Num_Storage_Units,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Year,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap,Hist_Storage_Incent]
+Definition: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View1,Battery_Storage_Spec,Num_Storage_Units,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Year,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap,Hist_Storage_Incent]
 NodeLocation: 1120,912,1
 NodeSize: 64,40
+WindState: 2,-28,182,720,350
 Aliases: FormNode Fo1557511241
 MetaOnly: 1
-Att_PrevIndexValue: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View,Battery_Storage_Spec,Num_Storage_Units,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Year,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap,Hist_Storage_Incent]
+Att_PrevIndexValue: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View1,Battery_Storage_Spec,Num_Storage_Units,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Year,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap,Hist_Storage_Incent]
 
 FormNode Fo1557511281
 Title: PV Econ Out

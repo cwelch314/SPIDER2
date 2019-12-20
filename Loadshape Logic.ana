@@ -3680,7 +3680,10 @@ Description: Hourly profiles selected for estimation of average daily profiles.
 Definition: Hourly_Profiles[Hourly_Profile_Names=Selected_Profiles]
 NodeLocation: 256,64,1
 NodeSize: 64,40
-ValueState: 2,38,187,893,303,,MIDM
+ValueState: 2,38,187,1461,641,,MIDM
+ReformVal: [Hours_8784,Null]
+Att_ResultSliceState: [Selected_Profiles,7,Hours_8784,1]
+Att_ColorRole: Null
 
 Variable Day_Type_Count
 Title: Day Type Count
@@ -3961,7 +3964,7 @@ Title: Month
 Definition: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 NodeLocation: 248,448,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 672,196}
+{!40300|Att_SlicerPopupSize: 697,196}
 Att_PrevIndexValue: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 
 Index Time_of_Day
@@ -4087,11 +4090,11 @@ NodeLocation: 248,160,1
 NodeSize: 64,40
 
 Index Day_Type_Granularity
+Att_PrevIndexValue: ['Day of Week','Weekday/Weekend','Both']
 Title: Day Type Granularity
 Definition: ['Day of Week','Weekday/Weekend','Both']
 NodeLocation: 384,160,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Day of Week','Weekday/Weekend','Both']
 
 Decision Weekday_end_Label
 Title: Weekday/end Label
@@ -4102,12 +4105,12 @@ Aliases: FormNode Fo1534259711
 {!40200|Att_ChoiceIndexes: Index Day_Type_Granularity}
 
 Index Selected_Profiles
+Att_PrevIndexValue: ['2017_Coast_Irradiance (W/m2)','2017_Inland_Irradiance (W/m2)','2017_Mountain_Irradiance (W/m2)','2017_Desert_Irradiance (W/m2)','2017_Residential_Load (kW-hr/meter)','2017_Small_Commercial_Load (kW-hr/meter)','2017_Med_Lrg_Commercial_Load (kW-hr/meter)','TMY_Resid_Solar_Coast (kW-hr/system)','TMY_Resid_Solar_Inland (kW-hr/system)','TMY_Resid_Solar_Mountain (kW-hr/system)','TMY_Resid_Solar_Desert (kW-hr/system)','TMY_C&I_Solar_Coast (kW-hr/system)','TMY_C&I_Solar_Inland (kW-hr/system)','TMY_C&I_Solar_Mountain (kW-hr/system)','TMY_C&I_Solar_Desert (kW-hr/system)']
 Title: Selected Profiles
 Definition: Subset(Profiles_to_Evaluate)
 NodeLocation: 248,64,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 272,785}
-Att_PrevIndexValue: ['2017_Coast_Irradiance (W/m2)','2017_Inland_Irradiance (W/m2)','2017_Mountain_Irradiance (W/m2)','2017_Desert_Irradiance (W/m2)','2017_Residential_Load (kW-hr/meter)','2017_Small_Commercial_Load (kW-hr/meter)','2017_Med_Lrg_Commercial_Load (kW-hr/meter)','TMY_Resid_Solar_Coast (kW-hr/system)','TMY_Resid_Solar_Inland (kW-hr/system)','TMY_Resid_Solar_Mountain (kW-hr/system)','TMY_Resid_Solar_Desert (kW-hr/system)','TMY_C&I_Solar_Coast (kW-hr/system)','TMY_C&I_Solar_Inland (kW-hr/system)','TMY_C&I_Solar_Mountain (kW-hr/system)','TMY_C&I_Solar_Desert (kW-hr/system)']
+{!40300|Att_SlicerPopupSize: 277,785}
 
 FormNode Fo1534259708
 Title: Weekday Label
@@ -4174,11 +4177,11 @@ NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,
 Original: Day_of_Week_Label
 
 Index Include_Peak
+Att_PrevIndexValue: ['Yes','No']
 Title: Include Peak
 Definition: ['Yes','No']
 NodeLocation: 112,352,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Yes','No']
 
 Decision Both_Label
 Title: Both Label
