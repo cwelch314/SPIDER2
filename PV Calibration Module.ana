@@ -794,13 +794,13 @@ WindState: 2,524,317,720,350
 DisplayOutputs: Function MultiStage_CalibrPV0
 
 Index PV_Calibration_Stage
-Att_PrevIndexValue: [1,2,3,4,5]
 Title: PV Calibration Stage
 Definition: 1..Max_PV_Calib_Stages
 NodeLocation: 568,176,1
 NodeSize: 64,40
 ValueState: 2,792,295,416,303,,MIDM
 DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
+Att_PrevIndexValue: [1,2,3,4,5]
 
 Constant PV_Decisions_by_Stg
 Title: PV Decision Variables by Stage
@@ -1020,7 +1020,6 @@ NodeInfo: 1,0,0,0,0,0,0,78,0,,0,,,
 Original: Stages_to_Calib_PV
 
 Index All_PV_Dec_Handles
-Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coeff,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef]
 Title: All PV Dec Handles
 Definition: CopyIndex(Handles_for_PV_Decis)
 NodeLocation: 840,64,1
@@ -1029,6 +1028,7 @@ WindState: 2,480,227,720,505
 ValueState: 2,2404,182,416,303,0,MIDM
 DisplayOutputs: Function OG_Multi_Stage_Calib
 MetaOnly: 1
+Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coeff,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef]
 
 Alias Al1542407785
 Title: Selected PV Decision Variables
@@ -1955,8 +1955,8 @@ Grid:0~
 Att_ContLineStyle Graph_Primary_Valdim:5
 ReformVal: [Time_Solar_PV,Act_vs_Sim]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [PV_Spatial_ID,PV_Sectors]
-Att_ResultSliceState: [PV_Sectors,0,PV_Spatial_ID,0,Act_vs_Sim,2,Time_Solar_PV,1]
+Att__TotalsIndex: [PV_Spatial_ID]
+Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,0,Act_vs_Sim,2,Time_Solar_PV,1]
 Att_SymbolRole: Null
 {!40200|Att_GraphSetupSlices: [3,1,Act_vs_Sim,2,2,Act_vs_Sim,1]}
 
@@ -1996,7 +1996,6 @@ NodeSize: 64,40
 ValueState: 2,631,354,702,381,,MIDM
 
 Decision Opt_Settings_PV
-Att_PrevIndexValue: ['Multistart','MaxTime']
 Title: Opt Settings PV
 Description: Settings for the PV optimization engine. ~
 ~
@@ -2011,6 +2010,7 @@ DefnState: 2,789,495,596,188,0,DFNM
 Aliases: FormNode Fo1535066203
 DisplayInputs: Function Multi_Stage_Calibrat
 {!40700|Att_CellFormat: CellSpan(Opt_Settings_PV,CellAlignment('Center'),2,header:0)}
+Att_PrevIndexValue: ['Multistart','MaxTime']
 
 FormNode Fo1535066203
 Title: Opt Settings EVs
@@ -2151,12 +2151,12 @@ ValueState: 2,990,418,416,303,0,MIDM
 ReformVal: [0,PV_Sectors]
 
 Index Optimization_Method1
-Att_PrevIndexValue: ['Stock Delta']
 Title: Optimization Methods
 Definition: ['Stock Delta']
 NodeLocation: 888,176,1
 NodeSize: 64,40
 ValueState: 2,505,196,416,303,,MIDM
+Att_PrevIndexValue: ['Stock Delta']
 
 Alias Al1535486018
 Title: Total PV Install Rate
@@ -2815,7 +2815,6 @@ Att_ColorRole: Null
 {!50000|Att_ColumnWidths: [,PV_Stored_Decisions,\([,,,,37,33,37,37,174,604])]}
 
 Index PV_Stored_Decisions
-Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coeff,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef,'Opt Status']
 Title: PV Stored Decisions
 Definition: Concat(All_PV_Dec_Handles, Opt_Status_Label)
 NodeLocation: 608,552,1
@@ -2823,6 +2822,7 @@ NodeSize: 64,40
 ValueState: 2,46,379,416,303,0,MIDM
 MetaOnly: 1
 {!40300|Att_SlicerPopupSize: 242,168}
+Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coeff,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef,'Opt Status']
 
 Constant Stored_Opt_Status_PV
 Title: Stored Opt Status PV
@@ -3659,6 +3659,7 @@ Units: systems/year
 Definition: Aggregate(Aggregated_Sim_vs_A4*dT_PV_Data, PV_Year_Map, Time_Solar_PV, Annual_PV_Time)
 NodeLocation: 776,168,1
 NodeSize: 64,40
+WindState: 2,3,95,938,466
 ValueState: 2,140,9,1060,691,1,MIDM
 
 Variable Sim_vs_Actual_Cumula

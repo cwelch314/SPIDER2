@@ -315,13 +315,13 @@ ReformVal: [Building_Stock_Year,EV_Spatial_ID]
 Att_ResultSliceState: [Selected_Spatial_ID,42,Sectors_Selected,1,Building_Stock_Year,1]
 
 Index Building_Stock_Year
-Att_PrevIndexValue: [1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 Title: Building Stock Year
 Definition: Bldg_Stock_Start_Yea..Bldg_Stock_End_Year
 NodeLocation: 240,192,1
 NodeSize: 64,40
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 242,546}
+Att_PrevIndexValue: [1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 
 Constant Bldg_Stock_Start_Yea
 Title: Bldg Stock Start Year
@@ -5616,7 +5616,7 @@ Author: Cory Welch
 Date: Fri, Jun 22, 2018 10:48 AM
 NodeLocation: 840,640,1
 NodeSize: 64,40
-DiagState: 2,127,15,1695,770,17
+DiagState: 2,4,204,1695,770,17
 
 Index Interconnect_Date
 Title: Interconnect Date
@@ -5624,7 +5624,7 @@ Definition: Sequence(Intercon_Strt_Yr,Intercon_End_Yr,Timestep_Months[Timestep_O
 NodeLocation: 1032,728,1
 NodeSize: 64,40
 WindState: 2,488,172,1052,350
-ValueState: 2,1058,13,565,658,,MIDM
+ValueState: 2,1058,13,565,658,0,MIDM
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"SHORT",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 262,1001}
 Att_PrevIndexValue: [1-Jul-1998,1-Aug-1998,1-Sep-1998,1-Oct-1998,1-Nov-1998,1-Dec-1998,1-Jan-1999,1-Feb-1999,1-Mar-1999,1-Apr-1999,1-May-1999,1-Jun-1999,1-Jul-1999,1-Aug-1999,1-Sep-1999,1-Oct-1999,1-Nov-1999,1-Dec-1999,1-Jan-2000,1-Feb-2000,1-Mar-2000,1-Apr-2000,1-May-2000,1-Jun-2000,1-Jul-2000,1-Aug-2000,1-Sep-2000,1-Oct-2000,1-Nov-2000,1-Dec-2000,1-Jan-2001,1-Feb-2001,1-Mar-2001,1-Apr-2001,1-May-2001,1-Jun-2001,1-Jul-2001,1-Aug-2001,1-Sep-2001,1-Oct-2001,1-Nov-2001,1-Dec-2001,1-Jan-2002,1-Feb-2002,1-Mar-2002,1-Apr-2002,1-May-2002,1-Jun-2002,1-Jul-2002,1-Aug-2002,1-Sep-2002,1-Oct-2002,1-Nov-2002,1-Dec-2002,1-Jan-2003,1-Feb-2003,1-Mar-2003,1-Apr-2003,1-May-2003,1-Jun-2003,1-Jul-2003,1-Aug-2003,1-Sep-2003,1-Oct-2003,1-Nov-2003,1-Dec-2003,1-Jan-2004,1-Feb-2004,1-Mar-2004,1-Apr-2004,1-May-2004,1-Jun-2004,1-Jul-2004,1-Aug-2004,1-Sep-2004,1-Oct-2004,1-Nov-2004,1-Dec-2004,1-Jan-2005,1-Feb-2005,1-Mar-2005,1-Apr-2005,1-May-2005,1-Jun-2005,1-Jul-2005,1-Aug-2005,1-Sep-2005,1-Oct-2005,1-Nov-2005,1-Dec-2005,1-Jan-2006,1-Feb-2006,1-Mar-2006,1-Apr-2006,1-May-2006,1-Jun-2006,1-Jul-2006,1-Aug-2006,1-Sep-2006,1-Oct-2006,1-Nov-2006,1-Dec-2006,1-Jan-2007,1-Feb-2007,1-Mar-2007,1-Apr-2007,1-May-2007,1-Jun-2007,1-Jul-2007,1-Aug-2007,1-Sep-2007,1-Oct-2007,1-Nov-2007,1-Dec-2007,1-Jan-2008,1-Feb-2008,1-Mar-2008,1-Apr-2008,1-May-2008,1-Jun-2008,1-Jul-2008,1-Aug-2008,1-Sep-2008,1-Oct-2008,1-Nov-2008,1-Dec-2008,1-Jan-2009,1-Feb-2009,1-Mar-2009,1-Apr-2009,1-May-2009,1-Jun-2009,1-Jul-2009,1-Aug-2009,1-Sep-2009,1-Oct-2009,1-Nov-2009,1-Dec-2009,1-Jan-2010,1-Feb-2010,1-Mar-2010,1-Apr-2010,1-May-2010,1-Jun-2010,1-Jul-2010,1-Aug-2010,1-Sep-2010,1-Oct-2010,1-Nov-2010,1-Dec-2010,1-Jan-2011,1-Feb-2011,1-Mar-2011,1-Apr-2011,1-May-2011,1-Jun-2011,1-Jul-2011,1-Aug-2011,1-Sep-2011,1-Oct-2011,1-Nov-2011,1-Dec-2011,1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018,1-Sep-2018,1-Oct-2018,1-Nov-2018,1-Dec-2018,1-Jan-2019,1-Feb-2019,1-Mar-2019,1-Apr-2019,1-May-2019,1-Jun-2019,1-Jul-2019,1-Aug-2019]
@@ -5786,12 +5786,12 @@ ValueState: 2,368,75,987,726,0,MIDM
 ReformVal: [db_Fields,db_Records]
 
 Index dbFields_Ordered
-Att_PrevIndexValue: ['Utility','Service Zip','Customer Sector','App Approved Date','System Size AC']
 Title: dbFields Ordered
 Description: database fields ordered such that the system size in kW AC is the LAST value. This facilitates using the MdTable function to aggregate the data.
 Definition: CopyIndex(Order_of_Columns)
 NodeLocation: 408,816,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Utility','Service Zip','Customer Sector','App Approved Date','System Size AC']
 
 Variable Intercon_Reordered
 Title: Intercon Reordered
@@ -6027,11 +6027,11 @@ WindState: 2,581,29,720,350
 Aliases: FormNode Fo1535331934, FormNode Fo1537568831
 
 Index Column_Number
-Att_PrevIndexValue: [1,2,3,4,5]
 Title: Column Number
 Definition: 1..Number_of_Data_Colum
 NodeLocation: 272,816,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2,3,4,5]
 
 FormNode Fo1535331934
 Title: Number of Data Columns
@@ -6195,7 +6195,7 @@ Date: Thu, Oct 11, 2018 7:58 AM
 NodeLocation: 920,424,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,245,196,1434,589,17
+DiagState: 2,22,78,1434,589,17
 
 Constant Stored_DC_CapInstall
 Title:  Stored DC Capacity Installations
@@ -6632,12 +6632,12 @@ Grid:0~
 {!50007|Graph_BarOutline:0}~
 {!40000|Att_StackedBar Graph_Primary_Valdim:1}~
 {!40000|Graph_KeyFont:,20,0}
-ReformVal: [All_Spatial_ID,Interconnect_Date]
+ReformVal: [Interconnect_Date,All_Spatial_ID]
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"M/yyyy",0,,,0,0,15
 Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utilities]
-Att_ResultSliceState: [All_Spatial_ID,3,All_Utilities,1,Interconnect_Date,1,All_Sectors,1]
-{!40600|Att_StackingIndex: All_Sectors}
-{!40600|Att_ClusterIndex: All_Sectors}
+Att_ResultSliceState: [All_Utilities,1,All_Sectors,2,All_Spatial_ID,3,Interconnect_Date,1]
+{!40600|Att_StackingIndex: All_Spatial_ID}
+{!40600|Att_ClusterIndex: Null}
 
 Variable DC_Intercon_Reordere
 Title: DC Intercon Reordered
@@ -7070,7 +7070,7 @@ Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,
 NodeLocation: 376,104,1
 NodeSize: 64,40
 WindState: 2,102,82,1165,350
-ValueState: 2,632,-9,837,690,0,MIDM
+ValueState: 2,195,4,1193,690,0,MIDM
 GraphSetup: {!40000|Att_ForceCategorical Graph_Primary_Valdim:1}~
 {!40000|Graph_HLabelRotation:60}~
 {!40000|Graph_AxisLabelFont:,26,0}~
@@ -7083,10 +7083,10 @@ Grid:0~
 {!50007|Graph_BarOutline:0}~
 {!40000|Att_StackedBar Graph_Primary_Valdim:1}~
 {!40000|Graph_KeyFont:,20,0}
-ReformVal: [All_Spatial_ID,Interconnect_Date]
+ReformVal: [All_Sectors,Interconnect_Date]
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"M/yyyy",0,,,0,0,15
 Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utilities,Interconnect_Date,All_Spatial_ID]
-Att_ResultSliceState: [All_Spatial_ID,3,All_Utilities,1,Interconnect_Date,1,All_Sectors,1]
+Att_ResultSliceState: [All_Spatial_ID,0,All_Utilities,1,Interconnect_Date,1,All_Sectors,1]
 {!40600|Att_StackingIndex: All_Sectors}
 {!40600|Att_ClusterIndex: All_Sectors}
 
@@ -7706,7 +7706,7 @@ Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 920,328,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,113,32,1705,684,17
+DiagState: 2,100,135,1705,650,17
 
 Variable PV_AC_SystSize_Econ
 Title: PV AC System Size for Economics
@@ -8631,7 +8631,7 @@ Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,
 NodeLocation: 80,312,1
 NodeSize: 64,36
 DefnState: 2,179,125,1172,616,0,DFNM
-ValueState: 2,230,6,1626,806,1,MIDM
+ValueState: 2,251,169,1626,806,0,MIDM
 Aliases: FormNode Fo1537569015
 GraphSetup: Att_GraphIndexRange Interconnect_Date:1,0,0,,,,,39841.607442855835,42302.489927351475,0~
 Att_Stacked_Lines Graph_Primary_Valdim:1~
@@ -8639,9 +8639,9 @@ Att_AreaFill Graph_Primary_Valdim:1~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_GraphValueRange Stored_Capacity_Inst:1,,0,,,,5,-0.45334592461586,24.884825944900513,0~
 Att_ContLineStyle Graph_Primary_Valdim:5
-ReformVal: [Interconnect_Date,Null]
+ReformVal: [All_Sectors,Interconnect_Date]
 NumberFormat: 2,F,4,1,0,0,4,1,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [All_Spatial_ID,Interconnect_Date,All_Sectors]
+Att__TotalsIndex: [All_Spatial_ID,All_Sectors,Interconnect_Date]
 Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [All_Utilities,1,All_Spatial_ID,0,All_Sectors,0,Interconnect_Date,1]
 Att_EditSliceState: [All_Sectors,1,All_Utilities,1,All_Spatial_ID,1,Interconnect_Date,1]
@@ -8890,11 +8890,11 @@ Aliases: FormNode Fo1542232306
 ReformDef: [All_Sectors,Min_and_Max]
 
 Index Min_and_Max
-Att_PrevIndexValue: ['Min','Max']
 Title: Min and Max
 Definition: ['Min','Max']
 NodeLocation: 1272,512,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Min','Max']
 
 Variable Fcst_System_Size_Zip
 Title: Forecast AC System Size by Zip
@@ -8945,6 +8945,7 @@ Definition: Cumulate(Hist_Increm_DC_Cap, Interconnect_Date)
 NodeLocation: 536,512,1
 NodeSize: 64,40
 WindState: 2,180,299,720,350
+ValueState: 2,368,265,596,592,,MIDM
 
 Decision Min_Required_Install
 Title: Min Required Installations
@@ -9098,54 +9099,12 @@ ValueState: 2,296,115,547,486,0,MIDM
 Variable Sizes_Over_Time_and_
 Title: Sizes Over Time and Zip
 Definition: Replace_X_with_Y(Avg_System_Size_Prd1, 0, Null)
-NodeLocation: 488,48,1
+NodeLocation: 528,144,1
 NodeSize: 64,40
 ValueState: 2,15,88,818,685,,MIDM
 ReformVal: [Interconnect_Date,Null]
 Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,3,Interconnect_Date,1]
 Att_ColorRole: Null
-
-Index Basis_Coeff
-Att_PrevIndexValue: ['Slope','Intercept']
-Title: Basis Coeff
-Definition: ['Slope','Intercept']
-NodeLocation: 632,48,1
-NodeSize: 64,40
-
-Variable Basis
-Title: Basis
-Definition: Table(Basis_Coeff)(Interconnect_Date, 1)
-NodeLocation: 768,48,1
-NodeSize: 64,40
-
-Variable Regressed_Coeff
-Title: Regressed Coeff
-Definition: Regression(Sizes_Over_Time_and_, Basis, Interconnect_Date, Basis_Coeff)
-NodeLocation: 680,136,1
-NodeSize: 64,40
-ValueState: 2,296,245,1154,644,0,MIDM
-
-Variable Regressed_System_Siz
-Title: Regressed System Size
-Definition: Sum(Basis * Regressed_Coeff, Basis_Coeff)
-NodeLocation: 824,136,1
-NodeSize: 64,40
-ValueState: 2,530,118,956,798,1,MIDM
-ReformVal: [Interconnect_Date,Null]
-Att_ResultSliceState: [PV_Sectors,2,Interconnect_Date,1]
-Att_ColorRole: Null
-
-Variable Compare8
-Definition: [Avg_System_Size_by_Z,Avg_System_Size_by_1[All_Spatial_ID=PV_Spatial_ID]]
-NodeLocation: 1328,104,1
-NodeSize: 64,40
-NodeInfo: 1,1,1,1,1,1,0,0,0,0,,0,1,0
-ValueState: 2,428,0,1251,880,1,MIDM
-GraphSetup: Att_ContLineStyle Graph_Primary_Valdim:4~
-Att_GraphIndexRange PV_Spatial_ID:1,,1,,,,,91911.33616566658,92678.2485961914,0~
-Att_GraphValueRange Compare8:1,,1,1,,,,36.78469955921173,20,0
-ReformVal: [PV_Spatial_ID,Self]
-Att_ResultSliceState: [PV_Sectors,2,Self,1,PV_Spatial_ID,1]
 
 Variable Avg_Historic_SDGE_Si
 Title: Avg Historic SDGE Size
@@ -9375,13 +9334,13 @@ NodeSize: 156,116
 NodeInfo: 1,0,0,1,1,1,0,,1,,0,,,
 
 Index db_Fields
-Att_PrevIndexValue: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 Title: db Fields
 Definition: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 NodeLocation: 576,416,1
 NodeSize: 56,32
 ValueState: 2,347,400,416,303,,MIDM
 {!40300|Att_SlicerPopupSize: 227,112}
+Att_PrevIndexValue: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 
 Index db_Records
 Att_PrevIndexValue: ['Empty']
