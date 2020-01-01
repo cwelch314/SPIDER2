@@ -590,7 +590,7 @@ Author: JamesMilford
 Date: Wed, Oct 10, 2018 9:00 AM
 NodeLocation: 760,64,1
 NodeSize: 64,40
-DiagState: 2,144,109,672,385,17
+DiagState: 2,144,109,914,385,17
 
 Decision Market_Share_Swing
 Title: Market Share Swing
@@ -613,7 +613,7 @@ Definition: VAR nonZero:=IF Cost_of_Elect_Ratios[PV_Spatial_ID=Aggregation_2_Lab
 VAR maxim:=MAX(nonZero, Competing_Systems);~
 VAR minim:=MIN(nonZero, Competing_Systems);~
 ~
-MAX(maxim - minim, Annual_PV_Time)
+MAX(maxim - minim, Annual_Econ_Time)
 NodeLocation: 304,96,1
 NodeSize: 64,40
 WindState: 2,378,368,720,350
@@ -3648,7 +3648,7 @@ ValueState: 2,841,54,797,691,1,MIDM
 Variable Aggreg_Annual_Sim_vs
 Title: Aggreg Annual Sim vs Act PV Systems
 Units: systems
-Definition: Aggregate(Aggregated_Sim_vs_Ac*dT_PV_Data, PV_Year_Map, Time_Solar_PV, Annual_PV_Time)
+Definition: Aggregate(Aggregated_Sim_vs_Ac*dT_PV_Data, PV_Year_Map, Time_Solar_PV, Annual_Econ_Time)
 NodeLocation: 632,168,1
 NodeSize: 64,40
 ValueState: 2,-1,53,828,691,1,MIDM
@@ -3656,7 +3656,7 @@ ValueState: 2,-1,53,828,691,1,MIDM
 Variable Aggreg_Annual_Sim_v1
 Title: Aggreg Annual Sim vs Act PV Install Rate
 Units: systems/year
-Definition: Aggregate(Aggregated_Sim_vs_A4*dT_PV_Data, PV_Year_Map, Time_Solar_PV, Annual_PV_Time)
+Definition: Aggregate(Aggregated_Sim_vs_A4*dT_PV_Data, PV_Year_Map, Time_Solar_PV, Annual_Econ_Time)
 NodeLocation: 776,168,1
 NodeSize: 64,40
 WindState: 2,3,95,938,466

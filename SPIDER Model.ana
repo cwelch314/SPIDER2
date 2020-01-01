@@ -7,7 +7,7 @@ Time := Sequence(Simulation_Start_Yea,Simulation_End_Year,step:Timestep_Months[T
 NodeLocation Time: 112,64,1
 NodeSize Time: 48,24
 NodeInfo Time: 1,1,1,1,1,1,0,0,0,0,,0,1,0
-WindState Time: 2,102,82,794,573
+WindState Time: 2,102,82,1116,840
 ValueState Time: 2,959,56,371,692,,MIDM
 Aliases Time: Alias Al1515102194
 NumberFormat Time: 2,F,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
@@ -58,6 +58,9 @@ Graph_ColorSeq := [12593,38293,0,65278,37008,6168,32639,32639,32639,0,0,0,34952,
 {!50000|NodeLocation DecimalForCopyPaste: 1024,64,1}
 {!50000|NodeSize DecimalForCopyPaste: 72,24}
 {!50000|NodeInfo DecimalForCopyPaste: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
+NodeLocation Sys_ComparisonTolera: 112,128,1
+NodeSize Sys_ComparisonTolera: 48,24
+NodeInfo Sys_ComparisonTolera: 1,1,1,1,1,1,0,0,0,0,,0,1,0
 {!50016|PlusOnTextReturnsNaN := 0}
 
 NodeInfo FormNode: 1,0,0,1,0,0,0,,0,1,,0,0
@@ -89,7 +92,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,70,37,1727,811,17
+DiagState: 2,77,28,1727,811,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
@@ -135,7 +138,7 @@ Date: Mon, Aug 18, 2014 9:09 PM
 NodeLocation: 744,80,7
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-DiagState: 2,49,52,1708,756,17
+DiagState: 2,118,134,1708,756,17
 WindState: 2,102,82,476,224
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
@@ -488,7 +491,7 @@ ELSE Show_ACP_Window(PV_Impact_Out,PV_Impact_Titles,PV_Impact1, 'Result')
 Decision PV_Impact1
 Title: PV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Impact_Titles,4,0)
+Definition: Choice(PV_Impact_Titles,1,0)
 NodeLocation: 616,440,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646

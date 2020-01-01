@@ -358,7 +358,6 @@ Att__TotalsIndex: [Spatial_ID]
 Att_ResultSliceState: [Sequential_Outputs,4,All_Sectors,3,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
 
 Index Sequential_Outputs
-Att_PrevIndexValue: ['Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 Title: Sequential Outputs
 Definition: ['Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 NodeLocation: 1064,88,1
@@ -366,6 +365,7 @@ NodeSize: 64,40
 WindState: 2,837,82,720,350
 Aliases: FormNode Fo1543018175
 {!40300|Att_SlicerPopupSize: 267,84}
+Att_PrevIndexValue: ['Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
 
 Decision Map_Seq_Outputs
 Title: Map Sequential Outputs
@@ -541,14 +541,14 @@ Definition: Sel_Sequential_Data[Output_DER_Types=Solar_PV_Label, Sequential_Outp
 NodeLocation: 1184,440,1
 NodeSize: 64,40
 WindState: 2,102,82,1261,505
-ValueState: 2,414,21,1122,850,1,MIDM
+ValueState: 2,377,10,1122,850,1,MIDM
 Aliases: FormNode Fo1544456700
 GraphSetup: Att_GraphValueRange PV_Cumul_Adoption:1,,,,,0
-ReformVal: [Output_Periods,Spatial_ID]
+ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [Spatial_ID]
+Att__TotalsIndex: [Spatial_ID,PV_Sectors]
 Att_GraphTemplate: Lumidyne_Template
-Att_ResultSliceState: [Spatial_ID,0,PV_Sectors,1,Act_vs_Sim,2,Output_Periods,1]
+Att_ResultSliceState: [Spatial_ID,0,PV_Sectors,0,Act_vs_Sim,2,Output_Periods,1]
 
 Variable EV_Cumul_MW_Impact
 Title: EV Cumulative MW Impact
