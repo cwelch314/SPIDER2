@@ -250,7 +250,7 @@ Definition: PV_Decis_Vars_in_Opt[All_PV_Decisions=PVAdEff_Label];
 NodeLocation: 256,176,1
 NodeSize: 64,40
 WindState: 2,2240,72,720,350
-DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Sequential_Opt_PV2
 
 Variable Include_Start_WOM
 Title: Include Start WOM
@@ -259,7 +259,7 @@ Description: This node evaluates to 1.0 if the Word of Mouth decision variable i
 Definition: PV_Decis_Vars_in_Opt[All_PV_Decisions=PVStartWOM_Label];
 NodeLocation: 256,272,1
 NodeSize: 64,40
-DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Sequential_Opt_PV2
 
 Variable Include_LRMS
 Title: Include LRMS
@@ -269,7 +269,7 @@ Definition: PV_Decis_Vars_in_Opt[All_PV_Decisions=PVLRMS_Label];
 NodeLocation: 256,368,1
 NodeSize: 64,40
 WindState: 2,102,82,720,350
-DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Sequential_Opt_PV2
 
 Variable Include_End_WOM
 Title: Include End WOM
@@ -278,7 +278,7 @@ Description: This node evaluates to 1.0 if the ending word-of-mouth decision var
 Definition: PV_Decis_Vars_in_Opt[All_PV_Decisions=PVEndWOM_Label];
 NodeLocation: 256,464,1
 NodeSize: 64,40
-DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Sequential_Opt_PV2
 
 Constant PV_Dec_Var_Bounds
 Title: PV Dec Var Bounds
@@ -467,7 +467,7 @@ Description: This node evaluates to 1.0 if the decision variable is selected to 
 Definition: PV_Decis_Vars_in_Opt[All_PV_Decisions=PVLogitPriceCoef_Lab];
 NodeLocation: 256,560,1
 NodeSize: 80,40
-DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Sequential_Opt_PV2
 
 Variable PV_PriceCoef_Lwr_Bnd
 Title: PV PriceCoef Lwr Bnd
@@ -508,7 +508,7 @@ Description: This node evaluates to 1.0 if the decision variable is selected to 
 Definition: PV_Decis_Vars_in_Opt[All_PV_Decisions=PVLogSpatCoef_Label];
 NodeLocation: 256,656,1
 NodeSize: 80,40
-DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Sequential_Opt_PV2
 
 Variable PVLogSpatCoef_Lwr_Bn
 Title: PVLogSpatCoef Lwr Bnd
@@ -549,7 +549,7 @@ Description: This node evaluates to 1.0 if the decision variable is selected to 
 Definition: PV_Decis_Vars_in_Opt[All_PV_Decisions=PVLogTechCoef_Label];
 NodeLocation: 256,752,1
 NodeSize: 72,40
-DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Sequential_Opt_PV2
 
 Variable PVLogTechCoef_Lwr_Bn
 Title: PVLogTechCoef Lwr Bnd
@@ -664,7 +664,7 @@ Definition: PV_Decis_Vars_in_Opt[All_PV_Decisions=PVPaybkCoef_Spat_Lab];
 NodeLocation: 256,856,1
 NodeSize: 64,40
 WindState: 2,102,82,720,478
-DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Sequential_Opt_PV2
 
 Variable PV_PaybkSpCoef_Lwr_B
 Title: PV PaybkSpCoef Lwr Bnd
@@ -720,7 +720,7 @@ Title: Include Payback Coeff
 Definition: PV_Decis_Vars_in_Opt[All_PV_Decisions=PV_PybkCoef_Label];
 NodeLocation: 256,960,1
 NodeSize: 64,40
-DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Sequential_Opt_PV2
 
 Variable PV_PaybkCoef_Upr_Bn1
 Title: PV PaybkCoef Upr Bnd
@@ -760,13 +760,13 @@ Step 2: .....
 NodeLocation: 424,520,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,1,,0,,,
-WindState: 2,6,75,1902,588
+WindState: 2,10,286,1902,588
 Aliases: Alias Al1543514124
 NodeColor: 49344,49344,49344
 NodeFont: Calibri,16
 OnClick: {Check_Calib_Dimensio(Indexes_of_Sim_vs_Ac,Required_Indexes_of_); }{checks to ensure extra dimensions are not contained in the output used for calibration, which would increase the dimensionality of stored coefficients}~
 Check_Stage_1(PV_Spatial_ID, Spatial_ID, Stages_to_Calib_PV, Ag_Level_for_PV_Coef); {checks whether all spatial IDs are selected if stage 1 is included in the calibration}~
-Multi_Stage_Calibrat(Stages_to_Calib_PV, PV_Calibration_Stage, All_Spatial_ID, Spatial_ID, Failed_Spat_ID_PV, Time_PV_Calibration, Time_Solar_PV, Selected_PV_Decision, All_PV_Decisions, All_PV_Dec_Handles, All_Sectors, 0, Use_Trace_Log, PV_Calibration_Start, PV_Calibration_End, PV_Dates_Incl_by_Stg, PV_Decisions_by_Stg, PV_OptSettings_byStg, Ag_Level_for_PV_Coef, PV_Spatial_ID, PV_Sectors, PV_Current_Stage, PV_Sim_Start_Year, PV_Sim_End_Year, Use_PV_Decision_Var, Dates_Incl_in_PV_Opt, PV_Decis_Vars_in_Opt, Stored_PV_Dec_Vars, Opt_Settings_PV, Stored_Opt_Status_PV, Handle(Optimization_PV))
+Multi_Stage_Calibrat(Stages_to_Calib_PV, PV_Calibration_Stage, All_Spatial_ID, Spatial_ID, Failed_Spat_ID_PV, Time_PV_Calibration, Time_Solar_PV, Selected_PV_Decision, All_PV_Decisions, All_PV_Dec_Handles, All_Sectors, , 0, Use_Trace_Log, PV_Calibration_Start, PV_Calibration_End, PV_Dates_Incl_by_Stg, PV_Decisions_by_Stg, PV_OptSettings_byStg, Ag_Level_for_PV_Coef, PV_Spatial_ID, PV_Sectors, PV_Current_Stage, PV_Sim_Start_Year, PV_Sim_End_Year, Use_PV_Decision_Var, Dates_Incl_in_PV_Opt, PV_Decis_Vars_in_Opt, Stored_PV_Dec_Vars, Opt_Settings_PV, Stored_Opt_Status_PV, , Handle(Optimization_PV))
 
 Button Set_ID_to_Failed_PV
 Title: Set Spatial ID to Failed Calib
@@ -799,7 +799,7 @@ Definition: 1..Max_PV_Calib_Stages
 NodeLocation: 568,176,1
 NodeSize: 64,40
 ValueState: 2,792,295,416,303,,MIDM
-DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
+DisplayOutputs: Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 Att_PrevIndexValue: [1,2,3,4,5]
 
 Constant PV_Decisions_by_Stg
@@ -819,7 +819,7 @@ DefnState: 2,793,4,658,291,0,DFNM
 ValueState: 2,12,362,870,303,0,MIDM
 Aliases: Alias Al1568908167, FormNode Fo1568908167, FormNode Fo9, FormNode Fo1535066242
 ReformDef: [PV_Calibration_Stage,All_PV_Decisions]
-DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
+DisplayOutputs: Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 TableCellDefault: checkbox(0)
 
 FormNode Fo1535066242
@@ -918,7 +918,7 @@ WindState: 2,202,371,720,541
 DefnState: 2,874,259,556,180,0,DFNM
 ValueState: 2,484,490,416,303,0,MIDM
 Aliases: Alias Al1568908171, FormNode Fo1568908171, FormNode Fo1535602755, FormNode Fo1535066246
-DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
+DisplayOutputs: Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 TableCellDefault: PV_OptSettingDefault
 
 FormNode Fo1535066246
@@ -936,6 +936,7 @@ Definition: subset(NOT All_Agg_Spatial_IDs)
 NodeLocation: 568,64,1
 NodeSize: 64,40
 ValueState: 2,120,122,427,484,,MIDM
+DisplayOutputs: Function Aggregate_Optimizati
 
 Decision Max_PV_Calib_Stages
 Title: Maximum PV Calibration Stages
@@ -989,7 +990,7 @@ Definition: Choice(All_Spatial_ID,2,0)
 NodeLocation: 112,296,1
 NodeSize: 64,40
 Aliases: FormNode Fo1542127131
-DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
 {!40200|Att_ChoiceIndexes: Index All_Spatial_ID}
 
 FormNode Fo1542127131
@@ -1199,6 +1200,7 @@ Status[All_Spatial_ID=i, All_Sectors=PV_Sectors[@PV_Sectors=1]] := OptStatusText
 NodeLocation: 448,288,1
 NodeSize: 64,40
 WindState: 2,125,10,1511,758
+DisplayInputs: Index All_Spatial_ID, Function Check_Sector, Index All_Sectors, Variable Include_Ad_Effect, Variable Include_Start_WOM, Variable Include_LRMS, Variable Include_End_WOM, Variable IncludeLogitPrice_Co, Variable IncludeLogSpatial_Co, Variable IncludeLogTech_Coeff, Variable Include_Payback_Spat, Variable Include_Payback_Coef, Index PV_Calibration_Stage, Constant PV_Decisions_by_Stg, Constant PV_OptSettings_byStg, Index Spatial_ID_PV, Decision Ag_Level_for_PV_Coef, Variable Optimization_PV, Variable Stored_AdEff_PV, Variable Stored_LRMS_PV, Variable Stored_WOM_PV, Variable Stored_End_WOM_PV, Variable All_Stored_Coeffs_PV, Constant Stored_Opt_Status_PV, Variable Stored_Spatial_Coeff, Variable Stored_Logit_Price_C, Variable Stored_Tech_Coeff, Variable Stored_Pybk_SpatCoef, Variable Stored_Payback_Coeff, Index PV_Sectors, Index PV_Spatial_ID
 
 Button Run_Aggregate_Calibr
 Title: Run Aggregate Calibration
@@ -1916,7 +1918,7 @@ NodeLocation: 888,272,1
 NodeSize: 64,40
 ValueState: 2,1427,177,274,280,0,MIDM
 ReformVal: [0,Aggreg_PV_LRMS]
-DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 
 Variable Opt_Solution_PV
 Title: Opt Solution PV
@@ -2724,7 +2726,7 @@ ValueState: 2,400,276,868,601,,MIDM
 Aliases: Alias Al1535520388
 ReformDef: [All_Sectors,All_Spatial_ID]
 ReformVal: [0,0]
-DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: Default_PVAdEff
 Att_ResultSliceState: [All_Sectors,3,All_Spatial_ID,1,Aggregate_EV_LRMS,1]
 Att_EditSliceState: [All_Sectors,3,All_Spatial_ID,1,Aggregate_EV_LRMS,1]
@@ -2743,7 +2745,7 @@ Aliases: Alias Al1535520789
 ReformDef: [All_Sectors,All_Spatial_ID]
 ReformVal: [All_Sectors,All_Spatial_ID]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: Default_PV_LRMS
 Att_ResultSliceState: [All_Sectors,3,All_Spatial_ID,1,EV_Mkt_Share_Scen,1]
 Att_EditSliceState: [All_Sectors,3,All_Spatial_ID,1,Aggregate_EV_LRMS,1]
@@ -2762,7 +2764,7 @@ DefnState: 2,737,161,597,632,0,DFNM
 ValueState: 2,374,399,972,303,,MIDM
 Aliases: Alias Al1535520633
 ReformDef: [All_Sectors,All_Spatial_ID]
-DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: Default_PV_WOM
 {!40700|CellFormatExpression: IF Self<>Self[@All_Spatial_ID=1] THEN CellFont(color: 'Red')}
 
@@ -2776,7 +2778,7 @@ NodeSize: 64,40
 DefnState: 2,1250,263,394,507,,DFNM
 Aliases: Alias Al1535665647
 ReformDef: [All_Sectors,All_Spatial_ID]
-DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: Default_PV_End_WOM
 {!40700|CellFormatExpression: IF Self<>Self[@All_Spatial_ID=1] THEN CellFont(color: 'Red')}
 
@@ -2802,7 +2804,7 @@ Att_CatLineStyle Graph_Primary_Valdim:4~
 Att_GraphIndexRange All_Spatial_ID:1,1
 ReformDef: [PV_Stored_Decisions,All_Spatial_ID]
 ReformVal: [PV_Stored_Decisions,All_Spatial_ID]
-DisplayOutputs: Function Sequential_Opt_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Sequential_Opt_PV2
 Att__TotalsIndex: []
 Att_ResultSliceState: [All_Sectors,3,All_Spatial_ID,1,PV_Stored_Decisions,9]
 Att_EditSliceState: [All_Sectors,1,All_Spatial_ID,91,Stored_Dec_Var_PV,1]
@@ -2973,7 +2975,7 @@ ValueState: 2,221,72,1159,702,0,MIDM
 Aliases: Alias Al1568908501, FormNode Fo1568908567
 ReformDef: [All_Sectors,All_Spatial_ID]
 ReformVal: [Undefined,All_Spatial_ID]
-DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
 TableCellDefault: 'Not Yet Solved.'
 {!40700|CellFormatExpression: IF Self<>Self[@All_Spatial_ID=1] THEN CellFont(color: 'Red')}
 
@@ -3024,7 +3026,7 @@ NodeLocation: 456,648,1
 NodeSize: 64,40
 ValueState: 2,2416,554,1061,303,,MIDM
 Aliases: Alias Al1539126685
-DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: 0
 
 Variable Stored_Logit_Price_C
@@ -3036,7 +3038,7 @@ NodeLocation: 456,456,1
 NodeSize: 64,40
 DefnState: 2,2256,394,1178,303,,DFNM
 Aliases: Alias Al1539126686
-DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: 0
 
 Decision Logit_Tech_Coeff
@@ -3060,7 +3062,7 @@ Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(Logit_Tech_Coeff)]
 NodeLocation: 456,552,1
 NodeSize: 64,40
 Aliases: Alias Al1539126688
-DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: 0
 
 FormNode Fo1539127221
@@ -3119,7 +3121,7 @@ Att_CatLineStyle Graph_Primary_Valdim:4~
 Att_ContLineStyle Graph_Primary_Valdim:4
 ReformDef: [All_Sectors,All_Spatial_ID]
 ReformVal: [All_Spatial_ID,All_Sectors]
-DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: 0
 
 FormNode Fo1542088631
@@ -3158,7 +3160,7 @@ ValueState: 2,350,113,699,665,0,MIDM
 Aliases: Alias Al1542302597
 ReformDef: [All_Sectors,All_Spatial_ID]
 ReformVal: [All_Sectors,All_Spatial_ID]
-DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: 0
 
 FormNode Fo1542131035

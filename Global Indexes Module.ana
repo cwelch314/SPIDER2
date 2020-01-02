@@ -160,7 +160,7 @@ NodeSize: 64,40
 WindState: 2,412,69,902,569
 ValueState: 2,1275,23,429,412,0,MIDM
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
-DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 {!40300|Att_SlicerPopupSize: 588,784}
 Att_PrevIndexValue: ['Statewide','All_Utility',91.901K,91.902K,91.905K,91.906K,91.91K,91.911K,91.913K,91.914K,91.915K,91.916K,91.917K,91.931K,91.932K,91.934K,91.935K,91.941K,91.942K,91.945K,91.948K,91.95K,91.962K,91.963K,91.977K,91.978K,91.98K,92.003K,92.004K,92.007K,92.008K,92.009K,92.01K,92.011K,92.014K,92.019K,92.02K,92.021K,92.024K,92.025K,92.026K,92.027K,92.028K,92.029K,92.036K,92.037K,92.04K,92.054K,92.055K,92.056K,92.057K,92.058K,92.059K,92.06K,92.061K,92.064K,92.065K,92.066K,92.067K,92.068K,92.069K,92.07K,92.071K,92.072K,92.075K,92.078K,92.081K,92.082K,92.083K,92.084K,92.085K,92.086K,92.091K,92.092K,92.093K,92.096K,92.101K,92.102K,92.103K,92.104K,92.105K,92.106K,92.107K,92.108K,92.109K,92.11K,92.111K,92.112K,92.113K,92.114K,92.115K,92.116K,92.117K,92.118K,92.119K,92.12K,92.121K,92.122K,92.123K,92.124K,92.126K,92.127K,92.128K,92.129K,92.13K,92.131K,92.132K,92.136K,92.139K,92.145K,92.152K,92.154K,92.158K,92.161K,92.173K,92.179K,92.182K,92.199K,92.536K,92.624K,92.629K,92.651K,92.653K,92.656K,92.672K,92.673K,92.674K,92.675K,92.676K,92.677K,92.679K,92.688K,92.69K,92.691K,92.692K,92.693K,92.694K,92.697K]
 
@@ -710,25 +710,40 @@ Author: JamesMilford
 Date: Fri, Mar 22, 2019 10:15 AM
 NodeLocation: 592,456,1
 NodeSize: 64,40
-DiagState: 2,493,45,1188,648,17
+DiagState: 2,789,108,1188,648,17
 Aliases: Alias Al1553196427, Alias Al1553196433, Alias Al1572476319
 
-Function Check_Sector(all_sectors: Index; der_sectors: Variable)
+Function Check_Sector(all_sectors: Index; all_index: Optional Index; der_sectors: Variable; der_index: Optional Variable)
 Title: Check Sector
 Description: This function checks to ensure that only one sector is chosen at a time when attempting to run the parameter calibration scripts. If more than one is selected, it returns an error message with instructions to only select one at a time.~
 ~
 [all_sectors]: the index for all sectors.~
-[der_sectors]: the sector index for the DER considered in the calibration.
+[all_index]: an optional generic static index in case the adoption logic is indexed by more than spatial IDs and sectors.~
+[der_sectors]: the sector index for the DER considered in the calibration.~
+[der_index]: an optional generic selectable index in case the adoption logic is indexed by more than spatial IDs and sectors. 
 Definition: var x:=[];~
 VAR ind_title:=Title of der_sectors;~
-IF size(der_sectors)>1 THEN ~
-	((x:=AskMsgChoice('Please select only one sector using the "' & der_sectors & '" input setting before attempting to calibrate diffusion parameters.','Sector Selector Message', all_sectors, all_sectors[@all_sectors=1],False,False));~
-	(der_sectors := x))~
+IF Size(der_sectors) > 1 ~
+THEN (~
+	x:=AskMsgChoice('Please select only one sector using the "' & ind_title & '" input setting before attempting to calibrate diffusion parameters.','Sector Selector Message', all_sectors, all_sectors[@all_sectors=1],False,False);~
+	(der_sectors := x)~
+);~
+~
+IF IsNotSpecified(all_index)~
+THEN Null ~
+ELSE (~
+   ind_title:=Title of der_index;~
+   IF Size(der_index) > 1~
+   THEN (~
+	x:=AskMsgChoice('Please select only one element using the "' & ind_title & '" input setting before attempting to calibrate diffusion parameters.','Index Selector Message', all_index, all_index[@all_index=1],False,False);~
+	(der_index := x)~
+   )~
+);~
 
 NodeLocation: 248,152,1
 NodeSize: 64,40
-WindState: 2,171,237,1335,651
-DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
+WindState: 2,71,142,1618,776
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 
 Function Check_SpatID_Sel_PV()
 Title: Check Spatial ID Selection
@@ -756,7 +771,7 @@ NodeSize: 64,40
 WindState: 2,118,70,951,499
 DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 
-Function Sequential_Opt(stage: Atom; select_decis, decis_handles, all_spatial_id, der_spatial_id, all_sectors: Index; ag_stage1, aggreg_level; der_sectors, stored_decis, stored_status, decis_switch: Variable; optDef_handle: Handle)
+Function Sequential_Opt(stage: Atom; select_decis, decis_handles, all_spatial_id, der_spatial_id, all_sectors: Index; all_index: Optional Index; ag_stage1, aggreg_level; der_sectors, stored_decis, stored_status, decis_switch: Variable; der_index: Optional Variable; optDef_handle: Handle)
 Title: Sequential Optimization
 Description: This function is called by a button script and sequentially optimizes each selected spatial ID's diffusion coefficients. This sequential operation facilitates interruption of the script during the optimization, if desired, and stores each value after its optimization, to avoid losing any coefficients already calculated (e.g., in the event of an abort of the optimization). It only walks through each selected spatial ID relevant to that DER. A separate function is called for the "aggregate calibration" step, which differs by DER. This function can be used for any DER. ~
 ~
@@ -766,15 +781,17 @@ Description: This function is called by a button script and sequentially optimiz
 [all_spatial_id]: the index of all spatial IDs.~
 [der_spatial_id]: the spatial ID index used for the DER considered in the calibration.~
 [all_sectors]: the index for all sectors.~
+[all_index]: an optional generic static index in case the adoption logic is indexed by more than spatial IDs and sectors.~
 [ag_stage1]: a boolean flag indicating whether the first calibration stage should set the spatial IDs to the selected aggregation level (as defined by aggreg_level) (true=stage1 uses aggregate label).~
 [aggreg_level]: the label within the spatial ID index indicating the appropriate level of aggregation for the first stage of the calibration.~
 [der_sectors]: the sector index for the DER considered in the calibration.~
 [stored_decis]: the node where calibrated decision variables will be stored.~
 [stored_status]: the node where the optimization status will be stored.~
 [decis_switch]: a boolean flag indicating whether decision nodes or stored results will be used in the model logic (true=use decision nodes).~
+[der_index]: an optional generic selectable index in case the adoption logic is indexed by more than spatial IDs and sectors.~
 [optDef]: the handle to the variable where the optimization is defined.
 Definition: (decis_switch:=1); {Ensures the optimization uses the actual decision variables when calculating the objective, rather than the stored coefficients}~
-Check_Sector(all_sectors, der_sectors);  {Checks to ensure only one sector is selected for the diffusion parameter calibration}~
+Check_Sector(all_sectors, all_index, der_sectors, der_index);  {Checks to ensure only one sector or generic index element is selected for the diffusion parameter calibration}~
 {Check_Cost_Scenario(); }{Checks to ensure only one cost scenario is selected for the diffusion parameter calibration}~
 ~
 {assign local variables for use in the function}~
@@ -796,8 +813,13 @@ For i:=remaining_IDs DO (	~
    Local x[]:=select_decis DO (~
       LocalAlias optDefn:=optDef_handle;   {Assign the result, rather than the handle, of the optimization definition to this local Alias}~
       solution := IgnoreWarnings(OptSolution(IF (stage=1 AND NOT ag_stage1) THEN optDefn ELSE optDefn[der_spatial_id=i], x));~
-      status[all_spatial_id=i, all_sectors=der_sectors[@der_sectors=1]] := OptStatusText(IF (stage=1 AND NOT ag_stage1) THEN optDefn ELSE optDefn[der_spatial_id=i]);~
-      IF solution <> null THEN temp_stored_coeff[decis_handles=x, all_spatial_id=i, all_sectors=der_sectors[@der_sectors=1]] := solution~
+      IF IsNotSpecified(all_index)   {If optimization is only over spatial ID and sector indices}~
+      THEN (~
+         status[all_spatial_id=i, all_sectors=Slice(der_sectors,1)] := OptStatusText(IF (stage=1 AND NOT ag_stage1) THEN optDefn ELSE optDefn[der_spatial_id=i]);~
+         IF solution <> null THEN temp_stored_coeff[decis_handles=x, all_spatial_id=i, all_sectors=Slice(der_sectors,1)] := solution )~
+      ELSE (  {Else if there's a third optimization index}~
+         status[all_spatial_id=i, all_sectors=Slice(der_sectors,1), all_index=Slice(der_index,1)] := OptStatusText(IF (stage=1 AND NOT ag_stage1) THEN optDefn ELSE optDefn[der_spatial_id=i]);~
+         IF solution <> null THEN temp_stored_coeff[decis_handles=x, all_spatial_id=i, all_sectors=Slice(der_sectors,1), all_index=Slice(der_index,1)] := solution )~
    );~
    (stored_decis:=temp_stored_coeff); {assigns the new solution for each spatial ID to ensure solutions are captured in the event of an abort}~
    (stored_status := status); ~
@@ -807,10 +829,10 @@ For i:=remaining_IDs DO (	~
 (decis_switch:=0); {Returns the value of this input to zero to ensure stored coefficients are used in model calculations}
 NodeLocation: 384,152,1
 NodeSize: 64,40
-WindState: 2,6,59,1405,738
+WindState: 2,13,31,1405,738
 DisplayOutputs: Function OG_Multi_Stage_Calib
 
-Function Multi_Stage_Calibrat(select_stages, all_stages, all_spatial_id, nonAg_id, failed_id, calib_time, sim_time, select_decis, all_decis, decis_handles, all_sectors: Index; ag_stage1, trace_flag, calib_start, calib_end, dates_by_stage, decis_by_stage, setting_by_stage, aggreg_level; der_spatial_id, der_sectors, curr_stage, sim_start, sim_end, decis_switch, dates_in_opt, decis_in_opt, stored_decis, setting_in_opt, stored_status: Variable; optDef_handle: Handle)
+Function Multi_Stage_Calibrat(select_stages, all_stages, all_spatial_id, nonAg_id, failed_id, calib_time, sim_time, select_decis, all_decis, decis_handles, all_sectors: Index; all_index: Optional Index; ag_stage1, trace_flag, calib_start, calib_end, dates_by_stage, decis_by_stage, setting_by_stage, aggreg_level; der_spatial_id, der_sectors, curr_stage, sim_start, sim_end, decis_switch, dates_in_opt, decis_in_opt, stored_decis, setting_in_opt, stored_status: Variable; der_index: Optional Variable; optDef_handle: Handle)
 Title: Multi-Stage Calibration
 Description: This script specifies the multi-state sequence of calibration scripts as follows:~
 Step 1: start with calibrating the most aggregate data available (e.g., statewide, or service territory wide), using all historical dates (more data typically available at the aggregate level). Calculation diffusion coefficients (ad eff & WOM) for an assumed aggregate long run market share~
@@ -828,6 +850,7 @@ Step 2: .....~
 [all_decis]: an index of the names of all decision variables.~
 [decis_handles]: an index of handles to all decision variables that could be selected.~
 [all_sectors]: the index for all sectors.~
+[all_index]: an optional generic static index in case the adoption logic is indexed by more than spatial IDs and sectors.~
 [ag_stage1]: a boolean flag indicating whether the first calibration stage should set the spatial IDs to the selected aggregation level (as defined by aggreg_level) (true=stage1 uses aggregate label).~
 [trace_flag]: a boolean flag indicating whether the model will write to trace log during the calibration/optimization process (true=write).~
 [calib_start]: the start period for the calibration time.~
@@ -847,6 +870,7 @@ Step 2: .....~
 [stored_decis]: the node where calibrated decision variables will be stored.~
 [setting_in_opt]: the optimization engine settings applied to the current optimization.~
 [stored_status]: the node where the optimization status will be stored.~
+[der_index]: an optional generic selectable index in case the adoption logic is indexed by more than spatial IDs and sectors.~
 [optDef_handle]: the handle to the variable where the optimization is defined.
 Definition: IF (trace_flag AND Size(select_stages)>1) THEN MsgBox('Optimization text trace is on. It will not work when optimizing more than one stage. Please turn it off and then re-run the calibration, or run only one stage.', 5, 'Optimization Trace Message' ) ;~
 INDEX origIDs:=CopyIndex(der_spatial_id);   {Temporarily store the selected IDs}~
@@ -862,9 +886,9 @@ For i:=stage DO (~
    (decis_in_opt:=decis_by_stage[all_stages=i]); {Selects only those decision variables used in the given calibration stage}~
    (setting_in_opt:=setting_by_stage[all_stages=i]); {Adjusts the optimization engine settings per the calibration stage}~
    IF (Size(failed_id)<>0 OR curr_stage=1 OR Size(select_stages)=1) ~
-   THEN Sequential_Opt(i,  select_decis, decis_handles, all_spatial_id, der_spatial_id, all_sectors, ag_stage1, aggreg_level, der_sectors, stored_decis, stored_status, decis_switch, optDef_handle); {Runs the optimization and assigns best fit coefficients to the stored coefficients, but only if there are spatial IDs that have failed the goodness of fit test}~
+   THEN Sequential_Opt(i, select_decis, decis_handles, all_spatial_id, der_spatial_id, all_sectors, all_index, ag_stage1, aggreg_level, der_sectors, stored_decis, stored_status, decis_switch, der_index, optDef_handle); {Runs the optimization and assigns best fit coefficients to the stored coefficients, but only if there are spatial IDs that have failed the goodness of fit test}~
    IF (ag_stage1 AND i=1) THEN (der_spatial_id:=nonAg_id) ELSE Null;   {If stage 1 uses an aggregate element of the spatial ID, then select all of the non-aggregate spatial IDs before calculating R2}~
-   IF i=1 THEN Set_Starting_Coeff(all_sectors, all_spatial_id, der_spatial_id, aggreg_level, der_sectors, stored_decis, stored_status); {Sets starting coefficients for all spatial IDs to the value just calculated for the aggregate spatial ID that will be used for setting default coefficients. }~
+   IF i=1 THEN Set_Starting_Coeff(all_sectors, all_spatial_id, der_spatial_id, all_index, aggreg_level, der_sectors, stored_decis, stored_status, der_index); {Sets starting coefficients for all spatial IDs to the value just calculated for the aggregate spatial ID that will be used for setting default coefficients. }~
    IF i>1 THEN Set_Spat_ID_Fail_R2(failed_id, der_spatial_id); {Set the spatial ID selector to all spatial IDs that failed the goodness of fit test, except for the "aggregate" calibration}	~
 );~
 ~
@@ -872,10 +896,10 @@ For i:=stage DO (~
 (decis_in_opt:=@all_decis > 0);   {Select all decision variables again so that model can be manually forced to use decision variables by simply checking the box}
 NodeLocation: 384,64,1
 NodeSize: 64,40
-WindState: 2,144,6,1689,845
+WindState: 2,144,5,1689,846
 DisplayOutputs: Decision Dates_Incl_in_PV_Opt, Decision Opt_Settings_PV, Decision Opt_Settings_BESS
 
-Function Set_Starting_Coeff(all_sectors, all_spatial_id, der_spatial_id: Index; aggreg_level; der_sectors, stored_decis, stored_status: Variable)
+Function Set_Starting_Coeff(all_sectors, all_spatial_id, der_spatial_id: Index; all_index: Optional Index; aggreg_level; der_sectors, stored_decis, stored_status: Variable; der_index: Optional Variable)
 Title: Set Starting Coeff
 Description: This function sets the values of the starting coefficients for all Spatial IDs. This function is typically called AFTER calibrating aggregate adoption.~
 ~
@@ -884,26 +908,34 @@ This function must be called from within an optimization script to ensure that o
 [all_sectors]: the index for all sectors.~
 [all_spatial_id]: the index for all spatial IDs.~
 [der_spatial_id]: the spatial ID index used for the DER considered in the calibration.~
+[all_index]: an optional generic static index in case the adoption logic is indexed by more than spatial IDs and sectors.~
 [aggreg_level]: the label within the spatial ID index indicating the appropriate level of aggregation for the first stage of the calibration.~
 [der_sectors]: the sector index for the DER considered in the calibration.~
 [stored_decis]: the node where calibrated decision variables will be stored.~
-[stored_status]: the node where the optimization status will be stored.
-Definition: Check_Sector(all_sectors, der_sectors);~
+[stored_status]: the node where the optimization status will be stored.~
+[der_index]: an optional generic selectable index in case the adoption logic is indexed by more than spatial IDs and sectors.
+Definition: Check_Sector(all_sectors, all_index, der_sectors, der_index);~
 ~
 local coeff:=stored_decis;~
 local status:=stored_status;~
 ~
 local active_sector:=Slice(der_sectors,1);~
 ~
-(coeff[all_sectors=active_sector, all_spatial_id=der_spatial_id]:=stored_decis[all_spatial_id=aggreg_level, all_sectors=active_sector]);~
-(status[all_sectors=active_sector, all_spatial_id=der_spatial_id]:='Not Yet Calibrated');~
+IF IsNotSpecified(all_index)~
+THEN (~
+   (coeff[all_sectors=active_sector, all_spatial_id=der_spatial_id]:=stored_decis[all_spatial_id=aggreg_level, all_sectors=active_sector]);~
+   (status[all_sectors=active_sector, all_spatial_id=der_spatial_id]:='Not Yet Calibrated'))~
+ELSE (~
+   local active_element:=Slice(der_index,1);~
+   (coeff[all_sectors=active_sector, all_spatial_id=der_spatial_id, all_index=active_element]:=stored_decis[all_spatial_id=aggreg_level, all_sectors=active_sector, all_index=active_element]);~
+   (status[all_sectors=active_sector, all_spatial_id=der_spatial_id, all_index=active_element]:='Not Yet Calibrated') );~
 ~
 (stored_decis:=coeff);~
 (stored_status:=status);~
 
 NodeLocation: 520,64,1
 NodeSize: 64,40
-WindState: 2,58,81,1322,764
+WindState: 2,85,145,1520,764
 DisplayOutputs: Function OG_Multi_Stage_Calib
 
 Decision Infeasible_Label
@@ -997,456 +1029,6 @@ NodeLocation: 268,304,1
 NodeSize: 68,16
 NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,0
 Original: Infeasible_Label
-
-Constant Test_2_D
-Title: Test 2-D
-Definition: Table(All_Spatial_ID,All_Sectors)
-NodeLocation: 488,432,1
-NodeSize: 64,40
-ValueState: 2,356,362,416,303,0,MIDM
-
-Constant Test_3_D
-Title: Test 3-D
-Definition: Table(All_Spatial_ID,All_Sectors,Storage_System_Type)(~
-1,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0)
-NodeLocation: 632,432,1
-NodeSize: 64,40
-ValueState: 2,388,254,940,652,0,MIDM
-Att_ResultSliceState: [Storage_System_Type,1,All_Sectors,1,All_Spatial_ID,1]
-
-Function Store_Data(ind1, ind2: Index; ind3: Optional Index; , x: Variable)
-Title: Store Data
-Definition: VAR y:=x;~
-y[ind1=Slice(ind1,1), ind2=Slice(ind2,1), ind3=Slice(ind3,1)] := 1;~
-(x:=y);
-NodeLocation: 344,432,1
-NodeSize: 64,40
-WindState: 2,349,459,720,407
-
-Button Store_2_D
-Title: Store 2-D
-NodeLocation: 488,536,1
-NodeSize: 64,40
-OnClick: Store_Data(All_Spatial_ID, All_Sectors, , Test_2_D)
-
-Button Store_3_D
-Title: Store 3-D
-NodeLocation: 632,536,1
-NodeSize: 64,40
-OnClick: Store_Data(All_Spatial_ID, All_Sectors, Storage_System_Type, Test_3_D)
 
 Close Global_Calibration_L
 
