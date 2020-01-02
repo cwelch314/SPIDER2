@@ -44,6 +44,7 @@ NodeLocation: 104,152,1
 NodeSize: 64,40
 DefnState: 2,248,250,964,440,,DFNM
 Aliases: FormNode Fo1534914693
+DisplayOutputs: Variable NewConst_Elig_Facto1
 TableCellDefault: Choice(Static_Profile_Names,1,0)
 {!40200|Att_ChoiceIndexes: Index All_Sectors}
 
@@ -80,7 +81,7 @@ Definition: ['Residential','NonResidential','EV Combined']
 NodeLocation: 248,64,1
 NodeSize: 64,40
 ValueState: 2,847,306,416,303,0,MIDM
-DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Function Sequential_Opt_PV1, Function Set_Start_Coeff_PV1, Function Sequential_Opt_PV3, Function OG_Sequential_Optim1
+DisplayOutputs: Function Sequential_Opt_PV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Variable NewConst_Elig_Facto1
 Att_GraphIndexRange: 1,,,,,,10
 {!40300|Att_SlicerPopupSize: 457,126}
 Att_PrevIndexValue: ['Residential','NonResidential','EV Combined']
@@ -423,7 +424,7 @@ Att_PrevIndexValue: ['Vehicle Average Lifetime','Vehicle Cost Logit Coefficient'
 
 Constant StructSingCell_Input
 Title: Structural Single Cell Inputs
-Definition: Table(StructSingCell_Names)(15.5,-4.1,9,6,2017,1-Jan-2020,4,0.1,0.126675,0.096590263,0.742,0.15,20)
+Definition: Table(StructSingCell_Names)(15.5,-4.1,9,6,2017,1-Jan-2020,2,0.1,0.126675,0.096590263,0.742,0.15,20)
 NodeLocation: 488,272,1
 NodeSize: 64,40
 DefnState: 2,260,266,594,509,0,DFNM
