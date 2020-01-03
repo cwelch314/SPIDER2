@@ -5786,12 +5786,12 @@ ValueState: 2,368,75,987,726,0,MIDM
 ReformVal: [db_Fields,db_Records]
 
 Index dbFields_Ordered
+Att_PrevIndexValue: ['Utility','Service Zip','Customer Sector','App Approved Date','System Size AC']
 Title: dbFields Ordered
 Description: database fields ordered such that the system size in kW AC is the LAST value. This facilitates using the MdTable function to aggregate the data.
 Definition: CopyIndex(Order_of_Columns)
 NodeLocation: 408,816,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Utility','Service Zip','Customer Sector','App Approved Date','System Size AC']
 
 Variable Intercon_Reordered
 Title: Intercon Reordered
@@ -6027,11 +6027,11 @@ WindState: 2,581,29,720,350
 Aliases: FormNode Fo1535331934, FormNode Fo1537568831
 
 Index Column_Number
+Att_PrevIndexValue: [1,2,3,4,5]
 Title: Column Number
 Definition: 1..Number_of_Data_Colum
 NodeLocation: 272,816,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5]
 
 FormNode Fo1535331934
 Title: Number of Data Columns
@@ -9334,13 +9334,13 @@ NodeSize: 156,116
 NodeInfo: 1,0,0,1,1,1,0,,1,,0,,,
 
 Index db_Fields
+Att_PrevIndexValue: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 Title: db Fields
 Definition: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 NodeLocation: 576,416,1
 NodeSize: 56,32
 ValueState: 2,347,400,416,303,,MIDM
 {!40300|Att_SlicerPopupSize: 227,112}
-Att_PrevIndexValue: ['Utility','Service Zip','System Size DC','System Size AC','Customer Sector','App Approved Date']
 
 Index db_Records
 Att_PrevIndexValue: ['Empty']
