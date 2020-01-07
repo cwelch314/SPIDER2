@@ -86,7 +86,6 @@ Att_GraphIndexRange: 1,,,,,,10
 Att_PrevIndexValue: ['Residential','NonResidential','EV Combined']
 
 Index Selected_Utilities
-Att_PrevIndexValue: ['SDGE']
 Title: Selected Utilities
 Description: This index is calculated based on which utilities are included in the dataset provided.
 Definition: subset(Select_Utility)
@@ -95,6 +94,7 @@ NodeSize: 64,40
 WindState: 2,1148,8,720,531
 ValueState: 2,1273,65,250,172,,MIDM
 {!40300|Att_SlicerPopupSize: 367,70}
+Att_PrevIndexValue: ['SDGE']
 
 Text Te1524758379
 Title: Insert fraction of housing stock for overlapping utility ZIP codes
@@ -2809,12 +2809,12 @@ NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,50,58,1524,645,17
 
 Index Import_Fixed_Params
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 Title: Import Fixed Params
 Definition: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 NodeLocation: 88,80,1
 NodeSize: 64,40
 WindState: 2,651,5,720,350
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
 
 Decision Max_Imported_Dim
 Title: Max Imported Dimensions
@@ -2836,12 +2836,12 @@ NodeLocation: 88,272,1
 NodeSize: 64,40
 
 Index Excel_Import_Params
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index','Fact Column Index 1','Fact Column Index 2','Fact Column Index 3']
 Title: Excel Import Parameters
 Definition: Concat(Import_Fixed_Params, Fact_Col_Index_Param)
 NodeLocation: 88,360,1
 NodeSize: 64,40
 ValueState: 2,104,106,406,324,,MIDM
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index','Fact Column Index 1','Fact Column Index 2','Fact Column Index 3']
 
 Variable Variable_Identifier
 Title: Variable Identifier
@@ -3112,12 +3112,12 @@ NodeLocation: 544,256,1
 NodeSize: 64,40
 
 Index Excel_Components
+Att_PrevIndexValue: ['Excel Column','Excel Row']
 Title: Excel Components
 Definition: ['Excel Column','Excel Row']
 IndexVals: ['item 1']
 NodeLocation: 544,344,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Excel Column','Excel Row']
 
 Decision Excel_Row_Label
 Title: Excel Row Label

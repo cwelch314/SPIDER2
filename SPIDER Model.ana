@@ -92,7 +92,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,152,14,1727,811,17
+DiagState: 2,86,242,1727,811,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
@@ -628,7 +628,7 @@ Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year B
 Decision PV_Economics
 Title: PV Economics
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Econ_Titles1,1,0)
+Definition: Choice(PV_Econ_Titles1,2,0)
 NodeLocation: 608,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -996,7 +996,7 @@ Original: Storage_Dispatch_Out
 Decision Storage_Dispatch
 Title: Storage Dispatch
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Dispatch_Tit,2,0)
+Definition: Choice(Storage_Dispatch_Tit,1,0)
 NodeLocation: 608,1160,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1234,11 +1234,11 @@ OnClick: FOR J:=@Dropdown_Vars DO (~
 
 
 Index Not_Applicable
-Att_PrevIndexValue: ['Not Applicable to Study']
 Title: Not Applicable
 Definition: ['Not Applicable to Study']
 NodeLocation: 1920,584,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Not Applicable to Study']
 
 Decision Hidden_Dropdown
 Title: Hidden Dropdown
