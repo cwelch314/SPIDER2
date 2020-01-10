@@ -794,13 +794,13 @@ WindState: 2,524,317,720,350
 DisplayOutputs: Function MultiStage_CalibrPV0
 
 Index PV_Calibration_Stage
+Att_PrevIndexValue: [1,2,3,4,5]
 Title: PV Calibration Stage
 Definition: 1..Max_PV_Calib_Stages
 NodeLocation: 568,176,1
 NodeSize: 64,40
 ValueState: 2,792,295,416,303,,MIDM
 DisplayOutputs: Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
-Att_PrevIndexValue: [1,2,3,4,5]
 
 Constant PV_Decisions_by_Stg
 Title: PV Decision Variables by Stage
@@ -2817,6 +2817,7 @@ Att_ColorRole: Null
 {!50000|Att_ColumnWidths: [,PV_Stored_Decisions,\([,,,,37,33,37,37,174,604])]}
 
 Index PV_Stored_Decisions
+Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coeff,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef,'Opt Status']
 Title: PV Stored Decisions
 Definition: Concat(All_PV_Dec_Handles, Opt_Status_Label)
 NodeLocation: 608,552,1
@@ -2824,7 +2825,6 @@ NodeSize: 64,40
 ValueState: 2,46,379,416,303,0,MIDM
 MetaOnly: 1
 {!40300|Att_SlicerPopupSize: 242,168}
-Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coeff,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef,'Opt Status']
 
 Constant Stored_Opt_Status_PV
 Title: Stored Opt Status PV
