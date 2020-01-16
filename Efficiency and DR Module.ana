@@ -24,7 +24,7 @@ Author: coryw
 Date: Fri, Dec 14, 2018 4:50 PM
 NodeLocation: 112,936,1
 NodeSize: 64,40
-DiagState: 2,394,254,1225,566,17
+DiagState: 2,394,254,1225,531,17
 NodeColor: 57311,57311,57311
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
@@ -59,12 +59,6 @@ NodeColor: 65535,1,1
 ReformVal: [Start_of_Year,Spatial_IDs]
 Att__TotalsIndex: [Spatial_IDs]
 Att_ResultSliceState: [Spatial_IDs,0,Start_of_Year,1]
-
-Index DER_Types_Subset
-Title: DER Types
-Definition: ['Solar PV','Electric Vehicles']
-NodeLocation: 256,288,1
-NodeSize: 64,40
 
 Variable Energy_Impacts
 Title: Energy Impacts
@@ -664,7 +658,7 @@ Close Battery_Impact
 Index DER_Type_and_Net
 Title: DER Type and Net
 Definition: Concat(All_DER_Types, Net_Impact_Label)
-NodeLocation: 256,376,1
+NodeLocation: 264,288,1
 NodeSize: 64,40
 
 Chance Demand_Uncertainty
@@ -724,7 +718,7 @@ Att_XRole: -1
 Decision Net_Impact_Label
 Title: Net Impact Label
 Definition: 'Net Impact'
-NodeLocation: 256,464,1
+NodeLocation: 264,376,1
 NodeSize: 64,40
 
 Variable Energy_Impacts_witho
@@ -759,7 +753,7 @@ Att_ResultSliceState: [Spatial_IDs,0,All_DER_Types,0,Start_of_Year,18]
 Decision PV_DER_Label
 Title: PV DER Label
 Definition: Choice(All_DER_Types,1,0)
-NodeLocation: 112,200,1
+NodeLocation: 104,104,1
 NodeSize: 64,40
 Aliases: FormNode Fo1543006097
 {!40200|Att_ChoiceIndexes: Index All_DER_Types}
@@ -767,7 +761,7 @@ Aliases: FormNode Fo1543006097
 FormNode Fo1543006097
 Title: Solar PV Label
 Definition: 0
-NodeLocation: 112,248,1
+NodeLocation: 104,152,1
 NodeSize: 64,16
 NodeInfo: 1,0,0,0,0,0,0,86,0,,0,,,0
 Original: PV_DER_Label
@@ -775,7 +769,7 @@ Original: PV_DER_Label
 Decision EV_DER_Label
 Title: EV DER Label
 Definition: Choice(All_DER_Types,2,0)
-NodeLocation: 112,312,1
+NodeLocation: 104,216,1
 NodeSize: 64,40
 Aliases: FormNode Fo1543009026
 {!40200|Att_ChoiceIndexes: Index All_DER_Types}
@@ -783,10 +777,26 @@ Aliases: FormNode Fo1543009026
 FormNode Fo1543009026
 Title: Solar PV Label
 Definition: 0
-NodeLocation: 112,360,1
+NodeLocation: 104,264,1
 NodeSize: 64,16
 NodeInfo: 1,0,0,0,0,0,0,86,0,,0,,,0
 Original: EV_DER_Label
+
+Decision BESS_DER_Label
+Title: BESS DER Label
+Definition: Choice(All_DER_Types,5,0)
+NodeLocation: 104,328,1
+NodeSize: 64,40
+Aliases: FormNode Fo1579112009
+{!40200|Att_ChoiceIndexes: Index All_DER_Types}
+
+FormNode Fo1579112009
+Title: Solar PV Label
+Definition: 0
+NodeLocation: 104,376,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,86,0,,0,,,0
+Original: BESS_DER_Label
 
 Close Work_in_Progress
 
