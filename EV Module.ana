@@ -17923,7 +17923,7 @@ Date: Fri, Jun 22, 2018 10:48 AM
 NodeLocation: 493,664,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,85,19,1219,554,17
+DiagState: 2,207,1,1219,554,17
 NodeColor: 57311,57311,57311
 {!40400|CloudPlayerStyles: Show_Object:no}
 {!40204-40399|AWP_Attrib:Show_Object:no}
@@ -17999,7 +17999,7 @@ NodeLocation: 88,376,1
 NodeSize: 64,40
 WindState: 2,11,140,720,350
 ValueState: 2,795,362,320,151,,MIDM
-Aliases: FormNode Fo1543022789, FormNode Fo1529509651, FormNode Fo1530223615, FormNode Fo1553204994
+Aliases: FormNode Fo1529509651, FormNode Fo1530223615, FormNode Fo1553204994
 {!40200|Att_ChoiceIndexes: Index Veh_Sim_Strt_Yr_Opti}
 
 Index Veh_Sim_Strt_Yr_Opti
@@ -18018,7 +18018,7 @@ Description: The final period of the vehicle simulated forecast.
 Definition: Choice(Veh_Sim_End_Yr_Opt,42,30)
 NodeLocation: 240,376,1
 NodeSize: 64,40
-Aliases: FormNode Fo1543022790, FormNode Fo1529509652, FormNode Fo1530223614, FormNode Fo1553204993
+Aliases: FormNode Fo1529509652, FormNode Fo1530223614, FormNode Fo1553204993
 {!40200|Att_ChoiceIndexes: Index Veh_Sim_End_Yr_Opt}
 
 Index Veh_Sim_End_Yr_Opt
@@ -18054,7 +18054,6 @@ NodeLocation: 216,264,-1
 NodeSize: 176,40
 
 Index Time_Vehicles
-Att_PrevIndexValue: [1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030]
 Title: Time-Vehicles
 Units: Years
 Description: Ths is the time index used for simulating vehicle adoption. It is allowed to be different from other DERs, for instance, due to differences in the granularity of available historical data on adoption (e.g., solar PV data are monthly, whereas vehicle data are, at best, quarterly, or in some cases, annual)
@@ -18066,6 +18065,7 @@ ValueState: 2,532,6,915,624,0,MIDM
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
 Att_GraphIndexRange: 1,,,,,,10
 {!40300|Att_SlicerPopupSize: 357,742}
+Att_PrevIndexValue: [1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030]
 
 Index Annual_EV_Time
 Title: Annual EV Time
@@ -18096,7 +18096,7 @@ MakeDate(years, monthOffset, days)~
 NodeLocation: 672,376,1
 NodeSize: 64,40
 WindState: 2,526,3,1216,473
-ValueState: 2,367,190,572,701,,MIDM
+ValueState: 2,367,65,572,826,0,MIDM
 
 Variable EV_Sim_Start_Minus_1
 Title: EV Sim Start Minus 1
@@ -18132,6 +18132,22 @@ NodeLocation: 488,592,1
 NodeSize: 64,40
 WindState: 2,9,326,720,350
 ValueState: 2,407,220,416,462,0,MIDM
+
+Variable EV_CalStart_Minus1
+Title: EV Calib Start Minus 1
+Definition: Slice(Veh_Sim_Strt_Yr_Opti, PositionInIndex(Veh_Sim_Strt_Yr_Opti, EV_Calibration_Start, Veh_Sim_Strt_Yr_Opti) - 1)
+NodeLocation: 184,592,1
+NodeSize: 64,40
+WindState: 2,20,-7,720,350
+ValueState: 2,5,76,487,326,,MIDM
+
+Variable EV_Calib_End_Plus1
+Title: EV Calib End Plus 1
+Definition: Slice(Veh_Sim_Strt_Yr_Opti, PositionInIndex(Veh_Sim_Strt_Yr_Opti, EV_Calibration_End, Veh_Sim_Strt_Yr_Opti) + 1)
+NodeLocation: 328,592,1
+NodeSize: 64,40
+WindState: 2,20,-7,720,350
+ValueState: 2,34,185,487,326,,MIDM
 
 Close EV_Time
 
@@ -19420,6 +19436,7 @@ Aliases: FormNode Fo1556244776
 {!40200|Att_ChoiceIndexes: Index Vehicle_Types}
 
 Index Vehicle_Types
+Att_PrevIndexValue: ['Electric (BEV or PHEV)','Non-Electric']
 Title: Vehicle Types
 Description: The different vehicle classifications to be modeled for marketshare and stock tracking calculations.
 Definition: ['Electric (BEV or PHEV)','Non-Electric']
@@ -19428,7 +19445,6 @@ NodeSize: 64,40
 WindState: 2,250,69,942,595
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 282,28}
-Att_PrevIndexValue: ['Electric (BEV or PHEV)','Non-Electric']
 
 Index Vehicle_Vintage
 Title: Vehicle Vintage
@@ -19485,7 +19501,7 @@ Title: EV Cumulative Data Types
 Definition: Subset(EV_Map_Increm_Cumul = Null)
 NodeLocation: 1024,168,1
 NodeSize: 64,40
-WindState: 2,1358,183,720,350
+WindState: 2,1060,267,720,350
 
 Index EV_Adopt_Types_None
 Title: EV Adopt Data Types with None
@@ -22852,7 +22868,7 @@ Date: Sun, Aug 5, 2018 8:27 AM
 NodeLocation: 176,112,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-5,75,1357,565,17
+DiagState: 2,147,13,1357,565,17
 
 Variable Qty_Fail_Spat_ID_EV
 Title: Qty of Failed Spatial IDs
@@ -22863,11 +22879,11 @@ NodeSize: 64,40
 ValueState: 2,995,312,416,303,,MIDM
 
 Index EV_Calibration_Stage
-Att_PrevIndexValue: [1,2,3,4,5,6]
 Title: EV Calibration Stage
 Definition: 1..Max_EV_Calib_Stages
 NodeLocation: 664,176,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2,3,4,5,6]
 
 Constant EV_Decisions_by_Stg
 Title: EV Decision Variables by Stage
@@ -23132,7 +23148,7 @@ Multi_Stage_Calibrat(Stages_to_Calib_EV, EV_Calibration_Stage, All_Spatial_ID, S
 
 Button Set_to_Failed_EV
 Title: Set Spatial ID to Failed Calib
-NodeLocation: 440,520,1
+NodeLocation: 440,432,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,1,,0,,,
 WindState: 2,675,5,720,350
@@ -23148,13 +23164,13 @@ THEN (EV_Spatial_ID:=Failed_Spat_ID_EV)
 
 Button Set_EV_Time_to_Calib
 Title: Set EV Time to Calib Time
-NodeLocation: 440,432,1
+NodeLocation: 712,432,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,1,,0,,,
 WindState: 2,22,479,720,350
 Aliases: Alias Al1553204913
 NodeColor: 49344,49344,49344
-OnClick: Set_SimTime_CalTime(EV_Calibration_Start, EV_Calibration_End, Vehicle_Sim_Start_Yr, Vehicle_Sim_End_Yr)
+OnClick: Set_Simulation_Time(EV_Calibration_Start, EV_Calibration_End, Vehicle_Sim_Start_Yr, Vehicle_Sim_End_Yr)
 
 Button Calibr_All_EV_Sect
 Title: Calibrate All EV Sectors
@@ -23272,13 +23288,13 @@ Aliases: Alias Al1530222087
 OnClick: Reset_all_StoredCoef()
 
 Index Aggregate_EV_LRMS
-Att_PrevIndexValue: [0.25,0.5,0.75]
 Title: Aggregate EV Long Run Mkt Share
 Description: This is the scenario for assumed long run market share of the most aggregated output used for establishing default diffusion parameters. It is not necessarily the long run market share for any given spatial ID.
 Definition: [0.25,0.5,0.75]
 NodeLocation: 624,440,1
 NodeSize: 72,32
 WindState: 2,1848,122,720,350
+Att_PrevIndexValue: [0.25,0.5,0.75]
 
 Decision Spatial_ID_for_Assig
 Title: Spatial ID for Assigning Default Coeff
@@ -24070,6 +24086,16 @@ Original: EV_Dec_Var_Bounds
 Close Old_EV_Calibration_G
 
 Close Old_Logic
+
+Button Set_EV_Time_to_Fcst
+Title: Set EV Time to Forecast Time
+NodeLocation: 712,520,1
+NodeSize: 64,40
+NodeInfo: 1,0,0,1,1,1,0,,1,,0,,,
+WindState: 2,22,479,720,350
+Aliases: Alias Al1579722243
+NodeColor: 49344,49344,49344
+OnClick: Set_Simulation_Time(EV_Calibration_Start, Vehicle_Stock_End_Yr, Vehicle_Sim_Start_Yr, Vehicle_Sim_End_Yr)
 
 Close Multi_Stage_Calibra1
 
@@ -25506,8 +25532,8 @@ NodeFont: Arial,24
 
 Text Te1553197511
 Title: Key Output
-NodeLocation: 456,608,-3
-NodeSize: 448,200
+NodeLocation: 456,628,-3
+NodeSize: 448,220
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
 WindState: 2,102,83,476,224
 NodeFont: Arial,24
@@ -25544,7 +25570,7 @@ Original: Set_to_Failed_EV
 Alias Al1553204913
 Title: Set EV Time to Calib Time
 Definition: 1
-NodeLocation: 760,752,1
+NodeLocation: 760,728,1
 NodeSize: 64,32
 NodeInfo: 1,0,0,1,1,1,0,,1,,0,,,
 Original: Set_EV_Time_to_Calib
@@ -25805,7 +25831,7 @@ Description: 	• Change BEV & PHEV logit tech preference coefficients to zero~
 	• After running stage 2 (logit spatial coefficient), review the zip codes that failed the R2 test~
 		○ In EV_Spatial_ID, deselect any failed zip codes that don't have any historic adoption (this will ensure that the same statewide marketing and WOM factors are still applied to these zips)~
 	• Run stage 3-6
-NodeLocation: 512,924,-1
+NodeLocation: 512,972,-1
 NodeSize: 504,108
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
 NodeColor: 57311,57311,57311
@@ -25821,6 +25847,15 @@ NodeSize: 212,20
 NodeInfo: 1,,,,,,,72,,,,,
 NodeColor: 65278,37008,6168
 Original: PHEV_Market_Share
+
+Alias Al1579722243
+Title: Set EV Time to Forecast Time
+Definition: 1
+NodeLocation: 760,800,1
+NodeSize: 64,32
+NodeInfo: 1,0,0,1,1,1,0,,1,,0,,,
+NodeColor: 49344,49344,49344
+Original: Set_EV_Time_to_Fcst
 
 Close Calibrate_Coefficien
 
