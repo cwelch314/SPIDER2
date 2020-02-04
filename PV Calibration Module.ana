@@ -794,13 +794,13 @@ WindState: 2,524,317,720,350
 DisplayOutputs: Function MultiStage_CalibrPV0
 
 Index PV_Calibration_Stage
+Att_PrevIndexValue: [1,2,3,4,5]
 Title: PV Calibration Stage
 Definition: 1..Max_PV_Calib_Stages
 NodeLocation: 568,176,1
 NodeSize: 64,40
 ValueState: 2,792,295,416,303,,MIDM
 DisplayOutputs: Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
-Att_PrevIndexValue: [1,2,3,4,5]
 
 Constant PV_Decisions_by_Stg
 Title: PV Decision Variables by Stage
@@ -2827,6 +2827,7 @@ Att_ColorRole: Null
 {!50000|Att_ColumnWidths: [,PV_Stored_Decisions,\([,,,,37,33,37,37,174,604])]}
 
 Index PV_Stored_Decisions
+Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coeff,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef,'Opt Status']
 Title: PV Stored Decisions
 Definition: Concat(All_PV_Dec_Handles, Opt_Status_Label)
 NodeLocation: 608,552,1
@@ -2834,7 +2835,6 @@ NodeSize: 64,40
 ValueState: 2,46,379,416,303,0,MIDM
 MetaOnly: 1
 {!40300|Att_SlicerPopupSize: 242,168}
-Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coeff,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef,'Opt Status']
 
 Constant Stored_Opt_Status_PV
 Title: Stored Opt Status PV
@@ -3685,7 +3685,7 @@ ValueState: 2,73,39,1278,798,1,MIDM
 GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_AreaFill Graph_Primary_Valdim:0~
 SymbolSize:9
-ReformVal: [Output_Time,Act_vs_Sim]
+ReformVal: [Impact_Year,Act_vs_Sim]
 NumberFormat: 2,F,4,4,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: []
 Att_ResultSliceState: [DER_Types_Stk_Units,1,Spatial_IDs_with_Agg,80,Act_vs_Sim,1,Output_Time,1]
@@ -3695,16 +3695,16 @@ Title: Sim vs Act Vehicle Stock Output
 Units: vehicles
 Definition: VAR vehicles:=Sum(Sim_vs_Act_EV_Stock[EV_Spatial_ID=Spatial_IDs_with_Agg, @Sel_Ag_EV_LRMS=1], EV_Sectors);~
 ~
-IF (Output_Time <= Max(Time_Vehicles)) AND (Act_vs_Sim = Simulated_Label)~
-THEN LinearInterp(Time_Vehicles, vehicles, Output_Time, Time_Vehicles)~
+IF (Impact_Year <= Max(Time_Vehicles)) AND (Act_vs_Sim = Simulated_Label)~
+THEN LinearInterp(Time_Vehicles, vehicles, Impact_Year, Time_Vehicles)~
 ELSE IF Act_vs_Sim = Actual_Label ~
-THEN IgnoreWarnings(vehicles[Time_Vehicles=Output_Time])~
+THEN IgnoreWarnings(vehicles[Time_Vehicles=Impact_Year])~
 ELSE Null
 NodeLocation: 240,160,1
 NodeSize: 64,40
 WindState: 2,102,82,1050,513
 ValueState: 2,324,78,1301,739,1,MIDM
-ReformVal: [Output_Time,Act_vs_Sim]
+ReformVal: [Impact_Year,Act_vs_Sim]
 Att__TotalsIndex: [Spatial_IDs]
 Att_ResultSliceState: [Spatial_IDs,0,Act_vs_Sim,1,Output_Time,1]
 
@@ -3713,16 +3713,16 @@ Title: Sim vs Act PV System Output
 Units: systems
 Definition: VAR systems:=Sum(Sim_vs_Act_PV_System[PV_Spatial_ID=Spatial_IDs_with_Agg], PV_Sectors);~
 ~
-IF (Output_Time <= Max(Time_Solar_PV)) AND (Act_vs_Sim = Simulated_Label)~
-THEN LinearInterp(Time_Solar_PV, systems, Output_Time, Time_Solar_PV)~
+IF (Impact_Year <= Max(Time_Solar_PV)) AND (Act_vs_Sim = Simulated_Label)~
+THEN LinearInterp(Time_Solar_PV, systems, Impact_Year, Time_Solar_PV)~
 ELSE IF Act_vs_Sim = Actual_Label ~
-THEN IgnoreWarnings(systems[Time_Solar_PV=Output_Time])~
+THEN IgnoreWarnings(systems[Time_Solar_PV=Impact_Year])~
 ELSE Null~
 
 NodeLocation: 240,72,1
 NodeSize: 64,40
 ValueState: 2,7,38,1380,691,1,MIDM
-ReformVal: [Output_Time,Act_vs_Sim]
+ReformVal: [Impact_Year,Act_vs_Sim]
 Att__TotalsIndex: [Spatial_IDs]
 Att_ResultSliceState: [Spatial_IDs,0,Act_vs_Sim,1,Output_Time,1]
 
@@ -3745,7 +3745,7 @@ ValueState: 2,30,29,1278,798,1,MIDM
 GraphSetup: SymbolSize:9~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_Stacked_Lines Graph_Primary_Valdim:0
-ReformVal: [Output_Time,Act_vs_Sim]
+ReformVal: [Impact_Year,Act_vs_Sim]
 NumberFormat: 2,F,4,4,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: []
 Att_ResultSliceState: [DER_Types_Stk_Units,1,Spatial_IDs_with_Agg,2,Act_vs_Sim,1,Output_Time,1]
@@ -3755,16 +3755,16 @@ Title: Sim vs Act Vehicle Sales Output
 Units: vehicles/year
 Definition: VAR vehicles:=Sum(Sim_vs_Act_EV_Sales[EV_Spatial_ID=Spatial_IDs_with_Agg, @Sel_Ag_EV_LRMS=1], EV_Sectors);~
 ~
-IF (Output_Time <= Max(Time_Vehicles)) AND (Act_vs_Sim = Simulated_Label)~
-THEN LinearInterp(Time_Vehicles, vehicles, Output_Time, Time_Vehicles)~
+IF (Impact_Year <= Max(Time_Vehicles)) AND (Act_vs_Sim = Simulated_Label)~
+THEN LinearInterp(Time_Vehicles, vehicles, Impact_Year, Time_Vehicles)~
 ELSE IF Act_vs_Sim = Actual_Label ~
-THEN IgnoreWarnings(vehicles[Time_Vehicles=Output_Time])~
+THEN IgnoreWarnings(vehicles[Time_Vehicles=Impact_Year])~
 ELSE Null
 NodeLocation: 384,160,1
 NodeSize: 64,40
 WindState: 2,102,82,1050,513
 ValueState: 2,324,78,1301,739,1,MIDM
-ReformVal: [Output_Time,Act_vs_Sim]
+ReformVal: [Impact_Year,Act_vs_Sim]
 Att__TotalsIndex: [Spatial_IDs]
 Att_ResultSliceState: [Spatial_IDs,0,Act_vs_Sim,1,Output_Time,1]
 
@@ -3773,16 +3773,16 @@ Title: Sim vs Act PV Install Output
 Units: systems/year
 Definition: VAR systems:=Sum(Sim_vs_Act_PV_Rate[PV_Spatial_ID=Spatial_IDs_with_Agg], PV_Sectors);~
 ~
-IF (Output_Time <= Max(Time_Solar_PV)) AND (Act_vs_Sim = Simulated_Label)~
-THEN LinearInterp(Time_Solar_PV, systems, Output_Time, Time_Solar_PV)~
+IF (Impact_Year <= Max(Time_Solar_PV)) AND (Act_vs_Sim = Simulated_Label)~
+THEN LinearInterp(Time_Solar_PV, systems, Impact_Year, Time_Solar_PV)~
 ELSE IF Act_vs_Sim = Actual_Label ~
-THEN IgnoreWarnings(systems[Time_Solar_PV=Output_Time])~
+THEN IgnoreWarnings(systems[Time_Solar_PV=Impact_Year])~
 ELSE Null~
 
 NodeLocation: 384,72,1
 NodeSize: 64,40
 ValueState: 2,7,38,1380,691,1,MIDM
-ReformVal: [Output_Time,Act_vs_Sim]
+ReformVal: [Impact_Year,Act_vs_Sim]
 Att__TotalsIndex: [Spatial_IDs]
 Att_ResultSliceState: [Spatial_IDs,0,Act_vs_Sim,1,Output_Time,1]
 

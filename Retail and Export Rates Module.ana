@@ -494,7 +494,7 @@ Definition: Rates[Rate_Names=Rate_Names_and_Start, All_Data_Types=DataType_by_Ra
 NodeLocation: 576,296,1
 NodeSize: 64,40
 WindState: 2,102,82,1339,449
-ValueState: 2,230,15,1390,873,1,MIDM
+ValueState: 2,65,49,1168,793,1,MIDM
 GraphSetup: Graph_LineThickness:5~
 Graph_HLabelRotation:90~
 ShowKey:1~
@@ -504,7 +504,7 @@ Att_StackedBar Graph_Primary_Valdim:0~
 {!50007|Graph_BarOutline:0}
 ReformVal: [Time_of_Day,Rate_Component]
 NumberFormat: 2,F,4,2,0,0,4,1,$,0,"ABBREV",0,,,0,0,14
-Att_ResultSliceState: [Month,8,Rate_Names_and_Start,4,Tiers,1,Rate_Component,1,Day_Type_and_Hour,1]
+Att_ResultSliceState: [Month,9,Rate_Names_and_Start,4,Tiers,1,Rate_Component,1,Day_Type_and_Hour,1]
 {!40700|CellFormatExpression: CellFill(IF RatesOnlyTransp[Rate_Names=Rate_to_View, All_Data_Types=Data_Type_to_View] < 0 THEN 'Green' ELSE 'Red', .2+.6*Abs(RatesOnlyTransp[Rate_Names=Rate_to_View, All_Data_Types=Data_Type_to_View] ))}
 
 Variable RatesOnlyTransp
@@ -973,7 +973,7 @@ Definition: Subset(Active_Tiers)
 NodeLocation: 976,184,1
 NodeSize: 64,40
 WindState: 2,297,6,1230,840
-{!40300|Att_SlicerPopupSize: 262,56}
+{!40300|Att_SlicerPopupSize: 276,104}
 
 Index Data_Attribute
 Title: Data Attribute
@@ -1159,7 +1159,6 @@ NodeLocation: 256,264,1
 NodeSize: 64,40
 
 Index All_Periods
-Att_PrevIndexValue: ['period0','period1','period2','period3','period4','period5','period6','period7','period8','period9','period10','period11','period12','period13','period14']
 Title: All Periods
 Definition: #Find_Valid_TiersPrds[.subscripts='periods']
 NodeLocation: 832,272,1
@@ -1167,6 +1166,7 @@ NodeSize: 64,40
 WindState: 2,98,82,1217,840
 ValueState: 2,548,427,416,430,,MIDM
 {!40300|Att_SlicerPopupSize: 227,238}
+Att_PrevIndexValue: ['period0','period1','period2','period3','period4','period5','period6','period7','period8','period9','period10','period11','period12','period13','period14']
 
 Index All_Tiers
 Title: All Tiers
