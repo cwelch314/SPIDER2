@@ -628,7 +628,7 @@ Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year B
 Decision PV_Economics
 Title: PV Economics
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Econ_Titles1,9,0)
+Definition: Choice(PV_Econ_Titles1,8,0)
 NodeLocation: 608,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -17066,7 +17066,7 @@ Definition: VAR totals:=Sum(Measure_Cost_Benef, Cash_Flow_Type);~
 Divide(totals[Benefit_or_Cost='Benefit'], totals[Benefit_or_Cost='Cost'], False)
 NodeLocation: 2048,240,1
 NodeSize: 64,40
-ValueState: 2,356,53,966,771,1,MIDM
+ValueState: 2,356,53,966,771,1,PDFP
 GraphSetup: Att_GraphIndexRange Program_Years:1,,,,,,4~
 Att_GraphValueRange Graph_KDE_Valdim:1,0,0,,,,,0.004344551998656243,2.979493737220764,0~
 Att_GraphValueRange Measure_B_C_Ratio:1,,,,,,10
