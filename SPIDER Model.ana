@@ -92,7 +92,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,43,18,1045,722,17
+DiagState: 2,121,7,1060,722,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
@@ -491,7 +491,7 @@ ELSE Show_ACP_Window(PV_Impact_Out,PV_Impact_Titles,PV_Impact1, 'Result')
 Decision PV_Impact1
 Title: PV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Impact_Titles,5,0)
+Definition: Choice(PV_Impact_Titles,1,0)
 NodeLocation: 616,440,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -506,6 +506,7 @@ NodeSize: 336,112
 NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
 
 Index EV_Scenario_Variable
+Att_PrevIndexValue: ['EV Vehicle Price','EV Incentives','EV Vehicle Range','Gasoline Price','Electricity Price']
 Title: EV Scenario Variables
 Definition: ['EV Vehicle Price','EV Incentives','EV Vehicle Range','Gasoline Price','Electricity Price']
 IndexVals: ['item 1']
@@ -513,7 +514,6 @@ NodeLocation: 1112,176,1
 NodeSize: 64,40
 WindState: 2,13,527,720,350
 Aliases: FormNode Fo1552873760
-Att_PrevIndexValue: ['EV Vehicle Price','EV Incentives','EV Vehicle Range','Gasoline Price','Electricity Price']
 
 Variable EV_Scenario_Selector
 Title: EV Scenario Selector
@@ -628,7 +628,7 @@ Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year B
 Decision PV_Economics
 Title: PV Economics
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Econ_Titles1,8,0)
+Definition: Choice(PV_Econ_Titles1,2,0)
 NodeLocation: 608,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -737,10 +737,10 @@ NodeSize: 64,40
 WindState: 2,340,155,915,591
 DefnState: 2,350,152,698,343,0,DFNM
 Aliases: FormNode Fo1552868509
-{!40200|Att_ChoiceIndexes: Index PV_Incentive_Scen}
 {!50000|Att_ColumnWidths: [215]}
 
 Index PV_Scenario_Variable
+Att_PrevIndexValue: ['PV Cost','Base Yr for PV Cost Decline','PV Incentive','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 Title: PV Scenario Variables
 Definition: ['PV Cost','Base Yr for PV Cost Decline','PV Incentive','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 IndexVals: ['item 1']
@@ -748,7 +748,6 @@ NodeLocation: 960,176,1
 NodeSize: 64,40
 WindState: 2,-13,61,720,350
 Aliases: FormNode Fo1552873761
-Att_PrevIndexValue: ['PV Cost','Base Yr for PV Cost Decline','PV Incentive','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 
 Alias Al1552872113
 Title: Result
@@ -999,7 +998,7 @@ Original: Storage_Dispatch_Out
 Decision BESS_Impact1
 Title: BESS Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Dispatch_Tit,2,0)
+Definition: Choice(Storage_Dispatch_Tit,1,0)
 NodeLocation: 608,1160,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1128,17 +1127,16 @@ NodeSize: 64,40
 WindState: 2,371,56,720,350
 DefnState: 2,380,63,514,243,0,DFNM
 Aliases: FormNode Fo1552873973
-{!40200|Att_ChoiceIndexes: Index BESS_Incentive_Scen}
 {!50000|Att_ColumnWidths: [215]}
 
 Index Storg_Scenario_Varia
+Att_PrevIndexValue: ['Storage Cost','Storage Incentive','Elec Rate Escalation','ITC Phase-Out']
 Title: Storg Scenario Variables
 Definition: ['Storage Cost','Storage Incentive','Elec Rate Escalation','ITC Phase-Out']
 IndexVals: ['item 1']
 NodeLocation: 1272,176,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552873762
-Att_PrevIndexValue: ['Storage Cost','Storage Incentive','Elec Rate Escalation','ITC Phase-Out']
 
 FormNode Fo1552873760
 Title: EV Scenario Variables
@@ -16015,12 +16013,12 @@ ReformVal: [Hours_8784,Avoided_Cost_Type]
 Att_ResultSliceState: [Avoided_Cost_Type,8,Hours_8784,1]
 
 Index Avoided_Cost_Type
+Att_PrevIndexValue: ['Energy','Ancillary Services','GHG Emissions','Avoided RPS']
 Title: Avoided Cost Type
 Definition: ['Energy','Ancillary Services','GHG Emissions','Avoided RPS']
 NodeLocation: 184,248,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 227,160}
-Att_PrevIndexValue: ['Energy','Ancillary Services','GHG Emissions','Avoided RPS']
 
 Constant Avoided_Demand_Costs
 Title: Avoided Demand Costs
@@ -16036,18 +16034,18 @@ ValueState: 2,196,202,1090,686,1,MIDM
 ReformDef: [Avoided_Cost_Years,Avoided_Demand_Type]
 
 Index Avoided_Cost_Years
+Att_PrevIndexValue: [2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,2040,2041,2042,2043,2044,2045,2046,2047]
 Title: Avoided Cost Years
 Definition: 2016..2047
 NodeLocation: 504,136,1
 NodeSize: 64,40
-Att_PrevIndexValue: [2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,2040,2041,2042,2043,2044,2045,2046,2047]
 
 Index Avoided_Demand_Type
+Att_PrevIndexValue: ['Transmission','Distribution','Capacity']
 Title: Avoided Demand Type
 Definition: ['Transmission','Distribution','Capacity']
 NodeLocation: 344,248,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Transmission','Distribution','Capacity']
 
 Decision Peak_Demand_Period
 Title: Peak Demand Period
@@ -16086,13 +16084,13 @@ TableCellDefault: Checkbox(0)
 Att_EditSliceState: [Weekday_or_Weekend,1,Time_of_Day,1,Month,1]
 
 Index DERs
+Att_PrevIndexValue: ['PV','PV + BESS','BESS Added to Existing PV','BESS Stand-Alone','EV']
 Title: DERs
 Definition: ['PV','PV + BESS','BESS Added to Existing PV','BESS Stand-Alone','EV']
 NodeLocation: 352,48,1
 NodeSize: 64,40
 ValueState: 2,1429,486,416,303,,MIDM
 {!40300|Att_SlicerPopupSize: 367,112}
-Att_PrevIndexValue: ['PV','PV + BESS','BESS Added to Existing PV','BESS Stand-Alone','EV']
 
 Variable Per_Unit_DER_Impacts
 Title: Per-Unit DER Impacts
@@ -16108,12 +16106,12 @@ Att__TotalsIndex: []
 Att_ResultSliceState: [All_Sectors,3,Month,6,Program_Years,2,DERs,1,Profile_Hours,1]
 
 Index Program_Years
+Att_PrevIndexValue: [2020,2021,2022,2023,2024]
 Title: Program Years
 Definition: 2020..2024
 NodeLocation: 488,248,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 227,112}
-Att_PrevIndexValue: [2020,2021,2022,2023,2024]
 
 Variable Avoided_Energy_Cost
 Title: Avoided Energy Cost
@@ -16135,6 +16133,7 @@ Att__TotalsIndex: [All_Sectors]
 Att_ResultSliceState: [All_Sectors,0,DERs,1,Program_Years,3,Month,1]
 
 Index Cash_Flow_Type
+Att_PrevIndexValue: ['Increm. Equipment Cost','Tax Credits','Incentives','Administrative Costs','O&M Costs','Lost Revenue/Bill Savings (electricity)','Lost Revenue/Bill Savings (gasoline)','Avoided Energy Costs (electricity)','Avoided Energy Costs (gasoline)','Avoided Ancillary Service Costs','Avoided Capacity Costs','Avoided Transmission Costs','Avoided Distribution Costs','Avoided RPS Cost','Avoided GHG Cost']
 Title: Cash Flow Type
 Definition: ['Increm. Equipment Cost','Tax Credits','Incentives','Administrative Costs','O&M Costs','Lost Revenue/Bill Savings (electricity)','Lost Revenue/Bill Savings (gasoline)','Avoided Energy Costs (electricity)','Avoided Energy Costs (gasoline)','Avoided Ancillary Service Costs','Avoided Capacity Costs','Avoided Transmission Costs','Avoided Distribution Costs','Avoided RPS Cost','Avoided GHG Cost']
 IndexVals: ['item 1']
@@ -16142,14 +16141,13 @@ NodeLocation: 904,136,1
 NodeSize: 64,40
 ValueState: 2,452,202,416,559,,MIDM
 {!40300|Att_SlicerPopupSize: 242,238}
-Att_PrevIndexValue: ['Increm. Equipment Cost','Tax Credits','Incentives','Administrative Costs','O&M Costs','Lost Revenue/Bill Savings (electricity)','Lost Revenue/Bill Savings (gasoline)','Avoided Energy Costs (electricity)','Avoided Energy Costs (gasoline)','Avoided Ancillary Service Costs','Avoided Capacity Costs','Avoided Transmission Costs','Avoided Distribution Costs','Avoided RPS Cost','Avoided GHG Cost']
 
 Index Cost_Benefit_Type
+Att_PrevIndexValue: ['Cost','Benefit','Transfer','N/A']
 Title: Cost Benefit Type
 Definition: ['Cost','Benefit','Transfer','N/A']
 NodeLocation: 1048,136,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Cost','Benefit','Transfer','N/A']
 
 Decision Cost_Test_Definition
 Title: Cost Test Definition
@@ -16178,12 +16176,12 @@ TableCellDefault: Choice(Cost_Benefit_Type,1,0)
 {!40200|Att_ChoiceIndexes: Index Cost_Benefit_Type}
 
 Index All_Cost_Tests
+Att_PrevIndexValue: ['TRC','SCT','PCT','UCT','RIM']
 Title: All Cost Tests
 Definition: ['TRC','SCT','PCT','UCT','RIM']
 NodeLocation: 1192,136,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 297,112}
-Att_PrevIndexValue: ['TRC','SCT','PCT','UCT','RIM']
 
 FormNode Fo1580497414
 Title: Cost Test Definition
@@ -17195,12 +17193,12 @@ NodeSize: 64,40
 ValueState: 2,32,14,1011,611,0,MIDM
 
 Index Summary_Outputs
+Att_PrevIndexValue: ['Participation (units)','B/C Ratio (ratio)','Total Costs ($)','Total Benefits ($)','Net Benefits ($)','Incentives ($)','Administrative Costs ($)','Total Program Spending ($)']
 Title: Summary Outputs
 Definition: ['Participation (units)','B/C Ratio (ratio)','Total Costs ($)','Total Benefits ($)','Net Benefits ($)','Incentives ($)','Administrative Costs ($)','Total Program Spending ($)']
 NodeLocation: 2672,240,1
 NodeSize: 64,40
 ValueState: 2,1241,9,416,558,,MIDM
-Att_PrevIndexValue: ['Participation (units)','B/C Ratio (ratio)','Total Costs ($)','Total Benefits ($)','Net Benefits ($)','Incentives ($)','Administrative Costs ($)','Total Program Spending ($)']
 
 Variable Total_Utility_Spendi
 Title: Total Utility Spending
