@@ -998,7 +998,7 @@ Original: Storage_Dispatch_Out
 Decision BESS_Impact1
 Title: BESS Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Dispatch_Tit,2,0)
+Definition: Choice(Storage_Dispatch_Tit,1,0)
 NodeLocation: 608,1160,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1031,12 +1031,12 @@ THEN Null~
 ELSE Show_ACP_Window(Storage_Dispatch_Out,Storage_Dispatch_Tit,BESS_Impact1, 'Result')
 
 Index Storage_Dispatch_Tit
-Att_PrevIndexValue: ['Cumulative BESS Adoption (nameplate MW)','Dispatch Flows (kW-hr/customer)','Rates for Dispatch','Battery Charge for Dispatch (kWh)','Pct of Stored Electricity from PV (fraction)']
 Title: Storage Dispatch Titles
 Definition: Create_Titles_List(Storage_Dispatch_Out)~
 
 NodeLocation: 160,1152,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Cumulative BESS Adoption (nameplate MW)','Dispatch Flows (kW-hr/customer)','Rates for Dispatch','Battery Charge for Dispatch (kWh)','Pct of Stored Electricity from PV (fraction)']
 
 Text Te1552872981
 Title: Storage Dispatch Output
@@ -1236,11 +1236,11 @@ OnClick: FOR J:=@Dropdown_Vars DO (~
 
 
 Index Not_Applicable
-Att_PrevIndexValue: ['Not Applicable to Study']
 Title: Not Applicable
 Definition: ['Not Applicable to Study']
 NodeLocation: 1920,584,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Not Applicable to Study']
 
 Decision Hidden_Dropdown
 Title: Hidden Dropdown
@@ -1435,7 +1435,6 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_Storage_Disp_Out
 
 Index All_Storage_Disp_Out
-Att_PrevIndexValue: [Cumul_BESS_Adoption,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Pct_Stored_PV_Elect2]
 Title: All Storage Dispatch Out
 Definition: [Cumul_BESS_Adoption,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Pct_Stored_PV_Elect2]
 NodeLocation: 432,1152,1
@@ -1443,6 +1442,7 @@ NodeSize: 64,40
 WindState: 2,8,29,720,518
 Aliases: FormNode Fo1557511281
 MetaOnly: 1
+Att_PrevIndexValue: [Cumul_BESS_Adoption,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Pct_Stored_PV_Elect2]
 
 FormNode Fo1557511325
 Title: PV Econ Out
