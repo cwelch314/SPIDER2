@@ -92,7 +92,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,78,8,1060,722,17
+DiagState: 2,241,17,1060,722,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 DiagramColor: 65535,65535,65535
@@ -467,12 +467,12 @@ MetaOnly: 1
 {!40200|Att_ChoiceIndexes: Index All_PV_Impact_Out}
 
 Index PV_Impact_Titles
+Att_PrevIndexValue: ['PV Cumulative Adoption (MW-AC)','PV Incremental Adoption (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)','Forecast Load Impacts (MW)']
 Title: PV Impact Titles
 Definition: Create_Titles_List(PV_Impact_Out)~
 
 NodeLocation: 160,432,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['PV Cumulative Adoption (MW-AC)','PV Incremental Adoption (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)','Forecast Load Impacts (MW)']
 
 Button PV_Econ_Output_But
 Title: Result
@@ -560,12 +560,12 @@ MetaOnly: 1
 {!40200|Att_ChoiceIndexes: Index All_EV_Impact_Out}
 
 Index EV_Impact_Titles
+Att_PrevIndexValue: ['EV Cumulative MW Impact (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Cumul Vehicle Stock - BEV/PHEV (vehicles)','Tech Share of Vehicle Stock (fraction)','Aggreg New Vehicle Sales (vehicles/year)','Tech Share of New Vehicle Sales (fraction)','EV Long-Run Market Share (market share)','Vehicle Cost Components ($/vehicle)','Vehicle Sticker Price ($/vehicle)','Miles of Range (miles)','Applied Fuel Prices ($/GGE)']
 Title: EV Impact Titles
 Definition: Create_Titles_List(EV_Impact_Out)~
 
 NodeLocation: 160,672,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['EV Cumulative MW Impact (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Cumul Vehicle Stock - BEV/PHEV (vehicles)','Tech Share of Vehicle Stock (fraction)','Aggreg New Vehicle Sales (vehicles/year)','Tech Share of New Vehicle Sales (fraction)','EV Long-Run Market Share (market share)','Vehicle Cost Components ($/vehicle)','Vehicle Sticker Price ($/vehicle)','Miles of Range (miles)','Applied Fuel Prices ($/GGE)']
 
 Decision EV_Impact
 Title: EV Impact
@@ -618,12 +618,12 @@ MetaOnly: 1
 {!40200|Att_ChoiceIndexes: Index All_PV_Econ_Out}
 
 Index PV_Econ_Titles1
+Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Cost of Electricity Ratio (post/pre ratio)','Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)','Measure Cost & Benefits ($/unit)','Measure B/C Ratio (ratio)','Program Summary']
 Title: PV Econ Titles
 Definition: Create_Titles_List(PV_Econ_Out1)~
 
 NodeLocation: 160,912,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Cost of Electricity Ratio (post/pre ratio)','Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)','Measure Cost & Benefits ($/unit)','Measure B/C Ratio (ratio)','Program Summary']
 
 Decision PV_Economics
 Title: PV Economics
@@ -948,12 +948,12 @@ THEN Null~
 ELSE Show_ACP_Window(Storage_Input1,Storage_Input_Titles,BESS_Input,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
 
 Index Storage_Input_Titles
+Att_PrevIndexValue: ['Start Time for Dispatch','End Time for Dispatch','Flows to View','Battery Storage Specs','Number of Storage Units (units/system)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (fraction)','Allowed ITC Percent by Year (fraction)','Storage kWh Incent Base Rate ($/kWh)','Incentive Step Start Month','kWh Incent Derate for Duration','kWh Incent Derate for Capacity','Historic Storage Incentives ($/kWh)']
 Title: Storage Input Titles
 Definition: Create_Titles_List(Storage_Input1)~
 
 NodeLocation: 848,912,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Start Time for Dispatch','End Time for Dispatch','Flows to View','Battery Storage Specs','Number of Storage Units (units/system)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (fraction)','Allowed ITC Percent by Year (fraction)','Storage kWh Incent Base Rate ($/kWh)','Incentive Step Start Month','kWh Incent Derate for Duration','kWh Incent Derate for Capacity','Historic Storage Incentives ($/kWh)']
 
 FormNode Fo1552872728
 Title: Select Output
@@ -1031,12 +1031,12 @@ THEN Null~
 ELSE Show_ACP_Window(Storage_Dispatch_Out,Storage_Dispatch_Tit,BESS_Impact1, 'Result')
 
 Index Storage_Dispatch_Tit
+Att_PrevIndexValue: ['Cumulative BESS Adoption (nameplate MW)','Dispatch Flows (kW-hr/customer)','Rates for Dispatch','Battery Charge for Dispatch (kWh)','Pct of Stored Electricity from PV (fraction)']
 Title: Storage Dispatch Titles
 Definition: Create_Titles_List(Storage_Dispatch_Out)~
 
 NodeLocation: 160,1152,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Cumulative BESS Adoption (nameplate MW)','Dispatch Flows (kW-hr/customer)','Rates for Dispatch','Battery Charge for Dispatch (kWh)','Pct of Stored Electricity from PV (fraction)']
 
 Text Te1552872981
 Title: Storage Dispatch Output
@@ -1302,13 +1302,13 @@ NodeSize: 372,124
 NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
 
 Index All_EV_Impact_Out
+Att_PrevIndexValue: [EV_Cumul_MW_Impact,Cumulative_EV_Delta,Cumulative_EV_Stock,Cumul_EV_Stock_byTec,Tech_Share_Veh_Stock,Aggreg_New_Veh_Sales,Share_New_Veh_Sales,EV_Long_Run_Mkt_Shr,Veh_Cost_Component,Vehicle_StickerPrice,Miles_of_Range,Applied_Fuel_Prices]
 Title: All EV Impact Out
 Definition: [EV_Cumul_MW_Impact,Cumulative_EV_Delta,Cumulative_EV_Stock,Cumul_EV_Stock_byTec,Tech_Share_Veh_Stock,Aggreg_New_Veh_Sales,Share_New_Veh_Sales,EV_Long_Run_Mkt_Shr,Veh_Cost_Component,Vehicle_StickerPrice,Miles_of_Range,Applied_Fuel_Prices]
 NodeLocation: 432,672,1
 NodeSize: 64,40
 Aliases: FormNode Fo1557510211
 MetaOnly: 1
-Att_PrevIndexValue: [EV_Cumul_MW_Impact,Cumulative_EV_Delta,Cumulative_EV_Stock,Cumul_EV_Stock_byTec,Tech_Share_Veh_Stock,Aggreg_New_Veh_Sales,Share_New_Veh_Sales,EV_Long_Run_Mkt_Shr,Veh_Cost_Component,Vehicle_StickerPrice,Miles_of_Range,Applied_Fuel_Prices]
 
 FormNode Fo1557510211
 Title: All EV Impact Out
@@ -1354,6 +1354,7 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_Output_Ident
 
 Index All_PV_Impact_Out
+Att_PrevIndexValue: [PV_Cumul_Adoption,PV_Increm_Adoption,Cumulative_PV_Delta,Share_of_Housing,Forecast_Load_Impact]
 Title: All PV Impact Out
 Definition: [PV_Cumul_Adoption,PV_Increm_Adoption,Cumulative_PV_Delta,Share_of_Housing,Forecast_Load_Impact]
 NodeLocation: 432,432,1
@@ -1361,7 +1362,6 @@ NodeSize: 64,40
 WindState: 2,102,82,720,559
 Aliases: FormNode Fo1557511105
 MetaOnly: 1
-Att_PrevIndexValue: [PV_Cumul_Adoption,PV_Increm_Adoption,Cumulative_PV_Delta,Share_of_Housing,Forecast_Load_Impact]
 
 FormNode Fo1557511105
 Title: PV Impact Out
@@ -1390,6 +1390,7 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_PV_Input
 
 Index All_PV_Econ_Out
+Att_PrevIndexValue: [PrePost_Load_Solar,FirstYr_Bill_Compare,CostOf_Elect_Compare,Cost_of_Elect_Ratio,Simple_Payback_Time1,Installed_Price,Measure_Cost_Benef,Measure_B_C_Ratio,Program_Summary]
 Title: All PV Econ Out
 Definition: [PrePost_Load_Solar,FirstYr_Bill_Compare,CostOf_Elect_Compare,Cost_of_Elect_Ratio,Simple_Payback_Time1,Installed_Price,Measure_Cost_Benef,Measure_B_C_Ratio,Program_Summary]
 NodeLocation: 432,912,1
@@ -1398,7 +1399,6 @@ WindState: 2,13,50,720,350
 ValueState: 2,52,58,416,303,,MIDM
 Aliases: FormNode Fo1557511198
 MetaOnly: 1
-Att_PrevIndexValue: [PrePost_Load_Solar,FirstYr_Bill_Compare,CostOf_Elect_Compare,Cost_of_Elect_Ratio,Simple_Payback_Time1,Installed_Price,Measure_Cost_Benef,Measure_B_C_Ratio,Program_Summary]
 
 FormNode Fo1557511198
 Title: PV Econ Out
@@ -1417,6 +1417,7 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_Storage_Input
 
 Index All_Storage_Input
+Att_PrevIndexValue: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View1,Battery_Storage_Spec,Num_Storage_Units,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Year,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap,Hist_Storage_Incent]
 Title: All Storage Input
 Definition: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View1,Battery_Storage_Spec,Num_Storage_Units,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Year,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap,Hist_Storage_Incent]
 NodeLocation: 1120,912,1
@@ -1424,7 +1425,6 @@ NodeSize: 64,40
 WindState: 2,-28,182,720,350
 Aliases: FormNode Fo1557511241
 MetaOnly: 1
-Att_PrevIndexValue: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View1,Battery_Storage_Spec,Num_Storage_Units,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Year,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap,Hist_Storage_Incent]
 
 FormNode Fo1557511281
 Title: PV Econ Out
@@ -1435,6 +1435,7 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_Storage_Disp_Out
 
 Index All_Storage_Disp_Out
+Att_PrevIndexValue: [Cumul_BESS_Adoption,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Pct_Stored_PV_Elect2]
 Title: All Storage Dispatch Out
 Definition: [Cumul_BESS_Adoption,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Pct_Stored_PV_Elect2]
 NodeLocation: 432,1152,1
@@ -1442,7 +1443,6 @@ NodeSize: 64,40
 WindState: 2,8,29,720,518
 Aliases: FormNode Fo1557511281
 MetaOnly: 1
-Att_PrevIndexValue: [Cumul_BESS_Adoption,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Pct_Stored_PV_Elect2]
 
 FormNode Fo1557511325
 Title: PV Econ Out
