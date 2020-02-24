@@ -18356,10 +18356,11 @@ Description: Cumulative EV vehicle stock broken out by BEV and PHEV technologies
 Definition: Sum(Sim_vs_Act_EV_Stock, EV_Spatial_ID)
 NodeLocation: 616,432,1
 NodeSize: 64,40
-ValueState: 2,453,152,1010,622,,MIDM
+ValueState: 2,581,12,1057,737,,MIDM
 Aliases: FormNode Fo1556311268
 NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [EV_Vehicles,1,EV_Sectors,1,Act_vs_Sim,1,Time_Vehicles,1]
+Att__TotalsIndex: [EV_Vehicles]
+Att_ResultSliceState: [EV_Vehicles,0,EV_Sectors,1,Act_vs_Sim,1,Time_Vehicles,1]
 
 Variable PHEV_Market_Share
 Title: PHEV Market Share
@@ -19441,7 +19442,6 @@ Aliases: FormNode Fo1556244776
 {!40200|Att_ChoiceIndexes: Index Vehicle_Types}
 
 Index Vehicle_Types
-Att_PrevIndexValue: ['Electric (BEV or PHEV)','Non-Electric']
 Title: Vehicle Types
 Description: The different vehicle classifications to be modeled for marketshare and stock tracking calculations.
 Definition: ['Electric (BEV or PHEV)','Non-Electric']
@@ -19450,6 +19450,7 @@ NodeSize: 64,40
 WindState: 2,250,69,942,595
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
 {!40300|Att_SlicerPopupSize: 282,28}
+Att_PrevIndexValue: ['Electric (BEV or PHEV)','Non-Electric']
 
 Index Vehicle_Vintage
 Title: Vehicle Vintage
@@ -19476,7 +19477,7 @@ Definition: Subset(Select_EV_Techs[All_Vehicle_Techs=Vehicle_Techs])
 NodeLocation: 872,184,1
 NodeSize: 64,40
 WindState: 2,98,82,1092,496
-{!40300|Att_SlicerPopupSize: 502,64}
+{!40300|Att_SlicerPopupSize: 507,64}
 Att_PrevIndexValue: ['PHEV','BEV']
 
 Index EV_Adopt_Data_Types
@@ -22068,11 +22069,11 @@ ValueState: 2,385,36,897,489,,MIDM
 Close Vehicle_Choice_Logi1
 
 Index Low_or_High
-Att_PrevIndexValue: ['Low','High']
 Title: Low or High
 Definition: ['Low','High']
 NodeLocation: 688,656,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Low','High']
 
 Decision Vehicle_Sensit_Yr
 Title: Vehicle Sensitivity Year
