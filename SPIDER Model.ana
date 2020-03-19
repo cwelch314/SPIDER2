@@ -138,7 +138,7 @@ Date: Mon, Aug 18, 2014 9:09 PM
 NodeLocation: 744,80,7
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-DiagState: 2,36,41,1708,756,17
+DiagState: 2,104,43,1708,756,17
 WindState: 2,102,82,476,224
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
@@ -737,10 +737,10 @@ NodeSize: 64,40
 WindState: 2,340,155,915,591
 DefnState: 2,350,152,698,343,0,DFNM
 Aliases: FormNode Fo1552868509
-{!40200|Att_ChoiceIndexes: Index PV_Incentive_Scen}
 {!50000|Att_ColumnWidths: [215]}
 
 Index PV_Scenario_Variable
+Att_PrevIndexValue: ['PV Cost','Base Yr for PV Cost Decline','PV Incentive','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 Title: PV Scenario Variables
 Definition: ['PV Cost','Base Yr for PV Cost Decline','PV Incentive','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 IndexVals: ['item 1']
@@ -748,7 +748,6 @@ NodeLocation: 960,176,1
 NodeSize: 64,40
 WindState: 2,-13,61,720,350
 Aliases: FormNode Fo1552873761
-Att_PrevIndexValue: ['PV Cost','Base Yr for PV Cost Decline','PV Incentive','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 
 Alias Al1552872113
 Title: Result
@@ -1237,11 +1236,11 @@ OnClick: FOR J:=@Dropdown_Vars DO (~
 
 
 Index Not_Applicable
+Att_PrevIndexValue: ['Not Applicable to Study']
 Title: Not Applicable
 Definition: ['Not Applicable to Study']
 NodeLocation: 1920,584,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Not Applicable to Study']
 
 Decision Hidden_Dropdown
 Title: Hidden Dropdown
