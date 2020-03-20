@@ -109,7 +109,7 @@ Aliases: FormNode Fo1535948194
 Variable Normalized_EE_Shapes
 Title: Normalized EE Shapes
 Units: kW/(kWh/day)
-Definition: Divide(Saved_Daily_Profiles[Static_Profile_Names=EE_Techs, All_Day_Types=Day_of_Week] , Profile_Annual_Total[Static_Profile_Names=EE_Techs], True)
+Definition: Divide(Daily_Prof_with_Peak[Static_Profile_Names=EE_Techs, All_Day_Types=Day_of_Week] , Profile_Annual_Total[Static_Profile_Names=EE_Techs], True)
 NodeLocation: 400,152,1
 NodeSize: 64,40
 WindState: 2,258,323,1242,478
@@ -270,7 +270,7 @@ Aliases: FormNode Fo1535949253
 Variable Normalized_DR_Shapes
 Title: Normalized DR Shapes
 Units: kW/(kWh/day)
-Definition: VAR profiles:=Saved_Daily_Profiles[Static_Profile_Names=Pre_and_Post_Loadsha, All_Day_Types=Day_of_Week];~
+Definition: VAR profiles:=Daily_Prof_with_Peak[Static_Profile_Names=Pre_and_Post_Loadsha, All_Day_Types=Day_of_Week];~
 VAR delta:=IF Pre_and_Post_Loadsha[Pre_and_Post_System=Pre_System_Label] = Pre_and_Post_Loadsha[Pre_and_Post_System=Post_System_Label] ~
    THEN profiles[Pre_and_Post_System=Pre_System_Label]~
    ELSE profiles[Pre_and_Post_System=Pre_System_Label] - profiles[Pre_and_Post_System=Post_System_Label];~

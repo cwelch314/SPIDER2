@@ -189,7 +189,7 @@ Author: JamesMilford
 Date: Sun, Sep 2, 2018 8:15 PM
 NodeLocation: 304,192,1
 NodeSize: 64,40
-DiagState: 2,522,322,944,378,17
+DiagState: 2,522,121,944,378,17
 
 Decision Battery_Scaling
 Title: Battery Scaling
@@ -202,7 +202,7 @@ Aliases: FormNode Fo1535952178
 Variable Normalized_Battery_S
 Title: Normalized Battery Shapes
 Units: kW/(kWh/day)
-Definition: VAR profiles:=Saved_Daily_Profiles[Static_Profile_Names=Pre_and_Post_Loadsh1, All_Day_Types=Day_of_Week];~
+Definition: VAR profiles:=Daily_Prof_with_Peak[Static_Profile_Names=Pre_and_Post_Loadsh1, All_Day_Types=Day_of_Week];~
 VAR delta:=IF Pre_and_Post_Loadsh1[Pre_and_Post_System=Pre_System_Label] = Pre_and_Post_Loadsh1[Pre_and_Post_System=Post_System_Label] ~
    THEN profiles[Pre_and_Post_System=Pre_System_Label]~
    ELSE profiles[Pre_and_Post_System=Pre_System_Label] - profiles[Pre_and_Post_System=Post_System_Label];~
