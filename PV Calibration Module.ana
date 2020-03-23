@@ -1,5 +1,5 @@
 { Analytica Model PV_Calibration1, encoding="UTF-8" }
-SoftwareVersion 5.2.9
+SoftwareVersion 5.3.3
 
 {!-40203|Attribute CloudPlayerStyles}
 Attribute UnoptimizedDef
@@ -748,7 +748,7 @@ Date: Sun, Aug 5, 2018 8:27 AM
 NodeLocation: 120,112,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,525,65,1335,602,17
+DiagState: 2,314,242,1335,602,17
 
 Button CALIBRATE_PV
 Title: CALIBRATE One Sector
@@ -794,13 +794,13 @@ WindState: 2,524,317,720,350
 DisplayOutputs: Function MultiStage_CalibrPV0
 
 Index PV_Calibration_Stage
-Att_PrevIndexValue: [1,2,3,4,5]
 Title: PV Calibration Stage
 Definition: 1..Max_PV_Calib_Stages
 NodeLocation: 568,176,1
 NodeSize: 64,40
 ValueState: 2,792,295,416,303,,MIDM
 DisplayOutputs: Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
+Att_PrevIndexValue: [1,2,3,4,5]
 
 Constant PV_Decisions_by_Stg
 Title: PV Decision Variables by Stage
@@ -1543,6 +1543,7 @@ Add a warning, or disallow, when vehicle end time is longer than finish Time of 
 NodeLocation: 268,724,-1
 NodeSize: 204,236
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
+NodeColor: 65535,65535,65535
 NodeFont: Arial,16
 
 Index Aggreg_PV_LRMS
@@ -1585,6 +1586,7 @@ Title: Old
 NodeLocation: 280,236,-1
 NodeSize: 232,212
 NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
+NodeColor: 65535,65535,65535
 
 Button Assign_Stored_to_De1
 Title: Assign Stored to Default Coeff
@@ -2827,7 +2829,6 @@ Att_ColorRole: Null
 {!50000|Att_ColumnWidths: [,PV_Stored_Decisions,\([,,,,37,33,37,37,174,604])]}
 
 Index PV_Stored_Decisions
-Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coeff,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef,'Opt Status']
 Title: PV Stored Decisions
 Definition: Concat(All_PV_Dec_Handles, Opt_Status_Label)
 NodeLocation: 608,552,1
@@ -2835,6 +2836,7 @@ NodeSize: 64,40
 ValueState: 2,46,379,416,303,0,MIDM
 MetaOnly: 1
 {!40300|Att_SlicerPopupSize: 242,168}
+Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coeff,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef,'Opt Status']
 
 Constant Stored_Opt_Status_PV
 Title: Stored Opt Status PV
@@ -3796,6 +3798,7 @@ NodeLocation: 468,216,-1
 NodeSize: 444,200
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
 WindState: 2,102,83,476,224
+NodeColor: 65535,65535,65535
 NodeFont: Arial,24
 
 Text Te1542730147
@@ -3804,6 +3807,7 @@ NodeLocation: 468,628,-3
 NodeSize: 444,212
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
 WindState: 2,102,83,476,224
+NodeColor: 65535,65535,65535
 NodeFont: Arial,24
 
 FormNode Fo1542767189
@@ -3902,6 +3906,7 @@ Text PVCalibr_Frame
 NodeLocation: 1288,336,-1
 NodeSize: 376,320
 NodeInfo: 1,0,0,1,0,0,0,,0,,0,,,
+NodeColor: 65535,65535,65535
 {!40400|CloudPlayerStyles: Show_index_menus:yes~
 Show_description:20}
 {!40204-40399|AWP_Attrib:Show_index_menus:yes~

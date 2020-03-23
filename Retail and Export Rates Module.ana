@@ -1,5 +1,5 @@
 { Analytica Model Electric_Rates1, encoding="UTF-8" }
-SoftwareVersion 5.2.9
+SoftwareVersion 5.3.3
 
 {!-40203|Attribute CloudPlayerStyles}
 
@@ -264,6 +264,7 @@ Text Te1570040492
 Description: The latest USURDB has added additional data columns, so this logic needs to be revised
 NodeLocation: 808,184,-1
 NodeSize: 80,72
+NodeColor: 65535,65535,65535
 
 Decision USURDB_Reset
 Title: USURDB Reset
@@ -1664,6 +1665,7 @@ Title: Retail Rate Viewing and Editing
 NodeLocation: 540,444,-1
 NodeSize: 532,436
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+NodeColor: 65535,65535,65535
 
 FormNode Fo1547663058
 Title: Specify Rate Info
@@ -1749,6 +1751,7 @@ Description: Define a new rate or view an existing rate. To view an existing rat
 NodeLocation: 540,288,-1
 NodeSize: 516,240
 NodeInfo: 1,0,0,1,1,0,1,,0,,0,,,
+NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,16
 
 FormNode Fo1547663462
@@ -1805,6 +1808,7 @@ Title: Settings for Flat Demand Charges~
 NodeLocation: 192,228,-1
 NodeSize: 152,28
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
+NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,16
 
 Text Te1547663898
@@ -1812,6 +1816,7 @@ Title: Settings for Time-of-Use Demand Charges (eg, on-peak demand)
 NodeLocation: 528,228,-1
 NodeSize: 152,28
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
+NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,16
 
 Text Te1547663956
@@ -1819,6 +1824,7 @@ Title: Settings for Time-of-Use Energy Charges
 NodeLocation: 864,228,-1
 NodeSize: 152,28
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
+NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,16
 
 Text Te1547664306
@@ -1826,6 +1832,7 @@ Title: Populate Tables with Existing Rate Data
 NodeLocation: 540,668,-1
 NodeSize: 516,12
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
+NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,16
 
 Text Te1547664407
@@ -1833,6 +1840,7 @@ Title: Save Rate Data to New Rate Name or Existing Rate Name
 NodeLocation: 540,556,-1
 NodeSize: 516,12
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
+NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,16
 
 Alias Al1547664530
@@ -1854,6 +1862,7 @@ Title: Delete Existing Rate from Model
 NodeLocation: 536,780,-1
 NodeSize: 520,12
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
+NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,16
 
 FormNode Fo1547664907
@@ -1901,6 +1910,7 @@ Title: Define Rate Info
 NodeLocation: 192,132,-1
 NodeSize: 152,12
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
+NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,16
 
 Text Te1547672012
@@ -1908,6 +1918,7 @@ Title: Optional: Clear out Rate Definition
 NodeLocation: 532,136,-1
 NodeSize: 156,16
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
+NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,16
 
 Alias Al1547672053
@@ -1922,53 +1933,63 @@ Title: Other Charges
 NodeLocation: 192,472,-1
 NodeSize: 152,16
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
+NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,16
 
 Text Te1547673217
 NodeLocation: 876,348,-1
 NodeSize: 164,100
 NodeInfo: 1,0,0,0,1,0,0,,0,,0,,,
+NodeColor: 65535,65535,65535
 
 Text Te1547673250
 NodeLocation: 540,348,-1
 NodeSize: 164,100
 NodeInfo: 1,0,0,0,1,0,0,,0,,0,,,
+NodeColor: 65535,65535,65535
 
 Text Te1547673258
 NodeLocation: 204,348,-1
 NodeSize: 164,100
 NodeInfo: 1,0,0,0,1,0,0,,0,,0,,,
+NodeColor: 65535,65535,65535
 
 Text Te1547673283
 NodeLocation: 372,500,-1
 NodeSize: 332,20
 NodeInfo: 1,0,0,0,1,0,0,,0,,0,,,
+NodeColor: 65535,65535,65535
 
 Text Te1547673316
 NodeLocation: 204,164,-1
 NodeSize: 164,20
 NodeInfo: 1,0,0,0,1,0,0,,0,,0,,,
+NodeColor: 65535,65535,65535
 
 Text Te1547676804
 NodeLocation: 540,716,-1
 NodeSize: 516,36
 NodeInfo: 1,0,0,0,1,0,0,,0,,0,,,
+NodeColor: 65535,65535,65535
 
 Text Te1547676850
 NodeLocation: 540,828,-1
 NodeSize: 516,36
 NodeInfo: 1,0,0,0,1,0,0,,0,,0,,,
+NodeColor: 65535,65535,65535
 
 Text Te1547676875
 NodeLocation: 540,604,-1
 NodeSize: 516,36
 NodeInfo: 1,0,0,0,1,0,0,,0,,0,,,
+NodeColor: 65535,65535,65535
 
 Text Te1547677047
 Description: !! Warning: This action can change downstream settings if the deleted rate is being used (in "Select Customer Rate", for example) !!
 NodeLocation: 540,808,-1
 NodeSize: 516,16
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
+NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,16
 
 Text Te1547677153
@@ -1976,6 +1997,7 @@ Description: This will save the rate data above to the rate name specified in th
 NodeLocation: 540,580,-1
 NodeSize: 516,12
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
+NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,16
 
 Module Rate_Saving_Details
@@ -3643,6 +3665,7 @@ Text RatesFrameNode
 NodeLocation: 1460,356,-20
 NodeSize: 364,348
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+NodeColor: 65535,65535,65535
 {!40400|CloudPlayerStyles: Show_index_menus: yes~
 Show_description:20}
 {!40204-40399|AWP_Attrib:Show_index_menus: yes~
@@ -3692,12 +3715,14 @@ Text Te1547831611
 NodeLocation: 540,164,-1
 NodeSize: 164,20
 NodeInfo: 1,0,0,0,1,0,0,,0,,0,,,
+NodeColor: 65535,65535,65535
 
 Text Te1547832821
 Description: Use these features to populate the rate definition tables above with an existing rate. You can make modifications to that rate and save it as the same name or a new name.
 NodeLocation: 540,692,-1
 NodeSize: 516,12
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
+NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,16
 
 FormNode Fo1547833110
@@ -3714,6 +3739,7 @@ Title: Specify Rates Used in the Simulation
 NodeLocation: 220,988,-1
 NodeSize: 212,100
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+NodeColor: 65535,65535,65535
 
 FormNode Fo1547834265
 Title: Flat Demand Schedule
