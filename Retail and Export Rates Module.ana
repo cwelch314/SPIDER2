@@ -504,7 +504,7 @@ Att_StackedBar Graph_Primary_Valdim:0~
 {!50007|Graph_BarOutline:0}
 ReformVal: [Time_of_Day,Rate_Component]
 NumberFormat: 2,F,4,2,0,0,4,1,$,0,"ABBREV",0,,,0,0,14
-Att_ResultSliceState: [Month,9,Rate_Names_and_Start,4,Tiers,1,Rate_Component,1,Day_Type_and_Hour,1]
+Att_ResultSliceState: [Month,8,Rate_Names_and_Start,2,Tiers,1,Rate_Component,1,Day_Type_and_Hour,1]
 {!40700|CellFormatExpression: CellFill(IF RatesOnlyTransp[Rate_Names=Rate_to_View, All_Data_Types=Data_Type_to_View] < 0 THEN 'Green' ELSE 'Red', .2+.6*Abs(RatesOnlyTransp[Rate_Names=Rate_to_View, All_Data_Types=Data_Type_to_View] ))}
 
 Variable RatesOnlyTransp
@@ -543,6 +543,7 @@ Definition: Table(Rate_Component)(Choice(All_Data_Types,3,0),Choice(All_Data_Typ
 NodeLocation: 432,400,1
 NodeSize: 64,40
 WindState: 2,157,9,720,350
+DefnState: 2,164,170,518,272,0,DFNM
 Aliases: FormNode Fo1546448242
 TableCellDefault: Choice(All_Data_Types,3,0)
 {!40200|Att_ChoiceIndexes: Index All_Data_Types}
@@ -941,7 +942,6 @@ DiagState: 2,592,8,1240,615,17
 NodeColor: 57311,57311,57311
 
 Index Rate_Names
-Att_PrevIndexValue: ['A (Primary) | 2014-01','A (Secondary) | 2014-01','A (Secondary) | 2014-08','A (Secondary) | 2015-04','A Primary (CLOSED Rate) | 2017-01','A Primary | 2016-08','A Secondary (CLOSED Rate) | 2017-01','A Secondary | 2016-08','A6 Primary | 2016-08','A6-TOU (Primary) | 2014-01','A6-TOU (Primary) | 2014-08','A6-TOU (Primary) | 2015-05','A6-TOU Primary | 2017-01','A6-TOU Primary | 2018-01','A6-TOU Primary Substation | 2017-01','A6-TOU Primary Substation | 2018-01','A6-TOU Transmission | 2017-01','A6-TOU Transmission | 2018-01','AL-TOU Primary (0-500 KW) | 2017-01','AL-TOU Primary (0-500 KW) | 2018-01','AL-TOU Primary (Above 500 KW) | 2017-01','AL-TOU Primary (Above 500 KW) | 2018-01','AL-TOU Primary (Above 500kW) | 2018-06','AL-TOU Primary | 2016-08','AL-TOU Primary Substation | 2017-01','AL-TOU Primary Substation | 2018-01','AL-TOU Secondary (0-500 KW) | 2015-05','AL-TOU Secondary (0-500 KW) | 2017-01','AL-TOU Secondary (0-500 KW) | 2018-01','AL-TOU Secondary (0-500 KW) | 2019-01','AL-TOU Secondary (Above 500 KW) | 2017-01','AL-TOU Secondary (Above 500 KW) | 2018-01','AL-TOU Secondary (Above 500kW) | 2018-07','AL-TOU Secondary | 2014-01','AL-TOU Secondary | 2014-08','AL-TOU Secondary | 2016-08','AL-TOU Secondary >500KW | 2014-01','AL-TOU Secondary 500KW | 2014-08','AL-TOU Secondary Substation | 2017-01','AL-TOU Secondary Substation | 2018-01','AL-TOU Transmission (0-500 KW) | 2017-01','AL-TOU Transmission (0-500 KW) | 2018-01','AL-TOU Transmission (Above 500 KW) | 2017-01','AL-TOU Transmission (Above 500 KW) | 2018-01','AL-TOU2 Primary (0-500kW) | 2018-06','AL-TOU2 Primary (Above 500kW) | 2018-06','AL-TOU2 Secondary (0-500kW) | 2018-06','AL-TOU2 Secondary (Above 500kW) | 2018-06','DG-R Primary (0-500 KW) | 2017-01','DG-R Primary (0-500 KW) | 2018-01','DG-R Primary (Above 500 KW) | 2017-01','DG-R Primary (Above 500 KW) | 2018-01','DG-R Primary | 2016-08','DG-R Primary | 2018-06','DG-R Primary Substation | 2017-01','DG-R Primary Substation | 2018-01','DG-R Secondary (0-500 KW) | 2017-01','DG-R Secondary (0-500 KW) | 2018-01','DG-R Secondary (0-500kW) | 2018-06','DG-R Secondary (Above 500 KW) | 2017-01','DG-R Secondary (Above 500 KW) | 2018-01','DG-R Secondary (Above 500kW) | 2018-06','DG-R Secondary | 2016-08','DG-R Secondary | 2019-01','DG-R Secondary Substation | 2017-01','DG-R Secondary Substation | 2018-01','DG-R Transmission (0-500 KW) | 2017-01','DG-R Transmission (0-500 KW) | 2018-01','DG-R Transmission (Above 500 KW) | 2017-01','DG-R Transmission (Above 500 KW) | 2018-01','DR - Coastal Baseline Region | 2014-02','DR - Coastal Baseline Region | 2014-08','DR - Coastal Baseline Region | 2015-05','DR - Coastal Baseline Region | 2016-07','DR - Coastal Baseline Region | 2017-01','DR - Coastal Baseline Region | 2018-01','DR - Coastal Baseline Region | 2018-10','DR - Desert Baseline Region | 2014-02','DR - Desert Baseline Region | 2014-08','DR - Desert Baseline Region | 2015-05','DR - Desert Baseline Region | 2016-07','DR - Desert Baseline Region | 2017-01','DR - Desert Baseline Region | 2018-01','DR - Desert Baseline Region | 2018-10','DR - Inland Baseline Region | 2014-02','DR - Inland Baseline Region | 2014-08','DR - Inland Baseline Region | 2015-05','DR - Inland Baseline Region | 2016-07','DR - Inland Baseline Region | 2017-01','DR - Inland Baseline Region | 2018-01','DR - Inland Baseline Region | 2018-10','DR - Mountain Baseline Region | 2014-02','DR - Mountain Baseline Region | 2014-08','DR - Mountain Baseline Region | 2015-05','DR - Mountain Baseline Region | 2016-07','DR - Mountain Baseline Region | 2017-01','DR - Mountain Baseline Region | 2018-01','DR - Mountain Baseline Region | 2018-10','DR- TOU- Coastal Baseline Region | 2014-02','DR- TOU- Coastal Baseline Region | 2014-08','DR- TOU- Coastal Baseline Region | 2015-05','DR- TOU- Desert Baseline Region | 2014-02','DR- TOU- Desert Baseline Region | 2014-08','DR- TOU- Desert Baseline Region | 2015-05','DR- TOU- Inland Baseline Region | 2014-02','DR- TOU- Inland Baseline Region | 2014-08','DR- TOU- Inland Baseline Region | 2015-05','DR- TOU- Mountain Baseline Region | 2014-02','DR- TOU- Mountain Baseline Region | 2014-08','DR- TOU- Mountain Baseline Region | 2015-05','DR-LI - Coastal Baseline Region | 2014-07','DR-LI - Coastal Baseline Region | 2015-05','DR-LI - Coastal Baseline Region | 2016-07','DR-LI - Coastal Baseline Region | 2017-01','DR-LI - Coastal Baseline Region | 2018-01','DR-LI - Desert Baseline Region | 2014-07','DR-LI - Desert Baseline Region | 2015-05','DR-LI - Desert Baseline Region | 2016-07','DR-LI - Desert Baseline Region | 2017-01','DR-LI - Desert Baseline Region | 2018-01','DR-LI - Inland Baseline Region | 2014-07','DR-LI - Inland Baseline Region | 2015-05','DR-LI - Inland Baseline Region | 2016-07','DR-LI - Inland Baseline Region | 2017-01','DR-LI - Inland Baseline Region | 2018-01','DR-LI - Mountain Baseline Region | 2014-07','DR-LI - Mountain Baseline Region | 2015-05','DR-LI - Mountain Baseline Region | 2016-07','DR-LI - Mountain Baseline Region | 2017-01','DR-LI - Mountain Baseline Region | 2018-01','DR-SES (Solar Energy Systems) | 2014-05','DR-SES (Solar Energy Systems) | 2014-08','DR-SES (Solar Energy Systems) | 2015-05','DR-SES (Solar Energy Systems) | 2016-07','DR-SES (Solar Energy Systems) | 2017-01','DR-SES (Solar Energy Systems) | 2018-01','EV-GIR1 (Experimental) | 2018-06','EV-GIR2 (Experimental) | 2018-06','EV-TOU | 2014-07','EV-TOU | 2015-05','EV-TOU | 2017-01','EV-TOU | 2018-01','EV-TOU-2 | 2014-07','EV-TOU-2 | 2015-05','EV-TOU-2 | 2017-01','EV-TOU-2 | 2018-01','TOU-A Primary (0-5kW) | 2018-06','TOU-A Primary (20-50kW) | 2018-06','TOU-A Primary (5-20kW) | 2018-06','TOU-A Primary | 2017-01','TOU-A Primary | 2018-01','TOU-A Secondary (0-5kW) | 2018-06','TOU-A Secondary (20-50kW) | 2018-06','TOU-A Secondary (5-20kW) | 2018-06','TOU-A Secondary (Above 50kW) | 2018-06','TOU-A Secondary | 2017-01','TOU-A Secondary | 2018-01','TOU-A-2 Primary (0-5kW) | 2018-06','TOU-A-2 Primary (20-50kW) | 2018-06','TOU-A-2 Primary (5-20kW) | 2018-06','TOU-A-2 Primary (Above 50kW) | 2018-06','TOU-A-2 Secondary (0-5kW) | 2018-06','TOU-A-2 Secondary (20-50kW) | 2018-06','TOU-A-2 Secondary (5-20kW) | 2018-06','TOU-A-3 Primary (0-5kW) | 2018-06','TOU-A-3 Primary (20-50kW) | 2018-06','TOU-A-3 Primary (5-20kW) | 2018-06','TOU-A-3 Primary (Above 50kW) | 2018-06','TOU-A-3 Secondary (0-5kW) | 2018-06','TOU-A-3 Secondary (20-50kW) | 2018-06','TOU-A-3 Secondary (5-20kW) | 2018-06','TOU-A-P Primary | 2016-08','TOU-A-P Secondary | 2016-08','TOU-DR Coastal Baseline Region | 2016-07','TOU-DR Coastal Baseline Region | 2017-01','TOU-DR Coastal Baseline Region | 2018-01','TOU-DR Desert Baseline Region | 2016-07','TOU-DR Desert Baseline Region | 2017-01','TOU-DR Desert Baseline Region | 2018-01','TOU-DR Inland Baseline Region | 2016-07','TOU-DR Inland Baseline Region | 2017-01','TOU-DR Inland Baseline Region | 2018-01','TOU-DR Mountain Baseline Region | 2016-07','TOU-DR Mountain Baseline Region | 2017-01','TOU-DR Mountain Baseline Region | 2018-01','TOU-DR1 Coastal | 2018-01','TOU-DR1 Coastal | 2019-06','TOU-DR1 Desert | 2018-01','TOU-DR1 Desert | 2019-06','TOU-DR1 Inland | 2018-01','TOU-DR1 Inland | 2019-06','TOU-DR1 Mountain | 2018-01','TOU-DR1 Mountain | 2019-06','TOU-DR2 Coastal | 2019-06','TOU-DR2 Desert | 2019-06','TOU-DR2 Inland | 2019-06','TOU-DR2 Mountain | 2019-06','TOU-M | 2018-06']
 Title: Rate Names
 Definition: INDEX names:=CopyIndex(Rate_Names_and_Dates);~
 SortIndex(names)
@@ -950,6 +950,7 @@ NodeSize: 64,40
 WindState: 2,102,82,1272,359
 ValueState: 2,104,106,705,637,,MIDM
 {!40300|Att_SlicerPopupSize: 496,717}
+Att_PrevIndexValue: ['A (Primary) | 2014-01','A (Secondary) | 2014-01','A (Secondary) | 2014-08','A (Secondary) | 2015-04','A Primary (CLOSED Rate) | 2017-01','A Primary | 2016-08','A Secondary (CLOSED Rate) | 2017-01','A Secondary | 2016-08','A6 Primary | 2016-08','A6-TOU (Primary) | 2014-01','A6-TOU (Primary) | 2014-08','A6-TOU (Primary) | 2015-05','A6-TOU Primary | 2017-01','A6-TOU Primary | 2018-01','A6-TOU Primary Substation | 2017-01','A6-TOU Primary Substation | 2018-01','A6-TOU Transmission | 2017-01','A6-TOU Transmission | 2018-01','AL-TOU Primary (0-500 KW) | 2017-01','AL-TOU Primary (0-500 KW) | 2018-01','AL-TOU Primary (Above 500 KW) | 2017-01','AL-TOU Primary (Above 500 KW) | 2018-01','AL-TOU Primary (Above 500kW) | 2018-06','AL-TOU Primary | 2016-08','AL-TOU Primary Substation | 2017-01','AL-TOU Primary Substation | 2018-01','AL-TOU Secondary (0-500 KW) | 2015-05','AL-TOU Secondary (0-500 KW) | 2017-01','AL-TOU Secondary (0-500 KW) | 2018-01','AL-TOU Secondary (0-500 KW) | 2019-01','AL-TOU Secondary (Above 500 KW) | 2017-01','AL-TOU Secondary (Above 500 KW) | 2018-01','AL-TOU Secondary (Above 500kW) | 2018-07','AL-TOU Secondary | 2014-01','AL-TOU Secondary | 2014-08','AL-TOU Secondary | 2016-08','AL-TOU Secondary >500KW | 2014-01','AL-TOU Secondary 500KW | 2014-08','AL-TOU Secondary Substation | 2017-01','AL-TOU Secondary Substation | 2018-01','AL-TOU Transmission (0-500 KW) | 2017-01','AL-TOU Transmission (0-500 KW) | 2018-01','AL-TOU Transmission (Above 500 KW) | 2017-01','AL-TOU Transmission (Above 500 KW) | 2018-01','AL-TOU2 Primary (0-500kW) | 2018-06','AL-TOU2 Primary (Above 500kW) | 2018-06','AL-TOU2 Secondary (0-500kW) | 2018-06','AL-TOU2 Secondary (Above 500kW) | 2018-06','DG-R Primary (0-500 KW) | 2017-01','DG-R Primary (0-500 KW) | 2018-01','DG-R Primary (Above 500 KW) | 2017-01','DG-R Primary (Above 500 KW) | 2018-01','DG-R Primary | 2016-08','DG-R Primary | 2018-06','DG-R Primary Substation | 2017-01','DG-R Primary Substation | 2018-01','DG-R Secondary (0-500 KW) | 2017-01','DG-R Secondary (0-500 KW) | 2018-01','DG-R Secondary (0-500kW) | 2018-06','DG-R Secondary (Above 500 KW) | 2017-01','DG-R Secondary (Above 500 KW) | 2018-01','DG-R Secondary (Above 500kW) | 2018-06','DG-R Secondary | 2016-08','DG-R Secondary | 2019-01','DG-R Secondary Substation | 2017-01','DG-R Secondary Substation | 2018-01','DG-R Transmission (0-500 KW) | 2017-01','DG-R Transmission (0-500 KW) | 2018-01','DG-R Transmission (Above 500 KW) | 2017-01','DG-R Transmission (Above 500 KW) | 2018-01','DR - Coastal Baseline Region | 2014-02','DR - Coastal Baseline Region | 2014-08','DR - Coastal Baseline Region | 2015-05','DR - Coastal Baseline Region | 2016-07','DR - Coastal Baseline Region | 2017-01','DR - Coastal Baseline Region | 2018-01','DR - Coastal Baseline Region | 2018-10','DR - Desert Baseline Region | 2014-02','DR - Desert Baseline Region | 2014-08','DR - Desert Baseline Region | 2015-05','DR - Desert Baseline Region | 2016-07','DR - Desert Baseline Region | 2017-01','DR - Desert Baseline Region | 2018-01','DR - Desert Baseline Region | 2018-10','DR - Inland Baseline Region | 2014-02','DR - Inland Baseline Region | 2014-08','DR - Inland Baseline Region | 2015-05','DR - Inland Baseline Region | 2016-07','DR - Inland Baseline Region | 2017-01','DR - Inland Baseline Region | 2018-01','DR - Inland Baseline Region | 2018-10','DR - Mountain Baseline Region | 2014-02','DR - Mountain Baseline Region | 2014-08','DR - Mountain Baseline Region | 2015-05','DR - Mountain Baseline Region | 2016-07','DR - Mountain Baseline Region | 2017-01','DR - Mountain Baseline Region | 2018-01','DR - Mountain Baseline Region | 2018-10','DR- TOU- Coastal Baseline Region | 2014-02','DR- TOU- Coastal Baseline Region | 2014-08','DR- TOU- Coastal Baseline Region | 2015-05','DR- TOU- Desert Baseline Region | 2014-02','DR- TOU- Desert Baseline Region | 2014-08','DR- TOU- Desert Baseline Region | 2015-05','DR- TOU- Inland Baseline Region | 2014-02','DR- TOU- Inland Baseline Region | 2014-08','DR- TOU- Inland Baseline Region | 2015-05','DR- TOU- Mountain Baseline Region | 2014-02','DR- TOU- Mountain Baseline Region | 2014-08','DR- TOU- Mountain Baseline Region | 2015-05','DR-LI - Coastal Baseline Region | 2014-07','DR-LI - Coastal Baseline Region | 2015-05','DR-LI - Coastal Baseline Region | 2016-07','DR-LI - Coastal Baseline Region | 2017-01','DR-LI - Coastal Baseline Region | 2018-01','DR-LI - Desert Baseline Region | 2014-07','DR-LI - Desert Baseline Region | 2015-05','DR-LI - Desert Baseline Region | 2016-07','DR-LI - Desert Baseline Region | 2017-01','DR-LI - Desert Baseline Region | 2018-01','DR-LI - Inland Baseline Region | 2014-07','DR-LI - Inland Baseline Region | 2015-05','DR-LI - Inland Baseline Region | 2016-07','DR-LI - Inland Baseline Region | 2017-01','DR-LI - Inland Baseline Region | 2018-01','DR-LI - Mountain Baseline Region | 2014-07','DR-LI - Mountain Baseline Region | 2015-05','DR-LI - Mountain Baseline Region | 2016-07','DR-LI - Mountain Baseline Region | 2017-01','DR-LI - Mountain Baseline Region | 2018-01','DR-SES (Solar Energy Systems) | 2014-05','DR-SES (Solar Energy Systems) | 2014-08','DR-SES (Solar Energy Systems) | 2015-05','DR-SES (Solar Energy Systems) | 2016-07','DR-SES (Solar Energy Systems) | 2017-01','DR-SES (Solar Energy Systems) | 2018-01','EV-GIR1 (Experimental) | 2018-06','EV-GIR2 (Experimental) | 2018-06','EV-TOU | 2014-07','EV-TOU | 2015-05','EV-TOU | 2017-01','EV-TOU | 2018-01','EV-TOU-2 | 2014-07','EV-TOU-2 | 2015-05','EV-TOU-2 | 2017-01','EV-TOU-2 | 2018-01','TOU-A Primary (0-5kW) | 2018-06','TOU-A Primary (20-50kW) | 2018-06','TOU-A Primary (5-20kW) | 2018-06','TOU-A Primary | 2017-01','TOU-A Primary | 2018-01','TOU-A Secondary (0-5kW) | 2018-06','TOU-A Secondary (20-50kW) | 2018-06','TOU-A Secondary (5-20kW) | 2018-06','TOU-A Secondary (Above 50kW) | 2018-06','TOU-A Secondary | 2017-01','TOU-A Secondary | 2018-01','TOU-A-2 Primary (0-5kW) | 2018-06','TOU-A-2 Primary (20-50kW) | 2018-06','TOU-A-2 Primary (5-20kW) | 2018-06','TOU-A-2 Primary (Above 50kW) | 2018-06','TOU-A-2 Secondary (0-5kW) | 2018-06','TOU-A-2 Secondary (20-50kW) | 2018-06','TOU-A-2 Secondary (5-20kW) | 2018-06','TOU-A-3 Primary (0-5kW) | 2018-06','TOU-A-3 Primary (20-50kW) | 2018-06','TOU-A-3 Primary (5-20kW) | 2018-06','TOU-A-3 Primary (Above 50kW) | 2018-06','TOU-A-3 Secondary (0-5kW) | 2018-06','TOU-A-3 Secondary (20-50kW) | 2018-06','TOU-A-3 Secondary (5-20kW) | 2018-06','TOU-A-P Primary | 2016-08','TOU-A-P Secondary | 2016-08','TOU-DR Coastal Baseline Region | 2016-07','TOU-DR Coastal Baseline Region | 2017-01','TOU-DR Coastal Baseline Region | 2018-01','TOU-DR Desert Baseline Region | 2016-07','TOU-DR Desert Baseline Region | 2017-01','TOU-DR Desert Baseline Region | 2018-01','TOU-DR Inland Baseline Region | 2016-07','TOU-DR Inland Baseline Region | 2017-01','TOU-DR Inland Baseline Region | 2018-01','TOU-DR Mountain Baseline Region | 2016-07','TOU-DR Mountain Baseline Region | 2017-01','TOU-DR Mountain Baseline Region | 2018-01','TOU-DR1 Coastal | 2018-01','TOU-DR1 Coastal | 2019-06','TOU-DR1 Desert | 2018-01','TOU-DR1 Desert | 2019-06','TOU-DR1 Inland | 2018-01','TOU-DR1 Inland | 2019-06','TOU-DR1 Mountain | 2018-01','TOU-DR1 Mountain | 2019-06','TOU-DR2 Coastal | 2019-06','TOU-DR2 Desert | 2019-06','TOU-DR2 Inland | 2019-06','TOU-DR2 Mountain | 2019-06','TOU-M | 2018-06']
 
 Index Tier_Period_Column
 Title: Tier & Period Columns
@@ -1174,6 +1175,12 @@ Definition: #Find_Valid_TiersPrds[.subscripts='tiers']
 NodeLocation: 832,184,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 257,56}
+
+Index Periods_Copy
+Title: Periods Copy
+Definition: CopyIndex(Periods)
+NodeLocation: 976,360,1
+NodeSize: 64,40
 
 Close Rates_Auxiliary_Vari
 
@@ -1990,7 +1997,7 @@ Definition: Choice(Self,2,0)
 NodeLocation: 456,64,1
 NodeSize: 64,40
 WindState: 2,550,143,877,350
-Aliases: FormNode Fo1547663462, FormNode Fo1547502443
+Aliases: FormNode Fo1547663462, FormNode Fo1547502443, FormNode Fo1567060128
 Domain: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
 {!40300|DomainExpr: 0..Size(Flat_Demand_Tier_Opt)}
 {!40200|Att_ChoiceIndexes: Keyword Self}
@@ -2010,7 +2017,7 @@ Definition: Choice(Self,2,0)
 NodeLocation: 608,64,1
 NodeSize: 64,40
 WindState: 2,707,143,720,350
-Aliases: FormNode Fo1547663463, FormNode Fo1547502561
+Aliases: FormNode Fo1547663463, FormNode Fo1547502561, FormNode Fo1567060129
 Domain: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
 {!40300|DomainExpr: 0..Size(Demand_TOU_Tier_Opti)}
 {!40200|Att_ChoiceIndexes: Keyword Self}
@@ -2030,7 +2037,7 @@ Definition: Choice(Self,2,0)
 NodeLocation: 760,64,1
 NodeSize: 64,40
 WindState: 2,707,143,720,350
-Aliases: FormNode Fo1547663464, FormNode Fo1547502590
+Aliases: FormNode Fo1547663464, FormNode Fo1547502590, FormNode Fo1567060130
 Domain: [0,1,2,3,4,5,6,7,8,9,10,11]
 {!40300|DomainExpr: 0..Size(Energy_TOU_Tiers_Opt)}
 {!40200|Att_ChoiceIndexes: Keyword Self}
@@ -2050,7 +2057,7 @@ Definition: Choice(Self,2,0)
 NodeLocation: 456,176,1
 NodeSize: 64,40
 WindState: 2,973,222,720,350
-Aliases: FormNode Fo1547663465, FormNode Fo1547502847
+Aliases: FormNode Fo1547663465, FormNode Fo1547502847, FormNode Fo1567060131
 Domain: [0,1,2,3,4,5,6,7,8]
 {!40300|DomainExpr: 0..Size(Flat_Demand_Period_O)}
 {!40200|Att_ChoiceIndexes: Keyword Self}
@@ -2070,7 +2077,7 @@ Definition: Choice(Self,4,0)
 NodeLocation: 608,176,1
 NodeSize: 64,40
 WindState: 2,843,173,720,350
-Aliases: FormNode Fo1547663466, FormNode Fo1547502871
+Aliases: FormNode Fo1547663466, FormNode Fo1547502871, FormNode Fo1567060132
 Domain: [0,1,2,3,4,5,6,7,8,9]
 {!40300|DomainExpr: 0..Size(Demand_TOU_Period_Op)}
 {!40200|Att_ChoiceIndexes: Keyword Self}
@@ -2090,7 +2097,7 @@ Definition: Choice(Self,7,0)
 NodeLocation: 760,176,1
 NodeSize: 64,40
 WindState: 2,707,143,720,350
-Aliases: FormNode Fo1547663467, FormNode Fo1547502901
+Aliases: FormNode Fo1547663467, FormNode Fo1547502901, FormNode Fo1567060133
 Domain: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
 {!40300|DomainExpr: 0..Size(Energy_TOU_Period_Op)}
 {!40200|Att_ChoiceIndexes: Keyword Self}
@@ -2129,7 +2136,7 @@ NodeSize: 64,40
 WindState: 2,330,84,942,601
 DefnState: 2,540,150,463,431,0,DFNM
 ValueState: 2,448,284,414,346,0,MIDM
-Aliases: FormNode Fo1547663175, FormNode Fo1547504238, FormNode Fo1547834265
+Aliases: FormNode Fo1547663175, FormNode Fo1547504238, FormNode Fo1547834265, FormNode Fo1567060122, FormNode Fo1567060140
 ReformDef: [Flat_Demand_Tiers,Month]
 Domain: DomDiscreteNumeric
 {!40300|DomainExpr: Integer(0,Num_Flat_Dmd_Periods-1)}
@@ -2146,7 +2153,7 @@ NodeSize: 64,40
 WindState: 2,767,38,943,350
 DefnState: 2,131,398,784,468,0,DFNM
 ValueState: 2,120,122,820,505,0,MIDM
-Aliases: FormNode Fo1547663058, FormNode Fo1547503299
+Aliases: FormNode Fo1547663058, FormNode Fo1547503299, FormNode Fo1567060120
 TableCellDefault: Rate_Info_Default
 
 FormNode Fo1547503299
@@ -2178,7 +2185,7 @@ NodeLocation: 280,176,1
 NodeSize: 64,40
 WindState: 2,311,499,720,350
 ValueState: 2,51,52,507,315,0,MIDM
-Aliases: Alias Al1547708339, FormNode Fo1547833110
+Aliases: Alias Al1547708339, FormNode Fo1547833110, FormNode Fo1567060139
 {!40700|Att_CellFormat: CellAlignment('Left')}
 
 FormNode Fo1547504238
@@ -2504,7 +2511,7 @@ NodeSize: 64,40
 WindState: 2,7,66,1120,667
 DefnState: 2,236,127,1160,766,0,DFNM
 ValueState: 2,289,219,931,541,0,MIDM
-Aliases: FormNode Fo1547663176, FormNode Fo1547504905, FormNode Fo1547834266
+Aliases: FormNode Fo1547663176, FormNode Fo1547504905, FormNode Fo1547834266, FormNode Fo1567060123, FormNode Fo1567060141
 ReformDef: [Month,Time_of_Day]
 ReformVal: [Month,Time_of_Day]
 Domain: DomDiscreteNumeric
@@ -2838,7 +2845,7 @@ NodeSize: 64,40
 WindState: 2,285,270,1030,626
 DefnState: 2,618,102,1160,766,0,DFNM
 ValueState: 2,440,32,931,722,0,MIDM
-Aliases: FormNode Fo1547663177, FormNode Fo1547506171, FormNode Fo1547834267
+Aliases: FormNode Fo1547663177, FormNode Fo1547506171, FormNode Fo1547834267, FormNode Fo1567060124, FormNode Fo1567060142
 ReformDef: [Month,Time_of_Day]
 ReformVal: [Month,Time_of_Day]
 Domain: DomDiscreteNumeric
@@ -2880,7 +2887,7 @@ Definition: 186.3
 NodeLocation: 152,504,1
 NodeSize: 64,40
 WindState: 2,4,311,720,350
-Aliases: FormNode Fo1547671387, FormNode Fo1547511886
+Aliases: FormNode Fo1547671387, FormNode Fo1547511886, FormNode Fo1567060137
 
 Decision Minimum_Charges1
 Title: Minimum Charges
@@ -2890,7 +2897,7 @@ Definition: Null
 NodeLocation: 304,504,1
 NodeSize: 64,40
 WindState: 2,130,54,720,350
-Aliases: FormNode Fo1547671388, FormNode Fo1547511887
+Aliases: FormNode Fo1547671388, FormNode Fo1547511887, FormNode Fo1567060138
 
 FormNode Fo1547511886
 Title: Basic Service Fees
@@ -2938,7 +2945,7 @@ NodeLocation: 456,504,1
 NodeSize: 64,40
 WindState: 2,377,35,1054,579
 DefnState: 2,766,33,639,429,0,DFNM
-Aliases: FormNode Fo1547663178, FormNode Fo1547570119
+Aliases: FormNode Fo1547663178, FormNode Fo1547570119, FormNode Fo1567060125
 ReformDef: [Demand_Rate_Attribut,Flat_Demand_Periods]
 TableCellDefault: Null
 Att_EditSliceState: [Flat_Demand_Tiers,1,Flat_Demand_Periods,0,Demand_Rate_Attribut,1]
@@ -2976,7 +2983,7 @@ NodeSize: 64,40
 WindState: 2,565,-8,1071,669
 DefnState: 2,403,110,638,479,0,DFNM
 ValueState: 2,1658,138,436,369,0,MIDM
-Aliases: FormNode Fo1547663179, FormNode Fo1547570120
+Aliases: FormNode Fo1547663179, FormNode Fo1547570120, FormNode Fo1567060126
 ReformDef: [Demand_Rate_Attribut,Demand_TOU_Periods]
 ReformVal: [Demand_Rate_Attribut,Demand_TOU_Periods]
 TableCellDefault: Null
@@ -3020,7 +3027,7 @@ NodeSize: 64,40
 WindState: 2,194,17,1328,591
 DefnState: 2,430,414,719,486,0,DFNM
 ValueState: 2,1602,74,901,719,0,MIDM
-Aliases: FormNode Fo1547663180, FormNode Fo1547570121
+Aliases: FormNode Fo1547663180, FormNode Fo1547570121, FormNode Fo1567060127
 ReformDef: [Energy_Rate_Attribut,Energy_TOU_Periods]
 NumberFormat: 2,F,2,3,0,0,2,1,$,0,"ABBREV",0,,,0,0,15
 TableCellDefault: Null
@@ -3057,7 +3064,7 @@ Description: Select an existing rate to view, use to populate a new rate, or del
 Definition: Choice(Rate_Names,189,0)
 NodeLocation: 120,64,1
 NodeSize: 64,40
-Aliases: FormNode Fo1547663079, FormNode Fo1547664907, FormNode Fo1547572499, Alias Al1547708329, FormNode Fo1547708334
+Aliases: FormNode Fo1547663079, FormNode Fo1547664907, FormNode Fo1547572499, Alias Al1547708329, FormNode Fo1547708334, FormNode Fo1567060121, FormNode Fo1567060134
 {!40200|Att_ChoiceIndexes: Index Rate_Names}
 
 FormNode Fo1547572499
@@ -3090,7 +3097,7 @@ Description: Press this button to populate the rate definition data with data fr
 NodeLocation: 672,632,1
 NodeSize: 64,40
 WindState: 2,307,37,720,350
-Aliases: Alias Al1547663095
+Aliases: Alias Al1547663095, Alias Al1567060120
 OnClick: Populate_Info_FixChg();~
 Populate_Flat_Demand();~
 Populate_TOU_Demand();~
@@ -3162,7 +3169,7 @@ Title: Save New Rate
 Description: Press this button to save the data currently shown in the rate definition. If the name and start date assigned to this rate (via the 'Rate Description' input table) is different from all existing rates, then this data will be added as a new rate. If the name and start date match an existing rate, then you'll have the option to overwrite the existing rate with this new data.
 NodeLocation: 808,768,1
 NodeSize: 64,40
-Aliases: Alias Al1547664530
+Aliases: Alias Al1547664530, Alias Al1567060121
 OnClick: Create_New_Rate();~
 Store_Filtered_Start;   {Have to store the filtered start dates in order for Rate_Names to be correct}~
 ~
@@ -3286,7 +3293,7 @@ Description: Press this button to delete
 NodeLocation: 816,632,1
 NodeSize: 64,40
 WindState: 2,102,82,1089,578
-Aliases: Alias Al1547664536
+Aliases: Alias Al1547664536, Alias Al1567060122
 OnClick: MsgBox("Warning: Performing this operation will permanently discard retail rate data from the model. Are you certain you want to delete the following rate: '" & Select_Existing_Rate & "'? Press OK to continue, or cancel to abort the operation.", 1, "Deletion of Retail Rate Data");~
 VAR rowValue:=Rows_for_Rate_Names[Rate_Names=Select_Existing_Rate];~
 INDEX newRows:=Subset(All_USURDB_Rows <> rowValue);~
@@ -3331,7 +3338,7 @@ Description: Press this button to reset all settings defining the new rate.
 NodeLocation: 272,912,1
 NodeSize: 64,40
 WindState: 2,517,364,720,350
-Aliases: Alias Al1547672053
+Aliases: Alias Al1547672053, Alias Al1567060123
 OnClick: Rate_Defin_Reset()
 
 Function Rate_Defin_Reset()
@@ -3536,7 +3543,7 @@ NodeLocation: 280,200,1
 NodeSize: 64,40
 WindState: 2,580,206,1057,563
 ValueState: 2,149,54,1495,845,,MIDM
-Aliases: FormNode Fo1547666967
+Aliases: FormNode Fo1547666967, FormNode Fo1567060135
 GraphSetup: Graph_HLabelRotation:90~
 Graph_AxisLabelFont:,16,0~
 Att_GraphValueRange View_Saved_Rates:1,,1,,,,,19.097389340400696,22,0~
@@ -3570,7 +3577,7 @@ NodeLocation: 280,296,1
 NodeSize: 64,40
 WindState: 2,98,82,1526,709
 ValueState: 2,17,-12,1495,845,1,MIDM
-Aliases: FormNode Fo1547666968
+Aliases: FormNode Fo1547666968, FormNode Fo1567060136
 GraphSetup: Graph_HLabelRotation:90~
 Graph_AxisLabelFont:,16,0~
 Att_GraphValueRange View_Existing_Rates:1,,,1~
