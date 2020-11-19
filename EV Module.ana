@@ -18018,7 +18018,7 @@ ValueState: 2,432,363,729,345,0,MIDM
 Decision Vehicle_Sim_End_Yr
 Title: Vehicle Sim End Year
 Description: The final period of the vehicle simulated forecast.
-Definition: Choice(Veh_Sim_End_Yr_Opt,17,30)
+Definition: Choice(Veh_Sim_End_Yr_Opt,42,30)
 NodeLocation: 240,376,1
 NodeSize: 64,40
 Aliases: FormNode Fo1529509652, FormNode Fo1530223614, FormNode Fo1553204993
@@ -18781,7 +18781,7 @@ Description: The impact on coincient peak demand, on average, of a single electr
 Source: Derived from CEC vehicle forecast. CEC used LBNL's V2G model to estimate this impact.~
 ~
 Sign convention: Load REDUCTIONS are positive. Load INCREASES are negative.
-Definition: Table(EV_Vehicles)(1.029091894917918,0.13912636148118937)
+Definition: Table(All_Vehicle_Techs)(0,1.029091894917918,0.13912636148118937)
 NodeLocation: 136,72,1
 NodeSize: 64,40
 Aliases: Alias Al1550770771, FormNode Fo1550770771, FormNode Fo1545177742, FormNode Fo1544975027
