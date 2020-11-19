@@ -11,7 +11,7 @@ Date: Mon, Jan 8, 2018 10:24 AM
 DefaultSize: 64,40
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-DiagState: 2,91,59,1711,788,17
+DiagState: 2,91,59,1711,727,17
 NodeColor: 65535,65535,65535
 Pict: (000000000000003C003C00044203000089504E470D0A1A0A0000000D494844520000003C0000003C08060000003AFCD972000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA864000002C7494441546843ED993D68535114C7337674EC6646471D44C70C0E852EBA75EC22082E1933D92E9241214504C5A11D1445148A2214042D2231836251A12208814AA9A0202A180AF29E9CC291DBD3FFFD7A1F7937AF77F841F3BFF71EDE2FF726EF9DB491A6E9A1028675068665D3DF5E9B59FED0EDECFE1D4DA1F1328161993CFABC327FE27623252E3E9B591BB7340CCB4295AD4A1A86652077968EB44D3A797BAB9D5C3F3A4A96A6531D69FF7257AE3301C3A2D11D63DBF14E964F0E91A4445D630386457267B3D7364919A5BFF45BC9E0CA22227D71A9179CF0CD770B8B2659C6B6D3909F5BCDA0845D65196FE990847D65192FE95084B3CA32CED22108E795659CA4AB162E4A96B14A57295CB42C6394AE4AB82C5946953EFFB4B5FE6BF7C7111E4BEECF0E0875BE0D18BA52B62CA34ACF3D39BEA14AFB024317AEBE69F7C621CB14250D431B0BAFE657C629CB501F7DEAEED4288F340C4DA8B2F4379A532679A561A8A36A59268F340C11A1C83259A56128094D96C9220D43955065195F691832A1CB323ED2302426459651A5CF3D3EF671FBF7B089E61D088849936554E9D9D5E61049EF7B414CAA2C6393DE3779D2651993F4FF4975916574D27B83EA4FA97590655469FAF6A66C6F803B116AF7D405CC834F372E5093F0FDCF0E75DB07C64386A4CF3C9CDEA15E9A5EC349127E97E8DF23683C0468B39E6FAD9E45632A3094F071D79D80AAA15DA4EBA38D41E32A3094842EACFE3820C724309444E1C088C2066028C92A4C37FBCECBB97B744B70856E7FEFBF0D4EA37A3A8211BEB6D1E9F25A1F481AD5D3118C303FAED2A31DADB5414F43349F761AD5D3119CB0AB80EF7C260A1B80A1848B45610B51D8421476240A1B80A1848B45610B51D8421476240A1B80A1848B1D3A61BAA0D75FD75BAE509BE723C0C2D435A17A3AD43654D694C050C2C5B2E22B9C075953024349DE0B71FD28A847330B2E6F2C0CEB0C0CEB0C0CEB4BDAF807C5ACDF944D009DE70000000049454E44AE426082)
 FontStyle: Arial Narrow,19
@@ -478,361 +478,6 @@ Att_EditSliceState: [Sectors,1,Selected_Spatial_ID,1,Building_Stock_Year,1]
 Att_ColorRole: Null
 {!50000|Att_ColumnWidths: [,Building_Stock_Year,\([94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,94,120,94,94,94,94,94])]}
 
-Module Non_Res_Bldg_Stock_E
-Title: Non-Res Bldg Stock Estimates
-Author: JamesMilford
-Date: Wed, Oct 31, 2018 10:11 AM
-NodeLocation: 232,960,1
-NodeSize: 64,40
-NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,6,99,1304,597,17
-NodeColor: 57311,57311,57311
-{!40400|CloudPlayerStyles: Show_Object:no}
-{!40204-40399|AWP_Attrib:Show_Object:no}
-
-Constant Comm_Floorspace
-Title: Commercial Floorspace
-Units: million sqft
-Description: The commercial floorspace forecast for SDGE. This is only used to calculate back-cast and forecast growth rates.~
-~
-Source:~
-Form 2.2 SDGE Planning Area California Energy Demand 2018-2030 Revised Baseline Forecast - Mid Demand Case~
-https://efiling.energy.ca.gov/GetDocument.aspx?tn=222324
-Definition: Table(Building_Stock_Year)(516,523,531,539,547,557,570,589,608,624,638,651,664,673,684,694,703,708,710,713,719,722,724,729,743,756,768,780,792,804,815,828,841,854,866,878,890,903)
-NodeLocation: 128,320,1
-NodeSize: 64,40
-WindState: 2,75,312,1116,572
-DefnState: 2,152,110,501,701,0,DFNM
-Aliases: FormNode Fo1541014066
-
-Decision Date_of_Premise_Cnt
-Title: Date of Non-Res Premise Counts
-Units: year
-Description: The year for which non-residential premise counts is available.
-Definition: Oct-1-2018
-NodeLocation: 128,208,1
-NodeSize: 64,40
-Aliases: FormNode Fo1541014067
-
-Variable Floorspc_GrowthIndex
-Title: Floorspace Growth Index
-Units: dmnls
-Description: An index indicating the size of commercial floorspace relative to a reference year.
-Definition: VAR interpFloorspc:=LinearInterp(Date_Bldg_Stock_Yr, Comm_Floorspace, Date_of_Premise_Cnt , Building_Stock_Year);~
-~
-Divide(Comm_Floorspace, interpFloorspc, True);~
-~
-
-NodeLocation: 296,320,1
-NodeSize: 64,40
-WindState: 2,870,69,855,578
-ValueState: 2,382,68,843,833,0,MIDM
-
-Constant Premise_Counts
-Title: Premise Counts
-Units: premises
-Description: The current count of premises for SDGE customers.~
-~
-Source:~
-File from Dan Wilson (posted on Sharepoint).~
-"PremiseAndServiceCountByZipSector102518.xlsx"
-Definition: Table(All_Spatial_ID,All_Sectors)(~
-0,0,0,~
-1287619,152883,0,~
-6413,790,0,~
-6160,513,0,~
-728,209,0,~
-1292,283,0,~
-25509,2598,0,~
-23664,2857,0,~
-16221,604,0,~
-5224,775,0,~
-10066,720,0,~
-701,132,0,~
-236,53,0,~
-92,21,0,~
-10194,550,0,~
-297,56,0,~
-2973,447,0,~
-13126,537,0,~
-17514,2378,0,~
-9166,940,0,~
-201,46,0,~
-15893,2983,0,~
-774,127,0,~
-258,66,0,~
-18861,1337,0,~
-2956,419,0,~
-46,53,0,~
-1794,417,0,~
-2323,433,0,~
-4681,324,0,~
-12554,3668,0,~
-16844,1542,0,~
-6635,885,0,~
-9802,1241,0,~
-6581,866,0,~
-14883,985,0,~
-20960,3705,0,~
-21378,2098,0,~
-20026,3008,0,~
-15788,3454,0,~
-18282,1258,0,~
-16209,1224,0,~
-16630,2484,0,~
-6827,2153,0,~
-2100,568,0,~
-19847,2477,0,~
-14464,1347,0,~
-16451,2264,0,~
-557,36,0,~
-20356,2138,0,~
-19623,878,0,~
-9952,1020,0,~
-548,187,0,~
-249,70,0,~
-1040,446,0,~
-15983,2820,0,~
-12251,1953,0,~
-174,39,0,~
-3959,803,0,~
-0,1,0,~
-15360,2475,0,~
-367,161,0,~
-19852,2506,0,~
-0,2,0,~
-6221,1210,0,~
-17772,2746,0,~
-11260,2307,0,~
-6074,1230,0,~
-11293,1572,0,~
-15034,1683,0,~
-0,1,0,~
-449,189,0,~
-971,83,0,~
-403,10,0,~
-0,3,0,~
-0,4,0,~
-25534,4146,0,~
-14678,1184,0,~
-18890,2154,0,~
-23581,1328,0,~
-22145,1303,0,~
-8289,1088,0,~
-14476,800,0,~
-14184,2379,0,~
-26177,2415,0,~
-12855,2913,0,~
-16847,3632,0,~
-0,1,0,~
-13096,1370,0,~
-17776,536,0,~
-23575,1790,0,~
-17963,851,0,~
-20983,1283,0,~
-9000,907,0,~
-10112,379,0,~
-12760,1388,0,~
-1957,5828,0,~
-22073,1271,0,~
-12751,2940,0,~
-9564,474,0,~
-25436,3265,0,~
-17032,1736,0,~
-22046,2014,0,~
-18078,890,0,~
-22518,1982,0,~
-12852,1283,0,~
-0,4,0,~
-942,13,0,~
-11157,247,0,~
-134,29,0,~
-0,1,0,~
-21027,3077,0,~
-0,6,0,~
-0,1,0,~
-6952,1069,0,~
-0,6,0,~
-0,3,0,~
-0,4,0,~
-53,35,0,~
-2941,300,0,~
-13479,1246,0,~
-1694,191,0,~
-5868,593,0,~
-2360,176,0,~
-17481,1997,0,~
-10286,1461,0,~
-0,6,0,~
-11585,2110,0,~
-0,1,0,~
-23283,1542,0,~
-3285,248,0,~
-2008,156,0,~
-0,5,0,~
-4010,670,0,~
-6552,629,0,~
-0,3,0,~
-11922,1055,0,~
-0,1,0)
-NodeLocation: 456,200,1
-NodeSize: 64,40
-DefnState: 2,182,7,615,872,0,DFNM
-ValueState: 2,71,387,416,303,,MIDM
-Aliases: FormNode Fo1541014068
-ReformDef: [All_Sectors,All_Spatial_ID]
-ReformVal: [All_Sectors,All_Spatial_ID]
-Att__TotalsIndex: [All_Spatial_ID]
-
-Variable Total_NonRes_Premise
-Title: Total Non-Res Premises
-Units: premises
-Description: The total number of non-residential premises.
-Definition: Sum(Non_Res_Premises * (NOT All_Agg_Spatial_IDs), All_Spatial_ID) * Floorspc_GrowthIndex
-NodeLocation: 704,320,1
-NodeSize: 64,40
-ValueState: 2,232,13,1256,857,0,MIDM
-
-Variable Non_Res_Premises
-Title: Non-Res Premises
-Units: premises
-Description: The non-residential premise count by zip code for SDGE.
-Definition: Premise_Counts[All_Sectors=Non_Res_Label]
-NodeLocation: 608,200,1
-NodeSize: 64,40
-ValueState: 2,52,141,519,655,,MIDM
-Att__TotalsIndex: [PV_Spatial_ID]
-
-Variable Res_Growth_Index
-Title: Residential Growth Index
-Units: dmnls
-Description: An index indicating the number of residential premises relative to a reference year.
-Definition: VAR interpStock:=LinearInterp(Date_Bldg_Stock_Yr, Residential_Stock, Date_of_Premise_Cnt, Building_Stock_Year);~
-Divide(Residential_Stock, interpStock, True)
-NodeLocation: 296,88,1
-NodeSize: 64,40
-ValueState: 2,244,16,1387,876,0,MIDM
-ReformVal: [0,All_Spatial_ID]
-Att_ResultSliceState: [All_Spatial_ID,2,TimeCopy,1]
-
-Variable UnscaleNonResPremise
-Title: Unscaled Non-Res Premises
-Units: premises
-Description: The number of non-residential premises estimated using residential growth indexes by zip code. These have not yet been scaled to match top-down estimates of commercial floorspace.
-Definition: Non_Res_Premises * Res_Growth_Index
-NodeLocation: 704,88,1
-NodeSize: 64,40
-ValueState: 2,483,26,1045,739,0,MIDM
-
-Variable ScaledNonResPremises
-Title: Scaled Non-Res Premises
-Units: premises
-Description: The non-residential premise count based on top-down growth estimates of commercial floorspace and bottom-up, zip-code-level growth rates from residential premises.
-Definition: VAR scaled:=Non_Res_Scaling_Fact * UnscaleNonResPremise;~
-VAR totalScaled:=Sum(scaled * (NOT All_Agg_Spatial_IDs), All_Spatial_ID);~
-~
-IF All_Spatial_ID = Aggregation_2_Label~
-THEN totalScaled~
-ELSE scaled
-NodeLocation: 936,88,1
-NodeSize: 64,40
-ValueState: 2,298,30,1297,849,0,MIDM
-ReformVal: [Time_Solar_PV,PV_Spatial_ID]
-Att__TotalsIndex: [PV_Spatial_ID]
-Att_ResultSliceState: [PV_Spatial_ID,0,Time_Solar_PV,1]
-
-FormNode Fo1541014066
-Title: Commercial Floorspace
-Definition: 0
-NodeLocation: 128,372,1
-NodeSize: 56,12
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Comm_Floorspace
-
-FormNode Fo1541014067
-Title: Date of Non-Res Premise Counts
-Definition: 0
-NodeLocation: 128,156,1
-NodeSize: 64,12
-NodeInfo: 1,0,0,0,0,0,0,90,0,,0,,,
-Original: Date_of_Premise_Cnt
-
-FormNode Fo1541014068
-Title: Premise Counts
-Definition: 0
-NodeLocation: 456,252,1
-NodeSize: 56,12
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Premise_Counts
-
-Variable Residential_Stock
-Title: Residential Stock
-Units: bldg units
-Description: The residential building stock.
-Definition: IF Isnumber(Building_Stock[All_Sectors=Residential_Label]) THEN Building_Stock[All_Sectors=Residential_Label] ELSE 0
-NodeLocation: 128,88,1
-NodeSize: 64,40
-WindState: 2,102,82,1105,431
-ValueState: 2,258,129,1003,582,,MIDM
-NumberFormat: 2,F,4,4,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [All_Spatial_ID]
-{!40700|Att_CellFormat: Undefined}
-
-Variable Date_Bldg_Stock_Yr
-Title: Date of Bldg Stock Year
-Description: The end of year date for each building stock year.
-Definition: Slice(BuildingYr_EOP_Map, @Building_Stock_Year)
-NodeLocation: 296,200,1
-NodeSize: 64,40
-WindState: 2,102,82,843,479
-ValueState: 2,568,238,416,635,,MIDM
-
-Variable Tot_Unscaled_Premise
-Title: Total Unscaled Non-Res Premises
-Units: premises
-Description: The total number of non-res premises based on zip code level growth rates, but not yet scaled to match CEC growth forecasts.
-Definition: Sum(UnscaleNonResPremise * (NOT All_Agg_Spatial_IDs), All_Spatial_ID)
-NodeLocation: 768,200,1
-NodeSize: 64,40
-
-Variable Non_Res_Scaling_Fact
-Title: Non-Res Scaling Factor
-Units: dmnls
-Description: The ratio of desired premises (based on CEC growth rates) vs total unscaled premises by zip code (based on zip code level growth rates).
-Definition: Divide(Total_NonRes_Premise, Tot_Unscaled_Premise, True)
-NodeLocation: 856,320,1
-NodeSize: 64,40
-ValueState: 2,168,170,993,568,1,MIDM
-
-Variable Compare_Premise_Fore
-Title: Compare Premise Forecasts
-Definition: VAR final:=Sum(ScaledNonResPremises * (NOT All_Agg_Spatial_IDs), All_Spatial_ID);~
-VAR desired:=Total_NonRes_Premise;~
-[final, desired]
-NodeLocation: 936,424,1
-NodeSize: 64,40
-WindState: 2,102,82,944,547
-ValueState: 2,296,125,1208,654,0,MIDM
-
-Decision Use_Calc_NonRes_Stk
-Title: Use Calculated Non-Res Stock
-Units: boolean
-Description: Check this input to use calculated estimates of the non-residential building stock. To use exogenous, imported non-residential building stock, leave this input unchecked.
-Definition: Checkbox(0)
-NodeLocation: 128,448,1
-NodeSize: 64,40
-Aliases: FormNode Fo1541013064
-
-FormNode Fo1541013064
-Title: Use Calculated Non-Res Stock
-Definition: 0
-NodeLocation: 180,476,1
-NodeSize: 28,12
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Use_Calc_NonRes_Stk
-
-Close Non_Res_Bldg_Stock_E
-
 Variable Applied_Building_Stk
 Title: Applied Building Stock
 Units: bldg units
@@ -965,7 +610,7 @@ VAR error:=IF Applied_Building_Stk = 0~
    ELSE Divide(interp, Applied_Building_Stk, True) - 1;~
 ~
 error[Building_Stock_Year=Time_Annually]
-NodeLocation: 448,952,1
+NodeLocation: 96,944,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 ValueState: 2,56,21,1560,922,1,MIDM
@@ -1107,16 +752,6 @@ NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: []
 Att_ResultSliceState: [All_Spatial_ID,2,All_Sectors,1,Stock_Source,1,Time,1]
 
-Text Te1542333139
-Title: This logic is not used any longer since it has been recreated directly in the global template.
-NodeLocation: 232,936,-1
-NodeSize: 120,80
-NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-NodeColor: 57311,57311,57311
-NodeFont: Arial Narrow,13
-{!40400|CloudPlayerStyles: Show_Object:no}
-{!40204-40399|AWP_Attrib:Show_Object:no}
-
 Decision BldgStk_Growth_Rates
 Title: Building Stock Growth Rates
 Units: fraction/year
@@ -1129,13 +764,13 @@ Aliases: FormNode Fo1544635313, FormNode Fo1545167499
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
 Index BldgGrowthRate_Scens
-Att_PrevIndexValue: ['Low','Medium','High']
 Title: Building Growth Rate Scenarios
 Description: Names for the building growth rate scenarios.
 Definition: ['Low','Medium','High']
 NodeLocation: 416,640,1
 NodeSize: 64,40
 Aliases: FormNode Fo1556245727
+Att_PrevIndexValue: ['Low','Medium','High']
 
 Decision Building_Growth_Scen
 Title: Building Growth Scenario
