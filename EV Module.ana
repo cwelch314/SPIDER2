@@ -18600,6 +18600,7 @@ Aliases: FormNode Fo1545336732, FormNode Fo1545336535, FormNode Fo1545338526
 {!40200|Att_ChoiceIndexes: Index EV_WOM_Scen}
 
 Index EV_WOM_Scen
+Att_PrevIndexValue: ['Low','Medium','High']
 Title: EV WOM Scenario
 Description: Names for the EV word-of-mouth scenarios.
 Definition: ['Low','Medium','High']
@@ -18607,7 +18608,6 @@ IndexVals: ['item 1']
 NodeLocation: 560,416,1
 NodeSize: 64,40
 Aliases: FormNode Fo1545336537
-Att_PrevIndexValue: ['Low','Medium','High']
 
 FormNode Fo1545336535
 Title: EV Mkt Share Scenario
@@ -18669,6 +18669,7 @@ NodeSize: 64,40
 ValueState: 2,236,38,1262,710,,MIDM
 
 Index EV_AdEff_Scenario
+Att_PrevIndexValue: ['Low','Medium','High']
 Title: EV AdEff Scenario
 Description: Names for the EV advertising effectiveness scenarios.
 Definition: ['Low','Medium','High']
@@ -18676,7 +18677,6 @@ IndexVals: ['item 1']
 NodeLocation: 248,520,1
 NodeSize: 64,40
 Aliases: FormNode Fo1545337303
-Att_PrevIndexValue: ['Low','Medium','High']
 
 Decision EV_AdEff_Scen
 Title: EV AdEff Scenario
@@ -19521,11 +19521,11 @@ NodeSize: 64,40
 WindState: 2,1060,267,720,350
 
 Index EV_Adopt_Types_None
+Att_PrevIndexValue: ['None','Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 Title: EV Adopt Data Types with None
 Definition: Concat(None_Label, EV_Adopt_Data_Types)
 NodeLocation: 1024,256,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['None','Incremental Vehicle Count','Incremental MW-AC','Cumulative Vehicle Count','Cumulative MW-AC']
 
 Index EV_Spatial_ID
 Title: EV Spatial ID
@@ -19574,21 +19574,21 @@ NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,0
 Original: EV_Sectors
 
 Index Fuel_Types
+Att_PrevIndexValue: ['Electricity','Gasoline']
 Title: Fuel Types
 Definition: ['Electricity','Gasoline']
 NodeLocation: 416,80,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 232,128}
-Att_PrevIndexValue: ['Electricity','Gasoline']
 
 Index Vehicle_Input_Years
+Att_PrevIndexValue: [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 Title: Vehicle Input Years
 Definition: Sequence(Veh_Input_Start_Yr, Veh_Input_End_Yr, 1)
 NodeLocation: 264,312,1
 NodeSize: 64,40
 DisplayOutputs: Variable Accel_Metric_Diff
 {!40300|Att_SlicerPopupSize: 237,322}
-Att_PrevIndexValue: [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030]
 
 Index All_Vehicle_Techs
 Title: All Vehicle Techs
@@ -19651,12 +19651,12 @@ NodeInfo: 1,0,0,0,0,0,0,118,0,,0,,,0
 Original: Vehicle_Techs
 
 Index Logit_Attributes
+Att_PrevIndexValue: ['Cost','Range','Tech Preference']
 Title: Logit Attributes
 Definition: ['Cost','Range','Tech Preference']
 NodeLocation: 104,328,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 227,80}
-Att_PrevIndexValue: ['Cost','Range','Tech Preference']
 
 Decision Cost_Attrib_Label
 Title: Cost Attrib Label
@@ -19691,12 +19691,12 @@ NodeInfo: 1,0,0,0,0,0,0,119,0,,0,,,
 Original: Electric_Fuel_Label
 
 Index Veh_Incentive_Type
+Att_PrevIndexValue: ['Federal','State','Utility']
 Title: Vehicle Incentive Type
 Definition: ['Federal','State','Utility']
 NodeLocation: 568,408,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 237,64}
-Att_PrevIndexValue: ['Federal','State','Utility']
 
 FormNode Fo1556244776
 Title: EV Label
@@ -20071,13 +20071,13 @@ NodeSize: 64,40
 NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 
 Index Gasoline_Price_Scens
+Att_PrevIndexValue: ['Low','Medium','High']
 Title: Gasoline Price Scenarios
 Description: Names for the gasoline price scenarios.
 Definition: ['Low','Medium','High']
 NodeLocation: 224,192,1
 NodeSize: 64,40
 Aliases: FormNode Fo1553721939
-Att_PrevIndexValue: ['Low','Medium','High']
 
 Decision Sel_Gasol_Price_Scen
 Title: Gasoline Price Scenario
@@ -20195,13 +20195,13 @@ NodeSize: 64,40
 ValueState: 2,164,170,739,516,,MIDM
 
 Index Elect_Price_Scens
+Att_PrevIndexValue: ['Low','Medium','High']
 Title: Electricity Price Scenarios
 Description: Names for the electricity price scenarios.
 Definition: ['Low','Medium','High']
 NodeLocation: 224,80,1
 NodeSize: 64,40
 Aliases: FormNode Fo1555031033
-Att_PrevIndexValue: ['Low','Medium','High']
 
 Decision Sel_ElectPrice_Scen
 Title: Electricity Price Scenario
@@ -20695,6 +20695,7 @@ Att_EditSliceState: [Veh_Incentive_Type,1,All_Vehicle_Techs,1,EV_Incent_Scenario
 {!50000|Att_ColumnWidths: [,Veh_Incentive_Type,[,,],Vehicle_Input_Years,\([,,,,,,,,,,61])]}
 
 Index EV_Incent_Scenario
+Att_PrevIndexValue: ['Low','Medium','High']
 Title: EV Incentive Scenario
 Description: Names for the EV incentive scenarios.
 Definition: ['Low','Medium','High']
@@ -20703,7 +20704,6 @@ NodeSize: 64,40
 WindState: 2,98,82,767,696
 Aliases: FormNode Fo1554146303
 {!40300|Att_SlicerPopupSize: 227,48}
-Att_PrevIndexValue: ['Low','Medium','High']
 
 FormNode Fo1554146281
 Title: EV Incentives
@@ -20757,13 +20757,13 @@ NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 {!40700|Att_CellFormat: Undefined}
 
 Index Vehicle_Price_Scens
+Att_PrevIndexValue: ['Low','Medium','High']
 Title: Vehicle Price Scenarios
 Description: Names for the vehicle price scenarios.
 Definition: ['Low','Medium','High']
 NodeLocation: 592,112,1
 NodeSize: 64,40
 Aliases: FormNode Fo1554832343
-Att_PrevIndexValue: ['Low','Medium','High']
 
 Constant BaseYr_VehPrice_Adj
 Title: Base Year for Vehicle Price Adjustment
@@ -20954,11 +20954,11 @@ NodeColor: 58982,58982,58982
 {!40204-40399|AWP_Attrib:ShowObject: no}
 
 Index Range_Val
+Att_PrevIndexValue: [62,381,700]
 Title: Range Val
 Definition: [62,381,700]
 NodeLocation: 120,88,1
 NodeSize: 64,40
-Att_PrevIndexValue: [62,381,700]
 
 Constant Range_Value
 Title: Range Value
@@ -21173,6 +21173,7 @@ NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 {!40700|Att_CellFormat: Undefined}
 
 Index Vehicle_Range_Scens
+Att_PrevIndexValue: ['Low','Medium','High']
 Title: Vehicle Range Scenarios
 Description: Names for the vehicle range scenarios.
 Definition: ['Low','Medium','High']
@@ -21180,7 +21181,6 @@ IndexVals: ['item 1']
 NodeLocation: 384,448,1
 NodeSize: 64,40
 Aliases: FormNode Fo1554832900
-Att_PrevIndexValue: ['Low','Medium','High']
 
 Constant BaseYr_VehRange_Adj
 Title: Base Year for Vehicle Range Adjustment
@@ -24598,11 +24598,11 @@ ValueState: 2,354,39,904,656,0,MIDM
 ReformVal: [EV_Spatial_ID,EV_Sectors]
 
 Index Optimization_Methods
-Att_PrevIndexValue: ['Stock Delta','Sales Delta','RSquared']
 Title: Optimization Methods
 Definition: ['Stock Delta','Sales Delta','RSquared']
 NodeLocation: 1032,80,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Stock Delta','Sales Delta','RSquared']
 
 Module EV_Constraints
 Title: EV Constraints
@@ -24699,6 +24699,7 @@ ValueState: 2,29,138,416,303,,MIDM
 TableCellDefault: Handle(Null)
 
 Index All_EV_Dec_Handles
+Att_PrevIndexValue: [EV_Ad_Effectiveness,EV_Word_of_Mouth,EV_LongRun_Mkt_Share,EV_Init_Familiarity,Early_Retiremnt_Mult,EV_Spatial_Coeff]
 Title: All EV Dec Handles
 Description: A superset of all possible decision variables to be used in the optimization.
 Definition: CopyIndex(Handles_for_EV_Decis)
@@ -24708,7 +24709,6 @@ WindState: 2,593,95,720,350
 ValueState: 2,1948,362,416,303,0,MIDM
 DisplayInputs: Index All_EV_Decisions
 MetaOnly: 1
-Att_PrevIndexValue: [EV_Ad_Effectiveness,EV_Word_of_Mouth,EV_LongRun_Mkt_Share,EV_Init_Familiarity,Early_Retiremnt_Mult,EV_Spatial_Coeff]
 
 Index All_EV_Decisions
 Title: All EV Decisions
