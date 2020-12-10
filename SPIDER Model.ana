@@ -369,7 +369,7 @@ Date: Sun, Dec 16, 2018 8:10 AM
 NodeLocation: 112,392,1
 NodeSize: 80,56
 NodeInfo: 1,1,1,1,1,1,1,,0,,0,,,
-DiagState: 2,-156,90,1820,702,17
+DiagState: 2,13,12,1820,702,17
 NodeFont: Arial Narrow,19
 {!40400|CloudPlayerStyles: Show_object: no}
 {!40204-40399|AWP_Attrib:Show_object: no}
@@ -634,7 +634,7 @@ Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year B
 Decision PV_Economics
 Title: PV Economics
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Econ_Titles1,7,0)
+Definition: Choice(PV_Econ_Titles1,5,0)
 NodeLocation: 608,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -746,7 +746,6 @@ Aliases: FormNode Fo1552868509
 {!50000|Att_ColumnWidths: [215]}
 
 Index PV_Scenario_Variable
-Att_PrevIndexValue: ['PV Cost','Base Yr for PV Cost Decline','PV Incentive','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 Title: PV Scenario Variables
 Definition: ['PV Cost','Base Yr for PV Cost Decline','PV Incentive','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 IndexVals: ['item 1']
@@ -754,6 +753,7 @@ NodeLocation: 960,176,1
 NodeSize: 64,40
 WindState: 2,-13,61,720,350
 Aliases: FormNode Fo1552873761
+Att_PrevIndexValue: ['PV Cost','Base Yr for PV Cost Decline','PV Incentive','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 
 Alias Al1552872113
 Title: Result
@@ -1242,11 +1242,11 @@ OnClick: FOR J:=@Dropdown_Vars DO (~
 
 
 Index Not_Applicable
-Att_PrevIndexValue: ['Not Applicable to Study']
 Title: Not Applicable
 Definition: ['Not Applicable to Study']
 NodeLocation: 1920,584,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Not Applicable to Study']
 
 Decision Hidden_Dropdown
 Title: Hidden Dropdown
