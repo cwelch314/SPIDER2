@@ -99,7 +99,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,241,64,1029,721,17
+DiagState: 2,284,82,1029,721,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
@@ -1004,7 +1004,7 @@ Original: Storage_Dispatch_Out
 Decision BESS_Impact1
 Title: BESS Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Dispatch_Tit,2,0)
+Definition: Choice(Storage_Dispatch_Tit,1,0)
 NodeLocation: 608,1160,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1242,11 +1242,11 @@ OnClick: FOR J:=@Dropdown_Vars DO (~
 
 
 Index Not_Applicable
-Att_PrevIndexValue: ['Not Applicable to Study']
 Title: Not Applicable
 Definition: ['Not Applicable to Study']
 NodeLocation: 1920,584,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Not Applicable to Study']
 
 Decision Hidden_Dropdown
 Title: Hidden Dropdown
