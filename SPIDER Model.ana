@@ -473,12 +473,12 @@ MetaOnly: 1
 {!40200|Att_ChoiceIndexes: Index All_PV_Impact_Out}
 
 Index PV_Impact_Titles
-Att_PrevIndexValue: ['PV Cumulative Adoption (MW-AC)','PV Incremental Adoption (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)','Forecast Load Impacts (MW)']
 Title: PV Impact Titles
 Definition: Create_Titles_List(PV_Impact_Out)~
 
 NodeLocation: 160,432,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['PV Cumulative Adoption (MW-AC)','PV Incremental Adoption (MW-AC/month)','Cumulative PV Delta (MW-AC)','Share of Housing (Res) (fraction)','Forecast Load Impacts (MW)']
 
 Button PV_Econ_Output_But
 Title: Result
@@ -566,12 +566,12 @@ MetaOnly: 1
 {!40200|Att_ChoiceIndexes: Index All_EV_Impact_Out}
 
 Index EV_Impact_Titles
-Att_PrevIndexValue: ['EV Cumulative MW Impact (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Cumul Vehicle Stock - BEV/PHEV (vehicles)','Tech Share of Vehicle Stock (fraction)','Aggreg New Vehicle Sales (vehicles/year)','Tech Share of New Vehicle Sales (fraction)','EV Long-Run Market Share (market share)','Vehicle Cost Components ($/vehicle)','Vehicle Sticker Price ($/vehicle)','Miles of Range (miles)','Applied Fuel Prices ($/GGE)']
 Title: EV Impact Titles
 Definition: Create_Titles_List(EV_Impact_Out)~
 
 NodeLocation: 160,672,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['EV Cumulative MW Impact (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Cumul Vehicle Stock - BEV/PHEV (vehicles)','Tech Share of Vehicle Stock (fraction)','Aggreg New Vehicle Sales (vehicles/year)','Tech Share of New Vehicle Sales (fraction)','EV Long-Run Market Share (market share)','Vehicle Cost Components ($/vehicle)','Vehicle Sticker Price ($/vehicle)','Miles of Range (miles)','Applied Fuel Prices ($/GGE)']
 
 Decision EV_Impact
 Title: EV Impact
@@ -624,12 +624,12 @@ MetaOnly: 1
 {!40200|Att_ChoiceIndexes: Index All_PV_Econ_Out}
 
 Index PV_Econ_Titles1
-Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Cost of Electricity Ratio (post/pre ratio)','Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)','Measure Cost & Benefits ($/unit)','Measure B/C Ratio (ratio)','Program Summary']
 Title: PV Econ Titles
 Definition: Create_Titles_List(PV_Econ_Out1)~
 
 NodeLocation: 160,912,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Cost of Electricity Ratio (post/pre ratio)','Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)','Measure Cost & Benefits ($/unit)','Measure B/C Ratio (ratio)','Program Summary']
 
 Decision PV_Economics
 Title: PV Economics
@@ -954,12 +954,12 @@ THEN Null~
 ELSE Show_ACP_Window(Storage_Input1,Storage_Input_Titles,BESS_Input,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
 
 Index Storage_Input_Titles
-Att_PrevIndexValue: ['Start Time for Dispatch','End Time for Dispatch','Flows to View','Battery Storage Specs','Number of Storage Units (units/system)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (fraction)','Allowed ITC Percent by Year (fraction)','Storage kWh Incent Base Rate ($/kWh)','Incentive Step Start Month','kWh Incent Derate for Duration','kWh Incent Derate for Capacity','Historic Storage Incentives ($/kWh)']
 Title: Storage Input Titles
 Definition: Create_Titles_List(Storage_Input1)~
 
 NodeLocation: 848,912,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Start Time for Dispatch','End Time for Dispatch','Flows to View','Battery Storage Specs','Number of Storage Units (units/system)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (fraction)','Allowed ITC Percent by Year (fraction)','Storage kWh Incent Base Rate ($/kWh)','Incentive Step Start Month','kWh Incent Derate for Duration','kWh Incent Derate for Capacity','Historic Storage Incentives ($/kWh)']
 
 FormNode Fo1552872728
 Title: Select Output
@@ -1037,12 +1037,12 @@ THEN Null~
 ELSE Show_ACP_Window(Storage_Dispatch_Out,Storage_Dispatch_Tit,BESS_Impact1, 'Result')
 
 Index Storage_Dispatch_Tit
-Att_PrevIndexValue: ['Cumulative BESS Adoption (nameplate MW)','Dispatch Flows (kW-hr/customer)','Rates for Dispatch','Battery Charge for Dispatch (kWh)','Pct of Stored Electricity from PV (fraction)']
 Title: Storage Dispatch Titles
 Definition: Create_Titles_List(Storage_Dispatch_Out)~
 
 NodeLocation: 160,1152,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Cumulative BESS Adoption (nameplate MW)','Dispatch Flows (kW-hr/customer)','Rates for Dispatch','Battery Charge for Dispatch (kWh)','Pct of Stored Electricity from PV (fraction)']
 
 Text Te1552872981
 Title: Storage Dispatch Output
@@ -1242,11 +1242,11 @@ OnClick: FOR J:=@Dropdown_Vars DO (~
 
 
 Index Not_Applicable
+Att_PrevIndexValue: ['Not Applicable to Study']
 Title: Not Applicable
 Definition: ['Not Applicable to Study']
 NodeLocation: 1920,584,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Not Applicable to Study']
 
 Decision Hidden_Dropdown
 Title: Hidden Dropdown
