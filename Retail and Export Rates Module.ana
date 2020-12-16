@@ -1161,6 +1161,7 @@ NodeLocation: 256,264,1
 NodeSize: 64,40
 
 Index All_Periods
+Att_PrevIndexValue: ['period0','period1','period2','period3','period4','period5','period6','period7','period8','period9','period10','period11','period12','period13','period14']
 Title: All Periods
 Definition: #Find_Valid_TiersPrds[.subscripts='periods']
 NodeLocation: 832,272,1
@@ -1168,7 +1169,6 @@ NodeSize: 64,40
 WindState: 2,98,82,1217,840
 ValueState: 2,548,427,416,430,,MIDM
 {!40300|Att_SlicerPopupSize: 227,238}
-Att_PrevIndexValue: ['period0','period1','period2','period3','period4','period5','period6','period7','period8','period9','period10','period11','period12','period13','period14']
 
 Index All_Tiers
 Title: All Tiers
@@ -3453,12 +3453,12 @@ NodeSize: 64,40
 ValueState: 2,536,538,416,303,0,MIDM
 
 Index Flat_Demand_Tiers
+Att_PrevIndexValue: ['tier0']
 Title: Flat Demand Tiers
 Definition: Subset(@Flat_Demand_Tier_Opt <= Num_Flat_Dmd_Tiers)
 NodeLocation: 520,64,1
 NodeSize: 64,40
 ValueState: 2,456,302,416,303,0,MIDM
-Att_PrevIndexValue: ['tier0']
 
 Index Demand_TOU_Tiers
 Att_PrevIndexValue: ['tier0']
@@ -3475,12 +3475,12 @@ NodeLocation: 520,240,1
 NodeSize: 64,40
 
 Index Flat_Demand_Periods
+Att_PrevIndexValue: ['period0']
 Title: Flat Demand Periods
 Definition: Subset(@Flat_Demand_Period_O <= Num_Flat_Dmd_Periods)
 NodeLocation: 248,64,1
 NodeSize: 64,40
 WindState: 2,671,-2,720,350
-Att_PrevIndexValue: ['period0']
 
 Index Demand_TOU_Periods
 Att_PrevIndexValue: ['period0','period1','period2']
@@ -3498,11 +3498,11 @@ NodeSize: 64,40
 ValueState: 2,488,246,416,547,0,MIDM
 
 Index Demand_Rate_Attribut
+Att_PrevIndexValue: ['max (kW)','rate ($/kW)','adj ($/kW)']
 Title: Demand Rate Attributes
 Definition: ['max (kW)','rate ($/kW)','adj ($/kW)']
 NodeLocation: 656,240,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['max (kW)','rate ($/kW)','adj ($/kW)']
 
 Index Energy_Rate_Attribut
 Att_PrevIndexValue: ['max (kWh/day)','rate ($/kWh)','adj ($/kWh)']
@@ -3527,11 +3527,11 @@ NodeLocation: 656,336,1
 NodeSize: 64,40
 
 Index Rate_Info
+Att_PrevIndexValue: ['Rate Name','Start Date (eg, 1/1/2019 or 1-Jan-2019)','End Date (eg, 1/1/2019 or 1-Jan-2019)','Utility','Sector','Source']
 Title: Rate Info
 Definition: ['Rate Name','Start Date (eg, 1/1/2019 or 1-Jan-2019)','End Date (eg, 1/1/2019 or 1-Jan-2019)','Utility','Sector','Source']
 NodeLocation: 656,64,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Rate Name','Start Date (eg, 1/1/2019 or 1-Jan-2019)','End Date (eg, 1/1/2019 or 1-Jan-2019)','Utility','Sector','Source']
 
 Index Day_Type_and_Hour
 Title: Day Type and Hour
