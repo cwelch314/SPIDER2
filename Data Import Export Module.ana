@@ -9793,18 +9793,18 @@ TableCellDefault: Default_ExportConfig
 {!40200|Att_ChoiceIndexes: Index Output_Data_Type}
 
 Index Export_Parameter
+Att_PrevIndexValue: ['Exclude?','Data Type','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 Title: Export Parameter
 Definition: ['Exclude?','Data Type','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 NodeLocation: 120,64,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Exclude?','Data Type','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 
 Index Export_Dataset_Num
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 Title: Export Dataset Number
 Definition: 1..Num_Export_Datasets
 NodeLocation: 280,176,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 
 Decision Num_Export_Datasets
 Title: Number of Export Datasets
@@ -10047,11 +10047,11 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Cleared_Range_Mult
 
 Index Range_Parameters
+Att_PrevIndexValue: ['Full Range','Clear Range']
 Title: Range Parameters
 Definition: ['Full Range','Clear Range']
 NodeLocation: 280,368,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Full Range','Clear Range']
 
 Decision Clear_Range_Label
 Title: Clear Range Label
@@ -10156,13 +10156,13 @@ NodeLocation: 432,592,1
 NodeSize: 64,40
 
 Index Export_Data_Descript
+Att_PrevIndexValue: []
 Title: Export Data Description
 Definition: CopyIndex(Data_Export_Settings[Export_Dataset_Num=Datasets_to_Export, Export_Parameter=Description_Label])
 NodeLocation: 280,784,1
 NodeSize: 64,40
 WindState: 2,789,122,720,350
 ValueState: 2,335,482,416,220,0,MIDM
-Att_PrevIndexValue: []
 
 Decision Description_Label
 Title: Description Label
