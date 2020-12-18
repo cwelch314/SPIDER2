@@ -497,7 +497,7 @@ ELSE Show_ACP_Window(PV_Impact_Out,PV_Impact_Titles,PV_Impact1, 'Result')
 Decision PV_Impact1
 Title: PV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Impact_Titles,1,0)
+Definition: Choice(PV_Impact_Titles,2,0)
 NodeLocation: 616,440,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -634,7 +634,7 @@ Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year B
 Decision PV_Economics
 Title: PV Economics
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Econ_Titles1,5,0)
+Definition: Choice(PV_Econ_Titles1,6,0)
 NodeLocation: 608,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -922,7 +922,7 @@ Original: Storag_Input_Button
 Decision BESS_Input
 Title: BESS Input
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Input_Titles,10,0)
+Definition: Choice(Storage_Input_Titles,4,0)
 NodeLocation: 1296,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
