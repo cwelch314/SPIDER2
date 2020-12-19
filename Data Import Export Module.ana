@@ -3511,11 +3511,11 @@ NodeLocation: 1192,264,1
 NodeSize: 64,40
 
 Index Seq_Index_Params
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Row 1 Parameter','Row 2 Parameter','Row 3 Parameter','Row 4 Parameter','Row 5 Parameter','Row 6 Parameter','Row 7 Parameter','Row 8 Parameter','Row 9 Parameter','Row 10 Parameter','Row 11 Parameter','Row 12 Parameter','Row 13 Parameter','Row 14 Parameter','Row 15 Parameter','Row 16 Parameter','Row 17 Parameter','Row 18 Parameter','Row 19 Parameter','Row 20 Parameter','Row 21 Parameter','Row 22 Parameter','Row 23 Parameter','Row 24 Parameter','Row 25 Parameter','Row 26 Parameter','Row 27 Parameter','Row 28 Parameter','Row 29 Parameter','Row 30 Parameter']
 Title: Sequence Index Parameters
 Definition: Concat(Seq_Index_Fix_Param, Import_Seq_Params)
 NodeLocation: 1192,464,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Row 1 Parameter','Row 2 Parameter','Row 3 Parameter','Row 4 Parameter','Row 5 Parameter','Row 6 Parameter','Row 7 Parameter','Row 8 Parameter','Row 9 Parameter','Row 10 Parameter','Row 11 Parameter','Row 12 Parameter','Row 13 Parameter','Row 14 Parameter','Row 15 Parameter','Row 16 Parameter','Row 17 Parameter','Row 18 Parameter','Row 19 Parameter','Row 20 Parameter','Row 21 Parameter','Row 22 Parameter','Row 23 Parameter','Row 24 Parameter','Row 25 Parameter','Row 26 Parameter','Row 27 Parameter','Row 28 Parameter','Row 29 Parameter','Row 30 Parameter']
 
 Decision Seq_Index_Default
 Title: Sequence Index Default
@@ -3539,11 +3539,11 @@ WindState: 2,42,72,720,350
 Aliases: FormNode New1551412488, FormNode New1551412521
 
 Index Seq_Index_Tabs
-Att_PrevIndexValue: [1,2]
 Title: Sequence Index Tabs
 Definition: 1..Num_Seq_Index_Tabs
 NodeLocation: 1336,184,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2]
 
 Decision SeqInd_ImportSetting
 Title: Sequence Index Import Settings
@@ -3584,6 +3584,7 @@ NodeLocation: 1192,664,1
 NodeSize: 64,40
 WindState: 2,26,10,1042,708
 DefnState: 2,474,10,805,645,0,DFNM
+ValueState: 2,386,352,939,334,,MIDM
 Aliases: FormNode New1551412489, FormNode New1551412515
 ReformDef: [Seq_Index_Tabs,Seq_Index_Params]
 TableCellDefault: Seq_Index_Default
@@ -9561,7 +9562,7 @@ Date: Fri, Nov 23, 2018 9:50 PM
 NodeLocation: 632,208,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-38,64,1468,685,17
+DiagState: 2,0,64,1468,685,17
 
 Button Run_Data_Export
 Title: Run Data Export
@@ -9591,7 +9592,7 @@ Original: Output_Filename
 
 Decision Active_Export_Datase
 Title: Active Export Dataset
-Definition: Choice(Export_Data_Descript,1,0)
+Definition: Choice(Export_Data_Descript,4,0)
 NodeLocation: 96,328,1
 NodeSize: 64,40
 Aliases: FormNode Fo1551980365
@@ -9683,7 +9684,7 @@ NodeSize: 64,40
 
 Decision Applied_Path
 Title: Applied Path
-Definition: 'C:\Users\coryw\OneDrive - Lumidyne Consulting LLC\Documents\Repos\SPIDER\CSV Files\Sequential_Export.csv'
+Definition: 'C:\Users\coryw\OneDrive - Lumidyne Consulting LLC\Documents\Repos\SPIDER\CSV Files\CEC_Forecast_Export.csv'
 NodeLocation: 880,344,1
 NodeSize: 64,40
 ValueState: 2,168,170,1015,303,,MIDM
@@ -10122,7 +10123,7 @@ OnChange: MsgBox("NOTE: ACP read/write won't currently work if this name is chan
 
 Decision Export_Timestamp
 Title: Export Timestamp
-Definition: 19-Dec-2020 13:32:53.580000
+Definition: 19-Dec-2020 15:41:30.791000
 NodeLocation: 584,64,1
 NodeSize: 64,40
 Aliases: FormNode Fo1544827467
@@ -10156,13 +10157,13 @@ NodeLocation: 432,592,1
 NodeSize: 64,40
 
 Index Export_Data_Descript
-Att_PrevIndexValue: ['Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)']
 Title: Export Data Description
 Definition: CopyIndex(Data_Export_Settings[Export_Dataset_Num=Datasets_to_Export, Export_Parameter=Description_Label])
 NodeLocation: 280,784,1
 NodeSize: 64,40
 WindState: 2,789,122,720,350
 ValueState: 2,335,482,416,220,0,MIDM
+Att_PrevIndexValue: ['Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)']
 
 Decision Description_Label
 Title: Description Label
@@ -10329,7 +10330,7 @@ FOR J:=Export_Data_Descript DO (~
 Reset_Workbook:=NOT Reset_Workbook;    {Clear the spreadsheet object in hopes of releasing any spreadsheet file}
 NodeLocation: 736,416,1
 NodeSize: 64,40
-WindState: 2,329,168,1440,726
+WindState: 2,284,95,1440,726
 
 Function Model_Path(filename)
 Title: In Model Path
