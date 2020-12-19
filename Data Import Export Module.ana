@@ -9772,7 +9772,7 @@ Decision Data_Export_Settings
 Title: Data Export Settings
 Description: For csv files, the "Sheet Name" and "Data Start Cell" parameters are not required. If "Clear Before Writing?" is not selected for a csv file, then the data will be appended to the bottom of the csv file, rather than overwriting any existing data.
 Definition: Table(Export_Parameter,Export_Dataset_Num)(~
-Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
+Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),~
 Choice(Output_Data_Type,3,0),Choice(Output_Data_Type,3,0),Choice(Output_Data_Type,3,0),Choice(Output_Data_Type,3,0),Choice(Output_Data_Type,3,0),Choice(Output_Data_Type,2,0),Choice(Output_Data_Type,2,0),Choice(Output_Data_Type,2,0),Choice(Output_Data_Type,2,0),Choice(Output_Data_Type,2,0),Choice(Output_Data_Type,1,0),Choice(Output_Data_Type,1,0),Choice(Output_Data_Type,1,0),Choice(Output_Data_Type,1,0),~
 'Sequential historic then actual data','Calibration comparison','Deltas from base period','CEC Forecast by Zip','Timestamp','Deliverable sequential historic then actual data','Deliverable calibration comparison','Deliverable deltas from base period','Deliverable CEC Forecast by Zip','Deliverable timestamp','Sequential historic then actual data (CSV)','Calibration comparison (CSV)','Deltas from base period (CSV)','CEC Forecast by Zip (CSV)',~
 Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),Handle(Indexed_Timestamp),Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),Handle(Indexed_Timestamp),Handle(Format_Sequent_Data),Handle(Format_Compare_Data),Handle(Format_Delta_Data),Handle(Format_Allocat_Data),~
@@ -9781,7 +9781,7 @@ Handle(Sequential_Text_Cols),Handle(Comparison_Text_Cols),Handle(Delta_Text_Cols
 Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Tableau_Output_File),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path(Output_Filename),Model_Path('CSV Files\Sequential_Export.csv'),Model_Path('CSV Files\Comparison_Export.csv'),Model_Path('CSV Files\Deltas_Export.csv'),Model_Path('CSV Files\CEC_Forecast_Export.csv'),~
 'Sequential','Comparison','Deltas','CEC Forecasts','Version History','Sequential','Comparison','Deltas','CEC','Contents',Null,Null,Null,Null,~
 'A2','A2','A2','A2','B3','A3','A3','A3','A3','C18',Null,Null,Null,Null,~
-Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
+Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
 NodeLocation: 432,176,1
 NodeSize: 64,40
 WindState: 2,265,331,972,490
@@ -9793,18 +9793,18 @@ TableCellDefault: Default_ExportConfig
 {!40200|Att_ChoiceIndexes: Index Output_Data_Type}
 
 Index Export_Parameter
-Att_PrevIndexValue: ['Exclude?','Data Type','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 Title: Export Parameter
 Definition: ['Exclude?','Data Type','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 NodeLocation: 120,64,1
 NodeSize: 64,40
+Att_PrevIndexValue: ['Exclude?','Data Type','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 
 Index Export_Dataset_Num
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 Title: Export Dataset Number
 Definition: 1..Num_Export_Datasets
 NodeLocation: 280,176,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 
 Decision Num_Export_Datasets
 Title: Number of Export Datasets
