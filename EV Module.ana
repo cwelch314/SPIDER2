@@ -22218,6 +22218,7 @@ NodeSize: 176,40
 NodeColor: 65535,65535,65535
 
 Index Time_Vehicles
+Att_PrevIndexValue: [1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030,1-Jan-2031,1-Jul-2031]
 Title: Time-Vehicles
 Units: Years
 Description: Ths is the time index used for simulating vehicle adoption. It is allowed to be different from other DERs, for instance, due to differences in the granularity of available historical data on adoption (e.g., solar PV data are monthly, whereas vehicle data are, at best, quarterly, or in some cases, annual)
@@ -22230,7 +22231,6 @@ NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
 DisplayOutputs: Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act_Vehicle_3
 Att_GraphIndexRange: 1,,,,,,10
 {!40300|Att_SlicerPopupSize: 357,742}
-Att_PrevIndexValue: [1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030,1-Jan-2031,1-Jul-2031]
 
 Index Annual_EV_Time
 Title: Annual EV Time
@@ -23653,13 +23653,13 @@ Aliases: FormNode Fo1556244802
 TableCellDefault: Checkbox(0)
 
 Index EV_Vehicles
+Att_PrevIndexValue: ['PHEV','BEV']
 Title: EV Vehicles
 Definition: Subset(Select_EV_Techs[All_Vehicle_Techs=Vehicle_Techs])
 NodeLocation: 872,184,1
 NodeSize: 64,40
 WindState: 2,98,82,1092,496
 {!40300|Att_SlicerPopupSize: 612,64}
-Att_PrevIndexValue: ['PHEV','BEV']
 
 Index EV_Adopt_Data_Types
 Title: EV Adoption Data Types
@@ -27201,11 +27201,11 @@ NodeSize: 64,40
 ValueState: 2,995,312,416,303,,MIDM
 
 Index EV_Calibration_Stage
-Att_PrevIndexValue: [1,2,3,4,5,6]
 Title: EV Calibration Stage
 Definition: 1..Max_EV_Calib_Stages
 NodeLocation: 664,176,1
 NodeSize: 64,40
+Att_PrevIndexValue: [1,2,3,4,5,6]
 
 Constant EV_Decisions_by_Stg
 Title: EV Decision Variables by Stage

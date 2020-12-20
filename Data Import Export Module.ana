@@ -83,10 +83,11 @@ NodeSize: 64,40
 ValueState: 2,847,306,416,303,0,MIDM
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 Att_GraphIndexRange: 1,,,,,,10
-{!40300|Att_SlicerPopupSize: 587,126}
+{!40300|Att_SlicerPopupSize: 632,126}
 Att_PrevIndexValue: ['Residential','NonResidential','EV Combined']
 
 Index Selected_Utilities
+Att_PrevIndexValue: ['SDGE']
 Title: Selected Utilities
 Description: This index is calculated based on which utilities are included in the dataset provided.
 Definition: subset(Select_Utility)
@@ -95,7 +96,6 @@ NodeSize: 64,40
 WindState: 2,1148,8,720,531
 ValueState: 2,1273,65,250,172,,MIDM
 {!40300|Att_SlicerPopupSize: 367,70}
-Att_PrevIndexValue: ['SDGE']
 
 Text Te1524758379
 Title: Insert fraction of housing stock for overlapping utility ZIP codes
@@ -9795,18 +9795,18 @@ TableCellDefault: Default_ExportConfig
 {!40200|Att_ChoiceIndexes: Index Output_Data_Type}
 
 Index Export_Parameter
+Att_PrevIndexValue: ['Exclude?','Data Type','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 Title: Export Parameter
 Definition: ['Exclude?','Data Type','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 NodeLocation: 120,64,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Exclude?','Data Type','Description','Handle to Variable','Handle to Row Index','Handle to Column Index','File Path','Sheet Name','Data Start Cell','Clear Before Writing?']
 
 Index Export_Dataset_Num
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 Title: Export Dataset Number
 Definition: 1..Num_Export_Datasets
 NodeLocation: 280,176,1
 NodeSize: 64,40
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 
 Decision Num_Export_Datasets
 Title: Number of Export Datasets
@@ -10049,11 +10049,11 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Cleared_Range_Mult
 
 Index Range_Parameters
+Att_PrevIndexValue: ['Full Range','Clear Range']
 Title: Range Parameters
 Definition: ['Full Range','Clear Range']
 NodeLocation: 280,368,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Full Range','Clear Range']
 
 Decision Clear_Range_Label
 Title: Clear Range Label
@@ -10158,13 +10158,13 @@ NodeLocation: 432,592,1
 NodeSize: 64,40
 
 Index Export_Data_Descript
+Att_PrevIndexValue: ['Deliverable sequential historic then actual data','Deliverable calibration comparison','Deliverable deltas from base period','Deliverable CEC Forecast by Zip','Deliverable timestamp']
 Title: Export Data Description
 Definition: CopyIndex(Data_Export_Settings[Export_Dataset_Num=Datasets_to_Export, Export_Parameter=Description_Label])
 NodeLocation: 280,784,1
 NodeSize: 64,40
 WindState: 2,789,122,720,449
 ValueState: 2,335,482,416,220,0,MIDM
-Att_PrevIndexValue: ['Deliverable sequential historic then actual data','Deliverable calibration comparison','Deliverable deltas from base period','Deliverable CEC Forecast by Zip','Deliverable timestamp']
 
 Decision Description_Label
 Title: Description Label
