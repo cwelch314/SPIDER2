@@ -53,7 +53,7 @@ Graph_ColorSeq := [12593,38293,0,65278,37008,6168,32639,32639,32639,0,0,0,34952,
 {!40600|NodeLocation MaxModelThreads: 880,64,1}
 {!40600|NodeSize MaxModelThreads: 48,24}
 {!40600|NodeInfo MaxModelThreads: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
-{!50000|OutlinerState Sys_FoundSet: 2,995,131,675,677}
+{!50000|OutlinerState Sys_FoundSet: 2,705,56,675,774}
 {!50000|NodeLocation DecimalForCopyPaste: 1024,64,1}
 {!50000|NodeSize DecimalForCopyPaste: 72,24}
 {!50000|NodeInfo DecimalForCopyPaste: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
@@ -99,7 +99,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,257,68,1403,721,17
+DiagState: 2,95,17,1403,860,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
@@ -144,7 +144,7 @@ Date: Mon, Aug 18, 2014 9:09 PM
 NodeLocation: 744,80,7
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-DiagState: 2,569,122,984,570,17
+DiagState: 2,253,95,984,570,17
 WindState: 2,102,82,476,224
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
@@ -576,7 +576,7 @@ Att_PrevIndexValue: ['EV Cumulative MW Impact (MW-AC)','Cumulative EV Delta (MW-
 Decision EV_Impact
 Title: EV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(EV_Impact_Titles,1,0)
+Definition: Choice(EV_Impact_Titles,3,0)
 NodeLocation: 608,680,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1004,7 +1004,7 @@ Original: Storage_Dispatch_Out
 Decision BESS_Impact1
 Title: BESS Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Dispatch_Tit,1,0)
+Definition: Choice(Storage_Dispatch_Tit,2,0)
 NodeLocation: 608,1160,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -17587,7 +17587,7 @@ Definition: 1
 NodeLocation: 595,496,2
 NodeSize: 35,13
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-NodeColor: 65278,37008,6168
+NodeColor: 65535,33410,0
 NodeFont: Arial,16
 Original: Storage_Disptch_But2
 
@@ -17641,23 +17641,42 @@ Original: Data_Import__Export
 FormNode Fo1579172861
 Title: PV Forecast Growth
 Definition: 1
-NodeLocation: 236,736,1
-NodeSize: 196,16
+NodeLocation: 264,720,1
+NodeSize: 224,16
+NodeColor: 65535,33410,0
 Original: PV_Forecast_Growth
 
 FormNode Fo1042301949
 Title: EV Forecast Growth
 Definition: 1
-NodeLocation: 236,768,1
-NodeSize: 196,16
+NodeLocation: 264,760,1
+NodeSize: 224,16
+NodeColor: 65535,33410,0
 Original: EV_Forecast_Growth
 
 FormNode Fo2116043773
 Title: BESS Forecast Growth
 Definition: 1
-NodeLocation: 236,800,1
-NodeSize: 196,16
+NodeLocation: 264,800,1
+NodeSize: 224,16
+NodeColor: 65535,33410,0
 Original: BESS_Forecast_Growth
+
+FormNode Fo514343933
+Title: Compare Relative Forecasts
+Definition: 1
+NodeLocation: 264,840,1
+NodeSize: 224,16
+NodeColor: 65535,33410,0
+Original: Compare_Relative_For
+
+FormNode Fo1403536381
+Title: Compare Prior Forecasts
+Definition: 1
+NodeLocation: 264,880,1
+NodeSize: 224,16
+NodeColor: 65535,33410,0
+Original: Compare_Prior_Fcsts
 
 Close Main_Interface
 
