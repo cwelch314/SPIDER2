@@ -53,7 +53,7 @@ Graph_ColorSeq := [12593,38293,0,65278,37008,6168,32639,32639,32639,0,0,0,34952,
 {!40600|NodeLocation MaxModelThreads: 880,64,1}
 {!40600|NodeSize MaxModelThreads: 48,24}
 {!40600|NodeInfo MaxModelThreads: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
-{!50000|OutlinerState Sys_FoundSet: 2,995,131,675,677}
+{!50000|OutlinerState Sys_FoundSet: 2,705,56,675,774}
 {!50000|NodeLocation DecimalForCopyPaste: 1024,64,1}
 {!50000|NodeSize DecimalForCopyPaste: 72,24}
 {!50000|NodeInfo DecimalForCopyPaste: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
@@ -99,11 +99,11 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,228,58,1029,721,17
+DiagState: 2,95,17,1403,860,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
-FileInfo: 0,Model Main_Interface,2,2,0,0,C:\Users\JamesMilford\OneDrive - Lumidyne Consulting LLC\Documents\SDGE_2019_SPIDER\SPIDER Model.ana
+FileInfo: 0,Model Main_Interface,2,2,0,0,C:\Users\coryw\OneDrive - Lumidyne Consulting LLC\Documents\Repos\SPIDER\SPIDER Model.ana
 {!40400|CloudPlayerStyles: FrameNode:GUI_Frame~
 Show_As_Tab:Yes~
 Use_flash_buttons:no~
@@ -144,7 +144,7 @@ Date: Mon, Aug 18, 2014 9:09 PM
 NodeLocation: 744,80,7
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-DiagState: 2,743,137,984,518,17
+DiagState: 2,253,95,984,570,17
 WindState: 2,102,82,476,224
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
@@ -369,7 +369,7 @@ Date: Sun, Dec 16, 2018 8:10 AM
 NodeLocation: 112,392,1
 NodeSize: 80,56
 NodeInfo: 1,1,1,1,1,1,1,,0,,0,,,
-DiagState: 2,-156,90,1820,702,17
+DiagState: 2,13,12,1820,702,17
 NodeFont: Arial Narrow,19
 {!40400|CloudPlayerStyles: Show_object: no}
 {!40204-40399|AWP_Attrib:Show_object: no}
@@ -634,7 +634,7 @@ Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year B
 Decision PV_Economics
 Title: PV Economics
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Econ_Titles1,7,0)
+Definition: Choice(PV_Econ_Titles1,6,0)
 NodeLocation: 608,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -746,6 +746,7 @@ Aliases: FormNode Fo1552868509
 {!50000|Att_ColumnWidths: [215]}
 
 Index PV_Scenario_Variable
+Att_PrevIndexValue: ['PV Cost','Base Yr for PV Cost Decline','PV Incentive','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 Title: PV Scenario Variables
 Definition: ['PV Cost','Base Yr for PV Cost Decline','PV Incentive','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 IndexVals: ['item 1']
@@ -753,7 +754,6 @@ NodeLocation: 960,176,1
 NodeSize: 64,40
 WindState: 2,-13,61,720,350
 Aliases: FormNode Fo1552873761
-Att_PrevIndexValue: ['PV Cost','Base Yr for PV Cost Decline','PV Incentive','Elec Rate Escalation','New Construction Code Ramp','Building Growth','New Constr System Size','New Constr Applicability','ITC Phase-out']
 
 Alias Al1552872113
 Title: Result
@@ -922,7 +922,7 @@ Original: Storag_Input_Button
 Decision BESS_Input
 Title: BESS Input
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Input_Titles,10,0)
+Definition: Choice(Storage_Input_Titles,4,0)
 NodeLocation: 1296,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1136,13 +1136,13 @@ Aliases: FormNode Fo1552873973
 {!50000|Att_ColumnWidths: [215]}
 
 Index Storg_Scenario_Varia
+Att_PrevIndexValue: ['Storage Cost','Storage Incentive','Elec Rate Escalation','ITC Phase-Out']
 Title: Storg Scenario Variables
 Definition: ['Storage Cost','Storage Incentive','Elec Rate Escalation','ITC Phase-Out']
 IndexVals: ['item 1']
 NodeLocation: 1272,176,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552873762
-Att_PrevIndexValue: ['Storage Cost','Storage Incentive','Elec Rate Escalation','ITC Phase-Out']
 
 FormNode Fo1552873760
 Title: EV Scenario Variables
@@ -1242,11 +1242,11 @@ OnClick: FOR J:=@Dropdown_Vars DO (~
 
 
 Index Not_Applicable
+Att_PrevIndexValue: ['Not Applicable to Study']
 Title: Not Applicable
 Definition: ['Not Applicable to Study']
 NodeLocation: 1920,584,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Not Applicable to Study']
 
 Decision Hidden_Dropdown
 Title: Hidden Dropdown
@@ -16040,18 +16040,18 @@ ValueState: 2,196,202,1090,686,1,MIDM
 ReformDef: [Avoided_Cost_Years,Avoided_Demand_Type]
 
 Index Avoided_Cost_Years
+Att_PrevIndexValue: [2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,2040,2041,2042,2043,2044,2045,2046,2047]
 Title: Avoided Cost Years
 Definition: 2016..2047
 NodeLocation: 504,136,1
 NodeSize: 64,40
-Att_PrevIndexValue: [2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,2040,2041,2042,2043,2044,2045,2046,2047]
 
 Index Avoided_Demand_Type
+Att_PrevIndexValue: ['Transmission','Distribution','Capacity']
 Title: Avoided Demand Type
 Definition: ['Transmission','Distribution','Capacity']
 NodeLocation: 344,248,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Transmission','Distribution','Capacity']
 
 Decision Peak_Demand_Period
 Title: Peak Demand Period
@@ -16090,13 +16090,13 @@ TableCellDefault: Checkbox(0)
 Att_EditSliceState: [Weekday_or_Weekend,1,Time_of_Day,1,Month,1]
 
 Index DERs
+Att_PrevIndexValue: ['PV','PV + BESS','BESS Added to Existing PV','BESS Stand-Alone','EV']
 Title: DERs
 Definition: ['PV','PV + BESS','BESS Added to Existing PV','BESS Stand-Alone','EV']
 NodeLocation: 352,48,1
 NodeSize: 64,40
 ValueState: 2,1429,486,416,303,,MIDM
 {!40300|Att_SlicerPopupSize: 392,112}
-Att_PrevIndexValue: ['PV','PV + BESS','BESS Added to Existing PV','BESS Stand-Alone','EV']
 
 Variable Per_Unit_DER_Impacts
 Title: Per-Unit DER Impacts
@@ -16112,12 +16112,12 @@ Att__TotalsIndex: []
 Att_ResultSliceState: [All_Sectors,3,Month,6,Program_Years,2,DERs,1,Profile_Hours,1]
 
 Index Program_Years
+Att_PrevIndexValue: [2020,2021,2022,2023,2024]
 Title: Program Years
 Definition: 2020..2024
 NodeLocation: 488,248,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 232,112}
-Att_PrevIndexValue: [2020,2021,2022,2023,2024]
 
 Variable Avoided_Energy_Cost
 Title: Avoided Energy Cost
@@ -16139,6 +16139,7 @@ Att__TotalsIndex: [All_Sectors]
 Att_ResultSliceState: [All_Sectors,0,DERs,1,Program_Years,3,Month,1]
 
 Index Cash_Flow_Type
+Att_PrevIndexValue: ['Increm. Equipment Cost','Tax Credits','Incentives','Administrative Costs','O&M Costs','Lost Revenue/Bill Savings (electricity)','Lost Revenue/Bill Savings (gasoline)','Avoided Energy Costs (electricity)','Avoided Energy Costs (gasoline)','Avoided Ancillary Service Costs','Avoided Capacity Costs','Avoided Transmission Costs','Avoided Distribution Costs','Avoided RPS Cost','Avoided GHG Cost']
 Title: Cash Flow Type
 Definition: ['Increm. Equipment Cost','Tax Credits','Incentives','Administrative Costs','O&M Costs','Lost Revenue/Bill Savings (electricity)','Lost Revenue/Bill Savings (gasoline)','Avoided Energy Costs (electricity)','Avoided Energy Costs (gasoline)','Avoided Ancillary Service Costs','Avoided Capacity Costs','Avoided Transmission Costs','Avoided Distribution Costs','Avoided RPS Cost','Avoided GHG Cost']
 IndexVals: ['item 1']
@@ -16146,14 +16147,13 @@ NodeLocation: 904,136,1
 NodeSize: 64,40
 ValueState: 2,452,202,416,559,,MIDM
 {!40300|Att_SlicerPopupSize: 242,238}
-Att_PrevIndexValue: ['Increm. Equipment Cost','Tax Credits','Incentives','Administrative Costs','O&M Costs','Lost Revenue/Bill Savings (electricity)','Lost Revenue/Bill Savings (gasoline)','Avoided Energy Costs (electricity)','Avoided Energy Costs (gasoline)','Avoided Ancillary Service Costs','Avoided Capacity Costs','Avoided Transmission Costs','Avoided Distribution Costs','Avoided RPS Cost','Avoided GHG Cost']
 
 Index Cost_Benefit_Type
+Att_PrevIndexValue: ['Cost','Benefit','Transfer','N/A']
 Title: Cost Benefit Type
 Definition: ['Cost','Benefit','Transfer','N/A']
 NodeLocation: 1048,136,1
 NodeSize: 64,40
-Att_PrevIndexValue: ['Cost','Benefit','Transfer','N/A']
 
 Decision Cost_Test_Definition
 Title: Cost Test Definition
@@ -16182,12 +16182,12 @@ TableCellDefault: Choice(Cost_Benefit_Type,1,0)
 {!40200|Att_ChoiceIndexes: Index Cost_Benefit_Type}
 
 Index All_Cost_Tests
+Att_PrevIndexValue: ['TRC','SCT','PCT','UCT','RIM']
 Title: All Cost Tests
 Definition: ['TRC','SCT','PCT','UCT','RIM']
 NodeLocation: 1192,136,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 302,112}
-Att_PrevIndexValue: ['TRC','SCT','PCT','UCT','RIM']
 
 FormNode Fo1580497414
 Title: Cost Test Definition
@@ -17205,12 +17205,12 @@ NodeSize: 64,40
 ValueState: 2,32,14,1011,611,0,MIDM
 
 Index Summary_Outputs
+Att_PrevIndexValue: ['Participation (units)','B/C Ratio (ratio)','Total Costs ($)','Total Benefits ($)','Net Benefits ($)','Incentives ($)','Administrative Costs ($)','Total Program Spending ($)']
 Title: Summary Outputs
 Definition: ['Participation (units)','B/C Ratio (ratio)','Total Costs ($)','Total Benefits ($)','Net Benefits ($)','Incentives ($)','Administrative Costs ($)','Total Program Spending ($)']
 NodeLocation: 2672,240,1
 NodeSize: 64,40
 ValueState: 2,1241,9,416,558,,MIDM
-Att_PrevIndexValue: ['Participation (units)','B/C Ratio (ratio)','Total Costs ($)','Total Benefits ($)','Net Benefits ($)','Incentives ($)','Administrative Costs ($)','Total Program Spending ($)']
 
 Variable Total_Utility_Spendi
 Title: Total Utility Spending
@@ -17385,7 +17385,7 @@ NodeColor: 12593,41891,0
 
 Text GUI_Frame
 NodeLocation: 1172,380,-24
-NodeSize: 516,372
+NodeSize: 72,56
 NodeInfo: 1,0,0,0,0,1,1,,0,,0,,,
 WindState: 2,102,83,476,224
 NodeFont: Arial,24
@@ -17587,7 +17587,7 @@ Definition: 1
 NodeLocation: 595,496,2
 NodeSize: 35,13
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-NodeColor: 65278,37008,6168
+NodeColor: 65535,33410,0
 NodeFont: Arial,16
 Original: Storage_Disptch_But2
 
@@ -17628,6 +17628,55 @@ Text Te1554510764
 NodeLocation: 55,289,29
 NodeSize: 26,266
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+
+Alias Al377403133
+Title: Data Import/ Export
+Definition: 1
+NodeLocation: 912,496,12
+NodeSize: 72,56
+Pict: (000000000000003C003C00042204000089504E470D0A1A0A0000000D494844520000003C0000003C08060000003AFCD972000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000000970485973000012740000127401DE661F78000003A7494441546843ED9A4F68D3501CC71D78586FDB6D3BB99DDC6E2B086E17D9C0C38697D5537B5B6FDBC9E2693BB98BF4A05011A1E2C11E1C466110FF41C483F5327A500C2A5A05A1A08C0A821105AB288DFD96FDF425F9A549DBBC365B13F8D0F6F7DEFBBDF749F2922D2F874CD31C28D8A06CAEBE38B779595FCF7265B26183B2397E73B816BF81AF7CB94CD8A06C201B09F70836289B48B887B041D944C23D840DCA2612EE216C503691700F6183B289847B081B244AA5D2ECDADA5A7E6E6EAE34343464FA25168BD5361B1B97137809E772B9CCE8E8A8C1E576231E8FEBE974BA80317339093608F2F9FC2A97D82F90E6F2022FE1C9C9C90A97D32FD96C769DCB0BD8A0AEEB33183025585A5AD270C4DAD98AC5E23C971B7809A3FFBD34BE371C5D51DAAD7F4700A45229058D205D2E97A7B83ADDE025DC29D56A756C7A7ABA8CB12F2C2C14B93A8E00A046894442E5CABB459630A0A9E836A51C01800600A70AC5EACFAF65EAF9A346FDD298E907F34E4A33FFFC1C16F3129EC268B77DBAC8E565B972A4562F5D688EB55028ACD0F82D39F77004002B8CA45C672D303FEEB0F3C853B8D18ECBE705DA06274C49B1E71B7BD393776A52CC29E229DCA0FEFAD60A9BD786793FAD4A156E7622D4ED043FC27E69EE98483812FE8723003A157EFB459FB9F82C93AB7C6D7DEFF623FCED97318287F58F3FA8CB5C39D157E1B34F9655889CB83D62409EAB03BC84219B7C30A3A3CEC9EDB12A5787E8ABF0C38A92249956D2AD84455970FD95FBDFC5A0EF7318D2B494E226ED266C97C51A94BD8E9D505CB47676B5C556D29CF0EEF7CA44E2DE54B91D59100A6160977EF9F9FFFFA97661C89E52272A14DF7A93CB509917A11106A2343EF11B7151D82E7BF77D6185DAFB2154C2E0E9A7E23C8EB0284D72A22CCADA9505A1130698C3A234098BB274F4DB2594C2409416E94616845618D8A5BB9505A11606909E55623F8E6D1DFEDDAD2C08BD70D044C291B015470044C20D0656D87C74A6D07C1A191676CE67A50A87198C333061535B55B84EC2021E1F639CC109EF1322611B8E001818E14E56DEFD809CC82DF665475194E4F8F878956BDF0DF6B7112C9D8A8BE041E3B67C49D012AD2CA81F4BA75488D574ACA007C1C6C64696F26291DA0DDAD9B2FA26475638C8B98B5395F2FAA1D5FB19EDC2CD674B052A0C52B856AB0D63FE22A7D70659C33046B83C9DE0294CA7153A17E3FB154F61CC2514E202A269DA22372FF613F47E19EE12ACB0AAAACBB4470E12E2196B1106380D64DC8BFB01A6A8FD2268911D04D8E0C1C53CF417ED20281D5796B60C0000000049454E44AE426082)
+NodeFont: Arial,16
+Original: Data_Import__Export
+
+FormNode Fo1579172861
+Title: PV Forecast Growth
+Definition: 1
+NodeLocation: 264,720,1
+NodeSize: 224,16
+NodeColor: 65535,33410,0
+Original: PV_Forecast_Growth
+
+FormNode Fo1042301949
+Title: EV Forecast Growth
+Definition: 1
+NodeLocation: 264,760,1
+NodeSize: 224,16
+NodeColor: 65535,33410,0
+Original: EV_Forecast_Growth
+
+FormNode Fo2116043773
+Title: BESS Forecast Growth
+Definition: 1
+NodeLocation: 264,800,1
+NodeSize: 224,16
+NodeColor: 65535,33410,0
+Original: BESS_Forecast_Growth
+
+FormNode Fo514343933
+Title: Compare Relative Forecasts
+Definition: 1
+NodeLocation: 264,840,1
+NodeSize: 224,16
+NodeColor: 65535,33410,0
+Original: Compare_Relative_For
+
+FormNode Fo1403536381
+Title: Compare Prior Forecasts
+Definition: 1
+NodeLocation: 264,880,1
+NodeSize: 224,16
+NodeColor: 65535,33410,0
+Original: Compare_Prior_Fcsts
 
 Close Main_Interface
 
