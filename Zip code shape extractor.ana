@@ -1,0 +1,158 @@
+{ Analytica Model Zip_code_shape_extra, encoding="UTF-8" }
+SoftwareVersion 5.5.0
+
+
+
+LinkLibrary Zip_code_shape_extra
+Title: Zip code shape extractor
+Description: Download and unzip the zipcode KML files from <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/kml-cartographic-boundary-files.html">Cartographic Boundary Files - KML</a> at the US census bureau.  You'll want the <a href="https://www2.census.gov/geo/tiger/GENZ2018/kml/cb_2018_us_zcta510_500k.zip">ZIP Code Tabulated Areas (ZCTAs)</a>.  Then you'll need to extract the KML file from the downloaded *.zip file.
+Author: Lonnie Chrisman, Ph.D.
+Date: Wed, Nov 4, 2020 10:19 AM
+NodeSize: 72,24
+NodeInfo: 1,,,,,,,0,,,,,,0
+DiagState: 2,102,365,1264,355,17
+WindState: 2,511,119,720,350
+FontStyle: Arial,15
+FileInfo: 0,LinkLibrary Zip_code_shape_extra,2,2,0,0,Zip code shape extractor.ana
+
+Variable KML_filename
+Title: KML filename
+Definition: ComputedBy(KML,'D:\Src\shapefiles\cb_2018_us_zcta510_500k.kml')
+NodeLocation: 104,56,1
+NodeSize: 48,24
+
+Variable KML
+Title: KML
+Definition: Local (xml,filename):=ReadTextFile(KML_filename);~
+KML_filename := filename;~
+Local d := COMCreateObject("Msxml2.DOMDocument.3.0");~
+d->async := False;~
+d->loadXML(xml);~
+If (d->parseError->errorCode <> 0) Then Error(d->parseError->reason);~
+d
+NodeLocation: 104,136,1
+NodeSize: 48,24
+ValueState: 2,372,89,416,303,,MIDM
+
+Variable Placemarks
+Title: Placemarks
+Definition: Local obj := KML->selectNodes("//*/Placemark");~
+Place_idx := 1..obj->length;~
+obj->item(Place_idx-1)
+NodeLocation: 240,136,1
+NodeSize: 56,24
+
+Index Place_idx
+Title: Place idx
+Definition: ComputedBy(Placemarks)
+NodeLocation: 104,200,1
+NodeSize: 48,24
+NumberFormat: 2,I,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+
+Variable All_ZipCodes
+Title: All ZipCodes
+Definition: Placemarks->selectSingleNode(".//SimpleData[@name='" & Zip_type & "']")->text~
+
+NodeLocation: 240,200,1
+NodeSize: 48,24
+ValueState: 2,116,122,399,303,,MIDM
+
+Constant Zip_type
+Title: Zip type
+Definition: "GEOID10"
+NodeLocation: 240,56,1
+NodeSize: 48,24
+Aliases: FormNode Fo919053053
+
+FormNode Fo919053053
+Title: Zip type
+Definition: 0
+NodeLocation: 188,288,1
+NodeSize: 156,16
+NodeInfo: 1,,,,,,,216,,,,,,0
+Original: Zip_type
+
+Index Zip_code
+Title: ZIP code
+Definition: ['91901','91902','91905','91906','91910','91911','91913','91914','91915','91916','91917','91931','91932','91934','91935','91941','91942','91945','91948','91950','91962','91963','91977','91978','91980','92003','92004','92007','92008','92009','92010','92011','92014','92019','92020','92021','92024','92025','92026','92027','92028','92029','92036','92037','92040','92054','92055','92056','92057','92058','92059','92060','92061','92064','92065','92066','92067','92068','92069','92070','92071','92072','92075','92078','92081','92082','92083','92084','92085','92086','92091','92092','92093','92096','92101','92102','92103','92104','92105','92106','92107','92108','92109','92110','92111','92112','92113','92114','92115','92116','92117','92118','92119','92120','92121','92122','92123','92124','92126','92127','92128','92129','92130','92131','92132','92136','92139','92145','92152','92154','92158','92161','92173','92179','92182','92199','92536','92624','92629','92651','92653','92656','92672','92673','92674','92675','92676','92677','92679','92688','92690','92691','92692','92693','92694','92697']
+NodeLocation: 392,56,1
+NodeSize: 48,24
+Aliases: FormNode Fo627548925, Alias Al1753195261, Alias Al1098883837
+
+FormNode Fo627548925
+Title: Zip codes of interest
+Definition: 0
+NodeLocation: 188,320,1
+NodeSize: 156,16
+Original: Zip_code
+
+Variable Selected_placemarks
+Title: Selected placemarks
+Definition: Placemarks[Place_idx=SubIndex(All_ZipCodes,Zip_code,Place_idx)]
+NodeLocation: 392,136,1
+NodeSize: 56,24
+ValueState: 2,886,369,416,303,,MIDM
+
+Index LatLong
+Title: LatLong
+Definition: ['Lat','Long']
+NodeLocation: 552,56,1
+NodeSize: 48,24
+Aliases: Alias Al411017981
+
+Variable Shapes
+Title: Shapes
+Definition: Local Null_txt := ' ' & Null & ',' & Null & ' ';~
+Local polys[] := Polygons;~
+LocalIndex LongLatRest := ['Long','Lat','Rest'];~
+if IsNull(polys) then null else (~
+	LocalIndex poly_i := 1..polys->length;~
+	Local poly := polys->item(poly_i-1);~
+	Local txtShape[] := JoinText(poly->text,poly_i,Null_txt);~
+	Local txtCoord:=SplitText(txtShape,' ');~
+	\ParseNumber(SplitText(txtCoord,',',resultIndex:LongLatRest)[LongLatRest=LatLong])~
+)
+NodeLocation: 528,200,1
+NodeSize: 48,24
+ValueState: 2,944,67,394,566,,MIDM
+ReformVal: [LatLong,Zip_code]
+{!40300|Att_DerefReformVal: [LatLong,Sys_LocalIndex('«Unindexed»')]}
+{!50000|Att_ColumnWidths: [63]}
+
+Variable Polygons
+Title: Polygons
+Definition: Selected_placemarks->selectNodes('.//coordinates')
+NodeLocation: 392,200,1
+NodeSize: 48,24
+ValueState: 2,920,208,446,530,,MIDM
+
+Variable Num_polys
+Title: Num polys
+Definition: Polygons->length
+NodeLocation: 392,264,1
+NodeSize: 48,24
+ValueState: 2,930,270,437,431,,MIDM
+
+Variable Plot_the_shapes
+Title: Plot the shapes
+Definition: LocalIndex pt := 1..max(Num_points_per_shape,...indexesOf(Num_points_per_shape));~
+Local r[]:=shapes do Slice(#r,@pt)
+NodeLocation: 664,200,1
+NodeSize: 48,24
+ValueState: 2,147,26,1048,806,0,MIDM
+GraphSetup: Graph_FillTransparen:203~
+Att_AreaFill Graph_Primary_Valdim:2
+ReformVal: [Sys_LocalIndex('pt'),Zip_code]
+Att__TotalsIndex: []
+Att_XRole: -2
+Att_YRole: -1
+Att_CoordinateIndex: LatLong
+
+Variable Num_points_per_shape
+Title: Num points per shape
+Definition: Local s[]:=shapes do size(#s,listLen:true)
+NodeLocation: 528,264,1
+NodeSize: 56,24
+
+Close Zip_code_shape_extra
+
