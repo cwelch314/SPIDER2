@@ -43,6 +43,7 @@ NodeLocation: 104,152,1
 NodeSize: 64,40
 DefnState: 2,248,250,964,440,,DFNM
 Aliases: FormNode Fo1534914693
+DisplayOutputs: Variable Clipboard_NewConstr_
 TableCellDefault: Choice(Static_Profile_Names,1,0)
 
 FormNode Fo1534914693
@@ -2957,7 +2958,7 @@ Checkbox(0),Path_to_Global_Data,'Incent_StartMonth','A7',Choice(Import_Data_Type
 Checkbox(0),Path_to_Global_Data,'MACRS','A7',Choice(Import_Data_Types,2,0),Null,Handle(MACRS_Schedule),Handle(All_Sectors),Handle(PV_Operating_Year),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Tax_Rates','A7',Choice(Import_Data_Types,2,0),Null,Handle(Tax_Rates),Handle(Tax_Entity),Handle(Static_PV_Time),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Bonus_Deprec','A7',Choice(Import_Data_Types,2,0),Null,Handle(Bonus_Deprec_Sched),Null,Handle(Static_PV_Time),Null,Null,~
-Checkbox(0),Path_to_Global_Data,'NewConstr_Share','A7',Choice(Import_Data_Types,2,0),Null,Handle(NewConstr_Mkt_Share),Handle(Static_PV_Time),Handle(Title24_Comply_Scens),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'NewConstr_Share','A7',Choice(Import_Data_Types,2,0),Null,Handle(NewConstr_Mkt_Share),Handle(Static_PV_Time),Handle(PV_Sectors),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Vehicle_Impact','A7',Choice(Import_Data_Types,2,0),Null,Handle(Impact_per_EV),Null,Handle(All_Vehicle_Techs),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Premise_Counts','A7',Choice(Import_Data_Types,2,0),Null,Handle(Premise_Counts),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,~
 Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
