@@ -2885,7 +2885,7 @@ Fact Column Index 3..N: 	Null
 Definition: Table(Imported_Dataset_Num,Excel_Import_Params)(~
 Checkbox(0),Path_to_Global_Data,'SGIP_Data','A7',Choice(Import_Data_Types,1,0),Null,Handle(SGIP_Data),Handle(SGIP_Data_Columns),Handle(SGIP_Data_Rows),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Single_Cell_Inputs','A7',Choice(Import_Data_Types,1,0),Null,Handle(Single_Cell_Inputs),Null,Handle(SingCell_Input_Names),Null,Null,~
-Checkbox(1),Path_to_Global_Data,'Hourly_Profiles','A7',Choice(Import_Data_Types,1,0),Null,Handle(Hourly_Profile_Data),Handle(Hourly_Profile_Names),Handle(Hourly_Profile_Rows),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Hourly_Profiles','A7',Choice(Import_Data_Types,1,0),Null,Handle(Hourly_Profile_Data),Handle(Hourly_Profile_Names),Handle(Hourly_Profile_Rows),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Holiday_Dates','A7',Choice(Import_Data_Types,4,0),Null,Handle(Dates_of_Holidays),Handle(Holiday_Name),Handle(Holiday_Years),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Meter_Counts','A7',Choice(Import_Data_Types,2,0),Null,Handle(Meter_Counts),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'PV_CapFactor','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Capacity_Factor),Handle(All_Sectors),Handle(PV_Climate_Zone),Null,Null,~
@@ -2958,7 +2958,7 @@ Checkbox(0),Path_to_Global_Data,'Incent_StartMonth','A7',Choice(Import_Data_Type
 Checkbox(0),Path_to_Global_Data,'MACRS','A7',Choice(Import_Data_Types,2,0),Null,Handle(MACRS_Schedule),Handle(All_Sectors),Handle(PV_Operating_Year),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Tax_Rates','A7',Choice(Import_Data_Types,2,0),Null,Handle(Tax_Rates),Handle(Tax_Entity),Handle(Static_PV_Time),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Bonus_Deprec','A7',Choice(Import_Data_Types,2,0),Null,Handle(Bonus_Deprec_Sched),Null,Handle(Static_PV_Time),Null,Null,~
-Checkbox(0),Path_to_Global_Data,'NewConstr_Share','A7',Choice(Import_Data_Types,2,0),Null,Handle(NewConstr_Mkt_Share),Handle(Static_PV_Time),Handle(PV_Sectors),Null,Null,~
+Checkbox(1),Path_to_Global_Data,'NewConstr_Share','A7',Choice(Import_Data_Types,2,0),Null,Handle(NewConstr_Mkt_Share),Handle(Static_PV_Time),Handle(PV_Sectors),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Vehicle_Impact','A7',Choice(Import_Data_Types,2,0),Null,Handle(Impact_per_EV),Null,Handle(All_Vehicle_Techs),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Premise_Counts','A7',Choice(Import_Data_Types,2,0),Null,Handle(Premise_Counts),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,~
 Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
@@ -3218,7 +3218,7 @@ NodeSize: 64,40
 
 Decision Last_Import_Time
 Title: Last Import Time
-Definition: 8-Jan-2021 14:30:04.386000
+Definition: 16-Nov-2021 12:39:56.517000
 NodeLocation: 544,848,1
 NodeSize: 64,40
 Aliases: FormNode New1551412475, FormNode New1551412538
@@ -4360,7 +4360,7 @@ Title: Path to Global Data
 Description: The path to the spreadsheet whose data will be imported. ~
 ~
 e.g. 'C:\Users\RickyBobby\Documents\Filename.xlsx'
-Definition: 'SDGE Global Data.xlsx'
+Definition: 'NYPA Global Data.xlsx'
 NodeLocation: 144,224,1
 NodeSize: 64,40
 Aliases: FormNode New1551412495, FormNode New1551412537, FormNode New1551412451
@@ -4368,7 +4368,7 @@ Aliases: FormNode New1551412495, FormNode New1551412537, FormNode New1551412451
 Decision Dataset_to_View
 Title: Dataset to View
 Description: Select the tab name of the dataset you wish to view in greater detail.
-Definition: Choice(Tab_Names,3,0)
+Definition: Choice(Tab_Names,76,0)
 NodeLocation: 112,520,1
 NodeSize: 64,40
 WindState: 2,7,277,720,350
@@ -4505,7 +4505,7 @@ Missing Subscripts - indicates whether any combination of fact column coordinate
 Incorrect Subscripts - indicates when coordinates/subscripts in a given fact column do not match any of the elements of the index that is assigned to that fact column.~
 ~
 Repeated Subscripts - indicates when a specific combination of coordinates/subscripts are repeated across two or more rows of the import data. In these instances, the model is not able to determine which row should be assigned to the coordinates, so it sums all rows having those coordinates.
-Definition: Table(All_Index_Checks)(Checkbox(1),Checkbox(1),Checkbox(1))
+Definition: Table(All_Index_Checks)(Checkbox(0),Checkbox(0),Checkbox(0))
 NodeLocation: 496,64,1
 NodeSize: 64,40
 WindState: 2,36,91,978,453
@@ -4568,7 +4568,7 @@ ValueState: 2,252,460,416,303,0,MIDM
 Decision Apply_DataType_Check
 Title: Apply Data Type Checks?
 Description: Check this option to test the data types of the imported data. For example, if a dataset has been specified to be of the "Number" data type, then error messages will be displayed if the imported data is not a number (e.g., text or dates).
-Definition: Checkbox(1)
+Definition: Checkbox(0)
 NodeLocation: 352,64,1
 NodeSize: 64,40
 Aliases: FormNode New1551412499, FormNode New1551412533, FormNode New1551412459
