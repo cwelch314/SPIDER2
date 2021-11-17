@@ -4096,7 +4096,7 @@ Author: JamesMilford
 Date: Fri, Oct 25, 2019 8:28 AM
 NodeLocation: 88,344,1
 NodeSize: 64,40
-DiagState: 2,1963,104,1160,582,17
+DiagState: 2,75,125,1160,582,17
 AcpStyles: Frame_Node: Scaling_Frame
 
 Constant Energy_Met_by_Solar
@@ -4176,7 +4176,7 @@ Units: dmnls
 Description: A scaling factor used to scale the customer load. Load is scaled to ensure that historically observed PV system sizes produce some percentage (as specified in Energy Met by Solar) of the total customer load.
 Definition: IF PV_Sectors=Residential_Label~
 THEN Divide(FirstYr_Annual_Solar / Energy_Met_by_Solar, Annual_Load, True)~
-ELSE Meter_Per_Premise_CZ
+ELSE 1
 NodeLocation: 432,192,1
 NodeSize: 64,40
 WindState: 2,468,285,720,350
@@ -11832,7 +11832,7 @@ AcpStyles: FrameNode: FrameNode_1545066386
 Variable Residential_Annual_C
 Title: Residential Annual Consumption
 Units: kWh/year-premise
-Definition: Profile_Annual_Total[Static_Profile_Names= '2017_Residential_Load'] * Meter_Per_Premise_CZ[PV_Sectors=Residential_Label]
+Definition: Profile_Annual_Total[Static_Profile_Names= '2017_Residential_Load'] 
 NodeLocation: 120,288,1
 NodeSize: 64,40
 ValueState: 2,55,514,607,331,,MIDM
@@ -11843,7 +11843,7 @@ Variable Small_Annual_Consump
 Title: Small Annual Consumption
 Units: kWh/year-premise
 Description: Annual premise consumption for small commercial buildings. This is derived from the 8760 load shapes representing average meter-level load and a multiplier to account for the average number of meters per non-residential premise.
-Definition: Profile_Annual_Total[Static_Profile_Names='2017_Small_Commercial_Load'] * Meter_Per_Premise_CZ[PV_Sectors=Non_Res_Label]
+Definition: Profile_Annual_Total[Static_Profile_Names='2017_Small_Commercial_Load'] 
 NodeLocation: 120,72,1
 NodeSize: 64,40
 WindState: 2,102,82,1048,424
@@ -11854,7 +11854,7 @@ Variable Med_Lrg_Ann_Consump
 Title: Med/Lrg Annual Consumption
 Units: kWh/year-premise
 Description: Annual premise consumption for medium/large non-residential buildings. This is derived from the 8760 load shapes representing average meter-level load and a multiplier to account for the average number of meters per non-residential premise.
-Definition: Profile_Annual_Total[Static_Profile_Names='2017_Med_Lrg_Commercial_Load'] * Meter_Per_Premise_CZ[PV_Sectors=Non_Res_Label]
+Definition: Profile_Annual_Total[Static_Profile_Names='2017_Med_Lrg_Commercial_Load'] 
 NodeLocation: 120,192,1
 NodeSize: 64,40
 WindState: 2,102,82,853,424

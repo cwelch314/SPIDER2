@@ -2785,7 +2785,7 @@ Date: Sun, Dec 16, 2018 8:07 AM
 NodeLocation: 216,184,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1880,116,1764,784,17
+DiagState: 2,2115,-1,1764,784,17
 
 Index Import_Fixed_Params
 Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
@@ -2887,7 +2887,7 @@ Checkbox(0),Path_to_Global_Data,'SGIP_Data','A7',Choice(Import_Data_Types,1,0),N
 Checkbox(0),Path_to_Global_Data,'Single_Cell_Inputs','A7',Choice(Import_Data_Types,1,0),Null,Handle(Single_Cell_Inputs),Null,Handle(SingCell_Input_Names),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Hourly_Profiles','A7',Choice(Import_Data_Types,1,0),Null,Handle(Hourly_Profile_Data),Handle(Hourly_Profile_Names),Handle(Hourly_Profile_Rows),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Holiday_Dates','A7',Choice(Import_Data_Types,4,0),Null,Handle(Dates_of_Holidays),Handle(Holiday_Name),Handle(Holiday_Years),Null,Null,~
-Checkbox(0),Path_to_Global_Data,'Meter_Counts','A7',Choice(Import_Data_Types,2,0),Null,Handle(Meter_Counts),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
 Checkbox(0),Path_to_Global_Data,'PV_CapFactor','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Capacity_Factor),Handle(All_Sectors),Handle(PV_Climate_Zone),Null,Null,~
 Checkbox(1),Path_to_Global_Data,'PV_ResNewConstr_Size','A7',Choice(Import_Data_Types,2,0),Null,Handle(NewConst_SysSize),Handle(PV_Sectors),Handle(PV_Climate_Zone),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Battery_Specs','A7',Choice(Import_Data_Types,2,0),Null,Handle(Battery_Storage_Spec),Handle(All_Sectors),Handle(Battery_Specs),Null,Null,~
@@ -2960,7 +2960,7 @@ Checkbox(0),Path_to_Global_Data,'Tax_Rates','A7',Choice(Import_Data_Types,2,0),N
 Checkbox(0),Path_to_Global_Data,'Bonus_Deprec','A7',Choice(Import_Data_Types,2,0),Null,Handle(Bonus_Deprec_Sched),Null,Handle(Static_PV_Time),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'NewConstr_Share','A7',Choice(Import_Data_Types,2,0),Null,Handle(NewConstr_Mkt_Share),Handle(Static_PV_Time),Handle(PV_Sectors),Null,Null,~
 Checkbox(0),Path_to_Global_Data,'Vehicle_Impact','A7',Choice(Import_Data_Types,2,0),Null,Handle(Impact_per_EV),Null,Handle(All_Vehicle_Techs),Null,Null,~
-Checkbox(0),Path_to_Global_Data,'Premise_Counts','A7',Choice(Import_Data_Types,2,0),Null,Handle(Premise_Counts),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
 Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
 Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
 Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
@@ -2976,7 +2976,7 @@ Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Typ
 NodeLocation: 88,552,1
 NodeSize: 64,40
 WindState: 2,30,63,1151,780
-DefnState: 2,-5,29,1863,823,0,DFNM
+DefnState: 2,0,29,1894,840,0,DFNM
 ValueState: 2,-66,109,1540,509,0,MIDM
 Aliases: FormNode New1551412463, FormNode New1551412503
 ReformDef: [Excel_Import_Params,Imported_Dataset_Num]
