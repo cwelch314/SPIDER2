@@ -138,7 +138,7 @@ Att_ColorRole: Null
 Variable NewConstr_MktShare
 Title: NewConstr Mkt Share
 Units: market share
-Definition: LinearInterp(EOY_Date_for_Econ_Yr[Annual_Econ_Time=Static_PV_Time], NewConstr_Mkt_Share, Time_Solar_PV, Static_PV_Time)   {Then use historic and exogenous data}~
+Definition: LinearInterp(EOY_Date_for_Econ_Yr[Annual_Econ_Time=Static_PV_Time], NewConstr_Mkt_Share[All_Sectors=PV_Sectors], Time_Solar_PV, Static_PV_Time)   {Then use historic and exogenous data}~
 
 NodeLocation: 440,400,1
 NodeSize: 64,40
@@ -167,9 +167,10 @@ Constant NewConstr_Mkt_Share
 Title: NewConstr Market Share
 Units: fraction
 Description: The percentage of newly constructed residential buildings that are built with PV. 2009-2017 uses the historic PV market share of new construction specific to single-family homes in SDGE. 2018 and 2019 uses the average of 2016-2017 historic values. Historic values derived from # of new homes with solar (from NSHP @ https://www.newsolarhomes.org/WebPages/Public/Reports.aspx) and number of new housing starts from SDGE ("Housing Starts for Lumidyne.xlsx" from Dan Wilson; original source Moody's). Title 24 goes into effect on Jan 1 2020. 2020 is based on expectations from SunPower and reflects builders pulling permits before the code goes into effect in order to not comply (from https://www.greentechmedia.com/articles/read/everything-you-need-to-know-about-californias-new-solar-roof-mandate#gs.tyPyxtE). 2021 is based on what the CEC expects in the first year (2020), which is probably over-optimistic and probably a better estimate for the second year. By 2022, the third year, full compliance is assumed (though the eligibility factor will preclude some homes as unsuitable for PV due to shading and other siting issues).
-Definition: Table(PV_Sectors,Static_PV_Time)(~
+Definition: Table(All_Sectors,Static_PV_Time)(~
 0.037808730405552944,0.0305167726676529,0.02784277648167075,0.03578616872286652,0.051613304846203675,0.04539409343614458,0.015310177372194506,0.0819464615772383,0.06689223970280353,0.07441935064002092,0.07441935064002092,0.5,0.8,1,1,1,1,1,1,1,1,1,1,1,1,1,1,~
-0.037808730405552944,0.0305167726676529,0.02784277648167075,0.03578616872286652,0.051613304846203675,0.04539409343614458,0.015310177372194506,0.0819464615772383,0.06689223970280353,0.07441935064002092,0.07441935064002092,0.5,0.8,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
+0.037808730405552944,0.0305167726676529,0.02784277648167075,0.03578616872286652,0.051613304846203675,0.04539409343614458,0.015310177372194506,0.0819464615772383,0.06689223970280353,0.07441935064002092,0.07441935064002092,0.5,0.8,1,1,1,1,1,1,1,1,1,1,1,1,1,1,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 NodeLocation: 440,520,1
 NodeSize: 64,40
 WindState: 2,8,156,1169,434
@@ -3068,7 +3069,7 @@ Choice(Static_Profile_Names,12,0),Choice(Static_Profile_Names,15,0),Choice(Stati
 Choice(Static_Profile_Names,8,0),Choice(Static_Profile_Names,11,0),Choice(Static_Profile_Names,13,0),Choice(Static_Profile_Names,10,0))
 NodeLocation: 96,336,1
 NodeSize: 64,40
-DefnState: 2,179,275,1483,214,0,DFNM
+DefnState: 2,129,323,1608,217,0,DFNM
 ValueState: 2,452,458,1127,303,,MIDM
 TableCellDefault: Choice(Static_Profile_Names,2,0)
 
@@ -3637,7 +3638,7 @@ Date: Tue, Oct 22, 2019 3:50 PM
 NodeLocation: 744,56,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,314,8,1427,403,17
+DiagState: 2,211,62,1427,403,17
 
 Variable Day_of_Month_8784
 Title: Day of Month 8784
@@ -4138,7 +4139,7 @@ Description: Select the customer load profile associated with each sector.
 Definition: Table(All_Sectors)(Choice(Static_Profile_Names,5,0),Choice(Static_Profile_Names,7,0),Choice(Static_Profile_Names,5,0))
 NodeLocation: 112,288,1
 NodeSize: 64,40
-DefnState: 2,973,204,605,208,0,DFNM
+DefnState: 2,764,183,605,208,0,DFNM
 ValueState: 2,340,346,737,329,,MIDM
 TableCellDefault: Choice(Static_Profile_Names,1,0)
 
@@ -9498,7 +9499,7 @@ Author: JamesMilford
 Date: Wed, Oct 10, 2018 9:00 AM
 NodeLocation: 544,64,1
 NodeSize: 64,40
-DiagState: 2,74,20,1682,713,17
+DiagState: 2,74,20,1682,640,17
 Aliases: Alias Al1548967120
 AcpStyles: FrameNode: FrameNode_1544919879
 
@@ -9678,17 +9679,18 @@ Source - "Medium" scenario:~
 CEC assumed capacities sized to offset annual energy consumption of prototype homes.~
 Uses a weighted average across homes 2100 and 2700 sqft in size.~
 https://efiling.energy.ca.gov/GetDocument.aspx?tn=221797
-Definition: Table(PV_Sectors,PV_Climate_Zone)(~
+Definition: Table(All_Sectors,PV_Climate_Zone)(~
 2.492175361,5.392108768,2.909933407,3.108812431,~
+0,0,0,0,~
 0,0,0,0)
 NodeLocation: 760,120,1
 NodeSize: 64,40
 WindState: 2,52,125,720,350
-DefnState: 2,764,350,586,351,0,DFNM
+DefnState: 2,782,378,586,351,0,DFNM
 ValueState: 2,416,209,416,303,,MIDM
 Aliases: Alias Al1550183210, FormNode Fo1550183210, FormNode Fo1542305980, FormNode Fo1544638294
-ReformDef: [0,PV_Climate_Zone]
-Att_EditSliceState: [PV_Sectors,1,PV_Climate_Zone,1,NC_SystSize_Scens,1]
+ReformDef: [All_Sectors,PV_Climate_Zone]
+Att_EditSliceState: [PV_Sectors,1,PV_Climate_Zone,1,All_Sectors,1]
 
 FormNode Fo1542305979
 Title: Battery Storage Specs
@@ -9740,7 +9742,7 @@ Units: CEC-kW-AC/system
 Description: The AC system size for new construction once new construction requirements becomes active.
 Definition: IF Time_Solar_PV < NewConstr_Compliance~
 THEN Forecast_AC_System_S~
-ELSE NewConst_SysSize[PV_Climate_Zone=Climate_Zone_Map] * Fcst_AC_to_DC_Factor[All_Sectors=PV_Sectors, All_Spatial_ID=PV_Spatial_ID]
+ELSE NewConst_SysSize[PV_Climate_Zone=Climate_Zone_Map,All_Sectors=PV_Sectors] * Fcst_AC_to_DC_Factor[All_Sectors=PV_Sectors, All_Spatial_ID=PV_Spatial_ID]
 NodeLocation: 912,216,1
 NodeSize: 64,40
 WindState: 2,2,38,720,350
@@ -9863,7 +9865,7 @@ Author: JamesMilford
 Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 256,288,1
 NodeSize: 64,40
-DiagState: 2,106,24,1712,741,17
+DiagState: 2,39,25,1791,833,17
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -11826,7 +11828,7 @@ Date: Wed, Nov 7, 2018 1:59 PM
 NodeLocation: 112,328,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,81,48,1565,521,17
+DiagState: 2,83,138,1565,521,17
 AcpStyles: FrameNode: FrameNode_1545066386
 
 Variable Residential_Annual_C
@@ -11903,7 +11905,7 @@ ValueState: 2,102,425,575,417,,MIDM
 
 Decision Use_CEC_Forecast
 Title: Use CEC Forecast
-Description: Check this input to use the CEC forecast when calculating the technical/eligible potential as a percentage of consumption. Otherwise, bottom-up consumption estimates derived from load shapes and premise counts will be used. 
+Description: Check this input to use the CEC forecast when calculating the technical/eligible potential as a percentage of consumption. Otherwise, bottom-up consumption estimates derived from load shapes and premise counts will be used.
 Definition: Checkbox(1)
 NodeLocation: 576,184,1
 NodeSize: 64,40
@@ -11974,6 +11976,11 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 NodeColor: 65535,65535,65535
 AcpStyles: Show_index_menus: yes~
 Show_description:20
+
+Text Te2130531523
+Title: This doesn't work right now if CEC forecast not used for downstream tech pot'l calcs (which are not integral to the model. just for cmparison purposes.
+NodeLocation: 512,80,-1
+NodeSize: 152,64
 
 Close Consumption_by_Secto
 
@@ -13236,7 +13243,7 @@ Date: Wed, Nov 7, 2018 1:59 PM
 NodeLocation: 264,240,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,2116,55,1384,546,17
+DiagState: 2,12,55,1384,546,17
 AcpStyles: FrameNode: FrameNode_1545066590
 
 Constant Power_Density
@@ -13245,11 +13252,11 @@ Units: W-DC/m2
 Description: The power density of common solar PV modules. ~
 ~
 https://www.nrel.gov/docs/fy16osti/65298.pdf (p. 13) states that 160 W/m2 corresponds to about 16% efficiency. Additionally, https://www.nrel.gov/docs/fy17osti/68925.pdf (figure 3) shows that the average installed efficiency in CA in 2016 was 17.5% (non-residential), and 16.2% (residential). Thus, 160 W/m2 has been scaled to reflect 17.5% efficiency in the non-residential sector.
-Definition: Table(PV_Sectors)(160,175)
+Definition: Table(All_Sectors)(160,175,0)
 NodeLocation: 144,104,1
 NodeSize: 64,40
 WindState: 2,335,550,720,350
-DefnState: 2,925,205,416,303,0,DFNM
+DefnState: 2,525,268,663,262,0,DFNM
 Aliases: Alias Al1568696777, FormNode Fo1568696778, FormNode Fo1541457042
 
 Constant Module_to_Roof_Area_
@@ -13272,23 +13279,26 @@ Units: fraction
 Description: The percentage of buildings having a certain roof type. ~
 ~
 https://www.nrel.gov/docs/fy16osti/65298.pdf  (estimated from p. viii and p. 44). Table ES-1 provides the relative solar potential from medium vs large buildings, while Table A-1 provides the median percentage of each building type having flat roofs. This information is combined to generate the estimates included in this table.
-Definition: Table(PV_Sectors,Roof_Type)(~
+Definition: Table(All_Sectors,Roof_Type)(~
 0.15,0.85,~
-0.874300518,0.125699482)
+0.874300518,0.125699482,~
+Null,Null)
 NodeLocation: 144,224,1
 NodeSize: 64,40
 WindState: 2,343,550,720,350
-DefnState: 2,396,1,621,244,0,DFNM
+DefnState: 2,397,191,703,273,0,DFNM
 ValueState: 2,477,303,416,303,0,MIDM
 Aliases: Alias Al1568696779, FormNode Fo1568696780, FormNode Fo1541457044
+ReformDef: [Roof_Type,All_Sectors]
 ReformVal: [Roof_Type,All_Sectors]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+Att_EditSliceState: [PV_Sectors,1,All_Sectors,1,Roof_Type,1]
 
 Variable Watts_per_m2_Roofspc
 Title: Watts per m2 Roofspace
 Units: W-DC/m2
 Description: The watts per m2 of roofspace.
-Definition: Sum(Power_Density * Module_to_Roof_Area_ * Pct_Bldgs_Roof_Type, Roof_Type)
+Definition: Sum(Power_Density[All_Sectors=PV_Sectors] * Module_to_Roof_Area_ * Pct_Bldgs_Roof_Type[All_Sectors=PV_Sectors], Roof_Type)
 NodeLocation: 304,224,1
 NodeSize: 64,40
 WindState: 2,102,82,925,287
