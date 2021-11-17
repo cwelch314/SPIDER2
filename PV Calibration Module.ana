@@ -1125,7 +1125,7 @@ For i:=ID DO~
 NodeLocation: 608,288,1
 NodeSize: 64,40
 WindState: 2,124,16,1552,780
-DisplayInputs: Object Function, Object Variable, Object Decision, Object Index, Object Constant, Index All_Spatial_ID, Function Check_Sector, Index All_Sectors, Variable Include_Ad_Effect, Variable Include_Start_WOM, Variable Include_LRMS, Variable Include_End_WOM, Variable IncludeLogitPrice_Co, Variable IncludeLogSpatial_Co, Variable IncludeLogTech_Coeff, Variable Include_Payback_Spat, Variable Include_Payback_Coef, Decision Ag_Level_for_PV_Coef, Variable Optimization_PV, Variable Stored_AdEff_PV, Variable Stored_LRMS_PV, Variable Stored_WOM_PV, Variable Stored_End_WOM_PV, Variable All_Stored_Coeffs_PV, Constant Stored_Opt_Status_PV, Variable Stored_Spatial_Coeff, Variable Stored_Logit_Price_C, Variable Stored_Tech_Coeff, Variable Stored_Pybk_SpatCoef, Variable Stored_Payback_Coeff, Index PV_Sectors, Index PV_Spatial_ID
+DisplayInputs: Object Object, Object Function, Object Variable, Object Decision, Object Index, Object Constant, Index All_Spatial_ID, Function Check_Sector, Index All_Sectors, Variable Include_Ad_Effect, Variable Include_Start_WOM, Variable Include_LRMS, Variable Include_End_WOM, Variable IncludeLogitPrice_Co, Variable IncludeLogSpatial_Co, Variable IncludeLogTech_Coeff, Variable Include_Payback_Spat, Variable Include_Payback_Coef, Decision Ag_Level_for_PV_Coef, Variable Optimization_PV, Variable Stored_AdEff_PV, Variable Stored_LRMS_PV, Variable Stored_WOM_PV, Variable Stored_End_WOM_PV, Variable All_Stored_Coeffs_PV, Constant Stored_Opt_Status_PV, Variable Stored_Spatial_Coeff, Variable Stored_Logit_Price_C, Variable Stored_Tech_Coeff, Variable Stored_Pybk_SpatCoef, Variable Stored_Payback_Coeff, Index PV_Sectors, Index PV_Spatial_ID
 
 Function Aggregate_Optimizati()
 Title: Aggregate Optimization
@@ -1187,7 +1187,7 @@ Status[All_Spatial_ID=i, All_Sectors=PV_Sectors[@PV_Sectors=1]] := OptStatusText
 NodeLocation: 448,288,1
 NodeSize: 64,40
 WindState: 2,125,10,1511,758
-DisplayInputs: Object Function, Object Variable, Object Decision, Object Index, Object Constant, Index All_Spatial_ID, Function Check_Sector, Index All_Sectors, Variable Include_Ad_Effect, Variable Include_Start_WOM, Variable Include_LRMS, Variable Include_End_WOM, Variable IncludeLogitPrice_Co, Variable IncludeLogSpatial_Co, Variable IncludeLogTech_Coeff, Variable Include_Payback_Spat, Variable Include_Payback_Coef, Index PV_Calibration_Stage, Constant PV_Decisions_by_Stg, Constant PV_OptSettings_byStg, Index Spatial_ID_PV, Decision Ag_Level_for_PV_Coef, Variable Optimization_PV, Variable Stored_AdEff_PV, Variable Stored_LRMS_PV, Variable Stored_WOM_PV, Variable Stored_End_WOM_PV, Variable All_Stored_Coeffs_PV, Constant Stored_Opt_Status_PV, Variable Stored_Spatial_Coeff, Variable Stored_Logit_Price_C, Variable Stored_Tech_Coeff, Variable Stored_Pybk_SpatCoef, Variable Stored_Payback_Coeff, Index PV_Sectors, Index PV_Spatial_ID
+DisplayInputs: Object Object, Object Function, Object Variable, Object Decision, Object Index, Object Constant, Index All_Spatial_ID, Function Check_Sector, Index All_Sectors, Variable Include_Ad_Effect, Variable Include_Start_WOM, Variable Include_LRMS, Variable Include_End_WOM, Variable IncludeLogitPrice_Co, Variable IncludeLogSpatial_Co, Variable IncludeLogTech_Coeff, Variable Include_Payback_Spat, Variable Include_Payback_Coef, Index PV_Calibration_Stage, Constant PV_Decisions_by_Stg, Constant PV_OptSettings_byStg, Index Spatial_ID_PV, Decision Ag_Level_for_PV_Coef, Variable Optimization_PV, Variable Stored_AdEff_PV, Variable Stored_LRMS_PV, Variable Stored_WOM_PV, Variable Stored_End_WOM_PV, Variable All_Stored_Coeffs_PV, Constant Stored_Opt_Status_PV, Variable Stored_Spatial_Coeff, Variable Stored_Logit_Price_C, Variable Stored_Tech_Coeff, Variable Stored_Pybk_SpatCoef, Variable Stored_Payback_Coeff, Index PV_Sectors, Index PV_Spatial_ID
 
 Button Run_Aggregate_Calibr
 Title: Run Aggregate Calibration
@@ -1253,7 +1253,7 @@ Index stage:=CopyIndex(Stages_to_Calibrate);~
 NodeLocation: 128,336,1
 NodeSize: 64,40
 WindState: 2,6,58,888,787
-DisplayInputs: Object Function, Object Variable, Object Decision, Object Index, Object Constant, Decision Aggregation_2_Label, Function Set_Spat_ID_Fail_R2, Variable Qty_Fail_Spat_ID_PV, Index PV_Calibration_Stage, Constant PV_Decisions_by_Stg, Constant PV_Dates_Incl_by_Stg, Decision PV_Calibration_Start, Decision PV_Calibration_End, Index Time_PV_Calibration, Constant PV_OptSettings_byStg, Index Stages_to_Calib_PV, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Index All_PV_Decisions, Index Time_Solar_PV, Index PV_Spatial_ID
+DisplayInputs: Object Object, Object Function, Object Variable, Object Decision, Object Index, Object Constant, Decision Aggregation_2_Label, Function Set_Spat_ID_Fail_R2, Variable Qty_Fail_Spat_ID_PV, Index PV_Calibration_Stage, Constant PV_Decisions_by_Stg, Constant PV_Dates_Incl_by_Stg, Decision PV_Calibration_Start, Decision PV_Calibration_End, Index Time_PV_Calibration, Constant PV_OptSettings_byStg, Index Stages_to_Calib_PV, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Index All_PV_Decisions, Index Time_Solar_PV, Index PV_Spatial_ID
 
 Button Run_MultistgCalib_PV
 Title: Run Multistage Calibration
@@ -1326,7 +1326,7 @@ local Sector_Sel:=Slice(PV_Sectors,1);~
 NodeLocation: 272,216,1
 NodeSize: 64,40
 WindState: 2,229,108,1322,764
-DisplayInputs: Object Function, Object Variable, Object Decision, Object Index, Object Constant, Index All_Spatial_ID, Function Check_Sector, Index All_Sectors, Decision Ag_Level_for_PV_Coef, Variable Stored_AdEff_PV, Variable Stored_LRMS_PV, Variable Stored_WOM_PV, Variable Stored_End_WOM_PV, Constant Stored_Opt_Status_PV, Variable Stored_Spatial_Coeff, Variable Stored_Logit_Price_C, Variable Stored_Tech_Coeff, Variable Stored_Pybk_SpatCoef, Variable Stored_Payback_Coeff, Index PV_Sectors, Index PV_Spatial_ID
+DisplayInputs: Object Object, Object Function, Object Variable, Object Decision, Object Index, Object Constant, Index All_Spatial_ID, Function Check_Sector, Index All_Sectors, Decision Ag_Level_for_PV_Coef, Variable Stored_AdEff_PV, Variable Stored_LRMS_PV, Variable Stored_WOM_PV, Variable Stored_End_WOM_PV, Constant Stored_Opt_Status_PV, Variable Stored_Spatial_Coeff, Variable Stored_Logit_Price_C, Variable Stored_Tech_Coeff, Variable Stored_Pybk_SpatCoef, Variable Stored_Payback_Coeff, Index PV_Sectors, Index PV_Spatial_ID
 DisplayOutputs: Function MultiStage_CalibrPV0
 
 Function Sequential_Opt_PV2(stage: optional number)
@@ -1402,7 +1402,7 @@ For i:=ID DO~
 NodeLocation: 112,208,1
 NodeSize: 64,40
 WindState: 2,21,23,1717,780
-DisplayInputs: Object Function, Object Variable, Object Decision, Object Index, Object Constant, Index All_Spatial_ID, Function Check_Sector, Index All_Sectors, Variable Include_Ad_Effect, Variable Include_Start_WOM, Variable Include_LRMS, Variable Include_End_WOM, Variable IncludeLogitPrice_Co, Variable IncludeLogSpatial_Co, Variable IncludeLogTech_Coeff, Variable Include_Payback_Spat, Variable Include_Payback_Coef, Decision Ag_Level_for_PV_Coef, Variable Optimization_PV, Variable Stored_AdEff_PV, Variable Stored_LRMS_PV, Variable Stored_WOM_PV, Variable Stored_End_WOM_PV, Variable All_Stored_Coeffs_PV, Constant Stored_Opt_Status_PV, Variable Stored_Spatial_Coeff, Variable Stored_Logit_Price_C, Variable Stored_Tech_Coeff, Variable Stored_Pybk_SpatCoef, Variable Stored_Payback_Coeff, Index PV_Sectors, Index PV_Spatial_ID
+DisplayInputs: Object Object, Object Function, Object Variable, Object Decision, Object Index, Object Constant, Index All_Spatial_ID, Function Check_Sector, Index All_Sectors, Variable Include_Ad_Effect, Variable Include_Start_WOM, Variable Include_LRMS, Variable Include_End_WOM, Variable IncludeLogitPrice_Co, Variable IncludeLogSpatial_Co, Variable IncludeLogTech_Coeff, Variable Include_Payback_Spat, Variable Include_Payback_Coef, Decision Ag_Level_for_PV_Coef, Variable Optimization_PV, Variable Stored_AdEff_PV, Variable Stored_LRMS_PV, Variable Stored_WOM_PV, Variable Stored_End_WOM_PV, Variable All_Stored_Coeffs_PV, Constant Stored_Opt_Status_PV, Variable Stored_Spatial_Coeff, Variable Stored_Logit_Price_C, Variable Stored_Tech_Coeff, Variable Stored_Pybk_SpatCoef, Variable Stored_Payback_Coeff, Index PV_Sectors, Index PV_Spatial_ID
 DisplayOutputs: Function MultiStage_CalibrPV0
 
 Function OG_Multi_Stage_Calib()
@@ -1439,7 +1439,7 @@ NodeLocation: 416,336,1
 NodeSize: 64,40
 WindState: 2,548,7,1208,922
 NodeColor: 65535,1,1
-DisplayInputs: Object Function, Object Decision, Object Index, Object Constant, Function Set_Spat_ID_Fail_R2, Function Sequential_Opt, Function Set_Starting_Coeff, Index Selected_PV_Decision, Index PV_Calibration_Stage, Constant PV_Decisions_by_Stg, Constant PV_Dates_Incl_by_Stg, Decision PV_Calibration_Start, Decision PV_Calibration_End, Index Time_PV_Calibration, Constant PV_OptSettings_byStg, Decision PV_Current_Stage, Decision Ag_Level_for_PV_Coef, Index Stages_to_Calib_PV, Index All_PV_Dec_Handles, Index All_PV_Decisions, Index Failed_Spat_ID_PV, Decision Use_Trace_Log, Constant Stored_Opt_Status_PV, Constant Stored_PV_Dec_Vars, Index Time_Solar_PV, Index PV_Spatial_ID
+DisplayInputs: Object Object, Object Function, Object Decision, Object Index, Object Constant, Function Set_Spat_ID_Fail_R2, Function Sequential_Opt, Function Set_Starting_Coeff, Index Selected_PV_Decision, Index PV_Calibration_Stage, Constant PV_Decisions_by_Stg, Constant PV_Dates_Incl_by_Stg, Decision PV_Calibration_Start, Decision PV_Calibration_End, Index Time_PV_Calibration, Constant PV_OptSettings_byStg, Decision PV_Current_Stage, Decision Ag_Level_for_PV_Coef, Index Stages_to_Calib_PV, Index All_PV_Dec_Handles, Index All_PV_Decisions, Index Failed_Spat_ID_PV, Decision Use_Trace_Log, Constant Stored_Opt_Status_PV, Constant Stored_PV_Dec_Vars, Index Time_Solar_PV, Index PV_Spatial_ID
 
 Function OG_Sequential_Optimi(stage: atom; decision_vars, decision_var_super, der_spatial_id: index, stored_coeff: variable, stored_status: variable)
 Title: OG Sequential Optimization3
@@ -1489,7 +1489,7 @@ For i:=orig_ID DO~
 NodeLocation: 280,336,1
 NodeSize: 64,40
 WindState: 2,25,-1,926,920
-DisplayInputs: Object Function, Object Variable, Object Decision, Object Index, Object Constant, Index All_Spatial_ID, Function Check_Sector, Index All_Sectors, Decision Ag_Level_for_PV_Coef, Variable Optimization_PV, Constant Stored_Opt_Status_PV, Constant Stored_PV_Dec_Vars, Index PV_Sectors, Index PV_Spatial_ID
+DisplayInputs: Object Object, Object Function, Object Variable, Object Decision, Object Index, Object Constant, Index All_Spatial_ID, Function Check_Sector, Index All_Sectors, Decision Ag_Level_for_PV_Coef, Variable Optimization_PV, Constant Stored_Opt_Status_PV, Constant Stored_PV_Dec_Vars, Index PV_Sectors, Index PV_Spatial_ID
 
 Function Check_Cost_Scenario()
 Title: Check Cost Scenario
@@ -1762,7 +1762,7 @@ Variable Act_PV_Install_Rate
 Title: Actual PV Install Rate
 Units: (systems or MW-AC)/year
 Description: PV installation rate from interconnection data
-Definition: VAR rates:=IF Stock_Basis_by_Sect[All_Sectors=PV_Sectors] = Bldg_Stocks_Label~
+Definition: VAR rates:=IF Stock_Basis_by_Sect[All_Sectors=PV_Sectors] = Buildings_Label~
    THEN System_Installations~
    ELSE Capacity_Installs;~
 ~
@@ -1793,7 +1793,7 @@ Variable Actual_Cumul_PV_Syst
 Title: Actual Cumul PV Systems
 Units: systems or MW-AC
 Description: Historical cumulative PV systems installed.
-Definition: VAR stocks:=IF Stock_Basis_by_Sect[All_Sectors=PV_Sectors] = Bldg_Stocks_Label~
+Definition: VAR stocks:=IF Stock_Basis_by_Sect[All_Sectors=PV_Sectors] = Buildings_Label~
    THEN Cumul_Syst_Installs~
    ELSE Cumul_Cap_Installs;~
 ~
@@ -1850,7 +1850,7 @@ WindState: 2,435,78,1025,623
 DefnState: 2,928,38,455,804,0,DFNM
 ValueState: 2,2493,180,263,582,,MIDM
 Aliases: FormNode Fo1535066204
-DisplayInputs: Object Function, Function Multi_Stage_Calibrat
+DisplayInputs: Object Object, Object Function, Function Multi_Stage_Calibrat
 TableCellDefault: checkbox(1)
 
 Objective Sales_Delta1
@@ -2005,7 +2005,7 @@ NodeSize: 64,40
 WindState: 2,379,220,720,350
 DefnState: 2,789,495,596,188,0,DFNM
 Aliases: FormNode Fo1535066203
-DisplayInputs: Object Function, Function Multi_Stage_Calibrat
+DisplayInputs: Object Object, Object Function, Function Multi_Stage_Calibrat
 {!40700|Att_CellFormat: CellSpan(Opt_Settings_PV,CellAlignment('Center'),2,header:0)}
 
 FormNode Fo1535066203
