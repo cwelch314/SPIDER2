@@ -117,7 +117,7 @@ Author: Cory Welch
 Date: Mon, Jan 8, 2018 10:24 AM
 NodeLocation: 136,200,1
 NodeSize: 72,56
-DiagState: 2,179,51,1364,570,17
+DiagState: 2,179,51,1364,626,17
 Pict: (000000000000003B003B0004EC05000089504E470D0A1A0A0000000D494844520000003B0000003B0806000000C525F2B3000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA86400000571494441546843ED9A4F681D5514C623821457DD197161777625AD82D64D09A850C8A676635C2811140A5D1874935DBB291514AAA510716140436A69256803D182C65262288AA18A56411A504B2B8A11A586407C63BE937ED72F376766EEBC76DE9F98C5EFBCCCBD77EE9C2FF7CF3973DFEBC9B26C43F1DBDF577B3FBF36DDE7D5AD2BE85666AE4CED79E283ED9776BED39391C317F68FFCB9B4B0956DD6DDD48DBC71F1E02115A9E01FB0B4BCB805EDDC9BBB8957BF183A4A618F9DEEBD8A6B8CF2F0F981132C1FFBF6E810DABA1D740B073F1B1CA5208CE095BFE6B769FD3353BB66513730B9630ED76B6EEE16302D75E42046D72639F5FDC87ED43F3CBE6511D76B2ABB01083DF0F19E290AC5E8794201A778FFC4B6795CAF6BD0C940940AC5DFDC7C62BEFB7D6E074614ED30DD5166158D2FDF1C6A8CDCB7D078AD37AB95E3F72E6633878FA853A94028A62B85BEF8E9DE893CA1D8A028149F88BD28B74A38E13A5713742A156C3C1A4339521E1FCE9F18A050806BD699094E9C7976A231FBCA211771D6AD2F213BFBC26878CE8D87A700A1587374FED8DC70EECC78FF87D141B683608CB0D69B0922BE7977502B95D0A6A2B3819F66FAAADE8F69CAF001903C78ED800ADD7D72EB8297329A09423A4CAC0A78EBEB23C35E1B803A158ACDC96B672608E930B1C86D2180498187A68A98EEF37F5CDAEEB5036682900E13CB0C296F43D20C0A42E30C2AC64C10D2A123FBD0F81D4BE77F9EEC6739D632420F857AA9A2879920A4C3C4223E3E327EE775087A60ECB6C6CB170E1C4756A4BB73510615632608E930B160EAF2F8533B5784529C529441799809423A502C98BCFCF6D30F8EDDBE4C91CF7DB4FBDC273F4EECF5DA1661263881546EC5290FB6B1764E7D199692F2FEC889149009512CD6B2D7A60C332AA4D5A833656898E10B791556FF3876CFB2E7481D64F1B53883F50711100598C02BFA1E1BA7836598090F3EBD6FDACB6B2B41215E9D031D81E33856A110806C281E414D2191FFE6654B1E66D4C1B84155D8575C5E0404A8500D2D204E2A30E26C83CFE6424F9BC432B7C5487DF5EBEC2E9441D0F367FBA6F304634431F2A84382A175799869B7588E2A12062DC788EBC984EEC2FA9280D1D5FBF230D34EB17815A3D35E121F0BC6C6C5833400A1A9EBD64C3BC532992F7AB3890593D49C989869975888E0114A59DC44DB474FDD758D421F5F99FAA91B1331D32EB17AAEEBC554455FE748D5C4C24CBBC472B72DDA4D31A29A48BC746EDF7B4F9EB9FF22AFB15179F779986987588C241DCE4BEAE3B5CADD18D3574F1BF504B10833416C4DE80309632B622544796DF8F20EB00B6B9D9E3A2274E5F5A198F11CBC95E8030947A6E80D06C7A658CF58DB5E3D420EFF1929EBD74C70AA283716E7DDFA02E2876A6C65C6D42C9CE67186E5614645C40D888A8DEBAAC29D3535F329827D75A458AC2DC6D6781D56059B1C53CD94177A33AD14AB270E55B21F05F7713DA31F7CA6A48C665A29966B0C31D6AB2F02EFBC7A844AA1A9C985995689D5D89A9A0CE01E8429861905C9462DB9F1AD109B125B0976696C3A9CAA04A2D14F597AE961A65562CB622B4751B32382E9DFCCF1A962A615623152743C8EADB8D6FC9760A7C546D4EC461663A61562E31F73601A63DDEA4F07080ED45097920256C1CC3F26E2EE20E6A639D93F9B5DFF25AC2938CD7888DD14D398E74704D7282FFACA91B8CFCC437EC7B17AF3EB4EA39B45BE4AC15A53610AD62772DF2AA3E83EAF04DCB7E6E6C2DF54A4C20788D8783D6287C54E5B961707BFE272EFB90EA647FA58D369D1175BA9787D512CD62B1280D4E314F61597A7021FB48FD5C21B0575896D16F61597A7B22996059B622B52475F71792A9B6259B029B62275F41597A75228B6E83715A9D4D2975397C48A0FA18F58EC462688D59FC76E447044FC9FD8FF0559CFBF23C53F94183BF9530000000049454E44AE426082)
 AcpStyles: FrameNode: PVAdoption1544977216
 
@@ -138,7 +138,7 @@ Att_ColorRole: Null
 Variable NewConstr_MktShare
 Title: NewConstr Mkt Share
 Units: market share
-Definition: IF PV_Sectors = Residential_Label   {If residential}~
+Definition: IF Force_NewCon_Market_[All_Sectors=PV_Sectors]   {If residential}~
 THEN LinearInterp(EOY_Date_for_Econ_Yr[Annual_Econ_Time=Static_PV_Time], NewConstr_Mkt_Share[All_Sectors=PV_Sectors], Time_Solar_PV, Static_PV_Time)   {Then use historic and exogenous data}~
 ELSE LRMS_by_PV_Time[System_Types=PV_Retrofit_Label, Installation_Types=Retrofit_Label]   {Else use calculated long-run market share}~
 /*~
@@ -148,7 +148,6 @@ NodeLocation: 440,400,1
 NodeSize: 64,40
 WindState: 2,39,85,1218,343
 ValueState: 2,67,16,1572,852,1,MIDM
-NodeColor: 65535,52427,52427
 GraphSetup: {!40000|Graph_ColorSeq:[12593,41891,0,65278,37008,6168,32639,32639,32639,0,0,0,34952,29298,56540,29298,53713,56540,56540,29298,55769,53456,44975,25186,65535,0,0,0,0,65535,65535,46003,65535,0,65535,65535,0,32896,0,65535,42405,0,0,0,35723,42405,10794,10794,65535,49344,52171,65535,65535,0,0,65535,0,32896,0,0,28784,32896,37008,0,32896,32896,32896,0,32896,37008,61166,37008,0,0,0]}
 ReformVal: [Time_Solar_PV,Null]
 NumberFormat: 2,%,4,2,0,0,4,1,$,0,"ABBREV",0,,,0,0,15
@@ -179,12 +178,11 @@ Definition: Table(All_Sectors,Static_PV_Time)(~
 NodeLocation: 440,520,1
 NodeSize: 64,40
 WindState: 2,8,156,1169,434
-DefnState: 2,125,474,1529,239,0,DFNM
+DefnState: 2,122,466,1529,239,0,DFNM
 ValueState: 2,328,123,1253,510,1,MIDM
 Aliases: Alias Al1, FormNode Fo6, FormNode Fo1541552777, FormNode Fo1544631509
 ReformDef: [Static_PV_Time,PV_Sectors]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-DisplayOutputs: Variable Clipboard_NewConstr_
 Att_EditSliceState: [New_Construction_Com,3,PV_Sectors,1,Static_PV_Time,1]
 {!40700|Att_CellFormat: Undefined}
 
@@ -297,6 +295,19 @@ Text Te347370691
 Title: Fix to do same as old
 NodeLocation: 584,400,-1
 NodeSize: 64,40
+
+Decision Force_NewCon_Market_
+Title: Force NewCon Market Share
+Units: boolean
+Description: NEED TO IMPORT~
+~
+Determines whether new construction market share for PV is forced (e.g., to meet a new construction code) or whether it is determined instead by the automated long run market share calculations.
+Definition: Table(All_Sectors)(1,0,0)
+NodeLocation: 664,520,1
+NodeSize: 64,40
+NodeColor: 65535,1,1
+{!40300|DomainExpr: Boolean()}
+TableCellDefault: 1
 
 Close New_Construction
 
@@ -1318,13 +1329,6 @@ NodeSize: 212,20
 NodeColor: 65278,37008,6168
 Original: Sim_vs_Act_PV_Rate
 
-FormNode Fo1573237296
-Title: R2 Fit
-Definition: 1
-NodeLocation: 716,124,1
-NodeSize: 212,20
-Original: R2_Fit
-
 FormNode Fo1573237322
 Title: Multi-D Forecasts
 Definition: 1
@@ -1843,13 +1847,6 @@ Show_description:20
 
 Close Advertising
 
-Alias Al1575484014
-Title: Potential by Type
-Definition: 1
-NodeLocation: 792,336,1
-NodeSize: 64,40
-Original: Potential_by_Type2
-
 Variable Compare_New___Retro
 Title: Compare New & Retro
 Units: stock basis by sector/yr
@@ -1888,7 +1885,7 @@ Author: coryw
 Date: Sun, Dec 9, 2018 10:46 AM
 NodeLocation: 292,184,1
 NodeSize: 72,64
-DiagState: 2,2319,77,1061,727,17
+DiagState: 2,218,48,1061,727,17
 Pict: (000000000000003C003C0004B105000089504E470D0A1A0A0000000D494844520000003C0000003C08060000003AFCD972000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA86400000536494441546843ED994D68145910C773F4B0871CBD9983B039493CC80ACA12C48320887ACA5E34824AC083D18B39A91789B0B27E204456307E47511C57851145A3480C1231B85F598930A24854C4F8814641BAED7FBBD554BFF977F79BB63B938973F82533F5AABB5FD5AB5755AFA7C175DDEF0A2ACC0AE7DEEF9DEEC08E6E36562DA8302B9CFDB3269C3D33BD8F7CBC1A506156C0D8BAC155860A33A3D8D1E79C5E3A48C7AA0415FA8CDD9D8F09BB2FFE6EA1E393C19BC74DEE958DBDCEA3EB4BE8780AA8D0070F4248F6FC385E15A33FBE69740ECD2BF97338B17898EAA4800A7DBC15962C8B07FBDE667A1ACF31CEE0AFDBDD8B6B0AEED995FD1AC89D7F4EB5C3107AAD06C67A464A0E701E14DAA85E0AA8504028054647ED4518E0D5DA60352C804362C3F4E6D6DD813E9CC4745242851ADF68843569209C3F8F743807E78C69637CE01C73854D1D0F3F12DE3F471A2FBF2F1C9DB1B1800A13C1AA6295B40108416FA2CC80802703AD7E6EF01C185C9793615150612CDE5E0EED2F8472A57B0C4E311D3649465361249F3FCE708E2E1C9149FA2169938422701E169707390264989CA2A0C248D4AA64762840359010CFB0FC4441850C9C7C0263B1B2442735AF469BFD728666878D670815968150966CEC8534BE53BD1A800A4D9CA17D5DB2BAD8774CA756A04293A0A99862078134506108241559DD49AC977941851ABF0786B15EF9F896123455A0C210528AA64138032AD4C050188C96908DD71AFE1FBFC64AF1370E0A92B070821119E372A9AFEDE7D38DE3738F35B87983E71CFAABBB8BCD2389AF1FCCBE56856F60704C67F5F45DA9E9A7933326D8E4CA384E6429B9FEB8507189A4428D1C14E2427AF38DE50599C4BEE1AEEE03F7B76D3791D55F79A179848D0BAB2FCF1F84DEB2F3B347D93858E1DD033A6D975A2A6E45A930C4F95F8ABEC1DE7F36FEDFABE1163176D7DD4E1AF68800D139FEEFEE4EA623FCF1B0B71D7A70101B07FA9949F733A1C210789B81304759222D25BC8C0723A45F7E18F33C131E076204187AD6DFCA74046D0C1CC5748044D5E2B333C73E7D9EB06E75A950E31FE160305619077835863D24938BF3F4B6DBEDBDD081536C2627F9206E8F965E8F348B1EB611D361506108BC5043E242F6562FF2307178170F4CF2F2D24253097AEBAEB4F6B3719355C5AFFB38C9106C21E8C545970915DA8015C5C3A60A51F9C3840A9378FB69BC5156772A81FDCFE6ABA1C22424946C1EA2C3CE36B9607FDADE5F6FAD0DD796D04AA2A1C238B05724592053321D8DECC74A6BA6D46D647836AED1C933A919A1C238A41CD8240A785F9C63BBC704AC16AEDB71A7A3878D9B48794C722C1546A16BA48D01A8B9A25F691B880C6D6380605B22A9300A094FDB628F3650268144C774A210032AD9FB36CD4899200AEDC15A20AA86970918F096340FB542548E097D89423719034F8B563F4EEBFD6E93691912A25DB7DAFAD8384357119667425F18585DA973366548D04E425D653A49E0908FEB711C64E351C87530DCACE32145866E1C929A008DAC4EDC312F099DE52B497A718B145234490A8F38A471A8242A4C60A4189C74AC34D14752BD0DCB1435D83BB800934F6A32347AFFC6D5441BE4ED469AFBB066A44C49D093C679161EB665EFBD2D3BE5DA73A307D78A7CD7D0A6DF169CFAE19D8C99606CEBEDD587F5BDD65F5D740D63F8AFE53648F302CE3CE8E9805DD458207BB0DAB41CFDFFF337BEFC93C4478D0592ACD2104C320B32BA979CA4A8B179210F47CB698EE936D41CCB122ACC8BBAC18ABAC13941857951375851373827A8302FEA062BA6B5C1F8C905066A209BB60627615E9725549817F22B621CB63FB8A5850AA72F6EC317AB462B3073E6846E0000000049454E44AE426082)
 
 Module Misc_Output
@@ -2913,7 +2910,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 256,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,499,167,1162,483,17
+DiagState: 2,58,170,1162,483,17
 AcpStyles: FrameNode: Solar_Frame
 
 Variable FirstYr_Annual_Solar
@@ -4558,7 +4555,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 256,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,225,-2,1445,798,17
+DiagState: 2,162,17,1445,696,17
 Aliases: Alias Al1548967139
 AcpStyles: FrameNode: FrameNode_1544920029
 
@@ -4891,10 +4888,11 @@ WindState: 2,108,40,1402,650
 DefnState: 2,554,214,851,310,0,DFNM
 ValueState: 2,302,51,935,658,0,MIDM
 Aliases: FormNode Fo1547766909, FormNode Fo1547828216
+NodeColor: 65535,52427,52427
 ReformDef: [Pre_and_Post_System,Rate_Vintage]
 ReformVal: [Pre_and_Post_System,Rate_Vintage]
 TableCellDefault: Rate_Setting_Default
-Att_EditSliceState: [All_Sectors,1,PV_Climate_Zone,4,Rate_Setting,1,Rate_Vintage,5,Pre_and_Post_System,2]
+Att_EditSliceState: [All_Sectors,2,PV_Climate_Zone,4,Rate_Setting,1,Rate_Vintage,5,Pre_and_Post_System,2]
 
 Decision Num_of_Rate_Vintages
 Title: Number of Rate Vintages
@@ -5274,9 +5272,10 @@ NodeSize: 64,40
 WindState: 2,52,379,1347,518
 DefnState: 2,25,81,1081,431,0,DFNM
 Aliases: FormNode Fo1547764385, Alias Al1547766712, FormNode Fo1547766739, FormNode Fo1547828218
+NodeColor: 65535,52427,52427
 ReformDef: [Rate_Attribute_Setti,PV_Climate_Zone]
 TableCellDefault: NonCoinc_Dmd_Default
-Att_EditSliceState: [All_Sectors,2,Rate_Vintage,4,Pre_and_Post_System,2,PV_Climate_Zone,1,Rate_Attribute_Setti,1]
+Att_EditSliceState: [All_Sectors,1,Rate_Vintage,3,Pre_and_Post_System,1,PV_Climate_Zone,1,Rate_Attribute_Setti,1]
 
 FormNode Fo1547764385
 Title: Non-Coinc Demand Rate Attributes
@@ -5425,6 +5424,7 @@ NodeSize: 64,40
 WindState: 2,126,248,1003,603
 DefnState: 2,194,175,1081,431,0,DFNM
 Aliases: FormNode Fo1547765306, Alias Al1547766713, FormNode Fo1547766740, FormNode Fo1547828219
+NodeColor: 65535,52427,52427
 ReformDef: [Rate_Attribute_Setti,PV_Climate_Zone]
 TableCellDefault: On_Peak_Dmd_Default
 Att_EditSliceState: [All_Sectors,1,Rate_Vintage,5,Pre_and_Post_System,2,PV_Climate_Zone,1,Rate_Attribute_Setti,1]
@@ -5576,6 +5576,7 @@ NodeSize: 64,40
 WindState: 2,178,338,1156,511
 DefnState: 2,553,320,931,296,0,DFNM
 Aliases: FormNode Fo1547766195, Alias Al1547767161, FormNode Fo1547767167, FormNode Fo1547828220
+NodeColor: 65535,52427,52427
 ReformDef: [Rate_Attribute_Setti,PV_Climate_Zone]
 TableCellDefault: Energy_DefaultAttrib
 Att_EditSliceState: [All_Sectors,3,Rate_Vintage,5,Pre_and_Post_System,2,PV_Climate_Zone,1,Rate_Attribute_Setti,1]
@@ -7479,7 +7480,7 @@ Definition: Table(All_Sectors,PV_Operating_Year)(~
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 NodeLocation: 96,80,1
 NodeSize: 64,40
-WindState: 2,479,558,720,350
+WindState: 2,477,329,720,350
 DefnState: 2,248,57,533,521,0,DFNM
 Aliases: Alias Al1568695862, FormNode Fo1568695862, FormNode Fo1545167165
 ReformDef: [0,PV_Operating_Year]
@@ -7817,7 +7818,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 584,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,148,16,1633,649,17
+DiagState: 2,148,16,1633,697,17
 AcpStyles: FrameNode: FrameNode_1544920267
 
 Constant Installed_EquipPrice
@@ -8631,6 +8632,7 @@ Checkbox(0),Checkbox(0),~
 ,)
 NodeLocation: 272,80,1
 NodeSize: 64,40
+WindState: 2,261,132,1061,574
 DefnState: 2,411,187,541,455,0,DFNM
 ReformDef: [Incentive_Source,Tax_Entity]
 TableCellDefault: Checkbox(0)
@@ -9173,7 +9175,7 @@ Date: Wed, Oct 10, 2018 9:00 AM
 NodeLocation: 544,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,-250,162,1682,626,17
+DiagState: 2,124,32,1681,626,17
 Aliases: Alias Al1548967120
 AcpStyles: FrameNode: FrameNode_1544919879
 
@@ -9198,7 +9200,7 @@ Description: The solar PV DC system sized used for PV economics.
 Definition: PV_AC_SystSize_Econ * PV_AC_to_DC_Factor
 NodeLocation: 288,488,1
 NodeSize: 64,40
-ValueState: 2,72,74,638,555,0,MIDM
+ValueState: 2,910,507,638,216,0,MIDM
 Aliases: Alias Al1571850383
 
 Constant Battery_Storage_Spec
@@ -9242,7 +9244,7 @@ Definition: Table(All_Sectors,All_System_Types)(~
 0,0,0,0,0,0,0)
 NodeLocation: 288,368,1
 NodeSize: 64,40
-DefnState: 2,348,54,661,285,0,DFNM
+DefnState: 2,889,333,661,285,0,DFNM
 ValueState: 2,42,138,1279,556,0,MIDM
 Aliases: Alias Al1550185112, FormNode Fo1550185113, FormNode Fo1539014254, FormNode Fo1567093177
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
@@ -9436,6 +9438,7 @@ NodeLocation: 760,240,1
 NodeSize: 64,40
 WindState: 2,2333,160,874,442
 Aliases: Alias Al1568696228, FormNode Fo1568696228, FormNode Fo1542829238
+NodeColor: 65535,1,1
 
 FormNode Fo1542829238
 Title: Title 24 Compliance Date
@@ -9936,7 +9939,6 @@ Definition: PV_Static_Start_Year..PV_Static_End_Year
 NodeLocation: 384,272,1
 NodeSize: 64,40
 WindState: 2,98,82,1097,834
-DisplayOutputs: Variable Clipboard_NewConstr_
 Att_GraphIndexRange: 1,,,,,,10
 
 Index Incentive_Source
@@ -11167,10 +11169,10 @@ Module Technical_Potential
 Title: Technical Potential
 Author: JamesMilford
 Date: Wed, Oct 31, 2018 10:11 AM
-NodeLocation: 704,208,1
+NodeLocation: 544,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,2075,48,1302,654,17
+DiagState: 2,154,55,1302,654,17
 AcpStyles: FrameNode: FrameNode_1544920370
 
 Decision Minimum_PV_Size_for_
@@ -11318,7 +11320,7 @@ Date: Wed, Oct 31, 2018 10:11 AM
 NodeLocation: 264,328,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,27,170,1630,616,17
+DiagState: 2,127,124,1630,616,17
 AcpStyles: FrameNode: FrameNode_1545066682
 
 Index Lidar_Zip
@@ -11502,177 +11504,6 @@ Show_description:20
 
 Close Lidar_Mappings
 
-FormNode Fo1541194968
-Title: Apply Res Multiplier
-Definition: 0
-NodeLocation: 248,584,1
-NodeSize: 200,16
-NodeColor: 57311,57311,57311
-Original: Use_CEC_Forecast
-
-Module Consumption_by_Secto
-Title: Consumption by Sector
-Author: JamesMilford
-Date: Wed, Nov 7, 2018 1:59 PM
-NodeLocation: 112,328,1
-NodeSize: 64,40
-NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-16,297,1565,521,17
-AcpStyles: FrameNode: FrameNode_1545066386
-
-Variable Residential_Annual_C
-Title: Residential Annual Consumption
-Units: kWh/year-premise
-Definition: Profile_Annual_Total[Static_Profile_Names= '2017_Residential_Load'] 
-NodeLocation: 120,288,1
-NodeSize: 64,40
-ValueState: 2,55,514,607,331,,MIDM
-NodeColor: 65535,52427,52427
-NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-
-Variable Small_Annual_Consump
-Title: Small Annual Consumption
-Units: kWh/year-premise
-Description: Annual premise consumption for small commercial buildings. This is derived from the 8760 load shapes representing average meter-level load and a multiplier to account for the average number of meters per non-residential premise.
-Definition: Profile_Annual_Total[Static_Profile_Names='2017_Small_Commercial_Load'] 
-NodeLocation: 120,72,1
-NodeSize: 64,40
-WindState: 2,102,82,1048,424
-ValueState: 2,232,234,550,425,,MIDM
-NodeColor: 65535,52427,52427
-
-Variable Med_Lrg_Ann_Consump
-Title: Med/Lrg Annual Consumption
-Units: kWh/year-premise
-Description: Annual premise consumption for medium/large non-residential buildings. This is derived from the 8760 load shapes representing average meter-level load and a multiplier to account for the average number of meters per non-residential premise.
-Definition: Profile_Annual_Total[Static_Profile_Names='2017_Med_Lrg_Commercial_Load'] 
-NodeLocation: 120,192,1
-NodeSize: 64,40
-WindState: 2,102,82,853,424
-ValueState: 2,232,234,550,425,,MIDM
-NodeColor: 65535,52427,52427
-
-Variable Implied_Non_Res_Cons
-Title: Implied Non-Res Consumption
-Units: kWh/year-premise
-Definition: Small_Annual_Consump * (1 - MedLrg_Pct_of_NonRes) + Med_Lrg_Ann_Consump * MedLrg_Pct_of_NonRes
-NodeLocation: 272,192,1
-NodeSize: 64,40
-WindState: 2,102,82,1009,407
-
-Variable Consumption_by_Time
-Title: Consumption by Time
-Units: GWh/year
-Definition: IF Use_CEC_Forecast~
-THEN CEC_Consumption_Fcst[All_Sectors=PV_Sectors]~
-ELSE Sum(Annual_Consumption * Premises_by_Climate_, PV_Climate_Zone) * GW_per_kW
-NodeLocation: 640,288,1
-NodeSize: 64,40
-WindState: 2,20,28,1320,670
-ValueState: 2,180,103,1377,665,1,MIDM
-ReformVal: [Building_Stock_Year,Use_CEC_Forecast]
-NumberFormat: 2,F,4,4,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-
-Variable Premises_by_Climate_
-Title: Premises by Climate Zone
-Units: premises
-Definition: Aggregate(Applied_Building_Stk[All_Sectors=PV_Sectors, All_Spatial_ID=PV_Spatial_ID], Climate_Zone_Map, PV_Spatial_ID, PV_Climate_Zone)
-NodeLocation: 424,192,1
-NodeSize: 64,40
-ValueState: 2,72,74,703,505,,MIDM
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Building_Stock_Year,1]
-
-Variable Annual_Consumption
-Title: Annual Consumption
-Units: kWh/year-premise
-Definition: IF PV_Sectors = Residential_Label~
-THEN Residential_Annual_C~
-ELSE Implied_Non_Res_Cons
-NodeLocation: 424,288,1
-NodeSize: 64,40
-ValueState: 2,102,425,575,417,,MIDM
-
-Decision Use_CEC_Forecast
-Title: Use CEC Forecast
-Description: Check this input to use the CEC forecast when calculating the technical/eligible potential as a percentage of consumption. Otherwise, bottom-up consumption estimates derived from load shapes and premise counts will be used.
-Definition: Checkbox(1)
-NodeLocation: 576,184,1
-NodeSize: 64,40
-WindState: 2,102,82,927,350
-Aliases: Alias Al1568696621, FormNode Fo1568696644, FormNode Fo1541194968
-AcpStyles: Show_object: no
-
-Constant MedLrg_Pct_of_NonRes
-Title: Med/Lrg Pct of Non-Res Premises
-Units: fraction
-Description: The percentage of non-residential premises that are medium or large in size.~
-~
-Source:~
-File from Dan Wilson at SDGE.~
-Uses Dec-31-2017 meter count values from "2015-2018 Hourly Average Non-NEM Energy.xlsx"
-Definition: SubTable(StructSingCell_Input[StructSingCell_Names=Med_Lrg_Pct_Label])
-NodeLocation: 272,88,1
-NodeSize: 64,40
-WindState: 2,272,5,918,410
-Aliases: Alias Al1568696589, FormNode Fo1568696589, FormNode Fo1541455709
-NodeColor: 39321,1,1
-NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-
-FormNode Fo1541455709
-Title: Med/Lrg Pct of Non-Res Premises
-Definition: 0
-NodeLocation: 276,36,1
-NodeSize: 60,12
-NodeInfo: 1,0,0,0,0,0,0,82,0,,0,,,
-Original: MedLrg_Pct_of_NonRes
-
-Constant CEC_Consumption_Fcst
-Title: CEC Consumption Forecast
-Units: GWh/year
-Description: Gross consumption (ie, prior to netting out PV) forecasts from the California Energy Commission.~
-~
-Source:~
-CEC SDGE-specific Demand Case~
-"TN222324_20180122T142256_CED_2017_Baseline_SDGE_Mid_Demand_Case.xls"~
-https://efiling.energy.ca.gov/GetDocument.aspx?tn=222324~
-Non-residential is the sum of commercial, manufacturing, mining, and agricultural sectors.
-Definition: Table(All_Sectors,Building_Stock_Year)(~
-5551,5731,5736,5937,6125,6319,6453,6513,6117,6328,6750,7080,7113,7537,7559,7741,7586,7376,7472,7719,7591,7670,7682,7553,7546,7637,7725,7841,7985,8201,8396,8595,8781,8945,9107,9274,9453,9642,0,0,0,0,0,~
-8335,8454,8592,8944,9304,9616,10085,10464,9903,10191,10455,11137,11126,11639,11651,11916,11414,10976,11100,11363,11323,11776,11814,11668,11431,11657,11866,12077,12270,12606,12817,13003,13163,13285,13381,13467,13531,13588,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-NodeLocation: 640,408,1
-NodeSize: 64,40
-WindState: 2,319,553,1011,350
-DefnState: 2,324,8,616,844,0,DFNM
-ValueState: 2,280,160,833,681,1,MIDM
-Aliases: Alias Al1568696633, FormNode Fo1568696633, FormNode Fo1541698922
-NodeColor: 39321,1,1
-ReformDef: [All_Sectors,Static_PV_Time]
-{!50000|Att_ColumnWidths: [,All_Sectors,\([126,126,126])]}
-
-FormNode Fo1541698922
-Title: CEC Consumption Forecast
-Definition: 0
-NodeLocation: 648,460,1
-NodeSize: 56,12
-NodeInfo: 1,0,1,0,0,0,0,,0,,0,,,
-Original: CEC_Consumption_Fcst
-
-Text FrameNode_1545066386
-NodeLocation: 1080,328,-20
-NodeSize: 360,304
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-NodeColor: 65535,65535,65535
-AcpStyles: Show_index_menus: yes~
-Show_description:20
-
-Text Te2130531523
-Title: This doesn't work right now if CEC forecast not used for downstream tech pot'l calcs (which are not integral to the model. just for cmparison purposes.
-NodeLocation: 512,80,-1
-NodeSize: 152,64
-
-Close Consumption_by_Secto
-
 Module Roofspace_Per_Buildi
 Title: Roofspace Per Building
 Author: JamesMilford
@@ -11680,8 +11511,15 @@ Date: Wed, Nov 7, 2018 1:59 PM
 NodeLocation: 112,240,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,861,80,1388,596,17
+DiagState: 2,230,165,1388,596,17
 AcpStyles: FrameNode: FrameNode_1545066262
+
+Decision Year_of_Consump_Data
+Title: Year of Consumption Data
+Description: The year from which consumption data is available.
+Definition: SubTable(StructSingCell_Input[StructSingCell_Names=Consump_Year_Label])
+NodeLocation: 272,280,1
+NodeSize: 64,40
 
 Variable Bldg_Stk_Conversion
 Title: Building Stock Conversion
@@ -12026,7 +11864,6 @@ area[All_Sectors=PV_Sectors, All_Spatial_ID=PV_Spatial_ID]
 NodeLocation: 272,160,1
 NodeSize: 64,40
 ValueState: 2,2467,134,707,517,0,MIDM
-NodeColor: 65535,52427,52427
 ReformVal: [PV_Sectors,PV_Spatial_ID]
 
 Close Roofspace_Per_Buildi
@@ -12108,6 +11945,7 @@ NodeLocation: 456,224,1
 NodeSize: 64,40
 WindState: 2,102,82,890,476
 ValueState: 2,584,43,579,749,0,MIDM
+Aliases: Alias Al1541461812
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:4
 ReformVal: [PV_Sectors,PV_Spatial_ID]
 
@@ -12153,11 +11991,12 @@ ELSE Watts_per_m2_Roofspc * kW_per_W * DC_to_AC_Fact_byTime
 NodeLocation: 304,344,1
 NodeSize: 64,40
 WindState: 2,39,303,720,350
-ValueState: 2,38,9,1246,810,1,MIDM
+ValueState: 2,160,19,1246,680,1,MIDM
 Aliases: Alias Al1542831105
 GraphSetup: Att_GraphIndexRange PV_Spatial_ID:1,1~
 Att_CatLineStyle Graph_Primary_Valdim:5
-Att_ResultSliceState: [PV_Sectors,2,PV_Spatial_ID,1,Time_Solar_PV,1]
+ReformVal: [PV_Spatial_ID,Time_Solar_PV]
+Att_ResultSliceState: [PV_Sectors,2,Time_Solar_PV,1,PV_Spatial_ID,1]
 
 Text FrameNode_1545066590
 NodeLocation: 1056,336,-20
@@ -12243,14 +12082,6 @@ NodeLocation: 248,552,1
 NodeSize: 200,16
 NodeColor: 57311,57311,57311
 Original: Incl_Homeowner_Fract
-
-FormNode Fo1541822407
-Title: Include Lidar Suitability
-Definition: 0
-NodeLocation: 248,520,1
-NodeSize: 200,16
-NodeColor: 57311,57311,57311
-Original: Include_Lidar_Suitab
 
 Text Te1541824648
 Title: Need to bound the historic avg system sizes to remove outliers (see Avg_DC_SystSize_Zip)
