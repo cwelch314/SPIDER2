@@ -1,0 +1,253 @@
+{ Analytica Model Roofspace_Derived_Po, encoding="UTF-8" }
+SoftwareVersion 6.0.10
+
+{!-60000|Attribute AcpStyles}
+
+
+LinkModule Roofspace_Derived_Po
+Title: Roofspace Derived Potential
+Author: JamesMilford
+Date: Wed, Nov 7, 2018 1:59 PM
+DefaultSize: 48,24
+NodeSize: 64,40
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+DiagState: 2,1928,33,1563,637,17
+FontStyle: Arial,15
+FileInfo: 0,LinkModule Roofspace_Derived_Po,2,2,0,0,Roofspace Derived Potential.ana
+AcpStyles: FrameNode: FrameNode_1545066562
+
+Variable Applicable_Roofspace
+Title: Applicable Roofspace
+Units: m2
+Definition: Applic_Premise_Cnt * m2_per_Bldg
+NodeLocation: 424,208,1
+NodeSize: 64,40
+ValueState: 2,1271,35,456,803,0,MIDM
+NodeColor: 65531,1,65535
+ReformVal: [PV_Sectors,Small_Comm_Fraction]
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
+Att_ResultSliceState: [PV_Spatial_ID,1,Building_Stock_Year,26,PV_Sectors,1,Small_Commercial_Fra,1]
+
+Variable Suitable_Roofspace
+Title: Suitable Roofspace
+Units: m2
+Definition: VAR space:=Applicable_Roofspace * Implied_Area_Suitab;~
+~
+Find_Aggreg_Sum(space, Aggregation_2_Label, Non_Agg_Spatial_IDs, PV_Spatial_ID)
+NodeLocation: 576,208,1
+NodeSize: 64,40
+ValueState: 2,50,80,892,822,1,MIDM
+Att_ResultSliceState: [PV_Sectors,2,Building_Stock_Year,1,PV_Spatial_ID,1]
+
+Variable Roof_Tech_Potent_GWh
+Title: Roofspace Tech Potential GWh
+Units: GWh/year
+Definition: VAR potent:=Suitable_Roofspace * kWh_per_m2_Roofspace * GW_per_kW;~
+~
+Find_Aggreg_Sum(potent, Aggregation_2_Label, Non_Agg_Spatial_IDs, PV_Spatial_ID)
+NodeLocation: 728,208,1
+NodeSize: 64,40
+WindState: 2,102,82,1311,763
+ValueState: 2,296,90,777,785,,MIDM
+
+Variable Roofspace_Tech_Poten
+Title: Roofspace Tech Potential Pct of Consump
+Units: fraction
+Definition: Divide(Total_Tech_Potentia1, Sum(Consumption_by_Time, PV_Sectors), True)
+NodeLocation: 1032,152,1
+NodeSize: 64,40
+ValueState: 2,3,20,943,704,1,MIDM
+NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+
+Variable Total_Tech_Potentia1
+Title: Total Tech Potential
+Units: GWh/year
+Definition: Sum(Roof_Tech_Potent_GWh * Non_Agg_Spatial_IDs, PV_Spatial_ID)
+NodeLocation: 880,208,1
+NodeSize: 64,40
+ValueState: 2,312,314,1249,303,,MIDM
+
+Variable Roofspc_Tech_Pot_Pct
+Title: Roofspace Tech Potent Pct of Sector Consump
+Units: fraction
+Definition: Divide(Total_Tech_Potentia1, Consumption_by_Time, True)
+NodeLocation: 1032,248,1
+NodeSize: 64,40
+ValueState: 2,17,132,943,704,1,MIDM
+NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+
+Variable Eligible_Roofspace
+Title: Eligible Roofspace
+Units: m2
+Definition: VAR space:=Suitable_Roofspace * Bldg_Ownership_Fract;~
+~
+Find_Aggreg_Sum(space, Aggregation_2_Label, Non_Agg_Spatial_IDs, PV_Spatial_ID)
+NodeLocation: 576,424,1
+NodeSize: 64,40
+ValueState: 2,260,266,571,424,0,MIDM
+Att_ResultSliceState: [PV_Sectors,1,Building_Stock_Year,1,PV_Spatial_ID,1]
+
+Variable Roof_Elig_Potent_GWh
+Title: Roofspace Eligible Potential GWh
+Units: GWh/year
+Definition: VAR potent:=Eligible_Roofspace * kWh_per_m2_Roofspace * GW_per_kW;~
+~
+Find_Aggreg_Sum(potent, Aggregation_2_Label, Non_Agg_Spatial_IDs, PV_Spatial_ID)
+NodeLocation: 728,424,1
+NodeSize: 64,40
+ValueState: 2,36,44,777,577,,MIDM
+Att_ResultSliceState: [PV_Sectors,2,PV_Spatial_ID,1,Building_Stock_Year,1]
+
+Variable Eligible_Potential_1
+Title: Eligible Potential Pct of Consump
+Units: fraction
+Definition: Divide(Total_Eligible_Pote1, Sum(Consumption_by_Time, PV_Sectors), True)
+NodeLocation: 1032,424,1
+NodeSize: 64,40
+ValueState: 2,17,45,943,704,1,MIDM
+NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+
+Variable Total_Eligible_Pote1
+Title: Total Eligible Potential
+Units: GWh/year
+Definition: Sum(Roof_Elig_Potent_GWh * Non_Agg_Spatial_IDs, PV_Spatial_ID)
+NodeLocation: 880,424,1
+NodeSize: 64,40
+ValueState: 2,312,314,1249,303,,MIDM
+
+Variable Roof_Eligib_Pct_Cons
+Title: Roofspace Eligible Potent Pct of Sector Consump
+Units: fraction
+Definition: Divide(Total_Eligible_Pote1, Consumption_by_Time, True)
+NodeLocation: 1032,520,1
+NodeSize: 64,40
+ValueState: 2,392,173,978,603,1,MIDM
+NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+
+Variable Implied_Building_Sui
+Title: Implied Building Suitability
+Definition: Divide(Roof_Elig_Potent_GWh, NonDiscrim_Potential, True)
+NodeLocation: 880,520,1
+NodeSize: 64,40
+ValueState: 2,353,14,1381,908,0,MIDM
+Att_ResultSliceState: [PV_Sectors,2,PV_Spatial_ID,1,Building_Stock_Year,1]
+
+Alias Al1541457484
+Title: Applicable Premise Count
+Definition: 1
+NodeLocation: 272,208,1
+NodeSize: 64,40
+Original: Applic_Premise_Cnt
+
+Alias Al1541459036
+Title: Home Ownership Rate
+Definition: 1
+NodeLocation: 272,424,1
+NodeSize: 64,40
+Original: Bldg_Ownership_Rate
+
+Alias Al1541461738
+Title: Weighted Area Suitability
+Definition: 1
+NodeLocation: 424,112,1
+NodeSize: 64,40
+Original: Wtd_Area_Suitability
+
+Alias Al1541461812
+Title: kWh per m2 Roofspace
+Definition: 1
+NodeLocation: 728,320,1
+NodeSize: 64,40
+Original: kWh_per_m2_Roofspace
+
+FormNode Fo1541461919
+Title: Home Ownership Rate
+Definition: 0
+NodeLocation: 272,476,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Bldg_Ownership_Rate
+
+Alias Al1541506175
+Title: Home Ownership Fraction
+Definition: 1
+NodeLocation: 424,424,1
+NodeSize: 64,40
+Original: Bldg_Ownership_Fract
+
+Alias Al5
+Title: Premise Applicability to Study
+Definition: 1
+NodeLocation: 120,208,1
+NodeSize: 64,40
+Original: PremiseApplicability
+
+Alias Al1541631924
+Title: Single-Family Home Percentage
+Definition: 1
+NodeLocation: 120,104,1
+NodeSize: 64,40
+Original: SingleFam_Home_Pct
+
+FormNode Fo1541631929
+Title: Single-Family Home Percentage
+Definition: 0
+NodeLocation: 432,508,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: SingleFam_Home_Pct
+
+Variable Roof_Tech_Potent_MW
+Title: Roofspace Tech Potential MW
+Units: MW-DC
+Definition: VAR potent:= Watts_per_m2_Roofspc * kW_per_W * Suitable_Roofspace * MW_per_kW;~
+~
+Find_Aggreg_Sum(potent, Aggregation_2_Label, Non_Agg_Spatial_IDs, PV_Spatial_ID)
+NodeLocation: 728,112,1
+NodeSize: 64,40
+WindState: 2,636,415,720,350
+ValueState: 2,228,22,1078,846,1,MIDM
+Att_ResultSliceState: [PV_Sectors,2,PV_Spatial_ID,1,Building_Stock_Year,1]
+
+Variable Roof_Elig_Potent_MW
+Title: Roofspace Eligible Potential MW
+Units: MW
+Definition: VAR potent:= Watts_per_m2_Roofspc * kW_per_W * Eligible_Roofspace * MW_per_kW;~
+~
+Find_Aggreg_Sum(potent, Aggregation_2_Label, Non_Agg_Spatial_IDs, PV_Spatial_ID)
+NodeLocation: 728,520,1
+NodeSize: 64,40
+ValueState: 2,296,298,777,577,,MIDM
+
+Alias Al1541822653
+Title: Include Homeowner Fraction
+Definition: 1
+NodeLocation: 424,520,1
+NodeSize: 64,40
+Original: Incl_Homeowner_Fract
+
+FormNode Fo1541822658
+Title: Include Homeowner Fraction
+Definition: 0
+NodeLocation: 424,572,1
+NodeSize: 56,12
+NodeInfo: 1,1,1,0,0,0,0,,0,,0,,,
+Original: Incl_Homeowner_Fract
+
+Alias Al1543355838
+Title: Implied Area Suitability
+Definition: 1
+NodeLocation: 576,112,1
+NodeSize: 64,40
+Original: Implied_Area_Suitab
+
+Text FrameNode_1545066562
+NodeLocation: 1464,328,-20
+NodeSize: 360,304
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+NodeColor: 65535,65535,65535
+AcpStyles: Show_index_menus: yes~
+Show_description:20
+
+Close Roofspace_Derived_Po
+
