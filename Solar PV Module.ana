@@ -3343,7 +3343,7 @@ ValueState: 2,94,131,791,671,0,MIDM
 Aliases: FormNode Fo1539221213, FormNode Fo1572476393
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9
-ReformVal: [PV_Climate_Zone,Energy_Met_by_Solar]
+ReformVal: [PV_Climate_Zone,0]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_ResultSliceState: [PV_Sectors,1,Pre_and_Post_System,1,PV_Operating_Year,1,PV_Climate_Zone,1]
 {!40600|Att_ClusterIndex: Energy_Met_by_Solar}
@@ -5085,7 +5085,7 @@ Definition: Choice(Rate_Escalation_Scen,2,1)
 NodeLocation: 240,704,1
 NodeSize: 64,40
 WindState: 2,102,113,720,319
-Aliases: FormNode Fo1544881622, FormNode Fo1544567173, FormNode Fo1544570137, FormNode Fo1548967849
+Aliases: FormNode Fo1544567173, FormNode Fo1544570137, FormNode Fo1548967849
 
 FormNode Fo1544567172
 Title: Retail Rate Escalation
@@ -8270,7 +8270,7 @@ Definition: Choice(PV_Cost_Scenario,2,1)
 IndexVals: ['item 1']
 NodeLocation: 264,168,1
 NodeSize: 64,40
-Aliases: Alias Al1568923260, FormNode Fo1568923260, FormNode Fo1544374882, FormNode Fo1543281664, FormNode Fo1544881571
+Aliases: Alias Al1568923260, FormNode Fo1568923260, FormNode Fo1543281664, FormNode Fo1544881571
 
 FormNode Fo1543281664
 Title: Selected PV Cost Scenario
@@ -11338,6 +11338,7 @@ Title: Lidar Fields
 Definition: ['ZIP Area (m2)','Lon','Lat','City','State','Year','LiDar Land Area Extent of ZIP (%)','Total number of buildings','Total rooftop area','Total No. Small Buildings','Total Area Small Buildings (m2)','Total No. Medium Buildings','Total Area Medium Buildings (m2)','Total No. Large Buildings','Total Area Large Buildings (m2)','Total No. of Small Bldg. Any Available Area','Total Area of Small Bldg. Any Available Area (m2)','Total No. of Small Bldg. >= 30 m2 Available Area','Total Area of Small Bldg. >= 30 m2 Available Area (m2)','Total No. of Small Bldg. >= 20 m2 Available Area','Total Area of Small Bldg. >= 20 m2 Available Area (m2)','Total No. of Small Bldg. >= 10 m2 Available Area','Total Area of Small Bldg. >= 10 m2 Available Area (m2)','Total No. of Small Bldg. >= 7.5 m2 Available Area','Total Area of Small Bldg. >= 7.5 m2 Available Area (m2)','Total No. of Small Bldg. >= 6 m2 Available Area','Total Area of Small Bldg. >= 6 m2 Available Area (m2)','Total No. of Small Bldg. >= 4.3 m2 Available Area','Total Area of Small Bldg. >= 4.3 m2 Available Area (m2)','Total No. of Medium Bldg. Any Available Area','Total Area of Medium Bldg. Any Available Area (m2)','Total No. of Medium Bldg. >= 30 m2 Available Area','Total Area of Medium Bldg. >= 30 m2 Available Area (m2)','Total No. of Medium Bldg. >= 20 m2 Available Area','Total Area of Medium Bldg. >= 20 m2 Available Area (m2)','Total No. of Medium Bldg. >= 10 m2 Available Area','Total Area of Medium Bldg. >= 10 m2 Available Area (m2)','Total No. of Medium Bldg. >= 7.5 m2 Available Area','Total Area of Medium Bldg. >= 7.5 m2 Available Area (m2)','Total No. of Medium Bldg. >= 6 m2 Available Area','Total Area of Medium Bldg. >= 6 m2 Available Area (m2)','Total No. of Medium Bldg. >= 4.3 m2 Available Area','Total Area of Medium Bldg. >= 4.3 m2 Available Area (m2)','Total No. of Large Bldg. Any Available Area','Total Area of Large Bldg. Any Available Area (m2)','Total No. of Large Bldg. >= 30 m2 Available Area','Total Area of Large Bldg. >= 30 m2 Available Area (m2)','Total No. of Large Bldg. >= 20 m2 Available Area','Total Area of Large Bldg. >= 20 m2 Available Area (m2)','Total No. of Large Bldg. >= 10 m2 Available Area','Total Area of Large Bldg. >= 10 m2 Available Area (m2)','Total No. of Large Bldg. >= 7.5 m2 Available Area','Total Area of Large Bldg. >= 7.5 m2 Available Area (m2)','Total No. of Large Bldg. >= 6 m2 Available Area','Total Area of Large Bldg. >= 6 m2 Available Area (m2)','Total No. of Large Bldg. >= 4.3 m2 Available Area','Total Area of Large Bldg. >= 4.3 m2 Available Area (m2)','Small Buildings (%)','Rooftop Area on Small Buildings (%)','Medium Buildings (%)','Rooftop Area on Medium Buildings (%)','Large Buildings (%)','Rooftop Area on Large Buildings (%)','Small Bldgs. >= 10 m2 (%)','Area of Small Bldgs. >= 10 m2 (m2)','Medium Bldgs. >= 10 m2 (%)','Area of Medium Bldgs. >= 10 m2 (m2)','Large Bldgs. >= 10 m2 (%)','Area of Large Bldgs. >= 10 m2 (m2)','Locale Description','2010 Population Density (people / sq. mile)','Census Region']
 NodeLocation: 720,216,1
 NodeSize: 64,40
+DisplayOutputs: Index Lidar_Locale_Type, Variable Zip_to_Locale_Map
 {!40300|Att_SlicerPopupSize: 237,1001}
 
 Index Lidar_Min_Syst_Sizes
@@ -11345,7 +11346,7 @@ Att_PrevIndexValue: [0.645,0.9,1.125,1.5,3,4.5]
 Title: Lidar Min System Sizes
 Units: kW-DC
 Definition: CopyIndex(Approx_kW_Equiv)
-NodeLocation: 400,224,1
+NodeLocation: 488,448,1
 NodeSize: 64,40
 WindState: 2,98,82,720,350
 ValueState: 2,789,129,416,303,0,MIDM
@@ -11375,12 +11376,14 @@ INDEX uniq_locale:=Unique(locales);~
 SortIndex(uniq_locale)
 NodeLocation: 720,392,1
 NodeSize: 64,40
+DisplayInputs: Index Lidar_Fields, Decision Locale_Label
 
 Decision Locale_Label
 Title: Locale Label
 Definition: Choice(Lidar_Fields,70,0)
 NodeLocation: 720,304,1
 NodeSize: 64,40
+DisplayOutputs: Index Lidar_Locale_Type, Variable Zip_to_Locale_Map
 
 Decision Estim_Locale_Label
 Title: Estimated Locale Label
@@ -11448,9 +11451,10 @@ Variable Zip_to_Locale_Map
 Title: Zip to Locale Map
 Description: Maps detailed lidar data by zip code to a lidar locale type.
 Definition: Lidar_Detailed_Data[Lidar_Fields=Locale_Label]
-NodeLocation: 128,432,1
+NodeLocation: 704,496,1
 NodeSize: 64,40
 ValueState: 2,440,73,416,672,,MIDM
+DisplayInputs: Index Lidar_Fields, Decision Locale_Label
 
 Variable LidarZip_for_ID
 Title: Lidar Zip for Spatial ID
@@ -11945,7 +11949,6 @@ NodeLocation: 456,224,1
 NodeSize: 64,40
 WindState: 2,102,82,890,476
 ValueState: 2,584,43,579,749,0,MIDM
-Aliases: Alias Al1541461812
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:4
 ReformVal: [PV_Sectors,PV_Spatial_ID]
 
@@ -12074,14 +12077,6 @@ NodeLocation: 764,444,-1
 NodeSize: 244,164
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 NodeColor: 65535,65535,65535
-
-FormNode Fo1541822406
-Title: Include Homeowner Fraction
-Definition: 0
-NodeLocation: 248,552,1
-NodeSize: 200,16
-NodeColor: 57311,57311,57311
-Original: Incl_Homeowner_Fract
 
 Text Te1541824648
 Title: Need to bound the historic avg system sizes to remove outliers (see Avg_DC_SystSize_Zip)

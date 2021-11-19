@@ -22,6 +22,7 @@ Checking := 1
 SaveOptions := 2
 SaveValues := 0
 OleAutoRecompute := 0
+DisplayOutputs SampleWeighting: Variable Lower_Pctile, Variable Upper_Pctile
 NodeLocation SampleWeighting: 368,64,1
 NodeSize SampleWeighting: 48,24
 NodeInfo SampleWeighting: 1,1,1,1,1,1,0,0,0,0,,0,1,0
@@ -110,7 +111,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,7,9,1783,734,17
+DiagState: 2,7,9,1783,720,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
@@ -472,7 +473,7 @@ NodeLocation: 608,312,1
 NodeSize: 64,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 WindState: 2,2424,68,720,350
-Aliases: Alias Al1552872555, Alias Al1552852361, Alias Al612315645
+Aliases: Alias Al1552872555, Alias Al612315645
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF PV_Impact1 = Hidden_Dropdown~
@@ -486,7 +487,7 @@ Definition: Choice(PV_Impact_Titles,1,0)
 NodeLocation: 616,440,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
-Aliases: FormNode Fo1552851929, FormNode Fo1552852282, FormNode Fo343880189
+Aliases: FormNode Fo1552851929, FormNode Fo343880189
 OnChange: PV_Econ_Output_But
 
 Text Te1552851929
@@ -515,7 +516,7 @@ NodeLocation: 1112,72,1
 NodeSize: 64,40
 WindState: 2,21,318,958,453
 DefnState: 2,615,318,514,243,0,DFNM
-Aliases: FormNode Fo1552855792, FormNode Fo1417622013
+Aliases: FormNode Fo1417622013
 {!50000|Att_ColumnWidths: [283]}
 
 FormNode Fo1552861680
@@ -533,7 +534,7 @@ NodeLocation: 584,552,1
 NodeSize: 40,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 WindState: 2,2424,68,720,350
-Aliases: Alias Al1552872556, Alias Al1552861973, Alias Al1686057469
+Aliases: Alias Al1552872556, Alias Al1686057469
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF EV_Impact = Hidden_Dropdown~
@@ -563,7 +564,7 @@ Definition: Choice(EV_Impact_Titles,3,0)
 NodeLocation: 608,680,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
-Aliases: FormNode Fo1552861680, FormNode Fo1552861951, FormNode Fo880751101
+Aliases: FormNode Fo1552861680, FormNode Fo880751101
 OnChange: EV_Imp_Output_But1
 
 Text Te1552861680
@@ -587,7 +588,7 @@ NodeLocation: 584,792,2
 NodeSize: 40,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 WindState: 2,2424,68,720,350
-Aliases: Alias Al1552872557, Alias Al1552863909, Alias Al343880189
+Aliases: Alias Al1552872557, Alias Al343880189
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF PV_Economics = Hidden_Dropdown~
@@ -619,7 +620,7 @@ Definition: Choice(PV_Econ_Titles1,2,0)
 NodeLocation: 608,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
-Aliases: FormNode Fo1552863501, FormNode Fo1552863839, FormNode Fo1954492925
+Aliases: FormNode Fo1552863501, FormNode Fo1954492925
 OnChange: PV_Econ_Output_But1
 
 Text Te1552863501
@@ -644,7 +645,7 @@ NodeLocation: 1288,440,1
 NodeSize: 64,40
 WindState: 2,99,257,720,646
 ValueState: 2,525,428,523,240,,MIDM
-Aliases: FormNode Fo1552865477, FormNode Fo1552866538, FormNode Fo209662461
+Aliases: FormNode Fo1552865477, FormNode Fo209662461
 OnChange: PV_Input_Button
 
 Index PV_Input1
@@ -663,7 +664,7 @@ NodeLocation: 1264,320,2
 NodeSize: 40,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 WindState: 2,-6,300,720,350
-Aliases: Alias Al1552866520, Alias Al1552866538, Alias Al1417622013
+Aliases: Alias Al1552866520, Alias Al1417622013
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF PV_Input = Hidden_Dropdown~
@@ -691,7 +692,7 @@ Description: Check this box if you want to view the inputs as a graphical output
 Definition: Checkbox(1)
 NodeLocation: 1464,168,1
 NodeSize: 64,40
-Aliases: FormNode Fo1552866073, FormNode Fo1552866539, FormNode Fo612315645
+Aliases: FormNode Fo1552866073, FormNode Fo612315645
 
 FormNode Fo1552866073
 Title: Show as Graph
@@ -720,7 +721,7 @@ NodeLocation: 960,72,1
 NodeSize: 64,40
 WindState: 2,237,158,1472,616
 DefnState: 2,432,232,930,343,0,DFNM
-Aliases: FormNode Fo1552868509, FormNode Fo1283404285
+Aliases: FormNode Fo1283404285
 ReformDef: [Undefined,PV_Scenario_Variable]
 {!50000|Att_ColumnWidths: [464]}
 
@@ -759,7 +760,7 @@ Definition: Choice(EV_Input_Titles,4,0)
 NodeLocation: 1296,680,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
-Aliases: FormNode Fo1552872113, FormNode Fo1552872598, FormNode Fo746533373
+Aliases: FormNode Fo1552872113, FormNode Fo746533373
 OnChange: EV_Input_Button1
 
 Index EV_Input1
@@ -778,7 +779,7 @@ NodeLocation: 1272,552,2
 NodeSize: 40,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 WindState: 2,2424,68,720,350
-Aliases: Alias Al1552872113, Alias Al1552872598, Alias Al880751101
+Aliases: Alias Al1552872113, Alias Al880751101
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF EV_Input = Hidden_Dropdown~
@@ -903,7 +904,7 @@ Definition: Choice(Storage_Input_Titles,4,0)
 NodeLocation: 1296,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
-Aliases: FormNode Fo1552872728, FormNode Fo1552873172, FormNode Fo1820275197
+Aliases: FormNode Fo1552872728, FormNode Fo1820275197
 OnChange: Storag_Input_Button
 
 Index Storage_Input1
@@ -921,7 +922,7 @@ NodeLocation: 1272,792,2
 NodeSize: 40,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 WindState: 2,2424,68,720,350
-Aliases: Alias Al1552872727, Alias Al1552873172, Alias Al1954492925
+Aliases: Alias Al1552872727, Alias Al1954492925
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF BESS_Input = Hidden_Dropdown~
@@ -983,7 +984,7 @@ Definition: Choice(Storage_Dispatch_Tit,2,0)
 NodeLocation: 608,1160,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
-Aliases: FormNode Fo1552872981, FormNode Fo1552873387, FormNode Fo478097917
+Aliases: FormNode Fo1552872981, FormNode Fo478097917
 OnChange: Storage_Disptch_But2
 
 Index Storage_Dispatch_Out
@@ -1002,7 +1003,7 @@ NodeLocation: 584,1032,2
 NodeSize: 40,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 WindState: 2,2424,68,720,350
-Aliases: Alias Al1552872981, Alias Al1552873387, Alias Al209662461
+Aliases: Alias Al1552872981, Alias Al209662461
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF BESS_Impact1 = Hidden_Dropdown~
@@ -1103,7 +1104,7 @@ NodeLocation: 1272,72,1
 NodeSize: 64,40
 WindState: 2,371,56,720,350
 DefnState: 2,357,63,688,243,0,DFNM
-Aliases: FormNode Fo1552873973, FormNode Fo1551839741
+Aliases: FormNode Fo1551839741
 {!50000|Att_ColumnWidths: [322]}
 
 Index Storg_Scenario_Varia
@@ -17325,494 +17326,12 @@ DefaultSize: 48,24
 NodeLocation: 1168,112,0
 NodeSize: 48,32
 NodeInfo: 1,0,,,0,0,,,,0
-DiagState: 2,2166,116,1021,570,17,,
+DiagState: 2,2093,99,1101,673,17,,
 WindState: 2,71,235,471,322
 Pict: (0ADC00000000001F001D0001280000001D0000001F0000000100180000000000A80A0000C40E0000C40E0000000000000000000044465145444E47434E48444F47454F474A52484A524948524B48524C4C53494A50484B4F44474843454544454543434543414743414A42434B3F424A3F424A3E41493E414940414B43444D42444C43464E44464F4548500046445046424E48444F49455045454E45474F45494E47485244454F43444C3E3F45393D403036362F353532343631353836383D3B3B413D3F463D3F483E424B3E424C3D414B40434D42444D41444945464C46484F45484D0046454F44454E46464F45454D44464D43474C43484E43444D3939412E303525272A56595254564E54554E1B1C1D1C1E1F1F20222425282A2D3030323734393F363A423A3F4841434D42444D42454A46464C47494E47494E0044464E43464D43464C44484D454A4C434A4D4047494D4F50ACAC98E2DEC2FFF4D0FFF1CBFFEDC5FFEFC9FFF1CBFFF4CFC4BFA4979886616258292A2A1F212324282B2D303436393F3E404845464B47494C484A4E47494D0044464E43464D42464D44494E454A4E474C4F797971F1EDCEFFF2CDFFECC4FFE9C0FFE5BAFFE2B7FFE2B6F3D1B0E2B9A6E6BEA8FFE4B9FFEDC6FFF7D3B5B59D5F6057191B1D2223282E2F353C3C4145454B4A4B50474A4F0045444F45454F464751464851484A5246484EF2ECCBFFF2CDFFEFC9FFE9C0FFE5BBFFE2B7EBC8B3D8ADA8DAAFAFF2CECED6A7A7F2D0B0FFE2B7FFE8BEFFEBC3FFF6D2E1DFC25F5F551D1D212A292F3A3A4145464E484A53004244524445534445534848544849537D776EFCF0C8FFF0CAFFECC4FFE8BFF9DBB9E0BDB8D9B3B3D9B2B2EBC4C4CFDBBEF9E4E4E5C4BCFFF1DBFFF2DDFFF1D8FFF1CDFFF3CDFFFBD8A6A69328282927292D3A3E43464A4E004344524445534445534848574A4A58B39B7EF2CC8FFFF6D2FFEBC3F5DDC3E3C4C2DFBFBFDEBEBEDCB9B9ECC7C781C3778FCE8BEFF4EAAFDFAF8FD28FBFE6BFFFFEFAFFF8DCFFF8D4FFFDDCD2D2B82A2A2B323235444649004547514546524646544A4A59494A57E9BD86EEB269F8DEACFBEFD1E7CFCFE5CCCCE4CACAE2C5C5DFC0C0F1CECE81C377019901119F1101990101990101990131AC31CFECC6FFFBDBFFFDDCFFFFDE8B8B7C2A2A2C43434700464952484953494954494954686363F4BE7FF1B672F1B979EDD9D4ECD9D9EBD7D7E8D1D1E5CDCDE5CBCBF8D5D581CA7E019901019901019901019901019901019901119F11DFF2CEFFFFDDFFFFDEC2B3922123263D414400464951484A53494A544849539E8E78F3B978F3B978F3D5BDF2E5E5F1E2E2EEDEDEECD9D9ECD8D8E4CACAF5CFCF81CC8101990101990101990151B95181CC8141B34101990141B33FFFFAD8F8D39EF8D8A41C2023383E4300474953474953484B53484A52CAAB85F7BF82F8CC9EF9F2F2F7EEEEF4E9E9F2E5E5F1E4E4E4C9C9D5ACACF6D0D081CC810199010199010199018FD28FFEFCF6FDF9E99FD99B019901BFDFA6FACF99F9CF992A2D2E32383D004C4C574A4C554C4E56494B53FCCE99FAC48BFEF0E1FDFAFAFBF5F5F9F2F2F8F0F0EDDCDCD2A5A5E2B6B6FFD6D681CC81019901019901019901019901CFECCFFDF9E0FCF6DA9FD99861BE5AFDDAAAFBC891545550313439004A4C564A4C55494B53746C65FECC98FDCFA0FFFFFFFFFFFFFFFFFFFEFDFDF8F1F1D1A3A3D2A7A7ECBFBFCFDDC0FFE5E5CFDFC2BFE2BC9FD99F81CC819FD99FFFFFFBFCF4D8FFFDE371C66FFFDFB1FDC9947071652E2F34004B5159484E55474B539F8D79FFCC99FFECD4FFFFF9FFFFFCFFFFFFFFFFFFDFBFBFD1A4A4D5ABABECC0C081BF74DFE2CFFAE6C8FEFCE3DFF2DF51B95181CC8181CC80AFDFAABFE6B2BFE4AEFFE6BEFFCC998C806C282C30004E565E4850564A5158CEB08FFFD1A0FFFCEEFFFFF6FFFFF8FFFFF8F9F2EFCD9B9BD2A6A6D7B0B0E3BBBBCFD6B931AB2FFFF0EDFDF4D9FFFFF571C671019901019901019901019901FFF8DCFFDAABFFD1A0B5A88C24292D00565D644D5258494C51FFD8A9FFE4BFFFFFF0FFFFF2FFFFF3FFFFF5E9D2CECFA0A0D3A8A8D9B3B3DEBCBCFBD9D921A62141B240EFF5ECFEFAEFFFFFFF31AC31019901019901019901FFF8DCFFD9ABFFD9ABC5B19322262800595C654E51596D6763FFDEB2FFF3D6FFFFEBFFFFECFFFFEFFFFFF2D9B3AFDAB6B3EAD6D1E1C3C1DFBFBFEDCECE9FCB91019901119F1171C67171C671119F11019901019901019901FFF8DCFFE0B5FFE0B5FFECC4212327005659624D52598C7E71FFEBC2FFFEE3FFFFE7FFFFEAFFFFEBFFFFEBF5ECDDFFFFF1FFFFF2FFFFF3C8DFEEE2CECFF8DFDF61BE5F019901019901019901019901019901019901019901FFF8DCFFEBC2FFEBC2FFF0C91F2124004E545E4A515AAD9C86FFF4CFFFFFE1FFFFE4FFFFE5FFFFE6FFFFE8FFFFEBFFFFEBFFFFEDFAFDF2D9F2FFDBEBF5ECDBDCFCECEC71C36E01990101990101990101990131AC31019901FFF8DCFFF5D8FFF3CDFFF4CF575850004B4F5A4A505BCFB999FFFBD8FFFDDBFFFDDBFFFDDCFFFDDEFFFFE2FFFFE4FFFFE7FFFFEAFDFEF0F6FCFFF6FCFFF5EFF0F2E5E5FBF4F4EFF8EEBFE6BFBFE6BFDFF2DEFFFFF541B33FFFF8DCFFFDEFFFFAD7FFFAD7565750004C4E5B4D515EE7C9A2FFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFCFFEBFAFFECFCFFF2F9FFFFF9FFFFF9FFFFF3EAEAF9F2F2FDFBFBFFFFFFFFFFFFFFFFFFFFFFFCEFF9DBFFFADCFFFFFBFFFFDEFFFFDE808173004B4D5A4C505DFFD9AAFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEE4FFF5D9FFFFDCFFFCD9FFFFD9FFFFD9FFFFECF8F1FBF5EAFFFEEDFFFFEFFFFFEFFFFFF5FFFFFDFFFFFDFFFFFBFFFFF7FFFFE0FFFFDE8E8E7E004D4F5C4D515EE8C59FFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEBCFFFDB9FFFFC8FBF3DBF7E5F2F6E0FBF7E3F5F4EBD4A9A9E3C7C7F1E4E4FFFFFFFFFFFBF4EFD6FFFFE6FFFFDEFFFFDEFFFFDEFFFFDE9A9A89004F54605055639B8879FFDFB3FFFCDAFFFFDEFFFFDEFFFFDEFFF9D5FFF3CED9EED6F2F0D9FFF7E7FFFEFBFFFFFFFFFFFFFFFFFFE4C9C9E9D4D4F7EFEFFFFFFFD9F2FFEDBF88F8C78EFCE0B2FFFBD8FFFFDEFFFFDEC5C5AD00535965555C66565C65817773BEA288D2B391D3B392AF9C85998D7C718D98F9FFFFF9FFFFF9FFFFF9FFFFF9FFFFF9FFFFF9FFFFE6D1D1EDDCDCF8FAFAF9FFFFC2E0E7F7BF82F8C185F9C287FAC88FFEEDC4FFFFDEC5C5AD00545A66565D68575E6859616A586069565D67535B6550595F4F585E78A3B5E5FFFFE5FFFFE5FFFFE5FFFFE5FFFFE5FFFFE5FFFFE5E2E2E9F4F4E5FFFFE5FFFFC6D0C1F8C185F9C287FAC48AFBC58DFBC68FFDDDAFC5C5AD00565A69585D6A58616B5C666E5B6A6F5A6A7157676D505F634F5A6074A6B9A9E2FF93E2FFA9E2FFCCFFFFCCFFFFCCFFFFCCFFFFCCFFFFCCFFFFCCFFFFBFF9FFDDC39CF9C287FAC48AFBC58DFBC68FFCC892FDC994E1C59E00595B6A5A5D6C5B616E5C67715F6D7464747B627577546568505E624F5B614E5A6049525B516B7DA9E2FF93E2FF93E2FFB4FCFFB9FFFFB9FFFFB9FFFF97E2F1F9C287FAC48AFBC58DFBC68FFCC892FDC994FFCB98BD9B7A005B5D6A5C606D5D626F5E6673616B76606E765F6E765A696D55646A515E644C595F48535B4A535C4D545D4D525C4D535A58799193E2FF95E0FFA6FFFF71B2C354514CB59676FBC68FFCC892FDC994FFCB98F2C49469605F00595E6C5C626E5B646E5D666F616A71626C73616C70616D735B666D535D664E58634C54604C525E4E545F4E535E4D525B4F515B50515C535B696296AE5D84984C4E594D505A5B5B5D85776CA48E7783756C59585F51556000)
 FontStyle: Arial,15
 Att_PreLoadScript: {!40404|FreePassObjectCount 5G4nCJrM31tNLh2R}
 {!40400|Att_clearTypeFonts: 0}
-
-Include 0,LinkModule Misc_Old_Logic,2,2,0,0,Misc Old Logic (possibly useful someday_).ana
-
-NodeLocation Misc_Old_Logic: 760,360,1
-NodeSize Misc_Old_Logic: 80,56
-
-
-Constant Energy_Met_by_Solar
-Title: Res Energy Met by Solar
-Units: fraction
-Description: Specify the percentage of annual energy consumption met by solar production. This input only likely applies to the residential sector, whose system sizing is assumed to be a function of annual load. Though the assumption may be made for other sectors as well. This input is used only for calculating systsem economics, where the size of the PV system relative to total load determines the savings due to rate structures that can vary by time of use.
-Definition: SubTable(Single_Cell_Inputs[SingCell_Input_Names=Met_by_Solar_Label])
-NodeLocation: 112,88,1
-NodeSize: 64,40
-WindState: 2,339,274,1194,581
-Aliases: Alias Al1550182568, FormNode Fo1550182568, FormNode Fo1538669797
-NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-
-FormNode Fo1538669797
-Title: Energy Met by Solar
-Definition: 0
-NodeLocation: 768,72,1
-NodeSize: 56,16
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Energy_Met_by_Solar
-
-Constant Meter_Counts
-Title: Meter Counts
-Units: meters
-Description: The current count of meters for SDGE customers.~
-~
-Source:~
-File from Dan Wilson (posted on Sharepoint).~
-"PremiseAndServiceCountByZipSector102518.xlsx"
-Definition: Table(All_Spatial_ID,All_Sectors)(~
-0,0,0,~
-0,0,0,~
-6665,829,0,~
-6229,529,0,~
-802,225,0,~
-1384,308,0,~
-25698,2703,0,~
-24028,2955,0,~
-16226,616,0,~
-5224,776,0,~
-10069,726,0,~
-753,152,0,~
-263,58,0,~
-105,30,0,~
-10233,570,0,~
-310,61,0,~
-3160,485,0,~
-13272,569,0,~
-17866,2494,0,~
-9218,991,0,~
-202,51,0,~
-16017,3102,0,~
-790,138,0,~
-288,69,0,~
-19117,1406,0,~
-2992,441,0,~
-51,60,0,~
-1831,453,0,~
-2342,456,0,~
-4692,337,0,~
-12608,3716,0,~
-16868,1547,0,~
-6636,888,0,~
-9806,1251,0,~
-6613,897,0,~
-15130,1065,0,~
-21362,3866,0,~
-21937,2192,0,~
-20187,3105,0,~
-16104,3614,0,~
-18603,1340,0,~
-16483,1302,0,~
-16816,2656,0,~
-6920,2197,0,~
-2175,628,0,~
-19895,2569,0,~
-14775,1440,0,~
-16581,2352,0,~
-557,36,0,~
-20460,2163,0,~
-19673,906,0,~
-9995,1072,0,~
-591,202,0,~
-280,76,0,~
-1085,502,0,~
-16095,2909,0,~
-12463,2068,0,~
-189,40,0,~
-3979,833,0,~
-0,1,0,~
-15502,2544,0,~
-393,171,0,~
-20005,2562,0,~
-0,2,0,~
-6299,1243,0,~
-17817,2787,0,~
-11479,2333,0,~
-6252,1348,0,~
-11448,1620,0,~
-15237,1733,0,~
-0,1,0,~
-478,221,0,~
-977,83,0,~
-403,10,0,~
-0,3,0,~
-0,4,0,~
-25573,4297,0,~
-14755,1248,0,~
-19005,2268,0,~
-23732,1379,0,~
-22258,1361,0,~
-8330,1129,0,~
-14607,842,0,~
-14266,2449,0,~
-26311,2516,0,~
-12978,3063,0,~
-16942,3744,0,~
-0,1,0,~
-13150,1474,0,~
-17820,562,0,~
-23722,1864,0,~
-18054,884,0,~
-21086,1331,0,~
-9026,952,0,~
-10142,400,0,~
-12815,1429,0,~
-1968,5952,0,~
-22253,1323,0,~
-12834,3003,0,~
-9612,478,0,~
-25538,3314,0,~
-17100,1752,0,~
-22151,2069,0,~
-18121,898,0,~
-22586,1998,0,~
-12874,1332,0,~
-0,4,0,~
-942,13,0,~
-11233,257,0,~
-134,32,0,~
-0,1,0,~
-21120,3124,0,~
-0,6,0,~
-0,1,0,~
-7045,1097,0,~
-0,7,0,~
-0,3,0,~
-0,4,0,~
-57,44,0,~
-2949,312,0,~
-13525,1289,0,~
-1698,197,0,~
-5871,597,0,~
-2375,178,0,~
-17554,2052,0,~
-10303,1482,0,~
-0,6,0,~
-11626,2178,0,~
-0,1,0,~
-23353,1571,0,~
-3286,249,0,~
-2008,156,0,~
-0,5,0,~
-4017,687,0,~
-6583,643,0,~
-0,3,0,~
-11922,1056,0,~
-0,1,0)
-NodeLocation: 112,88,1
-NodeSize: 64,40
-DefnState: 2,652,0,664,702,0,DFNM
-ValueState: 2,312,34,558,798,,MIDM
-Aliases: Alias Al1550178221, FormNode Fo1550178224, FormNode Fo1541463954
-ReformDef: [All_Sectors,All_Spatial_ID]
-ReformVal: [All_Sectors,All_Spatial_ID]
-Att__TotalsIndex: [All_Spatial_ID]
-
-Variable Meter_Per_Premise_CZ
-Title: Meters Per Premise by CZ
-Units: meters/premise
-Description: The number of meters per premise aggregated to the climate zone level. The load shapes provided by SDGE were per meter, and we want to scale them to the premise level.
-Definition: VAR meters:=Aggregate(Meter_Counts[All_Spatial_ID=PV_Spatial_ID, All_Sectors=PV_Sectors], Climate_Zone_Map, PV_Spatial_ID, PV_Climate_Zone);~
-VAR premise:=Aggregate(Premise_Counts[All_Spatial_ID=PV_Spatial_ID, All_Sectors=PV_Sectors], Climate_Zone_Map, PV_Spatial_ID, PV_Climate_Zone);~
-Divide(meters, premise, True)
-NodeLocation: 272,88,1
-NodeSize: 64,40
-WindState: 2,102,82,896,482
-ValueState: 2,334,367,689,530,0,MIDM
-Att__TotalsIndex: []
-
-FormNode Fo1541463954
-Title: Meter Counts
-Definition: 0
-NodeLocation: 848,220,1
-NodeSize: 56,12
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Meter_Counts
-
-Constant Premise_Counts
-Title: Premise Counts
-Units: premises
-Description: The current count of premises for SDGE customers.~
-~
-Source:~
-File from Dan Wilson (posted on Sharepoint).~
-"PremiseAndServiceCountByZipSector102518.xlsx"
-Definition: Table(All_Spatial_ID,All_Sectors)(~
-0,0,0,~
-1287619,152883,0,~
-6413,790,0,~
-6160,513,0,~
-728,209,0,~
-1292,283,0,~
-25509,2598,0,~
-23664,2857,0,~
-16221,604,0,~
-5224,775,0,~
-10066,720,0,~
-701,132,0,~
-236,53,0,~
-92,21,0,~
-10194,550,0,~
-297,56,0,~
-2973,447,0,~
-13126,537,0,~
-17514,2378,0,~
-9166,940,0,~
-201,46,0,~
-15893,2983,0,~
-774,127,0,~
-258,66,0,~
-18861,1337,0,~
-2956,419,0,~
-46,53,0,~
-1794,417,0,~
-2323,433,0,~
-4681,324,0,~
-12554,3668,0,~
-16844,1542,0,~
-6635,885,0,~
-9802,1241,0,~
-6581,866,0,~
-14883,985,0,~
-20960,3705,0,~
-21378,2098,0,~
-20026,3008,0,~
-15788,3454,0,~
-18282,1258,0,~
-16209,1224,0,~
-16630,2484,0,~
-6827,2153,0,~
-2100,568,0,~
-19847,2477,0,~
-14464,1347,0,~
-16451,2264,0,~
-557,36,0,~
-20356,2138,0,~
-19623,878,0,~
-9952,1020,0,~
-548,187,0,~
-249,70,0,~
-1040,446,0,~
-15983,2820,0,~
-12251,1953,0,~
-174,39,0,~
-3959,803,0,~
-0,1,0,~
-15360,2475,0,~
-367,161,0,~
-19852,2506,0,~
-0,2,0,~
-6221,1210,0,~
-17772,2746,0,~
-11260,2307,0,~
-6074,1230,0,~
-11293,1572,0,~
-15034,1683,0,~
-0,1,0,~
-449,189,0,~
-971,83,0,~
-403,10,0,~
-0,3,0,~
-0,4,0,~
-25534,4146,0,~
-14678,1184,0,~
-18890,2154,0,~
-23581,1328,0,~
-22145,1303,0,~
-8289,1088,0,~
-14476,800,0,~
-14184,2379,0,~
-26177,2415,0,~
-12855,2913,0,~
-16847,3632,0,~
-0,1,0,~
-13096,1370,0,~
-17776,536,0,~
-23575,1790,0,~
-17963,851,0,~
-20983,1283,0,~
-9000,907,0,~
-10112,379,0,~
-12760,1388,0,~
-1957,5828,0,~
-22073,1271,0,~
-12751,2940,0,~
-9564,474,0,~
-25436,3265,0,~
-17032,1736,0,~
-22046,2014,0,~
-18078,890,0,~
-22518,1982,0,~
-12852,1283,0,~
-0,4,0,~
-942,13,0,~
-11157,247,0,~
-134,29,0,~
-0,1,0,~
-21027,3077,0,~
-0,6,0,~
-0,1,0,~
-6952,1069,0,~
-0,6,0,~
-0,3,0,~
-0,4,0,~
-53,35,0,~
-2941,300,0,~
-13479,1246,0,~
-1694,191,0,~
-5868,593,0,~
-2360,176,0,~
-17481,1997,0,~
-10286,1461,0,~
-0,6,0,~
-11585,2110,0,~
-0,1,0,~
-23283,1542,0,~
-3285,248,0,~
-2008,156,0,~
-0,5,0,~
-4010,670,0,~
-6552,629,0,~
-0,3,0,~
-11922,1055,0,~
-0,1,0)
-NodeLocation: 512,288,1
-NodeSize: 64,40
-DefnState: 2,926,73,631,739,0,DFNM
-ValueState: 2,207,86,937,598,0,MIDM
-Aliases: FormNode Fo1541014068
-ReformDef: [All_Sectors,All_Spatial_ID]
-ReformVal: [All_Sectors,All_Spatial_ID]
-Att__TotalsIndex: [All_Spatial_ID]
-
-FormNode Fo1541014068
-Title: Premise Counts
-Definition: 0
-NodeLocation: 512,444,1
-NodeSize: 56,12
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Premise_Counts
-
-Decision Select_Profiles
-Title: Select Profiles
-Definition: Table(Static_Profile_Names)(Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
-NodeLocation: 112,160,1
-NodeSize: 64,40
-WindState: 2,102,82,834,583
-DefnState: 2,271,-22,760,663,0,DFNM
-ValueState: 2,104,106,1062,816,,MIDM
-TableCellDefault: Checkbox(0)
-
-Variable Profiles
-Title: Profiles
-Definition: Reindex_to_Week(Daily_Prof_with_Peak[Static_Profile_Names=Profiles1])
-NodeLocation: 256,160,1
-NodeSize: 64,40
-WindState: 2,102,82,989,441
-ValueState: 2,43,14,1533,768,1,MIDM
-GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
-Att_Stacked_Lines Graph_Primary_Valdim:0~
-Att_AreaFill Graph_Primary_Valdim:0
-ReformVal: [Day_and_Hour,Null]
-NumberFormat: 2,F,4,1,0,0,4,1,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [Profiles1,1,Month,8,Day_and_Hour,1]
-Att_ColorRole: Null
-
-Index Profiles1
-Title: Profiles
-Definition: Subset(Select_Profiles)
-NodeLocation: 296,480,1
-NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 237,56}
-
-Variable Normalized_Profiles
-Title: Normalized Profiles
-Definition: Divide(Profiles, MAX(Profiles, Day_and_Hour, Month), True)
-NodeLocation: 400,160,1
-NodeSize: 64,40
-ValueState: 2,392,117,1202,767,1,MIDM
-GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
-Att_AreaFill Graph_Primary_Valdim:0
-ReformVal: [Day_and_Hour,Profiles1]
-Att_ResultSliceState: [Month,4,Profiles1,1,Day_and_Hour,1]
-
-Decision Size_Map
-Title: Size Map
-Definition: Table(Grouped_Bldg_Sizes,Building_Size)(~
-1,0,0,~
-0,1,1)
-NodeLocation: 640,96,1
-NodeSize: 64,40
-ValueState: 2,372,378,416,303,0,MIDM
-Aliases: FormNode Fo1568696510, Alias Al1568696515
-
-Index Grouped_Bldg_Sizes
-Att_PrevIndexValue: ['Small','Med/Lrg']
-Title: Grouped Building Sizes
-Definition: ['Small','Med/Lrg']
-NodeLocation: 112,192,1
-NodeSize: 64,40
-
-Variable Area_of_Bldgs2
-Title: Area of Bldgs
-Units: m2
-Definition: Sum(Lidar_Detailed_Data[Lidar_Fields=Map_Total_Area_Field] * Size_Map, Building_Size)
-NodeLocation: 264,64,1
-NodeSize: 64,40
-ValueState: 2,280,282,889,508,,MIDM
-ReformVal: [Building_Size,Lidar_Zip]
-NumberFormat: 2,F,4,4,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-
-Variable Number_of_Bldgs2
-Title: Number of Bldgs
-Units: bldgs
-Definition: Sum(Lidar_Detailed_Data[Lidar_Fields=Map_Total_Number_Fie] * Size_Map, Building_Size) 
-NodeLocation: 264,152,1
-NodeSize: 64,40
-ValueState: 2,238,136,889,508,,MIDM
-ReformVal: [PV_Sectors,0]
-NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [Lidar_Zip]
-Att_ResultSliceState: [Lidar_Zip,0,Small_Commercial_Fra,1,PV_Sectors,1]
-
-Variable m2_per_Bldg2
-Title: m2 per Bldg
-Units: m2/bldg
-Definition: Divide(Area_of_Bldgs2, Number_of_Bldgs2, True)
-NodeLocation: 416,104,1
-NodeSize: 64,40
-ValueState: 2,146,4,1326,798,1,MIDM
-GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
-Att_ContLineStyle Graph_Primary_Valdim:4
-ReformVal: [Lidar_Zip,Building_Size]
-Att_ResultSliceState: [PV_Sectors,2,Small_Commercial_Fra,2,Building_Size,2,Lidar_Zip,1]
-
-Decision Incl_Homeowner_Fract
-Title: Include Homeowner Fraction
-Units: boolean
-Description: Select spatial IDs that will include homeowner fraction multipliers when estimating eligible potential.
-Definition: Table(All_Spatial_ID)(Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
-NodeLocation: 120,320,1
-NodeSize: 64,40
-WindState: 2,233,466,720,350
-DefnState: 2,713,47,416,685,0,DFNM
-ValueState: 2,404,410,416,303,0,MIDM
-Aliases: Alias Al1568696692, FormNode Fo1568696692, Alias Al1541822653, FormNode Fo1541822658, FormNode Fo15, FormNode Fo1541822406
-TableCellDefault: Checkbox(1)
-AcpStyles: Show_object: no
-
-FormNode Fo15
-Title: Include Homeowner Fraction
-Definition: 0
-NodeLocation: 112,116,1
-NodeSize: 56,12
-NodeInfo: 1,1,1,0,0,0,0,,0,,0,,,
-Original: Incl_Homeowner_Fract
 
 Close Bin
 
