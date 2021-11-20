@@ -69,16 +69,18 @@ NodeInfo Sys_ComparisonTolera: 1,1,1,1,1,1,0,0,0,0,,0,1,0
 {!50400|Sys_UseLegacyColors := 1}
 
 DisplayOutputs Object: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi, Decision Dates_Incl_in_PV_Opt, Decision Opt_Settings_PV, Variable Accel_Metric_Diff, Index All_EV_Dec_Handles, Decision Opt_Settings_BESS, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
+DisplayOutputs SysFunction: Variable Lower_Pctile, Variable Upper_Pctile
 DisplayOutputs Function: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi, Decision Dates_Incl_in_PV_Opt, Decision Opt_Settings_PV, Decision Opt_Settings_BESS
+DisplayOutputs SysVar: Variable Lower_Pctile, Variable Upper_Pctile
 {!-50299|DiagramColor Model: 65535,65535,65535}
 {!-50299|DiagramColor Module: 65535,65535,65535}
 {!-50299|DiagramColor LinkModule: 65535,65535,65535}
 {!-50299|DiagramColor Library: 65535,65535,65535}
 {!-50299|DiagramColor LinkLibrary: 65535,65535,65535}
 {!-50299|DiagramColor Form: 65535,65535,65535}
-DisplayOutputs Variable: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
-DisplayOutputs Decision: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
-DisplayOutputs Index: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi, Variable Accel_Metric_Diff, Index All_EV_Dec_Handles, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
+DisplayOutputs Variable: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Variable Lower_Pctile, Variable Upper_Pctile, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
+DisplayOutputs Decision: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi, Index Lidar_Locale_Type, Variable Zip_to_Locale_Map, Variable Lower_Pctile, Variable Upper_Pctile, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
+DisplayOutputs Index: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi, Index Lidar_Locale_Type, Variable Zip_to_Locale_Map, Variable Accel_Metric_Diff, Index All_EV_Dec_Handles, Variable Lower_Pctile, Variable Upper_Pctile, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
 DisplayOutputs Constant: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
 NodeInfo FormNode: 1,0,0,1,0,0,0,,0,1,,0,0
 NodeColor Text: 65535,65535,65535
@@ -111,7 +113,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,7,9,1783,720,17
+DiagState: 2,30,11,1794,727,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
@@ -17659,7 +17661,7 @@ NodeSize: 64,40
 NodeColor: 65535,52427,52427
 
 Variable Nodes_to_change
-Att_PrevIndexValue: [Include_Output_Type,Avg_Sys_Size_for_For,Avg_System_Size_by_1,Forecast_AC_System_S,Suitable_Premise_Cnt,Select_Customer_Rate,NonCoincDmd_Attribs,OnPeak_Dmd_Attribs,Energy_Rate_Attribs,Battery_Storage_Spec,PV_ACSystSize_byTime,NewConstr_AC_SysSize,PV_Sectors,HistCumulPV_BldgUnit,Nodecolor_for_change]
+Att_PrevIndexValue: [Include_Output_Type,Avg_Sys_Size_for_For,Avg_System_Size_by_1,Forecast_AC_System_S,Battery_Storage_Spec,PV_ACSystSize_byTime,NewConstr_AC_SysSize,PV_Sectors,HistCumulPV_BldgUnit,Nodecolor_for_change]
 Title: Nodes to change
 Definition: update_nodes_to_chan;~
 #FindObjects(Color,attribute:'NodeColor')
@@ -17667,7 +17669,7 @@ NodeLocation: 1288,504,1
 NodeSize: 64,40
 ValueState: 2,2478,107,429,497,0,MIDM
 Aliases: FormNode Fo1730677955
-{!40700|Att_CellFormat: CellFormats(CellSpan(Nodes_to_change,CellFill(0xffffff80),10,12,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),10,13,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),15,16,header:0),CellSpan(Nodes_to_change,CellFill(0xffffff80),16,header:0),CellFill(0xffffffff))}
+{!40700|Att_CellFormat: CellFormats(CellSpan(Nodes_to_change,CellFill(0xffffff80),5,7,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),5,8,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),10,11,header:0),CellSpan(Nodes_to_change,CellFill(0xffffff80),11,header:0),CellFill(0xffffffff))}
 
 Variable Color
 Title: Color
@@ -17738,7 +17740,7 @@ Original: Nodes_to_change
 Variable All_Constants_Decisi
 Title: All Constants & Decisions
 Definition: update_nodes_to_chan;~
-#FindObjects(Class: {'Constant',}'Decision')
+#FindObjects(Class: 'Constant'{,'Decision'})
 NodeLocation: 728,656,1
 NodeSize: 64,40
 ValueState: 2,518,98,397,581,0,MIDM
@@ -17758,34 +17760,50 @@ NodeLocation: 880,744,1
 NodeSize: 64,40
 ValueState: 2,1052,4,417,759,0,MIDM
 
-Variable Nodecolor_for_All_Se
-Title: Nodecolor for All Sect Outputs
+Variable Nodecolor_To_check
+Title: Nodecolor To check
 Definition: 1
-NodeLocation: 1536,880,1
+NodeLocation: 1424,856,1
 NodeSize: 64,40
 NodeColor: 65535,39321,39321
 
 Variable All_Sect_Nodes_Revie
 Title: All Sect Nodes Reviewed
 Definition: update_nodes_to_chan;~
-#FindObjects((NodeColor of Nodecolor_for_All_Se),attribute:'NodeColor')
-NodeLocation: 1224,880,1
+#FindObjects((NodeColor of Nodecolor_To_check),attribute:'NodeColor')
+NodeLocation: 1240,856,1
 NodeSize: 64,40
-ValueState: 2,735,209,421,479,0,MIDM
+ValueState: 2,2137,71,410,486,0,MIDM
 
 Variable Remainder_to_Review
 Title: Remainder to Review
-Definition: #SetDifference(\Intersection,\All_Sect_Nodes_Revie)
+Definition: #SetDifference(  \#SetDifference(\Intersection,\All_Sect_Nodes_Revie),\Already_Imported)
 NodeLocation: 1048,784,1
 NodeSize: 64,40
-ValueState: 2,694,49,402,759,0,MIDM
+ValueState: 2,2481,13,395,831,0,MIDM
+Aliases: FormNode Fo1278086339
 
 Variable Already_Imported
 Title: Already Imported
 Definition: outputs of Excel_Import_Setting
 NodeLocation: 880,840,1
 NodeSize: 64,40
-ValueState: 2,229,210,415,439,,MIDM
+ValueState: 2,229,210,415,439,0,MIDM
+
+FormNode Fo1278086339
+Title: Remainder to Review
+Definition: 1
+NodeLocation: 880,912,1
+NodeSize: 136,16
+Original: Remainder_to_Review
+
+FormNode New1771965635
+Title: Excel Import Configuration
+Definition: 0
+NodeLocation: 1476,292,1
+NodeSize: 212,20
+NodeColor: 49344,49344,49344
+Original: Excel_Import_Setting
 
 Close Main_Interface
 

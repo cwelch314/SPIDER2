@@ -361,7 +361,7 @@ Definition: Table(All_Sectors)(Choice(Market_Share_Metric,2,1),Choice(Market_Sha
 NodeLocation: 656,168,1
 NodeSize: 64,40
 DefnState: 2,782,322,691,182,0,DFNM
-NodeColor: 57311,57311,57311
+NodeColor: 65535,39321,39321
 TableCellDefault: Choice(Market_Share_Metric,1,1)
 AcpStyles: Show_object: no
 
@@ -871,7 +871,7 @@ Author: JamesMilford
 Date: Fri, Nov 8, 2019 10:26 AM
 NodeLocation: 816,296,1
 NodeSize: 64,40
-DiagState: 2,109,32,1685,646,17
+DiagState: 2,62,29,1685,646,17
 AcpStyles: Framenode: MktShr_Adj_Frame
 
 Variable Fract_Event_Peak
@@ -934,6 +934,7 @@ WindState: 2,66,28,852,442
 DefnState: 2,882,26,739,399,0,DFNM
 ValueState: 2,577,463,488,303,0,MIDM
 Aliases: FormNode Fo1573055309
+NodeColor: 65535,39321,39321
 ReformDef: [All_Sectors,Event_Names]
 NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 {!40300|DomainExpr: Continuous(0,1)}
@@ -967,6 +968,7 @@ NodeLocation: 1080,192,1
 NodeSize: 64,40
 DefnState: 2,372,378,614,333,0,DFNM
 Aliases: FormNode Fo1573055257
+NodeColor: 65535,39321,39321
 ReformDef: [All_Sectors,All_Event_Names]
 TableCellDefault: Checkbox(0)
 
@@ -3055,8 +3057,9 @@ Choice(Static_Profile_Names,12,0),Choice(Static_Profile_Names,15,0),Choice(Stati
 Choice(Static_Profile_Names,8,0),Choice(Static_Profile_Names,11,0),Choice(Static_Profile_Names,13,0),Choice(Static_Profile_Names,10,0))
 NodeLocation: 96,336,1
 NodeSize: 64,40
-DefnState: 2,129,323,1608,217,0,DFNM
+DefnState: 2,129,191,1608,217,0,DFNM
 ValueState: 2,452,458,1127,303,,MIDM
+NodeColor: 65535,39321,39321
 TableCellDefault: Choice(Static_Profile_Names,2,0)
 
 Constant PV_Capacity_Factor
@@ -4111,6 +4114,7 @@ NodeLocation: 112,192,1
 NodeSize: 64,40
 DefnState: 2,764,183,605,208,0,DFNM
 ValueState: 2,340,346,737,329,,MIDM
+NodeColor: 65535,39321,39321
 TableCellDefault: Choice(Static_Profile_Names,1,0)
 
 Variable Raw_Weekly_Cust_Load
@@ -4555,7 +4559,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 256,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,162,17,1445,696,17
+DiagState: 2,272,51,1445,696,17
 Aliases: Alias Al1548967139
 AcpStyles: FrameNode: FrameNode_1544920029
 
@@ -4678,7 +4682,7 @@ Description: The cost associated with non-coincident demand charges.
 Definition: Non_Coinc_Dmd_Price * Non_Coincident_Dema1
 NodeLocation: 408,464,1
 NodeSize: 64,40
-ValueState: 2,133,9,1172,764,1,MIDM
+ValueState: 2,289,78,1172,764,1,MIDM
 GraphSetup: Graph_SymbolKey:1~
 Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [Month,Periods]
@@ -4888,7 +4892,7 @@ WindState: 2,108,40,1402,650
 DefnState: 2,554,214,851,310,0,DFNM
 ValueState: 2,302,51,935,658,0,MIDM
 Aliases: FormNode Fo1547766909, FormNode Fo1547828216
-NodeColor: 65535,52427,52427
+NodeColor: 65535,39321,39321
 ReformDef: [Pre_and_Post_System,Rate_Vintage]
 ReformVal: [Pre_and_Post_System,Rate_Vintage]
 TableCellDefault: Rate_Setting_Default
@@ -5272,7 +5276,7 @@ NodeSize: 64,40
 WindState: 2,52,379,1347,518
 DefnState: 2,25,81,1081,431,0,DFNM
 Aliases: FormNode Fo1547764385, Alias Al1547766712, FormNode Fo1547766739, FormNode Fo1547828218
-NodeColor: 65535,52427,52427
+NodeColor: 65535,39321,39321
 ReformDef: [Rate_Attribute_Setti,PV_Climate_Zone]
 TableCellDefault: NonCoinc_Dmd_Default
 Att_EditSliceState: [All_Sectors,1,Rate_Vintage,3,Pre_and_Post_System,1,PV_Climate_Zone,1,Rate_Attribute_Setti,1]
@@ -5424,7 +5428,7 @@ NodeSize: 64,40
 WindState: 2,126,248,1003,603
 DefnState: 2,194,175,1081,431,0,DFNM
 Aliases: FormNode Fo1547765306, Alias Al1547766713, FormNode Fo1547766740, FormNode Fo1547828219
-NodeColor: 65535,52427,52427
+NodeColor: 65535,39321,39321
 ReformDef: [Rate_Attribute_Setti,PV_Climate_Zone]
 TableCellDefault: On_Peak_Dmd_Default
 Att_EditSliceState: [All_Sectors,1,Rate_Vintage,5,Pre_and_Post_System,2,PV_Climate_Zone,1,Rate_Attribute_Setti,1]
@@ -5576,10 +5580,10 @@ NodeSize: 64,40
 WindState: 2,178,338,1156,511
 DefnState: 2,553,320,931,296,0,DFNM
 Aliases: FormNode Fo1547766195, Alias Al1547767161, FormNode Fo1547767167, FormNode Fo1547828220
-NodeColor: 65535,52427,52427
+NodeColor: 65535,39321,39321
 ReformDef: [Rate_Attribute_Setti,PV_Climate_Zone]
 TableCellDefault: Energy_DefaultAttrib
-Att_EditSliceState: [All_Sectors,3,Rate_Vintage,5,Pre_and_Post_System,2,PV_Climate_Zone,1,Rate_Attribute_Setti,1]
+Att_EditSliceState: [All_Sectors,1,Rate_Vintage,5,Pre_and_Post_System,1,PV_Climate_Zone,1,Rate_Attribute_Setti,1]
 
 Module Rate_Attribute_Mappi
 Title: Rate Attribute Mapping
@@ -5641,7 +5645,7 @@ Definition: Table(Rate_Attribute_Setti)(Choice(All_Data_Types,2,0),Checkbox(1),C
 NodeLocation: 96,312,1
 NodeSize: 64,40
 WindState: 2,82,526,720,350
-DefnState: 2,107,348,416,303,,DFNM
+DefnState: 2,896,241,416,303,0,DFNM
 
 Variable OnPeakDmd_DataType
 Title: On-Peak Dmd Data Type
@@ -5848,7 +5852,7 @@ THEN Bill_Savings_by_Comp~
 ELSE Mthly_Bill_Component[Pre_and_Post_System=System_Comparison, PV_Operating_Year=1]
 NodeLocation: 392,296,1
 NodeSize: 64,40
-ValueState: 2,871,150,1001,758,1,MIDM
+ValueState: 2,416,96,1001,648,1,MIDM
 Aliases: FormNode Fo1544373571, FormNode Fo1572476404
 GraphSetup: Att_ForceCategorical Graph_Primary_Valdim:1~
 Att_StackedBar Graph_Primary_Valdim:1~
@@ -5862,7 +5866,7 @@ Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [System_Comparison,Bill_Components]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Bill_Components,Month]
-Att_ResultSliceState: [PV_Sectors,1,Month,0,PV_Climate_Zone,1,System_Types,1,Rate_Vintage,5,Bill_Components,0,System_Comparison,3]
+Att_ResultSliceState: [PV_Sectors,2,Month,0,PV_Climate_Zone,1,System_Types,1,Rate_Vintage,5,Bill_Components,0,System_Comparison,3]
 {!40600|Att_StackingIndex: Rate_Vintage}
 {!40600|Att_ClusterIndex: Rate_Vintage}
 {!40700|Att_CellFormat: Undefined}
@@ -6303,7 +6307,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 400,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,384,1,981,505,17
+DiagState: 2,2212,50,981,505,17
 Aliases: Alias Al1548967117
 
 Module Financing
@@ -7458,7 +7462,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 432,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,226,165,1524,626,17
+DiagState: 2,48,172,1524,573,17
 AcpStyles: FrameNode: FrameNode_1544920240
 
 Decision Taxed_as_Commercial
@@ -7468,6 +7472,7 @@ Description: Flags sectors that will be exposed to commercial tax treatment.
 Definition: Table(All_Sectors)(Checkbox(0),Checkbox(1),Checkbox(0))
 NodeLocation: 400,368,1
 NodeSize: 64,40
+NodeColor: 65535,39321,39321
 TableCellDefault: Checkbox(0)
 
 Constant MACRS_Schedule
@@ -8463,192 +8468,6 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Equipment_Lifetime
 
 Close Equipment_Costs
-
-Module Variables_for_Future
-Title: Variables for Future Add-Ons
-Author: JamesMilford
-Date: Thu, Oct 4, 2018 8:27 AM
-NodeLocation: 128,200,1
-NodeSize: 64,40
-NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,400,169,920,465,17
-NodeColor: 57311,57311,57311
-AcpStyles: Show_Object:no
-
-Constant Install_Price_Markup
-Title: Installer Price Markup
-Units: fraction
-Description: The markup above system equipment costs charged by system installers.
-Definition: Table(All_Sectors,All_Equipment_Types)(~
-0.6,0.6,~
-0.6,0.6,~
-0,0)
-NodeLocation: 88,368,1
-NodeSize: 64,40
-DefnState: 2,14,382,416,303,,DFNM
-NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-{!40700|Att_CellFormat: CellSpan(All_Sectors,CellNumberFormat('Percentage',4,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0),1,2,header:0)}
-
-Variable Price_Markup
-Title: Price Markup
-Units: fraction
-Description: The markup above system equipment costs charged by system installers.
-Definition: Install_Price_Markup[All_Sectors=PV_Sectors, All_Equipment_Types=Equipment_Types]
-NodeLocation: 240,368,1
-NodeSize: 64,40
-
-Constant Exogenous_Debt_Ratio
-Title: Exogenous Debt Ratio
-Units: fraction
-Description: The debt ratio specified exogenously, rather than being found through an optimization.
-Definition: Table(All_Sectors)(1,0.4,0)
-NodeLocation: 120,80,1
-NodeSize: 64,40
-DefnState: 2,370,15,416,303,,DFNM
-NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-
-Decision Stored_Opt_DebtRatio
-Title: Stored Optimal Debt Ratio
-Units: fraction/year
-Description: The debt ratio found through optimization, whereby the optimization finds the lowest system NPV, given constraints on minimum debt service coverage ratios.
-Definition: Table(All_Sectors,All_Technologies,Static_PV_Time)(~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-NodeLocation: 120,256,1
-NodeSize: 64,40
-WindState: 2,438,188,720,350
-
-Constant DSCR_Ratio
-Title: Debt Service Coverage Ratio
-Units: fraction
-Description: The minimum ratio of EBITDA to debt payment that must be maintained. 
-Definition: Table(All_Sectors)(1.3,1.3,0)
-NodeLocation: 120,168,1
-NodeSize: 64,40
-DefnState: 2,294,453,416,303,,DFNM
-
-Constant Upfront_Incentives
-Title: Upfront Incentives
-Units: $/system
-Description: The upfront incentives provided by source.
-Definition: Table(Incentive_Source,Static_PV_Time)(~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-NodeLocation: 432,96,1
-NodeSize: 64,40
-WindState: 2,163,23,720,350
-DefnState: 2,376,182,416,499,,DFNM
-NodeColor: 65535,1,1
-ReformDef: [Incentive_Source,Static_PV_Time]
-
-Constant Perform_Based_Incent
-Title: Performance Based Incentives
-Units: $/kWh
-Description: A per-kWh incentive applied to system production.
-Definition: Table(Incentive_Source,Static_PV_Time)(~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-NodeLocation: 432,184,1
-NodeSize: 64,40
-WindState: 2,98,82,939,524
-NodeColor: 65535,1,1
-
-Text Te1537824488
-Title: Might need to index these by monthly time.
-NodeLocation: 448,124,-1
-NodeSize: 88,108
-NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-NodeColor: 65535,65531,1
-NodeFont: Arial Narrow,15
-
-Decision Inflate_Incentives
-Title: Inflate Incentives
-Units: boolean
-Description: Check this box to inflate incentives over time.
-Definition: Checkbox(0)~
-
-NodeLocation: 616,88,1
-NodeSize: 64,40
-
-Decision BaseYr_Incent_Inflat
-Title: Base Year for Incentive Inflation
-Units: year
-Description: The base year for incentive inflation, meaning this year will have an inflation factor of 1.0.
-Definition: 2018
-NodeLocation: 616,176,1
-NodeSize: 64,40
-
-Constant Length_of_PBI_Incent
-Title: Length of PBI Incentive
-Units: years
-Description: The number of years that a performance-based incentive is available.
-Definition: Table(Incentive_Source,Static_PV_Time)(~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-NodeLocation: 432,280,1
-NodeSize: 64,40
-DefnState: 2,72,74,412,541,,DFNM
-NodeColor: 65535,1,1
-ReformDef: [Incentive_Source,Static_PV_Time]
-
-Decision Taxable_Incentives
-Title: Taxable Incentives
-Units: boolean
-Description: Flags indicating which incentives are taxable.
-Definition: Table(Incentive_Type,Incentive_Source,All_Sectors,Tax_Entity)(~
-Checkbox(0),Checkbox(1),~
-Checkbox(0),Checkbox(0),~
-Checkbox(0),Checkbox(0),~
-Checkbox(0),Checkbox(1),~
-Checkbox(0),Checkbox(0),~
-Checkbox(0),Checkbox(0),~
-Checkbox(0),Checkbox(1),~
-Checkbox(0),Checkbox(0),~
-Checkbox(0),Checkbox(0),~
-Checkbox(0),Checkbox(1),~
-Checkbox(0),Checkbox(0),~
-Checkbox(0),Checkbox(0),~
-,,~
-,,~
-,,~
-,,~
-,,~
-,,~
-,,~
-,,~
-,,~
-,,~
-,,~
-,)
-NodeLocation: 272,80,1
-NodeSize: 64,40
-WindState: 2,261,132,1061,574
-DefnState: 2,411,187,541,455,0,DFNM
-ReformDef: [Incentive_Source,Tax_Entity]
-TableCellDefault: Checkbox(0)
-Att_EditSliceState: [All_Sectors,1,Incentive_Type,1,Tax_Entity,1,Incentive_Source,1]
-
-Constant Min_Solar_Charging
-Title: Minimum Charging from PV
-Units: fraction
-Description: The minimum percent of charging energy that must come from PV in order to receive an ITC for storage technologies.
-Definition: .75
-NodeLocation: 432,368,1
-NodeSize: 64,40
-NodeColor: 65535,1,1
-NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-
-Close Variables_for_Future
 
 Module Annual_Cost_of_Syste
 Title: Annual Cost of System
@@ -9887,9 +9706,10 @@ Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox
 Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
 NodeLocation: 96,704,1
 NodeSize: 64,40
-DefnState: 2,280,282,721,468,0,DFNM
+DefnState: 2,413,280,721,468,0,DFNM
 ValueState: 2,148,154,715,524,0,MIDM
 Aliases: FormNode Fo1534997100
+NodeColor: 65535,39321,39321
 ReformDef: [0,Bill_Components]
 ReformVal: [All_Sectors,Bill_Components]
 TableCellDefault: Checkbox(0)
@@ -9942,14 +9762,12 @@ WindState: 2,98,82,1097,834
 Att_GraphIndexRange: 1,,,,,,10
 
 Index Incentive_Source
-Att_PrevIndexValue: ['Local','State','Federal','Utility']
 Title: Incentive Source
 Definition: ['Local','State','Federal','Utility']
 NodeLocation: 96,64,1
 NodeSize: 64,40
 
 Index Incentive_Type
-Att_PrevIndexValue: ['Upfront ','Performance-Based']
 Title: Incentive Type
 Definition: ['Upfront ','Performance-Based']
 NodeLocation: 96,152,1
@@ -10024,7 +9842,7 @@ Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox
 Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
 NodeLocation: 96,464,1
 NodeSize: 64,40
-DefnState: 2,344,346,662,451,,DFNM
+DefnState: 2,664,348,662,451,0,DFNM
 Aliases: FormNode Fo1538686227
 ReformDef: [All_Sectors,Cost_Component]
 TableCellDefault: Checkbox(0)
@@ -11376,7 +11194,7 @@ INDEX uniq_locale:=Unique(locales);~
 SortIndex(uniq_locale)
 NodeLocation: 720,392,1
 NodeSize: 64,40
-DisplayInputs: Index Lidar_Fields, Decision Locale_Label
+DisplayInputs: Object Decision, Object Index, Index Lidar_Fields, Decision Locale_Label
 
 Decision Locale_Label
 Title: Locale Label
@@ -11454,7 +11272,7 @@ Definition: Lidar_Detailed_Data[Lidar_Fields=Locale_Label]
 NodeLocation: 704,496,1
 NodeSize: 64,40
 ValueState: 2,440,73,416,672,,MIDM
-DisplayInputs: Index Lidar_Fields, Decision Locale_Label
+DisplayInputs: Object Decision, Object Index, Index Lidar_Fields, Decision Locale_Label
 
 Variable LidarZip_for_ID
 Title: Lidar Zip for Spatial ID

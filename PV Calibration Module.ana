@@ -1512,7 +1512,7 @@ Date: Tue, Nov 20, 2018 12:18 PM
 NodeLocation: 752,328,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1819,0,954,732,17
+DiagState: 2,2183,28,954,732,17
 
 Text Te1535066202
 Title: Ideas: ~
@@ -1597,26 +1597,6 @@ OnClick: (PV_Ad_Effectiveness:=Default_PVAdEff);~
 (PV_Ending_WOM:=Default_PV_End_WOM);~
 (PV_LongRun_Mkt_Share:=Default_PV_LRMS);~
 {(Early_Retiremnt_Mul1:=Default_PV_Early_Ret);}
-
-Decision Sector_for_Assignin1
-Title: Sector for Assigning Default Coeff
-Description: Select which sector you wish you use for the current value of the decision variables. Since "stored coefficients" are typically only used when running the model, this would likely be primarily for test purposes, if you chose to turn on "Use EV Decision Variables," for instance, and wished to see the impact of manually specifying a particular set of coefficients. ~
-~
-After selecting this value, you must run the "Assigned Default Coeff to Decision Variables" Script to assign the correct values.
-Definition: Choice(All_Sectors,3,0)
-NodeLocation: 448,152,1
-NodeSize: 64,40
-WindState: 2,201,201,720,350
-Aliases: FormNode Fo1535066235
-NodeColor: 65535,1,1
-
-FormNode Fo1535066235
-Title: Sector for Assigning Default Coeff
-Definition: 0
-NodeLocation: 456,208,1
-NodeSize: 136,16
-NodeInfo: 1,0,0,0,0,0,0,233,0,,0,,,
-Original: Sector_for_Assignin1
 
 FormNode Fo1535066236
 Title: Spatial ID for Assigning Default Coeff
@@ -2185,7 +2165,7 @@ Date: Wed, Aug 29, 2018 10:00 PM
 NodeLocation: 888,480,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,515,70,1289,565,17
+DiagState: 2,285,153,1289,565,17
 
 Constraint PV_Slope_Constraint
 Title: PV Slope Constraint
@@ -2225,6 +2205,7 @@ NodeLocation: 88,192,1
 NodeSize: 64,40
 WindState: 2,0,264,720,350
 Aliases: Alias Al1568908394, FormNode Fo1568908393, FormNode Fo1
+NodeColor: 65535,39321,39321
 
 FormNode Fo1
 Title: Time for Constraint
