@@ -3025,7 +3025,7 @@ Author: JamesMilford
 Date: Fri, Oct 25, 2019 8:28 AM
 NodeLocation: 88,208,1
 NodeSize: 64,40
-DiagState: 2,38,26,1711,673,17
+DiagState: 2,0,144,1711,673,17
 AcpStyles: FrameNode: Solar_Scale_Frame
 
 Variable Normal_Solar_Profile
@@ -3602,7 +3602,7 @@ Variable Load_Monthly_Mults
 Title: Load Monthly Mults
 Units: dimensionless
 Description: Multipliers to adjust the modeled hours in the optimization window to the number of similar hours that would occur across the entire month.
-Definition: Applied_Monthly_Mult[Static_Profile_Names=Select_Customer_Load[All_Sectors=PV_Sectors]]
+Definition: Applied_Monthly_Mult[Static_Profile_Names=Loadshape_Map[All_Sectors=PV_Sectors]]
 NodeLocation: 712,776,1
 NodeSize: 64,40
 ValueState: 2,222,90,1438,792,1,MIDM
@@ -3681,7 +3681,7 @@ Description: A mapping of hour of year to months and day and hour of the month.
 Definition: VAR dateStamp:=Month & Time_Separator & Day_of_Month_byMonth & Time_Separator & Time_of_Day_by_Month;~
 VAR stamp8784:=Month_8784 & Time_Separator & Day_of_Month_8784 & Time_Separator & Time_of_Day_8784;~
 ~
-SubIndex(stamp8784, dateStamp, Hours_8784)[Selected_Profiles=Select_Customer_Load[All_Sectors=PV_Sectors]]
+SubIndex(stamp8784, dateStamp, Hours_8784)[Selected_Profiles=Loadshape_Map[All_Sectors=PV_Sectors]]
 NodeLocation: 264,192,1
 NodeSize: 64,40
 ValueState: 2,168,45,902,428,0,MIDM
@@ -3698,7 +3698,7 @@ Variable Day_of_Week_in_Month
 Title: Day of Week in Month
 Units: day & time in week
 Description: The day of week and time of day for each day in the month, based on the year from which customer load is derived.
-Definition: VAR day:=Day_of_Week_8784[Selected_Profiles=Select_Customer_Load[All_Sectors=PV_Sectors], Hours_8784=Monthly_Profile_Map];~
+Definition: VAR day:=Day_of_Week_8784[Selected_Profiles=Loadshape_Map[All_Sectors=PV_Sectors], Hours_8784=Monthly_Profile_Map];~
 VAR hour:=SelectText(Month_Day_and_Hour, FindInText(Time_Separator,  Month_Day_and_Hour)+1);  {Returns the hour for each element of the Day Type and Hour index}~
 ~
 IF day = Null~
@@ -3839,7 +3839,7 @@ Variable Day_Type_Day_Counts
 Title: Day Type Day Counts
 Units: days/month
 Description: The count of days per month for each day type. This can differ by profile depending on the year of data used for each profile.
-Definition: Applied_Day_Counts[Static_Profile_Names=Select_Customer_Load[All_Sectors=PV_Sectors], All_Day_Types=Weekday_or_Weekend]
+Definition: Applied_Day_Counts[Static_Profile_Names=Loadshape_Map[All_Sectors=PV_Sectors], All_Day_Types=Weekday_or_Weekend]
 NodeLocation: 104,256,1
 NodeSize: 64,40
 WindState: 2,98,82,1272,363
@@ -3851,7 +3851,7 @@ Variable Day_of_Week_Day_Cnt
 Title: Day of Week Day Counts
 Units: days/month
 Description: The count of days per day of week. This can differ by profile depending on the year of data used for each profile.
-Definition: Applied_Day_Counts[Static_Profile_Names=Select_Customer_Load[All_Sectors=PV_Sectors], All_Day_Types=Day_of_Week]
+Definition: Applied_Day_Counts[Static_Profile_Names=Loadshape_Map[All_Sectors=PV_Sectors], All_Day_Types=Day_of_Week]
 NodeLocation: 104,160,1
 NodeSize: 64,40
 ValueState: 2,344,273,934,376,0,MIDM
@@ -4067,11 +4067,11 @@ Variable Monthly_Cust_Load
 Title: Monthly Customer Load
 Units: kW-hr/customer
 Description: The scaled load profiles by month.
-Definition: Select_Hrly_Profiles[Selected_Profiles=Select_Customer_Load[All_Sectors=PV_Sectors], Hours_8784=Monthly_Profile_Map] * Load_Scaling_Factor
+Definition: Select_Hrly_Profiles[Selected_Profiles=Loadshape_Map[All_Sectors=PV_Sectors], Hours_8784=Monthly_Profile_Map] * Load_Scaling_Factor
 NodeLocation: 248,248,1
 NodeSize: 64,40
 WindState: 2,98,82,719,350
-ValueState: 2,2529,208,603,458,0,MIDM
+ValueState: 2,516,190,603,458,0,MIDM
 Aliases: Alias Al1571845135
 ReformVal: [PV_Sectors,Month]
 Att__TotalsIndex: [Month,Month_Day_and_Hour]
@@ -4081,7 +4081,7 @@ Variable DayType_Cust_Load
 Title: Day Type Customer Load
 Units: kW-hr/customer
 Description: The scaled load profiles by day type.
-Definition: Daily_Prof_with_Peak[Static_Profile_Names=Select_Customer_Load[All_Sectors=PV_Sectors], All_Day_Types=DayType_for_Type_Hr, Time_of_Day=Hour_for_Type_and_Hr] * Load_Scaling_Factor
+Definition: Daily_Prof_with_Peak[Static_Profile_Names=Loadshape_Map[All_Sectors=PV_Sectors], All_Day_Types=DayType_for_Type_Hr, Time_of_Day=Hour_for_Type_and_Hr] * Load_Scaling_Factor
 NodeLocation: 248,440,1
 NodeSize: 64,40
 WindState: 2,98,82,1084,697
@@ -4096,14 +4096,14 @@ Author: JamesMilford
 Date: Fri, Oct 25, 2019 8:28 AM
 NodeLocation: 88,344,1
 NodeSize: 64,40
-DiagState: 2,2142,150,1460,539,17
+DiagState: 2,562,80,1460,487,17
 AcpStyles: Frame_Node: Scaling_Frame
 
 Variable Cust_Load_Profile
 Title: Customer Load Profile
 Units: kW-hr/customer
 Description: The imported customer load profile prior to any scaling.
-Definition: Daily_Prof_with_Peak[Static_Profile_Names=Select_Customer_Load[All_Sectors=PV_Sectors], All_Day_Types=Day_of_Week]~
+Definition: Daily_Prof_with_Peak[Static_Profile_Names=Loadshape_Map[All_Sectors=PV_Sectors], All_Day_Types=Day_of_Week]~
 
 NodeLocation: 112,328,1
 NodeSize: 64,40
@@ -4114,20 +4114,6 @@ ReformVal: [PV_Sectors,Month]
 Att__TotalsIndex: [Day_of_Week,Month,Time_of_Day]
 Att_ResultSliceState: [Day_of_Week,0,Time_of_Day,0,Month,7,PV_Sectors,2]
 
-Decision Select_Customer_Load
-Title: Select Customer Loadshape
-Description: Select the customer load profile associated with each sector.
-Definition: Loadshape_Name_Map~
-/*Loadshape_Name_Map~
-Table(All_Sectors)(Choice(Static_Profile_Names,5,0),Choice(Static_Profile_Names,7,0),Choice(Static_Profile_Names,5,0))
-NodeLocation: 112,192,1
-NodeSize: 64,40
-DefnState: 2,2931,283,605,208,0,DFNM
-ValueState: 2,195,441,737,329,0,MIDM
-Aliases: FormNode Fo1398516931
-NodeColor: 65535,65531,1
-TableCellDefault: Choice(Static_Profile_Names,1,0)
-
 Variable Raw_Weekly_Cust_Load
 Title: Raw Weekly Customer Load
 Units: kW-hr/customer
@@ -4136,7 +4122,7 @@ Definition: Reindex_to_Week(Cust_Load_Profile)
 NodeLocation: 272,328,1
 NodeSize: 64,40
 WindState: 2,293,348,1527,555
-ValueState: 2,161,59,1487,691,1,MIDM
+ValueState: 2,2368,69,1230,691,0,MIDM
 GraphSetup: Att_GraphValueRange Raw_Weekly_Cust_Load:1,,1,,,,,0.5903269767761231,0.9016096115112305,0~
 Att_GraphIndexRange Day_and_Hour:1,,1,,,,10,70,129,1~
 Att_CatLineStyle Graph_Primary_Valdim:5~
@@ -4144,14 +4130,15 @@ Graph_AxisLabelFont:,18,0~
 Graph_KeyTitleFont:,18,1~
 Graph_KeyFont:,18,0~
 Graph_AxisTitleFont:Arial,18,1
-Att__TotalsIndex: [Day_and_Hour]
-Att_ResultSliceState: [PV_Sectors,2,Month,1,Day_and_Hour,1]
+ReformVal: [PV_Sectors,Month]
+Att__TotalsIndex: [Day_and_Hour,PV_Sectors,Month]
+Att_ResultSliceState: [Day_and_Hour,0,Month,1,PV_Sectors,2]
 
 Variable Annual_Load
 Title: Annual Load
 Units: kWh/year-customer
 Description: The annual consumption per customer.
-Definition: Sum(Raw_Weekly_Cust_Load * Weekly_Day_Counts[Static_Profile_Names=Select_Customer_Load[All_Sectors=PV_Sectors]], Day_and_Hour, Month)
+Definition: Sum(Raw_Weekly_Cust_Load * Weekly_Day_Counts[Static_Profile_Names=Loadshape_Map[All_Sectors=PV_Sectors]], Day_and_Hour, Month)
 NodeLocation: 272,192,1
 NodeSize: 64,40
 ValueState: 2,319,369,732,258,0,MIDM
@@ -4169,7 +4156,8 @@ ELSE 1
 NodeLocation: 432,192,1
 NodeSize: 64,40
 WindState: 2,468,285,720,350
-ValueState: 2,981,404,612,199,0,MIDM
+ValueState: 2,721,460,612,199,0,MIDM
+NodeColor: 65535,39321,39321
 Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,PV_Spatial_ID,1]
 
 Text Scaling_Frame
@@ -4216,14 +4204,12 @@ NodeSize: 64,40
 {!50500|Att_TailNode: Scale_Load_by_Covere}
 {!50500|Att_ArrowProperties: 1}
 
-FormNode Fo1398516931
-Title: Select Customer Loadshape
-Definition: 0
-NodeLocation: 116,240,1
-NodeSize: 60,16
-NodeInfo: 1,,,0
-NodeColor: 65535,65531,1
-Original: Select_Customer_Load
+Alias Al1841032387
+Title: Loadshape Map
+Definition: 1
+NodeLocation: 112,192,1
+NodeSize: 64,40
+Original: Loadshape_Map
 
 Close Load_Profile_Scaling
 
@@ -9615,7 +9601,7 @@ WindState: 2,319,12,1255,632
 Aliases: FormNode Fo1535066238, FormNode Fo1539140368, FormNode Fo1247325693
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
-{!40300|Att_SlicerPopupSize: 740,83}
+{!40300|Att_SlicerPopupSize: 745,83}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
