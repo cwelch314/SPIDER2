@@ -4096,7 +4096,7 @@ Author: JamesMilford
 Date: Fri, Oct 25, 2019 8:28 AM
 NodeLocation: 88,344,1
 NodeSize: 64,40
-DiagState: 2,2142,150,1460,654,17
+DiagState: 2,2142,150,1460,539,17
 AcpStyles: Frame_Node: Scaling_Frame
 
 Variable Cust_Load_Profile
@@ -4117,7 +4117,7 @@ Att_ResultSliceState: [Day_of_Week,0,Time_of_Day,0,Month,7,PV_Sectors,2]
 Decision Select_Customer_Load
 Title: Select Customer Loadshape
 Description: Select the customer load profile associated with each sector.
-Definition: Table(All_Sectors)(Choice(Static_Profile_Names,5,0),Choice(Static_Profile_Names,7,0),Choice(Static_Profile_Names,5,0))~
+Definition: Loadshape_Name_Map~
 /*Loadshape_Name_Map~
 Table(All_Sectors)(Choice(Static_Profile_Names,5,0),Choice(Static_Profile_Names,7,0),Choice(Static_Profile_Names,5,0))
 NodeLocation: 112,192,1
@@ -9615,7 +9615,7 @@ WindState: 2,319,12,1255,632
 Aliases: FormNode Fo1535066238, FormNode Fo1539140368, FormNode Fo1247325693
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
-{!40300|Att_SlicerPopupSize: 735,83}
+{!40300|Att_SlicerPopupSize: 740,83}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
