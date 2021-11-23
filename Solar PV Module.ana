@@ -3070,7 +3070,7 @@ NodeLocation: 256,336,1
 NodeSize: 64,40
 WindState: 2,9,12,866,441
 DefnState: 2,876,444,967,221,0,DFNM
-ValueState: 2,412,173,567,391,0,MIDM
+ValueState: 2,992,453,472,237,0,MIDM
 Aliases: Alias Al1550179326, FormNode Fo1550179326, Alias Al1613372611
 ReformVal: [All_Sectors,PV_Climate_Zone]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
@@ -8989,7 +8989,7 @@ Date: Wed, Oct 10, 2018 9:00 AM
 NodeLocation: 544,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,66,-5,1654,747,17
+DiagState: 2,76,20,1654,750,17
 Aliases: Alias Al1548967120
 AcpStyles: FrameNode: FrameNode_1544919879
 
@@ -9176,7 +9176,7 @@ Definition: Table(All_Sectors,PV_Climate_Zone)(~
 NodeLocation: 760,120,1
 NodeSize: 64,40
 WindState: 2,52,125,720,350
-DefnState: 2,1157,472,511,226,0,DFNM
+DefnState: 2,1253,515,470,207,0,DFNM
 ValueState: 2,416,209,685,592,,MIDM
 Aliases: Alias Al1550183210, FormNode Fo1550183210, FormNode Fo1542305980, FormNode Fo1544638294
 ReformDef: [All_Sectors,PV_Climate_Zone]
@@ -9209,7 +9209,7 @@ ELSE CEC_kW_AC_per_Bldg_U
 NodeLocation: 1064,216,1
 NodeSize: 64,40
 WindState: 2,98,82,1467,427
-ValueState: 2,108,100,1228,743,1,MIDM
+ValueState: 2,220,61,1228,743,0,MIDM
 NodeColor: 65535,39321,39321
 Att_ResultSliceState: [PV_Sectors,2,New_or_Retrofit,2,PV_Spatial_ID,1,Time_Solar_PV,1]
 
@@ -9238,7 +9238,7 @@ ELSE NewConst_SysSize[PV_Climate_Zone=Climate_Zone_Map,All_Sectors=PV_Sectors] *
 NodeLocation: 912,216,1
 NodeSize: 64,40
 WindState: 2,2,38,720,350
-ValueState: 2,10,26,1309,743,0,MIDM
+ValueState: 2,10,26,1309,743,1,MIDM
 NodeColor: 65535,39321,39321
 GraphSetup: Att_GraphIndexRange PV_Spatial_ID:1,1~
 Att_CatLineStyle Graph_Primary_Valdim:5
@@ -9360,7 +9360,7 @@ Variable Load_based_PV_DC_Sys
 Title: Load-based PV DC Sys Size for Econ
 Units: kW-DC/system
 Description: This is the PV DC System Size (kW DC/system) assuming that all systems are sized as a function of average customer load (kWh / premise). This approach is typically used when historical interconnection are not available or adequate to calculate historical average system sizes.  
-Definition: local x:=Load_per_Premise * PV_AC_Generation_as_ / (PV_Capacity_Factor * 8760);~
+Definition: local x:=Avg_Load_per_Premise * PV_AC_Generation_as_ / (PV_Capacity_Factor * 8760);~
 x[All_Sectors = PV_Sectors]~
 ~
 {[kWh AC / year / premise] * [fraction] / ([kWh AC /year]/[kW-DC * 8760]) * 8760 = PV kW DC}
@@ -9386,7 +9386,7 @@ Title: Load per Premise
 Definition: 1
 NodeLocation: 272,888,1
 NodeSize: 64,40
-Original: Load_per_Premise
+Original: Avg_Load_per_Premise
 
 Alias Al1613372611
 Title: PV Capacity Factor
@@ -9423,6 +9423,43 @@ Title: Function of Load Label
 Definition: Choice(System_Sizing_Method,2,0)
 NodeLocation: 248,688,1
 NodeSize: 64,40
+
+Alias Al1978539203
+Title: Load per Premise by Spat ID
+Definition: 1
+NodeLocation: 760,896,1
+NodeSize: 64,40
+Original: Load_per_Premise_by_
+
+Variable Ld_bsd_PVDC_Siz_Spat
+Title: Load-based PVDC SysSize by SpatID
+Definition: local x:=Load_per_Premise_by_ * PV_AC_Generation_as_ / (PV_Capacity_Factor[PV_Climate_Zone=Climate_Zone_Map] * 8760);~
+x[All_Sectors = PV_Sectors]~
+~
+{[kWh AC / year / premise] * [fraction] / ([kWh AC /year]/[kW-DC * 8760]) * 8760 = PV kW DC}
+NodeLocation: 760,792,1
+NodeSize: 72,40
+ValueState: 2,297,5,1311,814,1,MIDM
+GraphSetup: Att_GraphIndexRange PV_Spatial_ID:1,1~
+Att_CatLineStyle Graph_Primary_Valdim:5
+ReformVal: [PV_Spatial_ID,Null]
+Att_ResultSliceState: [PV_Sectors,2,PV_Spatial_ID,1]
+Att_ColorRole: Null
+
+Variable Compare9
+Definition: [Forecast_AC_System_S,Ld_bsd_PVDC_Siz_Spat]
+NodeLocation: 1064,792,1
+NodeSize: 64,40
+ValueState: 2,277,44,1179,769,,MIDM
+GraphSetup: Att_GraphIndexRange PV_Spatial_ID:1,1~
+Att_CatLineStyle Graph_Primary_Valdim:5
+ReformVal: [PV_Spatial_ID,Self]
+Att_ResultSliceState: [PV_Sectors,1,Self,1,PV_Spatial_ID,1]
+
+Text Te234953923
+Title: Think about forecast issue associated with calibration & different historical system size compared with perhaps smaller load based
+NodeLocation: 828,572,-1
+NodeSize: 140,84
 
 Close Equipment_Sizing
 
