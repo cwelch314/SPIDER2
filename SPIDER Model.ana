@@ -58,7 +58,7 @@ Graph_ColorSeq := [12593,38293,0,65278,37008,6168,32639,32639,32639,0,0,0,34952,
 {!40600|NodeLocation MaxModelThreads: 880,64,1}
 {!40600|NodeSize MaxModelThreads: 48,24}
 {!40600|NodeInfo MaxModelThreads: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
-{!50000|OutlinerState Sys_FoundSet: 2,2127,93,1094,790}
+{!50000|OutlinerState Sys_FoundSet: 2,12,93,1094,790}
 {!50000|NodeLocation DecimalForCopyPaste: 1024,64,1}
 {!50000|NodeSize DecimalForCopyPaste: 72,24}
 {!50000|NodeInfo DecimalForCopyPaste: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
@@ -113,7 +113,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,6,-2,1792,795,17
+DiagState: 2,45,14,1792,795,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
@@ -17664,7 +17664,7 @@ NodeSize: 64,40
 NodeColor: 65535,39321,39321
 
 Variable Nodes_to_change
-Att_PrevIndexValue: [Residential_Label,Non_Res_Label,Res_and_NonRes_Label,DC_to_AC_Fact_byTime,Avg_Sys_Size_for_For,Avg_System_Size_by_1,Forecast_AC_System_S,Load_Scaling_Factor,Scale_Load_by_Covere,PV_ACSystSize_byTime,NewConstr_AC_SysSize,CEC_kW_AC_per_Bldg_U,Appl_Variab_Penalty,HistCumulPV_BldgUnit,Incurred_Variability,Nodecolor_for_change,Nodecolor_To_check]
+Att_PrevIndexValue: [Residential_Label,Non_Res_Label,Res_and_NonRes_Label,Calibr_All_PV_Sect,Calib_All_BESS_Sect,Nodecolor_for_change,Nodecolor_To_check]
 Title: Nodes to change
 Definition: update_nodes_to_chan;~
 #FindObjects(Color,attribute:'NodeColor')
@@ -17672,7 +17672,7 @@ NodeLocation: 1216,464,1
 NodeSize: 64,40
 ValueState: 2,2213,107,429,497,0,MIDM
 Aliases: FormNode Fo1730677955, FormNode Fo1725779139
-{!40700|Att_CellFormat: CellFormats(CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,18,header:0),CellSpan(Nodes_to_change,CellFill(0xffffff80),1,18,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,18,header:0))}
+{!40700|Att_CellFormat: CellFormats(CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,8,header:0),CellSpan(Nodes_to_change,CellFill(0xffffff80),1,8,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,8,header:0))}
 
 Variable Color
 Title: Color
@@ -17776,7 +17776,7 @@ Definition: update_nodes_to_chan;~
 #FindObjects((NodeColor of Nodecolor_To_check),attribute:'NodeColor')
 NodeLocation: 1536,808,1
 NodeSize: 64,40
-ValueState: 2,2092,62,430,564,0,MIDM
+ValueState: 2,540,222,374,373,0,MIDM
 Aliases: FormNode Fo1861831875
 ReformVal: [Undefined,Self]
 
