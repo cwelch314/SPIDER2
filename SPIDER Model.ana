@@ -58,7 +58,7 @@ Graph_ColorSeq := [12593,38293,0,65278,37008,6168,32639,32639,32639,0,0,0,34952,
 {!40600|NodeLocation MaxModelThreads: 880,64,1}
 {!40600|NodeSize MaxModelThreads: 48,24}
 {!40600|NodeInfo MaxModelThreads: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
-{!50000|OutlinerState Sys_FoundSet: 2,2547,173,1094,790}
+{!50000|OutlinerState Sys_FoundSet: 2,2127,93,1094,790}
 {!50000|NodeLocation DecimalForCopyPaste: 1024,64,1}
 {!50000|NodeSize DecimalForCopyPaste: 72,24}
 {!50000|NodeInfo DecimalForCopyPaste: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
@@ -113,7 +113,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,1888,4,1792,795,17
+DiagState: 2,6,-2,1792,795,17
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
@@ -17664,7 +17664,7 @@ NodeSize: 64,40
 NodeColor: 65535,39321,39321
 
 Variable Nodes_to_change
-Att_PrevIndexValue: [Residential_Label,Non_Res_Label,Res_and_NonRes_Label,DC_to_AC_Fact_byTime,Avg_Sys_Size_for_For,Avg_System_Size_by_1,Forecast_AC_System_S,PV_Capacity_Factor,Load_Scaling_Factor,Scale_Load_by_Covere,PV_DC_SystSize_Econ,PV_ACSystSize_byTime,NewConstr_AC_SysSize,NewConstr_Compliance,CEC_kW_AC_per_Bldg_U,Appl_Variab_Penalty,HistCumulPV_BldgUnit,Incurred_Variability,Nodecolor_for_change,Nodecolor_To_check]
+Att_PrevIndexValue: [Residential_Label,Non_Res_Label,Res_and_NonRes_Label,DC_to_AC_Fact_byTime,Avg_Sys_Size_for_For,Avg_System_Size_by_1,Forecast_AC_System_S,Load_Scaling_Factor,Scale_Load_by_Covere,PV_ACSystSize_byTime,NewConstr_AC_SysSize,CEC_kW_AC_per_Bldg_U,Appl_Variab_Penalty,HistCumulPV_BldgUnit,Incurred_Variability,Nodecolor_for_change,Nodecolor_To_check]
 Title: Nodes to change
 Definition: update_nodes_to_chan;~
 #FindObjects(Color,attribute:'NodeColor')
@@ -17672,7 +17672,7 @@ NodeLocation: 1216,464,1
 NodeSize: 64,40
 ValueState: 2,2213,107,429,497,0,MIDM
 Aliases: FormNode Fo1730677955, FormNode Fo1725779139
-{!40700|Att_CellFormat: CellFormats(CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,21,header:0),CellSpan(Nodes_to_change,CellFill(0xffffff80),1,21,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,21,header:0))}
+{!40700|Att_CellFormat: CellFormats(CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,18,header:0),CellSpan(Nodes_to_change,CellFill(0xffffff80),1,18,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,18,header:0))}
 
 Variable Color
 Title: Color
@@ -17811,7 +17811,7 @@ NodeColor: 49344,49344,49344
 Original: Excel_Import_Setting
 
 Index All_Nodes_to_Review
-Att_PrevIndexValue: [Stored_PV_Comparison,Include_Output_Type,Stored_BESS_Compare,Allowed_Indices_Exp,Sectors_for_Export,Residential_Label,Non_Res_Label,Res_and_NonRes_Label,Excel_Import_Setting,CatInd_ImportSetting,Fact_Column_Indices,Map_Intercon_to_Sect,Stored_DC_CapInstall,Stored_AC_CapInstall,Stored_PV_Installs,Stored_Capacity_Inst,Min_and_Max_System_S,Saved_NTG_Ratio,NewConstr_Mkt_Share,Force_NewCon_Market_,Market_Share_Method,Impact_Scaling,Event_Applicability,R2_Threshold1,Num_of_Periods_Avg,Stored_Opt_Status_PV,Stored_PV_Dec_Vars,Solar_Profile_Map,PV_Capacity_Factor,Loadshape_Map,Scale_Load_by_Covere,Select_Customer_Rate,NonCoincDmd_Attribs,OnPeak_Dmd_Attribs,Energy_Rate_Attribs,Map_Component_to_Prd,Debt_Equity_Rates,Invest_Tax_Credit,Stored_PV_Pct_ITC,Strg_kWh_Base_Rate,Incentive_Step_Start,Hist_Storage_Incent,PV_kW_AC_Incentive,Taxed_as_Commercial,MACRS_Schedule,Installed_EquipPrice,O_M_Cost,PV_Cost_Change_Rate,Strg_Cost_Chg_Rate,Battery_Storage_Spec,Num_Storage_Units,SAM_AC_to_DC_Factor,NewConst_SysSize,Map_Charges_to_Sect,Map_Costs_to_Sector,Stock_Basis_by_Sect,Total_Building_Area,Floors_per_Building,Power_Density,Pct_Bldgs_Roof_Type,NewConst_Suitability,PV_technical_suitabi,Building_Stock,Vehicle_Stock_Data,Sector_for_Assigning,Stored_Opt_Status_EV,Stored_EV_Dec_Vars,SGIP_Fact_Col_Indexe,Reported_Avg_Costs,Source_of_Ratio,SGIP_Sector_Map,StorageSyst_Included,Rates_Included,ClimZones_Included,Months_Included,Select_Strg_Sector1,Select_Strg_Rate1,Select_Strg_System1,PV_BESS_Sector_Map,BESS_Economics_Map,Slope_Data1,Increm_Data1,Select_Strg_Sector,Select_Strg_Rate,Select_Strg_System,AESS_Fact_Col_Indexe,AESS_Sector_Map,Rule21_Fact_Col_Inde,Reported_Avg_Costs2,Source_of_Ratio2,Rule21_Sector_Map,Sector_for_Type,Rate_Name_for_Sector,Market_Share_Method1,R2_Threshold_BESS,Stored_OptStatusBESS,Stored_BESS_Dec_Vars,BESS_Calibration_Com]
+Att_PrevIndexValue: [Stored_PV_Comparison,Include_Output_Type,Stored_BESS_Compare,Allowed_Indices_Exp,Sectors_for_Export,Residential_Label,Non_Res_Label,Res_and_NonRes_Label,Excel_Import_Setting,CatInd_ImportSetting,Fact_Column_Indices,Map_Intercon_to_Sect,Stored_DC_CapInstall,Stored_AC_CapInstall,Stored_PV_Installs,Stored_Capacity_Inst,Min_and_Max_System_S,Saved_NTG_Ratio,NewConstr_Mkt_Share,Force_NewCon_Market_,Market_Share_Method,Impact_Scaling,Event_Applicability,R2_Threshold1,Num_of_Periods_Avg,Stored_Opt_Status_PV,Stored_PV_Dec_Vars,Solar_Profile_Map,PV_Capacity_Factor,Loadshape_Map,Scale_Load_by_Covere,Select_Customer_Rate,NonCoincDmd_Attribs,OnPeak_Dmd_Attribs,Energy_Rate_Attribs,Map_Component_to_Prd,Debt_Equity_Rates,Invest_Tax_Credit,Stored_PV_Pct_ITC,Strg_kWh_Base_Rate,Incentive_Step_Start,Hist_Storage_Incent,PV_kW_AC_Incentive,Taxed_as_Commercial,MACRS_Schedule,Installed_EquipPrice,O_M_Cost,PV_Cost_Change_Rate,Strg_Cost_Chg_Rate,Battery_Storage_Spec,Num_Storage_Units,SAM_DC_to_AC_Ratio,NewConstr_Code_Sys_S,Map_Charges_to_Sect,Map_Costs_to_Sector,Stock_Basis_by_Sect,Total_Building_Area,Floors_per_Building,Power_Density,Pct_Bldgs_Roof_Type,NewConst_Suitability,PV_technical_suitabi,Building_Stock,Vehicle_Stock_Data,Sector_for_Assigning,Stored_Opt_Status_EV,Stored_EV_Dec_Vars,SGIP_Fact_Col_Indexe,Reported_Avg_Costs,Source_of_Ratio,SGIP_Sector_Map,StorageSyst_Included,Rates_Included,ClimZones_Included,Months_Included,Select_Strg_Sector1,Select_Strg_Rate1,Select_Strg_System1,PV_BESS_Sector_Map,BESS_Economics_Map,Slope_Data1,Increm_Data1,Select_Strg_Sector,Select_Strg_Rate,Select_Strg_System,AESS_Fact_Col_Indexe,AESS_Sector_Map,Rule21_Fact_Col_Inde,Reported_Avg_Costs2,Source_of_Ratio2,Rule21_Sector_Map,Sector_for_Type,Rate_Name_for_Sector,Market_Share_Method1,R2_Threshold_BESS,Stored_OptStatusBESS,Stored_BESS_Dec_Vars,BESS_Calibration_Com]
 Title: All Nodes to Review
 Definition: #SetDifference(\Intersection,\Already_Imported)
 NodeLocation: 760,936,1
