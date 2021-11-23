@@ -27,7 +27,7 @@ Author: JamesMilford
 Date: Fri, Aug 10, 2018 2:24 PM
 NodeLocation: 328,584,1
 NodeSize: 64,40
-DiagState: 2,2289,96,1255,603,17
+DiagState: 2,2079,32,1255,603,17
 
 Variable Hrly_Prof_Start_Date
 Title: Hourly Profile Start Date
@@ -37,7 +37,7 @@ NodeLocation: 104,216,1
 NodeSize: 64,40
 DefnState: 2,240,124,1053,649,0,DFNM
 ValueState: 2,460,10,597,558,0,MIDM
-Aliases: Alias Al1534527254, FormNode Fo1534260466, FormNode Fo1534306420
+Aliases: Alias Al1534527254, FormNode Fo1534306420
 ReformDef: [Undefined,Hourly_Profile_Names]
 
 Constant Dates_of_Holidays
@@ -68,14 +68,6 @@ NodeLocation: 368,516,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Dates_of_Holidays
-
-FormNode Fo1534260466
-Title: Loadshape Start Date
-Definition: 0
-NodeLocation: 112,260,1
-NodeSize: 56,12
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Hrly_Prof_Start_Date
 
 Variable Date_By_8784
 Title: Date By 8784
@@ -233,11 +225,12 @@ Aliases: FormNode Fo1534259710, FormNode Fo1534303277
 Decision Profiles_to_Evaluate
 Title: Profiles to Evaluate
 Description: Select the hourly profiles you wish to evaluate and for which you want to find average daily profiles.
-Definition: Table(All_Hourly_Profile_N)(Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
+Definition: Table(All_Hourly_Profile_N)(Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
 NodeLocation: 104,104,1
 NodeSize: 64,40
-DefnState: 2,839,125,639,522,0,DFNM
+DefnState: 2,822,52,582,607,0,DFNM
 Aliases: FormNode Fo1534259712, FormNode Fo1534306414
+NodeColor: 65535,65531,1
 TableCellDefault: Checkbox(1)
 
 Variable Day_of_Year_8784
@@ -615,7 +608,7 @@ Author: JamesMilford
 Date: Thu, Aug 16, 2018 5:26 AM
 NodeLocation: 640,584,1
 NodeSize: 64,40
-DiagState: 2,91,200,1751,614,17
+DiagState: 2,55,276,1751,495,17
 
 Variable Hourly_Profiles
 Title: Hourly Profiles
@@ -3704,7 +3697,6 @@ Definition: Hourly_Profiles[All_Hourly_Profile_N=Selected_Profiles]
 NodeLocation: 256,64,1
 NodeSize: 64,40
 ValueState: 2,0,79,1461,641,1,MIDM
-NodeColor: 65535,39321,39321
 ReformVal: [Hours_8784,Selected_Profiles]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Hours_8784]
@@ -4353,7 +4345,7 @@ Author: JamesMilford
 Date: Thu, Aug 16, 2018 5:26 AM
 NodeLocation: 480,696,1
 NodeSize: 64,40
-DiagState: 2,260,13,1098,517,17
+DiagState: 2,282,85,1098,517,17
 AcpStyles: Show_Object:no
 
 Index Month
@@ -4500,13 +4492,13 @@ NodeSize: 64,40
 Aliases: FormNode Fo1534259711
 
 Index Selected_Profiles
-Att_PrevIndexValue: ['2017_Coast_Irradiance (W/m2)','2017_Inland_Irradiance (W/m2)','2017_Mountain_Irradiance (W/m2)','2017_Desert_Irradiance (W/m2)','2017_Residential_Load (kW-hr/meter)','2017_Small_Commercial_Load (kW-hr/meter)','2017_Med_Lrg_Commercial_Load (kW-hr/meter)','TMY_Resid_Solar_Coast (kW-hr/system)','TMY_Resid_Solar_Inland (kW-hr/system)','TMY_Resid_Solar_Mountain (kW-hr/system)','TMY_Resid_Solar_Desert (kW-hr/system)','TMY_C&I_Solar_Coast (kW-hr/system)','TMY_C&I_Solar_Inland (kW-hr/system)','TMY_C&I_Solar_Mountain (kW-hr/system)','TMY_C&I_Solar_Desert (kW-hr/system)','2017_Avoided_Energy ($/MWh)','2017_Avoided_Losses ($/MWh)','2017_Ancillary_Services ($/MWh)','2017_Avoided_Emissions ($/MWh)','2017_Avoided_Capacity ($/MWh)','2017_Avoided_Transmission ($/MWh)','2017_Avoided_Distribution ($/MWh)','2017_Avoided_RPS ($/MWh)','Residential Load Profile (kWh/premise)','NonResidential Load Profile (kWh/premise)','EV Combined Load Profile (kWh/premise)']
+Att_PrevIndexValue: ['TMY_Resid_Solar_Coast (kW-hr/system)','TMY_Resid_Solar_Inland (kW-hr/system)','TMY_Resid_Solar_Mountain (kW-hr/system)','TMY_Resid_Solar_Desert (kW-hr/system)','TMY_C&I_Solar_Coast (kW-hr/system)','TMY_C&I_Solar_Inland (kW-hr/system)','TMY_C&I_Solar_Mountain (kW-hr/system)','TMY_C&I_Solar_Desert (kW-hr/system)','2017_Avoided_Energy ($/MWh)','2017_Avoided_Losses ($/MWh)','2017_Ancillary_Services ($/MWh)','2017_Avoided_Emissions ($/MWh)','2017_Avoided_Capacity ($/MWh)','2017_Avoided_Transmission ($/MWh)','2017_Avoided_Distribution ($/MWh)','2017_Avoided_RPS ($/MWh)','Residential Load Profile (kWh/premise)','NonResidential Load Profile (kWh/premise)','EV Combined Load Profile (kWh/premise)']
 Title: Selected Profiles
 Definition: Subset(Profiles_to_Evaluate)
 NodeLocation: 248,64,1
 NodeSize: 64,40
-ValueState: 2,868,275,573,516,,MIDM
-{!40300|Att_SlicerPopupSize: 342,785}
+ValueState: 2,835,200,573,516,0,MIDM
+{!40300|Att_SlicerPopupSize: 347,785}
 
 FormNode Fo1534259708
 Title: Weekday Label

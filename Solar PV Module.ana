@@ -2915,7 +2915,7 @@ Variable FirstYr_Annual_Solar
 Title: First-Year Annual Solar
 Units: kWh/year-system
 Description: The annual energy production from a PV system in its first year of operation.
-Definition: Sum(Applied_SolarProfile[@PV_Operating_Year=1] * Applied_Monthly_Mult[Static_Profile_Names=Solar_Profile_Name[All_Sectors=PV_Sectors]], Profile_Hours, Month)
+Definition: Sum(Applied_SolarProfile[@PV_Operating_Year=1] * Applied_Monthly_Mult[Static_Profile_Names=Solar_Profile_Map[All_Sectors=PV_Sectors]], Profile_Hours, Month)
 NodeLocation: 720,208,1
 NodeSize: 64,40
 ValueState: 2,438,409,1024,248,0,MIDM
@@ -3000,7 +3000,7 @@ Variable Day_Type_Solar
 Title: Day Type Solar
 Units: kW-hr/system
 Description: The scaled solar profile by weekday and weekend days for each month. This is bounded to not go negative (ie, we ignore the very small parasitic loads).
-Definition: MAX([0, Daily_Prof_with_Peak[Static_Profile_Names=Solar_Profile_Name[All_Sectors=PV_Sectors], All_Day_Types=DayType_for_Type_Hr, Time_of_Day=Hour_for_Type_and_Hr]]) * Solar_Scaling_Factor
+Definition: MAX([0, Daily_Prof_with_Peak[Static_Profile_Names=Solar_Profile_Map[All_Sectors=PV_Sectors], All_Day_Types=DayType_for_Type_Hr, Time_of_Day=Hour_for_Type_and_Hr]]) * Solar_Scaling_Factor
 NodeLocation: 248,304,1
 NodeSize: 64,40
 WindState: 2,595,12,720,350
@@ -3025,15 +3025,15 @@ Author: JamesMilford
 Date: Fri, Oct 25, 2019 8:28 AM
 NodeLocation: 88,208,1
 NodeSize: 64,40
-DiagState: 2,0,144,1711,673,17
+DiagState: 2,1992,25,1013,752,17
 AcpStyles: FrameNode: Solar_Scale_Frame
 
 Variable Normal_Solar_Profile
 Title: Normalized Solar Profile
 Units: kW-hr/(kWh/year)
 Description: The energy-normalized solar profile. This can be converted to a system profile by multiplying by the annual production of a given system. This is bounded to not go negative (ie, we ignore the very small parasitic loads).
-Definition: VAR profile:=MAX([0, Daily_Prof_with_Peak[Static_Profile_Names=Solar_Profile_Name[All_Sectors=PV_Sectors], All_Day_Types=Day_of_Week]]);~
-VAR annualSum:=Profile_Annual_Total[Static_Profile_Names=Solar_Profile_Name[All_Sectors=PV_Sectors]];~
+Definition: VAR profile:=MAX([0, Daily_Prof_with_Peak[Static_Profile_Names=Solar_Profile_Map[All_Sectors=PV_Sectors], All_Day_Types=Day_of_Week]]);~
+VAR annualSum:=Profile_Annual_Total[Static_Profile_Names=Solar_Profile_Map[All_Sectors=PV_Sectors]];~
 ~
 Divide(profile, annualSum)
 NodeLocation: 96,128,1
@@ -3044,7 +3044,7 @@ GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [Time_of_Day,PV_Climate_Zone]
 Att_ResultSliceState: [Month,7,PV_Spatial_ID,3,Day_of_Week,1,Time_of_Day,1]
 
-Decision Solar_Profile_Name
+Decision Solar_Profile_Map
 Title: Solar Profile Name
 Description: The hourly solar profiles names for each sector and climate zone.
 Definition: Table(All_Sectors,PV_Climate_Zone)(~
@@ -3053,15 +3053,14 @@ Choice(Static_Profile_Names,12,0),Choice(Static_Profile_Names,15,0),Choice(Stati
 Choice(Static_Profile_Names,8,0),Choice(Static_Profile_Names,11,0),Choice(Static_Profile_Names,13,0),Choice(Static_Profile_Names,10,0))
 NodeLocation: 96,336,1
 NodeSize: 64,40
-DefnState: 2,129,191,1608,217,0,DFNM
-ValueState: 2,452,458,1127,303,,MIDM
-Aliases: FormNode Fo872983747
-NodeColor: 65535,65531,1
+DefnState: 2,133,210,1608,217,0,DFNM
+ValueState: 2,198,253,1102,217,0,MIDM
+ReformVal: [All_Sectors,PV_Climate_Zone]
 TableCellDefault: Choice(Static_Profile_Names,2,0)
 
 Constant PV_Capacity_Factor
 Title: PV Capacity Factor
-Units: (kWh/year)/(kW-DC*8760)
+Units: kWhA/year / kW-DC*8760
 Description: The PV capacity factor, which indicates the kWh-AC of first-year solar production that can be expected from a system having a 1 kW-DC nameplate rating. 
 Definition: Table(All_Sectors,PV_Climate_Zone)(~
 0.1865,0.2239,0.1886,0.1843,~
@@ -3072,8 +3071,7 @@ NodeSize: 64,40
 WindState: 2,9,12,866,441
 DefnState: 2,876,444,967,221,0,DFNM
 ValueState: 2,412,173,567,391,0,MIDM
-Aliases: Alias Al1550179326, FormNode Fo1550179326, FormNode Fo1539715674
-NodeColor: 65535,39321,39321
+Aliases: Alias Al1550179326, FormNode Fo1550179326, Alias Al1613372611
 ReformVal: [All_Sectors,PV_Climate_Zone]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
@@ -3084,7 +3082,7 @@ Description: The annual energy produced per kW-DC of installed solar.
 Definition: PV_Capacity_Factor[All_Sectors=PV_Sectors] * Hours_per_Year
 NodeLocation: 416,336,1
 NodeSize: 64,40
-ValueState: 2,17,472,416,303,,MIDM
+ValueState: 2,329,59,682,630,0,MIDM
 Att__TotalsIndex: []
 
 Variable Per_kW_SolarProfie
@@ -3112,14 +3110,6 @@ Att_GraphValueRange: 1,,,,,,10
 Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [PV_Climate_Zone,2,Month,1,PV_Sectors,1,Day_and_Hour,1]
 
-FormNode Fo1539715674
-Title: PV Capacity Factor
-Definition: 0
-NodeLocation: 256,388,1
-NodeSize: 56,12
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: PV_Capacity_Factor
-
 Variable Avg_Daily_PV_by_Mth
 Title: Avg Daily PV by Month
 Units: kW-hr/customer
@@ -3139,7 +3129,7 @@ Variable Solar_Day_Counts
 Title: Solar Day Counts
 Units: days/year
 Description: The day counts for the solar profiles.
-Definition: Applied_Day_Counts[All_Day_Types=Day_of_Week, Static_Profile_Names=Solar_Profile_Name[All_Sectors=PV_Sectors]]
+Definition: Applied_Day_Counts[All_Day_Types=Day_of_Week, Static_Profile_Names=Solar_Profile_Map[All_Sectors=PV_Sectors]]
 NodeLocation: 256,232,1
 NodeSize: 64,40
 WindState: 2,102,82,1124,434
@@ -3168,7 +3158,7 @@ Variable Solar_Scaling_Factor
 Title: Solar Scaling Factor
 Units: dimensionless
 Description: A scaling factor to convert the annual energy represented by the 8760 solar profiles to the annual energy assumed for a new PV system.
-Definition: VAR totSolar:=Sum(Select_Hrly_Profiles[Selected_Profiles=Solar_Profile_Name[All_Sectors=PV_Sectors]], Hours_8784);   {For normalizing by total annual energy production}~
+Definition: VAR totSolar:=Sum(Select_Hrly_Profiles[Selected_Profiles=Solar_Profile_Map[All_Sectors=PV_Sectors]], Hours_8784);   {For normalizing by total annual energy production}~
 ~
 Divide(PV_Production_per_kW * PV_DC_SystSize_Econ, totSolar)   {Scaled by per-kW system production, per-system size, and normalized by total annual energy production}
 NodeLocation: 416,480,1
@@ -3180,7 +3170,7 @@ Variable Scaled_Hourly_Solar
 Title: Scaled Hourly Solar
 Units: kW-hr/system
 Description: The scaled solar profile by hour of the year. This is bounded to not go negative (ie, we ignore the very small parasitic loads).
-Definition: VAR profile:=MAX([0, Select_Hrly_Profiles[Selected_Profiles=Solar_Profile_Name[All_Sectors=PV_Sectors]]]);~
+Definition: VAR profile:=MAX([0, Select_Hrly_Profiles[Selected_Profiles=Solar_Profile_Map[All_Sectors=PV_Sectors]]]);~
 ~
 profile * Solar_Scaling_Factor
 NodeLocation: 96,480,1
@@ -3204,15 +3194,6 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 NodeColor: 65535,65535,65535
 AcpStyles: Show_index_menus: yes~
 Show_description:20
-
-FormNode Fo872983747
-Title: Solar Profile Name
-Definition: 0
-NodeLocation: 104,380,1
-NodeSize: 56,12
-NodeInfo: 1,,,0
-NodeColor: 65535,65531,1
-Original: Solar_Profile_Name
 
 Close Solar_Profile_Scalin
 
@@ -3921,7 +3902,7 @@ Variable Solar_DayTyo_DayCnt
 Title: Solar Day Type Day Counts
 Units: days/month
 Description: The count of days per month for each day type. This can differ by profile depending on the year of data used for each profile.
-Definition: Applied_Day_Counts[Static_Profile_Names=Solar_Profile_Name[All_Sectors=PV_Sectors], All_Day_Types=Weekday_or_Weekend]
+Definition: Applied_Day_Counts[Static_Profile_Names=Solar_Profile_Map[All_Sectors=PV_Sectors], All_Day_Types=Weekday_or_Weekend]
 NodeLocation: 104,560,1
 NodeSize: 64,40
 WindState: 2,98,82,1272,363
@@ -4096,7 +4077,7 @@ Author: JamesMilford
 Date: Fri, Oct 25, 2019 8:28 AM
 NodeLocation: 88,344,1
 NodeSize: 64,40
-DiagState: 2,562,80,1460,487,17
+DiagState: 2,112,67,1460,487,17
 AcpStyles: Frame_Node: Scaling_Frame
 
 Variable Cust_Load_Profile
@@ -8007,7 +7988,7 @@ Definition: Table(All_Sectors,Static_PV_Time,All_Equipment_Types,New_or_Retrofit
 NodeLocation: 120,56,1
 NodeSize: 64,40
 WindState: 2,755,283,1016,618
-DefnState: 2,493,104,918,596,0,DFNM
+DefnState: 2,1001,139,623,640,0,DFNM
 ValueState: 2,432,44,1293,766,0,MIDM
 Aliases: Alias Al1568696041, FormNode Fo1568696041, FormNode Fo1539276353, FormNode Fo1544633533, FormNode Fo1572476397, FormNode Fo1567092923
 GraphSetup: Att_GraphIndexRange Static_PV_Time:1,,1,,,,10,2016.6065129041672,2030,0
@@ -8015,7 +7996,7 @@ ReformDef: [All_Sectors,Static_PV_Time]
 ReformVal: [All_Sectors,Static_PV_Time]
 Att__TotalsIndex: []
 Att_ResultSliceState: [All_Equipment_Types,1,New_or_Retrofit,2,Static_PV_Time,1,All_Sectors,1]
-Att_EditSliceState: [All_Equipment_Types,1,New_or_Retrofit,2,Static_PV_Time,1,All_Sectors,1]
+Att_EditSliceState: [All_Equipment_Types,2,New_or_Retrofit,2,Static_PV_Time,1,All_Sectors,1]
 
 Constant Equipment_Lifetime
 Title: Equipment Lifetime
@@ -8154,6 +8135,7 @@ NodeLocation: 432,696,1
 NodeSize: 64,40
 ValueState: 2,147,299,1159,498,,MIDM
 NumberFormat: 2,F,4,2,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
+Att_ResultSliceState: [PV_Sectors,1,System_Types,1,System_Sizing_Method,1,PV_Climate_Zone,1,Annual_Econ_Time,1]
 
 Variable Tot_Equipment_Price
 Title: Total Equipment Price
@@ -8228,6 +8210,7 @@ Definition: Choice(Static_PV_Time,11,0)
 NodeLocation: 416,168,1
 NodeSize: 64,40
 Aliases: Alias Al1568923259, FormNode Fo1568923259, FormNode Fo1543274532, FormNode Fo1544916731
+NodeColor: 65535,65531,1
 
 FormNode Fo1543274532
 Title: Base Year for PV Cost Decline
@@ -8388,6 +8371,7 @@ Definition: Choice(Static_PV_Time,11,0)
 NodeLocation: 416,288,1
 NodeSize: 64,40
 Aliases: Alias Al1568923261, FormNode Fo1568923261, FormNode Fo1548961182
+NodeColor: 65535,65531,1
 
 FormNode Fo1548961182
 Title: Base Year for PV Cost Decline
@@ -9005,7 +8989,7 @@ Date: Wed, Oct 10, 2018 9:00 AM
 NodeLocation: 544,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,112,6,1672,702,17
+DiagState: 2,66,-5,1654,747,17
 Aliases: Alias Al1548967120
 AcpStyles: FrameNode: FrameNode_1544919879
 
@@ -9016,7 +9000,7 @@ Description: The conversion factor from kW-AC of solar to kW-DC. ~
 ~
 New Source: Interconnection data, which doesn't include all AC losses so it's a higher AC estimate than a PV system would actually provide. This conversion factor source is being used to maintain consistency with interconnection convention of CEC-MW-AC. See Avg_AC_DC_CZ_Fcast for calculated values.
 Definition: Avg_AC_DC_CZ_Fcast[All_Sectors=PV_Sectors, All_Utilities=SDGE_Utility_Label]
-NodeLocation: 136,488,1
+NodeLocation: 104,480,1
 NodeSize: 64,40
 WindState: 2,2159,119,953,441
 DefnState: 2,1065,122,713,303,0,DFNM
@@ -9027,12 +9011,11 @@ Variable PV_DC_SystSize_Econ
 Title: PV DC System Size for Economics
 Units: kW-DC/system
 Description: The solar PV DC system sized used for PV economics.
-Definition: PV_AC_SystSize_Econ * PV_AC_to_DC_Factor
-NodeLocation: 288,488,1
+Definition: IF Choose_System_Sizing = Function_of_Load_Lab THEN Load_based_PV_DC_Sys ELSE Historical_PV_DC_Sys
+NodeLocation: 408,584,1
 NodeSize: 64,40
-ValueState: 2,910,507,638,216,0,MIDM
+ValueState: 2,1040,523,638,216,0,MIDM
 Aliases: Alias Al1571850383
-NodeColor: 65535,39321,39321
 
 Constant Battery_Storage_Spec
 Title: Battery Storage Specs
@@ -9050,7 +9033,7 @@ Definition: Table(All_Sectors,Battery_Specs)(~
 NodeLocation: 136,176,1
 NodeSize: 64,40
 WindState: 2,297,1,801,442
-DefnState: 2,773,224,910,222,0,DFNM
+DefnState: 2,815,334,910,222,0,DFNM
 ValueState: 2,274,25,821,620,0,MIDM
 Aliases: Alias Al1550183618, FormNode Fo1550183618, FormNode Fo1542305979, FormNode Fo1567093176
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
@@ -9110,7 +9093,7 @@ Description: The solar PV array size (in kW-DC) and storage size (in kWh) per sy
 Definition: IF Equipment_Types = Solar_PV_Label~
 THEN PV_DC_Size_by_System~
 ELSE Storage_Capacity
-NodeLocation: 520,176,1
+NodeLocation: 560,176,1
 NodeSize: 64,40
 WindState: 2,5,42,875,350
 DefnState: 2,883,249,416,303,,DFNM
@@ -9127,7 +9110,7 @@ Title: PV DC Size by System Type
 Units: kW-DC/system
 Description: The solar PV system size in kW-DC.
 Definition: PV_DC_SystSize_Econ * Equip_Install_Map[All_Equipment_Types=Solar_PV_Label, All_System_Types=System_Types]
-NodeLocation: 520,488,1
+NodeLocation: 560,584,1
 NodeSize: 64,40
 WindState: 2,102,82,1085,492
 ValueState: 2,472,4,609,484,0,MIDM
@@ -9157,22 +9140,22 @@ Definition: Table(All_Sectors,PV_Climate_Zone)(~
 NodeLocation: 760,368,1
 NodeSize: 64,40
 WindState: 2,155,1,953,441
-DefnState: 2,425,312,713,303,0,DFNM
-ValueState: 2,20,16,510,189,,MIDM
+DefnState: 2,829,381,713,303,0,DFNM
+ValueState: 2,20,16,790,523,0,MIDM
 Aliases: Alias Al1550183623, FormNode Fo1550183623, FormNode Fo1542827262
 ReformDef: [All_Sectors,PV_Climate_Zone]
 
 Alias Al1542299851
 Title: PV AC System Size for Economics
 Definition: 1
-NodeLocation: 136,584,1
+NodeLocation: 104,584,1
 NodeSize: 64,40
 Original: PV_AC_SystSize_Econ
 
 Text Te1542300414
 Title: Sizing for impact analysis
-NodeLocation: 924,264,-1
-NodeSize: 268,248
+NodeLocation: 932,240,-1
+NodeSize: 276,224
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
 NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,15
@@ -9193,10 +9176,9 @@ Definition: Table(All_Sectors,PV_Climate_Zone)(~
 NodeLocation: 760,120,1
 NodeSize: 64,40
 WindState: 2,52,125,720,350
-DefnState: 2,830,407,586,351,0,DFNM
-ValueState: 2,416,209,416,303,,MIDM
+DefnState: 2,1157,472,511,226,0,DFNM
+ValueState: 2,416,209,685,592,,MIDM
 Aliases: Alias Al1550183210, FormNode Fo1550183210, FormNode Fo1542305980, FormNode Fo1544638294
-NodeColor: 65535,65531,1
 ReformDef: [All_Sectors,PV_Climate_Zone]
 Att_EditSliceState: [PV_Sectors,1,PV_Climate_Zone,1,All_Sectors,1]
 
@@ -9270,7 +9252,7 @@ NodeLocation: 760,240,1
 NodeSize: 64,40
 WindState: 2,2333,160,874,442
 Aliases: Alias Al1568696228, FormNode Fo1568696228, FormNode Fo1542829238
-NodeColor: 65535,39321,39321
+NodeColor: 65535,1,1
 
 FormNode Fo1542829238
 Title: Title 24 Compliance Date
@@ -9290,14 +9272,14 @@ Original: CEC_kW_AC_per_Bldg_U
 
 Text Te1542841015
 Title: Sizing for economic analysis
-NodeLocation: 328,328,-4
-NodeSize: 312,312
+NodeLocation: 332,476,-4
+NodeSize: 316,460
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
 NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,15
 
 Text FrameNode_1544919879
-NodeLocation: 1560,328,-20
+NodeLocation: 1576,320,-20
 NodeSize: 360,304
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 NodeColor: 65535,65535,65535
@@ -9367,6 +9349,81 @@ Title: This is wrong now. NonRes is zero when it shouldn't be.
 NodeLocation: 924,328,-1
 NodeSize: 68,48
 
+Index System_Sizing_Method
+Att_PrevIndexValue: ['Historical Interconnection Based','Function of Load Based']
+Title: System Sizing Methods
+Definition: ['Historical Interconnection Based','Function of Load Based']
+NodeLocation: 552,872,1
+NodeSize: 64,40
+
+Variable Load_based_PV_DC_Sys
+Title: Load-based PV DC Sys Size for Econ
+Units: kW-DC/system
+Description: This is the PV DC System Size (kW DC/system) assuming that all systems are sized as a function of average customer load (kWh / premise). This approach is typically used when historical interconnection are not available or adequate to calculate historical average system sizes.  
+Definition: local x:=Load_per_Premise * PV_AC_Generation_as_ / (PV_Capacity_Factor * 8760);~
+x[All_Sectors = PV_Sectors]~
+~
+{[kWh AC / year / premise] * [fraction] / ([kWh AC /year]/[kW-DC * 8760]) * 8760 = PV kW DC}
+NodeLocation: 408,768,1
+NodeSize: 64,40
+ValueState: 2,2287,535,734,227,0,MIDM
+NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+
+Constant PV_AC_Generation_as_
+Title: PV AC Generation as Fraction of Load
+Units: fraction
+Description: When the system sizing method chosen is "Function of Load Based," this input determines the size of the PV system and represent the fraction of a typical customer's total load that is covered by the installed PV system. This calculation is for economics purposes only, as it determines the electricity charges for the customer, which are a function of the net load for the customer.
+Definition: Table(All_Sectors)(0.9,0.4,0)
+NodeLocation: 104,768,1
+NodeSize: 64,40
+DefnState: 2,2517,388,390,172,0,DFNM
+ValueState: 2,1910,59,416,303,,MIDM
+NodeColor: 65535,1,1
+NumberFormat: 2,%,2,1,0,0,2,1,$,0,"ABBREV",0,,,0,0,15,
+
+Alias Al1724521667
+Title: Load per Premise
+Definition: 1
+NodeLocation: 272,888,1
+NodeSize: 64,40
+Original: Load_per_Premise
+
+Alias Al1613372611
+Title: PV Capacity Factor
+Definition: 1
+NodeLocation: 104,880,1
+NodeSize: 64,40
+Original: PV_Capacity_Factor
+
+Variable Historical_PV_DC_Sys
+Title: Historical PV DC Sys Size for Econ
+Definition: PV_AC_SystSize_Econ * PV_AC_to_DC_Factor
+NodeLocation: 248,584,1
+NodeSize: 64,40
+ValueState: 2,2120,298,416,303,0,MIDM
+
+Decision Choose_System_Sizing
+Title: Choose System Sizing Method
+Definition: Choice(System_Sizing_Method,2,1)
+NodeLocation: 408,464,1
+NodeSize: 64,40
+Aliases: FormNode Fo1060773059
+NodeColor: 65535,65531,1
+
+FormNode Fo1060773059
+Title: Choose System Sizing Method
+Definition: 0
+NodeLocation: 420,512,1
+NodeSize: 132,16
+NodeInfo: 1,,,0,,,,222,,,,,,0
+Original: Choose_System_Sizing
+
+Decision Function_of_Load_Lab
+Title: Function of Load Label
+Definition: Choice(System_Sizing_Method,2,0)
+NodeLocation: 248,688,1
+NodeSize: 64,40
+
 Close Equipment_Sizing
 
 Alias Al1538428922
@@ -9385,7 +9442,7 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 256,288,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,-140,66,1791,694,17
+DiagState: 2,1885,43,1791,694,17
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -9601,7 +9658,7 @@ WindState: 2,319,12,1255,632
 Aliases: FormNode Fo1535066238, FormNode Fo1539140368, FormNode Fo1247325693
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
-{!40300|Att_SlicerPopupSize: 745,83}
+{!40300|Att_SlicerPopupSize: 755,83}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
@@ -9807,7 +9864,7 @@ Title: All Equipment Types
 Definition: ['Solar PV','Battery Storage']
 NodeLocation: 1104,64,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 242,28}
+{!40300|Att_SlicerPopupSize: 247,28}
 
 Index Equipment_Types
 Title: Equipment Types
@@ -9896,7 +9953,7 @@ NodeLocation: 240,256,1
 NodeSize: 64,40
 WindState: 2,102,21,1089,879
 DisplayOutputs: Variable Clipboard_NewConstr_
-{!40300|Att_SlicerPopupSize: 457,112}
+{!40300|Att_SlicerPopupSize: 467,112}
 
 Index New_or_Retrofit
 Att_PrevIndexValue: ['NewConstr','Retrofit']
@@ -11942,7 +11999,7 @@ Definition: Table(All_Sectors,All_Spatial_ID)(~
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 NodeLocation: 592,488,1
 NodeSize: 64,40
-DefnState: 2,2338,124,691,726,0,DFNM
+DefnState: 2,2180,74,691,726,0,DFNM
 ValueState: 2,2001,154,437,434,0,MIDM
 NodeColor: 65535,1,1
 ReformDef: [All_Sectors,All_Spatial_ID]
