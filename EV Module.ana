@@ -22340,7 +22340,7 @@ AcpStyles: Show_Object:no
 
 Variable Cross_check_vehicles
 Title: Cross check vehicles/stock
-Definition: sum(Vehicle_Stock_EOP, Vehicle_Techs, Vehicle_Vintage) / Total_Building_Stock[Time=Time_Vehicles, All_Sectors=Residential_Label, All_Spatial_ID=EV_Spatial_ID]
+Definition: 1/*sum(Vehicle_Stock_EOP, Vehicle_Techs, Vehicle_Vintage) / Total_Building_Stock[Time=Time_Vehicles, All_Sectors=Residential_Label, All_Spatial_ID=EV_Spatial_ID]
 NodeLocation: 128,56,1
 NodeSize: 64,40
 WindState: 2,102,82,1122,350
@@ -23566,7 +23566,7 @@ Date: Fri, Mar 22, 2019 9:48 AM
 NodeLocation: 640,664,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,12,11,1154,649,17
+DiagState: 2,2392,89,1154,608,17
 NodeColor: 58982,58982,58982
 AcpStyles: Show_Object:no
 
@@ -23676,6 +23676,7 @@ NodeLocation: 112,80,1
 NodeSize: 64,40
 WindState: 2,446,260,816,396
 Aliases: Alias Al1535053028, FormNode Fo1553210568, FormNode Fo1532643409, FormNode Fo1553205017
+NodeColor: 65535,1,1
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act_Vehicle_3
 {!40300|Att_SlicerPopupSize: 277,42}
@@ -27089,7 +27090,7 @@ Date: Sun, Aug 5, 2018 8:27 AM
 NodeLocation: 176,112,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,180,53,1357,647,17
+DiagState: 2,180,53,1357,551,17
 
 Variable Qty_Fail_Spat_ID_EV
 Title: Qty of Failed Spatial IDs
@@ -27394,10 +27395,10 @@ Title: Calibrate All EV Sectors
 NodeLocation: 576,432,1
 NodeSize: 64,40
 Aliases: Alias Al1553204914
-NodeColor: 49344,49344,49344
+NodeColor: 65535,39321,39321
 OnClick: (EV_Spatial_ID:=Spatial_ID);  {Ensures all spatial IDs are checked}~
 (Stages_to_Calib_EV:=EV_Calibration_Stage); {Ensures all calibration stages are checked}~
-(EV_Sectors:=Res_and_NonRes_Label);~
+(EV_Sectors:=EV_Sect_Label);~
 CALIBRATE_EV;~
 Export_to_Tableau1
 
