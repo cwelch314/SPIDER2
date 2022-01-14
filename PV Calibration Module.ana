@@ -1,5 +1,5 @@
 { Analytica Model PV_Calibration1, encoding="UTF-8" }
-SoftwareVersion 6.0.10
+SoftwareVersion 6.1.0
 
 {!-60000|Attribute AcpStyles}
 Attribute UnoptimizedDef
@@ -1742,7 +1742,7 @@ Variable Act_PV_Install_Rate
 Title: Actual PV Install Rate
 Units: (systems or MW-AC)/year
 Description: PV installation rate from interconnection data
-Definition: VAR rates:=IF Stock_Basis_by_Sect[All_Sectors=PV_Sectors] = Buildings_Label~
+Definition: VAR rates:=IF PV_Stock_Basis_by_Se[All_Sectors=PV_Sectors] = Buildings_Label~
    THEN System_Installations~
    ELSE Capacity_Installs;~
 ~
@@ -1773,7 +1773,7 @@ Variable Actual_Cumul_PV_Syst
 Title: Actual Cumul PV Systems
 Units: systems or MW-AC
 Description: Historical cumulative PV systems installed.
-Definition: VAR stocks:=IF Stock_Basis_by_Sect[All_Sectors=PV_Sectors] = Buildings_Label~
+Definition: VAR stocks:=IF PV_Stock_Basis_by_Se[All_Sectors=PV_Sectors] = Buildings_Label~
    THEN Cumul_Syst_Installs~
    ELSE Cumul_Cap_Installs;~
 ~
