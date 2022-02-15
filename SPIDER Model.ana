@@ -113,7 +113,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,256,40,1348,779,17,10
+DiagState: 2,310,41,1348,779,17,10
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
@@ -142,7 +142,7 @@ Date: Mon, Aug 18, 2014 9:09 PM
 NodeLocation: 784,80,7
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-DiagState: 2,-35,99,1086,552,17
+DiagState: 2,244,90,1086,552,17,10
 WindState: 2,102,82,476,224
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
@@ -485,7 +485,7 @@ ELSE Show_ACP_Window(PV_Impact_Out,PV_Impact_Titles,PV_Impact1, 'Result')
 Decision PV_Impact1
 Title: PV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Impact_Titles,1,0)
+Definition: Choice(PV_Impact_Titles,4,0)
 NodeLocation: 616,440,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -618,7 +618,7 @@ NodeSize: 64,40
 Decision PV_Economics
 Title: PV Economics
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Econ_Titles1,4,0)
+Definition: Choice(PV_Econ_Titles1,6,0)
 NodeLocation: 608,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -642,7 +642,7 @@ Original: PV_Input
 Decision PV_Input
 Title: PV Input
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Input_Titles,9,0)
+Definition: Choice(PV_Input_Titles,7,0)
 NodeLocation: 1288,440,1
 NodeSize: 64,40
 WindState: 2,99,257,720,646
@@ -17626,7 +17626,7 @@ Author: CWelch
 Date: Tue, Nov 16, 2021 12:28 PM
 NodeLocation: 160,624,1
 NodeSize: 64,40
-DiagState: 2,117,-10,1774,854,17,10
+DiagState: 2,117,0,1774,854,17,10
 AcpStyles: Show_Object:no
 
 {!40404|FreePassObjectCount 5G4nCJrM31tNLh2R}
@@ -17674,15 +17674,15 @@ NodeSize: 64,40
 NodeColor: 65535,39321,39321
 
 Variable Nodes_to_change
-Att_PrevIndexValue: [Init_PV_Calib_Adopt,InitPVAdopt_HistBase,Calibr_All_PV_Sect,Calibr_All_EV_Sect,Calib_All_BESS_Sect,Calibrate_All_Sector,Nodecolor_for_change,Nodecolor_To_check]
+Att_PrevIndexValue: [Init_PV_Calib_Adopt,Initial_PV_Adopters1,Initial_PV_Adopters,Calibr_All_PV_Sect,Calibr_All_EV_Sect,Calib_All_BESS_Sect,Calibrate_All_Sector,Nodecolor_for_change,Nodecolor_To_check]
 Title: Nodes to change
 Definition: update_nodes_to_chan;~
 #FindObjects(Color,attribute:'NodeColor')
 NodeLocation: 912,456,1
 NodeSize: 64,40
-ValueState: 2,2213,107,429,497,0,MIDM
+ValueState: 2,27,111,429,497,0,MIDM
 Aliases: FormNode Fo1730677955, FormNode Fo1725779139
-{!40700|Att_CellFormat: CellFormats(CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,9,header:0),CellSpan(Nodes_to_change,CellFill(0xffffff80),1,9,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,9,header:0))}
+{!40700|Att_CellFormat: CellFormats(CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,10,header:0),CellSpan(Nodes_to_change,CellFill(0xffffff80),1,10,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,10,header:0))}
 
 Variable Color
 Title: Color
@@ -17778,7 +17778,7 @@ Definition: update_nodes_to_chan;~
 #FindObjects((NodeColor of Nodecolor_To_check),attribute:'NodeColor')
 NodeLocation: 1232,800,1
 NodeSize: 64,40
-ValueState: 2,3413,119,374,373,0,MIDM
+ValueState: 2,562,139,374,373,0,MIDM
 Aliases: FormNode Fo1861831875
 ReformVal: [Undefined,Self]
 
@@ -17813,7 +17813,7 @@ NodeColor: 49344,49344,49344
 Original: Excel_Import_Setting
 
 Index All_Nodes_to_Review
-Att_PrevIndexValue: [Stored_PV_Comparison,Include_Output_Type,Stored_BESS_Compare,Allowed_Indices_Exp,Sectors_for_Export,Residential_Label,Non_Res_Label,EV_Sect_Label,Consumption_by_Secto,Load_Profiles,Opt_Sectors,Excel_Import_Setting,CatInd_ImportSetting,Fact_Column_Indices,Map_Intercon_to_Sect,Stored_DC_CapInstall,Stored_AC_CapInstall,Stored_PV_Installs,Stored_Capacity_Inst,Min_and_Max_System_S,Pct_Error_Range,Abs_Error_Range1,Saved_NTG_Ratio,NewConstr_Mkt_Share,Force_NewCon_Market_,Market_Share_Method,Impact_Scaling,Event_Applicability,Infeas_Spat_ID_PV,R2_Threshold1,Num_of_Periods_Avg,Stored_Opt_Status_PV,Stored_PV_Dec_Vars,Solar_Profile_Map,PV_Capacity_Factor,Scale_Load_by_Covere,Select_Customer_Rate,NonCoincDmd_Attribs,OnPeak_Dmd_Attribs,Energy_Rate_Attribs,Map_Component_to_Prd,Debt_Equity_Rates,Invest_Tax_Credit,Stored_PV_Pct_ITC,Strg_kWh_Base_Rate,Incentive_Step_Start,Hist_Storage_Incent,PV_kW_AC_Incentive,Taxed_as_Commercial,MACRS_Schedule,Installed_EquipPrice,O_M_Cost,PV_Cost_Change_Rate,Strg_Cost_Chg_Rate,Battery_Storage_Spec,Num_Storage_Units,SAM_DC_to_AC_Ratio,NewConstr_Code_Sys_S,PV_AC_Generation_as_,PV_Sectors,Map_Charges_to_Sect,Map_Costs_to_Sector,PV_Stock_Basis_by_Se,Total_Roof_Area,Undefined,Power_Density,Pct_Bldgs_Roof_Type,NewConst_Suitability,PV_technical_suitabi,Building_Stock,Vehicle_Stock_Data,EV_Sectors,Infeas_Spat_ID_EV,Sector_for_Assigning,Stored_Opt_Status_EV,Stored_EV_Dec_Vars,SGIP_Fact_Col_Indexe,Result_Range,Reported_Avg_Costs,Source_of_Ratio,SGIP_Sector_Map,Valid_Rows1,StorageSyst_Included,Rates_Included,ClimZones_Included,Months_Included,Select_Strg_Sector1,Select_Strg_Rate1,Select_Strg_System1,Storage_Opt_Scenari1,All_BESS_Types,BESS_Sectors,PV_BESS_Sector_Map,BESS_Economics_Map,Slope_Data1,Increm_Data1,Abs_Error_Range2,Pct_Error_Range1,Abs_Error_Range3,Select_Strg_Sector,Select_Strg_Rate,Select_Strg_System,Storage_Opt_Scenario,AESS_Fact_Col_Indexe,AESS_Sector_Map,Rule21_Fact_Col_Inde,Reported_Avg_Costs2,Source_of_Ratio2,Rule21_Sector_Map,Sector_for_Type,Rate_Name_for_Sector,Market_Share_Method1,Infeas_Spat_ID_BESS,R2_Threshold_BESS,Stored_OptStatusBESS,Stored_BESS_Dec_Vars,BESS_Calibration_Com]
+Att_PrevIndexValue: [Opt_Sectors,Pct_Error_Range,Abs_Error_Range1,Infeas_Spat_ID_PV,PV_Sectors,EV_Sectors,Infeas_Spat_ID_EV,Result_Range,Valid_Rows1,Storage_Opt_Scenari1,All_BESS_Types,BESS_Sectors,Abs_Error_Range2,Pct_Error_Range1,Abs_Error_Range3,Storage_Opt_Scenario,Infeas_Spat_ID_BESS]
 Title: All Nodes to Review
 Definition: #SetDifference(\Intersection,\Already_Imported)
 NodeLocation: 456,928,1
@@ -17822,11 +17822,11 @@ ValueState: 2,3164,0,423,728,0,MIDM
 
 Variable Nodes_Already_Review
 Title: Nodes Already Reviewed
-Definition: Table(All_Nodes_to_Review)(Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
+Definition: Table(All_Nodes_to_Review)(Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
 NodeLocation: 768,936,1
 NodeSize: 64,40
 WindState: 2,98,82,720,558
-DefnState: 2,2546,-12,448,878,0,DFNM
+DefnState: 2,382,116,448,626,0,DFNM
 ValueState: 2,2883,20,416,303,0,MIDM
 Aliases: FormNode Fo1043942595
 TableCellDefault: Checkbox(0)
@@ -17844,7 +17844,7 @@ Title: Left to Review
 Definition: #SetDifference(\Uncolored_Nodes,\subset(Nodes_Already_Review))
 NodeLocation: 904,848,1
 NodeSize: 64,40
-ValueState: 2,2611,21,414,826,0,MIDM
+ValueState: 2,12,21,414,826,0,MIDM
 Aliases: FormNode Fo2138655939
 
 FormNode Fo2138655939
