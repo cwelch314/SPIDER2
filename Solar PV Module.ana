@@ -3278,9 +3278,9 @@ Decision Solar_Profile_Map
 Title: Solar Profile Name
 Description: The hourly solar profiles names for each sector and climate zone.
 Definition: Table(All_Sectors,PV_Climate_Zone)(~
-Choice(Static_Profile_Names,8,0),Choice(Static_Profile_Names,11,0),Choice(Static_Profile_Names,9,0),Choice(Static_Profile_Names,10,0),~
-Choice(Static_Profile_Names,12,0),Choice(Static_Profile_Names,15,0),Choice(Static_Profile_Names,13,0),Choice(Static_Profile_Names,14,0),~
-Choice(Static_Profile_Names,8,0),Choice(Static_Profile_Names,11,0),Choice(Static_Profile_Names,13,0),Choice(Static_Profile_Names,10,0))
+Choice(Static_Profile_Names,1,0),Choice(Static_Profile_Names,4,0),Choice(Static_Profile_Names,2,0),Choice(Static_Profile_Names,3,0),~
+Choice(Static_Profile_Names,5,0),Choice(Static_Profile_Names,8,0),Choice(Static_Profile_Names,6,0),Choice(Static_Profile_Names,7,0),~
+Choice(Static_Profile_Names,1,0),Choice(Static_Profile_Names,4,0),Choice(Static_Profile_Names,6,0),Choice(Static_Profile_Names,3,0))
 NodeLocation: 96,336,1
 NodeSize: 64,40
 DefnState: 2,133,210,1608,217,0,DFNM
@@ -9794,7 +9794,7 @@ NodeLocation: 568,176,1
 NodeSize: 64,40
 ValueState: 2,148,110,713,637,,MIDM
 GraphSetup: Att_GraphValueRange Ld_bsdPVACSizeAftCde:1,,0,,,,,0,5.737229734659195,0
-DisplayInputs: Index All_Sectors, Variable Load_per_Premise_by_, Constant PV_Capacity_Factor, Constant SAM_DC_to_AC_Ratio, Constant NewConstr_Code_Sys_S, Index NewConstr_Code_Param, Index PV_Sectors, Index PV_Climate_Zone, Variable Climate_Zone_Map
+DisplayInputs: Object Object, Object Variable, Object Index, Object Constant, Index All_Sectors, Variable Load_per_Premise_by_, Constant PV_Capacity_Factor, Constant SAM_DC_to_AC_Ratio, Constant NewConstr_Code_Sys_S, Index NewConstr_Code_Param, Index PV_Sectors, Index PV_Climate_Zone, Variable Climate_Zone_Map
 
 Variable Load_based_PV_AC_Sy1
 Title: Load based PV AC Sys Size
