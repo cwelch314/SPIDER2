@@ -1842,7 +1842,7 @@ Author: CWelch
 Date: Sun, Jan 9, 2022 3:29 PM
 NodeLocation: 632,208,1
 NodeSize: 72,56
-DiagState: 2,238,41,1185,675,17,10
+DiagState: 2,248,29,1185,675,17,10
 
 Variable Initial_PV_Adopters1
 Title: Initial PV Adopters
@@ -1855,7 +1855,6 @@ NodeSize: 72,40
 NodeInfo: 1,1,1,1,1,1,0,0,0,0,,0,1,0
 WindState: 2,249,104,1523,637
 ValueState: 2,631,148,690,672,0,MIDM
-NodeColor: 65535,39321,39321
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:4~
 Att_GraphIndexRange PV_Spatial_ID:1,1
 ReformVal: [PV_Sectors,PV_Spatial_ID]
@@ -2057,6 +2056,7 @@ Definition: Checkbox(0)
 NodeLocation: 944,160,1
 NodeSize: 64,40
 Aliases: FormNode Fo1462076355
+NodeColor: 65535,1,1
 
 FormNode Fo1462076355
 Title: Initialize PV with Historical Data?
@@ -2081,7 +2081,6 @@ NodeSize: 72,40
 NodeInfo: 1,1,1,1,1,1,0,0,0,0,,0,1,0
 WindState: 2,249,104,1523,637
 ValueState: 2,631,148,690,672,0,MIDM
-NodeColor: 65535,39321,39321
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:4~
 Att_GraphIndexRange PV_Spatial_ID:1,1
 ReformVal: [PV_Sectors,PV_Spatial_ID]
@@ -2093,9 +2092,16 @@ Variable Compare9
 Definition: [Initial_PV_Adopters_,Initial_PV_Adopters]
 NodeLocation: 560,360,1
 NodeSize: 72,40
-ValueState: 2,148,154,954,568,,MIDM
+ValueState: 2,280,123,954,568,,MIDM
+GraphSetup: Att_GraphIndexRange PV_Spatial_ID:1,1~
+Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [PV_Spatial_ID,Self]
-Att_ResultSliceState: [PV_Sectors,1,Self,1,PV_Spatial_ID,1]
+Att_ResultSliceState: [PV_Sectors,2,Self,1,PV_Spatial_ID,1]
+
+Text Te1347115043
+Title: Put on interface
+NodeLocation: 904,312,-1
+NodeSize: 64,40
 
 Close Initial_PV_Adoption
 
@@ -2236,7 +2242,7 @@ Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 688,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,215,72,1487,564,17,10
+DiagState: 2,170,159,1487,564,17,10
 AcpStyles: FrameNode: FrameNode_1544919954
 
 Variable PV_Adoption_Forecast
@@ -3259,7 +3265,7 @@ Author: JamesMilford
 Date: Fri, Oct 25, 2019 8:28 AM
 NodeLocation: 88,208,1
 NodeSize: 64,40
-DiagState: 2,1992,25,1013,752,17
+DiagState: 2,12,25,1013,639,17,10
 AcpStyles: FrameNode: Solar_Scale_Frame
 
 Variable Normal_Solar_Profile
@@ -3307,10 +3313,11 @@ NodeSize: 64,40
 WindState: 2,9,12,866,441
 DefnState: 2,876,444,967,221,0,DFNM
 ValueState: 2,992,453,472,237,0,MIDM
-Aliases: Alias Al1550179326, FormNode Fo1550179326, Alias Al1613372611
+Aliases: Alias Al1550179326, FormNode Fo1550179326
 ReformDef: [PV_Climate_Zone,All_Sectors]
 ReformVal: [All_Sectors,PV_Climate_Zone]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+DisplayOutputs: Variable Ld_bsdPVACSizeAftCde
 Att_EditSliceState: [New_or_Retrofit,1,All_Sectors,1,PV_Climate_Zone,1]
 
 Variable PV_Production_per_kW
@@ -3485,7 +3492,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,-17,20,1492,661,17
+DiagState: 2,0,20,1492,661,17,10
 Aliases: Alias Al1579800542
 AcpStyles: FrameNode: Load_Frame
 
@@ -3749,7 +3756,7 @@ profile[hours=Profile_Hours]
 NodeLocation: 560,176,1
 NodeSize: 64,40
 WindState: 2,98,82,796,378
-ValueState: 2,176,123,1438,595,1,MIDM
+ValueState: 2,179,74,1438,595,1,MIDM
 Aliases: Alias Al1571846275
 Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,3,Month,1,Profile_Hours,1]
 
@@ -4315,7 +4322,7 @@ Author: JamesMilford
 Date: Fri, Oct 25, 2019 8:28 AM
 NodeLocation: 88,344,1
 NodeSize: 64,40
-DiagState: 2,2268,-10,1460,544,17
+DiagState: 2,12,0,1460,544,17,10
 AcpStyles: Frame_Node: Scaling_Frame
 
 Variable Cust_Load_Profile
@@ -4395,7 +4402,7 @@ Definition: Table(All_Sectors,Solar_Scaling_Param)(~
 0,0)
 NodeLocation: 432,328,1
 NodeSize: 64,40
-DefnState: 2,626,460,828,292,0,DFNM
+DefnState: 2,806,503,762,222,0,DFNM
 ReformDef: [Solar_Scaling_Param,All_Sectors]
 
 Index Solar_Scaling_Param
@@ -4428,10 +4435,6 @@ Definition: 1
 NodeLocation: 112,192,1
 NodeSize: 64,40
 Original: Loadshape_Map
-
-Constant Co2
-NodeLocation: 280,448,1
-NodeSize: 64,40
 
 Close Load_Profile_Scaling
 
@@ -9230,7 +9233,7 @@ Date: Wed, Oct 10, 2018 9:00 AM
 NodeLocation: 544,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,34,2,1840,722,17,10
+DiagState: 2,137,98,1840,784,17,10
 Aliases: Alias Al1548967120
 AcpStyles: FrameNode: FrameNode_1544919879
 
@@ -9252,7 +9255,7 @@ Variable PV_DC_SystSize_Econ
 Title: PV DC System Size for Economics
 Units: kW-DC/system
 Description: The solar PV DC system sized used for PV economics.
-Definition: IF System_Size_Method_f = Function_of_Load_Lab THEN Load_based_PV_DC_Sys ELSE Historical_PV_DC_Sys
+Definition: Historical_PV_DC_Sys
 NodeLocation: 408,584,1
 NodeSize: 64,40
 ValueState: 2,1069,526,638,216,0,MIDM
@@ -9274,7 +9277,7 @@ Definition: Table(All_Sectors,Battery_Specs)(~
 NodeLocation: 136,176,1
 NodeSize: 64,40
 WindState: 2,297,1,801,442
-DefnState: 2,815,334,910,222,0,DFNM
+DefnState: 2,838,348,910,222,0,DFNM
 ValueState: 2,274,25,821,620,0,MIDM
 Aliases: Alias Al1550183618, FormNode Fo1550183618, FormNode Fo1542305979, FormNode Fo1567093176
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
@@ -9310,7 +9313,7 @@ Att_EditSliceState: [All_Sectors,2,System_Configuration,1,New_or_Retrofit,1]
 FormNode Fo1539014254
 Title: Quantity of Storage Units
 Definition: 0
-NodeLocation: 284,424,1
+NodeLocation: 292,416,1
 NodeSize: 60,16
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Num_Storage_Units
@@ -9378,7 +9381,7 @@ Definition: Table(All_Sectors,PV_Climate_Zone)(~
 1.247474747,1.247474747,1.258550797,1.266145855,~
 1.235148863,1.235148863,1.240244314,1.247274254,~
 0,0,0,0)
-NodeLocation: 1032,608,1
+NodeLocation: 1008,648,1
 NodeSize: 64,40
 WindState: 2,155,1,953,441
 DefnState: 2,829,381,713,303,0,DFNM
@@ -9386,6 +9389,7 @@ ValueState: 2,20,16,790,523,0,MIDM
 Aliases: Alias Al1550183623, FormNode Fo1550183623, FormNode Fo1542827262
 NodeColor: 65535,1,1
 ReformDef: [All_Sectors,PV_Climate_Zone]
+DisplayOutputs: Variable Ld_bsdPVACSizeAftCde
 
 Alias Al1542299851
 Title: PV AC System Size for Economics
@@ -9418,28 +9422,29 @@ https://efiling.energy.ca.gov/GetDocument.aspx?tn=221797~
 ~
 
 Definition: Table(All_Sectors,PV_Climate_Zone,NewConstr_Code_Param)(~
-1-Jan-2023,2.492175361,0.9,~
-1-Jan-2023,5.392108768,0.9,~
-1-Jan-2023,2.909933407,0.9,~
-1-Jan-2023,3.108812431,0.9,~
-1-Jan-2055,0,0.4,~
-1-Jan-2055,0,0.4,~
-1-Jan-2055,0,0.4,~
-1-Jan-2055,0,0.4,~
-1-Jan-2055,0,0,~
-1-Jan-2055,0,0,~
-1-Jan-2055,0,0,~
-1-Jan-2055,0,0)
+1-Jan-2023,2.492175361,~
+1-Jan-2023,5.392108768,~
+1-Jan-2023,2.909933407,~
+1-Jan-2023,3.108812431,~
+1-Jan-2055,0,~
+1-Jan-2055,0,~
+1-Jan-2055,0,~
+1-Jan-2055,0,~
+1-Jan-2055,0,~
+1-Jan-2055,0,~
+1-Jan-2055,0,~
+1-Jan-2055,0)
 NodeLocation: 640,296,1
 NodeSize: 64,40
 WindState: 2,52,125,720,350
-DefnState: 2,621,296,1005,189,0,DFNM
+DefnState: 2,845,472,773,184,0,DFNM
 ValueState: 2,416,209,685,592,,MIDM
 Aliases: Alias Al1550183210, FormNode Fo1550183210, FormNode Fo1542305980, FormNode Fo1544638294
 NodeColor: 65535,1,1
-ReformDef: [PV_Climate_Zone,All_Sectors]
+ReformDef: [All_Sectors,NewConstr_Code_Param]
 NumberFormat: 2,F,2,2,0,0,2,1,$,0,"ABBREV",0,,,0,0,15,
-Att_EditSliceState: [NewConstr_Code_Param,3,All_Sectors,1,PV_Climate_Zone,1]
+DisplayOutputs: Variable Ld_bsdPVACSizeAftCde
+Att_EditSliceState: [PV_Climate_Zone,1,NewConstr_Code_Param,3,All_Sectors,1]
 
 FormNode Fo1542305979
 Title: Battery Storage Specs
@@ -9462,7 +9467,7 @@ Variable PV_ACSystSize_byTime
 Title: PV AC System Size by Time
 Units: CEC-kW-AC/PVbldg unit
 Description: The solar PV system size in kW-AC per PV building stock unit (eg, per building or per m2 or roofspace).
-Definition: IF System_Size_Method_f=HistIntercon_Label THEN Historical_based_PV_ ELSE Load_based_PV_AC_Sy1
+Definition: Historical_based_PV_
 NodeLocation: 1120,208,1
 NodeSize: 64,40
 WindState: 2,98,82,1467,427
@@ -9473,7 +9478,7 @@ Att_ResultSliceState: [PV_Sectors,1,New_or_Retrofit,2,PV_Spatial_ID,39,System_Si
 FormNode Fo1542827262
 Title: SAM AC-to-DC Factor
 Definition: 0
-NodeLocation: 1040,660,1
+NodeLocation: 1016,700,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: SAM_DC_to_AC_Ratio
@@ -9579,54 +9584,6 @@ Title: This is wrong now. NonRes is zero when it shouldn't be.
 NodeLocation: 1552,136,-1
 NodeSize: 72,72
 
-Index System_Sizing_Method
-Att_PrevIndexValue: ['Historical Interconnection Based','Function of Load Based']
-Title: System Sizing Methods
-Definition: ['Historical Interconnection Based','Function of Load Based']
-NodeLocation: 584,848,1
-NodeSize: 64,40
-
-Variable Load_based_PV_DC_Sys
-Title: Load-based PV DC Sys Size for Econ
-Units: kW-DC/system
-Description: This is the PV DC System Size (kW DC/system) assuming that all systems are sized as a function of average customer load (kWh / premise). This approach is typically used when historical interconnection are not available or adequate to calculate historical average system sizes.  
-Definition: local x:=Avg_Load_per_Premise * PV_AC_Generation_as_ / (PV_Capacity_Factor * 8760);~
-x[All_Sectors = PV_Sectors]~
-~
-{[kWh AC / year / premise] * [fraction] / ([kWh AC /year]/[kW-DC * 8760]) * 8760 = PV kW DC}
-NodeLocation: 248,680,1
-NodeSize: 64,40
-ValueState: 2,2287,535,734,227,0,MIDM
-NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-
-Constant PV_AC_Generation_as_
-Title: PV AC Generation as Fraction of Load
-Units: fraction
-Description: Need to import this. ~
-~
-When the system sizing method chosen is "Function of Load Based," this input determines the size of the PV system and represent the fraction of a typical customer's total load that is covered by the installed PV system. This calculation is for economics purposes only, as it determines the electricity charges for the customer, which are a function of the net load for the customer.
-Definition: Table(All_Sectors)(0.9,0.4,0)
-NodeLocation: 248,792,1
-NodeSize: 64,40
-DefnState: 2,1444,594,390,172,0,DFNM
-ValueState: 2,1910,59,416,303,,MIDM
-NodeColor: 65535,1,1
-NumberFormat: 2,%,2,1,0,0,2,1,$,0,"ABBREV",0,,,0,0,15,
-
-Alias Al1724521667
-Title: Load per Premise
-Definition: 1
-NodeLocation: 408,680,1
-NodeSize: 64,40
-Original: Avg_Load_per_Premise
-
-Alias Al1613372611
-Title: PV Capacity Factor
-Definition: 1
-NodeLocation: 408,848,1
-NodeSize: 64,40
-Original: PV_Capacity_Factor
-
 Variable Historical_PV_DC_Sys
 Title: Historical PV DC Sys Size for Econ
 Definition: PV_AC_SystSize_Econ * PV_AC_to_DC_Factor
@@ -9634,96 +9591,21 @@ NodeLocation: 248,584,1
 NodeSize: 64,40
 ValueState: 2,3101,480,640,242,0,MIDM
 
-Decision System_Size_Method_f
-Title: System Size Method for Economics
-Description: Select whether system sizing for the forecast is dependent on historical interconnection data average calculations, or whether it is purely a function of customer load (e.g., if no historical data are available).
-Definition: Choice(System_Sizing_Method,1,1)
-NodeLocation: 408,464,1
-NodeSize: 64,40
-WindState: 2,883,435,720,350
-Aliases: FormNode Fo1060773059
-NodeColor: 65535,65531,1
-
-FormNode Fo1060773059
-Title: Choose System Sizing Method
-Definition: 0
-NodeLocation: 420,512,1
-NodeSize: 132,16
-NodeInfo: 1,,,0,,,,222,,,,,,0
-Original: System_Size_Method_f
-
-Decision Function_of_Load_Lab
-Title: Function of Load Label
-Definition: Choice(System_Sizing_Method,2,0)
-NodeLocation: 96,680,1
-NodeSize: 64,40
-
-Alias Al1978539203
-Title: Load per Premise by Spat ID
-Definition: 1
-NodeLocation: 856,816,1
-NodeSize: 64,40
-Original: Load_per_Premise_by_
-
-Variable Ld_bsdPVACSizeB4Code
-Title: Load-based PV_AC Size B4 Code
-Units: kW DC
-Description: Calculated PV AC system size to be used for forecasting impacts, when using the "Function of Load Based" method of generating forecasts (as opposed to "historical interconnection based"_)
-Definition: local PV_DC:=Load_per_Premise_by_ * PV_AC_Generation_as_ ~
-/ (PV_Capacity_Factor[PV_Climate_Zone=Climate_Zone_Map] * 8760);~
-~
-{[kWh AC / year / premise] * [fraction] / ([kWh AC /year]/[kW-DC * 8760]) * 8760 = PV kW DC}~
-~
-PV_DC[All_Sectors = PV_Sectors] / SAM_DC_to_AC_Ratio[All_Sectors=PV_Sectors,PV_Climate_Zone=Climate_Zone_Map] {converts PV DC to PV AC}~
-
-NodeLocation: 656,752,1
-NodeSize: 64,40
-ValueState: 2,297,5,1311,814,1,MIDM
-GraphSetup: Att_GraphIndexRange PV_Spatial_ID:1,1~
-Att_CatLineStyle Graph_Primary_Valdim:5
-ReformVal: [PV_Spatial_ID,Null]
-Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,1]
-Att_ColorRole: Null
-
 Text Te234953923
 Title: Think about forecast issue associated with calibration & different historical system size compared with perhaps smaller load based
 NodeLocation: 1820,220,-1
 NodeSize: 140,84
 
-Variable Load_based_NewCon_AC
-Title: Load_based NewCon AC Sys Size
-Definition: IF Time_Solar_PV < NewConstr_Code_Sys_S[NewConstr_Code_Param=CodeCompDate_Label, All_Sectors=PV_Sectors,PV_Climate_Zone=Climate_Zone_Map] {If Time is before code takes effect}~
-THEN Ld_bsdPVACSizeB4Code {Size before code takes effect}~
-ELSE Ld_bsdPVACSizeAftCde  {Size after code takes effect}~
-
-NodeLocation: 880,400,1
-NodeSize: 64,40
-ValueState: 2,142,78,1562,618,,MIDM
-GraphSetup: Att_GraphValueRange Load_based_NewCon_AC:1,,0,,,,,1.655947744846344,2.957556188106537,0~
-Att_GraphIndexRange Time_Solar_PV:1,,0,,,,,43345.957325086,44788.77332550287,0
-Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,1,Time_Solar_PV,1]
-
 Variable Historical_based_PV_
 Title: Historical based PV AC Sys Size
-Description: The solar PV system size in kW-AC per building stock unit (eg, per building or per m2 or roofspace). This value is only used if the basis for system forecasting is historical interconnection data (e.g., using average historical system sizes for each spatial ID).
+Description: The solar PV system size in kW-AC per building stock unit (eg, per building or per m2 or roofspace).
 Definition: IF (New_or_Retrofit=NewConstr_Label) AND (PV_Stock_Basis_by_Se[All_Sectors=PV_Sectors]=Buildings_Label)~
 THEN NewConstr_AC_SysSize~
 ELSE CEC_kW_AC_per_Bldg_U
 NodeLocation: 944,208,1
 NodeSize: 64,40
-
-Variable Load_based_PV_AC_Sys
-Title: Load-based PV AC SysSize
-Description: Calculated PV AC system size to be used for forecasting impacts, when using the "Function of Load Based" method of generating forecasts (as opposed to "historical interconnection based"_)~
-~
-IF stock basis is building type, it uses the calculated system size per building. Otherwise, the stock basis would be in m2 and therefore the system size is simply the conversion of roof space in m2 converted to the kW AC that could be installed on that amount of roofspace (since system sizes will ultimately be multiplied by the adopted stock basis, which is either buildings or m2).  
-Definition: IF PV_Stock_Basis_by_Se[All_Sectors=PV_Sectors]=Buildings_Label~
-THEN Ld_bsdPVACSizeB4Code~
-ELSE Watts_per_m2_Roofspc {in DC} * kW_per_W / SAM_DC_to_AC_Ratio[All_Sectors=PV_Sectors,PV_Climate_Zone=Climate_Zone_Map]
-NodeLocation: 1032,752,1
-NodeSize: 64,40
-ValueState: 2,2334,120,852,561,,MIDM
-Att_ResultSliceState: [New_or_Retrofit,1,PV_Sectors,1,PV_Spatial_ID,1]
+ValueState: 2,406,316,907,550,,MIDM
+Att_ResultSliceState: [PV_Sectors,2,New_or_Retrofit,1,PV_Spatial_ID,1,Time_Solar_PV,1]
 
 Variable Va15
 NodeLocation: 1928,528,1
@@ -9734,38 +9616,49 @@ Title: Sizing multiplier to account for diff hist/forecast sizes?
 NodeLocation: 456,64,1
 NodeSize: 80,40
 
-Variable Ld_bsdPVACSizeAftCde
-Title: Load-based PV_AC Size AFTER NewCon Code
-Units: PV AC/system
-Description: This is only the value that will be used AFTER the new construction code takes effect. ~
-~
-Calculated PV AC system size to be used for forecasting impacts, when using the "Function of Load Based" method of generating forecasts (as opposed to "historical interconnection based"_)
-Definition: local PV_DC:=Load_per_Premise_by_ * NewConstr_Code_Sys_S[PV_Climate_Zone=Climate_Zone_Map,All_Sectors=PV_Sectors,NewConstr_Code_Param=ForceFract_Load_Labe] ~
-/ (PV_Capacity_Factor[PV_Climate_Zone=Climate_Zone_Map] * 8760);~
-~
-{[kWh AC / year / premise] * [fraction] / ([kWh AC /year]/[kW-DC * 8760]) * 8760 = PV kW DC}~
-~
-PV_DC[All_Sectors = PV_Sectors] / SAM_DC_to_AC_Ratio[All_Sectors=PV_Sectors,PV_Climate_Zone=Climate_Zone_Map] {converts PV DC to PV AC}
-NodeLocation: 704,512,1
+Decision HistIntercon_Label
+Title: Historical Intercon Label
+Definition: Choice(System_Sizing_Method,1,0)
+NodeLocation: 1120,88,1
 NodeSize: 64,40
-ValueState: 2,148,110,713,637,,MIDM
-GraphSetup: Att_GraphValueRange Ld_bsdPVACSizeAftCde:1,,0,,,,,0,5.737229734659195,0
 
-Module NewConstr_Param
-Title: NewConstr Param
+Variable Document_all_this
+Title: Document all this
+NodeLocation: 1488,264,1
+NodeSize: 64,40
+NodeColor: 65535,1,1
+
+Text Te1829229507
+Title: Is it rooftop constrained? Or load constrained? Need to know/specify.~
+~
+Should economic system size when not using historical interconnection be different from forecast system size? 
+NodeLocation: 1592,480,-1
+NodeSize: 128,120
+
+Module Old2
+Title: Old
+Author: CWelch
+Date: Wed, Feb 16, 2022 9:45 AM
+NodeLocation: 808,688,1
+NodeSize: 64,40
+DiagState: 2,0,0,1132,507,17,10
+
+Module NewConstr_Param_OLD
+Title: NewConstr Param OLD
 Author: CWelch
 Date: Tue, Nov 23, 2021 3:33 PM
-NodeLocation: 1200,512,1
+NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,212,189,944,480,17
+DiagState: 2,1063,185,789,216,17,10
 
 Index NewConstr_Code_Param
-Att_PrevIndexValue: ['Code Compliance Date','Forced System Size (kW DC), if applicable','Forced Fraction of Load (%), if applicable']
+Att_PrevIndexValue: ['Code Compliance Date','Forced System Size (kW DC), if applicable']
 Title: NewConstr Code Parameter
-Definition: ['Code Compliance Date','Forced System Size (kW DC), if applicable','Forced Fraction of Load (%), if applicable']
+Definition: ['Code Compliance Date','Forced System Size (kW DC), if applicable']
 NodeLocation: 576,64,1
 NodeSize: 64,40
+DisplayOutputs: Variable Ld_bsdPVACSizeAftCde
 {!40300|Att_SlicerPopupSize: 267,48}
 
 Decision CodeCompDate_Label
@@ -9782,14 +9675,136 @@ NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,,,,,,,0,,,,,,0
 
-Decision ForceFract_Load_Labe
-Title: ForceFract Load Label
-Definition: Choice(NewConstr_Code_Param,3,0)
-NodeLocation: 416,64,1
-NodeSize: 64,40
-NodeInfo: 1,,,,,,,0,,,,,,0
+Close NewConstr_Param_OLD
 
-Close NewConstr_Param
+Index System_Sizing_Method
+Att_PrevIndexValue: ['Historical Interconnection Based','Function of Load Based']
+Title: System Sizing Methods
+Definition: ['Historical Interconnection Based','Function of Load Based']
+NodeLocation: 112,64,1
+NodeSize: 64,40
+
+Variable Load_based_PV_DC_Sys
+Title: Load-based PV DC Sys Size for Econ
+Units: kW-DC/system
+Description: This is the PV DC System Size (kW DC/system) assuming that all systems are sized as a function of average customer load (kWh / premise). This approach is typically used when historical interconnection are not available or adequate to calculate historical average system sizes.  
+Definition: local x:=Avg_Load_per_Premise * PV_AC_Generation_as_ / (PV_Capacity_Factor * 8760);~
+x[All_Sectors = PV_Sectors]~
+~
+{[kWh AC / year / premise] * [fraction] / ([kWh AC /year]/[kW-DC * 8760]) * 8760 = PV kW DC}
+NodeLocation: 112,344,1
+NodeSize: 64,40
+ValueState: 2,2287,535,734,227,0,MIDM
+NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+
+Constant PV_AC_Generation_as_
+Title: PV AC Generation as Fraction of Load
+Units: fraction
+Description: Need to import this. ~
+~
+When the system sizing method chosen is "Function of Load Based," this input determines the size of the PV system and represent the fraction of a typical customer's total load that is covered by the installed PV system. This calculation is for economics purposes only, as it determines the electricity charges for the customer, which are a function of the net load for the customer.
+Definition: Table(All_Sectors)(0.9,0.4,0)
+NodeLocation: 112,456,1
+NodeSize: 64,40
+DefnState: 2,1444,594,390,172,0,DFNM
+ValueState: 2,1910,59,416,303,,MIDM
+NodeColor: 65535,1,1
+NumberFormat: 2,%,2,1,0,0,2,1,$,0,"ABBREV",0,,,0,0,15,
+
+Alias Al1724521667
+Title: Load per Premise
+Definition: 1
+NodeLocation: 112,64,1
+NodeSize: 64,40
+Original: Avg_Load_per_Premise
+
+Decision System_Size_Method_f
+Title: System Size Method for Economics
+Description: Select whether system sizing for the forecast is dependent on historical interconnection data average calculations, or whether it is purely a function of customer load (e.g., if no historical data are available).
+Definition: Choice(System_Sizing_Method,1,1)
+NodeLocation: 272,128,1
+NodeSize: 64,40
+WindState: 2,883,435,720,350
+Aliases: FormNode Fo1060773059
+NodeColor: 65535,65531,1
+
+FormNode Fo1060773059
+Title: Choose System Sizing Method
+Definition: 0
+NodeLocation: 284,176,1
+NodeSize: 132,16
+NodeInfo: 1,,,0,,,,222,,,,,,0
+Original: System_Size_Method_f
+
+Decision Function_of_Load_Lab
+Title: Function of Load Label
+Definition: Choice(System_Sizing_Method,2,0)
+NodeLocation: 112,64,1
+NodeSize: 64,40
+
+Variable Ld_bsdPVACSizeB4Code
+Title: Load-based PV_AC Size B4 Code
+Units: kW DC
+Description: Calculated PV AC system size to be used for forecasting impacts, when using the "Function of Load Based" method of generating forecasts (as opposed to "historical interconnection based"_)
+Definition: local PV_DC:=Load_per_Premise_by_ * PV_AC_Generation_as_ ~
+/ (PV_Capacity_Factor[PV_Climate_Zone=Climate_Zone_Map] * 8760);~
+~
+{[kWh AC / year / premise] * [fraction] / ([kWh AC /year]/[kW-DC * 8760]) * 8760 = PV kW DC}~
+~
+PV_DC[All_Sectors = PV_Sectors] / SAM_DC_to_AC_Ratio[All_Sectors=PV_Sectors,PV_Climate_Zone=Climate_Zone_Map] {converts PV DC to PV AC}~
+
+NodeLocation: 520,416,1
+NodeSize: 64,40
+ValueState: 2,297,5,1311,814,1,MIDM
+GraphSetup: Att_GraphIndexRange PV_Spatial_ID:1,1~
+Att_CatLineStyle Graph_Primary_Valdim:5
+ReformVal: [PV_Spatial_ID,Null]
+Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,1]
+Att_ColorRole: Null
+
+Variable Load_based_NewCon_AC
+Title: Load_based NewCon AC Sys Size
+Definition: IF Time_Solar_PV < NewConstr_Code_Sys_S[NewConstr_Code_Param=CodeCompDate_Label, All_Sectors=PV_Sectors,PV_Climate_Zone=Climate_Zone_Map] {If Time is before code takes effect}~
+THEN Ld_bsdPVACSizeB4Code {Size before code takes effect}~
+ELSE Ld_bsdPVACSizeAftCde  {Size after code takes effect}~
+
+NodeLocation: 744,64,1
+NodeSize: 64,40
+ValueState: 2,142,78,1562,618,,MIDM
+GraphSetup: Att_GraphValueRange Load_based_NewCon_AC:1,,0,,,,,1.655947744846344,2.957556188106537,0~
+Att_GraphIndexRange Time_Solar_PV:1,,0,,,,,43345.957325086,44788.77332550287,0
+Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,1,Time_Solar_PV,1]
+
+Variable Load_based_PV_AC_Sys
+Title: Load-based PV AC SysSize
+Description: Calculated PV AC system size to be used for forecasting impacts, when using the "Function of Load Based" method of generating forecasts (as opposed to "historical interconnection based"_)~
+~
+IF stock basis is building type, it uses the calculated system size per building. Otherwise, the stock basis would be in m2 and therefore the system size is simply the conversion of roof space in m2 converted to the kW AC that could be installed on that amount of roofspace (since system sizes will ultimately be multiplied by the adopted stock basis, which is either buildings or m2).  
+Definition: IF PV_Stock_Basis_by_Se[All_Sectors=PV_Sectors]=Buildings_Label~
+THEN Ld_bsdPVACSizeB4Code~
+ELSE Watts_per_m2_Roofspc {in DC} * kW_per_W / SAM_DC_to_AC_Ratio[All_Sectors=PV_Sectors,PV_Climate_Zone=Climate_Zone_Map]
+NodeLocation: 896,416,1
+NodeSize: 64,40
+ValueState: 2,2334,120,852,561,,MIDM
+Att_ResultSliceState: [New_or_Retrofit,1,PV_Sectors,1,PV_Spatial_ID,1]
+
+Variable Ld_bsdPVACSizeAftCde
+Title: Load-based PV_AC Size AFTER NewCon Code
+Units: PV AC/system
+Description: This is only the value that will be used AFTER the new construction code takes effect. ~
+~
+Calculated PV AC system size to be used for forecasting impacts, when using the "Function of Load Based" method of generating forecasts (as opposed to "historical interconnection based"_)
+Definition: local PV_DC:=Load_per_Premise_by_ * NewConstr_Code_Sys_S[PV_Climate_Zone=Climate_Zone_Map,All_Sectors=PV_Sectors,NewConstr_Code_Param=ForceFract_Load_Labe] ~
+/ (PV_Capacity_Factor[PV_Climate_Zone=Climate_Zone_Map] * 8760);~
+~
+{[kWh AC / year / premise] * [fraction] / ([kWh AC /year]/[kW-DC * 8760]) * 8760 = PV kW DC}~
+~
+PV_DC[All_Sectors = PV_Sectors] / SAM_DC_to_AC_Ratio[All_Sectors=PV_Sectors,PV_Climate_Zone=Climate_Zone_Map] {converts PV DC to PV AC}
+NodeLocation: 568,176,1
+NodeSize: 64,40
+ValueState: 2,148,110,713,637,,MIDM
+GraphSetup: Att_GraphValueRange Ld_bsdPVACSizeAftCde:1,,0,,,,,0,5.737229734659195,0
+DisplayInputs: Index All_Sectors, Variable Load_per_Premise_by_, Constant PV_Capacity_Factor, Constant SAM_DC_to_AC_Ratio, Constant NewConstr_Code_Sys_S, Index NewConstr_Code_Param, Index PV_Sectors, Index PV_Climate_Zone, Variable Climate_Zone_Map
 
 Variable Load_based_PV_AC_Sy1
 Title: Load based PV AC Sys Size
@@ -9797,35 +9812,16 @@ Description: The solar PV system size in kW-AC per building stock unit (eg, per 
 Definition: IF (New_or_Retrofit=NewConstr_Label) AND (PV_Stock_Basis_by_Se[All_Sectors=PV_Sectors]=Buildings_Label)~
 THEN Load_based_NewCon_AC~
 ELSE Watts_per_m2_Roofspc * kW_per_W / SAM_DC_to_AC_Ratio[All_Sectors=PV_Sectors,PV_Climate_Zone=Climate_Zone_Map]
-NodeLocation: 1088,400,1
+NodeLocation: 952,64,1
 NodeSize: 64,40
 ValueState: 2,375,146,899,584,,MIDM
 Att_ResultSliceState: [PV_Sectors,1,New_or_Retrofit,2,PV_Spatial_ID,1,Time_Solar_PV,1]
-
-Decision HistIntercon_Label
-Title: Historical Intercon Label
-Definition: Choice(System_Sizing_Method,1,0)
-NodeLocation: 1120,88,1
-NodeSize: 64,40
-
-Variable Document_all_this
-Title: Document all this
-NodeLocation: 1456,272,1
-NodeSize: 64,40
-NodeColor: 65535,1,1
-
-Text Te1829229507
-Title: Is it rooftop constrained? Or load constrained? Need to know/specify.~
-~
-Should economic system size when not using historical interconnection be different from forecast system size? 
-NodeLocation: 1592,480,-1
-NodeSize: 128,120
 
 Decision System_Size_Method_1
 Title: System Size Method for Impacts
 Description: Select whether system sizing for the forecast is dependent on historical interconnection data average calculations, or whether it is purely a function of customer load (e.g., if no historical data are available).
 Definition: Choice(System_Sizing_Method,1,1)
-NodeLocation: 1328,400,1
+NodeLocation: 176,64,1
 NodeSize: 64,40
 WindState: 2,883,435,720,350
 Aliases: FormNode Fo1814025155
@@ -9834,11 +9830,13 @@ NodeColor: 65535,65531,1
 FormNode Fo1814025155
 Title: System Size Method for Impacts
 Definition: 0
-NodeLocation: 1332,448,1
+NodeLocation: 180,112,1
 NodeSize: 132,16
 NodeInfo: 1,,,0,,,,206,,,,,,0
 NodeColor: 65535,65531,1
 Original: System_Size_Method_1
+
+Close Old2
 
 Close Equipment_Sizing
 
@@ -10073,7 +10071,7 @@ NodeSize: 64,40
 WindState: 2,319,12,1255,632
 Aliases: FormNode Fo1535066238, FormNode Fo1539140368, FormNode Fo1247325693
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
+DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Variable Ld_bsdPVACSizeAftCde
 {!40300|Att_SlicerPopupSize: 795,83}
 OnChange: Set_Optimization_Sec()
 
@@ -10215,6 +10213,7 @@ Definition: ['Coastal','Desert','Inland','Mountain']
 NodeLocation: 960,64,1
 NodeSize: 64,40
 ValueState: 2,491,274,416,303,,MIDM
+DisplayOutputs: Variable Ld_bsdPVACSizeAftCde
 {!40300|Att_SlicerPopupSize: 282,84}
 
 Constant Spatial_ID_to_CZ_Map
@@ -10230,6 +10229,7 @@ Title: Climate Zone Map
 Definition: Spatial_ID_to_CZ_Map[All_Spatial_ID=PV_Spatial_ID]
 NodeLocation: 960,264,1
 NodeSize: 64,40
+DisplayOutputs: Variable Ld_bsdPVACSizeAftCde
 
 Index All_Technologies
 Att_PrevIndexValue: ['Solar PV','Solar PV + Storage']
