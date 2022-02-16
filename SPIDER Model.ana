@@ -485,7 +485,7 @@ ELSE Show_ACP_Window(PV_Impact_Out,PV_Impact_Titles,PV_Impact1, 'Result')
 Decision PV_Impact1
 Title: PV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Impact_Titles,4,0)
+Definition: Choice(PV_Impact_Titles,1,0)
 NodeLocation: 616,440,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -17626,7 +17626,7 @@ Author: CWelch
 Date: Tue, Nov 16, 2021 12:28 PM
 NodeLocation: 160,624,1
 NodeSize: 64,40
-DiagState: 2,117,0,1774,854,17,10
+DiagState: 2,0,-21,1774,761,17,10
 AcpStyles: Show_Object:no
 
 {!40404|FreePassObjectCount 5G4nCJrM31tNLh2R}
@@ -17669,12 +17669,12 @@ Original: Suitability_for_Sect
 Variable Nodecolor_for_change
 Title: Nodecolor for change
 Definition: 1
-NodeLocation: 808,640,1
+NodeLocation: 952,712,1
 NodeSize: 64,40
 NodeColor: 65535,39321,39321
 
 Variable Nodes_to_change
-Att_PrevIndexValue: [Init_PV_Calib_Adopt,Initial_PV_Adopters1,Initial_PV_Adopters,Calibr_All_PV_Sect,Calibr_All_EV_Sect,Calib_All_BESS_Sect,Calibrate_All_Sector,Nodecolor_for_change,Nodecolor_To_check]
+Att_PrevIndexValue: [Init_PV_Calib_Adopt,Calibr_All_PV_Sect,Calibr_All_EV_Sect,Init_BESS_Adoption,Calib_All_BESS_Sect,Calibrate_All_Sector,Nodecolor_for_change,Nodecolor_To_check]
 Title: Nodes to change
 Definition: update_nodes_to_chan;~
 #FindObjects(Color,attribute:'NodeColor')
@@ -17682,12 +17682,12 @@ NodeLocation: 912,456,1
 NodeSize: 64,40
 ValueState: 2,27,111,429,497,0,MIDM
 Aliases: FormNode Fo1730677955, FormNode Fo1725779139
-{!40700|Att_CellFormat: CellFormats(CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,10,header:0),CellSpan(Nodes_to_change,CellFill(0xffffff80),1,10,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,10,header:0))}
+{!40700|Att_CellFormat: CellFormats(CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,9,header:0),CellSpan(Nodes_to_change,CellFill(0xffffff80),1,9,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,9,header:0))}
 
 Variable Color
 Title: Color
 Definition: NodeColor of Nodecolor_for_change
-NodeLocation: 984,608,1
+NodeLocation: 1016,584,1
 NodeSize: 64,40
 ValueState: 2,1262,174,416,303,,MIDM
 
@@ -17725,7 +17725,7 @@ NodeSize: 140,80
 
 Variable update_nodes_to_chan
 Title: update nodes to change
-Definition: 0
+Definition: 1
 NodeLocation: 1136,472,1
 NodeSize: 64,40
 
@@ -17826,7 +17826,7 @@ Definition: Table(All_Nodes_to_Review)(Checkbox(0),Checkbox(0),Checkbox(0),Check
 NodeLocation: 768,936,1
 NodeSize: 64,40
 WindState: 2,98,82,720,558
-DefnState: 2,382,116,448,626,0,DFNM
+DefnState: 2,1395,90,448,626,0,DFNM
 ValueState: 2,2883,20,416,303,0,MIDM
 Aliases: FormNode Fo1043942595
 TableCellDefault: Checkbox(0)

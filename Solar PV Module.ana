@@ -1668,7 +1668,7 @@ THEN Initial_PV_Adopters1   {building units}~
 ELSE Replace_X_with_Y(Cumul_Cap_Installs[Interconnect_Date=PV_Sim_Start_Minus_1], Null, 0)   {MW-AC}
 NodeLocation: 336,432,1
 NodeSize: 64,40
-ValueState: 2,445,280,967,347,,MIDM
+ValueState: 2,445,280,967,347,0,MIDM
 NodeColor: 65535,39321,39321
 
 Variable Tot_NC_Install_EOP
@@ -2027,7 +2027,7 @@ Index All_PV_Sectors
 Att_PrevIndexValue: ['Residential','NonResidential']
 Title: All PV Sectors
 Definition: ['Residential','NonResidential']
-NodeLocation: 800,56,1
+NodeLocation: 944,304,1
 NodeSize: 64,40
 
 Variable Initial_PV_Adopters_
@@ -2061,7 +2061,7 @@ NodeColor: 65535,1,1
 FormNode Fo1462076355
 Title: Initialize PV with Historical Data?
 Definition: 0
-NodeLocation: 892,224,1
+NodeLocation: 988,224,1
 NodeSize: 148,16
 Original: Initialize_PV_with_H
 
@@ -2088,19 +2088,9 @@ NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Stored_ID_Interconn,All_Sectors,PV_Spatial_ID]
 Att_ResultSliceState: [PV_Sectors,1,PV_Sectors,2,PV_Spatial_ID,1]
 
-Variable Compare9
-Definition: [Initial_PV_Adopters_,Initial_PV_Adopters]
-NodeLocation: 560,360,1
-NodeSize: 72,40
-ValueState: 2,280,123,954,568,,MIDM
-GraphSetup: Att_GraphIndexRange PV_Spatial_ID:1,1~
-Att_CatLineStyle Graph_Primary_Valdim:5
-ReformVal: [PV_Spatial_ID,Self]
-Att_ResultSliceState: [PV_Sectors,2,Self,1,PV_Spatial_ID,1]
-
 Text Te1347115043
 Title: Put on interface
-NodeLocation: 904,312,-1
+NodeLocation: 1088,160,-1
 NodeSize: 64,40
 
 Close Initial_PV_Adoption
