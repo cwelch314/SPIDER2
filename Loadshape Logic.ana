@@ -621,14 +621,14 @@ WindState: 2,98,82,1318,570
 DefnState: 2,75,42,1702,798,0,DFNM
 ValueState: 2,292,35,1069,802,1,MIDM
 Aliases: Alias Al1534527346, FormNode Fo1534259705, FormNode Fo1534308067
-GraphSetup: Att_GraphIndexRange Hours_8784:1,,0,,,,,3372.6427912712097,4038.504934310913,0~
-Att_ContLineStyle Graph_Primary_Valdim:1~
-Att_AreaFill Graph_Primary_Valdim:0~
+GraphSetup: Att_GraphValueRange Hourly_Profiles:1,,1,,,,,0.0004050837829709053,1.5533343315124513,0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
-Att_GraphValueRange Hourly_Profiles:1,,1,,,,,0.0004050837829709053,1.5533343315124513,0
+Att_AreaFill Graph_Primary_Valdim:0~
+Att_ContLineStyle Graph_Primary_Valdim:1~
+Att_GraphIndexRange Hours_8784:1,,1,,,,,3372.6427912712097,4038.504934310913,0
 ReformDef: [Hourly_Profile_Names,Hours_8784]
 ReformVal: [Hours_8784,Null]
-Att_ResultSliceState: [All_Hourly_Profile_N,25,Hours_8784,1]
+Att_ResultSliceState: [All_Hourly_Profile_N,18,Hours_8784,1]
 Att_ColorRole: Null
 
 FormNode Fo1534259705
@@ -3534,7 +3534,7 @@ Att_AreaFill Graph_Primary_Valdim:0~
 Att_Stacked_Lines Graph_Primary_Valdim:0
 ReformVal: [Time_of_Day,All_Day_Types]
 TableCellDefault: 0
-Att_ResultSliceState: [Static_Profile_Names,25,Month,8,All_Day_Types,5,Time_of_Day,1]
+Att_ResultSliceState: [Static_Profile_Names,18,Month,1,All_Day_Types,5,Time_of_Day,1]
 Att_EditSliceState: [Month,12,All_Day_Types,7,Static_Profile_Names,1,Time_of_Day,1]
 {!40600|Att_ClusterIndex: All_Day_Types}
 
@@ -3700,7 +3700,7 @@ ValueState: 2,0,79,1461,641,1,MIDM
 ReformVal: [Hours_8784,Selected_Profiles]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Hours_8784]
-Att_ResultSliceState: [Selected_Profiles,6,Selected_Profiles,7,Hours_8784,1]
+Att_ResultSliceState: [Selected_Profiles,18,Selected_Profiles,18,Hours_8784,1]
 Att_ColorRole: Null
 
 Variable Day_Type_Count
@@ -3811,10 +3811,11 @@ ELSE values[noPeakTypes=Day_Type]~
 NodeLocation: 600,64,1
 NodeSize: 64,40
 WindState: 2,183,192,1208,350
-ValueState: 2,127,29,1130,666,1,MIDM
+ValueState: 2,263,82,1130,666,1,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [Time_of_Day,Day_Type]
-Att_ResultSliceState: [Selected_Profiles,7,Month,10,Day_Type,1,Time_of_Day,1]
+Att__TotalsIndex: [Month]
+Att_ResultSliceState: [Selected_Profiles,18,Month,0,Day_Type,1,Time_of_Day,1]
 {!40600|Att_ClusterIndex: Month}
 
 Button Save_Static_ProfName
@@ -3852,7 +3853,7 @@ WindState: 2,102,82,1345,569
 ValueState: 2,88,0,1240,669,1,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [Time_of_Day,All_Day_Types]
-Att_ResultSliceState: [Month,1,Static_Profile_Names,1,All_Day_Types,1,Time_of_Day,1]
+Att_ResultSliceState: [Month,1,Static_Profile_Names,18,All_Day_Types,1,Time_of_Day,1]
 {!40600|Att_ClusterIndex: All_Day_Types}
 
 Variable Reindex_Day_Counts
@@ -4337,6 +4338,12 @@ Att_ResultSliceState: [Static_Profile_Names,5,All_Day_Types,1,Month,1]
 {!50500|Att_TailNode: Use_Peak_in_Profile}
 {!50500|Att_ArrowProperties: 0,,1}
 
+Variable Va17
+Definition: PositionInIndex(Selected_Profiles, Static_Profile_Names, Selected_Profiles) AND PositionInIndex(Day_Type, All_Day_Types, Day_Type)
+NodeLocation: 1328,416,1
+NodeSize: 64,40
+ValueState: 2,743,206,1023,554,0,MIDM
+
 Close Daily_Profile_Logic
 
 Module Structural_Variables
@@ -4345,7 +4352,7 @@ Author: JamesMilford
 Date: Thu, Aug 16, 2018 5:26 AM
 NodeLocation: 480,696,1
 NodeSize: 64,40
-DiagState: 2,282,85,1098,517,17
+DiagState: 2,282,85,1098,517,17,10
 AcpStyles: Show_Object:no
 
 Index Month
@@ -4354,7 +4361,7 @@ Title: Month
 Definition: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 NodeLocation: 248,544,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 887,196}
+{!40300|Att_SlicerPopupSize: 897,196}
 
 Index Time_of_Day
 Att_PrevIndexValue: ['12am-1am','1am-2am','2am-3am','3am-4am','4am-5am','5am-6am','6am-7am','7am-8am','8am-9am','9am-10am','10am-11am','11am-12pm','12pm-1pm','1pm-2pm','2pm-3pm','3pm-4pm','4pm-5pm','5pm-6pm','6pm-7pm','7pm-8pm','8pm-9pm','9pm-10pm','10pm-11pm','11pm-12am']
@@ -4498,7 +4505,7 @@ Definition: Subset(Profiles_to_Evaluate)
 NodeLocation: 248,64,1
 NodeSize: 64,40
 ValueState: 2,835,200,573,516,0,MIDM
-{!40300|Att_SlicerPopupSize: 352,785}
+{!40300|Att_SlicerPopupSize: 362,785}
 
 FormNode Fo1534259708
 Title: Weekday Label
@@ -4615,8 +4622,9 @@ Definition: ['TMY_Resid_Solar_Coast (kW-hr/system)','TMY_Resid_Solar_Inland (kW-
 NodeLocation: 384,352,1
 NodeSize: 64,40
 WindState: 2,77,350,858,573
+ValueState: 2,1164,366,419,490,0,MIDM
 NodeColor: 65535,65531,1
-{!40300|Att_SlicerPopupSize: 407,785}
+{!40300|Att_SlicerPopupSize: 417,785}
 
 FormNode Fo1540241306
 Title: Yes Label
