@@ -142,7 +142,7 @@ Date: Mon, Aug 18, 2014 9:09 PM
 NodeLocation: 784,80,7
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-DiagState: 2,244,90,1086,552,17,10
+DiagState: 2,244,90,1361,621,17,10
 WindState: 2,102,82,476,224
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
@@ -17766,7 +17766,7 @@ Author: CWelch
 Date: Tue, Nov 16, 2021 12:28 PM
 NodeLocation: 160,624,1
 NodeSize: 64,40
-DiagState: 2,0,-21,1774,761,17,10
+DiagState: 2,-20,190,1774,761,17,10
 AcpStyles: Show_Object:no
 
 {!40404|FreePassObjectCount 5G4nCJrM31tNLh2R}
@@ -17814,15 +17814,15 @@ NodeSize: 64,40
 NodeColor: 65535,39321,39321
 
 Variable Nodes_to_change
-Att_PrevIndexValue: [Avg_AC_DC_CZ_Fcast,AC_DC_Factor_by_Time,Hist_AC_to_DC_Factor,Fcst_AC_to_DC_Factor,DC_to_AC_Fact_byTime,Init_PV_Calib_Adopt,Calibr_All_PV_Sect,PV_AC_to_DC_Factor,Calibr_All_EV_Sect,Init_BESS_Adoption,Calib_All_BESS_Sect,Calibrate_All_Sector,Nodecolor_for_change,Nodecolor_To_check]
+Att_PrevIndexValue: [Init_PV_Calib_Adopt,Calibr_All_PV_Sect,Calibr_All_EV_Sect,Init_BESS_Adoption,Calib_All_BESS_Sect,Calibrate_All_Sector,Nodecolor_for_change,Nodecolor_To_check]
 Title: Nodes to change
 Definition: update_nodes_to_chan;~
 #FindObjects(Color,attribute:'NodeColor')
 NodeLocation: 912,456,1
 NodeSize: 64,40
-ValueState: 2,27,111,429,497,0,MIDM
+ValueState: 2,172,224,429,497,0,MIDM
 Aliases: FormNode Fo1730677955, FormNode Fo1725779139
-{!40700|Att_CellFormat: CellFormats(CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,15,header:0),CellSpan(Nodes_to_change,CellFill(0xffffff80),1,15,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,15,header:0))}
+{!40700|Att_CellFormat: CellFormats(CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,9,header:0),CellSpan(Nodes_to_change,CellFill(0xffffff80),1,9,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,9,header:0))}
 
 Variable Color
 Title: Color
@@ -17865,7 +17865,7 @@ NodeSize: 140,80
 
 Variable update_nodes_to_chan
 Title: update nodes to change
-Definition: 1
+Definition: 0
 NodeLocation: 1136,472,1
 NodeSize: 64,40
 
@@ -17918,7 +17918,7 @@ Definition: update_nodes_to_chan;~
 #FindObjects((NodeColor of Nodecolor_To_check),attribute:'NodeColor')
 NodeLocation: 1232,800,1
 NodeSize: 64,40
-ValueState: 2,562,139,374,373,0,MIDM
+ValueState: 2,805,335,374,373,0,MIDM
 Aliases: FormNode Fo1861831875
 ReformVal: [Undefined,Self]
 
@@ -17984,7 +17984,7 @@ Title: Left to Review
 Definition: #SetDifference(\Uncolored_Nodes,\subset(Nodes_Already_Review))
 NodeLocation: 904,848,1
 NodeSize: 64,40
-ValueState: 2,12,21,414,826,0,MIDM
+ValueState: 2,162,41,414,826,0,MIDM
 Aliases: FormNode Fo2138655939
 
 FormNode Fo2138655939
