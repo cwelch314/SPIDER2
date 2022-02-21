@@ -27,7 +27,7 @@ Date: Wed, Aug 8, 2018 1:55 PM
 NodeLocation: 968,944,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,416,59,832,485,17,10
+DiagState: 2,185,62,977,479,17,10
 NodeColor: 57311,57311,57311
 
 Decision Tier_Period_Labels
@@ -2124,7 +2124,7 @@ Date: Wed, Aug 8, 2018 7:26 PM
 NodeLocation: 536,1040,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,414,114,951,549,17
+DiagState: 2,414,114,951,549,17,10
 
 Variable Map_USURDB_Columns
 Title: Map USURDB Columns to Data
@@ -2152,10 +2152,11 @@ Description: USURDB data for rates and rate attributes (eg, max, adj, sell) mapp
 Definition: IgnoreWarnings(Stored_Filtered_USUR[USURDB_Columns=Map_USURDB_Columns])
 NodeLocation: 256,72,1
 NodeSize: 64,40
-ValueState: 2,1008,44,826,539,0,MIDM
+ValueState: 2,305,213,826,539,0,MIDM
+NodeColor: 65535,39321,39321
 ReformVal: [All_Tiers,All_Periods]
 NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [All_Data_Types,3,Rate_Names,29,Data_Attribute,3,All_Periods,1,All_Tiers,1]
+Att_ResultSliceState: [All_Data_Types,3,Rate_Names,21,Data_Attribute,1,All_Periods,1,All_Tiers,1]
 
 Decision Map_USURDB_Units_to_
 Title: Map USURDB Units to Type
@@ -2393,7 +2394,7 @@ Date: Fri, Aug 10, 2018 2:24 PM
 NodeLocation: 968,1040,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,405,4,1382,535,17
+DiagState: 2,-73,151,1382,535,17,10
 NodeColor: 57311,57311,57311
 
 Decision TOU_Schedule_Labels
@@ -2535,7 +2536,8 @@ Description: The periods associated with flat demand schedules.
 Definition: Stored_Filtered_USUR[USURDB_Columns=Flat_Schedules, @Flat_Schedules=@Month]
 NodeLocation: 568,392,1
 NodeSize: 64,40
-ValueState: 2,1742,313,1119,421,0,MIDM
+ValueState: 2,236,288,1346,441,0,MIDM
+NodeColor: 65535,39321,39321
 
 Variable Periods_by_TOU_Sched
 Title: Periods by TOU Schedule
@@ -2595,7 +2597,7 @@ Date: Thu, Aug 16, 2018 5:26 AM
 NodeLocation: 536,944,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,2351,15,938,616,17
+DiagState: 2,12,15,938,616,17,10
 NodeColor: 58982,58982,58982
 
 Variable Fixed_Charges_Units
@@ -2604,7 +2606,8 @@ Description: The unit of measure for fixed charges.
 Definition: Stored_Filtered_USUR[USURDB_Columns=FixedChrg_Unit_Label]
 NodeLocation: 272,184,1
 NodeSize: 64,40
-ValueState: 2,104,106,1014,357,,MIDM
+ValueState: 2,632,127,572,639,0,MIDM
+NodeColor: 65535,39321,39321
 
 Decision FixedChrg_Unit_Label
 Title: Fixed Charge Units Label
@@ -2643,6 +2646,7 @@ Definition: Stored_Filtered_USUR[USURDB_Columns=Fixed_Charges_Label]
 NodeLocation: 272,64,1
 NodeSize: 64,40
 ValueState: 2,104,106,1097,666,0,MIDM
+NodeColor: 65535,39321,39321
 
 Variable Min_Charges_Units
 Title: Min Charges Units
@@ -2651,6 +2655,7 @@ Definition: Stored_Filtered_USUR[USURDB_Columns=Min_Chrg_Units_Label]
 NodeLocation: 624,184,1
 NodeSize: 64,40
 ValueState: 2,104,106,1014,357,,MIDM
+NodeColor: 65535,39321,39321
 
 Decision Min_Chrg_Units_Label
 Title: Min Charge Units Label
@@ -2689,6 +2694,7 @@ Definition: Stored_Filtered_USUR[USURDB_Columns=Min_Charge_Label]
 NodeLocation: 624,64,1
 NodeSize: 64,40
 ValueState: 2,516,194,781,662,0,MIDM
+NodeColor: 65535,39321,39321
 
 Close Find_Fixed_Charges
 
@@ -2710,7 +2716,8 @@ NodeLocation: 976,88,1
 NodeSize: 64,40
 WindState: 2,102,82,1272,359
 ValueState: 2,104,106,705,637,,MIDM
-{!40300|Att_SlicerPopupSize: 496,717}
+NodeColor: 65535,39321,39321
+{!40300|Att_SlicerPopupSize: 534,717}
 
 Index Tier_Period_Column
 Title: Tier & Period Columns
@@ -2742,7 +2749,7 @@ Title: Data Attribute
 Definition: ['rate','max','adj','sell']
 NodeLocation: 400,88,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 327,70}
+{!40300|Att_SlicerPopupSize: 337,70}
 
 Index All_Data_Types
 Att_PrevIndexValue: ['flatdemandstructure','demandratestructure','energyratestructure','coincidentratestructure']
@@ -2751,7 +2758,7 @@ Definition: ['flatdemandstructure','demandratestructure','energyratestructure','
 NodeLocation: 256,88,1
 NodeSize: 64,40
 WindState: 2,40,131,720,350
-{!40300|Att_SlicerPopupSize: 392,70}
+{!40300|Att_SlicerPopupSize: 397,70}
 
 Decision Energy_Rate_Label
 Title: Energy Rate Label
@@ -2921,6 +2928,7 @@ NodeLocation: 832,272,1
 NodeSize: 64,40
 WindState: 2,98,82,1217,840
 ValueState: 2,548,427,416,430,,MIDM
+NodeColor: 65535,39321,39321
 {!40300|Att_SlicerPopupSize: 227,238}
 
 Index All_Tiers
@@ -2928,6 +2936,7 @@ Title: All Tiers
 Definition: #Find_Valid_TiersPrds[.subscripts='tiers']
 NodeLocation: 832,184,1
 NodeSize: 64,40
+NodeColor: 65535,39321,39321
 {!40300|Att_SlicerPopupSize: 257,56}
 
 Index Periods_Copy
@@ -2971,7 +2980,7 @@ Description: The rows corresponding to the filter selections.
 Definition: Subset(Include_in_Filter5)
 NodeLocation: 184,560,1
 NodeSize: 64,40
-ValueState: 2,1677,4,354,801,0,MIDM
+ValueState: 2,907,20,354,801,0,MIDM
 
 Variable Stored_Filtered_USUR
 Title: Stored Filtered USURDB Data
@@ -2980,8 +2989,8 @@ Definition: USURDB_Data[All_USURDB_Rows=Rows_for_Rate_Names]
 NodeLocation: 792,336,1
 NodeSize: 64,40
 WindState: 2,3,5,720,350
-ValueState: 2,22,95,1301,839,0,MIDM
-ReformVal: [Null,USURDB_Columns]
+ValueState: 2,22,95,1650,839,0,MIDM
+ReformVal: [USURDB_Columns,Rate_Names]
 Att_ResultSliceState: [Rate_Names,4,USURDB_Columns,1]
 
 Variable Rows_for_Rate_Names
@@ -2991,7 +3000,7 @@ Definition: SubIndex(Rate_Names_and_Dates, Rate_Names, Filtered_USURDB_Rows)
 NodeLocation: 640,336,1
 NodeSize: 64,40
 WindState: 2,716,118,1025,491
-ValueState: 2,1648,13,951,636,0,MIDM
+ValueState: 2,725,32,951,636,0,MIDM
 
 Variable Filtered_Rate_Names
 Title: Filtered Rate Names
@@ -3027,7 +3036,7 @@ Definition: Filtered_Rate_Names & Pipe_Separator1 & Stored_Filtered_Star
 NodeLocation: 488,336,1
 NodeSize: 64,40
 WindState: 2,102,82,720,350
-ValueState: 2,854,90,424,723,0,MIDM
+ValueState: 2,788,24,539,800,0,MIDM
 NodeColor: 65535,1,1
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"yyyy-MM",0,,,0,0,15
 
@@ -3045,6 +3054,7 @@ NodeLocation: 488,448,1
 NodeSize: 64,40
 DefnState: 2,1164,154,231,640,0,DFNM
 ValueState: 2,424,114,416,615,,MIDM
+NodeColor: 65535,65532,19661
 
 Decision Hyphen_Separator
 Title: Hyphen Separator
@@ -3287,7 +3297,7 @@ Definition: INDEX rowsIncluded:=Subset(Include_in_Filter3);~
 USURDB_Data[USURDB_Columns=End_Date_Label, All_USURDB_Rows=rowsIncluded]
 NodeLocation: 544,184,1
 NodeSize: 64,40
-ValueState: 2,1081,40,416,759,,MIDM
+ValueState: 2,1081,40,416,759,0,MIDM
 
 Decision End_Date_Filter
 Title: End Date Filter
@@ -3341,7 +3351,7 @@ Definition: Table(Rate_Name_Options)(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 NodeLocation: 688,376,1
 NodeSize: 64,40
 WindState: 2,1570,82,720,550
-DefnState: 2,670,65,647,530,0,DFNM
+DefnState: 2,670,65,538,702,0,DFNM
 ValueState: 2,46,346,416,303,,MIDM
 Aliases: FormNode Fo1547585855, FormNode Fo1547586717
 TableCellDefault: 1
