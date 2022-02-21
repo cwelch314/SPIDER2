@@ -4763,7 +4763,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 256,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,132,28,1445,696,17,10
+DiagState: 2,1059,75,1351,856,17,10
 Aliases: Alias Al1548967139
 AcpStyles: FrameNode: FrameNode_1544920029
 
@@ -4971,203 +4971,204 @@ Decision Select_Customer_Rate
 Title: Select Customer Rate
 Description: Select the rate tariffs for each system type. For each rate tariff, specify the start date when the rate became effective (the date you select does not have to match the date included in the rate name). If you wish to apply rate escalation to any of the rates, you can do so by checking the box. Escalation will use the start date as the base year for inflation (ie, inflation factors are 1.0 in the base year). Generally, the first and last rates (on a chronological basis) will apply (de)escalation to fill in the missing years on the outer edges of the simulation horizon. For example, say you have two rate vintages, where the first rate starts in 1/1/2019 and the second rate starts in 1/1/2020. If you choose to apply escalation to each of these rates, any simulated time period prior to 1/1/2019 will apply de-escalation rates (eg, if the escalation rate is 2%, then the rates applied to 1/1/2018 will include a de-escalation multiplier of 1/[1+2%]). Moreover, any simulated time period after 1/1/2020 will apply escalation rates (eg, if the escalation rate is 2%, then the rates applied to 1/1/2021 will include an escalation multiplier of [1+2%]). Rates in the middle of the chronological order may not require escalation if it is known with certainty that the rates were constant from the start date until the subsequent rate's start date.
 Definition: Table(Rate_Vintage,PV_Climate_Zone,Pre_and_Post_System,All_Sectors,Rate_Setting)(~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,97,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,77,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,62,0),Checkbox(1),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,109,0),Checkbox(1),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,97,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,97,0),Checkbox(0))
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0),~
+Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0))
 NodeLocation: 96,216,1
 NodeSize: 64,40
 WindState: 2,108,40,1402,650
-DefnState: 2,263,158,1281,478,0,DFNM
+DefnState: 2,170,64,1408,807,0,DFNM
 ValueState: 2,302,51,935,658,0,MIDM
 Aliases: FormNode Fo1547766909, FormNode Fo1547828216
 NodeColor: 65535,65531,1
-ReformDef: [All_Sectors,Rate_Vintage]
+ReformDef: [Rate_Setting,All_Sectors]
 ReformVal: [Pre_and_Post_System,Rate_Vintage]
 TableCellDefault: Rate_Setting_Default
-Att_EditSliceState: [PV_Climate_Zone,1,Rate_Setting,1,Pre_and_Post_System,2,Rate_Vintage,5,All_Sectors,2]
+Att_ResultSliceState: [All_Sectors,1,PV_Climate_Zone,1,Rate_Setting,2,Rate_Vintage,1,Pre_and_Post_System,1]
+Att_EditSliceState: [Pre_and_Post_System,1,Rate_Vintage,1,PV_Climate_Zone,3,All_Sectors,2,Rate_Setting,1]
 
 Decision Num_of_Rate_Vintages
 Title: Number of Rate Vintages
@@ -5612,7 +5613,7 @@ Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0))
 NodeLocation: 96,464,1
 NodeSize: 64,40
 WindState: 2,52,379,1347,518
-DefnState: 2,25,81,1081,431,0,DFNM
+DefnState: 2,363,295,1081,431,0,DFNM
 Aliases: FormNode Fo1547764385, Alias Al1547766712, FormNode Fo1547766739, FormNode Fo1547828218
 NodeColor: 65535,65531,1
 ReformDef: [Rate_Attribute_Setti,PV_Climate_Zone]
@@ -6048,12 +6049,12 @@ Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(0))
 NodeLocation: 408,312,1
 NodeSize: 64,40
 WindState: 2,178,338,1156,511
-DefnState: 2,327,286,1303,302,0,DFNM
+DefnState: 2,236,202,974,280,0,DFNM
 Aliases: FormNode Fo1547766195, Alias Al1547767161, FormNode Fo1547767167, FormNode Fo1547828220
 NodeColor: 65535,65531,1
 ReformDef: [Rate_Attribute_Setti,PV_Climate_Zone]
 TableCellDefault: Energy_DefaultAttrib
-Att_EditSliceState: [All_Sectors,14,Rate_Vintage,1,Pre_and_Post_System,2,PV_Climate_Zone,1,Rate_Attribute_Setti,1]
+Att_EditSliceState: [All_Sectors,20,Rate_Vintage,1,Pre_and_Post_System,2,PV_Climate_Zone,1,Rate_Attribute_Setti,1]
 
 Module Rate_Attribute_Mappi
 Title: Rate Attribute Mapping
@@ -6250,7 +6251,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 400,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,52,83,1702,503,17,10
+DiagState: 2,69,184,1702,503,17,10
 Aliases: Alias Al1548967140
 AcpStyles: FrameNode: FrameNode_1544920081
 
@@ -6297,7 +6298,7 @@ ValueState: 2,316,110,949,634,0,MIDM
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [System_Types,PV_Operating_Year]
-Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Pre_and_Post_System,1,Rate_Vintage,4,PV_Operating_Year,1,System_Types,1]
+Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Pre_and_Post_System,1,Rate_Vintage,1,PV_Operating_Year,1,System_Types,1]
 {!40600|Att_StackingIndex: PV_Climate_Zone}
 {!40600|Att_ClusterIndex: System_Types}
 
@@ -6507,444 +6508,174 @@ Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,5,0),Choice(Bill_Components_None,5,0),~
 Choice(Bill_Components_None,6,0),Choice(Bill_Components_None,6,0),~
 Choice(Bill_Components_None,7,0),Choice(Bill_Components_None,7,0),~
 Choice(Bill_Components_None,10,0),Choice(Bill_Components_None,10,0),~
 Choice(Bill_Components_None,11,0),Choice(Bill_Components_None,11,0),~
 Choice(Bill_Components_None,12,0),Choice(Bill_Components_None,12,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
@@ -6956,20 +6687,11 @@ Choice(Bill_Components_None,9,0),Choice(Bill_Components_None,9,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0))
 NodeLocation: 88,184,1
 NodeSize: 64,40
 WindState: 2,841,241,720,490
-DefnState: 2,439,252,1325,541,0,DFNM
+DefnState: 2,124,237,1552,414,0,DFNM
 ValueState: 2,194,195,975,518,0,MIDM
 Aliases: FormNode Fo1574745288
 NodeColor: 65535,65531,1
@@ -13560,7 +13282,7 @@ WindState: 2,98,82,1059,632
 {!40300|Att_SlicerPopupSize: 337,140}
 
 Index Rate_Names_with_None
-Att_PrevIndexValue: ['None','A (Primary) | 2014-01','A (Secondary) | 2014-01','A (Secondary) | 2014-08','A (Secondary) | 2015-04','A Primary (CLOSED Rate) | 2017-01','A Primary | 2016-08','A Secondary (CLOSED Rate) | 2017-01','A Secondary | 2016-08','A6 Primary | 2016-08','A6-TOU (Primary) | 2014-01','A6-TOU (Primary) | 2014-08','A6-TOU (Primary) | 2015-05','A6-TOU Primary | 2017-01','A6-TOU Primary | 2018-01','A6-TOU Primary Substation | 2017-01','A6-TOU Primary Substation | 2018-01','A6-TOU Transmission | 2017-01','A6-TOU Transmission | 2018-01','AL-TOU Primary (0-500 KW) | 2017-01','AL-TOU Primary (0-500 KW) | 2018-01','AL-TOU Primary (Above 500 KW) | 2017-01','AL-TOU Primary (Above 500 KW) | 2018-01','AL-TOU Primary (Above 500kW) | 2018-06','AL-TOU Primary | 2016-08','AL-TOU Primary Substation | 2017-01','AL-TOU Primary Substation | 2018-01','AL-TOU Secondary (0-500 KW) | 2015-05','AL-TOU Secondary (0-500 KW) | 2017-01','AL-TOU Secondary (0-500 KW) | 2018-01','AL-TOU Secondary (0-500 KW) | 2019-01','AL-TOU Secondary (Above 500 KW) | 2017-01','AL-TOU Secondary (Above 500 KW) | 2018-01','AL-TOU Secondary (Above 500kW) | 2018-07','AL-TOU Secondary | 2014-01','AL-TOU Secondary | 2014-08','AL-TOU Secondary | 2016-08','AL-TOU Secondary >500KW | 2014-01','AL-TOU Secondary 500KW | 2014-08','AL-TOU Secondary Substation | 2017-01','AL-TOU Secondary Substation | 2018-01','AL-TOU Transmission (0-500 KW) | 2017-01','AL-TOU Transmission (0-500 KW) | 2018-01','AL-TOU Transmission (Above 500 KW) | 2017-01','AL-TOU Transmission (Above 500 KW) | 2018-01','AL-TOU2 Primary (0-500kW) | 2018-06','AL-TOU2 Primary (Above 500kW) | 2018-06','AL-TOU2 Secondary (0-500kW) | 2018-06','AL-TOU2 Secondary (Above 500kW) | 2018-06','DG-R Primary (0-500 KW) | 2017-01','DG-R Primary (0-500 KW) | 2018-01','DG-R Primary (Above 500 KW) | 2017-01','DG-R Primary (Above 500 KW) | 2018-01','DG-R Primary | 2016-08','DG-R Primary | 2018-06','DG-R Primary Substation | 2017-01','DG-R Primary Substation | 2018-01','DG-R Secondary (0-500 KW) | 2017-01','DG-R Secondary (0-500 KW) | 2018-01','DG-R Secondary (0-500kW) | 2018-06','DG-R Secondary (Above 500 KW) | 2017-01','DG-R Secondary (Above 500 KW) | 2018-01','DG-R Secondary (Above 500kW) | 2018-06','DG-R Secondary | 2016-08','DG-R Secondary | 2019-01','DG-R Secondary Substation | 2017-01','DG-R Secondary Substation | 2018-01','DG-R Transmission (0-500 KW) | 2017-01','DG-R Transmission (0-500 KW) | 2018-01','DG-R Transmission (Above 500 KW) | 2017-01','DG-R Transmission (Above 500 KW) | 2018-01','DR - Coastal Baseline Region | 2014-02','DR - Coastal Baseline Region | 2014-08','DR - Coastal Baseline Region | 2015-05','DR - Coastal Baseline Region | 2016-07','DR - Coastal Baseline Region | 2017-01','DR - Coastal Baseline Region | 2018-01','DR - Coastal Baseline Region | 2018-10','DR - Desert Baseline Region | 2014-02','DR - Desert Baseline Region | 2014-08','DR - Desert Baseline Region | 2015-05','DR - Desert Baseline Region | 2016-07','DR - Desert Baseline Region | 2017-01','DR - Desert Baseline Region | 2018-01','DR - Desert Baseline Region | 2018-10','DR - Inland Baseline Region | 2014-02','DR - Inland Baseline Region | 2014-08','DR - Inland Baseline Region | 2015-05','DR - Inland Baseline Region | 2016-07','DR - Inland Baseline Region | 2017-01','DR - Inland Baseline Region | 2018-01','DR - Inland Baseline Region | 2018-10','DR - Mountain Baseline Region | 2014-02','DR - Mountain Baseline Region | 2014-08','DR - Mountain Baseline Region | 2015-05','DR - Mountain Baseline Region | 2016-07','DR - Mountain Baseline Region | 2017-01','DR - Mountain Baseline Region | 2018-01','DR - Mountain Baseline Region | 2018-10','DR- TOU- Coastal Baseline Region | 2014-02','DR- TOU- Coastal Baseline Region | 2014-08','DR- TOU- Coastal Baseline Region | 2015-05','DR- TOU- Desert Baseline Region | 2014-02','DR- TOU- Desert Baseline Region | 2014-08','DR- TOU- Desert Baseline Region | 2015-05','DR- TOU- Inland Baseline Region | 2014-02','DR- TOU- Inland Baseline Region | 2014-08','DR- TOU- Inland Baseline Region | 2015-05','DR- TOU- Mountain Baseline Region | 2014-02','DR- TOU- Mountain Baseline Region | 2014-08','DR- TOU- Mountain Baseline Region | 2015-05','DR-LI - Coastal Baseline Region | 2014-07','DR-LI - Coastal Baseline Region | 2015-05','DR-LI - Coastal Baseline Region | 2016-07','DR-LI - Coastal Baseline Region | 2017-01','DR-LI - Coastal Baseline Region | 2018-01','DR-LI - Desert Baseline Region | 2014-07','DR-LI - Desert Baseline Region | 2015-05','DR-LI - Desert Baseline Region | 2016-07','DR-LI - Desert Baseline Region | 2017-01','DR-LI - Desert Baseline Region | 2018-01','DR-LI - Inland Baseline Region | 2014-07','DR-LI - Inland Baseline Region | 2015-05','DR-LI - Inland Baseline Region | 2016-07','DR-LI - Inland Baseline Region | 2017-01','DR-LI - Inland Baseline Region | 2018-01','DR-LI - Mountain Baseline Region | 2014-07','DR-LI - Mountain Baseline Region | 2015-05','DR-LI - Mountain Baseline Region | 2016-07','DR-LI - Mountain Baseline Region | 2017-01','DR-LI - Mountain Baseline Region | 2018-01','DR-SES (Solar Energy Systems) | 2014-05','DR-SES (Solar Energy Systems) | 2014-08','DR-SES (Solar Energy Systems) | 2015-05','DR-SES (Solar Energy Systems) | 2016-07','DR-SES (Solar Energy Systems) | 2017-01','DR-SES (Solar Energy Systems) | 2018-01','EV-GIR1 (Experimental) | 2018-06','EV-GIR2 (Experimental) | 2018-06','EV-TOU | 2014-07','EV-TOU | 2015-05','EV-TOU | 2017-01','EV-TOU | 2018-01','EV-TOU-2 | 2014-07','EV-TOU-2 | 2015-05','EV-TOU-2 | 2017-01','EV-TOU-2 | 2018-01','TOU-A Primary (0-5kW) | 2018-06','TOU-A Primary (20-50kW) | 2018-06','TOU-A Primary (5-20kW) | 2018-06','TOU-A Primary | 2017-01','TOU-A Primary | 2018-01','TOU-A Secondary (0-5kW) | 2018-06','TOU-A Secondary (20-50kW) | 2018-06','TOU-A Secondary (5-20kW) | 2018-06','TOU-A Secondary (Above 50kW) | 2018-06','TOU-A Secondary | 2017-01','TOU-A Secondary | 2018-01','TOU-A-2 Primary (0-5kW) | 2018-06','TOU-A-2 Primary (20-50kW) | 2018-06','TOU-A-2 Primary (5-20kW) | 2018-06','TOU-A-2 Primary (Above 50kW) | 2018-06','TOU-A-2 Secondary (0-5kW) | 2018-06','TOU-A-2 Secondary (20-50kW) | 2018-06','TOU-A-2 Secondary (5-20kW) | 2018-06','TOU-A-3 Primary (0-5kW) | 2018-06','TOU-A-3 Primary (20-50kW) | 2018-06','TOU-A-3 Primary (5-20kW) | 2018-06','TOU-A-3 Primary (Above 50kW) | 2018-06','TOU-A-3 Secondary (0-5kW) | 2018-06','TOU-A-3 Secondary (20-50kW) | 2018-06','TOU-A-3 Secondary (5-20kW) | 2018-06','TOU-A-P Primary | 2016-08','TOU-A-P Secondary | 2016-08','TOU-DR Coastal Baseline Region | 2016-07','TOU-DR Coastal Baseline Region | 2017-01','TOU-DR Coastal Baseline Region | 2018-01','TOU-DR Desert Baseline Region | 2016-07','TOU-DR Desert Baseline Region | 2017-01','TOU-DR Desert Baseline Region | 2018-01','TOU-DR Inland Baseline Region | 2016-07','TOU-DR Inland Baseline Region | 2017-01','TOU-DR Inland Baseline Region | 2018-01','TOU-DR Mountain Baseline Region | 2016-07','TOU-DR Mountain Baseline Region | 2017-01','TOU-DR Mountain Baseline Region | 2018-01','TOU-DR1 Coastal | 2018-01','TOU-DR1 Coastal | 2019-06','TOU-DR1 Desert | 2018-01','TOU-DR1 Desert | 2019-06','TOU-DR1 Inland | 2018-01','TOU-DR1 Inland | 2019-06','TOU-DR1 Mountain | 2018-01','TOU-DR1 Mountain | 2019-06','TOU-DR2 Coastal | 2019-06','TOU-DR2 Desert | 2019-06','TOU-DR2 Inland | 2019-06','TOU-DR2 Mountain | 2019-06','TOU-M | 2018-06']
+Att_PrevIndexValue: ['None','AL-TOU Secondary (0-500 KW) | 2019-01','NYPA Test | 2019-01','NYPA Test 2 | 2019-01']
 Title: Rate Names with None
 Definition: Concat(None_Label, Rate_Names)
 NodeLocation: 384,1104,1
@@ -14038,7 +13760,7 @@ Title: Rate Setting
 Definition: ['Rate Name','Rate Start Date','Allow Rate Escalation']
 NodeLocation: 816,704,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 262,48}
+{!40300|Att_SlicerPopupSize: 267,48}
 
 Decision Name_Setting_Label
 Title: Name Setting Label
@@ -15764,6 +15486,8 @@ Close Technical_Potential
 
 Module DC_to_AC_Ratios
 Title: DC to AC Ratios
+Author: CWelch
+Date: Mon, Feb 21, 2022 12:08 PM
 NodeLocation: 688,152,1
 NodeSize: 64,40
 
