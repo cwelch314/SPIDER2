@@ -3036,7 +3036,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 256,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,290,85,1222,566,17,10
+DiagState: 2,2467,133,1222,566,17,10
 AcpStyles: FrameNode: Solar_Frame
 
 Variable FirstYr_Annual_Solar
@@ -3044,11 +3044,12 @@ Title: First-Year Annual Solar
 Units: kWh/year-system
 Description: The annual energy production from a PV system in its first year of operation.
 Definition: Sum(Applied_SolarProfile[@PV_Operating_Year=1] * Applied_Monthly_Mult[Static_Profile_Names=Solar_Profile_Map[All_Sectors=PV_Sectors]], Profile_Hours, Month)
-NodeLocation: 720,208,1
+NodeLocation: 720,304,1
 NodeSize: 64,40
-ValueState: 2,438,409,1024,248,0,MIDM
+ValueState: 2,2328,163,719,660,0,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [PV_Climate_Zone,Undefined]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att_ColorRole: Null
 {!40600|Att_ClusterIndex: Null}
 
@@ -3057,13 +3058,13 @@ Title: Percent of Load Met by Solar
 Units: fraction
 Description: The percentage of annual customer consumption met by solar production.
 Definition: Divide(FirstYr_Annual_Solar, Scaled_Annual_Load, True)
-NodeLocation: 880,208,1
+NodeLocation: 880,304,1
 NodeSize: 64,40
-ValueState: 2,399,215,1039,475,0,MIDM
-Aliases: FormNode Fo1539221198, FormNode Fo1572476392
+ValueState: 2,715,119,753,701,0,MIDM
+Aliases: FormNode Fo1539221198, FormNode Fo1572476392, Alias Al49435683
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9
-ReformVal: [PV_Sectors,PV_Climate_Zone]
-NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+ReformVal: [PV_Climate_Zone,PV_Sectors]
+NumberFormat: 2,%,2,0,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att_ResultSliceState: [PV_Sectors,1,PV_Sectors,2,PV_Climate_Zone,1]
 Att_ColorRole: Null
 {!40600|Att_ClusterIndex: Null}
@@ -3071,7 +3072,7 @@ Att_ColorRole: Null
 Alias Al1534881034
 Title: Annual Load
 Definition: 1
-NodeLocation: 880,304,1
+NodeLocation: 880,400,1
 NodeSize: 64,40
 Original: Scaled_Annual_Load
 
@@ -3080,7 +3081,7 @@ Title: Degradation Factor
 Units: dmnls
 Description: A time-series of solar output degradation factors.
 Definition: (1-PV_Degradation_Rate)^(PV_Operating_Year-1)
-NodeLocation: 560,304,1
+NodeLocation: 560,400,1
 NodeSize: 64,40
 ValueState: 2,184,186,854,540,1,MIDM
 
@@ -3089,7 +3090,7 @@ Title: PV Degradation Rate
 Units: fraction/year
 Description: The annual rate at which PV production declines.
 Definition: SubTable(Single_Cell_Inputs[SingCell_Input_Names=Degradation_Label])
-NodeLocation: 408,304,1
+NodeLocation: 408,400,1
 NodeSize: 64,40
 Aliases: Alias Al1550179301, FormNode Fo1550179305, FormNode Fo1539715757
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
@@ -3097,7 +3098,7 @@ NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 FormNode Fo1539715757
 Title: PV Degradation Rate
 Definition: 0
-NodeLocation: 408,356,1
+NodeLocation: 408,452,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: PV_Degradation_Rate
@@ -3115,21 +3116,21 @@ Title: Monthly Solar
 Units: kW-hr/system
 Description: The scaled hourly solar profiles by month of year.
 Definition: Scaled_Hourly_Solar[Hours_8784=Monthly_Profile_Map] 
-NodeLocation: 248,112,1
+NodeLocation: 248,208,1
 NodeSize: 64,40
 ValueState: 2,52,9,1375,781,,MIDM
 Aliases: Alias Al1571850056
 GraphSetup: Att_GraphValueRange Monthly_Solar:1,,1,,,,,-0.29800040274858475,5.434707164764404,0~
 Att_GraphIndexRange Month_Day_and_Hour:1,,1,,,,,143,306,1
 ReformVal: [Month_Day_and_Hour,Month]
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,3,Month,1,Month_Day_and_Hour,1]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,2,Month,1,Month_Day_and_Hour,1]
 
 Variable Day_Type_Solar
 Title: Day Type Solar
 Units: kW-hr/system
 Description: The scaled solar profile by weekday and weekend days for each month. This is bounded to not go negative (ie, we ignore the very small parasitic loads).
 Definition: MAX([0, Daily_Prof_with_Peak[Static_Profile_Names=Solar_Profile_Map[All_Sectors=PV_Sectors], All_Day_Types=DayType_for_Type_Hr, Time_of_Day=Hour_for_Type_and_Hr]]) * Solar_Scaling_Factor
-NodeLocation: 248,304,1
+NodeLocation: 248,400,1
 NodeSize: 64,40
 WindState: 2,595,12,720,350
 ValueState: 2,57,9,1172,686,,MIDM
@@ -3141,7 +3142,7 @@ Title: Weekly Solar
 Units: kW-hr/system
 Description: The average weekly solar profile scaled to the assumed new system size.
 Definition: PerKW_Week_SolarProf * PV_DC_SystSize_Econ 
-NodeLocation: 248,208,1
+NodeLocation: 248,304,1
 NodeSize: 64,40
 WindState: 2,101,546,913,350
 ValueState: 2,108,-7,1310,671,,MIDM
@@ -3151,9 +3152,9 @@ Module Solar_Profile_Scalin
 Title: Solar Profile Scaling
 Author: JamesMilford
 Date: Fri, Oct 25, 2019 8:28 AM
-NodeLocation: 88,208,1
+NodeLocation: 88,248,1
 NodeSize: 64,40
-DiagState: 2,264,70,1013,597,17,10
+DiagState: 2,215,70,1013,597,17,10
 AcpStyles: FrameNode: Solar_Scale_Frame
 
 Variable Normal_Solar_Profile
@@ -3209,9 +3210,10 @@ Definition: Table(All_Sectors,PV_Climate_Zone)(~
 'Solar_Downstate (W-hr/system)','Solar_LI&HV (W-hr/system)','Solar_Upstate (W-hr/system)')
 NodeLocation: 96,336,1
 NodeSize: 64,40
-DefnState: 2,133,210,1608,217,0,DFNM
-ValueState: 2,198,253,1102,217,0,MIDM
-ReformVal: [All_Sectors,PV_Climate_Zone]
+DefnState: 2,290,96,1062,651,0,DFNM
+ValueState: 2,361,264,985,477,0,MIDM
+ReformDef: [PV_Climate_Zone,All_Sectors]
+ReformVal: [PV_Climate_Zone,All_Sectors]
 TableCellDefault: Choice(Static_Profile_Names,2,0)
 
 Constant PV_Capacity_Factor
@@ -3270,7 +3272,8 @@ Description: The annual energy produced per kW-DC of installed solar.
 Definition: PV_Capacity_Factor[All_Sectors=PV_Sectors] * Hours_per_Year
 NodeLocation: 416,336,1
 NodeSize: 64,40
-ValueState: 2,329,59,682,630,0,MIDM
+ValueState: 2,329,59,750,683,0,MIDM
+ReformVal: [PV_Climate_Zone,PV_Sectors]
 Att__TotalsIndex: []
 
 Variable Per_kW_SolarProfie
@@ -3349,24 +3352,11 @@ Description: A scaling factor to convert the annual energy represented by the 87
 Definition: VAR totSolar:=Sum(Select_Hrly_Profiles[Selected_Profiles=Solar_Profile_Map[All_Sectors=PV_Sectors]], Hours_8784);   {For normalizing by total annual energy production}~
 ~
 Divide(PV_Production_per_kW * PV_DC_SystSize_Econ, totSolar)   {Scaled by per-kW system production, per-system size, and normalized by total annual energy production}
-NodeLocation: 416,480,1
+NodeLocation: 568,464,1
 NodeSize: 64,40
 WindState: 2,-7,7,1503,350
-ValueState: 2,1176,327,471,231,0,MIDM
-
-Variable Scaled_Hourly_Solar
-Title: Scaled Hourly Solar
-Units: kW-hr/system
-Description: The scaled solar profile by hour of the year. This is bounded to not go negative (ie, we ignore the very small parasitic loads).
-Definition: VAR profile:=MAX([0, Select_Hrly_Profiles[Selected_Profiles=Solar_Profile_Map[All_Sectors=PV_Sectors]]]);~
-~
-profile * Solar_Scaling_Factor
-NodeLocation: 96,480,1
-NodeSize: 64,40
-ValueState: 2,107,115,1021,550,,MIDM
-ReformVal: [Hours_8784,Null]
-Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,2,Hours_8784,1]
-Att_ColorRole: Null
+ValueState: 2,829,91,737,684,0,MIDM
+ReformVal: [PV_Climate_Zone,PV_Sectors]
 
 Alias Al1571850383
 Title: PV DC System Size for Economics
@@ -3385,17 +3375,33 @@ Show_description:20
 
 Close Solar_Profile_Scalin
 
+Variable Scaled_Hourly_Solar
+Title: Scaled Hourly Solar
+Units: kW-hr/system
+Description: The scaled solar profile by hour of the year. This is bounded to not go negative (ie, we ignore the very small parasitic loads).
+Definition: VAR profile:=MAX([0, Select_Hrly_Profiles[Selected_Profiles=Solar_Profile_Map[All_Sectors=PV_Sectors]]]);~
+~
+profile * Solar_Scaling_Factor
+NodeLocation: 248,112,1
+NodeSize: 64,40
+ValueState: 2,662,118,790,689,0,MIDM
+ReformVal: [PV_Climate_Zone,PV_Sectors]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Hours_8784]
+Att_ResultSliceState: [Hours_8784,0,PV_Sectors,2,PV_Climate_Zone,2]
+Att_ColorRole: Null
+
 Alias Al1571850213
 Title: Selected Profile Granularity
 Definition: 1
-NodeLocation: 560,112,1
+NodeLocation: 560,208,1
 NodeSize: 64,40
 Original: Sel_Profile_Granular
 
 FormNode Fo1571850212
 Title: Selected Profile Granularity
 Definition: 0
-NodeLocation: 564,56,1
+NodeLocation: 564,152,1
 NodeSize: 132,16
 NodeInfo: 1,0,0,0,0,0,0,214,0,,0,,,0
 Original: Sel_Profile_Granular
@@ -3403,14 +3409,14 @@ Original: Sel_Profile_Granular
 Alias Al1571850241
 Title: Applied Solar Profile
 Definition: 1
-NodeLocation: 560,208,1
+NodeLocation: 560,304,1
 NodeSize: 64,40
 Original: Applied_SolarProfile
 
 Alias Al1571851253
 Title: Solar Profile Handles
 Definition: 1
-NodeLocation: 408,208,1
+NodeLocation: 408,304,1
 NodeSize: 64,40
 NodeColor: 19661,48336,65535
 Original: Solar_Profile_Handle
@@ -3420,11 +3426,13 @@ Title: Levelized Solar Profile
 Units: lev kW-hr/system
 Description: The solar profile levelized over all years in the system lifetime.
 Definition: PMT(Nominal_Equity_Rate, Economic_Lifetime, -NPV(Nominal_Equity_Rate, Applied_SolarProfile, PV_Operating_Year))
-NodeLocation: 720,304,1
+NodeLocation: 720,400,1
 NodeSize: 64,40
 WindState: 2,517,8,1275,405
-ValueState: 2,292,298,1126,599,,MIDM
+ValueState: 2,232,172,1126,599,,MIDM
 Aliases: Alias Al1571852559
+ReformVal: [Profile_Hours,PV_Climate_Zone]
+Att_ResultSliceState: [Month,7,PV_Sectors,29,PV_Climate_Zone,2,Profile_Hours,1]
 
 Close Solar_Energy_Product
 
@@ -3435,7 +3443,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,289,118,1492,661,17,10
+DiagState: 2,2023,84,1734,623,17,10
 Aliases: Alias Al1579800542
 AcpStyles: FrameNode: Load_Frame
 
@@ -3443,8 +3451,8 @@ Variable Weekly_Customer_Load
 Title: Weekly Customer Load
 Units: kW-hr/customer
 Description: The weekly customer load scaled to its final assumed levels.
-Definition: Reindex_to_Week(Cust_Load_Profile) * Load_Scaling_Factor
-NodeLocation: 248,344,1
+Definition: Weekly_Nrml_Loadshap * Annual_Load * Load_Scaling_Factor
+NodeLocation: 416,344,1
 NodeSize: 64,40
 WindState: 2,102,81,1099,351
 ValueState: 2,9,4,1487,691,1,MIDM
@@ -3462,7 +3470,7 @@ Title: Load Net of Solar
 Units: kW-hr/customer
 Description: The load net of solar per system.
 Definition: Applied_Load_Profile - Applied_SolarProfile
-NodeLocation: 568,240,1
+NodeLocation: 736,240,1
 NodeSize: 64,40
 WindState: 2,139,2,1190,503
 ValueState: 2,9,4,1487,691,1,MIDM
@@ -3480,7 +3488,7 @@ Title: Pre/Post Load by OpYr
 Units: kW-hr/customer
 Description: Customer load before and after installation of a system. The PV Operating Year index captures PV system degradation over the life of the system, consistent with the input for PV_degradation_rate.
 Definition: Table(Pre_and_Post_System)(Pre_System_Load,Net_Load)
-NodeLocation: 888,192,1
+NodeLocation: 1056,192,1
 NodeSize: 64,40
 WindState: 2,546,219,720,350
 ValueState: 2,341,32,1109,855,1,MIDM
@@ -3502,12 +3510,13 @@ Title: Scaled Annual Load
 Units: kWh/year-customer
 Description: The annual consumption per customer.
 Definition: Sum(Applied_Load_Profile * Load_Monthly_Mults, Profile_Hours, Month)
-NodeLocation: 728,344,1
+NodeLocation: 896,344,1
 NodeSize: 64,40
-ValueState: 2,460,157,773,667,0,MIDM
+ValueState: 2,2946,143,773,667,0,MIDM
 Aliases: Alias Al1534881034
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9
-ReformVal: [PV_Sectors,PV_Climate_Zone]
+ReformVal: [Undefined,PV_Sectors]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att_ResultSliceState: [PV_Sectors,1,PV_Sectors,2,PV_Climate_Zone,1]
 Att_ColorRole: Null
 {!40600|Att_ClusterIndex: Null}
@@ -3517,7 +3526,7 @@ Title: Scaled Annual Net Load
 Units: kWh/year-cust
 Description: The annual net consumption per customer per year of the system lifetime.
 Definition: Sum(PrePost_Load_by_OpYr * Load_Monthly_Mults, Profile_Hours, Month)
-NodeLocation: 888,344,1
+NodeLocation: 1056,344,1
 NodeSize: 64,40
 ValueState: 2,94,131,791,671,0,MIDM
 Aliases: FormNode Fo1539221213, FormNode Fo1572476393
@@ -3533,7 +3542,7 @@ Title: Levelized Annual Net Load
 Units: kWh/year-customer
 Description: The annual net consumption per customer levelized over the system lifetime.
 Definition: PMT(Nominal_Equity_Rate, Economic_Lifetime, -NPV(Nominal_Equity_Rate, Scaled_Ann_Net_Load, PV_Operating_Year))
-NodeLocation: 1048,344,1
+NodeLocation: 1216,344,1
 NodeSize: 64,40
 ValueState: 2,509,83,806,643,,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9
@@ -3549,7 +3558,7 @@ Description: The average daily customer load within a given month and by weekday
 Definition: VAR agProfile:=Aggregate(PrePost_Load_by_OpYr, Map_Prof_DayType_Hr, Profile_Hours, Day_Type_and_Hour, type: "Average");~
 ~
 agProfile[Day_Type_and_Hour=DayType_and_Hour_Map]
-NodeLocation: 888,88,1
+NodeLocation: 1056,88,1
 NodeSize: 64,40
 WindState: 2,320,19,1220,541
 ValueState: 2,333,30,974,681,1,MIDM
@@ -3558,7 +3567,7 @@ ReformVal: [Time_of_Day,Pre_and_Post_System]
 Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,PV_Operating_Year,1,Rate_Vintage,1,System_Types,1,Weekday_or_Weekend,2,Month,7,Pre_and_Post_System,2,Time_of_Day,1]
 
 Text Load_Frame
-NodeLocation: 1488,320,-20
+NodeLocation: 1688,320,-20
 NodeSize: 360,304
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 NodeColor: 65535,65535,65535
@@ -3577,7 +3586,7 @@ IF System_with_Storage   {If a storage system}~
 THEN netOfStorage[Storage_Systems=System_Types]   {Then use the load net of storage}~
 ELSE Load_Net_of_Solar   {Else use the load net of solar}~
 
-NodeLocation: 568,136,1
+NodeLocation: 736,136,1
 NodeSize: 64,40
 WindState: 2,152,10,1683,659
 ValueState: 2,605,92,1124,798,,MIDM
@@ -3592,7 +3601,7 @@ Description: The net customer load after solar and/or storage.~
 ~
 !!Note: the storage optimization will actually change the definition of this variable to completely break the linkage to Load_Net_of_Storage with the effect being identical to the definition shown below!!
 Definition: IF Decouple_Rates2 THEN Load_Net_of_Solar ELSE Load_Net_of_Storage
-NodeLocation: 728,136,1
+NodeLocation: 896,136,1
 NodeSize: 64,40
 WindState: 2,18,322,1163,505
 ValueState: 2,369,29,1118,870,0,MIDM
@@ -3604,7 +3613,7 @@ Title: Pre and Post Customer Load
 Units: kW-hr/customer
 Description: Customer load before and after installation of a system. The PV Operating Year index captures PV system degradation over the life of the system, consistent with the input for PV_degradation_rate.
 Definition: PrePost_Load_by_OpYr[Rate_Vintage=RateVint_by_RateName, Pre_and_Post_System=Pre_or_Post_by_Syst, System_Types=SystType_for_System]
-NodeLocation: 1048,240,1
+NodeLocation: 1216,240,1
 NodeSize: 64,40
 WindState: 2,394,15,1122,599
 ValueState: 2,82,8,1179,665,1,MIDM
@@ -3628,7 +3637,7 @@ Description: The customer load prior to installing the system specified.
 Definition: IF System_Types = Storage_Added_Label~
 THEN Load_Net_of_Solar~
 ELSE Applied_Load_Profile
-NodeLocation: 728,240,1
+NodeLocation: 896,240,1
 NodeSize: 64,40
 WindState: 2,17,317,720,350
 ValueState: 2,198,21,924,575,,MIDM
@@ -3641,7 +3650,7 @@ Title: Pre and Post Customer Load
 Units: kW-hr/customer
 Description: Customer load before and after installation of a system in the first operating year (subsequent operating years account for degradation but are not shown in this particular output). Results shown here are for the rate vintage selected via the input "Rate Vintage for GUI," and is typically the latest rate.
 Definition: PrePost_Load_by_OpYr[PV_Operating_Year=1, Rate_Vintage=RateVint_by_RateName]
-NodeLocation: 1048,136,1
+NodeLocation: 1216,136,1
 NodeSize: 64,40
 ValueState: 2,348,61,1140,768,1,MIDM
 Aliases: FormNode Fo1582589389
@@ -3652,10 +3661,10 @@ Module Profile_Creation
 Title: Profile Creation
 Author: JamesMilford
 Date: Wed, May 1, 2019 11:53 AM
-NodeLocation: 408,344,1
+NodeLocation: 576,344,1
 NodeSize: 64,40
 NodeInfo: 1,1,0,1,1,1,0,,0,,0,,,
-DiagState: 2,12,105,1479,650,17,10
+DiagState: 2,35,123,1479,618,17,10
 AcpStyles: FrameNode: Profile_Frame
 
 Alias Al1557428073
@@ -3724,10 +3733,10 @@ profile[hours=Profile_Hours] * Degradation_Factor
 NodeLocation: 560,464,1
 NodeSize: 64,40
 WindState: 2,24,55,720,350
-ValueState: 2,82,42,1283,595,0,MIDM
+ValueState: 2,332,196,1447,602,1,MIDM
 Aliases: Alias Al1571850241
-ReformVal: [Profile_Hours,PV_Operating_Year]
-Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Month,1,PV_Operating_Year,1,Profile_Hours,1]
+ReformVal: [Profile_Hours,PV_Climate_Zone]
+Att_ResultSliceState: [PV_Sectors,22,Month,12,PV_Operating_Year,1,PV_Climate_Zone,1,Profile_Hours,1]
 
 Objective Hours_Index_Handles
 Title: Hours Index Handles
@@ -4237,22 +4246,23 @@ Variable Monthly_Cust_Load
 Title: Monthly Customer Load
 Units: kW-hr/customer
 Description: The scaled load profiles by month.
-Definition: Select_Hrly_Profiles[Selected_Profiles=Loadshape_Map[All_Sectors=PV_Sectors], Hours_8784=Monthly_Profile_Map] * Load_Scaling_Factor
-NodeLocation: 248,248,1
+Definition: Select_Hrly_Profiles[Selected_Profiles=Loadshape_Map[All_Sectors=PV_Sectors], Hours_8784=Monthly_Profile_Map] * Annual_Load * Load_Scaling_Factor
+NodeLocation: 416,248,1
 NodeSize: 64,40
 WindState: 2,98,82,719,350
-ValueState: 2,516,190,603,458,0,MIDM
+ValueState: 2,830,79,416,693,0,MIDM
 Aliases: Alias Al1571845135
-ReformVal: [PV_Sectors,Month]
-Att__TotalsIndex: [Month,Month_Day_and_Hour]
+ReformVal: [Null,PV_Sectors]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Month_Day_and_Hour]
 Att_ResultSliceState: [PV_Climate_Zone,1,Month_Day_and_Hour,0,Month,1,PV_Sectors,1]
 
 Variable DayType_Cust_Load
 Title: Day Type Customer Load
 Units: kW-hr/customer
 Description: The scaled load profiles by day type.
-Definition: Daily_Prof_with_Peak[Static_Profile_Names=Loadshape_Map[All_Sectors=PV_Sectors], All_Day_Types=DayType_for_Type_Hr, Time_of_Day=Hour_for_Type_and_Hr] * Load_Scaling_Factor
-NodeLocation: 248,440,1
+Definition: Daily_Prof_with_Peak[Static_Profile_Names=Loadshape_Map[All_Sectors=PV_Sectors], All_Day_Types=DayType_for_Type_Hr, Time_of_Day=Hour_for_Type_and_Hr] * Annual_Load * Load_Scaling_Factor
+NodeLocation: 416,440,1
 NodeSize: 64,40
 WindState: 2,98,82,1084,697
 ValueState: 2,57,9,1610,533,0,MIDM
@@ -4266,52 +4276,36 @@ Author: JamesMilford
 Date: Fri, Oct 25, 2019 8:28 AM
 NodeLocation: 88,344,1
 NodeSize: 64,40
-DiagState: 2,721,166,619,421,17,10
+DiagState: 2,243,142,1324,494,17,10
 AcpStyles: Frame_Node: Scaling_Frame
 
-Variable Cust_Load_Profile
-Title: Customer Load Profile
-Units: kW-hr/customer
+Variable Normalized_Load_Shap
+Title:  Normalized Load Shape
+Units: kW-hr/kW
 Description: The imported customer load profile prior to any scaling.
 Definition: Daily_Prof_with_Peak[Static_Profile_Names=Loadshape_Map[All_Sectors=PV_Sectors], All_Day_Types=Day_of_Week]~
 
 NodeLocation: 112,328,1
 NodeSize: 64,40
 WindState: 2,107,230,720,350
-ValueState: 2,539,172,695,494,0,MIDM
+ValueState: 2,457,361,1039,455,0,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [PV_Sectors,Month]
 Att__TotalsIndex: [Day_of_Week,Month,Time_of_Day]
 Att_ResultSliceState: [Day_of_Week,0,Time_of_Day,0,Month,7,PV_Sectors,2]
 
-Variable Raw_Weekly_Cust_Load
-Title: Raw Weekly Customer Load
-Units: kW-hr/customer
-Description: A representative week of customer load for each month. These have not yet been scaled to represent the load of buildings installing solar.
-Definition: Reindex_to_Week(Cust_Load_Profile)
-NodeLocation: 272,328,1
-NodeSize: 64,40
-WindState: 2,293,348,1527,555
-ValueState: 2,2368,69,1230,691,0,MIDM
-GraphSetup: Att_GraphValueRange Raw_Weekly_Cust_Load:1,,1,,,,,0.5903269767761231,0.9016096115112305,0~
-Att_GraphIndexRange Day_and_Hour:1,,1,,,,10,70,129,1~
-Att_CatLineStyle Graph_Primary_Valdim:5~
-Graph_AxisLabelFont:,18,0~
-Graph_KeyTitleFont:,18,1~
-Graph_KeyFont:,18,0~
-Graph_AxisTitleFont:Arial,18,1
-ReformVal: [PV_Sectors,Month]
-Att__TotalsIndex: [Day_and_Hour,PV_Sectors,Month]
-Att_ResultSliceState: [Day_and_Hour,0,Month,1,PV_Sectors,2]
-
 Variable Annual_Load
 Title: Annual Load
 Units: kWh/year-customer
 Description: The annual consumption per customer.
-Definition: Sum(Raw_Weekly_Cust_Load * Weekly_Day_Counts[Static_Profile_Names=Loadshape_Map[All_Sectors=PV_Sectors]], Day_and_Hour, Month)
-NodeLocation: 272,192,1
+Definition: local x:=Sum(Weekly_Nrml_Loadshap * Weekly_Day_Counts[Static_Profile_Names=Loadshape_Map[All_Sectors=PV_Sectors]], Day_and_Hour, Month)~
+* Cust_Load_Total_by_P / Customer_count_by_cl;~
+IF x=null THEN 0 ELSE x
+NodeLocation: 424,192,1
 NodeSize: 64,40
-ValueState: 2,563,154,602,442,0,MIDM
+ValueState: 2,550,42,899,705,0,MIDM
+ReformVal: [PV_Climate_Zone,PV_Sectors]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 
 Variable Load_Scaling_Factor
 Title: Load Scaling Factor
@@ -4323,15 +4317,16 @@ Definition: IF (Scale_Load_by_Covere[Solar_Scaling_Param=Is_Load_Adj_Label, All_
 Divide(FirstYr_Annual_Solar / Scale_Load_by_Covere[Solar_Scaling_Param=Fraction_Load_Label, All_Sectors=PV_Sectors], Annual_Load, True)~
 ELSE 1~
 
-NodeLocation: 432,192,1
+NodeLocation: 800,192,1
 NodeSize: 64,40
 WindState: 2,468,285,720,350
-ValueState: 2,581,354,970,203,0,MIDM
-NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+ValueState: 2,693,170,780,641,0,MIDM
+ReformVal: [PV_Climate_Zone,PV_Sectors]
+NumberFormat: 2,F,2,2,0,0,2,1,$,0,"ABBREV",0,,,0,0,15,
 Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,PV_Spatial_ID,1]
 
 Text Scaling_Frame
-NodeLocation: 952,320,-20
+NodeLocation: 1344,320,-20
 NodeSize: 432,304
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 NodeColor: 65535,65535,65535
@@ -4342,41 +4337,43 @@ Constant Scale_Load_by_Covere
 Title: Scale Load by % Covered by Solar
 Description: This is for economic calculations only and recognizes that historical installed system sizes may be sized at greater than (or perhaps even lower than) might make sense based on average customer load. One reason for this, especially in the residential sector, is that larger homes may tend to install PV sooner, meaning that early on the adoption curve the actual system size may generate more kWh than an AVERAGE home. This adjustment allows the load used in economic calculations to be proportional to the historical average system size, making the economics more accurate.
 Definition: Table(All_Sectors,Solar_Scaling_Param)(~
-0,0,~
-0,0,~
-0,0,~
 1,1,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
 1,1,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0,~
-0,0)
-NodeLocation: 432,328,1
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1)
+NodeLocation: 800,328,1
 NodeSize: 64,40
-DefnState: 2,910,212,834,537,0,DFNM
+DefnState: 2,487,195,882,667,0,DFNM
+ValueState: 2,480,266,706,524,0,MIDM
 ReformDef: [Solar_Scaling_Param,All_Sectors]
+ReformVal: [Solar_Scaling_Param,All_Sectors]
 
 Index Solar_Scaling_Param
 Att_PrevIndexValue: ['Fraction of Load Covered by PV','Is Load Adjusted by Fraction Covered?']
@@ -4389,13 +4386,13 @@ ReformVal: [Undefined,Self]
 Decision Fraction_Load_Label
 Title: Fraction Load Label
 Definition: Choice(Solar_Scaling_Param,1,0)
-NodeLocation: 272,88,1
+NodeLocation: 648,88,1
 NodeSize: 64,40
 
 Decision Is_Load_Adj_Label
 Title: Is Load Adjusted to PV size Label
 Definition: Choice(Solar_Scaling_Param,2,0)
-NodeLocation: 432,88,1
+NodeLocation: 800,88,1
 NodeSize: 64,40
 
 {!50500|ArrowClass Arrow271897795}
@@ -4410,26 +4407,84 @@ NodeLocation: 112,192,1
 NodeSize: 64,40
 Original: Loadshape_Map
 
+Variable Cust_Load_Total_by_P
+Title: Cust Load Total by PV Clim Zone
+Units: kWh/year
+Definition: Aggregate(Consumption_by_Secto[All_Sectors=PV_Sectors,All_Spatial_ID=PV_Spatial_ID,Building_Stock_Year=Year_of_Consump_Data],Spatial_ID_to_CZ_Map[All_Spatial_ID=PV_Spatial_ID],PV_Spatial_ID,PV_Climate_Zone)
+NodeLocation: 424,88,1
+NodeSize: 64,40
+ValueState: 2,745,85,738,662,0,MIDM
+ReformVal: [PV_Climate_Zone,PV_Sectors]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [PV_Sectors]
+
+Variable Va18
+NodeLocation: 512,432,1
+NodeSize: 64,40
+
+Alias Al1159025699
+Title: Spatial ID to CZ Map
+Definition: 1
+NodeLocation: 280,88,1
+NodeSize: 64,40
+Original: Spatial_ID_to_CZ_Map
+
+Alias Al1615680547
+Title: Weekly Normalized Cust Load Shape
+Definition: 1
+NodeLocation: 424,328,1
+NodeSize: 64,40
+Original: Weekly_Nrml_Loadshap
+
+Variable Customer_count_by_cl
+Title: Customer count by climate zone
+Definition: Aggregate(Building_Stock[All_Sectors=PV_Sectors,All_Spatial_ID=PV_Spatial_ID,Building_Stock_Year=Year_of_Consump_Data],Spatial_ID_to_CZ_Map[All_Spatial_ID=PV_Spatial_ID],PV_Spatial_ID,PV_Climate_Zone)
+NodeLocation: 592,176,1
+NodeSize: 64,40
+ValueState: 2,758,137,872,692,0,MIDM
+ReformVal: [PV_Climate_Zone,PV_Sectors]
+
 Close Load_Profile_Scaling
+
+Variable Weekly_Nrml_Loadshap
+Title: Weekly Normalized Cust Load Shape
+Units: kW-hr/customer
+Description: A representative week of customer load for each month. These have not yet been scaled to represent the load of buildings installing solar.
+Definition: Reindex_to_Week(Normalized_Load_Shap)
+NodeLocation: 256,344,1
+NodeSize: 64,40
+WindState: 2,293,348,1527,555
+ValueState: 2,2368,69,1230,691,0,MIDM
+Aliases: Alias Al1615680547
+GraphSetup: Att_GraphValueRange Weekly_Nrml_Loadshap:1,,1,,,,,0.5903269767761231,0.9016096115112305,0~
+Att_GraphIndexRange Day_and_Hour:1,,1,,,,10,70,129,1~
+Att_CatLineStyle Graph_Primary_Valdim:5~
+Graph_AxisLabelFont:,18,0~
+Graph_KeyTitleFont:,18,1~
+Graph_KeyFont:,18,0~
+Graph_AxisTitleFont:Arial,18,1
+ReformVal: [PV_Sectors,Month]
+Att__TotalsIndex: [Day_and_Hour,PV_Sectors,Month]
+Att_ResultSliceState: [Day_and_Hour,0,Month,1,PV_Sectors,2]
 
 Alias Al1571846275
 Title: Applied Load Profile
 Definition: 1
-NodeLocation: 568,344,1
+NodeLocation: 736,344,1
 NodeSize: 64,40
 Original: Applied_Load_Profile
 
 Alias Al1571846328
 Title: Selected Profile Granularity
 Definition: 1
-NodeLocation: 568,448,1
+NodeLocation: 736,448,1
 NodeSize: 64,40
 Original: Sel_Profile_Granular
 
 FormNode Fo1571846329
 Title: Selected Profile Granularity
 Definition: 0
-NodeLocation: 572,504,1
+NodeLocation: 740,504,1
 NodeSize: 132,16
 NodeInfo: 1,0,0,0,0,0,0,214,0,,0,,,0
 Original: Sel_Profile_Granular
@@ -4765,7 +4820,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 256,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,1059,75,1351,856,17,10
+DiagState: 2,297,75,1351,856,17,10
 Aliases: Alias Al1548967139
 AcpStyles: FrameNode: FrameNode_1544920029
 
@@ -6796,7 +6851,7 @@ Definition: Table(All_Sectors,Debt_or_Equity)(~
 NodeLocation: 112,64,1
 NodeSize: 64,40
 WindState: 2,511,184,720,350
-DefnState: 2,442,3,416,303,,DFNM
+DefnState: 2,442,3,425,722,0,DFNM
 ValueState: 2,150,305,542,312,0,MIDM
 Aliases: Alias Al1550187543, FormNode Fo1550187544, FormNode Fo1545167068, FormNode Fo1567092877
 ReformDef: [Debt_or_Equity,All_Sectors]
@@ -12469,7 +12524,7 @@ Date: Wed, Oct 10, 2018 9:00 AM
 NodeLocation: 544,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,-133,138,1840,762,17,10
+DiagState: 2,0,138,1840,603,17,10
 Aliases: Alias Al1548967120
 AcpStyles: FrameNode: FrameNode_1544919879
 
@@ -12480,8 +12535,10 @@ Description: The solar PV DC system sized used for PV economics.
 Definition: Historical_PV_DC_Sys
 NodeLocation: 408,584,1
 NodeSize: 64,40
-ValueState: 2,1069,526,638,216,0,MIDM
+ValueState: 2,948,292,789,586,0,MIDM
 Aliases: Alias Al1571850383
+ReformVal: [PV_Climate_Zone,PV_Sectors]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 
 Constant Battery_Storage_Spec
 Title: Battery Storage Specs
@@ -12966,7 +13023,7 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 256,288,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,95,244,1701,624,17,10
+DiagState: 2,906,404,1701,624,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -13359,7 +13416,8 @@ Definition: Table(All_Spatial_ID)(Null,Null,'Downstate_cz','Long Island/Hudson V
 NodeLocation: 960,152,1
 NodeSize: 64,40
 DefnState: 2,188,160,580,748,,DFNM
-Aliases: Alias Al1551412556, FormNode Fo1551412556, FormNode Fo1540240591
+ValueState: 2,1162,201,550,535,,MIDM
+Aliases: Alias Al1551412556, FormNode Fo1551412556, FormNode Fo1540240591, Alias Al1159025699
 
 Variable Climate_Zone_Map
 Title: Climate Zone Map
@@ -14814,7 +14872,7 @@ DisplayOutputs: Index Lidar_Locale_Type, Variable Zip_to_Locale_Map
 {!40300|Att_SlicerPopupSize: 237,1001}
 
 Index Lidar_Min_Syst_Sizes
-Att_PrevIndexValue: [0.6449999999999999,0.8999999999999999,1.125,1.5,3,4.5]
+Att_PrevIndexValue: [0.645,0.9,1.125,1.5,3,4.5]
 Title: Lidar Min System Sizes
 Units: kW-DC
 Definition: CopyIndex(Approx_kW_Equiv)
@@ -14987,7 +15045,7 @@ Date: Wed, Nov 7, 2018 1:59 PM
 NodeLocation: 112,240,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,320,157,1388,596,17,10
+DiagState: 2,403,175,1388,566,17,10
 AcpStyles: FrameNode: FrameNode_1545066262
 
 Decision Year_of_Consump_Data

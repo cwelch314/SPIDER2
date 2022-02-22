@@ -28,7 +28,7 @@ DiagState: 2,71,229,1671,635,17,10
 Variable Cumulative_Data_Plus
 Title: Cumulative Data Plus
 Definition: IF Output_Prd_Plus_Map <= PV_Calibration_End~
-THEN Replace_X_with_Y(Historic_PV_Adoption[Interconnect_Date=Output_Prd_Plus_Map, PV_Adopt_Data_Types=PV_Cumul_Data_Type], Null, 0)~
+THEN Replace_X_with_Y(Historical_PV_Adopti[Interconnect_Date=Output_Prd_Plus_Map, PV_Adopt_Data_Types=PV_Cumul_Data_Type], Null, 0)~
 ELSE PV_Adoption_Forecast[Time_Solar_PV=Output_Prd_Plus_Map, System_Types=PV_Retrofit_Label, PV_Adopt_Data_Types=PV_Cumul_Data_Type]
 NodeLocation: 264,216,1
 NodeSize: 64,40
@@ -51,7 +51,7 @@ Definition: 1
 NodeLocation: 112,112,1
 NodeSize: 64,40
 NodeColor: 19661,48336,65535
-Original: Historic_PV_Adoption
+Original: Historical_PV_Adopti
 
 Variable Incremental_Data
 Title: Incremental Data
@@ -795,7 +795,7 @@ DiagState: 2,-4,63,1649,656,17
 Variable Cumulative_Data_Plu1
 Title: Cumulative Data Plus
 Definition: VAR historic:=IF (Output_Prd_Plus_Map >= PV_CalStart_Minus1) AND (Output_Prd_Plus_Map <= PV_Calibration_End)~
-   THEN Historic_PV_Adoption[Interconnect_Date=Output_Prd_Plus_Map, PV_Adopt_Data_Types=PV_Cumul_Data_Type]~
+   THEN Historical_PV_Adopti[Interconnect_Date=Output_Prd_Plus_Map, PV_Adopt_Data_Types=PV_Cumul_Data_Type]~
    ELSE Null;~
 VAR actual:=IF (Output_Prd_Plus_Map >= PV_CalStart_Minus1) AND (Output_Prd_Plus_Map <= PV_Calibration_End)~
    THEN IgnoreWarnings(PV_Adoption_Forecast[Time_Solar_PV=Output_Prd_Plus_Map, System_Types=PV_Retrofit_Label, PV_Adopt_Data_Types=PV_Cumul_Data_Type])~
@@ -826,7 +826,7 @@ Definition: 1
 NodeLocation: 112,112,1
 NodeSize: 64,40
 NodeColor: 19661,48336,65535
-Original: Historic_PV_Adoption
+Original: Historical_PV_Adopti
 
 Variable Incremental_Data1
 Title: Incremental Data
