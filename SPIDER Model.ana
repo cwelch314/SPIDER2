@@ -113,7 +113,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,133,31,1348,735,17,10
+DiagState: 2,158,23,1348,735,17,10
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
@@ -17811,10 +17811,10 @@ Title: Nodecolor for change
 Definition: 1
 NodeLocation: 952,712,1
 NodeSize: 64,40
-NodeColor: 65535,39321,39321
+NodeColor: 65535,65531,1
 
 Variable Nodes_to_change
-Att_PrevIndexValue: [Init_PV_Calib_Adopt,Calibr_All_PV_Sect,Calibr_All_EV_Sect,Init_BESS_Adoption,Calib_All_BESS_Sect,Calibrate_All_Sector,Nodecolor_for_change,Nodecolor_To_check]
+Att_PrevIndexValue: [Init_PV_Calib_Adopt,Calibr_All_PV_Sect,Val_by_Install_Event,Data_by_Tier_Period,Flat_Periods,Fixed_Charges_Units,Fixed_Charges,Min_Charges_Units,Minimum_Charges,Rate_Names,All_Periods,All_Tiers,Calibr_All_EV_Sect,Init_BESS_Adoption,Calib_All_BESS_Sect,Calibrate_All_Sector]
 Title: Nodes to change
 Definition: update_nodes_to_chan;~
 #FindObjects(Color,attribute:'NodeColor')
@@ -17822,7 +17822,7 @@ NodeLocation: 912,456,1
 NodeSize: 64,40
 ValueState: 2,172,224,429,497,0,MIDM
 Aliases: FormNode Fo1730677955, FormNode Fo1725779139
-{!40700|Att_CellFormat: CellFormats(CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,9,header:0),CellSpan(Nodes_to_change,CellFill(0xffffff80),1,9,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,9,header:0))}
+{!40700|Att_CellFormat: CellFormats(CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,17,header:0),CellSpan(Nodes_to_change,CellFill(0xffffff80),1,17,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,17,header:0))}
 
 Variable Color
 Title: Color
@@ -17910,7 +17910,7 @@ Title: Nodecolor To check
 Definition: 1
 NodeLocation: 1392,800,1
 NodeSize: 64,40
-NodeColor: 65535,39321,39321
+NodeColor: 65535,65531,1
 
 Variable Colored_nodes_to_fix
 Title: Colored nodes to fix
@@ -17918,7 +17918,7 @@ Definition: update_nodes_to_chan;~
 #FindObjects((NodeColor of Nodecolor_To_check),attribute:'NodeColor')
 NodeLocation: 1232,800,1
 NodeSize: 64,40
-ValueState: 2,805,335,374,373,0,MIDM
+ValueState: 2,433,80,702,801,0,MIDM
 Aliases: FormNode Fo1861831875
 ReformVal: [Undefined,Self]
 

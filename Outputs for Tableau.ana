@@ -476,16 +476,16 @@ Definition: PV_Sequent_Outputs[Sequential_Outputs=Seq_Cumul_MW_Label, All_Sector
 NodeLocation: 888,128,1
 NodeSize: 64,40
 WindState: 2,102,82,1261,505
-ValueState: 2,265,74,1051,786,1,MIDM
+ValueState: 2,243,24,1235,814,1,MIDM
 NodeColor: 65535,1,1
-GraphSetup: Att_GraphIndexRange Output_Periods:1,,1,,,,10,42566.54732918739,42613,0~
-Att_GraphValueRange PV_Cumul_Adoption:1,,1,,,0,,22.299736127257347,23.20282953977585,0~
+GraphSetup: Att_GraphValueRange PV_Cumul_Adoption:1,,1,,,0,,22.299736127257347,23.20282953977585,0~
+Att_GraphIndexRange Output_Periods:1,,0,,,,10,42429.86039918661,46752,0~
 Att_ContLineStyle Graph_Primary_Valdim:5
-ReformVal: [Output_Periods,Act_vs_Sim]
+ReformVal: [Output_Periods,PV_Sectors]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [Spatial_ID,Act_vs_Sim,PV_Sectors]
+Att__TotalsIndex: [Spatial_ID,Act_vs_Sim]
 Att_GraphTemplate: Lumidyne_Template
-Att_ResultSliceState: [Spatial_ID,0,Installation_Types,1,PV_Sectors,0,Act_vs_Sim,0,Output_Periods,167]
+Att_ResultSliceState: [Spatial_ID,0,Installation_Types,1,Act_vs_Sim,0,PV_Sectors,14,Output_Periods,167]
 
 Variable EV_Cumul_MW_Impact
 Title: EV Cumulative MW Impact
@@ -25589,7 +25589,7 @@ Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
 NodeLocation: 1032,432,1
 NodeSize: 64,40
 WindState: 2,98,82,1030,418
-DefnState: 2,682,123,782,396,0,DFNM
+DefnState: 2,310,412,1035,268,0,DFNM
 Aliases: FormNode Fo1574705357
 NodeColor: 65535,65531,1
 ReformDef: [All_Sectors,Comparison_Outputs]

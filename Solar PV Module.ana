@@ -381,7 +381,7 @@ Original: PV_LongRun_Mkt_Share
 Decision Market_Share_Method
 Title: Market Share Method
 Description: Select the price metric used in the long-run market share model.
-Definition: Table(All_Sectors)(Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1))
+Definition: Table(All_Sectors)(Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1))
 NodeLocation: 656,168,1
 NodeSize: 64,40
 DefnState: 2,920,245,618,645,0,DFNM
@@ -434,8 +434,8 @@ Definition: MIN([1, Exp(Applied_PV_Pybk_Coef * (Payback_Time + Applied_Payback_A
 NodeLocation: 496,296,1
 NodeSize: 64,40
 WindState: 2,374,142,720,350
-ValueState: 2,38,35,1287,725,0,MIDM
-GraphSetup: Att_GraphValueRange Payback_LRMS:1,,0,,,,,0,1,0
+ValueState: 2,38,35,1287,725,1,MIDM
+GraphSetup: Att_GraphValueRange Payback_LRMS:1,,0,,,,,0,0.057510167360305786,0
 ReformVal: [Time_Solar_PV,PV_Sectors]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_ResultSliceState: [System_Types,1,PV_Spatial_ID,2,PV_Sectors,1,Time_Solar_PV,1]
@@ -447,11 +447,11 @@ Description: The simple payback time by spatial ID.
 Definition: Mthly_Simple_Payback[PV_Climate_Zone=Climate_Zone_Map, Time=Time_Solar_PV]
 NodeLocation: 288,296,1
 NodeSize: 64,40
-ValueState: 2,355,21,1078,819,1,MIDM
+ValueState: 2,501,108,857,749,1,MIDM
 GraphSetup: Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,46104.41218471527,46752,0~
 Att_GraphValueRange Payback_Time:1,,1,,,,,1.080540508031845,3.7537561655044556,0
 ReformVal: [Time_Solar_PV,PV_Sectors]
-Att_ResultSliceState: [System_Types,1,PV_Spatial_ID,1,PV_Sectors,4,Time_Solar_PV,1]
+Att_ResultSliceState: [System_Types,2,PV_Spatial_ID,1,PV_Sectors,4,Time_Solar_PV,1]
 
 Text Te1541771144
 Title: Eventually these weights should be specific to new vs retrofit construction
@@ -607,7 +607,7 @@ Decision Mkt_Share_Fin_Year
 Title: Mkt Share Fin Year
 Units: date
 Description: The finish date for the assumed ramp up of market share over time
-Definition: Choice(Time_Solar_PV,126,0)
+Definition: Choice(Time_Solar_PV,109,0)
 NodeLocation: 256,256,1
 NodeSize: 64,40
 Aliases: FormNode Fo1535473810
@@ -957,7 +957,7 @@ Definition: Table(All_Event_Names,All_Sectors)(~
 NodeLocation: 704,480,1
 NodeSize: 64,40
 WindState: 2,66,28,852,442
-DefnState: 2,882,84,739,341,0,DFNM
+DefnState: 2,448,285,1099,330,0,DFNM
 ValueState: 2,577,463,488,303,0,MIDM
 Aliases: FormNode Fo1573055309
 NodeColor: 65535,65531,1
@@ -992,10 +992,10 @@ Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox
 Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
 NodeLocation: 1080,192,1
 NodeSize: 64,40
-DefnState: 2,372,378,614,333,0,DFNM
+DefnState: 2,372,378,949,305,0,DFNM
 Aliases: FormNode Fo1573055257
 NodeColor: 65535,65531,1
-ReformDef: [All_Sectors,All_Event_Names]
+ReformDef: [All_Event_Names,All_Sectors]
 TableCellDefault: Checkbox(0)
 
 Variable Fractional_Time
@@ -1593,7 +1593,7 @@ Date: Tue, Dec 11, 2018 9:35 AM
 NodeLocation: 136,648,1
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,187,33,1063,634,17,10
+DiagState: 2,321,116,1063,634,17,10
 Pict: (000000000000003C003C00047A06000089504E470D0A1A0A0000000D494844520000003C0000003C08060000003AFCD972000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA864000005FF494441546843E5984B681D5518C7036E2AB8881BC9AED9885D495D8845B46491452108D155DC485C08414183885C41BC5D58B2B0120D95041F09D6470C56AE8FC28D05138B4D2F6D82D1FA8885C2AD95105F1853D1B410663CFFE17E27DF9CF9E666E6CC39976B5CFCE0DEEF3CE67CE77BCE748461F8BF4214EE6644A1177EFD767FF8C9C395E06265401C6F11A2D0395BD7F6049377D68397BAC2E0D8DECDF0EF5FBAC4792D4014BA26F8F2D5E148D906E1E9E746A579AD40143A05D67DEDF635AE7064E56B1B9DE27CCF8842A7286B6ACB2E1C19D14A7FF7DEA038DF33A2D0191B57BA61CD485995B060D5D87F698D6744A1339095614D9EA84E3C30AF65CADD136B3C230A9DB0B67420520CD664498A27B0F0A7859ED89A16200A5D10BCD3BB1C29A61256CC9270F386C2509EAF6905A2B028C1A56A7F33A5286B87D5A16973CC37A2B010BC0C292B4B738299BE5AB3719F88C222C49A0C6569694EF8E183D5685C755FE2780E82CB7387A21CA19261C4DCD3E3CDDA5751688DCAC4C1F86DEB50A669D939F5C454A430E25B1ACF021A17DA4700972A3537B13F85E14D065E16A43980352089B1AC7065E129B032AC7BFC9E15BD379436D6C5FE144229A89B0A2A4388E7C5B192597E82DA0B87F5A1983C2B3C2942F1443D6FD2D16D4F2A8AD46490C5CD58A503D9C6B0CAEED17A654D715C4189D1B4726C922D481CD1010095216E71339EE9722C15D6351E593E257474F2543985CB63936C119B0CC9E234BF1167515665F2ACE8E73540EC26E62857D6E34C1E9B644370E1CD21FD702A43296D6504E23A6D2C2B780981059587D05EC80B7C8E1F85539A0CD1E2045CBD7190C2AF88D89B6ABA82BBB7178563D9B6F130147D92C1FA8935CC23D2E22F17ECD279AE70AF309A0C3329A5589CA3AD6F9BA10562CA359A0DF70AA3C863439694B8C5A396CF5CC3DCD93A7E25F8BE2A7F40E65661E9E092C54D5877E4F45DD8BBC254727852226560712936D9E79D3477B7C5AB4B8BEFBA195C35D35B940DBE93964E3ADC4A647174354693110177DF219959016BD2373228C63CCB89C2629301945523997A089F9F1837D7D9824B45D26CBC8A02B3DB2AAE708AEBEC084F6696ADA489F63252C84B6BC9AC2426A534C8DDF3AE6B02ED8737A2B43D8B29CCAD949294443224331B684FB37FE6145398AC84922325A514F4C7BA9CEB768214F1A330B3922E431910CB9723F4BE3E14D6098237193B810447DF96F2ACCB0829E25CE198957294136F4D4603BDB753855919CAD52CA085A4F2E5A80C9990224E15E656CA554E6CCB570E687F770AA30CA92E66E3E55BC2D90F7A164B5F0C4C3F72AA67BEAFD25DBFE3AD8EB0DDC0B9703E9CF3A34B538357AFAF77E6535859E9CC2B3787BDC76F08A407B43BBD27BAD6CED49E793193C257576BF796276FDAE21B1C9CE95CC70D4E7C5D3E9C89A5A78E8A7257D41E9D98F8F4BED989AF9E7D9E648F7D76A80A45F9B9CBAFDF18C24BB97E31654179E6D61F69415F65EFE585D56AF2CB451B53FF7365DF43D50335D2A1F4062AE2F6786C3294A389E593779FBBBEB5E9B47EB692B1F38F8F912E886B92EB0908747289FB3FDEB722298BDB3BBA343C0AF70647CE0D8D5FF8AD167D52691579CE8071E88390FCFD9F3504F3B6C2B805BA91C59FE713DF9BDEFE7E74F8AE77F76CD21C0E1E6ACEF741DE33E072683EE21C323DF8E4E7FD150C20C5938CE0AE0E2FC0E6B8655EA6DEBF389EF806ED12DB339095074EEE8F9A273D0037C600142719419781077157C76F6CC437F485ED1970291883A5F15F0F50FC4E7E335222993926B90D5C0563C01C7389ED1978A8E2BF1E20D7903634DD82D32C145C627B06BA8C848551B8D33644B2C018C0E6B3F5E981B92B957EB4722487EB98EB5C627B06BA0C842CFE2736C44D500AE7D042095C9254C65C93F70CF88F928471BA0C3D08252985C3DA24E7201EB0313D04B786986F85B2449E33203C31077AFDF0C772F4E6169B80B44E1BF92E33BEE1658C6A30484CA4E400101F927BB733B0F4D872698474405FCDAD9F58B0FA57BD9B37DF8801C40E6E091D58BB02B786817823023DA00FD72FA62C071B504CFF178195A5B88EFD3141A023F0A9E8B73B3867F9ECE054B3171A51B89B1185BB97B0E35FD04CAAD2B53AC7380000000049454E44AE426082)
 AcpStyles: FrameNode: PVAdoption1544977242
 
@@ -1700,6 +1700,7 @@ NodeLocation: 336,432,1
 NodeSize: 64,40
 ValueState: 2,445,280,967,347,0,MIDM
 NodeColor: 65535,39321,39321
+ReformVal: [PV_Spatial_ID,PV_Sectors]
 
 Variable Tot_NC_Install_EOP
 Title: Total NewCon Installed EOP
@@ -1743,12 +1744,11 @@ NodeLocation: 336,328,1
 NodeSize: 64,40
 NodeInfo: 1,1,1,1,1,1,0,,0,,0,,,
 WindState: 2,303,229,1154,454
-ValueState: 2,15,50,1355,748,1,MIDM
+ValueState: 2,224,64,1355,748,1,MIDM
 NodeColor: 65535,65535,65535
-ReformVal: [Time_Solar_PV,Null]
+ReformVal: [Time_Solar_PV,PV_Sectors]
 Att__TotalsIndex: [PV_Spatial_ID]
 Att_ResultSliceState: [PV_Sectors,2,PV_Spatial_ID,0,Time_Solar_PV,1]
-Att_ColorRole: Null
 
 Text PVAdoption1544977242
 NodeLocation: 908,324,-1
@@ -1769,14 +1769,14 @@ NodeLocation: 632,336,1
 NodeSize: 66,38
 NodeInfo: 1,1,1,1,0,1,0,,0,,0,,,
 WindState: 2,161,13,720,350
-ValueState: 2,300,102,1321,679,1,MIDM
+ValueState: 2,193,53,1321,679,1,MIDM
 Aliases: Alias Al1542240311
 NodeColor: 65535,65535,65535
 GraphSetup: Graph_HLabelRotation:45
 ReformVal: [Time_Solar_PV,Null]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Sectors,26,PV_Spatial_ID,2,Installation_Types,1,Time_Solar_PV,1]
+Att__TotalsIndex: [PV_Sectors,PV_Spatial_ID]
+Att_ResultSliceState: [PV_Sectors,0,PV_Spatial_ID,0,Installation_Types,1,Time_Solar_PV,1]
 Att_ColorRole: Null
 
 Variable NC_and_Retro_Install
@@ -1872,7 +1872,7 @@ Author: CWelch
 Date: Sun, Jan 9, 2022 3:29 PM
 NodeLocation: 632,208,1
 NodeSize: 72,56
-DiagState: 2,248,29,1185,592,17,10
+DiagState: 2,599,56,1185,592,17,10
 
 Variable Initial_PV_Adopters1
 Title: Initial PV Adopters
@@ -1887,7 +1887,7 @@ WindState: 2,249,104,1523,637
 ValueState: 2,320,183,1301,454,0,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:4~
 Att_GraphIndexRange PV_Spatial_ID:1,1
-ReformVal: [PV_Sectors,PV_Spatial_ID]
+ReformVal: [PV_Spatial_ID,PV_Sectors]
 NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Stored_ID_Interconn,All_Sectors,PV_Spatial_ID]
 Att_ResultSliceState: [PV_Sectors,1,PV_Sectors,2,PV_Spatial_ID,1]
@@ -2493,7 +2493,7 @@ NodeSize: 64,40
 NodeColor: 65535,1,1
 
 Index Time_Solar_PV
-Att_PrevIndexValue: [1-Aug-2020,1-Sep-2020,1-Oct-2020,1-Nov-2020,1-Dec-2020,1-Jan-2021,1-Feb-2021,1-Mar-2021,1-Apr-2021,1-May-2021,1-Jun-2021,1-Jul-2021,1-Aug-2021,1-Sep-2021,1-Oct-2021,1-Nov-2021,1-Dec-2021,1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023,1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030,1-Jan-2031,1-Feb-2031,1-Mar-2031,1-Apr-2031,1-May-2031,1-Jun-2031,1-Jul-2031,1-Aug-2031,1-Sep-2031,1-Oct-2031,1-Nov-2031,1-Dec-2031]
+Att_PrevIndexValue: [1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023,1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030,1-Jan-2031,1-Feb-2031,1-Mar-2031,1-Apr-2031,1-May-2031,1-Jun-2031,1-Jul-2031,1-Aug-2031,1-Sep-2031,1-Oct-2031,1-Nov-2031,1-Dec-2031]
 Title: Time-Solar PV
 Description: Ths is the time index used for simulating vehicle adoption. It is allowed to be different from other DERs, for instance, due to differences in the granularity of available historical data on adoption (e.g., solar PV data are monthly, whereas vehicle data are, at best, quarterly, or in some cases, annual)
 Definition: Sequence(PV_Sim_Start_Year, PV_Sim_End_Year,step: Timestep_Months[Timestep_Options=PV_Data_dT_Choice],dateUnit: 'M')
@@ -2550,11 +2550,12 @@ Title: PV Sim Start Year
 Description: The year in which you want the adoption simulation to start. The simulation will then use the appropriate starting point for instalaltions at this point in time. In some cases, depending on the data, you may not want to start the simulation as early as the stock data are available. Typically for PV, you will want to start the PV simulation exactly one period (e.g., month) after the latest reliable data are available regarding historical installations. That said, the latest month in the interconnection databases are typically unreliable due to previous applications that have not yet come through. So, it is typically wise to ignore the last month (or even two, depending on the time delays) of interconnection data. ~
 ~
 During calibration, this time is set to an earlier period to "back cast" adoption and compare it with actual adoption for purposes of estimating diffusion coefficients.
-Definition: Choice(PV_Sim_Strt_Yr_Opt,140,0)
+Definition: Choice(PV_Sim_Strt_Yr_Opt,157,0)
 NodeLocation: 96,272,1
 NodeSize: 64,40
 ValueState: 2,795,362,320,151,,MIDM
 Aliases: Alias Al1568697943, FormNode Fo1568697971, FormNode Fo1542137499, FormNode Fo1534871512
+NodeColor: 65535,65531,1
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
 
 Index PV_Sim_Strt_Yr_Opt
@@ -2576,6 +2577,7 @@ NodeSize: 64,40
 WindState: 2,102,82,1083,701
 ValueState: 2,72,74,416,303,,MIDM
 Aliases: Alias Al1568697944, FormNode Fo1568697972, FormNode Fo1542137498, FormNode Fo1534871513
+NodeColor: 65535,65531,1
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
 
 Index PV_Sim_End_Yr_Option
@@ -3061,7 +3063,7 @@ Definition: Divide(FirstYr_Annual_Solar, Scaled_Annual_Load, True)
 NodeLocation: 880,304,1
 NodeSize: 64,40
 ValueState: 2,715,119,753,701,0,MIDM
-Aliases: FormNode Fo1539221198, FormNode Fo1572476392, Alias Al49435683
+Aliases: Alias Al49435683, FormNode Fo1539221198, FormNode Fo1572476392
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [PV_Climate_Zone,PV_Sectors]
 NumberFormat: 2,%,2,0,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
@@ -9373,6 +9375,8 @@ Description: Flags sectors that will be exposed to commercial tax treatment.
 Definition: Table(All_Sectors)(Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
 NodeLocation: 400,368,1
 NodeSize: 64,40
+DefnState: 2,68,74,429,636,0,DFNM
+Aliases: FormNode Fo1554732067
 NodeColor: 65535,65531,1
 TableCellDefault: Checkbox(0)
 
@@ -9742,6 +9746,15 @@ NodeLocation: 1008,176,1
 NodeSize: 64,40
 ValueState: 2,216,171,1076,350,0,MIDM
 Att_ResultSliceState: [PV_Sectors,2,System_Types,1,Annual_PV_Time,1]
+
+FormNode Fo1554732067
+Title: Taxed as Commercial
+Definition: 0
+NodeLocation: 408,416,1
+NodeSize: 56,16
+NodeInfo: 1,,,0
+NodeColor: 65535,65531,1
+Original: Taxed_as_Commercial
 
 Close Taxes
 
@@ -12524,7 +12537,7 @@ Date: Wed, Oct 10, 2018 9:00 AM
 NodeLocation: 544,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,0,138,1840,603,17,10
+DiagState: 2,158,24,1511,731,17,10
 Aliases: Alias Al1548967120
 AcpStyles: FrameNode: FrameNode_1544919879
 
@@ -12584,12 +12597,12 @@ Definition: Table(All_Sectors,Battery_Specs)(~
 NodeLocation: 136,176,1
 NodeSize: 64,40
 WindState: 2,297,1,801,442
-DefnState: 2,838,348,910,222,0,DFNM
+DefnState: 2,660,46,1157,717,0,DFNM
 ValueState: 2,274,25,821,620,0,MIDM
 Aliases: Alias Al1550183618, FormNode Fo1550183618, FormNode Fo1542305979, FormNode Fo1567093176
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9
-ReformDef: [All_Sectors,Battery_Specs]
+ReformDef: [Battery_Specs,All_Sectors]
 ReformVal: [All_Sectors,Battery_Specs]
 Att_GraphValueRange: 1,,,,,,10
 Att_GraphTemplate: Lumidyne_Template
@@ -12636,12 +12649,12 @@ Definition: Table(All_Sectors,All_System_Types)(~
 0,0,1,1,1,1,1)
 NodeLocation: 288,368,1
 NodeSize: 64,40
-DefnState: 2,893,339,661,285,0,DFNM
+DefnState: 2,585,311,1143,303,0,DFNM
 ValueState: 2,42,138,1279,556,0,MIDM
 Aliases: Alias Al1550185112, FormNode Fo1550185113, FormNode Fo1539014254, FormNode Fo1567093177
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9
-ReformDef: [All_Sectors,All_System_Types]
+ReformDef: [All_System_Types,All_Sectors]
 TableCellDefault: 0
 Att_EditSliceState: [All_Sectors,2,System_Configuration,1,New_or_Retrofit,1]
 
@@ -12661,8 +12674,8 @@ Definition: Battery_Storage_Spec[All_Sectors=PV_Sectors, Battery_Specs=Energy_kW
 NodeLocation: 288,176,1
 NodeSize: 64,40
 WindState: 2,336,-7,720,350
-ValueState: 2,352,7,946,496,0,MIDM
-ReformVal: [New_or_Retrofit,System_Configuration]
+ValueState: 2,406,84,998,716,0,MIDM
+ReformVal: [System_Types,PV_Sectors]
 Att_ResultSliceState: [PV_Sectors,1,System_Configuration,1,New_or_Retrofit,1]
 
 Variable Equipment_Sizes
@@ -13023,7 +13036,7 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 256,288,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,906,404,1701,624,17,10
+DiagState: 2,82,88,1701,624,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -13239,7 +13252,7 @@ WindState: 2,319,12,1255,632
 Aliases: FormNode Fo1535066238, FormNode Fo1539140368, FormNode Fo1247325693
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
-{!40300|Att_SlicerPopupSize: 838,353}
+{!40300|Att_SlicerPopupSize: 843,353}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
@@ -13261,7 +13274,7 @@ DefnState: 2,857,228,346,508,,DFNM
 ValueState: 2,2185,301,416,303,,MIDM
 Aliases: FormNode Fo1535655040, FormNode Fo1542091914
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
-{!40300|Att_SlicerPopupSize: 1290,784}
+{!40300|Att_SlicerPopupSize: 1295,784}
 
 Index Market_Share_Metric
 Att_PrevIndexValue: ['Cost of Electricity Ratio','Simple Payback Time','Static Long-Run Market Share']
@@ -13417,7 +13430,7 @@ NodeLocation: 960,152,1
 NodeSize: 64,40
 DefnState: 2,188,160,580,748,,DFNM
 ValueState: 2,1162,201,550,535,,MIDM
-Aliases: Alias Al1551412556, FormNode Fo1551412556, FormNode Fo1540240591, Alias Al1159025699
+Aliases: Alias Al1551412556, FormNode Fo1551412556, Alias Al1159025699, FormNode Fo1540240591
 
 Variable Climate_Zone_Map
 Title: Climate Zone Map
@@ -13581,6 +13594,7 @@ Definition: Table(All_System_Types)(Checkbox(1),Checkbox(0),Checkbox(1),Checkbox
 NodeLocation: 240,152,1
 NodeSize: 64,40
 WindState: 2,98,82,720,724
+DefnState: 2,83,90,416,303,0,DFNM
 Aliases: FormNode Fo1539019857
 NodeColor: 65535,65531,1
 TableCellDefault: Checkbox(0)
@@ -13593,7 +13607,7 @@ NodeLocation: 240,256,1
 NodeSize: 64,40
 WindState: 2,102,21,1089,879
 DisplayOutputs: Variable Clipboard_NewConstr_
-{!40300|Att_SlicerPopupSize: 602,112}
+{!40300|Att_SlicerPopupSize: 607,112}
 
 Index New_or_Retrofit
 Att_PrevIndexValue: ['NewConstr','Retrofit']
@@ -14739,7 +14753,7 @@ NodeLocation: 440,192,1
 NodeSize: 64,40
 WindState: 2,2125,148,720,350
 DefnState: 2,901,320,416,303,,DFNM
-ValueState: 2,2184,278,346,181,0,MIDM
+ValueState: 2,2184,278,561,572,0,MIDM
 Aliases: Alias Al1568696874, FormNode Fo1568696942, FormNode Fo168015043
 TableCellDefault: Choice(Stock_Basis_Types,1,0)
 
