@@ -1872,7 +1872,7 @@ Author: CWelch
 Date: Sun, Jan 9, 2022 3:29 PM
 NodeLocation: 632,208,1
 NodeSize: 72,56
-DiagState: 2,248,29,1185,675,17,10
+DiagState: 2,248,29,1185,592,17,10
 
 Variable Initial_PV_Adopters1
 Title: Initial PV Adopters
@@ -3036,7 +3036,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 256,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,276,164,1162,483,17
+DiagState: 2,290,85,1222,566,17,10
 AcpStyles: FrameNode: Solar_Frame
 
 Variable FirstYr_Annual_Solar
@@ -3059,7 +3059,7 @@ Description: The percentage of annual customer consumption met by solar producti
 Definition: Divide(FirstYr_Annual_Solar, Scaled_Annual_Load, True)
 NodeLocation: 880,208,1
 NodeSize: 64,40
-ValueState: 2,556,87,689,532,0,MIDM
+ValueState: 2,399,215,1039,475,0,MIDM
 Aliases: FormNode Fo1539221198, FormNode Fo1572476392
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [PV_Sectors,PV_Climate_Zone]
@@ -3153,7 +3153,7 @@ Author: JamesMilford
 Date: Fri, Oct 25, 2019 8:28 AM
 NodeLocation: 88,208,1
 NodeSize: 64,40
-DiagState: 2,12,25,1013,639,17,10
+DiagState: 2,264,70,1013,597,17,10
 AcpStyles: FrameNode: Solar_Scale_Frame
 
 Variable Normal_Solar_Profile
@@ -3255,7 +3255,7 @@ Null,Null,Null)
 NodeLocation: 256,336,1
 NodeSize: 64,40
 WindState: 2,9,12,866,441
-DefnState: 2,876,444,967,221,0,DFNM
+DefnState: 2,751,340,728,525,0,DFNM
 ValueState: 2,992,453,472,237,0,MIDM
 Aliases: Alias Al1550179326, FormNode Fo1550179326
 ReformDef: [PV_Climate_Zone,All_Sectors]
@@ -3365,7 +3365,7 @@ NodeLocation: 96,480,1
 NodeSize: 64,40
 ValueState: 2,107,115,1021,550,,MIDM
 ReformVal: [Hours_8784,Null]
-Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,3,Hours_8784,1]
+Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,2,Hours_8784,1]
 Att_ColorRole: Null
 
 Alias Al1571850383
@@ -3435,7 +3435,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,0,20,1492,661,17,10
+DiagState: 2,289,118,1492,661,17,10
 Aliases: Alias Al1579800542
 AcpStyles: FrameNode: Load_Frame
 
@@ -3483,18 +3483,19 @@ Definition: Table(Pre_and_Post_System)(Pre_System_Load,Net_Load)
 NodeLocation: 888,192,1
 NodeSize: 64,40
 WindState: 2,546,219,720,350
-ValueState: 2,432,57,1191,697,1,MIDM
+ValueState: 2,341,32,1109,855,1,MIDM
 Aliases: FormNode Fo1534438380, FormNode Fo1572476391
 NodeColor: 19661,48336,65535
 GraphSetup: Graph_AxisLabelFont:,14,0~
 Att_CatLineStyle Graph_Primary_Valdim:5~
 Att_AreaFill Graph_Primary_Valdim:0~
-Att_Stacked_Lines Graph_Primary_Valdim:0
-ReformVal: [Profile_Hours,Pre_and_Post_System]
+Att_Stacked_Lines Graph_Primary_Valdim:0~
+Att_GraphValueRange PrePost_Load_by_OpYr:1,,1,,,,10,0,421.10850512981415,0
+ReformVal: [Profile_Hours,PV_Sectors]
 Att__TotalsIndex: []
 Att_GraphValueRange: 1,,,,,,10
 Att_GraphTemplate: Lumidyne_Template
-Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Month,11,PV_Operating_Year,1,Rate_Vintage,4,System_Types,1,Pre_and_Post_System,2,Profile_Hours,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,Month,8,PV_Operating_Year,1,Rate_Vintage,1,System_Types,1,Pre_and_Post_System,1,PV_Sectors,2,Profile_Hours,1]
 
 Variable Scaled_Annual_Load
 Title: Scaled Annual Load
@@ -4265,7 +4266,7 @@ Author: JamesMilford
 Date: Fri, Oct 25, 2019 8:28 AM
 NodeLocation: 88,344,1
 NodeSize: 64,40
-DiagState: 2,690,96,1460,530,17,10
+DiagState: 2,721,166,619,421,17,10
 AcpStyles: Frame_Node: Scaling_Frame
 
 Variable Cust_Load_Profile
@@ -4310,7 +4311,7 @@ Description: The annual consumption per customer.
 Definition: Sum(Raw_Weekly_Cust_Load * Weekly_Day_Counts[Static_Profile_Names=Loadshape_Map[All_Sectors=PV_Sectors]], Day_and_Hour, Month)
 NodeLocation: 272,192,1
 NodeSize: 64,40
-ValueState: 2,319,369,732,258,0,MIDM
+ValueState: 2,563,154,602,442,0,MIDM
 
 Variable Load_Scaling_Factor
 Title: Load Scaling Factor
@@ -4321,11 +4322,12 @@ This is for economic calculations only and recognizes that historical installed 
 Definition: IF (Scale_Load_by_Covere[Solar_Scaling_Param=Is_Load_Adj_Label, All_Sectors=PV_Sectors] ) THEN ~
 Divide(FirstYr_Annual_Solar / Scale_Load_by_Covere[Solar_Scaling_Param=Fraction_Load_Label, All_Sectors=PV_Sectors], Annual_Load, True)~
 ELSE 1~
-{Don't apply a load scaling factor if the system sizing method is already based on customer load, which is typically used when historical interconnection data are not available for use in calculating forecast system sizes}
+
 NodeLocation: 432,192,1
 NodeSize: 64,40
 WindState: 2,468,285,720,350
-ValueState: 2,1313,388,422,167,0,MIDM
+ValueState: 2,581,354,970,203,0,MIDM
+NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,PV_Spatial_ID,1]
 
 Text Scaling_Frame
@@ -4338,11 +4340,12 @@ Show_description:20
 
 Constant Scale_Load_by_Covere
 Title: Scale Load by % Covered by Solar
-Description: This is for economic calculations only and recognizes that historical installed system sizes may be sized at greater than (or perhaps even lower than) might make sense based on average customer load. One reason for this, especially in the residential sector, is that larger homes may tend to install PV sooner, meaning that early on the adoption curve the actual system size may generate more kWh than an AVERAGE home. This adjustment allows the load used in economic calculations to be proportional to the historical average system size, making the economics more accurate. This input also ONLY applies if the system sizing method selected in "Historical Interconnection Based" rather than "Fraction of Load Based."
+Description: This is for economic calculations only and recognizes that historical installed system sizes may be sized at greater than (or perhaps even lower than) might make sense based on average customer load. One reason for this, especially in the residential sector, is that larger homes may tend to install PV sooner, meaning that early on the adoption curve the actual system size may generate more kWh than an AVERAGE home. This adjustment allows the load used in economic calculations to be proportional to the historical average system size, making the economics more accurate.
 Definition: Table(All_Sectors,Solar_Scaling_Param)(~
 0,0,~
 0,0,~
 0,0,~
+1,1,~
 0,0,~
 0,0,~
 0,0,~
@@ -4355,8 +4358,7 @@ Definition: Table(All_Sectors,Solar_Scaling_Param)(~
 0,0,~
 0,0,~
 0,0,~
-0,0,~
-0,0,~
+1,1,~
 0,0,~
 0,0,~
 0,0,~
@@ -4373,7 +4375,7 @@ Definition: Table(All_Sectors,Solar_Scaling_Param)(~
 0,0)
 NodeLocation: 432,328,1
 NodeSize: 64,40
-DefnState: 2,806,503,762,222,0,DFNM
+DefnState: 2,910,212,834,537,0,DFNM
 ReformDef: [Solar_Scaling_Param,All_Sectors]
 
 Index Solar_Scaling_Param
@@ -9695,7 +9697,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 584,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,51,201,1633,584,17,10
+DiagState: 2,128,118,1018,584,17,10
 AcpStyles: FrameNode: FrameNode_1544920267
 
 Constant Installed_EquipPrice
@@ -11526,11 +11528,11 @@ Val_by_Install_Event(price, 1, Annual_Econ_Time)
 NodeLocation: 568,56,1
 NodeSize: 64,40
 WindState: 2,-48,325,1556,638
-ValueState: 2,702,130,1166,711,1,MIDM
+ValueState: 2,565,118,1166,711,1,MIDM
 ReformVal: [Annual_Econ_Time,Installation_Event]
 NumberFormat: 2,F,4,2,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Sectors,1,Equipment_Types,1,System_Types,1,Installation_Event,1,Annual_Econ_Time,1]
+Att_ResultSliceState: [PV_Sectors,1,Equipment_Types,1,System_Types,2,Installation_Event,1,Annual_Econ_Time,1]
 
 Variable Levelized_O_M
 Title: Levelized O&M
@@ -11626,7 +11628,7 @@ NodeSize: 64,40
 Decision BaseYr_for_PV_Costs
 Title: Base Yr: PV Cost Decline
 Description: Select the base year to which cost decline scenarios will be applied.
-Definition: Choice(Static_PV_Time,11,0)
+Definition: Choice(Static_PV_Time,13,0)
 NodeLocation: 416,168,1
 NodeSize: 64,40
 Aliases: Alias Al1568923259, FormNode Fo1568923259, FormNode Fo1543274532, FormNode Fo1544916731
@@ -11815,7 +11817,7 @@ NodeSize: 64,40
 Decision BaseYr_Strg_Costs
 Title: Base Yr: Storage Cost Decline
 Description: Select the base year to which cost decline scenarios will be applied.
-Definition: Choice(Static_PV_Time,11,0)
+Definition: Choice(Static_PV_Time,13,0)
 NodeLocation: 416,288,1
 NodeSize: 64,40
 Aliases: Alias Al1568923261, FormNode Fo1568923261, FormNode Fo1548961182
@@ -12467,7 +12469,7 @@ Date: Wed, Oct 10, 2018 9:00 AM
 NodeLocation: 544,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,46,94,1840,619,17,10
+DiagState: 2,-133,138,1840,762,17,10
 Aliases: Alias Al1548967120
 AcpStyles: FrameNode: FrameNode_1544919879
 
@@ -13202,7 +13204,7 @@ DefnState: 2,857,228,346,508,,DFNM
 ValueState: 2,2185,301,416,303,,MIDM
 Aliases: FormNode Fo1535655040, FormNode Fo1542091914
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
-{!40300|Att_SlicerPopupSize: 1285,784}
+{!40300|Att_SlicerPopupSize: 1290,784}
 
 Index Market_Share_Metric
 Att_PrevIndexValue: ['Cost of Electricity Ratio','Simple Payback Time','Static Long-Run Market Share']
@@ -13533,7 +13535,7 @@ NodeLocation: 240,256,1
 NodeSize: 64,40
 WindState: 2,102,21,1089,879
 DisplayOutputs: Variable Clipboard_NewConstr_
-{!40300|Att_SlicerPopupSize: 597,112}
+{!40300|Att_SlicerPopupSize: 602,112}
 
 Index New_or_Retrofit
 Att_PrevIndexValue: ['NewConstr','Retrofit']
