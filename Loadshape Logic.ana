@@ -608,7 +608,7 @@ Author: JamesMilford
 Date: Thu, Aug 16, 2018 5:26 AM
 NodeLocation: 640,584,1
 NodeSize: 64,40
-DiagState: 2,2005,130,1751,563,17,10
+DiagState: 2,2020,133,1751,698,17,10
 
 Variable Hourly_Profiles
 Title: Hourly Profiles
@@ -4082,7 +4082,7 @@ NodeSize: 64,40
 WindState: 2,98,82,887,438
 ValueState: 2,179,114,1159,743,1,MIDM
 ReformVal: [Time_of_Day,All_Day_Types]
-Att_ResultSliceState: [Month,2,Static_Profile_Names,13,All_Day_Types,1,Time_of_Day,1]
+Att_ResultSliceState: [Month,8,Static_Profile_Names,13,All_Day_Types,1,Time_of_Day,1]
 
 Constant Saved_Avg_to_Peak
 Title: Saved Avg to Peak Ratios
@@ -4211,7 +4211,7 @@ Definition: Table(Month,All_Day_Types,Static_Profile_Names)(~
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
 NodeLocation: 928,392,1
 NodeSize: 64,40
-DefnState: 2,297,108,1132,593,0,DFNM
+DefnState: 2,297,72,1349,792,0,DFNM
 ValueState: 2,200,2,1131,657,0,MIDM
 Aliases: FormNode Fo1584597865
 ReformDef: [Month,Static_Profile_Names]
@@ -4350,7 +4350,7 @@ Title: Month
 Definition: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 NodeLocation: 248,544,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 897,196}
+{!40300|Att_SlicerPopupSize: 922,196}
 
 Index Time_of_Day
 Att_PrevIndexValue: ['12am-1am','1am-2am','2am-3am','3am-4am','4am-5am','5am-6am','6am-7am','7am-8am','8am-9am','9am-10am','10am-11am','11am-12pm','12pm-1pm','1pm-2pm','2pm-3pm','3pm-4pm','4pm-5pm','5pm-6pm','6pm-7pm','7pm-8pm','8pm-9pm','9pm-10pm','10pm-11pm','11pm-12am']
@@ -4490,7 +4490,7 @@ NodeSize: 64,40
 Aliases: FormNode Fo1534259711
 
 Index Selected_Profiles
-Att_PrevIndexValue: ['Solar_Upstate (W-hr/system)','Solar_Downstate (W-hr/system)','Solar_LI&HV (W-hr/system)','Higher Education Normalized Load Shape (kWh/kW)','Hospitals Normalized Load Shape (kWh/kW)','K-12 Normalized Load Shape (kWh/kW)','LG_Air Transportation Normalized Load Shape (kWh/kW)','LG_Art_Museum Normalized Load Shape (kWh/kW)','LG_Assisted Living Normalized Load Shape (kWh/kW)','LG_Community services Normalized Load Shape (kWh/kW)','LG_Correctional Facility Normalized Load Shape (kWh/kW)','LG_Unique Education Normalized Load Shape (kWh/kW)','LG_Government_Office Normalized Load Shape (kWh/kW)','LG_Housing Normalized Load Shape (kWh/kW)','LG_Library Normalized Load Shape (kWh/kW)','LG_Other Transportation Normalized Load Shape (kWh/kW)','LG_Police and Fire Department Normalized Load Shape (kWh/kW)','LG_Recreational Normalized Load Shape (kWh/kW)','LG_Water Supply & Waste Water Normalized Load Shape (kWh/kW)','SA_Air Transportation Normalized Load Shape (kWh/kW)','SA_Art_Museum Normalized Load Shape (kWh/kW)','SA_Assisted Living Normalized Load Shape (kWh/kW)','SA_Community services Normalized Load Shape (kWh/kW)','SA_Correctional Facility Normalized Load Shape (kWh/kW)','SA_Courthouse_Probation Normalized Load Shape (kWh/kW)','SA_Unique Education Normalized Load Shape (kWh/kW)','SA_Government_Office Normalized Load Shape (kWh/kW)','SA_Housing Normalized Load Shape (kWh/kW)','SA_Library Normalized Load Shape (kWh/kW)','SA_Other Transportation Normalized Load Shape (kWh/kW)','SA_Police and Fire Department Normalized Load Shape (kWh/kW)','SA_Recreational Normalized Load Shape (kWh/kW)','SA_Water Supply & Waste Water Normalized Load Shape (kWh/kW)','EV Combined Normalized Load Shape (kWh/kW)']
+Att_PrevIndexValue: ['Solar_Upstate (W-hr/system)','Solar_Downstate (W-hr/system)','Solar_LI&HV (W-hr/system)','Higher Education Normalized Load Shape (kWh/kW)','Hospitals Normalized Load Shape (kWh/kW)','K-12 Normalized Load Shape (kWh/kW)','LG_Air Transportation Normalized Load Shape (kWh/kW)','LG_Art_Museum Normalized Load Shape (kWh/kW)','LG_Assisted Living Normalized Load Shape (kWh/kW)','LG_Community services Normalized Load Shape (kWh/kW)','LG_Correctional Facility Normalized Load Shape (kWh/kW)','LG_Unique Education Normalized Load Shape (kWh/kW)','LG_Government_Office Normalized Load Shape (kWh/kW)','LG_Housing Normalized Load Shape (kWh/kW)','LG_Library Normalized Load Shape (kWh/kW)','LG_Other Transportation Normalized Load Shape (kWh/kW)','LG_Police and Fire Department Normalized Load Shape (kWh/kW)','LG_Recreational Normalized Load Shape (kWh/kW)','LG_Water Supply & Waste Water Normalized Load Shape (kWh/kW)','SA_Air Transportation Normalized Load Shape (kWh/kW)','SA_Art_Museum Normalized Load Shape (kWh/kW)','SA_Assisted Living Normalized Load Shape (kWh/kW)','SA_Community services Normalized Load Shape (kWh/kW)','SA_Correctional Facility Normalized Load Shape (kWh/kW)','SA_Courthouse_Probation Normalized Load Shape (kWh/kW)','SA_Unique Education Normalized Load Shape (kWh/kW)','SA_Government_Office Normalized Load Shape (kWh/kW)','SA_Housing Normalized Load Shape (kWh/kW)','SA_Library Normalized Load Shape (kWh/kW)','SA_Other Transportation Normalized Load Shape (kWh/kW)','SA_Police and Fire Department Normalized Load Shape (kWh/kW)','SA_Recreational Normalized Load Shape (kWh/kW)','SA_Water Supply & Waste Water Normalized Load Shape (kWh/kW)']
 Title: Selected Profiles
 Definition: Subset(Profiles_to_Evaluate)
 NodeLocation: 248,64,1

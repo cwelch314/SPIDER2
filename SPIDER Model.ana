@@ -113,7 +113,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,158,23,1348,735,17,10
+DiagState: 2,12,35,1348,735,17,10
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
@@ -485,7 +485,7 @@ ELSE Show_ACP_Window(PV_Impact_Out,PV_Impact_Titles,PV_Impact1, 'Result')
 Decision PV_Impact1
 Title: PV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Impact_Titles,1,0)
+Definition: Choice(PV_Impact_Titles,4,0)
 NodeLocation: 616,440,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -618,7 +618,7 @@ NodeSize: 64,40
 Decision PV_Economics
 Title: PV Economics
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Econ_Titles1,6,0)
+Definition: Choice(PV_Econ_Titles1,5,0)
 NodeLocation: 608,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -982,7 +982,7 @@ Original: Storage_Dispatch_Out
 Decision BESS_Impact1
 Title: BESS Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Dispatch_Tit,1,0)
+Definition: Choice(Storage_Dispatch_Tit,2,0)
 NodeLocation: 608,1160,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
