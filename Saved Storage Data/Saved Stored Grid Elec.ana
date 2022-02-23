@@ -1,0 +1,30 @@
+{ Analytica Model Saved_Stored_Grid_El, encoding="UTF-8" }
+SoftwareVersion 6.1.0
+
+{!-60000|Attribute AcpStyles}
+
+
+LinkModule Saved_Stored_Grid_El
+Title: Saved Stored Grid Elec
+DefaultSize: 64,40
+NodeSize: 64,40
+FontStyle: Arial Narrow,19
+FileInfo: 0,LinkModule Saved_Stored_Grid_El,2,2,0,0,Saved Storage Data\Saved Stored Grid Elec.ana
+
+Constant Saved_Stored_Grid2
+Title: Saved Stored Grid Elect
+Units: kW-hr/customer
+Description: The decision variable for the amount of grid electricity that will be stored.
+Definition: Null
+NodeLocation: 112,64,1
+NodeSize: 64,40
+DefnState: 2,257,-2,943,682,0,DFNM
+ValueState: 2,40,42,1194,745,1,MIDM
+Aliases: FormNode New1552348267, Alias Al899626019
+ReformDef: [Month,Day_and_Hour]
+ReformVal: [Day_and_Hour,Month]
+Att_ResultSliceState: [All_Sectors,2,Rate_Vintage,3,PV_Climate_Zone,1,All_Storage_Systems,1,Month,1,Day_and_Hour,1]
+Att_EditSliceState: [PV_Climate_Zone,1,Rate_Vintage,5,Opt_Sectors,1,Opt_Storage_Systems,2,Seq_Opt_Number,1,Opt_Hours,1,Month,1]
+
+Close Saved_Stored_Grid_El
+

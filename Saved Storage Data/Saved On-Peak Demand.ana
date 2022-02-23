@@ -1,0 +1,29 @@
+{ Analytica Model Saved_On_Peak_Demand, encoding="UTF-8" }
+SoftwareVersion 6.1.0
+
+{!-60000|Attribute AcpStyles}
+
+
+LinkModule Saved_On_Peak_Demand
+Title: Saved On-Peak Demand
+DefaultSize: 64,40
+NodeSize: 64,40
+FontStyle: Arial Narrow,19
+FileInfo: 0,LinkModule Saved_On_Peak_Demand,2,2,0,0,Saved Storage Data\Saved On-Peak Demand.ana
+
+Constant Saved_OnPeak_Dmd2
+Title: Saved On-Peak Demand
+Units: kW
+Description: The decision variable used to identify the maximum on-peak load.
+Definition: Null
+NodeLocation: 112,64,1
+NodeSize: 64,40
+DefnState: 2,284,8,731,897,,DFNM
+ValueState: 2,325,155,782,606,,MIDM
+Aliases: FormNode New1552348273, Alias Al1839150115
+ReformVal: [Month,Rate_Vintage]
+Att_ResultSliceState: [All_Sectors,2,PV_Climate_Zone,1,All_Storage_Systems,1,Month,1,Rate_Vintage,1]
+Att_EditSliceState: [All_Sectors,2,PV_Climate_Zone,1,Month,1,All_Storage_Systems,1,Day_and_Hour,1,Rate_Vintage,1]
+
+Close Saved_On_Peak_Demand
+

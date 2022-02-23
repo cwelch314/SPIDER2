@@ -1,0 +1,30 @@
+{ Analytica Model Saved_Total_Discharg, encoding="UTF-8" }
+SoftwareVersion 6.1.0
+
+{!-60000|Attribute AcpStyles}
+
+
+LinkModule Saved_Total_Discharg
+Title: Saved Total Discharge
+DefaultSize: 64,40
+NodeSize: 64,40
+FontStyle: Arial Narrow,19
+FileInfo: 0,LinkModule Saved_Total_Discharg,2,2,0,0,Saved Storage Data\Saved Total Discharge.ana
+
+Constant Saved_Tot_Discharge
+Title: Saved Total Discharge
+Units: kW-hr/customer
+Description: The decision variable for the total amount of electricity discharged from the battery.
+Definition: Null
+NodeLocation: 112,64,1
+NodeSize: 64,40
+DefnState: 2,392,67,1001,630,,DFNM
+ValueState: 2,363,5,1011,734,,MIDM
+Aliases: FormNode New1552348269, Alias Al228537379
+ReformDef: [Month,Opt_Hours]
+ReformVal: [Day_and_Hour,Month]
+Att_ResultSliceState: [All_Sectors,1,Rate_Vintage,4,PV_Climate_Zone,1,All_Storage_Systems,1,Month,1,Day_and_Hour,1]
+Att_EditSliceState: [Rate_Vintage,5,PV_Climate_Zone,1,Opt_Sectors,1,Opt_Storage_Systems,1,Seq_Opt_Number,1,Opt_Hours,1,Month,1]
+
+Close Saved_Total_Discharg
+

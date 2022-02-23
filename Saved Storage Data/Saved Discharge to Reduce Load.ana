@@ -1,0 +1,31 @@
+{ Analytica Model Saved_Discharge_to_R, encoding="UTF-8" }
+SoftwareVersion 6.1.0
+
+{!-60000|Attribute AcpStyles}
+
+
+LinkModule Saved_Discharge_to_R
+Title: Saved Discharge to Reduce Load
+DefaultSize: 64,40
+NodeSize: 64,40
+FontStyle: Arial Narrow,19
+FileInfo: 0,LinkModule Saved_Discharge_to_R,2,2,0,0,Saved Storage Data\Saved Discharge to Reduce Load.ana
+
+Constant Saved_Dischg_RedLoa2
+Title: Saved Discharge to Reduce Load
+Units: kW-hr/customer
+Description: The decision variable for the amount of electricity discharged from the battery to reduce load.
+Definition: Null
+NodeLocation: 112,64,1
+NodeSize: 64,40
+WindState: 2,249,294,720,350
+DefnState: 2,260,-3,1180,567,0,DFNM
+ValueState: 2,120,122,1313,801,,MIDM
+Aliases: FormNode New1552348268, Alias Al1973367843
+ReformDef: [Month,Opt_Hours]
+ReformVal: [Day_and_Hour,Rate_Vintage]
+Att_ResultSliceState: [All_Sectors,1,PV_Climate_Zone,1,All_Storage_Systems,4,Month,10,Rate_Vintage,1,Day_and_Hour,1]
+Att_EditSliceState: [PV_Climate_Zone,1,Rate_Vintage,4,Opt_Sectors,1,Opt_Storage_Systems,2,Seq_Opt_Number,1,Opt_Hours,1,Month,1]
+
+Close Saved_Discharge_to_R
+

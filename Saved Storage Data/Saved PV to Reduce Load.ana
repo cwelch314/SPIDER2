@@ -1,0 +1,32 @@
+{ Analytica Model Saved_PV_to_Reduce_L, encoding="UTF-8" }
+SoftwareVersion 6.1.0
+
+{!-60000|Attribute AcpStyles}
+
+
+LinkModule Saved_PV_to_Reduce_L
+Title: Saved PV to Reduce Load
+DefaultSize: 64,40
+NodeSize: 64,40
+FontStyle: Arial Narrow,19
+FileInfo: 0,LinkModule Saved_PV_to_Reduce_L,2,2,0,0,Saved Storage Data\Saved PV to Reduce Load.ana
+
+Constant Saved_PV_RedLoad2
+Title: Saved PV to Reduce Load
+Units: kW-hr/customer
+Description: The decision variable for the amount of PV used to reduce load.
+Definition: Null
+NodeLocation: 112,64,1
+NodeSize: 64,40
+WindState: 2,296,224,720,350
+DefnState: 2,360,115,842,568,,DFNM
+ValueState: 2,113,86,1094,723,,MIDM
+Aliases: FormNode New1552348272, Alias Al765408291
+ReformDef: [Month,Day_and_Hour]
+ReformVal: [Valid_Opt_Hours,Seq_Opt_Number]
+Att_ResultSliceState: [All_Sectors,1,Rate_Vintage,4,PV_Climate_Zone,1,All_Storage_Systems,1,Month,6,Seq_Opt_Number,1,Valid_Opt_Hours,1]
+Att_EditSliceState: [All_Sectors,1,Rate_Vintage,4,PV_Climate_Zone,3,All_Storage_Systems,1,Day_and_Hour,1,Month,1]
+{!40300|OptInitialGuess: Opt_Solar_Output}
+
+Close Saved_PV_to_Reduce_L
+
