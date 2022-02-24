@@ -287,7 +287,7 @@ Definition: Table(All_PV_Decisions,Upper_Lower)(~
 0,1,~
 -0.3,-0.2,~
 0,1,~
--5,0,~
+-9,0,~
 -15,15,~
 -15,15,~
 -15,15)
@@ -469,6 +469,7 @@ Description: The lower bound on the corresponding decision variable.
 Definition: PV_Dec_Var_Bounds[All_PV_Decisions=PVLogitPriceCoef_Lab, Upper_Lower=Lower_Label]
 NodeLocation: 408,560,1
 NodeSize: 64,40
+WindState: 2,98,82,720,506
 
 Variable PV_PriceCoef_Upr_Bnd
 Title: PV PriceCoef Upr Bnd
@@ -871,7 +872,7 @@ Original: PV_Calibration_Start
 Decision PV_Calibration_End
 Title: PV Calibration End
 Description: The time period for which PV calibration end.
-Definition: Choice(PV_Sim_End_Yr_Option,139,0)
+Definition: Choice(PV_Sim_End_Yr_Option,156,0)
 NodeLocation: 256,176,1
 NodeSize: 64,40
 Aliases: Alias Al1568908170, FormNode Fo1568908170, FormNode Fo1542054650, FormNode Fo1535066245
@@ -2601,7 +2602,7 @@ Decision PV_Ad_Effectiveness
 Title: PV Ad Effectiveness
 Units: fraction/year
 Description: Advertising effectiveness, also known as the "p" coefficient in the classic Bass diffusion model.
-Definition: 0.005
+Definition: 0.01
 NodeLocation: 128,72,1
 NodeSize: 64,40
 WindState: 2,36,8,1180,547
@@ -2617,7 +2618,7 @@ Decision PV_Word_of_Mouth
 Title: PV Word of Mouth
 Units: fraction/year
 Description: The strength of word-of-mouth effectiveness, also known as the "q" parameter in the classic Bass diffusion model.
-Definition: 0.1573
+Definition: 0.4
 NodeLocation: 128,264,1
 NodeSize: 64,40
 WindState: 2,5,426,720,350
@@ -2829,7 +2830,7 @@ Decision Logit_Price_Coeff
 Title: Logit Price Coefficient
 Units: utility/ratio
 Description: The amount of utility derived per unit of the cost of electricity ratio.
-Definition: -1
+Definition: -6
 NodeLocation: 128,456,1
 NodeSize: 64,40
 WindState: 2,97,174,720,350
@@ -2875,7 +2876,7 @@ Decision Logit_Tech_Coeff
 Title: Logit Tech Coefficient
 Units: utility
 Description: The amount of utility explained by preference for a particular technology regardless of differences in economics.
-Definition: 0
+Definition: 4
 NodeLocation: 128,552,1
 NodeSize: 64,40
 WindState: 2,57,96,720,350
@@ -2966,7 +2967,7 @@ Description: Coefficient on the payback acceptance curve for PV, which has the f
 ~
 EXP(PV_Payback_Coeff * Payback_time), where payback time is in years. ~
 
-Definition: -0.3
+Definition: -0.2
 NodeLocation: 128,840,1
 NodeSize: 64,40
 Aliases: Alias Al1542130160, FormNode Fo1542131035
@@ -2981,7 +2982,7 @@ Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(PV_Payback_Coeff)]
 NodeLocation: 456,840,1
 NodeSize: 64,40
 DefnState: 2,653,19,559,803,0,DFNM
-ValueState: 2,505,27,712,762,0,MIDM
+ValueState: 2,511,129,927,727,0,MIDM
 Aliases: Alias Al1542302597
 ReformDef: [All_Sectors,All_Spatial_ID]
 ReformVal: [All_Spatial_ID,All_Sectors]

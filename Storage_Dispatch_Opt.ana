@@ -22,7 +22,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 416,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,70,-3,1788,748,17,10
+DiagState: 2,15,56,1788,748,17,10
 
 Decision Stored_Grid_Elect1
 Title: Stored Grid Electricity
@@ -260,7 +260,7 @@ Decision Use_Storage_Decisio2
 Title: Use Storage Decision Var
 Units: boolean
 Description: Enables decision variables to be used during a storage optimization. When this is unchecked, the logic reverts to saved optimization solutions.
-Definition: Checkbox(1)
+Definition: Checkbox(0)
 NodeLocation: 96,1648,1
 NodeSize: 64,40
 Aliases: FormNode New1552348266, Alias Al1552348255, FormNode Fo1552348271
@@ -893,7 +893,7 @@ Decision Exog_Initial_Charge1
 Title: Exog Initial Charge Level
 Units: kWh
 Description: The exogenous initial charge level of the battery. This is not found via an optimization, and it can be used to overwrite the optimized decision variable's values.
-Definition: 0
+Definition: 0.5
 NodeLocation: 1016,536,1
 NodeSize: 64,40
 Aliases: FormNode New1552348287, Alias Al1552348258, FormNode Fo1552348279
@@ -984,10 +984,10 @@ Definition: Battery_Charge_BOP + Net_Charge2
 NodeLocation: 1168,232,1
 NodeSize: 64,40
 WindState: 2,162,-10,720,350
-ValueState: 2,54,6,1681,803,0,MIDM
+ValueState: 2,54,6,1681,803,1,MIDM
 GraphSetup: Att_GraphValueRange Battery_Charge_EOP:1,,1,,,,,0.02811669430229813,4.286858290433884,0~
 Att_GraphIndexRange Opt_Hours:1,,1,,,,,0.014121800195425749,3.4485435485839844,0
-Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,1,Opt_Storage_Systems,2,Seq_Opt_Number,1,Month,1,Opt_Hours,1]
+Att_ResultSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Opt_Storage_Systems,1,Seq_Opt_Number,1,Month,1,Opt_Sectors,1,Opt_Hours,1]
 
 Decision Ending_Charge_Level
 Title: Ending Charge Level
@@ -2655,12 +2655,12 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,105,-5,1615,615,17,10
+DiagState: 2,-1,41,1749,742,17,10
 
 Decision Opt_Seq_Number
 Title: Opt Sequential Number
 Description: The sequential optimization number currently being optimized.  This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.
-Definition: Choice(Seq_Opt_Number,1,1)
+Definition: Choice(Seq_Opt_Number,0,1)
 NodeLocation: 768,568,1
 NodeSize: 64,40
 WindState: 2,59,318,720,350
@@ -2688,7 +2688,7 @@ Title: Opt Sector
 Description: The sector for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.~
 ~
 Choice(Opt_Sectors,1,0)
-Definition: Choice(Opt_Sectors,1,1)
+Definition: Choice(Opt_Sectors,0,1)
 NodeLocation: 464,568,1
 NodeSize: 64,40
 WindState: 2,149,1,720,350
@@ -2697,7 +2697,7 @@ Aliases: FormNode Fo1206201853, FormNode Fo1552348256, FormNode Fo895004157
 Decision Opt_Climate_Zone2
 Title: Opt Climate Zone
 Description: The climate zone for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.
-Definition: Choice(PV_Climate_Zone,3,1)
+Definition: Choice(PV_Climate_Zone,0,1)
 NodeLocation: 464,680,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348257
@@ -2721,7 +2721,7 @@ Original: Opt_Climate_Zone2
 Decision Opt_Rate_Vintage2
 Title: Opt Rate Vintage
 Description: The rate vintage for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.
-Definition: Choice(Rate_Vintage,1,1)
+Definition: Choice(Rate_Vintage,0,1)
 NodeLocation: 616,680,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348258
@@ -2764,7 +2764,7 @@ OnClick: Set_Decisions_To_Opt(Storage_Opt_Def2)
 Decision Opt_Month2
 Title: Opt Month
 Description: The month for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.
-Definition: Choice(Month,12,1)
+Definition: Choice(Month,0,1)
 NodeLocation: 616,568,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348259
@@ -2920,7 +2920,7 @@ ValueState: 2,256,248,416,303,,MIDM
 Decision Opt_System2
 Title: Opt System
 Description: The storage system for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.
-Definition: Choice(Opt_Storage_Systems,2,1)
+Definition: Choice(Opt_Storage_Systems,0,1)
 NodeLocation: 464,792,1
 NodeSize: 64,40
 WindState: 2,137,521,720,350
@@ -2958,7 +2958,7 @@ Aliases: FormNode Fo1552348264
 Decision Select_Strg_CZ2
 Title: Selected Storage Climate Zones
 Description: Select the climate zones that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(PV_Climate_Zone,allowNone:0,returnList:1)
+Definition: MultiChoice(PV_Climate_Zone,1,allowNone:0,returnList:1)
 NodeLocation: 768,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348265
@@ -3031,7 +3031,7 @@ Original: Select_Strg_Rate2
 Decision Select_Strg_Month2
 Title: Selected Storage Months
 Description: Select the months that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Month,allowNone:0,returnList:1)
+Definition: MultiChoice(Month,1,allowNone:0,returnList:1)
 NodeLocation: 616,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348267
@@ -3071,7 +3071,7 @@ Decision Decouple_Rates2
 Title: Decouple Rates from Storage Opt
 Units: boolean
 Description: When checked, this will decouple rates from the net load found from the storage optimization. This ensures that rates aren't invalidated whenever a new storage optimization solution is saved, which allows the storage optimization to run faster.
-Definition: Checkbox(1)
+Definition: Checkbox(0)
 NodeLocation: 1128,480,1
 NodeSize: 64,40
 WindState: 2,128,555,720,350
@@ -3385,7 +3385,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 22-Feb-2022 17:38:44.514000
+Definition: 23-Feb-2022 11:23:03.014000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3393,7 +3393,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 22-Feb-2022 17:11:50.683000
+Definition: 23-Feb-2022 11:23:47.387000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,2,2,0,0,2,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3598,7 +3598,7 @@ Decision Opt_Window_Length
 Title: Opt Window Length
 Units: days
 Description: Specify the length of optimization window. The optimization will assume perfect foresight of loads and solar production during this window. For a "Representative Day Type" profile granularity, selecting an optimization window longer than 1 day implies that all weekdays are followed by weekend days, and all weekend days are preceded by weekdays.
-Definition: 1
+Definition: 7
 NodeLocation: 96,208,1
 NodeSize: 64,40
 WindState: 2,782,3,720,483
@@ -3750,7 +3750,7 @@ Description: Select the granularity of the customer load and solar profiles used
 Monthly Time-Series: uses every hour in each month.~
 Representative Week: uses a representative week, which is an average across all weeks in the month.~
 Representative Day Type: uses a representative weekday and weekend, which are averages across all weekdays/weekends in the month.
-Definition: Choice(Profile_Granularity,3,0)
+Definition: Choice(Profile_Granularity,2,0)
 NodeLocation: 96,96,1
 NodeSize: 64,40
 WindState: 2,98,82,1104,446
@@ -4473,15 +4473,15 @@ Definition: Reindex_to_ProfileHr(Flows_by_Opt_Hour[Flow_Name2=Flow_Types1, Rate_
 NodeLocation: 416,64,1
 NodeSize: 64,40
 WindState: 2,5,19,972,489
-ValueState: 2,2180,25,1250,793,1,MIDM
+ValueState: 2,2135,20,1423,803,1,MIDM
 Aliases: FormNode Fo1557458712, FormNode Fo1571775089
-GraphSetup: Grid:0~
-Att_GraphValueRange Dispatch_Flows2:1,,1,,,,,-76.77660882472992,114.06230926513672,0~
-Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,1,,,,,53,99,1
+GraphSetup: Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,1,,,,,53,99,1~
+Att_GraphValueRange Dispatch_Flows2:1,,0,1,,,,0,2000,0~
+Grid:0
 ReformVal: [Viewed_Dispatch_Tim2,Flow_Types1]
 NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: []
-Att_ResultSliceState: [Rate_Names_and_Start,1,Month,8,PV_Climate_Zone,1,Opt_Storage_Systems,2,Opt_Sectors,2,Flow_Types1,11,Viewed_Dispatch_Tim2,1]
+Att_ResultSliceState: [Rate_Names_and_Start,1,Month,1,PV_Climate_Zone,1,Opt_Storage_Systems,2,Opt_Sectors,1,Flow_Types1,11,Viewed_Dispatch_Tim2,1]
 
 Decision Dispatch_Start_Time2
 Title: Start Time for Dispatch
@@ -5477,7 +5477,7 @@ NodeLocation: 248,280,1
 NodeSize: 64,40
 
 Index Seq_Opt_Number
-Att_PrevIndexValue: [1,2]
+Att_PrevIndexValue: [1]
 Title: Sequential Opt Number
 Definition: VAR ind:=Number_SeqOpt_Handle[Profile_Granularity=Sel_Profile_Granular];~
 CopyIndex(ind)
@@ -5485,7 +5485,7 @@ NodeLocation: 248,376,1
 NodeSize: 64,40
 WindState: 2,58,531,1071,354
 ValueState: 2,228,234,488,688,0,MIDM
-{!40300|Att_SlicerPopupSize: 237,64}
+{!40300|Att_SlicerPopupSize: 247,64}
 
 Index Valid_Opt_Hours
 Title: Valid Opt Hours
@@ -5498,7 +5498,7 @@ NodeSize: 64,40
 ValueState: 2,52,58,693,471,0,MIDM
 
 Index Opt_Hours
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72]
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216]
 Title: Opt Hours
 Definition: VAR start:=Max(App_Start_End_Pos[@Position_Type=1], Month);~
 VAR end:=Max(App_Start_End_Pos[@Position_Type=4], Month);~
