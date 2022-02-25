@@ -22,7 +22,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 416,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,15,56,1788,748,17,10
+DiagState: 2,15,56,1788,730,17,10
 
 Decision Stored_Grid_Elect1
 Title: Stored Grid Electricity
@@ -1358,6 +1358,8 @@ Original: Saved_Ending_Charge
 
 Module Saved_Storage_Data
 Title: Saved Storage Data
+Author: CWelch
+Date: Thu, Feb 24, 2022 10:13 AM
 NodeLocation: 496,656,1
 NodeSize: 64,40
 DiagState: 2,2181,43,1237,712,17,10
@@ -2655,7 +2657,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-1,41,1749,742,17,10
+DiagState: 2,132,44,1749,742,17,10
 
 Decision Opt_Seq_Number
 Title: Opt Sequential Number
@@ -2950,7 +2952,7 @@ OnClick: FOR J:=@All_Strg_Decisions2 DO (~
 Decision Select_Strg_Sector2
 Title: Selected Storage Sectors
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,1,2,allowNone:0,returnList:1)
 NodeLocation: 464,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348264
@@ -2958,7 +2960,7 @@ Aliases: FormNode Fo1552348264
 Decision Select_Strg_CZ2
 Title: Selected Storage Climate Zones
 Description: Select the climate zones that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(PV_Climate_Zone,1,allowNone:0,returnList:1)
+Definition: MultiChoice(PV_Climate_Zone,allowNone:0,returnList:1)
 NodeLocation: 768,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348265
@@ -3031,7 +3033,7 @@ Original: Select_Strg_Rate2
 Decision Select_Strg_Month2
 Title: Selected Storage Months
 Description: Select the months that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Month,1,allowNone:0,returnList:1)
+Definition: MultiChoice(Month,allowNone:0,returnList:1)
 NodeLocation: 616,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348267
@@ -3385,7 +3387,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 23-Feb-2022 11:23:03.014000
+Definition: 24-Feb-2022 11:03:15.508000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3393,7 +3395,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 23-Feb-2022 11:23:47.387000
+Definition: 24-Feb-2022 11:10:37.318000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,2,2,0,0,2,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -4473,15 +4475,15 @@ Definition: Reindex_to_ProfileHr(Flows_by_Opt_Hour[Flow_Name2=Flow_Types1, Rate_
 NodeLocation: 416,64,1
 NodeSize: 64,40
 WindState: 2,5,19,972,489
-ValueState: 2,2135,20,1423,803,1,MIDM
+ValueState: 2,154,28,1423,803,1,MIDM
 Aliases: FormNode Fo1557458712, FormNode Fo1571775089
-GraphSetup: Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,1,,,,,53,99,1~
-Att_GraphValueRange Dispatch_Flows2:1,,0,1,,,,0,2000,0~
-Grid:0
+GraphSetup: Grid:0~
+Att_GraphValueRange Dispatch_Flows2:1,,1,1,,,,0,2000,0~
+Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,1,,,,,53,99,1
 ReformVal: [Viewed_Dispatch_Tim2,Flow_Types1]
 NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: []
-Att_ResultSliceState: [Rate_Names_and_Start,1,Month,1,PV_Climate_Zone,1,Opt_Storage_Systems,2,Opt_Sectors,1,Flow_Types1,11,Viewed_Dispatch_Tim2,1]
+Att_ResultSliceState: [Rate_Names_and_Start,1,Month,8,PV_Climate_Zone,1,Opt_Storage_Systems,1,Opt_Sectors,2,Flow_Types1,11,Viewed_Dispatch_Tim2,1]
 
 Decision Dispatch_Start_Time2
 Title: Start Time for Dispatch
