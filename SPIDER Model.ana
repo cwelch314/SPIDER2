@@ -58,7 +58,7 @@ Graph_ColorSeq := [12593,38293,0,65278,37008,6168,32639,32639,32639,0,0,0,34952,
 {!40600|NodeLocation MaxModelThreads: 880,64,1}
 {!40600|NodeSize MaxModelThreads: 48,24}
 {!40600|NodeInfo MaxModelThreads: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
-{!50000|OutlinerState Sys_FoundSet: 2,359,98,1094,789}
+{!50000|OutlinerState Sys_FoundSet: 2,97,107,1094,751}
 {!50000|NodeLocation DecimalForCopyPaste: 1024,64,1}
 {!50000|NodeSize DecimalForCopyPaste: 72,24}
 {!50000|NodeInfo DecimalForCopyPaste: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
@@ -68,7 +68,7 @@ NodeInfo Sys_ComparisonTolera: 1,1,1,1,1,1,0,0,0,0,,0,1,0
 {!50016|PlusOnTextReturnsNaN := 0}
 {!50400|Sys_UseLegacyColors := 1}
 
-DisplayOutputs Object: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi, Decision Dates_Incl_in_PV_Opt, Decision Opt_Settings_PV, Index Lidar_Locale_Type, Variable Zip_to_Locale_Map, Variable Accel_Metric_Diff, Index All_EV_Dec_Handles, Variable Lower_Pctile, Variable Upper_Pctile, Decision Opt_Settings_BESS, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
+DisplayOutputs Object: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi, Decision Dates_Incl_in_PV_Opt, Decision Opt_Settings_PV, Index Lidar_Locale_Type, Variable Zip_to_Locale_Map, Variable Accel_Metric_Diff, Index All_EV_Dec_Handles, Variable Lower_Pctile, Variable Upper_Pctile, Variable Payback_Time_by_ID1, Decision Opt_Settings_BESS, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
 DisplayOutputs SysFunction: Variable Lower_Pctile, Variable Upper_Pctile
 DisplayOutputs Function: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi, Decision Dates_Incl_in_PV_Opt, Decision Opt_Settings_PV, Decision Opt_Settings_BESS
 DisplayOutputs SysVar: Variable Lower_Pctile, Variable Upper_Pctile
@@ -78,7 +78,7 @@ DisplayOutputs SysVar: Variable Lower_Pctile, Variable Upper_Pctile
 {!-50299|DiagramColor Library: 65535,65535,65535}
 {!-50299|DiagramColor LinkLibrary: 65535,65535,65535}
 {!-50299|DiagramColor Form: 65535,65535,65535}
-DisplayOutputs Variable: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Variable Lower_Pctile, Variable Upper_Pctile, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
+DisplayOutputs Variable: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Variable Lower_Pctile, Variable Upper_Pctile, Variable Payback_Time_by_ID1, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
 DisplayOutputs Decision: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi, Index Lidar_Locale_Type, Variable Zip_to_Locale_Map, Variable Lower_Pctile, Variable Upper_Pctile, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
 DisplayOutputs Index: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi, Index Lidar_Locale_Type, Variable Zip_to_Locale_Map, Variable Accel_Metric_Diff, Index All_EV_Dec_Handles, Variable Lower_Pctile, Variable Upper_Pctile, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
 DisplayOutputs Constant: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
@@ -113,7 +113,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,499,182,1348,735,17,10
+DiagState: 2,206,92,1092,578,17,10
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
@@ -618,7 +618,7 @@ NodeSize: 64,40
 Decision PV_Economics
 Title: PV Economics
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Econ_Titles1,2,0)
+Definition: Choice(PV_Econ_Titles1,5,0)
 NodeLocation: 608,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -17764,7 +17764,7 @@ NodeColor: 0,28784,52685
 Module Mo2
 Author: CWelch
 Date: Tue, Nov 16, 2021 12:28 PM
-NodeLocation: 160,624,1
+NodeLocation: 128,1040,1
 NodeSize: 64,40
 DiagState: 2,-20,190,1774,761,17,10
 AcpStyles: Show_Object:no
@@ -18025,6 +18025,62 @@ NodeSize: 148,16
 Original: Nodes_to_change
 
 Close Mo2
+
+FormNode Fo569089059
+Title: Equipment Sizes
+Definition: 1
+NodeLocation: 476,644,1
+NodeSize: 204,20
+NodeColor: 30583,48316,7967
+Original: Equipment_Sizes
+
+FormNode Fo871078947
+Title: Compare PV Potl and Load
+Definition: 1
+NodeLocation: 476,684,1
+NodeSize: 204,20
+NodeColor: 30583,48316,7967
+Original: Compare_PV_Potl_and_
+
+FormNode Fo1532730403
+Title: Simple Payback Time
+Definition: 1
+NodeLocation: 476,772,1
+NodeSize: 204,20
+NodeColor: 30583,48316,7967
+Original: Simple_Payback_Time1
+
+FormNode Fo1675336739
+Title: Mkt Share Example
+Definition: 1
+NodeLocation: 476,852,1
+NodeSize: 204,20
+NodeColor: 30583,48316,7967
+Original: Mkt_Share_Example
+
+FormNode Fo1077648419
+Title: Payback Acceptance Curve
+Definition: 1
+NodeLocation: 476,812,1
+NodeSize: 204,20
+NodeColor: 30583,48316,7967
+Original: Payback_Accept_Curve
+
+FormNode Fo641440803
+Title: Cost of Electricity Ratios
+Definition: 1
+NodeLocation: 476,892,1
+NodeSize: 204,20
+NodeColor: 30583,48316,7967
+Original: Cost_of_Elect_Ratios
+
+FormNode Fo1615305763
+Title: Total PV Area
+Definition: 1
+NodeLocation: 476,604,1
+NodeSize: 204,20
+NodeColor: 30583,48316,7967
+Original: Total_PV_Area1
 
 Close Main_Interface
 
