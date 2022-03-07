@@ -22,7 +22,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 416,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,15,56,1788,730,17,10
+DiagState: 2,60,63,1788,730,17,10
 
 Decision Stored_Grid_Elect1
 Title: Stored Grid Electricity
@@ -1855,7 +1855,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 264,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,81,21,1740,694,17
+DiagState: 2,17,10,1740,801,17,10
 
 Variable Lev_NCDmdPrice_Opt
 Title: Lev NC Dmd Price for Opt
@@ -1976,9 +1976,9 @@ Definition: Cost_of_Purch_Elect2 - Value_of_Export_Ele2 + Cost_of_On_Peak_Dmd2 +
 NodeLocation: 1136,264,1
 NodeSize: 64,40
 WindState: 2,28,104,1241,597
-ValueState: 2,413,91,799,558,0,MIDM
+ValueState: 2,337,172,1172,545,0,MIDM
 Att__TotalsIndex: [Month]
-Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Storage_Systems,1,Rate_Vintage,4,Month,1,Seq_Opt_Number,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Seq_Opt_Number,1,Opt_Storage_Systems,1,Area_Type,3,Month,1,Opt_Sectors,1]
 
 Variable Opt_Net_Load
 Title: Opt Net Load
@@ -2102,6 +2102,7 @@ NodeSize: 64,40
 WindState: 2,419,215,720,680
 DefnState: 2,328,330,618,291,0,DFNM
 Aliases: FormNode Fo1552348254
+NodeColor: 65535,65531,1
 ReformDef: [0,Opt_Storage_Systems]
 TableCellDefault: Choice(All_System_Types,1,0)
 
@@ -2112,8 +2113,9 @@ Definition: Table(All_Storage_Systems)(Choice(Pre_and_Post_System,2,0),Choice(Pr
 NodeLocation: 104,504,1
 NodeSize: 64,40
 WindState: 2,326,439,720,499
-DefnState: 2,-1,448,618,249,0,DFNM
+DefnState: 2,611,612,618,249,0,DFNM
 Aliases: FormNode Fo1552348255
+NodeColor: 65535,65531,1
 ReformDef: [0,Opt_Storage_Systems]
 TableCellDefault: Choice(Pre_and_Post_System, 1, 0)
 
@@ -2657,7 +2659,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,33,23,1749,742,17,10
+DiagState: 2,23,16,1799,796,17,10
 
 Decision Opt_Seq_Number
 Title: Opt Sequential Number
@@ -5487,7 +5489,7 @@ NodeLocation: 248,376,1
 NodeSize: 64,40
 WindState: 2,58,531,1071,354
 ValueState: 2,228,234,488,688,0,MIDM
-{!40300|Att_SlicerPopupSize: 247,64}
+{!40300|Att_SlicerPopupSize: 252,64}
 
 Index Valid_Opt_Hours
 Title: Valid Opt Hours
