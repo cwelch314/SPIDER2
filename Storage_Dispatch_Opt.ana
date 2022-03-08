@@ -11,7 +11,7 @@ Date: Wed, May 1, 2019 11:53 AM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
-DiagState: 2,560,90,720,254,17,10
+DiagState: 2,254,0,720,254,17,10
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule Storage_Dispatch_Opt,2,2,0,0,Storage_Dispatch_Opt.ana
 
@@ -22,7 +22,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 416,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,60,63,1788,730,17,10
+DiagState: 2,35,80,1788,620,17,10
 
 Decision Stored_Grid_Elect1
 Title: Stored Grid Electricity
@@ -2659,7 +2659,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,23,16,1799,796,17,10
+DiagState: 2,-28,1,1860,755,17,10
 
 Decision Opt_Seq_Number
 Title: Opt Sequential Number
@@ -2954,7 +2954,7 @@ OnClick: FOR J:=@All_Strg_Decisions2 DO (~
 Decision Select_Strg_Sector2
 Title: Selected Storage Sectors
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,1,2,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,allowNone:0,returnList:1)
 NodeLocation: 464,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348264
@@ -3389,7 +3389,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 24-Feb-2022 11:03:15.508000
+Definition: 7-Mar-2022 19:30:11.200000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3397,7 +3397,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 24-Feb-2022 11:10:37.318000
+Definition: 7-Mar-2022 19:32:19.328000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,2,2,0,0,2,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -4078,13 +4078,14 @@ FOR J:=@Storage_Decisions2 DO (   {For each decision variable}~
    LocalAlias decisVar:=varHandle;   {A local alias to the decision variable being saved}~
    solution[Storage_Decisions2=varHandle]:=IF Total_Optimized_Cos2 = Null   {If the objective is null because a specific sequential optimization is not applicable}~
       THEN Null   {Then return null}~
-      ELSE OptSolution(Storage_Opt_Def2, decisVar);   {Else find the solution to the optimization for the Jth decision}~
+      ELSE Round(OptSolution(Storage_Opt_Def2, decisVar),Saved_DV_Rounding_De);   {Else find the solution to the optimization for the Jth decision}~
    Null;   {Return a null to prevent excessive indexing}~
 );~
 Saved_Linked_List:=LL_Push(Saved_Linked_List, solution);   {Appends the current array of decision variables to the saved linked list}
 NodeLocation: 1600,384,1
 NodeSize: 64,40
 WindState: 2,130,8,1567,879
+NodeColor: 65535,1,1
 
 Variable Extract_Link_Results
 Title: Extract Linked Results
@@ -4398,6 +4399,12 @@ Definition: 1
 NodeLocation: 1128,760,1
 NodeSize: 64,40
 Original: Saved_Linked_List
+
+Constant Saved_DV_Rounding_De
+Title: Saved DV Rounding Decimals
+Definition: 2
+NodeLocation: 1608,288,1
+NodeSize: 64,40
 
 Close Storage_Optimizati11
 
@@ -5489,7 +5496,7 @@ NodeLocation: 248,376,1
 NodeSize: 64,40
 WindState: 2,58,531,1071,354
 ValueState: 2,228,234,488,688,0,MIDM
-{!40300|Att_SlicerPopupSize: 252,64}
+{!40300|Att_SlicerPopupSize: 257,64}
 
 Index Valid_Opt_Hours
 Title: Valid Opt Hours
