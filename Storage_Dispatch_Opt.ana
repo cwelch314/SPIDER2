@@ -22,7 +22,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 416,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,3,163,1627,743,17,10
+DiagState: 2,123,53,1627,743,17,10
 
 Decision Stored_Grid_Elect1
 Title: Stored Grid Electricity
@@ -260,7 +260,7 @@ Decision Use_Storage_Decisio2
 Title: Use Storage Decision Var
 Units: boolean
 Description: Enables decision variables to be used during a storage optimization. When this is unchecked, the logic reverts to saved optimization solutions.
-Definition: Checkbox(0)
+Definition: Checkbox(1)
 NodeLocation: 96,1648,1
 NodeSize: 64,40
 Aliases: FormNode New1552348266, Alias Al1552348255, FormNode Fo1552348271
@@ -1860,7 +1860,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 264,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,17,10,1740,775,17,10
+DiagState: 2,-46,191,1740,710,17,10
 
 Variable Lev_NCDmdPrice_Opt
 Title: Lev NC Dmd Price for Opt
@@ -1888,7 +1888,8 @@ price[PV_Sectors=Opt_Sector2, PV_Climate_Zone=Opt_Climate_Zone2, Rate_Vintage=Op
 NodeLocation: 760,256,1
 NodeSize: 64,40
 WindState: 2,102,82,1541,789
-ValueState: 2,152,154,1058,630,,MIDM
+ValueState: 2,152,154,1058,630,0,MIDM
+Att_ResultSliceState: [Rate_Vintage,1,PV_Climate_Zone,2,Opt_Storage_Systems,1,Area_Type,1,Month,1,Opt_Sectors,1]
 
 Variable EnergyPrice_by_OptHr
 Title: Energy Price by OptHr
@@ -1898,7 +1899,7 @@ Definition: Applied_Energy_Price[Periods=Periods_for_Prof_Opt[Data_Types=Energy_
 NodeLocation: 760,160,1
 NodeSize: 64,40
 WindState: 2,102,82,1602,709
-ValueState: 2,100,6,1721,843,0,MIDM
+ValueState: 2,52,10,1721,843,0,MIDM
 ReformVal: [Opt_Hours,Null]
 Att_ResultSliceState: [PV_Climate_Zone,1,Seq_Opt_Number,1,Opt_Storage_Systems,1,Rate_Vintage,2,Opt_Sectors,2,Month,8,Opt_Hours,1]
 Att_ColorRole: Null
@@ -1953,9 +1954,9 @@ Definition: Sum(Purchased_Electric2 * EnergyPrice_by_OptHr, Opt_Hours) * Mthly_S
 NodeLocation: 912,160,1
 NodeSize: 64,40
 WindState: 2,218,222,1194,695
-ValueState: 2,-3,27,891,589,0,MIDM
+ValueState: 2,451,111,1183,589,0,MIDM
 Att__TotalsIndex: [Month]
-Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Storage_Systems,1,Rate_Vintage,4,Month,1,Seq_Opt_Number,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Seq_Opt_Number,1,Opt_Storage_Systems,1,Area_Type,1,Month,1,Opt_Sectors,1]
 
 Variable Value_of_Export_Ele2
 Title: Value of Exported Electricity
@@ -1969,7 +1970,7 @@ NodeSize: 64,40
 WindState: 2,3,37,1138,560
 ValueState: 2,414,8,864,864,0,MIDM
 Att__TotalsIndex: [Month]
-Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,4,PV_Climate_Zone,1,Storage_Systems,1,Month,1,Seq_Opt_Number,1]
+Att_ResultSliceState: [Rate_Vintage,1,PV_Climate_Zone,2,Seq_Opt_Number,1,Opt_Storage_Systems,1,Area_Type,1,Month,1,Opt_Sectors,1]
 
 Objective Total_Optimized_Cos2
 Title: Total Optimized Cost
@@ -1981,9 +1982,9 @@ Definition: Cost_of_Purch_Elect2 - Value_of_Export_Ele2 + Cost_of_On_Peak_Dmd2 +
 NodeLocation: 1136,264,1
 NodeSize: 64,40
 WindState: 2,604,166,1169,658
-ValueState: 2,337,172,1172,545,0,MIDM
+ValueState: 2,398,163,1366,581,0,MIDM
 Att__TotalsIndex: [Month]
-Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Seq_Opt_Number,1,Opt_Storage_Systems,1,Area_Type,3,Month,1,Opt_Sectors,1]
+Att_ResultSliceState: [PV_Climate_Zone,2,Rate_Vintage,1,Seq_Opt_Number,1,Opt_Storage_Systems,1,Area_Type,2,Month,1,Opt_Sectors,1]
 
 Variable Opt_Net_Load
 Title: Opt Net Load
@@ -2026,8 +2027,8 @@ Description: The optimized total cost of on-peak demand charges.
 Definition: OnPkDmdPrice_OptHr * Applied_OnPeak_Dmd2
 NodeLocation: 912,256,1
 NodeSize: 64,40
-ValueState: 2,311,31,665,685,0,MIDM
-ReformVal: [Seq_Opt_Number,Month]
+ValueState: 2,311,31,939,752,0,MIDM
+ReformVal: [PV_Climate_Zone,Opt_Sectors]
 Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,4,PV_Climate_Zone,1,Storage_Systems,1,Month,1,Seq_Opt_Number,1]
 
 Variable Cost_of_NonCoinc_Dm2
@@ -2184,9 +2185,9 @@ Definition: Sum(Pct_Consump_by_Tier[System_Types=Map_Tier_Wts_to_Str2[All_Storag
 NodeLocation: 104,160,1
 NodeSize: 64,40
 WindState: 2,7,14,1502,537
-ValueState: 2,12,29,862,717,,MIDM
-ReformVal: [Month,Rate_Vintage]
-Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Periods,1,PV_Operating_Year,1,All_Storage_Systems,1,Rate_Vintage,1,Month,5]
+ValueState: 2,482,42,1183,791,0,MIDM
+ReformVal: [Month,PV_Sectors]
+Att_ResultSliceState: [PV_Climate_Zone,2,Periods,1,PV_Operating_Year,1,Rate_Vintage,1,Opt_Storage_Systems,2,Area_Type,1,PV_Sectors,2,Month,5]
 
 Variable Lev_Energy_Price_Prd
 Title: Lev Energy Price by Period
@@ -2196,9 +2197,9 @@ Definition: PMT(Nominal_Equity_Rate, Economic_Lifetime, -NPV(Nominal_Equity_Rate
 NodeLocation: 448,160,1
 NodeSize: 64,40
 WindState: 2,102,82,1169,464
-ValueState: 2,799,142,1721,843,0,MIDM
-ReformVal: [Month,Periods]
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Rate_Vintage,5,Opt_Storage_Systems,1,Periods,1,Month,6]
+ValueState: 2,260,54,1721,843,0,MIDM
+ReformVal: [Month,PV_Sectors]
+Att_ResultSliceState: [PV_Climate_Zone,3,Rate_Vintage,1,Opt_Storage_Systems,1,Periods,1,Area_Type,1,PV_Sectors,1,Month,6]
 
 Variable Periods_for_Prof_Opt
 Title: Periods for Profile Opt
@@ -2271,7 +2272,7 @@ Date: Wed, Oct 30, 2019 8:57 PM
 NodeLocation: 1136,656,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,192,9,1460,796,17,10
+DiagState: 2,80,163,1460,796,17,10
 
 Index Compare_Elements
 Title: Compare Elements
@@ -2664,7 +2665,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,33,9,1806,556,17,10
+DiagState: 2,120,33,1823,657,17,10
 
 Decision Opt_Seq_Number
 Title: Opt Sequential Number
@@ -2758,9 +2759,9 @@ ELSE DefineOptimization(~
 NodeLocation: 968,216,1
 NodeSize: 64,40
 WindState: 2,-33,94,1540,840
-ValueState: 2,469,293,1114,494,0,MIDM
-{!40300|Att_DerefReformVal: [Sys_LocalIndex('Item'),Sys_LocalIndex('Decision')]}
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Storage_Systems,1,Month,1,Rate_Vintage,1]
+ValueState: 2,276,231,1470,547,0,MIDM
+{!40300|Att_DerefReformVal: [Undefined,Sys_LocalIndex('Item')]}
+Att_ResultSliceState: [PV_Climate_Zone,2,Rate_Vintage,1,Opt_Storage_Systems,1,Area_Type,1,Seq_Opt_Number,1,Month,1,Opt_Sectors,1]
 
 Button Save_Storage_Decis2
 Title: Save Storage Decisions
@@ -2959,7 +2960,7 @@ OnClick: FOR J:=@All_Strg_Decisions2 DO (~
 Decision Select_Strg_Sector2
 Title: Selected Storage Sectors
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,22,allowNone:0,returnList:1)
 NodeLocation: 464,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348264, Alias Al513733155
@@ -3040,7 +3041,7 @@ Original: Select_Strg_Rate2
 Decision Select_Strg_Month2
 Title: Selected Storage Months
 Description: Select the months that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Month,1,allowNone:0,returnList:1)
+Definition: MultiChoice(Month,3,allowNone:0,returnList:1)
 NodeLocation: 616,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348267
@@ -3197,7 +3198,7 @@ Use_Storage_Decisio2:=0;   {Connect logic to stored decisions}~
 Set_Filters_to_All2;   {Set the optimization filters to "All"}~
 Storage_Opt_End_Tim2:= Today(withTime: True);   {Set the end time of the entire loop of optimizations}~
 ~
-MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimization");~
+/*MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimization");~
    ~
 ~
 
@@ -3394,7 +3395,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 8-Mar-2022 12:14:37.736000
+Definition: 9-Mar-2022 08:56:44.605000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3402,7 +3403,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 8-Mar-2022 12:27:29.374000
+Definition: 9-Mar-2022 08:57:04.448000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,2,2,0,0,2,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -4425,7 +4426,8 @@ Title: Opt Time
 Definition: Saved_Opt_Date1[Start_End_Time1='End Opt']-Saved_Opt_Date1[Start_End_Time1= 'Start Opt']
 NodeLocation: 112,64,1
 NodeSize: 64,40
-ValueState: 2,2032,186,1628,516,0,MIDM
+ValueState: 2,2136,127,1247,728,0,MIDM
+ReformVal: [Month,Opt_Sectors]
 NumberFormat: 2,F,4,2,0,0,4,0,$,0,"mm:sss",0,,,0,1,15,
 Att__TotalsIndex: [Month,PV_Climate_Zone,Opt_Storage_Systems]
 Att_ResultSliceState: [Rate_Vintage,1,PV_Climate_Zone,0,Opt_Storage_Systems,0,Seq_Opt_Number,1,Month,1,Opt_Sectors,1]
@@ -4435,10 +4437,11 @@ Title: Save Time
 Definition: Saved_Opt_Date1[Start_End_Time1= 'End Save']-Saved_Opt_Date1[Start_End_Time1='End Opt']
 NodeLocation: 112,160,1
 NodeSize: 64,40
-ValueState: 2,51,251,1680,489,0,MIDM
+ValueState: 2,190,149,1680,489,0,MIDM
 NumberFormat: 2,F,2,2,0,0,2,0,$,0,"mm:ssssss",0,,,0,1,15,
-Att__TotalsIndex: [Month,Opt_Storage_Systems,PV_Climate_Zone]
+Att__TotalsIndex: [Month,PV_Climate_Zone,Opt_Storage_Systems]
 Att_ResultSliceState: [Rate_Vintage,1,PV_Climate_Zone,0,Opt_Storage_Systems,0,Seq_Opt_Number,1,Month,1,Opt_Sectors,1]
+{!40700|Att_CellFormat: CellFormats(CellSpan(Opt_Sectors,CellSpan(Month,CellNumberFormat('Fixed Point',2,0,0,dateFormat:'mm:ssssssssss',fullPrecision:0,numbersAsDates:1,datesAsNumbers:0),1,header:0),11,12,header:0),CellSpan(Opt_Sectors,CellSpan(Month,CellNumberFormat('Suffix',2,0,0,dateFormat:'mm:sssssss',fullPrecision:0,numbersAsDates:1,datesAsNumbers:0),1,header:0),10,11,header:0),CellSpan(Opt_Sectors,CellSpan(Month,CellNumberFormat('Suffix',2,0,0,dateFormat:'mm:sssssssssssssss',fullPrecision:0,numbersAsDates:1,datesAsNumbers:0),1,header:0),10,12,header:0))}
 
 Alias Al513733155
 Title: Selected Storage Sectors
@@ -4459,12 +4462,13 @@ NodeLocation: 600,264,1
 NodeSize: 64,40
 OnClick: for i:=Chose_Sectors_to_Opt DO~
 	(Select_Strg_Sector2:=i;~
-	Run_Storage_Optimiz2)
+	Run_Storage_Optimiz2);~
+MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimization");
 
 Decision Chose_Sectors_to_Opt
 Title: Chose Sectors to Optimize
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,11,12,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,allowNone:0,returnList:1)
 NodeLocation: 592,64,1
 NodeSize: 64,40
 Aliases: FormNode Fo989786659
@@ -4472,7 +4476,7 @@ Aliases: FormNode Fo989786659
 FormNode Fo989786659
 Title: Chose Sectors to Optimize
 Definition: 0
-NodeLocation: 788,136,1
+NodeLocation: 668,184,1
 NodeSize: 252,16
 NodeInfo: 1,,,,,,,292,,,,,,0
 Original: Chose_Sectors_to_Opt
@@ -4557,7 +4561,7 @@ Definition: Reindex_to_ProfileHr(Flows_by_Opt_Hour[Flow_Name2=Flow_Types1, Rate_
 NodeLocation: 416,64,1
 NodeSize: 64,40
 WindState: 2,5,19,972,489
-ValueState: 2,241,47,1423,803,1,MIDM
+ValueState: 2,2224,24,1423,803,1,MIDM
 Aliases: FormNode Fo1557458712, FormNode Fo1571775089
 GraphSetup: Grid:0~
 Att_GraphValueRange Dispatch_Flows2:1,,1,1,,,,0,2000,0~
@@ -4565,7 +4569,7 @@ Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,1,,,,,53,99,1
 ReformVal: [Viewed_Dispatch_Tim2,Flow_Types1]
 NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: []
-Att_ResultSliceState: [Rate_Names_and_Start,1,Month,8,PV_Climate_Zone,1,Opt_Storage_Systems,1,Opt_Sectors,2,Flow_Types1,11,Viewed_Dispatch_Tim2,1]
+Att_ResultSliceState: [Rate_Names_and_Start,1,Month,8,PV_Climate_Zone,1,Opt_Storage_Systems,1,Opt_Sectors,2,Area_Type,1,Flow_Types1,11,Viewed_Dispatch_Tim2,1]
 
 Decision Dispatch_Start_Time2
 Title: Start Time for Dispatch

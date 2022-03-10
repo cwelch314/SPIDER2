@@ -1766,7 +1766,7 @@ Show_description:20
 
 Variable Tech_Potl_KW_DC
 Title: Tech Potl KW DC
-Definition: Aggregate(Elig_Bldgs_for_Retro / m2_Roofspc_per_kWdc, Climate_Zone_Map,PV_Spatial_ID,PV_Climate_Zone)
+Definition: Aggregate(Elig_Bldgs_for_Retro / m2_area_per_kW_DC, Climate_Zone_Map,PV_Spatial_ID,PV_Climate_Zone)
 NodeLocation: 320,88,1
 NodeSize: 64,40
 ValueState: 2,311,144,1137,736,0,MIDM
@@ -2057,7 +2057,7 @@ Units: PV stock basis by sector
 Description: Initial adopters of PV (by building units) at the start of the simulation (PV Simulation Start Year). ~
 
 Definition: VAR systems:= Cumul_Syst_Installs[Interconnect_Date=PV_Sim_Start_Minus_1];~
-VAR roofspace:= Hist_Cumul_DC_Cap[Interconnect_Date=PV_Sim_Start_Minus_1] * kW_per_MW * m2_Roofspc_per_kWdc;~
+VAR roofspace:= Hist_Cumul_DC_Cap[Interconnect_Date=PV_Sim_Start_Minus_1] * kW_per_MW * m2_area_per_kW_DC;~
 VAR initAdoption:=IF PV_Stock_Basis_by_Se[All_Sectors=PV_Sectors] = Buildings_Label~
    THEN systems~
    ELSE roofspace;~
@@ -3246,7 +3246,7 @@ Author: JamesMilford
 Date: Fri, Oct 25, 2019 8:28 AM
 NodeLocation: 88,248,1
 NodeSize: 64,40
-DiagState: 2,215,70,1013,597,17,10
+DiagState: 2,208,43,1013,507,17,10
 AcpStyles: FrameNode: Solar_Scale_Frame
 
 Variable Normal_Solar_Profile
@@ -3303,7 +3303,7 @@ Definition: Table(All_Sectors,PV_Climate_Zone)(~
 NodeLocation: 96,336,1
 NodeSize: 64,40
 DefnState: 2,290,96,1062,651,0,DFNM
-ValueState: 2,361,264,985,477,0,MIDM
+ValueState: 2,550,100,928,663,0,MIDM
 ReformDef: [PV_Climate_Zone,All_Sectors]
 ReformVal: [PV_Climate_Zone,All_Sectors]
 TableCellDefault: Choice(Static_Profile_Names,2,0)
@@ -3314,48 +3314,111 @@ Units: kWhA/year / kW-DC*8760
 Description: NEED TO CHANGE DIMENSIONALITY OF DATA IMPORTED~
 ~
 The PV capacity factor, which indicates the kWh-AC of first-year solar production that can be expected from a system having a 1 kW-DC nameplate rating.
-Definition: Table(All_Sectors,PV_Climate_Zone)(~
-0.156,0.14766941852187138,0.135,~
-0.156,0.14766941852187138,0.135,~
-0.156,0.14766941852187138,0.135,~
-0.156,0.14766941852187138,0.135,~
-0.156,0.14766941852187138,0.135,~
-0.156,0.14766941852187138,0.135,~
-0.156,0.14766941852187138,0.135,~
-0.156,0.14766941852187138,0.135,~
-0.156,0.14766941852187138,0.135,~
-0.156,0.14766941852187138,0.135,~
-0.156,0.14766941852187138,0.135,~
-0.156,0.14766941852187138,0.135,~
-0.156,0.14766941852187138,0.135,~
-0.156,0.147669418521871,0.135,~
-0.156,0.147669418521871,0.135,~
-0.156,0.147669418521871,0.135,~
-0.156,0.147669418521871,0.135,~
-0.156,0.147669418521871,0.135,~
-0.156,0.147669418521871,0.135,~
-0.156,0.147669418521871,0.135,~
-0.156,0.147669418521871,0.135,~
-0.156,0.147669418521871,0.135,~
-0.156,0.147669418521871,0.135,~
-0.156,0.147669418521871,0.135,~
-0.156,0.147669418521871,0.135,~
-0.156,0.147669418521871,0.135,~
-0.156,0.147669418521871,0.135,~
-0.156,0.147669418521871,0.135,~
-0.156,0.147669418521871,0.135,~
-0.156,0.147669418521871,0.135,~
+Definition: Table(All_Sectors,PV_Climate_Zone,Area_Type)(~
+0.156,0.156,0.156,~
+0.14766941852187138,0.14766941852187138,0.14766941852187138,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.14766941852187138,0.14766941852187138,0.14766941852187138,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.14766941852187138,0.14766941852187138,0.14766941852187138,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.14766941852187138,0.14766941852187138,0.14766941852187138,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.14766941852187138,0.14766941852187138,0.14766941852187138,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.14766941852187138,0.14766941852187138,0.14766941852187138,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.14766941852187138,0.14766941852187138,0.14766941852187138,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.14766941852187138,0.14766941852187138,0.14766941852187138,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.14766941852187138,0.14766941852187138,0.14766941852187138,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.14766941852187138,0.14766941852187138,0.14766941852187138,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.14766941852187138,0.14766941852187138,0.14766941852187138,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.14766941852187138,0.14766941852187138,0.14766941852187138,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.14766941852187138,0.14766941852187138,0.14766941852187138,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.147669418521871,0.147669418521871,0.147669418521871,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.147669418521871,0.147669418521871,0.147669418521871,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.147669418521871,0.147669418521871,0.147669418521871,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.147669418521871,0.147669418521871,0.147669418521871,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.147669418521871,0.147669418521871,0.147669418521871,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.147669418521871,0.147669418521871,0.147669418521871,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.147669418521871,0.147669418521871,0.147669418521871,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.147669418521871,0.147669418521871,0.147669418521871,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.147669418521871,0.147669418521871,0.147669418521871,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.147669418521871,0.147669418521871,0.147669418521871,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.147669418521871,0.147669418521871,0.147669418521871,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.147669418521871,0.147669418521871,0.147669418521871,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.147669418521871,0.147669418521871,0.147669418521871,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.147669418521871,0.147669418521871,0.147669418521871,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.147669418521871,0.147669418521871,0.147669418521871,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.147669418521871,0.147669418521871,0.147669418521871,~
+0.135,0.135,0.135,~
+0.156,0.156,0.156,~
+0.147669418521871,0.147669418521871,0.147669418521871,~
+0.135,0.135,0.135,~
+Null,Null,Null,~
+Null,Null,Null,~
 Null,Null,Null)
 NodeLocation: 256,336,1
 NodeSize: 64,40
-WindState: 2,9,12,866,441
-DefnState: 2,751,340,728,525,0,DFNM
+WindState: 2,433,146,866,441
+DefnState: 2,800,129,797,669,0,DFNM
 ValueState: 2,992,453,472,237,0,MIDM
 Aliases: Alias Al1550179326, FormNode Fo1550179326
+NodeColor: 65535,1,1
 ReformDef: [PV_Climate_Zone,All_Sectors]
 ReformVal: [All_Sectors,PV_Climate_Zone]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att_EditSliceState: [New_or_Retrofit,1,All_Sectors,1,PV_Climate_Zone,1]
+Att_EditSliceState: [Area_Type,1,All_Sectors,1,PV_Climate_Zone,1]
 
 Variable PV_Production_per_kW
 Title: PV Production per kW
@@ -3364,7 +3427,7 @@ Description: The annual energy produced per kW-DC of installed solar.
 Definition: PV_Capacity_Factor[All_Sectors=PV_Sectors] * Hours_per_Year
 NodeLocation: 416,336,1
 NodeSize: 64,40
-ValueState: 2,372,83,750,683,0,MIDM
+ValueState: 2,787,106,750,683,0,MIDM
 ReformVal: [PV_Climate_Zone,PV_Sectors]
 Att__TotalsIndex: []
 
@@ -3535,7 +3598,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,-195,163,1734,606,17,10
+DiagState: 2,0,163,1734,589,17,10
 Aliases: Alias Al1579800542
 AcpStyles: FrameNode: Load_Frame
 
@@ -3547,7 +3610,7 @@ Definition: Weekly_Nrml_Loadshap * Annual_Load * Load_Scaling_Factor
 NodeLocation: 416,344,1
 NodeSize: 64,40
 WindState: 2,102,81,1099,351
-ValueState: 2,2193,60,1487,691,1,MIDM
+ValueState: 2,1981,56,1487,691,1,MIDM
 Aliases: Alias Al1552430385
 GraphSetup: Att_GraphValueRange Weekly_Customer_Load:1,,0,,,,,0,2624.838173389435,0~
 Att_CatLineStyle Graph_Primary_Valdim:5~
@@ -3556,7 +3619,7 @@ Graph_KeyTitleFont:,18,1~
 Graph_KeyFont:,18,0~
 Graph_AxisTitleFont:Arial,18,1
 Att__TotalsIndex: [Day_and_Hour]
-Att_ResultSliceState: [PV_Climate_Zone,1,Month,8,PV_Sectors,2,Day_and_Hour,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,Month,8,Area_Type,1,PV_Sectors,2,Day_and_Hour,1]
 
 Variable Load_Net_of_Solar
 Title: Load Net of Solar
@@ -4359,7 +4422,7 @@ Author: JamesMilford
 Date: Fri, Oct 25, 2019 8:28 AM
 NodeLocation: 88,344,1
 NodeSize: 64,40
-DiagState: 2,243,142,1324,494,17,10
+DiagState: 2,155,234,1324,494,17,10
 AcpStyles: Frame_Node: Scaling_Frame
 
 Variable Normalized_Load_Shap
@@ -4371,7 +4434,7 @@ Definition: Daily_Prof_with_Peak[Static_Profile_Names=Loadshape_Map[All_Sectors=
 NodeLocation: 112,328,1
 NodeSize: 64,40
 WindState: 2,107,230,720,350
-ValueState: 2,457,361,1039,455,0,MIDM
+ValueState: 2,305,355,1039,455,0,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [PV_Sectors,Month]
 Att__TotalsIndex: [Day_of_Week,Month,Time_of_Day]
@@ -4455,6 +4518,7 @@ NodeLocation: 800,328,1
 NodeSize: 64,40
 DefnState: 2,487,195,882,667,0,DFNM
 ValueState: 2,480,266,706,524,0,MIDM
+NodeColor: 65535,1,1
 ReformDef: [Solar_Scaling_Param,All_Sectors]
 ReformVal: [Solar_Scaling_Param,All_Sectors]
 
@@ -4555,7 +4619,7 @@ Graph_KeyTitleFont:,18,1~
 Graph_KeyFont:,18,0~
 Graph_AxisTitleFont:Arial,18,1~
 ShowKey:2
-ReformVal: [Day_and_Hour,PV_Sectors]
+ReformVal: [Day_and_Hour,Month]
 Att__TotalsIndex: [Day_and_Hour]
 Att_ResultSliceState: [Month,8,PV_Sectors,2,Day_and_Hour,0]
 
@@ -4601,7 +4665,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,323,40,981,721,17,10
+DiagState: 2,323,40,981,456,17,10
 Aliases: Alias Al1548967138
 AcpStyles: FrameNode: FrameNode_1544919985
 
@@ -4694,7 +4758,7 @@ Description: The consumption by tier and period.
 Definition: Consum_by_TOU_Prd * Pct_Consump_by_Tier
 NodeLocation: 648,72,1
 NodeSize: 64,40
-ValueState: 2,622,112,1089,672,0,MIDM
+ValueState: 2,239,110,1089,672,0,MIDM
 GraphSetup: Graph_SymbolKey:1~
 Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [Month,PV_Operating_Year]
@@ -4877,7 +4941,7 @@ Description: The total energy consumption by TOU period.
 Definition: Aggregate(PrePost_Load_by_OpYr * Load_Monthly_Mults, Periods_by_ProfileHr[Data_Types=Energy_Rate_Label], Profile_Hours, Periods)
 NodeLocation: 280,72,1
 NodeSize: 64,40
-ValueState: 2,28,3,863,764,1,MIDM
+ValueState: 2,298,116,863,764,1,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
 {!40600|Att_WaterfallBar Graph_Primary_Valdim:0}
 ReformVal: [Month,Periods]
@@ -4923,7 +4987,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 256,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,304,32,1351,710,17,10
+DiagState: 2,140,28,1351,710,17,10
 Aliases: Alias Al1548967139
 AcpStyles: FrameNode: FrameNode_1544920029
 
@@ -4990,7 +5054,7 @@ Definition: Replace_X_with_Y(Sum(Data_by_Tier_Period[Rate_Names=Selected_Cust_Ra
 NodeLocation: 256,312,1
 NodeSize: 64,40
 WindState: 2,102,82,1080,350
-ValueState: 2,88,96,1540,768,0,MIDM
+ValueState: 2,106,150,1395,404,0,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:6
 ReformVal: [Day_and_Hour,Rate_Vintage]
 Att_ResultSliceState: [PV_Sectors,2,Pre_and_Post_System,1,PV_Climate_Zone,1,Tiers,1,Periods,1,Rate_Vintage,4,PV_Operating_Year,1]
@@ -5692,7 +5756,7 @@ Checkbox(0),Checkbox(0),Checkbox(0))
 NodeLocation: 96,216,1
 NodeSize: 64,40
 WindState: 2,108,40,1402,650
-DefnState: 2,2392,27,757,779,0,DFNM
+DefnState: 2,2276,61,757,779,0,DFNM
 ValueState: 2,302,51,935,658,0,MIDM
 Aliases: FormNode Fo1547766909, FormNode Fo1547828216
 NodeColor: 65535,65531,1
@@ -10236,7 +10300,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 584,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,331,46,1093,678,17,10
+DiagState: 2,189,70,1093,678,17,10
 AcpStyles: FrameNode: FrameNode_1544920267
 
 Constant Installed_EquipPrice
@@ -13595,16 +13659,17 @@ Null,Null,Null)
 NodeLocation: 120,56,1
 NodeSize: 64,40
 WindState: 2,755,283,1016,618
-DefnState: 2,437,130,1244,684,0,DFNM
+DefnState: 2,238,132,1244,684,0,DFNM
 ValueState: 2,214,66,1293,766,0,MIDM
 Aliases: Alias Al1568696041, FormNode Fo1568696041, FormNode Fo1539276353, FormNode Fo1544633533, FormNode Fo1572476397, FormNode Fo1567092923
+NodeColor: 65535,1,1
 GraphSetup: Att_GraphIndexRange Static_PV_Time:1,,1,,,,10,2016.6065129041672,2030,0
 ReformDef: [All_Sectors,Static_PV_Time]
 ReformVal: [All_Sectors,Static_PV_Time]
 NumberFormat: 2,F,2,0,1,1,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: []
 Att_ResultSliceState: [All_Equipment_Types,1,New_or_Retrofit,2,Static_PV_Time,1,All_Sectors,1]
-Att_EditSliceState: [All_Equipment_Types,1,New_or_Retrofit,2,Area_Type,2,Static_PV_Time,1,All_Sectors,1]
+Att_EditSliceState: [All_Equipment_Types,1,New_or_Retrofit,2,Area_Type,1,Static_PV_Time,1,All_Sectors,1]
 
 Constant Equipment_Lifetime
 Title: Equipment Lifetime
@@ -13675,11 +13740,12 @@ Definition: Table(All_Sectors,All_Equipment_Types)(~
 NodeLocation: 120,600,1
 NodeSize: 64,40
 WindState: 2,444,494,720,350
-DefnState: 2,304,453,783,323,0,DFNM
+DefnState: 2,904,232,613,524,0,DFNM
 ValueState: 2,445,68,1054,636,,MIDM
 Aliases: Alias Al1568696050, FormNode Fo1568696050, FormNode Fo1544633536, FormNode Fo1567092851
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9
+ReformDef: [All_Equipment_Types,All_Sectors]
 ReformVal: [All_Equipment_Types,All_Sectors]
 NumberFormat: 2,F,2,2,1,1,2,1,$,0,"ABBREV",0,,,0,0,15
 
@@ -13828,6 +13894,7 @@ WindState: 2,285,574,720,350
 DefnState: 2,488,161,416,632,,DFNM
 ValueState: 2,196,202,416,303,0,MIDM
 Aliases: Alias Al1568696122, FormNode Fo1568696122, FormNode Fo1544633537
+NodeColor: 65535,1,1
 TableCellDefault: 0
 
 Index PV_Cost_Scenario
@@ -14169,7 +14236,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 736,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,355,-8,1092,710,17,10
+DiagState: 2,355,0,1092,710,17,10
 BalloonHelp: FrameNode: FrameNode_1544920329
 AcpStyles: FrameNode: FrameNode_1544920329
 
@@ -14677,11 +14744,11 @@ THEN INF~
 ELSE Divide(Tot_Price_Aft_Incent - Monthly_Fees, FirstYr_BillSav_Time, False)
 NodeLocation: 816,200,1
 NodeSize: 64,40
-ValueState: 2,2176,29,990,821,1,MIDM
+ValueState: 2,2383,43,990,746,1,MIDM
 Aliases: FormNode Fo1532730403
 GraphSetup: ShowKey:2~
-Att_GraphValueRange Simple_Payback_Time1:1,,0,,,,,0,39.06942844390869,0~
-Att_GraphIndexRange Time:1,,0,,,,,39648.94398993999,47848,0
+Att_GraphValueRange Simple_Payback_Time1:1,,0,,,,,0,17.784100770950317,0~
+Att_GraphIndexRange Time:1,,0,,,,,42875.3476549387,47100.80024778843,0
 ReformVal: [Time,PV_Sectors]
 Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,1,Area_Type,1,PV_Sectors,2,Time,1]
 
@@ -15258,7 +15325,7 @@ NodeLocation: 384,1192,1
 NodeSize: 64,40
 WindState: 2,98,82,1165,697
 ValueState: 2,536,157,988,684,0,MIDM
-{!40300|Att_SlicerPopupSize: 1227,522}
+{!40300|Att_SlicerPopupSize: 1232,522}
 
 Text Te1545165196
 Description: Currently chooses the rate name for the post-system, which doesn't tell you the pre-system if they are different.
@@ -15546,7 +15613,7 @@ Definition: 1..Num_of_Rate_Vintages
 NodeLocation: 384,1016,1
 NodeSize: 64,40
 WindState: 2,98,82,1059,632
-{!40300|Att_SlicerPopupSize: 347,140}
+{!40300|Att_SlicerPopupSize: 352,140}
 
 Index Rate_Names_with_None
 Att_PrevIndexValue: ['None','AL-TOU Secondary (0-500 KW) | 2019-01','NYPA Test | 2019-01','NYPA Test 2 | 2019-01']
@@ -15616,7 +15683,7 @@ Definition: ['Downstate_cz','Long Island/Hudson Valley_cz','Upstate_cz']
 NodeLocation: 960,64,1
 NodeSize: 64,40
 ValueState: 2,491,274,416,303,,MIDM
-{!40300|Att_SlicerPopupSize: 437,84}
+{!40300|Att_SlicerPopupSize: 457,84}
 
 Constant Spatial_ID_to_CZ_Map
 Title: Spatial ID to CZ Map
@@ -16463,7 +16530,7 @@ Definition: Subset(Storage_Systems <> Storage_Added_Label)
 NodeLocation: 1104,936,1
 NodeSize: 64,40
 WindState: 2,40,-1,910,825
-{!40300|Att_SlicerPopupSize: 388,110}
+{!40300|Att_SlicerPopupSize: 408,110}
 
 Variable System_with_PV
 Title: System with PV
@@ -17255,7 +17322,7 @@ Date: Wed, Nov 7, 2018 1:59 PM
 NodeLocation: 112,240,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,649,214,834,491,17,10
+DiagState: 2,451,68,1136,533,17,10
 AcpStyles: FrameNode: FrameNode_1545066262
 
 Decision Year_of_Consump_Data
@@ -17272,7 +17339,7 @@ Units: (bldgs or m2)/bldg
 Description: Converts buildings stocks into the stock basis (eg, roofspace) used for technical potential.
 Definition: IF PV_Stock_Basis_by_Se[All_Sectors=PV_Sectors] = Buildings_Label~
 THEN 1~
-ELSE Roof_area_per_buildi
+ELSE Installation_area_pe
 NodeLocation: 432,160,1
 NodeSize: 64,40
 ValueState: 2,-57,52,1675,860,0,MIDM
@@ -17412,8 +17479,8 @@ NodeLocation: 96,160,1
 NodeSize: 64,40
 Original: Building_Stock
 
-Variable Roof_area_per_buildi
-Title: Roof area per building
+Variable Installation_area_pe
+Title: Installation area per building
 Units: m2/building
 Definition: local area:=ZIDZ(Total_PV_Area[All_PV_Sectors=PV_Sectors,Spatial_ID=PV_Spatial_ID,@Roof_Dummy=1] , ~
 Building_Stock[Building_Stock_Year=Year_of_Consump_Data,All_Spatial_ID=PV_Spatial_ID,All_Sectors=PV_Sectors]) ;~
@@ -17445,7 +17512,7 @@ Variable Total_PV_Area1
 Title: Total PV Area
 Units: m2
 Definition: Total_PV_Area[Roof_Dummy='dummy']
-NodeLocation: 96,392,1
+NodeLocation: 240,384,1
 NodeSize: 64,40
 WindState: 2,593,82,904,536
 ValueState: 2,112,47,1633,739,,MIDM
@@ -17460,7 +17527,7 @@ Att_ResultSliceState: [Spatial_ID,0,Area_Type,1,All_PV_Sectors,1]
 
 Include 0,LinkModule NYPA_PV_Area,2,2,0,0,NYPA PV Area (Special Module).ana
 
-NodeLocation NYPA_PV_Area: 96,520,1
+NodeLocation NYPA_PV_Area: 88,432,1
 NodeSize NYPA_PV_Area: 64,40
 
 
@@ -17473,7 +17540,7 @@ Date: Wed, Nov 7, 2018 1:59 PM
 NodeLocation: 264,240,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,807,144,899,547,17,10
+DiagState: 2,470,75,835,475,17,10
 AcpStyles: FrameNode: FrameNode_1545066590
 
 Constant Power_Density
@@ -17481,32 +17548,103 @@ Title: Power Density
 Units: W-DC/m2
 Description: The power density of common solar PV modules. ~
 ~
-https://www.nrel.gov/docs/fy16osti/65298.pdf (p. 13) states that 160 W/m2 corresponds to about 16% efficiency. Additionally, https://www.nrel.gov/docs/fy17osti/68925.pdf (figure 3) shows that the average installed efficiency in CA in 2016 was 17.5% (non-residential), and 16.2% (residential). Thus, 160 W/m2 has been scaled to reflect 17.5% efficiency in the non-residential sector.
-Definition: Table(All_Sectors)(160,160,160,160,160,160,160,160,160,160,160,160,160,160,160,160,160,160,160,160,160,160,160,160,160,160,160,160,160,160,0)
+W DC (nameplate) / m2 of solar panel module~
+~
+
+Definition: Table(All_PV_Sectors,Area_Type)(~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200,~
+200,200,200)
 NodeLocation: 144,104,1
 NodeSize: 64,40
-WindState: 2,335,550,720,350
-DefnState: 2,899,95,460,685,0,DFNM
+WindState: 2,621,249,720,350
+DefnState: 2,1042,48,474,646,0,DFNM
 Aliases: Alias Al1568696777, FormNode Fo1568696778, FormNode Fo1541457042
+NodeColor: 65535,1,1
+ReformDef: [Area_Type,All_PV_Sectors]
 
-Constant Module_to_Roof_Area_
-Title: Module to Roof Area Ratio
-Units: module area/roof area
-Description: The ratio of module area to roof area based on prevalent tilt and racking configurations.~
+Constant Module_to_Area_Ratio
+Title: Module to Area Ratio
+Units: module m2/installat m2
+Description: The ratio of module area to placement area based on prevalent tilt and racking configurations.~
 ~
-https://www.nrel.gov/docs/fy16osti/65298.pdf (p. 13)
-Definition: Table(Roof_Type)(0.7,0.98)
+https://www.nrel.gov/docs/fy16osti/65298.pdf (p. 13)~
+~
+See ~
+See https://eta-publications.lbl.gov/sites/default/files/land_requirements_for_utility-scale_pv.pdf for ground cover for ground mount fixed tilt coverage ratios (0.4 - 0.5)
+Definition: Table(All_PV_Sectors,Area_Type)(~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4,~
+0.7,0.4,0.4)
 NodeLocation: 144,344,1
 NodeSize: 64,40
-WindState: 2,361,519,720,350
-DefnState: 2,998,441,253,161,0,DFNM
+WindState: 2,693,459,720,350
+DefnState: 2,698,59,500,660,0,DFNM
 ValueState: 2,327,216,416,303,,MIDM
 Aliases: Alias Al1568696778, FormNode Fo1568696779, FormNode Fo1541457043
+NodeColor: 65535,1,1
+ReformDef: [Area_Type,All_PV_Sectors]
 
 Constant Pct_Bldgs_Roof_Type
 Title: Pct of Bldgs with Roof Type
 Units: fraction
-Description: The percentage of buildings having a certain roof type. ~
+Description: Delete this.~
+~
+The percentage of buildings having a certain roof type. ~
 ~
 https://www.nrel.gov/docs/fy16osti/65298.pdf  (estimated from p. viii and p. 44). Table ES-1 provides the relative solar potential from medium vs large buildings, while Table A-1 provides the median percentage of each building type having flat roofs. This information is combined to generate the estimates included in this table.
 Definition: Table(All_Sectors,Roof_Type)(~
@@ -17544,36 +17682,39 @@ Definition: Table(All_Sectors,Roof_Type)(~
 NodeLocation: 144,224,1
 NodeSize: 64,40
 WindState: 2,343,550,720,350
-DefnState: 2,699,247,468,713,0,DFNM
+DefnState: 2,1263,43,496,684,0,DFNM
 ValueState: 2,477,303,416,303,0,MIDM
 Aliases: Alias Al1568696779, FormNode Fo1568696780, FormNode Fo1541457044
+NodeColor: 65535,1,1
 ReformDef: [Roof_Type,All_Sectors]
 ReformVal: [Roof_Type,All_Sectors]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_EditSliceState: [PV_Sectors,1,All_Sectors,1,Roof_Type,1]
 
-Variable Watts_per_m2_Roofspc
-Title: Watts per m2 Roofspace
+Variable DC_Watts_per_m2_usab
+Title: DC Watts per m2 usable installation area
 Units: W-DC/m2
 Description: The watts per m2 of roofspace.
-Definition: Sum(Power_Density[All_Sectors=PV_Sectors] * Module_to_Roof_Area_ * Pct_Bldgs_Roof_Type[All_Sectors=PV_Sectors], Roof_Type)
-NodeLocation: 304,224,1
+Definition: Power_Density[All_PV_Sectors=PV_Sectors] * ~
+Module_to_Area_Ratio[All_PV_Sectors=PV_Sectors]
+NodeLocation: 512,224,1
 NodeSize: 64,40
 WindState: 2,102,82,925,287
 ValueState: 2,273,152,449,564,0,MIDM
 
-Variable kWh_per_m2_Roofspace
-Title: kWh per m2 Roofspace
+Variable kWh_per_m2_Area
+Title: kWh per m2 Area
 Units: kWh/year-m2
 Description: The annual PV energy production from a m2 of roofspace.
-Definition: Watts_per_m2_Roofspc * kW_per_W * PV_Production_per_kW[PV_Climate_Zone=Climate_Zone_Map]
-NodeLocation: 456,224,1
+Definition: DC_Watts_per_m2_usab * kW_per_W * PV_Production_per_kW[PV_Climate_Zone=Climate_Zone_Map]
+NodeLocation: 664,224,1
 NodeSize: 64,40
 WindState: 2,102,82,890,476
 ValueState: 2,1016,69,750,685,0,MIDM
 Aliases: Alias Al784937507
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:4
 ReformVal: [PV_Spatial_ID,PV_Sectors]
+Att_ResultSliceState: [Area_Type,3,PV_Sectors,1,PV_Spatial_ID,1]
 
 FormNode Fo1541457042
 Title: Power Density
@@ -17589,7 +17730,7 @@ Definition: 0
 NodeLocation: 144,396,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Module_to_Roof_Area_
+Original: Module_to_Area_Ratio
 
 FormNode Fo1541457044
 Title: Pct of Bldgs with Roof Type
@@ -17599,12 +17740,12 @@ NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Pct_Bldgs_Roof_Type
 
-Variable m2_Roofspc_per_kWdc
-Title: m2 Roofspace per kW-DC
+Variable m2_area_per_kW_DC
+Title: m2 area per kW-DC
 Units: m2/kW-DC
 Description: The m2 of roofspace required per kW-DC of solar PV.
-Definition: 1 / (Watts_per_m2_Roofspc * kW_per_W)
-NodeLocation: 456,112,1
+Definition: 1 / (DC_Watts_per_m2_usab * kW_per_W)
+NodeLocation: 664,112,1
 NodeSize: 64,40
 ValueState: 2,300,504,535,356,0,MIDM
 
@@ -17613,8 +17754,8 @@ Title: CEC-kW-AC per Bldg Unit
 Units: CEC-kW-AC/bldg unit
 Definition: IF PV_Stock_Basis_by_Se[All_Sectors=PV_Sectors] = Buildings_Label~
 THEN Forecast_AC_System_S~
-ELSE Watts_per_m2_Roofspc * kW_per_W * AC_to_DC_Ratio_by_PV
-NodeLocation: 304,344,1
+ELSE DC_Watts_per_m2_usab * kW_per_W * AC_to_DC_Ratio_by_PV
+NodeLocation: 512,344,1
 NodeSize: 64,40
 WindState: 2,39,303,720,350
 ValueState: 2,160,19,1246,680,1,MIDM
