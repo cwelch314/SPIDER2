@@ -38,7 +38,7 @@ Variable Potential_PV_Adopter
 Title: Potential PV Adopters
 Units: stock basis by sector
 Description: Market potential adopters of PV ... a function of total "eligible" buildings and the calculated long-run market share, less those who have already adopted (installed) a system.
-Definition: MAX([0,  LRMS_by_PV_Time[System_Types=PV_Retrofit_Label] * Elig_Bldgs_for_Retro - NC_and_Retro_Install])
+Definition: MAX([0,  LRMS_by_PV_Time[System_Types=PV_Retrofit_Label] * Eligible_PV_Stock_fo - NC_and_Retro_Install])
 NodeLocation: 314,336,1
 NodeSize: 61,37
 NodeInfo: 1,1,1,1,0,1,0,,0,,0,,,
@@ -100,7 +100,7 @@ Variable Fraction_Remaining
 Title: Fraction Remaining
 Units: fraction
 Description: The fraction of buildings remaining that would be suitable for PV installation by customers willing to adopt.
-Definition: Divide(Potential_PV_Adopter, Elig_Bldgs_for_Retro * LRMS_by_PV_Time[System_Types=PV_Retrofit_Label], True)
+Definition: Divide(Potential_PV_Adopter, Eligible_PV_Stock_fo * LRMS_by_PV_Time[System_Types=PV_Retrofit_Label], True)
 NodeLocation: 136,536,1
 NodeSize: 64,40
 WindState: 2,598,2,1096,350
@@ -157,7 +157,7 @@ Variable NewConstr_for_PV
 Title: New Construction for PV
 Units: bldg units/year
 Description: This is an annualized construction rate (building units per year) for stocks applicable to PV. The stocks have been reduced to account for any suitability/eligibility adjustments. "bldg units" can be expressed in number of buildings or m2 of roofspace (the Stock_Basis_by_Sect setting determines the units basis for each sector).
-Definition: Construction[Time=Time_Solar_PV, All_Sectors=PV_Sectors, All_Spatial_ID=PV_Spatial_ID] *  Bldg_Stk_Conversion
+Definition: Construction[Time=Time_Solar_PV, All_Sectors=PV_Sectors, All_Spatial_ID=PV_Spatial_ID] *  Usable_PV_stock_to_b
 NodeLocation: 440,296,1
 NodeSize: 64,40
 WindState: 2,340,267,1153,482
@@ -801,7 +801,7 @@ Variable Installation_Weights
 Title: Installation Weights
 Units: fraction
 Description: The fraction of total SDGE PV installations occuring in each spatial ID.
-Definition: VAR weights:=Total_Building_Stock[Time=BOY_Date_for_Econ_Yr, All_Sectors=PV_Sectors, All_Spatial_ID=PV_Spatial_ID] * Bldg_Stk_Conversion * Retrofit_Eligibility * Non_Agg_Spatial_IDs;~
+Definition: VAR weights:=Total_Building_Stock[Time=BOY_Date_for_Econ_Yr, All_Sectors=PV_Sectors, All_Spatial_ID=PV_Spatial_ID] * Usable_PV_stock_to_b * {Retrofit_Eligibility * } Non_Agg_Spatial_IDs;~
 VAR totWeight:=Sum(weights, PV_Spatial_ID);~
 ~
 Divide(weights, totWeight, True)
@@ -1406,7 +1406,7 @@ Variable Wtd_Avg_LRMS
 Title: Wtd Avg LRMS
 Units: fraction
 Description: The average long-run market share, weighted by eligible buildings for retrofits.
-Definition: Sum(LRMS_by_PV_Time[System_Types=PV_Retrofit_Label] * Elig_Bldgs_for_Retro, PV_Spatial_ID) / Sum(Elig_Bldgs_for_Retro, PV_Spatial_ID)
+Definition: Sum(LRMS_by_PV_Time[System_Types=PV_Retrofit_Label] * Eligible_PV_Stock_fo, PV_Spatial_ID) / Sum(Eligible_PV_Stock_fo, PV_Spatial_ID)
 NodeLocation: 1160,472,1
 NodeSize: 64,40
 WindState: 2,235,557,720,350
@@ -1417,7 +1417,7 @@ Variable Wtd_Avg_Fract_Remain
 Title: Wtd Avg Fraction Remaining
 Units: fraction
 Description: The average fraction of market potential remaining, weighted by market potential in each zip code.
-Definition: Sum(Fraction_Remaining * Elig_Bldgs_for_Retro * LRMS_by_PV_Time[System_Types=PV_Retrofit_Label], PV_Spatial_ID) / Sum(Elig_Bldgs_for_Retro * LRMS_by_PV_Time[System_Types=PV_Retrofit_Label], PV_Spatial_ID)
+Definition: Sum(Fraction_Remaining * Eligible_PV_Stock_fo * LRMS_by_PV_Time[System_Types=PV_Retrofit_Label], PV_Spatial_ID) / Sum(Eligible_PV_Stock_fo * LRMS_by_PV_Time[System_Types=PV_Retrofit_Label], PV_Spatial_ID)
 NodeLocation: 1008,472,1
 NodeSize: 64,40
 ValueState: 2,426,223,972,679,,MIDM
@@ -1601,15 +1601,15 @@ Date: Tue, Dec 11, 2018 9:35 AM
 NodeLocation: 136,648,1
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,145,127,1530,592,17,10
+DiagState: 2,83,194,1530,538,17,10
 Pict: (000000000000003C003C00047A06000089504E470D0A1A0A0000000D494844520000003C0000003C08060000003AFCD972000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA864000005FF494441546843E5984B681D5518C7036E2AB8881BC9AED9885D495D8845B46491452108D155DC485C08414183885C41BC5D58B2B0120D95041F09D6470C56AE8FC28D05138B4D2F6D82D1FA8885C2AD95105F1853D1B410663CFFE17E27DF9CF9E666E6CC39976B5CFCE0DEEF3CE67CE77BCE748461F8BF4214EE6644A1177EFD767FF8C9C395E06265401C6F11A2D0395BD7F6049377D68397BAC2E0D8DECDF0EF5FBAC4792D4014BA26F8F2D5E148D906E1E9E746A579AD40143A05D67DEDF635AE7064E56B1B9DE27CCF8842A7286B6ACB2E1C19D14A7FF7DEA038DF33A2D0191B57BA61CD485995B060D5D87F698D6744A1339095614D9EA84E3C30AF65CADD136B3C230A9DB0B67420520CD664498A27B0F0A7859ED89A16200A5D10BCD3BB1C29A61256CC9270F386C2509EAF6905A2B028C1A56A7F33A5286B87D5A16973CC37A2B010BC0C292B4B738299BE5AB3719F88C222C49A0C6569694EF8E183D5685C755FE2780E82CB7387A21CA19261C4DCD3E3CDDA5751688DCAC4C1F86DEB50A669D939F5C454A430E25B1ACF021A17DA4700972A3537B13F85E14D065E16A43980352089B1AC7065E129B032AC7BFC9E15BD379436D6C5FE144229A89B0A2A4388E7C5B192597E82DA0B87F5A1983C2B3C2942F1443D6FD2D16D4F2A8AD46490C5CD58A503D9C6B0CAEED17A654D715C4189D1B4726C922D481CD1010095216E71339EE9722C15D6351E593E257474F2543985CB63936C119B0CC9E234BF1167515665F2ACE8E73540EC26E62857D6E34C1E9B644370E1CD21FD702A43296D6504E23A6D2C2B780981059587D05EC80B7C8E1F85539A0CD1E2045CBD7190C2AF88D89B6ABA82BBB7178563D9B6F130147D92C1FA8935CC23D2E22F17ECD279AE70AF309A0C3329A5589CA3AD6F9BA10562CA359A0DF70AA3C863439694B8C5A396CF5CC3DCD93A7E25F8BE2A7F40E65661E9E092C54D5877E4F45DD8BBC254727852226560712936D9E79D3477B7C5AB4B8BEFBA195C35D35B940DBE93964E3ADC4A647174354693110177DF219959016BD2373228C63CCB89C2629301945523997A089F9F1837D7D9824B45D26CBC8A02B3DB2AAE708AEBEC084F6696ADA489F63252C84B6BC9AC2426A534C8DDF3AE6B02ED8737A2B43D8B29CCAD949294443224331B684FB37FE6145398AC84922325A514F4C7BA9CEB768214F1A330B3922E431910CB9723F4BE3E14D6098237193B810447DF96F2ACCB0829E25CE198957294136F4D4603BDB753855919CAD52CA085A4F2E5A80C9990224E15E656CA554E6CCB570E687F770AA30CA92E66E3E55BC2D90F7A164B5F0C4C3F72AA67BEAFD25DBFE3AD8EB0DDC0B9703E9CF3A34B538357AFAF77E6535859E9CC2B3787BDC76F08A407B43BBD27BAD6CED49E793193C257576BF796276FDAE21B1C9CE95CC70D4E7C5D3E9C89A5A78E8A7257D41E9D98F8F4BED989AF9E7D9E648F7D76A80A45F9B9CBAFDF18C24BB97E31654179E6D61F69415F65EFE585D56AF2CB451B53FF7365DF43D50335D2A1F4062AE2F6786C3294A389E593779FBBBEB5E9B47EB692B1F38F8F912E886B92EB0908747289FB3FDEB722298BDB3BBA343C0AF70647CE0D8D5FF8AD167D52691579CE8071E88390FCFD9F3504F3B6C2B805BA91C59FE713DF9BDEFE7E74F8AE77F76CD21C0E1E6ACEF741DE33E072683EE21C323DF8E4E7FD150C20C5938CE0AE0E2FC0E6B8655EA6DEBF389EF806ED12DB339095074EEE8F9A273D0037C600142719419781077157C76F6CC437F485ED1970291883A5F15F0F50FC4E7E335222993926B90D5C0563C01C7389ED1978A8E2BF1E20D7903634DD82D32C145C627B06BA8C848551B8D33644B2C018C0E6B3F5E981B92B957EB4722487EB98EB5C627B06BA0C842CFE2736C44D500AE7D042095C9254C65C93F70CF88F928471BA0C3D08252985C3DA24E7201EB0313D04B786986F85B2449E33203C31077AFDF0C772F4E6169B80B44E1BF92E33BEE1658C6A30484CA4E400101F927BB733B0F4D872698474405FCDAD9F58B0FA57BD9B37DF8801C40E6E091D58BB02B786817823023DA00FD72FA62C071B504CFF178195A5B88EFD3141A023F0A9E8B73B3867F9ECE054B3171A51B89B1185BB97B0E35FD04CAAD2B53AC7380000000049454E44AE426082)
 AcpStyles: FrameNode: PVAdoption1544977242
 
-Variable Elig_Bldgs_for_Retro
-Title: Eligible Bldgs for Retrofit
+Variable Eligible_PV_Stock_fo
+Title: Eligible PV Stock for Retrofit
 Units: bldg units
 Description: The beginning-of-period building stock that has the potential to be retrofitted with a supplemental system.
-Definition: VAR currentStock:=Total_Building_Stock[All_Sectors=PV_Sectors, All_Spatial_ID=PV_Spatial_ID] * Bldg_Stk_Conversion * Retrofit_Eligibility;~
+Definition: VAR currentStock:=Total_Building_Stock[All_Sectors=PV_Sectors, All_Spatial_ID=PV_Spatial_ID] * Usable_PV_stock_to_b;~
 VAR previousStock:=currentStock[Time=Time_Solar_PV][@Time_Solar_PV=@Time_Solar_PV-1];~
 IF @Time_Solar_PV=1 ~
 THEN currentStock[Time=PV_Sim_Start_Minus_1] ~
@@ -1618,8 +1618,9 @@ NodeLocation: 152,88,1
 NodeSize: 64,40
 WindState: 2,32,380,1355,538
 ValueState: 2,78,197,1429,589,0,MIDM
+Aliases: Alias Al1460632099
 NodeColor: 65535,65535,65535
-GraphSetup: Att_GraphValueRange Elig_Bldgs_for_Retro:1,,1,1,,,,0,700K,0
+GraphSetup: Att_GraphValueRange Eligible_PV_Stock_fo:1,,1,1,,,,0,700K,0
 ReformVal: [Time_Solar_PV,PV_Sectors]
 NumberFormat: 2,F,4,0,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: []
@@ -1767,14 +1768,14 @@ Show_description:20
 
 Variable Tech_Potl_KW_DC
 Title: Tech Potl KW DC
-Definition: Aggregate(Elig_Bldgs_for_Retro / m2_usable_area_per_k, Climate_Zone_Map,PV_Spatial_ID,PV_Climate_Zone)
+Definition: Aggregate(Eligible_PV_Stock_fo / m2_usable_area_per_k, Climate_Zone_Map,PV_Spatial_ID,PV_Climate_Zone)
 NodeLocation: 320,88,1
 NodeSize: 64,40
 ValueState: 2,311,144,1137,736,0,MIDM
-ReformVal: [PV_Climate_Zone,PV_Sectors]
+ReformVal: [Area_Type,PV_Sectors]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [PV_Sectors,PV_Climate_Zone]
-Att_ResultSliceState: [Time_Solar_PV,1,Area_Type,3,PV_Sectors,1,PV_Climate_Zone,1]
+Att_ResultSliceState: [Time_Solar_PV,1,PV_Climate_Zone,0,PV_Sectors,1,Area_Type,3]
 
 Variable Tech_Potl_KWh_Solar_
 Title: Tech Potl KWh Solar PV
@@ -1783,11 +1784,11 @@ Definition: local x:=Tech_Potl_KW_DC * PV_Production_per_kW / 1000;~
 x[Area_Type=Included_Area_Types]
 NodeLocation: 480,88,1
 NodeSize: 64,40
-ValueState: 2,562,86,1101,723,0,MIDM
+ValueState: 2,622,168,1101,723,0,MIDM
 ReformVal: [PV_Climate_Zone,PV_Sectors]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [PV_Sectors,PV_Climate_Zone]
-Att_ResultSliceState: [Time_Solar_PV,1,Area_Type,1,PV_Sectors,1,PV_Climate_Zone,1]
+Att__TotalsIndex: [PV_Sectors,PV_Climate_Zone,Included_Area_Types]
+Att_ResultSliceState: [Time_Solar_PV,1,Included_Area_Types,0,PV_Sectors,1,PV_Climate_Zone,1]
 
 Alias Al464260131
 Title: Cust Load Total by PV Clim Zone
@@ -1833,8 +1834,8 @@ Title: Included Area Types
 Definition: MultiChoice(Area_Type)
 NodeLocation: 672,312,1
 NodeSize: 64,40
-Aliases: FormNode Fo1962324515
-{!40300|Att_SlicerPopupSize: 232,64}
+Aliases: FormNode Fo1962324515, FormNode Clipboard_Fo19623245, FormNode Fo1367337507
+{!40300|Att_SlicerPopupSize: 257,64}
 
 FormNode Fo1962324515
 Title: Included Area Types
@@ -2023,7 +2024,7 @@ Description: Initial adopters of PV (by PV building units) at the start of the s
 Units are either buildings or m2 of roofspace, depending on the input by sector for "PV Stock Basis by Sector"
 Definition: PV_Init_Adop_Fractio[All_PV_Sectors=PV_Sectors,Spatial_ID=PV_Spatial_ID] ~
 * Bldg_Stock_by_Time[Time=PV_Sim_Start_Year,All_Spatial_ID=PV_Spatial_ID,All_Sectors=PV_Sectors]~
-* Bldg_Stk_Conversion
+* Usable_PV_stock_to_b
 NodeLocation: 312,360,1
 NodeSize: 72,40
 ValueState: 2,1185,216,552,402,0,MIDM
@@ -2035,7 +2036,7 @@ Title: Building Stock Conversion
 Definition: 1
 NodeLocation: 112,464,1
 NodeSize: 64,40
-Original: Bldg_Stk_Conversion
+Original: Usable_PV_stock_to_b
 
 Decision Initialize_PV_with_H
 Title: Initialize PV with Historical Data?
@@ -2085,7 +2086,7 @@ Close Initial_PV_Adoption
 
 Variable Share_of_Tech_Potent
 Title: Share of Tech Potential
-Definition: TotRetro_Install_BOP / Elig_Bldgs_for_Retro
+Definition: TotRetro_Install_BOP / Eligible_PV_Stock_fo
 NodeLocation: 784,448,1
 NodeSize: 64,40
 ValueState: 2,329,28,1010,704,0,MIDM
@@ -2116,7 +2117,7 @@ Date: Fri, Jun 22, 2018 10:48 AM
 NodeLocation: 112,384,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,2274,57,944,575,17
+DiagState: 2,2259,75,944,575,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -2154,7 +2155,7 @@ Variable Share_of_Retrofit
 Title: Share of Retrofit
 Units: fraction
 Description: Market share of systems installed on retrofit homes, as a percentage of total potential buildings for retrofit. This specifically excludes systems installed on new construction homes.
-Definition: TotRetro_Install_EOP / Elig_Bldgs_for_Retro
+Definition: TotRetro_Install_EOP / Eligible_PV_Stock_fo
 NodeLocation: 488,240,1
 NodeSize: 64,40
 ValueState: 2,286,93,1032,659,1,MIDM
@@ -3414,14 +3415,14 @@ Null,Null,Null)
 NodeLocation: 256,336,1
 NodeSize: 64,40
 WindState: 2,433,146,866,441
-DefnState: 2,635,120,797,669,0,DFNM
+DefnState: 2,572,120,768,691,0,DFNM
 ValueState: 2,992,453,472,237,0,MIDM
-Aliases: Alias Al1550179326, FormNode Fo1550179326
+Aliases: Alias Al1550179326, FormNode Fo1550179326, Alias Al1012103715
 NodeColor: 65535,1,1
 ReformDef: [PV_Climate_Zone,All_Sectors]
 ReformVal: [All_Sectors,PV_Climate_Zone]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att_EditSliceState: [Area_Type,3,All_Sectors,1,PV_Climate_Zone,1]
+Att_EditSliceState: [Area_Type,2,All_Sectors,1,PV_Climate_Zone,1]
 
 Variable PV_Production_per_kW
 Title: PV Production per kW
@@ -3430,9 +3431,11 @@ Description: The annual energy produced per kW-DC of installed solar.
 Definition: PV_Capacity_Factor[All_Sectors=PV_Sectors] * Hours_per_Year
 NodeLocation: 416,336,1
 NodeSize: 64,40
-ValueState: 2,787,106,750,683,0,MIDM
-ReformVal: [PV_Climate_Zone,PV_Sectors]
+ValueState: 2,660,122,616,677,0,MIDM
+Aliases: Alias Al909343267
+ReformVal: [Area_Type,PV_Sectors]
 Att__TotalsIndex: []
+Att_ResultSliceState: [PV_Climate_Zone,1,PV_Sectors,1,Area_Type,1]
 
 Variable Per_kW_SolarProfie
 Title: Per-kW Solar Profile
@@ -4577,7 +4580,7 @@ ValueState: 2,292,117,738,662,0,MIDM
 Aliases: Alias Al464260131, Alias Al497814563
 ReformVal: [PV_Climate_Zone,PV_Sectors]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [PV_Sectors]
+Att__TotalsIndex: [PV_Sectors,PV_Climate_Zone]
 
 Variable Va18
 NodeLocation: 384,448,1
@@ -15596,7 +15599,7 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 256,288,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,20,168,1701,624,17,10
+DiagState: 2,-40,194,1701,573,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -15812,7 +15815,7 @@ WindState: 2,319,12,1255,632
 Aliases: FormNode Fo1535066238, FormNode Fo1539140368, FormNode Fo1247325693
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
-{!40300|Att_SlicerPopupSize: 958,353}
+{!40300|Att_SlicerPopupSize: 968,353}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
@@ -15834,7 +15837,7 @@ DefnState: 2,857,228,346,508,,DFNM
 ValueState: 2,2185,301,416,303,,MIDM
 Aliases: FormNode Fo1535655040, FormNode Fo1542091914
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
-{!40300|Att_SlicerPopupSize: 1300,784}
+{!40300|Att_SlicerPopupSize: 1310,784}
 
 Index Market_Share_Metric
 Att_PrevIndexValue: ['Cost of Electricity Ratio','Simple Payback Time','Static Long-Run Market Share']
@@ -15981,7 +15984,7 @@ Definition: ['Downstate_cz','Long Island/Hudson Valley_cz','Upstate_cz']
 NodeLocation: 960,64,1
 NodeSize: 64,40
 ValueState: 2,491,274,416,303,,MIDM
-{!40300|Att_SlicerPopupSize: 477,84}
+{!40300|Att_SlicerPopupSize: 487,84}
 
 Constant Spatial_ID_to_CZ_Map
 Title: Spatial ID to CZ Map
@@ -15997,7 +16000,7 @@ Title: Climate Zone Map
 Definition: Spatial_ID_to_CZ_Map[All_Spatial_ID=PV_Spatial_ID]
 NodeLocation: 960,264,1
 NodeSize: 64,40
-ValueState: 2,36,42,887,303,0,MIDM
+ValueState: 2,521,158,887,303,0,MIDM
 
 Index All_Technologies
 Att_PrevIndexValue: ['Solar PV','Solar PV + Storage']
@@ -17277,7 +17280,7 @@ Date: Wed, Oct 31, 2018 10:11 AM
 NodeLocation: 544,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,2129,32,1302,689,17,10
+DiagState: 2,58,41,1302,610,17,10
 AcpStyles: FrameNode: FrameNode_1544920370
 
 Decision Minimum_PV_Size_for_
@@ -17325,7 +17328,7 @@ Date: Wed, Oct 31, 2018 10:11 AM
 NodeLocation: 112,416,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,346,224,944,484,17,10
+DiagState: 2,419,275,944,466,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_object: no
 
@@ -17620,25 +17623,25 @@ Date: Wed, Nov 7, 2018 1:59 PM
 NodeLocation: 112,240,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,449,14,1086,529,17,10
+DiagState: 2,388,47,910,630,17,10
 AcpStyles: FrameNode: FrameNode_1545066262
 
 Decision Year_of_Consump_Data
 Title: Year of Consumption Data
 Description: The year from which consumption data is available.
 Definition: SubTable(StructSingCell_Input[StructSingCell_Names=Consump_Year_Label])
-NodeLocation: 272,272,1
+NodeLocation: 280,384,1
 NodeSize: 64,40
 NodeColor: 65535,65531,1
 
-Variable Bldg_Stk_Conversion
-Title: Building Stock Conversion
+Variable Usable_PV_stock_to_b
+Title: Usable PV stock to building stock
 Units: (bldgs or m2)/bldg
-Description: Converts buildings stocks into the stock basis (eg, roofspace) used for technical potential.
+Description: Ratio of usable PV stock (either m2 area or # of buildings, depending on the PV stock basis) to building counts. This accounts for technical suitability of the input area or building stocks.
 Definition: IF PV_Stock_Basis_by_Se[All_Sectors=PV_Sectors] = Buildings_Label~
-THEN 1~
-ELSE Usable_Installation_
-NodeLocation: 432,160,1
+THEN PV_suitability[All_PV_Sectors=PV_Sectors]~
+ELSE Usable_PV_Area_to_Bu
+NodeLocation: 440,264,1
 NodeSize: 64,40
 ValueState: 2,-57,52,1675,860,0,MIDM
 Aliases: Alias Al263822787
@@ -17648,7 +17651,7 @@ Att_ResultSliceState: [PV_Sectors,2,PV_Spatial_ID,0]
 Att_ColorRole: Null
 
 Text FrameNode_1545066262
-NodeLocation: 880,320,-20
+NodeLocation: 1080,328,-20
 NodeSize: 360,304
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 NodeColor: 65535,65535,65535
@@ -17658,7 +17661,7 @@ Show_description:20
 Constant Total_PV_Area
 Title: Total PV Area
 Units: m2
-Description: m2 of PV area by area type. Not relevant for combined EV sectors. Also not relevant for any sectors where building count will be used as the basis for solar PV potential rather than roof area.~
+Description: m2 of PV area by area type. not relevant for any sectors where building count will be used as the basis for solar PV potential rather than roof area.~
 ~
 Prior to model changes, this came from the m2_of_Eligible node for the SDGE forecast (to facilitate reproducibility).
 Definition: Table(Spatial_ID,All_PV_Sectors,Roof_Dummy,Area_Type)(~
@@ -17752,7 +17755,7 @@ Null,Null,Null,~
 35856.802571464126,35957.396267089134,542763.2409899486,~
 81578.07286434813,231797.2131376163,18722632.20716297,~
 547.4201147394454,17912.251716353316,6597856.24983428)
-NodeLocation: 96,56,1
+NodeLocation: 104,160,1
 NodeSize: 64,40
 WindState: 2,410,157,1194,571
 DefnState: 2,578,59,1116,827,0,DFNM
@@ -17773,19 +17776,19 @@ Att_EditSliceState: [Roof_Dummy,1,All_PV_Sectors,1,Spatial_ID,1]
 Alias Al416789699
 Title: Building Stock
 Definition: 1
-NodeLocation: 96,160,1
+NodeLocation: 104,264,1
 NodeSize: 64,40
 Original: Building_Stock
 
-Variable Usable_Installation_
-Title: Usable Installation area per building
-Units: usable m2/building
-Definition: local area:=ZIDZ(Total_PV_Area[All_PV_Sectors=PV_Sectors,Spatial_ID=PV_Spatial_ID,@Roof_Dummy=1] *~
-Area_suitability~
+Variable Usable_PV_Area_to_Bu
+Title: Usable PV Area to Buildings Ratio
+Units: PV stock units
+Description: Total usable PV stock (either m2 on usable installation area or # of technicall suitable buildings, depending on the PV building stock basis)
+Definition: local area:=ZIDZ(Usable_PV_Area~
 , ~
 Building_Stock[Building_Stock_Year=Year_of_Consump_Data,All_Spatial_ID=PV_Spatial_ID,All_Sectors=PV_Sectors]) ;~
 IF area=null THEN 0 ELSE area
-NodeLocation: 272,160,1
+NodeLocation: 280,264,1
 NodeSize: 64,40
 WindState: 2,-6,84,720,350
 ValueState: 2,455,92,814,741,0,MIDM
@@ -17796,43 +17799,72 @@ Index Roof_Dummy
 Title: Roof Dummy
 Description: Only used to facilitate importing total roof area as a vector rather than a matrix, due to the way the data were developed and input into Excel (and to avoid re-coding to fix the warning that appears otherwise). This could someday be eliminated with some import code changes or changes to the import tab arrangement
 Definition: ['dummy']
-NodeLocation: 272,56,1
+NodeLocation: 104,504,1
 NodeSize: 64,40
 
 Index Area_Type
 Att_PrevIndexValue: ['Roof','Parking','Land']
 Title: Area Type
 Definition: ['Roof','Parking','Land']
-NodeLocation: 96,280,1
+NodeLocation: 104,384,1
 NodeSize: 64,40
 WindState: 2,408,-14,824,781
-{!40300|Att_SlicerPopupSize: 327,80}
+{!40300|Att_SlicerPopupSize: 347,80}
 
-Variable Total_usable_PV_Area
-Title: Total usable PV Area
-Units: m2
-Definition: Total_PV_Area[All_PV_Sectors=PV_Sectors,Spatial_ID=PV_Spatial_ID,@Roof_Dummy=1] *~
-Area_suitability
-NodeLocation: 280,432,1
+Include 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
+
+NodeLocation Facility_Level_Area_: 104,56,1
+NodeSize Facility_Level_Area_: 64,40
+
+
+Alias Al1460632099
+Title: Eligible Bldgs for Retrofit
+Definition: 1
+NodeLocation: 600,264,1
 NodeSize: 64,40
-WindState: 2,593,82,904,536
-ValueState: 2,447,119,925,641,,MIDM
-Aliases: FormNode Fo1615305763
-GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_StackedBar Graph_Primary_Valdim:1~
-{!50007|Graph_BarOutline:1}
-ReformVal: [PV_Spatial_ID,Area_Type]
-NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Spatial_ID,PV_Sectors]
-Att_ResultSliceState: [PV_Spatial_ID,2,PV_Sectors,0,PV_Sectors,0,Area_Type,1]
-{!40600|Att_StackingIndex: Area_Type}
-{!40600|Att_ClusterIndex: Area_Type}
+NodeColor: 65535,65535,65535
+Original: Eligible_PV_Stock_fo
 
-Include 0,LinkModule NYPA_PV_Area,2,2,0,0,NYPA PV Area (Special Module).ana
+Variable Usable_PV_Area
+Title: Usable PV Area
+Units: m2
+Description: m2 of PV area by area type. Not relevant for combined EV sectors. Also not relevant for any sectors where building count will be used as the basis for solar PV potential rather than roof area.
+Definition: IF Use_facility_level_d THEN Usable_PV_Area_fm_Fa ELSE ~
+~
+Total_PV_Area[All_PV_Sectors=PV_Sectors,Spatial_ID=PV_Spatial_ID,@Roof_Dummy=1] *~
+PV_suitability[All_PV_Sectors=PV_Sectors]
+NodeLocation: 280,160,1
+NodeSize: 64,40
+ValueState: 2,540,77,727,716,0,MIDM
+ReformVal: [Use_facility_level_d,PV_Sectors]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [PV_Spatial_ID,PV_Sectors]
+Att_ResultSliceState: [PV_Spatial_ID,0,Area_Type,3,PV_Sectors,1,Use_facility_level_d,1]
 
-NodeLocation NYPA_PV_Area: 88,432,1
-NodeSize NYPA_PV_Area: 64,40
+Variable Usable_PV_Area_fm_Fa
+Title: Usable PV Area fm Facility Data
+Units: m2
+Description: Effective usable area from individual facility level data (if available) that accounts for min/max system sizes, etc.
+Definition: Effective_Usable_Ar2[All_PV_Sectors=PV_Sectors,Spatial_ID=PV_Spatial_ID]
+NodeLocation: 280,56,1
+NodeSize: 64,40
+ValueState: 2,1102,232,571,494,,MIDM
 
+Decision Use_facility_level_d
+Title: Use facility level data?
+Definition: Checkbox(1)
+NodeLocation: 440,56,1
+NodeSize: 64,40
+Aliases: FormNode Fo396950051
+NodeColor: 65535,65531,1
+
+FormNode Fo396950051
+Title: Use facility level data?
+Definition: 0
+NodeLocation: 492,80,1
+NodeSize: 28,16
+NodeInfo: 1,,,0
+Original: Use_facility_level_d
 
 Close Roofspace_Per_Buildi
 
@@ -17843,7 +17875,7 @@ Date: Wed, Nov 7, 2018 1:59 PM
 NodeLocation: 264,240,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,144,405,1460,585,17,10
+DiagState: 2,2234,65,1369,563,17,10
 AcpStyles: FrameNode: FrameNode_1545066590
 
 Constant Power_Density
@@ -17888,8 +17920,8 @@ Definition: Table(All_PV_Sectors,Area_Type)(~
 NodeLocation: 144,104,1
 NodeSize: 64,40
 WindState: 2,621,249,720,350
-DefnState: 2,1159,121,474,646,0,DFNM
-Aliases: Alias Al1568696777, FormNode Fo1568696778, FormNode Fo1541457042
+DefnState: 2,719,130,498,655,0,DFNM
+Aliases: Alias Al1568696777, FormNode Fo1568696778, FormNode Fo1541457042, Alias Al1916336675, FormNode Fo1952250403
 NodeColor: 65535,1,1
 ReformDef: [Area_Type,All_PV_Sectors]
 
@@ -17936,14 +17968,14 @@ Definition: Table(All_PV_Sectors,Area_Type)(~
 NodeLocation: 144,344,1
 NodeSize: 64,40
 WindState: 2,693,459,720,350
-DefnState: 2,698,59,500,660,0,DFNM
+DefnState: 2,631,78,500,660,0,DFNM
 ValueState: 2,327,216,416,303,,MIDM
-Aliases: Alias Al1568696778, FormNode Fo1568696779, FormNode Fo1541457043
+Aliases: Alias Al1568696778, FormNode Fo1568696779, FormNode Fo1541457043, Alias Al2123069987, FormNode Fo1683814947
 NodeColor: 65535,1,1
 ReformDef: [Area_Type,All_PV_Sectors]
 
-Constant Pct_Bldgs_Roof_Type
-Title: Pct of Bldgs with Roof Type
+Constant DELETE_Pct_of_Bldgs_
+Title: DELETE Pct of Bldgs with Roof Type
 Units: fraction
 Description: Delete this.~
 ~
@@ -17982,10 +18014,10 @@ Definition: Table(All_Sectors,Roof_Type)(~
 1,0,~
 1,0,~
 0,0)
-NodeLocation: 144,224,1
+NodeLocation: 352,624,1
 NodeSize: 64,40
 WindState: 2,343,550,720,350
-DefnState: 2,1263,43,496,684,0,DFNM
+DefnState: 2,1025,48,496,684,0,DFNM
 ValueState: 2,477,303,416,303,0,MIDM
 Aliases: Alias Al1568696779, FormNode Fo1568696780, FormNode Fo1541457044
 NodeColor: 65535,1,1
@@ -18004,6 +18036,7 @@ NodeLocation: 312,224,1
 NodeSize: 64,40
 WindState: 2,102,82,925,287
 ValueState: 2,915,188,504,644,0,MIDM
+Aliases: Alias Al629897763
 ReformVal: [Area_Type,PV_Sectors]
 
 Variable kWh_per_m2_usable_in
@@ -18014,9 +18047,8 @@ Definition: DC_Watts_per_m2_usab * kW_per_W * PV_Production_per_kW[PV_Climate_Zo
 NodeLocation: 568,224,1
 NodeSize: 64,40
 WindState: 2,102,82,890,476
-ValueState: 2,811,87,750,685,0,MIDM
+ValueState: 2,786,107,750,685,0,MIDM
 Aliases: Alias Al784937507
-NodeColor: 65535,1,1
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:4
 ReformVal: [PV_Spatial_ID,PV_Sectors]
 Att_ResultSliceState: [Area_Type,3,PV_Sectors,1,PV_Spatial_ID,1]
@@ -18040,10 +18072,10 @@ Original: Module_to_Area_Ratio
 FormNode Fo1541457044
 Title: Pct of Bldgs with Roof Type
 Definition: 0
-NodeLocation: 144,276,1
+NodeLocation: 352,676,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Pct_Bldgs_Roof_Type
+Original: DELETE_Pct_of_Bldgs_
 
 Variable m2_usable_area_per_k
 Title: m2 usable area per kW-DC
@@ -18078,25 +18110,51 @@ NodeColor: 65535,65535,65535
 AcpStyles: Show_index_menus: yes~
 Show_description:20
 
-Constant Area_suitability
-Title: Area suitability
-Units: m2usable/m2total
-Description: m2 of usable area divided by m2 of area footprint
-Definition: Table(Area_Type,PV_Sectors)(~
-0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,~
-0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,~
-0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05)
+Constant PV_suitability
+Title: PV suitability
+Units: fraction
+Description: m2 of usable area divided by m2 of input total PV area (when m2 is the PV building stock basis) ~
+~
+Or, the fraction of total buildings suitable for PV (if building is the PV building stock basis)
+Definition: Table(All_PV_Sectors,Area_Type)(~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05,~
+0.8,0.8,0.05)
 NodeLocation: 144,480,1
 NodeSize: 64,40
-DefnState: 2,2562,31,522,654,0,DFNM
-Aliases: FormNode Fo120842787
+DefnState: 2,527,62,503,654,0,DFNM
+Aliases: FormNode Fo120842787, Alias Al25917987, FormNode Fo341637667
 NodeColor: 65535,1,1
-ReformDef: [Area_Type,PV_Sectors]
-
-Variable DC_watts_per_m2_of_t
-Title: DC watts per m2 of total area footprint
-NodeLocation: 568,464,1
-NodeSize: 64,40
+ReformDef: [Area_Type,All_PV_Sectors]
+NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+{!50000|Att_ColumnWidths: [,Area_Type,\([,,64])]}
 
 FormNode Fo120842787
 Title: Area suitability
@@ -18105,39 +18163,15 @@ NodeLocation: 152,528,1
 NodeSize: 56,16
 NodeInfo: 1,,,0
 NodeColor: 65535,1,1
-Original: Area_suitability
+Original: PV_suitability
 
 Close Power_and_Module_Den
-
-Variable Retrofit_Eligibility
-Title: Retrofit Eligibility Factor
-Units: bldg units/bldg
-Description: The fraction of retrofit building stock that is suitable and eligible for PV installation. If the stock basis is m2 of roofspace, this will also include a conversion from buildings to m2 of roofspace.
-Definition: PV_technical_suitabi[All_PV_Sectors=PV_Sectors]~
-~
-/* Old for SDGE~
-Suitability_for_Sect := ~
-IF Stock_Basis_by_Sect[All_Sectors=PV_Sectors] = Buildings_Label~
-THEN Wtd_Bldg_Suitability~
-ELSE Implied_Area_Suitab~
-~
-Then this output was :=~
-MAX([PremiseApplicability * Suitability_for_Sect * Bldg_Ownership_Fract, Min_Assumed_Eligible[All_Sectors=PV_Sectors]])
-NodeLocation: 752,488,1
-NodeSize: 64,40
-WindState: 2,102,82,841,350
-ValueState: 2,246,37,1522,793,0,MIDM
-GraphSetup: Att_GraphIndexRange PV_Spatial_ID:1,1~
-Att_CatLineStyle Graph_Primary_Valdim:5
-ReformVal: [Null,PV_Sectors]
-Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,1]
-Att_ColorRole: Null
 
 Variable NewConst_Elig_Factor
 Title: NewConstr Eligibility Factor
 Units: bldg units/bldg
 Description: The fraction of new construction stock that is suitable and eligible for PV installation. If the stock basis is m2 of roofspace, this will also include a conversion from buildings to m2 of roofspace.
-Definition: Retrofit_Eligibility * PV_New_Construction_[All_Sectors=PV_Sectors, NC_Suitability_Scens=Sel_NC_Suitable_Scen]~
+Definition: PV_New_Construction_[All_Sectors=PV_Sectors, NC_Suitability_Scens=Sel_NC_Suitable_Scen]~
 ~
 /*IF PV_Sectors = Residential_Label~
 THEN Retrofit_Eligibility * NewConst_Suitability[All_Sectors=PV_Sectors, NC_Suitability_Scens=Sel_NC_Suitable_Scen]~
@@ -18186,8 +18220,9 @@ Definition: Table(All_Sectors,NC_Suitability_Scens)(~
 NodeLocation: 592,384,1
 NodeSize: 64,40
 WindState: 2,321,552,720,350
-DefnState: 2,434,258,564,496,0,DFNM
+DefnState: 2,1325,168,486,681,0,DFNM
 Aliases: Alias Al1568696273, FormNode Fo1568696273, Alias Al1541540869, FormNode Fo1541540881, FormNode Fo1544641553
+NodeColor: 65535,1,1
 ReformDef: [NC_Suitability_Scens,All_Sectors]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
@@ -18222,52 +18257,10 @@ NodeColor: 65535,65535,65535
 AcpStyles: Show_index_menus: yes~
 Show_description:20
 
-Constant PV_technical_suitabi
-Title: PV technical suitability
-Description: NEED TO IMPORT~
-~
-Technical suitability of buildings (or rooftop area, depending on the PV stock basis) for solar PV.~
-~
-These values came from the Suitability_for_sect nodes (for nonres) and the product of bldg_ownership_fract X premiseapplicability X min_assumed_eligible for residential from the past SDGE study (for replicability)
-Definition: Table(All_PV_Sectors,PV_Spatial_ID)(~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1)
-NodeLocation: 592,488,1
+Text Te626588195
+Title: Fix this
+NodeLocation: 600,504,-1
 NodeSize: 64,40
-WindState: 2,581,127,720,349
-DefnState: 2,427,80,948,646,0,DFNM
-ValueState: 2,2282,126,893,777,0,MIDM
-ReformDef: [PV_Spatial_ID,PV_Sectors]
-ReformVal: [PV_Spatial_ID,All_PV_Sectors]
-NumberFormat: 2,%,1,1,0,0,1,0,$,0,"ABBREV",0,,,0,0,15,
 
 Close Technical_Potential
 
