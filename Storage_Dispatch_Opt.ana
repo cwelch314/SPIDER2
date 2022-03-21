@@ -22,7 +22,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 416,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,123,53,1627,743,17,10
+DiagState: 2,133,55,1627,714,17,10
 
 Decision Stored_Grid_Elect1
 Title: Stored Grid Electricity
@@ -260,7 +260,7 @@ Decision Use_Storage_Decisio2
 Title: Use Storage Decision Var
 Units: boolean
 Description: Enables decision variables to be used during a storage optimization. When this is unchecked, the logic reverts to saved optimization solutions.
-Definition: Checkbox(1)
+Definition: Checkbox(0)
 NodeLocation: 96,1648,1
 NodeSize: 64,40
 Aliases: FormNode New1552348266, Alias Al1552348255, FormNode Fo1552348271
@@ -430,7 +430,7 @@ Title: Applied Grid Elect to Meet Load
 Units: kW-hr/customer
 Description: The decision variable for the amount of grid electricity that will be purchased to meet load.
 Definition: Opt_Customer_Load - (Applied_PV_RedLoad2 + Dischg_RedLoad_Loss1)
-NodeLocation: 864,128,1
+NodeLocation: 864,80,1
 NodeSize: 64,40
 WindState: 2,209,412,720,350
 DefnState: 2,248,33,716,665,0,DFNM
@@ -1860,7 +1860,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 264,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-46,191,1740,710,17,10
+DiagState: 2,28,109,1740,612,17,10
 
 Variable Lev_NCDmdPrice_Opt
 Title: Lev NC Dmd Price for Opt
@@ -2665,7 +2665,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,120,33,1823,657,17,10
+DiagState: 2,-172,132,1823,657,17,10
 
 Decision Opt_Seq_Number
 Title: Opt Sequential Number
@@ -4679,9 +4679,10 @@ Description: The percentage of the total electricity used to charge the battery 
 Definition: Divide(Sum(Applied_Stored_PV2 * Monthly_Mults_SeqOpt, Opt_Hours, Seq_Opt_Number, Month), Sum(Total_Charge2  * Monthly_Mults_SeqOpt, Opt_Hours, Seq_Opt_Number, Month), True)
 NodeLocation: 560,160,1
 NodeSize: 64,40
-ValueState: 2,26,189,715,604,0,MIDM
+ValueState: 2,205,43,1105,743,0,MIDM
 NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [Opt_Storage_Systems,1,PV_Climate_Zone,1,Opt_Sectors,2,PV_Sectors,1,Rate_Vintage,1]
+Att__TotalsIndex: [Area_Type,PV_Climate_Zone,Opt_Storage_Systems,Opt_Sectors,PV_Sectors]
+Att_ResultSliceState: [Opt_Storage_Systems,0,PV_Climate_Zone,0,Rate_Vintage,1,Area_Type,0,Opt_Sectors,2,PV_Sectors,1]
 
 Decision Flows_to_View1
 Title: Flows to View
