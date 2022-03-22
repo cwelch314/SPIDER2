@@ -1439,7 +1439,7 @@ Index stage:=CopyIndex(Stages_to_Calibrate);~
 NodeLocation: 416,336,1
 NodeSize: 64,40
 WindState: 2,548,7,1208,922
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 DisplayInputs: Object Object, Object Function, Object Decision, Object Index, Object Constant, Function Set_Spat_ID_Fail_R2, Function Sequential_Opt, Function Set_Starting_Coeff, Index Selected_PV_Decision, Index PV_Calibration_Stage, Constant PV_Decisions_by_Stg, Constant PV_Dates_Incl_by_Stg, Decision PV_Calibration_Start, Decision PV_Calibration_End, Index Time_PV_Calibration, Constant PV_OptSettings_byStg, Decision PV_Current_Stage, Decision Ag_Level_for_PV_Coef, Index Stages_to_Calib_PV, Index All_PV_Dec_Handles, Index All_PV_Decisions, Index Failed_Spat_ID_PV, Decision Use_Trace_Log, Constant Stored_Opt_Status_PV, Constant Stored_PV_Dec_Vars, Index Time_Solar_PV, Index PV_Spatial_ID
 
 Function OG_Sequential_Optimi(stage: atom; decision_vars, decision_var_super, der_spatial_id: index, stored_coeff: variable, stored_status: variable)
@@ -1513,7 +1513,7 @@ Date: Tue, Nov 20, 2018 12:18 PM
 NodeLocation: 752,328,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,2183,28,954,732,17
+DiagState: 2,226,43,954,732,17,10
 
 Text Te1535066202
 Title: Ideas: ~
@@ -1549,7 +1549,7 @@ Definition: Choice(All_Spatial_ID,1,0)
 NodeLocation: 448,384,1
 NodeSize: 72,40
 Aliases: FormNode Fo1535066236
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 
 Decision EV_LRMS_Scen_for_Th1
 Title: EV LRMS Scen for Threshold
@@ -1580,7 +1580,7 @@ Description: Pushing this button will assign the selected stored coefficients (p
 NodeLocation: 216,284,1
 NodeSize: 56,52
 WindState: 2,102,82,1147,350
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 OnClick: (Default_PVAdEff:=Stored_AdEff_PV[All_Spatial_ID=Spatial_ID_for_Assi1, All_Sectors=Sector_for_Assignin1, Aggreg_PV_LRMS=EV_LRMS_for_Assigni1]);~
 (Default_PV_WOM:=Stored_WOM_PV[ All_Spatial_ID=Spatial_ID_for_Assi1, All_Sectors=Sector_for_Assignin1, Aggreg_PV_LRMS=EV_LRMS_for_Assigni1]);~
 (Default_PV_End_WOM:=Stored_End_WOM_PV[All_Spatial_ID=Spatial_ID_for_Assi1, All_Sectors=Sector_for_Assignin1, Aggreg_PV_LRMS=EV_LRMS_for_Assigni1]);~
@@ -1592,7 +1592,7 @@ Title: Assign Default Coeff to Decision Variables
 Description: Pushing this button will assign the default values for each EV diffusion coefficient to the actual decision variables used in the optimization of diffusion parameters. You'll likely want to do this when only a subset of the diffusion parameters are being optimized, since the optimization script will hold constant (at the value of the current input for the decision variable).
 NodeLocation: 352,284,1
 NodeSize: 64,52
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 OnClick: (PV_Ad_Effectiveness:=Default_PVAdEff);~
 (PV_Word_of_Mouth:=Default_PV_WOM);~
 (PV_Ending_WOM:=Default_PV_End_WOM);~
@@ -1621,7 +1621,7 @@ Definition: Choice(Aggreg_PV_LRMS,2,0)
 NodeLocation: 600,384,1
 NodeSize: 64,40
 Aliases: FormNode Fo1535066241
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 
 FormNode Fo1535066241
 Title: EV LRMS for Assigning Default Coeff

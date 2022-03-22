@@ -440,7 +440,7 @@ NodeSize: 64,40
 WindState: 2,775,130,720,350
 
 Index Database_Drivers
-Att_PrevIndexValue: ['SQL Server','Microsoft Access Driver (*.mdb, *.accdb)','Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)','Microsoft Access dBASE Driver (*.dbf, *.ndx, *.mdx)','Microsoft Access Text Driver (*.txt, *.csv)']
+Att_PrevIndexValue: ['SQL Server']
 Title: Database Drivers
 Definition: SqlDriverInfo()
 NodeLocation: 120,432,1
@@ -509,7 +509,7 @@ Button Store_Data1
 Title: Store Data
 NodeLocation: 400,232,1
 NodeSize: 56,32
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 Script: (db_Fields:=copyindex(Fields_Selected));~
 (db_Records:=copyindex(Records));~
 (Interconnect_Data:=Filtered_Raw_Data[Fields_Selected=db_Fields,Records=db_Records])
@@ -693,7 +693,6 @@ NodeLocation: 384,64,1
 NodeSize: 64,40
 WindState: 2,557,1,720,350
 ValueState: 2,32,55,450,292,0,MIDM
-NodeColor: 65535,1,1
 {!40300|Att_SlicerPopupSize: 962,785}
 
 Module Global_Calibration_L

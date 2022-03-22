@@ -2710,7 +2710,7 @@ Title: Opt Sector
 Description: The sector for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.~
 ~
 Choice(Opt_Sectors,1,0)
-Definition: Choice(Opt_Sectors,1,1)
+Definition: Choice(Opt_Sectors,0,1)
 NodeLocation: 464,568,1
 NodeSize: 64,40
 WindState: 2,149,1,720,350
@@ -3960,7 +3960,7 @@ NodeLocation: 104,240,1
 NodeSize: 48,24
 DefnState: 2,49,215,416,303,0,MIDM
 ValueState: 2,56,66,416,303,0,MIDM
-NodeColor: 65535,1,1
+NodeColor: 65535,39321,39321
 
 Variable Fruit_2
 Title: Fruit 2
@@ -4107,7 +4107,6 @@ Saved_Linked_List:=LL_Push(Saved_Linked_List, solution);   {Appends the current 
 NodeLocation: 1600,384,1
 NodeSize: 64,40
 WindState: 2,130,8,1567,879
-NodeColor: 65535,1,1
 
 Variable Extract_Link_Results
 Title: Extract Linked Results

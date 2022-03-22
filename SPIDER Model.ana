@@ -16096,7 +16096,7 @@ NodeLocation: 248,848,1
 NodeSize: 64,40
 WindState: 2,98,82,1192,397
 ValueState: 2,657,463,999,396,0,MIDM
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 Att_ResultSliceState: [System_Types,1,Month,1,Rate_Component2,3,Profile_Hours,1,Program_Years,1]
 
 Variable Avoided_GHG_Cost
@@ -17766,7 +17766,7 @@ Author: CWelch
 Date: Tue, Nov 16, 2021 12:28 PM
 NodeLocation: 128,1040,1
 NodeSize: 64,40
-DiagState: 2,111,126,1774,761,17,10
+DiagState: 2,-170,335,1774,761,17,10
 AcpStyles: Show_Object:no
 
 {!40404|FreePassObjectCount 5G4nCJrM31tNLh2R}
@@ -17814,7 +17814,7 @@ NodeSize: 64,40
 NodeColor: 65535,1,1
 
 Variable Nodes_to_change
-Att_PrevIndexValue: [Include_Output_Type,EV_Sect_Label,Intercon_Strt_Yr,Intercon_End_Yr,Fact_Column_Indices,Map_Intercon_to_Sect,Min_and_Max_System_S,Min_Required_Install,Stored_DC_CapInstall,Stored_AC_CapInstall,Avg_AC_DC_CZ_Fcast,PV_AC_to_DC_Factor,Te1541505644,Saved_NTG_Ratio,NewConstr_Mkt_Share,Force_NewCon_Market_,Market_Share_Method,Impact_Scaling,Event_Applicability,R2_Threshold1,Num_of_Periods_Avg,PV_Sim_Start_Year,PV_Sim_End_Year,Select_Customer_Rate,Num_of_Rate_Vintages,NonCoincDmd_Attribs,OnPeak_Dmd_Attribs,Energy_Rate_Attribs,Map_Component_to_Prd,Stored_PV_Pct_ITC,Assume_Third_Party_O,Base_Year_for_O_M_In,BaseYr_for_PV_Costs,BaseYr_Strg_Costs,Map_Charges_to_Sect,Map_Costs_to_Sector,Select_System_Types,Year_of_Consump_Data,Use_facility_level_d,Tier_Period_Labels,Profiles_to_Evaluate,Save_Static_ProfName,Save_Daily_Profiles,Use_Peak_in_Profile,Static_Profile_Names,Te1554180641,Reported_Avg_Costs,Saved_kWh_Ratings,Source_of_Ratio,SGIP_Sector_Map,StorageSyst_Included,Rates_Included,ClimZones_Included,Months_Included,Select_Strg_Rate1,Select_Strg_System1,Map_Tier_Wts_to_Str2,Map_Tier_Wts_PrePos2,Fruit_2,BESS_Sim_Start_Year,BESS_Sim_End_Year,BESS_Economics_Map,AESS_Sector_Map,Reported_Avg_Costs2,Source_of_Ratio2,Rule21_Sector_Map,Market_Share_Method1,R2_Threshold_BESS,BESS_Calibration_Com,Nodecolor_to_updates]
+Att_PrevIndexValue: [Include_Output_Type,EV_Sect_Label,Intercon_Strt_Yr,Intercon_End_Yr,Fact_Column_Indices,Map_Intercon_to_Sect,Min_and_Max_System_S,Min_Required_Install,Stored_DC_CapInstall,Stored_AC_CapInstall,Avg_AC_DC_CZ_Fcast,PV_AC_to_DC_Factor,Te1541505644,Saved_NTG_Ratio,NewConstr_Mkt_Share,Force_NewCon_Market_,Market_Share_Method,Impact_Scaling,Event_Applicability,Initialize_PV_with_H,R2_Threshold1,Num_of_Periods_Avg,PV_Sim_Start_Year,PV_Sim_End_Year,Select_Customer_Rate,Num_of_Rate_Vintages,NonCoincDmd_Attribs,OnPeak_Dmd_Attribs,Energy_Rate_Attribs,Map_Component_to_Prd,Stored_PV_Pct_ITC,Assume_Third_Party_O,Base_Year_for_O_M_In,BaseYr_for_PV_Costs,BaseYr_Strg_Costs,Map_Charges_to_Sect,Map_Costs_to_Sector,Select_System_Types,Year_of_Consump_Data,Use_facility_level_d,Tier_Period_Labels,Profiles_to_Evaluate,Save_Static_ProfName,Save_Daily_Profiles,Use_Peak_in_Profile,Static_Profile_Names,Te1554180641,Reported_Avg_Costs,Saved_kWh_Ratings,Source_of_Ratio,SGIP_Sector_Map,StorageSyst_Included,Rates_Included,ClimZones_Included,Months_Included,Estim_Storage_Add_On,Select_Strg_Rate1,Select_Strg_System1,Map_Tier_Wts_to_Str2,Map_Tier_Wts_PrePos2,Fruit_2,BESS_Sim_Start_Year,BESS_Sim_End_Year,BESS_Economics_Map,AESS_Sector_Map,Reported_Avg_Costs2,Source_of_Ratio2,Rule21_Sector_Map,Market_Share_Method1,R2_Threshold_BESS,BESS_Calibration_Com,Nodecolor_to_updates]
 Title: Nodes to change
 Definition: update_nodes_to_chan;~
 #FindObjects(Color,attribute:'NodeColor')
@@ -17822,7 +17822,7 @@ NodeLocation: 912,456,1
 NodeSize: 64,40
 ValueState: 2,172,224,429,497,0,MIDM
 Aliases: FormNode Fo1730677955, FormNode Fo1725779139
-{!40700|Att_CellFormat: CellFormats(CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,71,header:0),CellSpan(Nodes_to_change,CellFill(0xffffff80),1,71,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,71,header:0))}
+{!40700|Att_CellFormat: CellFormats(CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,73,header:0),CellSpan(Nodes_to_change,CellFill(0xffffff80),1,73,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,73,header:0))}
 
 Variable Color
 Title: Color
@@ -17865,7 +17865,7 @@ NodeSize: 140,80
 
 Variable update_nodes_to_chan
 Title: update nodes to change
-Definition: 1
+Definition: 0
 NodeLocation: 1136,472,1
 NodeSize: 64,40
 
@@ -17910,6 +17910,7 @@ Title: Nodecolor To check
 Definition: 1
 NodeLocation: 1392,800,1
 NodeSize: 64,40
+ValueState: 2,276,282,416,303,,MIDM
 NodeColor: 65535,1,1
 
 Variable Colored_nodes_to_fix

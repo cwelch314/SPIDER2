@@ -621,7 +621,7 @@ Description: Just a placheholder for graphics generation.
 Definition: 1 {Lognormal(mean:1.25,stddev:0.3)}
 NodeLocation: 120,352,1
 NodeSize: 64,40
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 
 FormNode Fo1535473808
 Title: Retro Finish Mkt Share
@@ -775,7 +775,7 @@ NodeSize: 64,40
 ValueState: 2,399,29,1122,732,1,MIDM
 ReformVal: [Annual_Econ_Time,PV_Spatial_ID]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [PV_Spatial_ID,1,System_Types,1,PV_Sectors,21,Annual_Econ_Time,1]
+Att_ResultSliceState: [System_Types,1,PV_Sectors,1,Equity_Test,2,Area_Type,1,PV_Spatial_ID,1,Annual_Econ_Time,1]
 
 Variable Applied_Tech_Utility
 Title: Applied Tech Utility
@@ -1961,7 +1961,7 @@ Author: CWelch
 Date: Sun, Jan 9, 2022 3:29 PM
 NodeLocation: 632,208,1
 NodeSize: 72,56
-DiagState: 2,312,259,1185,592,17,10
+DiagState: 2,283,55,1185,592,17,10
 
 Variable Initial_PV_Adopters1
 Title: Initial PV Adopters
@@ -2092,6 +2092,7 @@ Definition: Table(Spatial_ID,All_PV_Sectors,Area_Type)(~
 0,0,0)
 NodeLocation: 112,360,1
 NodeSize: 64,40
+WindState: 2,375,58,720,350
 DefnState: 2,231,83,734,678,0,DFNM
 ValueState: 2,309,106,885,732,,MIDM
 NodeColor: 65535,1,1
@@ -2135,7 +2136,7 @@ Definition: Checkbox(0)
 NodeLocation: 944,160,1
 NodeSize: 64,40
 Aliases: FormNode Fo1363428899, FormNode Fo1462076355
-NodeColor: 65535,1,1
+NodeColor: 65535,65531,1
 
 FormNode Fo1462076355
 Title: Initialize PV with Historical Data?
@@ -2668,7 +2669,7 @@ Date: Fri, Jun 22, 2018 10:48 AM
 NodeLocation: 112,288,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,185,149,1222,535,17
+DiagState: 2,185,149,1222,535,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -3342,7 +3343,7 @@ Author: JamesMilford
 Date: Fri, Oct 25, 2019 8:28 AM
 NodeLocation: 88,248,1
 NodeSize: 64,40
-DiagState: 2,208,43,1013,507,17,10
+DiagState: 2,587,86,1013,507,17,10
 AcpStyles: FrameNode: Solar_Scale_Frame
 
 Variable Normal_Solar_Profile
@@ -3410,117 +3411,113 @@ Units: kWhA/year / kW-DC*8760
 Description: NEED TO CHANGE DIMENSIONALITY OF DATA IMPORTED~
 ~
 The PV capacity factor, which indicates the kWh-AC of first-year solar production that can be expected from a system having a 1 kW-DC nameplate rating.
-Definition: Table(All_Sectors,PV_Climate_Zone,Area_Type)(~
-0.156,0.156,0.156,~
-0.14766941852187138,0.14766941852187138,0.14766941852187138,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.14766941852187138,0.14766941852187138,0.14766941852187138,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.14766941852187138,0.14766941852187138,0.14766941852187138,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.14766941852187138,0.14766941852187138,0.14766941852187138,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.14766941852187138,0.14766941852187138,0.14766941852187138,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.14766941852187138,0.14766941852187138,0.14766941852187138,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.14766941852187138,0.14766941852187138,0.14766941852187138,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.14766941852187138,0.14766941852187138,0.14766941852187138,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.14766941852187138,0.14766941852187138,0.14766941852187138,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.14766941852187138,0.14766941852187138,0.14766941852187138,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.14766941852187138,0.14766941852187138,0.14766941852187138,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.14766941852187138,0.14766941852187138,0.14766941852187138,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.14766941852187138,0.14766941852187138,0.14766941852187138,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.147669418521871,0.147669418521871,0.147669418521871,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.147669418521871,0.147669418521871,0.147669418521871,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.147669418521871,0.147669418521871,0.147669418521871,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.147669418521871,0.147669418521871,0.147669418521871,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.147669418521871,0.147669418521871,0.147669418521871,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.147669418521871,0.147669418521871,0.147669418521871,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.147669418521871,0.147669418521871,0.147669418521871,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.147669418521871,0.147669418521871,0.147669418521871,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.147669418521871,0.147669418521871,0.147669418521871,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.147669418521871,0.147669418521871,0.147669418521871,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.147669418521871,0.147669418521871,0.147669418521871,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.147669418521871,0.147669418521871,0.147669418521871,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.147669418521871,0.147669418521871,0.147669418521871,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.147669418521871,0.147669418521871,0.147669418521871,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.147669418521871,0.147669418521871,0.147669418521871,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.147669418521871,0.147669418521871,0.147669418521871,~
-0.135,0.135,0.135,~
-0.156,0.156,0.156,~
-0.147669418521871,0.147669418521871,0.147669418521871,~
-0.135,0.135,0.135,~
-Null,Null,Null,~
-Null,Null,Null,~
-Null,Null,Null)
+Definition: Table(All_PV_Sectors,PV_Climate_Zone,Area_Type)(~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138,~
+0.145,0.145,0.161,~
+0.1405,0.1405,0.1555,~
+0.127,0.127,0.138)
 NodeLocation: 256,336,1
 NodeSize: 64,40
 WindState: 2,433,146,866,441
-DefnState: 2,572,120,768,691,0,DFNM
+DefnState: 2,463,119,768,691,0,DFNM
 ValueState: 2,692,293,661,218,0,MIDM
 Aliases: Alias Al1550179326, FormNode Fo1550179326, Alias Al1012103715
-NodeColor: 65535,1,1
-ReformDef: [PV_Climate_Zone,All_Sectors]
+ReformDef: [Area_Type,All_PV_Sectors]
 ReformVal: [All_Sectors,PV_Climate_Zone]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att_EditSliceState: [Area_Type,2,All_Sectors,1,PV_Climate_Zone,1]
+Att_EditSliceState: [PV_Climate_Zone,2,All_PV_Sectors,1,Area_Type,2]
 
 Variable PV_Production_per_kW
 Title: PV Production per kW DC
 Units: (kWh/year)/kW-DC
 Description: The annual energy produced per kW-DC of installed solar.
-Definition: PV_Capacity_Factor[All_Sectors=PV_Sectors] * Hours_per_Year
+Definition: PV_Capacity_Factor[All_PV_Sectors=PV_Sectors] * Hours_per_Year
 NodeLocation: 416,336,1
 NodeSize: 64,40
 ValueState: 2,3078,223,616,677,0,MIDM
@@ -3711,7 +3708,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,57,56,1734,589,17,10
+DiagState: 2,30,160,1734,589,17,10
 Aliases: Alias Al1579800542
 AcpStyles: FrameNode: Load_Frame
 
@@ -3844,9 +3841,8 @@ ELSE Load_Net_of_Solar   {Else use the load net of solar}~
 
 NodeLocation: 736,136,1
 NodeSize: 64,40
-WindState: 2,152,10,1683,659
+WindState: 2,162,61,1683,659
 ValueState: 2,410,63,1222,764,0,MIDM
-NodeColor: 65535,1,1
 ReformVal: [Profile_Hours,Month]
 Att_ResultSliceState: [PV_Sectors,22,PV_Climate_Zone,1,PV_Operating_Year,1,System_Types,2,Area_Type,1,Rate_Vintage,1,Month,7,Profile_Hours,1]
 
@@ -5082,7 +5078,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 256,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,180,165,1482,659,17,10
+DiagState: 2,204,0,1325,723,17,10
 Aliases: Alias Al1548967139
 AcpStyles: FrameNode: FrameNode_1544920029
 
@@ -6577,7 +6573,7 @@ Constant Additional_Value
 Title: Additional Value
 Units: $/kWh
 Definition: Table(Value_Type)(0.004,0.01)
-NodeLocation: 728,336,1
+NodeLocation: 784,192,1
 NodeSize: 64,40
 NodeColor: 65535,1,1
 NumberFormat: 2,F,3,3,0,1,3,1,$,0,"ABBREV",0,,,0,0,15,
@@ -7667,7 +7663,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 128,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,291,129,1116,454,17,10
+DiagState: 2,257,136,1116,454,17,10
 AcpStyles: FrameNode: FrameNode_1544920171
 
 Constant Debt_Equity_Rates
@@ -7677,41 +7673,41 @@ Description: The interest rates for debt and equity financing.~
 ~
 The cost of equity financing is the consumer discount rate in the case of a residential customer. Note that the residential opportunity cost may be lower than a residential customer's implied discount rate, but implied discount rates are premised on having to make an upfront investment, which is not the case for a 100% debt-financed investment.
 Definition: Table(All_Sectors,Debt_or_Equity)(~
-0.06,equity_test,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12,~
-0.06,0.12)
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test,~
+equity_test,equity_test)
 NodeLocation: 112,64,1
 NodeSize: 64,40
 WindState: 2,496,161,720,350
-DefnState: 2,442,3,425,722,0,DFNM
+DefnState: 2,556,88,553,722,0,DFNM
 ValueState: 2,150,305,542,312,0,MIDM
 Aliases: Alias Al1550187543, FormNode Fo1550187544, FormNode Fo1545167068, FormNode Fo1567092877
 NodeColor: 65535,1,1
@@ -7822,9 +7818,10 @@ Original: Inflation_Rate
 
 Variable Equity_Test
 Title: Equity Test
-Definition: .06
-NodeLocation: 184,336,1
+Definition: 0.06
+NodeLocation: 224,336,1
 NodeSize: 64,40
+{!40300|Att_SlicerPopupSize: 232,64}
 
 Close Financing
 
@@ -7941,10 +7938,9 @@ Definition: Table(All_Sectors,ITC_Scenario,Static_PV_Time)(~
 0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.22,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1)
 NodeLocation: 88,176,1
 NodeSize: 64,40
-DefnState: 2,1969,159,1393,667,0,DFNM
+DefnState: 2,12,159,1731,669,0,DFNM
 ValueState: 2,552,57,975,672,0,MIDM
 Aliases: Alias Al1550189910, FormNode Fo1550189910, FormNode Fo1545167107, FormNode Fo1545084105, FormNode Fo1567092849, FormNode Fo1548967851
-NodeColor: 65535,1,1
 ReformDef: [All_Sectors,Static_PV_Time]
 ReformVal: [Static_PV_Time,ITC_Scenario]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
@@ -7990,7 +7986,8 @@ NodeSize: 64,40
 WindState: 2,98,82,1157,590
 ValueState: 2,274,206,1235,377,0,MIDM
 ReformVal: [Annual_Econ_Time,System_Types]
-Att_ResultSliceState: [PV_Sectors,26,PV_Climate_Zone,2,Equipment_Types,1,System_Types,2,Annual_Econ_Time,14]
+Att__TotalsIndex: [Equipment_Types]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,2,Equipment_Types,0,Area_Type,1,System_Types,2,Annual_Econ_Time,14]
 
 Text FrameNode_1544920201
 NodeLocation: 1184,320,-20
@@ -8059,7 +8056,7 @@ https://www.energysage.com/solar/solar-energy-storage/energy-storage-tax-credits
 Definition: Table(All_Sectors)(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 NodeLocation: 88,296,1
 NodeSize: 64,40
-DefnState: 2,1126,178,427,605,0,DFNM
+DefnState: 2,1202,87,389,705,0,DFNM
 ValueState: 2,212,218,416,303,0,MIDM
 Aliases: Alias Al1550189914, FormNode Fo1550189914, FormNode Fo1546192388, Alias Al1584728928, FormNode Fo1584728929
 NodeColor: 65535,65531,1
@@ -8144,6 +8141,7 @@ NodeSize: 64,40
 WindState: 2,129,187,1049,548
 ValueState: 2,483,368,825,444,0,MIDM
 ReformVal: [Equipment_Types,System_Types]
+Att_ResultSliceState: [PV_Sectors,1,Annual_Econ_Time,14,PV_Climate_Zone,1,Installation_Event,1,Area_Type,1,System_Types,1,Equipment_Types,1]
 
 Module Taxable_Incents
 Title: Taxable Incentives
@@ -8152,7 +8150,7 @@ Date: Wed, Feb 6, 2019 6:05 PM
 NodeLocation: 96,424,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,112,31,1688,782,17,10
+DiagState: 2,3,49,1688,754,17,10
 AcpStyles: Framenode: Taxable_Incent_Frame
 
 Constant kWh_Incen_Dur_Derate
@@ -8170,8 +8168,7 @@ https://www.selfgenca.com/documents/handbook/2017
 Definition: Table(Incent_Duration_Step,Incent_Durat_Inputs)(~
 0,1,~
 5,0.25,~
-7,0,~
-Null,Null)
+7,0)
 NodeLocation: 104,224,1
 NodeSize: 64,40
 WindState: 2,7,167,720,350
@@ -8197,7 +8194,8 @@ Definition: AvgRate_Across_Brack(kWh_Incen_Dur_Derate[@Incent_Durat_Inputs=1], k
 NodeLocation: 248,224,1
 NodeSize: 64,40
 WindState: 2,318,265,720,350
-ValueState: 2,456,56,416,303,0,MIDM
+ValueState: 2,456,56,804,702,0,MIDM
+ReformVal: [PV_Climate_Zone,PV_Sectors]
 NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
 Constant kWh_Incent_DerateCap
@@ -8214,13 +8212,13 @@ SGIP Handbook, Section 5.2.2~
 https://www.selfgenca.com/documents/handbook/2017
 Definition: Table(Incent_Capacity_Step,Incent_MWhCap_Inputs)(~
 0,1,~
-2,0.5,~
-4,0.25,~
-6,0,~
-0,0)
+100,1,~
+100,1,~
+100,1,~
+100,1)
 NodeLocation: 104,344,1
 NodeSize: 64,40
-WindState: 2,448,294,959,608
+WindState: 2,397,252,959,608
 DefnState: 2,302,104,776,379,0,DFNM
 ValueState: 2,27,546,877,303,0,MIDM
 Aliases: Alias Al1550726186, FormNode Fo1550726187, FormNode Fo1548708354
@@ -8243,7 +8241,8 @@ Definition: AvgRate_Across_Brack(kWh_Incent_DerateCap[@Incent_MWhCap_Inputs=1], 
 NodeLocation: 248,344,1
 NodeSize: 64,40
 WindState: 2,304,156,720,350
-ValueState: 2,485,351,752,303,0,MIDM
+ValueState: 2,643,60,739,655,0,MIDM
+ReformVal: [PV_Climate_Zone,PV_Sectors]
 NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 
 Constant Strg_kWh_Base_Rate
@@ -8255,485 +8254,485 @@ Source: ~
 SGIP Handbook, Section 3.2.1~
 https://www.selfgenca.com/documents/handbook/2017
 Definition: Table(All_Sectors,Incentive_Steps,ITC_Applied,PV_Climate_Zone)(~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
 147.2117,104.1667,125,~
-Null,Null,Null,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
+147.2117,104.1667,125,~
 147.2117,104.1667,125,~
 Null,Null,Null,~
 Null,Null,Null,~
@@ -8754,13 +8753,13 @@ Null,Null,Null)
 NodeLocation: 400,80,1
 NodeSize: 64,40
 WindState: 2,298,593,720,350
-DefnState: 2,818,344,658,246,0,DFNM
+DefnState: 2,312,47,1095,866,0,DFNM
 ValueState: 2,477,354,952,554,0,MIDM
 Aliases: Alias Al1568695724, FormNode Fo1568695724, FormNode Fo1548723041
-ReformDef: [Incentive_Steps,BESS_Incentive_Scen]
+ReformDef: [Incentive_Steps,All_Sectors]
 ReformVal: [Incentive_Steps,All_Sectors]
 Att_ResultSliceState: [ITC_Applied,1,BESS_Incentive_Scen,3,All_Sectors,2,Incentive_Steps,1]
-Att_EditSliceState: [ITC_Applied,1,All_Sectors,1,PV_Climate_Zone,1,Incentive_Steps,1]
+Att_EditSliceState: [ITC_Applied,1,PV_Climate_Zone,3,All_Sectors,1,Incentive_Steps,1]
 {!50000|Att_ColumnWidths: [,Incentive_Steps,\([61,,,66])]}
 
 FormNode Fo1548723041
@@ -8811,7 +8810,7 @@ Choice(Incentive_Start_Time,102,0),Choice(Incentive_Start_Time,103,0),Choice(Inc
 NodeLocation: 552,80,1
 NodeSize: 64,40
 WindState: 2,475,416,829,498
-DefnState: 2,1109,6,730,368,0,DFNM
+DefnState: 2,749,281,965,372,0,DFNM
 ValueState: 2,591,315,941,389,0,MIDM
 Aliases: Alias Al1568695821, FormNode Fo1568695821, FormNode Fo1548796240
 NodeColor: 65535,1,1
@@ -8883,9 +8882,9 @@ Definition: VAR ITC_claimed:=StepInterp(BOY_Date_for_Econ_Yr, Storage_ITC_Claime
 Strg_kWh_Base_Rate[BESS_Incentive_Scen=BESS_Incent_Scenario, Incentive_Steps=Incent_Step_by_Time, All_Sectors=PV_Sectors, ITC_Applied=ITC_claimed, System_Types=Storage_Systems]
 NodeLocation: 568,224,1
 NodeSize: 64,40
-ValueState: 2,17,-1,1523,675,1,MIDM
+ValueState: 2,17,0,1523,675,1,MIDM
 ReformVal: [Time,BESS_Incentive_Scen]
-Att_ResultSliceState: [PV_Sectors,2,Storage_Systems,2,PV_Climate_Zone,1,BESS_Incentive_Scen,1,Time,1]
+Att_ResultSliceState: [Storage_Systems,1,Area_Type,1,PV_Climate_Zone,1,PV_Sectors,1,Time,1]
 
 Variable Storage_ITC_Claimed
 Title: Storage ITC Claimed
@@ -9174,7 +9173,7 @@ Att_ResultSliceState: [PV_Sectors,1,Storage_Systems,3,PV_Climate_Zone,1,Time,1]
 Constant FinalYr_of_kW_Incent
 Title: Final Year of kW Incentives
 Description: The final year that kW-based incentives were available. After this year, kWh-based incentives will be applied.
-Definition: 2016
+Definition: 2000
 NodeLocation: 888,240,1
 NodeSize: 64,40
 Aliases: FormNode Fo1572462032
@@ -9198,7 +9197,7 @@ ELSE kWh_Incentive
 NodeLocation: 888,344,1
 NodeSize: 64,40
 ValueState: 2,96,23,1378,770,,MIDM
-ReformVal: [Time,Storage_Systems]
+ReformVal: [Time,PV_Climate_Zone]
 Att_ResultSliceState: [PV_Climate_Zone,1,Storage_Systems,3,PV_Sectors,1,Time,1]
 
 FormNode Fo1572464811
@@ -10074,11 +10073,11 @@ Definition: Table(All_Sectors,Static_PV_Time,PV_Incentive_Scen)(~
 NodeLocation: 128,784,1
 NodeSize: 64,40
 WindState: 2,45,506,720,350
-DefnState: 2,41,426,1764,283,0,DFNM
+DefnState: 2,184,163,1409,644,0,DFNM
 ValueState: 2,409,135,1262,773,,MIDM
 Aliases: FormNode Fo1580649311
 NodeColor: 65535,1,1
-ReformDef: [Static_PV_Time,PV_Incentive_Scen]
+ReformDef: [All_Sectors,Static_PV_Time]
 TableCellDefault: 0
 Att_ResultSliceState: [All_Sectors,2,PV_Incentive_Scen,1,Static_PV_Time,1]
 Att_EditSliceState: [All_Sectors,3,PV_Incentive_Scen,2,Static_PV_Time,1]
@@ -10240,7 +10239,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 432,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,108,128,1314,622,17,10
+DiagState: 2,135,51,1314,622,17,10
 AcpStyles: FrameNode: FrameNode_1544920240
 
 Decision Taxed_as_Commercial
@@ -10347,7 +10346,6 @@ WindState: 2,258,541,1722,350
 DefnState: 2,939,156,704,713,0,DFNM
 ValueState: 2,196,202,416,303,0,MIDM
 Aliases: Alias Al1568695868, FormNode Fo1568695868, FormNode Fo1545167166
-NodeColor: 65535,1,1
 ReformDef: [Tax_Entity,Static_PV_Time]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
@@ -10653,6 +10651,11 @@ NodeLocation: 628,552,1
 NodeSize: 132,16
 NodeColor: 65535,65531,1
 Original: Assume_Third_Party_O
+
+Text Te394931747
+Title: These economics don't seem to work for a TPO system
+NodeLocation: 900,484,-1
+NodeSize: 68,60
 
 Close Taxes
 
@@ -14257,7 +14260,6 @@ WindState: 2,285,574,720,350
 DefnState: 2,488,161,416,632,,DFNM
 ValueState: 2,196,202,416,303,0,MIDM
 Aliases: Alias Al1568696122, FormNode Fo1568696122, FormNode Fo1544633537
-NodeColor: 65535,1,1
 TableCellDefault: 0
 
 Index PV_Cost_Scenario
@@ -14599,7 +14601,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 736,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,141,16,1409,748,17,10
+DiagState: 2,207,25,1409,748,17,10
 BalloonHelp: FrameNode: FrameNode_1544920329
 AcpStyles: FrameNode: FrameNode_1544920329
 
@@ -14706,7 +14708,7 @@ Title: Annual Levelized Bill Savings
 Units: $/year-system
 Description: The savings based on levelized annual utility bills.
 Definition: Lev_Ann_Bill_byYr[Pre_and_Post_System=Pre_System_Label] - Lev_Ann_Bill_byYr[Pre_and_Post_System=Post_System_Label]
-NodeLocation: 520,784,1
+NodeLocation: 544,784,1
 NodeSize: 64,40
 ValueState: 2,506,195,927,588,1,MIDM
 
@@ -14742,7 +14744,7 @@ Definition: Divide(Annual_Cost_of_Elect[Pre_and_Post_System=Post_System_Label], 
 NodeLocation: 648,408,1
 NodeSize: 64,40
 WindState: 2,766,136,720,350
-ValueState: 2,595,67,849,698,1,MIDM
+ValueState: 2,659,140,849,698,1,MIDM
 Aliases: FormNode Fo1539221820, FormNode Fo1572476395
 NodeColor: 65535,1,1
 GraphSetup: Att_GraphIndexRange PV_Sectors:1,,0,,,,,1,7,1~
@@ -14762,9 +14764,9 @@ Graph_AxisTitleColor:17408,29184,50176~
 Att_GraphValueRange Cost_of_Elect_Ratio:1,,1,1,,,,0,1,0~
 Grid:0~
 Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2021.932933807373,2032,0
-ReformVal: [Annual_Econ_Time,PV_Climate_Zone]
+ReformVal: [Annual_Econ_Time,Equity_Test]
 NumberFormat: 2,F,4,1,0,0,4,1,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [Area_Type,1,System_Types,1,PV_Sectors,1,PV_Climate_Zone,1,Annual_Econ_Time,12]
+Att_ResultSliceState: [Area_Type,1,System_Types,1,PV_Sectors,1,PV_Climate_Zone,1,Equity_Test,1,Annual_Econ_Time,12]
 
 Variable Simple_Payback_Time
 Title: Simple Payback Time
@@ -14789,7 +14791,7 @@ Definition: Table(Cost_Component)(Lev_Ann_Bill_byYr,Annual_Loan_Payments * (Pre_
 NodeLocation: 496,520,1
 NodeSize: 64,40
 DefnState: 2,154,432,861,448,,DFNM
-ValueState: 2,399,65,1205,774,1,MIDM
+ValueState: 2,264,60,1205,774,1,MIDM
 NodeColor: 19661,48336,65535
 GraphSetup: Att_ForceCategorical Graph_Primary_Valdim:1~
 Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2021.0589036941528,2031.6031724214554,0~
@@ -14797,7 +14799,7 @@ Att_CatLineStyle Graph_Primary_Valdim:9~
 {!40600|Att_WaterfallBar Graph_Primary_Valdim:1}
 ReformVal: [Cost_Component,Annual_Econ_Time]
 Att__TotalsIndex: [Cost_Component]
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,System_Types,1,Pre_and_Post_System,2,Area_Type,1,Annual_Econ_Time,21,Equity_Test,1,Annual_Econ_Time,1,Cost_Component,1]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,System_Types,1,Pre_and_Post_System,2,Area_Type,1,Annual_Econ_Time,21,Equity_Test,1,Annual_Econ_Time,21,Cost_Component,1]
 Att_ColorRole: Null
 {!40600|Att_StackingIndex: Cost_Component}
 {!40600|Att_ClusterIndex: Null}
@@ -15142,7 +15144,7 @@ Variable Levelized_cost_of_so
 Title: Levelized cost of solar production
 Units: $/kWh
 Definition: NPV_of_System_Cost / NPV_of_Solar_Product
-NodeLocation: 128,568,1
+NodeLocation: 104,592,1
 NodeSize: 64,40
 ValueState: 2,488,109,672,628,,MIDM
 GraphSetup: Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2021.9889801740646,2032,0
@@ -15187,11 +15189,12 @@ Variable Levelized_Value_of_S
 Title: Levelized Value of Solar Production
 Units: $/kWh
 Definition: ZIDZ(NPV_of_Bill_Savings, NPV_of_Solar_Product)
-NodeLocation: 184,824,1
+NodeLocation: 128,824,1
 NodeSize: 64,40
-ValueState: 2,884,87,659,631,,MIDM
+ValueState: 2,837,113,659,631,,MIDM
 ReformVal: [Annual_Econ_Time,PV_Climate_Zone]
 NumberFormat: 2,F,4,2,0,0,4,1,$,0,"ABBREV",0,,,0,0,15,
+Att_ResultSliceState: [Equity_Test,2,PV_Sectors,1,System_Types,1,Area_Type,1,PV_Climate_Zone,1,Annual_Econ_Time,1]
 
 Variable Value_vs_Cost
 Title: Value vs Cost
@@ -15206,14 +15209,18 @@ Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_GraphValueRange Value_vs_Cost:1,,0,,,,8,0,0.35000000000000003,0
 ReformVal: [PV_Climate_Zone,Self]
 NumberFormat: 2,F,4,2,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
-Att_ResultSliceState: [PV_Sectors,1,Area_Type,2,System_Types,3,Annual_Econ_Time,11,Self,2,PV_Climate_Zone,1]
+Att_ResultSliceState: [PV_Sectors,1,Area_Type,2,System_Types,1,Annual_Econ_Time,11,Equity_Test,2,Self,1,PV_Climate_Zone,1]
 
 Alias Al1203148323
 Title: First year $/kWh value of solar generation
 Definition: 1
-NodeLocation: 704,800,1
-NodeSize: 64,56
+NodeLocation: 704,784,1
+NodeSize: 72,40
 Original: First_year_kWh_value
+
+Variable Va24
+NodeLocation: 272,928,1
+NodeSize: 64,40
 
 Close Annual_Cost_of_Syste
 
@@ -15226,7 +15233,7 @@ Date: Wed, Oct 10, 2018 9:00 AM
 NodeLocation: 544,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,49,118,1170,632,17,10
+DiagState: 2,61,101,1493,632,17,10
 Aliases: Alias Al1548967120
 AcpStyles: FrameNode: FrameNode_1544919879
 
@@ -15240,44 +15247,43 @@ Note: Tesla Powerpack specs 210kWh, 50kW, 88% (2hr system) or 89% (4hr system)~
 ~
 Page 16 of SDGE's "Behind the Meter Battery Energy Storage System M&V" report (Aug 2019) states that controllers are configured to only allow the battery charge level to range between 5%-95% of the rated energy capacity.
 Definition: Table(All_Sectors,Battery_Specs)(~
-66,30,0.9,0.05,0.95,~
-6000,1500,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95,~
-66,30,0.9,0.05,0.95)
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95,~
+0.9,0.05,0.95)
 NodeLocation: 136,176,1
 NodeSize: 64,40
 WindState: 2,297,1,801,442
-DefnState: 2,490,136,1157,717,0,DFNM
+DefnState: 2,292,147,1157,717,0,DFNM
 ValueState: 2,274,25,821,620,0,MIDM
 Aliases: Alias Al1550183618, FormNode Fo1550183618, FormNode Fo1542305979, FormNode Fo1567093176
-NodeColor: 65535,1,1
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9
 ReformDef: [Battery_Specs,All_Sectors]
@@ -15287,7 +15293,7 @@ Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [Battery_Specs,1,Battery_Specs,3,All_Sectors,1]
 Att_ColorRole: Null
 {!40600|Att_ClusterIndex: Null}
-{!40700|Att_CellFormat: CellFormats(CellSpan(Battery_Specs,CellNumberFormat('Percentage',2,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0),3,5,header:0),CellSpan(Battery_Specs,CellFill(0xffff0000),1,2,header:0))}
+{!40700|Att_CellFormat: CellFormats(CellSpan(Battery_Specs,CellNumberFormat('Percentage',2,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0),1,3,header:0))}
 
 Constant Num_Storage_Units
 Title: Number of Storage Units
@@ -15507,7 +15513,6 @@ Definition: 0
 NodeLocation: 136,228,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-NodeColor: 65535,31131,19661
 Original: Battery_Storage_Spec
 
 FormNode Fo1542305980
@@ -15743,7 +15748,7 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 256,288,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,58,109,1701,573,17,10
+DiagState: 2,72,166,1701,573,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -15817,13 +15822,13 @@ ValueState: 2,536,157,988,684,0,MIDM
 Constant Num_Incent_Dur_Steps
 Title: Number of Incentive Duration Steps
 Description: Specify the number of steps (ie, marginal brackets) in the incentive as a function of storage duration.
-Definition: 4
+Definition: 3
 NodeLocation: 1840,264,1
 NodeSize: 64,40
 Aliases: Alias Al1550726181, FormNode Fo1550726182, FormNode Fo1548706815
 
 Index Incent_Duration_Step
-Att_PrevIndexValue: [1,2,3,4]
+Att_PrevIndexValue: [1,2,3]
 Title: Incentive Duration Step
 Definition: 1..Num_Incent_Dur_Steps
 NodeLocation: 1840,376,1
@@ -15949,10 +15954,10 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Num_Incentive_Steps
 
 Index PV_Sectors
-Att_PrevIndexValue: ['Higher Education']
+Att_PrevIndexValue: ['Higher Education','Hospitals','K-12','LG_Air Transportation','LG_Art_Museum','LG_Assisted Living','LG_Community services','LG_Correctional Facility','LG_Unique Education','LG_Government_Office','LG_Housing','LG_Library','LG_Other Transportation','LG_Police and Fire Department','LG_Recreational','LG_Water Supply & Waste Water','SA_Air Transportation','SA_Art_Museum','SA_Assisted Living','SA_Community services','SA_Correctional Facility','SA_Courthouse_Probation','SA_Unique Education','SA_Government_Office','SA_Housing','SA_Library','SA_Other Transportation','SA_Police and Fire Department','SA_Recreational','SA_Water Supply & Waste Water']
 Title: PV Sectors
 Description: The sectors selected for the PV analysis.
-Definition: MultiChoice(All_PV_Sectors,1,returnList:1)
+Definition: MultiChoice(All_PV_Sectors,returnList:1)
 NodeLocation: 1536,344,1
 NodeSize: 64,40
 WindState: 2,319,12,1255,632
@@ -16040,7 +16045,7 @@ WindState: 2,228,3,1362,905
 ValueState: 2,472,240,832,491,0,MIDM
 DisplayOutputs: Variable Clipboard_NewConstr_
 Att_GraphIndexRange: 1,,,,,,10
-{!40300|Att_SlicerPopupSize: 322,336}
+{!40300|Att_SlicerPopupSize: 327,336}
 
 Variable BOY_Date_for_Econ_Yr
 Title: BOY Date for Econ Year
@@ -16203,7 +16208,7 @@ Title: Equipment Types
 Definition: Subset(Sum(Equip_Install_Map[All_System_Types=System_Types], System_Types))
 NodeLocation: 1104,360,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 297,56}
+{!40300|Att_SlicerPopupSize: 307,56}
 
 Decision Federal_Label
 Title: Federal Label
@@ -16308,7 +16313,7 @@ NodeColor: 65535,65531,1
 TableCellDefault: Checkbox(0)
 
 Index System_Types
-Att_PrevIndexValue: ['Solar PV Retrofit','Solar + Storage Retrofit','Storage Added to Exist Solar','Storage Only Retrofit']
+Att_PrevIndexValue: ['Solar PV Retrofit','Solar + Storage Retrofit']
 Title: System Types
 Definition: Subset(Select_System_Types)
 NodeLocation: 240,256,1
@@ -16316,7 +16321,7 @@ NodeSize: 64,40
 WindState: 2,102,21,1089,879
 ValueState: 2,1420,581,416,303,,MIDM
 DisplayOutputs: Variable Clipboard_NewConstr_
-{!40300|Att_SlicerPopupSize: 752,112}
+{!40300|Att_SlicerPopupSize: 757,112}
 
 Index New_or_Retrofit
 Att_PrevIndexValue: ['NewConstr','Retrofit']
@@ -16333,9 +16338,9 @@ NodeLocation: 672,152,1
 NodeSize: 64,40
 
 Index Battery_Specs
-Att_PrevIndexValue: ['Energy (kWh/unit)','Power (kW/unit)','Roundtrip Efficiency (%)','Minimum Charge Level (%)','Maximum Charge Level (%)']
+Att_PrevIndexValue: ['Roundtrip Efficiency (%)','Minimum Charge Level (%)','Maximum Charge Level (%)']
 Title: Battery Specs
-Definition: ['Energy (kWh/unit)','Power (kW/unit)','Roundtrip Efficiency (%)','Minimum Charge Level (%)','Maximum Charge Level (%)']
+Definition: ['Roundtrip Efficiency (%)','Minimum Charge Level (%)','Maximum Charge Level (%)']
 NodeLocation: 816,64,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 227,70}
@@ -16951,7 +16956,7 @@ NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
 Original: Power_kW_Label
 
 Index Storage_Systems
-Att_PrevIndexValue: ['Solar + Storage Retrofit','Storage Added to Exist Solar','Storage Only Retrofit']
+Att_PrevIndexValue: ['Solar + Storage Retrofit']
 Title: Storage Systems
 Definition: Subset(Equip_Install_Map[All_System_Types=System_Types, All_Equipment_Types=Battery_Strg_Label])
 NodeLocation: 1104,1024,1
@@ -17225,7 +17230,7 @@ Original: PV_Strg_Retro_Label
 
 Decision Roundtrip_Label
 Title: Roundtrip Label
-Definition: Choice(Battery_Specs,3,0)
+Definition: Choice(Battery_Specs,1,0)
 NodeLocation: 816,360,1
 NodeSize: 64,40
 Aliases: FormNode Fo1550004482
@@ -17310,7 +17315,7 @@ Original: PV_Static_End_Year
 
 Decision Min_SOC_Label
 Title: Min SOC Label
-Definition: Choice(Battery_Specs,4,0)
+Definition: Choice(Battery_Specs,2,0)
 NodeLocation: 816,464,1
 NodeSize: 64,40
 Aliases: FormNode Fo1572020378
@@ -17325,7 +17330,7 @@ Original: Min_SOC_Label
 
 Decision Max_SOC_Label
 Title: Max SOC Label
-Definition: Choice(Battery_Specs,5,0)
+Definition: Choice(Battery_Specs,3,0)
 NodeLocation: 816,568,1
 NodeSize: 64,40
 Aliases: FormNode Fo1572020379
@@ -17768,7 +17773,7 @@ Date: Wed, Nov 7, 2018 1:59 PM
 NodeLocation: 112,240,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,393,203,1132,523,17,10
+DiagState: 2,393,203,1132,486,17,10
 AcpStyles: FrameNode: FrameNode_1545066262
 
 Decision Year_of_Consump_Data
@@ -18029,7 +18034,7 @@ Date: Wed, Nov 7, 2018 1:59 PM
 NodeLocation: 264,240,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,321,108,1369,563,17,10
+DiagState: 2,197,108,1369,652,17,10
 AcpStyles: FrameNode: FrameNode_1545066590
 
 Constant Power_Density
@@ -18074,9 +18079,8 @@ Definition: Table(All_PV_Sectors,Area_Type)(~
 NodeLocation: 144,104,1
 NodeSize: 64,40
 WindState: 2,621,249,720,350
-DefnState: 2,2416,198,498,655,0,DFNM
+DefnState: 2,1069,195,498,655,0,DFNM
 Aliases: Alias Al1568696777, FormNode Fo1568696778, Alias Al1916336675, FormNode Fo1952250403, FormNode Fo1541457042
-NodeColor: 65535,1,1
 ReformDef: [Area_Type,All_PV_Sectors]
 
 Constant Module_to_Area_Ratio
@@ -18125,60 +18129,7 @@ WindState: 2,693,459,720,350
 DefnState: 2,631,78,500,660,0,DFNM
 ValueState: 2,327,216,416,303,,MIDM
 Aliases: Alias Al1568696778, FormNode Fo1568696779, Alias Al2123069987, FormNode Fo1683814947, FormNode Fo1541457043
-NodeColor: 65535,1,1
 ReformDef: [Area_Type,All_PV_Sectors]
-
-Constant DELETE_Pct_of_Bldgs_
-Title: DELETE Pct of Bldgs with Roof Type
-Units: fraction
-Description: Delete this.~
-~
-The percentage of buildings having a certain roof type. ~
-~
-https://www.nrel.gov/docs/fy16osti/65298.pdf  (estimated from p. viii and p. 44). Table ES-1 provides the relative solar potential from medium vs large buildings, while Table A-1 provides the median percentage of each building type having flat roofs. This information is combined to generate the estimates included in this table.
-Definition: Table(All_Sectors,Roof_Type)(~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
-0,0)
-NodeLocation: 352,624,1
-NodeSize: 64,40
-WindState: 2,343,550,720,350
-DefnState: 2,1025,48,496,684,0,DFNM
-ValueState: 2,477,303,416,303,0,MIDM
-Aliases: Alias Al1568696779, FormNode Fo1568696780, FormNode Fo1541457044
-NodeColor: 65535,1,1
-ReformDef: [Roof_Type,All_Sectors]
-ReformVal: [Roof_Type,All_Sectors]
-NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att_EditSliceState: [PV_Sectors,1,All_Sectors,1,Roof_Type,1]
 
 Variable DC_Watts_per_m2_usab
 Title: DC Watts per m2 usable installation area
@@ -18208,14 +18159,6 @@ NodeLocation: 144,396,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Module_to_Area_Ratio
-
-FormNode Fo1541457044
-Title: Pct of Bldgs with Roof Type
-Definition: 0
-NodeLocation: 352,676,1
-NodeSize: 56,12
-NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: DELETE_Pct_of_Bldgs_
 
 Variable m2_usable_area_per_k
 Title: m2 usable area per kW-DC
@@ -18289,9 +18232,8 @@ Definition: Table(All_PV_Sectors,Area_Type)(~
 0.8,0.8,0.05)
 NodeLocation: 144,480,1
 NodeSize: 64,40
-DefnState: 2,2832,209,503,654,0,DFNM
+DefnState: 2,836,232,503,654,0,DFNM
 Aliases: Alias Al25917987, FormNode Fo341637667, FormNode Fo120842787
-NodeColor: 65535,1,1
 ReformDef: [Area_Type,All_PV_Sectors]
 NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 {!50000|Att_ColumnWidths: [,Area_Type,\([,,64])]}
@@ -18302,7 +18244,6 @@ Definition: 0
 NodeLocation: 152,528,1
 NodeSize: 56,16
 NodeInfo: 1,,,0
-NodeColor: 65535,1,1
 Original: PV_suitability
 
 Close Power_and_Module_Den
@@ -18359,10 +18300,10 @@ Definition: Table(All_Sectors,NC_Suitability_Scens)(~
 1,1,1)
 NodeLocation: 592,384,1
 NodeSize: 64,40
-WindState: 2,321,552,720,350
-DefnState: 2,1325,168,486,681,0,DFNM
+WindState: 2,465,549,720,350
+DefnState: 2,920,119,486,681,0,DFNM
 Aliases: Alias Al1568696273, FormNode Fo1568696273, Alias Al1541540869, FormNode Fo1541540881, FormNode Fo1544641553
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 ReformDef: [NC_Suitability_Scens,All_Sectors]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 

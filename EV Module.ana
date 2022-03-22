@@ -111,7 +111,7 @@ NodeLocation: 512,528,1
 NodeSize: 64,40
 ValueState: 2,152,154,1541,615,,MIDM
 Aliases: Alias Al80744189, FormNode Fo80744189, Alias Al1550725786, FormNode Fo1550725786, FormNode Fo1542875895
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 
 FormNode Fo1542875895
 Title: Final EV Historic Period
@@ -13941,7 +13941,7 @@ Date: Fri, Mar 22, 2019 9:48 AM
 NodeLocation: 128,584,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1670,0,1648,829,17
+DiagState: 2,-24,24,1648,829,17,10
 
 Button Reset_All_Decisions
 Title: Reset All Decision Variables
@@ -14054,7 +14054,7 @@ Definition: Choice(All_Spatial_ID,1,0)
 NodeLocation: 1392,464,1
 NodeSize: 72,40
 Aliases: FormNode Fo1532639110
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 
 Decision EV_LRMS_Scen_for_Thr
 Title: EV LRMS Scen for Threshold
@@ -14063,7 +14063,7 @@ Definition: Choice(EV_LRMS_Scenario,2,0)
 NodeLocation: 1136,248,1
 NodeSize: 56,40
 Aliases: FormNode Fo1532465972
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 
 FormNode Fo1532465972
 Title: EV LRMS Scen for Threshold
@@ -14093,7 +14093,7 @@ Title: Assign Stored to Default Coeff
 Description: Pushing this button will assign the selected stored coefficients (per the user-defined "Spatial ID for Assignment") to the default coefficient values.
 NodeLocation: 1160,364,1
 NodeSize: 56,52
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 OnClick: (Default_EVAdEff:=Stored_AdEff_EV[All_Spatial_ID=Spatial_ID_for_Assig, All_Sectors=Sector_for_Assigning, Aggregate_EV_LRMS=EV_LRMS_for_Assignin]);~
 (Default_EV_WOM:=Stored_WOM_EV[ All_Spatial_ID=Spatial_ID_for_Assig, All_Sectors=Sector_for_Assigning, Aggregate_EV_LRMS=EV_LRMS_for_Assignin]);~
 (Default_EV_InitFam:=Stored_InitFam_EV[All_Spatial_ID=Spatial_ID_for_Assig, All_Sectors=Sector_for_Assigning, Aggregate_EV_LRMS=EV_LRMS_for_Assignin]);~
@@ -14105,7 +14105,7 @@ Title: Assign Default Coeff to Decision Variables
 Description: Pushing this button will assign the default values for each EV diffusion coefficient to the actual decision variables used in the optimization of diffusion parameters. You'll likely want to do this when only a subset of the diffusion parameters are being optimized, since the optimization script will hold constant (at the value of the current input for the decision variable).
 NodeLocation: 1296,364,1
 NodeSize: 64,52
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 OnClick: (EV_Ad_Effectiveness:=Default_EVAdEff);~
 (EV_Word_of_Mouth:=Default_EV_WOM);~
 (EV_Init_Familiarity:=Default_EV_InitFam);~
@@ -14194,7 +14194,7 @@ NodeLocation: 1392,232,1
 NodeSize: 64,40
 WindState: 2,201,201,720,350
 Aliases: FormNode Fo1532636335
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 
 FormNode Fo1532636335
 Title: Sector for Assigning Default Coeff
@@ -14248,7 +14248,7 @@ Definition: Choice(Aggregate_EV_LRMS,2,0)
 NodeLocation: 1544,464,1
 NodeSize: 64,40
 Aliases: FormNode Fo1533244820
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 
 FormNode Fo1533244820
 Title: EV LRMS for Assigning Default Coeff
