@@ -113,7 +113,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,136,9,1600,743,17,10
+DiagState: 2,17,12,1667,774,17,10
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
@@ -902,7 +902,7 @@ Original: Storag_Input_Button
 Decision BESS_Input
 Title: BESS Input
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Input_Titles,10,0)
+Definition: Choice(Storage_Input_Titles,3,0)
 NodeLocation: 1296,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -982,7 +982,7 @@ Original: Storage_Dispatch_Out
 Decision BESS_Impact1
 Title: BESS Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Dispatch_Tit,1,0)
+Definition: Choice(Storage_Dispatch_Tit,2,0)
 NodeLocation: 608,1160,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -18027,14 +18027,6 @@ Original: Nodes_to_change
 
 Close Mo2
 
-FormNode Fo1532730403
-Title: Simple Payback Time
-Definition: 1
-NodeLocation: 376,892,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Simple_Payback_Time1
-
 FormNode Fo1515644451
 Title: First year $/kWh value of solar generation
 Definition: 1
@@ -18110,7 +18102,7 @@ Original: Additional_Value
 Alias Al1294704163
 Title: PV Cumulative Adoption
 Definition: 1
-NodeLocation: 744,760,1
+NodeLocation: 736,696,1
 NodeSize: 64,40
 NodeColor: 65535,1,1
 Original: PV_Cumul_Adoption
@@ -18127,7 +18119,7 @@ Definition: Table(Spatial_ID,Area_Type,All_PV_Sectors)(~
 0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
 0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
 0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2)
-NodeLocation: 744,872,1
+NodeLocation: 720,848,1
 NodeSize: 72,40
 DefnState: 2,277,155,711,663,0,DFNM
 ValueState: 2,1167,229,624,551,,MIDM
@@ -18138,9 +18130,9 @@ Att_EditSliceState: [Area_Type,3,All_PV_Sectors,1,Spatial_ID,1]
 
 Variable NYPA_Enabled_PV_Adop
 Title: NYPA Enabled PV Adoption
-Units: MW-AC
-Definition: Assumed_NYPA_fractio[All_PV_Sectors=PV_Sectors] * PV_Cumul_Adoption[Act_vs_Sim=Simulated_Label]
-NodeLocation: 928,824,1
+Units: MW-DC
+Definition: Assumed_NYPA_fractio[All_PV_Sectors=PV_Sectors] * PV_Cumul_MW_DC
+NodeLocation: 896,848,1
 NodeSize: 64,40
 ValueState: 2,356,10,1231,711,1,MIDM
 GraphSetup: ShowKey:2~
@@ -18149,10 +18141,10 @@ Att_GraphIndexRange Output_Periods:1,,1,,,,10,44278.27083802223,44589.5079159736
 Att_Stacked_Lines Graph_Primary_Valdim:1~
 Att_AreaFill Graph_Primary_Valdim:1~
 {!50000|Graph_SortBySpread:1}
-ReformVal: [PV_Sectors,Area_Type]
+ReformVal: [PV_Sectors,Spatial_ID]
 Att__TotalsIndex: [PV_Sectors,Spatial_ID,Area_Type]
-Att_ResultSliceState: [Area_Type,0,Output_Periods,227,Spatial_ID,0,PV_Sectors,0]
-{!40600|Att_StackingIndex: Area_Type}
+Att_ResultSliceState: [Output_Periods,108,Spatial_ID,0,Area_Type,0,PV_Sectors,0]
+{!40600|Att_StackingIndex: Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
 
 Alias Al1661443619
@@ -18168,7 +18160,7 @@ Title: Sectors Aggregated
 Definition: ['Higher Education','Hospitals','K-12','Air Transportation','Art_Museum','Assisted Living','Community services','Correctional Facility','Unique Education','Government_Office','Housing','Library','Other Transportation','Police and Fire Department','Recreational','Water Supply & Waste Water','Courthouse_Probation']
 NodeLocation: 784,1080,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 232,252}
+{!40300|Att_SlicerPopupSize: 242,252}
 
 Decision Map_All_to_Aggregate
 Title: Map All to Aggregated Sectors
@@ -18180,7 +18172,7 @@ TableCellDefault: Choice(Sectors_Aggregated,1,0)
 
 Variable NYPA_Enabled_PV_Ado1
 Title: NYPA Enabled PV Adoption
-Units: MW-AC
+Units: MW-DC
 Definition: Aggregate(NYPA_Enabled_PV_Adop,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
 NodeLocation: 928,960,1
 NodeSize: 64,40
@@ -18201,7 +18193,7 @@ Att_ResultSliceState: [Output_Periods,108,Sectors_Aggregated,0,Area_Type,0,Spati
 FormNode Fo471309859
 Title: Assumed NYPA fraction of natural market
 Definition: 0
-NodeLocation: 748,920,1
+NodeLocation: 724,896,1
 NodeSize: 60,16
 NodeInfo: 1,,,0
 NodeColor: 65535,1,1
@@ -18276,15 +18268,15 @@ Original: LRMS_by_PV_Time
 FormNode Fo1042431523
 Title: NYPA Enabled PV Adoption
 Definition: 1
-NodeLocation: 1208,952,1
-NodeSize: 200,16
+NodeLocation: 1216,952,1
+NodeSize: 208,16
 Original: NYPA_Enabled_PV_Ado1
 
 Variable NYPA_Enabled_PV_Ado2
 Title: NYPA Enabled PV Adoption Percentages
 Definition: ZIDZ(NYPA_Enabled_PV_Ado1,sum(NYPA_Enabled_PV_Ado1,Spatial_ID,Area_Type,Sectors_Aggregated))
-NodeLocation: 952,1216,1
-NodeSize: 64,56
+NodeLocation: 968,1184,1
+NodeSize: 64,40
 ValueState: 2,318,41,1124,790,1,MIDM
 Aliases: FormNode Fo1872903715
 GraphSetup: Att_GraphValueRange NYPA_Enabled_PV_Ado2:1,,0,,,,,0,0.45,0~
@@ -18303,6 +18295,44 @@ Definition: 1
 NodeLocation: 1216,984,1
 NodeSize: 208,16
 Original: NYPA_Enabled_PV_Ado2
+
+Variable Total_PV_MW_DC_Tech_
+Title: Total PV MW DC Tech Potential, aggr
+Definition: Aggregate(Total_PV_MW_DC_Poten,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
+NodeLocation: 1352,1072,1
+NodeSize: 64,40
+ValueState: 2,59,224,912,570,,MIDM
+
+Variable Potential_by_Type
+Title: Potential by Type
+Units: MW-DC
+Definition: Table(Potential_Type)(Total_PV_MW_DC_Tech_,PV_Cumul_MW_DC1,NYPA_Enabled_PV_Ado1)
+NodeLocation: 1120,1184,1
+NodeSize: 64,40
+ValueState: 2,216,80,873,643,,MIDM
+ReformVal: [Output_Periods,Potential_Type]
+Att__TotalsIndex: [Sectors_Aggregated,Area_Type,Spatial_ID]
+Att_ResultSliceState: [Spatial_ID,0,Area_Type,0,Sectors_Aggregated,0,Potential_Type,1,Output_Periods,1]
+
+Variable PV_Cumul_MW_DC
+Title: PV Cumul MW DC
+Units: MW DC
+Definition: PV_Cumul_Adoption[Act_vs_Sim=Simulated_Label] * DC_to_AC_Ratio[All_PV_Sectors=PV_Sectors,PV_Climate_Zone=Climate_Zone_Map[PV_Spatial_ID=Spatial_ID]]
+NodeLocation: 920,696,1
+NodeSize: 64,40
+
+Index Potential_Type
+Att_PrevIndexValue: ['Total Technical','Total Market','NYPA Enabled']
+Title: Potential Type
+Definition: ['Total Technical','Total Market','NYPA Enabled']
+NodeLocation: 1360,1184,1
+NodeSize: 64,40
+
+Variable PV_Cumul_MW_DC1
+Title: PV Cumul MW DC
+Definition: Aggregate(PV_Cumul_MW_DC,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
+NodeLocation: 1072,672,1
+NodeSize: 64,40
 
 Close Main_Interface
 
