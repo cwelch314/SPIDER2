@@ -216,6 +216,7 @@ WindState: 2,2106,105,1001,709
 DefnState: 2,1970,40,405,292,0,DFNM
 ValueState: 2,2852,240,416,303,,MIDM
 Aliases: FormNode Fo1535066211
+NodeColor: 65535,65531,1
 TableCellDefault: Checkbox(1)
 
 Index Selected_PV_Decision
@@ -282,7 +283,7 @@ Title: PV Dec Var Bounds
 Units: various
 Description: This input contains the upper and lower bounds on PV decision variables used in the parameter calibration process.
 Definition: Table(All_PV_Decisions,Upper_Lower)(~
-0,0.03,~
+0,0.1,~
 0,2,~
 0,1,~
 -0.9,-0.1,~
@@ -324,6 +325,7 @@ Description: The upper bound on the corresponding decision variable.
 Definition: PV_Dec_Var_Bounds[All_PV_Decisions=PVAdEff_Label, Upper_Lower=Upper_Label]
 NodeLocation: 560,176,1
 NodeSize: 64,40
+WindState: 2,98,82,720,477
 
 Variable PV_LRMS_Lwr_Bnd
 Title: PV LRMS Lwr Bnd
@@ -2602,12 +2604,12 @@ Decision PV_Ad_Effectiveness
 Title: PV Ad Effectiveness
 Units: fraction/year
 Description: Advertising effectiveness, also known as the "p" coefficient in the classic Bass diffusion model.
-Definition: 0.01
+Definition: 0.05
 NodeLocation: 128,72,1
 NodeSize: 64,40
 WindState: 2,36,8,1180,547
 DefnState: 2,992,310,295,412,0,DFNM
-Aliases: Alias Al2, FormNode Fo1535066222
+Aliases: Alias Al2, FormNode Fo1535066222, FormNode Fo1916001827
 {!40300|DomainExpr: Continuous(PV_AdEff_Lwr_Bnd, PV_AdEff_Upr_Bnd)}
 TableCellDefault: Default_PVAdEff
 {!40300|OptInitialGuess: 0.001}
@@ -2623,7 +2625,7 @@ NodeLocation: 128,264,1
 NodeSize: 64,40
 WindState: 2,5,426,720,350
 DefnState: 2,1002,261,455,530,0,DFNM
-Aliases: Alias Al4, FormNode Fo1535066223
+Aliases: Alias Al4, FormNode Fo1535066223, FormNode Fo171171363
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 {!40300|DomainExpr: Continuous(PV_StartWOM_Lwr_Bnd,PV_StartWOM_Upr_Bnd)}
 TableCellDefault: Default_PV_WOM
@@ -2834,7 +2836,7 @@ Definition: -6
 NodeLocation: 128,456,1
 NodeSize: 64,40
 WindState: 2,97,174,720,350
-Aliases: Alias Al1539126683, FormNode Fo1539127221
+Aliases: Alias Al1539126683, FormNode Fo1539127221, FormNode Fo1526480419
 {!40300|DomainExpr: Continuous(PV_PriceCoef_Lwr_Bnd,PV_PriceCoef_Upr_Bnd)}
 
 Decision Logit_Spatial_Coeff
@@ -2876,11 +2878,11 @@ Decision Logit_Tech_Coeff
 Title: Logit Tech Coefficient
 Units: utility
 Description: The amount of utility explained by preference for a particular technology regardless of differences in economics.
-Definition: 4
+Definition: 5
 NodeLocation: 128,552,1
 NodeSize: 64,40
 WindState: 2,57,96,720,350
-Aliases: Alias Al1539126687, FormNode Fo1539127223
+Aliases: Alias Al1539126687, FormNode Fo1539127223, FormNode Fo989609507
 {!40300|DomainExpr: Continuous(PVLogTechCoef_Lwr_Bn,PVLogTechCoef_Upr_Bn)}
 {!40300|Att_SlicerPopupSize: 227,1001}
 
@@ -2967,7 +2969,7 @@ Description: Coefficient on the payback acceptance curve for PV, which has the f
 ~
 EXP(PV_Payback_Coeff * Payback_time), where payback time is in years. ~
 
-Definition: [-0.6,-0.5,-0.4,-0.30000000000000004,-0.20000000000000007]
+Definition: Payback_coefficient_
 NodeLocation: 128,840,1
 NodeSize: 64,40
 Aliases: Alias Al1542130160, FormNode Fo1542131035
@@ -3159,7 +3161,7 @@ Null,Null,Null,Null,Null,Null,Null,Null,Null)
 NodeLocation: 296,72,1
 NodeSize: 64,40
 WindState: 2,293,145,720,350
-DefnState: 2,21,11,1659,715,0,DFNM
+DefnState: 2,83,48,1659,715,0,DFNM
 ValueState: 2,223,6,1355,891,0,MIDM
 Aliases: Alias Al1568908502, FormNode Fo1568908568, FormNode Fo1543522440
 ReformDef: [All_PV_Dec_Handles,All_Sectors]
@@ -3168,7 +3170,7 @@ NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
 TableCellDefault: Null
 Att_ResultSliceState: [All_Sectors,1,All_Spatial_ID,1,All_PV_Dec_Handles,1]
-Att_EditSliceState: [All_Sectors,1,All_Spatial_ID,2,All_PV_Dec_Handles,1]
+Att_EditSliceState: [All_Spatial_ID,2,All_Sectors,1,All_PV_Dec_Handles,1]
 {!50000|Att_ColumnWidths: [,All_PV_Dec_Handles,[,,93,,92],All_Spatial_ID,\([,,,,])]}
 
 Variable Stored_Coeff_for_PV_

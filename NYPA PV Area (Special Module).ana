@@ -10,7 +10,7 @@ Author: CWelch
 Date: Tue, Mar 8, 2022 9:07 AM
 DefaultSize: 64,40
 NodeSize: 64,40
-DiagState: 2,-11,180,1827,636,17,10
+DiagState: 2,733,7,1827,636,17,10
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
 
@@ -229,11 +229,13 @@ Units: GWh/year
 Definition: Total_PV_kW_DC_poten * PV_kWh_per_KW_DC / 1E6
 NodeLocation: 1800,568,1
 NodeSize: 64,40
-ValueState: 2,342,90,837,698,0,MIDM
+ValueState: 2,447,125,1028,679,1,MIDM
+Aliases: FormNode Fo304836131, FormNode Fo770403875
 NodeColor: 65535,1,1
-GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
+GraphSetup: {!50000|Graph_SortBySpread:1}~
+Att_StackedBar Graph_Primary_Valdim:1~
 Att_CatLineStyle Graph_Primary_Valdim:9
-ReformVal: [Spatial_ID,PV_Sectors]
+ReformVal: [Spatial_ID,Area_Type]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Spatial_ID,PV_Sectors,PV_Spatial_ID]
 Att_ResultSliceState: [Area_Type,1,PV_Sectors,0,Spatial_ID,1]
@@ -278,15 +280,16 @@ Units: GWh/year
 Definition: [Total_Technical_PV_P,Customer_Load_by_Sp_]
 NodeLocation: 1968,672,1
 NodeSize: 64,40
-ValueState: 2,539,234,1011,400,0,MIDM
+ValueState: 2,310,135,1040,663,1,MIDM
+Aliases: FormNode Fo1121676835
 GraphSetup: Graph_AxisLabelFont:,14,0~
 Graph_AxisTitleFont:Arial,20,1~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_StackedBar Graph_Primary_Valdim:0~
 ShowKey:2
-ReformVal: [Self,Spatial_ID]
+ReformVal: [Spatial_ID,Self]
 Att__TotalsIndex: [Spatial_ID,PV_Sectors]
-Att_ResultSliceState: [PV_Sectors,0,Spatial_ID,0,Self,1]
+Att_ResultSliceState: [PV_Sectors,0,Self,1,Spatial_ID,0]
 {!40600|Att_ClusterIndex: Load_vs_PV_Potential}
 {!40700|Att_CellFormat: CellNumberFormat('Fixed Point',0,0,1,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:0)}
 
@@ -587,7 +590,8 @@ Units: kW
 Definition: DC_Watts_per_m2_usab * Effective_Usable_Ar2[All_PV_Sectors=PV_Sectors] * kW_per_W
 NodeLocation: 1632,472,1
 NodeSize: 64,40
-ValueState: 2,829,304,646,202,0,MIDM
+ValueState: 2,625,296,646,202,0,MIDM
+Aliases: FormNode Fo1378577955
 GraphSetup: Att_GraphValueRange Total_PV_kW_DC_poten:1,,1,,,,,0,369091.07863903046,0~
 Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [Spatial_ID,Area_Type]
@@ -851,11 +855,16 @@ Title: Potential divided by Load
 Definition: ZIDZ(sum(Technical_PV_Potenti,PV_Sectors),sum(Customer_Load_by_Sp_,PV_Sectors))
 NodeLocation: 1800,776,1
 NodeSize: 64,40
-ValueState: 2,854,529,637,195,0,MIDM
+ValueState: 2,403,121,859,649,1,MIDM
+Aliases: FormNode Fo710635043
+GraphSetup: {!50000|Graph_SortBySpread:1}~
+Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [Spatial_ID,Area_Type]
-NumberFormat: 2,%,2,1,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Area_Type]
+NumberFormat: 2,%,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: []
 Att_ResultSliceState: [PV_Sectors,1,Area_Type,1,Spatial_ID,1]
+{!40600|Att_StackingIndex: Area_Type}
+{!40600|Att_ClusterIndex: Null}
 
 Alias Al2147194403
 Title: Scale PV Size by % Covered by Solar
@@ -867,6 +876,70 @@ Original: Scale_PV_Size_by_Cov
 Constant Co2
 NodeLocation: 328,600,1
 NodeSize: 64,40
+
+FormNode Fo304836131
+Title: Technical PV Potential
+Definition: 1
+NodeLocation: 1508,704,1
+NodeSize: 188,16
+NodeColor: 65535,1,1
+Original: Technical_PV_Potenti
+
+FormNode Fo1378577955
+Title: Total PV kW DC potential
+Definition: 1
+NodeLocation: 1492,672,1
+NodeSize: 172,16
+Original: Total_PV_kW_DC_poten
+
+Variable PV_Tech_Potential_Pe
+Title: PV Tech Potential Percentage of Total
+Definition: local total:=sum(Technical_PV_Potenti,Spatial_ID,PV_Sectors,Area_Type);~
+ZIDZ(Technical_PV_Potenti,total)
+NodeLocation: 1952,776,1
+NodeSize: 64,56
+ValueState: 2,327,80,1157,789,1,MIDM
+Aliases: FormNode Fo1835757091, FormNode Fo1844145699
+GraphSetup: {!50000|Graph_SortBySpread:1}~
+Att_CatLineStyle Graph_Primary_Valdim:9
+ReformVal: [PV_Sectors,Area_Type]
+NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [PV_Sectors,Spatial_ID,Area_Type]
+Att_ResultSliceState: [Area_Type,0,Spatial_ID,0,PV_Sectors,0]
+{!40600|Att_StackingIndex: Area_Type}
+{!40600|Att_ClusterIndex: Null}
+
+FormNode Fo1835757091
+Title: PV Tech Potential Percentage of Total
+Definition: 1
+NodeLocation: 1516,736,1
+NodeSize: 196,16
+Original: PV_Tech_Potential_Pe
+
+Variable Total_PV_MW_DC_Poten
+Title: Total PV MW DC Potential
+Units: MW-DC
+Definition: Total_PV_kW_DC_poten / 1000
+NodeLocation: 1968,472,1
+NodeSize: 64,40
+ValueState: 2,651,258,804,343,0,MIDM
+Aliases: FormNode Fo954953251, FormNode Fo501968419
+GraphSetup: Att_GraphValueRange Total_PV_MW_DC_Poten:1,,0,,,,,0,481.7144274711609,0~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+{!50000|Graph_SortBySpread:1}
+ReformVal: [Area_Type,Spatial_ID]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Spatial_ID,Area_Type]
+Att_ResultSliceState: [PV_Sectors,21,Spatial_ID,0,Area_Type,0]
+{!40600|Att_StackingIndex: Spatial_ID}
+{!40600|Att_ClusterIndex: Null}
+
+FormNode Fo954953251
+Title: Total PV MW DC Potential
+Definition: 1
+NodeLocation: 1512,768,1
+NodeSize: 192,16
+Original: Total_PV_MW_DC_Poten
 
 Close Facility_Level_Area_
 
