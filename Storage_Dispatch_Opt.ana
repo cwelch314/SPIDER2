@@ -261,7 +261,7 @@ Decision Use_Storage_Decisio2
 Title: Use Storage Decision Var
 Units: boolean
 Description: Enables decision variables to be used during a storage optimization. When this is unchecked, the logic reverts to saved optimization solutions.
-Definition: Checkbox(0)
+Definition: Checkbox(1)
 NodeLocation: 96,1648,1
 NodeSize: 64,40
 Aliases: FormNode New1552348266, Alias Al1552348255, FormNode Fo1552348271, FormNode Fo1521323555
@@ -2678,7 +2678,7 @@ DiagState: 2,22,38,1823,673,17,10
 Decision Opt_Seq_Number
 Title: Opt Sequential Number
 Description: The sequential optimization number currently being optimized.  This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.
-Definition: Choice(Seq_Opt_Number,0,1)
+Definition: Choice(Seq_Opt_Number,1,1)
 NodeLocation: 768,568,1
 NodeSize: 64,40
 WindState: 2,59,318,720,350
@@ -2706,7 +2706,7 @@ Title: Opt Sector
 Description: The sector for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.~
 ~
 Choice(Opt_Sectors,1,0)
-Definition: Choice(Opt_Sectors,0,1)
+Definition: Choice(Opt_Sectors,1,1)
 NodeLocation: 464,568,1
 NodeSize: 64,40
 WindState: 2,149,1,720,350
@@ -2715,7 +2715,7 @@ Aliases: FormNode Fo1206201853, FormNode Fo1552348256, FormNode Fo895004157
 Decision Opt_Climate_Zone2
 Title: Opt Climate Zone
 Description: The climate zone for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.
-Definition: Choice(PV_Climate_Zone,0,1)
+Definition: Choice(PV_Climate_Zone,1,1)
 NodeLocation: 464,680,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348257
@@ -2739,7 +2739,7 @@ Original: Opt_Climate_Zone2
 Decision Opt_Rate_Vintage2
 Title: Opt Rate Vintage
 Description: The rate vintage for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.
-Definition: Choice(Rate_Vintage,0,1)
+Definition: Choice(Rate_Vintage,1,1)
 NodeLocation: 616,680,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348258
@@ -2783,7 +2783,7 @@ OnClick: Set_Decisions_To_Opt(Storage_Opt_Def2)
 Decision Opt_Month2
 Title: Opt Month
 Description: The month for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.
-Definition: Choice(Month,0,1)
+Definition: Choice(Month,1,1)
 NodeLocation: 616,568,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348259
@@ -2942,7 +2942,7 @@ ValueState: 2,882,625,563,204,0,MIDM
 Decision Opt_System2
 Title: Opt System
 Description: The storage system for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.
-Definition: Choice(Opt_Storage_Systems,0,1)
+Definition: Choice(Opt_Storage_Systems,1,1)
 NodeLocation: 464,792,1
 NodeSize: 64,40
 WindState: 2,137,521,720,350
@@ -2972,7 +2972,7 @@ OnClick: FOR J:=@All_Strg_Decisions2 DO (~
 Decision Select_Strg_Sector2
 Title: Selected Storage Sectors
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,2,3,4,5,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
 NodeLocation: 464,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348264, Alias Al513733155
@@ -3070,8 +3070,7 @@ Decision Select_Strg_System2
 Title: Selected Storage Systems
 Description: Select the storage systems that will be evaluated in the storage optimization routines. Note that only the storage system subset selected in Select_System_Types will actually be evaluated.
 Definition: Table(Opt_Storage_Systems,Opt_Sectors)(~
-Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
-Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
+Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
 NodeLocation: 464,208,1
 NodeSize: 64,40
 WindState: 2,30,73,720,350
@@ -3093,7 +3092,7 @@ Decision Decouple_Rates2
 Title: Decouple Rates from Storage Opt
 Units: boolean
 Description: When checked, this will decouple rates from the net load found from the storage optimization. This ensures that rates aren't invalidated whenever a new storage optimization solution is saved, which allows the storage optimization to run faster.
-Definition: Checkbox(0)
+Definition: Checkbox(1)
 NodeLocation: 1128,480,1
 NodeSize: 64,40
 WindState: 2,128,555,720,350
@@ -3407,7 +3406,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 25-Mar-2022 14:31:24.589000
+Definition: 27-Mar-2022 15:08:02.537000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3415,7 +3414,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 25-Mar-2022 14:46:34.674000
+Definition: 27-Mar-2022 14:54:27.763000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,2,2,0,0,2,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -4432,7 +4431,7 @@ Date: Fri, Mar 11, 2022 9:14 AM
 NodeLocation: 1752,288,1
 NodeSize: 64,40
 NodeInfo: 1,0
-DiagState: 2,493,134,1212,480,17,10
+DiagState: 2,2227,217,1212,480,17,10
 WindState: 2,323,77,720,350
 
 Variable Opt_Time
@@ -4440,7 +4439,7 @@ Title: Opt Time
 Definition: ignorewarnings(Saved_Opt_Date1[Start_End_Time1='End Opt']-Saved_Opt_Date1[Start_End_Time1= 'Start Opt'])
 NodeLocation: 112,64,1
 NodeSize: 64,40
-ValueState: 2,450,97,1178,730,0,MIDM
+ValueState: 2,305,86,1178,730,0,MIDM
 ReformVal: [Month,Opt_Sectors]
 NumberFormat: 2,F,4,2,0,0,4,0,$,0,"mm:sss",0,,,0,1,15,
 Att__TotalsIndex: [Opt_Storage_Systems,Month,PV_Climate_Zone]
@@ -4482,7 +4481,7 @@ MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimizat
 Decision Chose_Sectors_to_Opt
 Title: Chose Sectors to Optimize
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,1,2,allowNone:0,returnList:1)
 NodeLocation: 592,64,1
 NodeSize: 64,40
 Aliases: FormNode Fo989786659
