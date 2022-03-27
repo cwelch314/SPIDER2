@@ -1051,7 +1051,7 @@ ELSE Saved_Initial_Charg1[Opt_Sectors=Opt_Sector2, Opt_Storage_Systems=Opt_Syste
 NodeLocation: 704,544,1
 NodeSize: 64,40
 WindState: 2,695,23,1145,350
-ValueState: 2,354,-20,945,717,,MIDM
+ValueState: 2,354,0,945,717,0,MIDM
 ReformVal: [Month,Rate_Vintage]
 {!40300|DomainExpr: Continuous()}
 Att_ResultSliceState: [All_Sectors,1,Rate_Vintage,4,PV_Climate_Zone,1,All_Storage_Systems,1,Month,1,Day_and_Hour,1]
@@ -3070,7 +3070,8 @@ Decision Select_Strg_System2
 Title: Selected Storage Systems
 Description: Select the storage systems that will be evaluated in the storage optimization routines. Note that only the storage system subset selected in Select_System_Types will actually be evaluated.
 Definition: Table(Opt_Storage_Systems,Opt_Sectors)(~
-Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
+Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
+Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
 NodeLocation: 464,208,1
 NodeSize: 64,40
 WindState: 2,30,73,720,350
