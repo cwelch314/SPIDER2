@@ -11,7 +11,7 @@ Date: Wed, May 1, 2019 11:53 AM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
-DiagState: 2,424,56,720,254,17,10
+DiagState: 2,2839,263,720,254,17,10
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule Storage_Dispatch_Opt,2,2,0,0,Storage_Dispatch_Opt.ana
 
@@ -22,7 +22,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 416,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,58,69,1627,676,17,10
+DiagState: 2,67,25,1627,676,17,10
 
 Decision Stored_Grid_Elect1
 Title: Stored Grid Electricity
@@ -151,7 +151,7 @@ NodeLocation: 1168,336,1
 NodeSize: 64,40
 ValueState: 2,58,48,1419,679,1,MIDM
 ReformVal: [Opt_Hours,Null]
-Att_ResultSliceState: [PV_Climate_Zone,2,Rate_Vintage,1,Month,6,Opt_Sectors,1,Opt_Storage_Systems,1,Area_Type,1,Seq_Opt_Number,1,Opt_Hours,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Month,6,Opt_Sectors,11,Opt_Storage_Systems,1,Area_Type,1,Seq_Opt_Number,1,Opt_Hours,1]
 Att_ColorRole: Null
 
 Variable Dischg_RedLoad_Loss1
@@ -261,7 +261,7 @@ Decision Use_Storage_Decisio2
 Title: Use Storage Decision Var
 Units: boolean
 Description: Enables decision variables to be used during a storage optimization. When this is unchecked, the logic reverts to saved optimization solutions.
-Definition: Checkbox(1)
+Definition: Checkbox(0)
 NodeLocation: 96,1648,1
 NodeSize: 64,40
 Aliases: FormNode New1552348266, Alias Al1552348255, FormNode Fo1552348271, FormNode Fo1521323555
@@ -1483,7 +1483,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 568,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,14,94,1207,657,17,10
+DiagState: 2,208,106,1207,657,17,10
 
 Constraint Force_Positive_Delt1
 Title: Force Positive Delta
@@ -2673,12 +2673,12 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,22,38,1823,673,17,10
+DiagState: 2,0,57,1823,662,17,10
 
 Decision Opt_Seq_Number
 Title: Opt Sequential Number
 Description: The sequential optimization number currently being optimized.  This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.
-Definition: Choice(Seq_Opt_Number,1,1)
+Definition: Choice(Seq_Opt_Number,0,1)
 NodeLocation: 768,568,1
 NodeSize: 64,40
 WindState: 2,59,318,720,350
@@ -2706,7 +2706,7 @@ Title: Opt Sector
 Description: The sector for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.~
 ~
 Choice(Opt_Sectors,1,0)
-Definition: Choice(Opt_Sectors,1,1)
+Definition: Choice(Opt_Sectors,0,1)
 NodeLocation: 464,568,1
 NodeSize: 64,40
 WindState: 2,149,1,720,350
@@ -2715,7 +2715,7 @@ Aliases: FormNode Fo1206201853, FormNode Fo1552348256, FormNode Fo895004157
 Decision Opt_Climate_Zone2
 Title: Opt Climate Zone
 Description: The climate zone for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.
-Definition: Choice(PV_Climate_Zone,1,1)
+Definition: Choice(PV_Climate_Zone,0,1)
 NodeLocation: 464,680,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348257
@@ -2739,7 +2739,7 @@ Original: Opt_Climate_Zone2
 Decision Opt_Rate_Vintage2
 Title: Opt Rate Vintage
 Description: The rate vintage for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.
-Definition: Choice(Rate_Vintage,1,1)
+Definition: Choice(Rate_Vintage,0,1)
 NodeLocation: 616,680,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348258
@@ -2783,7 +2783,7 @@ OnClick: Set_Decisions_To_Opt(Storage_Opt_Def2)
 Decision Opt_Month2
 Title: Opt Month
 Description: The month for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.
-Definition: Choice(Month,1,1)
+Definition: Choice(Month,0,1)
 NodeLocation: 616,568,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348259
@@ -2942,7 +2942,7 @@ ValueState: 2,882,625,563,204,0,MIDM
 Decision Opt_System2
 Title: Opt System
 Description: The storage system for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.
-Definition: Choice(Opt_Storage_Systems,1,1)
+Definition: Choice(Opt_Storage_Systems,0,1)
 NodeLocation: 464,792,1
 NodeSize: 64,40
 WindState: 2,137,521,720,350
@@ -2969,14 +2969,6 @@ OnClick: FOR J:=@All_Strg_Decisions2 DO (~
    saveVar:=Null;~
 );
 
-Decision Select_Strg_Sector2
-Title: Selected Storage Sectors
-Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
-NodeLocation: 464,96,1
-NodeSize: 64,40
-Aliases: FormNode Fo1552348264, Alias Al513733155
-
 Decision Select_Strg_CZ2
 Title: Selected Storage Climate Zones
 Description: Select the climate zones that will be evaluated in the storage optimization routines.
@@ -2984,14 +2976,6 @@ Definition: MultiChoice(PV_Climate_Zone,allowNone:0,returnList:1)
 NodeLocation: 768,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348265
-
-FormNode Fo1552348264
-Title: Opt Sector
-Definition: 0
-NodeLocation: 456,144,1
-NodeSize: 88,16
-NodeInfo: 1,,,0,,,,134,,,0,,,0
-Original: Select_Strg_Sector2
 
 FormNode Fo1552348265
 Title: Opt Climate Zone
@@ -3092,7 +3076,7 @@ Decision Decouple_Rates2
 Title: Decouple Rates from Storage Opt
 Units: boolean
 Description: When checked, this will decouple rates from the net load found from the storage optimization. This ensures that rates aren't invalidated whenever a new storage optimization solution is saved, which allows the storage optimization to run faster.
-Definition: Checkbox(1)
+Definition: Checkbox(0)
 NodeLocation: 1128,480,1
 NodeSize: 64,40
 WindState: 2,128,555,720,350
@@ -3192,7 +3176,7 @@ FOR J:=Storage_Opt_Scenari2 DO (   {For each storage optimization scenario repre
    cnt:=cnt+1;~
    VAR currentOptNum:=Seq_Opt_Num_by_Scen[Storage_Opt_Scenari2=J];   {Update the current sequential opt number}~
    VAR nextOptNum:=Next_Seq_Opt_Number[Storage_Opt_Scenari2=J];   {Update the next sequential opt number}~
-   ShowProgressBar("Storage Dispatch Optimization Progress", "Optimizing storage dispatch for scenario: '" & J & ". Scenario " & cnt & " of " & maxCnt & ".", (cnt - 0.1)/maxCnt);~
+   ShowProgressBar("Storage Dispatch Optimization Progress", "Optimizing storage dispatch for scenario: '" & J & ". Scenario " & cnt & " of " & maxCnt & "." & " Sector " & Current_BESS_Sector & " of " & Number_of_bess_opt_s, (cnt - 0.1)/maxCnt);~
    Set_Storage_Filters2(J, Storage_Opt_Filters2);   {Set the optimization filters to the current scenario}~
    Save_Opt_Timestamp1(1);   {Set the start time of the current optimization}~
    Save_Status_and_Obj2();   {Saves the status and objective of the current optimization scenario}~
@@ -3240,15 +3224,6 @@ Definition: FOR J:=@Storage_Decisions2 DO (~
 NodeLocation: 1728,664,1
 NodeSize: 64,40
 WindState: 2,258,140,1567,879
-
-Button Run_Storage_Optimiz2
-Title: Run Storage Optimization
-Description: Press this button to loop through the selected storage scenarios, perform storage dispatch optimization, and store the optimized solutions in the decision variables (if selected via Store_Soln_in_Decis) and saved solution variables.
-NodeLocation: 964,112,1
-NodeSize: 68,40
-NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
-NodeFont: Arial Black,16
-OnClick: Run_Storage_Dispatc2()
 
 Function Conditional_Reindex2(var; origInd, newInd: Index)
 Title: Conditional Reindex
@@ -3406,7 +3381,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 27-Mar-2022 15:08:02.537000
+Definition: 28-Mar-2022 18:54:14.642000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3414,7 +3389,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 27-Mar-2022 14:54:27.763000
+Definition: 28-Mar-2022 18:59:00.332000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,2,2,0,0,2,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -4431,29 +4406,55 @@ Date: Fri, Mar 11, 2022 9:14 AM
 NodeLocation: 1752,288,1
 NodeSize: 64,40
 NodeInfo: 1,0
-DiagState: 2,2227,217,1212,480,17,10
+DiagState: 2,2141,138,1212,416,17,10
 WindState: 2,323,77,720,350
+
+Decision Select_Strg_Sector2
+Title: Selected Storage Sectors
+Description: Select the sectors that will be evaluated in the storage optimization routines.
+Definition: MultiChoice(Opt_Sectors,30,allowNone:0,returnList:1)
+NodeLocation: 128,288,1
+NodeSize: 64,40
+Aliases: FormNode Fo1552348264, Alias Al513733155
+
+FormNode Fo1552348264
+Title: Opt Sector
+Definition: 0
+NodeLocation: 120,336,1
+NodeSize: 88,16
+NodeInfo: 1,,,0,,,,134,,,0,,,0
+Original: Select_Strg_Sector2
+
+Button Run_Storage_Optimiz2
+Title: Run Storage Optimization
+Description: Press this button to loop through the selected storage scenarios, perform storage dispatch optimization, and store the optimized solutions in the decision variables (if selected via Store_Soln_in_Decis) and saved solution variables.
+NodeLocation: 124,408,1
+NodeSize: 68,40
+NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
+NodeFont: Arial Black,16
+OnClick: Run_Storage_Dispatc2()
 
 Variable Opt_Time
 Title: Opt Time
 Definition: ignorewarnings(Saved_Opt_Date1[Start_End_Time1='End Opt']-Saved_Opt_Date1[Start_End_Time1= 'Start Opt'])
 NodeLocation: 112,64,1
 NodeSize: 64,40
-ValueState: 2,305,86,1178,730,0,MIDM
+ValueState: 2,295,39,1226,752,0,MIDM
 ReformVal: [Month,Opt_Sectors]
 NumberFormat: 2,F,4,2,0,0,4,0,$,0,"mm:sss",0,,,0,1,15,
-Att__TotalsIndex: [Opt_Storage_Systems,Month,PV_Climate_Zone]
-Att_ResultSliceState: [PV_Climate_Zone,0,Opt_Storage_Systems,0,Seq_Opt_Number,1,Rate_Vintage,1,Opt_Sectors,1,Month,0]
+Att__TotalsIndex: [Month,Opt_Sectors,PV_Climate_Zone]
+Att_ResultSliceState: [PV_Climate_Zone,0,Opt_Storage_Systems,1,Seq_Opt_Number,1,Rate_Vintage,1,Opt_Sectors,1,Month,0]
 
 Variable Save_Time
 Title: Save Time
 Definition: ignorewarnings(Saved_Opt_Date1[Start_End_Time1= 'End Save']-Saved_Opt_Date1[Start_End_Time1='End Opt'])
 NodeLocation: 112,160,1
 NodeSize: 64,40
-ValueState: 2,190,149,1680,489,0,MIDM
+ValueState: 2,119,86,1567,608,0,MIDM
+ReformVal: [Month,Opt_Sectors]
 NumberFormat: 2,F,2,2,0,0,2,0,$,0,"mm:ssssss",0,,,0,1,15,
-Att__TotalsIndex: [Month,PV_Climate_Zone,Opt_Storage_Systems]
-Att_ResultSliceState: [Rate_Vintage,1,PV_Climate_Zone,0,Opt_Storage_Systems,0,Seq_Opt_Number,1,Month,1,Opt_Sectors,1]
+Att__TotalsIndex: [Month,PV_Climate_Zone]
+Att_ResultSliceState: [Rate_Vintage,1,PV_Climate_Zone,0,Opt_Storage_Systems,1,Seq_Opt_Number,1,Month,1,Opt_Sectors,1]
 {!40700|Att_CellFormat: CellFormats(CellSpan(Opt_Sectors,CellSpan(Month,CellNumberFormat('Fixed Point',2,0,0,dateFormat:'mm:ssssssssss',fullPrecision:0,numbersAsDates:1,datesAsNumbers:0),1,header:0),11,12,header:0),CellSpan(Opt_Sectors,CellSpan(Month,CellNumberFormat('Suffix',2,0,0,dateFormat:'mm:sssssss',fullPrecision:0,numbersAsDates:1,datesAsNumbers:0),1,header:0),10,11,header:0),CellSpan(Opt_Sectors,CellSpan(Month,CellNumberFormat('Suffix',2,0,0,dateFormat:'mm:sssssssssssssss',fullPrecision:0,numbersAsDates:1,datesAsNumbers:0),1,header:0),10,12,header:0))}
 
 Alias Al513733155
@@ -4466,35 +4467,74 @@ Original: Select_Strg_Sector2
 Index Copied_Selected_Stor
 Title: Copied Selected Storage Sectors
 Definition: ['LG_Unique Education','LG_Government_Office','LG_Housing']
-NodeLocation: 312,200,1
+NodeLocation: 488,264,1
 NodeSize: 72,40
 ValueState: 2,3147,232,416,303,0,MIDM
-
-Button Bu2
-NodeLocation: 600,264,1
-NodeSize: 64,40
-OnClick: for i:=Chose_Sectors_to_Opt DO~
-	(Select_Strg_Sector2:=i;~
-	Run_Storage_Optimiz2);~
-MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimization");
-
-Decision Chose_Sectors_to_Opt
-Title: Chose Sectors to Optimize
-Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,1,2,allowNone:0,returnList:1)
-NodeLocation: 592,64,1
-NodeSize: 64,40
-Aliases: FormNode Fo989786659
 
 FormNode Fo989786659
 Title: Chose Sectors to Optimize
 Definition: 0
-NodeLocation: 668,184,1
-NodeSize: 252,16
+NodeLocation: 684,184,1
+NodeSize: 268,16
 NodeInfo: 1,,,,,,,292,,,,,,0
-Original: Chose_Sectors_to_Opt
+Original: Choose_Sectors_to_Op
+
+Variable Number_of_bess_opt_s
+Title: Number of bess opt sectors selected
+Definition: size(Choose_Sectors_to_Op)
+NodeLocation: 784,64,1
+NodeSize: 72,40
+
+Variable Current_BESS_Sector
+Title: Current BESS Sector
+Definition: 16
+NodeLocation: 648,264,1
+NodeSize: 64,40
+Aliases: FormNode Fo631382307
+
+FormNode Fo631382307
+Title: Current BESS Sector
+Definition: 1
+NodeLocation: 984,256,1
+NodeSize: 136,16
+Original: Current_BESS_Sector
+
+Alias Al783884579
+Title: Choose Sectors to Optimize
+Definition: 1
+NodeLocation: 960,64,1
+NodeSize: 64,40
+Original: Choose_Sectors_to_Op
 
 Close Misc6
+
+Button Run_Storage_Optimiza
+Title: Run Storage Optimization (wrapped)
+Description: Runs faster using this method when running multiple sectors (due to some issue with exponentially growing save times with other script)
+NodeLocation: 968,112,1
+NodeSize: 64,40
+OnClick: for i:=Choose_Sectors_to_Op DO~
+	(Current_BESS_Sector:= PositionInIndex( Choose_Sectors_to_Op, i, Choose_Sectors_to_Op);~
+	Select_Strg_Sector2:=i;~
+	Run_Storage_Optimiz2;~
+	);~
+MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimization");
+
+Decision Choose_Sectors_to_Op
+Title: Choose Sectors to Optimize
+Description: Select the sectors that will be evaluated in the storage optimization routines.
+Definition: MultiChoice(Opt_Sectors,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,allowNone:0,returnList:1)
+NodeLocation: 464,96,1
+NodeSize: 64,40
+Aliases: FormNode Fo989786659, Alias Al783884579, FormNode Fo431563043
+
+FormNode Fo431563043
+Title: Chose Sectors to Optimize
+Definition: 0
+NodeLocation: 476,144,1
+NodeSize: 76,16
+NodeInfo: 1,,,0,,,,118,,,,,,0
+Original: Choose_Sectors_to_Op
 
 Close Storage_Optimizati11
 
@@ -4574,15 +4614,15 @@ Definition: Reindex_to_ProfileHr(Flows_by_Opt_Hour[Flow_Name2=Flow_Types1, Rate_
 NodeLocation: 416,64,1
 NodeSize: 64,40
 WindState: 2,5,19,972,489
-ValueState: 2,106,48,1423,803,1,MIDM
+ValueState: 2,106,48,1423,803,0,MIDM
 Aliases: FormNode Fo1557458712, FormNode Fo1571775089
 GraphSetup: Grid:0~
 Att_GraphValueRange Dispatch_Flows2:1,,1,1,,,,0,2000,0~
 Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,1,,,,,53,99,1
 ReformVal: [Viewed_Dispatch_Tim2,Flow_Types1]
 NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: []
-Att_ResultSliceState: [Rate_Names_and_Start,3,Month,8,PV_Climate_Zone,3,Opt_Storage_Systems,1,Opt_Sectors,4,Area_Type,1,Flow_Types1,11,Viewed_Dispatch_Tim2,1]
+Att__TotalsIndex: [Viewed_Dispatch_Tim2]
+Att_ResultSliceState: [Rate_Names_and_Start,3,Area_Type,1,Flow_Types1,11,Viewed_Dispatch_Tim2,1]
 
 Decision Dispatch_Start_Time2
 Title: Start Time for Dispatch
