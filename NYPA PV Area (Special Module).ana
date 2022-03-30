@@ -10,7 +10,7 @@ Author: CWelch
 Date: Tue, Mar 8, 2022 9:07 AM
 DefaultSize: 64,40
 NodeSize: 64,40
-DiagState: 2,1698,-2,2242,718,17,10
+DiagState: 2,1944,14,1584,718,17,10
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
 
@@ -84,7 +84,7 @@ NodeLocation: 144,224,1
 NodeSize: 64,40
 DefnState: 2,55,16,1749,829,0,DFNM
 ValueState: 2,67,36,1567,763,0,MIDM
-Aliases: FormNode Fo610073123, Alias Al1512235299
+Aliases: Alias Al1512235299, FormNode Fo610073123
 ReformDef: [Facility_Parameter,Facility_Identifier]
 ReformVal: [Facility_Parameter,Facility_Identifier]
 Att__TotalsIndex: [Facility_Identifier]
@@ -196,6 +196,7 @@ NodeLocation: 2120,672,1
 NodeSize: 72,40
 ValueState: 2,1086,224,416,303,0,MIDM
 ReformVal: [Null,Self]
+{!40300|Att_SlicerPopupSize: 227,64}
 
 Variable Effective_Area_Flat
 Title: Effective Area Flat
@@ -203,9 +204,13 @@ Definition: Table(Conglomeration_Index)(Facility_Spatial_ID,Facility_Sector_Filt
 NodeLocation: 1472,568,1
 NodeSize: 64,40
 DefnState: 2,876,350,416,303,0,DFNM
-ValueState: 2,418,59,895,612,0,MIDM
-ReformVal: [Conglomeration_Index,Facility_ID_Filtered]
-Att_ResultSliceState: [Area_Type,2,Conglomeration_Index,1,Facility_ID_Filtered,1]
+ValueState: 2,130,93,1229,630,1,MIDM
+GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9
+ReformVal: [Facility_ID_Filtered,Spatial_ID]
+Att_ResultSliceState: [Area_Type,2,Conglomeration_Index,3,Spatial_ID,1,Spatial_ID,4,Facility_ID_Filtered,1]
+Att_ColorRole: Null
+{!40600|Att_StackingIndex: Spatial_ID}
+{!40600|Att_ClusterIndex: Null}
 
 Variable Effective_Usable_Ar2
 Title: Effective Usable Area Table
@@ -213,15 +218,15 @@ Units: m2
 Definition: MdTable(Effective_Area_Flat,Facility_ID_Filtered,Conglomeration_Index,conglomerationFn:"Sum")
 NodeLocation: 1632,568,1
 NodeSize: 64,40
-ValueState: 2,35,83,1506,813,1,MIDM
+ValueState: 2,84,23,1674,822,1,MIDM
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_GraphValueRange Effective_Usable_Ar2:1,,1,,,,,0,1425455.9576511383,0
-ReformVal: [All_PV_Sectors,Area_Type]
+ReformVal: [All_PV_Sectors,Spatial_ID]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Spatial_ID,PV_Sectors,All_PV_Sectors]
-Att_ResultSliceState: [Spatial_ID,0,Area_Type,3,Spatial_ID,0,All_PV_Sectors,1]
-{!40600|Att_ClusterIndex: Area_Type}
+Att__TotalsIndex: [PV_Sectors,All_PV_Sectors]
+Att_ResultSliceState: [Area_Type,2,Spatial_ID,3,All_PV_Sectors,1]
+{!40600|Att_ClusterIndex: Spatial_ID}
 
 Variable Technical_PV_Potenti
 Title: Technical PV Potential
@@ -229,17 +234,18 @@ Units: GWh/year
 Definition: Total_PV_kW_DC_poten * PV_kWh_per_KW_DC / 1E6
 NodeLocation: 1800,568,1
 NodeSize: 64,40
-ValueState: 2,447,125,1028,679,1,MIDM
+ValueState: 2,403,82,1028,679,1,MIDM
 Aliases: FormNode Fo304836131, FormNode Fo770403875
 NodeColor: 65535,1,1
 GraphSetup: {!50000|Graph_SortBySpread:1}~
 Att_StackedBar Graph_Primary_Valdim:1~
 Att_CatLineStyle Graph_Primary_Valdim:9
-ReformVal: [Spatial_ID,Area_Type]
+ReformVal: [Area_Type,Spatial_ID]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Spatial_ID,PV_Sectors,PV_Spatial_ID]
-Att_ResultSliceState: [Area_Type,1,PV_Sectors,0,Spatial_ID,1]
-{!40600|Att_ClusterIndex: Area_Type}
+Att__TotalsIndex: [Spatial_ID,PV_Spatial_ID]
+Att_ResultSliceState: [PV_Sectors,10,Area_Type,1,Spatial_ID,1]
+{!40600|Att_StackingIndex: Spatial_ID}
+{!40600|Att_ClusterIndex: Null}
 
 Variable Customer_Load_by_Sp_
 Title: Customer Load by Sp ID
@@ -997,11 +1003,11 @@ Definition: Table(Spatial_ID,Area_Type,Min_Max)(~
 250,5000)
 NodeLocation: 1312,72,1
 NodeSize: 64,40
-WindState: 2,195,105,720,350
+WindState: 2,374,145,720,350
 DefnState: 2,299,370,629,301,0,DFNM
 ValueState: 2,2193,346,821,420,,MIDM
 NodeColor: 65535,1,1
-ReformDef: [Area_Type,PV_Climate_Zone]
+ReformDef: [Area_Type,Spatial_ID]
 Att_EditSliceState: [Min_Max,1,Spatial_ID,1,Area_Type,3]
 
 Variable Consumption_by_Sect1
@@ -1025,16 +1031,17 @@ ValueState: 2,2275,333,416,303,,MIDM
 
 Variable Building_Count_from_
 Title: Building Count from Facility Data
+Units: Buildings
 Definition: MdTable(Consumption_by_Type,Facility_ID_Filtered,Conglomeration_Index,conglomerationFn:"Count" )~
 * (1+Building_Stock_Growt)^(Building_Stock_Year - Year_of_Consump_Data)
 NodeLocation: 280,960,1
 NodeSize: 64,40
-ValueState: 2,2464,139,866,680,0,MIDM
-Aliases: Alias Al638771491
+ValueState: 2,2362,78,866,680,0,MIDM
+Aliases: Alias Al638771491, FormNode Clipboard_Fo14496934, FormNode Fo1583911203
 ReformVal: [Spatial_ID,All_PV_Sectors]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [All_PV_Sectors,Spatial_ID]
-Att_ResultSliceState: [Included_Area_Types,3,All_PV_Sectors,1,Spatial_ID,1]
+Att_ResultSliceState: [Building_Stock_Year,28,All_PV_Sectors,1,Spatial_ID,1]
 
 Constant Building_Stock_Growt
 Title: Building Stock Growth Rate

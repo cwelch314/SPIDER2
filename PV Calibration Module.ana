@@ -2832,12 +2832,14 @@ NodeSize: 64,40
 Decision Logit_Price_Coeff
 Title: Logit Price Coefficient
 Units: utility/ratio
-Description: The amount of utility derived per unit of the cost of electricity ratio.
+Description: Sensitivity of market share to the cost of electricity ratio. More negative values indicate that market share will increase (or drop off) faster for the same change in the cost of electricity ratio (i.e., more price sensitive).~
+~
+See the "Market Share Illustration" output for a visualization of market share as a function of this input.
 Definition: -6
 NodeLocation: 128,456,1
 NodeSize: 64,40
-WindState: 2,97,174,720,350
-Aliases: Alias Al1539126683, FormNode Fo1539127221, FormNode Fo1526480419
+WindState: 2,2094,188,720,350
+Aliases: Alias Al1539126683, FormNode Fo1539127221, FormNode Fo1526480419, FormNode Fo1439994147
 {!40300|DomainExpr: Continuous(PV_PriceCoef_Lwr_Bnd,PV_PriceCoef_Upr_Bnd)}
 
 Decision Logit_Spatial_Coeff
@@ -2878,12 +2880,14 @@ TableCellDefault: 0
 Decision Logit_Tech_Coeff
 Title: Logit Tech Coefficient
 Units: utility
-Description: The amount of utility explained by preference for a particular technology regardless of differences in economics.
+Description: Coefficient representative the inherent preference for "doing nothing" (i.e., not installing a system. Higher values indicate a stronger preference for NOT installing a system, all else equal (i.e., for the same cost of electricity ratio). ~
+~
+See the "Market Share Illustration" output for a visualization of market share as a function of this input.
 Definition: 5
 NodeLocation: 128,552,1
 NodeSize: 64,40
 WindState: 2,57,96,720,350
-Aliases: Alias Al1539126687, FormNode Fo1539127223, FormNode Fo989609507
+Aliases: Alias Al1539126687, FormNode Fo1539127223, FormNode Fo989609507, FormNode Fo903123235
 {!40300|DomainExpr: Continuous(PVLogTechCoef_Lwr_Bn,PVLogTechCoef_Upr_Bn)}
 {!40300|Att_SlicerPopupSize: 227,1001}
 

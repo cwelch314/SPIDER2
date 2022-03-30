@@ -113,7 +113,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,297,17,1150,821,17,10
+DiagState: 2,90,67,1722,832,17,10
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
@@ -18053,7 +18053,7 @@ Close Mo2
 FormNode Fo1307274787
 Title: Included Area Types
 Definition: 0
-NodeLocation: 856,924,1
+NodeLocation: 848,1028,1
 NodeSize: 256,20
 NodeInfo: 1,,,,,,,142,,,,,,0
 NodeColor: 30583,48316,7967
@@ -18062,7 +18062,7 @@ Original: Included_Area_Types
 FormNode Fo770403875
 Title: Technical PV Potential
 Definition: 1
-NodeLocation: 856,620,1
+NodeLocation: 848,724,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: Technical_PV_Potenti
@@ -18070,7 +18070,7 @@ Original: Technical_PV_Potenti
 FormNode Fo1844145699
 Title: PV Tech Potential Percentage of Total
 Definition: 1
-NodeLocation: 856,740,1
+NodeLocation: 848,844,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: PV_Tech_Potential_Pe
@@ -18078,7 +18078,7 @@ Original: PV_Tech_Potential_Pe
 FormNode Fo501968419
 Title: Total PV MW DC Potential
 Definition: 1
-NodeLocation: 856,780,1
+NodeLocation: 848,884,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: Total_PV_MW_DC_Poten
@@ -18086,7 +18086,7 @@ Original: Total_PV_MW_DC_Poten
 FormNode Fo710635043
 Title: Potential divided by Load
 Definition: 1
-NodeLocation: 856,700,1
+NodeLocation: 848,804,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: Potential_divided_by
@@ -18094,7 +18094,7 @@ Original: Potential_divided_by
 FormNode Fo1121676835
 Title: Load vs. PV Potential
 Definition: 1
-NodeLocation: 856,660,1
+NodeLocation: 848,764,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: Load_vs_PV_Potential
@@ -18110,7 +18110,7 @@ Original: Additional_Value
 FormNode Fo33701411
 Title: LRMS by PV Time
 Definition: 1
-NodeLocation: 312,964,1
+NodeLocation: 1400,1212,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: LRMS_by_PV_Time
@@ -18118,7 +18118,7 @@ Original: LRMS_by_PV_Time
 FormNode Fo1042431523
 Title: NYPA Enabled PV Adoption
 Definition: 1
-NodeLocation: 856,1028,1
+NodeLocation: 848,1132,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: NYPA_Enabled_PV_Ado1
@@ -18126,7 +18126,7 @@ Original: NYPA_Enabled_PV_Ado1
 FormNode Fo1872903715
 Title: NYPA Enabled PV Adoption Percentages
 Definition: 1
-NodeLocation: 856,988,1
+NodeLocation: 848,1092,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: NYPA_Enabled_PV_Ado2
@@ -18134,7 +18134,7 @@ Original: NYPA_Enabled_PV_Ado2
 FormNode Fo89932067
 Title: Simple LCOE vs Value of Solar
 Definition: 1
-NodeLocation: 312,844,1
+NodeLocation: 1400,1092,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: Simple_LCOE_vs_Value
@@ -18142,7 +18142,7 @@ Original: Simple_LCOE_vs_Value
 FormNode Fo1692803363
 Title: Cost of Electricity Ratio
 Definition: 1
-NodeLocation: 312,884,1
+NodeLocation: 1400,1132,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: Cost_of_Elect_Ratio
@@ -18235,7 +18235,7 @@ Units: MW-DC
 Definition: Aggregate(NYPA_Enabled_PV_Adop,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
 NodeLocation: 776,352,1
 NodeSize: 64,40
-ValueState: 2,578,159,1077,723,1,MIDM
+ValueState: 2,507,135,1077,723,1,MIDM
 Aliases: FormNode Fo1042431523
 GraphSetup: Att_GraphValueRange NYPA_Enabled_PV_Ado1:1,,1,1,,,,0,1000,0~
 Att_AreaFill Graph_Primary_Valdim:1~
@@ -18297,15 +18297,15 @@ Units: %
 Definition: ZIDZ(NYPA_Enabled_PV_Ado1,sum(NYPA_Enabled_PV_Ado1,Spatial_ID,Area_Type,Sectors_Aggregated))
 NodeLocation: 816,576,1
 NodeSize: 64,40
-ValueState: 2,459,139,955,682,1,MIDM
+ValueState: 2,386,31,1044,647,1,MIDM
 Aliases: FormNode Fo1872903715
 GraphSetup: Att_GraphValueRange NYPA_Enabled_PV_Ado2:1,,0,,,,,0,0.45,0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 {!50000|Graph_SortBySpread:1}
 ReformVal: [Sectors_Aggregated,Area_Type]
 NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Spatial_ID,Sectors_Aggregated,Area_Type]
-Att_ResultSliceState: [Output_Periods,108,Comm_Adder_test,1,Area_Type,0,Spatial_ID,0,Sectors_Aggregated,0]
+Att__TotalsIndex: [Sectors_Aggregated,Area_Type]
+Att_ResultSliceState: [Output_Periods,48,Spatial_ID,4,Area_Type,0,Sectors_Aggregated,0]
 {!40600|Att_StackingIndex: Area_Type}
 {!40600|Att_ClusterIndex: Null}
 
@@ -18376,7 +18376,7 @@ Units: MW
 Definition: sum(Aggregate(NYPA_Enabled_Storage,Map_All_to_Aggregate[All_PV_Sectors=BESS_Sectors],BESS_Sectors,Sectors_Aggregated,"Sum"), BESS_types)
 NodeLocation: 816,688,1
 NodeSize: 64,40
-ValueState: 2,243,86,959,657,1,MIDM
+ValueState: 2,506,160,959,657,1,MIDM
 Aliases: FormNode Fo1849909539
 GraphSetup: Att_AreaFill Graph_Primary_Valdim:1~
 Att_Stacked_Lines Graph_Primary_Valdim:1~
@@ -18392,7 +18392,7 @@ Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,BESS_Spatial_ID,1,Time_S
 Variable Comm_Adder_test
 Title: Comm Adder test
 Units: $/kWh
-Definition: 0.02
+Definition: 0
 NodeLocation: 1128,64,1
 NodeSize: 64,40
 Aliases: FormNode Fo1406492963
@@ -18428,7 +18428,7 @@ Close NYPA_specific_output
 FormNode Fo1696948515
 Title: Market Share Illustration
 Definition: 1
-NodeLocation: 312,924,1
+NodeLocation: 1400,1172,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: Market_Share_Illustr
@@ -18436,7 +18436,7 @@ Original: Market_Share_Illustr
 FormNode Fo1687511331
 Title: Potential by Type
 Definition: 1
-NodeLocation: 856,1068,1
+NodeLocation: 848,1172,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: PV_Potential_by_Type
@@ -18444,7 +18444,7 @@ Original: PV_Potential_by_Type
 FormNode Fo517300515
 Title: Assumed NYPA fraction of natural market
 Definition: 0
-NodeLocation: 856,844,1
+NodeLocation: 848,948,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: Assumed_NYPA_fractio
@@ -18452,7 +18452,7 @@ Original: Assumed_NYPA_fractio
 FormNode Fo1591042339
 Title: PV Init Adop Fraction
 Definition: 0
-NodeLocation: 856,884,1
+NodeLocation: 848,988,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: PV_Init_Adop_Fractio
@@ -18468,7 +18468,7 @@ Original: Comm_Adder_test
 FormNode Fo1484087587
 Title: Investment Tax Credit
 Definition: 0
-NodeLocation: 312,1020,1
+NodeLocation: 312,868,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: Invest_Tax_Credit
@@ -18476,7 +18476,7 @@ Original: Invest_Tax_Credit
 FormNode Fo947216675
 Title: ITC Scenario
 Definition: 0
-NodeLocation: 312,1060,1
+NodeLocation: 312,908,1
 NodeSize: 256,20
 NodeInfo: 1,,,,,,,142,,,,,,0
 Original: Selected_ITC_Scen
@@ -18508,7 +18508,7 @@ Original: Simple_LCOE_Discount
 FormNode Fo328032547
 Title: Equipment Price Multiplier
 Definition: 0
-NodeLocation: 312,1116,1
+NodeLocation: 312,964,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: Equipment_Price_Mult
@@ -18548,7 +18548,7 @@ Original: Cost_to_Value_Ratio_
 FormNode Fo247292195
 Title: Installed Price
 Definition: 1
-NodeLocation: 312,1156,1
+NodeLocation: 312,1044,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: Installed_Price
@@ -18556,7 +18556,7 @@ Original: Installed_Price
 FormNode Fo1849909539
 Title: NYPA Enabled Storage Adoption
 Definition: 1
-NodeLocation: 856,1108,1
+NodeLocation: 848,1212,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: NYPA_Enabled_Storag1
@@ -18564,7 +18564,7 @@ Original: NYPA_Enabled_Storag1
 FormNode Fo507732259
 Title: NYPA Enabled Storage Adopt Pct
 Definition: 1
-NodeLocation: 856,1148,1
+NodeLocation: 848,1252,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: NYPA_Enabled_Storag2
@@ -18572,7 +18572,7 @@ Original: NYPA_Enabled_Storag2
 FormNode Fo187916579
 Title: PV kW-AC Incentive
 Definition: 0
-NodeLocation: 312,1236,1
+NodeLocation: 312,1124,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: PV_kW_AC_Incentive
@@ -18580,7 +18580,7 @@ Original: PV_kW_AC_Incentive
 FormNode Fo7561507
 Title: Incentive Base Rate
 Definition: 1
-NodeLocation: 312,1196,1
+NodeLocation: 312,1084,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: Storage_Incentive_Ba
@@ -18592,6 +18592,30 @@ NodeLocation: 312,780,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: Hourly_Rate
+
+FormNode Fo1583911203
+Title: Building Count from Facility Data
+Definition: 1
+NodeLocation: 848,684,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Building_Count_from_
+
+FormNode Fo1439994147
+Title: Logit Price Coefficient
+Definition: 0
+NodeLocation: 1400,1012,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Logit_Price_Coeff
+
+FormNode Fo903123235
+Title: Logit Tech Coefficient
+Definition: 0
+NodeLocation: 1400,1052,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Logit_Tech_Coeff
 
 Close Main_Interface
 

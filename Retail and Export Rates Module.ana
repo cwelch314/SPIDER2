@@ -1027,14 +1027,16 @@ ReformVal: [Time_of_Day,Month]
 Att_ResultSliceState: [Rate_Names,33,Tiers,1,Data_Type,3,Weekday_or_Weekend,1,Month,1,Time_of_Day,1]
 
 Variable Electric_Rates
-Title: Electric Rates
+Title: Electric Rates (energy, DRV, capacity only)
 Units: cents/kWh or $/kW
-Description: The electric rates considered in the simulation.
+Description: Community credits/adders, environmental adders, and LSRV adders are not included in the rates shown here. These rates only include energy, capacity, and demand reduction value per the NY VDER calculator. Those adders are separately input to facilitate scenario analysis.~
+~
+Also, all $/kW charges are rolled into the hourly cents/kWh rate and are therefore not shown separately.
 Definition: Rates[Rate_Names=Rate_Names_and_Start, All_Data_Types=DataType_by_RateType, Weekday_or_Weekend=DayType_for_Type_Hr,Time_of_Day=Hour_for_Type_and_Hr, All_Tiers=Tiers] * Rate_Compon_Scaling
 NodeLocation: 576,296,1
 NodeSize: 64,40
 WindState: 2,102,82,1339,449
-ValueState: 2,221,26,1297,830,1,MIDM
+ValueState: 2,240,45,1188,734,1,MIDM
 Aliases: FormNode Fo1182097699
 GraphSetup: Graph_LineThickness:5~
 Att_GraphValueRange Electric_Rates:1,,1,,,,5,0,17.45011806488037,0~
@@ -4499,11 +4501,13 @@ GraphSetup: Att_ContLineStyle Graph_Primary_Valdim:1
 Variable Hourly_Rate
 Title: Hourly Rate (energy, DRV, cap only)
 Units: $/kWh
-Description: Hourly rate excluding community adder, environmental value, or LSRV
+Description: Community credits/adders, environmental adders, and LSRV adders are not included in the rates shown here. These rates only include energy, capacity, and demand reduction value per the NY VDER calculator. Those adders are separately input to facilitate scenario analysis.~
+~
+Also, all $/kW charges are rolled into the hourly cents/kWh rate and are therefore not shown separately.
 Definition: Hourly_NY_Rate[@Hourly_Electric_Rate=@NY_Rate]
 NodeLocation: 624,480,1
 NodeSize: 64,40
-ValueState: 2,116,41,1674,780,,MIDM
+ValueState: 2,65,48,1674,780,,MIDM
 Aliases: FormNode Fo1729847587
 GraphSetup: Att_ContLineStyle Graph_Primary_Valdim:1~
 Att_GraphIndexRange Hourly_Profile_Rows:1,,1,,,,,4015.8838033676147,6773.299813270569,0~

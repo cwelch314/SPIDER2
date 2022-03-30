@@ -706,7 +706,7 @@ Author: coryw
 Date: Sun, Dec 16, 2018 8:10 AM
 NodeLocation: 496,168,1
 NodeSize: 64,40
-DiagState: 2,142,37,1407,707,17,10
+DiagState: 2,2093,37,1407,586,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object: no
 
@@ -897,26 +897,31 @@ NumberFormat: 2,F,2,1,0,0,2,1,$,0,"ABBREV",0,,,0,0,15,
 Variable Market_Share_Illustr
 Title: Market Share Illustration
 Units: %
+Description: Illustration of calculated marketshare as a function of the ratio of LCOE to "value of solar" prices, showing the sensitivity to different input assumptions for price and technology sensitivities. Default assumptions for those values are: ~
+~
+Price Coefficient: -6~
+Tech Coefficient: 5
 Definition: local utility:=PPA_to_Value_Ratio1 * Price_Coefficient_Il + Tech_Coefficient_Ill;~
 exp(utility) / (1 + exp(utility))
 NodeLocation: 1208,176,1
 NodeSize: 64,40
+WindState: 2,438,332,720,350
 ValueState: 2,380,128,866,623,,MIDM
 Aliases: FormNode Fo1696948515
 ReformVal: [PPA_to_Value_Ratio1,Null]
 NumberFormat: 2,%,4,0,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att_ResultSliceState: [Price_Coefficient_Il,3,Tech_Coefficient_Ill,5,PPA_to_Value_Ratio1,1]
+Att_ResultSliceState: [Tech_Coefficient_Ill,3,Price_Coefficient_Il,2,PPA_to_Value_Ratio1,1]
 Att_ColorRole: Null
 
 Index Price_Coefficient_Il
 Title: Price Coefficient Illustrator
-Definition: [-2,-4,-6,-8,-10]
+Definition: [-5,-6,-7,-8,-9]
 NodeLocation: 928,176,1
 NodeSize: 64,40
 
 Index Tech_Coefficient_Ill
 Title: Tech Coefficient Illustrator
-Definition: [1,2,3,4,5,6,7,8,9]
+Definition: [3,4,5,6,7]
 NodeLocation: 1064,176,1
 NodeSize: 64,40
 
@@ -1987,136 +1992,136 @@ Title: PV Init Adop Fraction
 Units: fraction
 Description: Initial fraction of technical potential for PV that have already adopted PV at the beginning of the forecast simulation.
 Definition: Table(Spatial_ID,All_PV_Sectors,Area_Type)(~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04,~
-0.04,0.04,0.04)
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02,~
+0.02,0.02,0.02)
 NodeLocation: 112,472,1
 NodeSize: 64,40
 WindState: 2,375,58,720,350
-DefnState: 2,2507,109,734,678,0,DFNM
+DefnState: 2,273,141,734,678,0,DFNM
 ValueState: 2,309,106,885,732,,MIDM
 Aliases: FormNode Fo1388822819, FormNode Fo1591042339
 NodeColor: 65535,1,1
 ReformDef: [Spatial_ID,All_PV_Sectors]
 TableCellDefault: 0
-Att_EditSliceState: [Area_Type,1,All_PV_Sectors,1,Spatial_ID,1]
+Att_EditSliceState: [Area_Type,3,All_PV_Sectors,1,Spatial_ID,1]
 
 Index All_PV_Sectors
 Att_PrevIndexValue: ['Higher Education','Hospitals','K-12','LG_Air Transportation','LG_Art_Museum','LG_Assisted Living','LG_Community services','LG_Correctional Facility','LG_Unique Education','LG_Government_Office','LG_Housing','LG_Library','LG_Other Transportation','LG_Police and Fire Department','LG_Recreational','LG_Water Supply & Waste Water','SA_Air Transportation','SA_Art_Museum','SA_Assisted Living','SA_Community services','SA_Correctional Facility','SA_Courthouse_Probation','SA_Unique Education','SA_Government_Office','SA_Housing','SA_Library','SA_Other Transportation','SA_Police and Fire Department','SA_Recreational','SA_Water Supply & Waste Water']
@@ -5630,7 +5635,7 @@ ReformDef: [Rate_Setting,All_Sectors]
 ReformVal: [Pre_and_Post_System,Rate_Vintage]
 TableCellDefault: Rate_Setting_Default
 Att_ResultSliceState: [All_Sectors,1,PV_Climate_Zone,1,Rate_Setting,2,Rate_Vintage,1,Pre_and_Post_System,1]
-Att_EditSliceState: [Pre_and_Post_System,2,Rate_Vintage,1,PV_Climate_Zone,4,All_Sectors,2,Rate_Setting,1]
+Att_EditSliceState: [Pre_and_Post_System,2,Rate_Vintage,1,PV_Climate_Zone,3,All_Sectors,2,Rate_Setting,1]
 
 Decision Num_of_Rate_Vintages
 Title: Number of Rate Vintages
@@ -6907,7 +6912,8 @@ Comm_Adder_test,Comm_Adder_test,Comm_Adder_test,Comm_Adder_test,~
 0,0,0,0)
 NodeLocation: 784,192,1
 NodeSize: 64,40
-DefnState: 2,496,284,697,200,0,DFNM
+WindState: 2,664,360,720,350
+DefnState: 2,680,356,697,200,0,DFNM
 Aliases: FormNode Fo48726307, FormNode Fo322661923
 NodeColor: 65535,1,1
 ReformDef: [Value_Type,PV_Climate_Zone]
@@ -8187,16 +8193,15 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 280,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,310,140,1567,555,17,10
+DiagState: 2,157,92,1397,648,17,10
 AcpStyles: FrameNode: FrameNode_1544920201
 
 Constant Invest_Tax_Credit
 Title: Investment Tax Credit
-Units: fraction
+Units: percent
 Description: Investment tax credit expressed as a percentage of the upfront capital costs.~
 ~
-Source:~
-http://programs.dsireusa.org/system/program/detail/658
+This input assumes the system owner is a taxable entity. For the current NYPA analysis, we assume third party ownership for government/non-profit entities. 
 Definition: Table(All_Sectors,ITC_Scenario,Static_PV_Time)(~
 0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
 0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.22,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,~
@@ -8305,7 +8310,7 @@ NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_GraphValueRange: 1,,,,,,10
 Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [All_Sectors,3,ITC_Scenario,1,Static_PV_Time,1]
-Att_EditSliceState: [ITC_Scenario,1,Static_PV_Time,1,All_Sectors,2]
+Att_EditSliceState: [All_Sectors,11,Static_PV_Time,1,ITC_Scenario,1]
 {!50000|Att_ColumnWidths: [,Static_PV_Time,\([63,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
 
 Variable ITC_Fraction
@@ -10380,7 +10385,7 @@ Definition: Table(All_Sectors,Static_PV_Time,PV_Incentive_Scen)(~
 NodeLocation: 128,784,1
 NodeSize: 64,40
 WindState: 2,45,506,720,350
-DefnState: 2,591,115,714,667,0,DFNM
+DefnState: 2,333,167,1197,629,0,DFNM
 ValueState: 2,426,65,1030,633,,MIDM
 Aliases: FormNode Fo1580649311, FormNode Fo187916579
 NodeColor: 65535,1,1
@@ -10390,7 +10395,7 @@ ReformDef: [All_Sectors,Static_PV_Time]
 ReformVal: [Static_PV_Time,PV_Incentive_Scen]
 TableCellDefault: 0
 Att_ResultSliceState: [PV_Incentive_Scen,2,All_Sectors,2,Static_PV_Time,1]
-Att_EditSliceState: [All_Sectors,8,Static_PV_Time,1,PV_Incentive_Scen,2]
+Att_EditSliceState: [PV_Incentive_Scen,2,Static_PV_Time,1,All_Sectors,8]
 {!50000|Att_ColumnWidths: [,Static_PV_Time,\([,,,,,,,,,,,,,,,,,,,432])]}
 
 Index PV_Incentive_Scen
@@ -14666,7 +14671,7 @@ ELSE Installed_EquipPrice * Equipment_Price_Mult;
 NodeLocation: 416,56,1
 NodeSize: 64,40
 WindState: 2,4,56,1264,521
-ValueState: 2,309,81,1098,721,1,MIDM
+ValueState: 2,496,111,1098,721,1,MIDM
 Aliases: FormNode Fo1544635738, FormNode Fo1548968037, FormNode Fo247292195
 GraphSetup: Att_GraphIndexRange Static_PV_Time:1,,0,,,,,2020.9681741148233,2034.5455272495747,0~
 Att_GraphValueRange Installed_Price:1,,1,,,,10,234.51277054846287,2591.9187515974045,0~
@@ -14676,7 +14681,7 @@ NumberFormat: 2,F,4,2,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: []
 Att_GraphValueRange: 1,,,,,,10
 Att_GraphTemplate: Lumidyne_Template
-Att_ResultSliceState: [All_Equipment_Types,2,New_or_Retrofit,2,All_Sectors,1,Area_Type,1,PV_Climate_Zone,2,Static_PV_Time,1]
+Att_ResultSliceState: [All_Equipment_Types,1,New_or_Retrofit,2,All_Sectors,1,Area_Type,1,PV_Climate_Zone,2,Static_PV_Time,1]
 
 Decision Select_PV_Cost_Scen
 Title: PV Cost Scenario
@@ -14916,6 +14921,8 @@ Original: Equipment_Lifetime
 
 Constant Equipment_Price_Mult
 Title: Equipment Price Multiplier
+Units: fraction
+Description: Multiplier of the input base equipment prices as a function of geography. 
 Definition: Table(All_Equipment_Types,PV_Climate_Zone)(~
 1.6,1,1,1,~
 1.6,1,1,1)
@@ -14945,7 +14952,7 @@ AcpStyles: FrameNode: FrameNode_1544920329
 Variable Cost_of_Elect_Ratio
 Title: Cost of Electricity Ratio
 Units: post/pre ratio
-Description: The ratio of post-system to pre-system total cost of electricity.
+Description: Ratio of the cost of electricity (when "simple LCOE" method is chosen, this is simply the ratio of the calculated LCOE and the first-year value of solar).
 Definition: DetermTable(Cost_to_Value_Ratio_)(Cost_of_Electricity_,PPA_to_Value_Ratio,Simple_LCOE_to_Value)
 NodeLocation: 472,272,1
 NodeSize: 64,40
@@ -15885,6 +15892,7 @@ Close Manually_Input_PPA
 Variable Simple_LCOE_vs_Value
 Title: Simple LCOE vs Value of Solar
 Units: $/kWh
+Description: Comparison of the value of solar per the NY VDER calculator (inclusive of manually input community adders, environmental value, or LSRV) and a "simple" LCOE for solar (accounting for installed costs, tax credits (assume third party owned), and incentives.
 Definition: [Simple_LCOE_of_PV,A_kWh_value_of_solar]
 NodeLocation: 304,496,1
 NodeSize: 64,40
@@ -15893,10 +15901,10 @@ Aliases: FormNode Fo89932067
 GraphSetup: Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2021,2030,0~
 Att_GraphValueRange Simple_LCOE_vs_Value:1,,1,,,,,0.17367490082979203,0.2686929821968079,0~
 Att_CatLineStyle Graph_Primary_Valdim:5
-ReformVal: [Annual_Econ_Time,Self]
+ReformVal: [Annual_Econ_Time,System_Types]
 NumberFormat: 2,F,4,3,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: []
-Att_ResultSliceState: [Area_Type,1,PV_Sectors,4,PV_Climate_Zone,4,System_Types,1,Self,1,Annual_Econ_Time,11]
+Att_ResultSliceState: [Area_Type,1,PV_Sectors,4,PV_Climate_Zone,2,Self,2,System_Types,1,Annual_Econ_Time,11]
 {!40300|Att_SlicerPopupSize: 252,64}
 
 Text Te1891843619
