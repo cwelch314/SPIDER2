@@ -3862,7 +3862,7 @@ NodeLocation: 1056,192,1
 NodeSize: 64,40
 WindState: 2,546,219,720,350
 DefnState: 2,1094,392,416,303,0,DFNM
-ValueState: 2,157,52,1109,760,0,MIDM
+ValueState: 2,2108,147,1276,727,0,MIDM
 Aliases: FormNode Fo1534438380, FormNode Fo1572476391
 NodeColor: 19661,48336,65535
 GraphSetup: Graph_AxisLabelFont:,14,0~
@@ -3870,11 +3870,11 @@ Att_CatLineStyle Graph_Primary_Valdim:5~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_GraphValueRange PrePost_Load_by_OpYr:1,,1,,,,10,0,421.10850512981415,0
-ReformVal: [Profile_Hours,PV_Sectors]
-Att__TotalsIndex: []
+ReformVal: [Profile_Hours,Area_Type]
+Att__TotalsIndex: [Pre_and_Post_System,System_Types]
 Att_GraphValueRange: 1,,,,,,10
 Att_GraphTemplate: Lumidyne_Template
-Att_ResultSliceState: [PV_Climate_Zone,2,Month,8,PV_Operating_Year,1,System_Types,1,Pre_and_Post_System,1,Area_Type,1,PV_Sectors,2,Profile_Hours,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,Month,8,PV_Operating_Year,1,System_Types,0,Pre_and_Post_System,0,Rate_Vintage,1,PV_Sectors,4,Area_Type,3,Profile_Hours,1]
 
 Variable Scaled_Annual_Load
 Title: Scaled Annual Load
@@ -4023,7 +4023,7 @@ Date: Wed, May 1, 2019 11:53 AM
 NodeLocation: 576,344,1
 NodeSize: 64,40
 NodeInfo: 1,1,0,1,1,1,0,,0,,0,,,
-DiagState: 2,115,143,1612,622,17,10
+DiagState: 2,83,55,1612,622,17,10
 AcpStyles: FrameNode: Profile_Frame
 
 Alias Al1557428073
@@ -4105,6 +4105,7 @@ Definition: Table(Profile_Granularity)(Handle(Month_Day_and_Hour),Handle(Day_and
 NodeLocation: 560,328,1
 NodeSize: 64,40
 WindState: 2,50,25,720,538
+ValueState: 2,909,439,416,303,,MIDM
 NodeColor: 19661,48336,65535
 
 Index Profile_Hours
@@ -4145,9 +4146,9 @@ Description: Multipliers to adjust the modeled hours in the optimization window 
 Definition: Applied_Monthly_Mult[Static_Profile_Names=Loadshape_Map[All_Sectors=PV_Sectors]]
 NodeLocation: 712,776,1
 NodeSize: 64,40
-ValueState: 2,222,90,1438,792,1,MIDM
+ValueState: 2,225,104,1438,668,1,MIDM
 ReformVal: [Profile_Hours,Month]
-Att_ResultSliceState: [Static_Profile_Names,5,Month,1,Profile_Hours,1]
+Att_ResultSliceState: [PV_Sectors,30,Month,1,Profile_Hours,1]
 
 Variable Monthly_Day_Counts
 Title: Monthly Day Counts
@@ -4529,7 +4530,7 @@ Definition: Weeks_Per_Month * Applied_Avg_to_Peak[All_Day_Types=Day_by_Day_and_H
 NodeLocation: 256,776,1
 NodeSize: 64,40
 WindState: 2,98,82,915,350
-ValueState: 2,10,9,1803,662,1,MIDM
+ValueState: 2,10,9,1803,662,0,MIDM
 Att_ResultSliceState: [Month,2,Static_Profile_Names,1,Day_and_Hour,1]
 
 Variable Applied_Monthly_Mult
@@ -4540,7 +4541,7 @@ Definition: LocalAlias hours:=Hours_Index_Handles[Profile_Granularity=Sel_Profil
 VAR profile:=Day_Count_Handles[Profile_Granularity=Sel_Profile_Granular];~
 ~
 profile[hours=Profile_Hours]
-NodeLocation: 560,776,1
+NodeLocation: 568,680,1
 NodeSize: 64,40
 ValueState: 2,222,90,1438,792,1,MIDM
 ReformVal: [Profile_Hours,Month]
@@ -4817,7 +4818,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,347,35,1142,618,17,10
+DiagState: 2,163,8,1554,717,17,10
 Aliases: Alias Al1548967138
 AcpStyles: FrameNode: FrameNode_1544919985
 
@@ -5104,7 +5105,9 @@ Variable Max_Dmd_by_TOU_Prd
 Title: Max Demand by TOU Period
 Units: kW
 Description: The maximum demand by TOU period.
-Definition: Replace_X_with_Y(Aggregate(PrePost_Load_by_OpYr, Periods_by_ProfileHr[Data_Types=Demand_Data_Types], Profile_Hours, Periods, 'Max'), Null, 0)
+Definition: IF Include_demand_charg  THEN  {zeros out demand charges if they are not accounted for in the analysis}~
+Replace_X_with_Y(Aggregate(PrePost_Load_by_OpYr, Periods_by_ProfileHr[Data_Types=Demand_Data_Types], Profile_Hours, Periods, 'Max'), Null, 0)~
+ELSE 0
 NodeLocation: 200,504,1
 NodeSize: 64,40
 WindState: 2,102,82,1015,350
@@ -5154,6 +5157,28 @@ ValueState: 2,390,134,994,567,,MIDM
 ReformVal: [PV_Climate_Zone,PV_Sectors]
 Att__TotalsIndex: [Demand_Data_Types]
 Att_ResultSliceState: [Rate_Vintage,1,Pre_and_Post_System,1,Tiers,1,Demand_Data_Types,0,PV_Sectors,1,PV_Climate_Zone,1]
+
+Decision Include_demand_charg
+Title: Include demand charges?
+Description: If demand charges need not be accounted for in the analysis, unchecking this box will speed model run time considerably.
+Definition: Checkbox(0)
+NodeLocation: 880,648,1
+NodeSize: 64,40
+Aliases: FormNode Fo606900515
+NodeColor: 65535,65531,1
+
+FormNode Fo606900515
+Title: Include demand charges?
+Definition: 0
+NodeLocation: 1124,664,1
+NodeSize: 124,16
+Original: Include_demand_charg
+
+Variable Va24
+Definition: PrePost_Load_by_OpYr * Load_Monthly_Mults
+NodeLocation: 784,328,1
+NodeSize: 64,40
+ValueState: 2,503,63,1138,788,,MIDM
 
 Close Energy_and_Demand
 
@@ -16833,7 +16858,7 @@ NodeLocation: 960,64,1
 NodeSize: 64,40
 WindState: 2,707,203,665,594
 ValueState: 2,491,274,416,303,,MIDM
-{!40300|Att_SlicerPopupSize: 627,84}
+{!40300|Att_SlicerPopupSize: 632,84}
 
 Constant All_Spatial_ID_to_CZ
 Title: All Spatial ID to CZ Map
@@ -16894,6 +16919,7 @@ Title: PV Operating Year
 Definition: 1..Economic_Lifetime
 NodeLocation: 384,896,1
 NodeSize: 64,40
+WindState: 2,361,83,1086,715
 ValueState: 2,632,289,416,303,,MIDM
 {!40300|Att_SlicerPopupSize: 282,294}
 
@@ -17023,7 +17049,7 @@ NodeLocation: 240,256,1
 NodeSize: 64,40
 WindState: 2,102,21,1089,879
 ValueState: 2,992,329,416,303,,MIDM
-{!40300|Att_SlicerPopupSize: 897,112}
+{!40300|Att_SlicerPopupSize: 902,112}
 
 Index New_or_Retrofit
 Att_PrevIndexValue: ['NewConstr','Retrofit']
@@ -17181,7 +17207,7 @@ Title: Pre and Post System
 Definition: ['Pre-System','Post-System']
 NodeLocation: 528,616,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 260,80}
+{!40300|Att_SlicerPopupSize: 265,80}
 
 Index Bill_Components
 Att_PrevIndexValue: ['Basic Service Fees','Minimum Charges','Summer Energy','Summer On-Peak Energy','Summer Off-Peak Energy','Summer Super-Off Peak Energy','Summer Semi-Peak Energy','Winter Energy','Winter On-Peak Energy','Winter Off-Peak Energy','Winter Super-Off Peak Energy','Winter Semi-Peak Energy','Non-Coincident Demand','Summer On-Peak Demand','Winter On-Peak Demand','Net Total']

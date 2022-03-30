@@ -1171,7 +1171,7 @@ Date: Fri, Aug 10, 2018 2:24 PM
 NodeLocation: 968,1040,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,104,59,1382,535,17,10
+DiagState: 2,2149,110,1382,535,17,10
 NodeColor: 57311,57311,57311
 
 Decision TOU_Schedule_Labels
@@ -1362,7 +1362,7 @@ Definition: Period_by_DayType_Hr[Time_of_Day=TimeOfDay_ProfileHrs, Weekday_or_We
 NodeLocation: 1080,232,1
 NodeSize: 64,40
 WindState: 2,120,8,720,350
-ValueState: 2,132,38,1009,769,0,MIDM
+ValueState: 2,2325,98,1322,779,0,MIDM
 Att_ResultSliceState: [PV_Climate_Zone,1,Pre_and_Post_System,1,Data_Types,3,Month,12,Rate_Vintage,1,PV_Sectors,1,Profile_Hours,1]
 
 Close Find_TOU_Schedules
@@ -1708,6 +1708,7 @@ Description: Relevant data types to the rates included in the simulation.
 Definition: Subset(Active_Data_Types)
 NodeLocation: 256,264,1
 NodeSize: 64,40
+{!40300|Att_SlicerPopupSize: 227,64}
 
 Index All_Periods
 Att_PrevIndexValue: ['period0','period1','period2','period3','period4','period5','period6','period7','period8','period9','period10','period11','period12','period13','period14','period15','period16','period17','period18','period19','period20','period21','period22','period23']

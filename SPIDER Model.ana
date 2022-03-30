@@ -113,7 +113,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,90,67,1722,832,17,10
+DiagState: 2,100,13,1722,832,17,10
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
@@ -142,7 +142,7 @@ Date: Mon, Aug 18, 2014 9:09 PM
 NodeLocation: 784,80,7
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-DiagState: 2,244,102,1361,621,17,10
+DiagState: 2,2278,73,1081,648,17,10
 WindState: 2,102,82,476,224
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
@@ -674,7 +674,7 @@ THEN Null~
 ELSE Show_ACP_Window(PV_Input1,PV_Input_Titles,PV_Input, IF Inputs_only_for_view THEN 'Result' ELSE 'Definition' )
 
 Index PV_Input_Titles
-Att_PrevIndexValue: ['Historical PV Capacity Installations (MW-AC/period)','Historical PV Installations (systems/period)','PV kW-AC Incentive ($/kW-AC)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (fraction)','Electric Rates (cents/kWh or $/kW)','Hourly Profiles (various)','Saved Daily Profiles (various)','Per-kW Weekly Solar Profile (kW-hr/kW-DC)','Payback Acceptance Curve (market share)']
+Att_PrevIndexValue: ['Historical PV Capacity Installations (MW-AC/period)','Historical PV Installations (systems/period)','PV kW-AC Incentive ($/kW-AC)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (percent)','Electric Rates (energy, DRV, capacity only) (cents/kWh or $/kW)','Hourly Profiles (various)','Saved Daily Profiles (various)','Per-kW Weekly Solar Profile (kW-hr/kW-DC)','Payback Acceptance Curve (market share)']
 Title: PV Input Titles
 Definition: Create_Titles_List(PV_Input1)~
 
@@ -932,7 +932,7 @@ THEN Null~
 ELSE Show_ACP_Window(Storage_Input1,Storage_Input_Titles,BESS_Input,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
 
 Index Storage_Input_Titles
-Att_PrevIndexValue: ['Start Time for Dispatch','End Time for Dispatch','Flows to View','Battery Storage Specs','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (fraction)','Allowed ITC Percent by Year (fraction)','Storage kWh Incent Base Rate ($/kWh)','Incentive Step Start Month','kWh Incent Derate for Duration','kWh Incent Derate for Capacity']
+Att_PrevIndexValue: ['Start Time for Dispatch','End Time for Dispatch','Flows to View','Battery Storage Specs','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (percent)','Allowed ITC Percent by Year (fraction)','Storage kWh Incent Base Rate ($/kWh)','Incentive Step Start Month','kWh Incent Derate for Duration','kWh Incent Derate for Capacity']
 Title: Storage Input Titles
 Definition: Create_Titles_List(Storage_Input1)~
 
@@ -18235,7 +18235,7 @@ Units: MW-DC
 Definition: Aggregate(NYPA_Enabled_PV_Adop,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
 NodeLocation: 776,352,1
 NodeSize: 64,40
-ValueState: 2,507,135,1077,723,1,MIDM
+ValueState: 2,512,134,1077,723,1,MIDM
 Aliases: FormNode Fo1042431523
 GraphSetup: Att_GraphValueRange NYPA_Enabled_PV_Ado1:1,,1,1,,,,0,1000,0~
 Att_AreaFill Graph_Primary_Valdim:1~
