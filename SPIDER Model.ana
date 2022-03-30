@@ -58,7 +58,7 @@ Graph_ColorSeq := [3855,26214,35209,57568,15420,13107,32639,32639,32639,0,0,0,34
 {!40600|NodeLocation MaxModelThreads: 880,64,1}
 {!40600|NodeSize MaxModelThreads: 48,24}
 {!40600|NodeInfo MaxModelThreads: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
-{!50000|OutlinerState Sys_FoundSet: 2,340,93,1094,693}
+{!50000|OutlinerState Sys_FoundSet: 2,345,94,1094,693}
 {!50000|NodeLocation DecimalForCopyPaste: 1024,64,1}
 {!50000|NodeSize DecimalForCopyPaste: 72,24}
 {!50000|NodeInfo DecimalForCopyPaste: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
@@ -113,7 +113,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,277,34,1244,817,17,10
+DiagState: 2,297,17,1150,821,17,10
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
@@ -18174,15 +18174,18 @@ Definition: Table(Spatial_ID,Area_Type,All_PV_Sectors)(~
 0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
 0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
 0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
+0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
+0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
+0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
 0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2)
 NodeLocation: 568,240,1
 NodeSize: 72,40
-DefnState: 2,277,155,711,663,0,DFNM
+DefnState: 2,277,155,1195,663,0,DFNM
 ValueState: 2,1167,229,624,551,,MIDM
 Aliases: FormNode Fo471309859, FormNode Fo517300515
 NodeColor: 65535,1,1
-ReformDef: [PV_Climate_Zone,All_PV_Sectors]
-Att_EditSliceState: [Area_Type,2,All_PV_Sectors,1,Spatial_ID,1]
+ReformDef: [Spatial_ID,All_PV_Sectors]
+Att_EditSliceState: [Area_Type,1,All_PV_Sectors,1,Spatial_ID,1]
 
 Variable NYPA_Enabled_PV_Adop
 Title: NYPA Enabled PV Adoption
@@ -18216,7 +18219,7 @@ Title: Sectors Aggregated
 Definition: ['Higher Education','Hospitals','K-12','Air Transportation','Art_Museum','Assisted Living','Community services','Correctional Facility','Unique Education','Government_Office','Housing','Library','Other Transportation','Police and Fire Department','Recreational','Water Supply & Waste Water','Courthouse_Probation']
 NodeLocation: 632,472,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 272,252}
+{!40300|Att_SlicerPopupSize: 277,252}
 
 Decision Map_All_to_Aggregate
 Title: Map All to Aggregated Sectors
@@ -18232,20 +18235,20 @@ Units: MW-DC
 Definition: Aggregate(NYPA_Enabled_PV_Adop,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
 NodeLocation: 776,352,1
 NodeSize: 64,40
-ValueState: 2,387,61,933,708,1,MIDM
+ValueState: 2,578,159,1077,723,1,MIDM
 Aliases: FormNode Fo1042431523
-GraphSetup: Graph_FillTransparen:2~
-Att_ContLineStyle Graph_Primary_Valdim:1~
-{!50000|Graph_SortBySpread:1}~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_GraphIndexRange Output_Periods:1,0,,,,,10~
-Att_Stacked_Lines Graph_Primary_Valdim:1~
+GraphSetup: Att_GraphValueRange NYPA_Enabled_PV_Ado1:1,,1,1,,,,0,1000,0~
 Att_AreaFill Graph_Primary_Valdim:1~
-Att_GraphValueRange NYPA_Enabled_PV_Ado1:1,,0,1,,,,0,1000,0
+Att_Stacked_Lines Graph_Primary_Valdim:1~
+Att_GraphIndexRange Output_Periods:1,0,,,,,10~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+{!50000|Graph_SortBySpread:1}~
+Att_ContLineStyle Graph_Primary_Valdim:1~
+Graph_FillTransparen:2
 ReformVal: [Output_Periods,Spatial_ID]
 NumberFormat: 2,F,2,1,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Spatial_ID,Sectors_Aggregated,Area_Type]
-Att_ResultSliceState: [Sectors_Aggregated,0,Area_Type,0,Comm_Adder_test,1,Spatial_ID,0,Output_Periods,108]
+Att__TotalsIndex: [Spatial_ID,Area_Type,Sectors_Aggregated]
+Att_ResultSliceState: [Sectors_Aggregated,0,Area_Type,0,Spatial_ID,0,Output_Periods,108]
 {!40600|Att_StackingIndex: Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
 
@@ -18389,7 +18392,7 @@ Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,BESS_Spatial_ID,1,Time_S
 Variable Comm_Adder_test
 Title: Comm Adder test
 Units: $/kWh
-Definition: 0
+Definition: 0.02
 NodeLocation: 1128,64,1
 NodeSize: 64,40
 Aliases: FormNode Fo1406492963

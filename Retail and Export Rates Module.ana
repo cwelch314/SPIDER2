@@ -1045,7 +1045,7 @@ Att_GraphIndexRange Day_Type_and_Hour:1,,1,,,,,9,18,1
 ReformVal: [Day_Type_and_Hour,Rate_Names_and_Start]
 NumberFormat: 2,F,4,2,0,0,4,1,$,0,"ABBREV",0,,,0,0,14
 Att__TotalsIndex: []
-Att_ResultSliceState: [Tiers,1,Rate_Component,1,Month,7,Rate_Names_and_Start,2,Day_Type_and_Hour,1]
+Att_ResultSliceState: [Tiers,1,Rate_Component,1,Month,8,Rate_Names_and_Start,2,Day_Type_and_Hour,1]
 {!40700|CellFormatExpression: CellFill(IF RatesOnlyTransp[Rate_Names=Rate_to_View, All_Data_Types=Data_Type_to_View] < 0 THEN 'Green' ELSE 'Red', .2+.6*Abs(RatesOnlyTransp[Rate_Names=Rate_to_View, All_Data_Types=Data_Type_to_View] ))}
 
 Variable RatesOnlyTransp
