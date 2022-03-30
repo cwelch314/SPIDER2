@@ -113,7 +113,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,100,13,1722,832,17,10
+DiagState: 2,12,0,1586,761,17,10
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
@@ -360,7 +360,7 @@ Date: Sun, Dec 16, 2018 8:10 AM
 NodeLocation: 112,392,1
 NodeSize: 80,56
 NodeInfo: 1,,,,,,1
-DiagState: 2,-52,164,1820,702,17,10
+DiagState: 2,-206,149,1820,702,17,10
 NodeFont: Arial Narrow,19
 AcpStyles: Show_object: no
 
@@ -718,7 +718,7 @@ Title: PV Scenario Selector
 Description: Select which scenario you wish to run for each scenario variable. ~
 ~
 CAUTION: Selecting "All" for more than one scenario variable may result in exceeding server memory, resulting in an error.
-Definition: MultiTable(PV_Scenario_Variable)(Select_PV_Cost_Scen,BaseYr_for_PV_Costs,PV_Incent_Scenario,Select_Rate_Escalate,,Sel_NC_Suitable_Scen,Selected_ITC_Scen)
+Definition: MultiTable(PV_Scenario_Variable)(Select_DER_Cost_Scen,Base_Yr_of_Cost_Decl,PV_Incent_Scenario,Select_Rate_Escalate,,Sel_NC_Suitable_Scen,Selected_ITC_Scen)
 NodeLocation: 960,72,1
 NodeSize: 64,40
 WindState: 2,237,158,1472,616
@@ -1101,21 +1101,23 @@ Title: BESS Scenario Selector
 Description: Select which scenario you wish to run for each scenario variable. ~
 ~
 CAUTION: Selecting "All" for more than one scenario variable may result in exceeding server memory, resulting in an error.
-Definition: MultiTable(Storg_Scenario_Varia)(Select_StrgCost_Scen,BESS_Incent_Scenario,Select_Rate_Escalate,Selected_ITC_Scen)
+Definition: MultiTable(Storg_Scenario_Varia)(Select_DER_Cost_Scen,Select_Rate_Escalate,Selected_ITC_Scen)
 NodeLocation: 1272,72,1
 NodeSize: 64,40
-WindState: 2,371,56,720,350
+WindState: 2,2012,167,1033,562
 DefnState: 2,357,63,688,243,0,DFNM
+ValueState: 2,813,310,705,211,,MIDM
 Aliases: FormNode Fo1551839741
 {!50000|Att_ColumnWidths: [322]}
 
 Index Storg_Scenario_Varia
-Att_PrevIndexValue: ['Storage Cost','Storage Incentive','Elec Rate Escalation','ITC Phase-Out']
+Att_PrevIndexValue: ['Storage Cost','Elec Rate Escalation','ITC Phase-Out']
 Title: Storg Scenario Variables
-Definition: ['Storage Cost','Storage Incentive','Elec Rate Escalation','ITC Phase-Out']
+Definition: ['Storage Cost','Elec Rate Escalation','ITC Phase-Out']
 IndexVals: ['item 1']
 NodeLocation: 1272,176,1
 NodeSize: 64,40
+WindState: 2,929,209,744,473
 Aliases: FormNode Fo1552873762
 
 FormNode Fo1552873760
@@ -16692,6 +16694,7 @@ THEN BESS_Incent_Scenario~
 ELSE Subset(BESS_Incent_Scenario <> None_Label)
 NodeLocation: 2376,64,1
 NodeSize: 64,40
+WindState: 2,98,82,911,481
 
 Variable Measure_B_C_Ratio
 Title: Measure B/C Ratio
@@ -17830,7 +17833,7 @@ NodeSize: 64,40
 NodeColor: 65535,1,1
 
 Variable Nodes_to_change
-Att_PrevIndexValue: [Include_Output_Type,EV_Sect_Label,Intercon_Strt_Yr,Intercon_End_Yr,Fact_Column_Indices,Map_Intercon_to_Sect,Min_and_Max_System_S,Min_Required_Install,Stored_DC_CapInstall,Stored_AC_CapInstall,Avg_AC_DC_CZ_Fcast,PV_AC_to_DC_Factor,Te1541505644,Saved_NTG_Ratio,NewConstr_Mkt_Share,Force_NewCon_Market_,Market_Share_Method,Impact_Scaling,Event_Applicability,Use_Hist_PV_Intercon,R2_Threshold1,Num_of_Periods_Avg,PV_Sim_Start_Year,PV_Sim_End_Year,Select_Customer_Rate,Num_of_Rate_Vintages,NonCoincDmd_Attribs,OnPeak_Dmd_Attribs,Energy_Rate_Attribs,Map_Component_to_Prd,Stored_PV_Pct_ITC,Assume_Third_Party_O,Base_Year_for_O_M_In,BaseYr_for_PV_Costs,BaseYr_Strg_Costs,Map_Charges_to_Sect,Map_Costs_to_Sector,Select_System_Types,Year_of_Consump_Data,Use_facility_level_d,Tier_Period_Labels,Profiles_to_Evaluate,Save_Static_ProfName,Save_Daily_Profiles,Use_Peak_in_Profile,Static_Profile_Names,Te1554180641,Reported_Avg_Costs,Saved_kWh_Ratings,Source_of_Ratio,SGIP_Sector_Map,StorageSyst_Included,Rates_Included,ClimZones_Included,Months_Included,Estim_Storage_Add_On,Select_Strg_Rate1,Select_Strg_System1,Map_Tier_Wts_to_Str2,Map_Tier_Wts_PrePos2,Fruit_2,BESS_Sim_Start_Year,BESS_Sim_End_Year,BESS_Economics_Map,AESS_Sector_Map,Reported_Avg_Costs2,Source_of_Ratio2,Rule21_Sector_Map,Market_Share_Method1,R2_Threshold_BESS,BESS_Calibration_Com,Nodecolor_to_updates]
+Att_PrevIndexValue: [Include_Output_Type,EV_Sect_Label,Intercon_Strt_Yr,Intercon_End_Yr,Fact_Column_Indices,Map_Intercon_to_Sect,Min_and_Max_System_S,Min_Required_Install,Stored_DC_CapInstall,Stored_AC_CapInstall,Avg_AC_DC_CZ_Fcast,PV_AC_to_DC_Factor,Te1541505644,Saved_NTG_Ratio,NewConstr_Mkt_Share,Force_NewCon_Market_,Market_Share_Method,Impact_Scaling,Event_Applicability,Use_Hist_PV_Intercon,R2_Threshold1,Num_of_Periods_Avg,PV_Sim_Start_Year,PV_Sim_End_Year,Select_Customer_Rate,Num_of_Rate_Vintages,NonCoincDmd_Attribs,OnPeak_Dmd_Attribs,Energy_Rate_Attribs,Map_Component_to_Prd,Stored_PV_Pct_ITC,Assume_Third_Party_O,Base_Year_for_O_M_In,Base_Yr_of_Cost_Decl,BaseYr_Strg_Costs,Map_Charges_to_Sect,Map_Costs_to_Sector,Select_System_Types,Year_of_Consump_Data,Use_facility_level_d,Tier_Period_Labels,Profiles_to_Evaluate,Save_Static_ProfName,Save_Daily_Profiles,Use_Peak_in_Profile,Static_Profile_Names,Te1554180641,Reported_Avg_Costs,Saved_kWh_Ratings,Source_of_Ratio,SGIP_Sector_Map,StorageSyst_Included,Rates_Included,ClimZones_Included,Months_Included,Estim_Storage_Add_On,Select_Strg_Rate1,Select_Strg_System1,Map_Tier_Wts_to_Str2,Map_Tier_Wts_PrePos2,Fruit_2,BESS_Sim_Start_Year,BESS_Sim_End_Year,BESS_Economics_Map,AESS_Sector_Map,Reported_Avg_Costs2,Source_of_Ratio2,Rule21_Sector_Map,Market_Share_Method1,R2_Threshold_BESS,BESS_Calibration_Com,Nodecolor_to_updates]
 Title: Nodes to change
 Definition: update_nodes_to_chan;~
 #FindObjects(Color,attribute:'NodeColor')
@@ -18235,7 +18238,7 @@ Units: MW-DC
 Definition: Aggregate(NYPA_Enabled_PV_Adop,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
 NodeLocation: 776,352,1
 NodeSize: 64,40
-ValueState: 2,512,134,1077,723,1,MIDM
+ValueState: 2,341,55,1077,723,1,MIDM
 Aliases: FormNode Fo1042431523
 GraphSetup: Att_GraphValueRange NYPA_Enabled_PV_Ado1:1,,1,1,,,,0,1000,0~
 Att_AreaFill Graph_Primary_Valdim:1~
@@ -18508,7 +18511,7 @@ Original: Simple_LCOE_Discount
 FormNode Fo328032547
 Title: Equipment Price Multiplier
 Definition: 0
-NodeLocation: 312,964,1
+NodeLocation: 312,1028,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: Equipment_Price_Mult
@@ -18548,7 +18551,7 @@ Original: Cost_to_Value_Ratio_
 FormNode Fo247292195
 Title: Installed Price
 Definition: 1
-NodeLocation: 312,1044,1
+NodeLocation: 312,1260,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: Installed_Price
@@ -18572,7 +18575,7 @@ Original: NYPA_Enabled_Storag2
 FormNode Fo187916579
 Title: PV kW-AC Incentive
 Definition: 0
-NodeLocation: 312,1124,1
+NodeLocation: 312,1340,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: PV_kW_AC_Incentive
@@ -18580,7 +18583,7 @@ Original: PV_kW_AC_Incentive
 FormNode Fo7561507
 Title: Incentive Base Rate
 Definition: 1
-NodeLocation: 312,1084,1
+NodeLocation: 312,1188,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: Storage_Incentive_Ba
@@ -18616,6 +18619,59 @@ NodeLocation: 1400,1052,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: Logit_Tech_Coeff
+
+Alias Al661819683
+Title: Zero out times
+Definition: 1
+NodeLocation: 824,616,1
+NodeSize: 48,24
+Original: Zero_out_times
+
+Alias Al1735561507
+Title: Update profiles
+Definition: 1
+NodeLocation: 640,616,1
+NodeSize: 48,24
+Original: Update_profiles
+
+FormNode Ordered_pr1601343779
+Title: Ordered profiles
+Definition: 1
+NodeLocation: 1073,628,1
+NodeSize: 161,12
+NodeInfo: 1,0,0,1,0,0,0,120,0,
+Original: Performance_profiles
+
+FormNode Fo930517283
+Title: Installed Equipment Price
+Definition: 0
+NodeLocation: 312,988,1
+NodeSize: 256,20
+Original: Installed_EquipPrice
+
+FormNode Fo1235587363
+Title: DER Cost Change Rate
+Definition: 0
+NodeLocation: 312,1068,1
+NodeSize: 256,20
+Original: DER_Cost_Change_Rate
+
+FormNode Fo1134924067
+Title: Base Yr of Cost Decline
+Definition: 0
+NodeLocation: 312,1148,1
+NodeSize: 256,20
+NodeInfo: 1,,,,,,,142,,,,,,0
+NodeColor: 65535,65531,1
+Original: Base_Yr_of_Cost_Decl
+
+FormNode Fo598053155
+Title: DER Cost Scenario
+Definition: 0
+NodeLocation: 312,1108,1
+NodeSize: 256,20
+NodeInfo: 1,,,,,,,142,,,,,,0
+Original: Select_DER_Cost_Scen
 
 Close Main_Interface
 
