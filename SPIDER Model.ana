@@ -58,7 +58,7 @@ Graph_ColorSeq := [3855,26214,35209,57568,15420,13107,32639,32639,32639,0,0,0,34
 {!40600|NodeLocation MaxModelThreads: 880,64,1}
 {!40600|NodeSize MaxModelThreads: 48,24}
 {!40600|NodeInfo MaxModelThreads: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
-{!50000|OutlinerState Sys_FoundSet: 2,372,117,1094,693}
+{!50000|OutlinerState Sys_FoundSet: 2,340,93,1094,693}
 {!50000|NodeLocation DecimalForCopyPaste: 1024,64,1}
 {!50000|NodeSize DecimalForCopyPaste: 72,24}
 {!50000|NodeInfo DecimalForCopyPaste: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
@@ -113,7 +113,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,2129,9,1491,767,17,10
+DiagState: 2,277,34,1244,817,17,10
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
@@ -18216,7 +18216,7 @@ Title: Sectors Aggregated
 Definition: ['Higher Education','Hospitals','K-12','Air Transportation','Art_Museum','Assisted Living','Community services','Correctional Facility','Unique Education','Government_Office','Housing','Library','Other Transportation','Police and Fire Department','Recreational','Water Supply & Waste Water','Courthouse_Probation']
 NodeLocation: 632,472,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 267,252}
+{!40300|Att_SlicerPopupSize: 272,252}
 
 Decision Map_All_to_Aggregate
 Title: Map All to Aggregated Sectors
@@ -18319,13 +18319,13 @@ Units: MW-DC
 Definition: Table(Potential_Type)(Total_PV_MW_DC_Tech_,PV_Cumul_MW_DC1,NYPA_Enabled_PV_Ado1)
 NodeLocation: 968,576,1
 NodeSize: 64,40
-ValueState: 2,395,108,895,684,,MIDM
+ValueState: 2,389,107,944,768,,MIDM
 Aliases: FormNode Fo1687511331
 GraphSetup: Att_GraphValueRange PV_Potential_by_Type:1,,1,,,,,0,2757.6518058776855,0
 ReformVal: [Output_Periods,Potential_Type]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Sectors_Aggregated,Area_Type,Spatial_ID]
-Att_ResultSliceState: [Spatial_ID,0,Area_Type,0,Sectors_Aggregated,0,Potential_Type,1,Output_Periods,1]
+Att__TotalsIndex: [Area_Type]
+Att_ResultSliceState: [Spatial_ID,2,Area_Type,0,Sectors_Aggregated,1,Potential_Type,1,Output_Periods,1]
 
 Variable PV_Cumul_MW_DC
 Title: PV Cumul MW DC
@@ -18493,14 +18493,6 @@ NodeLocation: 312,700,1
 NodeSize: 256,20
 NodeColor: 30583,48316,7967
 Original: Select_Customer_Rate
-
-FormNode Fo905273635
-Title: System Size Constraints
-Definition: 0
-NodeLocation: 320,1628,-3
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: System_Size_Constrai
 
 FormNode Fo1116561699
 Title: Simple LCOE Discount Rate

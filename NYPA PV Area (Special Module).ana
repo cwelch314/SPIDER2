@@ -10,7 +10,7 @@ Author: CWelch
 Date: Tue, Mar 8, 2022 9:07 AM
 DefaultSize: 64,40
 NodeSize: 64,40
-DiagState: 2,-490,51,2242,718,17,10
+DiagState: 2,1919,6,2242,718,17,10
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
 
@@ -84,7 +84,7 @@ NodeLocation: 144,224,1
 NodeSize: 64,40
 DefnState: 2,55,16,1749,829,0,DFNM
 ValueState: 2,67,36,1567,763,0,MIDM
-Aliases: FormNode Fo610073123
+Aliases: FormNode Fo610073123, Alias Al1512235299
 ReformDef: [Facility_Parameter,Facility_Identifier]
 ReformVal: [Facility_Parameter,Facility_Identifier]
 Att__TotalsIndex: [Facility_Identifier]
@@ -182,7 +182,7 @@ Att_ResultSliceState: [Area_Type,3,Facility_ID_Filtered,1]
 Variable Max_Facility_System_
 Title: Max Facility System Size
 Units: kW
-Definition: System_Size_Constrai[Min_Max=Maximum_Label,PV_Climate_Zone=Spatial_ID_to_CZ_Map[Spatial_ID=Facility_Spatial_ID]]
+Definition: System_Size_Constra2[Min_Max=Maximum_Label,Spatial_ID=Facility_Spatial_ID]
 NodeLocation: 1312,192,1
 NodeSize: 64,40
 ValueState: 2,494,159,862,393,0,MIDM
@@ -244,15 +244,15 @@ Att_ResultSliceState: [Area_Type,1,PV_Sectors,0,Spatial_ID,1]
 Variable Customer_Load_by_Sp_
 Title: Customer Load by Sp ID
 Units: GWh/yr
-Definition: Consumption_by_Secto[All_Sectors=PV_Sectors,All_Spatial_ID=Spatial_ID,Building_Stock_Year=Year_of_Consump_Data] / 1E6
+Definition: Consumption_by_Sect1[All_PV_Sectors=PV_Sectors] / 1E6
 NodeLocation: 1800,672,1
 NodeSize: 64,40
-ValueState: 2,397,27,796,701,0,MIDM
+ValueState: 2,2089,104,796,701,0,MIDM
 NodeColor: 65535,1,1
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [Spatial_ID,PV_Sectors]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [PV_Sectors]
+Att__TotalsIndex: [PV_Sectors,Spatial_ID]
 
 FormNode Fo1367337507
 Title: Included Area Types
@@ -335,7 +335,7 @@ NodeSize: 64,40
 Variable Min_Facility_System1
 Title: Min Facility System Size
 Units: kW
-Definition: System_Size_Constrai[Min_Max=Minimum_Label,PV_Climate_Zone=Spatial_ID_to_CZ_Map[Spatial_ID=Facility_Spatial_ID]]
+Definition: System_Size_Constra2[Min_Max=Minimum_Label,Spatial_ID=Facility_Spatial_ID]
 NodeLocation: 1472,192,1
 NodeSize: 64,40
 
@@ -369,12 +369,12 @@ Date: Mon, Mar 14, 2022 1:06 PM
 NodeLocation: 144,376,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,2497,227,944,480,17,10
+DiagState: 2,391,91,1025,480,17,10
 
 Variable Facility_Spatial_ID
 Title: Facility Spatial ID
-Definition: Facility_Data_Filter[Facility_Parameter='Geographic Region'] & "_sp"
-NodeLocation: 480,48,1
+Definition: Facility_Data_Filter[Facility_Parameter='Geographic Region'] & Sp_ID_Suffix
+NodeLocation: 272,56,1
 NodeSize: 64,40
 ValueState: 2,580,196,424,539,0,MIDM
 
@@ -388,7 +388,7 @@ ValueState: 2,1138,50,422,721,0,MIDM
 Variable Facility_Sector_Filt
 Title: Facility Sector Filtered
 Definition: Facility_Sector[Facility_Identifier=Facility_ID_Filtered]
-NodeLocation: 280,64,1
+NodeLocation: 272,160,1
 NodeSize: 64,40
 
 Constant sqft_per_m2
@@ -495,7 +495,7 @@ NodeLocation: 96,288,1
 NodeSize: 64,40
 WindState: 2,480,230,720,350
 DefnState: 2,700,85,900,689,0,DFNM
-ValueState: 2,2215,13,1014,765,0,MIDM
+ValueState: 2,2259,68,1014,765,0,MIDM
 ReformDef: [Spatial_ID,All_PV_Sectors]
 ReformVal: [Spatial_ID,All_PV_Sectors]
 Att_EditSliceState: [Roof_Dummy,1,All_PV_Sectors,1,Spatial_ID,1]
@@ -513,17 +513,38 @@ Variable Facility_Consumption
 Title: Facility Consumption
 Units: kWh/year
 Definition: Facility_floor_area * EUI_per_m2[Spatial_ID=Facility_Spatial_ID,All_PV_Sectors=Facility_Sector_Filt]
-NodeLocation: 432,200,1
+NodeLocation: 480,160,1
 NodeSize: 64,40
-ValueState: 2,1194,8,253,868,0,MIDM
+ValueState: 2,711,3,253,868,0,MIDM
 Aliases: Alias Al790242851
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Facility_ID_Filtered]
 
 Text Te720960035
 Title: Put back in a consumption fraction threshold?
-NodeLocation: 656,152,-1
+NodeLocation: 864,168,-1
 NodeSize: 104,40
+
+Alias Al1512235299
+Title: Facility Data
+Definition: 1
+NodeLocation: 112,56,1
+NodeSize: 64,40
+Original: Facility_Data1
+
+Constant Sp_ID_Suffix
+Title: Sp ID Suffix
+Definition: "_sp"
+NodeLocation: 496,56,1
+NodeSize: 64,40
+Aliases: FormNode Fo510845219
+
+FormNode Fo510845219
+Title: Sp ID Suffix
+Definition: 0
+NodeLocation: 672,56,1
+NodeSize: 104,16
+Original: Sp_ID_Suffix
 
 Close Misc_Extracted_Data
 
@@ -552,15 +573,6 @@ NodeSize: 60,16
 NodeInfo: 1,,,0,,,,86,,,,,,0
 NodeColor: 65535,31131,19661
 Original: PV_suitability
-
-FormNode Fo1415379491
-Title: System Size Constraints
-Definition: 0
-NodeLocation: 1324,120,1
-NodeSize: 60,16
-NodeInfo: 1,,,0,,,,86,,,,,,0
-NodeColor: 65535,31131,19661
-Original: System_Size_Constrai
 
 FormNode Fo878508579
 Title: Ratio of Parking Area to Floor Area
@@ -628,14 +640,6 @@ Definition: 1
 NodeLocation: 1472,72,1
 NodeSize: 64,40
 Original: All_Spatial_ID_to_CZ
-
-Alias Al742934051
-Title: System Size Constraints
-Definition: 1
-NodeLocation: 1320,72,-3
-NodeSize: 64,40
-NodeColor: 65535,31131,19661
-Original: System_Size_Constrai
 
 Alias Al1380468259
 Title: PV kWh per KW DC
@@ -876,13 +880,13 @@ NodeSize: 64,40
 Original: Scale_PV_Size_by_Cov
 
 Constant Co2
-NodeLocation: 328,600,1
+NodeLocation: 200,568,1
 NodeSize: 64,40
 
 FormNode Fo304836131
 Title: Technical PV Potential
 Definition: 1
-NodeLocation: 1508,704,1
+NodeLocation: 308,696,1
 NodeSize: 188,16
 NodeColor: 65535,1,1
 Original: Technical_PV_Potenti
@@ -890,7 +894,7 @@ Original: Technical_PV_Potenti
 FormNode Fo1378577955
 Title: Total PV kW DC potential
 Definition: 1
-NodeLocation: 1492,672,1
+NodeLocation: 292,664,1
 NodeSize: 172,16
 Original: Total_PV_kW_DC_poten
 
@@ -915,7 +919,7 @@ Att_ResultSliceState: [Area_Type,0,Spatial_ID,0,PV_Sectors,0]
 FormNode Fo1835757091
 Title: PV Tech Potential Percentage of Total
 Definition: 1
-NodeLocation: 1536,736,1
+NodeLocation: 336,728,1
 NodeSize: 216,16
 Original: PV_Tech_Potential_Pe
 
@@ -940,9 +944,69 @@ Att_ResultSliceState: [PV_Sectors,21,Spatial_ID,0,Area_Type,0]
 FormNode Fo954953251
 Title: Total PV MW DC Potential
 Definition: 1
-NodeLocation: 1512,768,1
+NodeLocation: 312,760,1
 NodeSize: 192,16
 Original: Total_PV_MW_DC_Poten
+
+Constant System_Size_Constra2
+Title: System Size Constraints
+Units: kW
+Definition: Table(Spatial_ID,Area_Type,Min_Max)(~
+250,5000,~
+250,5000,~
+250,5000,~
+250,5000,~
+250,5000,~
+250,5000,~
+250,5000,~
+250,5000,~
+250,5000)
+NodeLocation: 1312,72,1
+NodeSize: 64,40
+WindState: 2,195,105,720,350
+DefnState: 2,299,370,629,301,0,DFNM
+NodeColor: 65535,1,1
+ReformDef: [Area_Type,PV_Climate_Zone]
+Att_EditSliceState: [Min_Max,1,Spatial_ID,1,Area_Type,3]
+
+Variable Consumption_by_Sect1
+Title: Consumption by Sector from Facility Data
+Definition: MdTable(Consumption_by_Type,Facility_ID_Filtered,Conglomeration_Index,conglomerationFn:"Sum" )
+NodeLocation: 440,864,1
+NodeSize: 64,40
+ValueState: 2,2702,202,866,680,0,MIDM
+Aliases: Alias Al1082319139
+ReformVal: [Spatial_ID,All_PV_Sectors]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [All_PV_Sectors,Spatial_ID]
+Att_ResultSliceState: [Included_Area_Types,3,All_PV_Sectors,1,Spatial_ID,1]
+
+Variable Consumption_by_Type
+Title: Consumption by Type
+Definition: Table(Conglomeration_Index)(Facility_Spatial_ID,Facility_Sector_Filt,Facility_Consumption)
+NodeLocation: 280,864,1
+NodeSize: 64,40
+ValueState: 2,2275,333,416,303,,MIDM
+
+Variable Building_Count_from_
+Title: Building Count from Facility Data
+Definition: MdTable(Consumption_by_Type,Facility_ID_Filtered,Conglomeration_Index,conglomerationFn:"Count" )~
+* (1+Building_Stock_Growt)^(Building_Stock_Year - Year_of_Consump_Data)
+NodeLocation: 280,960,1
+NodeSize: 64,40
+ValueState: 2,2464,139,866,680,0,MIDM
+Aliases: Alias Al638771491
+ReformVal: [Spatial_ID,All_PV_Sectors]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [All_PV_Sectors,Spatial_ID]
+Att_ResultSliceState: [Included_Area_Types,3,All_PV_Sectors,1,Spatial_ID,1]
+
+Constant Building_Stock_Growt
+Title: Building Stock Growth Rate
+Definition: 0.57%
+NodeLocation: 88,1056,1
+NodeSize: 64,40
+NodeColor: 65535,1,1
 
 Close Facility_Level_Area_
 

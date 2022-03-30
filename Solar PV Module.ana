@@ -403,15 +403,15 @@ ELSE LinearInterp(EOY_Date_for_Econ_Yr, Applied_PV_LRMS, Time_Solar_PV, Annual_E
 NodeLocation: 656,296,1
 NodeSize: 64,40
 WindState: 2,429,4,1158,657
-ValueState: 2,381,95,900,681,1,MIDM
+ValueState: 2,407,117,900,681,1,MIDM
 Aliases: Alias Al87752227, FormNode Fo33701411
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:4~
 Att_GraphIndexRange PV_Spatial_ID:1,1~
 Att_GraphValueRange LRMS_by_PV_Time:1,,1,,,,,0,0.01937572926282883,0
-ReformVal: [Time_Solar_PV,System_Types]
+ReformVal: [Time_Solar_PV,PV_Sectors]
 NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Variable Clipboard_NewConstr_
-Att_ResultSliceState: [Area_Type,1,PV_Spatial_ID,1,PV_Sectors,2,System_Types,2,Time_Solar_PV,193]
+Att_ResultSliceState: [Area_Type,1,PV_Spatial_ID,2,System_Types,1,PV_Sectors,2,Time_Solar_PV,193]
 
 Variable Payback_Accept_Curve
 Title: Payback Acceptance Curve
@@ -1810,67 +1810,12 @@ NodeColor: 65535,65535,65535
 AcpStyles: Show_index_menus:yes~
 Show_description:20
 
-Variable Tech_Potl_KW_DC
-Title: Tech Potl KW DC
-Definition: Aggregate(Eligible_PV_Stock_fo / m2_usable_area_per_k, Climate_Zone_Map,PV_Spatial_ID,PV_Climate_Zone)
-NodeLocation: 320,88,1
-NodeSize: 64,40
-ValueState: 2,311,144,1137,736,0,MIDM
-ReformVal: [Area_Type,PV_Sectors]
-NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [PV_Sectors,PV_Climate_Zone]
-Att_ResultSliceState: [Time_Solar_PV,1,PV_Climate_Zone,0,PV_Sectors,1,Area_Type,3]
-
-Variable Tech_Potl_KWh_Solar_
-Title: Tech Potl KWh Solar PV
-Units: MWh
-Definition: local x:=Tech_Potl_KW_DC * PV_Production_per_kW / 1000;~
-x[Area_Type=Included_Area_Types]
-NodeLocation: 480,88,1
-NodeSize: 64,40
-ValueState: 2,489,39,932,753,1,MIDM
-ReformVal: [Time_Solar_PV,PV_Sectors]
-NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [PV_Sectors,Included_Area_Types]
-Att_ResultSliceState: [Time_Solar_PV,1,Included_Area_Types,0,PV_Sectors,1,PV_Climate_Zone,1]
-
 Alias Al464260131
 Title: Cust Load Total by PV Clim Zone
 Definition: 1
 NodeLocation: 480,192,1
 NodeSize: 64,40
 Original: Cust_Load_Total_by_P
-
-Variable Compare_PV_Potl_and_
-Title: Compare PV Potl and Load
-Units: MWh/year
-Definition: [Tech_Potl_KWh_Solar_,Customer_Load_by_PV_]
-NodeLocation: 672,88,1
-NodeSize: 64,40
-ValueState: 2,622,76,818,751,0,MIDM
-GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:1~
-{!50400|Att_AxisOrKeyTitle Compare_PV_Potl_and_:MWh/Year}~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_StackedBar Graph_Primary_Valdim:0~
-Att_GraphValueRange Compare_PV_Potl_and_:1,,1,,,,,0,4521433.20441246,0~
-BarOverlap:50~
-{!40600|BarOverlap4ValueKey:50}
-ReformVal: [Self,PV_Sectors]
-NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Self,PV_Sectors]
-Att_ResultSliceState: [Time_Solar_PV,3,PV_Climate_Zone,1,Included_Area_Types,1,PV_Sectors,1,Self,1]
-{!40300|Att_SlicerPopupSize: 247,48}
-{!40600|Att_StackingIndex: Compare_PV_Potl_and_}
-{!40600|Att_ClusterIndex: Null}
-
-Variable Customer_Load_by_PV_
-Title: Customer Load by PV CZ
-Units: kWh/yr
-Definition: local x:=Aggregate(Consumption_by_Secto[All_Sectors=PV_Sectors,All_Spatial_ID=PV_Spatial_ID,Building_Stock_Year=PV_Year_Map],All_Spatial_ID_to_CZ[All_Spatial_ID=PV_Spatial_ID],PV_Spatial_ID,PV_Climate_Zone)  / 1000;~
-x[Area_Type=Included_Area_Types]
-NodeLocation: 672,192,1
-NodeSize: 64,40
-ValueState: 2,268,79,761,595,,MIDM
 
 Index Included_Area_Types
 Title: Included Area Types
@@ -2002,7 +1947,7 @@ Author: CWelch
 Date: Sun, Jan 9, 2022 3:29 PM
 NodeLocation: 632,208,1
 NodeSize: 72,56
-DiagState: 2,240,47,1263,618,17,10
+DiagState: 2,2183,34,1263,618,17,10
 
 Variable Initial_PV_Adopters1
 Title: Initial PV Adopters
@@ -2134,13 +2079,13 @@ Definition: Table(Spatial_ID,All_PV_Sectors,Area_Type)(~
 NodeLocation: 112,472,1
 NodeSize: 64,40
 WindState: 2,375,58,720,350
-DefnState: 2,511,119,734,678,0,DFNM
+DefnState: 2,2507,109,734,678,0,DFNM
 ValueState: 2,309,106,885,732,,MIDM
 Aliases: FormNode Fo1388822819, FormNode Fo1591042339
 NodeColor: 65535,1,1
 ReformDef: [Spatial_ID,All_PV_Sectors]
 TableCellDefault: 0
-Att_EditSliceState: [Area_Type,2,All_PV_Sectors,1,Spatial_ID,1]
+Att_EditSliceState: [Area_Type,3,All_PV_Sectors,1,Spatial_ID,1]
 
 Index All_PV_Sectors
 Att_PrevIndexValue: ['Higher Education','Hospitals','K-12','LG_Air Transportation','LG_Art_Museum','LG_Assisted Living','LG_Community services','LG_Correctional Facility','LG_Unique Education','LG_Government_Office','LG_Housing','LG_Library','LG_Other Transportation','LG_Police and Fire Department','LG_Recreational','LG_Water Supply & Waste Water','SA_Air Transportation','SA_Art_Museum','SA_Assisted Living','SA_Community services','SA_Correctional Facility','SA_Courthouse_Probation','SA_Unique Education','SA_Government_Office','SA_Housing','SA_Library','SA_Other Transportation','SA_Police and Fire Department','SA_Recreational','SA_Water Supply & Waste Water']
@@ -4626,7 +4571,7 @@ Author: JamesMilford
 Date: Fri, Oct 25, 2019 8:28 AM
 NodeLocation: 88,344,1
 NodeSize: 64,40
-DiagState: 2,94,21,1363,625,17,10
+DiagState: 2,264,95,1363,625,17,10
 AcpStyles: Frame_Node: Scaling_Frame
 
 Variable Normalized_Load_Shap
@@ -4696,11 +4641,11 @@ Original: Loadshape_Map
 Variable Cust_Load_Total_by_P
 Title: Cust Load Total by PV Clim Zone
 Units: kWh/year
-Definition: local x:=Aggregate(Consumption_by_Secto[All_Sectors=PV_Sectors,All_Spatial_ID=PV_Spatial_ID,Building_Stock_Year=Year_of_Consump_Data],All_Spatial_ID_to_CZ[All_Spatial_ID=PV_Spatial_ID],PV_Spatial_ID,PV_Climate_Zone);~
+Definition: local x:=Aggregate(Consumption_by_Sect2[All_PV_Sectors=PV_Sectors,Spatial_ID=PV_Spatial_ID],All_Spatial_ID_to_CZ[All_Spatial_ID=PV_Spatial_ID],PV_Spatial_ID,PV_Climate_Zone);~
 IF x=0 THEN 1 ELSE x {put in a nominal value to avoid downstream errors if no load for a given sector/spatial ID combination}
 NodeLocation: 424,88,1
 NodeSize: 64,40
-ValueState: 2,292,117,738,662,0,MIDM
+ValueState: 2,292,117,889,662,0,MIDM
 Aliases: Alias Al464260131, Alias Al497814563
 ReformVal: [PV_Climate_Zone,PV_Sectors]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
@@ -15507,7 +15452,7 @@ Title: Cost to Value Ratio Method
 Definition: MultiChoice(Self,3,returnList:0)
 NodeLocation: 712,64,1
 NodeSize: 64,40
-Aliases: FormNode Fo2025340451, FormNode Clipboard_Fo20253404, FormNode Fo1741512995
+Aliases: FormNode Fo2025340451, FormNode Fo1741512995
 NodeColor: 65535,65531,1
 {!40300|DomainExpr: Discrete('Old','Manual PPA Inputs','Simple LCOE Calculator')}
 
@@ -15633,7 +15578,7 @@ Units: $/kWh
 Definition: [Simple_LCOE_of_PV,A_kWh_value_of_solar]
 NodeLocation: 304,496,1
 NodeSize: 64,40
-ValueState: 2,291,41,1172,770,1,MIDM
+ValueState: 2,321,80,1172,770,1,MIDM
 Aliases: FormNode Fo89932067
 GraphSetup: Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2021,2030,0~
 Att_GraphValueRange Simple_LCOE_vs_Value:1,,1,,,,,0.17367490082979203,0.2686929821968079,0~
@@ -15641,7 +15586,7 @@ Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [Annual_Econ_Time,Self]
 NumberFormat: 2,F,4,3,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: []
-Att_ResultSliceState: [Area_Type,1,PV_Sectors,1,System_Types,1,PV_Climate_Zone,3,Self,1,Annual_Econ_Time,11]
+Att_ResultSliceState: [Area_Type,1,PV_Sectors,1,System_Types,1,PV_Climate_Zone,2,Self,1,Annual_Econ_Time,11]
 {!40300|Att_SlicerPopupSize: 247,64}
 
 Text Te1891843619
@@ -16422,7 +16367,7 @@ DefnState: 2,857,228,346,508,,DFNM
 ValueState: 2,2185,301,416,303,,MIDM
 Aliases: FormNode Fo1535655040, FormNode Fo1542091914
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
-{!40300|Att_SlicerPopupSize: 1330,784}
+{!40300|Att_SlicerPopupSize: 1335,784}
 
 Index Market_Share_Metric
 Att_PrevIndexValue: ['Cost of Electricity Ratio','Simple Payback Time','Static Long-Run Market Share']
@@ -16567,15 +16512,17 @@ Title: PV Climate Zone
 Definition: ['Downstate_cz','Long Island/Hudson Valley_cz','Upstate_cz']
 NodeLocation: 960,64,1
 NodeSize: 64,40
+WindState: 2,707,203,665,594
 ValueState: 2,491,274,416,303,,MIDM
-{!40300|Att_SlicerPopupSize: 622,84}
+{!40300|Att_SlicerPopupSize: 627,84}
 
 Constant All_Spatial_ID_to_CZ
 Title: All Spatial ID to CZ Map
 Definition: Table(All_Spatial_ID)(Null,Null,'Downstate_cz','Long Island/Hudson Valley_cz','Upstate_cz')
 NodeLocation: 960,152,1
 NodeSize: 64,40
-DefnState: 2,188,160,580,748,,DFNM
+WindState: 2,2679,167,720,350
+DefnState: 2,2709,250,590,372,0,DFNM
 ValueState: 2,1103,362,565,291,0,MIDM
 Aliases: Alias Al1551412556, FormNode Fo1551412556, Alias Al1159025699, FormNode Fo1540240591, Alias Al1428421155
 
@@ -16584,7 +16531,7 @@ Title: Climate Zone Map
 Definition: All_Spatial_ID_to_CZ[All_Spatial_ID=PV_Spatial_ID]
 NodeLocation: 960,264,1
 NodeSize: 64,40
-ValueState: 2,521,158,887,303,0,MIDM
+ValueState: 2,2835,428,590,205,0,MIDM
 
 Index All_Technologies
 Att_PrevIndexValue: ['Solar PV','Solar PV + Storage']
