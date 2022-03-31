@@ -113,7 +113,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,12,0,1586,761,17,10
+DiagState: 2,48,22,1586,710,17,10
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
@@ -135,11 +135,1040 @@ show_definition_in_balloon:yes~
 hover_balloon_delay:300~
 Use_flash_buttons:yes
 
+GraphStyleTemplate Lumidyne_Template
+Title: Lumidyne Template
+GraphSetup: Graph_KeyLabelColor:20224,20224,20224~
+Graph_KeyTextColor:20224,20224,20224~
+Graph_AxisLabelColor:20224,20224,20224~
+Graph_AxisTitleColor:20224,20224,20224~
+Graph_PlotAreaBrush:65280,65280,65280,2,1,65280,65280,65280~
+Grid:3~
+Frame:1~
+Graph_TickDir:2~
+Graph_KeyAreaBrush:65024,65024,65024~
+Graph_OutlineKey:0~
+Graph_HLabelRotation:45~
+Att_ContLineStyle Graph_Primary_Valdim:1~
+ShowKey:1~
+Graph_FrameColor:20224,20224,20224~
+Graph_GridColor:20224,20224,20224~
+Graph_KeyTitleFont:,20,1~
+Graph_KeyFont:,18,1~
+Graph_AxisTitleFont:Arial,20,1
+
+Text GUI_Frame
+NodeLocation: 1128,372,-24
+NodeSize: 432,364
+NodeInfo: 1,0,0,0,0,1,1,,0,,0,,,
+WindState: 2,102,83,476,224
+NodeFont: Arial,24
+AcpStyles: Show_description:30~
+Show_index_menus:yes
+
+Module Mo2
+Author: CWelch
+Date: Tue, Nov 16, 2021 12:28 PM
+NodeLocation: 432,1248,1
+NodeSize: 64,40
+DiagState: 2,-170,335,1774,761,17,10
+AcpStyles: Show_Object:no
+
+{!40404|FreePassObjectCount 5G4nCJrM31tNLh2R}
+Module Bin
+Title: Bin
+Description: Recycle Bin. Drag your discarded objects into here.~
+~
+Unlike deletion, Binned items can be retrieved, and  "Undo" (control-Z) works for items dragged into the Bin. If you put an item into the Bin which has dependents outside the Bin, it will show arrows from the Bin -- a signal that you should either retrieve the item (because it is being used) or drag its dependent(s) into the Bin too.  ~
+~
+When the Bin is full of stuff you are sure you don't need, you can get rid of it permanently: Open the Bin, select all its contents (with Control-A), and delete it (press Delete key).
+Author: Max
+Date: Thu, Jul 31, 2003 3:34 PM
+DefaultSize: 48,24
+NodeLocation: 864,128,0
+NodeSize: 48,32
+NodeInfo: 1,0,1,1,0,0,0,0,0,0,
+DiagState: 1,235,89,501,284,17
+WindState: 2,71,235,471,322
+Pict: (0ADC00000000001F001D0001280000001D0000001F0000000100180000000000A80A0000C40E0000C40E0000000000000000000044465145444E47434E48444F47454F474A52484A524948524B48524C4C53494A50484B4F44474843454544454543434543414743414A42434B3F424A3F424A3E41493E414940414B43444D42444C43464E44464F4548500046445046424E48444F49455045454E45474F45494E47485244454F43444C3E3F45393D403036362F353532343631353836383D3B3B413D3F463D3F483E424B3E424C3D414B40434D42444D41444945464C46484F45484D0046454F44454E46464F45454D44464D43474C43484E43444D3939412E303525272A56595254564E54554E1B1C1D1C1E1F1F20222425282A2D3030323734393F363A423A3F4841434D42444D42454A46464C47494E47494E0044464E43464D43464C44484D454A4C434A4D4047494D4F50ACAC98E2DEC2FFF4D0FFF1CBFFEDC5FFEFC9FFF1CBFFF4CFC4BFA4979886616258292A2A1F212324282B2D303436393F3E404845464B47494C484A4E47494D0044464E43464D42464D44494E454A4E474C4F797971F1EDCEFFF2CDFFECC4FFE9C0FFE5BAFFE2B7FFE2B6F3D1B0E2B9A6E6BEA8FFE4B9FFEDC6FFF7D3B5B59D5F6057191B1D2223282E2F353C3C4145454B4A4B50474A4F0045444F45454F464751464851484A5246484EF2ECCBFFF2CDFFEFC9FFE9C0FFE5BBFFE2B7EBC8B3D8ADA8DAAFAFF2CECED6A7A7F2D0B0FFE2B7FFE8BEFFEBC3FFF6D2E1DFC25F5F551D1D212A292F3A3A4145464E484A53004244524445534445534848544849537D776EFCF0C8FFF0CAFFECC4FFE8BFF9DBB9E0BDB8D9B3B3D9B2B2EBC4C4CFDBBEF9E4E4E5C4BCFFF1DBFFF2DDFFF1D8FFF1CDFFF3CDFFFBD8A6A69328282927292D3A3E43464A4E004344524445534445534848574A4A58B39B7EF2CC8FFFF6D2FFEBC3F5DDC3E3C4C2DFBFBFDEBEBEDCB9B9ECC7C781C3778FCE8BEFF4EAAFDFAF8FD28FBFE6BFFFFEFAFFF8DCFFF8D4FFFDDCD2D2B82A2A2B323235444649004547514546524646544A4A59494A57E9BD86EEB269F8DEACFBEFD1E7CFCFE5CCCCE4CACAE2C5C5DFC0C0F1CECE81C377019901119F1101990101990101990131AC31CFECC6FFFBDBFFFDDCFFFFDE8B8B7C2A2A2C43434700464952484953494954494954686363F4BE7FF1B672F1B979EDD9D4ECD9D9EBD7D7E8D1D1E5CDCDE5CBCBF8D5D581CA7E019901019901019901019901019901019901119F11DFF2CEFFFFDDFFFFDEC2B3922123263D414400464951484A53494A544849539E8E78F3B978F3B978F3D5BDF2E5E5F1E2E2EEDEDEECD9D9ECD8D8E4CACAF5CFCF81CC8101990101990101990151B95181CC8141B34101990141B33FFFFAD8F8D39EF8D8A41C2023383E4300474953474953484B53484A52CAAB85F7BF82F8CC9EF9F2F2F7EEEEF4E9E9F2E5E5F1E4E4E4C9C9D5ACACF6D0D081CC810199010199010199018FD28FFEFCF6FDF9E99FD99B019901BFDFA6FACF99F9CF992A2D2E32383D004C4C574A4C554C4E56494B53FCCE99FAC48BFEF0E1FDFAFAFBF5F5F9F2F2F8F0F0EDDCDCD2A5A5E2B6B6FFD6D681CC81019901019901019901019901CFECCFFDF9E0FCF6DA9FD99861BE5AFDDAAAFBC891545550313439004A4C564A4C55494B53746C65FECC98FDCFA0FFFFFFFFFFFFFFFFFFFEFDFDF8F1F1D1A3A3D2A7A7ECBFBFCFDDC0FFE5E5CFDFC2BFE2BC9FD99F81CC819FD99FFFFFFBFCF4D8FFFDE371C66FFFDFB1FDC9947071652E2F34004B5159484E55474B539F8D79FFCC99FFECD4FFFFF9FFFFFCFFFFFFFFFFFFDFBFBFD1A4A4D5ABABECC0C081BF74DFE2CFFAE6C8FEFCE3DFF2DF51B95181CC8181CC80AFDFAABFE6B2BFE4AEFFE6BEFFCC998C806C282C30004E565E4850564A5158CEB08FFFD1A0FFFCEEFFFFF6FFFFF8FFFFF8F9F2EFCD9B9BD2A6A6D7B0B0E3BBBBCFD6B931AB2FFFF0EDFDF4D9FFFFF571C671019901019901019901019901FFF8DCFFDAABFFD1A0B5A88C24292D00565D644D5258494C51FFD8A9FFE4BFFFFFF0FFFFF2FFFFF3FFFFF5E9D2CECFA0A0D3A8A8D9B3B3DEBCBCFBD9D921A62141B240EFF5ECFEFAEFFFFFFF31AC31019901019901019901FFF8DCFFD9ABFFD9ABC5B19322262800595C654E51596D6763FFDEB2FFF3D6FFFFEBFFFFECFFFFEFFFFFF2D9B3AFDAB6B3EAD6D1E1C3C1DFBFBFEDCECE9FCB91019901119F1171C67171C671119F11019901019901019901FFF8DCFFE0B5FFE0B5FFECC4212327005659624D52598C7E71FFEBC2FFFEE3FFFFE7FFFFEAFFFFEBFFFFEBF5ECDDFFFFF1FFFFF2FFFFF3C8DFEEE2CECFF8DFDF61BE5F019901019901019901019901019901019901019901FFF8DCFFEBC2FFEBC2FFF0C91F2124004E545E4A515AAD9C86FFF4CFFFFFE1FFFFE4FFFFE5FFFFE6FFFFE8FFFFEBFFFFEBFFFFEDFAFDF2D9F2FFDBEBF5ECDBDCFCECEC71C36E01990101990101990101990131AC31019901FFF8DCFFF5D8FFF3CDFFF4CF575850004B4F5A4A505BCFB999FFFBD8FFFDDBFFFDDBFFFDDCFFFDDEFFFFE2FFFFE4FFFFE7FFFFEAFDFEF0F6FCFFF6FCFFF5EFF0F2E5E5FBF4F4EFF8EEBFE6BFBFE6BFDFF2DEFFFFF541B33FFFF8DCFFFDEFFFFAD7FFFAD7565750004C4E5B4D515EE7C9A2FFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFCFFEBFAFFECFCFFF2F9FFFFF9FFFFF9FFFFF3EAEAF9F2F2FDFBFBFFFFFFFFFFFFFFFFFFFFFFFCEFF9DBFFFADCFFFFFBFFFFDEFFFFDE808173004B4D5A4C505DFFD9AAFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEE4FFF5D9FFFFDCFFFCD9FFFFD9FFFFD9FFFFECF8F1FBF5EAFFFEEDFFFFEFFFFFEFFFFFF5FFFFFDFFFFFDFFFFFBFFFFF7FFFFE0FFFFDE8E8E7E004D4F5C4D515EE8C59FFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEBCFFFDB9FFFFC8FBF3DBF7E5F2F6E0FBF7E3F5F4EBD4A9A9E3C7C7F1E4E4FFFFFFFFFFFBF4EFD6FFFFE6FFFFDEFFFFDEFFFFDEFFFFDE9A9A89004F54605055639B8879FFDFB3FFFCDAFFFFDEFFFFDEFFFFDEFFF9D5FFF3CED9EED6F2F0D9FFF7E7FFFEFBFFFFFFFFFFFFFFFFFFE4C9C9E9D4D4F7EFEFFFFFFFD9F2FFEDBF88F8C78EFCE0B2FFFBD8FFFFDEFFFFDEC5C5AD00535965555C66565C65817773BEA288D2B391D3B392AF9C85998D7C718D98F9FFFFF9FFFFF9FFFFF9FFFFF9FFFFF9FFFFF9FFFFE6D1D1EDDCDCF8FAFAF9FFFFC2E0E7F7BF82F8C185F9C287FAC88FFEEDC4FFFFDEC5C5AD00545A66565D68575E6859616A586069565D67535B6550595F4F585E78A3B5E5FFFFE5FFFFE5FFFFE5FFFFE5FFFFE5FFFFE5FFFFE5E2E2E9F4F4E5FFFFE5FFFFC6D0C1F8C185F9C287FAC48AFBC58DFBC68FFDDDAFC5C5AD00565A69585D6A58616B5C666E5B6A6F5A6A7157676D505F634F5A6074A6B9A9E2FF93E2FFA9E2FFCCFFFFCCFFFFCCFFFFCCFFFFCCFFFFCCFFFFCCFFFFBFF9FFDDC39CF9C287FAC48AFBC58DFBC68FFCC892FDC994E1C59E00595B6A5A5D6C5B616E5C67715F6D7464747B627577546568505E624F5B614E5A6049525B516B7DA9E2FF93E2FF93E2FFB4FCFFB9FFFFB9FFFFB9FFFF97E2F1F9C287FAC48AFBC58DFBC68FFCC892FDC994FFCB98BD9B7A005B5D6A5C606D5D626F5E6673616B76606E765F6E765A696D55646A515E644C595F48535B4A535C4D545D4D525C4D535A58799193E2FF95E0FFA6FFFF71B2C354514CB59676FBC68FFCC892FDC994FFCB98F2C49469605F00595E6C5C626E5B646E5D666F616A71626C73616C70616D735B666D535D664E58634C54604C525E4E545F4E535E4D525B4F515B50515C535B696296AE5D84984C4E594D505A5B5B5D85776CA48E7783756C59585F51556000)
+FontStyle: Arial,15
+Att_PreLoadScript: {!40404|FreePassObjectCount 5G4nCJrM31tNLh2R}
+{!40400|Att_clearTypeFonts: 0}
+
+Close Bin
+
+Text Te1876272323
+Title: Candidate for Deletion
+NodeLocation: 1048,132,-1
+NodeSize: 264,108
+NodeInfo: 1,,,,1
+
+Alias Al1226024131
+Title: Suitability for Sector
+Definition: 1
+NodeLocation: 856,336,1
+NodeSize: 64,40
+NodeColor: 39321,1,16386
+Original: Suitability_for_Sect
+
+Variable Nodecolor_for_change
+Title: Nodecolor for change
+Definition: 1
+NodeLocation: 952,712,1
+NodeSize: 64,40
+NodeColor: 65535,1,1
+
+Variable Nodes_to_change
+Att_PrevIndexValue: [Include_Output_Type,EV_Sect_Label,Intercon_Strt_Yr,Intercon_End_Yr,Fact_Column_Indices,Map_Intercon_to_Sect,Min_and_Max_System_S,Min_Required_Install,Stored_DC_CapInstall,Stored_AC_CapInstall,Avg_AC_DC_CZ_Fcast,PV_AC_to_DC_Factor,Te1541505644,Saved_NTG_Ratio,NewConstr_Mkt_Share,Force_NewCon_Market_,Market_Share_Method,Impact_Scaling,Event_Applicability,Use_Hist_PV_Intercon,R2_Threshold1,Num_of_Periods_Avg,PV_Sim_Start_Year,PV_Sim_End_Year,Select_Customer_Rate,Num_of_Rate_Vintages,NonCoincDmd_Attribs,OnPeak_Dmd_Attribs,Energy_Rate_Attribs,Map_Component_to_Prd,Stored_PV_Pct_ITC,Assume_Third_Party_O,Base_Year_for_O_M_In,Base_Yr_of_Cost_Decl,BaseYr_Strg_Costs,Map_Charges_to_Sect,Map_Costs_to_Sector,Select_System_Types,Year_of_Consump_Data,Use_facility_level_d,Tier_Period_Labels,Profiles_to_Evaluate,Save_Static_ProfName,Save_Daily_Profiles,Use_Peak_in_Profile,Static_Profile_Names,Te1554180641,Reported_Avg_Costs,Saved_kWh_Ratings,Source_of_Ratio,SGIP_Sector_Map,StorageSyst_Included,Rates_Included,ClimZones_Included,Months_Included,Estim_Storage_Add_On,Select_Strg_Rate1,Select_Strg_System1,Map_Tier_Wts_to_Str2,Map_Tier_Wts_PrePos2,Fruit_2,BESS_Sim_Start_Year,BESS_Sim_End_Year,BESS_Economics_Map,AESS_Sector_Map,Reported_Avg_Costs2,Source_of_Ratio2,Rule21_Sector_Map,Market_Share_Method1,R2_Threshold_BESS,BESS_Calibration_Com,Nodecolor_to_updates]
+Title: Nodes to change
+Definition: update_nodes_to_chan;~
+#FindObjects(Color,attribute:'NodeColor')
+NodeLocation: 912,456,1
+NodeSize: 64,40
+ValueState: 2,172,224,429,497,0,MIDM
+Aliases: FormNode Fo1730677955, FormNode Fo1725779139
+{!40700|Att_CellFormat: CellFormats(CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,73,header:0),CellSpan(Nodes_to_change,CellFill(0xffffff80),1,73,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,73,header:0))}
+
+Variable Color
+Title: Color
+Definition: NodeColor of Nodecolor_for_change
+NodeLocation: 1016,584,1
+NodeSize: 64,40
+ValueState: 2,1262,174,416,303,,MIDM
+
+Variable NonRes_Label_Outputs
+Title: NonRes Label Outputs
+Definition: #FindObjects(outputOf:handle(Non_Res_Label))
+NodeLocation: 112,616,1
+NodeSize: 64,40
+ValueState: 2,778,103,395,523,0,MIDM
+
+Variable Res_Label_Outputs
+Title: Res Label Outputs
+Definition: #FindObjects(outputOf:handle(Residential_Label))
+NodeLocation: 112,712,1
+NodeSize: 64,40
+ValueState: 2,363,103,395,523,0,MIDM
+
+Variable Va12
+Definition: #SetUnion([\NonRes_Label_Outputs, \Res_Label_Outputs])
+NodeLocation: 264,712,1
+NodeSize: 64,40
+ValueState: 2,1087,59,393,617,0,MIDM
+
+Text Te238818499
+Description: 1. Input % eligib le by spatial ID, or no?
+NodeLocation: 164,108,-1
+NodeSize: 116,84
+
+Text Te185029827
+Title: Divergence for SDGE
+Description: 1. Meters/Premise inputs & calculations~
+2. Check double counting of res homeownerhip rate and single family home percentage
+NodeLocation: 1260,608,-1
+NodeSize: 140,80
+
+Variable update_nodes_to_chan
+Title: update nodes to change
+Definition: 0
+NodeLocation: 1136,472,1
+NodeSize: 64,40
+
+Button update_nodes_to_cha1
+Title: update nodes to change
+NodeLocation: 1288,472,1
+NodeSize: 64,40
+OnClick: (update_nodes_to_chan:= not update_nodes_to_chan)
+
+FormNode Fo1730677955
+Title: Nodes to change
+Definition: 1
+NodeLocation: 1200,384,1
+NodeSize: 120,16
+Original: Nodes_to_change
+
+Variable All_Constants_Decisi
+Title: All Constants & Decisions
+Definition: update_nodes_to_chan;~
+#FindObjects(Class: {'Constant','Decision',}'Index')
+NodeLocation: 424,632,1
+NodeSize: 64,40
+ValueState: 2,2129,51,511,817,0,MIDM
+
+Variable Outputs_of_All_Secto
+Title: Outputs of All Sectors
+Definition: update_nodes_to_chan;~
+outputs of All_Sectors
+NodeLocation: 424,736,1
+NodeSize: 64,40
+ValueState: 2,248,106,376,557,,MIDM
+
+Variable Intersection
+Title: Intersection
+Definition: #SetIntersection( [\All_Constants_Decisi,\Outputs_of_All_Secto])
+NodeLocation: 576,736,1
+NodeSize: 64,40
+ValueState: 2,1278,98,417,759,0,MIDM
+
+Variable Nodecolor_To_check
+Title: Nodecolor To check
+Definition: 1
+NodeLocation: 1392,800,1
+NodeSize: 64,40
+ValueState: 2,276,282,416,303,,MIDM
+NodeColor: 65535,1,1
+
+Variable Colored_nodes_to_fix
+Title: Colored nodes to fix
+Definition: update_nodes_to_chan;~
+#FindObjects((NodeColor of Nodecolor_To_check),attribute:'NodeColor')
+NodeLocation: 1232,800,1
+NodeSize: 64,40
+ValueState: 2,433,80,702,801,0,MIDM
+Aliases: FormNode Fo1861831875
+ReformVal: [Undefined,Self]
+
+Variable Uncolored_Nodes
+Title: Uncolored Nodes
+Definition: #SetDifference(  \#SetDifference(\Intersection,\Colored_nodes_to_fix),\Already_Imported)
+NodeLocation: 688,472,1
+NodeSize: 64,40
+ValueState: 2,2021,11,395,831,0,MIDM
+Aliases: FormNode Fo1278086339
+
+Variable Already_Imported
+Title: Already Imported
+Definition: outputs of Excel_Import_Setting
+NodeLocation: 576,832,1
+NodeSize: 64,40
+ValueState: 2,229,210,415,439,0,MIDM
+
+FormNode Fo1278086339
+Title: Remainder to Review
+Definition: 1
+NodeLocation: 368,832,1
+NodeSize: 136,16
+Original: Uncolored_Nodes
+
+FormNode New1771965635
+Title: Excel Import Configuration
+Definition: 0
+NodeLocation: 1172,284,1
+NodeSize: 212,20
+NodeColor: 49344,49344,49344
+Original: Excel_Import_Setting
+
+Index All_Nodes_to_Review
+Att_PrevIndexValue: [Opt_Sectors,Pct_Error_Range,Abs_Error_Range1,Infeas_Spat_ID_PV,PV_Sectors,EV_Sectors,Infeas_Spat_ID_EV,Result_Range,Valid_Rows1,Storage_Opt_Scenari1,All_BESS_Types,BESS_Sectors,Abs_Error_Range2,Pct_Error_Range1,Abs_Error_Range3,Storage_Opt_Scenario,Infeas_Spat_ID_BESS]
+Title: All Nodes to Review
+Definition: #SetDifference(\Intersection,\Already_Imported)
+NodeLocation: 456,928,1
+NodeSize: 64,40
+ValueState: 2,3164,0,423,728,0,MIDM
+
+Variable Nodes_Already_Review
+Title: Nodes Already Reviewed
+Definition: Table(All_Nodes_to_Review)(Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
+NodeLocation: 768,936,1
+NodeSize: 64,40
+WindState: 2,98,82,720,558
+DefnState: 2,1395,90,448,626,0,DFNM
+ValueState: 2,2883,20,416,303,0,MIDM
+Aliases: FormNode Fo1043942595
+TableCellDefault: Checkbox(0)
+OnChange: update_nodes_to_cha1; Left_to_Review
+
+FormNode Fo1043942595
+Title: Nodes Already Reviewed
+Definition: 0
+NodeLocation: 1236,956,1
+NodeSize: 148,20
+Original: Nodes_Already_Review
+
+Variable Left_to_Review
+Title: Left to Review
+Definition: #SetDifference(\Uncolored_Nodes,\subset(Nodes_Already_Review))
+NodeLocation: 904,848,1
+NodeSize: 64,40
+ValueState: 2,162,41,414,826,0,MIDM
+Aliases: FormNode Fo2138655939
+
+FormNode Fo2138655939
+Title: Left to Fix
+Definition: 1
+NodeLocation: 1236,916,1
+NodeSize: 148,20
+Original: Left_to_Review
+
+FormNode Fo1861831875
+Title: Colored nodes to fix
+Definition: 1
+NodeLocation: 1236,876,1
+NodeSize: 148,20
+Original: Colored_nodes_to_fix
+
+Variable Va9
+NodeLocation: 304,920,1
+NodeSize: 64,40
+
+Variable Color_for_adding_to_
+Title: Color for adding to import script
+NodeLocation: 152,920,1
+NodeSize: 64,40
+NodeColor: 65535,1,1
+
+Variable Nodecolor_to_updates
+Title: Nodecolor to updates sector specific inputs
+NodeLocation: 152,1016,1
+NodeSize: 64,40
+NodeColor: 65535,65531,1
+
+FormNode Fo1725779139
+Title: Nodes to change
+Definition: 1
+NodeLocation: 1236,992,1
+NodeSize: 148,16
+Original: Nodes_to_change
+
+FormNode Fo1521323555
+Title: Use Storage Decision Var
+Definition: 0
+NodeLocation: 252,40,1
+NodeSize: 204,16
+Original: Use_Storage_Decisio2
+
+Close Mo2
+
+Module NYPA_specific_output
+Title: NYPA specific output
+Author: CWelch
+Date: Tue, Mar 29, 2022 11:58 AM
+NodeLocation: 280,1232,1
+NodeSize: 64,40
+DiagState: 2,-226,101,1733,771,17,10
+
+Alias Al1294704163
+Title: PV Cumulative Adoption
+Definition: 1
+NodeLocation: 584,88,1
+NodeSize: 64,40
+NodeColor: 65535,1,1
+Original: PV_Cumul_Adoption
+
+Constant Assumed_NYPA_fractio
+Title: Assumed NYPA fraction of natural market
+Definition: Table(Spatial_ID,Area_Type,All_PV_Sectors)(~
+0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
+0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
+0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
+0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
+0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
+0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
+0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
+0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
+0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
+0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
+0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
+0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2)
+NodeLocation: 568,240,1
+NodeSize: 72,40
+DefnState: 2,277,155,1195,663,0,DFNM
+ValueState: 2,1167,229,624,551,,MIDM
+Aliases: FormNode Fo471309859, FormNode Fo517300515
+NodeColor: 65535,1,1
+ReformDef: [Spatial_ID,All_PV_Sectors]
+Att_EditSliceState: [Area_Type,1,All_PV_Sectors,1,Spatial_ID,1]
+
+Variable NYPA_Enabled_PV_Adop
+Title: NYPA Enabled PV Adoption
+Units: MW-DC
+Definition: Assumed_NYPA_fractio[All_PV_Sectors=PV_Sectors] * PV_Cumul_MW_DC
+NodeLocation: 744,240,1
+NodeSize: 64,40
+ValueState: 2,356,10,1231,711,1,MIDM
+GraphSetup: ShowKey:2~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+Att_GraphIndexRange Output_Periods:1,,1,,,,10,44278.27083802223,44589.50791597366,0~
+Att_Stacked_Lines Graph_Primary_Valdim:1~
+Att_AreaFill Graph_Primary_Valdim:1~
+{!50000|Graph_SortBySpread:1}
+ReformVal: [PV_Sectors,Spatial_ID]
+Att__TotalsIndex: [PV_Sectors,Spatial_ID,Area_Type]
+Att_ResultSliceState: [Output_Periods,108,Spatial_ID,0,Area_Type,0,PV_Sectors,0]
+{!40600|Att_StackingIndex: Spatial_ID}
+{!40600|Att_ClusterIndex: Null}
+
+Alias Al1661443619
+Title: All PV Sectors
+Definition: 1
+NodeLocation: 496,472,1
+NodeSize: 64,40
+Original: All_PV_Sectors
+
+Index Sectors_Aggregated
+Att_PrevIndexValue: ['Higher Education','Hospitals','K-12','Air Transportation','Art_Museum','Assisted Living','Community services','Correctional Facility','Unique Education','Government_Office','Housing','Library','Other Transportation','Police and Fire Department','Recreational','Water Supply & Waste Water','Courthouse_Probation']
+Title: Sectors Aggregated
+Definition: ['Higher Education','Hospitals','K-12','Air Transportation','Art_Museum','Assisted Living','Community services','Correctional Facility','Unique Education','Government_Office','Housing','Library','Other Transportation','Police and Fire Department','Recreational','Water Supply & Waste Water','Courthouse_Probation']
+NodeLocation: 632,472,1
+NodeSize: 64,40
+{!40300|Att_SlicerPopupSize: 277,252}
+
+Decision Map_All_to_Aggregate
+Title: Map All to Aggregated Sectors
+Definition: Table(All_PV_Sectors)(Choice(Sectors_Aggregated,1,0),Choice(Sectors_Aggregated,2,0),Choice(Sectors_Aggregated,3,0),Choice(Sectors_Aggregated,4,0),Choice(Sectors_Aggregated,5,0),Choice(Sectors_Aggregated,6,0),Choice(Sectors_Aggregated,7,0),Choice(Sectors_Aggregated,8,0),Choice(Sectors_Aggregated,9,0),Choice(Sectors_Aggregated,10,0),Choice(Sectors_Aggregated,11,0),Choice(Sectors_Aggregated,12,0),Choice(Sectors_Aggregated,13,0),Choice(Sectors_Aggregated,14,0),Choice(Sectors_Aggregated,15,0),Choice(Sectors_Aggregated,16,0),Choice(Sectors_Aggregated,4,0),Choice(Sectors_Aggregated,5,0),Choice(Sectors_Aggregated,6,0),Choice(Sectors_Aggregated,7,0),Choice(Sectors_Aggregated,8,0),Choice(Sectors_Aggregated,17,0),Choice(Sectors_Aggregated,9,0),Choice(Sectors_Aggregated,10,0),Choice(Sectors_Aggregated,11,0),Choice(Sectors_Aggregated,12,0),Choice(Sectors_Aggregated,13,0),Choice(Sectors_Aggregated,14,0),Choice(Sectors_Aggregated,15,0),Choice(Sectors_Aggregated,16,0))
+NodeLocation: 768,472,1
+NodeSize: 64,40
+DefnState: 2,719,154,573,746,0,DFNM
+TableCellDefault: Choice(Sectors_Aggregated,1,0)
+
+Variable NYPA_Enabled_PV_Ado1
+Title: NYPA Enabled PV Adoption
+Units: MW-DC
+Definition: Aggregate(NYPA_Enabled_PV_Adop,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
+NodeLocation: 776,352,1
+NodeSize: 64,40
+ValueState: 2,341,55,1077,723,1,MIDM
+Aliases: FormNode Fo1042431523
+GraphSetup: Att_GraphValueRange NYPA_Enabled_PV_Ado1:1,,1,1,,,,0,1000,0~
+Att_AreaFill Graph_Primary_Valdim:1~
+Att_Stacked_Lines Graph_Primary_Valdim:1~
+Att_GraphIndexRange Output_Periods:1,0,,,,,10~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+{!50000|Graph_SortBySpread:1}~
+Att_ContLineStyle Graph_Primary_Valdim:1~
+Graph_FillTransparen:2
+ReformVal: [Output_Periods,Spatial_ID]
+NumberFormat: 2,F,2,1,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Spatial_ID,Area_Type,Sectors_Aggregated]
+Att_ResultSliceState: [Sectors_Aggregated,0,Area_Type,0,Spatial_ID,0,Output_Periods,108]
+{!40600|Att_StackingIndex: Spatial_ID}
+{!40600|Att_ClusterIndex: Null}
+
+FormNode Fo471309859
+Title: Assumed NYPA fraction of natural market
+Definition: 0
+NodeLocation: 572,288,1
+NodeSize: 60,16
+NodeInfo: 1,,,0
+NodeColor: 65535,1,1
+Original: Assumed_NYPA_fractio
+
+FormNode Fo1916001827
+Title: EV Ad Effectiveness
+Definition: 0
+NodeLocation: 236,452,1
+NodeSize: 188,20
+NodeColor: 49344,49344,49344
+Original: PV_Ad_Effectiveness
+
+FormNode Fo171171363
+Title: EV Word of Mouth
+Definition: 0
+NodeLocation: 236,492,1
+NodeSize: 188,20
+NodeColor: 49344,49344,49344
+Original: PV_Word_of_Mouth
+
+FormNode Fo1526480419
+Title: Logit Price Coefficient
+Definition: 0
+NodeLocation: 1072,248,1
+NodeSize: 184,16
+Original: Logit_Price_Coeff
+
+FormNode Fo989609507
+Title: Logit Tech Coefficient
+Definition: 0
+NodeLocation: 1072,280,1
+NodeSize: 184,16
+Original: Logit_Tech_Coeff
+
+Variable NYPA_Enabled_PV_Ado2
+Title: NYPA Enabled PV Adoption Percentages
+Units: %
+Definition: ZIDZ(NYPA_Enabled_PV_Ado1,sum(NYPA_Enabled_PV_Ado1,Spatial_ID,Area_Type,Sectors_Aggregated))
+NodeLocation: 816,576,1
+NodeSize: 64,40
+ValueState: 2,386,31,1044,647,1,MIDM
+Aliases: FormNode Fo1872903715
+GraphSetup: Att_GraphValueRange NYPA_Enabled_PV_Ado2:1,,0,,,,,0,0.45,0~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+{!50000|Graph_SortBySpread:1}
+ReformVal: [Sectors_Aggregated,Area_Type]
+NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Sectors_Aggregated,Area_Type]
+Att_ResultSliceState: [Output_Periods,48,Spatial_ID,4,Area_Type,0,Sectors_Aggregated,0]
+{!40600|Att_StackingIndex: Area_Type}
+{!40600|Att_ClusterIndex: Null}
+
+Variable Total_PV_MW_DC_Tech_
+Title: Total PV MW DC Tech Potential, aggr
+Definition: Aggregate(Total_PV_MW_DC_Poten,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
+NodeLocation: 1200,464,1
+NodeSize: 64,40
+ValueState: 2,2267,136,912,570,,MIDM
+
+Variable PV_Potential_by_Type
+Title: PV Potential by Type
+Units: MW-DC
+Definition: Table(Potential_Type)(Total_PV_MW_DC_Tech_,PV_Cumul_MW_DC1,NYPA_Enabled_PV_Ado1)
+NodeLocation: 968,576,1
+NodeSize: 64,40
+ValueState: 2,389,107,944,768,,MIDM
+Aliases: FormNode Fo1687511331
+GraphSetup: Att_GraphValueRange PV_Potential_by_Type:1,,1,,,,,0,2757.6518058776855,0
+ReformVal: [Output_Periods,Potential_Type]
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Area_Type]
+Att_ResultSliceState: [Spatial_ID,2,Area_Type,0,Sectors_Aggregated,1,Potential_Type,1,Output_Periods,1]
+
+Variable PV_Cumul_MW_DC
+Title: PV Cumul MW DC
+Units: MW DC
+Definition: PV_Cumul_Adoption[Act_vs_Sim=Simulated_Label] * DC_to_AC_Ratio[All_PV_Sectors=PV_Sectors,PV_Climate_Zone=Climate_Zone_Map[PV_Spatial_ID=Spatial_ID]]
+NodeLocation: 768,88,1
+NodeSize: 64,40
+ValueState: 2,337,78,1190,772,,MIDM
+Att__TotalsIndex: [Area_Type]
+Att_ResultSliceState: [Spatial_ID,3,Area_Type,0,PV_Sectors,1,Output_Periods,1]
+
+Index Potential_Type
+Att_PrevIndexValue: ['Total Technical','Total Market','NYPA Enabled']
+Title: Potential Type
+Definition: ['Total Technical','Total Market','NYPA Enabled']
+NodeLocation: 1208,576,1
+NodeSize: 64,40
+
+Variable PV_Cumul_MW_DC1
+Title: PV Cumul MW DC
+Definition: Aggregate(PV_Cumul_MW_DC,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
+NodeLocation: 920,64,1
+NodeSize: 64,40
+ValueState: 2,2276,79,1044,656,,MIDM
+
+Alias Al1508540707
+Title: BESS Adoption EOP
+Definition: 1
+NodeLocation: 512,688,1
+NodeSize: 64,40
+NodeColor: 65535,65535,65535
+Original: BESS_Adoption_EOP
+
+Variable NYPA_Enabled_Storage
+Title: NYPA Enabled Storage Adoption
+Units: MW
+Definition: Assumed_NYPA_fractio[All_PV_Sectors=BESS_Sectors,Spatial_ID=BESS_Spatial_ID] * BESS_Adoption_EOP
+NodeLocation: 664,688,1
+NodeSize: 64,40
+ValueState: 2,233,103,829,599,,MIDM
+
+Variable NYPA_Enabled_Storag1
+Title: NYPA Enabled Storage Adoption
+Units: MW
+Definition: sum(Aggregate(NYPA_Enabled_Storage,Map_All_to_Aggregate[All_PV_Sectors=BESS_Sectors],BESS_Sectors,Sectors_Aggregated,"Sum"), BESS_types)
+NodeLocation: 816,688,1
+NodeSize: 64,40
+ValueState: 2,506,160,959,657,1,MIDM
+Aliases: FormNode Fo1849909539
+GraphSetup: Att_AreaFill Graph_Primary_Valdim:1~
+Att_Stacked_Lines Graph_Primary_Valdim:1~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+{!50000|Graph_SortBySpread:1}~
+Att_GraphValueRange NYPA_Enabled_Storag1:1,,1,,,,,0,17.05717697739601,0
+ReformVal: [Time_Storage,BESS_Spatial_ID]
+Att__TotalsIndex: [Area_Type,BESS_Spatial_ID,Sectors_Aggregated]
+Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,BESS_Spatial_ID,1,Time_Storage,37]
+{!40600|Att_StackingIndex: BESS_Spatial_ID}
+{!40600|Att_ClusterIndex: Null}
+
+Variable Comm_Adder_test
+Title: Comm Adder test
+Units: $/kWh
+Definition: 0
+NodeLocation: 1128,64,1
+NodeSize: 64,40
+
+FormNode Fo1388822819
+Title: PV Init Adop Fraction
+Definition: 0
+NodeLocation: 428,400,1
+NodeSize: 172,16
+NodeColor: 65535,1,1
+Original: PV_Init_Adop_Fractio
+
+Variable NYPA_Enabled_Storag2
+Title: NYPA Enabled Storage Adopt Pct
+Units: %
+Definition: ZIDZ(NYPA_Enabled_Storag1,sum(NYPA_Enabled_Storag1,BESS_Spatial_ID,Area_Type,Sectors_Aggregated))
+NodeLocation: 968,688,1
+NodeSize: 64,40
+ValueState: 2,308,112,1171,680,,MIDM
+Aliases: FormNode Fo507732259
+GraphSetup: {!50000|Graph_SortBySpread:1}~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+Att_ForceCategorical Graph_Primary_Valdim:1
+ReformVal: [Sectors_Aggregated,BESS_Spatial_ID]
+NumberFormat: 2,%,4,2,0,0,4,1,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [BESS_Spatial_ID,Area_Type,Sectors_Aggregated]
+Att_ResultSliceState: [Time_Storage,37,Area_Type,0,Sectors_Aggregated,0,Time_Storage,37,BESS_Spatial_ID,0]
+{!40600|Att_StackingIndex: BESS_Spatial_ID}
+{!40600|Att_ClusterIndex: Null}
+
+Close NYPA_specific_output
+
+FormNode Fo1045258531
+Title: Hours of Storage at Peak Output
+Definition: 0
+NodeLocation: 328,1884,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Hours_of_Storage_at_
+
+FormNode Fo2119000355
+Title: Fraction of Peak for Storage Max
+Definition: 0
+NodeLocation: 328,1844,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Fraction_of_Peak_for
+
+Module NYPA_Specific_Interf
+Title: NYPA Specific Interface
+NodeLocation: 120,1128,1
+NodeSize: 72,40
+DiagState: 2,1940,3,1685,823,17,10
+NodeColor: 65535,65535,65535
+
+FormNode Fo699244067
+Title: Va26
+Definition: 0
+NodeLocation: 824,844,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: PPA_Rates_Input_Subt
+
+FormNode Fo769891875
+Title: PPA Multiplier
+Definition: 0
+NodeLocation: 824,884,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: PPA_Multiplier
+
+FormNode Fo770403875
+Title: Technical PV Potential
+Definition: 1
+NodeLocation: 296,460,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Technical_PV_Potenti
+
+FormNode Fo1844145699
+Title: PV Tech Potential Percentage of Total
+Definition: 1
+NodeLocation: 296,580,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: PV_Tech_Potential_Pe
+
+FormNode Fo501968419
+Title: Total PV MW DC Potential
+Definition: 1
+NodeLocation: 296,420,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Total_PV_MW_DC_Poten
+
+FormNode Fo710635043
+Title: Potential divided by Load
+Definition: 1
+NodeLocation: 296,540,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Potential_divided_by
+
+FormNode Fo1121676835
+Title: Load vs. PV Potential
+Definition: 1
+NodeLocation: 296,500,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Load_vs_PV_Potential
+
+FormNode Fo322661923
+Title: Additional Value
+Definition: 0
+NodeLocation: 1368,268,1
+NodeSize: 256,20
+NodeColor: 63993,42148,13107
+Original: Additional_Value
+
+FormNode Fo33701411
+Title: LRMS by PV Time
+Definition: 1
+NodeLocation: 1368,788,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: LRMS_by_PV_Time
+
+FormNode Fo1042431523
+Title: NYPA Enabled PV Adoption
+Definition: 1
+NodeLocation: 296,732,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: NYPA_Enabled_PV_Ado1
+
+FormNode Fo1872903715
+Title: NYPA Enabled PV Adoption Percentages
+Definition: 1
+NodeLocation: 296,772,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: NYPA_Enabled_PV_Ado2
+
+FormNode Fo89932067
+Title: Simple LCOE vs Value of Solar
+Definition: 1
+NodeLocation: 824,804,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Simple_LCOE_vs_Value
+
+FormNode Fo1692803363
+Title: Cost of Electricity Ratio
+Definition: 1
+NodeLocation: 824,1004,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Cost_of_Elect_Ratio
+
+FormNode Fo1696948515
+Title: Market Share Illustration
+Definition: 1
+NodeLocation: 1368,748,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Market_Share_Illustr
+
+FormNode Fo1687511331
+Title: Potential by Type
+Definition: 1
+NodeLocation: 296,812,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: PV_Potential_by_Type
+
+FormNode Fo517300515
+Title: Assumed NYPA fraction of natural market
+Definition: 0
+NodeLocation: 1368,588,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Assumed_NYPA_fractio
+
+FormNode Fo1591042339
+Title: PV Init Adop Fraction
+Definition: 0
+NodeLocation: 1368,628,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: PV_Init_Adop_Fractio
+
+FormNode Fo1484087587
+Title: Investment Tax Credit
+Definition: 0
+NodeLocation: 832,452,1
+NodeSize: 256,20
+NodeColor: 63993,42148,13107
+Original: Invest_Tax_Credit
+
+FormNode Fo947216675
+Title: ITC Scenario
+Definition: 0
+NodeLocation: 832,492,1
+NodeSize: 256,20
+NodeInfo: 1,,,,,,,150,,,,,,0
+Original: Selected_ITC_Scen
+
+FormNode Fo1735745827
+Title: Select Customer Rate
+Definition: 0
+NodeLocation: 1368,228,1
+NodeSize: 256,20
+NodeColor: 63993,42148,13107
+Original: Select_Customer_Rate
+
+FormNode Fo1116561699
+Title: Simple LCOE Discount Rate
+Definition: 0
+NodeLocation: 824,964,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Simple_LCOE_Discount
+
+FormNode Fo328032547
+Title: Equipment Price Multiplier
+Definition: 0
+NodeLocation: 832,196,1
+NodeSize: 256,20
+NodeColor: 63993,42148,13107
+Original: Equipment_Cost_Multi
+
+FormNode Fo1707958563
+Title: Manual PPA Rates by Type
+Definition: 1
+NodeLocation: 824,924,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Manual_PPA_Rates_by_
+
+FormNode Fo1741512995
+Title: Cost to Value Ratio Method
+Definition: 0
+NodeLocation: 824,764,1
+NodeSize: 256,20
+NodeInfo: 1,,,,,,,226,,,,,,0
+Original: Cost_to_Value_Ratio_
+
+FormNode Fo247292195
+Title: Installed Price
+Definition: 1
+NodeLocation: 832,356,1
+NodeSize: 256,20
+NodeColor: 63993,42148,13107
+Original: Installed_Cost_Resul
+
+FormNode Fo1849909539
+Title: NYPA Enabled Storage Adoption
+Definition: 1
+NodeLocation: 296,852,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: NYPA_Enabled_Storag1
+
+FormNode Fo507732259
+Title: NYPA Enabled Storage Adopt Pct
+Definition: 1
+NodeLocation: 296,892,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: NYPA_Enabled_Storag2
+
+FormNode Fo187916579
+Title: PV kW-AC Incentive
+Definition: 0
+NodeLocation: 832,612,1
+NodeSize: 256,20
+NodeInfo: 1,,,,,,,72,,,,,
+NodeColor: 63993,42148,13107
+Original: PV_kW_AC_Incentive
+
+FormNode Fo1729847587
+Title: Hourly Rate (energy, DRV, cap only)
+Definition: 1
+NodeLocation: 1368,148,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Electric_Rate_8760
+
+FormNode Fo1439994147
+Title: Logit Price Coefficient
+Definition: 0
+NodeLocation: 1368,668,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Logit_Price_Coeff
+
+FormNode Fo903123235
+Title: Logit Tech Coefficient
+Definition: 0
+NodeLocation: 1368,708,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Logit_Tech_Coeff
+
+FormNode Fo930517283
+Title: Installed Equipment Price
+Definition: 0
+NodeLocation: 832,156,1
+NodeSize: 256,20
+NodeColor: 63993,42148,13107
+Original: Installed_Cost_Input
+
+FormNode Fo1235587363
+Title: DER Cost Change Rate
+Definition: 0
+NodeLocation: 832,236,1
+NodeSize: 256,20
+NodeColor: 63993,42148,13107
+Original: DER_Cost_Change_Rate
+
+FormNode Fo1134924067
+Title: Base Yr of Cost Decline
+Definition: 0
+NodeLocation: 832,316,1
+NodeSize: 256,20
+NodeInfo: 1,,,,,,,142,,,,,,0
+NodeColor: 65535,65531,1
+Original: Base_Yr_of_Cost_Decl
+
+FormNode Fo598053155
+Title: DER Cost Scenario
+Definition: 0
+NodeLocation: 832,276,1
+NodeSize: 256,20
+NodeInfo: 1,,,,,,,142,,,,,,0
+Original: Select_DER_Cost_Scen
+
+FormNode Fo1587777827
+Title: Storage KWh Incentive
+Definition: 0
+NodeLocation: 832,532,1
+NodeSize: 256,20
+NodeColor: 63993,42148,13107
+Original: Storage_KWh_Incentiv
+
+FormNode Fo1553174819
+Title: PV Incentive Scenario
+Definition: 0
+NodeLocation: 832,572,1
+NodeSize: 256,20
+NodeInfo: 1,,,,,,,150,,,,,,0
+Original: Storage_Incentive_Sc
+
+FormNode Fo357798179
+Title: PV Incentive Scenario
+Definition: 0
+NodeLocation: 832,652,1
+NodeSize: 256,20
+NodeInfo: 1,,,,,,,150,,,,,,0
+Original: PV_Incent_Scenario
+
+FormNode Fo839618851
+Title: Electric Rates
+Definition: 1
+NodeLocation: 1368,188,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Electric_Rates2
+
+FormNode Fo179015971
+Title: $/kWh value of solar by Econ Time
+Definition: 1
+NodeLocation: 1368,308,1
+NodeSize: 256,20
+NodeInfo: 1,,,,,,,72,,,,,
+NodeColor: 30583,48316,7967
+Original: Value_of_generation
+
+Text Te1605079331
+Title: Equipment Costs
+NodeLocation: 832,244,-1
+NodeSize: 264,148
+NodeInfo: 1,,,,1
+
+Text Te90935587
+Title: Credits & Incentives
+NodeLocation: 832,548,-1
+NodeSize: 264,148
+NodeInfo: 1,,,,1
+
+Text Te2062258467
+Title: Electric Rates
+NodeLocation: 1368,220,-1
+NodeSize: 264,124
+NodeInfo: 1,,,,1
+
+Text Te874221859
+Title: Technical Potential
+NodeLocation: 296,428,-1
+NodeSize: 264,188
+NodeInfo: 1,,,,1
+
+FormNode Fo748392739
+Title: Building Count from Facillity Data
+Definition: 1
+NodeLocation: 296,156,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Building_Count_from1
+
+FormNode Fo194744611
+Title: System Size Constraints
+Definition: 0
+NodeLocation: 296,372,1
+NodeSize: 256,20
+NodeColor: 63993,42148,13107
+Original: System_Size_Constra2
+
+FormNode Fo39555363
+Title: PV suitability
+Definition: 0
+NodeLocation: 296,292,1
+NodeSize: 256,20
+NodeColor: 63993,42148,13107
+Original: PV_suitability
+
+FormNode Fo1950060835
+Title: PV Capacity Factor
+Definition: 0
+NodeLocation: 296,332,1
+NodeSize: 256,20
+NodeColor: 63993,42148,13107
+Original: PV_Capacity_Factor
+
+FormNode Fo867930403
+Title: Customer Consumption
+Definition: 1
+NodeLocation: 296,196,1
+NodeSize: 256,20
+NodeColor: 30583,48316,7967
+Original: Customer_Load1
+
+Text Te1383829795
+Title: Market Characterization
+NodeLocation: 296,164,-1
+NodeSize: 264,68
+NodeInfo: 1,,,,1
+
+Text Te461869347
+Description: Input
+NodeLocation: 84,44,-1
+NodeSize: 44,20
+NodeInfo: 1,,,,1,1,1,,1,,,,1
+NodeColor: 63993,42148,13107
+NodeFont: Calibri,19
+
+Text Te1531416867
+Description: Output
+NodeLocation: 180,44,-1
+NodeSize: 44,20
+NodeInfo: 1,,,,1,1,1,,1,,,,1
+NodeColor: 30583,48316,7967
+NodeFont: Calibri,19
+
+Text Te1607438627
+Title: Add revenue, TBtu, and GHG emissions outputs
+NodeLocation: 168,1036,-1
+NodeSize: 112,36
+
+Close NYPA_Specific_Interf
+
+Picture Pi1008177443
+NodeLocation: 704,1252,-2
+NodeSize: 152,52
+Pict: (000000000000005B01300004EC65000089504E470D0A1A0A0000000D49484452000001300000005B0806000000F4BFD9DE000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA8640000657149444154785EED7D076016C7B5B52836EE3DB1E3C4CE4B716CC7491C3BCE737AF2D2DB8BBB4D134280E8986A4C37C6F40EEABD8244AFA6F7DEABE85D7421446F92E0FCE7DCD99504080C382F7F88BF2BCDB7BBD3E7CECC997B6766678310A000052840B72905002C40010AD06D4B01000B50800274DB5200C00214A000DDB61400B000052840B72D05002C40010AD06D4B5F6000BBC47FCFE8BED85C416675A51FDF38F2EF74BDE86E03F439497C0CF032409F455F2800BBE4038FFB47117F64745FD265F4E459EA427391373225E17DE33FEAA7C8DC8BBC1802F43988FC544D88A3B8E460CC78AA9F007303548ABE901298DF0F1C6439782AB1BDBA87387F57BB98EFE220AEA3B9FB2B7D06E8A6C878EA719D0CD6A306060D1201DE06A8347DE1004CCDBF188C8A3B8A758FB2C902A8239532C590566057DD19597CBA29F46F02740BE4B3B198839E44E6A02C40012AA12F148009A68AD41504421779476312D43F8B2E15522525A0D1985A19A05B22C15591FD9582310E22172F06781AA0CBE93F1AC06CD64A2A8867DC9C17EF2F5242BA28E9C9D19E9367B1E2C031AC3C7812D97967B1F998335B6836E59F45F6D173589B7B16AB0E9FC6F243A7B084FE66ED3888CC953B103E670362E66563E19E23B8C0B82E10BC0A998EF5B50088DD1A5DBAC03A2A200F0B9177E102B2738FA3C044B0003F037439FD670398075CBE312A2A511717E51C45A321B3F1B586837147F5FEB82B6430EE0D1D8C076B47E0913A117894D7876B85E3A1D0703C40B7FB4206E1DE9081A854A33F2A54ED83A0777B23E89D5E34BD196E20C2E7AE73F28226F4AF4C3740374EE49F2F6D252F5A8FAF87F6C0B2BD47ED3940012A4DFF7100A666AF6979FD9AB648B1AB801D42AA1D2479910E9E3E8F2699F350A9D62004BDDD0D3FEE94851A2973503D6926FE316802FEDA6F1CFEDA7F2CFEDC5FD771F8C7C0B1783B6222AAC74D436DFA6990321B6DC7AC40F8FC8DC85AB51D83E66FC55D7563F1B38F86E0AC015600BC3E2FF9BCEB337D2DEBA807266CDC67CF010A5069FA0F94C0D4F0357B42558EBF52140B2F15984A229A47A9EB7BED3210F45A0FFCE4A34C8C5ABB0BA7A59E942217839B8ABF9175AF8539F9A8586310AAC4CD14665AA000807D4ED28043EA3F730382AAF4C5A4CD07EC3940012A4DFF790026CCD03C1451A488BF85A68AB8CE307AE3017CA95E34CA57EB87CE93D7E2844DAC78644BF4822C1FB6E46691D1F8E43F4BC6134A69D60B98B323177752BD7C277A32CECBDD9BC40F00D8E7201FC06605002C40D7A6FF1800F301C319428C4C113B81379792B47407EE0F1D840742FA62C8F2AD6627BA4477C32E0F9424B95DB2CE7335803940F28049E918D8019BF3CFE389C649F8CD27593863FE0300F679C8B1B904C0CA05002C40D7A0FF3800BB48532844D264FDC58B948880766357D864FB579B4462FCE6FD2E00C14DF063BFEA31D669CA3682AA120B0F14057C0EF9306DDB6154A8D61F4D86CEB567C51700B05B27C736076003A84296AFDA0F93B704002C4057D37F2680997A576000F5C1C8F9087ABD077EFCD150AC3EE856B20A8BE887005468582478F2C0C9BB94263D4A36737F4E4AD32E256D5F2DF2006CCCFA3D4CA3333A8C9D6FCF26D579F909D0CD93B1CD93C00CC0AA10C002125880CAA0DB1BC0ACA50B541C686803A940E5A237613F79CB6154ACD607BFEC3A027B4F3BBB4B94CA0A19CE369B520A5338D7594AC0C6E22B652EB7103049D5148839CB4D874EE057ED9290346FAD3D5FB20DB24AC305292181E01576C50FCC8395C7DDCB67697F76AF1FFFC677F4AF46DEC365762259384028C3D1B3BADC5E4FA56DAE7C76A4381D171CF9698804EE32A5ECCCE39561AE2663432900AB40009B72030076DD383DE39371D7B3F0ED2FF3537C23F25C3CBBCB9C3CF27C786E2577BAF84FCEA6E44E5496DDB56CAF7C0AD06D0C605695042303123576AA8C8502306D95B8E4E6A69A8D5885A037FB60DCFA5DF66C5AA5019033176D7737E3F09ECB2675240112A3A571E125E315F22AC02C4401FD9CA4374DE917F0597EE4D9411C1DEC5971D9137FF5E0D9C9C26C2435FAF9707371E6649EDC93FC98BB878C5E50FBF17DC8382BE7C1EEF56BBC72E9381FFCE5C5DC0D2CE86ED6CE976CECD7C0DAC56BE9893C7F0EA01C6F5C6EB470E2EE04F217C91907F6CEBBF8622ABBE5E53A64015C6A02B08A95FB61EA75014CF1291DE5978F56062F5D73968B5276EEE2A1B9BA8CCBD6EC7D0E7999357BE7E6DD59FE5DED782E24DDCBDE8575FE35583A5F2E8CCB8F5DC90FF9776E7E9DB95F4772717E64E3FC39E372EDDC02E4E8360630BFB1C8B009D06897BDDF2833576EC7A3B563F064DD68EC3E7ACAFC15A9517AD2D195E6DA2437A6A4F0FCD1D60CA5AB66A479B48B850C2F898F46ED5C521D2E12CAE48969B9554DC5E1C7E3EEF52B92B792E4BD6D1FEED639780D5EA0AC0E68E92A904BC0BCA86B085065A56775073F1DD771BDFC5AA40AA7520880950FBF0BF9243FEE2257EB305630E7D727BBF3A3B33C5AAACE8F97B6D9F25657F1CEB37696C69B6B90F97369DD2880B95494B62EE4A23788599A1CB92E328F2AB58BDB85D06D31F9EDA2D8D67974CF1EDF8BC9B3755E68FCF4690CBC2C253325F9A2F1CA2D1BC74BF9D5D5278517A74816A786445D5D3E5C183F6617FB179D6E6B09CC9A951A9EB52447E7E83270D67A94AB3A008FD48BC0C8B5BBCDBE481D86C0E246C09246630DFC3A24776B70BAB9A825013D95223E6AD1E0A2F69A79563ED96B4B3710FF9524A9CE5E772A4DF4A8CDB8524FAFA42253992FB75709D5692FE9B59C52E51529495BA1BD1E29EFEA6C7655FCD723FAF3FC5E990F14523E25DFCB7A8FF19A0387AC6F0AC0C87FC66F92EF95445E3A807751164BCF57F29754C0F065E5B3407FC650028AEA805E3415616DEA2A72929E71CCCA2130E3B3C25899CA0A7325D1B36906F46BED4A31CA8E4EC6168B58375F78BAED00CC6FF45685BC5783F46A159F6EDA87FFE93316416FF4C0732D933073F761B397926763221B856B40CEFF8D90D2B1E6A3B06C801B0E1C4587AC79689C3E1BA9CBB75A43B58E4E3F9BF28EA1D388F96892361343976CB1B0FB8E9D4387A173D0206301EA672E41C3AC056834742E1A327C8711F3B0F3F405642C5C83FA1933F1F198C5C839266951A3F0452CD87500CD87CC41AF4F9721F79C769829DF17316EDD2E34CE58840F862EC09A3D872C5F47CF9E45DF498B98CE0CF4F974090E9F6789C51FE65B1C1AB270031AA7CD41FB918BB0F7E809DA00872F142171FE26344D9F831AB19350237E263E18B60463D7EDC669F3A18ECE8ECAF83F5DBF03ED462D4148CA42548F9985DA7153D17CF802642CDF82E37E9DF0BAF1703EDA8F58C4F2CCC2F0559B0D540460A219DB0EA265E63C344B9B8B618B1C7FCA24395867BF091592E99C2828C488D51BD17BFA3A0C98B61E8B771D34D7424A32064C64C425E6A54010C672CDD99C437F6B3068CA724C5AB703A7184701A5B5691B76A0EFF4B5E83F6535A66FDC63729049D645E7591E07606E9EB5085B8F9D46E49CF5E847BF290B3620E7F81903F242B6092B9FFCF3CFE2600672CF9EC678A6D57B46363A8E5D83E659CBD1386B113E24CF7A4F5E8D31ACDBBC420FE4188FDAB7E0D0A649C412733206E9E60B4FB72D8059FDB151EAF1003B6B9321B350BE4A0F9BF00D8E9D866DC7CE386F1CC14C68B7BE6F3F667FA3E4DA8CC0C035AAA4B9EB09903D11542512F7D48EC094ADAE938886AFDE81A0CA11087A3D02BFFB64186D2E61F9C1E3B8A7663F04551D88A0EA89087A9BEE6FF6A19FFEA8F8765F2CDC9B8BDA91A31927EDDEE9838133D6585C4AAD4AC438FA635AD5FB6242F61EB33F56508497DA329E376311F4DE208C5DB5CDEC4F5F28C0EB7D86D2BFDECFEC837E043D9FA66DDA8F7B420621E8AD4178A64532724F9FC66602CDCFBA64305FE1087A97866E662AC7A26270386A244EC661A6253A4D1EFFB4530AD3631E6B24317E96E1ADFEF41BCDBC45E3F5C113B1FFB4A4532065C96696B12FDDFBE16FFD4708338C36E59EC4B79BA9FCEEF5ADA8E9AB3C973248757B9300265AB8E3001E0865F9AB305FAC87AF358EC09203C7E8C208293DDBE28A547DDAE49D2FC27FB7637EDE1B4C138E271A4662EBD133B84000FB9FCECAE70004558BC4C3E4DBD40DEE352681B16B0B6E85FB1881E6CF3D86937F8CA3CA40DC5BB92BA665EF34BF923CC53DA5E57E8035FBF2F1E287E9285F23867C8C4250481CAFACC7E0481ADA558F45B99A71F87E8761485DB8D90647A5634390243116D3630BC98BF40B4EB72F80A92259A9A2B61CBD82DEEC853F0C9C89D97BF3CD4E74C966EDDD8869528D496B374716D45A8EEBCC898B36B1D1B1B1D5CF64A38BC32FBA0FC3516FC41CB36E2F82EAA4D23E157FEA3DCEEC561C3E89871BB243D449C17D0D12F166E44C8426CD45B5B8D96896320B47CE5E40C2A2ED6CBC090C9780EA045FD151E6FDA5B66908AA49FB9078F4A154219ABFE7081EACCF461F9A8A6FB44AC18E930EA845AB0F1CC7138D9298BF147CAB590A76521A384790FF4D174AA5D5E3D8712290B27C374ED2EF6FD5F1AAB2E3D44AC553AD33D068D852D464BE1E6AC04E152AB01A88769973ADFC7ABFF3D5AE63988F54DC512709AF33EF61998BF1E5264C8BF9087A7B203E1AB5C0F290BC7C27F34CFE04C7E38DF04966778AD2CB5FFA8F671EE8BF6A3CA5C4D92691A8624C4AF4EBD42763BAEBA99F05602EACF33B6BFB21DC5D2F9EBC66DD342498B3BC7FED350AC755ED26C9A80DB8BA3A42E9F3071D87B1FCE908AA9D8E479B24633DEB4A94B67207CA8732AFF5B2AC8E7FD76B2CA54C9786A5E7499451F336A2623502723DF2B27A0CDE899A44298ECEF2CB76A710A527DD67B20CE5146F9D21086AC0BA555BA9C2C1808380D585C0AC2EDD6A24A23C07BC766397D93E464D05685E4FB25C490B76717ED1E9F60530D5292B514FD52226B0A1C5E0B5A845485BEC462E8DB46E4B851A93143CFDDD4AA5338C81A06BC0498B37B223B3A1D51B8AF275D9F8D9F03A4FD2F60960FCDA1C54AC4D000889C41FFA8D667AC0FA8327F07803FAAF9581279A2761EF39D7F84B938EE979BC61B201CF775AA71A20CECBC9C37D61EC8C61EA8802B619E6B7C7544A800487A06AB1A81633D5EC04E42665923A8E2698AB23500A693F7E195257EFB14E2870FC73FFD1C69BA1AB0832D50832B586E0A9E61958B85F528AA3E8851B71676D76A85A9978B24E0436505253CC3FE93A91F10AC0123075479EF9ED46F52BA806E32638BEC9F28A5257EC44859A0CCFF4DE8E7400F6D198257C9694918C9F761E8E83E75C37BC0AB87C92F5CD0098E777C6CE5C3C508F65AF9D8172F50904F586A05CF508F4999B6DEE92A0FC7A3C42A9FD471D47126C09D6B593F104C1781DA544D1399A37077ECABA8D41B97A740F8940C2D2CDE6E6A478E0E099F378A1358152E1EBA4E191FA7158B2D7F145EAA39B4AD34F0980CDDA7688752AFFACD3B0543CDE22135D262C471AD5FB7E3356E2B7BD29898726A0421825E3D064DC5B2B0AD3B67A1BAF253D6A3ECD0662677515296B2A23FF5CDFF0CB5B2A006F5D78B9BA679F74EB4AE73CE9BE24F722C1B16C25119A17EFC7B5BDD23E45AE7E3DE3FEBD67FF4A79D67F2C26E55917FD30ADABDC2FA7DB76125F1291CEF7120D5DB9930D83232147C33BAB0FC0A4EC1C7930E6D8C42E3BB835A8CF6046D9242696805FF2E26C366849606A846C8C35D3F164A3746C397ADAF69DD9C85D33167FE8EB002C9B00F6447DFAAF938107DF4F43F8BC2D18B3760FC667EFC269496E8C56EF64FEAA3B47718EBC1543C3316BCF41C42FD8E280A83EA584D078FCA86D3AF65392D10BE3028C2076CC5882B54892859BE902769FBA80E73FE4C84E80FB6ACBA1F85E17760AAA7D0F85C5612E4151141ACDCE598D204375A5E5888566E733E7382F3FE9C28E1D4209812A54FA924DE6F293AE94E26AC4E3AE3A5198B9C749B9FD66AF75790C8EC51B031C80A5AFD8413588E5AD1E8F6A49333176FB613C5C87698524E2CB8D12B06097372FA941C14BF32A92F54D01988B67E6CEC378B01ED30E237811C0CAD523C0D44A261F12B0E9880327B7F9B8C824B0173F1AE524C83AE978E2FD6464E7BAB941D1D27DC7F068434ABF9438836A2693A719D8774AD0E61604DA0C9F6FD308414AA35A04DA8F5D62E194177F6BCE95347BDB41DC5B9703555D4A760428F1B4447E06F2D9A05F1F34C9F81CD480EDAB5A1C5A0F5F646EA6BE4A83F0B40ED171A6B3F76C210E9F2BC259C72E23496C3A4BCDDF682DD2528EFFA4F9C04B456E7ED327C9778EC44FA6433F26F97974AED89DC4B0DA04AE557DF1437496E630D5F27D670A70B2142AB9DD018CF2A2C294E4FD7C716E1CE59E2D403EEB4464F9625BB73E67FFB22F89B334DDB600A60ECBB188E572C55B937B1CC1C39621E8AD5E8898B9DE7922F3D449F4E7D85C3613AE4F0C59168051D47FA0593AEE6C4829AC72026A254EC7B02D8728A1B043501DFC4B9F3116620D01EC91FAEC0894062AD4A75F7578016DD5AE98B5B3A4537E307631DDD4F1A3D19C9253CBE1CBF91C474982A331E3FC72930464EE388C17DAF3B966229E689A84B5F9A72CACA04B5CF03B4D22F3582198A05187E057871D8660D238638EB94925F9534F825170123B511C1216385E99B4EA71A93655C9A060AABD94DCBA4E5A6DF1FFBC9B803011778425A0E1F0C5E83E7E31BED69471D76679DF1B8CEEE3165BD8F4653B682729281E2FB1837EA72381996A70790258DF390E708BD8400B4D0DBB467DC8FA16006CD676AAD775592EF23AA821F3C5BA3110AB1A87CA83A73975CC4A73117994C0BEFF11F34615DA07B00D1E8079D1E14349B352EF0CA462D169DC0AB35F74201F8F108C254505D58CC78BEDD30824AE732A3F927ACA02B059DB0FA2527D82535D8593343A06C72E0814BD554E52CAD26DE43381B101EB99EDA10AA56C39A90D8BE47BFAB6BD689A36032F77188A6FB4CDC2B7DA64E1D54EC3D17ED442ACDAE706291D1D25E0D89177028D5367E0279F64E12FFDC6E0D30DDA13C9D8046004AA53F4F7F1E805F869C70CD4889D8A2D478E15838EF8B4F1601E6A444FC14F3FCE4258CC146CDC972B6BD6A1F8081C385388D8D9EBF047AAD9CFB7CEC23334AFB4198266E933B174FF11F3734903759176005CC484D53BD83786E3C75D87A333F9BB2E271FF539D07DA375025E6E15CDBEBB0AE7BD3A35E9D1A19FC55316DDBE12181BA2B5116334B0F3F8397CB755121EAF17855587BC86E8FD89E3CE9BE7F9A688CC2303AF02308EDCBF0F9F81EA59041EAA63778725E22F317350A9091B5E75DEF71D6B2156690EAC816BEC151BA4E26B541BBED52C032F368F6705E715E768ECAA5DA81812C5CE94826F741885EFB61F639DE3E703A7E3D15663503E2C19BF193413F73566E30F49C21FFB8CB3F916913A8B8D51543354468DEA7F1F3C95FE388AD74AC47F7D908CB5941045E2CC2F7B8D33A949E5885FB4C1ECA5A2F8E7A5D5CB9CE7DC09829D272CB1B87FF10941AF26D36E4050A46A15F45E04F39A813B2851BC17FE290E9D71AA71FA32AAA7A102F8243CD96A281E6820904BB1C9E9F6E3575879B55D411DC8556019246BAFD1DE1880B9FBD994F6EEAF9744C0910AC9BC4ADAA17A588E125979AAB5094B37398FA43C4A2D3FB23930FABB12C03CC962C789B3F84E2B0D18ACBF5A296C5F69D843E06B3A74B6D5B9CD83126C12E63B1E4A2A7100E6CC953473DB615452FEEA5272AF958457BA4C449E491D0526218986AEA2CA4FE02AAFB9B0E0180413349CCB4503AF0E6317E1DEDA035807E47F0D964FF5545DF3678C9752F557EAC72266F67AB55AA38D04DB2F85F43737CD55FEAEDB309C55845EFEE65222BE2B7820DD59C6B7FBA1D71407D2AE2500CD3328F1BFD5D7D22AFF6E1F4CC9DEE1B9683EF6305EE9C47C5665BBAD4E7E288D100234C1598B1A5F6A148DACE5CEBFBD5EC76B70CC445BE0D17C6A45B689AF7DA0C181F957FAEFC6E1BFA8CAE79C706DD5B6A0309FE2D0B5E83606307538BF6A41142763DEED86F8A55BCCCE44565E4D4AB3991FB52EB9DC2C295C19005633056F0CE48875E63CC1860DB23A8D5497466CF021B1F853DF71166275EE493CDA80954A95E1B1666998B23B0FFB4E9EA73A721E17A80ED88BE7241D6BFDED16AC7802983A6050583AD5D104F49C9B8D9FF51618B123D2AD9CA48BE0047C3CC15BC55378E58F896944D56B52A288B91B514E52181B57D5246FAE8C391227FED64F13EACC1355959E040891DE625050F1ECB508AA98D631C23178F66AE3EF2FA44286A6E18E7AA978A6E348DC2D298292E163CD52B1DA0347513A1B6CC51A4C37381E6F26CD41AF999B180F3B1B01FC9E5A91C8E4086CC4DE5E7AFFDE6524EB5B00B0393B0EE15E4938E45D39F2FBD98E13F19D4E5487C94701F9B36D92B0D3D440AA2C04A29729B51880D1FF13EF271503980AEC1445206EC10694AF3ED8EAB6626834EA8F598B6FB721F0D5A4345D3D09BFED473550795018D64559C0E5D3ECED0770773DD6713D0E2CB593F0EA27A329015DEEBF511AA55F8251B9FACC5BD558AAAA4EB21585CFC946F92A042F02AE34807BEB50CAFD280B3FE83004956AB1BE242986A6E0BE90C118B3D6AD862AF6F7A2A630CE388649E4609A8815079D3A2DFA68E27A96238AE9A5999FBF0E984009C8B99D240B7ED39D6A360752A9E2CFB5C9A0C4E506AA4DACF3673F4822F030DEDAD42EC22889929FDF635EC4EBA0BA2C63700A9E6C9AC8F671C255294D58D22CDA93070DA8466B1A866DF0E99619F8EFCEA3F020CBF06B4A7A47CFAB950AF0C84FF2C7EF7B65D16D0C60246B2C6E65E67F7B0CC7037592B0E9841A9EF47B37DDE870DFDD5D870FD72186BD0680FDADF778B31BBA7A1B2A69595C13EE0DD5B8E3F0674A604A75CDE11378CC002C1D4F364BC1F6339A2DB89C043CCA75E52882301BAD35C4BAE978B47E12561D3D457572211B0AD3347B3656AA679336EE75616DBE4560A09C960058DC9CB5281742E0A89A80E0E45966679E489D47536AAC4A90A12AFAD7BEE3BD7918176EDD9133789AA0A48E700747E6499B720CF47EDE8D0D992AE43D61D118BBED006AA74BBD223084C4A169A67B895D94BE6C3B2A680EAC4602DE89FDD4A486D7A22630FF2C578D143CDB32011BF35D07BA665F97FD2D01D861DCA755482DAE500AFEFDC01948DE74100FD661DAEAF4945A6A27CFB07AC92B28C28B9D0912043A816B6900B3282DFD4B06307FE94D89555B60EA7350D1FC954CED34B6B758CC26685A1849AF971C385E8BE66EDB8FBBEBB3C36B5E93C0F912D5EB25878F61C7D16358BC2F1F2D472EC57D61E49DC0A45E1A4129121336BBF80F9D3A8B675B10306AD28D83C7030D1391425E1F2F28B03D7F5D27AFC11DA12CBB564409807F607FF08795C8F99BDD8024B594925294B755E7028BF88FFE023702A600A54E9A4D0B6CF706A4657BF3F0507D96BB36C3514AAA9FE11692442D87B1FEAB10F8EA0C2390C6A2CFACF538C6BCE49D3D8FC6D24A248969FA23380A1DC6F9F3AC40DD84F9CC83008C6EA171F85D9F89D870E4144E31ACF8B374E7410E044E8295F0E10604F570AF92AFA0FF4F00A6CC949D21675BDABD6C7F6A5E3667E3A93DDD26E9C89CDE18B9DEEDBCB7F6672A953F9692CA8EEA33881131B2CB014C9D3F8552D6789BBCD498F4AEC08720534E6A4588E6C0C62924D609C03407562B0B8F354E44DCB26D98BF6D2FA66DC9C1E42DFB709092979310D9D0166E641CF18C43A31847B48E230C5C86AFDC827235084692BE4213F15CFB613870CECDE8688AE02279E0447407DEA288398CAB163B0B01AC66C24CB3F325D655878EE391FA8C8F65A8C846DF902AE34A36D659EC8C7FE84DB0910A583D0E3FEB9C8563170A4CE5F899B651B0A1DF11168769BB8F60FDB133F84A43768A9A49B8A77624A66C71AB6519EC54B68D823C7877F058B3DB947F02CFB662A30DA17459251E6F447E7AD9E4F555A46CDE1480B972CDD99E8B87286558C7A11AF3EB1EA3A059C2F7B3E6B03CACB33A99B8B35604C664EF32607DB91381A41480F993F82E4A2A75DA86439ABC791FA5030D5069ECB094EE543FC103502F759A65556C2D607EFD99D66BD12C0330814C262AD6CDC03D94B49F689E86A79BC7E3D186AC2BF2CCA46F49E1EF0D40A39419964F510A557D494A6EFB4E349A66950C1A221BC429F56BE00862DC0FD689295E30594D80F84A63C6AF39BB9044FC63C018B35F77E434BEDC98E5174011BC04D05AB58D9BB7D1DC07CF5AC5342329F5934F6C7FC357BB73F40E9F2BC00F74AAB1B6DB50B5FC45F74CAF7738DAC136F364B324C6C9B829A5FE991A845AABFCD44C515DB07DD4CDC41D6C272336B8FD8DA5C9361DFB00C667D7AE4BA75042B70C602E62112B4D1D881568137F56FB9EA300C45FC9F0EC54C50E52D4699D8E6BD56EE1E422D4A5BB562254100328059617BA7912875B6171F6A2515B8F52B7EE810F464C77168ACF4BB4C4D7CD918B42E05068D91125CC5F4D5018C44A48C3EFBA8F2C1EE5561E3A81271BB3F1D85C443C7E4BD15B395F4DB078B00EED6B66A25C2DAA80B512D889A25979ECFCEFF64657EF081ED15282DD8394BA8242D938DE8BC0BBD153CC7ECDFEE3B8AFAE447536C0772210E2ED1573FCF34AC87FC75B076003671268D550DED3760BCF3F2B48FC95BF7E5357A29236D706334E02EFFD75E351511D47AA65B5FE78B2512CA66F73A3FF2906F8B15431CD5350FA1CB3C18149BB110B183FD5ABAA71F8C9C723917FA110439613C0B4B7A94A0CFE77E0582F37C0D8F57BF100250A53BDDEEB8FCEE316DB2A96B1D87CB85F91E3BB63F8CD0098E6C01EAC2B1010D027E357DD46DB00B3F3EC393CDF469D976913445F25306F397501AF7621280BC0D879BFA27D60DE4A6571BD13C074AB96D6207932EB3616E5A5FE11C49E691E872D47DC6AACFC28B72E17D7A6B95B0FE01E5B851C4689C7A9819A0B927A66E02589B65A34259A70B4C89885E3DEAA9CA8F5E8257427805172294FC9659837B764AF6FD9400DF49EBCCEF969C8782931F940749A7CFE536F9635846D8B79FF5AAB34E452024D5DB393658A4639AA7B4F7E3806772A4F7CAE1A33C57AE79B83C6F3D9B5BB6FB6CEC0AED34E7D5C71F0181ED62286F6B39127EFC44FB705A5F5878F63E3E1539879E8249EFF6804CBC5F614928617DB0DC5214A58A25A295421B5CACAB2DF5F278E12ACDB08EE5521E9B3B87839DD2280950205A6AC9DC96E8F8A2415D785945DF7DA859E54BD6232AF0A68B5AD1BED5E62380B25773288239F4288553E025B20A54314B11324BCC62DB7F805D9F8759761F8C60764D8DB7D3178869B1B7240E742DF2A196012280D561D3AE3D335DBF1F5FAE17888237258DC643721EA4981B1F336E0A9BA9178283416F5E33FB512AD23803DF37E342B3C098FBE4FD1BF493A1EE4A8F750C3643C58B33FFA4C753BE6C583538545A83E78021EAA9D80AFD689C2B015DBCDED54C125BC37680CEEAB138DA738524F5CE74ED750BE94865217A774F5817DD8B24DF85ABD703C52733081661E6D685B4420B65762F4720D3064C966FCA6EB303CDC301E77D68DC5DDF562F0F8FB297877D0442CD9EDCE4E13A7CFF1E73DDADD5F7B309E635996ECC8A5ED25EC6683FE7DD7D178382C16DF6A38004BD918676C3F88A71A45B06CE168923ADDF2A73AD5F59389CBF14483083C141685DF774CC1214A66E66CF5E4EA54648FB7026054211F3015D207B031C8F7A21DB96A1BEE0A21604B0A098E4148FA62FCB0FB5476CE12005B77198031C76ACF5EF8E11B7208BEECCCDADC1A928CCA714E2D77CE2EFDCF2201D87D619410C3B4C5231577354CC3D79B27E35B2D52F142EB34FCB1C748B44C9B83B9DB0F79F1F2D703A74643A8B2511D93747507079AF1EB9DC4EBB54EBB8F99B7C9CA66736C55A3D17FAADBFC2CEA3C41D294F23F14775062CE5AB317C189D36817837BEB25A3D5A7D9F87A4BF2AD6602BEFB41063EDD998B6FB44C627AE2571CDE899C625294E8D34DBB51A9A62452AAAB04BDBB1B25E3610EDE8FD48FB5698F8739F895B3C50AC7ABFF6A1E831CAAC0A2B0A4990430F28083CCFD543D676D77E5F0AAF0A6E99600CC8DE14CD1FE35AA3B0033494C0063B637432E3EBDE4E18EB8F1F6B1D05E53F17A934CDD5315E5A002D89B7F0EF513E7D90AC9031C755FEC90860669D390AB4D92E4866D60FD9CE4004C860F024496EF24F3907DF438D61CC8C391737AAF8EEE72D3DE187ADB9A77022B0FE4234F13912CC7D98242AC3F984F492C1FAB0EEB7A0CEBF8BCEEE051AC953F8EB2451A00ACCC402E9FD7EECFC336C623F5C1BDA4AC8D9717B08AF65BF34F3B719CC5BB2C7FE48EDD887F97CE1B186EC83D86B5878E22BF507923781148ECF40CADD9F35E74824196331FB3084A0B771EC2A623C73D1EAB5C85046817DF414A314A7F37414793BCFAFEA5389C7FBE10EBC88BADB43F5B78D1F6236D67DED7EE3B82BCB3AC3365BE8869315F1AD4F4BEE8EA03476D4FD50539291DC76025EA488FB70060B3AE04B0EE6371CC3959943592D861357F4915F08EBA69B8AB313B603D4A1D7552AF0230B56A1B80957FD2080E1A411C986CE299405035DECD0739D752895C87666E3F804AF528B908144213F0C34E13B0F2F069EC3D760A7B4E9F3375B79898AE2B9B935C1A0D596AD28ED4D83BA89A8DCBF65E61D34290C7BB584A5C36571A46E0A81287FE53DC065ED154AAF8F7D612B809A4A2502D630DA524EDED4BC073AD52B0FAE419FCBA27F9119C82FB1A66A0CEF0E578B4112528CD27D68841C46C6FB59A34810076570825B7DA9224D3702F01ECD18604AE06090430815838BED438128F3549C103F563F0A336E13870D2E92AB552046052A333086031A500AC54FDDF04DD228069546082E22FFF0A0936B6E9CDE60C4A6A519B0517EFCD43E2E21D683F61255A8F5A8C2EE369A6AE4693118BF1F1A7CB3992EC26209CC4319370487671955616C965D9C1E378F143EAECAFF7C05F7B8EC26AAA5EC708006EAC52DD7F7EE9AB3419606B24149878768E042E0EC4B435C0EF743EA94837920BCBB9E2B63CFB218CB38C43007245BC3EEFCD9E61555E81BCD5814209F04B85A15FB7CF4BDCD340E3ECAE284C09593C52A15CDD5EBA72729A763A5D4100E42272E4F250F26C6E3EDF5C962F23256F59B130A532A347AFCC9F0560465E9A4E02A394514A02F3014CB4EEE8593CD99C1D922A58396D65D0A288B7CFEE7200535DA85694691781BE5E65737B02B060AAE5714EBD77443F9667F7742D9AB5EDB05B852408692EF3BF3F19CB01E4F240F6E23687280D8A8E25E41FE9C3515221096094DCCAD58A43DA0A37D76B75251E937A4CD3C662965F13F254EB13E67B6F0F908E73407BB523CB1BCAF0614978BAC378DCDB649881F16BFDDC969FCEE397D99C69F946E978AAF368DCC3B4A4263ED420C91619FC022E3F709C527B12DDC8CB9038FC6FDC746C3C790E1B3970ADA35993771AAB68D693DF1B8F9EC2D6A31CF4BCFE5D27B904C01E08FBFF0460A56B4A09DB690C9ED511EAD6A3A85BD74E9A8D173E4CC79DD5FA22E8CDEE1C117A7374E883A0F7787D5BF783BCFBAE7898EAD28F3A0F45ECFC6C1BFDF3A8E6CCA6343071C35ECCD8B20F4BF71DB5E71E9356E22FFD27E031BD5BF84E5774FC7415CE94648515E980CB37FF3C625C6A2816A71AB5244E82811A8E8187009CF66A4706441A13757281C042D2478193365447C62B8102ED75E59FA9000CE74E5CD45B038A43C9CA9E811887C5A9F0DA3FA517935D4EDCAFE5411291FC0AA23CE941793230622A7252DEF4C7C08ADAB9333ECB8F0BA31C993B1353715CDE2CB0F9B7721AA09D614C4E72747CA03FE58D7119A02B6B2CA37B995E00AFB07257B9E543B1FBC4B0A5498F4A8774F30076B90AE9008CA97949242CD882F27AADA95E1AA507829126E4A54252752E990353FB31D9D0959DE4002C9AE1E89F2A55F5587F6B8AC88BDCBB5C8B6613C0EE91F4A5ED36CCDF8FBB8C465E81E469F14469B9B4AD4E8A2BC9A59FB67403CA570B677E35711E8D3A434A56F6448CC1F6069A9A5B3F9D6A611C16EDD546D292BED052FBD7AA46A1BC405B1B7EC5A7EA11183CDBA99AB3B61FC65D9AA714C83648C69DF24709ED97DD47B91347BC780E53CCFE5E3B82B0D2AA998AE73ECCC4A1D2D5598A8AAD5D50D44B9C61713A002BAD42AA7DD9ED4DD1AD0198CAC28B7518AF238BCD8BF61CC27F77222ABFD3DD3E72F1DC07A9A83F641E22094C1337EEC59C5D7918B7E91046AFDE85F97BF2316A5D0EBA4F5D83CA11D3296AB271BCD70B7F1A300D3FE8AC91A1BF4DF696ABD60F77D5D4C900FD10C486FC48BD68FCB04D227A4E5E6A698AD4C68CBF367AA9C2F47C0BDC288B5C6496967569352EBF364A9135F66B1179A48FEBFA24C0F3379DDE14296DED68A66A2719AB4C5276BD39B9B2C8819BD29747F36C65536E04BB8216E3A14119EB561DC892521D6B2E4B00A7704A83C6E38F19877CF261B7FE72B8404FE7A5C9B8783CD0E65D8929457252BAA4EB0198031AA5A900D70330A66F8D4433AEC05B6C6FDABF54AE418904F6842430EF5D485BD1F5CBED01D8C8F53E8011F46A2452022BD952E0F2EFF2703D9AB9FD102A0980B492582B093FFF68148E9D7761C5FFE22A91B11025E53B70F63C9EB7955CE63B2C85D2512262166D46EEB922EC3F57808F262CB57750CB49E50B8EC11FFB8EB6955ED5A4497324ADA6DE2D3552FC692020CDA4BA174335D6CD771EA0C6F47227F2A3660AD3C824D0B1ACD506E323EF3529B1C4F6BAF1BEE99059741B487E6885321E9563A760C39133385870117BA90E4F675AD5A326E37FFB0DC79EB382579787D0E439C63F49B20FD489C3CC6D25736032374BB70660CC8BD2B2F1DA3A954BF9C36144F8B77AA156FA024A4CB964C8B53BD295B4F2C869BC1B31050F870CC6B36D5211923ADBCE9F6A96B90835E267A16EE26C242DDE661BE84AD40276088935AC79D7E96E8103374062BD4A622A1A9B9ADE17CC24087719BB10BD272CC1DC0D07A8025FC490A56BD077CA4A44CFD982F8B99BD16FCA2A24CD5A83E36C64A2E5398791B9381B7A546398BDE900FA7CBA12E1B336207AC1560C9C918D7E93576063FE31ACDC7D105133D761E0F4D5E83B7925D2E6ADB73D3F2AA3BDE3C97C080E26AEDF8B1E6316A2E7B825761E9A4DB4B24E76E79F44F2BCB5183C630DFA51B5089FBC185B738F1A9FDC89A5AE211AC7FC1B15B4B86E45FC55AF12991FE7D13A9BEC483ED705832689DA93BCBA3AB147DFF864CFFAF11234E313EDCDDDD9DD0880592727694F965653FDED26BFEC360EC72DFFE416AF055E475E7DF024BED6989D48275134A05F02C2579A24626DEE717377002DE0D5BD0B6373605A39D6247E8D147B27B584BCB25E568EAB49EF42DEED4B3E3513F1EAC723912B5DDCC8B52D3725EFD9F96593644B1ABC682B07746A2ECA776806EE0D8DC7F73A8CC6B3EDB250C136B26AD23C15778746636CB6808175658570F9DAAB4DD71F10A06A65A0BC562A43D2F09BAEA370C2DC5D09EA255142AA4AA0AC3B9A662825B928CCDDE9B663A8AB69C244F1AECF3D856F6B92BF8A009140A75DF5CD52F132858FEFB41D82BB285DE9153B69599F7A4741894204603A8C8000767F9D68CCF8FF026024C7643771ED0358E3610B4DCC4DCB760516599FB7D157BDB6540EED9EC6541021B49412D824F2418E28A57C9649C50DD7BFFE9F918BDFA5E054A31643E6E0B19A7DF0E76E59F869FB64FCAD5312769F38830671A3F1D336F1788CE2FBBDA111F8713B8E4CBD92297217E0346BFF175DD8C05EEB8A71ABDC2EE9C19396E2271F84E3DBCDE3C8B768BCD83A15BFFD30120B76E5A0037959E1BDBEF869E714FCB65D02C20664E2F079C1135B113B95B636BC9F3C050F54EF81DF771D8A5F771E82FBAA7E42D077DB323EDDB81F95AAF7C1F75A25E2B79DB3F0C776D198BFD59B37F141E9DF9594BD1B00309FFCFAB77D56920A3491FDF640BCDA71043BA7DC3C29D358E7C53B632582DEA554AF933ADE1B84C76A0F2680B953395C104209AFFEB694E1ABB753B3A05620FF6FF6C17B116EDEC8F269FEF8638DFDDA3467CB0194D75B09DAAAF26E385E6C976EF3C4D722954BDB24D477046C52DCBB4E588C876B2B0E96319800519571C968A36AB5483CD99092D942EF95A98B9AC650BE78CF7CEA5233819293CE3AD36AE51B83D07E84B70AEEE53D7DE16696537C61DCEF0CC2CB1DD36D1148243F364160DA030179D711BCD296929CF6D8E9B5265DAB50CDD5AB66AA83E028FCA47D0AB20F89AF8EEFA1D113992EF9583D097757E989695B75F00249F953066F923E970AE9460CA5ED32D78D62AC0A2DD130C67B3FACA421288325392CBED745E15DEB727622D92B1CFD39F8A0B1C622C351CA0AEC814BA978FFF9E4D2B3F449BBF24FE1EEAAFD502BC39D12A0C5E1EDC74EA380A3A456E74ED1DF9F078CC3331FC4612FF3E52F3D8FCFDE8D0A5A0163A5BE317882B70156D2D445F49B958D72552330654F9EB864FEC3D2E6E21BCD12E18ED27312A0D450DBE4471AA96372DEE986B61356D8FC87E26B9C3517152AF7C4A203C7317DC711DC111C8E746FB54AE1CF312D2BC9FF25BBFE19A4FCA99E499F0560C56D80F7BB4E9E43BBE10B503D7A3A6A444F43CCDC0DDE865996DA56C8C543FAA439CE7B6D7EAE1C3B0BD5A2A6A0D398E5B6A3DD12178FCD9F824ACB284276DE4934CB988B2A549542622762C48A2D96AE4DA178B526736DBA887DC7CFE0C3E14B98BF99A8163B1D317336D8796DD7225363D937E445EDC407C8F9BB0EA2F988D9F8EBC0B178F5931178B5DB68BC1E3EC98E2D5A79D05BCBBC44759F615CF42ABFF2A9771F7311963C0D55E3A7A151FA5CACDA47F551FDC9A4F28BD873FA3C5A8D6039632623386E1252566CB341DB0AA7BEAC3E4F7FEAAEA2FD54170750C27F377A067EDD633C5EED3212FFD367024212E62076FE46ECA3D427928CAA20A3576E47D5D899783766265A0F9D831D3A8158F99326277EDE24DD2280B90663D9E28DBFC275887A7AFF793B5131340E7FE93BC27C58E5AAB46A406564505662888D0036E12D5332916D682F3755A05860F7322571FD5F029862B6D89526EFF4AAC40F5A25DB28D86AF8422CDB73D4557029FAFBA0B1F84E9BB8E2DDE6727F6BF044FCB0E310349DB01A0F870DC492BD2567700D9AB309E583FB6289DEF4F7A8C1D0F978AC6E327A517D8C99B1041B0F1E61F1557EE7AE8D8EF7878623FB98DB5F23CA3E7A96925F7FF49FBF1EF3728EE2EE1A91084E998598690B316B9D3A9C037D2730FFDFF1EC7393315DF57DE32A64E977E604432EB458E6B71707441A007492828372EB3AA53821FE8A476AD3020DFE585BD4DCAA23F9D7BDC21415D1DEBE93A099C59234CB22F518FDF9E4526748E647C994456E6F254BA3881940FD4439F7491299DE573C41ABCBD6898B8A7081919A766AD212A52686F53451233F7D45AED341FC3EE8F3A57459E46E7D4C79A561AE8C8FA5B72AE9EE347FA4B25FB61D8464020CDDFC6F08285B2559519CAE5E2C8D9BA45B542155154C8C09AA9DA97A8BB4BA44DA72F22C25B0088426B91DF156443246CCB956FE7C11D9FD3AE39AA3639C6FAE45B752F01B25C5ECCAE0573055955D87F187DE637037D58107DEEB8737078CC4E623DE8BC0A4BF0F988AE75AA714CFD5ADA5DB837506E393196BA1D980AFD48F42DB614E82136915E8CEE06E589CE376BE8B9A672E2000C5E1CFBD46E1CD9E9998B5D66D5E355EF05A336E32BE5A2F06FB4EFB3059883D672FE26B8D12087AAB309F00795F68347ED471285EEB918A81A3E7B9A6C9F0AEB1FEDFF1EC7393B2A68645BA6115D23ABA063FB533C723EB350420755E93E4597F1A48E9C33AA55B35959DA40FD9AAC5F1567F7CF65BA4C65F53102C31C5EBDAB39DAA6121E4E87B289B2C4E79507A0C6740A4D5656FB0F6C9F25EFCECC2A8DE6465E0A1B0BC571D3A1E090A3444AA9CF449B450D1D41BED99E0AB72D84919B6CAAD322BBCD270129A2D5A3090E2D59E44B7526CCEB467598D677CB0674BC9FC5BF4C663E5C172E95D15DEF1D3CAA2747D23FF5618DECB281E7B66B05BA05B5621FDABE54FB7CA0C6953FE697CB9612C7EDB6B2447075788E24625CF65915718391B43E5CDFD58522CA21967E3CCBF8E94AEEBF46A702A91884FD8987B1C1F4D5C4D55AE2FDA141F0C08BCD66F225EF82001BE8CD547EF69BED5073FFA6828FED66718EEAC1B89E70970874C6501A26664E3AE6ABD313FA744026B943A1FDF6A1A8F3D4AC823F14F8D4C39689DB508F7844462FD11FF65A64B587EE414EEAD3610097337613625B04A21E1485EE5945035716DE5101F1DAF5D39FE2D4959B3CE79A30026A38EE1C2A8B53885450FAEEDA85D99BB804EB79E912FBB571CDEBDD95A7BF65A1D1DD5BEA56598CA68EDD54FC1B50F77BD1EB961D9C2F1E200867961E77792B1F355BA9FE8D7E54F7FAE8F080474EFDE60F181C34AE80298B8437BCBA36ADDCDE239FE9CA517274D2A848B498EF2E1CA6379348872F02D007765A5BD65C82B27F3E8A6779477C75FC5E7DC5C5C2ECFCA0BDD69E1F76DE7E6EEADAC322EE44DD32D4FE2FBE9A960C61BE58A2456FC79D00CAA32E15875D0ADEA7C1680B9622B12AF20EEDF2BA8FB7336579A7F057939F01AEDE193E790306D15361E3E6E8D70D989B3B8AF662C5A673A894AB9FA5BDFB178A145BC9D3DBF9720F57C8B18FCA2C758749DB0165DC62E47D311CB50A9C6400C9CE3764A0F9EB10E41550660418E3B004E542F75019EA634B52EFF0CF2CF17D85789CEABF15A4F04A66D38880A957BA3EE90D93874A108FBCF16E2DDA84F717F484F641F3989A93B7251BEFA00A479EFCC59F362195C83F1ACFE5D49F9F31AD48D00984F0A665DC76B47AEDEE4E25647EDD61AAB6B5B7E0B33F2F9E23DCAC50FE33AA26C9C44E63AB317965777E7C57F4DA23FF3CE1EA279353E58555A60E5D385BEB29FD8ADF7687992856769D6DEA37FEF241AE69196FE9FC229B4004F80E582D3C5F3E30574171A174265F6CBEDD22EF1EB11DDE4B7C4CDA0D2F9B04C596A7A323FC637F3237BE7C5F9A3ABF376D3741D002B5538EF62A4AB98E46E4CA4B5A55A5E4F524EFD68EA4ADC533B0EDF689280DDDE049DED1DA17BE98A299BE4EEFCB8D8FDBBB2CCBF90981C4B60B7FBF24FE177ADA3F0AD2631F871BB247CBBC920FCBC63063618583BAEBCD97F347ED432CAAA2A63E1063C52E513CCDC56F2F522D9FFA1FB48FCBA5DBC0D98317357DB0AE2B2521258F3210B7057954178B975225E691D8F5F7588C6D65C9DB6293E6A7404BA8D5F8EAFD41A84E7DBC4E2D90FE2F095DA833068B63B2A65FAC67D78B85A770C59E64E1050FDB87D5D2E8F5628DD58EB13147B6A8339AA513A5FF2EF1A1CAFC5EEDE8D356077EB1AA8BB1759B4F6E059DC0C593057FB370E60AE4D5A8E2C490735168BDA2B0751EBFCB43015DAFC99C7122AF5A870AE0C97936F5FE272A58F527E7C69CD8857F513E643F971279ACA90D43F0CD4FC41C6DB8E7245D425699745F2EC8C7EE5EF8AE04666E77B15793C70FC60385D64C508743563DEFC1BC5CC32D8A3930165ED487797DB9490ECBCB09795C2B7BF35BA2E8095CE88FF6486855136C564075E45268DD44B9D8DA07F74C40F3E4CC6A40DEEBC2A9BDF921786F96C00FB7724E5D91B652CFF853872BE0863D7E7207CE62A8C58B98DAAA013D56D31838D73554E1EE6EFD8AF1742B06DDF11CCD99083336482A97F2E226CCE3D8939EB77DA9E3001FD8CECDDC8E783004D8D78FDBE7C8C5CB11359CBB7229320346AF916E49FD58E7CE640BC6443506ED61E3841005C8BF8F9EB90CD3865A79FC367CE632AE33C78E2B4CBB797773520CB82FD396BC5A42EA3B8CDD2480D8DFEBDB0AEBE9D91F262A1CD8D1616A73A9E3CC8C501A52BACCC4D92E2B96900F3F364B724D599032A970DE58937F2627EAED5D13E07293A2BBFE3A9B866EDDE9E1D2754B71A309437B59A63E70AEC945CF51F7B07D8F8E8DA8105FC979178E372ED322A233BAFE679AFF661C05ADC1A543EF9E38FDD88BC36F32FA2EBAB90CA172F62BE6FF46CE5B34CAA208E1256ED42D05B3DF1FB9EA3B0CF3BB55113A55A09713ABE8CC2DC6EA4D2D278175BB1312E5C4E2A9A26754B7FB8A03459D14DD2514425A4F65C4C37CB1E1BC5CBA6D2A9D8DC57E9B82F4BC76B98A5EC3EBB9AAEF0C04707A87E61BC085DA19DD5CD90057325B85915D285F5EE959FCB18EC91DC695F563D7E3E52F7F77B89032E472E25B14300A57CCDDF75007FEA3E1A2FB5C9C21FBAA6D92B35A6F6D1E86AF55112C1FF39590E8D570EE8CB4A5A1C73FEE45F77F4AF6A52C19477DDCA42CFFF22FACC393065C565DC72EAFE2DA7AEF3EC3C7E1AAD32E7E2CE6A03F1D57A915871D05B8DB3D5157AB3601A555CE5DC6EA41C5B57F226235D11DCFEAE157BF3308552CEAAFDDAE1EE4887011D2180AFD87D049F528D5BB4E748F19961E78A0A6CB572D6967D98B465AFADD88AD4F5457A5ABEF730A5D73D5871E098B734EE24B7DCD305584C1573C2A63D58B2E7284E7A096E3C7C148B761E62B8A358B12F0F0B98DEC23D8771FCC205EC3C926FA76BBA4104387EEE02B20F1CC1B9828B384E2972D5813C9CB095384646F783274F612BDDB56275F4EC39DBBAA169814D878F61C9CE8358B5F70896338D797B72793D8AF5878E633DD397B4E060E222728E9DC606DA3B298D8DFC56EA5C416E15C0AC261C4CF8E0356DC37EB41A360FCD33672062DA1A1C3D4F7993F19B4AF94F244567E7735D45B4531FB0ACB9722551620E7ABB17826A25F0DA03E1B3BCA36FBC7CB936E1FCFE2B48C3AEE396DA4311CEB3F38E5DBB0B9D462E42FBE18B316EE52E14DA0282C988E6F34AD28AA4FEFEC96CBD2E5D17C0940F97173252B9123F6D95C3D94EDA7A08DF6E1A43B5B13B5EE93812B3B7BB49E862694BDE4A2EB72529DF0EBCDD4BC9A29CE3E7F0669F91783A6C207EDC2A165FADDF1FC111636CC7BD282C760ABE542702AFB44AC533F506E0F53EE93874EA829DC4FA54834178E6FD44BCD83C16CF341E80D4856EC3EFAEE367F18F0123F18D7ABD192E065FAF33005523C612B81C8C354D9E81C769F7E207B1F43318AFF51A8E2D27CEA375EA583CD7A82F9E6E1A8B271BC6E2F9A671F8E90703B134E710AAF6CE40DD8889165E347AC5067C23AC37D6E69DC4948DFBF148CDBE683F7EA9E70A7C327A367ED46C30F2D892472DDD8067EBF7C2ECDD47D188F978BE5138BED938194F358EC18BEF47E2EF9D92D179EC427CBB411F4CDDE2E6F7F6B08C3F691A8E8E43DCB1CD4E85BA0510B306E33AEFCD0398BAA100CA1EB039FF2CBED5241E41EFD1E8B0BFCABD0816ABCD4DD31F066257E4CF1F6CAF343E95E526637BA378DD77E20CA2A72F47BB1173D06BE212AC25D88B0FEE65761747DAE26DB06397F54A4F8D3844CF77DF72D04029BEF96B8065A5E353596EA5CDB5E86ABF4CC7DBCE612BA3CC41CEA9023CDB4C7C63FF7E371C2FB48EC341FBA6A9CBD7A1E367103B6B253A0D9F819E13E661E53EF57DBA10C46C5B46A9F8DD9EB1CBEDF87FC5F3B5CDF5E83301CC7E2C22875D3E0D5FB31B8F8445E1AE1A83D0737A36F2346C9374BCF1454A1A628A17038BE5CC6D4B6A7C2C8B5FA2BA89D37157703FA4ADCAC1815385885CB20D7754ED8D8619F3357EE137DD46E35B2D13B1FBCC450C5D978372553E418F49AB3071CB011B6DFBCCD94A10BC80BFF41D856F3688C3AEB385A895340BF754EF850CAAE2BBCE142172D156DC51B9275A672DB02EF9A701E3F17CEB246C3F5D8861D9FB715F957E6835642EF6538A5B73301FEF25CCC41DB5A291B9E120361DCAC7013B3E2511AF0F9860E145A98B37A012C16059EE498C5ABF17FAAEE1BDB523307F8FFB14578BACD9F872BD4138C800C98BB6B0C3F7C7EC5DF9D84F10587AE8047ED76F1ABED12A198B28ED6DCB3D81BD178AF0CB8F33F09BCE19B669B7F9F005788820BBFED0496B33EA84FF3A00736D94BFBC779D48D473FA1AF7D271D870773472AD78FCB2FB309C6619AD5D5E276F657522F7AC72F9652B75EF495723576E2750F6A761E77FAD275A66CE7745BAE4F70B02D8A21DDE4BCD59F65A4FEC7CF7FA8FDBDFA5393202C535D2F7AF37629CDF9270A22BFD28FFB8749E57A5ED06E19D272EE0719DDF5F25892036184FB78CC06EBDDBECB28F116B99FFAA7D096E11087AA3079AB22D1AB1FF972C4678FCF19E15D895DF19E75EDA94E453570343EFF95AF41900A60229567751E75CBAE720DE8E9CC8420DC0A3B5076284FF95198DB645DA98A742EAABD82E9BAE21DADDBF0F793CD1C56EBDE7B2484E967B5718EC3F73164FD41D8C3A19F364514C6F474CC3775B26208F1DE74F7DC6E0079DD2CD7E3BF5BFFB42FBA2C5B0F998B8ED10F9D61D99DEB9FDCDC6AEC463B5C2317D6F3EBED9340A21F1FE19532E43AF0D1885675BC4E10099A99DFC3FEB34CCEC35D63D4569AB6AA43B735ED4962AD2A3B5C3B18D23A3486AEBCF3AA5E1CDC193ACDE4469CB36E3BEEA03B0E2C87102580EEEAF1585FB1BA5E3B75D324D7D6D3F7A1EBE4E09F100934F5AB2059538382DF44E6615558F9D86EF7748B609679FA6B14C7A2FB4F1C86594CE287D7DBADCEC6D97B68DBA2CCD6734C2AB48DEADDDDC0C806990F15547975EFE8502BCD2C19DBD558E924E85BA99285737C3BE3C3E61B37B07CF80CECB9EE593C6E5D7B31459672C298B818CA5E43AA55616B521D55759C7AEDB85F2FA36A64EBBA81E69677939A2BB376F99B6980384BE1AA5D32D8223EDB59B3249E9327E9F1C00B83C0AE05C5E4AE5D527BFF37BE11D40F8FE4AAEBEB454424C8BCF3ACEBADDC885F84D8FD1F875D761E8C4F67B4A428A07D263B2F7A13C07033B3C9140DC6CB87BA752FC30E0B53CCBC8BFE294E426507660A66B91CD1797F22737E6C7A435A6A33674BD0146F4197360AA1416DC7B9ABBFD205199A359D581F86BFF09F64D3947FACEAE461795DD31A4EC6465FBCF32D7A1B2BCF15EB9F22B554F62AD95CEECCC5719241F62A47B5A43E9A662F53EE83DCDCD59D8B960A466A316E0EB0DA3292115E0F54113EDABCEEF67CEA684928527EB0CC2E23DB9984409AC5CF5DEF81B41A561C234FB5E5F932133B1E6F8793C11C638BDAFC5F88DA415559087EB0CC666C6593D6E82C5D974F83CBC3678329E6E1487299BDD4AAFA825D3D20BC9D904279160EC171D930960136D7E432400BBBBC6002CA704368C00F650683F749A9D836F31AE9EB3D6A3E3A41578BA41040E30F984A55B29118663FEEE92579EAA44CFC04B6D5270D25E84A384459EA8E935D4B703DFEE8F5FE9935805AE315E2CD4B13F6AAC7AF4F8EB9BCF22F3E77870330066F564B72E91ACD5BBEDC31176FA838ECD094BF1BEB7188FF7E2277B7E995F7576855630164A1701FA813305C85771E853AFC118F4B093E92A103F74E61C0E15B834B52DE2C2C50B3846352B7EE92E4AC33A369900C6B41A652EC6E1B317EC9002FF03B6F14B37B3E313C0C2E8A74604E2163A15F2D0F90B7642EEF2FD79D84355D411F354CC4BAF4F1A7F2C73384687EC23C7B08A03E1324AE339CC5731B1AE9C60219075ACD5E6A643A7CE8382BE91CAA22F032D3D9087A356B7249653B4BBE012765C704B130A7D81E5D46A79DCB21DB853274E8491AFC1091CD0975AF972594EBD9FAE5874E0C0FE331770DA550774269C56EA9577015381C7D3234CF320FD291F7ABEA81DFB7A4D4B7CB71C7B792A83AE09600A6613B1A53A77FFD9EB6DE2B1D7B4F5C5A3B01AB196F51D6ACA9061C6291985F5EFE9D98BE72AF2DD6ECAF0A7386E1A2B6429433B27B6960472A390DCF82F63D522FFD7270BED55E8D6A327710F81A7A3F795661F6C6A0F9D8DFF7A3F01BB58D9AF0F1A87FBEBC722386E0A9AA5CFC0FC5D6E7FD7A8B5BBED38945FF41C8BB0C4098898B506A7C8C0ADC7CEE1F1B081683DDADBCDEF65294CF35E0DA2B0F3FC45937E1E6D12879FF71C4991BD1BFACD75FBBB540E51538E900F8545609DF74A930158A778FC357C723180652EDB887BABF7C4B2BC931891BD1795AAF5C5E49D4790BC78339E7A3F16BF1C3015CF368B431E5B5112D5E27B820712C04A24B0AAD1D3F062DB341C57A75753F3A489D93927A8420F44DF79DE3C4EA97A50FBF1552163E48D9031DC31E14600CCE2BE2C7257B395995F7DCEAD1CD5B44A3A7FAA09A51D0146AD347CA9410C56EDF7169C2C2DCD9B3114A359B9FB10FEDE3D032FB41E825759DEE18BB32D76D7998AB0FBD80954E937123F6899811FB449C7C0C9EEDB8DCB3848BDDA31098FD3DE3E8DD6602801330D8F3749C177DB0CC54FDA2562E92E375F98B0941258888EC0D1D13A91E8316F1B2267AFC34B6D53F1E50649F81207ABE75A2458FBC9F1BE65A9C51CDB89EF2DA009307A4D5A8E5F741982AFB2ED7DB951B27D7DE87B1FA4A05EC2542CA5AA2F12B8BAF7192984ECC8A144954C3FA9F84DD7E1485BBF0B4DB366537A4EC0A375A3F07A9F513874E29C95B559C624FCA0DD10BCF8612A9AA64FB685ABD57B4FE027ED87E28916192C5B32D572F134038FBF9F8AEFB6CBC08F3F4CB6A3C7676EDC819F76CAC0773F4CC72F3E1A8A896CFB46E4B1B6EC78D58BF069CBF0729B34E3CFEBBDB3B025EF3853767DD54614C31215BC6CBAAE046668A81B2F7C7F36509DEF3366B5FBD844712E44C6D452CFFF56A402788510C812F14D3C5535193029DFD766925CE557BF670938AA90EFB6CD408EF62790769DB8806FBD1F87DF125CA4BAFDBED728AA5AA9C5C0E1D388B53B3900F446EA6AFF8C0951114E7258FEC94743F04CAB44ECF25E2FDA7EEA02BEDE281AFFE833C246CCD7074CC1CFBA8CC43E26F98BCE43F1E32EA9386AF38E2E0F2D872EC023B507618377A69572FBF73E63F1CD9643E07D6C1E8D33E6E2CB210339421760181BD49D55FB601C5501C5F0E6E04F11F4EE203CD376080E31DA384A6077505A9BBBBB64736DB5C8E9F8E187437146E9B2EEED257DD2927D27705FF000C4512D12E5E49DC0B6A3C7B1EFE4199C3AAF91F4DABC2D93E4DD6B5B9F0560022FDF94AEC6B5878EE1517D324CC737D74CC4CF7A4D40E3716B4D9DD469AC41C111F868BC370829AD4BD422BC416AC8B26DD43206D02FFDBD3D18AD38381979EE4BA879DC578BD293BE28F45E14DE1AE054F9716B7623E8CDDED079F41528F155A8978AF23AF5D5E28943D06B1F63D46A37D7954C15DDFF7662F90629F86A2B7DF5290A76644F55E6B136814D1FDD7D7B20DE1D301AC728D91A5BAC335FB2E39B7FD97D38822A53231210DA27EB78D5873BF405F5CA91F872FD3824531A14B970ACD77914422AB36C35E99FF97AE87DF2A81A9FE95F47DC04BD331013D76CB776FC0D4DE22BBE2A51F86EEB246B8733D7EF619E7A328FF1CCF7103B135FEAB9CECD0F7A9B71FC9D6D6AED2ECCDC7180768399AF04B6ABC1A6B199D073E98249B3229DFEF15D9D2966C7EF24E2DBCD92ED5B092AA84ED260A6F9EFDAC1B5E83A002686F94DCFFD86CFDAC40AEB8FE8153B6D843F5950C8D1FA12F23DA363658FB2FFE5B3E7161BFF595776FE63F4E39BE3FE95793C7623A6545833D770537CC586CFFAD6ED4916A19460CDB65868270148825439FD325E4D8E0B4E519001C6AFDB8D2FD5E883173B50744E9DCC112A165FADD31753B6BA4EF6EB8FD3F15CCB689CF31A9BA929A4512BD968FFDA09290BDD59E59ABFA05261F723D7EEC1C3A183F0723B8E9E89D3F162CB447CA5EE603B044FF4F79E43F1C30F62EC7E410ED5D8CA9DD02A75AA4937A2E6BC7FA05A7BACCE2D9198C650857A30B80F7EC586FE6EEC14DC4DC06A9CE23AE390255B51F1B5CEC858E50E9B5BA5EF57D689C09304CD23CC6EE2820D28F766672CF00EB313BD3568149E6F16417E920F4CD6363193344F76CF1B1F2361AEFB22D47A4A1929B396A04BCA7864EF2851736F988C6D8ED7370C601AA93528B92CA1E39845EC14EC183A1FBE7A147A4C5E8655C7CEE2E106927A1CA8BDD22913F9761E170351357343072555F2A47C183B9E8E9BAE9180B623FD17EF5D9E96E41CC5638D75A63E81A266022A474DB301E328D5A7C19F2EC31F7B8DC71DB5D3509E2A64B9DAC978A9CB28344899819619D3B0D1FB1293CD8185101C04603AA5B56A1CA5AE14FC3D621C7ED77D04EED4A7F8F491DABAC3519103C9D835DE27FA6974B6DC3F068E6798089BD3D3E9AE4FB748C5BB51A3F1D32E2350516056579266021E691089457B4BEA30458B07CCB3CDBDD51FC13C24E3E9A629782B721C5EEE98C681381AEBF34ED959FD2FB461FAFA945FAD74BA8D466E61114E9F3B8788E9CBF1873EA37147582A2530A6C3B2BED8790CEAA7CE40B3B4E9D8967F0A1A465FF99869307E7DF9FCF116E9D8902FC59C3C948A484A5FB10DE5F441E8862C43D5287418EDE64F55F5F606A7496BAC5BB32D9B3E13C01CB94E96B6702B117A309E683D022F75C8C08B6D52F142BB4C8AD199BCA7C84D11F2FB944C7E5096693384E2E8501AFA6DEF9B2CBCC8E71FDE8C619897685EEE40D3310B3FA2D1F5729379F9B54326FEFBE391F863EF896831643EE679DFA253B9B4E860FBA43C9BAB492E64B82761FA80B124E708DA0E9F851A6C709D472CC4FA036EAE48ECCE5CBA0EF1735772C4D1BC03C3B2C16924D9967B0C3DC62EC4860394895839DA3324F55B1FCF50AC8B72F2D076D85C548F9C844F862FC42A2F4ED5C488A51B90306F9555A868F8D24D8898B4908DD90472CCD8B80783272EC4117622C5A6F3A3749DBA793F3BCF4C3BC32A6ECE7A9CF024A26CC6DD7BCC626CD439F09E4A326EF50E444E5D665F6C5EBFEF28FA8C5B807D274E79652EC2F8355B103F6BA501B3A057474C6B94CC3D7106FDC72DC29A7D8769E7DE02D870E008166ED88E2354B76E9A94DC2D00982D1C9074F2E8B3ADD3D9F19C04F6789374AAFE672CDA77C229690627A05C988021BAF8D3759A02D160261ABE7217CA1980B003D648449B91FE24BCA3653987F115AA78F6C51E76D07762A6159FFB261ABDE52081CB5F618C43DB712B3D17BF27B1F31A801160954668025EED368640A30F6738F53F34750EDD09103AEDB47A0CBA4C749D5BF4E9C6BDB823349C6550FA04E2CE23B1C63BCFFF24CBD166CC3294AB15CFB004E0AAD1A81933A578CA276131FB70A8160FB4229B88E7D98F17EE77ED2C976D63D5BE5CB5761C29BC80EFB423C0119CF401DB1F771C8ABD36BFE968DC96FD04694DE22B7FB1683EDA6D4D71E418D949E7035623AF05A6C18310BBC85BA860DDAAA6AAC4EA2B51CACB103C407574EE4EF54B42171DDDF724D8DAAD2D2850D9741D0053F3F726EFD8D91447CEC9737887E2EC3314F55E6A9F41F048A7198E573A0CC3AB6484CC2B2CE82B1D4A193D9BC9C48F043AD49F7F4835E52519EAD7323F6C2BBB1B3004C09708622F32EC0FDAA69BF9BE99347C9F7AB46FBEE719779F8EEF510FFF4EF3447CA96E38C5D9EE7828B42FA2176DB30308C53089B4AEE9974DC57365EAB832C5CDF0722A5427F2B69388CE325CA1008C5602AA127200635F73D696134657E8A92757929D23EF754C9101932F66906C72D956733C623AB608AF301E305D4E7213F8F8A467829EDF7B49AE79B9672DCE280DFFB82491B26A8B17B4737971B1A904CA896B2D65D035ACAF22F9BB5900135F3C1EC62C203868825C9216A5AFD0244F05248DA50A7447482401CAAD9EFDB5EF18B6038197034151D62A029824307D253B381E1F8EF4BFDDE968D9DE23F8923E622C70A99182F762A6BA16E1791849F5BC825621EB1360D8B95B8DF4C047F17BF386294B3613180460CA471CBACEF03BB7ABCBACD5BB9836E3A8C33C10C0DA8F29D9AFD76AE40202C36002433AA5AD0864AC7420ECABC0FBA80D7DAF03C147AA2455D1E75AA663FB09B79D3A6931B5A850AA7A0D285D51FA69CF81C788F5A8FD67DE038E165CC0B3ECAB360884C6E3C79DD271C05F81A0CF91EB7258460298A4D01A91689AE5E54F5B40BCF6B9F8403E1ED211DFB5746E7E1CDE889E54CCC3AD474FE3EBCD58B63A0C4F10FE75F7B125A7E73219D5A9B55F1A3F4C59F49900565C2445C8A6A9D1E1D059F7FE96305F7AB1AEBEF19F75BDD24D46DF21D499F252FB7CD5F1E88D1A85A3D1C74A8FB2AE64F2D8F1B4F1F27AE608FD1CA064A2D31FB3D6EEC5534DD9F8DEEA4B517F022510E5528D5FE593F12EA56E25B1D8237FE4CF4D420ACC64C7CC70FC2D54C51920B102A462D1D1BE3E2470618DC8AFF150FE0598E6A64EE349628CD3446B8B4F6F13D2D05E13B6B25250C52FB5CD3AAA2294A56E3552A90BD15EF108C02C6E85B7B04E5AB2133A95BCAE16217D2B0C6F65DCBE1BDBBDC507FE5A5674AFCE213F6A50925A7951996854545BC46138B752A632282FAECCAE213ADE99B91132BF4AFC46014C7961BAE481DE39FD7B5FAA573A72392C03F7D74BC28C3D4EB211091E7ED37B343B4D9201D47D619198E3AFA67BAACD50AADEE5C2A8DED52500B2E3B519E51657FCBE20007BA409C3DB0A622282A3A618785B6590B45853B116C34BBD2248B41EE58304CB24A6909234896F67EC13248223D17BD25AB32747ED3A5E0B3E26A1318E6A51E834CA81A05CFF366002F32FE972089E6E12437052CF52DCE7ACBA240DBE3568AC03C8BAC3F048C3642CB72F14697FDF2694D3C7494C3D8E41CF4FDD3CA0DA848E8BF6D3CFBB50E8019854C844FCF0A32C1C762724D25C621973505152AAF12816EF0FF3A45466C0CD5F15593E5EEB3FC678A4BC3ED128111B0EBB39DAE4455B5141F3635293AB45D851D946AA4F6BBB8E17CA95FADFB5E8BA93F857D2674DA8DD2EB4EEF00984E8FB74EFF4C65BE1A3EDF44A917E5D153999CBACCBE09DEB341E807964FB5EF82C161938F1C6F72707FFDE3D97C471A3A674982BA9B4BF1B35371AAE345D697FADE7CF4D8AC26B6B370660024FC1CB25CCDA9387FBEA70D4D7C85E3B03DF6C3B16B12BF7DA4758B256EDC6A875FBF07AC22294A35A64D24FF57034CB74DF11F02B741855C8F28A432A588D044A600EC05CABD0C75972F1A54604903AECE0A1B1A816E9AB682EFC88753E8049CA89A1C4E4754EE5D1E34FB224305B852440558F46F7C90EC00CE448630810F6D932DB4B168576DE9781F479B39F7565BCB592080AE978FEC30CECF6B74DE84047927259234EAAB240380BF7D78FC79C6D0EA493166D218009185936BA7F32D1CD5B2AEFCA9A0F1602B0E7A8F1D81C58CD44BCF8D1300FC09CBB49607514BF0038114DFD033A551F041D7F7B517F1D155523C2F19A401C3FCFBD7952256A12CB456063FE1EAE1B81E507BD41C6EAF372733DBA2900BBDD49BC90DA2652737FB9CB707CA54124F69F71CCD6A82149C61D212CE6C9CE399526632A8D1A4AC6D20D889CA97921E766812C60806E99C4BE1B0130F913E8B0D35B63E763FD9439EC18ECDC0DD9B11A66A03CD5C80A35A932DA8A184149DF24A46A57BE619AFB6C58AD147CB7553AF69C2C519147ACD84500224069829C925C1B7F125FD2256971CE513CD1806984D14FAD7876463789EFB795516BF6A012D52E173E0E1F8C70528E5A8CCBA5004CAA5C949B27A39AD97D8A07605EDB118095D3E7FBB58A191C8D0E631798BDCE1BF94577AA872A4768069E6D95899DA7DD3BB5067E0C2FCE558D990C7DA4565F01BFBF6E0266EFF024B0C55B51DEF6C6493DA6EA7A0580F9F93B5A200023C8690E8CBC78E9A34CE4DA1C98731FB13E07E5557E0290CAD822CBDB024477E90176863F69EDE193F8AABE00559BE508D1F7342761DDF153541FC91FA9B82C878E602FBDC07633F485023091CD0DD188BDBFEA361C8F378A418EF7D9331BC52549791D427E5C755D4EFEA87092FEFEBBA3967FA390AB996F2386F7DC03748B24F6DD088019787986B439FF24BEDE98520D3B5DB986945C422921686B82BE02A4ED0032D5D8A9A57E518D2AAFF99B06C3CC4F9CF72A8F286BC56E6F232ADD4322D176B427A179AD419B4C9FB02F53B37333AECAD1B36C40F4F33C7CCD5E540C653ADAC241706A33D2DBAE41A54A33942293C04229995C17C062BC89F858B41F5B3207563972AA2B07D5B7C7285DADF6BFA6A45C300F02833FF4A71A1DCC72D64EC1971BA760857D19E86A00EB36D19F7CBF1AC09E970AE901984E139654A65444232481D5253F35CF171C850FB23C1E2938237273B017ED2494D795971AE417078B1F7E321A2D26AC36FEDB1EB2EA11885DE47D41DC257D53F4C592C0644C8CD70C13F0EEE0C9B833241C2B0F6B1E8CD664BCAD0892F7EA13AE2D5DCD551FC0B46CFE42CB74FCB0C3689CB0162C2A196503748B24F65D03C04A38CB3B531D555FCEB6F79415ECD8FAB2343B273BDECF7B4EB28ED570E86234C85A84F787CE47B38C05683C6C19AA242DC47DF5095052A52899FDE293E138A38940D250AA9AE5F59D4549682109084BF5DEF3F368C6CE5CDCDB902AA8BEB01D9C40009BEA01980B9FB56E0FCAE994094DC0D788420B6F1140E4AB680292A010A9568CA30C001B2B1552529CCD9145E3C3F13E8802BDA6E8FD4EBA691F56B5087C3CD15FE5746157E79FC5575A681596714B7A6A9F81C3F62236D3D5B7254D85BCBE04E6544886F701ACB30F60CE7DF49ADDA8A4AF78DB5C5A2C9A67796AB247FE877C44718B09D6D5E99760FC60B34C3CDD761479C7F4A902FF57CB145B2116B9986F8EBE702AA4DABABFE698B678877D88F7EF04B203DE0652B1512AA49B57B1C7ABC807B02DC74EDB0BAF3FEF36DE5E3DF13D0700EC7392D8775D00D32FDD59479A7C161D29B8E8E68642094AEC28F7D449C0E49D257BE2AE244D7BFFAAC748EB7C92222AD58AC664FB18ACBEA07D00F78645B38365A15CED2C3CD524DD4069D7F19318B776375EE9C40E281553F3533552ED1364461E904ED8B80777870924E84E20FC5DFF89587AE414FA4E5E86B9DE4EFC140198F6401990C4A2471912984990DAC74609B1C3787F2F1AB0F4E0313CDA9000568BE0523B1D8F378947C2E22DD87AE294BDDEF7C7DE2C17C14F5FD7D64BE59DC739F553540C607AB54AAB9F370460491E80395E8B666EDA87076B4B9263FE2859FDBAD7242CCD6319A72DC1CCAD6E6FA13F67BEEDE4597CBD3901BDB6F68D1158EBA4A3427DB732593966AAD71B6F8DBE582A2439A5255EB765B1D0CEBA0A49988EA0D7BBE3DB1FA6A26ED2546CCAD768208FEEF81C1FD64A930F604B0F9EC0C3B5C2F156F864298E24BF2A9C7B806E91C4BE1B003029F9B6E2451ABF3E0777D8A7FF052A09F843CF11386BF544775B54E1ADFDB046BDFA1B385B13CC9A676267B2ED16B32CE663170AF0934EB4D3368606ECE8755251292C1E4FBC9F818A542983AA0C4425ED4097FA143A024F35CF40EC826C5B35166D387A0AFFF5BE536525A1DC5927190F36A6DFB77BA346D478F393BE54004600D097C1ABC7A09B3F89EFC561DFFDD48762B55F8BA0FC42C7E118B1C2BD3EA612EB73FF41EF0D64DE189EEAE01DB5A3F078B338DC5B97E9067B7BD0AA44E2E79DB24A26F94949024E03304A7635E2CB98C477FC3C42007BD6004C654CC24B5421734B6DA3D873F21CBED992E5D39B0DE4514596F1D1C649CC533FBCDE772415656FC98391AA446F454F617AB128D760284D26CA33CF15832391B4DC7BAB472AE72DD0176E0E4CECB4E308F53D3F32378F7C6B3B6C0E9E6DC18AF87B37548F9BEE55A1B60768D29F30A64E62EFA0696E8C0E0EAD306FF7513C10DC1F8D8B4FA6B01640E28FFCF24E5E6D6036A3F02E0E8BC7E6095C45BB86638103E4F14A54268019CFDC7E37A929DACFF74E5F02CD1BFAA2741282DEE9899445EBCDBFBDC44CFF8EEFCEF8FB94761D3F836FEBAC307D1EBFEA203C1136086B0FB965FE495B0EE1AB8D092055BD38AB53E2D2CEFEAA03503B79169A0C9B8FA077FBD29E6EAFF7C1CF3B27E09CD426AF3E3B8F5F48F5AE37C352F2D07C5535C6F5E600D48CFCD4E24F5BA8030D7BD29D52D61B3DD16562C97E2CD18CCDEECBEA7A97530012F47A37D41C38CA959F25D7478A3B13C41EACCB786D6E4F79A54AAAD772646A0CC2EFFB8EC0FAC36EFF97AF6627CD5FCD7C777320F7563F7CECAD6E3261AF056AC82EC2E1F30578A639E37C8FE69DC178E1C3381C30094CC7C7BB61BDDF8C552817AC2FA1337D9DB55685D777C2F17A3F0E1ECCA925E9A9913DA732DDCA7D1DE837A4A1F4F89D5629D87BDA6D01765B8CECF6A6E88B05601E8FB46B4AAB24A5379DE6161452F41E6B9F8DAF9634DBDEECF7497BAFB4574B9DC6E6C93C462FCAC9C77DC183D8A0E7380B56BFDCA4A20A26F56C2B570C6FF56371B826E2F672F14E6EAA69DB86E145FC4527B181F523BA12C0CC967CD255F5A8AD03673910642EDB80B62316A045E60244CF5C877CBD3BC838ACDE8CF9E2AFAB0BDBF3A4FA671C5337E4A0D5884568316C2EFA4E5A813DC74E316997B626EB5B8F9C87CA9153F0E6E0C9A89B3A1543976CB2FD4D39C74FA13907AEBF0F9E882629B3B162EF31E6A6080556D7176DBF64DAA20DA893380D6F0F9E84E0E889E83A6E39B61D3B67F9DE78E418BA4F58860F32E7E3E3510BB06ADF21E6C7B5CB4B1C5CCF310FDAEC5A356A22DE8C1C8B2E6317326FA7CDCF7981B2E59E6D70F72193C6AA274CC51BD404DE8B9A861643E762F88A2D38E1F9B109F522CA448C7B536E3E7A4C5C825699F3D069F4222CDD7B84F6E223F9426FD63679AF777E872E264FB316308F73A9F266E38CCD6B15402510E0909BC858B10DB51367E0CDF071A81235199DC72CC1D6BC13AA225785F2C4879D54BFABC5CDA0FA9A6252A90683C6AC2B47AE4E74BD59FA82019898A47DF4B6ED9398418615F2AE4822F625641F3DC1D163948D76F7D51A8CD6A31623F7AC1B41C4DB824B7A7351A0A35A01F67044FA5AF334BCD07E886DEE9527019352B1BA60C569D140528003291AD5AC6A55FEEC513FBA57D30C9091186175752D0073C60613BD45E001CE6544770D3CDA0669C389F1998676BA17BFED7595AB88F6AC33FF3D4F9FE4D3F75D3A35273F38D2F130761E9E36C47AE1F5ABD6E55A8C481B9435145E4D855EFBBAA8F6E8B531A55512D69DA1A557B914A7DBBCEB5CD5FA344D7F39275C39B47DCB6D622E89A93459DB132F69C42FF9F525B6D2242B2D72B90DDA7A28F1233E944E5BEEDADC5C9ACFFD67645352A3341A361477D78EC5E4ADDE2B7DC63785BE3ACDCFA22F980AC90AD42B316C28561B7AE4458066A31449ACCE5CB11DDFEB3C8C40D6D55E57CA58B5BBA4F12A00C3E71716A1FFBC4DB8272C160FD71D5C7C0A841BE5756505F2A270AE83B9F8456555930571B7011223D8F04557AB901E97CC8F3AA6E6B7C865F158BC67A59A9A4837075C259CB520AC1767D8690408F223EE5F324830FF8ACF753EAF8198B1E6423BFA2DD2819D2E1D93A2AD43339CBD4971CE00C0EA5DE14A91A5A36F10B0ED289CC930F2A22C2ABCD2D76B5EBC77EFE7CA41F1BBB495633B0F4C711818C98DF9B6328A14995AB30B23EFAE9C5A94623915466D5FFEFD72797C536EDCB07ECEFCEBD957EB2C5FB4B13C5830A52F1E3B7B8B47646EAE1C4AA7D0944DBAD3E4B3403FEFA20DB854332985BDFAD1086F514075217E5B0C374D5FBC393055A4986C8D53578D28BA2533AD313A7F872F14A2CB94E578B0663882DE1A88D723A660A9F772F5E97317F0EE404A6A9507E03BEF2750BCF6CFC12A9B14E5AE13A791BA682B6AC6CDC4EB03C62273E50E3BD6664DEE09ACA5396BE9DE622DFEA791D8A04E46BA12C0CCD16393BA9C9B2C565DBA4EA5EE2249444B3036F27B757CB5F1EA5EFE6874AFB0EAC2B2313FEA87F6A3780494B2A72110C89D5D987D939991C4A6DCA809F151F1581C924BBCA39A958E8184F26EE82A80E0453E65A964E864404607494297ECF5344998F4433B0310F9A22A27F0D03D83594A25ED592909D4980B86713169C0766EAEAC7AC355CE4A57092B3E2F0EA625955BEE2E4AB939CEC8DD19575EF51B33CA9380976E2A93E38D008C712983A4D93B72714F3D4A5F75536DBEAE9DFF82BCD256AE18EE56E80B08609EB13F57FD56B9AA0432D3CD4BA9C21CADC8C9C3DBE1930862FD716FCDBEE8356D15F67104FD69E721A8101A8F597BDD24E9F1828BC8CE3B8305BBF3307DF31E4CCCDE85D1EB7661D0AC0DA84AD07AB231479ED7BAE3FED068DC5F3B06954222F14CEB2178E2FD143C526B107A4DF47732074855617541BA0AC05CE5597DA97396D427EB4C9DCBBA93C0411D4D9D56EEFAD1BD0CEF4B93754EEB82AE23292CFFCC9F492C821D19DD3B9070BEE5CFC91772732DC96B4FE6C3C564CF2A8B3AB7FDC9BF97075E0C343C5BF7AB1FFD12420C2814C66B93022497B4F95548238B43B0ED00C4F2EFA5EF7937FF32468CD7005231286FF221DEC88D8F02133B7C4092A27DB54AA5A483A5E3975E3FB2930B7F8C4F5E7C3496075DCD23D076F402AA8F31A63EDE573B1233771C32FB125074357AB3F4050330AF12C4278F578E69B42F2657B1D6503CEE4BBF1FB5662F5E6C9741A9AB1B62D6ED46ED214B51AE7A345A8D5989B62316DAF1408F3488C7DDC1916EE5AA4A6F54A8DC0B41EFF44085AA7DF03F3D4760F09C0DD870E20C26EEC9C3331F8FB5656C5BA57AA327FA4E2AD9ECF84527F1DE756760A000AC4A3F4CB9420273EEEAD4BCD0B8AE25E2838BC0C85D3C4F66AE24F9F03B8F93BF4AFCB9D0CE87A3927BFEAAE3F9CFF6E3A7AD36E662747922C99A1785B08EEEA7E1D9EBD98314926C5C789F8A735E6C291B0F743CFF2E0ECF4BF1CF15C62E7E0EF4ECD2918D7BD6BFFEF4E443A04BCDDDF957B938577BE64FC955770CE181DAC1F317F0FD0F257925D9D68EDF741F6EE7F3995FF2CA4E5CB1557E8BE1A6E80B278119D76E906C54D09C83356C60F28E7C54A24AF954DB2C3CD0640875F96404BD3D0015AA0CC4B3AD92F1A7BE63D028731E3E99B40283A6AFB22382D357EFC6D22327B0E54C21C66D3A84F73317E295CE2350BEC66054A8158DEFB5CF40FF292BED90BA9BC9DB7F32394EE85700968DF204B0C95B7C000BD0ED400EFC548717B166EF21FCBC4D0ABEDE2203CFB58843E222EFB5AD4227611AA8BBEABE69FA0202D88D9303308E32DEC83064C56E94D7EE68ADA45489C6375A24DB5BF853B6E5E270A9C3DE7C529DECBF5088F0B91BF19D5669B691B1FCBBBDF0DC0729689AB51863B373ECC3118E54E501003312BF352A932481551080154B6001BA1D4855683D82FDE702A5AB9C7385D8927F1639272FD80AAACDA311B56CFED9F37B2BAD3F0060D72131D4C0CB0330A98AE56A84E31F9193F1C9B825D873CA3B0580944FA05AB8F310C66F3988CEE396E1F73D47E3E5CE23F170ED0804FDA31BBEDE3C0DEDC7AFC2DCEDFBE9D7BD97E688E38F264E5993B75281FF9164F3280EC0FACFDA4809AC7F29153240FFF6E43A8EBBA82AED5EF54998B245830BD0019E9A5973FD4BF0654F3437470100FB0CD2EA8FBF27E69DD8E9B83B2C1AABCE5CB2771F779C3883F445D96894321BCFB74A4579ED4AB68F7D76C72361E1B48BC7BBB1933168CE1A6C3BA171C7916233C15973049A473173F395F71F4BD6A825BF0AC03619800524B0DB8D045A022B55A79641F4D1143EDB40AD9552F601AB67029B1609BCFABE590A00D875488CF75751A66CD88D07F59E59581A7EDA63225E6C9D867B4208586F744585777AE1FB6DB3502365811D7E97BA740BC1ED1CCE6815A734B1A2DCF2B73735AA1FBBD16CC1AD0AD1FF99E4037ABF69EB50F19DEE98B2F1163E0E12A0FF6F2498B2A5026F30D29612FDBA5AF5DAB9808B7EDCEFAD5100C03E838A3BD2B87908FADFCEA8543B168FD51E84FFEE9881B0F4B91830631DA66EDA8FC3D4F12F2757599AA0B4CD8F5691BED168A3ABFDBBFB0080159363931B912366AC41A5373B60DE36775244806E0F7200E6AD5216B7796764ABEDB66EEB8B9B072BB57E7A531400B0EB9049605221C9D71CAA8BA90BD6DB1761361F3B635F43BE8AACA254270AA3494A17B6A4F2ECC15D3CF26C02549A8C29E2DD25EC22AFF539BA135A240930EA36225759C5EDBBB8EE4CB1F4866B5A167B0800D83F9DD4810CC4AEC75743A812BF579A00DD02896D343647529A02EC0CD0151400B0EB506920526792E8EBA4AACBC1A9B4BF2B4D806E81C4361AF14F3C2F51C19D738002E45300C0AE43D68FACE338F1B6E48FDDCA96835D8F2A0D58579A00DD0219E32FE7AB6F17A00095A60080DD10F9BDA72C13A07F3A95C5DA00BB03540605002C40010AD06D4B01000BD0BF1D0504B000DD2805002C40010AD06D4B01000B50800274DB5200C00214A000DDB61400B000052840B72D05002C40010AD06D4AC0FF031A326D52124DC9780000000049454E44AE426082)
+
+Module Standard_SPIDER_Inte
+Title: Standard SPIDER Interface
+NodeLocation: 120,1232,1
+NodeSize: 64,40
+
 Module Model_Details
 Title: Model Details
 Author: Cory Welch
 Date: Mon, Aug 18, 2014 9:09 PM
-NodeLocation: 784,80,7
+NodeLocation: 800,96,7
 NodeSize: 72,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
 DiagState: 2,2278,73,1081,648,17,10
@@ -608,7 +1637,7 @@ Aliases: FormNode Fo1552872215
 MetaOnly: 1
 
 Index PV_Econ_Titles1
-Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Cost of Electricity Ratio (post/pre ratio)','Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)','Measure Cost & Benefits ($/unit)','Measure B/C Ratio (ratio)','Program Summary']
+Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Cost of Electricity Ratio (post/pre ratio)','Simple Payback Time (years)','Installed Cost Result ($/kW-DC, $/kWh)','Measure Cost & Benefits ($/unit)','Measure B/C Ratio (ratio)','Program Summary']
 Title: PV Econ Titles
 Definition: Create_Titles_List(PV_Econ_Out1)~
 
@@ -642,7 +1671,7 @@ Original: PV_Input
 Decision PV_Input
 Title: PV Input
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Input_Titles,8,0)
+Definition: Choice(PV_Input_Titles,10,0)
 NodeLocation: 1288,440,1
 NodeSize: 64,40
 WindState: 2,99,257,720,646
@@ -691,7 +1720,7 @@ NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
 Decision Inputs_only_for_view
 Title: Inputs only for viewing purposes (no editing)?
 Description: Check this box if you want to view the inputs as a graphical output result (or output table which is not editable), as opposed to an input table, which is editable.
-Definition: Checkbox(1)
+Definition: Checkbox(0)
 NodeLocation: 1464,168,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552866073, FormNode Fo612315645
@@ -722,7 +1751,7 @@ Definition: MultiTable(PV_Scenario_Variable)(Select_DER_Cost_Scen,Base_Yr_of_Cos
 NodeLocation: 960,72,1
 NodeSize: 64,40
 WindState: 2,237,158,1472,616
-DefnState: 2,543,304,753,343,0,DFNM
+DefnState: 2,803,403,737,277,0,DFNM
 Aliases: FormNode Fo1283404285
 ReformDef: [Undefined,PV_Scenario_Variable]
 {!50000|Att_ColumnWidths: [464]}
@@ -982,7 +2011,7 @@ Original: Storage_Dispatch_Out
 Decision BESS_Impact1
 Title: BESS Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Dispatch_Tit,2,0)
+Definition: Choice(Storage_Dispatch_Tit,5,0)
 NodeLocation: 608,1160,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1105,7 +2134,7 @@ Definition: MultiTable(Storg_Scenario_Varia)(Select_DER_Cost_Scen,Select_Rate_Es
 NodeLocation: 1272,72,1
 NodeSize: 64,40
 WindState: 2,2012,167,1033,562
-DefnState: 2,357,63,688,243,0,DFNM
+DefnState: 2,973,543,572,193,0,DFNM
 ValueState: 2,813,310,705,211,,MIDM
 Aliases: FormNode Fo1551839741
 {!50000|Att_ColumnWidths: [322]}
@@ -1371,9 +2400,9 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_PV_Input
 
 Index All_PV_Econ_Out
-Att_PrevIndexValue: [PrePost_Load_Solar,FirstYr_Bill_Compare,CostOf_Elect_Compare,Cost_of_Elect_Ratio,Simple_Payback_Time1,Installed_Price,Measure_Cost_Benef,Measure_B_C_Ratio,Program_Summary]
+Att_PrevIndexValue: [PrePost_Load_Solar,FirstYr_Bill_Compare,CostOf_Elect_Compare,Cost_of_Elect_Ratio,Simple_Payback_Time1,Installed_Cost_Resul,Measure_Cost_Benef,Measure_B_C_Ratio,Program_Summary]
 Title: All PV Econ Out
-Definition: [PrePost_Load_Solar,FirstYr_Bill_Compare,CostOf_Elect_Compare,Cost_of_Elect_Ratio,Simple_Payback_Time1,Installed_Price,Measure_Cost_Benef,Measure_B_C_Ratio,Program_Summary]
+Definition: [PrePost_Load_Solar,FirstYr_Bill_Compare,CostOf_Elect_Compare,Cost_of_Elect_Ratio,Simple_Payback_Time1,Installed_Cost_Resul,Measure_Cost_Benef,Measure_B_C_Ratio,Program_Summary]
 NodeLocation: 432,912,1
 NodeSize: 64,40
 WindState: 2,13,50,720,350
@@ -1434,9 +2463,9 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_Storage_Econ_Out
 
 Index All_Storage_Econ_Out
-Att_PrevIndexValue: [PrePost_Load_Strg,FirstYr_Bill_Compare,CostOf_Elect_Compare,Simple_Payback_Time1,Installed_Price]
+Att_PrevIndexValue: [PrePost_Load_Strg,FirstYr_Bill_Compare,CostOf_Elect_Compare,Simple_Payback_Time1,Installed_Cost_Resul]
 Title: All Storage Econ Out
-Definition: [PrePost_Load_Strg,FirstYr_Bill_Compare,CostOf_Elect_Compare,Simple_Payback_Time1,Installed_Price]
+Definition: [PrePost_Load_Strg,FirstYr_Bill_Compare,CostOf_Elect_Compare,Simple_Payback_Time1,Installed_Cost_Resul]
 NodeLocation: 432,1392,1
 NodeSize: 64,40
 WindState: 2,0,65,720,350
@@ -6845,7 +7874,7 @@ Author: JamesMilford
 Date: Tue, Feb 4, 2020 5:33 AM
 NodeLocation: 296,392,1
 NodeSize: 80,56
-DiagState: 2,114,87,1555,670,17,10
+DiagState: 2,114,87,1555,645,17,10
 Pict: (0000008E007000BF00AC00041911000089504E470D0A1A0A0000000D494844520000011C000000EB0806000000BB1429F5000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA8640000109E49444154785EED9A318E2CB71545B504870EBD05074E0D010E9D79054EB40D6B014E9C184A0C27863307DA80A1C830042DC35A87BE9B3D53FA33C3DBAFC95724EB913C0738C997A6BB8BBC7D1FAB66BEF8040030080A07008641E100C030281C0018068503EFF8E1C7EFEE7EF5ED97777FFDD72F32D3BF7FF3FDD777D3FF0B500A8503F7D248E5F1A8604A4C3F0FF00C0A67638E938C2A10AF140F5850389B928A4115462B291E5050389BD1E35463C9331E780B85B311BD4F358FE4B4030714CE265C553687940E24289C0DB8BA6C0E291DA07016274AD91C523A7B43E12C4C7A60ABBEF457CB83E47DA17016467DD923987E4B067B42E12C4ACB5BA9541087EABF7BE4D66A4F42154EEB50A3DFB40F8F6E7DD2BF477B3684E5A6BDBDAAF043144ED4670D3B5A1B448A675EAF289D1085A31603C7EB7D98CBC098D774DA19C9E585C3848CE159289D79F50E1A0F97170ECF6CAEB755E0289D391D79CAB9BC70D402E0385BDFC773629DD35150389BDB034EADF3398ACB0B87705E6B0FD8D3B91CF9DB2A0A6763FFF4EF3FBEEE425B789633975B150EE1BCCE9E4153EF87F11C593689CB0B27C183C6F1FEFE1FBF7A5DFD3E70728D6FDAA3D184289C442A1D8A679CBDC346E1C435EDCDC8BFBD794B98C2A9E1A7BFFCB289ABA1C2F5C8DE85A3DED37277543E3D4667BA9DFEE9BF7F960BEDF27FFF797DD535505F64CB9EA8F7B3DC99A699BEBD5664E62B1CB5C85EFFF587D7575D83DADB985EC7EADA5BE3DEA7ADE8C86C7A0D9EE9A90AA7E924385CE894535B38BDBEE8B58593FEFF5DD92DD314CE42A71CCF9F18B43EE5781EFC53382297670C9CE9B90A472D6E0B1739E5780AA7F52947BDC7337725E54EE6B18541333DCD6E779904870B9D726A6FAB92AD4AC7F3DEC95DD931D3F3148E5AD486AE82E794934C65E1BDBD4A3FE72D9BAD6FA7440E5B1A91290AA7EB24385CE8E1B1FA62975A5B009E67366FDD952199BEBD4734E6281CB59896B7E3A4FC77CB856EABCE964032BDC6A313CF9913CD5B39DD54B848A6C3178E6712DC7FCEB3419C72A4BFFDDB2FE4BF9F755776CEF47A85F37A8CF46CEA4AA71CEFB39C516E7DBAD938D3A10BC7F36BC3B7A8FFFED4854E392D6E7B7AB875D96C9EE9D885E39C0407AE23E842A79C44B4D2499F676776CF74ECC2518B67F971731CD324B91AEA8B7F95BBA3F266BA58A6C326A07A12DC54B826C2874D9E9D08CF73D2C9E6D16FBD76814C472E1CB568960F16D4351116BBAD3AB8EAF66AF7DBA8039935CB05331DB2705A4D8203D74408F4A0AD252DFE46A7C69D1F10BF854CBFB046E13C9804079C72DE934AA0F769875BA8F790E917C2158E67214B503FF7D4454F39073D4E3B144D0E99FE4CBCC2693C090E5C47D0854F396F49C573B67C289AC790E9CFC42B1CB54896A59BE33982DEDC0DCF6FB4C046E5CA74E14C874A4BF524B859836B22146EFE4AA852B184C790E9F7C42A1CB53896950BE79A089BDC56BD45958A253C4666CA72F14C87494BEF4970E09A08173F681B8D2A154BD090E99C790BA772121C70CA798E2A154BD090E99C1069712DD8898696AFF7CC8B26C215A852B1841C32AD8951388326C141F5FB25373AE5A852B1841C32AD8951386A312CCF6E8E67FADCDC05552A9690A3F2637A32D309F9BA4F1CCDE569F134730B5C0FDA1A84620654A958C27BC8F463AE2F1CB508968D16C875CAD9E4B64A958A25BC4766C772A34C5F9A96AB26C1816B225CF0A06D34AA542CE13364DA66AEC26934090E38E56854A958C267C8B4CD6569712D4CE3CD4970CAC951A562092FB832DD214B91337D5DE1D44E824E2DEC0AC9E2A71C552A96F002997ECE7585A32EDAB2C3E9E640BEDF135746958A25BCA07262BA61A62F494BF524B8D913D711B46358AE46958A2590E952AE291C75B1969D1782DBAAF7A852B104325DCAF0B4449B0407AE8930E841DB6854A958EE0E992E277EE1749E04079C723EA34AC57277C8743943D3E25A80419B93E094F3822A15CB9D21D3758C2D9CDA497073241127C215A852B1DC99EA4C0FCE4BB44C8F2D1C7571960327C181FC1C4F5C0D552A963BA3F260BA79A687A525FAE9E6C0F339AF08514F54A958EE0A99AE675CE1A88BB2BCE84BCC6D1585538ACC82E54C99BED98321699965121C447BD0361A552A963B42A67DC42C9C8B26C1C1EEA71C552A963B52FD0526D377BAA7C575A1176F4E62E7538E2A15CBDDF09C6EC8F40BFD0BC7B13911D8F994A34AC57237C8B49FFE85A32EC232C02438F04C841550A562B91B6ADF4D27CF74CB534ED7B4CC3A090E3C9F3F52B8BCA852B1DC09327D8EBE85A33EBC65C02FABFC9C4F9C1D552A963BA1F6DB944CBFA35B5A669F0407111EB48D46958AE52E90E9F3F42B9CDA8B0A3809123B3E3C56A562B90B64FA3C5DD2E2990451372771E544B802552A963B40A66F36C87498C289CC6EA71C552A963B40A66F36C8749FC2511FD632F02438D8E994A34AC57207E4FE5A926949F3B4AC36090E5C136182D02954A958AE0E997EE3C94CB72F1CF5212D27FA52CACFFFC41951A562B93A6A5F4DC9F4439AA6C5330966BAEDD8E5B64A958AE5CA9069E189EB6B5B38B51F7EA24990701D416F6B321BAA542C57864C0B4F64BA595A5C9360B2CD498C9E0857A04AC57255C8B4A133D39716CE8CEC70CA51A562B92A64DAD099E97685A33E94E58493E060F5538E2A15CB5591FB6849A69FD2242DBB4C8203D74498288CAA542C57844C17E8C8749BC2511FC672E2497020AFEB89B3A04AC57245D4FE9992E9224EA7C5330996D81CCF754F725BA54AC57235C8748595993E5F38B5F77E933D40B590D76739C9B5AB52B15C0D325D61E5B59F4ACBAE93E0A03A98C9094E39AA542C57824CF7CDF4F0C25909D783B609A6A12A15CB9520D37D337DAE70D49B5B2E34090E563CE5A852B15C09B95F9664FAC5C24CBBD3B2FB2438704D84E02155A562B90A64FA859E99F6178E7A53CB0527C18167224446958AE52AA87D3225D3EF2CC19516CF24587A733C1321F06D952A15CB1520D3EFE995695FE12C36D15BA0AED9F4B6865151A562B902643A475DB36941A6ABD3C224D078021BF594A34AC57276C8B4A647A68714CE0EB88EA0414F39AA542C67874C6B7A64BABE70D49B586E30090E5639E5A852B19C1DB92F9664DAD6C874555A980436AE891030BCAA542C67864CDBB4CE745DE1A817B7DC68121C7826423454A958CE8CDA0F53325DE4238AD3E299045B6E8E672204BBAD52A562392B64BA8C96992E2F1CCFBD1C96795BDB48A852B19C1532DDD107992E4A8B6B12609D814E39AA542C67844C0F50649AC289E23F7FF7BADAD7A34AC572467EFAFB6FF43E603BC529A7AC70D48B6173A3A04AC5723618A0E3FCC8D3B4B81E18A1CF20B755AA542C67239D26E5FA637B3F649AC28924853304B9F6D8470A27B014CE10E4DA63173F529416F542D8DE28A852B19C0DB5F6D8C78F5038818C822A15CBD9E0EF6FC6F991B2C26183FAFBE00FA5AE40958AE56C90E741BA7F2DCE06F597C21906791EE4B0C2497FE78075EB46E10CC355386A7F77F464A6CB0A27BD917A4165A02FCED5546DCE6D8DA3A04AC57236AAF29C24D33F7336D3ED0BE726BCA0D6E6A114CE30AAFFD483C2F919B93E8F74174EE5068123D441FE0627A14AC57236AAF7E626B4C97497C289F4E5B98AEA637BA03553A562391BD5794E92E926773AC569512FF8D040B70757D16273AE42958AE58CA83D30A57006174ECDC322EE79F5BA3C32D87AA952B19C91AA3C27C9B45E97473E38749417CEC4137B34B56BF56873AE42958AE58C786EAB76A655A6CB0BA77683363E825238F1F1140E99166BF2C8076B559516F9C28FDCF8082AD7C3301AAA542C6745ED8529992EF61175855379DFBB23D59320608855A958CE4A6D9E933BD2F2C45E5738DC563D45AE8365B0DBA9842A15CB59E1B6AA0CB90E969715CE6647D0EA49703322AA542C6746ED8929997EAA45755AAA8FA11B4D0479FD9641C3AB4AC572663CB75564DAF0C989BDBE7038E5483C93E0D9E65C852A15CB99A9CE73924C3FB675E124E41B596E3011E4753F312AAA542C6787538E465EB765C100F5158E63835666A5D34D42958AE5ECB84E393757A657A67D85C331F4675C1B733332AA542C57C075CA21D3EF2CC19D16D706059EEA1EBC9331FA3AA852B15C8155F7B296DEEBE02F1CEF07BBFDDC2AC8EB2B303AAA542C57C135449364FAF5A79F732A2D3D8F5ED17187738289A84AC57215DC4374915BAB11993E9D16F9019E39F906798B363903AA542C57C2FDA5DB35D39503F47CE1783FE8A41B74A66C6A37E72A54A958AE84FB9493DC30D3B53449CB99A930D3FDAFFB3A9393944D42958AE56A9C1A2A9395CEE84CB7299C33532119FCCB78BFBE331B73732654A958AEC8D9FD8E3E484F67DAF99D6D969653532119B4744E5F573278A17E44958AE5AAC8BDAC71E14C7B699A96D317921A37C826B538D5DC9DAC6C12AA542C57E5F4C93D993214E4B4D32CD327AEA7795A56F89236B986E484659350A562B932A787E82199BED3252D337E619BB5FFE1EDB56645958AE5EA342B9DE4CC996EF0D9FB144EBA50F581BDA60DEFB451CD37253971D92454A958EE40D3D249CE96E9469FB55B5A9A97CE615AC8139B75FF5CE9E75B6FC8E1E4659350A562B90BF7DCA83D3F6BF44C3B3F97A27B5ABA2DC25BD37B1CBE6EDCBB7F4BAA9F6BEDED7D5640958AE54EDCB3A5F6BEB56FB37B65A66FEFDB92216919B638577ABBC65550A562B91BC34AE76A1B974D62585A96DEA40E1B7325AA542C77A4DB238328DEAEAF0743D3B264E974DA982B51A562B933CB65BAF3497D785AEE9361855BAC740D0B964D42958AE5EE2C533A034EEA97A565DA4D5AB8680E54A958C20B64FA3997A765AA4D1A300122A04AC5123E73CFF32C99BE607886494BE84DDAA4680E54A958424EE8E2B9F0941E2E2D613669835BA747A852B184C7842A9E00990E9B964B362A6DC8C64573A04AC512CAB8E739E54B65AF97C1F23C455ABA96CFEB86EC5E326F51A56209F574CBF49BA11931D353A6E5BE98C7861D0B9CB436E030FD0C0563A24AC512CE732AD3AF799E21D3A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A2043958A254029A4053254A9580294425A82F2C38FDF7DFAEADB2FE5171CBFB8AFCD37DF7FFDBA5A300B144E40289A72D35AC13C5038C1A06CEAA574E681C20944BA45505F287C2EB7577340E104427D91B04C4E397340E104427D91B05C880FBB1408F525C272213EEC52207860EC9767387340E10422FDED8DFA32E173610ED8A960F09BAA7A39DDCC038513148AC736DD7E26D3A910E681C2018061503800300C0A07008641E100C030281C001806850300C3A070006018140E000C83C201806150380030884F9FFE0FFC729302FE6B61470000000049454E44AE426082)
 
 Constant Avoided_Costs
@@ -16689,9 +17718,9 @@ NodeSize: 64,40
 
 Variable BESS_Incentive_Scena
 Title: BESS Incentive Scenarios
-Definition: IF Size(BESS_Incent_Scenario) = 1~
-THEN BESS_Incent_Scenario~
-ELSE Subset(BESS_Incent_Scenario <> None_Label)
+Definition: IF Size(Storage_Incentive_Sc) = 1~
+THEN Storage_Incentive_Sc~
+ELSE Subset(Storage_Incentive_Sc <> None_Label)
 NodeLocation: 2376,64,1
 NodeSize: 64,40
 WindState: 2,98,82,911,481
@@ -16761,7 +17790,7 @@ Definition: 0
 NodeLocation: 2692,40,1
 NodeSize: 164,16
 NodeInfo: 1,,,,,,0,102,,,,,,0
-Original: BESS_Incent_Scenario
+Original: Storage_Incentive_Sc
 
 FormNode Fo1580763489
 Title: EV Incentive Scenario
@@ -17464,94 +18493,48 @@ Close Model_Details
 
 Include 0,LinkModule Solar_PV,2,2,0,0,Solar PV Module.ana
 
-NodeLocation Solar_PV: 784,216,1
+NodeLocation Solar_PV: 800,232,1
 NodeSize Solar_PV: 72,56
 
 
-FormNode Fo699244067
-Title: Va26
-Definition: 0
-NodeLocation: 856,1588,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: PPA_Rates_Input_Subt
-
-FormNode Fo769891875
-Title: PPA Multiplier
-Definition: 0
-NodeLocation: 856,1628,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: PPA_Multiplier
-
 Include 0,LinkModule Electric_Rates1,2,2,0,0,Retail and Export Rates Module.ana
 
-NodeLocation Electric_Rates1: 952,216,1
+NodeLocation Electric_Rates1: 968,232,1
 NodeSize Electric_Rates1: 72,56
 
 
 Include 0,LinkModule Loadshapes,2,2,0,0,Loadshape Logic.ana
 
-NodeLocation Loadshapes: 952,360,1
+NodeLocation Loadshapes: 968,376,1
 NodeSize Loadshapes: 72,56
 
 
 Include 0,LinkModule Building_Stocks,2,2,0,0,Building Stocks Module.ana
 
-NodeLocation Building_Stocks: 952,80,1
+NodeLocation Building_Stocks: 968,96,1
 NodeSize Building_Stocks: 72,56
 
 
 Include 0,LinkModule Electric_Vehicles,2,2,0,0,EV Module.ana
 
-NodeLocation Electric_Vehicles: 784,360,1
+NodeLocation Electric_Vehicles: 800,376,1
 NodeSize Electric_Vehicles: 72,56
 
 
 Include 0,LinkModule Energy_Storage,2,2,0,0,Energy Storage Module.ana
 
-NodeLocation Energy_Storage: 784,496,1
+NodeLocation Energy_Storage: 800,512,1
 NodeSize Energy_Storage: 72,56
 
 
 Text Te1552674989
-NodeLocation: 868,288,-22
+NodeLocation: 884,304,-22
 NodeSize: 172,272
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 AcpStyles: Show_Object:no
 
-GraphStyleTemplate Lumidyne_Template
-Title: Lumidyne Template
-GraphSetup: Graph_KeyLabelColor:20224,20224,20224~
-Graph_KeyTextColor:20224,20224,20224~
-Graph_AxisLabelColor:20224,20224,20224~
-Graph_AxisTitleColor:20224,20224,20224~
-Graph_PlotAreaBrush:65280,65280,65280,2,1,65280,65280,65280~
-Grid:3~
-Frame:1~
-Graph_TickDir:2~
-Graph_KeyAreaBrush:65024,65024,65024~
-Graph_OutlineKey:0~
-Graph_HLabelRotation:45~
-Att_ContLineStyle Graph_Primary_Valdim:1~
-ShowKey:1~
-Graph_FrameColor:20224,20224,20224~
-Graph_GridColor:20224,20224,20224~
-Graph_KeyTitleFont:,20,1~
-Graph_KeyFont:,18,1~
-Graph_AxisTitleFont:Arial,20,1
-
-Text GUI_Frame
-NodeLocation: 1128,372,-24
-NodeSize: 432,364
-NodeInfo: 1,0,0,0,0,1,1,,0,,0,,,
-WindState: 2,102,83,476,224
-NodeFont: Arial,24
-AcpStyles: Show_description:30~
-Show_index_menus:yes
-
 Text Te1552875046
-NodeLocation: 872,288,-23
+NodeLocation: 888,304,-23
 NodeSize: 176,280
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 NodeColor: 0,29298,52942
@@ -17560,7 +18543,7 @@ AcpStyles: Show_Object:no
 Alias Al377403133
 Title: Data Import/ Export
 Definition: 1
-NodeLocation: 952,496,12
+NodeLocation: 968,512,12
 NodeSize: 72,56
 Pict: (000000000000003B003C00043D04000089504E470D0A1A0A0000000D494844520000003C0000003B080600000027F9E9CA000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA864000003C2494441546843ED9B4B4854511CC65DBA74E9AE28885A042E5A086DA445D4CE5DAEC24DD0A2851091DACBA2D08530043D172648281424F4C045D9581183948D25A598A2626A9968896531C834DFE21BFE9DF9CFBD771E67E68EDEC50FEEFDCE39FF73BE39F79E7B1E4C593C1EDF52A8A26D9E4E865AFA26DA5AB534DBA8A26DCE3CDFB57EFAD9B6C4A59E6E1355B40DCC06860B842ADA26305C4054D13681E102A28AB6090C171055B44D60B880A8A26D02C3054415C9CC8F77D5BD63CD37AFBFA98DB0915EC0E2002B222D26603E5327AF663A1A5A06F6AEC8986E5C1D3C1CBDF7E96427DAACC524AA0822B3778F6B81BD02D35A5CC03CA64EDA5EEF9F92B132253C75A3518B0B54716EF563159770E04EF4681F7A2C13269723355A6CC0B8A64E50BF16D309F42EE38274F5A708A07BE4440F0AC1F4E2DAC46E2D4F2EB051A69E2BAB7F172BDB23074611FBF6D091B0962745002CD4F5FE58AF969E2BB60C03BE8AE95EA91401B0417854A88506BE3554340DAF94350CC5DD283F155DBFD0379FF5A085B288A1C53631EB7A3B7FBFDE297E8A0058401AF6DA005279FEC3828C29716A1040592DA6132C9B37C30C5CDB31D98B5FD48DE8975F5532A6C4A9412032BD56ADC534A9EF9EEEB46EB87370A95EE6CD06A7066542F8F36A4D60B89086F1097B347E3184CF83964E9C1A447EC77E56A0FEB1A581435A3A28BA614C50500E332527D34E0D02B18D3FE53296960714DD30E6C02C8BB92D7A49CBC73CA64EE4AC0993202D0FF0C53B2C1B9BCE34D34D1DC8F2E865F4B6960FF866D0726B34D3A406B032631AA6864E66816F0C0327D3D4790F501775A7D741E22BC372E001F25DA4C67BB914F56A16F8CA30304DA3D7A1F31ED7C35F1FD6F1DE6D7437F19D6180DE42AF31A67CD4F18DE5BA1B6697D767B76B31D2E14BC3C0344D6816DB39D9ACBB7D6B18C0B4B67503B3D8E1D0CAB8E16BC3008FAC349D8B59E07BC300A6CF85F7AC35F5EF88B9ED30BA511286F34960384160D820450081E1045BD670E3E3B95654E407B0756CDDB05F613BF366B8AE6BAA47ABC80FD45C1B4F1EABE4CD70A9101836485E647308ED05C4446C59A909D6C4975FEE5BD0CAE702566366A7252FB854B341BA933CC2D34A5BC8BA92174CC4E659287270A4A97F67ECC168F32DFC42D982E356C6D5D2099F2CD4ADA567C293F12BED67133FF0A51755DF59373D8214C3282433E4827C9FBC60AB6EA9272F6C548A5D0CAFE3021E7BA763954C298AE162E26A983D81C33099A154915BBF524F5E70808171FCE3043D5DCAF033872F806A18DB2DFC453613E869D530C0A0A1ED2C9622E8616DC2F3DFCDE6275EF60F0A19D4AF37B6DB060000000049454E44AE426082)
 NodeFont: Arial,16
@@ -17569,7 +18552,7 @@ Original: Data_Import__Export
 Alias Al612315645
 Title: Result
 Definition: 1
-NodeLocation: 635,184,25
+NodeLocation: 651,200,25
 NodeSize: 35,13
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
 NodeColor: 30583,48316,7967
@@ -17579,7 +18562,7 @@ Original: PV_Econ_Output_But
 Alias Al1686057469
 Title: Result
 Definition: 1
-NodeLocation: 635,360,22
+NodeLocation: 651,376,22
 NodeSize: 35,13
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
 NodeColor: 30583,48316,7967
@@ -17589,7 +18572,7 @@ Original: EV_Imp_Output_But1
 Alias Al343880189
 Title: Result
 Definition: 1
-NodeLocation: 635,224,23
+NodeLocation: 651,240,23
 NodeSize: 35,13
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
 NodeColor: 30583,48316,7967
@@ -17599,7 +18582,7 @@ Original: PV_Econ_Output_But1
 Alias Al1417622013
 Title: Result
 Definition: 1
-NodeLocation: 635,144,24
+NodeLocation: 651,160,24
 NodeSize: 35,13
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
 NodeColor: 30583,48316,7967
@@ -17609,7 +18592,7 @@ Original: PV_Input_Button
 Alias Al880751101
 Title: Result
 Definition: 1
-NodeLocation: 635,320,2
+NodeLocation: 651,336,2
 NodeSize: 35,13
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
 NodeColor: 30583,48316,7967
@@ -17619,7 +18602,7 @@ Original: EV_Input_Button1
 Alias Al1954492925
 Title: Result
 Definition: 1
-NodeLocation: 635,456,2
+NodeLocation: 651,472,2
 NodeSize: 35,13
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
 NodeColor: 30583,48316,7967
@@ -17629,7 +18612,7 @@ Original: Storag_Input_Button
 Alias Al209662461
 Title: Result
 Definition: 1
-NodeLocation: 635,496,2
+NodeLocation: 651,512,2
 NodeSize: 35,13
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
 NodeColor: 30583,48316,7967
@@ -17639,7 +18622,7 @@ Original: Storage_Disptch_But2
 FormNode Fo612315645
 Title: Show as Graph
 Definition: 0
-NodeLocation: 364,84,21
+NodeLocation: 380,100,21
 NodeSize: 244,20
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
 NodeFont: Arial,16
@@ -17648,7 +18631,7 @@ Original: Inputs_only_for_view
 FormNode Fo1686057469
 Title: Output End Period
 Definition: 0
-NodeLocation: 364,44,1
+NodeLocation: 380,60,1
 NodeSize: 244,20
 NodeInfo: 1,0,0,1,0,0,1,150,0,,0,,,
 NodeFont: Arial,16
@@ -17657,7 +18640,7 @@ Original: Output_End_Period
 FormNode Fo343880189
 Title: Select Output
 Definition: 0
-NodeLocation: 364,184,1
+NodeLocation: 380,200,1
 NodeSize: 244,16
 NodeInfo: 1,0,0,1,0,0,1,310,0,,0,,,
 NodeFont: Arial,16
@@ -17666,7 +18649,7 @@ Original: PV_Impact1
 FormNode Fo1417622013
 Title: Va2
 Definition: 0
-NodeLocation: 364,400,1
+NodeLocation: 380,416,1
 NodeSize: 244,16
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
 NodeColor: 53199,53199,53199
@@ -17676,7 +18659,7 @@ Original: EV_Scenario_Selector
 FormNode Fo880751101
 Title: Select Output
 Definition: 0
-NodeLocation: 364,360,1
+NodeLocation: 380,376,1
 NodeSize: 244,16
 NodeInfo: 1,0,0,1,0,0,1,310,0,,0,,,
 NodeFont: Arial,16
@@ -17685,7 +18668,7 @@ Original: EV_Impact
 FormNode Fo1954492925
 Title: Select Output
 Definition: 0
-NodeLocation: 364,224,1
+NodeLocation: 380,240,1
 NodeSize: 244,16
 NodeInfo: 1,0,0,1,0,0,1,310,0,,0,,,
 NodeFont: Arial,16
@@ -17694,7 +18677,7 @@ Original: PV_Economics
 FormNode Fo209662461
 Title: Select Output
 Definition: 0
-NodeLocation: 364,144,1
+NodeLocation: 380,160,1
 NodeSize: 244,16
 NodeInfo: 1,0,0,1,0,0,1,310,0,,0,,,0
 NodeFont: Arial,16
@@ -17703,7 +18686,7 @@ Original: PV_Input
 FormNode Fo1283404285
 Title: PV Scenario Selector
 Definition: 0
-NodeLocation: 364,264,1
+NodeLocation: 380,280,1
 NodeSize: 244,16
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
 NodeColor: 53199,53199,53199
@@ -17713,7 +18696,7 @@ Original: PV_Scenario_Selector
 FormNode Fo746533373
 Title: Select Output
 Definition: 0
-NodeLocation: 364,320,1
+NodeLocation: 380,336,1
 NodeSize: 244,16
 NodeInfo: 1,0,0,1,0,0,1,310,0,,0,,,
 NodeFont: Arial,16
@@ -17722,7 +18705,7 @@ Original: EV_Input
 FormNode Fo1820275197
 Title: Select Output
 Definition: 0
-NodeLocation: 364,456,1
+NodeLocation: 380,472,1
 NodeSize: 244,16
 NodeInfo: 1,0,0,1,0,0,1,310,0,,0,,,
 NodeFont: Arial,16
@@ -17731,7 +18714,7 @@ Original: BESS_Input
 FormNode Fo478097917
 Title: Select Output
 Definition: 0
-NodeLocation: 364,496,1
+NodeLocation: 380,512,1
 NodeSize: 244,16
 NodeInfo: 1,0,0,1,0,0,1,310,0,,0,,,
 NodeFont: Arial,16
@@ -17740,7 +18723,7 @@ Original: BESS_Impact1
 FormNode Fo1551839741
 Title: Storage Scenario Selector
 Definition: 0
-NodeLocation: 364,536,27
+NodeLocation: 380,552,27
 NodeSize: 244,16
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
 NodeColor: 53199,53199,53199
@@ -17748,930 +18731,39 @@ NodeFont: Arial,16
 Original: BESS_Scenario_Select
 
 Picture Pi612315645
-NodeLocation: 96,480,34
+NodeLocation: 112,496,34
 NodeSize: 64,40
 Pict: (000000000000001B002B0004CD05000089504E470D0A1A0A0000000D494844520000002B0000001B0806000000E527766D000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA86400000552494441545847B5966B6C536518C7874644D0A8E80782984022988889891F4C543E29B84BE7D828037673A24664434CC06D6D1D2208C1250EBA8D765B0B63974E908DCBA2842122C2D860EBFD76DADD5BD66EEDBAD2CBD6F59CD3D33EF6540BA4BC1B5B5B3FFC7A799EE7FCF3CFDBB7EFFB4F0080FF05073EBADAE7279E41F5A205598C15176E5D797EE0FBAB3835F502AA1F2D099F974935DB7F92EA720F4986E7437E9976F860BDAE05257A7DA4F67895228322FC53CFD3DF492AF0F42EAEE24EDE1115522B4CCE21F1F08E637ACD91E6DEA6484D9A8424961CD6EFB905A887676326B3F770F3EBB5BAADF87125939C22EDCBE9DA5CCD66FF2836A6946A6147B95C1EA94B9390C45600AB567B05D58C8676437973BD691B5429983EDBF4F05BA8999920486A512AAB6B6AE7518514D5FFCFAC262E66CD93D83A3EC6849A5E26F0341930EC12A7A0E66682F4F99F7EACD9921ACD1FA8E67C69EDE3DC10F433A1B59F734D3898099A892B5FA0E6660227A8C58C922E4F2157D183EAC7CDEC80F3F6A6A6B12C68ED635F1D74763344D66C908E5F2842CDCE8417A796A4B16FBB189C1E6F51B5FACF306C81E63247A8BD1417B3F4792AD27F8DD58D64C2885BF9FE84D7F866BD791B74984FFD1C80C013A4DFBBC4EB9B5CEA22C75EA37B740DA943F917161C538833F6CB9D1BF6DE0A84492C914232470571312B1FFF6DF72FF61C68D1B3427BDF4198D7F0544CDF495DFEC4AF7D459206ECAB218126D75E3798EBE91C6D3C02105810A911669AA09E757BA8A56E8FEF3E7B79EAEB496C79EC66BD94EBE553BACF2C35FDE9C15555BCF76FCDFD5223B6B397AFD94456A89281AB4C866ADD66100CA783CC72E1D3488DC7C1AED5B6D33E63367BCBDC5076C6910BAD7A4EDB837A60C124615B11BC7257D9A7EFAEBA6AA8A86E306541952CCDECC22DCB1E7E7E2ED0FE6236EB2046570B74D91E9EEE63CA3CA9791B3543057C8B9A7A0B074F8EA4C30DA3A01835F338E262B6DD70B45964CB86B6DE1F1AE8EF0EDCBC2678B632E8F7F04CE7A8E8B0C89A035C31C334453AA2CA0A319B1DF3E8DFADC698013E96018DBA02AD48BFABAF469D35D510BCBD94E39776D1336ED2F6AA10CB730A8D6970D328DC1BA93157D802EDE524B6323AB33E3FBEF874EF1E99C89A057C2C1DF8BA8D50A14E04AE22114E0C6DA1CD16D273374D75E5F4AA568853EF7A486728D4CC0583C5F386C132BDD630E609B1BB42D995C8924567D6458CAFECB1B6940EBABAD30D2EE97AA34BB6CEE894BEF3F7486D59E35836C8AD170B3D3EC732A12ECF5D33C4806E53F397289D48E8EBF66083FE6C62890452F6E920A5140B4187ADC462716C7B3612ECDE5FDBE93D7CC7DC5CDC61AE2B6F0E7EE64B376B09CABB08351F8917F72D492AEA2498FB25F6CA7303BCCA738321BEA95275E61D960CC4D5ACCA7679679D712B34690B6E0BB5F9767E7F3248465BF251B32842D980D5E509C6C9EE477AA47F715CCDCAC7DBF69C346C01AE3C15844399502DDDA2F251C442D42C0ABF3FF0642AAB7396D4C55142E909EC775473BE482CE78BE995E5AB374325B60124E6D63CBA3E8D53CF4D4EFB5E0C5E9DB332E1C497D32B5B704C2989D4A64948FE4E03DB0E884DE1FD311F8EB79978EDDDD6ED613199F5E2B7B4593A26065755E1F3934FD175FA674D66CBEE0793D94809FA09861974443C7DED6EC947C53DC078E8DF3757D20E998023C42E85C57A2C67F7D58F640357FD2168C6DB3786EB95AD033C96B0EF7EE49B19CDB5CC038A89E21A35725B865E42E7D943E7DA9CB1E26B6D4E624558ACDB72E6C06967169C907FD211AECD179B137FC5EE2690F9E191422C748D3595D5F5E78CF64D747C80EAC70AB2182D74021B70DC4943F5E201B218250B1CDE070126FE40C23FC5C61A81815AF7520000000049454E44AE426082)
 
 Picture Pi1686057469
-NodeLocation: 96,64,33
+NodeLocation: 112,80,33
 NodeSize: 64,40
 Pict: (000000000000002A001F0004F005000089504E470D0A1A0A0000000D494844520000001F0000002A08060000004B198027000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA86400000575494441545847C5987B4C53571CC7EF3607080AC21406895BDC3FBA4D50294299A2D3C48D6D3A311922C48CF9883AB329CAC3F22838B76C233E8A1083A8431D03456080BC51B1201695475B60B6B48A826B45B0D0027D400B67F747537734B7856A913F3E69EEF79CFBFB9E7BCFEFFECE39250E72B6FE41BB44205ACEABE17951CFA15BDB4F8F8C8EBC891022C683A065136865B6636F68992F27B4FCE5D852BEAC765DFE07F73D2F1068692181A26B83B37423DA6954863884571E81F6547D554CD5680E396DA9BB20965FB683DCA78440719CCD19BA11DD5B547D0D105EB904DA5BB5B688AAD11CF2C4693BBC8B0974B635316A3F3B209F7E95404CCEB7E7474747DFA0EA0F8C995BE4C945A9BB7C2A0854DA9E19A2D6296DB75DF1ABA15F2150C2CDEFCE8E22EA0158D6BC9C40B96D2777C2B55C23730AADF4E5E807B0259D6A001637CF13A5ED3068DD4A895B70F9622EBD92FC0A38DB4FBF3880493507A4030FDF0F2AF3E0C3007EBFFD430ADE36E9E6C0BFFDEDF3024B3F6E85F6A4C6A844836E71F3A2FBE742A9DA9FAABA5C3657D01AE08B48E146FF0A9AC5CCB3DB4EECF62923D0096EEC2FA23EBE8740D6E889735FFECF47F025ACC875907BFD4DA034FE4FF11633CF179FD906F30A81A15C7B9125F7453C33F56D0054438B99F769BAE79C6A399890CC8F4A4C6A8A388C73A4218C9578E7C764E048C3BE631B2E2F104059376ADEA71C9ED5ABD239F62AB51362408D66BC18C318F13743CFC11BA23467B1BBC36627087AAC23791AABF0A62103D6E15C8D1343249B7540D887EBC6B08EE0691CE305BD71A5929FF1F88C1B9B2EC03A40694E6709EB088618B927DE6DA61D1534781E1134D28E0A1B1626F25AED1232D18CD88B3AD04C01FD171DBECB23A284C8FB98F0361E7F5C737B064FF16440EB8CEB8F073BDE8344092C5AD882EBC650A875F62E71BC2E1F96F016AE9B34F74D1272C05CA6D439E17A8F4AE24623370C41C5EECDB86E0CE5D088EDBB4CFE63B3CCE92C419D03832FD70C216B5CEF1FEA9B054F1E54BC8887EBA67063B648BC8F0926FEDA57A6B4B36D6239DA9D152165FBABD717EC63EBF9FEEA9ACA257F911B868BF60A83668CFD24BBAF0496CC8C676B561C7F508DC73769BE3AA5E39A75420DF22C704274B264FA94EAF12E22D0920CB24064FDAF19834E563B5AA11D9A7EA802AD4E7E740D8F6FD27CD97151ED8C98C6C1CAF6EA80FAAEEB9F1AA87C98BD118CD7E6CF6BC77563B03BD85FCE66D6CB7C59220E1E7FDC848339576B900DAE2B34BD8E30E79BCC9873D7B866A959736E4838AD163DB703550EF7CF7CA984639961BEFCB8F8866DCC1D753A3F3D1C3686B04603E92DBF316071F82CD74D62D04C91D17A668F23B34EB12CE95E2D1EDFA4F9AA94875556F13568519613824ECF0E07E46A040907198F1F18A880B88B2FD8219B831568557267151EDFA4F927496D3767329A065ABB3B1677293BE7760DEA69E9B9E503AF7D43E17CA141338558D6F1A133B3A99BCE6AABC3E38F9B70F607780A850AD9E37AAFFA89B37ECE3DF8B86E8CA16164E5CA6C969A5F5EA7CA7C4A5FFB9426DC947E6A535A64C6CA6B344FAED08C3C9F709A2E172F72E3175432B1F57C48374A261CDFFC6CB78BE20DF2252A0FA962D855221F76932AB4AEDCC70F96BA9F9F83D6E62C1782660AE82F7CA29EFF4E0CF7A9D9E644BC14C126707A6493CA26A2496D1BC9535A85D70FBFCDE4A069311C343D92AB02A08D0A68B38EE06A08A6C4BC3D5C46BD6C73C09F927CFF93E2B2CF4F8ACBFDD3E05754FE45DABDD280D38FF2BF3ED55108D7A01B63EC3EF2FEF5E72505A9B5DDBBF0F826CD279BE7CCF75E7FF5BF45CC21FA4670D633F3B0EBEB2E53759A2C626A4332C7CCE1CCB426D7557AA0666376544DE0A5C8EA6F72260B880F3EFE79733BC7CE6A5B2BFC6AC6CA213992D70594E90D850B04FF01DC9B26A32DBB35C30000000049454E44AE426082)
 
 Picture Pi343880189
-NodeLocation: 96,344,31
+NodeLocation: 112,360,31
 NodeSize: 64,40
 Pict: (000000000000002A002A0004EC09000089504E470D0A1A0A0000000D494844520000002A0000002A0806000000C5C3C95B000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA86400000971494441545847B599795453571EC763EBE8B88DD6BAD62AAB0B735CCE78DCB52E33C77A665CA774B4E7546D3B4E3B1DEDD415851202845DA9A82CC711AD0B38DAAA65446A01111108C40402241012420884251BD9494242923BEF67E7D147B82850E78FCFE1BDDFF6FDE5BE77DF7BF7424308BD729C2EC728B7DBF51ACE375CB0C6E1D062A85A992D094B49A9D8561153BCA23DB17C832483FFF9DD0AC5779F98ED9DD3703943016B1C0A2EB7F3F59C86983311CF7C5064852F8A2D5DD59AC2D9F92C89BD851F5CE88562F87E8859B2589F273D136DB075BC8DAB3118B0C6A1C069BBF5B7D85A3F94CCDD5A29D5B237D89D9671607723F708BDAD7D0EBB2DF3F3F3DC2D7C88613C5D607928893DADB1C8E67AD6791958E350B858B9BB28BC6C9E5D676BF5C6F9011875BEFAC19E14DE561E340C237DBBF670A640FD30104619FCB83C2A58E3504862BF2B60162D55B9907324CE4FC5ED768FA851657FF0AFAAF74B18653E288AE74B8C7240572A775779A755E68FCB21C11A87C2BF055FDC0A2FF7752BCCA24554BBD3ED18A5B775CC6E35D62CEB300B9718BB15B3A87E888789165A38CF1652E48D3AADCDFFDF46459D4FFE185DE5EFBC577F2A5DDCF9744B812C292285BB931DCB5AD111F2D8AF279C986461C4E83158731D57AAF6E6C1A38BCC95EAD81B9895BEE816711B506BE2C01A070B4C1CBE266737A328A02BB4C49B98F53E88495CCE88A78B75C4CC67DFAE3D92912FFD9A097C5B7FF8E67D71F8851E977D34E49ABA35D313D8AB5A99E50116B5453ADFB3B62758E3CBD0DBDAE614B5A48624B0D7B444727D50C8132F145CE0857E90447FDDA82BFD43B7B36B022E8F049AFDA6665F5E9CD00F95347FF3252EC613AC7120D496C605F72561A961C573ED71757E28A67445FB5D61F0A5B0A2F9D614EE0E0E2EC71387D3362683FFF77BA71BFCD17D1123191783036BF4446D6E9A97250EB948272E6F8C807866566CAD7CD67EF3335B8F69A2D62AF7096379A32C113D15974B456F6D9F9D5EBDA72841E48FEED6075D81A7002E0E07D648A5A2E3CEC7E1657ECE18BE2F02915A4DEE9FDDE8E7F778ABB17A05DC9BB99233D1D43C4F6AD579BB12382BDB638937558E84791617F322B0462A85B2D490CB75812CA1267F07CE6FB66BA687152DB0A4F17670BA7BFADF9BCD86CAD51982CFBE8FAEF64311AC004B45FB9D8F3D630603D638541E375DA0C712B74442D99AE6FB6246F213E2C73D68884CBAC0D95611C1F141F01DF05DFD914C4D57D3905F9D2458E37028955FFDE759CEC686D0526F442FF521F046B165CB3BB2C45F5D941BAB56E0728602D6F84BB0BB3453EC2EF55400111F26B898E180350E845C679F2D5475070895362C12558F7FB306799134AA9D7EF5CAEE05FD62891A469BF337388D81C01A71E48B8D9B2784D69B682152443BD54020191EC1045F35A16567455C83CD3911A785036BF4A4C7E51EB928A18E3FE284C07DF08E3CF548566BD270399AD57A765BBAF4018DD181120B15C7717A38B0464F6E703BF7D1C295E8CB7BF2F338FF50E9EE718F9ECD14CAA7850B553AABF30D5C8C275823158BC335D68B59D73C912E34288C3D337031C321AD54F50F5A840685E6B4BDF045418235524929511FA245A851F88FED1138FF70B1395CBFF68FA9938C0FA9352B4C8E970E00D64862B63BC7BF1D59D73A27AABEC562778DC5C5FC12B26BF5DB69F4567432BB2D01E7A7823592C417749CA285B620FF6881E4C0ED96CB1F66C8325F157B3365197BAE37DDA61DE5A131A704567E87B5CF0AC113AC11A8949B974EA20BF5B4E046443B51473C5264AF1E78D41DAB218E9B914F8CA849A8B406E07A01B0C612A969DDE470B19676A216A596A80EE68B4D9B73EB8D5B0643A1D8BAA95064DD84F3E180DA4945AA23B49322343D52A4E4B69897E17AEA67286C306E1A1B2AB2FC2AA4C1715FA0C77E31BD183BB1260270BE8101ADD783C5CE490CB19E2D33ADF4F4F739C9AE706D9F705269F2626A9BAB9BD012AA6FB0C03AE926FFE0B738DFCBE0CBD022DF289D743A5DAD7C5A87D6537DBD078F24D51F6CBE4AB76DB81E89221F873D2E6E3943CF6D4C88CD9526C43E922546C9F49C75D4C48148E6EC78060B3B9CCF136229BD3CBF29310A3440AB447E2634EA71D8A30D37A2D1B60CBA812DE7F55ED1DEA473E51F15C757CF40CCE249EE08D60CF4FC3B1220166FB03E3ACFF9138F8C7D11D76B3ECDBA5AFD490ECEE709F1A338501B34482DD08E2C9EE88EAF99892E3CDB5B4CC6F626A5F3DE7F125C340F3568391B6111A7EA9204008A2ED142D8F84A60BD2325635F4CD73884CCE3F1BEBE9C2E7BA731E2E9122D6C50907AA02DD156AE3FFE2800A5F3028BC8D8DEA4CBBCBF149E82463BA151E97C485077352E509A450BE358ABE59E8D6A2D3D93332BB41F5E2AD77E7AA94CD3CB0DB6691F40B5414C4685766F6757CF9BD41AA75944A3458B75D028683DD724B4259DBCF5C70A02D06562F0C8D8DEA44B15FBF3E379535078B9176294FBF40136B6CEB1B7D490B14054BE824E6328108DDE3638184AC4CC5384516B5CE06CAD8C835D3E765F3D46B9378AAF9A8AAE54EDCB23637B9376DF28285C9692E07ADA7CED084F71E3409532E3AF24B5BA5BFB5516DEEFC85800BEA468A7C428A5547DE83F02C3CE2CBE7E170EF0410CC47A7E7D755A050B6BB5B7F653B5409B25BFFEC5BA8BA7ADBBAFFFD8FFD2AF4B9295BC76A8D12553206FAB158DB158D0582A5A239ADCA2B3CF01DA0C8E591FDD945D83B74ABBD1F116596320200662210772C93A9D46F4A6A70E687768D0CC71871BBBD69E959592357A8BFD3EB5E1312D5C8D261D97EAA706C9D46F044975CF3921D54D099269E02FED080F01AF1DE5B968C7F8686C50A5A5CD60EFB34B87A3C3E898392EA8B28B764CF053EEFFEA506B937A53829A88F3261DF4B22159DC7F449F484C1B4FE4281257A5C475AFBE148556A6317B59931E85D6A59D351CFEBEF51CC9E233E29A51C1427B5C8132F80657BBEF3A47BB1F07F8E20A14C1A38385DD9043AD0135A136550BB4A187133F2812F3EA8DEFF66B942491EDAB49AF5E536D74F01701BAEECAA5E7B8016D6995CB85D43810A745A88889D2FAD364091B80E793898821BE69630B1421D41A50136A8306A907DAD003350EE87302BB6C614F7E6B4E2CDFD850A7CEDB2954E7EF10A81E0646972E55C797AE95516355E69E69F76AF4EFDDAD3104DEADD1BF044320C42A4D8EE9D41AF1ACB532A80D1AA0059AA00D3D90DB9324BD0780CBE51C99C67D8F059B5EB02146021BB1C4A322971AFB2AB8567D201B6A53B5E8847632673BD7E5EEBBD5DE271180CD59935DF996A15B310B3012C7704EFEB7E355025B90501B34483D38EFBF878568FF05ABEA7300D6A550DD0000000049454E44AE426082)
 
 Picture Pi1417622013
-NodeLocation: 96,168,32
+NodeLocation: 112,184,32
 NodeSize: 64,40
 Pict: (0000000000000025002500047507000089504E470D0A1A0A0000000D4948445200000025000000250806000000C59E2003000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA864000006FA494441545847CD98795454551CC79FB99476B4A23A699902AE94A5222E957B65752AF39CB293B9A5566AA5E516DB6C30222AB8A0169492E242AE074154641918861954647798199641980166619B6186D9DF6D7ED8AB378FEB11F598FDF139F37EDFEFEFDDF77BEFFDDEBD170884D07DD1DEE978CAEE24FBE2BC07052BDE8D16B3D3EB65BEAC3E4AA0D98CF31F14AC78376A9AADBE044F87BE3B53F70BCE7F503C824EBBABFFF53AF364BA86C368750EF4DF5559F89B44FF2DCEA7E37491BDF36F99A6D99C643F9C8FC323285499FD89C02AB4F1BC6A175DBF5F5C24F9D892E3B5C7882D1548A1B38EC6E5E0F008E06ED69EADFF95E0B7A3C8CCA620BA0714D49B0378698DDCF9876A92A7C72844730E540A569E54C51F2F6C5DDC6C723CCBCCDF705EB59B086F45BCB426AEC345F661FA77022BAE4F52C7D09BF8EAAD8EA9EFC4293388E01A446C2E472323A4556FC628C401BB6405CFB1CAF544B0123D192235F1D3352CB3CD39803A8F75B1811F9CDAB88D8A7B0A56A41327D6AD26022BD1D31C795B748E6E133439DD37D95C4F662A0C6FCF8F572613EC0614B0B7BAA0A1DDFE223DE75EC18A14B179DA35045783DEFFBDF672A3C136049743E76C69DBA744A0020D0DAB50698CF61770393D012B02D7EBCD9389A06AF451FCAD0B2449F6C2E5E0C8AE32CEFEE6B4EA775D87E3799CDF13B022F0568C3CCF8B236B69353B9EC1F90F13AC78F596692A11528B6284DAF538FF618315832E3444F609943AD4EDF69770FEC3062BBE1B5B953E6A6B7925CEFB2F20CC36D7802F8FD59E9819572F4C9319DE03717C94AC64C63E452E3339BBF6D7C004E95797E28B97A6DD66D9E543454BD2E36E7C2EFC57BB4DEC8D85B9E0D3B5A3152B2E16369E5BCA1C974957513FA7A877AC39DF1C9B5DD5311BC429BBE5D7A6ED91E5D313152DC279E145BE28423C49139D3F471E2599ADD8299E59C5167BA3E02C5F27C451925995D1F9F03B5B1192E38D80E8FCB932D0E09C0889BF2E44E88D74E69A31F4B19960C5454795895EA1652D46AB6BE06D8DECB5F7DABCB248C954B5C5D13188CA6BB5A8BC59793E6486720F97D22812CB7FF8939BF35A9BDD69E94F69667B9BD756F184E6C3252B52E9B94CB0E26F62DDB744681D2A6FB28C83B8A0E1E4AAB0425FA46816CEA3E749F519F379D77D5083B1DC9FAE03659AD485DCAB3E486F567A2CC437B5E99F70F27D504D6B7ED75BC1811561E9C8AA34CEEDB493FD2D0EE320BEC85FC715BE6A28D1A47C41E758E9EA73A1226F2451257CCFF432957B396CF7C593E59CFD9E5EF22256CE28DBBE6B1FDDC05D1BC08A74D2AB77878515F8A29D9299D5FC5C7F6DB870A21E80E3E0ECE1285430DAC2CF9DA4A1748AADA2C98D4199BECEC0CCE1C81DEB281D727748A62BB9D77C505163D262DC35BB0974DA2C0DC3B892918E13E5DF9D76918E3E2ED2D99BA2D3DD1F2CC158F3998A2DF1749D0E7C813BC5B32A9DA4BD2F5D77BAECFD0E162FCADA2699DC647376FEB3ABA0F008982496AD3FC1938CB6B55B1B87323D95A13400FAA9A429E50BA6479151B387172AF2213B6CFA6E8BB3D654E507BD955113C3667A1E011DB5A12C001EF1A5CAC8EDF0F5B9EFB61F1D615DDC16569EB7BBC9A513981E45853EF36318A3549BBA90E9C1227FF2E68604AE688CC560D5786C753C0AA173B0707146A474046267FB99D8D9AF7470E8E4BC6264658F35C33C04BE874703FA0DE625C8677A3066A86094757BC50894246379FC01E25108C54D5DDA027835F1254BD2134ABF3E7FB864E5053A7F142FBF040DBC4DF446FD919255294C9FC2ED25F3725E6F65BB6F008E99FED1D26F92E28A3ECD83C2352679D7F403742B081E6DD4D519353105EF97323D0A6872B6D8D725A8DD1F8AF3E99C966E3C129633A119E7010EA7ED7198E90F167D994969DD924475F13F71DC931EF40AD3A390EAAE2CE0BA9FA4DA583609E7D329D35EFC0CFA8AFE2498DCD4A57F026F46A6CFFA10620FB3CDA21EC6C9196B8E104D551737252D2E6838B592C98DC6B3CB0F152FBD0293666EDDC18DEE057619FC5EACE2EF4E9673F701A9D5E17B04B50742C0BB521DB5158A3A25DD9800E7E2C6BCAE3EB98A2D1C638996CC91DB9DD6273C8A9237677FC0158DB672847E26E899A0ACEE04BA81059825F03305657A9310C3A70D1786AF11A062C8A77203FFCE658E0780C7CDF5337185E30CEDD6A6A11E45C1C466B4EA061B6DDA21F099DE09A3553BC468D30D866398C360E13D5EB6F60C684086722F179E64BDA1644A577E977E9731DDBEC9D6F23C4C151E45DD2FE1B913F5672A361FA662B1EAF03A280A8AA1E7F514AC782F90C8F558987042F329E986A39426AA3FB4018A6AB5A887D3737B0A56BC17FED7459DAED87484D2DCAF6FFD232F8A271CDF9258BE2E11567F00D6C5475E14EC9160C2853D165FE8DE6709BC49981A60EB833BE76E60C57BA5547BE1F32B75913B5314BC18E0B232223AAF2EFE47F792751FFF1345C45F8A60383867A12AB10000000049454E44AE426082)
 
 Text Te612315645
-NodeLocation: 376,288,-1
+NodeLocation: 392,304,-1
 NodeSize: 312,272
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
 WindState: 2,102,83,476,224
 NodeFont: Arial,24
 
 Text Te1686057469
-NodeLocation: 376,288,-18
+NodeLocation: 392,304,-18
 NodeSize: 320,280
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 NodeColor: 0,28784,52685
 
-Module Mo2
-Author: CWelch
-Date: Tue, Nov 16, 2021 12:28 PM
-NodeLocation: 1216,1536,1
-NodeSize: 64,40
-DiagState: 2,-170,335,1774,761,17,10
-AcpStyles: Show_Object:no
-
-{!40404|FreePassObjectCount 5G4nCJrM31tNLh2R}
-Module Bin
-Title: Bin
-Description: Recycle Bin. Drag your discarded objects into here.~
-~
-Unlike deletion, Binned items can be retrieved, and  "Undo" (control-Z) works for items dragged into the Bin. If you put an item into the Bin which has dependents outside the Bin, it will show arrows from the Bin -- a signal that you should either retrieve the item (because it is being used) or drag its dependent(s) into the Bin too.  ~
-~
-When the Bin is full of stuff you are sure you don't need, you can get rid of it permanently: Open the Bin, select all its contents (with Control-A), and delete it (press Delete key).
-Author: Max
-Date: Thu, Jul 31, 2003 3:34 PM
-DefaultSize: 48,24
-NodeLocation: 864,128,0
-NodeSize: 48,32
-NodeInfo: 1,0,1,1,0,0,0,0,0,0,
-DiagState: 1,235,89,501,284,17
-WindState: 2,71,235,471,322
-Pict: (0ADC00000000001F001D0001280000001D0000001F0000000100180000000000A80A0000C40E0000C40E0000000000000000000044465145444E47434E48444F47454F474A52484A524948524B48524C4C53494A50484B4F44474843454544454543434543414743414A42434B3F424A3F424A3E41493E414940414B43444D42444C43464E44464F4548500046445046424E48444F49455045454E45474F45494E47485244454F43444C3E3F45393D403036362F353532343631353836383D3B3B413D3F463D3F483E424B3E424C3D414B40434D42444D41444945464C46484F45484D0046454F44454E46464F45454D44464D43474C43484E43444D3939412E303525272A56595254564E54554E1B1C1D1C1E1F1F20222425282A2D3030323734393F363A423A3F4841434D42444D42454A46464C47494E47494E0044464E43464D43464C44484D454A4C434A4D4047494D4F50ACAC98E2DEC2FFF4D0FFF1CBFFEDC5FFEFC9FFF1CBFFF4CFC4BFA4979886616258292A2A1F212324282B2D303436393F3E404845464B47494C484A4E47494D0044464E43464D42464D44494E454A4E474C4F797971F1EDCEFFF2CDFFECC4FFE9C0FFE5BAFFE2B7FFE2B6F3D1B0E2B9A6E6BEA8FFE4B9FFEDC6FFF7D3B5B59D5F6057191B1D2223282E2F353C3C4145454B4A4B50474A4F0045444F45454F464751464851484A5246484EF2ECCBFFF2CDFFEFC9FFE9C0FFE5BBFFE2B7EBC8B3D8ADA8DAAFAFF2CECED6A7A7F2D0B0FFE2B7FFE8BEFFEBC3FFF6D2E1DFC25F5F551D1D212A292F3A3A4145464E484A53004244524445534445534848544849537D776EFCF0C8FFF0CAFFECC4FFE8BFF9DBB9E0BDB8D9B3B3D9B2B2EBC4C4CFDBBEF9E4E4E5C4BCFFF1DBFFF2DDFFF1D8FFF1CDFFF3CDFFFBD8A6A69328282927292D3A3E43464A4E004344524445534445534848574A4A58B39B7EF2CC8FFFF6D2FFEBC3F5DDC3E3C4C2DFBFBFDEBEBEDCB9B9ECC7C781C3778FCE8BEFF4EAAFDFAF8FD28FBFE6BFFFFEFAFFF8DCFFF8D4FFFDDCD2D2B82A2A2B323235444649004547514546524646544A4A59494A57E9BD86EEB269F8DEACFBEFD1E7CFCFE5CCCCE4CACAE2C5C5DFC0C0F1CECE81C377019901119F1101990101990101990131AC31CFECC6FFFBDBFFFDDCFFFFDE8B8B7C2A2A2C43434700464952484953494954494954686363F4BE7FF1B672F1B979EDD9D4ECD9D9EBD7D7E8D1D1E5CDCDE5CBCBF8D5D581CA7E019901019901019901019901019901019901119F11DFF2CEFFFFDDFFFFDEC2B3922123263D414400464951484A53494A544849539E8E78F3B978F3B978F3D5BDF2E5E5F1E2E2EEDEDEECD9D9ECD8D8E4CACAF5CFCF81CC8101990101990101990151B95181CC8141B34101990141B33FFFFAD8F8D39EF8D8A41C2023383E4300474953474953484B53484A52CAAB85F7BF82F8CC9EF9F2F2F7EEEEF4E9E9F2E5E5F1E4E4E4C9C9D5ACACF6D0D081CC810199010199010199018FD28FFEFCF6FDF9E99FD99B019901BFDFA6FACF99F9CF992A2D2E32383D004C4C574A4C554C4E56494B53FCCE99FAC48BFEF0E1FDFAFAFBF5F5F9F2F2F8F0F0EDDCDCD2A5A5E2B6B6FFD6D681CC81019901019901019901019901CFECCFFDF9E0FCF6DA9FD99861BE5AFDDAAAFBC891545550313439004A4C564A4C55494B53746C65FECC98FDCFA0FFFFFFFFFFFFFFFFFFFEFDFDF8F1F1D1A3A3D2A7A7ECBFBFCFDDC0FFE5E5CFDFC2BFE2BC9FD99F81CC819FD99FFFFFFBFCF4D8FFFDE371C66FFFDFB1FDC9947071652E2F34004B5159484E55474B539F8D79FFCC99FFECD4FFFFF9FFFFFCFFFFFFFFFFFFDFBFBFD1A4A4D5ABABECC0C081BF74DFE2CFFAE6C8FEFCE3DFF2DF51B95181CC8181CC80AFDFAABFE6B2BFE4AEFFE6BEFFCC998C806C282C30004E565E4850564A5158CEB08FFFD1A0FFFCEEFFFFF6FFFFF8FFFFF8F9F2EFCD9B9BD2A6A6D7B0B0E3BBBBCFD6B931AB2FFFF0EDFDF4D9FFFFF571C671019901019901019901019901FFF8DCFFDAABFFD1A0B5A88C24292D00565D644D5258494C51FFD8A9FFE4BFFFFFF0FFFFF2FFFFF3FFFFF5E9D2CECFA0A0D3A8A8D9B3B3DEBCBCFBD9D921A62141B240EFF5ECFEFAEFFFFFFF31AC31019901019901019901FFF8DCFFD9ABFFD9ABC5B19322262800595C654E51596D6763FFDEB2FFF3D6FFFFEBFFFFECFFFFEFFFFFF2D9B3AFDAB6B3EAD6D1E1C3C1DFBFBFEDCECE9FCB91019901119F1171C67171C671119F11019901019901019901FFF8DCFFE0B5FFE0B5FFECC4212327005659624D52598C7E71FFEBC2FFFEE3FFFFE7FFFFEAFFFFEBFFFFEBF5ECDDFFFFF1FFFFF2FFFFF3C8DFEEE2CECFF8DFDF61BE5F019901019901019901019901019901019901019901FFF8DCFFEBC2FFEBC2FFF0C91F2124004E545E4A515AAD9C86FFF4CFFFFFE1FFFFE4FFFFE5FFFFE6FFFFE8FFFFEBFFFFEBFFFFEDFAFDF2D9F2FFDBEBF5ECDBDCFCECEC71C36E01990101990101990101990131AC31019901FFF8DCFFF5D8FFF3CDFFF4CF575850004B4F5A4A505BCFB999FFFBD8FFFDDBFFFDDBFFFDDCFFFDDEFFFFE2FFFFE4FFFFE7FFFFEAFDFEF0F6FCFFF6FCFFF5EFF0F2E5E5FBF4F4EFF8EEBFE6BFBFE6BFDFF2DEFFFFF541B33FFFF8DCFFFDEFFFFAD7FFFAD7565750004C4E5B4D515EE7C9A2FFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFCFFEBFAFFECFCFFF2F9FFFFF9FFFFF9FFFFF3EAEAF9F2F2FDFBFBFFFFFFFFFFFFFFFFFFFFFFFCEFF9DBFFFADCFFFFFBFFFFDEFFFFDE808173004B4D5A4C505DFFD9AAFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEE4FFF5D9FFFFDCFFFCD9FFFFD9FFFFD9FFFFECF8F1FBF5EAFFFEEDFFFFEFFFFFEFFFFFF5FFFFFDFFFFFDFFFFFBFFFFF7FFFFE0FFFFDE8E8E7E004D4F5C4D515EE8C59FFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEFFFFDEBCFFFDB9FFFFC8FBF3DBF7E5F2F6E0FBF7E3F5F4EBD4A9A9E3C7C7F1E4E4FFFFFFFFFFFBF4EFD6FFFFE6FFFFDEFFFFDEFFFFDEFFFFDE9A9A89004F54605055639B8879FFDFB3FFFCDAFFFFDEFFFFDEFFFFDEFFF9D5FFF3CED9EED6F2F0D9FFF7E7FFFEFBFFFFFFFFFFFFFFFFFFE4C9C9E9D4D4F7EFEFFFFFFFD9F2FFEDBF88F8C78EFCE0B2FFFBD8FFFFDEFFFFDEC5C5AD00535965555C66565C65817773BEA288D2B391D3B392AF9C85998D7C718D98F9FFFFF9FFFFF9FFFFF9FFFFF9FFFFF9FFFFF9FFFFE6D1D1EDDCDCF8FAFAF9FFFFC2E0E7F7BF82F8C185F9C287FAC88FFEEDC4FFFFDEC5C5AD00545A66565D68575E6859616A586069565D67535B6550595F4F585E78A3B5E5FFFFE5FFFFE5FFFFE5FFFFE5FFFFE5FFFFE5FFFFE5E2E2E9F4F4E5FFFFE5FFFFC6D0C1F8C185F9C287FAC48AFBC58DFBC68FFDDDAFC5C5AD00565A69585D6A58616B5C666E5B6A6F5A6A7157676D505F634F5A6074A6B9A9E2FF93E2FFA9E2FFCCFFFFCCFFFFCCFFFFCCFFFFCCFFFFCCFFFFCCFFFFBFF9FFDDC39CF9C287FAC48AFBC58DFBC68FFCC892FDC994E1C59E00595B6A5A5D6C5B616E5C67715F6D7464747B627577546568505E624F5B614E5A6049525B516B7DA9E2FF93E2FF93E2FFB4FCFFB9FFFFB9FFFFB9FFFF97E2F1F9C287FAC48AFBC58DFBC68FFCC892FDC994FFCB98BD9B7A005B5D6A5C606D5D626F5E6673616B76606E765F6E765A696D55646A515E644C595F48535B4A535C4D545D4D525C4D535A58799193E2FF95E0FFA6FFFF71B2C354514CB59676FBC68FFCC892FDC994FFCB98F2C49469605F00595E6C5C626E5B646E5D666F616A71626C73616C70616D735B666D535D664E58634C54604C525E4E545F4E535E4D525B4F515B50515C535B696296AE5D84984C4E594D505A5B5B5D85776CA48E7783756C59585F51556000)
-FontStyle: Arial,15
-Att_PreLoadScript: {!40404|FreePassObjectCount 5G4nCJrM31tNLh2R}
-{!40400|Att_clearTypeFonts: 0}
-
-Close Bin
-
-Text Te1876272323
-Title: Candidate for Deletion
-NodeLocation: 1048,132,-1
-NodeSize: 264,108
-NodeInfo: 1,,,,1
-
-Alias Al1226024131
-Title: Suitability for Sector
-Definition: 1
-NodeLocation: 856,336,1
-NodeSize: 64,40
-NodeColor: 39321,1,16386
-Original: Suitability_for_Sect
-
-Variable Nodecolor_for_change
-Title: Nodecolor for change
-Definition: 1
-NodeLocation: 952,712,1
-NodeSize: 64,40
-NodeColor: 65535,1,1
-
-Variable Nodes_to_change
-Att_PrevIndexValue: [Include_Output_Type,EV_Sect_Label,Intercon_Strt_Yr,Intercon_End_Yr,Fact_Column_Indices,Map_Intercon_to_Sect,Min_and_Max_System_S,Min_Required_Install,Stored_DC_CapInstall,Stored_AC_CapInstall,Avg_AC_DC_CZ_Fcast,PV_AC_to_DC_Factor,Te1541505644,Saved_NTG_Ratio,NewConstr_Mkt_Share,Force_NewCon_Market_,Market_Share_Method,Impact_Scaling,Event_Applicability,Use_Hist_PV_Intercon,R2_Threshold1,Num_of_Periods_Avg,PV_Sim_Start_Year,PV_Sim_End_Year,Select_Customer_Rate,Num_of_Rate_Vintages,NonCoincDmd_Attribs,OnPeak_Dmd_Attribs,Energy_Rate_Attribs,Map_Component_to_Prd,Stored_PV_Pct_ITC,Assume_Third_Party_O,Base_Year_for_O_M_In,Base_Yr_of_Cost_Decl,BaseYr_Strg_Costs,Map_Charges_to_Sect,Map_Costs_to_Sector,Select_System_Types,Year_of_Consump_Data,Use_facility_level_d,Tier_Period_Labels,Profiles_to_Evaluate,Save_Static_ProfName,Save_Daily_Profiles,Use_Peak_in_Profile,Static_Profile_Names,Te1554180641,Reported_Avg_Costs,Saved_kWh_Ratings,Source_of_Ratio,SGIP_Sector_Map,StorageSyst_Included,Rates_Included,ClimZones_Included,Months_Included,Estim_Storage_Add_On,Select_Strg_Rate1,Select_Strg_System1,Map_Tier_Wts_to_Str2,Map_Tier_Wts_PrePos2,Fruit_2,BESS_Sim_Start_Year,BESS_Sim_End_Year,BESS_Economics_Map,AESS_Sector_Map,Reported_Avg_Costs2,Source_of_Ratio2,Rule21_Sector_Map,Market_Share_Method1,R2_Threshold_BESS,BESS_Calibration_Com,Nodecolor_to_updates]
-Title: Nodes to change
-Definition: update_nodes_to_chan;~
-#FindObjects(Color,attribute:'NodeColor')
-NodeLocation: 912,456,1
-NodeSize: 64,40
-ValueState: 2,172,224,429,497,0,MIDM
-Aliases: FormNode Fo1730677955, FormNode Fo1725779139
-{!40700|Att_CellFormat: CellFormats(CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,73,header:0),CellSpan(Nodes_to_change,CellFill(0xffffff80),1,73,header:0),CellSpan(Nodes_to_change,CellFill(0xff00ff00),1,73,header:0))}
-
-Variable Color
-Title: Color
-Definition: NodeColor of Nodecolor_for_change
-NodeLocation: 1016,584,1
-NodeSize: 64,40
-ValueState: 2,1262,174,416,303,,MIDM
-
-Variable NonRes_Label_Outputs
-Title: NonRes Label Outputs
-Definition: #FindObjects(outputOf:handle(Non_Res_Label))
-NodeLocation: 112,616,1
-NodeSize: 64,40
-ValueState: 2,778,103,395,523,0,MIDM
-
-Variable Res_Label_Outputs
-Title: Res Label Outputs
-Definition: #FindObjects(outputOf:handle(Residential_Label))
-NodeLocation: 112,712,1
-NodeSize: 64,40
-ValueState: 2,363,103,395,523,0,MIDM
-
-Variable Va12
-Definition: #SetUnion([\NonRes_Label_Outputs, \Res_Label_Outputs])
-NodeLocation: 264,712,1
-NodeSize: 64,40
-ValueState: 2,1087,59,393,617,0,MIDM
-
-Text Te238818499
-Description: 1. Input % eligib le by spatial ID, or no?
-NodeLocation: 164,108,-1
-NodeSize: 116,84
-
-Text Te185029827
-Title: Divergence for SDGE
-Description: 1. Meters/Premise inputs & calculations~
-2. Check double counting of res homeownerhip rate and single family home percentage
-NodeLocation: 1260,608,-1
-NodeSize: 140,80
-
-Variable update_nodes_to_chan
-Title: update nodes to change
-Definition: 0
-NodeLocation: 1136,472,1
-NodeSize: 64,40
-
-Button update_nodes_to_cha1
-Title: update nodes to change
-NodeLocation: 1288,472,1
-NodeSize: 64,40
-OnClick: (update_nodes_to_chan:= not update_nodes_to_chan)
-
-FormNode Fo1730677955
-Title: Nodes to change
-Definition: 1
-NodeLocation: 1200,384,1
-NodeSize: 120,16
-Original: Nodes_to_change
-
-Variable All_Constants_Decisi
-Title: All Constants & Decisions
-Definition: update_nodes_to_chan;~
-#FindObjects(Class: {'Constant','Decision',}'Index')
-NodeLocation: 424,632,1
-NodeSize: 64,40
-ValueState: 2,2129,51,511,817,0,MIDM
-
-Variable Outputs_of_All_Secto
-Title: Outputs of All Sectors
-Definition: update_nodes_to_chan;~
-outputs of All_Sectors
-NodeLocation: 424,736,1
-NodeSize: 64,40
-ValueState: 2,248,106,376,557,,MIDM
-
-Variable Intersection
-Title: Intersection
-Definition: #SetIntersection( [\All_Constants_Decisi,\Outputs_of_All_Secto])
-NodeLocation: 576,736,1
-NodeSize: 64,40
-ValueState: 2,1278,98,417,759,0,MIDM
-
-Variable Nodecolor_To_check
-Title: Nodecolor To check
-Definition: 1
-NodeLocation: 1392,800,1
-NodeSize: 64,40
-ValueState: 2,276,282,416,303,,MIDM
-NodeColor: 65535,1,1
-
-Variable Colored_nodes_to_fix
-Title: Colored nodes to fix
-Definition: update_nodes_to_chan;~
-#FindObjects((NodeColor of Nodecolor_To_check),attribute:'NodeColor')
-NodeLocation: 1232,800,1
-NodeSize: 64,40
-ValueState: 2,433,80,702,801,0,MIDM
-Aliases: FormNode Fo1861831875
-ReformVal: [Undefined,Self]
-
-Variable Uncolored_Nodes
-Title: Uncolored Nodes
-Definition: #SetDifference(  \#SetDifference(\Intersection,\Colored_nodes_to_fix),\Already_Imported)
-NodeLocation: 688,472,1
-NodeSize: 64,40
-ValueState: 2,2021,11,395,831,0,MIDM
-Aliases: FormNode Fo1278086339
-
-Variable Already_Imported
-Title: Already Imported
-Definition: outputs of Excel_Import_Setting
-NodeLocation: 576,832,1
-NodeSize: 64,40
-ValueState: 2,229,210,415,439,0,MIDM
-
-FormNode Fo1278086339
-Title: Remainder to Review
-Definition: 1
-NodeLocation: 368,832,1
-NodeSize: 136,16
-Original: Uncolored_Nodes
-
-FormNode New1771965635
-Title: Excel Import Configuration
-Definition: 0
-NodeLocation: 1172,284,1
-NodeSize: 212,20
-NodeColor: 49344,49344,49344
-Original: Excel_Import_Setting
-
-Index All_Nodes_to_Review
-Att_PrevIndexValue: [Opt_Sectors,Pct_Error_Range,Abs_Error_Range1,Infeas_Spat_ID_PV,PV_Sectors,EV_Sectors,Infeas_Spat_ID_EV,Result_Range,Valid_Rows1,Storage_Opt_Scenari1,All_BESS_Types,BESS_Sectors,Abs_Error_Range2,Pct_Error_Range1,Abs_Error_Range3,Storage_Opt_Scenario,Infeas_Spat_ID_BESS]
-Title: All Nodes to Review
-Definition: #SetDifference(\Intersection,\Already_Imported)
-NodeLocation: 456,928,1
-NodeSize: 64,40
-ValueState: 2,3164,0,423,728,0,MIDM
-
-Variable Nodes_Already_Review
-Title: Nodes Already Reviewed
-Definition: Table(All_Nodes_to_Review)(Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
-NodeLocation: 768,936,1
-NodeSize: 64,40
-WindState: 2,98,82,720,558
-DefnState: 2,1395,90,448,626,0,DFNM
-ValueState: 2,2883,20,416,303,0,MIDM
-Aliases: FormNode Fo1043942595
-TableCellDefault: Checkbox(0)
-OnChange: update_nodes_to_cha1; Left_to_Review
-
-FormNode Fo1043942595
-Title: Nodes Already Reviewed
-Definition: 0
-NodeLocation: 1236,956,1
-NodeSize: 148,20
-Original: Nodes_Already_Review
-
-Variable Left_to_Review
-Title: Left to Review
-Definition: #SetDifference(\Uncolored_Nodes,\subset(Nodes_Already_Review))
-NodeLocation: 904,848,1
-NodeSize: 64,40
-ValueState: 2,162,41,414,826,0,MIDM
-Aliases: FormNode Fo2138655939
-
-FormNode Fo2138655939
-Title: Left to Fix
-Definition: 1
-NodeLocation: 1236,916,1
-NodeSize: 148,20
-Original: Left_to_Review
-
-FormNode Fo1861831875
-Title: Colored nodes to fix
-Definition: 1
-NodeLocation: 1236,876,1
-NodeSize: 148,20
-Original: Colored_nodes_to_fix
-
-Variable Va9
-NodeLocation: 304,920,1
-NodeSize: 64,40
-
-Variable Color_for_adding_to_
-Title: Color for adding to import script
-NodeLocation: 152,920,1
-NodeSize: 64,40
-NodeColor: 65535,1,1
-
-Variable Nodecolor_to_updates
-Title: Nodecolor to updates sector specific inputs
-NodeLocation: 152,1016,1
-NodeSize: 64,40
-NodeColor: 65535,65531,1
-
-FormNode Fo1725779139
-Title: Nodes to change
-Definition: 1
-NodeLocation: 1236,992,1
-NodeSize: 148,16
-Original: Nodes_to_change
-
-FormNode Fo1521323555
-Title: Use Storage Decision Var
-Definition: 0
-NodeLocation: 252,40,1
-NodeSize: 204,16
-Original: Use_Storage_Decisio2
-
-Close Mo2
-
-FormNode Fo1307274787
-Title: Included Area Types
-Definition: 0
-NodeLocation: 848,1028,1
-NodeSize: 256,20
-NodeInfo: 1,,,,,,,142,,,,,,0
-NodeColor: 30583,48316,7967
-Original: Included_Area_Types
-
-FormNode Fo770403875
-Title: Technical PV Potential
-Definition: 1
-NodeLocation: 848,724,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Technical_PV_Potenti
-
-FormNode Fo1844145699
-Title: PV Tech Potential Percentage of Total
-Definition: 1
-NodeLocation: 848,844,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: PV_Tech_Potential_Pe
-
-FormNode Fo501968419
-Title: Total PV MW DC Potential
-Definition: 1
-NodeLocation: 848,884,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Total_PV_MW_DC_Poten
-
-FormNode Fo710635043
-Title: Potential divided by Load
-Definition: 1
-NodeLocation: 848,804,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Potential_divided_by
-
-FormNode Fo1121676835
-Title: Load vs. PV Potential
-Definition: 1
-NodeLocation: 848,764,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Load_vs_PV_Potential
-
-FormNode Fo322661923
-Title: Additional Value
-Definition: 0
-NodeLocation: 312,620,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Additional_Value
-
-FormNode Fo33701411
-Title: LRMS by PV Time
-Definition: 1
-NodeLocation: 1400,1212,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: LRMS_by_PV_Time
-
-FormNode Fo1042431523
-Title: NYPA Enabled PV Adoption
-Definition: 1
-NodeLocation: 848,1132,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: NYPA_Enabled_PV_Ado1
-
-FormNode Fo1872903715
-Title: NYPA Enabled PV Adoption Percentages
-Definition: 1
-NodeLocation: 848,1092,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: NYPA_Enabled_PV_Ado2
-
-FormNode Fo89932067
-Title: Simple LCOE vs Value of Solar
-Definition: 1
-NodeLocation: 1400,1092,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Simple_LCOE_vs_Value
-
-FormNode Fo1692803363
-Title: Cost of Electricity Ratio
-Definition: 1
-NodeLocation: 1400,1132,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Cost_of_Elect_Ratio
-
-Module NYPA_specific_output
-Title: NYPA specific output
-Author: CWelch
-Date: Tue, Mar 29, 2022 11:58 AM
-NodeLocation: 1360,1544,1
-NodeSize: 64,40
-DiagState: 2,-226,101,1733,771,17,10
-
-Alias Al1294704163
-Title: PV Cumulative Adoption
-Definition: 1
-NodeLocation: 584,88,1
-NodeSize: 64,40
-NodeColor: 65535,1,1
-Original: PV_Cumul_Adoption
-
-Constant Assumed_NYPA_fractio
-Title: Assumed NYPA fraction of natural market
-Definition: Table(Spatial_ID,Area_Type,All_PV_Sectors)(~
-0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
-0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
-0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
-0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
-0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
-0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
-0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
-0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
-0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
-0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
-0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
-0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2)
-NodeLocation: 568,240,1
-NodeSize: 72,40
-DefnState: 2,277,155,1195,663,0,DFNM
-ValueState: 2,1167,229,624,551,,MIDM
-Aliases: FormNode Fo471309859, FormNode Fo517300515
-NodeColor: 65535,1,1
-ReformDef: [Spatial_ID,All_PV_Sectors]
-Att_EditSliceState: [Area_Type,1,All_PV_Sectors,1,Spatial_ID,1]
-
-Variable NYPA_Enabled_PV_Adop
-Title: NYPA Enabled PV Adoption
-Units: MW-DC
-Definition: Assumed_NYPA_fractio[All_PV_Sectors=PV_Sectors] * PV_Cumul_MW_DC
-NodeLocation: 744,240,1
-NodeSize: 64,40
-ValueState: 2,356,10,1231,711,1,MIDM
-GraphSetup: ShowKey:2~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_GraphIndexRange Output_Periods:1,,1,,,,10,44278.27083802223,44589.50791597366,0~
-Att_Stacked_Lines Graph_Primary_Valdim:1~
-Att_AreaFill Graph_Primary_Valdim:1~
-{!50000|Graph_SortBySpread:1}
-ReformVal: [PV_Sectors,Spatial_ID]
-Att__TotalsIndex: [PV_Sectors,Spatial_ID,Area_Type]
-Att_ResultSliceState: [Output_Periods,108,Spatial_ID,0,Area_Type,0,PV_Sectors,0]
-{!40600|Att_StackingIndex: Spatial_ID}
-{!40600|Att_ClusterIndex: Null}
-
-Alias Al1661443619
-Title: All PV Sectors
-Definition: 1
-NodeLocation: 496,472,1
-NodeSize: 64,40
-Original: All_PV_Sectors
-
-Index Sectors_Aggregated
-Att_PrevIndexValue: ['Higher Education','Hospitals','K-12','Air Transportation','Art_Museum','Assisted Living','Community services','Correctional Facility','Unique Education','Government_Office','Housing','Library','Other Transportation','Police and Fire Department','Recreational','Water Supply & Waste Water','Courthouse_Probation']
-Title: Sectors Aggregated
-Definition: ['Higher Education','Hospitals','K-12','Air Transportation','Art_Museum','Assisted Living','Community services','Correctional Facility','Unique Education','Government_Office','Housing','Library','Other Transportation','Police and Fire Department','Recreational','Water Supply & Waste Water','Courthouse_Probation']
-NodeLocation: 632,472,1
-NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 277,252}
-
-Decision Map_All_to_Aggregate
-Title: Map All to Aggregated Sectors
-Definition: Table(All_PV_Sectors)(Choice(Sectors_Aggregated,1,0),Choice(Sectors_Aggregated,2,0),Choice(Sectors_Aggregated,3,0),Choice(Sectors_Aggregated,4,0),Choice(Sectors_Aggregated,5,0),Choice(Sectors_Aggregated,6,0),Choice(Sectors_Aggregated,7,0),Choice(Sectors_Aggregated,8,0),Choice(Sectors_Aggregated,9,0),Choice(Sectors_Aggregated,10,0),Choice(Sectors_Aggregated,11,0),Choice(Sectors_Aggregated,12,0),Choice(Sectors_Aggregated,13,0),Choice(Sectors_Aggregated,14,0),Choice(Sectors_Aggregated,15,0),Choice(Sectors_Aggregated,16,0),Choice(Sectors_Aggregated,4,0),Choice(Sectors_Aggregated,5,0),Choice(Sectors_Aggregated,6,0),Choice(Sectors_Aggregated,7,0),Choice(Sectors_Aggregated,8,0),Choice(Sectors_Aggregated,17,0),Choice(Sectors_Aggregated,9,0),Choice(Sectors_Aggregated,10,0),Choice(Sectors_Aggregated,11,0),Choice(Sectors_Aggregated,12,0),Choice(Sectors_Aggregated,13,0),Choice(Sectors_Aggregated,14,0),Choice(Sectors_Aggregated,15,0),Choice(Sectors_Aggregated,16,0))
-NodeLocation: 768,472,1
-NodeSize: 64,40
-DefnState: 2,719,154,573,746,0,DFNM
-TableCellDefault: Choice(Sectors_Aggregated,1,0)
-
-Variable NYPA_Enabled_PV_Ado1
-Title: NYPA Enabled PV Adoption
-Units: MW-DC
-Definition: Aggregate(NYPA_Enabled_PV_Adop,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
-NodeLocation: 776,352,1
-NodeSize: 64,40
-ValueState: 2,341,55,1077,723,1,MIDM
-Aliases: FormNode Fo1042431523
-GraphSetup: Att_GraphValueRange NYPA_Enabled_PV_Ado1:1,,1,1,,,,0,1000,0~
-Att_AreaFill Graph_Primary_Valdim:1~
-Att_Stacked_Lines Graph_Primary_Valdim:1~
-Att_GraphIndexRange Output_Periods:1,0,,,,,10~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-{!50000|Graph_SortBySpread:1}~
-Att_ContLineStyle Graph_Primary_Valdim:1~
-Graph_FillTransparen:2
-ReformVal: [Output_Periods,Spatial_ID]
-NumberFormat: 2,F,2,1,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Spatial_ID,Area_Type,Sectors_Aggregated]
-Att_ResultSliceState: [Sectors_Aggregated,0,Area_Type,0,Spatial_ID,0,Output_Periods,108]
-{!40600|Att_StackingIndex: Spatial_ID}
-{!40600|Att_ClusterIndex: Null}
-
-FormNode Fo471309859
-Title: Assumed NYPA fraction of natural market
-Definition: 0
-NodeLocation: 572,288,1
-NodeSize: 60,16
-NodeInfo: 1,,,0
-NodeColor: 65535,1,1
-Original: Assumed_NYPA_fractio
-
-FormNode Fo1916001827
-Title: EV Ad Effectiveness
-Definition: 0
-NodeLocation: 236,452,1
-NodeSize: 188,20
-NodeColor: 49344,49344,49344
-Original: PV_Ad_Effectiveness
-
-FormNode Fo171171363
-Title: EV Word of Mouth
-Definition: 0
-NodeLocation: 236,492,1
-NodeSize: 188,20
-NodeColor: 49344,49344,49344
-Original: PV_Word_of_Mouth
-
-FormNode Fo1526480419
-Title: Logit Price Coefficient
-Definition: 0
-NodeLocation: 1072,248,1
-NodeSize: 184,16
-Original: Logit_Price_Coeff
-
-FormNode Fo989609507
-Title: Logit Tech Coefficient
-Definition: 0
-NodeLocation: 1072,280,1
-NodeSize: 184,16
-Original: Logit_Tech_Coeff
-
-Variable NYPA_Enabled_PV_Ado2
-Title: NYPA Enabled PV Adoption Percentages
-Units: %
-Definition: ZIDZ(NYPA_Enabled_PV_Ado1,sum(NYPA_Enabled_PV_Ado1,Spatial_ID,Area_Type,Sectors_Aggregated))
-NodeLocation: 816,576,1
-NodeSize: 64,40
-ValueState: 2,386,31,1044,647,1,MIDM
-Aliases: FormNode Fo1872903715
-GraphSetup: Att_GraphValueRange NYPA_Enabled_PV_Ado2:1,,0,,,,,0,0.45,0~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-{!50000|Graph_SortBySpread:1}
-ReformVal: [Sectors_Aggregated,Area_Type]
-NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Sectors_Aggregated,Area_Type]
-Att_ResultSliceState: [Output_Periods,48,Spatial_ID,4,Area_Type,0,Sectors_Aggregated,0]
-{!40600|Att_StackingIndex: Area_Type}
-{!40600|Att_ClusterIndex: Null}
-
-Variable Total_PV_MW_DC_Tech_
-Title: Total PV MW DC Tech Potential, aggr
-Definition: Aggregate(Total_PV_MW_DC_Poten,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
-NodeLocation: 1200,464,1
-NodeSize: 64,40
-ValueState: 2,2267,136,912,570,,MIDM
-
-Variable PV_Potential_by_Type
-Title: PV Potential by Type
-Units: MW-DC
-Definition: Table(Potential_Type)(Total_PV_MW_DC_Tech_,PV_Cumul_MW_DC1,NYPA_Enabled_PV_Ado1)
-NodeLocation: 968,576,1
-NodeSize: 64,40
-ValueState: 2,389,107,944,768,,MIDM
-Aliases: FormNode Fo1687511331
-GraphSetup: Att_GraphValueRange PV_Potential_by_Type:1,,1,,,,,0,2757.6518058776855,0
-ReformVal: [Output_Periods,Potential_Type]
-NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Area_Type]
-Att_ResultSliceState: [Spatial_ID,2,Area_Type,0,Sectors_Aggregated,1,Potential_Type,1,Output_Periods,1]
-
-Variable PV_Cumul_MW_DC
-Title: PV Cumul MW DC
-Units: MW DC
-Definition: PV_Cumul_Adoption[Act_vs_Sim=Simulated_Label] * DC_to_AC_Ratio[All_PV_Sectors=PV_Sectors,PV_Climate_Zone=Climate_Zone_Map[PV_Spatial_ID=Spatial_ID]]
-NodeLocation: 768,88,1
-NodeSize: 64,40
-ValueState: 2,337,78,1190,772,,MIDM
-Att__TotalsIndex: [Area_Type]
-Att_ResultSliceState: [Spatial_ID,3,Area_Type,0,PV_Sectors,1,Output_Periods,1]
-
-Index Potential_Type
-Att_PrevIndexValue: ['Total Technical','Total Market','NYPA Enabled']
-Title: Potential Type
-Definition: ['Total Technical','Total Market','NYPA Enabled']
-NodeLocation: 1208,576,1
-NodeSize: 64,40
-
-Variable PV_Cumul_MW_DC1
-Title: PV Cumul MW DC
-Definition: Aggregate(PV_Cumul_MW_DC,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
-NodeLocation: 920,64,1
-NodeSize: 64,40
-ValueState: 2,2276,79,1044,656,,MIDM
-
-Alias Al1508540707
-Title: BESS Adoption EOP
-Definition: 1
-NodeLocation: 512,688,1
-NodeSize: 64,40
-NodeColor: 65535,65535,65535
-Original: BESS_Adoption_EOP
-
-Variable NYPA_Enabled_Storage
-Title: NYPA Enabled Storage Adoption
-Units: MW
-Definition: Assumed_NYPA_fractio[All_PV_Sectors=BESS_Sectors,Spatial_ID=BESS_Spatial_ID] * BESS_Adoption_EOP
-NodeLocation: 664,688,1
-NodeSize: 64,40
-ValueState: 2,233,103,829,599,,MIDM
-
-Variable NYPA_Enabled_Storag1
-Title: NYPA Enabled Storage Adoption
-Units: MW
-Definition: sum(Aggregate(NYPA_Enabled_Storage,Map_All_to_Aggregate[All_PV_Sectors=BESS_Sectors],BESS_Sectors,Sectors_Aggregated,"Sum"), BESS_types)
-NodeLocation: 816,688,1
-NodeSize: 64,40
-ValueState: 2,506,160,959,657,1,MIDM
-Aliases: FormNode Fo1849909539
-GraphSetup: Att_AreaFill Graph_Primary_Valdim:1~
-Att_Stacked_Lines Graph_Primary_Valdim:1~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-{!50000|Graph_SortBySpread:1}~
-Att_GraphValueRange NYPA_Enabled_Storag1:1,,1,,,,,0,17.05717697739601,0
-ReformVal: [Time_Storage,BESS_Spatial_ID]
-Att__TotalsIndex: [Area_Type,BESS_Spatial_ID,Sectors_Aggregated]
-Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,BESS_Spatial_ID,1,Time_Storage,37]
-{!40600|Att_StackingIndex: BESS_Spatial_ID}
-{!40600|Att_ClusterIndex: Null}
-
-Variable Comm_Adder_test
-Title: Comm Adder test
-Units: $/kWh
-Definition: 0
-NodeLocation: 1128,64,1
-NodeSize: 64,40
-Aliases: FormNode Fo1406492963
-
-FormNode Fo1388822819
-Title: PV Init Adop Fraction
-Definition: 0
-NodeLocation: 428,400,1
-NodeSize: 172,16
-NodeColor: 65535,1,1
-Original: PV_Init_Adop_Fractio
-
-Variable NYPA_Enabled_Storag2
-Title: NYPA Enabled Storage Adopt Pct
-Units: %
-Definition: ZIDZ(NYPA_Enabled_Storag1,sum(NYPA_Enabled_Storag1,BESS_Spatial_ID,Area_Type,Sectors_Aggregated))
-NodeLocation: 968,688,1
-NodeSize: 64,40
-ValueState: 2,308,112,1171,680,,MIDM
-Aliases: FormNode Fo507732259
-GraphSetup: {!50000|Graph_SortBySpread:1}~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_ForceCategorical Graph_Primary_Valdim:1
-ReformVal: [Sectors_Aggregated,BESS_Spatial_ID]
-NumberFormat: 2,%,4,2,0,0,4,1,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [BESS_Spatial_ID,Area_Type,Sectors_Aggregated]
-Att_ResultSliceState: [Time_Storage,37,Area_Type,0,Sectors_Aggregated,0,Time_Storage,37,BESS_Spatial_ID,0]
-{!40600|Att_StackingIndex: BESS_Spatial_ID}
-{!40600|Att_ClusterIndex: Null}
-
-Close NYPA_specific_output
-
-FormNode Fo1696948515
-Title: Market Share Illustration
-Definition: 1
-NodeLocation: 1400,1172,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Market_Share_Illustr
-
-FormNode Fo1687511331
-Title: Potential by Type
-Definition: 1
-NodeLocation: 848,1172,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: PV_Potential_by_Type
-
-FormNode Fo517300515
-Title: Assumed NYPA fraction of natural market
-Definition: 0
-NodeLocation: 848,948,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Assumed_NYPA_fractio
-
-FormNode Fo1591042339
-Title: PV Init Adop Fraction
-Definition: 0
-NodeLocation: 848,988,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: PV_Init_Adop_Fractio
-
-FormNode Fo1406492963
-Title: Comm Adder test
-Definition: 0
-NodeLocation: 312,660,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Comm_Adder_test
-
-FormNode Fo1484087587
-Title: Investment Tax Credit
-Definition: 0
-NodeLocation: 312,868,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Invest_Tax_Credit
-
-FormNode Fo947216675
-Title: ITC Scenario
-Definition: 0
-NodeLocation: 312,908,1
-NodeSize: 256,20
-NodeInfo: 1,,,,,,,142,,,,,,0
-Original: Selected_ITC_Scen
-
-FormNode Fo1182097699
-Title: Electric Rates
-Definition: 1
-NodeLocation: 312,740,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Electric_Rates
-
-FormNode Fo1735745827
-Title: Select Customer Rate
-Definition: 0
-NodeLocation: 312,700,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Select_Customer_Rate
-
-FormNode Fo1116561699
-Title: Simple LCOE Discount Rate
-Definition: 0
-NodeLocation: 856,1708,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Simple_LCOE_Discount
-
-FormNode Fo328032547
-Title: Equipment Price Multiplier
-Definition: 0
-NodeLocation: 312,1028,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Equipment_Price_Mult
-
-FormNode Fo1045258531
-Title: Hours of Storage at Peak Output
-Definition: 0
-NodeLocation: 320,1588,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Hours_of_Storage_at_
-
-FormNode Fo2119000355
-Title: Fraction of Peak for Storage Max
-Definition: 0
-NodeLocation: 320,1548,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Fraction_of_Peak_for
-
-FormNode Fo1707958563
-Title: Manual PPA Rates by Type
-Definition: 1
-NodeLocation: 856,1668,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Manual_PPA_Rates_by_
-
-FormNode Fo1741512995
-Title: Cost to Value Ratio Method
-Definition: 0
-NodeLocation: 856,1548,1
-NodeSize: 256,20
-NodeInfo: 1,,,,,,,226,,,,,,0
-Original: Cost_to_Value_Ratio_
-
-FormNode Fo247292195
-Title: Installed Price
-Definition: 1
-NodeLocation: 312,1260,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Installed_Price
-
-FormNode Fo1849909539
-Title: NYPA Enabled Storage Adoption
-Definition: 1
-NodeLocation: 848,1212,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: NYPA_Enabled_Storag1
-
-FormNode Fo507732259
-Title: NYPA Enabled Storage Adopt Pct
-Definition: 1
-NodeLocation: 848,1252,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: NYPA_Enabled_Storag2
-
-FormNode Fo187916579
-Title: PV kW-AC Incentive
-Definition: 0
-NodeLocation: 312,1340,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: PV_kW_AC_Incentive
-
-FormNode Fo7561507
-Title: Incentive Base Rate
-Definition: 1
-NodeLocation: 312,1188,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Storage_Incentive_Ba
-
-FormNode Fo1729847587
-Title: Hourly Rate (energy, DRV, cap only)
-Definition: 1
-NodeLocation: 312,780,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Hourly_Rate
-
-FormNode Fo1583911203
-Title: Building Count from Facility Data
-Definition: 1
-NodeLocation: 848,684,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Building_Count_from_
-
-FormNode Fo1439994147
-Title: Logit Price Coefficient
-Definition: 0
-NodeLocation: 1400,1012,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Logit_Price_Coeff
-
-FormNode Fo903123235
-Title: Logit Tech Coefficient
-Definition: 0
-NodeLocation: 1400,1052,1
-NodeSize: 256,20
-NodeColor: 30583,48316,7967
-Original: Logit_Tech_Coeff
-
-Alias Al661819683
-Title: Zero out times
-Definition: 1
-NodeLocation: 824,616,1
-NodeSize: 48,24
-Original: Zero_out_times
-
-Alias Al1735561507
-Title: Update profiles
-Definition: 1
-NodeLocation: 640,616,1
-NodeSize: 48,24
-Original: Update_profiles
-
-FormNode Ordered_pr1601343779
-Title: Ordered profiles
-Definition: 1
-NodeLocation: 1073,628,1
-NodeSize: 161,12
-NodeInfo: 1,0,0,1,0,0,0,120,0,
-Original: Performance_profiles
-
-FormNode Fo930517283
-Title: Installed Equipment Price
-Definition: 0
-NodeLocation: 312,988,1
-NodeSize: 256,20
-Original: Installed_EquipPrice
-
-FormNode Fo1235587363
-Title: DER Cost Change Rate
-Definition: 0
-NodeLocation: 312,1068,1
-NodeSize: 256,20
-Original: DER_Cost_Change_Rate
-
-FormNode Fo1134924067
-Title: Base Yr of Cost Decline
-Definition: 0
-NodeLocation: 312,1148,1
-NodeSize: 256,20
-NodeInfo: 1,,,,,,,142,,,,,,0
-NodeColor: 65535,65531,1
-Original: Base_Yr_of_Cost_Decl
-
-FormNode Fo598053155
-Title: DER Cost Scenario
-Definition: 0
-NodeLocation: 312,1108,1
-NodeSize: 256,20
-NodeInfo: 1,,,,,,,142,,,,,,0
-Original: Select_DER_Cost_Scen
+Close Standard_SPIDER_Inte
 
 Close Main_Interface
 

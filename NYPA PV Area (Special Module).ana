@@ -10,7 +10,7 @@ Author: CWelch
 Date: Tue, Mar 8, 2022 9:07 AM
 DefaultSize: 64,40
 NodeSize: 64,40
-DiagState: 2,1944,14,1584,718,17,10
+DiagState: 2,47,23,1711,709,17,10
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
 
@@ -192,7 +192,7 @@ Index Conglomeration_Index
 Att_PrevIndexValue: [Spatial_ID,All_PV_Sectors,'Value']
 Title: Conglomeration Index
 Definition: Copyindex([handle(Spatial_ID),handle(All_PV_Sectors),'Value'])
-NodeLocation: 2120,672,1
+NodeLocation: 2168,560,1
 NodeSize: 72,40
 ValueState: 2,1086,224,416,303,0,MIDM
 ReformVal: [Null,Self]
@@ -263,7 +263,7 @@ Att__TotalsIndex: [PV_Sectors,Spatial_ID]
 FormNode Fo1367337507
 Title: Included Area Types
 Definition: 0
-NodeLocation: 1708,992,1
+NodeLocation: 972,1208,1
 NodeSize: 156,16
 NodeInfo: 1,,,,,,,120,,,,,,0
 Original: Included_Area_Types
@@ -851,7 +851,7 @@ Units: GWh/Year
 Definition: MdTable(PV_Generation_by_Ty1[Sorted_Area_Type=Included_Area_Types] ,Facility_ID_Filtered,Conglomeration_Index,conglomerationFn:"Sum") / 1E6
 NodeLocation: 1128,1112,1
 NodeSize: 64,40
-ValueState: 2,846,254,643,244,0,MIDM
+ValueState: 2,1032,548,643,244,0,MIDM
 GraphSetup: {!50000|Graph_SortBySpread:1}~
 Att_StackedBar Graph_Primary_Valdim:1~
 Att_CatLineStyle Graph_Primary_Valdim:9~
@@ -878,17 +878,17 @@ Definition: local total:=sum(PV_Generation_by_Ty2, Onsite_vs_Community_,Spatial_
 PV_Generation_by_Ty2 / total
 NodeLocation: 1296,1112,1
 NodeSize: 64,40
-ValueState: 2,434,127,1030,662,1,MIDM
+ValueState: 2,703,139,868,623,1,MIDM
 GraphSetup: {!50007|Graph_BarOutline:0}~
 Att_GraphValueRange PV_Generation_Percen:1,,1,,,,,0,0.04732672050595284,0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_Stacked_Lines Graph_Primary_Valdim:1~
 {!50000|Graph_SortBySpread:1}
-ReformVal: [Spatial_ID,Included_Area_Types]
+ReformVal: [Spatial_ID,Onsite_vs_Community_]
 NumberFormat: 2,%,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Sorted_Area_Type,All_PV_Sectors,Onsite_vs_Community_]
-Att_ResultSliceState: [Onsite_vs_Community_,0,Spatial_ID,2,All_PV_Sectors,0,Included_Area_Types,1]
-{!40600|Att_StackingIndex: Included_Area_Types}
+Att__TotalsIndex: [Sorted_Area_Type,All_PV_Sectors,Onsite_vs_Community_,Included_Area_Types]
+Att_ResultSliceState: [All_PV_Sectors,0,Included_Area_Types,0,Onsite_vs_Community_,0,Spatial_ID,2]
+{!40600|Att_StackingIndex: Onsite_vs_Community_}
 {!40600|Att_ClusterIndex: Null}
 
 Variable Potential_divided_by
@@ -940,8 +940,8 @@ Title: PV Tech Potential Percentage of Total
 Units: %
 Definition: local total:=sum(Technical_PV_Potenti,Spatial_ID,PV_Sectors,Area_Type);~
 ZIDZ(Technical_PV_Potenti,total)
-NodeLocation: 1952,776,1
-NodeSize: 64,56
+NodeLocation: 1976,784,1
+NodeSize: 72,40
 ValueState: 2,383,111,1048,658,1,MIDM
 Aliases: FormNode Fo1835757091, FormNode Fo1844145699
 GraphSetup: {!50000|Graph_SortBySpread:1}~
@@ -1006,6 +1006,7 @@ NodeSize: 64,40
 WindState: 2,374,145,720,350
 DefnState: 2,299,370,629,301,0,DFNM
 ValueState: 2,2193,346,821,420,,MIDM
+Aliases: FormNode Fo194744611
 NodeColor: 65535,1,1
 ReformDef: [Area_Type,Spatial_ID]
 Att_EditSliceState: [Min_Max,1,Spatial_ID,1,Area_Type,3]
@@ -1015,7 +1016,7 @@ Title: Consumption by Sector from Facility Data
 Definition: MdTable(Consumption_by_Type,Facility_ID_Filtered,Conglomeration_Index,conglomerationFn:"Sum" )
 NodeLocation: 440,864,1
 NodeSize: 64,40
-ValueState: 2,2393,117,866,680,0,MIDM
+ValueState: 2,2364,111,866,680,0,MIDM
 Aliases: Alias Al1082319139
 ReformVal: [Spatial_ID,All_PV_Sectors]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
@@ -1036,8 +1037,9 @@ Definition: MdTable(Consumption_by_Type,Facility_ID_Filtered,Conglomeration_Inde
 * (1+Building_Stock_Growt)^(Building_Stock_Year - Year_of_Consump_Data)
 NodeLocation: 280,960,1
 NodeSize: 64,40
+WindState: 2,339,235,720,350
 ValueState: 2,2362,78,866,680,0,MIDM
-Aliases: Alias Al638771491, FormNode Clipboard_Fo14496934, FormNode Fo1583911203
+Aliases: Alias Al638771491
 ReformVal: [Spatial_ID,All_PV_Sectors]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [All_PV_Sectors,Spatial_ID]
@@ -1049,6 +1051,24 @@ Definition: 0.57%
 NodeLocation: 88,1056,1
 NodeSize: 64,40
 NodeColor: 65535,1,1
+
+Variable Building_Count_from1
+Title: Building Count from Facillity Data
+Units: Buildings
+Description: Total building count from parcel data.
+Definition: Building_Count_from_[Building_Stock_Year=2021]
+NodeLocation: 280,1064,1
+NodeSize: 64,40
+Aliases: FormNode Fo748392739
+
+Variable Customer_Load1
+Title: Customer Load
+Units: MWh/year
+Description: Estimated annual customer MWh load of eligible customers.
+Definition: Consumption_by_Sect1 / 1000
+NodeLocation: 592,800,1
+NodeSize: 64,40
+Aliases: FormNode Fo867930403
 
 Close Facility_Level_Area_
 

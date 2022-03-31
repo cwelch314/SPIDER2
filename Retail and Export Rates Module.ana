@@ -17,7 +17,7 @@ Pict: (000000000000003A003A00046307000089504E470D0A1A0A0000000D494844520000003A0
 FontStyle: Arial Narrow,19
 NodeFont: Arial,16
 FileInfo: 0,LinkModule Electric_Rates1,2,2,0,0,Retail and Export Rates Module.ana
-AcpStyles: Show_Object:yes~
+AcpStyles: Show_Object:no~
 FrameNode: RatesFrameNode
 
 Module Find_Periods_Tiers
@@ -897,7 +897,7 @@ Date: Wed, Aug 8, 2018 7:26 PM
 NodeLocation: 536,1040,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,247,109,1032,563,17,10
+DiagState: 2,2459,-14,1032,563,17,10
 
 Variable Map_USURDB_Columns
 Title: Map USURDB Columns to Data
@@ -1027,7 +1027,7 @@ ReformVal: [Time_of_Day,Month]
 Att_ResultSliceState: [Rate_Names,33,Tiers,1,Data_Type,3,Weekday_or_Weekend,1,Month,1,Time_of_Day,1]
 
 Variable Electric_Rates
-Title: Electric Rates (energy, DRV, capacity only)
+Title: Electric Rates 
 Units: cents/kWh or $/kW
 Description: Community credits/adders, environmental adders, and LSRV adders are not included in the rates shown here. These rates only include energy, capacity, and demand reduction value per the NY VDER calculator. Those adders are separately input to facilitate scenario analysis.~
 ~
@@ -1037,7 +1037,6 @@ NodeLocation: 576,296,1
 NodeSize: 64,40
 WindState: 2,102,82,1339,449
 ValueState: 2,240,45,1188,734,1,MIDM
-Aliases: FormNode Fo1182097699
 GraphSetup: Graph_LineThickness:5~
 Att_GraphValueRange Electric_Rates:1,,1,,,,5,0,17.45011806488037,0~
 Att_CatLineStyle Graph_Primary_Valdim:6~
@@ -1161,6 +1160,21 @@ NodeLocation: 256,368,1
 NodeSize: 64,40
 WindState: 2,137,388,1101,486
 ValueState: 2,468,346,653,431,0,MIDM
+
+Variable Electric_Rates2
+Title: Electric Rates (Energy, Capacity, DRV)
+Units: $/kWh
+Description: These values average the 8760 rates from the NY VDER calculator for the given day type (weekend, weekday) and month. ~
+~
+Community credits/adders, environmental adders, and LSRV adders are not included in the rates shown here. These rates only include energy, capacity, and demand reduction value per the NY VDER calculator. Those adders are separately input to facilitate scenario analysis.~
+~
+Also, all $/kW charges are rolled into the hourly cents/kWh rate and are therefore not shown separately.
+Definition: Electric_Rates[Tiers='tier0',Rate_Component='Energy (cents/kWh)'] / 100
+NodeLocation: 744,296,1
+NodeSize: 64,56
+ValueState: 2,255,140,1190,586,,MIDM
+Aliases: FormNode Fo839618851
+NumberFormat: 2,F,4,3,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
 
 Close Rate_Values_by_Perio
 
@@ -4499,20 +4513,23 @@ NodeSize: 64,40
 ValueState: 2,226,109,1287,692,,MIDM
 GraphSetup: Att_ContLineStyle Graph_Primary_Valdim:1
 
-Variable Hourly_Rate
-Title: Hourly Rate (energy, DRV, cap only)
+Variable Electric_Rate_8760
+Title: Electric Rate 8760 (Energy, Capacity, DRV)
 Units: $/kWh
-Description: Community credits/adders, environmental adders, and LSRV adders are not included in the rates shown here. These rates only include energy, capacity, and demand reduction value per the NY VDER calculator. Those adders are separately input to facilitate scenario analysis.~
+Description: These values come directly from the NY VDER calculator. ~
+~
+Community credits/adders, environmental adders, and LSRV adders are not included in the rates shown here. These rates only include energy, capacity, and demand reduction value per the NY VDER calculator. Those adders are separately input to facilitate scenario analysis.~
 ~
 Also, all $/kW charges are rolled into the hourly cents/kWh rate and are therefore not shown separately.
 Definition: Hourly_NY_Rate[@Hourly_Electric_Rate=@NY_Rate]
 NodeLocation: 624,480,1
 NodeSize: 64,40
+WindState: 2,801,147,720,350
 ValueState: 2,65,48,1674,780,,MIDM
 Aliases: FormNode Fo1729847587
 GraphSetup: Att_ContLineStyle Graph_Primary_Valdim:1~
 Att_GraphIndexRange Hourly_Profile_Rows:1,,1,,,,,4015.8838033676147,6773.299813270569,0~
-Att_GraphValueRange Hourly_Rate:1,,0,,,,,0,0.18353909254074097,0~
+Att_GraphValueRange Electric_Rate_8760:1,,0,,,,,0,0.18353909254074097,0~
 Graph_KeyFont:,16,0
 ReformVal: [Hourly_Profile_Rows,NY_Rate]
 NumberFormat: 2,F,4,2,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
