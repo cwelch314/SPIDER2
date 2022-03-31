@@ -1,123 +1,27 @@
 { Analytica Model Main_Interface, encoding="UTF-8" }
 SoftwareVersion 6.1.0
 
-
-{ System Variables with non-default values: }
-Time := Sequence(Simulation_Start_Yr,Simulation_End_Yr,step:Timestep_Months[Timestep_Options=dT_choice],dateUnit: 'M')
-ValueState Time: 2,718,0,371,692,0,MIDM
-NodeLocation Time: 112,64,1
-NodeSize Time: 48,24
-NodeInfo Time: 1,1,1,1,1,1,0,0,0,0,,0,1,0
-WindState Time: 2,102,82,1116,840
-NumberFormat Time: 2,F,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Aliases Time: Alias Al1515102194
-{!40300|Att_SlicerPopupSize Time: 262,1001}
-SampleSize := 100
-NodeLocation SampleSize: 240,64,1
-NodeSize SampleSize: 48,24
-NodeInfo SampleSize: 1,1,1,1,1,1,0,0,0,0,,0,1,0
-UseTable := 1
-TypeChecking := 1
-Checking := 1
-SaveOptions := 2
-SaveValues := 0
-OleAutoRecompute := 0
-DisplayOutputs SampleWeighting: Variable Lower_Pctile, Variable Upper_Pctile
-NodeLocation SampleWeighting: 368,64,1
-NodeSize SampleWeighting: 48,24
-NodeInfo SampleWeighting: 1,1,1,1,1,1,0,0,0,0,,0,1,0
-ShowDescriptionMarks := 1
-Sys_DefaultNumberFmt := 2,F,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Graph_AxisTitleFont := Arial,20,1
-Graph_AxisLabelFont := ,14,0
-Graph_KeyFont := ,20,0
-Graph_KeyTitleFont := ,20,1
-Graph_AxisTitleColor := 17408,29184,50176
-Graph_AxisLabelColor := 17408,29184,50176
-Graph_KeyTextColor := 17408,29184,50176
-Graph_KeyLabelColor := 17408,29184,50176
-Graph_LineThickness := 4
-Graph_HLabelRotation := 90
-Att_CatLineStyle Graph_Primary_Valdim: 1
-Att_ContLineStyle Graph_Primary_Valdim: 5
-Att_StackedBar Graph_Primary_Valdim: 1
-Att_Stacked_Lines Graph_Primary_Valdim: 0
-Att_AreaFill Graph_Primary_Valdim: 0
-Graph_ColorSeq := [3855,26214,35209,57568,15420,13107,32639,32639,32639,0,0,0,34952,29298,56540,29298,53713,56540,56540,29298,55769,53456,44975,25186,65535,0,0,0,0,65535,65535,46003,65535,0,65535,65535,0,32896,0,65535,42405,0,0,0,35723,42405,10794,10794,65535,49344,52171,65535,65535,0,0,65535,0,32896,0,0,28784,32896,37008,0,32896,32896,32896,0,32896,37008,61166,37008,0,0,0]
-{!40200|NodeLocation EnableComplexNumbers: 496,64,1}
-{!40200|NodeSize EnableComplexNumbers: 48,24}
-{!40200|NodeInfo EnableComplexNumbers: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
-{!40400|Sys_PdfSmoothMethod := 1}
-{!40500|NodeLocation TextLocale: 624,64,1}
-{!40500|NodeSize TextLocale: 48,24}
-{!40500|NodeInfo TextLocale: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
-{!40600|Att_PrevIndexValue AllProbabilityBands: [0,0.01,0.025,0.05,0.1,0.25,0.3333333333333333,0.5,0.6666666666666666,0.75,0.9,0.95,0.0975,0.99,1]}
-{!40600|NodeLocation MaxEvaluationThreads: 752,64,1}
-{!40600|NodeSize MaxEvaluationThreads: 48,24}
-{!40600|NodeInfo MaxEvaluationThreads: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
-{!40600|NodeLocation MaxModelThreads: 880,64,1}
-{!40600|NodeSize MaxModelThreads: 48,24}
-{!40600|NodeInfo MaxModelThreads: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
-{!50000|OutlinerState Sys_FoundSet: 2,345,94,1094,693}
-{!50000|NodeLocation DecimalForCopyPaste: 1024,64,1}
-{!50000|NodeSize DecimalForCopyPaste: 72,24}
-{!50000|NodeInfo DecimalForCopyPaste: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
-NodeLocation Sys_ComparisonTolera: 112,128,1
-NodeSize Sys_ComparisonTolera: 48,24
-NodeInfo Sys_ComparisonTolera: 1,1,1,1,1,1,0,0,0,0,,0,1,0
-{!50016|PlusOnTextReturnsNaN := 0}
-{!50400|Sys_UseLegacyColors := 1}
-
-DisplayOutputs Object: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi, Decision Dates_Incl_in_PV_Opt, Decision Opt_Settings_PV, Index Lidar_Locale_Type, Variable Zip_to_Locale_Map, Variable Accel_Metric_Diff, Index All_EV_Dec_Handles, Variable Lower_Pctile, Variable Upper_Pctile, Variable Payback_Time_by_ID1, Decision Opt_Settings_BESS, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
-DisplayOutputs SysFunction: Variable Lower_Pctile, Variable Upper_Pctile
-DisplayOutputs Function: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi, Decision Dates_Incl_in_PV_Opt, Decision Opt_Settings_PV, Decision Opt_Settings_BESS
-DisplayOutputs SysVar: Variable Lower_Pctile, Variable Upper_Pctile
-{!-50299|DiagramColor Model: 65535,65535,65535}
-{!-50299|DiagramColor Module: 65535,65535,65535}
-{!-50299|DiagramColor LinkModule: 65535,65535,65535}
-{!-50299|DiagramColor Library: 65535,65535,65535}
-{!-50299|DiagramColor LinkLibrary: 65535,65535,65535}
-{!-50299|DiagramColor Form: 65535,65535,65535}
-DisplayOutputs Variable: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Variable Lower_Pctile, Variable Upper_Pctile, Variable Payback_Time_by_ID1, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
-DisplayOutputs Decision: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi, Index Lidar_Locale_Type, Variable Zip_to_Locale_Map, Variable Lower_Pctile, Variable Upper_Pctile, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
-DisplayOutputs Index: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi, Index Lidar_Locale_Type, Variable Zip_to_Locale_Map, Variable Accel_Metric_Diff, Index All_EV_Dec_Handles, Variable Lower_Pctile, Variable Upper_Pctile, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
-DisplayOutputs Constant: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
-NodeInfo FormNode: 1,0,0,1,0,0,0,,0,1,,0,0
-NodeColor Text: 65535,65535,65535
-
 {!-60000|Attribute AcpStyles}
 Attribute Prev_attribute
 Title: Prev_attribute
 
 
-AskAttribute Check,Function,Yes
 AskAttribute Prev_attribute,Function,Yes
 AskAttribute Prev_attribute,Module,Yes
-AskAttribute Value,Variable,Yes
-AskAttribute Check,Variable,Yes
-AskAttribute Script,Variable,Yes
-AskAttribute Domain,Variable,Yes
-AskAttribute TableCellDefault,Variable,Yes
-AskAttribute MetaOnly,Variable,Yes
-{!40300|AskAttribute OptInitialGuess,Variable,Yes}
-AskAttribute AcpStyles,Variable,Yes
-AskAttribute OnChange,Variable,Yes
-{!40700|AskAttribute CellFormatExpression,Variable,Yes}
-{!50103|AskAttribute OnGraphDraw,Variable,Yes}
 AskAttribute Prev_attribute,Variable,Yes
-AskAttribute Script,Button,Yes
-AskAttribute Script,Picture,Yes
 
-Model Main_Interface
+LinkModule Main_Interface
 Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
+NodeSize: 64,32
+NodeInfo: 1,,,,,,,0,,,,,,0
 DiagState: 2,48,22,1585,710,17,10
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
-FileInfo: 0,Model Main_Interface,2,2,0,0,C:\Users\cwelch\Documents\Repos\Nexant\SPIDER\SPIDER Model.ana
+FileInfo: 0,LinkModule Main_Interface,2,2,0,0,SPIDER Model.ana
 AcpStyles: FrameNode:GUI_Frame~
 Show_As_Tab:Yes~
 Use_flash_buttons:no~
@@ -536,11 +440,11 @@ Att_CatLineStyle Graph_Primary_Valdim:9~
 {!50000|Graph_SortBySpread:1}~
 Att_ContLineStyle Graph_Primary_Valdim:1~
 Graph_FillTransparen:2
-ReformVal: [Output_Periods,Spatial_ID]
+ReformVal: [Output_Periods,Area_Type]
 NumberFormat: 2,F,2,1,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Spatial_ID,Area_Type,Sectors_Aggregated]
 Att_ResultSliceState: [Sectors_Aggregated,0,Area_Type,0,Spatial_ID,0,Output_Periods,108]
-{!40600|Att_StackingIndex: Spatial_ID}
+{!40600|Att_StackingIndex: Area_Type}
 {!40600|Att_ClusterIndex: Null}
 
 FormNode Fo471309859
@@ -733,6 +637,8 @@ Original: Fraction_of_Peak_for
 
 Module NYPA_Specific_Interf
 Title: NYPA Specific Interface
+Author: CWelch
+Date: Thu, Mar 31, 2022 9:18 AM
 NodeLocation: 120,1128,1
 NodeSize: 72,40
 DiagState: 2,1940,3,1685,823,17,10
@@ -1161,6 +1067,8 @@ Pict: (000000000000005B01300004EC65000089504E470D0A1A0A0000000D49484452000001300
 
 Module Standard_SPIDER_Inte
 Title: Standard SPIDER Interface
+Author: CWelch
+Date: Thu, Mar 31, 2022 9:18 AM
 NodeLocation: 120,1232,1
 NodeSize: 64,40
 DiagState: 2,2147,88,1315,678,17,10

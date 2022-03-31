@@ -490,7 +490,6 @@ Att_ContLineStyle Graph_Primary_Valdim:5
 ReformVal: [Output_Periods,Spatial_ID]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [PV_Sectors,Area_Type]
-Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [Act_vs_Sim,2,PV_Sectors,0,Area_Type,0,Spatial_ID,1,Payback_coefficient_,2,Output_Periods,167]
 {!40600|Att_StackingIndex: Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
@@ -510,7 +509,6 @@ Att_ContLineStyle Graph_Primary_Valdim:5
 ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,1,1,0,4,1,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Spatial_ID]
-Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,0,Act_vs_Sim,2,Output_Periods,1]
 
 Variable PV_Increm_Adoption
@@ -528,7 +526,6 @@ Flip:0
 ReformVal: [Output_Periods,Act_vs_Sim]
 Att__TotalsIndex: [Act_vs_Sim,Spatial_ID]
 Att_GraphValueRange: 1,,,,,,10
-Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [PV_Sectors,1,Spatial_ID,0,Act_vs_Sim,0,Output_Periods,1]
 
 Variable Cumulative_EV_Stock
@@ -546,7 +543,6 @@ ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Spatial_ID]
 Att_GraphValueRange: 1,,,,,,10
-Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,0,Act_vs_Sim,2,Output_Periods,1]
 
 Decision Seq_Cumul_MW_Label
@@ -66398,7 +66394,6 @@ ReformVal: [Delta_Output_Periods,Null]
 NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Spatial_ID,PV_Sectors,Installation_Type]
 Att_GraphValueRange: 1,,,,,,10
-Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [PV_Sectors,0,Installation_Type,0,Spatial_ID,0,Delta_Output_Periods,1]
 Att_ColorRole: Null
 
@@ -66425,7 +66420,6 @@ ReformVal: [Delta_Output_Periods,Null]
 NumberFormat: 2,F,4,1,1,0,4,1,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Spatial_ID]
 Att_GraphValueRange: 1,,,,,,10
-Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,0,Delta_Output_Periods,1]
 Att_ColorRole: Null
 

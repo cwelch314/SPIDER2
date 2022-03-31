@@ -394,8 +394,8 @@ AcpStyles: Show_object: no
 
 Variable LRMS_by_PV_Time
 Title: LRMS by PV Time
-Units: market share
-Description: The long-run market share by PV time, which simply interpolates between annual market share values.
+Units: %
+Description: The long-run expected market share of DERs (i.e., the expected long-run saturation of DER adoption, given sufficient time). The speed at which adoption approaches this long-run market share is determined by the diffusion coefficients.
 Definition: IF Market_Share_Method[All_Sectors=PV_Sectors] = Payback_Label~
 THEN MIN([1, Payback_LRMS * Total_Impact_Shape])~
 ELSE IF Market_Share_Method[All_Sectors=PV_Sectors] = Cost_of_Elect_Label~
@@ -404,8 +404,8 @@ ELSE LinearInterp(EOY_Date_for_Econ_Yr, Applied_PV_LRMS, Time_Solar_PV, Annual_E
 NodeLocation: 656,296,1
 NodeSize: 64,40
 WindState: 2,429,4,1158,657
-ValueState: 2,407,117,900,681,1,MIDM
-Aliases: Alias Al87752227, FormNode Fo33701411
+ValueState: 2,490,120,900,681,1,MIDM
+Aliases: FormNode Fo33701411, Alias Al87752227
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:4~
 Att_GraphIndexRange PV_Spatial_ID:1,1~
 Att_GraphValueRange LRMS_by_PV_Time:1,,1,,,,,0,0.01937572926282883,0
@@ -426,7 +426,6 @@ ValueState: 2,442,187,1034,630,1,MIDM
 ReformVal: [Payback_Intervals,PV_Payback_Coeff]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_GraphValueRange: 1,,,,,,10
-Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [PV_Sectors,2,Payback_Intervals,1]
 
 Variable Payback_LRMS
@@ -707,7 +706,7 @@ Author: coryw
 Date: Sun, Dec 16, 2018 8:10 AM
 NodeLocation: 496,168,1
 NodeSize: 64,40
-DiagState: 2,2093,37,1407,586,17,10
+DiagState: 2,2093,37,1502,725,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object: no
 
@@ -896,7 +895,7 @@ NodeSize: 64,40
 NumberFormat: 2,F,2,1,0,0,2,1,$,0,"ABBREV",0,,,0,0,15,
 
 Variable Market_Share_Illustr
-Title: Market Share Illustration
+Title: Market Share Illustrator
 Units: %
 Description: Illustration of calculated marketshare as a function of the ratio of LCOE to "value of solar" prices, showing the sensitivity to different input assumptions for price and technology sensitivities. Default assumptions for those values are: ~
 ~
@@ -925,6 +924,15 @@ Title: Tech Coefficient Illustrator
 Definition: [3,4,5,6,7]
 NodeLocation: 1064,176,1
 NodeSize: 64,40
+
+Variable Market_Share_Functio
+Title: Market Share Function
+Description: calculated marketshare as a function of the ratio of LCOE to "value of solar" prices
+Definition: local utility:=PPA_to_Value_Ratio1 * Logit_Price_Coeff + Logit_Tech_Coeff;~
+exp(utility) / (1 + exp(utility))
+NodeLocation: 1208,272,1
+NodeSize: 64,40
+Aliases: FormNode Fo653512995
 
 Close Logit_Calcs
 
@@ -3603,9 +3611,9 @@ Definition: Table(All_PV_Sectors,PV_Climate_Zone,Area_Type)(~
 NodeLocation: 256,336,1
 NodeSize: 64,40
 WindState: 2,433,146,866,441
-DefnState: 2,769,221,475,207,0,DFNM
+DefnState: 2,952,337,475,207,0,DFNM
 ValueState: 2,292,387,1025,195,0,MIDM
-Aliases: Alias Al1550179326, FormNode Fo1550179326, Alias Al1012103715, FormNode Fo1950060835
+Aliases: FormNode Fo1950060835, Alias Al1550179326, FormNode Fo1550179326, Alias Al1012103715
 ReformDef: [Area_Type,PV_Climate_Zone]
 ReformVal: [All_Sectors,PV_Climate_Zone]
 NumberFormat: 2,%,4,2,0,0,4,1,$,0,"ABBREV",0,,,0,0,15,
@@ -3647,7 +3655,6 @@ NodeSize: 64,40
 ValueState: 2,351,200,1103,527,1,MIDM
 ReformVal: [Day_and_Hour,Area_Type]
 Att_GraphValueRange: 1,,,,,,10
-Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [Month,8,PV_Sectors,1,PV_Climate_Zone,1,Area_Type,3,Day_and_Hour,1]
 
 Variable Avg_Daily_PV_by_Mth
@@ -3881,7 +3888,6 @@ Att_GraphValueRange PrePost_Load_by_OpYr:1,,1,,,,10,0,421.10850512981415,0
 ReformVal: [Profile_Hours,Area_Type]
 Att__TotalsIndex: [Pre_and_Post_System,System_Types]
 Att_GraphValueRange: 1,,,,,,10
-Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [PV_Climate_Zone,1,Month,8,PV_Operating_Year,1,System_Types,0,Pre_and_Post_System,0,Rate_Vintage,1,PV_Sectors,4,Area_Type,3,Profile_Hours,1]
 
 Variable Scaled_Annual_Load
@@ -5666,7 +5672,7 @@ NodeSize: 64,40
 WindState: 2,108,40,1402,650
 DefnState: 2,324,38,990,868,0,DFNM
 ValueState: 2,302,51,935,658,0,MIDM
-Aliases: FormNode Fo1547766909, FormNode Fo1547828216, FormNode Fo1735745827
+Aliases: FormNode Fo1735745827, FormNode Fo1547766909, FormNode Fo1547828216
 NodeColor: 65535,65531,1
 ReformDef: [Rate_Setting,All_Sectors]
 ReformVal: [Pre_and_Post_System,Rate_Vintage]
@@ -6948,13 +6954,13 @@ Description: Environmental and community adders are constant $/kWh. ~
 Although LSRV values would actually vary by hour of day, we offer the ability to input an overall average LSRV for simplicity of data input.
 Definition: Table(Value_Type,PV_Climate_Zone)(~
 0.031,0.031,0.031,0.031,~
-0,0,0,0,~
+0.02,0.02,0.02,0.02,~
 0,0,0,0)
 NodeLocation: 784,192,1
 NodeSize: 64,40
 WindState: 2,664,360,720,350
 DefnState: 2,791,413,697,200,0,DFNM
-Aliases: FormNode Fo48726307, FormNode Fo322661923
+Aliases: FormNode Fo322661923, FormNode Fo48726307
 NodeColor: 65535,1,1
 ReformDef: [Value_Type,PV_Climate_Zone]
 NumberFormat: 2,F,3,4,0,1,3,1,$,0,"ABBREV",0,,,0,0,15,
@@ -8045,10 +8051,10 @@ NodeLocation: 920,512,1
 NodeSize: 64,40
 WindState: 2,325,165,720,350
 ValueState: 2,327,71,1040,636,1,MIDM
-Aliases: Alias Al497262115, FormNode Fo179015971
-ReformVal: [Annual_Econ_Time,PV_Climate_Zone]
-Att__TotalsIndex: [PV_Climate_Zone]
-Att_ResultSliceState: [System_Types,1,Area_Type,1,PV_Sectors,1,PV_Climate_Zone,0,Annual_Econ_Time,1]
+Aliases: FormNode Fo179015971, Alias Al497262115
+ReformVal: [Annual_Econ_Time,System_Types]
+Att__TotalsIndex: []
+Att_ResultSliceState: [Area_Type,1,PV_Sectors,1,PV_Climate_Zone,1,System_Types,2,Annual_Econ_Time,1]
 
 Close Utility_Bills_and_Bi
 
@@ -8256,14 +8262,13 @@ NodeSize: 64,40
 WindState: 2,457,241,918,488
 DefnState: 2,623,84,595,673,0,DFNM
 ValueState: 2,247,126,1030,579,1,MIDM
-Aliases: Alias Al1550189910, FormNode Fo1550189910, FormNode Fo1545167107, FormNode Fo1545084105, FormNode Fo1567092849, FormNode Fo1548967851, FormNode Fo1484087587
+Aliases: FormNode Fo1484087587, Alias Al1550189910, FormNode Fo1550189910, FormNode Fo1545167107, FormNode Fo1545084105, FormNode Fo1567092849, FormNode Fo1548967851
 NodeColor: 65535,1,1
 GraphSetup: Att_GraphIndexRange Static_PV_Time:1,1,,,,,10
 ReformDef: [ITC_Scenario,Static_PV_Time]
 ReformVal: [Static_PV_Time,ITC_Scenario]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_GraphValueRange: 1,,,,,,10
-Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [All_Sectors,3,ITC_Scenario,1,Static_PV_Time,1]
 Att_EditSliceState: [All_Sectors,11,Static_PV_Time,1,ITC_Scenario,1]
 {!50000|Att_ColumnWidths: [,Static_PV_Time,\([63,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
@@ -8332,7 +8337,7 @@ IndexVals: ['item 1']
 NodeLocation: 240,72,1
 NodeSize: 64,40
 WindState: 2,577,280,842,409
-Aliases: FormNode Fo1545167109, FormNode Fo1545084106, FormNode Fo1548967850, FormNode Fo947216675
+Aliases: FormNode Fo947216675, FormNode Fo1545167109, FormNode Fo1545084106, FormNode Fo1548967850
 
 FormNode Fo1545167107
 Title: Investment Tax Credit
@@ -10346,7 +10351,7 @@ NodeSize: 64,40
 WindState: 2,45,506,720,350
 DefnState: 2,445,169,1197,629,0,DFNM
 ValueState: 2,426,65,1030,633,,MIDM
-Aliases: FormNode Fo1580649311, FormNode Fo187916579
+Aliases: FormNode Fo187916579, FormNode Fo1580649311
 NodeColor: 65535,1,1
 GraphSetup: Att_GraphIndexRange Static_PV_Time:1,,0,,,,10,2014.9164547026157,2034.6114791929722,0~
 Att_GraphValueRange PV_kW_AC_Incentive:1,,0,,,,,0,1027.4618715047836,0
@@ -10373,7 +10378,7 @@ IndexVals: ['item 1']
 NodeLocation: 272,880,1
 NodeSize: 64,40
 WindState: 2,2477,242,720,350
-Aliases: FormNode Fo1580763407, FormNode Fo1580649196, FormNode Fo357798179
+Aliases: FormNode Fo357798179, FormNode Fo1580763407, FormNode Fo1580649196
 
 FormNode Fo1580649196
 Title: PV Incentive Scenario
@@ -10456,7 +10461,7 @@ IndexVals: ['item 1']
 NodeLocation: 1296,256,1
 NodeSize: 64,40
 WindState: 2,452,169,836,534
-Aliases: FormNode Fo1580763408, FormNode Fo1580668309, FormNode Fo1553174819
+Aliases: FormNode Fo1553174819, FormNode Fo1580763408, FormNode Fo1580668309
 NodeColor: 65535,1,1
 
 FormNode Fo1580668309
@@ -10498,7 +10503,7 @@ Definition: Table(BESS_Incentive_Scen,PV_Climate_Zone,Static_PV_Time)(~
 NodeLocation: 1056,80,1
 NodeSize: 64,40
 DefnState: 2,2184,145,625,615,0,DFNM
-Aliases: FormNode Fo1352896803, FormNode Fo1587777827
+Aliases: FormNode Fo1587777827, FormNode Fo1352896803
 NodeColor: 65535,1,1
 ReformDef: [PV_Climate_Zone,Static_PV_Time]
 Att_EditSliceState: [BESS_Incentive_Scen,1,Static_PV_Time,11,PV_Climate_Zone,1]
@@ -11826,7 +11831,7 @@ NodeSize: 64,40
 WindState: 2,723,158,1016,618
 DefnState: 2,901,200,582,642,0,DFNM
 ValueState: 2,218,39,1293,648,1,MIDM
-Aliases: Alias Al1568696041, FormNode Fo1568696041, FormNode Fo1539276353, FormNode Fo1544633533, FormNode Fo1572476397, FormNode Fo1567092923, FormNode Fo930517283
+Aliases: FormNode Fo930517283, Alias Al1568696041, FormNode Fo1568696041, FormNode Fo1539276353, FormNode Fo1544633533, FormNode Fo1572476397, FormNode Fo1567092923
 GraphSetup: Att_GraphIndexRange Static_PV_Time:1,,0,,,,10,2020.9325099736452,2035,0
 ReformDef: [All_Equipment_Types,Static_PV_Time]
 ReformVal: [Static_PV_Time,Area_Type]
@@ -11970,7 +11975,7 @@ Units: $/kW-DC, $/kWh
 Description: The per-unit price seen by customers. Solar PV prices are expressed in $/kW-DC, while battery storage prices are in $/kWh. Replacement costs have not yet been discounted and proportioned to the remaining years in the economic horizon, so it is inappropriate to sum over Installation Events (ie, initial installation and future replacement).~
 ~
 DOESN'T SEEM TO REDUCE PRICE DUE TO FORECAST PRICE DECLINES OF THE REPLACEMENT EQUIPMENT
-Definition: VAR price:=Installed_Cost_Resul[All_Equipment_Types=Equipment_Types, All_pv_Sectors=PV_Sectors, Static_PV_Time=Annual_Econ_Time] * Equip_Installed_Flag;~
+Definition: VAR price:=Equipment_Cost_Resul[All_Equipment_Types=Equipment_Types, All_pv_Sectors=PV_Sectors, Static_PV_Time=Annual_Econ_Time] * Equip_Installed_Flag;~
 ~
 Val_by_Install_Event(price, 1, Annual_Econ_Time)
 NodeLocation: 568,120,1
@@ -12079,7 +12084,7 @@ Description: Select the base year to which cost decline scenarios will be applie
 Definition: Choice(Static_PV_Time,13,0)
 NodeLocation: 416,232,1
 NodeSize: 64,40
-Aliases: Alias Al1568923259, FormNode Fo1568923259, FormNode Fo1543274532, FormNode Fo1544916731, FormNode Fo1134924067
+Aliases: FormNode Fo1134924067, Alias Al1568923259, FormNode Fo1568923259, FormNode Fo1543274532, FormNode Fo1544916731
 NodeColor: 65535,65531,1
 {!40300|Att_SlicerPopupSize: 247,64}
 
@@ -12191,15 +12196,15 @@ Definition: Table(All_PV_Sectors,DER_Cost_Scenario,All_Equipment_Types)(~
 NodeLocation: 120,232,1
 NodeSize: 64,40
 WindState: 2,1067,27,720,495
-DefnState: 2,1114,176,535,568,0,DFNM
+DefnState: 2,832,97,535,568,0,DFNM
 ValueState: 2,260,266,759,632,0,MIDM
-Aliases: Alias Al1568696043, FormNode Fo1568696042, FormNode Fo1544633538, FormNode Fo1544635478, FormNode Fo1235587363
+Aliases: FormNode Fo1235587363, Alias Al1568696043, FormNode Fo1568696042, FormNode Fo1544633538, FormNode Fo1544635478
 ReformDef: [DER_Cost_Scenario,All_PV_Sectors]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_EditSliceState: [All_Equipment_Types,2,All_PV_Sectors,1,DER_Cost_Scenario,1]
 
-Variable Installed_Cost_Resul
-Title: Installed Cost Result
+Variable Equipment_Cost_Resul
+Title: Equipment Cost Result
 Units: $/kW-DC, $/kWh
 Description: Historical & forecast installed equipment price (all-in retail price) to the customer prior to incentives.~
 ~
@@ -12210,15 +12215,14 @@ NodeLocation: 416,120,1
 NodeSize: 64,40
 WindState: 2,4,56,1264,521
 ValueState: 2,218,66,1052,721,1,MIDM
-Aliases: FormNode Fo1544635738, FormNode Fo1548968037, FormNode Fo247292195
+Aliases: FormNode Fo247292195, FormNode Fo1544635738, FormNode Fo1548968037, FormNode Clipboard_Fo24729219, FormNode Fo1205326115
 GraphSetup: Att_GraphIndexRange Static_PV_Time:1,,0,,,,,2020.1879722625017,2035,0~
-Att_GraphValueRange Installed_Cost_Resul:1,,1,,,,10,0,647.1657007932663,0~
+Att_GraphValueRange Equipment_Cost_Resul:1,,1,,,,10,0,647.1657007932663,0~
 Att_ContLineStyle Graph_Primary_Valdim:5
 ReformVal: [Static_PV_Time,Area_Type]
 NumberFormat: 2,F,4,2,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [BaseYr_Strg_Costs,Base_Yr_of_Cost_Decl]
 Att_GraphValueRange: 1,,,,,,10
-Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [All_Equipment_Types,1,PV_Climate_Zone,1,All_PV_Sectors,1,Area_Type,3,Static_PV_Time,1]
 
 Decision Select_DER_Cost_Scen
@@ -12228,7 +12232,8 @@ Definition: Choice(DER_Cost_Scenario,2,1)
 IndexVals: ['item 1']
 NodeLocation: 264,232,1
 NodeSize: 64,40
-Aliases: Alias Al1568923260, FormNode Fo1568923260, FormNode Fo1543281664, FormNode Fo1544881571, FormNode Fo598053155
+ValueState: 2,2515,291,416,303,,MIDM
+Aliases: FormNode Fo598053155, Alias Al1568923260, FormNode Fo1568923260, FormNode Fo1543281664, FormNode Fo1544881571
 
 FormNode Fo1543281664
 Title: Selected PV Cost Scenario
@@ -12507,7 +12512,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 736,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,630,16,1204,640,17,10
+DiagState: 2,290,12,1204,640,17,10
 BalloonHelp: FrameNode: FrameNode_1544920329
 AcpStyles: FrameNode: FrameNode_1544920329
 
@@ -12515,12 +12520,12 @@ Variable Cost_of_Elect_Ratio
 Title: Cost of Electricity Ratio
 Units: post/pre ratio
 Description: Ratio of the cost of electricity (when "simple LCOE" method is chosen, this is simply the ratio of the calculated LCOE and the first-year value of solar).
-Definition: DetermTable(Cost_to_Value_Ratio_)(Cost_of_Electricity_,PPA_to_Value_Ratio,Simple_LCOE_to_Value)
+Definition: DetermTable(Cost_to_Value_Ratio_)(PPA_to_Value_Ratio,Simple_LCOE_to_Value)
 NodeLocation: 472,272,1
 NodeSize: 64,40
 WindState: 2,766,136,720,350
 ValueState: 2,387,146,874,604,1,MIDM
-Aliases: FormNode Fo1539221820, FormNode Fo1572476395, FormNode Fo1692803363
+Aliases: FormNode Fo1692803363, FormNode Fo1539221820, FormNode Fo1572476395
 GraphSetup: Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2022.0709496736526,2032,0~
 Grid:0~
 Att_GraphValueRange Cost_of_Elect_Ratio:1,,1,,,,,1.320643737912178,2.707960143685341,0~
@@ -12865,7 +12870,6 @@ ReformVal: [Time,PV_Climate_Zone]
 DisplayOutputs: Variable Payback_Time_by_ID1
 Att__TotalsIndex: [Self]
 Att_GraphValueRange: 1,,,,,,10
-Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [PV_Climate_Zone,1,PV_Sectors,11,System_Types,1,Time,1]
 {!40300|Att_SlicerPopupSize: 227,70}
 
@@ -13190,7 +13194,7 @@ Definition: 8.89%
 NodeLocation: 120,480,1
 NodeSize: 64,40
 ValueState: 2,548,554,416,303,,MIDM
-Aliases: FormNode Fo1703427619, FormNode Fo1116561699
+Aliases: FormNode Fo1116561699, FormNode Fo1703427619
 NodeColor: 65535,1,1
 NumberFormat: 2,%,2,2,0,0,2,1,$,0,"ABBREV",0,,,0,0,15,
 
@@ -13328,12 +13332,12 @@ Att_ResultSliceState: [PV_Climate_Zone,2,System_Types,1,Area_Type,1,PV_Sectors,1
 
 Index Cost_to_Value_Ratio_
 Title: Cost to Value Ratio Method
-Definition: MultiChoice(Self,3,returnList:0)
+Definition: MultiChoice(Self,2,returnList:0)
 NodeLocation: 712,64,1
 NodeSize: 64,40
-Aliases: FormNode Fo2025340451, FormNode Fo1741512995
+Aliases: FormNode Fo1741512995, FormNode Fo2025340451
 NodeColor: 65535,65531,1
-{!40300|DomainExpr: Discrete('Old','Manual PPA Inputs','Simple LCOE Calculator')}
+{!40300|DomainExpr: Discrete('Manual PPA Inputs','Simple LCOE Calculator')}
 
 FormNode Fo2025340451
 Title: Cost to Value Ratio Method
@@ -13391,8 +13395,8 @@ NodeSize: 64,40
 DefnState: 2,334,471,1057,273,0,DFNM
 NodeColor: 65535,1,1
 
-Variable PPA_Rates_Input_Subt
-Title: PPA Rates Input Subtable
+Variable Base_assumed_PPA_rat
+Title: Base assumed PPA rates
 Units: $/kWh
 Definition: SubTable(Estimated_PPA_Rates[All_System_Types=System_Types])
 NodeLocation: 272,664,1
@@ -13421,11 +13425,11 @@ TableCellDefault: 1
 Variable Manual_PPA_Rates_by_
 Title: Manual PPA Rates by Type
 Units: $/kWh
-Definition: PPA_Rates_Input_Subt * PPA_Multiplier
+Definition: Base_assumed_PPA_rat * PPA_Multiplier
 NodeLocation: 272,768,1
 NodeSize: 64,40
 ValueState: 2,260,165,1114,647,,MIDM
-Aliases: Alias Al1165860387, FormNode Fo1707958563
+Aliases: FormNode Fo1707958563, Alias Al1165860387
 Att_ResultSliceState: [System_Types,1,Area_Type,1,PV_Climate_Zone,1,Annual_Econ_Time,1]
 
 Alias Al1203148323
@@ -13542,7 +13546,6 @@ Att_CatLineStyle Graph_Primary_Valdim:9
 ReformDef: [Battery_Specs,All_Sectors]
 ReformVal: [All_Sectors,Battery_Specs]
 Att_GraphValueRange: 1,,,,,,10
-Att_GraphTemplate: Lumidyne_Template
 Att_ResultSliceState: [Battery_Specs,1,Battery_Specs,3,All_Sectors,1]
 Att_ColorRole: Null
 {!40600|Att_ClusterIndex: Null}
@@ -13938,7 +13941,6 @@ NodeLocation: 448,64,1
 NodeSize: 64,40
 WindState: 2,195,92,720,522
 DefnState: 2,849,96,520,687,0,DFNM
-Aliases: FormNode Fo1045258531
 NodeColor: 65535,1,1
 ReformDef: [Null,All_PV_Sectors]
 TableCellDefault: 2
@@ -13962,7 +13964,7 @@ NodeLocation: 584,64,1
 NodeSize: 64,40
 WindState: 2,2276,101,720,350
 DefnState: 2,1133,196,416,303,0,DFNM
-Aliases: Alias Al568492323, FormNode Fo2119000355
+Aliases: Alias Al568492323
 NodeColor: 65535,1,1
 TableCellDefault: 1
 
@@ -14227,7 +14229,7 @@ WindState: 2,319,12,1255,632
 Aliases: FormNode Fo1535066238, FormNode Fo1539140368, FormNode Fo1247325693
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
-{!40300|Att_SlicerPopupSize: 1258,353}
+{!40300|Att_SlicerPopupSize: 1263,353}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
@@ -14396,7 +14398,7 @@ NodeLocation: 960,64,1
 NodeSize: 64,40
 WindState: 2,707,203,665,594
 ValueState: 2,491,274,416,303,,MIDM
-{!40300|Att_SlicerPopupSize: 662,84}
+{!40300|Att_SlicerPopupSize: 667,84}
 
 Constant All_Spatial_ID_to_CZ
 Title: All Spatial ID to CZ Map
@@ -16537,7 +16539,7 @@ Definition: Table(All_PV_Sectors,Area_Type)(~
 NodeLocation: 144,480,1
 NodeSize: 64,40
 DefnState: 2,836,232,503,654,0,DFNM
-Aliases: Alias Al25917987, FormNode Fo341637667, FormNode Fo120842787, FormNode Fo39555363
+Aliases: FormNode Fo39555363, Alias Al25917987, FormNode Fo341637667, FormNode Fo120842787
 ReformDef: [Area_Type,All_PV_Sectors]
 NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 {!50000|Att_ColumnWidths: [,Area_Type,\([,,64])]}
@@ -16803,7 +16805,7 @@ NodeLocation: 504,68,8
 NodeSize: 56,20
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 NodeColor: 65278,37008,6168
-Original: Installed_Cost_Resul
+Original: Equipment_Cost_Resul
 
 FormNode Fo1544635850
 Title: Bldg Stock by Time

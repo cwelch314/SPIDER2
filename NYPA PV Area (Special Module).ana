@@ -235,7 +235,7 @@ Definition: Total_PV_kW_DC_poten * PV_kWh_per_KW_DC / 1E6
 NodeLocation: 1800,568,1
 NodeSize: 64,40
 ValueState: 2,403,82,1028,679,1,MIDM
-Aliases: FormNode Fo304836131, FormNode Fo770403875
+Aliases: FormNode Fo770403875, FormNode Fo304836131
 NodeColor: 65535,1,1
 GraphSetup: {!50000|Graph_SortBySpread:1}~
 Att_StackedBar Graph_Primary_Valdim:1~
@@ -898,7 +898,7 @@ Description: Potential as % of Looad
 Definition: ZIDZ(sum(Technical_PV_Potenti,PV_Sectors),sum(Customer_Load_by_Sp_,PV_Sectors))
 NodeLocation: 1800,776,1
 NodeSize: 64,40
-ValueState: 2,403,121,859,649,1,MIDM
+ValueState: 2,417,150,859,649,1,MIDM
 Aliases: FormNode Fo710635043
 GraphSetup: {!50000|Graph_SortBySpread:1}~
 Att_CatLineStyle Graph_Primary_Valdim:9
@@ -943,7 +943,7 @@ ZIDZ(Technical_PV_Potenti,total)
 NodeLocation: 1976,784,1
 NodeSize: 72,40
 ValueState: 2,383,111,1048,658,1,MIDM
-Aliases: FormNode Fo1835757091, FormNode Fo1844145699
+Aliases: FormNode Fo1844145699, FormNode Fo1835757091
 GraphSetup: {!50000|Graph_SortBySpread:1}~
 Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [PV_Sectors,Area_Type]
@@ -967,7 +967,7 @@ Definition: Total_PV_kW_DC_poten / 1000
 NodeLocation: 1968,472,1
 NodeSize: 64,40
 ValueState: 2,573,206,804,343,0,MIDM
-Aliases: FormNode Fo954953251, FormNode Fo501968419
+Aliases: FormNode Fo501968419, FormNode Fo954953251
 GraphSetup: Att_GraphValueRange Total_PV_MW_DC_Poten:1,,0,,,,,0,481.7144274711609,0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 {!50000|Graph_SortBySpread:1}
@@ -1004,12 +1004,13 @@ Definition: Table(Spatial_ID,Area_Type,Min_Max)(~
 NodeLocation: 1312,72,1
 NodeSize: 64,40
 WindState: 2,374,145,720,350
-DefnState: 2,299,370,629,301,0,DFNM
+DefnState: 2,717,374,629,301,0,DFNM
 ValueState: 2,2193,346,821,420,,MIDM
 Aliases: FormNode Fo194744611
 NodeColor: 65535,1,1
 ReformDef: [Area_Type,Spatial_ID]
-Att_EditSliceState: [Min_Max,1,Spatial_ID,1,Area_Type,3]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att_EditSliceState: [Min_Max,2,Spatial_ID,1,Area_Type,3]
 
 Variable Consumption_by_Sect1
 Title: Consumption by Sector from Facility Data
