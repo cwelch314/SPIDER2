@@ -113,7 +113,7 @@ Title: Main Interface
 Author: Cory Welch
 Date: Fri, May 8, 2015 8:30 PM
 DefaultSize: 64,40
-DiagState: 2,48,22,1586,710,17,10
+DiagState: 2,48,22,1585,710,17,10
 WindState: 2,540,59,720,350
 NodeColor: 57311,57311,57311
 FontStyle: Arial Narrow,19
@@ -168,7 +168,7 @@ Show_index_menus:yes
 Module Mo2
 Author: CWelch
 Date: Tue, Nov 16, 2021 12:28 PM
-NodeLocation: 432,1248,1
+NodeLocation: 120,1336,1
 NodeSize: 64,40
 DiagState: 2,-170,335,1774,761,17,10
 AcpStyles: Show_Object:no
@@ -1163,8 +1163,9 @@ Module Standard_SPIDER_Inte
 Title: Standard SPIDER Interface
 NodeLocation: 120,1232,1
 NodeSize: 64,40
+DiagState: 2,2147,88,1315,678,17,10
 
-Module Model_Details
+Module Model_Details1
 Title: Model Details
 Author: Cory Welch
 Date: Mon, Aug 18, 2014 9:09 PM
@@ -1351,16 +1352,16 @@ AcpStyles: Show_Object:no
 
 Close Sensitivity1
 
-Include 0,LinkModule Other_Input,2,2,0,0,Other Input Module.ana
+Include 0,LinkModule Other_Input1,2,2,0,0,Other Input Module.ana
 
-NodeLocation Other_Input: 480,264,1
-NodeSize Other_Input: 80,56
+NodeLocation Other_Input1: 480,264,1
+NodeSize Other_Input1: 80,56
 
 
-Include 0,LinkModule Other_Output,2,2,0,0,Other Output Module.ana
+Include 0,LinkModule Other_Output1,2,2,0,0,Other Output Module.ana
 
-NodeLocation Other_Output: 296,264,1
-NodeSize Other_Output: 80,56
+NodeLocation Other_Output1: 296,264,1
+NodeSize Other_Output1: 80,56
 
 
 Include 0,LinkModule Efficiency___DR,2,2,0,0,Efficiency and DR Module.ana
@@ -1463,7 +1464,7 @@ NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 WindState: 2,2424,68,720,350
 NodeColor: 65278,37008,6168
 NodeFont: Arial,19
-OnClick: Show_ACP_Window(Output_Ident,Output_Titles,Select_Output, 'Result')
+OnClick: Show_ACP_Window1(Output_Ident,Output_Titles,Select_Output, 'Result')
 
 Text Te1552851629
 Title: Copy these nodes to create a new ShowWindow dropdown.
@@ -1509,7 +1510,7 @@ NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF PV_Impact1 = Hidden_Dropdown~
 THEN Null~
-ELSE Show_ACP_Window(PV_Impact_Out,PV_Impact_Titles,PV_Impact1, 'Result')
+ELSE Show_ACP_Window1(PV_Impact_Out,PV_Impact_Titles,PV_Impact1, 'Result')
 
 Decision PV_Impact1
 Title: PV Impact
@@ -1570,7 +1571,7 @@ NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF EV_Impact = Hidden_Dropdown~
 THEN Null~
-ELSE Show_ACP_Window(EV_Impact_Out,EV_Impact_Titles,EV_Impact, 'Result')
+ELSE Show_ACP_Window1(EV_Impact_Out,EV_Impact_Titles,EV_Impact, 'Result')
 
 Index EV_Impact_Out
 Title: EV Impact Out
@@ -1624,7 +1625,7 @@ NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF PV_Economics = Hidden_Dropdown~
 THEN Null~
-ELSE Show_ACP_Window(PV_Econ_Out1,PV_Econ_Titles1,PV_Economics, 'Result')
+ELSE Show_ACP_Window1(PV_Econ_Out1,PV_Econ_Titles1,PV_Economics, 'Result')
 
 Index PV_Econ_Out1
 Title: PV Econ Out
@@ -1700,7 +1701,7 @@ NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF PV_Input = Hidden_Dropdown~
 THEN Null~
-ELSE Show_ACP_Window(PV_Input1,PV_Input_Titles,PV_Input, IF Inputs_only_for_view THEN 'Result' ELSE 'Definition' )
+ELSE Show_ACP_Window1(PV_Input1,PV_Input_Titles,PV_Input, IF Inputs_only_for_view THEN 'Result' ELSE 'Definition' )
 
 Index PV_Input_Titles
 Att_PrevIndexValue: ['Historical PV Capacity Installations (MW-AC/period)','Historical PV Installations (systems/period)','PV kW-AC Incentive ($/kW-AC)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (percent)','Electric Rates (energy, DRV, capacity only) (cents/kWh or $/kW)','Hourly Profiles (various)','Saved Daily Profiles (various)','Per-kW Weekly Solar Profile (kW-hr/kW-DC)','Payback Acceptance Curve (market share)']
@@ -1815,7 +1816,7 @@ NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF EV_Input = Hidden_Dropdown~
 THEN Null~
-ELSE Show_ACP_Window(EV_Input1,EV_Input_Titles,EV_Input,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
+ELSE Show_ACP_Window1(EV_Input1,EV_Input_Titles,EV_Input,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
 
 Index EV_Input_Titles
 Att_PrevIndexValue: ['Vehicle Stock Data (vehicles)','Vehicle Price ($/vehicle)','Vehicle Price Adjustment by Scenario (fraction)','Vehicle Incentives ($/vehicle)','Vehicle Range (miles/refueling)','Vehicle Range Adjustment by Scenario (fraction)','VMT (miles/year-vehicle)','MPG (miles/GGE)','Fuel Mix (fraction)','Fuel Prices ($/GGE)','Electricity Price Adjustment by Scenario (fraction)','Gasoline Price Adjustment by Scenario (fraction)','Vehicle Maintenance Cost ($/year-vehicle)','Impact per EV (kW/vehicle)','Vehicle Average Lifetime (Years)','Num Vehicle Vintages (dmnl)']
@@ -1958,7 +1959,7 @@ NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF BESS_Input = Hidden_Dropdown~
 THEN Null~
-ELSE Show_ACP_Window(Storage_Input1,Storage_Input_Titles,BESS_Input,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
+ELSE Show_ACP_Window1(Storage_Input1,Storage_Input_Titles,BESS_Input,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
 
 Index Storage_Input_Titles
 Att_PrevIndexValue: ['Start Time for Dispatch','End Time for Dispatch','Flows to View','Battery Storage Specs','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (percent)','Allowed ITC Percent by Year (fraction)','Storage kWh Incent Base Rate ($/kWh)','Incentive Step Start Month','kWh Incent Derate for Duration','kWh Incent Derate for Capacity']
@@ -2039,7 +2040,7 @@ NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF BESS_Impact1 = Hidden_Dropdown~
 THEN Null~
-ELSE Show_ACP_Window(Storage_Dispatch_Out,Storage_Dispatch_Tit,BESS_Impact1, 'Result')
+ELSE Show_ACP_Window1(Storage_Dispatch_Out,Storage_Dispatch_Tit,BESS_Impact1, 'Result')
 
 Index Storage_Dispatch_Tit
 Att_PrevIndexValue: ['BESS Adoption EOP (MW)','Dispatch Flows (kW-hr/customer)','Rates for Dispatch','Battery Charge for Dispatch (kWh)','Pct of Stored Electricity from PV (fraction)']
@@ -2109,7 +2110,7 @@ WindState: 2,2424,68,720,350
 Aliases: Alias Al1552873476
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
-OnClick: Show_ACP_Window(Storage_Econ_Out,Storage_Econ_Titles,Storage_Economics, 'Result')
+OnClick: Show_ACP_Window1(Storage_Econ_Out,Storage_Econ_Titles,Storage_Economics, 'Result')
 
 Index Storage_Econ_Titles
 Att_PrevIndexValue: ['Pre and Post Customer Load (kW-hr/customer)','First-Year Bill Comparison ($)','Cost of Electricity Comparison ($/year)','Simple Payback Time (years)','Installed Price ($/kW-DC, $/kWh)']
@@ -2179,10 +2180,10 @@ NodeLocation: 1048,136,-1
 NodeSize: 336,112
 NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
 
-Include 0,LinkLibrary GUI_Dropdowns,2,2,0,0,GUI Dropdowns.ana
+Include 0,LinkLibrary GUI_Dropdowns1,2,2,0,0,GUI Dropdowns.ana
 
-NodeLocation GUI_Dropdowns: 1464,344,1
-NodeSize GUI_Dropdowns: 64,40
+NodeLocation GUI_Dropdowns1: 1464,344,1
+NodeSize GUI_Dropdowns1: 64,40
 
 
 Text Te1556500893
@@ -6530,7 +6531,7 @@ Aliases: FormNode ACP_Select_frame_nod
 OnChange: ACP_onSelectFrameNod()
 
 Index ACP_Modules
-Att_PrevIndexValue: [Main_Interface,Model_Details,Illustrative_Nodes,Parameter_Optimizati,Sensitivity1,GUI_Definitions,Undefined]
+Att_PrevIndexValue: [Main_Interface,Model_Details1,Illustrative_Nodes,Parameter_Optimizati,Sensitivity1,GUI_Definitions,Undefined]
 Title: Modules
 Description: A list of modules in the the top model, not including this library. Used for frame node setings.
 Definition: If (ACP_Top_model() = handle(ACP_option_libra)) then ~
@@ -18489,7 +18490,7 @@ NodeSize: 64,40
 
 Close GIS
 
-Close Model_Details
+Close Model_Details1
 
 Include 0,LinkModule Solar_PV,2,2,0,0,Solar PV Module.ana
 
