@@ -497,7 +497,7 @@ DefaultSize: 48,24
 NodeLocation: 232,232,1
 NodeSize: 64,32
 NodeInfo: 1,1,1,1,1,1,0,0,0,0,,,,0
-DiagState: 2,2423,297,611,320,21,10
+DiagState: 2,2584,300,611,320,21,10
 WindState: 2,372,189,507,744
 FontStyle: Arial, 15
 Att_PreLoadScript: {!40404|FreePassObjectCount NFuk$KoNg0JRHEwYQ1a_9HMEDGnHuMwCUfrqYEiIxzED36qoV8ev7IGMV$lS5l8TfcWN1aOw9QWUnyQFmCl$8YhmiP3g4cDiZVqxM7l8Unt4K7riAg7b6x68xhOuV9MUkeUN0W7kEnhry$3rKrBPo4ODJMjQ_Jbqs$BygEpAgDr4DE0bT2KisGBNVM9pEcB4JPG4rP1MjG7KOD$kGe5Szs_1xnMsN1JQpWMJ_iNt5QUUkjeQzTwAYzkccI7zY3RagjZWXlCwMZ$EB3$zc6PsyDVH3JHUrCb_PqGjBf9gCkHsR1eGvYDubI1mWH3sgUKA1wpjeZWUTSSUWZdinu09ITeq1FUk_GYsAVrBZyMmCe5a3Z4c9jHtT4iL$fL2mUE_lXL9_pgYQKEA531$$0148CHNUclv3FRft6MdvDWrAXuGg4VxOrKpKrNwU4fGuWAqWBvdM6seRE2tkbTMGB630$__$147CIOVenx6IUixARi_HbxGd$NnCd3W_TzT$Y5gFrS4jN2jQ7sbL6uhVK90umfZUQNLJJJLNQVagmu1BLWiw8}
@@ -508,7 +508,7 @@ Title: Zero out times
 Description: Zeros all computation times, so that only the times of subsequent computations will be shown.
 NodeLocation: 248,40,1
 NodeSize: 48,24
-Aliases: Alias Al661819683
+Aliases: Alias Al1149645091
 Script: ResetEvalTimes~
 Reset_profiler := 1~
 
@@ -519,7 +519,7 @@ Description: Sets the profiles to recompute, adding in any further computation t
 NodeLocation: 64,40,1
 NodeSize: 48,24
 WindState: 2,39,304,476,224
-Aliases: Alias Al1735561507
+Aliases: Alias Al612774179
 Script: (Reset_profiler := Reset_profiler+1)
 
 FormNode Sort_profiled_objec1
@@ -579,7 +579,7 @@ Definition: Choice(Profiler_fields,4,0)
 NodeLocation: 336,248,1
 NodeSize: 48,24
 WindState: 2,102,90,523,465
-Aliases: FormNode Sort_profiled_objec1
+Aliases: FormNode Sort_profiled_objec1, FormNode Sort_profi1283862819
 
 Index Profiler_fields
 Att_PrevIndexValue: ['Class','Module','Bytes','CPU msecs','msecs w ancestors']
@@ -640,8 +640,8 @@ Profiles[.Objs = object_id]
 NodeLocation: 336,184,1
 NodeSize: 56,24
 WindState: 2,102,90,497,494
-ValueState: 2,366,-6,1040,797,0,MIDM
-Aliases: FormNode Ordered_profiles1, FormNode Clipboard_Ordered_pr, FormNode Ordered_pr1601343779
+ValueState: 2,418,79,1145,588,0,MIDM
+Aliases: FormNode Ordered_profiles1, FormNode Ordered_pr1283862819
 GraphSetup: {!40000|Att_graphvaluerange Performance_profiles:1,,,,,,10}~
 {!40000|Att_graphindexrange Profiler_fields:1,,,,,,10}~
 {!40000|Flip:8}~

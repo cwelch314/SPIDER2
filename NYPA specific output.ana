@@ -10,10 +10,12 @@ Author: CWelch
 Date: Tue, Mar 29, 2022 11:58 AM
 DefaultSize: 64,40
 NodeSize: 64,40
-DiagState: 2,-174,127,1733,771,17,10
+DiagState: 2,7,125,1733,771,17,10
+NodeColor: 65535,65535,65535
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule NYPA_specific_output,2,2,0,0,NYPA specific output.ana
-AcpStyles: Show_Object:No
+AcpStyles: Show_Object:No~
+show_as_tab: No
 
 Alias Al1294704163
 Title: PV Cumulative Adoption
@@ -95,7 +97,7 @@ Units: MW-DC
 Definition: Aggregate(NYPA_Enabled_PV_Adop,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
 NodeLocation: 776,352,1
 NodeSize: 64,40
-ValueState: 2,341,55,1077,723,1,MIDM
+ValueState: 2,519,82,1077,723,1,MIDM
 Aliases: FormNode Fo1042431523
 GraphSetup: Att_GraphValueRange NYPA_Enabled_PV_Ado1:1,,1,1,,,,0,1000,0~
 Att_AreaFill Graph_Primary_Valdim:1~
@@ -105,11 +107,11 @@ Att_CatLineStyle Graph_Primary_Valdim:9~
 {!50000|Graph_SortBySpread:1}~
 Att_ContLineStyle Graph_Primary_Valdim:1~
 Graph_FillTransparen:2
-ReformVal: [Output_Periods,Area_Type]
+ReformVal: [Output_Periods,Spatial_ID]
 NumberFormat: 2,F,2,1,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Spatial_ID,Area_Type,Sectors_Aggregated]
 Att_ResultSliceState: [Sectors_Aggregated,0,Area_Type,0,Spatial_ID,0,Output_Periods,108]
-{!40600|Att_StackingIndex: Area_Type}
+{!40600|Att_StackingIndex: Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
 
 FormNode Fo471309859
@@ -164,8 +166,8 @@ Att_CatLineStyle Graph_Primary_Valdim:9~
 {!50000|Graph_SortBySpread:1}
 ReformVal: [Sectors_Aggregated,Area_Type]
 NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Sectors_Aggregated,Area_Type]
-Att_ResultSliceState: [Output_Periods,48,Spatial_ID,4,Area_Type,0,Sectors_Aggregated,0]
+Att__TotalsIndex: [Sectors_Aggregated,Area_Type,Spatial_ID]
+Att_ResultSliceState: [Output_Periods,108,Spatial_ID,0,Area_Type,0,Sectors_Aggregated,0]
 {!40600|Att_StackingIndex: Area_Type}
 {!40600|Att_ClusterIndex: Null}
 
@@ -182,13 +184,13 @@ Units: MW-DC
 Definition: Table(Potential_Type)(Total_PV_MW_DC_Tech_,PV_Cumul_MW_DC1,NYPA_Enabled_PV_Ado1)
 NodeLocation: 968,576,1
 NodeSize: 64,40
-ValueState: 2,435,111,927,685,,MIDM
+ValueState: 2,524,77,927,685,,MIDM
 Aliases: FormNode Fo1687511331
 GraphSetup: Att_GraphValueRange PV_Potential_by_Type:1,,1,,,,,0,2757.6518058776855,0
 ReformVal: [Output_Periods,Potential_Type]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Area_Type,Sectors_Aggregated]
-Att_ResultSliceState: [Spatial_ID,2,Area_Type,0,Sectors_Aggregated,0,Potential_Type,1,Output_Periods,1]
+Att__TotalsIndex: [Area_Type,Sectors_Aggregated,Spatial_ID]
+Att_ResultSliceState: [Spatial_ID,0,Area_Type,0,Sectors_Aggregated,0,Potential_Type,1,Output_Periods,1]
 
 Variable PV_Cumul_MW_DC
 Title: PV Cumul MW DC
@@ -236,7 +238,7 @@ Units: MW
 Definition: sum(Aggregate(NYPA_Enabled_Storage,Map_All_to_Aggregate[All_PV_Sectors=BESS_Sectors],BESS_Sectors,Sectors_Aggregated,"Sum"), BESS_types)
 NodeLocation: 816,688,1
 NodeSize: 64,40
-ValueState: 2,506,160,959,657,1,MIDM
+ValueState: 2,732,160,959,657,1,MIDM
 Aliases: FormNode Fo1849909539
 GraphSetup: Att_AreaFill Graph_Primary_Valdim:1~
 Att_Stacked_Lines Graph_Primary_Valdim:1~
