@@ -10,27 +10,11 @@ Author: CWelch
 Date: Thu, Mar 31, 2022 3:05 PM
 DefaultSize: 64,32
 NodeSize: 64,40
-DiagState: 2,21,18,1818,742,17,10
+DiagState: 2,172,-15,1866,881,17,10
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
 FileInfo: 0,LinkModule NYPA_Solar_Storage1,2,2,0,0,NYPA Specific\NYPA Solar, Storage (Expanded).ana
 AcpStyles: Framenode: NYPA_DER_F1649160483
-
-FormNode Fo699244067
-Title: Va26
-Definition: 0
-NodeLocation: 668,844,1
-NodeSize: 204,20
-NodeColor: 49151,49151,49151
-Original: Base_assumed_PPA_rat
-
-FormNode Fo769891875
-Title: PPA Multiplier
-Definition: 0
-NodeLocation: 668,884,1
-NodeSize: 204,20
-NodeColor: 49151,49151,49151
-Original: PPA_Multiplier
 
 FormNode Fo770403875
 Title: Technical PV Potential
@@ -70,7 +54,7 @@ Original: Load_vs_PV_Potential
 FormNode Fo322661923
 Title: Additional Value
 Definition: 0
-NodeLocation: 668,628,1
+NodeLocation: 668,588,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Additional_Value
@@ -92,14 +76,14 @@ Original: NYPA_Enabled_PV_Ado2
 FormNode Fo89932067
 Title: Simple LCOE vs Value of Solar
 Definition: 1
-NodeLocation: 668,804,1
+NodeLocation: 668,764,1
 NodeSize: 204,20
 Original: Simple_LCOE_vs_Value
 
 FormNode Fo1692803363
 Title: Cost of Electricity Ratio
 Definition: 1
-NodeLocation: 668,1004,1
+NodeLocation: 668,804,1
 NodeSize: 204,20
 Original: Cost_of_Elect_Ratio
 
@@ -142,18 +126,10 @@ NodeSize: 204,20
 NodeInfo: 1,,,,,,,150,,,,,,0
 Original: Selected_ITC_Scen
 
-FormNode Fo1735745827
-Title: Select Customer Rate
-Definition: 0
-NodeLocation: 668,588,1
-NodeSize: 204,20
-NodeColor: 49151,49151,49151
-Original: Select_Customer_Rate
-
 FormNode Fo1116561699
 Title: Simple LCOE Discount Rate
 Definition: 0
-NodeLocation: 668,964,1
+NodeLocation: 668,724,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Simple_LCOE_Discount
@@ -164,31 +140,7 @@ Definition: 0
 NodeLocation: 236,1036,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
-Original: Equipment_Cost_Multi
-
-FormNode Fo1707958563
-Title: Manual PPA Rates by Type
-Definition: 1
-NodeLocation: 668,924,1
-NodeSize: 204,20
-NodeColor: 49151,49151,49151
-Original: Manual_PPA_Rates_by_
-
-FormNode Fo1741512995
-Title: Cost to Value Ratio Method
-Definition: 0
-NodeLocation: 668,764,1
-NodeSize: 204,20
-NodeInfo: 1,,,,,,,226,,,,,,0
-Original: Cost_Ratio_Method
-
-FormNode Fo247292195
-Title: Installed Price
-Definition: 1
-NodeLocation: 236,1196,1
-NodeSize: 204,20
-NodeColor: 49151,49151,49151
-Original: Equipment_Cost_Resul
+Original: Base_Cost_Multiplier
 
 FormNode Fo1849909539
 Title: NYPA Enabled Storage Adoption
@@ -220,30 +172,13 @@ NodeLocation: 668,508,1
 NodeSize: 204,20
 Original: Electric_Rate_8760
 
-FormNode Fo930517283
-Title: Installed Equipment Price
-Definition: 0
-NodeLocation: 236,996,1
-NodeSize: 204,20
-NodeColor: 49151,49151,49151
-Original: Installed_Cost_Input
-
 FormNode Fo1235587363
 Title: DER Cost Change Rate
 Definition: 0
 NodeLocation: 236,1076,1
 NodeSize: 204,20
-NodeColor: 63993,42148,13107
+NodeColor: 49151,49151,49151
 Original: DER_Cost_Change_Rate
-
-FormNode Fo1134924067
-Title: Base Yr of Cost Decline
-Definition: 0
-NodeLocation: 236,1156,1
-NodeSize: 204,20
-NodeInfo: 1,,,,,,,142,,,,,,0
-NodeColor: 65535,65531,1
-Original: Base_Yr_of_Cost_Decl
 
 FormNode Fo598053155
 Title: DER Cost Scenario
@@ -284,18 +219,10 @@ NodeLocation: 668,548,1
 NodeSize: 204,20
 Original: Electric_Rates2
 
-FormNode Fo179015971
-Title: $/kWh value of solar by Econ Time
-Definition: 1
-NodeLocation: 668,668,1
-NodeSize: 204,20
-NodeInfo: 1,,,,,,,72,,,,,
-Original: Value_of_generation
-
 Text Te1605079331
 Title: Equipment Costs
-NodeLocation: 236,1084,-1
-NodeSize: 212,148
+NodeLocation: 236,1060,-1
+NodeSize: 212,124
 NodeInfo: 1,,,,1
 NodeFontColor: 3855,26214,35209
 
@@ -308,8 +235,8 @@ NodeFontColor: 3855,26214,35209
 
 Text Te2062258467
 Title: Electric Rates
-NodeLocation: 668,572,-1
-NodeSize: 212,124
+NodeLocation: 668,552,-1
+NodeSize: 212,104
 NodeInfo: 1,,,,1
 NodeFontColor: 3855,26214,35209
 
@@ -419,8 +346,8 @@ NodeInfo: 1,,,0
 
 Text Te606875939
 Title: LCOE and DER Value
-NodeLocation: 668,872,-1
-NodeSize: 212,168
+NodeLocation: 668,748,-1
+NodeSize: 212,84
 NodeFont: Arial,19
 NodeFontColor: 3855,26214,35209
 
@@ -439,35 +366,34 @@ NodeInfo: 1,,,,0,,1,,,,,,1
 NodeFont: Arial,32
 AcpStyles: Show_Object:No
 
-Alias Al1149645091
-Title: Zero out times
-Definition: 1
-NodeLocation: 1128,824,1
-NodeSize: 48,24
-Original: Zero_out_times
-
-Alias Al612774179
-Title: Update profiles
-Definition: 1
-NodeLocation: 960,824,1
-NodeSize: 48,24
-Original: Update_profiles
-
-FormNode Sort_profi1283862819
-Title: Sort profiled objects by
+FormNode Fo103510307
+Title: Installed Cost in Base Year (2021)
 Definition: 0
-NodeLocation: 1063,876,1
-NodeSize: 161,12
-NodeInfo: 0,0,0,0,0,0,0,170
-Original: Sort_objects_by
+NodeLocation: 236,996,1
+NodeSize: 204,20
+Original: Installed_Cost_in_Ba
 
-FormNode Ordered_pr1283862819
-Title: Ordered profiles
+FormNode Fo430666019
+Title: Equipment Cost Forecast
 Definition: 1
-NodeLocation: 1063,904,1
-NodeSize: 161,12
-NodeInfo: 1,0,0,1,0,0,0,120,0,
-Original: Performance_profiles
+NodeLocation: 236,1156,1
+NodeSize: 204,20
+Original: Equipment_Cost_Forec
+
+FormNode Fo1027305763
+Title: Value of generation
+Definition: 1
+NodeLocation: 668,628,1
+NodeSize: 204,20
+Original: Value_of_generation1
+
+Alias Al1234661667
+Title: Compare Annual Solar Energy
+Definition: 1
+NodeLocation: 1008,408,1
+NodeSize: 64,40
+NodeColor: 19661,48336,65535
+Original: Compare_Annual_Solar
 
 Close NYPA_Solar_Storage1
 

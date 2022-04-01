@@ -2972,7 +2972,7 @@ OnClick: FOR J:=@All_Strg_Decisions2 DO (~
 Decision Select_Strg_CZ2
 Title: Selected Storage Climate Zones
 Description: Select the climate zones that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(PV_Climate_Zone,1,allowNone:0,returnList:1)
+Definition: MultiChoice(PV_Climate_Zone,2,allowNone:0,returnList:1)
 NodeLocation: 768,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348265
@@ -3037,7 +3037,7 @@ Original: Select_Strg_Rate2
 Decision Select_Strg_Month2
 Title: Selected Storage Months
 Description: Select the months that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Month,1,allowNone:0,returnList:1)
+Definition: MultiChoice(Month,allowNone:0,returnList:1)
 NodeLocation: 616,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348267
@@ -3749,7 +3749,7 @@ Description: Select the granularity of the customer load and solar profiles used
 Monthly Time-Series: uses every hour in each month.~
 Representative Week: uses a representative week, which is an average across all weeks in the month.~
 Representative Day Type: uses a representative weekday and weekend, which are averages across all weekdays/weekends in the month.
-Definition: Choice(Profile_Granularity,2,0)
+Definition: Choice(Profile_Granularity,2,1)
 NodeLocation: 96,96,1
 NodeSize: 64,40
 WindState: 2,98,82,1104,446
@@ -4537,7 +4537,7 @@ MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimizat
 Decision Choose_Sectors_to_Op
 Title: Choose Sectors to Optimize
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,allowNone:0,returnList:1)
 NodeLocation: 464,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo989786659, Alias Al783884579, FormNode Fo431563043
@@ -4838,7 +4838,7 @@ Author: JamesMilford
 Date: Wed, May 15, 2019 1:43 PM
 NodeLocation: 416,160,1
 NodeSize: 64,40
-DiagState: 2,10,11,1422,703,17
+DiagState: 2,191,47,1422,703,17,10
 
 Module Weekly_Opt_Windows
 Title: Weekly Opt Window
