@@ -163,7 +163,7 @@ Description: Stored USURDB (US Utility Rate Database) data.
 Definition: Table(USURDB_Columns,All_USURDB_Rows)(~
 'JM18',Null,Null,Null,Null,Null,Null,Null,~
 16609,Null,Null,Null,Null,Null,Null,Null,~
-'AL-TOU Secondary (0-500 KW)','NYPA Test','NYPA Test 2','NYPA Upstate (NYSEG - Rest of State, Zone C)','NYPA LI/Hudson Valley (PSEG-LI, Zone K)','NYPA Downstate (NYC, Zone J)','NYPA LI/Hudson Valley (NYSEG Lower Hudson, Zone G)','NYPA LI/Hudson Valley (Central Hudson,Zone G)',~
+'AL-TOU Secondary (0-500 KW)','NYPA Test','NYPA Test 2','NYPA Upstate (NYSEG - Rest of State, Zone C)','NYPA Long Island (PSEG-LI, Zone K)','NYPA Downstate (NYC, Zone J)','NYPA Hudson Valley (NYSEG Lower Hudson, Zone G)','NYPA Hudson Valley (Central Hudson,Zone G)',~
 1-Jan-2019,1-Jan-2019,1-Jan-2019,1-Jan-2021,1-Jan-2021,1-Jan-2021,1-Jan-2021,1-Jan-2021,~
 Null,Null,Null,Null,Null,Null,Null,Null,~
 'San Diego Gas & Electric Co','NYPA','NYPA','NYSEG Rest of State, Region Central - C','PSEG LI, Region Long Island - K','Con Edison - NYC, Region NYC - J','NYSEG Lower Hudson, Region Hudson - G','Central Hudson, Region Hudson - G',~
@@ -681,8 +681,8 @@ Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null)
 NodeLocation: 488,384,1
 NodeSize: 64,40
-WindState: 2,98,82,720,350
-DefnState: 2,-83,84,1853,677,0,DFNM
+WindState: 2,98,82,834,433
+DefnState: 2,-131,79,1853,677,0,DFNM
 ValueState: 2,192,68,1469,665,0,MIDM
 Aliases: FormNode Fo1533786962, Alias Al1534527214, FormNode Fo1534527214
 ReformDef: [USURDB_Columns,All_USURDB_Rows]
@@ -1507,7 +1507,7 @@ Definition: INDEX names:=CopyIndex(Rate_Names_and_Dates);~
 SortIndex(names)
 NodeLocation: 976,88,1
 NodeSize: 64,40
-WindState: 2,102,82,1272,359
+WindState: 2,102,82,1272,574
 ValueState: 2,535,327,625,353,0,MIDM
 Aliases: Alias Al176906531
 NodeColor: 65535,39321,39321
@@ -1841,7 +1841,7 @@ Title: Rate Names and Dates
 Definition: Filtered_Rate_Names & Pipe_Separator1 & Stored_Filtered_Star
 NodeLocation: 488,336,1
 NodeSize: 64,40
-WindState: 2,102,82,720,350
+WindState: 2,102,82,720,503
 ValueState: 2,788,24,539,800,0,MIDM
 NodeColor: 65535,52427,52427
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"yyyy-MM",0,,,0,0,15
@@ -2134,7 +2134,7 @@ NodeSize: 64,40
 ValueState: 2,1970,153,416,592,0,MIDM
 
 Index Rate_Name_Options
-Att_PrevIndexValue: ['AL-TOU Secondary (0-500 KW)','NYPA Downstate (NYC, Zone J)','NYPA LI/Hudson Valley (Central Hudson,Zone G)','NYPA LI/Hudson Valley (NYSEG Lower Hudson, Zone G)','NYPA LI/Hudson Valley (PSEG-LI, Zone K)','NYPA Test','NYPA Test 2','NYPA Upstate (NYSEG - Rest of State, Zone C)']
+Att_PrevIndexValue: ['AL-TOU Secondary (0-500 KW)','NYPA Downstate (NYC, Zone J)','NYPA Hudson Valley (Central Hudson,Zone G)','NYPA Hudson Valley (NYSEG Lower Hudson, Zone G)','NYPA Long Island (PSEG-LI, Zone K)','NYPA Test','NYPA Test 2','NYPA Upstate (NYSEG - Rest of State, Zone C)']
 Title: Rate Name Options
 Definition: INDEX all_vals:=CopyIndex(USURDB_Rate_Names);~
 INDEX uniq_vals:=Unique(all_vals);~

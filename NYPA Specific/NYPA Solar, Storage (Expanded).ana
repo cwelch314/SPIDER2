@@ -5,12 +5,12 @@ SoftwareVersion 6.1.0
 
 
 LinkModule NYPA_Solar_Storage1
-Title: NYPA Solar, Storage (Expanded)
+Title: NYPA Solar, Storage
 Author: CWelch
 Date: Thu, Mar 31, 2022 3:05 PM
 DefaultSize: 64,32
 NodeSize: 64,40
-DiagState: 2,35,6,1866,739,17,10
+DiagState: 2,31,7,1866,739,17,10
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
 FileInfo: 0,LinkModule NYPA_Solar_Storage1,2,2,0,0,NYPA Specific\NYPA Solar, Storage (Expanded).ana
@@ -19,14 +19,14 @@ AcpStyles: Framenode: NYPA_DER_F1649160483
 FormNode Fo1696948515
 Title: Market Share Illustration
 Definition: 1
-NodeLocation: 668,1100,1
+NodeLocation: 676,1132,1
 NodeSize: 204,20
 Original: Long_Run_Market_Sha3
 
 FormNode Fo1439994147
 Title: Logit Price Coefficient
 Definition: 0
-NodeLocation: 668,900,1
+NodeLocation: 676,932,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Logit_Price_Coeff
@@ -34,7 +34,7 @@ Original: Logit_Price_Coeff
 FormNode Fo903123235
 Title: Logit Tech Coefficient
 Definition: 0
-NodeLocation: 668,940,1
+NodeLocation: 676,972,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Logit_Tech_Coeff
@@ -42,7 +42,7 @@ Original: Logit_Tech_Coeff
 FormNode Fo653512995
 Title: Market Share Function
 Definition: 1
-NodeLocation: 668,1060,1
+NodeLocation: 676,1092,1
 NodeSize: 204,20
 Original: Market_Share_Functio
 
@@ -106,7 +106,7 @@ Original: NYPA_Enabled_PV_Ado2
 FormNode Fo89932067
 Title: Simple LCOE vs Value of Solar
 Definition: 1
-NodeLocation: 668,764,1
+NodeLocation: 668,804,1
 NodeSize: 204,20
 Original: Simple_LCOE_vs_Value
 
@@ -152,7 +152,7 @@ Original: Selected_ITC_Scen
 FormNode Fo1116561699
 Title: Simple LCOE Discount Rate
 Definition: 0
-NodeLocation: 668,724,1
+NodeLocation: 668,764,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Simple_LCOE_Discount
@@ -170,7 +170,6 @@ Title: NYPA Enabled Storage Adoption
 Definition: 1
 NodeLocation: 668,372,1
 NodeSize: 204,20
-NodeColor: 65535,1,1
 Original: NYPA_Enabled_Storag1
 
 FormNode Fo507732259
@@ -186,8 +185,8 @@ Definition: 0
 NodeLocation: 236,852,1
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,72,,,,,
-NodeColor: 65535,1,1
-Original: PV_kW_AC_Incentive
+NodeColor: 49151,49151,49151
+Original: PV_kW_DC_Incentive
 
 FormNode Fo1729847587
 Title: Hourly Rate (energy, DRV, cap only)
@@ -259,8 +258,8 @@ NodeFontColor: 3855,26214,35209
 
 Text Te2062258467
 Title: Electric Rates
-NodeLocation: 668,552,-1
-NodeSize: 212,104
+NodeLocation: 668,572,-1
+NodeSize: 212,124
 NodeInfo: 1,,,,1
 NodeFontColor: 3855,26214,35209
 
@@ -328,14 +327,14 @@ NodeInfo: 1,,,,0
 NodeFontColor: 3855,26214,35209
 
 Text Te306983203
-NodeLocation: 452,612,-25
-NodeSize: 444,604
+NodeLocation: 452,632,-25
+NodeSize: 444,624
 NodeInfo: 1,,,,1,1
 NodeColor: 3855,26214,35209
 
 Text Te1380725027
-NodeLocation: 452,660,-22
-NodeSize: 436,548
+NodeLocation: 452,680,-22
+NodeSize: 436,568
 NodeInfo: 1,,,,1,1
 NodeColor: 65535,65535,65535
 
@@ -370,7 +369,7 @@ NodeInfo: 1,,,0,0
 
 Text Te606875939
 Title: LCOE and DER Value
-NodeLocation: 668,748,-1
+NodeLocation: 668,788,-1
 NodeSize: 212,84
 NodeFont: Arial,19
 NodeFontColor: 3855,26214,35209
@@ -415,7 +414,7 @@ Original: Value_of_generation1
 FormNode Fo842592547
 Title: PV Ad Effectiveness
 Definition: 0
-NodeLocation: 668,980,1
+NodeLocation: 676,1012,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: PV_Ad_Effectiveness
@@ -423,7 +422,7 @@ Original: PV_Ad_Effectiveness
 FormNode Fo1446572323
 Title: PV Word of Mouth
 Definition: 0
-NodeLocation: 668,1020,1
+NodeLocation: 676,1052,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: PV_Word_of_Mouth
@@ -431,20 +430,20 @@ Original: PV_Word_of_Mouth
 FormNode Fo1878585635
 Title: Cost of Electricity Ratio
 Definition: 1
-NodeLocation: 668,804,1
+NodeLocation: 668,844,1
 NodeSize: 204,20
 Original: Cost_of_Elect_Ratio2
 
 FormNode Fo617935139
 Title: Long Run Market Share
 Definition: 1
-NodeLocation: 668,1180,1
+NodeLocation: 676,1212,1
 NodeSize: 204,20
 Original: Long_Run_Market_Sha1
 
 Text Te1725231395
 Title: Technology Diffusion
-NodeLocation: 668,1020,-1
+NodeLocation: 668,1060,-1
 NodeSize: 212,180
 NodeFont: Arial,19
 NodeFontColor: 3855,26214,35209
@@ -452,9 +451,16 @@ NodeFontColor: 3855,26214,35209
 FormNode Fo274919715
 Title: Market Adoption Percent
 Definition: 1
-NodeLocation: 668,1140,1
+NodeLocation: 676,1172,1
 NodeSize: 204,20
 Original: Market_Adoption_Illu
+
+FormNode Fo340429091
+Title: Hourly Energy Flows
+Definition: 1
+NodeLocation: 668,668,1
+NodeSize: 204,20
+Original: Hourly_Energy_Flows
 
 Close NYPA_Solar_Storage1
 

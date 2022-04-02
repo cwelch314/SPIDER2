@@ -11,7 +11,7 @@ Date: Wed, May 1, 2019 11:53 AM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
-DiagState: 2,2475,178,720,254,17,10
+DiagState: 2,962,283,720,254,17,10
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule Storage_Dispatch_Opt,2,2,0,0,Storage_Dispatch_Opt.ana
 
@@ -22,7 +22,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 416,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,2091,48,1629,654,17,10
+DiagState: 2,-6,27,1780,655,17,10
 
 Decision Stored_Grid_Elect1
 Title: Stored Grid Electricity
@@ -100,18 +100,23 @@ ValueState: 2,72,74,753,627,,MIDM
 Variable Total_Charge2
 Title: Total Charge
 Units: kWh/customer
-Description: The total amount of energy added to the battery's state of charge.
-Definition: Applied_Stored_Grid1 + Applied_Stored_PV2
-NodeLocation: 864,232,1
+Description: The total amount of energy added to the battery's state of charge.~
+~
+CHECK LOSSES ACCOUNTING (ADDED LOSS FACTOR HERE, BUT NEED TO LOOK AT MORE CLOSELY)
+Definition: (Applied_Stored_Grid1 + Applied_Stored_PV2) * Charge_disch_eff[PV_Sectors=Opt_Sector2]
+NodeLocation: 880,200,1
 NodeSize: 64,40
+WindState: 2,2058,147,720,350
 ValueState: 2,228,234,1005,503,0,MIDM
+NodeColor: 65535,1,1
 Att_ResultSliceState: [Opt_Sectors,2,Rate_Vintage,2,PV_Climate_Zone,3,Opt_Storage_Systems,1,Seq_Opt_Number,1,Month,1,Opt_Hours,1]
 
 Variable Net_Charge2
 Title: Net Charge
 Units: kWh/customer
 Description: The net charge added to the battery. Negative values indicate discharge and subtract from the battery's charge level.
-Definition: Total_Charge2 - Applied_Tot_Dischrg
+Definition: Total_Charge2 {accounts for charge efficiency losses, which limit the amount of energy going into the battery}~
+- Applied_Tot_Dischrg {does not account for efficiency losses, since this is the discharge rate coming from the battery and losses will be accounted for downstream}
 NodeLocation: 1016,336,1
 NodeSize: 64,40
 ValueState: 2,159,38,1128,756,,MIDM
@@ -149,16 +154,16 @@ Definition: Dynamic[Opt_Hours](Applied_Initial_Cha1,~
 
 NodeLocation: 1168,336,1
 NodeSize: 64,40
-ValueState: 2,58,48,1419,679,1,MIDM
+ValueState: 2,192,63,1419,679,1,MIDM
 ReformVal: [Opt_Hours,Null]
-Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Month,6,Opt_Sectors,11,Opt_Storage_Systems,1,Area_Type,1,Seq_Opt_Number,1,Opt_Hours,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Month,6,Opt_Sectors,1,Opt_Storage_Systems,1,Area_Type,1,Seq_Opt_Number,1,Opt_Hours,1]
 Att_ColorRole: Null
 
 Variable Dischg_RedLoad_Loss1
 Title: Discharge to Reduce Load After Losses
 Units: kWh/customer
 Description: The battery discharge used to reduce load after round-trip battery efficiency losses are considered.
-Definition: App_Dischg_RedLoad1 * Storage_RndTripEffic[PV_Sectors=Opt_Sector2]
+Definition: App_Dischg_RedLoad1 * Charge_disch_eff[PV_Sectors=Opt_Sector2]
 NodeLocation: 864,856,1
 NodeSize: 64,40
 WindState: 2,6,52,720,350
@@ -364,7 +369,7 @@ Title: Discharge Exported to Grid
 Units: kW-hr/customer
 Description: The decision variable for the amount of electricity discharged from the battery and exported to the grid (prior to losses).
 Definition: Applied_Tot_Dischrg - App_Dischg_RedLoad1
-NodeLocation: 864,752,1
+NodeLocation: 880,720,1
 NodeSize: 64,40
 ValueState: 2,363,5,1011,734,,MIDM
 ReformVal: [Day_and_Hour,Month]
@@ -472,7 +477,7 @@ Variable Dischg_Export_Loss2
 Title: Discharge Exported After Losses
 Units: kW-hr/customer
 Description: The battery discharge exported to the grid after round-trip battery efficiency losses are considered.
-Definition: Discharge_Exported * Storage_RndTripEffic[PV_Sectors=Opt_Sector2]
+Definition: Discharge_Exported * Charge_disch_eff[PV_Sectors=Opt_Sector2]
 NodeLocation: 1016,752,1
 NodeSize: 64,40
 WindState: 2,39,8,1072,516
@@ -1474,6 +1479,12 @@ NodeSize Saved_Linked_List1: 64,40
 
 Close Saved_Storage_Data
 
+Text Te1345227043
+Title: Look over losses accounting
+NodeLocation: 1480,488,-1
+NodeSize: 64,40
+NodeColor: 65535,1,1
+
 Close Storage_Optimizatio8
 
 Module Storage_Optimizatio9
@@ -1483,7 +1494,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 568,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,2112,69,1207,626,17,10
+DiagState: 2,2430,47,1207,602,17,10
 
 Constraint Force_Positive_Delt1
 Title: Force Positive Delta
@@ -1547,12 +1558,13 @@ Constraint Storage_Charge_Rate1
 Title: Storage Charge Rate
 Units: boolean
 Description: A constraint to ensure that the battery charge rate does not exceed the battery's rated maximum. This includes the binary decision (Allow_Charging) so that charging is forced to zero whenever charging is not allowed.
-Definition: Total_Charge2 <= Storage_Max_Power[System_Types=Opt_System2, PV_Sectors=Opt_Sector2,PV_Climate_Zone=Opt_Climate_Zone2]
+Definition: (Applied_Stored_Grid1 + Applied_Stored_PV2) <= Storage_Max_Power[System_Types=Opt_System2, PV_Sectors=Opt_Sector2,PV_Climate_Zone=Opt_Climate_Zone2]
 NodeLocation: 272,88,1
 NodeSize: 64,40
 WindState: 2,150,501,1022,350
 ValueState: 2,157,116,1111,597,0,MIDM
-ReformVal: [PV_Climate_Zone,Opt_Sectors]
+Aliases: Alias Al69306659
+ReformVal: [Opt_Hours,PV_Climate_Zone]
 
 Constraint Storage_Energy_Cap2
 Title: Storage Energy Capacity
@@ -1582,12 +1594,13 @@ Constraint Storage_DishargeRat1
 Title: Storage Disharge Rate
 Units: boolean
 Description: A constraint to ensure that the battery discharge rate does not exceed the battery's rated maximum. This includes the binary decision (Allow_Charging) so that discharging is forced to zero whenever discharging is not allowed.
-Definition: Total_Discharge_Los2 <= Storage_Max_Power[System_Types=Opt_System2, PV_Sectors=Opt_Sector2,PV_Climate_Zone=Opt_Climate_Zone2]
+Definition: {Old doesn't account for losses correctly. Total_Discharge_Los2 <= Storage_Max_Power[System_Types=Opt_System2, PV_Sectors=Opt_Sector2,PV_Climate_Zone=Opt_Climate_Zone2]}~
+(Discharge_Exported + App_Dischg_RedLoad1)  <= Storage_Max_Power[System_Types=Opt_System2, PV_Sectors=Opt_Sector2,PV_Climate_Zone=Opt_Climate_Zone2]
 NodeLocation: 272,184,1
 NodeSize: 64,40
 WindState: 2,11,113,813,350
-ValueState: 2,175,222,773,619,0,MIDM
-ReformVal: [PV_Climate_Zone,Opt_Sectors]
+ValueState: 2,674,332,773,619,0,MIDM
+ReformVal: [PV_Climate_Zone,Opt_Hours]
 {!40700|Att_CellFormat: CellSpan(PV_Climate_Zone,CellNumberFormat('Fixed Point',5,1,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:5),2,5,header:0)}
 
 Constraint Load_Balance2
@@ -1705,10 +1718,10 @@ Variable Min_Battery_SOC
 Title: Min Battery SOC
 Units: kWh
 Description: The minimum charge level for the battery system.
-Definition: Divide(Storage_Capacity[System_Types=Opt_System2, PV_Sectors=Opt_Sector2,PV_Climate_Zone=Opt_Climate_Zone2], Storage_RndTripEffic[PV_Sectors=Opt_Sector2], True) * Min_Charge_Level[System_Types=Opt_System2, PV_Sectors=Opt_Sector2]   {Accounts for roundtrip efficiency so that kWh spec represents usable energy}
+Definition: Divide(Storage_Capacity[System_Types=Opt_System2, PV_Sectors=Opt_Sector2,PV_Climate_Zone=Opt_Climate_Zone2], Charge_disch_eff[PV_Sectors=Opt_Sector2], True) * Min_Charge_Level[System_Types=Opt_System2, PV_Sectors=Opt_Sector2]   {Accounts for roundtrip efficiency so that kWh spec represents usable energy}
 NodeLocation: 112,472,1
 NodeSize: 64,40
-ValueState: 2,68,74,865,677,0,MIDM
+ValueState: 2,526,181,865,677,0,MIDM
 NumberFormat: 2,F,2,4,0,0,2,1,$,0,"ABBREV",0,,,0,0,15,
 {!40700|Att_CellFormat: CellSpan(PV_Climate_Zone,CellNumberFormat('Fixed Point',8,1,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:4,zeroes_:8),2,5,header:0)}
 
@@ -1716,7 +1729,7 @@ Variable Max_Battery_SOC
 Title: Max Battery SOC
 Units: kWh
 Description: The maximum charge level for the battery system.
-Definition: Divide(Storage_Capacity[System_Types=Opt_System2, PV_Sectors=Opt_Sector2,PV_Climate_Zone=Opt_Climate_Zone2], Storage_RndTripEffic[PV_Sectors=Opt_Sector2], True) * Max_Charge_Level[System_Types=Opt_System2, PV_Sectors=Opt_Sector2]  {Accounts for roundtrip efficiency so that kWh spec represents usable energy}
+Definition: Divide(Storage_Capacity[System_Types=Opt_System2, PV_Sectors=Opt_Sector2,PV_Climate_Zone=Opt_Climate_Zone2], Charge_disch_eff[PV_Sectors=Opt_Sector2], True) * Max_Charge_Level[System_Types=Opt_System2, PV_Sectors=Opt_Sector2]  {Accounts for roundtrip efficiency so that kWh spec represents usable energy}
 NodeLocation: 112,568,1
 NodeSize: 64,40
 ValueState: 2,68,74,865,677,0,MIDM
@@ -1941,7 +1954,7 @@ Units: kW-hr/customer
 Description: The solar output levelized over the system lifetime for each optimization window.
 Definition: VAR solar:=IF Use_Levelized_Inputs~
    THEN Lev_Solar_Profile~
-   ELSE Applied_SolarProfile[@PV_Operating_Year=1];~
+   ELSE Levelized_Applied_So[@PV_Operating_Year=1];~
 solar[PV_Sectors=Opt_Sector2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2, Profile_Hours=Opt_Hours_for_SeqOpt[Seq_Opt_Number=Opt_Seq_Number, Month=Opt_Month2]] * System_with_PV[System_Types=Opt_System2]
 NodeLocation: 600,504,1
 NodeSize: 64,40
@@ -2639,7 +2652,7 @@ Units: $/kWh
 Description: The minimum non-zero arbitrage opportunity of charging during one period and discharging during another after accounting for storage roundtrip efficiency losses. We don't want any optimization penalties to be larger than this value or else the optimal dispatch might be distorted.
 Definition: VAR minArbitrage:=Replace_X_with_Y(MIN(ABS(Arbitrage_Opportun), Periods_Copy, Periods), Null, 0);~
 ~
-minArbitrage * Storage_RndTripEffic[PV_Sectors=Opt_Sector2]
+minArbitrage * Charge_disch_eff[PV_Sectors=Opt_Sector2]
 NodeLocation: 600,64,1
 NodeSize: 64,40
 WindState: 2,12,34,1196,450
@@ -2665,6 +2678,10 @@ Definition: PV_Sectors=Opt_Sector2
 NodeLocation: 1128,488,1
 NodeSize: 64,40
 
+Variable Va29
+NodeLocation: 1072,64,1
+NodeSize: 64,40
+
 Close Storage_Optimizati10
 
 Module Storage_Optimizati11
@@ -2674,7 +2691,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1938,30,1823,745,17,10
+DiagState: 2,-5,53,1823,715,17,10
 
 Decision Opt_Seq_Number
 Title: Opt Sequential Number
@@ -2973,7 +2990,7 @@ OnClick: FOR J:=@All_Strg_Decisions2 DO (~
 Decision Select_Strg_CZ2
 Title: Selected Storage Climate Zones
 Description: Select the climate zones that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(PV_Climate_Zone,2,allowNone:0,returnList:1)
+Definition: MultiChoice(PV_Climate_Zone,allowNone:0,returnList:1)
 NodeLocation: 768,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348265
@@ -3382,7 +3399,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 1-Apr-2022 16:17:34.310000
+Definition: 2-Apr-2022 15:01:45.351000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3390,7 +3407,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 1-Apr-2022 16:18:03.749000
+Definition: 2-Apr-2022 15:03:37.493000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 WindState: 2,362,172,796,472
@@ -4414,7 +4431,7 @@ WindState: 2,323,77,720,350
 Decision Select_Strg_Sector2
 Title: Selected Storage Sectors
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,30,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
 NodeLocation: 128,288,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348264, Alias Al513733155
@@ -4489,7 +4506,7 @@ NodeSize: 72,40
 
 Variable Current_BESS_Sector
 Title: Current BESS Sector
-Definition: 30
+Definition: 1
 NodeLocation: 648,264,1
 NodeSize: 64,40
 Aliases: FormNode Fo631382307
@@ -4512,18 +4529,19 @@ Variable Compare11
 Definition: [Opt_Time,Save_Time]
 NodeLocation: 264,64,1
 NodeSize: 64,40
-ValueState: 2,428,106,1036,672,1,MIDM
+ValueState: 2,428,106,1036,672,0,MIDM
 GraphSetup: Att_GraphIndexRange Opt_Sectors:1,,0,,,,,1,4,1~
 Att_GraphValueRange Compare11:1,,1,,,,,1.3335053324699406e-05,2.450520217418671e-05,0
-ReformVal: [Opt_Sectors,PV_Climate_Zone]
+ReformVal: [Opt_Sectors,Self]
 NumberFormat: 3,F,4,5,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",40203,0,0,15,
-Att__TotalsIndex: [Month,PV_Climate_Zone]
-Att_ResultSliceState: [Rate_Vintage,1,Opt_Storage_Systems,1,Seq_Opt_Number,1,Self,2,Opt_Sectors,1,PV_Climate_Zone,0,Month,0]
-{!40300|Att_SlicerPopupSize: 227,64}
+Att__TotalsIndex: [Month,PV_Climate_Zone,Self]
+Att_ResultSliceState: [Rate_Vintage,1,Opt_Storage_Systems,1,Seq_Opt_Number,1,Self,1,Month,0,PV_Climate_Zone,0,Opt_Sectors,1]
+{!40300|Att_SlicerPopupSize: 232,64}
+{!40700|Att_CellFormat: CellSpan(Compare11,CellNumberFormat('Fixed Point',5,0,0,dateFormat:'mm:ss',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0),3,header:0)}
 
 Close Misc6
 
-Button Run_Storage_Optimiza
+Button Run_Strg_Opt_Wrap
 Title: Run Storage Optimization (wrapped)
 Description: Runs faster using this method when running multiple sectors (due to some issue with exponentially growing save times with other script)
 NodeLocation: 968,112,1
@@ -4538,7 +4556,7 @@ MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimizat
 Decision Choose_Sectors_to_Op
 Title: Choose Sectors to Optimize
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
 NodeLocation: 464,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo989786659, Alias Al783884579, FormNode Fo431563043
@@ -4560,7 +4578,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 264,160,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,446,-5,1163,672,17,10
+DiagState: 2,2256,112,961,633,17,10
 
 Variable Tot_Elect_Meet_Load2
 Title: Total Electricity Meeting Load
@@ -4588,12 +4606,15 @@ Description: All dispatch flows by the nine-day optimization horizon.
 Definition: Table(Flow_Name2)(StorageSyst_Net_Loa2,Opt_Solar_Output,Opt_Customer_Load,App_Grid_MeetLoad2,Applied_Stored_Grid1,Dischg_RedLoad_Loss1,Dischg_Export_Loss2,Applied_PV_RedLoad2,Applied_PV_Exported2,Applied_Stored_PV2,Total_Discharge_Los2,Total_Charge2,Purchased_Electric2,Total_Exported_Elec2,Total_Change_in_Loa2)
 NodeLocation: 272,64,1
 NodeSize: 64,40
-WindState: 2,723,294,720,350
-DefnState: 2,1269,434,416,490,0,DFNM
-ValueState: 2,405,39,1308,858,0,MIDM
+WindState: 2,1615,238,720,350
+DefnState: 2,3223,410,416,490,0,DFNM
+ValueState: 2,200,12,1457,751,1,MIDM
 Aliases: FormNode Fo1557443244, FormNode Fo1582234728
 NodeColor: 19661,48336,65535
-Att_ResultSliceState: [Seq_Opt_Number,1,Opt_Sectors,2,Rate_Vintage,2,PV_Climate_Zone,3,Opt_Storage_Systems,1,Month,10,Flow_Name2,13,Opt_Hours,1]
+GraphSetup: Att_GraphValueRange Flows_by_Opt_Hour:1,,1,,,,,-843.6260223388672,2734.088897705078,0~
+Att_GraphIndexRange Opt_Hours:1,,0,,,,,0,26.280438154935837,0
+ReformVal: [Opt_Hours,Flow_Name2]
+Att_ResultSliceState: [Seq_Opt_Number,1,Opt_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,3,Opt_Storage_Systems,1,Month,1,Area_Type,1,Flow_Name2,13,Opt_Hours,1]
 
 Index Flow_Name2
 Att_PrevIndexValue: ['Net Load','Total Solar Output','Gross Load','Grid Electricity to Meet Load','Stored Grid Electricity','Discharge to Reduce Load','Discharge Exported to Grid','PV to Reduce Load','PV Exported to Grid','Stored PV','Total Discharge','Total Charge','Total Purchased Electricity','Total Exported Electricity','Total Change in Load']
@@ -4603,6 +4624,8 @@ IndexVals: ['item 1']
 NodeLocation: 112,488,1
 NodeSize: 64,40
 WindState: 2,3,3,720,350
+ValueState: 2,2585,294,343,426,0,MIDM
+ReformVal: [Undefined,Self]
 
 Variable Pct_Stored_PV_Elect2
 Title: Pct of Stored Electricity from PV
@@ -4629,18 +4652,18 @@ Definition: Reindex_to_ProfileHr(Flows_by_Opt_Hour[Flow_Name2=Flow_Types1, Rate_
 NodeLocation: 416,64,1
 NodeSize: 64,40
 WindState: 2,5,19,972,489
-ValueState: 2,2220,117,1234,705,1,MIDM
-Aliases: FormNode Fo1557458712, FormNode Fo1571775089
+ValueState: 2,2129,103,1234,705,1,MIDM
+Aliases: FormNode Fo1557458712, FormNode Fo1571775089, FormNode Fo1228179747, Alias Al2033486115
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
 Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,0,,,,,1,72,1~
 Att_GraphValueRange Dispatch_Flows2:1,,1,1,,,,0,2000,0~
 Grid:0~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_Stacked_Lines Graph_Primary_Valdim:0
-ReformVal: [Viewed_Dispatch_Tim2,PV_Climate_Zone]
+ReformVal: [Viewed_Dispatch_Tim2,Flow_Types1]
 NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [Viewed_Dispatch_Tim2,Rate_Names_and_Start]
-Att_ResultSliceState: [Area_Type,1,Opt_Sectors,1,Opt_Storage_Systems,1,Month,8,Rate_Names_and_Start,0,Flow_Types1,1,PV_Climate_Zone,1,Viewed_Dispatch_Tim2,1]
+Att__TotalsIndex: [Viewed_Dispatch_Tim2]
+Att_ResultSliceState: [Area_Type,1,Opt_Storage_Systems,1,Month,8,Rate_Names_and_Start,1,Flow_Types1,1,PV_Climate_Zone,1,Opt_Sectors,1,Viewed_Dispatch_Tim2,1]
 
 Decision Dispatch_Start_Time2
 Title: Start Time for Dispatch
@@ -4684,6 +4707,7 @@ CopyIndex(SubIndex(@Profile_Hours, range, Profile_Hours))
 NodeLocation: 112,312,1
 NodeSize: 64,40
 ValueState: 2,701,12,416,667,0,MIDM
+{!40300|Att_SlicerPopupSize: 227,1001}
 
 Objective Rates_Storage_Dispa2
 Title: Rates for Storage Dispatch
@@ -4756,7 +4780,7 @@ Att_ResultSliceState: [Opt_Storage_Systems,1,PV_Climate_Zone,1,Rate_Vintage,1,Ar
 Decision Flows_to_View1
 Title: Flows to View
 Description: Select the storage dispatch energy flows you wish to view.
-Definition: Table(Flow_Name2)(Checkbox(0),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0))
+Definition: Table(Flow_Name2)(Checkbox(0),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0))
 NodeLocation: 112,584,1
 NodeSize: 64,40
 DefnState: 2,630,216,416,514,0,DFNM
@@ -4777,7 +4801,7 @@ Title: Flow Types
 Definition: Subset(Flows_to_View1)
 NodeLocation: 248,488,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 272,140}
+{!40300|Att_SlicerPopupSize: 277,140}
 
 Variable Num_Full_Discharges1
 Title: Number of Full Discharges
@@ -4833,6 +4857,13 @@ ValueState: 2,471,-3,950,682,,MIDM
 ReformVal: [Time_of_Day,Month]
 NumberFormat: 2,F,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_ResultSliceState: [Rate_Names_and_Start,18,PV_Sectors,1,PV_Climate_Zone,3,Storage_Systems,1,Month,1,Time_of_Day,1]
+
+FormNode Fo1228179747
+Title: Dispatch Flows
+Definition: 1
+NodeLocation: 772,72,1
+NodeSize: 180,16
+Original: Dispatch_Flows2
 
 Close Storage_Opt_Diagnos2
 

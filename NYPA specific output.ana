@@ -11,12 +11,13 @@ Date: Tue, Mar 29, 2022 11:58 AM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,,,,,,,,,,,0
-DiagState: 2,2065,70,1733,620,17,10
+DiagState: 2,1986,35,1733,620,17,10
 WindState: 2,2271,111,720,350
 NodeColor: 65535,65535,65535
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule NYPA_specific_output,2,2,0,0,NYPA specific output.ana
-AcpStyles: Show_Object:No
+AcpStyles: Show_Object:No~
+show_as_tab: No
 
 Alias Al1294704163
 Title: PV Cumulative Adoption
@@ -243,10 +244,8 @@ ValueState: 2,233,103,829,599,,MIDM
 
 Variable NYPA_Enabled_Storag1
 Title: NYPA Enabled Storage Adoption
-Units: MW
-Description: Check AC/DC units. ~
-~
-NYPA enabled adoption of storage systems. Currently, only "paired" solar + storage systems are modeled (not stand-alone).
+Units: MW-AC
+Description: NYPA enabled adoption of storage systems. Currently, only "paired" solar + storage systems are modeled (not stand-alone).
 Definition: sum(Aggregate(NYPA_Enabled_Storage,Map_All_to_Aggregate[All_PV_Sectors=BESS_Sectors],BESS_Sectors,Sectors_Aggregated,"Sum"), BESS_types)
 NodeLocation: 816,688,1
 NodeSize: 64,40
@@ -319,6 +318,90 @@ Aliases: FormNode Fo617935139
 GraphSetup: Graph_AxisLabelFont:,20,0
 NumberFormat: 2,%,4,0,0,0,4,1,$,0,"ABBREV",0,,,0,0,15,
 Att_ResultSliceState: [System_Types,1,Area_Type,3,PV_Spatial_ID,1,Time_Solar_PV,1]
+
+Alias Al2033486115
+Title: Dispatch Flows
+Definition: 1
+NodeLocation: 112,64,1
+NodeSize: 64,40
+Original: Dispatch_Flows2
+
+Variable Hourly_Energy_Flows
+Title: Hourly Energy Flows
+Units: kWh
+Description: Illustrative optimized hourly energy flows assuming a 1 MW-DC solar PV DC system installed and a 660 kW-AC battery storage system with 3.5 hrs of storage at peak capacity.
+Definition: sum(Dispatch_Flows2[Opt_Sectors=Hrly_flow_sector_sel,@Opt_Storage_Systems=1,Area_Type=Hrly_flow_area_type_] * ~
+Flow_Scaling_Factor, PV_Climate_Zone) {converts dispatch flow output to a standard system size of 1000 kW}~
+
+NodeLocation: 272,64,1
+NodeSize: 64,40
+WindState: 2,2306,207,720,350
+ValueState: 2,2169,43,1213,673,1,MIDM
+Aliases: FormNode Fo340429091, FormNode Clipboard_Fo34042909
+GraphSetup: Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,0,,,,,2,82,1
+ReformVal: [Viewed_Dispatch_Tim2,Flow_Types1]
+Att__TotalsIndex: [Viewed_Dispatch_Tim2]
+Att_ResultSliceState: [Month,8,Rate_Names_and_Start,1,Flow_Types1,2,Viewed_Dispatch_Tim2,0]
+{!40700|Att_CellFormat: CellSpan(Viewed_Dispatch_Tim2,CellNumberFormat('Fixed Point',0,0,1,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:0),169,header:0)}
+{!50000|Att_ColumnWidths: [126]}
+
+Variable Flow_Scaling_Factor
+Title: Flow Scaling Factor
+Definition: 1000/PV_DC_System_Size_fo[PV_Sectors=Hrly_flow_sector_sel, Area_Type=Hrly_flow_area_type_] {normalized hourly energy flow output to show value for a 1000 kW system}~
+/ (IF Flow_Types1='Total Solar Output' THEN Levelized_Degradatio ELSE 1) {solar flows show levelized value. this converts back into first year flows. does not apply to storage dispatch flows}
+NodeLocation: 112,176,1
+NodeSize: 64,40
+ValueState: 2,242,154,964,628,,MIDM
+
+Constant Co3
+NodeLocation: 424,64,1
+NodeSize: 64,40
+
+Alias Al2138343715
+Title: PV DC System Size for Economics
+Definition: 1
+NodeLocation: 272,176,1
+NodeSize: 64,40
+NodeColor: 65535,1,1
+Original: PV_DC_System_Size_fo
+
+Decision Hrly_flow_sector_sel
+Title: Hrly flow sector selected
+Definition: Choice(Opt_Sectors,1,0)
+NodeLocation: 112,272,1
+NodeSize: 64,40
+
+Decision Hrly_flow_area_type_
+Title: Hrly flow area type selected
+Definition: Choice(Area_Type,1,0)
+NodeLocation: 112,360,1
+NodeSize: 64,40
+
+Decision De1
+NodeLocation: 272,272,1
+NodeSize: 64,40
+
+Alias Al2074249507
+Title: PV Capacity Factor
+Definition: 1
+NodeLocation: 424,272,1
+NodeSize: 64,40
+Original: PV_Capacity_Factor
+
+Alias Al69306659
+Title: Storage Charge Rate
+Definition: 1
+NodeLocation: 416,168,1
+NodeSize: 64,40
+Original: Storage_Charge_Rate1
+
+Constraint Ct1
+Definition: (Applied_Stored_Grid1* Flow_Scaling_Factor  + Applied_Stored_PV2* Flow_Scaling_Factor ) <= (Storage_Max_Power[System_Types=Opt_System2, PV_Sectors=Opt_Sector2,PV_Climate_Zone=Opt_Climate_Zone2] * Flow_Scaling_Factor)
+NodeLocation: 576,176,1
+NodeSize: 64,40
+ValueState: 2,3143,168,579,678,0,MIDM
+ReformVal: [Opt_Sectors,Opt_Hours]
+Att_ResultSliceState: [Rate_Vintage,1,PV_Climate_Zone,3,Opt_Storage_Systems,1,Area_Type,1,Month,1,Seq_Opt_Number,1,Opt_Sectors,1,Opt_Hours,1]
 
 Close NYPA_specific_output
 
