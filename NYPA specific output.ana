@@ -10,12 +10,13 @@ Author: CWelch
 Date: Tue, Mar 29, 2022 11:58 AM
 DefaultSize: 64,40
 NodeSize: 64,40
-DiagState: 2,7,125,1733,771,17,10
+NodeInfo: 1,,,,,,,,,,,0
+DiagState: 2,2065,70,1733,620,17,10
+WindState: 2,2271,111,720,350
 NodeColor: 65535,65535,65535
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule NYPA_specific_output,2,2,0,0,NYPA specific output.ana
-AcpStyles: Show_Object:No~
-show_as_tab: No
+AcpStyles: Show_Object:No
 
 Alias Al1294704163
 Title: PV Cumulative Adoption
@@ -27,6 +28,7 @@ Original: PV_Cumul_Adoption
 
 Constant Assumed_NYPA_fractio
 Title: Assumed NYPA fraction of natural market
+Description: The assumed fraction of the total "natural" market adoption that is enabled by NYPA.
 Definition: Table(Spatial_ID,Area_Type,All_PV_Sectors)(~
 0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
 0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,~
@@ -81,6 +83,7 @@ Title: Sectors Aggregated
 Definition: ['Higher Education','Hospitals','K-12','Air Transportation','Art_Museum','Assisted Living','Community services','Correctional Facility','Unique Education','Government_Office','Housing','Library','Other Transportation','Police and Fire Department','Recreational','Water Supply & Waste Water','Courthouse_Probation']
 NodeLocation: 632,472,1
 NodeSize: 64,40
+{!50400|Att_AxisOrKeyTitle: ""}
 {!40300|Att_SlicerPopupSize: 282,252}
 
 Decision Map_All_to_Aggregate
@@ -94,23 +97,24 @@ TableCellDefault: Choice(Sectors_Aggregated,1,0)
 Variable NYPA_Enabled_PV_Ado1
 Title: NYPA Enabled PV Adoption
 Units: MW-DC
+Description: Simulated PV adoption that is enabled by NYPA.
 Definition: Aggregate(NYPA_Enabled_PV_Adop,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
 NodeLocation: 776,352,1
 NodeSize: 64,40
-ValueState: 2,519,82,1077,723,1,MIDM
+ValueState: 2,2373,104,890,679,1,MIDM
 Aliases: FormNode Fo1042431523
-GraphSetup: Att_GraphValueRange NYPA_Enabled_PV_Ado1:1,,1,1,,,,0,1000,0~
-Att_AreaFill Graph_Primary_Valdim:1~
-Att_Stacked_Lines Graph_Primary_Valdim:1~
-Att_GraphIndexRange Output_Periods:1,0,,,,,10~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-{!50000|Graph_SortBySpread:1}~
+GraphSetup: Graph_FillTransparen:59~
 Att_ContLineStyle Graph_Primary_Valdim:1~
-Graph_FillTransparen:2
+{!50000|Graph_SortBySpread:1}~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+Att_GraphIndexRange Output_Periods:1,0,,,,,10~
+Att_Stacked_Lines Graph_Primary_Valdim:1~
+Att_AreaFill Graph_Primary_Valdim:1~
+Att_GraphValueRange NYPA_Enabled_PV_Ado1:1,,1,1,,,,0,1000,0
 ReformVal: [Output_Periods,Spatial_ID]
 NumberFormat: 2,F,2,1,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Spatial_ID,Area_Type,Sectors_Aggregated]
-Att_ResultSliceState: [Sectors_Aggregated,0,Area_Type,0,Spatial_ID,0,Output_Periods,108]
+Att__TotalsIndex: [Sectors_Aggregated,Spatial_ID,Area_Type]
+Att_ResultSliceState: [Sectors_Aggregated,0,Area_Type,0,Spatial_ID,0,Word_of_Mouth_Coeff1,3,Advertising_Coeffici,4,Output_Periods,108]
 {!40600|Att_StackingIndex: Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
 
@@ -156,14 +160,15 @@ Original: Logit_Tech_Coeff
 Variable NYPA_Enabled_PV_Ado2
 Title: NYPA Enabled PV Adoption Percentages
 Units: %
+Description: Percentage of total NYPA enabled PV adoption by sector, geography, and area type.
 Definition: ZIDZ(NYPA_Enabled_PV_Ado1,sum(NYPA_Enabled_PV_Ado1,Spatial_ID,Area_Type,Sectors_Aggregated))
 NodeLocation: 816,576,1
 NodeSize: 64,40
 ValueState: 2,386,31,1044,647,1,MIDM
 Aliases: FormNode Fo1872903715
-GraphSetup: Att_GraphValueRange NYPA_Enabled_PV_Ado2:1,,0,,,,,0,0.45,0~
+GraphSetup: {!50000|Graph_SortBySpread:1}~
 Att_CatLineStyle Graph_Primary_Valdim:9~
-{!50000|Graph_SortBySpread:1}
+Att_GraphValueRange NYPA_Enabled_PV_Ado2:1,,0,,,,,0,0.45,0
 ReformVal: [Sectors_Aggregated,Area_Type]
 NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Sectors_Aggregated,Area_Type,Spatial_ID]
@@ -181,12 +186,16 @@ ValueState: 2,2267,136,912,570,,MIDM
 Variable PV_Potential_by_Type
 Title: PV Potential by Type
 Units: MW-DC
+Description: PV potential by type. ~
+Total technical: assumes all usable area converted to solar PV~
+Total market: the "natural" market adoption of solar PV considering system economics and likely technology diffusion. ~
+NYPA enabled: the portion of the total "natural" market adoption enabled by NYPA services.
 Definition: Table(Potential_Type)(Total_PV_MW_DC_Tech_,PV_Cumul_MW_DC1,NYPA_Enabled_PV_Ado1)
 NodeLocation: 968,576,1
 NodeSize: 64,40
 ValueState: 2,524,77,927,685,,MIDM
 Aliases: FormNode Fo1687511331
-GraphSetup: Att_GraphValueRange PV_Potential_by_Type:1,,1,,,,,0,2757.6518058776855,0
+GraphSetup: Att_GraphValueRange PV_Potential_by_Type:1,,1,,,,,0,2670.3765988349915,0
 ReformVal: [Output_Periods,Potential_Type]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Area_Type,Sectors_Aggregated,Spatial_ID]
@@ -235,18 +244,23 @@ ValueState: 2,233,103,829,599,,MIDM
 Variable NYPA_Enabled_Storag1
 Title: NYPA Enabled Storage Adoption
 Units: MW
+Description: Check AC/DC units. ~
+~
+NYPA enabled adoption of storage systems. Currently, only "paired" solar + storage systems are modeled (not stand-alone).
 Definition: sum(Aggregate(NYPA_Enabled_Storage,Map_All_to_Aggregate[All_PV_Sectors=BESS_Sectors],BESS_Sectors,Sectors_Aggregated,"Sum"), BESS_types)
 NodeLocation: 816,688,1
 NodeSize: 64,40
-ValueState: 2,732,160,959,657,1,MIDM
+ValueState: 2,484,95,959,657,1,MIDM
 Aliases: FormNode Fo1849909539
 GraphSetup: Att_AreaFill Graph_Primary_Valdim:1~
 Att_Stacked_Lines Graph_Primary_Valdim:1~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 {!50000|Graph_SortBySpread:1}~
-Att_GraphValueRange NYPA_Enabled_Storag1:1,,1,,,,,0,17.05717697739601,0
+Att_GraphValueRange NYPA_Enabled_Storag1:1,,1,,,,,0,17.05717697739601,0~
+Att_ContLineStyle Graph_Primary_Valdim:1~
+Graph_FillTransparen:55
 ReformVal: [Time_Storage,BESS_Spatial_ID]
-Att__TotalsIndex: [Area_Type,BESS_Spatial_ID,Sectors_Aggregated]
+Att__TotalsIndex: [BESS_Spatial_ID,Sectors_Aggregated,Area_Type]
 Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,BESS_Spatial_ID,1,Time_Storage,37]
 {!40600|Att_StackingIndex: BESS_Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
@@ -269,20 +283,42 @@ Original: PV_Init_Adop_Fractio
 Variable NYPA_Enabled_Storag2
 Title: NYPA Enabled Storage Adopt Pct
 Units: %
+Description: Percentage of NYPA enabled storage adoption by geography, sector, and area type.
 Definition: ZIDZ(NYPA_Enabled_Storag1,sum(NYPA_Enabled_Storag1,BESS_Spatial_ID,Area_Type,Sectors_Aggregated))
 NodeLocation: 968,688,1
 NodeSize: 64,40
 ValueState: 2,308,112,1171,680,,MIDM
 Aliases: FormNode Fo507732259
-GraphSetup: {!50000|Graph_SortBySpread:1}~
+GraphSetup: Att_ForceCategorical Graph_Primary_Valdim:1~
 Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_ForceCategorical Graph_Primary_Valdim:1
+{!50000|Graph_SortBySpread:1}
 ReformVal: [Sectors_Aggregated,BESS_Spatial_ID]
 NumberFormat: 2,%,4,2,0,0,4,1,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [BESS_Spatial_ID,Area_Type,Sectors_Aggregated]
 Att_ResultSliceState: [Time_Storage,37,Area_Type,0,Sectors_Aggregated,0,Time_Storage,37,BESS_Spatial_ID,0]
 {!40600|Att_StackingIndex: BESS_Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
+
+Alias Al60092707
+Title: LRMS by PV Time
+Definition: 1
+NodeLocation: 1288,64,1
+NodeSize: 64,40
+Original: LRMS_by_PV_Time
+
+Variable Long_Run_Market_Sha1
+Title: Long Run Market Share
+Units: %
+Description: The long-run expected market share of DERs (i.e., the expected long-run saturation of DER adoption, given sufficient time). The speed at which adoption approaches this long-run market share is determined by the diffusion coefficients.
+Definition: LRMS_by_PV_Time[@PV_Sectors=1]
+NodeLocation: 1296,152,1
+NodeSize: 64,40
+WindState: 2,2334,170,720,350
+ValueState: 2,2247,83,1002,601,,MIDM
+Aliases: FormNode Fo617935139
+GraphSetup: Graph_AxisLabelFont:,20,0
+NumberFormat: 2,%,4,0,0,0,4,1,$,0,"ABBREV",0,,,0,0,15,
+Att_ResultSliceState: [System_Types,1,Area_Type,3,PV_Spatial_ID,1,Time_Solar_PV,1]
 
 Close NYPA_specific_output
 

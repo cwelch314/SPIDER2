@@ -1172,9 +1172,11 @@ Also, all $/kW charges are rolled into the hourly cents/kWh rate and are therefo
 Definition: Electric_Rates[Tiers='tier0',Rate_Component='Energy (cents/kWh)'] / 100
 NodeLocation: 744,296,1
 NodeSize: 64,56
-ValueState: 2,255,140,1190,586,,MIDM
+ValueState: 2,255,126,1190,647,,MIDM
 Aliases: FormNode Fo839618851
+ReformVal: [Day_Type_and_Hour,Rate_Names_and_Start]
 NumberFormat: 2,F,4,3,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
+Att_ResultSliceState: [Month,8,Rate_Names_and_Start,1,Day_Type_and_Hour,1]
 
 Close Rate_Values_by_Perio
 
@@ -4516,11 +4518,9 @@ GraphSetup: Att_ContLineStyle Graph_Primary_Valdim:1
 Variable Electric_Rate_8760
 Title: Electric Rate 8760 (Energy, Capacity, DRV)
 Units: $/kWh
-Description: These values come directly from the NY VDER calculator. ~
+Description: These values were derived by running different utility/NYISO zone combinations from the <a href="https://www.nyserda.ny.gov/All-Programs/ny-sun/contractors/value-of-distributed-energy-resources/solar-value-stack-calculator">NY VDER calculator</a>. ~
 ~
-Community credits/adders, environmental adders, and LSRV adders are not included in the rates shown here. These rates only include energy, capacity, and demand reduction value per the NY VDER calculator. Those adders are separately input to facilitate scenario analysis.~
-~
-Also, all $/kW charges are rolled into the hourly cents/kWh rate and are therefore not shown separately.
+Community credits/adders, environmental adders, and LSRV adders are not included in the rates shown here. Those adders are separately input to facilitate scenario analysis. These rates only include energy, capacity, and demand reduction value per the NY VDER calculator.
 Definition: Hourly_NY_Rate[@Hourly_Electric_Rate=@NY_Rate]
 NodeLocation: 624,480,1
 NodeSize: 64,40

@@ -231,6 +231,7 @@ Att_ResultSliceState: [Area_Type,2,Spatial_ID,3,All_PV_Sectors,1]
 Variable Technical_PV_Potenti
 Title: Technical PV Potential
 Units: GWh/year
+Description: Total technical potential for solar PV installations if all calculated usable area were utilized for solar PV.
 Definition: Total_PV_kW_DC_poten * PV_kWh_per_KW_DC / 1E6
 NodeLocation: 1800,568,1
 NodeSize: 64,40
@@ -283,6 +284,7 @@ Att__TotalsIndex: [PV_Sectors,Spatial_ID]
 Variable Load_vs_PV_Potential
 Title: Load vs. PV Potential
 Units: GWh/year
+Description: Customer load compared with total technical potential for solar PV installations if all calculated usable area were utilized for solar PV.
 Definition: [Total_Technical_PV_P,Customer_Load_by_Sp_]
 NodeLocation: 1968,672,1
 NodeSize: 64,40
@@ -894,7 +896,7 @@ Att_ResultSliceState: [All_PV_Sectors,0,Included_Area_Types,0,Onsite_vs_Communit
 Variable Potential_divided_by
 Title: Potential divided by Load
 Units: %
-Description: Potential as % of Looad
+Description: Total technical potential for solar generation as % of customer load.
 Definition: ZIDZ(sum(Technical_PV_Potenti,PV_Sectors),sum(Customer_Load_by_Sp_,PV_Sectors))
 NodeLocation: 1800,776,1
 NodeSize: 64,40
@@ -938,6 +940,7 @@ Original: Total_PV_kW_DC_poten
 Variable PV_Tech_Potential_Pe
 Title: PV Tech Potential Percentage of Total
 Units: %
+Description: Solar PV technical potential by geographic region, sector, and area type as a percentage of the total potential.
 Definition: local total:=sum(Technical_PV_Potenti,Spatial_ID,PV_Sectors,Area_Type);~
 ZIDZ(Technical_PV_Potenti,total)
 NodeLocation: 1976,784,1
@@ -963,6 +966,7 @@ Original: PV_Tech_Potential_Pe
 Variable Total_PV_MW_DC_Poten
 Title: Total PV MW DC Potential
 Units: MW-DC
+Description: Total technical potential for solar PV installations if all calculated usable area were utilized for solar PV.
 Definition: Total_PV_kW_DC_poten / 1000
 NodeLocation: 1968,472,1
 NodeSize: 64,40
@@ -988,6 +992,7 @@ Original: Total_PV_MW_DC_Poten
 Constant System_Size_Constra2
 Title: System Size Constraints
 Units: kW
+Description: Maximum and minimum assumed system sizes installed in this simulation. Increasing the maximum system size will increase total technical potential, since calculated usable "area" would therefore effectively increase in some circumstances.
 Definition: Table(Spatial_ID,Area_Type,Min_Max)(~
 250,5000,~
 250,5000,~
@@ -1063,8 +1068,9 @@ NodeSize: 64,40
 ValueState: 2,887,34,844,721,0,MIDM
 Aliases: FormNode Fo748392739
 ReformVal: [Spatial_ID,All_PV_Sectors]
-NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Spatial_ID,All_PV_Sectors]
+{!40700|Att_CellFormat: CellFormats(CellFont(size:14),CellAlignment('Center'))}
 
 Variable Customer_Load1
 Title: Customer Load
@@ -1076,8 +1082,9 @@ NodeSize: 64,40
 ValueState: 2,924,45,822,694,0,MIDM
 Aliases: FormNode Fo867930403
 ReformVal: [Spatial_ID,All_PV_Sectors]
-NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [All_PV_Sectors,Spatial_ID]
+{!40700|Att_CellFormat: CellFont(size:14)}
 
 Close Facility_Level_Area_
 

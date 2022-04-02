@@ -2609,11 +2609,10 @@ NodeLocation: 128,72,1
 NodeSize: 64,40
 WindState: 2,36,8,1180,547
 DefnState: 2,992,310,295,412,0,DFNM
-Aliases: FormNode Fo1916001827, Alias Al2, FormNode Fo1535066222
+Aliases: FormNode Fo1916001827, Alias Al2, FormNode Fo1535066222, FormNode Fo842592547
 {!40300|DomainExpr: Continuous(PV_AdEff_Lwr_Bnd, PV_AdEff_Upr_Bnd)}
 TableCellDefault: Default_PVAdEff
 {!40300|OptInitialGuess: 0.001}
-AcpStyles: Show_object: no
 UnoptimizedDef: 0.02
 
 Decision PV_Word_of_Mouth
@@ -2625,12 +2624,11 @@ NodeLocation: 128,264,1
 NodeSize: 64,40
 WindState: 2,5,426,720,350
 DefnState: 2,1002,261,455,530,0,DFNM
-Aliases: FormNode Fo171171363, Alias Al4, FormNode Fo1535066223
+Aliases: FormNode Fo171171363, Alias Al4, FormNode Fo1535066223, FormNode Fo1446572323
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 {!40300|DomainExpr: Continuous(PV_StartWOM_Lwr_Bnd,PV_StartWOM_Upr_Bnd)}
 TableCellDefault: Default_PV_WOM
 {!40300|OptInitialGuess: 0.4}
-AcpStyles: Show_object: no
 UnoptimizedDef: 0.50
 
 Decision PV_Ending_WOM
@@ -2831,10 +2829,10 @@ NodeSize: 64,40
 
 Decision Logit_Price_Coeff
 Title: Logit Price Coefficient
-Units: utility/ratio
+Units: dimensionless
 Description: Sensitivity of market share to the cost of electricity ratio. More negative values indicate that market share will increase (or drop off) faster for the same change in the cost of electricity ratio (i.e., more price sensitive).~
 ~
-See the "Market Share Illustration" output for a visualization of market share as a function of this input.
+See the "Long-Run Market Share Illustration" output for a visualization of market share as a function of this input.
 Definition: -6
 NodeLocation: 128,456,1
 NodeSize: 64,40
@@ -2879,10 +2877,10 @@ TableCellDefault: 0
 
 Decision Logit_Tech_Coeff
 Title: Logit Tech Coefficient
-Units: utility
+Units: dimensionless
 Description: Coefficient representative the inherent preference for "doing nothing" (i.e., not installing a system. Higher values indicate a stronger preference for NOT installing a system, all else equal (i.e., for the same cost of electricity ratio). ~
 ~
-See the "Market Share Illustration" output for a visualization of market share as a function of this input.
+See the "Long-Run Market Share Illustration" output for a visualization of market share as a function of this input.
 Definition: 5
 NodeLocation: 128,552,1
 NodeSize: 64,40
