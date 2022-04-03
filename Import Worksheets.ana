@@ -11,7 +11,7 @@ Author: Max Henrion & Paul Sanford
 Date: Sun, Jul 27, 2014 2:56 PM
 DefaultSize: 64,40
 NodeSize: 80,56
-DiagState: 2,83,53,891,615,17,10
+DiagState: 2,233,39,1441,704,17,10
 WindState: 2,355,67,533,321
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
@@ -22,7 +22,7 @@ FileInfo: 0,LinkModule Import_Worksheets,2,2,0,0,Import Worksheets.ana
 Button Show_Stored_Imported
 Title: Show Stored Imported Data
 Description: Press to show the variable where the imported dataset has been stored. The stored data has been dimensionalized using fact column indices and a value index (if applicable).
-NodeLocation: 528,464,1
+NodeLocation: 528,512,1
 NodeSize: 64,40
 OnClick: MetaVar varHandle:=Active_StoreLocatio1;~
 VAR ident:=Identifier of varHandle;~
@@ -31,7 +31,7 @@ Show_Result(ident)
 Button Release_Spreadsheet
 Title: Release Spreadsheet
 Description: After viewing a specific dataset, it may be necessary to "release" the spreadsheet so it can be opened and viewed (Analytica will open the spreadsheet to perform the import, but the spreadsheet may not be visible on the desktop). Pressing this button will release the spreadsheet, but it will also discard the data chosen for temporary viewing (though it does not discard any of the data stored in the model).
-NodeLocation: 672,464,1
+NodeLocation: 672,512,1
 NodeSize: 64,40
 Aliases: Alias New1004128547, Alias New2010761507, Alias New1608108323, Alias New1551412514, Alias New1551412523, Alias New1551412529
 OnClick: (Import_Reset1:=NOT Import_Reset1)
@@ -40,9 +40,9 @@ Module Structural_Settings_
 Title: Structural Settings for Import
 Author: JamesMilford
 Date: Fri, Dec 21, 2018 10:51 AM
-NodeLocation: 696,168,1
+NodeLocation: 696,304,1
 NodeSize: 64,40
-DiagState: 2,50,21,1847,701,17,10
+DiagState: 2,-1,19,1823,755,17,10
 NodeColor: 65535,65535,65535
 
 Module Excel_Import_Logic
@@ -51,7 +51,7 @@ Author: JamesMilford
 Date: Sun, Dec 16, 2018 8:07 AM
 NodeLocation: 696,656,1
 NodeSize: 64,40
-DiagState: 2,179,222,834,506,17
+DiagState: 2,948,276,834,506,17,10
 
 Module Import_Auxiliary_Var
 Title: Import Auxiliary Variables
@@ -196,8 +196,8 @@ Checkbox(0),Path_to_Global_Data1,'Veh_CalibDecisions','A7',Choice(Import_Data_Ty
 Checkbox(0),Path_to_Global_Data1,'Veh_OptSetting','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_OptSettings_byStg),Handle(EV_Calibration_Stage),Handle(Opt_Settings_EVs),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Veh_DecisBounds','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Dec_Var_Bounds),Handle(Upper_Lower),Handle(All_EV_Decisions),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Veh_Stock_Mults','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Multip),Null,Handle(All_Spatial_ID),Null,Null,Null,~
-Checkbox(1),Path_to_Global_Data1,'Equip_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Base_Installed_Cost_),Handle(All_PV_Sectors),Handle(All_Equipment_Types),Handle(Static_PV_Time),Null,Null,~
-Checkbox(1),Path_to_Global_Data1,'DER_PriceChangeRate','A7',Choice(Import_Data_Types,2,0),Null,Handle(DER_Cost_Change_Rate),Handle(All_PV_Sectors),Handle(DER_Cost_Scenario),Handle(All_Equipment_Types),Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Equip_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Base_Installed_Cost_),Handle(All_PV_Sectors),Handle(All_Equipment_Types),Handle(Static_PV_Time),Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'DER_PriceChangeRate','A7',Choice(Import_Data_Types,2,0),Null,Handle(DER_Cost_Change_Rate),Handle(All_PV_Sectors),Handle(DER_Cost_Scenario),Handle(All_Equipment_Types),Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Equip_Lifetime','A7',Choice(Import_Data_Types,2,0),Null,Handle(Equipment_Lifetime),Null,Handle(All_Equipment_Types),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'OM_Cost','A7',Choice(Import_Data_Types,2,0),Null,Handle(O_M_Cost),Handle(All_Sectors),Handle(All_Equipment_Types),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Interconn_Fee','A7',Choice(Import_Data_Types,2,0),Null,Handle(Interconnect_Fee),Null,Handle(Static_PV_Time),Null,Null,Null,~
@@ -244,7 +244,7 @@ Checkbox(0),Path_to_Global_Data1,'EUI','A7',Choice(Import_Data_Types,1,0),Null,H
 Checkbox(0),Path_to_Global_Data1,'Facility_Data','A1',Choice(Import_Data_Types,1,0),Null,Handle(Facility_Data1),Handle(Facility_Parameter),Handle(Facility_Identifier),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Park_To_GFA_Ratio','A7',Choice(Import_Data_Types,1,0),Null,Handle(Ratio_of_Parking_Ar1),Handle(Spatial_ID),Handle(All_PV_Sectors),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'PV_Suitability','A7',Choice(Import_Data_Types,1,0),Null,Handle(PV_suitability),Handle(Area_Type),Handle(All_PV_Sectors),Null,Null,Null,~
-Checkbox(0),Path_to_Global_Data1,'System_Size_Constraints','A7',Choice(Import_Data_Types,1,0),Null,Handle(System_Size_Constra2),Handle(Min_Max),Handle(Spatial_ID),Handle(Area_Type),Null,Null,~
+Checkbox(1),Path_to_Global_Data1,'System_Size_Constraints','A7',Choice(Import_Data_Types,1,0),Null,Handle(System_Size_Constra2),Handle(Min_Max),Handle(Spatial_ID),Handle(Area_Type),Null,Null,~
 Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
 Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
 Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
@@ -577,7 +577,7 @@ NodeSize: 64,40
 
 Decision Last_Import_Time
 Title: Last Import Time
-Definition: 30-Mar-2022 14:48:48.778000
+Definition: 3-Apr-2022 11:23:54.127000
 NodeLocation: 544,848,1
 NodeSize: 64,40
 Aliases: FormNode New1910098211, FormNode New2017052963, FormNode New1551412475
@@ -1551,7 +1551,7 @@ Author: JamesMilford
 Date: Fri, Dec 21, 2018 10:51 AM
 NodeLocation: 440,80,1
 NodeSize: 64,40
-DiagState: 2,1053,-4,1003,613,17,10
+DiagState: 2,541,-2,1003,613,17,10
 
 Variable Raw_Imported_Data1
 Title: Raw Imported Data
@@ -1748,7 +1748,7 @@ WindState: 2,18,191,720,350
 
 Variable Import_Reset1
 Title: Import Reset
-Definition: 0
+Definition: 1
 NodeLocation: 144,128,1
 NodeSize: 64,40
 
@@ -1767,7 +1767,7 @@ TableCellDefault: 'C:\Documents\Filename.xlsx'
 Decision Dataset_to_View1
 Title: Dataset to View
 Description: Select the tab name of the dataset you wish to view in greater detail.
-Definition: Choice(Tab_Names,41,0)
+Definition: Choice(Tab_Names,88,0)
 NodeLocation: 112,520,1
 NodeSize: 64,40
 WindState: 2,7,277,720,350
@@ -2119,6 +2119,23 @@ Definition: INDEX importInd:=CopyIndex(IndexesOf(Raw_Imported_Data1) & '');~
 PositionInIndex(importInd, '.Column', importInd) > 0
 NodeLocation: 272,368,1
 NodeSize: 64,40
+
+Index Model_for_Data_Impo1
+Att_PrevIndexValue: ['SPIDER','Efficiency']
+Title: Model for Data Import
+Definition: ['SPIDER','Efficiency']
+NodeLocation: 432,368,1
+NodeSize: 64,40
+WindState: 2,348,98,720,350
+Aliases: FormNode Fo1124452643
+
+Decision Select_Model_for_Dat
+Title: Select Model for Data Import
+Definition: Choice(Model_for_Data_Impo1,1,0)
+NodeLocation: 584,368,1
+NodeSize: 64,40
+Aliases: FormNode Clipboard_Fo84265251, FormNode Fo1385416995
+{!40300|DomainExpr: Model_for_Data_Impo1}
 
 Close Data_Import1
 
@@ -2753,65 +2770,6 @@ NodeInfo: 1,,,,,,,72,,,0,,,0,,,,
 NodeColor: 49344,49344,49344
 Original: Path_to_Global_Data1
 
-Index Model_for_Data_Impo1
-Att_PrevIndexValue: ['SPIDER','Efficiency']
-Title: Model for Data Import
-Definition: ['SPIDER','Efficiency']
-NodeLocation: 200,768,1
-NodeSize: 64,40
-WindState: 2,348,98,720,350
-Aliases: FormNode Fo1124452643, Alias Al1076218147, FormNode Fo144951587
-
-Decision Select_Model_for_Dat
-Title: Select Model for Data Import
-Definition: Choice(Model_for_Data_Impo1,1,0)
-NodeLocation: 648,856,1
-NodeSize: 64,40
-Aliases: FormNode Fo84265251
-{!40300|DomainExpr: Model_for_Data_Impo1}
-
-FormNode Fo84265251
-Title: Model for Data Import
-Definition: 0
-NodeLocation: 608,928,1
-NodeSize: 208,16
-NodeInfo: 1,,,,,,,167,,,,,,0
-Original: Select_Model_for_Dat
-
-FormNode Fo1124452643
-Title: Model
-Definition: 0
-NodeLocation: 856,768,1
-NodeSize: 136,16
-Original: Model_for_Data_Impo1
-
-Variable Va17
-Definition: DetermTable(Select_Model_for_Dat,Categ_Index_Tabs,Categ_Index_Params)(~
-Checkbox(1),Path_to_Global_Data1,'Categorical_Indexes','A5',Handle(Hourly_Profile_Names),Handle(Holiday_Years),Handle(ITC_Scenario),Handle(EV_Mkt_Share_Scen),Handle(EV_AdEff_Scenario),Handle(EV_WOM_Scen),Handle(Fuel_Types),Handle(All_Vehicle_Techs),Handle(Gasoline_Price_Scens),Handle(EV_Incent_Scenario),Handle(Vehicle_Price_Scens),Handle(Vehicle_Range_Scens),Handle(Elect_Price_Scens),Handle(BldgGrowthRate_Scens),Handle(BESS_Incentive_Scen),Handle(Storage_Cost_Scen),Handle(PV_Incentive_Scen),Handle(DER_Cost_Scenario),Handle(NC_Suitability_Scens),Handle(All_PV_Sectors),Handle(Facility_Identifier),Handle(Spatial_ID),Handle(All_Utilities),Handle(PV_Climate_Zone),~
-Checkbox(0),Path_to_Global_Data1,'Struct_Categ_Indexes','A5',Handle(SGIP_Data_Columns),Handle(Battery_Specs),Handle(All_System_Types),Handle(Debt_or_Equity),Handle(Incent_Durat_Inputs),Handle(Incent_MWhCap_Inputs),Handle(Timestep_Options),Handle(StructSingCell_Names),Handle(Vehicle_Types),Handle(SingCell_Input_Names),Handle(Hourly_Profile_Rows),Handle(Holiday_Name),Handle(Delta_Outputs),Handle(EV_Adopt_Data_Types),Handle(Sequential_Outputs),Handle(Veh_Incentive_Type),Null,Null,Null,Null,Null,Null,Null,Null,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-NodeLocation: 200,672,1
-NodeSize: 64,40
-DefnState: 2,570,123,817,677,0,DFNM
-ValueState: 2,325,72,750,631,0,MIDM
-ReformDef: [Categ_Index_Tabs,Categ_Index_Params]
-ReformVal: [Categ_Index_Tabs,Categ_Index_Params]
-Att_ResultSliceState: [Model_for_Data_Impo1,1,Categ_Index_Params,1,Categ_Index_Tabs,1]
-Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),1,Categ_Index_Params,1,Categ_Index_Tabs,1]
-
-Variable Va30
-Definition: DetermTable(Select_Model_for_Dat)(0,0)
-NodeLocation: 344,672,1
-NodeSize: 64,40
-
-Alias Al1076218147
-Title: Model
-Definition: 1
-NodeLocation: 512,672,1
-NodeSize: 64,40
-Original: Model_for_Data_Impo1
-
 FormNode Fo1584253219
 Title: Data to Import
 Definition: 0
@@ -2828,19 +2786,12 @@ NodeSize: 212,20
 NodeColor: 49344,49344,49344
 Original: Categorical_Indexes_
 
-FormNode Fo144951587
-Title: Model for Data Import
-Definition: 0
-NodeLocation: 264,872,1
-NodeSize: 136,16
-Original: Model_for_Data_Impo1
-
 Close Structural_Settings_
 
 Button Clear_Imported_Vari1
 Title: Clear Imported Variables
 Description: Press this button to clear data that had been previously imported. Only the datasets selected in "Data to Import" (Data_to_Import) will be cleared.
-NodeLocation: 544,168,1
+NodeLocation: 536,248,1
 NodeSize: 64,40
 WindState: 2,238,420,720,350
 OnClick: FOR J:=@Stored_Vars_Selected DO (~
@@ -2851,14 +2802,14 @@ OnClick: FOR J:=@Stored_Vars_Selected DO (~
 
 Text Te702138659
 Title: Import Data from Spreadsheets
-NodeLocation: 400,168,-1
-NodeSize: 376,152
+NodeLocation: 400,192,-1
+NodeSize: 376,176
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 NodeColor: 65535,65535,65535
 
 Text Te1775880483
 Title: Inspect Imported Data
-NodeLocation: 400,456,-1
+NodeLocation: 400,504,-1
 NodeSize: 376,128
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 NodeColor: 65535,65535,65535
@@ -2866,16 +2817,16 @@ NodeColor: 65535,65535,65535
 FormNode New809093411
 Title: Path to Test File
 Definition: 0
-NodeLocation: 408,76,1
-NodeSize: 368,20
-NodeInfo: 1,0,0,1,0,0,0,542,0,,0,,,0
+NodeLocation: 176,128,1
+NodeSize: 136,24
+NodeInfo: 1,,,,,,,70,,,0,,,0
 NodeColor: 49344,49344,49344
 Original: Path_to_Global_Data1
 
 FormNode New138004771
 Title: Dataset to View
 Definition: 0
-NodeLocation: 240,388,1
+NodeLocation: 240,436,1
 NodeSize: 200,20
 NodeInfo: 1,,,,,,0,239,,,,,,0
 Original: Dataset_to_View1
@@ -2883,7 +2834,7 @@ Original: Dataset_to_View1
 FormNode New1211746595
 Title: Raw Imported Data
 Definition: 1
-NodeLocation: 240,428,1
+NodeLocation: 240,476,1
 NodeSize: 200,20
 NodeInfo: 1,,,,,,0,72,,,,,,0
 NodeColor: 65278,37008,6168
@@ -2892,7 +2843,7 @@ Original: Raw_Imported_Data1
 FormNode New674875683
 Title: Cleaned Import Data
 Definition: 1
-NodeLocation: 240,468,1
+NodeLocation: 240,516,1
 NodeSize: 200,20
 NodeInfo: 1,,,,,,0,72,,,,,,0
 NodeColor: 65278,37008,6168
@@ -2901,7 +2852,7 @@ Original: Format_Import_Data1
 FormNode New1748617507
 Title: Check for Index Errors
 Definition: 1
-NodeLocation: 240,508,1
+NodeLocation: 240,556,1
 NodeSize: 200,20
 NodeInfo: 1,,,,,,0,72,,,,,,0
 NodeColor: 65278,37008,6168
@@ -2910,7 +2861,7 @@ Original: Check_Index_Errors1
 FormNode New406440227
 Title: Check for Data Type Errors
 Definition: 1
-NodeLocation: 240,548,1
+NodeLocation: 240,596,1
 NodeSize: 200,20
 NodeInfo: 1,,,,,,0,72,,,,,,0
 NodeColor: 65278,37008,6168
@@ -2919,7 +2870,7 @@ Original: Check_DataType_Erro1
 FormNode New1480182051
 Title: Apply Index Checks?
 Definition: 0
-NodeLocation: 176,276,1
+NodeLocation: 176,332,1
 NodeSize: 136,20
 NodeColor: 49344,49344,49344
 Original: Apply_Index_Checks1
@@ -2927,7 +2878,7 @@ Original: Apply_Index_Checks1
 FormNode New943311139
 Title: Apply Data Type Checks?
 Definition: 0
-NodeLocation: 176,236,1
+NodeLocation: 176,292,1
 NodeSize: 136,20
 NodeColor: 49344,49344,49344
 Original: Apply_DataType_Chec1
@@ -2935,7 +2886,7 @@ Original: Apply_DataType_Chec1
 FormNode New2017052963
 Title: Last Import Time
 Definition: 1
-NodeLocation: 504,272,1
+NodeLocation: 472,320,1
 NodeSize: 120,16
 NodeInfo: 1,,,,,,0,72,,,,,,0
 NodeColor: 65278,37008,6168
@@ -2944,30 +2895,47 @@ Original: Last_Import_Time
 FormNode New70895907
 Title: Import Categorial Indexes
 Definition: 0
-NodeLocation: 176,116,1
+NodeLocation: 176,172,1
 NodeSize: 136,20
 Original: Import_Categor_Inde1
 
 FormNode New1144637731
 Title: Import Sequential Indexes?
 Definition: 0
-NodeLocation: 176,156,1
+NodeLocation: 176,212,1
 NodeSize: 136,20
 Original: Import_Sequent_Inde1
 
 Alias New607766819
 Title: Import from Excel
 Definition: 1
-NodeLocation: 400,168,1
+NodeLocation: 536,152,1
 NodeSize: 64,40
 Original: Import_from_Excel1
+
+FormNode Fo1124452643
+Title: Model
+Definition: 0
+NodeLocation: 176,88,1
+NodeSize: 136,16
+NodeColor: 49344,49344,49344
+Original: Model_for_Data_Impo1
 
 FormNode Fo1320012067
 Title: Data to Import
 Definition: 0
-NodeLocation: 176,196,1
+NodeLocation: 176,252,1
 NodeSize: 136,20
+NodeColor: 49344,49344,49344
 Original: Data_to_Import1
+
+FormNode Fo1385416995
+Title: Model for Data Import
+Definition: 0
+NodeLocation: 544,88,1
+NodeSize: 208,16
+NodeInfo: 1,,,,,,,167,,,,,,0
+Original: Select_Model_for_Dat
 
 Close Import_Worksheets
 
