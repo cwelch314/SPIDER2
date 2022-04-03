@@ -33,7 +33,7 @@ Title: Release Spreadsheet
 Description: After viewing a specific dataset, it may be necessary to "release" the spreadsheet so it can be opened and viewed (Analytica will open the spreadsheet to perform the import, but the spreadsheet may not be visible on the desktop). Pressing this button will release the spreadsheet, but it will also discard the data chosen for temporary viewing (though it does not discard any of the data stored in the model).
 NodeLocation: 672,512,1
 NodeSize: 64,40
-Aliases: Alias New1004128547, Alias New2010761507, Alias New1608108323, Alias New1551412514, Alias New1551412523, Alias New1551412529
+Aliases: Alias New1004128547, Alias New2010761507, Alias New1608108323
 OnClick: (Import_Reset1:=NOT Import_Reset1)
 
 Module Structural_Settings_
@@ -42,7 +42,7 @@ Author: JamesMilford
 Date: Fri, Dec 21, 2018 10:51 AM
 NodeLocation: 696,304,1
 NodeSize: 64,40
-DiagState: 2,-1,19,1823,755,17,10
+DiagState: 2,0,19,1823,755,17,10
 NodeColor: 65535,65535,65535
 
 Module Excel_Import_Logic
@@ -59,7 +59,7 @@ Author: JamesMilford
 Date: Sun, Dec 16, 2018 8:07 AM
 NodeLocation: 216,184,1
 NodeSize: 64,40
-DiagState: 2,23,67,1764,696,17,10
+DiagState: 2,29,94,1787,796,17,10
 
 Index Import_Fixed_Params
 Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
@@ -78,7 +78,7 @@ Definition: 4
 NodeLocation: 88,168,1
 NodeSize: 64,40
 WindState: 2,11,69,855,404
-Aliases: FormNode New1322895651, FormNode New333039907, FormNode New1551412461, FormNode New1551412504
+Aliases: FormNode New1322895651, FormNode New333039907
 
 Index Fact_Col_Index_Param
 Att_PrevIndexValue: ['Fact Column Index 1','Fact Column Index 2','Fact Column Index 3','Fact Column Index 4','Fact Column Index 5']
@@ -94,7 +94,8 @@ Title: Excel Import Parameters
 Definition: Concat(Import_Fixed_Params, Fact_Col_Index_Param)
 NodeLocation: 88,360,1
 NodeSize: 64,40
-ValueState: 2,104,106,406,324,,MIDM
+WindState: 2,1976,100,720,350
+ValueState: 2,104,106,406,324,0,MIDM
 
 Variable Variable_Identifier
 Title: Variable Identifier
@@ -115,7 +116,7 @@ NodeLocation: 88,448,1
 NodeSize: 64,40
 DefnState: 2,313,331,884,477,0,DFNM
 ValueState: 2,230,172,416,303,,MIDM
-Aliases: FormNode New786024739, FormNode New1551412462
+Aliases: FormNode New786024739
 TableCellDefault: Handle(Index_Identifier)
 
 Decision Excel_Import_Setting
@@ -251,35 +252,35 @@ Checkbox(0),Path_to_Global_Data1,'Sequence_Indexes_Param','A5',Choice(Import_Dat
 Checkbox(0),Path_to_Global_Data1,'OneFact Column plus Data Only','A5',Choice(Import_Data_Types,1,0),Null,Handle(Sheet1_Stored),Null,'Handle(Example_Technology)',Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'TwoFact Columns plus Data Only','A5',Choice(Import_Data_Types,1,0),Null,Handle(Sheet2_Stored),Null,'Handle(Example_Technology)','Handle(Example_Sector)',Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'TwoFact Columns plus ValueIndex','A5',Choice(Import_Data_Types,1,0),Null,Handle(Sheet3_Stored),'Handle(Example_Tech_Paramet)','Handle(Example_Technology)','Handle(Example_Sector)',Null,Null,~
-Checkbox(0),Path_to_Global_Data1,'Feasibility','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Feasibility),Handle(Building_Type),Handle(All_Measures),Null,Null,Null,~
-Checkbox(0),Path_to_Global_Data1,'Applicability','C4',Choice(Import_Data_Types,1,0),Null,Handle(All_Applicability),Handle(Building_Type),Handle(All_Measures),Handle(Region),Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Feasibility','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Feasibility),Handle(All_PV_Sectors),Handle(All_Measures),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Applicability','C4',Choice(Import_Data_Types,1,0),Null,Handle(All_Applicability),Handle(All_PV_Sectors),Handle(All_Measures),Handle(Region),Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'SheetName','A4',Choice(Import_Data_Types,1,0),Null,Null,Null,Null,Null,Null,Null,~
-Checkbox(0),Path_to_Global_Data1,'PercentNotComplete','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Percent_Not_Comp),Handle(Building_Type),Handle(All_Measures),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'PercentNotComplete','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Percent_Not_Comp),Handle(All_PV_Sectors),Handle(All_Measures),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Meas Fuel EndUse','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Measure_Fuel_End),Handle(Fuel__End_Use),Handle(All_Measures),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Measure Char','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Measure_Characte),Handle(Measure_Parameter),Handle(All_Measures),Handle(RET_or_MD),Null,Null,~
-Checkbox(0),Path_to_Global_Data1,'Building Stock','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Building_Stock),Null,Handle(Region),Handle(Building_Type),Null,Null,~
-Checkbox(0),Path_to_Global_Data1,'EUI','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_EUI_by_Bldg_EndU),Handle(End_Use),Handle(Region),Handle(Building_Type),Handle(Primary_Fuel_Type),Null,~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'EUI','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_EUI_by_Bldg_EndU),Handle(End_Use),Handle(Region),Handle(All_PV_Sectors),Handle(Primary_Fuel_Type),Null,~
 Checkbox(0),Path_to_Global_Data1,'Fuel Interactive Factor','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Fuel_Interaction),Handle(Region),Handle(All_Measures),Null,Null,Null,~
-Checkbox(0),Path_to_Global_Data1,'Penetration','A4',Choice(Import_Data_Types,1,0),Null,Handle(EE_Penetration),Handle(Study_Year),Handle(All_Measures),Handle(Scenario),Handle(Building_Type),Handle(Replacement_Type),~
+Checkbox(0),Path_to_Global_Data1,'Penetration','A4',Choice(Import_Data_Types,1,0),Null,Handle(EE_Penetration),Handle(Study_Year),Handle(All_Measures),Handle(Scenario),Handle(All_PV_Sectors),Handle(Replacement_Type),~
 Checkbox(0),Path_to_Global_Data1,'Consumption','A4',Choice(Import_Data_Types,1,0),Null,Handle(EE_Consumption),Handle(Study_Year),Handle(Primary_Fuel_Type),Handle(Region),Null,Null,~
-Checkbox(0),Path_to_Global_Data1,'Split EndUse Segment','A4',Choice(Import_Data_Types,1,0),Null,Handle(Split_EndUse_Segment),Handle(Building_Type),Handle(Region),Handle(Primary_Fuel_Type),Handle(End_Use),Null,~
-Checkbox(0),Path_to_Global_Data1,'Split Region Segment','A4',Choice(Import_Data_Types,1,0),Null,Handle(Split_Region_Segment),Handle(Building_Type),Handle(Primary_Fuel_Type),Handle(Region),Null,Null,~
-Checkbox(0),Path_to_Global_Data1,'Table D1_Old','B4',Choice(Import_Data_Types,1,0),Null,'Handle(Table_D1_Old)',Handle(Study_Year),Handle(All_Measures),Handle(Building_Type),Handle(Replacement_Type),Null,~
-Checkbox(0),Path_to_Global_Data1,'Table D1','B4',Choice(Import_Data_Types,1,0),Null,Handle(D1),Handle(Study_Year),Handle(All_Measures),Handle(Primary_Fuel_Type),Handle(Building_Type),Handle(Replacement_Type),~
-Checkbox(0),Path_to_Global_Data1,'Table D2','B4',Choice(Import_Data_Types,1,0),Null,Handle(D2),Handle(Study_Year),Handle(All_Measures),Handle(Primary_Fuel_Type),Handle(Building_Type),Handle(Replacement_Type),~
-Checkbox(0),Path_to_Global_Data1,'Table D3','B4',Choice(Import_Data_Types,1,0),Null,Handle(D3),Handle(Study_Year),Handle(All_Measures),Handle(Primary_Fuel_Type),Handle(Building_Type),Handle(Replacement_Type),~
-Checkbox(0),Path_to_Global_Data1,'Table D4','B4',Choice(Import_Data_Types,1,0),Null,Handle(D4),Handle(Study_Year),Handle(All_Measures),Handle(Primary_Fuel_Type),Handle(Building_Type),Handle(Replacement_Type),~
-Checkbox(0),Path_to_Global_Data1,'Table D5','B4',Choice(Import_Data_Types,1,0),Null,Handle(D5),Handle(Study_Year),Handle(All_Measures),Handle(Primary_Fuel_Type),Handle(Building_Type),Handle(Replacement_Type),~
-Checkbox(0),Path_to_Global_Data1,'Table D6','B4',Choice(Import_Data_Types,1,0),Null,Handle(D6),Handle(Study_Year),Handle(All_Measures),Handle(Primary_Fuel_Type),Handle(Building_Type),Handle(Replacement_Type),~
-Checkbox(0),Path_to_Global_Data1,'Table D7','B4',Choice(Import_Data_Types,1,0),Null,Handle(D7),Handle(Study_Year),Handle(All_Measures),Handle(Primary_Fuel_Type),Handle(Building_Type),Handle(Replacement_Type),~
-Checkbox(0),Path_to_Global_Data1,'Table D8','B4',Choice(Import_Data_Types,1,0),Null,Handle(D8),Handle(Study_Year),Handle(All_Measures),Handle(Primary_Fuel_Type),Handle(Building_Type),Handle(Replacement_Type),~
-Checkbox(0),Path_to_Global_Data1,'Table D9','B4',Choice(Import_Data_Types,1,0),Null,Handle(D9),Handle(Study_Year),Handle(All_Measures),Handle(Primary_Fuel_Type),Handle(Building_Type),Handle(Replacement_Type),~
-Checkbox(0),Path_to_Global_Data1,'Table D10','B4',Choice(Import_Data_Types,1,0),Null,Handle(D10),Handle(Study_Year),Handle(All_Measures),Handle(Primary_Fuel_Type),Handle(Building_Type),Handle(Replacement_Type),~
-Checkbox(0),Path_to_Global_Data1,'Table D11','B4',Choice(Import_Data_Types,1,0),Null,Handle(D11),Handle(Study_Year),Handle(All_Measures),Handle(Primary_Fuel_Type),Handle(Building_Type),Handle(Replacement_Type),~
-Checkbox(0),Path_to_Global_Data1,'Table D12','B4',Choice(Import_Data_Types,1,0),Null,Handle(D12),Handle(Study_Year),Handle(All_Measures),Handle(Primary_Fuel_Type),Handle(Building_Type),Handle(Replacement_Type),~
-Checkbox(0),Path_to_Global_Data1,'Table D13','B4',Choice(Import_Data_Types,1,0),Null,Handle(D13),Handle(Economic_Param_NYSER),Handle(All_Measures),Handle(Building_Type),Handle(Replacement_Type),Null,~
-Checkbox(0),Path_to_Global_Data1,'Table D14','B4',Choice(Import_Data_Types,1,0),Null,Null,Null,Null,Null,Null,Null,~
-Checkbox(0),Path_to_Global_Data1,'Table D15','B4',Choice(Import_Data_Types,1,0),Null,Null,Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
 Checkbox(0),Path_to_Global_Data1,'Include Replacement Type','A5',Choice(Import_Data_Types,1,0),Null,Handle(All_Include_Replacem),Handle(Replacement_Type),Handle(All_Measures),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'ForceCostEffective','B4',Choice(Import_Data_Types,1,0),Null,Handle(All_Force_Cost_Effec),Null,Handle(All_Measures),Handle(Replacement_Type),Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
@@ -340,9 +341,9 @@ Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),
 NodeLocation: 88,552,1
 NodeSize: 64,40
 WindState: 2,64,77,1746,780
-DefnState: 2,26,32,1644,805,0,DFNM
+DefnState: 2,26,32,1756,822,0,DFNM
 ValueState: 2,-66,109,1540,509,0,MIDM
-Aliases: FormNode New1771965635, FormNode New1859766563, FormNode New1675217187, FormNode New1551412463, FormNode New1551412503
+Aliases: FormNode New1771965635, FormNode New1859766563, FormNode New1675217187
 ReformDef: [Excel_Import_Params,Imported_Dataset_Num]
 TableCellDefault: Import_Param_Default
 Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),2,Imported_Dataset_Num,1,Excel_Import_Params,1]
@@ -357,7 +358,7 @@ Definition: 90
 NodeLocation: 240,80,1
 NodeSize: 64,40
 WindState: 2,42,72,720,350
-Aliases: FormNode New517589283, FormNode New1406781731, FormNode New1551412464, FormNode New1551412505
+Aliases: FormNode New517589283, FormNode New1406781731
 
 Index Imported_Dataset_Num
 Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90]
@@ -377,49 +378,49 @@ Title: Select for Import Label
 Definition: Choice(Excel_Import_Params,1,0)
 NodeLocation: 392,80,1
 NodeSize: 64,40
-Aliases: FormNode New249153827, FormNode New1551412460
+Aliases: FormNode New249153827
 
 Decision Tab_Name_Label
 Title: Tab Name Label
 Definition: Choice(Excel_Import_Params,3,0)
 NodeLocation: 392,392,1
 NodeSize: 64,40
-Aliases: FormNode New1591331107, FormNode New1551412465
+Aliases: FormNode New1591331107
 
 Decision File_Path_Label
 Title: File Path Label
 Definition: Choice(Excel_Import_Params,2,0)
 NodeLocation: 240,536,1
 NodeSize: 64,40
-Aliases: FormNode New1054460195, FormNode New1551412466
+Aliases: FormNode New1054460195
 
 Decision Start_Cell_Label
 Title: Start Cell Label
 Definition: Choice(Excel_Import_Params,4,0)
 NodeLocation: 392,184,1
 NodeSize: 64,40
-Aliases: FormNode New2128202019, FormNode New1551412467
+Aliases: FormNode New2128202019
 
 Decision Data_Default_Label
 Title: Data Default Label
 Definition: Choice(Excel_Import_Params,6,0)
 NodeLocation: 392,496,1
 NodeSize: 64,40
-Aliases: FormNode New31050019, FormNode New1551412468
+Aliases: FormNode New31050019
 
 Decision Stored_Locat_Label
 Title: Stored Location Label
 Definition: Choice(Excel_Import_Params,7,0)
 NodeLocation: 240,640,1
 NodeSize: 64,40
-Aliases: FormNode New1104791843, FormNode New1551412469
+Aliases: FormNode New1104791843
 
 Decision Value_Index_Label
 Title: Value Index Label
 Definition: Choice(Excel_Import_Params,8,0)
 NodeLocation: 392,288,1
 NodeSize: 64,40
-Aliases: FormNode New567920931, FormNode New1551412470
+Aliases: FormNode New567920931
 
 Index Active_FactCol_Ind
 Title: Active Fact Col Indices
@@ -460,7 +461,7 @@ Title: Excel Row Label
 Definition: Choice(Excel_Components,2,0)
 NodeLocation: 544,432,1
 NodeSize: 64,40
-Aliases: FormNode New1641662755, FormNode New1551412471
+Aliases: FormNode New1641662755
 
 Index Populated_Rows
 Title: Populated Rows
@@ -530,7 +531,7 @@ Title: Data Type Label
 Definition: Choice(Excel_Import_Params,5,0)
 NodeLocation: 392,600,1
 NodeSize: 64,40
-Aliases: FormNode New299485475, FormNode New1551412472
+Aliases: FormNode New299485475
 
 Index Import_Value_Cols
 Title: Import Value Cols
@@ -557,7 +558,7 @@ Definition: Subtable(Excel_Import_Setting[Excel_Import_Params=Select_Import_Labe
 NodeLocation: 88,656,1
 NodeSize: 64,40
 DefnState: 2,1269,182,270,635,0,DFNM
-Aliases: FormNode New98158883, FormNode New1551412484
+Aliases: FormNode New98158883
 ReformDef: [Sys_LocalIndex('DomainIndex'),Imported_Dataset_Num]
 
 Variable Tab_Names_by_Number
@@ -580,7 +581,7 @@ Title: Last Import Time
 Definition: 3-Apr-2022 11:23:54.127000
 NodeLocation: 544,848,1
 NodeSize: 64,40
-Aliases: FormNode New1910098211, FormNode New2017052963, FormNode New1551412475
+Aliases: FormNode New1910098211, FormNode New2017052963
 NumberFormat: 3,F,4,4,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 
 Index Tab_Names
@@ -595,7 +596,7 @@ Title: Import in Progress
 Definition: 0
 NodeLocation: 544,656,1
 NodeSize: 64,40
-Aliases: FormNode New836356387, FormNode New1551412474
+Aliases: FormNode New836356387
 
 Variable Open_Error_Results
 Title: Open Error Results
@@ -615,7 +616,7 @@ Title: Select Categorical Params
 Definition: Table(Import_Fixed_Params)(Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
 NodeLocation: 872,352,1
 NodeSize: 64,40
-Aliases: FormNode New165267747, FormNode New1551412476
+Aliases: FormNode New165267747
 TableCellDefault: Checkbox(0)
 
 Index Cat_Index_Fix_Params
@@ -633,7 +634,7 @@ Definition: 24
 NodeLocation: 864,168,1
 NodeSize: 64,40
 WindState: 2,11,69,855,404
-Aliases: FormNode New1239009571, FormNode New735693091, FormNode New1551412477, FormNode New1551412510
+Aliases: FormNode New1239009571, FormNode New735693091
 
 Index Import_Index_Cols
 Title: Import Index Cols
@@ -651,12 +652,12 @@ NodeSize: 64,40
 
 Decision Categ_Index_Default
 Title: Categorical Index Default
-Definition: Table(Categ_Index_Params)(Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A5',Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier))
+Definition: Table(Categ_Index_Params)(Checkbox(0),Path_to_Global_Data1,'SheetName','A5',Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier))
 NodeLocation: 872,552,1
 NodeSize: 64,40
 WindState: 2,102,82,720,350
 DefnState: 2,1152,276,416,303,,DFNM
-Aliases: FormNode New702138659, FormNode New1551412478
+Aliases: FormNode New702138659
 TableCellDefault: Handle(Index_Identifier)
 
 Decision Num_Categ_Index_Tabs
@@ -668,7 +669,7 @@ Definition: 2
 NodeLocation: 1016,80,1
 NodeSize: 64,40
 WindState: 2,42,72,720,350
-Aliases: FormNode New1775880483, FormNode New1809434915, FormNode New1551412479, FormNode New1551412511
+Aliases: FormNode New1775880483, FormNode New1809434915
 
 Index Categ_Index_Tabs
 Att_PrevIndexValue: [1,2]
@@ -714,20 +715,20 @@ Column 4-N Index:		Null
 Definition: DetermTable(Select_Model_for_Dat,Categ_Index_Tabs,Categ_Index_Params)(~
 Checkbox(1),Path_to_Global_Data1,'Categorical_Indexes','A5',Handle(Hourly_Profile_Names),Handle(Holiday_Years),Handle(ITC_Scenario),Handle(EV_Mkt_Share_Scen),Handle(EV_AdEff_Scenario),Handle(EV_WOM_Scen),Handle(Fuel_Types),Handle(All_Vehicle_Techs),Handle(Gasoline_Price_Scens),Handle(EV_Incent_Scenario),Handle(Vehicle_Price_Scens),Handle(Vehicle_Range_Scens),Handle(Elect_Price_Scens),Handle(BldgGrowthRate_Scens),Handle(BESS_Incentive_Scen),Handle(Storage_Cost_Scen),Handle(PV_Incentive_Scen),Handle(DER_Cost_Scenario),Handle(NC_Suitability_Scens),Handle(All_PV_Sectors),Handle(Facility_Identifier),Handle(Spatial_ID),Handle(All_Utilities),Handle(PV_Climate_Zone),~
 Checkbox(0),Path_to_Global_Data1,'Struct_Categ_Indexes','A5',Handle(SGIP_Data_Columns),Handle(Battery_Specs),Handle(All_System_Types),Handle(Debt_or_Equity),Handle(Incent_Durat_Inputs),Handle(Incent_MWhCap_Inputs),Handle(Timestep_Options),Handle(StructSingCell_Names),Handle(Vehicle_Types),Handle(SingCell_Input_Names),Handle(Hourly_Profile_Rows),Handle(Holiday_Name),Handle(Delta_Outputs),Handle(EV_Adopt_Data_Types),Handle(Sequential_Outputs),Handle(Veh_Incentive_Type),Null,Null,Null,Null,Null,Null,Null,Null,~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A5',Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A5',Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier))
+Checkbox(0),Path_to_Global_Data1,'Categorical_Indexes','A5',Handle(All_Measures),Handle(Region),Handle(End_Use),Handle(Study_Year),Handle(Scenario),Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A5',Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier))
 NodeLocation: 872,664,1
 NodeSize: 64,40
 WindState: 2,102,82,1528,740
-DefnState: 2,553,171,763,607,0,DFNM
+DefnState: 2,916,113,763,607,0,DFNM
 ValueState: 2,769,178,771,486,0,MIDM
-Aliases: FormNode New433703203, FormNode New467257635, FormNode New1551412480, FormNode New1551412512
+Aliases: FormNode New433703203, FormNode New467257635
 ReformDef: [Categ_Index_Tabs,Categ_Index_Params]
 ReformVal: [Categ_Index_Tabs,Categ_Index_Params]
 TableCellDefault: Categ_Index_Default
 Att_ResultSliceState: [Model_for_Data_Impo1,1,Categ_Index_Params,1,Categ_Index_Tabs,1]
-Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),1,Categ_Index_Params,1,Categ_Index_Tabs,1]
-{!40700|Att_CellFormat: CellFormats(CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xff80ff80),5,17,header:0),1,header:0),CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xffff0000),14,header:0),2,header:0),CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xffff0000),14,16,header:0),2,header:0),CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xffffffff),14,20,header:0),2,header:0))}
+Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),2,Categ_Index_Params,1,Categ_Index_Tabs,1]
+{!40700|Att_CellFormat: CellFormats(CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xff80ff80),5,17,header:0),1,header:0),CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xffff0000),14,header:0),2,header:0),CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xffff0000),14,16,header:0),2,header:0),CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xffffffff),14,20,header:0),2,header:0),CellSpan(Categ_Index_Params,CellFill(0xffffffff),5,17,header:0))}
 
 Index Cat_Index_Tab_Names
 Att_PrevIndexValue: ['Categorical_Indexes','Struct_Categ_Indexes']
@@ -756,7 +757,7 @@ Title: Excel Col Label
 Definition: Choice(Excel_Components,1,0)
 NodeLocation: 544,544,1
 NodeSize: 64,40
-Aliases: FormNode New1507445027, FormNode New1551412481
+Aliases: FormNode New1507445027
 
 Index Select_Categ_Indexes
 Title: Selected Categorical Indexes
@@ -836,7 +837,7 @@ NodeSize: 64,40
 
 Decision Seq_Index_Default1
 Title: Sequence Index Default
-Definition: Table(Seq_Index_Params1)(Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A5',Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier))
+Definition: Table(Seq_Index_Params1)(Checkbox(0),Path_to_Global_Data1,'SheetName','A5',Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier))
 NodeLocation: 1192,552,1
 NodeSize: 64,40
 WindState: 2,102,82,720,350
@@ -902,7 +903,7 @@ Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A5',Handle(Variable_Identi
 NodeLocation: 1192,664,1
 NodeSize: 64,40
 WindState: 2,26,10,1042,708
-DefnState: 2,2776,96,805,645,0,DFNM
+DefnState: 2,2426,99,659,746,0,DFNM
 ValueState: 2,386,352,939,334,,MIDM
 Aliases: FormNode New1440336163, FormNode New2077870371
 ReformDef: [Seq_Index_Tabs1,Seq_Index_Params1]
@@ -1261,18 +1262,13 @@ NodeSize: 28,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Import_Sequent_Inde1
 
-Variable Total_Comm_Load1
-NodeLocation: 1896,128,1
-NodeSize: 80,40
-NodeInfo: 1,,,,,,,0,,,,,,0
-
 Decision Data_to_Import1
 Title: Data to Import
 Definition: subtable(Excel_Import_Setting[Excel_Import_Params=SubTab_Index])
 NodeLocation: 88,768,1
 NodeSize: 64,40
 DefnState: 2,743,84,564,676,0,DFNM
-Aliases: FormNode Fo1320012067, FormNode Fo1584253219
+Aliases: FormNode Fo1584253219, FormNode Fo1320012067
 ReformDef: [SubTab_Index,Imported_Dataset_Num]
 Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),1,Imported_Dataset_Num,1,SubTab_Index,1]
 {!50000|Att_ColumnWidths: [,SubTab_Index,\([,160])]}
@@ -2134,7 +2130,7 @@ Title: Select Model for Data Import
 Definition: Choice(Model_for_Data_Impo1,1,0)
 NodeLocation: 584,368,1
 NodeSize: 64,40
-Aliases: FormNode Clipboard_Fo84265251, FormNode Fo1385416995
+Aliases: FormNode Fo1385416995
 {!40300|DomainExpr: Model_for_Data_Impo1}
 
 Close Data_Import1

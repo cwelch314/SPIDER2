@@ -10,7 +10,7 @@ Author: CWelch
 Date: Tue, Mar 8, 2022 9:07 AM
 DefaultSize: 64,40
 NodeSize: 64,40
-DiagState: 2,80,78,1711,643,17,10
+DiagState: 2,-83,93,1711,643,17,10
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
 
@@ -58,7 +58,7 @@ Variable Facility_Footprint_m
 Title: Facility Footprint m2
 Units: m2
 Definition: Facility_Data_Filter[Facility_Parameter= 'Finalized Bldg Footprints (m2)']
-NodeLocation: 528,520,1
+NodeLocation: 528,600,1
 NodeSize: 64,40
 
 Index Facility_ID_Filtered
@@ -534,9 +534,10 @@ NodeLocation: 96,288,1
 NodeSize: 64,40
 WindState: 2,480,230,720,350
 DefnState: 2,700,85,900,689,0,DFNM
-ValueState: 2,2259,68,1014,765,0,MIDM
+ValueState: 2,2302,129,1014,765,0,MIDM
 ReformDef: [Spatial_ID,All_PV_Sectors]
 ReformVal: [Spatial_ID,All_PV_Sectors]
+Att__TotalsIndex: [All_PV_Sectors]
 Att_EditSliceState: [Roof_Dummy,1,All_PV_Sectors,1,Spatial_ID,1]
 
 Variable EUI_per_m2
@@ -914,7 +915,7 @@ Att_ResultSliceState: [PV_Sectors,1,Area_Type,1,Spatial_ID,1]
 Alias Al2147194403
 Title: Scale PV Size by % Covered by Solar
 Definition: 1
-NodeLocation: 312,464,1
+NodeLocation: 200,472,1
 NodeSize: 64,40
 Original: Scale_PV_Size_by_Cov
 
@@ -1021,11 +1022,12 @@ Att_EditSliceState: [Area_Type,1,Spatial_ID,1,Min_Max,2]
 
 Variable Consumption_by_Sect1
 Title: Consumption by Sector from Facility Data
-Definition: MdTable(Consumption_by_Type,Facility_ID_Filtered,Conglomeration_Index,conglomerationFn:"Sum" )
+Definition: local x:=MdTable(Consumption_by_Type,Facility_ID_Filtered,Conglomeration_Index,conglomerationFn:"Sum" );~
+IF x=null THEN 0 ELSE x
 NodeLocation: 440,864,1
 NodeSize: 64,40
-ValueState: 2,2364,111,866,680,0,MIDM
-Aliases: Alias Al1082319139
+ValueState: 2,691,123,866,680,0,MIDM
+Aliases: Alias Al1082319139, Alias Al916728099
 ReformVal: [Spatial_ID,All_PV_Sectors]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [All_PV_Sectors,Spatial_ID]
@@ -1087,6 +1089,25 @@ ReformVal: [Spatial_ID,All_PV_Sectors]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [All_PV_Sectors,Spatial_ID]
 {!40700|Att_CellFormat: CellFont(size:14)}
+
+Variable Floor_area_by_type
+Title: Floor area by type
+Units: m2
+Definition: Table(Conglomeration_Index)(Facility_Spatial_ID,Facility_Sector_Filt,Facility_floor_area)
+NodeLocation: 528,440,1
+NodeSize: 64,40
+
+Variable Floor_Area
+Title: Floor Area
+Units: sqft
+Definition: local x:=MdTable(Floor_area_by_type,Facility_ID_Filtered,Conglomeration_Index,conglomerationFn:"Sum" );~
+IF x=null THEN 0 ELSE x * sqft_per_m2
+NodeLocation: 360,440,1
+NodeSize: 64,40
+ValueState: 2,2039,151,906,660,0,MIDM
+Aliases: Alias Al2048141603
+ReformVal: [Spatial_ID,All_PV_Sectors]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 
 Close Facility_Level_Area_
 

@@ -2066,7 +2066,7 @@ Author: CWelch
 Date: Sun, Jan 9, 2022 3:29 PM
 NodeLocation: 632,208,1
 NodeSize: 72,56
-DiagState: 2,2183,34,1263,618,17,10
+DiagState: 2,2437,296,1263,618,17,10
 
 Variable Initial_PV_Adopters1
 Title: Initial PV Adopters
@@ -2244,7 +2244,7 @@ Definition: ['Higher Education','Hospitals','K-12','LG_Air Transportation','LG_A
 NodeLocation: 944,304,1
 NodeSize: 64,40
 ValueState: 2,510,101,448,662,0,MIDM
-Aliases: Alias Al1661443619
+Aliases: Alias Al1661443619, Alias Al1896098083
 {!40300|Att_SlicerPopupSize: 252,434}
 
 Variable Initial_PV_Adopters_
@@ -15100,7 +15100,7 @@ Definition: ['Roof','Parking','Land']
 NodeLocation: 104,384,1
 NodeSize: 64,40
 WindState: 2,408,-14,824,781
-{!40300|Att_SlicerPopupSize: 642,80}
+{!40300|Att_SlicerPopupSize: 647,80}
 
 Include 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
 
@@ -15140,8 +15140,9 @@ Definition: local x:=Effective_Usable_Ar2[All_PV_Sectors=PV_Sectors,Spatial_ID=P
 IF x=null THEN 0 ELSE x
 NodeLocation: 280,56,1
 NodeSize: 64,40
-ValueState: 2,1102,232,700,638,0,MIDM
+ValueState: 2,371,184,847,691,0,MIDM
 ReformVal: [PV_Spatial_ID,PV_Sectors]
+Att_ResultSliceState: [Area_Type,1,PV_Sectors,1,PV_Spatial_ID,1]
 
 Decision Use_facility_level_d
 Title: Use facility level data?
