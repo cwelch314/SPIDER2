@@ -1,0 +1,2790 @@
+{ Analytica Model Import_Worksheets, encoding="UTF-8" }
+SoftwareVersion 6.1.0
+
+{!-60000|Attribute AcpStyles}
+
+
+LinkModule Import_Worksheets
+Title: Import Worksheets
+Description: Module for importing data into an Analytica model from an Excel spreadsheet template. It imports from each specified sheet (tab) into a corresponding Analytica variable (Constant) transforming it from a relational table (or fact table) form into a multidimensional table with specified indexes.
+Author: Max Henrion & Paul Sanford
+Date: Sun, Jul 27, 2014 2:56 PM
+DefaultSize: 64,40
+NodeSize: 80,56
+DiagState: 2,602,85,891,615,17,10
+WindState: 2,355,67,533,321
+NodeColor: 65535,65535,65535
+DiagramColor: 65535,65535,65535
+Pict: (000000000000003B003C00041608000089504E470D0A1A0A0000000D494844520000003C0000003B080600000027F9E9CA000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA8640000079B494441546843ED9B795454551CC7473B626569A7B2542C43532B7341105A2C154DCA236E9995A6765C52D1D23A6E95D87A523BA74C5974581C156610064196044713890015640BD9251762534174401878F7D7FD3DA4E6313F4F0E36C368F3C7E7BC99EFFDBD37F7FBEEEF77EF7DC3200380FF15A4889469CFF6FBEEF8329F1509AE71EE47261E3227CBE35DE3D626CE54E75E4A73A0FA763B9022B23D63FD26A768198C3A2003A79FCD488C0C1CC3F9E746CA607AF4E0FCE2EA9C2154FFDA0B29221E49F3F6A0E109A18F577C9E38276843E27B817834251EBFCDDDBB2E615688B3B26B83BD921BDF2F831931CFE61656670FA5FAD81E4811F92A65A1BFF341192C3B3CE130D56E2A7442A38D8BBA67D5C86019A069CCB0A991830A0AAAB38651F1C6428A48ABE1251A975FA8765351A7BBFAE09890872F3BA83AB1259AF147C6F2D7A378A64D8F199CFF5F98264544DF3003D6898A31055A5D6D7734EC1826838842BF4509A5516ECEFBBA3660794D891A58985F9D31823AEF562145A4C30DF3FADD97EFB902B5832541735E5677D3FE3DD2973387B73DEF562145C4120CABF27E5AD9AA1F280E58E018DC5970E2B3B75BE480E2D3ED5CB24811B134C388BA60C752E7902EBA515198DE4F17E55F363EBD4911B144C3C8FE42DFC568DA094D473F5D64ECE68414114B358CB498B669C4CDC9E448BB929C4BA98E541C052922966C185117EC5CE2B8AFB3209A8EEA7FE6F42D9A2645C4D20D2381B93F7E6CAF6AD99CBC11D1EFECEF174F385171FA9022620986D5053ECBA8187D30BD5F09EB5EEB18C167EF98FE67FECD3429221D65F85AE3951EAF863C54E3102A8355F16E5181B93F7CA2C8D9BC8E62CFE9EFD728F3B6AE9A1FFB62F2483ED2B859718DB02D4DAB383686BA36428A484719BEDEACED3621AC57392E3D98AA78C419F966600D3BAA5BCCA2697CDAF2489ABF9BBA36428A484719C6CFDACB47F5836363E31769C61C5B78E8D5847F03E3166BC6C6BB84F6ACC29BF065CA8200EADA0829221D65F876589FF84EB073AC0CB0EF543B428AC89D68784DC24CB5D5701B4811B11A26622C0DAB61025244AC8689184BC36A98801411AB6122C6D2B01A262045C46A988811D1D57523F586ABDD49FD7ACDC3507D6620D97613D8B5325BA8CC72802B7F0CA0DA5B31BDE1F253CEB0DF2D9965EE5A2ED173821641F8A413703ED145A223B1EE4A50D89742D9C9970DDADAC29AEF61A9DB3E05E5E87CF0B6AB638A911784048FAD37BBC9A6379CE6B90EF6D802F319580B35252DA3A6ADE823C8875640A02DC0F11F364AE2055D17E6CBDB76F5014897AF92B411B0E42D5F832F8FF5E7E0D1AFE5B57074BD37156F7AC395990ECCA7BF56EC500AEF1CD7D889AD1BB0638C8F0894A74BBF5F42C3FEF61740DE1B20C3FF43495B5B6A8A0731EF01D730961D987D909D8D7705CD4A05ECE4EF3D9F6C60159906DF529AA586D991D57271C4768D2A613CC559D0F84C50F0F79A8F1406F1683860E479D1706680F877A39B92A79E0B727E1D9E11ECCAF9A744ADF16A77E6FB7C2504709D38DF3C86719477F051F6EA054C39211D3C7B01783DA163A5C75F318837C6709AD75A4C63B6CBA9049A1BBAB6EA2CF19B2DA0187C0572540B24F11CB3184658F4C2304C35F0E260CA452D0807A1F91E8358630C17FD3C037CF8B57CFA360927B77DCA6E98668CF70527CBA6EBF7B53DC76C86A12CF5255EB3F5689879E2E8A6188E2E628CE1C6AB3D986A629A383F6CE759A374C982A46F37F3256D1019CF319F615C5BFD1DCEC18EDE20E08C5D57C97B48C4196318A9CAB6672A6E146B79379FF579EDB280A195AC386E2A156F3EC3B97C82F1EE23601D83776F26A4FBD27F2231D630A2D33EC0327C5741EC6235F37AAA5E5C967C879781B69CDF0569AC790CF35A624A9E7ABC76859F7A33B18683C667E08C6A106B544AD7F680D2A4B192EB14C5CC603BF872C76B1B7243E64BE2396631CC8A0F4E839D7D9BD876DB26217EC336E6CD4781A736CB512E3488D7379CBD67A941BB1E2C4BE18EEBB910B762AFBE2EEC1E9D276E4052F9A6474F474C6F5868B46161338E8AF5153A25915DAF7E4488783716D76121705C96C14CAA67989DDCBE5EACFDFACB8F42FDA59EAC9EBFD68FC565079725F97317415BC9EF10D77037277FA65A9CBDF3D4EF49E239A6375CCC970E5C8A70447343E6895A7EF86C31E5502F8C7A4B128F86FD86FF2976D87F442953BD768A29C767B2C071D92C74E22921DDEF9FDAAF2E7A46DCAD61A9EC9FA5116F50C8E464BC09827C4815ABBDD04F726D8EC90D33DC1EE25E5AE59ACA3707F78ABAA0B31182271DC7BD344BF3592D3987099D05F5B404712786BB25CC0C05078FC17DF9FA3DFF807E3C3BB9ED3331FD3116D31867699F3E02CBDEBB443FAE15D31BC694E435CC6ADA3CEEE1635C49EC345677F131898E605A96F0BA2FE6ED37C0D77086537BCE4E128B4F4B38B9A9C66583DFB07216FEE65128889C2589D1C32C93965968D6D94053FDFD982164FB0DEE1EC3B788D53001292256C3448CA561354C408A88BE61AADD12F94F0CBB1F7E4D43B55B22EB7E7D7B5FBB0D7F91FCBE027F023439DCAE6467D6975FF8667FED21CFFE6AA34592D5C2CCE82139F843F276FD8A67D389E55ECE712DBF9542E37702D857678D0C36F2C1A23C21A4886455A5BCB0F2985B94FBD18987DC7FB973C0FF794A2A8B7D9DF28490E2DD0BC8FE02F4F4ECCE4B813A9D0000000049454E44AE426082)
+FontStyle: Arial Narrow,19
+FileInfo: 0,LinkModule Import_Worksheets,2,2,0,0,Import Worksheets.ana
+
+Button Show_Stored_Imported
+Title: Show Stored Imported Data
+Description: Press to show the variable where the imported dataset has been stored. The stored data has been dimensionalized using fact column indices and a value index (if applicable).
+NodeLocation: 528,464,1
+NodeSize: 64,40
+OnClick: MetaVar varHandle:=Active_StoreLocation;~
+VAR ident:=Identifier of varHandle;~
+Show_Result(ident)
+
+Button Release_Spreadsheet
+Title: Release Spreadsheet
+Description: After viewing a specific dataset, it may be necessary to "release" the spreadsheet so it can be opened and viewed (Analytica will open the spreadsheet to perform the import, but the spreadsheet may not be visible on the desktop). Pressing this button will release the spreadsheet, but it will also discard the data chosen for temporary viewing (though it does not discard any of the data stored in the model).
+NodeLocation: 672,464,1
+NodeSize: 64,40
+Aliases: Alias New1551412514, Alias New1551412523, Alias New1551412529
+OnClick: (Import_Reset:=NOT Import_Reset)
+
+Module Structural_Settings_
+Title: Structural Settings for Import
+Author: JamesMilford
+Date: Fri, Dec 21, 2018 10:51 AM
+NodeLocation: 696,168,1
+NodeSize: 64,40
+DiagState: 2,54,85,1847,749,17,10
+NodeColor: 65535,65535,65535
+
+Module Excel_Import_Logic
+Title: Excel Import Logic
+Author: JamesMilford
+Date: Sun, Dec 16, 2018 8:07 AM
+NodeLocation: 696,656,1
+NodeSize: 64,40
+DiagState: 2,179,222,834,506,17
+
+Module Import_Auxiliary_Var
+Title: Import Auxiliary Variables
+Author: JamesMilford
+Date: Sun, Dec 16, 2018 8:07 AM
+NodeLocation: 216,184,1
+NodeSize: 64,40
+DiagState: 2,2009,20,1764,696,17,10
+
+Index Import_Fixed_Params
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
+Title: Import Fixed Params
+Definition: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
+NodeLocation: 88,80,1
+NodeSize: 64,40
+WindState: 2,651,5,720,350
+
+Decision Max_Imported_Dim
+Title: Max Imported Dimensions
+Description: WARNING: Reducing this number may result in a loss of data.~
+~
+The maximum number of fact column dimensions that can be imported from Excel. This determines the size of the Excel Import Settings table. When reducing this number, ensure that it will not result in discarding previously defined fact column configurations.
+Definition: 4
+NodeLocation: 88,168,1
+NodeSize: 64,40
+WindState: 2,11,69,855,404
+Aliases: FormNode New1551412461, FormNode New1551412504
+
+Index Fact_Col_Index_Param
+Att_PrevIndexValue: ['Fact Column Index 1','Fact Column Index 2','Fact Column Index 3','Fact Column Index 4','Fact Column Index 5']
+Title: Fact Col Index Params
+Definition: INDEX dims:=1..Max_Imported_Dim;~
+CopyIndex("Fact Column Index " & dims)
+NodeLocation: 88,272,1
+NodeSize: 64,40
+
+Index Excel_Import_Params
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index','Fact Column Index 1','Fact Column Index 2','Fact Column Index 3','Fact Column Index 4']
+Title: Excel Import Parameters
+Definition: Concat(Import_Fixed_Params, Fact_Col_Index_Param)
+NodeLocation: 88,360,1
+NodeSize: 64,40
+ValueState: 2,104,106,406,324,,MIDM
+
+Variable Variable_Identifier
+Title: Variable Identifier
+Definition: Null
+NodeLocation: 240,360,1
+NodeSize: 64,40
+
+Index Index_Identifier
+Title: Index Identifier
+Definition: []
+NodeLocation: 240,448,1
+NodeSize: 64,40
+
+Decision Import_Param_Default
+Title: Import Param Default
+Definition: Table(Excel_Import_Params)(Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier))
+NodeLocation: 88,448,1
+NodeSize: 64,40
+DefnState: 2,313,331,416,303,0,DFNM
+ValueState: 2,230,172,416,303,,MIDM
+Aliases: FormNode New1551412462
+TableCellDefault: Handle(Index_Identifier)
+
+Decision Excel_Import_Setting
+Title: Excel Import Settings
+Description: This tables defines:~
+1) the datasets that will be imported from spreadsheets~
+2) the spreadsheet names, tab names, and data start cell locations for each dataset~
+3) the type of data expected, e.g., number, text, or date~
+4) the dimensionality that will be applied to the imported data~
+5) the variable location where the imported data will be stored in the model~
+~
+Parameter Instructions:~
+Selected for Import - check this to include the dataset in the next import.~
+File Path - the path to the spreadsheet file, which can be an identifier to another object/variable that holds the path.~
+Tab Name - the name of the spreadsheet tab where the data resides.~
+Data Start Cell - the upper leftmost cell where the dataset resides, which is often populated with a column header.~
+Data Type - the required type of data; use "Any" of the data type is not important~
+Missing Data Default - the value assigned to any missing coordinates in the dimensionalized dataset (e.g., Null, 0, 'missing', etc.)~
+Stored Location - the handle to the variable where the imported data will be stored in the model; this must follow the Handle(Some_Identifier) syntax; often you'll need to add this storage variable to the model prior to specifying the handle in this import settings table.~
+==== The following parameters must take the form of Handle(Identifier) when applicable, or Null when not applicable =====~
+Value Index - the handle to the index that appears as columns in the spreadsheet and relates to data values, rather than data coordinates~
+Fact Column Index 1 - the handle to the index that appears as the leftmost column in the spreadsheet and describes data coordinates, rather than values~
+Fact Column Index 2 - the handle to the index that appears as the 2nd leftmost column in the spreadsheet and describes data coordinates, rather than values~
+Fact Column Index N - the handle to the index that appears as the Nth leftmost column in the spreadsheet and describes data coordinates, rather than values~
+~
+Illustrative Excel Data (assume that 'FactCol1' appears in cell A1 of the spreadsheet):~
+						ValueInd ->~
+FactCol1	FactCol2	2020	2025	2030~
+CO			Urban		103		122		136~
+CO			Rural		45		51		66~
+CA			Urban		567		632		777~
+CO			Rural		112		161		202~
+~
+As an example, the table above would be characterized as follows:~
+~
+Data Start Cell: 			'A1'~
+Value Index: 			Handle(Years)~
+Fact Column Index 1: 	Handle(States)~
+Fact Column Index 2: 	Handle(Land_Type)~
+Fact Column Index 3..N: 	Null
+Definition: Table(Imported_Dataset_Num,Excel_Import_Params)(~
+Checkbox(0),Path_to_Global_Data,'SGIP_Data','A7',Choice(Import_Data_Types,1,0),Null,Handle(SGIP_Data),Handle(SGIP_Data_Columns),Handle(SGIP_Data_Rows),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Single_Cell_Inputs','A7',Choice(Import_Data_Types,1,0),Null,Handle(Single_Cell_Inputs),Null,Handle(SingCell_Input_Names),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Hourly_Profiles','A7',Choice(Import_Data_Types,1,0),Null,Handle(Hourly_Profile_Data),Handle(Hourly_Profile_Names),Handle(Hourly_Profile_Rows),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Holiday_Dates','A7',Choice(Import_Data_Types,4,0),Null,Handle(Dates_of_Holidays),Handle(Holiday_Name),Handle(Holiday_Years),Null,Null,Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),Path_to_Global_Data,'PV_CapFactor','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Capacity_Factor),Handle(Area_Type),Handle(PV_Climate_Zone),Handle(All_PV_Sectors),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'PV_NewConstr_Size','A7',Choice(Import_Data_Types,2,0),Null,Handle(NewConstr_Code_Sys_S),Handle(NewConstr_Code_Param),Handle(PV_Climate_Zone),Handle(All_Sectors),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Battery_Specs','A7',Choice(Import_Data_Types,2,0),Null,Handle(Battery_Storage_Spec),Handle(All_Sectors),Handle(Battery_Specs),Null,Null,Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),Path_to_Global_Data,'DC_to_AC_Ratio','A7',Choice(Import_Data_Types,2,0),Null,Handle(DC_to_AC_Ratio),Handle(All_PV_Sectors),Handle(PV_Climate_Zone),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Finance_Rates','A7',Choice(Import_Data_Types,2,0),Null,Handle(Debt_Equity_Rates),Handle(All_PV_Sectors),Handle(Debt_or_Equity),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Fed_ITC','A7',Choice(Import_Data_Types,2,0),Null,Handle(Invest_Tax_Credit),Handle(All_Sectors),Handle(ITC_Scenario),Handle(Static_PV_Time),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Strg_Duration_Incent','A7',Choice(Import_Data_Types,2,0),Null,Handle(kWh_Incen_Dur_Derate),Handle(Incent_Durat_Inputs),Handle(Incent_Duration_Step),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Vehicle_Stock_Data','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Data),Handle(Vehicle_Stock_DataYr),Handle(All_Sectors),Handle(All_Spatial_ID),Handle(All_Vehicle_Techs),Null,~
+Checkbox(0),Path_to_Global_Data,'Struct_Single_Cell_Inputs','A7',Choice(Import_Data_Types,1,0),Null,Handle(StructSingCell_Input),Null,Handle(StructSingCell_Names),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Hist_Vehicle_Growth','A7',Choice(Import_Data_Types,2,0),Null,Handle(Hist_Veh_Growth_Rate),Null,Handle(All_Vehicle_Techs),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'EV_MktShare_Mults','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Mkt_Share_Mult),Null,Handle(EV_Mkt_Share_Scen),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Building_Stock','A7',Choice(Import_Data_Types,2,0),0.001,Handle(Building_Stock),Handle(Building_Stock_Year),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Aggreg_Spatial_ID','A7',Choice(Import_Data_Types,2,0),Null,Handle(All_Agg_Spatial_IDs),Null,Handle(All_Spatial_ID),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'EV_Map_Increm_to_Cumul','A7',Choice(Import_Data_Types,1,0),Null,Handle(EV_Map_Increm_Cumul),Null,Handle(EV_Adopt_Data_Types),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Climate_Zone_Map','A7',Choice(Import_Data_Types,3,0),Null,Handle(All_Spatial_ID_to_CZ),Null,Handle(All_Spatial_ID),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Fuel_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Fuel_Prices),Handle(Vehicle_Input_Years),Handle(Fuel_Types),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'MPG','A7',Choice(Import_Data_Types,2,0),Null,Handle(MPG),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Handle(Fuel_Types),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'VMT','A7',Choice(Import_Data_Types,2,0),Null,Handle(VMT),Null,Handle(Vehicle_Input_Years),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Fuel_Mix','A7',Choice(Import_Data_Types,2,0),Null,Handle(Fuel_Mix),Handle(Vehicle_Input_Years),Handle(Fuel_Types),Handle(All_Vehicle_Techs),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Vehicle_Price','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Price),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Vehicle_Range','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Range),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Maint_Costs','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Maint_Cost),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_Type_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Vehicle_Type_Map),Null,Handle(All_Vehicle_Techs),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Vehicle_Tech_Pref','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Tech_Pref),Null,Handle(All_Vehicle_Techs),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_Incentives','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Incents),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Handle(Veh_Incentive_Type),Handle(EV_Incent_Scenario),Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_DecisionVars','A7',Choice(Import_Data_Types,2,0),Null,Handle(Stored_EV_Dec_Vars),Handle(All_EV_Dec_Handles),Handle(All_Spatial_ID),Handle(All_Sectors),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_OptStatus','A7',Choice(Import_Data_Types,3,0),Null,Handle(Stored_Opt_Status_EV),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_R2Thresh','A7',Choice(Import_Data_Types,2,0),Null,Handle(R2_Threshold),Null,Handle(EV_Calibration_Stage),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_CalibDates','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Dates_Incl_by_Stg),Handle(EV_Calibration_Stage),Handle(Time_EV_Calibration),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_CalibDecisions','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Decisions_by_Stg),Handle(EV_Calibration_Stage),Handle(All_EV_Decisions),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_OptSetting','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_OptSettings_byStg),Handle(EV_Calibration_Stage),Handle(Opt_Settings_EVs),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_DecisBounds','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Dec_Var_Bounds),Handle(Upper_Lower),Handle(All_EV_Decisions),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Veh_Stock_Mults','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Multip),Null,Handle(All_Spatial_ID),Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data,'Equip_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Base_Installed_Cost_),Handle(All_PV_Sectors),Handle(All_Equipment_Types),Handle(Static_PV_Time),Null,Null,~
+Checkbox(1),Path_to_Global_Data,'DER_PriceChangeRate','A7',Choice(Import_Data_Types,2,0),Null,Handle(DER_Cost_Change_Rate),Handle(All_PV_Sectors),Handle(DER_Cost_Scenario),Handle(All_Equipment_Types),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Equip_Lifetime','A7',Choice(Import_Data_Types,2,0),Null,Handle(Equipment_Lifetime),Null,Handle(All_Equipment_Types),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'OM_Cost','A7',Choice(Import_Data_Types,2,0),Null,Handle(O_M_Cost),Handle(All_Sectors),Handle(All_Equipment_Types),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Interconn_Fee','A7',Choice(Import_Data_Types,2,0),Null,Handle(Interconnect_Fee),Null,Handle(Static_PV_Time),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'PV_Hist_Capacity_Installs','A7',Choice(Import_Data_Types,1,0),Null,Handle(Historical_PV_Capaci),Handle(Interconnect_Date),Handle(All_Utilities),Handle(All_Sectors),Handle(All_Spatial_ID),Null,~
+Checkbox(0),Path_to_Global_Data,'PV_Historical_Installs','A7',Choice(Import_Data_Types,1,0),Null,Handle(Historical_PV_Instal),Handle(Interconnect_Date),Handle(All_Utilities),Handle(All_Sectors),Handle(All_Spatial_ID),Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),Path_to_Global_Data,'NewConstr_Suitability','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_New_Construction_),Handle(All_Sectors),Handle(NC_Suitability_Scens),Null,Null,Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),Path_to_Global_Data,'Stock_Basis','A7',Choice(Import_Data_Types,3,0),Null,Handle(PV_Stock_Basis_by_Se),Null,Handle(All_Sectors),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'PV_Power_Density','A7',Choice(Import_Data_Types,2,0),Null,Handle(Power_Density),Handle(Area_Type),Handle(All_PV_Sectors),Null,Null,Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),Path_to_Global_Data,'PV_Module_to_Area','A7',Choice(Import_Data_Types,2,0),Null,Handle(Module_to_Area_Ratio),Handle(Area_Type),Handle(All_PV_Sectors),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'PV_CalibDecis','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Decisions_by_Stg),Handle(PV_Calibration_Stage),Handle(All_PV_Decisions),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'PV_Constraints','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Constraints_by_St),Handle(PV_Calibration_Stage),Handle(All_PV_Constraints),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'PV_CalibDates','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Dates_Incl_by_Stg),Handle(PV_Calibration_Stage),Handle(Time_PV_Calibration),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'PV_R2Thresh','A7',Choice(Import_Data_Types,2,0),Null,Handle(R2_Threshold1),Handle(PV_Calibration_Stage),Handle(All_Sectors),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'PV_CalibToler','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Tolerance_by_Stag),Handle(PV_Calibration_Stage),Handle(Tolerance_Input),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'PV_OptSetting','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_OptSettings_byStg),Handle(PV_Calibration_Stage),Handle(Opt_Settings_PV),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'PV_DecisBounds','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Dec_Var_Bounds),Handle(Upper_Lower),Handle(All_PV_Decisions),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'PV_DecisionVars','A7',Choice(Import_Data_Types,2,0),Null,Handle(Stored_PV_Dec_Vars),Handle(All_PV_Dec_Handles),Handle(All_Spatial_ID),Handle(All_Sectors),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'PV_OptStatus','A7',Choice(Import_Data_Types,3,0),Null,Handle(Stored_Opt_Status_PV),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Strg_Cap_Derate','A7',Choice(Import_Data_Types,2,0),Null,Handle(kWh_Incent_DerateCap),Handle(Incent_MWhCap_Inputs),Handle(Incent_Capacity_Step),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Strg_Incent_BaseRate','A7',Choice(Import_Data_Types,2,0),Null,Handle(Strg_kWh_Base_Rate),Handle(Incentive_Steps),Handle(ITC_Applied),Handle(All_Sectors),Handle(PV_Climate_Zone),Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),Path_to_Global_Data,'Incent_StartMonth','A7',Choice(Import_Data_Types,1,0),Null,Handle(Incentive_Step_Start),Handle(Incentive_Steps),Handle(All_Sectors),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'MACRS','A7',Choice(Import_Data_Types,2,0),Null,Handle(MACRS_Schedule),Handle(All_Sectors),Handle(PV_Operating_Year),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Tax_Rates','A7',Choice(Import_Data_Types,2,0),Null,Handle(Tax_Rates),Handle(Tax_Entity),Handle(Static_PV_Time),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Bonus_Deprec','A7',Choice(Import_Data_Types,2,0),Null,Handle(Bonus_Deprec_Sched),Null,Handle(Static_PV_Time),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'NewConstr_Share','A7',Choice(Import_Data_Types,2,0),Null,Handle(NewConstr_Mkt_Share),Handle(Static_PV_Time),Handle(All_Sectors),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Vehicle_Impact','A7',Choice(Import_Data_Types,2,0),Null,Handle(Impact_per_EV),Null,Handle(All_Vehicle_Techs),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'PV_Scale_Load','A7',Choice(Import_Data_Types,1,0),Null,Handle(Scale_PV_Size_by_Cov),Null,Handle(All_PV_Sectors),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Consumption_by_Sector','A7',Choice(Import_Data_Types,2,0),0.001,Handle(Consumption_by_Secto),Null,Handle(All_PV_Sectors),Handle(Spatial_ID),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Load_Profiles','A7',Choice(Import_Data_Types,1,0),Null,Handle(Load_Profiles),Handle(All_Sectors),Handle(Hourly_Profile_Rows),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Solar_Profile_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Solar_Profile_Map),Handle(All_Sectors),Handle(PV_Climate_Zone),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'PV_Init_Adop_Fraction','A7',Choice(Import_Data_Types,1,0),Null,Handle(PV_Init_Adop_Fractio),Handle(All_PV_Sectors),Handle(Spatial_ID),Handle(Area_Type),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Total_PV_Area','A7',Choice(Import_Data_Types,1,0),Null,Handle(Total_PV_Area),Handle(Roof_Dummy),Handle(Area_Type),Handle(All_PV_Sectors),Handle(Spatial_ID),Null,~
+Checkbox(0),Path_to_Global_Data,'EUI','A7',Choice(Import_Data_Types,1,0),Null,Handle(EUI),Handle(Roof_Dummy),Handle(Spatial_ID),Handle(All_PV_Sectors),Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Facility_Data','A1',Choice(Import_Data_Types,1,0),Null,Handle(Facility_Data1),Handle(Facility_Parameter),Handle(Facility_Identifier),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'Park_To_GFA_Ratio','A7',Choice(Import_Data_Types,1,0),Null,Handle(Ratio_of_Parking_Ar1),Handle(Spatial_ID),Handle(All_PV_Sectors),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'PV_Suitability','A7',Choice(Import_Data_Types,1,0),Null,Handle(PV_suitability),Handle(Area_Type),Handle(All_PV_Sectors),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data,'System_Size_Constraints','A7',Choice(Import_Data_Types,1,0),Null,Handle(System_Size_Constra2),Handle(Min_Max),Handle(Spatial_ID),Handle(Area_Type),Null,Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null)
+NodeLocation: 88,552,1
+NodeSize: 64,40
+WindState: 2,61,61,1746,780
+DefnState: 2,45,12,1815,770,0,DFNM
+ValueState: 2,-66,109,1540,509,0,MIDM
+Aliases: FormNode New1771965635, FormNode New1551412463, FormNode New1551412503
+ReformDef: [Excel_Import_Params,Imported_Dataset_Num]
+TableCellDefault: Import_Param_Default
+{!40700|Att_CellFormat: CellFormats(CellSpan(Imported_Dataset_Num,CellFill(0xffff0000),1,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellNumberFormat('Fixed Point',7,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:7),79,header:0),6,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellNumberFormat('Fixed Point',5,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:5),18,header:0),6,header:0))}
+
+Decision Number_of_Datasets
+Title: Number of Imported Datasets
+Description: WARNING: Reducing this number may result in a loss of data.~
+~
+The number of datasets whose import configuration can be specified. This determines the size of the Excel Import Settings table. When reducing this number, ensure that it will not result in discarding previously defined dataset import configurations.
+Definition: 90
+NodeLocation: 240,80,1
+NodeSize: 64,40
+WindState: 2,42,72,720,350
+Aliases: FormNode New1551412464, FormNode New1551412505
+
+Index Imported_Dataset_Num
+Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90]
+Title: Imported Dataset Number
+Definition: 1..Number_of_Datasets
+NodeLocation: 240,184,1
+NodeSize: 64,40
+
+Index Selected_Import_Data
+Title: Selected Import Datasets
+Definition: Subset(Excel_Import_Setting[Excel_Import_Params=Select_Import_Label])
+NodeLocation: 240,272,1
+NodeSize: 64,40
+
+Decision Select_Import_Label
+Title: Select for Import Label
+Definition: Choice(Excel_Import_Params,1,0)
+NodeLocation: 392,80,1
+NodeSize: 64,40
+Aliases: FormNode New1551412460
+
+Decision Tab_Name_Label
+Title: Tab Name Label
+Definition: Choice(Excel_Import_Params,3,0)
+NodeLocation: 392,392,1
+NodeSize: 64,40
+Aliases: FormNode New1551412465
+
+Decision File_Path_Label
+Title: File Path Label
+Definition: Choice(Excel_Import_Params,2,0)
+NodeLocation: 240,536,1
+NodeSize: 64,40
+Aliases: FormNode New1551412466
+
+Decision Start_Cell_Label
+Title: Start Cell Label
+Definition: Choice(Excel_Import_Params,4,0)
+NodeLocation: 392,184,1
+NodeSize: 64,40
+Aliases: FormNode New1551412467
+
+Decision Data_Default_Label
+Title: Data Default Label
+Definition: Choice(Excel_Import_Params,6,0)
+NodeLocation: 392,496,1
+NodeSize: 64,40
+Aliases: FormNode New1551412468
+
+Decision Stored_Locat_Label
+Title: Stored Location Label
+Definition: Choice(Excel_Import_Params,7,0)
+NodeLocation: 240,640,1
+NodeSize: 64,40
+Aliases: FormNode New1551412469
+
+Decision Value_Index_Label
+Title: Value Index Label
+Definition: Choice(Excel_Import_Params,8,0)
+NodeLocation: 392,288,1
+NodeSize: 64,40
+Aliases: FormNode New1551412470
+
+Index Active_FactCol_Ind
+Title: Active Fact Col Indices
+Description: Handle objects to the fact column indices for the dataset that is currently being imported.
+Definition: INDEX indHandles:=CopyIndex(Excel_Import_Setting[Excel_Import_Params=Fact_Col_Index_Param, Imported_Dataset_Num=Active_Dataset_Num]);~
+~
+Subset(indHandles <> Null)
+NodeLocation: 688,256,1
+NodeSize: 64,40
+
+Function Excel_Cell_Component(cell_ref)
+Title: Excel Cell Components
+Description: Takes a reference to an Excel cell (e.g., A15), and returns the column (A) and row (15) components.~
+~
+[cell_ref]: the reference location of a cell in an Excel spreadsheet.
+Definition: INDEX textLen:=1..TextLength(cell_ref);~
+VAR singleChars:=FOR J:=textLen DO (~
+   SelectText(cell_ref, J, J)~
+);~
+VAR parsed:=ParseNumber(singleChars);~
+VAR startCol:=JoinText(IF parsed = Null THEN singleChars ELSE Null, textLen);~
+VAR startRow:=ParseNumber(JoinText(IF parsed = Null THEN Null ELSE singleChars, textLen));~
+~
+Array(Excel_Components, [startCol, startRow])
+NodeLocation: 544,256,1
+NodeSize: 64,40
+
+Index Excel_Components
+Att_PrevIndexValue: ['Excel Column','Excel Row']
+Title: Excel Components
+Definition: ['Excel Column','Excel Row']
+IndexVals: ['item 1']
+NodeLocation: 544,344,1
+NodeSize: 64,40
+
+Decision Excel_Row_Label
+Title: Excel Row Label
+Definition: Choice(Excel_Components,2,0)
+NodeLocation: 544,432,1
+NodeSize: 64,40
+Aliases: FormNode New1551412471
+
+Index Populated_Rows
+Title: Populated Rows
+Definition: Data_Start_Row..End_Row
+NodeLocation: 688,80,1
+NodeSize: 64,40
+ValueState: 2,17,98,416,303,,MIDM
+
+Index Expected_Cols
+Title: Expected Cols
+Definition: MetaVar valueInd:=Active_Value_Index;~
+VAR cols:=Concat(Active_FactCol_Ind, Import_Value_Cols);~
+~
+IF Size(Cols) <> Size(Non_Null_Cols)~
+THEN MsgBox("The number of columns on the tab '" & Active_Tab_Name & "' of workbook '" & Active_File_Path & "' does not match the number expected, per the settings specified for the data import.", 0, "Error: Mismatch in Number of Data Columns")~
+ELSE Null;~
+~
+CopyIndex(cols)
+NodeLocation: 688,168,1
+NodeSize: 64,40
+WindState: 2,51,200,720,350
+ValueState: 2,1136,217,648,393,,MIDM
+
+Index Index_Titles
+Title: Index Titles
+Definition: VAR titles:=FOR J:=@Active_FactCol_Ind DO (~
+   MetaVar indHandle:=Slice(Active_FactCol_Ind, J);~
+   Title of indHandle~
+);~
+~
+CopyIndex(titles)
+NodeLocation: 688,344,1
+NodeSize: 64,40
+
+Index All_Index_Checks
+Att_PrevIndexValue: ['Missing Subscripts','Incorrect Subscripts','Repeat Subscripts']
+Title: All Index Checks
+Definition: ['Missing Subscripts','Incorrect Subscripts','Repeat Subscripts']
+NodeLocation: 688,520,1
+NodeSize: 64,40
+
+Index Index_Checks
+Title: Index Checks
+Definition: Subset(Apply_Index_Checks)
+NodeLocation: 688,608,1
+NodeSize: 64,40
+
+Function Show_Result(ident: Text)
+Title: Show Result
+Description: Opens the result window for the variable specified.~
+~
+[ident]: the identifier (in text form) of the variable whose result will be opened.
+Definition: EvaluateScript("Open Result " & ident)
+NodeLocation: 544,168,1
+NodeSize: 64,40
+WindState: 2,-3,6,720,350
+
+Index Import_Data_Types
+Att_PrevIndexValue: ['Any','Number','Text','Date']
+Title: Import Data Types
+Definition: ['Any','Number','Text','Date']
+NodeLocation: 688,696,1
+NodeSize: 64,40
+
+Decision Data_Type_Label
+Title: Data Type Label
+Definition: Choice(Excel_Import_Params,5,0)
+NodeLocation: 392,600,1
+NodeSize: 64,40
+Aliases: FormNode New1551412472
+
+Index Import_Value_Cols
+Title: Import Value Cols
+Definition: LocalAlias valueInd:=Active_Value_Index;~
+~
+IF Active_Value_Index <> Null~
+THEN CopyIndex(valueInd)~
+ELSE ['Value']
+NodeLocation: 688,432,1
+NodeSize: 64,40
+
+Function Return_Not_Specified(arg: Optional)
+Title: Return Not Specified
+Description: This is used to assign nothing (not even a Null value) to an object. The result returned can be used as an argument in a function, and it will be treated as though the argument has not been specified. This function should be called without any arguments, eg, Return_Not_Specified()~
+~
+[arg]: leave this blank
+Definition: arg
+NodeLocation: 544,80,1
+NodeSize: 64,40
+
+Decision Import_Selection_Sub
+Title: Import Selection Subtable
+Definition: Subtable(Excel_Import_Setting[Excel_Import_Params=Select_Import_Label])
+NodeLocation: 88,656,1
+NodeSize: 64,40
+Aliases: FormNode New1551412484
+
+Variable Tab_Names_by_Number
+Title: Tab Names by Number
+Definition: Excel_Import_Setting[Excel_Import_Params=Tab_Name_Label]
+NodeLocation: 240,768,1
+NodeSize: 64,40
+ValueState: 2,22,239,479,384,,MIDM
+
+Decision Data_to_Import
+Title: Data to Import
+Description: Check the datasets to import.
+Definition: MultiTable(Data_Selection_Optio)(Tab_Names_by_Number&"",Import_Selection_Sub)
+NodeLocation: 88,768,1
+NodeSize: 64,40
+DefnState: 2,2735,81,581,824,0,DFNM
+Aliases: FormNode New1551412473, FormNode New1551412530, FormNode New1551412452
+ReformDef: [Data_Selection_Optio,Imported_Dataset_Num]
+{!40700|Att_CellFormat: CellFormats(CellSpan(Imported_Dataset_Num,CellFill(0xff80ff80),2,header:0),CellSpan(Data_Selection_Optio,CellSpan(Imported_Dataset_Num,CellFill(0xffc0c0c0),2,header:0),1,header:0),CellSpan(Data_Selection_Optio,CellFill(0xe8c0c0c0),1,header:0),CellSpan(Data_Selection_Optio,CellFill(0xb5c0c0c0),1,header:0),CellSpan(Data_Selection_Optio,CellFill(0x60c0c0c0),1,header:0),CellSpan(Data_Selection_Optio,CellFill(0xffffffff),2,header:0),CellSpan(Imported_Dataset_Num,CellFill(0x60ffff00),2,4,header:0),CellSpan(Imported_Dataset_Num,CellFill(0x60ffff00),6,13,header:0),CellSpan(Imported_Dataset_Num,CellFill(0x60ffff00),15,header:0),CellSpan(Imported_Dataset_Num,CellFill(0x60ffff00),18,19,header:0),CellSpan(Imported_Dataset_Num,CellFill(0x60ffff00),21,header:0),CellSpan(Imported_Dataset_Num,CellFill(0x60ffff00),40,44,header:0),CellSpan(Imported_Dataset_Num,CellFill(0x60ffff00),50,header:0),CellSpan(Imported_Dataset_Num,CellFill(0x60ffff00),55,58,header:0),CellSpan(Imported_Dataset_Num,CellFill(0x60ffff00),68,76,header:0),CellSpan(Imported_Dataset_Num,CellFill(0x60ffff00),78,83,header:0),CellSpan(Imported_Dataset_Num,CellFill(0x60ffff80),45,header:0),CellSpan(Imported_Dataset_Num,CellFill(0x60ffff00),45,header:0),CellSpan(Imported_Dataset_Num,CellFill(0x60ffff00),46,47,header:0),CellSpan(Imported_Dataset_Num,CellFill(0x60ffff80),84,header:0),CellSpan(Imported_Dataset_Num,CellFill(0x60ffff00),84,header:0),CellSpan(Data_Selection_Optio,CellSpan(Imported_Dataset_Num,CellFill(0x60c0c0c0),47,header:0),1,header:0),CellSpan(Imported_Dataset_Num,CellFill(0x60ffffff),47,header:0),CellSpan(Data_Selection_Optio,CellSpan(Imported_Dataset_Num,CellFill(0x60c0c0c0),47,header:0),1,header:0),CellSpan(Imported_Dataset_Num,CellFill(0x60ffff00),85,88,header:0),CellSpan(Imported_Dataset_Num,CellFill(0x60ffffff),57,header:0),CellSpan(Data_Selection_Optio,CellSpan(Imported_Dataset_Num,CellFill(0x60c0c0c0),57,header:0),1,header:0))}
+
+Index Data_Selection_Optio
+Att_PrevIndexValue: ['Tab Name','Selected for Import']
+Title: Data Selection Options
+Definition: CopyIndex([Tab_Name_Label,Select_Import_Label])
+NodeLocation: 88,872,1
+NodeSize: 64,40
+
+Decision Last_Import_Time
+Title: Last Import Time
+Definition: 30-Mar-2022 14:48:48.778000
+NodeLocation: 544,848,1
+NodeSize: 64,40
+Aliases: FormNode New1551412475, FormNode New1551412538
+NumberFormat: 3,F,4,4,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
+
+Index Tab_Names
+Att_PrevIndexValue: ['SGIP_Data','Single_Cell_Inputs','Hourly_Profiles','Holiday_Dates','SheetName','PV_CapFactor','PV_NewConstr_Size','Battery_Specs','SheetName','DC_to_AC_Ratio','Finance_Rates','Fed_ITC','Strg_Duration_Incent','Vehicle_Stock_Data','Struct_Single_Cell_Inputs','Hist_Vehicle_Growth','EV_MktShare_Mults','Building_Stock','Aggreg_Spatial_ID','EV_Map_Increm_to_Cumul','Climate_Zone_Map','Fuel_Prices','MPG','VMT','Fuel_Mix','Vehicle_Price','Vehicle_Range','Maint_Costs','Veh_Type_Map','Vehicle_Tech_Pref','Veh_Incentives','Veh_DecisionVars','Veh_OptStatus','Veh_R2Thresh','Veh_CalibDates','Veh_CalibDecisions','Veh_OptSetting','Veh_DecisBounds','Veh_Stock_Mults','Equip_Prices','DER_PriceChangeRate','Equip_Lifetime','OM_Cost','Interconn_Fee','PV_Hist_Capacity_Installs','PV_Historical_Installs','SheetName','SheetName','SheetName','NewConstr_Suitability','SheetName','SheetName','SheetName','SheetName','Stock_Basis','PV_Power_Density','SheetName','PV_Module_to_Area','PV_CalibDecis','PV_Constraints','PV_CalibDates','PV_R2Thresh','PV_CalibToler','PV_OptSetting','PV_DecisBounds','PV_DecisionVars','PV_OptStatus','Strg_Cap_Derate','Strg_Incent_BaseRate','SheetName','SheetName','Incent_StartMonth','MACRS','Tax_Rates','Bonus_Deprec','NewConstr_Share','Vehicle_Impact','PV_Scale_Load','Consumption_by_Sector','Load_Profiles','Solar_Profile_Map','PV_Init_Adop_Fraction','Total_PV_Area','EUI','Facility_Data','Park_To_GFA_Ratio','PV_Suitability','System_Size_Constraints','SheetName','SheetName']
+Title: Tab Names
+Definition: CopyIndex(Tab_Names_by_Number)
+NodeLocation: 240,872,1
+NodeSize: 64,40
+
+Decision Import_in_Progress
+Title: Import in Progress
+Definition: 0
+NodeLocation: 544,656,1
+NodeSize: 64,40
+Aliases: FormNode New1551412474
+
+Variable Open_Error_Results
+Title: Open Error Results
+Definition: (Size(Selected_Import_Data) = 1) OR (NOT Import_in_Progress)~
+ 
+NodeLocation: 544,760,1
+NodeSize: 64,40
+
+Index Stored_Vars_Selected
+Title: Stored Variables for Selected
+Definition: CopyIndex(Excel_Import_Setting[Excel_Import_Params=Stored_Locat_Label, Imported_Dataset_Num=Selected_Import_Data])
+NodeLocation: 392,712,1
+NodeSize: 64,40
+
+Decision Select_Categ_Params
+Title: Select Categorical Params
+Definition: Table(Import_Fixed_Params)(Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
+NodeLocation: 872,352,1
+NodeSize: 64,40
+Aliases: FormNode New1551412476
+TableCellDefault: Checkbox(0)
+
+Index Cat_Index_Fix_Params
+Title: Categ Index Fixed Params
+Definition: Subset(Select_Categ_Params)
+NodeLocation: 864,80,1
+NodeSize: 64,40
+
+Decision Max_Imported_Indexes
+Title: Max Imported Indexes
+Description: WARNING: Reducing this number may result in a loss of data.~
+~
+The maximum number of sequential index columns that can be imported from Excel. This determines the size of the Categorial Index Import Settings table. When reducing this number, ensure that it will not result in discarding previously defined index column configurations.
+Definition: 24
+NodeLocation: 864,168,1
+NodeSize: 64,40
+WindState: 2,11,69,855,404
+Aliases: FormNode New1551412477, FormNode New1551412510
+
+Index Import_Index_Cols
+Title: Import Index Cols
+Definition: INDEX dims:=1..Max_Imported_Indexes;~
+CopyIndex("Column " & dims & " Index")
+NodeLocation: 872,264,1
+NodeSize: 64,40
+
+Index Categ_Index_Params
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Column 1 Index','Column 2 Index','Column 3 Index','Column 4 Index','Column 5 Index','Column 6 Index','Column 7 Index','Column 8 Index','Column 9 Index','Column 10 Index','Column 11 Index','Column 12 Index','Column 13 Index','Column 14 Index','Column 15 Index','Column 16 Index','Column 17 Index','Column 18 Index','Column 19 Index','Column 20 Index','Column 21 Index','Column 22 Index','Column 23 Index','Column 24 Index']
+Title: Categorical Index Parameters
+Definition: Concat(Cat_Index_Fix_Params, Import_Index_Cols)
+NodeLocation: 872,464,1
+NodeSize: 64,40
+
+Decision Categ_Index_Default
+Title: Categorical Index Default
+Definition: Table(Categ_Index_Params)(Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A5',Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier))
+NodeLocation: 872,552,1
+NodeSize: 64,40
+WindState: 2,102,82,720,350
+DefnState: 2,1152,276,416,303,,DFNM
+Aliases: FormNode New1551412478
+TableCellDefault: Handle(Index_Identifier)
+
+Decision Num_Categ_Index_Tabs
+Title: Number of Categorical Index Tabs
+Description: WARNING: Reducing this number may result in a loss of data.~
+~
+The number of categorical index tabs whose import configuration can be specified. This determines the size of the Categorical Index Import Settings table. When reducing this number, ensure that it will not result in discarding previously defined index tab configurations.
+Definition: 2
+NodeLocation: 1016,80,1
+NodeSize: 64,40
+WindState: 2,42,72,720,350
+Aliases: FormNode New1551412479, FormNode New1551412511
+
+Index Categ_Index_Tabs
+Att_PrevIndexValue: [1,2]
+Title: Categorical Index Tabs
+Definition: 1..Num_Categ_Index_Tabs
+NodeLocation: 1016,184,1
+NodeSize: 64,40
+
+Decision CatInd_ImportSetting
+Title: Categorical Index Import Settings
+Description: This tables defines:~
+1) the categorical indexes that will be imported from spreadsheets~
+2) the spreadsheet names, tab names, and data start cell locations for each index~
+3) the index location where the imported data will be stored in the model~
+~
+Parameter Instructions:~
+Selected for Import - check this to include the dataset in the next import.~
+File Path - the path to the spreadsheet file, which can be an identifier to another object/variable that holds the path.~
+Tab Name - the name of the spreadsheet tab where the data resides.~
+Data Start Cell - the upper leftmost cell where the dataset resides, which is often populated with a column header.~
+==== The following parameters must take the form of Handle(Identifier) when applicable, or Null when not applicable =====~
+Column 1 Index - the handle to the index that appears as the leftmost column in the spreadsheet~
+Column 2 Index - the handle to the index that appears as the 2nd leftmost column in the spreadsheet~
+Column N Index - the handle to the index that appears as the Nth leftmost column in the spreadsheet~
+~
+Illustrative Excel Data (assume that 'States' appears in cell A1 of the spreadsheet):~
+						~
+States		LandType	Years	~
+CA			Urban		2020~
+CO			Rural		2021~
+UT						2022	~
+WY						2023~
+						2024~
+						2025~
+~
+As an example, the index data above would be characterized as follows:~
+~
+Data Start Cell: 			'A1'~
+Column 1 Index: 			Handle(States)~
+Column 2 Index: 			Handle(Land_Type)~
+Column 3 Index: 			Handle(Years)~
+Column 4-N Index:		Null
+Definition: Table(Categ_Index_Tabs,Categ_Index_Params)(~
+Checkbox(1),Path_to_Global_Data,'Categorical_Indexes','A5',Handle(Hourly_Profile_Names),Handle(Holiday_Years),Handle(ITC_Scenario),Handle(EV_Mkt_Share_Scen),Handle(EV_AdEff_Scenario),Handle(EV_WOM_Scen),Handle(Fuel_Types),Handle(All_Vehicle_Techs),Handle(Gasoline_Price_Scens),Handle(EV_Incent_Scenario),Handle(Vehicle_Price_Scens),Handle(Vehicle_Range_Scens),Handle(Elect_Price_Scens),Handle(BldgGrowthRate_Scens),Handle(BESS_Incentive_Scen),Handle(Storage_Cost_Scen),Handle(PV_Incentive_Scen),Handle(DER_Cost_Scenario),Handle(NC_Suitability_Scens),Handle(All_PV_Sectors),Handle(Facility_Identifier),Handle(Spatial_ID),Handle(All_utilities),Handle(PV_Climate_Zone),~
+Checkbox(0),Path_to_Global_Data,'Struct_Categ_Indexes','A5',Handle(SGIP_Data_Columns),Handle(Battery_Specs),Handle(All_System_Types),Handle(Debt_or_Equity),Handle(Incent_Durat_Inputs),Handle(Incent_MWhCap_Inputs),Handle(Timestep_Options),Handle(StructSingCell_Names),Handle(Vehicle_Types),Handle(SingCell_Input_Names),Handle(Hourly_Profile_Rows),Handle(Holiday_Name),Handle(Delta_Outputs),Handle(EV_Adopt_Data_Types),Handle(Sequential_Outputs),Handle(Veh_Incentive_Type),Null,Null,Null,Null,Null,Null,Null,Null)
+NodeLocation: 872,664,1
+NodeSize: 64,40
+WindState: 2,102,82,1528,740
+DefnState: 2,868,172,763,607,0,DFNM
+Aliases: FormNode New1551412480, FormNode New1551412512
+ReformDef: [Categ_Index_Tabs,Categ_Index_Params]
+TableCellDefault: Categ_Index_Default
+{!40700|Att_CellFormat: CellFormats(CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xff80ff80),5,17,header:0),1,header:0),CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xffff0000),14,header:0),2,header:0),CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xffff0000),14,16,header:0),2,header:0),CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xffffffff),14,20,header:0),2,header:0))}
+
+Index Cat_Index_Tab_Names
+Att_PrevIndexValue: ['Categorical_Indexes','Struct_Categ_Indexes']
+Title: Categ Index Tab Names
+Definition: CopyIndex(Categ_Index_Tab_Opt)
+NodeLocation: 1016,784,1
+NodeSize: 64,40
+
+Index Categ_Index_Rows
+Title: Categ Index Rows
+Definition: Cat_Index_Start_Row..Categ_Index_End_Row
+NodeLocation: 1016,272,1
+NodeSize: 64,40
+
+Index Categ_Index_Handles
+Title: Categorical Index Handles
+Description: Handle objects to the categorical indices, where imported lists will be stored.
+Definition: INDEX indHandles:=CopyIndex(CatInd_ImportSetting[Categ_Index_Params=Import_Index_Cols, Categ_Index_Tabs=Categ_Index_Tab_Num]);~
+~
+Subset(indHandles <> Null)
+NodeLocation: 1016,360,1
+NodeSize: 64,40
+
+Decision Excel_Col_Label
+Title: Excel Col Label
+Definition: Choice(Excel_Components,1,0)
+NodeLocation: 544,544,1
+NodeSize: 64,40
+Aliases: FormNode New1551412481
+
+Index Select_Categ_Indexes
+Title: Selected Categorical Indexes
+Definition: Subset(CatInd_ImportSetting[Categ_Index_Params=Select_Import_Label])
+NodeLocation: 1016,880,1
+NodeSize: 64,40
+ValueState: 2,490,302,416,303,,MIDM
+
+Text Te1545264993
+Title: Data Import
+NodeLocation: 392,484,-1
+NodeSize: 384,476
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+NodeColor: 65535,65535,65535
+
+Text Te1545265066
+Title: Categorical Index Import
+NodeLocation: 944,484,-1
+NodeSize: 160,476
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+NodeColor: 65535,65535,65535
+
+Decision CatIndexes_to_Import
+Title: Categorical Indexes to Import
+Description: Check the categorical index tabs to import.
+Definition: MultiTable(Data_Selection_Optio)(Categ_Index_Tab_Opt&"",CatIndex_Select_Sub)
+NodeLocation: 872,888,1
+NodeSize: 64,40
+DefnState: 2,106,163,843,561,0,DFNM
+Aliases: FormNode New1551412482, FormNode New1551412513
+ReformDef: [Data_Selection_Optio,Imported_Dataset_Num]
+
+Decision CatIndex_Select_Sub
+Title: Categ Index Selection Subtable
+Definition: Subtable(CatInd_ImportSetting[Categ_Index_Params=Select_Import_Label])
+NodeLocation: 872,776,1
+NodeSize: 64,40
+Aliases: FormNode New1551412483
+
+Text Te1545342092
+Title: Sequential Index Import
+NodeLocation: 1272,484,-1
+NodeSize: 160,476
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+NodeColor: 65535,65535,65535
+
+Decision Select_Seq_Params
+Title: Select Sequence Params
+Definition: Table(Import_Fixed_Params)(Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
+NodeLocation: 1192,352,1
+NodeSize: 64,40
+DefnState: 2,40,338,416,303,,DFNM
+Aliases: FormNode New1551412485
+TableCellDefault: Checkbox(0)
+
+Index Seq_Index_Fix_Param
+Title: Sequence Index Fixed Params
+Definition: Subset(Select_Seq_Params)
+NodeLocation: 1192,80,1
+NodeSize: 64,40
+
+Decision Max_Import_Seq_Param
+Title: Max Imported Sequence Params
+Description: WARNING: Reducing this number may result in a loss of data.~
+~
+The maximum number of sequence index parameters that can be imported from Excel. This determines the size of the Sequence Index Import Settings table. When reducing this number, ensure that it will not result in discarding previously defined parameter configurations.
+Definition: 30
+NodeLocation: 1192,168,1
+NodeSize: 64,40
+WindState: 2,11,69,855,404
+Aliases: FormNode New1551412486, FormNode New1551412520
+
+Index Import_Seq_Params
+Title: Import Sequence Params
+Definition: INDEX dims:=1..Max_Import_Seq_Param;~
+CopyIndex("Row " & dims & " Parameter")
+NodeLocation: 1192,264,1
+NodeSize: 64,40
+
+Index Seq_Index_Params
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Row 1 Parameter','Row 2 Parameter','Row 3 Parameter','Row 4 Parameter','Row 5 Parameter','Row 6 Parameter','Row 7 Parameter','Row 8 Parameter','Row 9 Parameter','Row 10 Parameter','Row 11 Parameter','Row 12 Parameter','Row 13 Parameter','Row 14 Parameter','Row 15 Parameter','Row 16 Parameter','Row 17 Parameter','Row 18 Parameter','Row 19 Parameter','Row 20 Parameter','Row 21 Parameter','Row 22 Parameter','Row 23 Parameter','Row 24 Parameter','Row 25 Parameter','Row 26 Parameter','Row 27 Parameter','Row 28 Parameter','Row 29 Parameter','Row 30 Parameter']
+Title: Sequence Index Parameters
+Definition: Concat(Seq_Index_Fix_Param, Import_Seq_Params)
+NodeLocation: 1192,464,1
+NodeSize: 64,40
+
+Decision Seq_Index_Default
+Title: Sequence Index Default
+Definition: Table(Seq_Index_Params)(Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A5',Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier),Handle(Variable_Identifier))
+NodeLocation: 1192,552,1
+NodeSize: 64,40
+WindState: 2,102,82,720,350
+DefnState: 2,1105,510,416,303,0,DFNM
+Aliases: FormNode New1551412487
+TableCellDefault: Handle(Variable_Identifier)
+
+Decision Num_Seq_Index_Tabs
+Title: Number of Sequence Index Tabs
+Description: WARNING: Reducing this number may result in a loss of data.~
+~
+The number of sequential index tabs whose import configuration can be specified. This determines the size of the Sequence Index Import Settings table. When reducing this number, ensure that it will not result in discarding previously defined import tab configurations.
+Definition: 2
+NodeLocation: 1336,80,1
+NodeSize: 64,40
+WindState: 2,42,72,720,350
+Aliases: FormNode New1551412488, FormNode New1551412521
+
+Index Seq_Index_Tabs
+Att_PrevIndexValue: [1,2]
+Title: Sequence Index Tabs
+Definition: 1..Num_Seq_Index_Tabs
+NodeLocation: 1336,184,1
+NodeSize: 64,40
+
+Decision SeqInd_ImportSetting
+Title: Sequence Index Import Settings
+Description: This tables defines:~
+1) the parameters, imported from spreadsheets, used to define sequence indexes ~
+2) the spreadsheet names, tab names, and data start cell locations for each tab~
+3) the variable location where the imported data parameters will be stored in the model~
+~
+Parameter Instructions:~
+Selected for Import - check this to include the dataset in the next import.~
+File Path - the path to the spreadsheet file, which can be an identifier to another object/variable that holds the path.~
+Tab Name - the name of the spreadsheet tab where the data resides.~
+Data Start Cell - the upper leftmost cell where the dataset resides, which is often populated with a column header.~
+==== The following parameters must take the form of Handle(Identifier) when applicable, or Null when not applicable =====~
+Row 1 Parameter - the handle to the variable that appears as the 1st row in the spreadsheet data~
+Row 2 Parameter - the handle to the variable that appears as the 2nd row in the spreadsheet data~
+Row N Parameter - the handle to the variable that appears as the Nth row in the spreadsheet data~
+~
+Illustrative Excel Data (assume that 'Start Time' appears in cell A5 of the spreadsheet):~
+						~
+Start Time				2018		~
+End Time				2030			~
+Timestep				'Month'~
+Number of Locations	10~
+~
+As an example, the index parameter data above would be characterized as follows:~
+~
+Data Start Cell: 			'A5'~
+Row 1 Parameter: 		Handle(Start_Time)~
+Row 2 Parameter: 		Handle(End_Time)~
+Row 3 Parameter: 		Handle(Timestep)~
+Row 4 Parameter:		Handle(Num_of_Locations)~
+Row 5-N Parameter:		Null
+Definition: Table(Seq_Index_Tabs,Seq_Index_Params)(~
+Checkbox(1),Path_to_Global_Data,'Sequence_Index_Inputs','A5',Handle(Bldg_Stock_Start_Yea),Handle(Bldg_Stock_End_Year),Handle(Vehicle_Stk_Start_Yr),Handle(Vehicle_Stock_End_Yr),Handle(Vehicle_Sim_Start_Yr),Handle(Vehicle_Sim_End_Yr),Handle(Final_Hist_Incent_Yr),Handle(Final_EV_Hist_Period),Handle(Base_Period_Deltas),Handle(Output_Start_Period),Handle(Output_End_Period),Handle(Veh_Input_Start_Yr),Handle(Veh_Input_End_Yr),Handle(PV_Sim_Start_Year),Handle(PV_Sim_End_Year),Handle(Select_DER_Cost_Scen),Handle(Select_StrgCost_Scen),Handle(Base_Yr_of_Cost_Decl),Handle(BaseYr_Strg_Costs),Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data,'Struct_Seq_Index_Inputs','A5',Handle(Num_SGIP_Data_Rows),Handle(PV_Static_Start_Year),Handle(PV_Static_End_Year),Handle(Num_Incent_Dur_Steps),Handle(Num_Incent_Cap_Steps),Handle(Num_Incentive_Steps),Handle(Vehicle_dT_Choice),Handle(Num_Vehicle_Vintages),Handle(Output_dT_Choice),Handle(Baseline_Veh_Tech),Handle(Final_EV_Hist_Period),Handle(Select_Opt_Method),Handle(EV_Calibration_Start),Handle(EV_Calibration_End),Handle(PV_Data_dT_Choice),Handle(PV_Calibration_Start),Handle(PV_Calibration_End),Handle(Max_PV_Calib_Stages),Handle(Select_PV_Opt_Method),Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+NodeLocation: 1192,664,1
+NodeSize: 64,40
+WindState: 2,26,10,1042,708
+DefnState: 2,2776,96,805,645,0,DFNM
+ValueState: 2,386,352,939,334,,MIDM
+Aliases: FormNode New1551412489, FormNode New1551412515
+ReformDef: [Seq_Index_Tabs,Seq_Index_Params]
+TableCellDefault: Seq_Index_Default
+
+Index Seq_Index_Tab_Names
+Att_PrevIndexValue: ['Sequence_Index_Inputs','Struct_Seq_Index_Inputs']
+Title: Sequence Index Tab Names
+Definition: CopyIndex(Seq_Index_Tab_Opt)
+NodeLocation: 1336,784,1
+NodeSize: 64,40
+
+Index Seq_Index_Rows
+Title: Sequence Index Rows
+Definition: Seq_Index_Start_Row..Seq_Index_End_Row
+NodeLocation: 1336,272,1
+NodeSize: 64,40
+
+Index Seq_Index_Handles
+Title: Sequence Param Handles
+Description: Handle objects to the sequential index parameters, where imported params will be stored.
+Definition: INDEX indHandles:=CopyIndex(SeqInd_ImportSetting[Seq_Index_Params=Import_Seq_Params, Seq_Index_Tabs=Seq_Index_Tab_Num]);~
+~
+Subset(indHandles <> Null)
+NodeLocation: 1336,360,1
+NodeSize: 64,40
+WindState: 2,468,331,720,350
+ValueState: 2,644,174,488,530,0,MIDM
+
+Index Select_Seq_Indexes
+Title: Selected Sequence Params
+Definition: Subset(SeqInd_ImportSetting[Seq_Index_Params=Select_Import_Label])
+NodeLocation: 1336,880,1
+NodeSize: 64,40
+
+Decision SeqIndexes_to_Import
+Title: Sequence Params to Import
+Description: Check the sequence index tabs to import.
+Definition: MultiTable(Data_Selection_Optio)(Seq_Index_Tab_Opt&"",Seq_Index_Select_Sub)
+NodeLocation: 1192,888,1
+NodeSize: 64,40
+DefnState: 2,106,163,843,561,0,DFNM
+Aliases: FormNode New1551412490, FormNode New1551412522
+ReformDef: [Data_Selection_Optio,Imported_Dataset_Num]
+
+Decision Seq_Index_Select_Sub
+Title: Seq Index Selection Subtable
+Definition: Subtable(SeqInd_ImportSetting[Seq_Index_Params=Select_Import_Label])
+NodeLocation: 1192,776,1
+NodeSize: 64,40
+Aliases: FormNode New1551412491
+
+Decision Pipe_Separator
+Title: Pipe Separator
+Definition: " | "
+NodeLocation: 392,800,1
+NodeSize: 64,40
+Aliases: FormNode New1551412492
+
+Decision Import_Categor_Index
+Title: Import Categorial Indexes?
+Description: Check this box to import categorical indexes prior to importing data tabs.
+Definition: Checkbox(0)
+NodeLocation: 1520,80,1
+NodeSize: 64,40
+Aliases: FormNode New1551412493, FormNode New1551412534, FormNode New1551412539
+
+Decision Import_Sequent_Index
+Title: Import Sequential Indexes?
+Description: Check this box to import sequential indexes prior to importing data tabs.
+Definition: Checkbox(0)
+NodeLocation: 1664,80,1
+NodeSize: 64,40
+Aliases: FormNode New1551412494, FormNode New1551412535, FormNode New1551412540
+
+Button Import_from_Excel
+Title: Import from Excel
+Description: Press this button to import data from Excel. If selected, this will read the categorical and/or sequential indexes before importing the data tabs.
+NodeLocation: 1520,168,1
+NodeSize: 64,40
+Aliases: Alias New1551412536, Alias New1551412541
+OnClick: IF Import_Categor_Index THEN Import_Categ_Indexes ELSE Null;   {Import categorical indexes if desired}~
+IF Import_Sequent_Index THEN Import_Seq_Index ELSE Null;   {Import sequential indexes if desired}~
+Import_Data_Tabs   {Import selected data tabs}
+
+Text Te1550776526
+Title: Index Then Data Import
+NodeLocation: 1600,484,-1
+NodeSize: 160,476
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+NodeColor: 65535,65535,65535
+
+FormNode New1551412460
+Title: Select for Import Label
+Definition: 0
+NodeLocation: 392,128,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
+Original: Select_Import_Label
+
+FormNode New1551412461
+Title: Max Imported Dimensions
+Definition: 0
+NodeLocation: 88,212,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Max_Imported_Dim
+
+FormNode New1551412462
+Title: Import Param Default
+Definition: 0
+NodeLocation: 88,492,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Import_Param_Default
+
+FormNode New1551412463
+Title: Excel Import Configuration
+Definition: 0
+NodeLocation: 88,596,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Excel_Import_Setting
+
+FormNode New1551412464
+Title: Number of Imported Datasets
+Definition: 0
+NodeLocation: 240,124,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Number_of_Datasets
+
+FormNode New1551412465
+Title: Select for Import Label
+Definition: 0
+NodeLocation: 392,440,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
+Original: Tab_Name_Label
+
+FormNode New1551412466
+Title: Select for Import Label
+Definition: 0
+NodeLocation: 240,584,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
+Original: File_Path_Label
+
+FormNode New1551412467
+Title: Select for Import Label
+Definition: 0
+NodeLocation: 392,232,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
+Original: Start_Cell_Label
+
+FormNode New1551412468
+Title: Select for Import Label
+Definition: 0
+NodeLocation: 392,544,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
+Original: Data_Default_Label
+
+FormNode New1551412469
+Title: Select for Import Label
+Definition: 0
+NodeLocation: 240,688,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
+Original: Stored_Locat_Label
+
+FormNode New1551412470
+Title: Select for Import Label
+Definition: 0
+NodeLocation: 392,336,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
+Original: Value_Index_Label
+
+FormNode New1551412471
+Title: Select for Import Label
+Definition: 0
+NodeLocation: 544,480,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
+Original: Excel_Row_Label
+
+FormNode New1551412472
+Title: Select for Import Label
+Definition: 0
+NodeLocation: 392,648,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
+Original: Data_Type_Label
+
+FormNode New1551412473
+Title: Data to Import
+Definition: 0
+NodeLocation: 96,812,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Data_to_Import
+
+FormNode New1551412474
+Title: Import in Progress
+Definition: 0
+NodeLocation: 544,700,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Import_in_Progress
+
+FormNode New1551412475
+Title: Last Import Time
+Definition: 0
+NodeLocation: 548,900,1
+NodeSize: 68,12
+NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,0
+Original: Last_Import_Time
+
+FormNode New1551412476
+Title: Select Categorical Params
+Definition: 0
+NodeLocation: 872,404,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Select_Categ_Params
+
+FormNode New1551412477
+Title: Max Imported Dimensions
+Definition: 0
+NodeLocation: 864,204,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Max_Imported_Indexes
+
+FormNode New1551412478
+Title: Categorical Index Default
+Definition: 0
+NodeLocation: 872,604,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Categ_Index_Default
+
+FormNode New1551412479
+Title: Number of Imported Datasets
+Definition: 0
+NodeLocation: 1016,124,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Num_Categ_Index_Tabs
+
+FormNode New1551412480
+Title: Categorical Index Import Settings
+Definition: 0
+NodeLocation: 880,716,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: CatInd_ImportSetting
+
+FormNode New1551412481
+Title: Select for Import Label
+Definition: 0
+NodeLocation: 544,592,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,0
+Original: Excel_Col_Label
+
+FormNode New1551412482
+Title: Data to Import
+Definition: 0
+NodeLocation: 880,932,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: CatIndexes_to_Import
+
+FormNode New1551412483
+Title: Categ Index Selection Subtable
+Definition: 0
+NodeLocation: 880,828,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: CatIndex_Select_Sub
+
+FormNode New1551412484
+Title: Import Selection Subtable
+Definition: 0
+NodeLocation: 88,708,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Import_Selection_Sub
+
+FormNode New1551412485
+Title: Select Categorical Params
+Definition: 0
+NodeLocation: 1192,404,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Select_Seq_Params
+
+FormNode New1551412486
+Title: Max Imported Dimensions
+Definition: 0
+NodeLocation: 1192,212,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Max_Import_Seq_Param
+
+FormNode New1551412487
+Title: Categorical Index Default
+Definition: 0
+NodeLocation: 1192,604,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Seq_Index_Default
+
+FormNode New1551412488
+Title: Number of Imported Datasets
+Definition: 0
+NodeLocation: 1336,124,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Num_Seq_Index_Tabs
+
+FormNode New1551412489
+Title: Categorical Index Import Settings
+Definition: 0
+NodeLocation: 1200,716,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: SeqInd_ImportSetting
+
+FormNode New1551412490
+Title: Data to Import
+Definition: 0
+NodeLocation: 1200,932,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: SeqIndexes_to_Import
+
+FormNode New1551412491
+Title: Categ Index Selection Subtable
+Definition: 0
+NodeLocation: 1200,828,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Seq_Index_Select_Sub
+
+FormNode New1551412492
+Title: Pipe Separator
+Definition: 0
+NodeLocation: 400,852,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Pipe_Separator
+
+FormNode New1551412493
+Title: Import Categorial Indexes?
+Definition: 0
+NodeLocation: 1572,108,1
+NodeSize: 28,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Import_Categor_Index
+
+FormNode New1551412494
+Title: Import Categorial Indexes?
+Definition: 0
+NodeLocation: 1716,108,1
+NodeSize: 28,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Import_Sequent_Index
+
+Variable Total_Comm_Load
+NodeLocation: 1896,128,1
+NodeSize: 80,40
+NodeInfo: 1,,,,,,,0,,,,,,0
+
+Close Import_Auxiliary_Var
+
+Module Stored_Test_Data
+Title: Stored Test Data
+Author: JamesMilford
+Date: Fri, Dec 21, 2018 10:51 AM
+NodeLocation: 368,184,1
+NodeSize: 64,40
+DiagState: 2,28,91,1075,485,17
+
+Index Header_1
+Att_PrevIndexValue: ['A','B','C','D','E','F','G']
+Title: Header 1
+Definition: ['A','B','C','D','E','F','G']
+IndexVals: ['A','B','C','D','E','F','G']
+NodeLocation: 112,64,1
+NodeSize: 64,40
+
+Constant Sheet1_Stored
+Title: Sheet1 Stored
+Definition: Table(Header_1)(1,2,3,4,5,6,7)
+NodeLocation: 256,64,1
+NodeSize: 64,40
+ValueState: 2,17,171,416,303,,MIDM
+
+Index Header_2
+Att_PrevIndexValue: [1,2]
+Title: Header 2
+Definition: [1,2]
+IndexVals: [1,2,Null,Null,Null,Null,Null]
+NodeLocation: 112,152,1
+NodeSize: 64,40
+
+Index ValueInd
+Att_PrevIndexValue: ['ValueCol1','ValueCol2']
+Title: ValueInd
+Definition: ['ValueCol1','ValueCol2']
+IndexVals: ['ValueCol1','ValueCol2',Null,Null,Null,Null,Null]
+NodeLocation: 248,152,1
+NodeSize: 64,40
+
+Constant Sheet2_Stored
+Title: Sheet2 Stored
+Definition: Table(Header_1,Header_2)(~
+1,Null,~
+2,Null,~
+3,Null,~
+4,Null,~
+5,Null,~
+Null,Null,~
+Null,Null)
+NodeLocation: 392,64,1
+NodeSize: 64,40
+ValueState: 2,472,474,644,303,,MIDM
+
+Constant Sheet3_Stored
+Title: Sheet3 Stored
+Definition: Table(Header_1,Header_2,ValueInd)(~
+1,15,~
+8,22,~
+2,16,~
+9,23,~
+3,17,~
+10,24,~
+4,18,~
+11,25,~
+5,19,~
+12,26,~
+6,20,~
+13,27,~
+7,21,~
+14,28)
+NodeLocation: 392,152,1
+NodeSize: 64,40
+ValueState: 2,681,234,1057,417,,MIDM
+Att_ResultSliceState: [ValueInd,1,Header_2,1,Header_1,1]
+
+Constant Sheet4_Stored
+Title: Sheet4 Stored
+Definition: 10
+NodeLocation: 536,64,1
+NodeSize: 64,40
+
+Constant Sheet5_Stored
+Title: Sheet5 Stored
+Definition: 10
+NodeLocation: 536,152,1
+NodeSize: 64,40
+
+Constant Sheet6_Stored
+Title: Sheet6 Stored
+Definition: 10
+NodeLocation: 680,64,1
+NodeSize: 64,40
+
+Constant Sheet7_Stored
+Title: Sheet7 Stored
+Definition: Table(Header_1,Header_2)(~
+1,16,~
+2,9,~
+3,10,~
+4,11,~
+5,12,~
+6,13,~
+14,14)
+NodeLocation: 680,152,1
+NodeSize: 64,40
+
+Constant Sheet8_Stored
+Title: Sheet8 Stored
+Definition: Table(Header_1,Header_2,ValueInd)(~
+1,15,~
+8,22,~
+2,16,~
+9,23,~
+3,17,~
+10,24,~
+4,18,~
+11,25,~
+'a',19,~
+12,1-Jan-2019,~
+'b',20,~
+13,27,~
+'c',21,~
+14,28)
+NodeLocation: 824,64,1
+NodeSize: 64,40
+ValueState: 2,67,67,784,588,,MIDM
+
+Constant Sheet9_Stored
+Title: Sheet9 Stored
+Definition: Table(Header_1,Header_2,ValueInd)(~
+'a','o',~
+'h','v',~
+'b','p',~
+'i','w',~
+'c','q',~
+'j','x',~
+1-Jan-2019,'r',~
+'k','y',~
+'e','s',~
+'l','z',~
+'f','t',~
+'m',27,~
+'g','u',~
+'n',28)
+NodeLocation: 824,152,1
+NodeSize: 64,40
+
+Constant Sheet10_Stored
+Title: Sheet10 Stored
+Definition: Table(Header_1,Header_2,ValueInd)(~
+1-Jan-2019,1-Mar-2020,~
+1-Aug-2019,1-Oct-2020,~
+1-Feb-2019,1-Apr-2020,~
+1-Sep-2019,1-Nov-2020,~
+1-Mar-2019,1-May-2020,~
+1-Oct-2019,'12/1/2020',~
+1-Apr-2019,1-Jun-2020,~
+1-Nov-2019,1-Jan-2021,~
+100,1-Jul-2020,~
+1-Dec-2019,1-Feb-2021,~
+1-Jun-2019,1-Aug-2020,~
+1-Jan-2020,1-Mar-2021,~
+1-Jul-2019,1-Sep-2020,~
+1-Feb-2020,1-Apr-2021)
+NodeLocation: 968,64,1
+NodeSize: 72,40
+ValueState: 2,446,106,785,301,,MIDM
+Att_ResultSliceState: [ValueInd,2,Header_2,1,Header_1,1]
+
+Constant Bldg_Stock_Start_Yr
+Title: Bldg Stock Start Yr
+Definition: 1994
+NodeLocation: 112,296,1
+NodeSize: 64,40
+
+Constant Bldg_Stock_End_Yr
+Title: Bldg Stock End Yr
+Definition: 2030
+NodeLocation: 264,296,1
+NodeSize: 64,40
+
+Constant Intercon_Start_Yr
+Title: Intercon Start Yr
+Definition: 2009
+NodeLocation: 112,392,1
+NodeSize: 64,40
+
+Constant Intercon_End_Yr1
+Title: Intercon End Yr
+Definition: 2018
+NodeLocation: 256,392,1
+NodeSize: 64,40
+
+Index Bldg_Stock_Years
+Title: Bldg Stock Years
+Definition: Sequence(Bldg_Stock_Start_Yr, Bldg_Stock_End_Yr, Months_per_Timestep[Timestep_Opt=Bldg_Stock_Timestep] / 12)
+NodeLocation: 544,296,1
+NodeSize: 64,40
+ValueState: 2,1130,14,416,871,,MIDM
+NumberFormat: 2,F,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+
+Index Intercon_Years
+Title: Intercon Years
+Definition: Intercon_Start_Yr..Intercon_End_Yr1
+NodeLocation: 400,392,1
+NodeSize: 64,40
+
+Constant Bldg_Stock_Timestep
+Title: Bldg Stock Timestep
+Definition: 'Month'
+NodeLocation: 400,296,1
+NodeSize: 64,40
+
+Decision Months_per_Timestep
+Title: Months per Timestep
+Units: months
+Definition: Table(Timestep_Opt)(1,4,6,12)
+NodeLocation: 544,392,1
+NodeSize: 64,40
+
+Index Timestep_Opt
+Att_PrevIndexValue: ['Month','Quarter','Biannual','Year']
+Title: Timestep Options
+Definition: ['Month','Quarter','Biannual','Year']
+NodeLocation: 688,392,1
+NodeSize: 64,40
+
+Close Stored_Test_Data
+
+Module Data_Import
+Title: Data Import
+Author: JamesMilford
+Date: Fri, Dec 21, 2018 10:51 AM
+NodeLocation: 440,80,1
+NodeSize: 64,40
+DiagState: 2,274,0,1003,500,17
+
+Variable Raw_Imported_Data
+Title: Raw Imported Data
+Description: The raw imported data for the active dataset.
+Definition: SpreadsheetRange(Active_Wkbk_Object, sheet: Active_Tab_Name)
+NodeLocation: 120,176,1
+NodeSize: 64,40
+ValueState: 2,21,120,1652,571,0,MIDM
+Aliases: FormNode New1551412525, FormNode New1551412454
+
+Variable End_Row
+Title: End Row
+Definition: ArgMax(Sum(Raw_Imported_Data<>NULL, Raw_Imported_Data.Column)>0, Raw_Imported_Data.Row)
+NodeLocation: 120,272,1
+NodeSize: 64,40
+ValueState: 2,612,406,416,303,,MIDM
+
+Variable Atomic_Import
+Title: Atomic Import
+Definition: INDEX importInd:=CopyIndex(IndexesOf(Raw_Imported_Data) & '');~
+INDEX colSubset:=CopyIndex(Non_Null_Cols);~
+INDEX rowSubset:=IF Includes_Rows ~
+   THEN Subset(Raw_Imported_Data.Row>=Header_Start_Row)~
+   ELSE [Null];~
+VAR colFlag:=Size(colSubset) > 1;~
+VAR rowFlag:=Size(rowSubset) > 1;~
+~
+IF NOT Atomic_Flag~
+THEN Null~
+ELSE IF colFlag AND rowFlag~
+THEN MsgBox("The data on the tab '" & Active_Tab_Name & "' of workbook '" & Active_File_Path & "' has been specified to be dimensionless (i.e., a single cell). However, multiple rows and columns are populated below or to the right of the specified data start cell. Please check the data or the import settings for correctness.", 1, "Error Importing Dimensionless Data")~
+ELSE IF colFlag AND Includes_Rows~
+THEN Raw_Imported_Data[.Column=colSubset, @colSubset=2, .Row=Header_Start_Row]~
+ELSE IF colFlag AND (NOT Includes_Rows)~
+THEN Raw_Imported_Data[.Column=colSubset, @colSubset=2]~
+ELSE IF rowFlag AND Includes_Cols~
+THEN Raw_Imported_Data[.Row=rowSubset, @rowSubset=2, .Column=Start_Col]~
+ELSE IF rowFlag AND (NOT Includes_Cols)~
+THEN Raw_Imported_Data[.Row=rowSubset, @rowSubset=2]~
+ELSE IF Includes_Rows AND Includes_Cols~
+THEN Raw_Imported_Data[.Row=Header_Start_Row, .Column=Start_Col]~
+ELSE IF Includes_Rows ~
+THEN Raw_Imported_Data[.Row=Header_Start_Row]~
+ELSE IF Includes_Cols~
+THEN Raw_Imported_Data[.Column=Start_Col]~
+ELSE Raw_Imported_Data
+NodeLocation: 424,176,1
+NodeSize: 64,40
+ValueState: 2,650,391,416,315,,MIDM
+
+Variable Flat_Import_Data
+Title: Flat Import Data
+Definition: VAR colOffset:=PositionInIndex(Raw_Imported_Data.Column, Start_Col, Raw_Imported_Data.Column)-1;~
+Raw_Imported_Data[.Row=Populated_Rows, @.Column=@Expected_Cols+colOffset]
+NodeLocation: 272,80,1
+NodeSize: 64,40
+ValueState: 2,94,169,1215,436,0,MIDM
+ReformVal: [Expected_Cols,Populated_Rows]
+
+Variable Format_Import_Data
+Title: Formatted Import Data
+Description: The import dataset after proper row and column formatting have been applied, but prior to dimensionalizing the data with fact column indices and a value index.
+Definition: IF Atomic_Flag~
+THEN Atomic_Import~
+ELSE Flat_Import_Data
+NodeLocation: 480,80,1
+NodeSize: 64,40
+ValueState: 2,46,0,1602,713,0,MIDM
+Aliases: FormNode New1551412526, FormNode New1551412455
+ReformVal: [Expected_Cols,Populated_Rows]
+
+Button Import_Data_Tabs
+Title: Import Data Tabs
+Description: Initiate data import from Excel for the selected datasets.
+NodeLocation: 688,184,1
+NodeSize: 64,40
+WindState: 2,118,538,720,350
+Aliases: Alias New1551412531
+OnClick: Read_and_Store_Data()
+
+Function Read_and_Store_Data()
+Title: Read and Store Data
+Definition: Import_Reset:=NOT Import_Reset;~
+Import_in_Progress:=1;~
+VAR cnt:=0;~
+VAR maxCnt:=Size(Selected_Import_Data);~
+~
+FOR J:=Selected_Import_Data DO (~
+   cnt:=cnt+1;~
+   Dataset_to_View:=Tab_Names_by_Number[Imported_Dataset_Num=J];~
+   ShowProgressBar("Excel Import Progress", "Importing tab '" & Active_Tab_Name & "'. Dataset " & cnt & " of " & maxCnt & ".", (cnt-0.1)/maxCnt);~
+   Check_Index_Errors;~
+   Check_DataType_Error;~
+   LocalAlias storeVar:=Active_StoreLocation;~
+   storeVar:=Indexed_Import_Data;~
+);~
+~
+Last_Import_Time:=Today(withTime: True);~
+Import_In_Progress:=0;~
+Import_Reset:=NOT Import_Reset;~
+MsgBox("Import of data tabs complete.", 0, "Import Complete");
+NodeLocation: 688,80,1
+NodeSize: 64,40
+WindState: 2,169,46,720,597
+
+Module Configuration_Parame
+Title: Configuration Parameters
+Author: JamesMilford
+Date: Sun, Dec 16, 2018 8:07 AM
+NodeLocation: 120,480,1
+NodeSize: 64,40
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+DiagState: 2,294,37,1136,749,17
+
+Variable Active_Tab_Name
+Title: Active Tab Name
+Description: The tab name for the dataset that is currently being imported.
+Definition: Excel_Import_Setting[Excel_Import_Params=Tab_Name_Label, Imported_Dataset_Num=Active_Dataset_Num]
+NodeLocation: 296,224,1
+NodeSize: 64,40
+ValueState: 2,968,294,416,303,,MIDM
+
+Variable Active_File_Path
+Title: Active File Path
+Description: The file path for the dataset that is currently being imported.
+Definition: Import_Reset;~
+Excel_Import_Setting[Excel_Import_Params=File_Path_Label, Imported_Dataset_Num=Active_Dataset_Num]
+NodeLocation: 296,128,1
+NodeSize: 64,40
+WindState: 2,102,82,1034,475
+ValueState: 2,296,298,794,303,,MIDM
+
+Variable Active_Wkbk_Object
+Title: Active Workbook Object
+Description: The workbook object for the dataset that is currently being imported.
+Definition: SpreadsheetOpen(Active_File_Path)
+NodeLocation: 448,128,1
+NodeSize: 64,40
+ValueState: 2,280,282,416,303,,MIDM
+
+Variable Active_Dataset_Num
+Title: Active Dataset Number
+Description: The dataset number that is currently being imported.
+Definition: SubIndex(Tab_Names_by_Number, Dataset_to_View, Imported_Dataset_Num)
+NodeLocation: 112,416,1
+NodeSize: 64,40
+
+Variable Active_Start_Cell
+Title: Active Start Cell
+Description: The start cell for the dataset that is currently being imported.
+Definition: Excel_Import_Setting[Excel_Import_Params=Start_Cell_Label, Imported_Dataset_Num=Active_Dataset_Num]
+NodeLocation: 296,320,1
+NodeSize: 64,40
+
+Variable Active_StoreLocation
+Title: Active Store Location
+Description: The handle to the object where the dataset that is currently being imported will be stored.
+Definition: Excel_Import_Setting[Excel_Import_Params=Stored_Locat_Label, Imported_Dataset_Num=Active_Dataset_Num]
+NodeLocation: 296,608,1
+NodeSize: 64,40
+WindState: 2,18,191,720,350
+
+Variable Active_Value_Index
+Title: Active Value Index
+Description: The handle to the value index for the dataset that is currently being imported.
+Definition: Excel_Import_Setting[Excel_Import_Params=Value_Index_Label, Imported_Dataset_Num=Active_Dataset_Num]
+NodeLocation: 296,704,1
+NodeSize: 64,40
+WindState: 2,18,191,720,350
+
+Variable Active_Data_Default
+Title: Active Data Default
+Description: The handle to the object where the dataset that is currently being imported will be stored.
+Definition: Excel_Import_Setting[Excel_Import_Params=Data_Default_Label, Imported_Dataset_Num=Active_Dataset_Num]
+NodeLocation: 296,416,1
+NodeSize: 64,40
+WindState: 2,18,191,720,350
+
+Variable Atomic_Flag
+Title: Atomic Flag
+Description: If no fact columns or value index are specified, then the data is assumed to be atomic.
+Definition: (Active_Value_Index = Null) AND (Size(Active_FactCol_Ind)=0)
+NodeLocation: 448,704,1
+NodeSize: 64,40
+ValueState: 2,184,186,416,303,,MIDM
+
+Variable Active_Data_Type
+Title: Active Data Type
+Description: The data type for the dataset that is currently being imported.
+Definition: Excel_Import_Setting[Excel_Import_Params=Data_Type_Label, Imported_Dataset_Num=Active_Dataset_Num]
+NodeLocation: 296,512,1
+NodeSize: 64,40
+WindState: 2,18,191,720,350
+
+Variable Import_Reset
+Title: Import Reset
+Definition: 0
+NodeLocation: 144,128,1
+NodeSize: 64,40
+
+Decision Path_to_Global_Data
+Title: Path to Global Data
+Description: The path to the spreadsheet whose data will be imported. ~
+~
+e.g. 'C:\Users\RickyBobby\Documents\Filename.xlsx'
+Definition: 'NYPA DER Data Copy.xlsx'
+NodeLocation: 144,224,1
+NodeSize: 64,40
+Aliases: FormNode New1551412495, FormNode New1551412537, FormNode New1551412451
+
+Decision Dataset_to_View
+Title: Dataset to View
+Description: Select the tab name of the dataset you wish to view in greater detail.
+Definition: Choice(Tab_Names,41,0)
+NodeLocation: 112,520,1
+NodeSize: 64,40
+WindState: 2,7,277,720,350
+Aliases: FormNode New1551412496, FormNode New1551412524, FormNode New1551412453
+
+Variable Start_Col
+Title: Start Col
+Definition: Excel_Cell_Component(Active_Start_Cell)[Excel_Components=Excel_Col_Label]
+NodeLocation: 448,360,1
+NodeSize: 64,40
+
+Variable Data_Start_Row
+Title: Data Start Row
+Definition: Header_Start_Row + 1
+NodeLocation: 600,264,1
+NodeSize: 64,40
+
+FormNode New1551412495
+Title: Path to Test File
+Definition: 0
+NodeLocation: 400,24,1
+NodeSize: 376,16
+NodeInfo: 1,0,0,1,0,0,0,558,0,,0,,,0
+Original: Path_to_Global_Data
+
+FormNode New1551412496
+Title: Dataset to View
+Definition: 0
+NodeLocation: 112,568,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,
+Original: Dataset_to_View
+
+Variable Header_Start_Row
+Title: Header Start Row
+Definition: Excel_Cell_Component(Active_Start_Cell)[Excel_Components=Excel_Row_Label]
+NodeLocation: 448,264,1
+NodeSize: 64,40
+
+Close Configuration_Parame
+
+Module Import_Error_Checks
+Title: Import Error Checks
+Author: JamesMilford
+Date: Sun, Dec 16, 2018 8:07 AM
+NodeLocation: 272,480,1
+NodeSize: 64,40
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+DiagState: 2,572,45,794,752,17
+
+Variable Missing_Subscripts
+Title: Missing Subscripts
+Definition: VAR maxCnt:=0;~
+VAR missingRef:=FOR J:=@Active_FactCol_Ind DO (~
+   MetaVar indHandle:=Slice(Active_FactCol_Ind, J);~
+   LocalAlias ind:=indHandle;~
+   INDEX missingLabel:=Subset(NOT PositionInIndex(Flat_Import_Data[Expected_Cols=indHandle], ind, Populated_Rows));~
+   maxCnt:=MAX([maxCnt, Size(missingLabel)]);~
+   \missingLabel~
+);~
+~
+INDEX Number_Missing:=IF maxCnt = 0~
+   THEN []~
+   ELSE 1..maxCnt;~
+~
+IF maxCnt = 0~
+THEN Null~
+ELSE FOR K:=@Index_Titles DO (~
+   INDEX deref:=CopyIndex(#missingRef[@Active_FactCol_Ind=K]);~
+   Slice(deref, Number_Missing)~
+   )~
+~
+~
+~
+
+NodeLocation: 272,208,1
+NodeSize: 64,40
+ValueState: 2,1418,334,327,497,0,MIDM
+ReformVal: [Sys_LocalIndex('Index_Names'),Sys_LocalIndex('Number_Missing')]
+NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
+
+Variable Incorrect_Subscripts
+Title: Incorrect Subscripts
+Definition: VAR maxCnt:=0;~
+VAR incorrectRef:=FOR J:=@Active_FactCol_Ind DO (~
+   MetaVar indHandle:=Slice(Active_FactCol_Ind, J);~
+   LocalAlias ind:=indHandle;~
+   INDEX all_labels:=CopyIndex(Flat_Import_Data[Expected_Cols=indHandle]);~
+   INDEX uniqueLabels:=Unique(all_labels);~
+   INDEX incorrectLabel:=Subset(NOT Sum(uniqueLabels = ind, ind));~
+   maxCnt:=MAX([maxCnt, Size(incorrectLabel)]);~
+   \incorrectLabel~
+);~
+~
+INDEX Number_Incorrect:=IF maxCnt = 0~
+   THEN []~
+   ELSE 1..maxCnt;~
+~
+IF maxCnt = 0~
+THEN Null~
+ELSE FOR K:=@Index_Titles DO (~
+   INDEX deref:=CopyIndex(#incorrectRef[@Active_FactCol_Ind=K]);~
+   Slice(deref, Number_Incorrect)~
+   )~
+~
+~
+~
+
+NodeLocation: 272,304,1
+NodeSize: 64,40
+ValueState: 2,58,67,1233,440,0,MIDM
+NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
+
+Variable Repeat_Subscripts
+Title: Repeat Subscripts
+Definition: INDEX subscripts:=CopyIndex(JoinText(Flat_Import_Data[Expected_Cols=Active_FactCol_Ind], Active_FactCol_Ind, Pipe_Separator));~
+INDEX uniqSubs:=Unique(subscripts);~
+INDEX repeatSubs:=Subset(Sum(subscripts = uniqSubs, subscripts) > 1);~
+~
+IF size(repeatSubs) = 0~
+THEN Null~
+ELSE CopyIndex(repeatSubs)
+NodeLocation: 272,400,1
+NodeSize: 64,40
+WindState: 2,29,62,720,350
+ValueState: 2,45,156,675,474,0,MIDM
+
+Decision Apply_Index_Checks
+Title: Apply Index Checks?
+Description: Select the index error checks that will be applied.~
+~
+Missing Subscripts - indicates whether any combination of fact column coordinates/subscripts is missing. Combinations are often omitted when they are not applicable, so this does not necessarily indicate an error.~
+~
+Incorrect Subscripts - indicates when coordinates/subscripts in a given fact column do not match any of the elements of the index that is assigned to that fact column.~
+~
+Repeated Subscripts - indicates when a specific combination of coordinates/subscripts are repeated across two or more rows of the import data. In these instances, the model is not able to determine which row should be assigned to the coordinates, so it sums all rows having those coordinates.
+Definition: Table(All_Index_Checks)(Checkbox(0),Checkbox(0),Checkbox(0))
+NodeLocation: 496,64,1
+NodeSize: 64,40
+WindState: 2,36,91,978,453
+Aliases: FormNode New1551412498, FormNode New1551412532, FormNode New1551412458
+TableCellDefault: Checkbox(1)
+
+Objective Index_Error_Checks
+Title: Index Error Checks
+Definition: Table(All_Index_Checks)(Handle(Missing_Subscripts), Handle(Incorrect_Subscripts), Handle(Repeat_Subscripts))
+NodeLocation: 424,200,1
+NodeSize: 64,40
+NodeColor: 19661,48336,65535
+
+Variable Check_Index_Errors
+Title: Check for Index Errors
+Description: This performs checks to identify if there are any index errors with the imported data. Only the index error types selected by the user will be evaluated. If an error is found, a result window will open showing the coordinates/subscripts in the Excel data that don't align with the associated indices. If multiple error types are present, multiple result windows will open.
+Definition: Import_Reset;~
+VAR result:='No Errors';~
+~
+IF Atomic_Flag~
+THEN Null~
+ELSE (FOR J:=Index_Checks DO (~
+   MetaVar errHandle:=Index_Error_Checks[All_Index_Checks=J];~
+   VAR ident:=Identifier of errHandle;~
+   LocalAlias errResult:=errHandle;~
+   IFONLY (Size(errResult) = 1) AND (errResult = Null)~
+   THEN Null~
+   ELSE (IF Import_in_Progress THEN MsgBox(Msgs_for_Index_Error[All_Index_Checks=J], 1, "Index Error Found") ELSE Null;~
+              IF Open_Error_Results THEN Show_Result(ident) ELSE Null;~
+		result:='Errors Found';~
+             )~
+   );~
+   result~
+)
+NodeLocation: 584,200,1
+NodeSize: 64,40
+WindState: 2,26,148,1156,489
+ValueState: 2,456,266,719,428,,MIDM
+Aliases: FormNode New1551412527, FormNode New1551412456
+
+Decision Msgs_for_Index_Error
+Title: Messages for Index Errors
+Definition: Table(All_Index_Checks)("The data on the tab '" & Active_Tab_Name & "' of workbook '" & Active_File_Path & "' is missing subscripts for the associated indexes. See 'Missing Subscripts' (Missing_Subscripts).","The data on the tab '" & Active_Tab_Name & "' of workbook '" & Active_File_Path & "' has incorrect subscripts for the associated indexes. See 'Incorrect Subscripts' (Incorrect_Subscripts).","The data on the tab '" & Active_Tab_Name & "' of workbook '" & Active_File_Path & "' has repeated subscripts for the associated indexes. See 'Repeated Subscripts' (Repeated_Subscripts).")
+NodeLocation: 424,304,1
+NodeSize: 64,40
+WindState: 2,102,82,720,350
+DefnState: 2,200,202,1306,719,,DFNM
+ValueState: 2,162,155,1431,766,,MIDM
+Aliases: FormNode New1551412497
+
+Variable Non_Number_Rows
+Title: Non-Number Rows
+Definition: VAR data:=Format_Import_Data[Expected_Cols=Import_Value_Cols];~
+Subset(Sum(((NOT IsNumber(data)) OR IsDateTime(data)) AND (data<>Null), Import_Value_Cols))
+NodeLocation: 112,416,1
+NodeSize: 64,40
+WindState: 2,102,82,1479,350
+ValueState: 2,252,460,416,303,0,MIDM
+
+Decision Apply_DataType_Check
+Title: Apply Data Type Checks?
+Description: Check this option to test the data types of the imported data. For example, if a dataset has been specified to be of the "Number" data type, then error messages will be displayed if the imported data is not a number (e.g., text or dates).
+Definition: Checkbox(0)
+NodeLocation: 352,64,1
+NodeSize: 64,40
+Aliases: FormNode New1551412499, FormNode New1551412533, FormNode New1551412459
+
+Variable Non_Text_Rows
+Title: Non-Text Rows
+Definition: VAR data:=Format_Import_Data[Expected_Cols=Import_Value_Cols];~
+Subset(Sum(NOT IsText(data) AND (data<>Null), Import_Value_Cols))
+NodeLocation: 112,512,1
+NodeSize: 64,40
+WindState: 2,932,6,852,490
+ValueState: 2,846,2,416,303,0,MIDM
+
+Variable Non_Date_Rows
+Title: Non-Date Rows
+Definition: VAR data:=Format_Import_Data[Expected_Cols=Import_Value_Cols];~
+Subset(Sum(NOT IsDateTime(data) AND (data<>Null), Import_Value_Cols))
+NodeLocation: 112,608,1
+NodeSize: 64,40
+WindState: 2,696,221,1118,568
+ValueState: 2,226,204,416,303,,MIDM
+
+Objective DataType_Error_Check
+Title: Data Type Error Checks
+Definition: Table(Import_Data_Types)(Handle(Any_Type),Handle(Non_Number_Rows),Handle(Non_Text_Rows),Handle(Non_Date_Rows))
+NodeLocation: 272,512,1
+NodeSize: 64,40
+WindState: 2,102,82,720,350
+NodeColor: 19661,48336,65535
+
+Variable Any_Type
+Title: Any Type
+Definition: []
+NodeLocation: 112,696,1
+NodeSize: 64,40
+
+Variable Check_DataType_Error
+Title: Check for Data Type Errors
+Description: This performs checks to identify if there are any data type errors with the imported data. This will only look for errors if the user has allowed data type checks to be performed. If an error is found, a result window will open showing the spreadsheet rows where the error occurs.
+Definition: Import_Reset;~
+VAR result:='No Errors';~
+~
+IF NOT Apply_DataType_Check~
+THEN Null~
+ELSE (MetaVar errHandle:=DataType_Error_Check[Import_Data_Types=Active_Data_Type];~
+   VAR ident:=Identifier of errHandle;~
+   LocalAlias errResult:=errHandle;~
+   IF Size(errResult) = 0~
+   THEN Null~
+   ELSE (IF Import_In_Progress THEN MsgBox(Messages_for_Type_Er[Import_Data_Types=Active_Data_Type], 1, "Data Type Error Found") ELSE Null;~
+              IF Open_Error_Results THEN Show_Result(ident) ELSE Null;~
+              result:='Errors Found';~
+             )~
+);~
+~
+result
+NodeLocation: 536,512,1
+NodeSize: 64,40
+WindState: 2,17,273,1522,522
+ValueState: 2,456,266,719,428,,MIDM
+Aliases: FormNode New1551412528, FormNode New1551412457
+
+Decision Messages_for_Type_Er
+Title: Messages for Type Errors
+Definition: Table(Import_Data_Types)(Null,"The tab '" & Active_Tab_Name & "' of workbook '" & Active_File_Path & "' includes data that are not numbers (the required data type). See 'Non-Number Rows' (Non_Number_Rows).","The tab '" & Active_Tab_Name & "' of workbook '" & Active_File_Path & "' includes data that are not text (the required data type). See 'Non-Text Rows' (Non_Text_Rows).","The tab '" & Active_Tab_Name & "' of workbook '" & Active_File_Path & "' includes data that are not dates (the required data type). See 'Non-Date Rows' (Non_Date_Rows).")
+NodeLocation: 384,640,1
+NodeSize: 64,40
+WindState: 2,102,82,720,350
+DefnState: 2,178,334,1306,719,0,DFNM
+ValueState: 2,584,586,1043,303,,MIDM
+Aliases: FormNode New1551412500
+{!50000|Att_ColumnWidths: [882]}
+
+Variable Indexed_Import_Data
+Title: Indexed Import Data
+Definition: LocalAlias valueInd:=IF Active_Value_Index = Null~
+   THEN Return_Not_Specified()~
+   ELSE Active_Value_Index;~
+~
+IF Atomic_Flag~
+THEN Format_Import_Data~
+ELSE MdTable(Format_Import_Data, Populated_Rows, Expected_Cols, Active_FactCol_Ind, 'Sum', Active_Data_Default, valueInd)
+NodeLocation: 592,328,1
+NodeSize: 64,40
+ValueState: 2,505,235,825,589,,MIDM
+Att_ResultSliceState: [ValueInd,2,Header_2,1,Header_1,1]
+
+FormNode New1551412497
+Title: Messages for Index Errors
+Definition: 0
+NodeLocation: 424,356,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,70,0,,0,,,0
+Original: Msgs_for_Index_Error
+
+FormNode New1551412498
+Title: Apply Index Checks?
+Definition: 0
+NodeLocation: 496,116,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Apply_Index_Checks
+
+FormNode New1551412499
+Title: Apply Data Type Checks?
+Definition: 0
+NodeLocation: 404,92,1
+NodeSize: 28,12
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: Apply_DataType_Check
+
+FormNode New1551412500
+Title: Messages for Index Errors
+Definition: 0
+NodeLocation: 384,692,1
+NodeSize: 56,12
+NodeInfo: 1,0,0,0,0,0,0,70,0,,0,,,0
+Original: Messages_for_Type_Er
+
+Close Import_Error_Checks
+
+Variable Non_Null_Cols
+Title: Non-Null Cols
+Definition: IF NOT Includes_Cols~
+THEN Null~
+ELSE   (VAR colPos:=PositionInIndex(Raw_Imported_Data.Column, Start_Col, Raw_Imported_Data.Column);~
+	      INDEX colSub:=Subset(@Raw_Imported_Data.Column >= colPos);~
+            VAR colHeaders:=IF Includes_Rows THEN Raw_Imported_Data[.Row=Header_Start_Row, .Column=colSub] ELSE Raw_Imported_Data[.Column=colSub];~
+	     VAR nullFlag:=Cumulate(Cumulate(colHeaders = Null, colSub), colSub);   {Flag the first occurrence of a null header column with a 1}~
+	     Subset(nullFlag = 0)~
+	     )~
+
+NodeLocation: 272,176,1
+NodeSize: 64,40
+ValueState: 2,495,284,676,516,,MIDM
+
+Variable Includes_Rows
+Title: Includes Rows
+Definition: INDEX importInd:=CopyIndex(IndexesOf(Raw_Imported_Data) & '');~
+~
+PositionInIndex(importInd, '.Row', importInd) > 0
+NodeLocation: 272,272,1
+NodeSize: 64,40
+
+Variable Includes_Cols
+Title: Includes Cols
+Definition: INDEX importInd:=CopyIndex(IndexesOf(Raw_Imported_Data) & '');~
+~
+PositionInIndex(importInd, '.Column', importInd) > 0
+NodeLocation: 272,368,1
+NodeSize: 64,40
+
+Close Data_Import
+
+Module Categ_Index_Import
+Title: Categorical Index Import
+Author: JamesMilford
+Date: Fri, Dec 21, 2018 10:51 AM
+NodeLocation: 136,80,1
+NodeSize: 64,40
+DiagState: 2,273,5,1157,749,17
+
+Variable Categ_Index_Tab_Name
+Title: Categ Index Tab Name
+Description: The tab name for the dataset that is currently being imported.
+Definition: CatInd_ImportSetting[Categ_Index_Params=Tab_Name_Label, Categ_Index_Tabs=Categ_Index_Tab_Num]
+NodeLocation: 552,168,1
+NodeSize: 64,40
+
+Variable Cat_Index_File_Path
+Title: Categ Index File Path
+Description: The file path for the dataset that is currently being imported.
+Definition: Import_Reset; ~
+CatInd_ImportSetting[Categ_Index_Params=File_Path_Label, Categ_Index_Tabs=Categ_Index_Tab_Num]
+NodeLocation: 400,72,1
+NodeSize: 64,40
+ValueState: 2,296,298,794,303,,MIDM
+
+Variable Cat_Index_Workbook
+Title: Categ Index Workbook Object
+Description: The workbook object for the dataset that is currently being imported.
+Definition: SpreadsheetOpen(Cat_Index_File_Path)
+NodeLocation: 552,72,1
+NodeSize: 64,40
+ValueState: 2,280,282,416,303,,MIDM
+
+Variable Categ_Index_Tab_Num
+Title: Categ Index Tab Number
+Description: The dataset number that is currently being imported.
+Definition: SubIndex(Categ_Index_Tab_Opt, Cat_IndexTab_to_View, Categ_Index_Tabs)
+NodeLocation: 248,168,1
+NodeSize: 64,40
+
+Variable Cat_Index_Start_Cell
+Title: Categ Index Start Cell
+Description: The start cell for the dataset that is currently being imported.
+Definition: CatInd_ImportSetting[Categ_Index_Params=Start_Cell_Label, Categ_Index_Tabs=Categ_Index_Tab_Num]
+NodeLocation: 400,264,1
+NodeSize: 64,40
+
+Variable Cat_Index_Start_Row
+Title: Categ Index Start Row
+Definition: Excel_Cell_Component(Cat_Index_Start_Cell)[Excel_Components=Excel_Row_Label] + 1
+NodeLocation: 560,336,1
+NodeSize: 64,40
+
+Decision Cat_IndexTab_to_View
+Title: Categ Index Tab to View
+Description: Select the tab name of the categorical index data you wish to view in greater detail.
+Definition: Choice(Cat_Index_Tab_Names,1,0)
+NodeLocation: 248,272,1
+NodeSize: 64,40
+WindState: 2,7,277,720,350
+Aliases: FormNode New1551412501, FormNode New1551412506
+
+Variable Categ_Index_Tab_Opt
+Title: Categ Index Tab Options
+Definition: CatInd_ImportSetting[Categ_Index_Params=Tab_Name_Label]
+NodeLocation: 96,168,1
+NodeSize: 64,40
+ValueState: 2,22,239,479,384,0,MIDM
+
+Variable Raw_Categ_Index_Data
+Title: Raw Category Index Data
+Description: The raw imported data for the active category index tab.
+Definition: SpreadsheetRange(Cat_Index_Workbook, sheet: Categ_Index_Tab_Name)
+NodeLocation: 704,72,1
+NodeSize: 64,40
+ValueState: 2,32,21,1124,655,0,MIDM
+Aliases: FormNode New1551412507
+
+Variable Categ_Index_End_Row
+Title: Categ Index End Row
+Definition: ArgMax(Sum(Raw_Categ_Index_Data<>NULL, Raw_Categ_Index_Data.Column)>0, Raw_Categ_Index_Data.Row)
+NodeLocation: 704,168,1
+NodeSize: 64,40
+ValueState: 2,612,406,416,303,,MIDM
+
+Variable Format_CategInd_Data
+Title: Formatted Category Index Data
+Description: The import categorical indexes after proper row and column formatting have been applied. Click on the blue index names to view the actual indices.
+Definition: VAR colOffset:=PositionInIndex(Raw_Categ_Index_Data.Column, CategIndex_Start_Col, Raw_Categ_Index_Data.Column)-1;~
+Raw_Categ_Index_Data[.Row=Categ_Index_Rows, @.Column=@Categ_Index_Handles+colOffset]
+NodeLocation: 856,72,1
+NodeSize: 64,40
+ValueState: 2,191,56,1135,497,0,MIDM
+Aliases: FormNode New1551412508
+ReformVal: [Categ_Index_Handles,Categ_Index_Rows]
+
+Variable CategIndex_Start_Col
+Title: Categ Index Start Col
+Definition: Excel_Cell_Component(Cat_Index_Start_Cell)[Excel_Components=Excel_Col_Label]
+NodeLocation: 704,264,1
+NodeSize: 64,40
+
+Button Import_Categ_Indexes
+Title: Import Categorical Indexes
+Description: Initiate import from Excel for the selected categorical index tabs.
+NodeLocation: 1016,176,1
+NodeSize: 64,40
+WindState: 2,118,247,720,350
+Aliases: Alias New1551412509
+OnClick: Read_Store_Cat_Index()
+
+Function Read_Store_Cat_Index()
+Title: Read and Store Categ Indexes
+Definition: Import_Reset:=NOT Import_Reset;~
+VAR cnt:=0;~
+VAR maxCnt:=Size(Select_Categ_Indexes);~
+~
+FOR J:=Select_Categ_Indexes DO (~
+   cnt:=cnt+1;~
+   Cat_IndexTab_to_View:=Categ_Index_Tab_Opt[Categ_Index_Tabs=J];~
+   ShowProgressBar("Categorical Index Import Progress", "Importing tab '" & Categ_Index_Tab_Name & "'. Tab " & cnt & " of " & maxCnt & ".", (cnt-0.1)/maxCnt);~
+   FOR K:=@Categ_Index_Handles DO (~
+      LocalAlias storeVar:=Slice(Categ_Index_Handles, K);~
+      INDEX indexData:=CopyIndex(Format_CategInd_Data[@Categ_Index_Handles=K]);~
+      storeVar:=Subset(indexData <> Null);~
+      Null   {return a null value to avoid issues with implicit indexes}~
+   );~
+);~
+~
+Last_Import_Time:=Today(withTime: True);~
+Import_Reset:=NOT Import_Reset;~
+MsgBox("Import of categorical indexes complete.", 0, "Import Complete");
+NodeLocation: 1016,72,1
+NodeSize: 64,40
+WindState: 2,33,70,804,643
+
+FormNode New1551412501
+Title: Dataset to View
+Definition: 0
+NodeLocation: 248,320,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,
+Original: Cat_IndexTab_to_View
+
+Close Categ_Index_Import
+
+Module Seq_Index_Import
+Title: Sequence Index Import
+Author: JamesMilford
+Date: Fri, Dec 21, 2018 10:51 AM
+NodeLocation: 288,80,1
+NodeSize: 64,40
+DiagState: 2,64,359,1428,430,17
+
+Variable Seq_Index_Tab_Name
+Title: Sequence Index Tab Name
+Description: The tab name for the data that is currently being imported.
+Definition: SeqInd_ImportSetting[Seq_Index_Params=Tab_Name_Label, Seq_Index_Tabs=Seq_Index_Tab_Num]
+NodeLocation: 552,168,1
+NodeSize: 64,40
+
+Variable Seq_Index_File_Path
+Title: Sequence Index File Path
+Description: The file path for the parameter that is currently being imported.
+Definition: Import_Reset; ~
+SeqInd_ImportSetting[Seq_Index_Params=File_Path_Label, Seq_Index_Tabs=Seq_Index_Tab_Num]
+NodeLocation: 400,72,1
+NodeSize: 64,40
+ValueState: 2,296,298,794,303,,MIDM
+
+Variable Seq_Index_Workbook
+Title: Seq Index Workbook Object
+Description: The workbook object for the data that is currently being imported.
+Definition: SpreadsheetOpen(Seq_Index_File_Path)
+NodeLocation: 552,72,1
+NodeSize: 64,40
+ValueState: 2,280,282,416,303,,MIDM
+
+Variable Seq_Index_Tab_Num
+Title: Sequence Index Tab Number
+Description: The sequence parameter number that is currently being imported.
+Definition: SubIndex(Seq_Index_Tab_Opt, Seq_IndexTab_to_View, Seq_Index_Tabs)
+NodeLocation: 248,168,1
+NodeSize: 64,40
+
+Variable Seq_Index_Start_Cell
+Title: Sequence Index Start Cell
+Description: The start cell for the parameter that is currently being imported.
+Definition: SeqInd_ImportSetting[Seq_Index_Params=Start_Cell_Label, Seq_Index_Tabs=Seq_Index_Tab_Num]
+NodeLocation: 400,264,1
+NodeSize: 64,40
+
+Variable Seq_Index_Start_Row
+Title: Sequence Index Start Row
+Definition: Excel_Cell_Component(Seq_Index_Start_Cell)[Excel_Components=Excel_Row_Label]
+NodeLocation: 560,336,1
+NodeSize: 64,40
+
+Decision Seq_IndexTab_to_View
+Title: Seq Index Tab to View
+Description: Select the tab name of the sequence index data you wish to view in greater detail.
+Definition: Choice(Seq_Index_Tab_Names,2,0)
+NodeLocation: 248,272,1
+NodeSize: 64,40
+WindState: 2,7,277,720,350
+Aliases: FormNode New1551412502, FormNode New1551412519
+
+Variable Seq_Index_Tab_Opt
+Title: Sequence Index Tab Options
+Definition: SeqInd_ImportSetting[Seq_Index_Params=Tab_Name_Label]
+NodeLocation: 96,168,1
+NodeSize: 64,40
+ValueState: 2,22,239,479,384,,MIDM
+
+Variable Raw_Seq_Index_Data
+Title: Raw Sequence Index Data
+Description: The raw imported data for the active sequence index tab.
+Definition: SpreadsheetRange(Seq_Index_Workbook, sheet: Seq_Index_Tab_Name)
+NodeLocation: 704,72,1
+NodeSize: 64,40
+ValueState: 2,32,21,670,234,0,MIDM
+Aliases: FormNode New1551412517
+
+Variable Seq_Index_End_Row
+Title: Sequence Index End Row
+Definition: ArgMax(Sum(Raw_Seq_Index_Data<>NULL, Raw_Seq_Index_Data.Column)>0, Raw_Seq_Index_Data.Row)
+NodeLocation: 704,168,1
+NodeSize: 64,40
+ValueState: 2,612,406,416,303,,MIDM
+
+Variable Format_Seq_Ind_Data
+Title: Formatted Sequence Index Data
+Description: The imported sequence index parameters after proper row and column formatting have been applied. Click on the blue variable names to view the actual model parameters.
+Definition: Raw_Seq_Index_Data[.Row=Seq_Index_Rows, @Seq_Index_Rows=@Seq_Index_Handles, @.Column=2]
+NodeLocation: 856,72,1
+NodeSize: 64,40
+ValueState: 2,532,397,534,436,,MIDM
+Aliases: FormNode New1551412518
+ReformVal: [Undefined,Seq_Index_Handles]
+
+Variable Seq_Index_Start_Col
+Title: Sequence Index Start Col
+Definition: Excel_Cell_Component(Seq_Index_Start_Cell)[Excel_Components=Excel_Col_Label]
+NodeLocation: 704,264,1
+NodeSize: 64,40
+ValueState: 2,426,510,416,303,,MIDM
+
+Button Import_Seq_Index
+Title: Import Sequence Indexes
+Description: Initiate import from Excel for the selected sequence index tabs.
+NodeLocation: 1016,176,1
+NodeSize: 64,40
+WindState: 2,118,538,720,350
+Aliases: Alias New1551412516
+OnClick: Read_Store_Seq_Index()
+
+Function Read_Store_Seq_Index()
+Title: Read and Store Seq Indexes
+Definition: Import_Reset:=NOT Import_Reset;~
+VAR cnt:=0;~
+VAR maxCnt:=Size(Select_Seq_Indexes);~
+~
+FOR J:=Select_Seq_Indexes DO (~
+   cnt:=cnt+1;~
+   Seq_IndexTab_to_View:=Seq_Index_Tab_Opt[Seq_Index_Tabs=J];~
+   ShowProgressBar("Sequence Index Import Progress", "Importing tab '" & Seq_Index_Tab_Name & "'. Tab " & cnt & " of " & maxCnt & ".", (cnt-0.1)/maxCnt);~
+   FOR K:=@Seq_Index_Handles DO (~
+      LocalAlias storeVar:=Slice(Seq_Index_Handles, K);~
+      VAR indexData:=Format_Seq_Ind_Data[@Seq_Index_Handles=K];~
+      storeVar:=indexData;~
+   );~
+);~
+~
+Last_Import_Time:=Today(withTime: True);~
+Import_Reset:=NOT Import_Reset;~
+MsgBox("Import of sequence indexes complete.", 0, "Import Complete");
+NodeLocation: 1016,72,1
+NodeSize: 64,40
+WindState: 2,-1,51,804,643
+
+FormNode New1551412502
+Title: Dataset to View
+Definition: 0
+NodeLocation: 248,320,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,94,0,,0,,,
+Original: Seq_IndexTab_to_View
+
+Close Seq_Index_Import
+
+Close Excel_Import_Logic
+
+Text Te1544985702
+Title: Structural Settings for Data Import~
+
+Description: Warning: Changes to these settings can corrupt previously defined configurations.
+NodeLocation: 1152,648,-1
+NodeSize: 216,104
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+NodeColor: 65535,65535,65535
+
+Text Te1545342165
+Title: Inspect Categorical Indexes
+NodeLocation: 256,288,-1
+NodeSize: 216,104
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+NodeColor: 65535,65535,65535
+
+Text Te1545342472
+Title: Import Categorical Indexes
+Description: Warning: Updating these indexes may modify or corrupt pre-existing data tables.
+NodeLocation: 256,92,-1
+NodeSize: 216,84
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+NodeColor: 65535,65535,65535
+
+Text Te1545344074
+Title: Structural Settings for Categorical Index Import~
+
+Description: Warning: Changes to these settings can corrupt previously defined configurations.
+NodeLocation: 256,504,-1
+NodeSize: 216,104
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+NodeColor: 65535,65535,65535
+
+Text Te1545352116
+Title: Inspect Sequence Indexes
+NodeLocation: 704,288,-1
+NodeSize: 216,104
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+NodeColor: 65535,65535,65535
+
+Text Te1545352117
+Title: Import Sequence Indexes
+Description: Warning: Updating these indexes may modify or corrupt pre-existing data tables.
+NodeLocation: 704,92,-1
+NodeSize: 216,84
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+NodeColor: 65535,65535,65535
+
+Text Te1545352118
+Title: Structural Settings for Sequence Index Import~
+
+Description: Warning: Changes to these settings can corrupt previously defined configurations.
+NodeLocation: 704,504,-1
+NodeSize: 216,104
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+NodeColor: 65535,65535,65535
+
+Text Te1550096820
+Title: Inspect Data Import
+NodeLocation: 1152,400,-1
+NodeSize: 216,136
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+NodeColor: 65535,65535,65535
+
+Text Te1550097011
+Title: Import Data Tabs
+Description: Warning: Updating these datasets may modify or corrupt pre-existing data tables.
+NodeLocation: 1152,132,-1
+NodeSize: 216,124
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+NodeColor: 65535,65535,65535
+
+Text Te1550776124
+Title: Sequentially Import Indexes Then Data
+Description: Warning: Updating these datasets may modify or corrupt pre-existing data tables.
+NodeLocation: 1600,132,-1
+NodeSize: 216,124
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+NodeColor: 65535,65535,65535
+
+FormNode New1551412503
+Title: Excel Import Configuration
+Definition: 0
+NodeLocation: 1156,644,1
+NodeSize: 212,20
+NodeColor: 49344,49344,49344
+Original: Excel_Import_Setting
+
+FormNode New1551412504
+Title: Max Imported Dimensions
+Definition: 0
+NodeLocation: 1156,724,1
+NodeSize: 212,20
+NodeColor: 49344,49344,49344
+Original: Max_Imported_Dim
+
+FormNode New1551412505
+Title: Number of Imported Datasets
+Definition: 0
+NodeLocation: 1156,684,1
+NodeSize: 212,20
+NodeColor: 49344,49344,49344
+Original: Number_of_Datasets
+
+FormNode New1551412506
+Title: Categ Index Tab to View
+Definition: 0
+NodeLocation: 260,244,1
+NodeSize: 212,20
+NodeInfo: 1,,,,,,0,198,,,,,,0
+Original: Cat_IndexTab_to_View
+
+FormNode New1551412507
+Title: Raw Category Index Data
+Definition: 1
+NodeLocation: 260,284,1
+NodeSize: 212,20
+NodeColor: 65278,37008,6168
+Original: Raw_Categ_Index_Data
+
+FormNode New1551412508
+Title: Formatted Category Index Data
+Definition: 1
+NodeLocation: 260,324,1
+NodeSize: 212,20
+NodeColor: 65278,37008,6168
+Original: Format_CategInd_Data
+
+Alias New1551412509
+Title: Import Categorical Indexes
+Definition: 1
+NodeLocation: 336,152,1
+NodeSize: 112,16
+Original: Import_Categ_Indexes
+
+FormNode New1551412510
+Title: Max Imported Indexes
+Definition: 0
+NodeLocation: 260,580,1
+NodeSize: 212,20
+NodeColor: 49344,49344,49344
+Original: Max_Imported_Indexes
+
+FormNode New1551412511
+Title: Number of Categorical Index Tabs
+Definition: 0
+NodeLocation: 260,540,1
+NodeSize: 212,20
+NodeColor: 49344,49344,49344
+Original: Num_Categ_Index_Tabs
+
+FormNode New1551412512
+Title: Categorical Index Import Settings
+Definition: 0
+NodeLocation: 260,500,2
+NodeSize: 212,20
+NodeColor: 49344,49344,49344
+Original: CatInd_ImportSetting
+
+FormNode New1551412513
+Title: Categorical Indexes to Import
+Definition: 0
+NodeLocation: 260,108,1
+NodeSize: 212,20
+NodeColor: 49344,49344,49344
+Original: CatIndexes_to_Import
+
+Alias New1551412514
+Title: Release Spreadsheet
+Definition: 1
+NodeLocation: 336,368,1
+NodeSize: 112,16
+Original: Release_Spreadsheet
+
+FormNode New1551412515
+Title: Sequence Index Import Settings
+Definition: 0
+NodeLocation: 708,496,1
+NodeSize: 212,20
+NodeColor: 49344,49344,49344
+Original: SeqInd_ImportSetting
+
+Alias New1551412516
+Title: Import Sequence Indexes
+Definition: 1
+NodeLocation: 784,152,1
+NodeSize: 112,16
+Original: Import_Seq_Index
+
+FormNode New1551412517
+Title: Raw Sequence Index Data
+Definition: 1
+NodeLocation: 708,280,1
+NodeSize: 212,20
+NodeColor: 65278,37008,6168
+Original: Raw_Seq_Index_Data
+
+FormNode New1551412518
+Title: Formatted Sequence Index Data
+Definition: 1
+NodeLocation: 708,320,1
+NodeSize: 212,20
+NodeColor: 65278,37008,6168
+Original: Format_Seq_Ind_Data
+
+FormNode New1551412519
+Title: Sequence Index Tab to View
+Definition: 0
+NodeLocation: 708,240,1
+NodeSize: 212,20
+NodeInfo: 1,,,,,,0,198,,,,,,0
+Original: Seq_IndexTab_to_View
+
+FormNode New1551412520
+Title: Max Imported Sequence Params
+Definition: 0
+NodeLocation: 708,576,1
+NodeSize: 212,20
+NodeColor: 49344,49344,49344
+Original: Max_Import_Seq_Param
+
+FormNode New1551412521
+Title: Number of Sequence Index Tabs
+Definition: 0
+NodeLocation: 708,536,1
+NodeSize: 212,20
+NodeColor: 49344,49344,49344
+Original: Num_Seq_Index_Tabs
+
+FormNode New1551412522
+Title: Sequence Params to Import
+Definition: 0
+NodeLocation: 708,104,1
+NodeSize: 212,20
+NodeColor: 49344,49344,49344
+Original: SeqIndexes_to_Import
+
+Alias New1551412523
+Title: Release Spreadsheet
+Definition: 1
+NodeLocation: 784,368,1
+NodeSize: 112,16
+Original: Release_Spreadsheet
+
+FormNode New1551412524
+Title: Dataset to View
+Definition: 0
+NodeLocation: 1156,308,1
+NodeSize: 212,20
+NodeInfo: 1,,,,,,0,198,,,,,,0
+Original: Dataset_to_View
+
+FormNode New1551412525
+Title: Raw Imported Data
+Definition: 1
+NodeLocation: 1156,348,1
+NodeSize: 212,20
+NodeInfo: 1,,,,,,0,72,,,,,,0
+NodeColor: 65278,37008,6168
+Original: Raw_Imported_Data
+
+FormNode New1551412526
+Title: Cleaned Import Data
+Definition: 1
+NodeLocation: 1156,388,1
+NodeSize: 212,20
+NodeInfo: 1,,,,,,0,72,,,,,,0
+NodeColor: 65278,37008,6168
+Original: Format_Import_Data
+
+FormNode New1551412527
+Title: Check for Index Errors
+Definition: 1
+NodeLocation: 1156,428,1
+NodeSize: 212,20
+NodeInfo: 1,,,,,,0,72,,,,,,0
+NodeColor: 65278,37008,6168
+Original: Check_Index_Errors
+
+FormNode New1551412528
+Title: Check for Data Type Errors
+Definition: 1
+NodeLocation: 1156,468,1
+NodeSize: 212,20
+NodeInfo: 1,,,,,,0,72,,,,,,0
+NodeColor: 65278,37008,6168
+Original: Check_DataType_Error
+
+Alias New1551412529
+Title: Release Spreadsheet
+Definition: 1
+NodeLocation: 1232,512,1
+NodeSize: 112,16
+Original: Release_Spreadsheet
+
+FormNode New1551412530
+Title: Data to Import
+Definition: 0
+NodeLocation: 1156,108,1
+NodeSize: 212,20
+NodeColor: 49344,49344,49344
+Original: Data_to_Import
+
+Alias New1551412531
+Title: Import from Excel
+Definition: 1
+NodeLocation: 1232,236,1
+NodeSize: 112,16
+Original: Import_Data_Tabs
+
+FormNode New1551412532
+Title: Apply Index Checks?
+Definition: 0
+NodeLocation: 1156,188,1
+NodeSize: 212,20
+NodeColor: 49344,49344,49344
+Original: Apply_Index_Checks
+
+FormNode New1551412533
+Title: Apply Data Type Checks?
+Definition: 0
+NodeLocation: 1156,148,1
+NodeSize: 212,20
+NodeColor: 49344,49344,49344
+Original: Apply_DataType_Check
+
+FormNode New1551412534
+Title: Import Categorial Indexes
+Definition: 0
+NodeLocation: 1604,148,1
+NodeSize: 212,20
+Original: Import_Categor_Index
+
+FormNode New1551412535
+Title: Import Sequential Indexes?
+Definition: 0
+NodeLocation: 1604,188,1
+NodeSize: 212,20
+Original: Import_Sequent_Index
+
+Alias New1551412536
+Title: Import from Excel
+Definition: 1
+NodeLocation: 1696,232,1
+NodeSize: 112,16
+Original: Import_from_Excel
+
+FormNode New1551412537
+Title: Path to Test File
+Definition: 0
+NodeLocation: 1604,108,1
+NodeSize: 212,20
+NodeInfo: 1,0,0,1,0,0,0,230,0,,0,,,0
+NodeColor: 49344,49344,49344
+Original: Path_to_Global_Data
+
+Close Structural_Settings_
+
+Button Clear_Imported_Varia
+Title: Clear Imported Variables
+Description: Press this button to clear data that had been previously imported. Only the datasets selected in "Data to Import" (Data_to_Import) will be cleared.
+NodeLocation: 544,168,1
+NodeSize: 64,40
+WindState: 2,238,420,720,350
+OnClick: FOR J:=@Stored_Vars_Selected DO (~
+   MetaVar varHandle:=Slice(Stored_Vars_Selected, J);~
+   LocalAlias var:=varHandle;~
+   (var:=0);~
+)
+
+Text Te1544986631
+Title: Import Data from Spreadsheets
+NodeLocation: 400,168,-1
+NodeSize: 376,152
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+NodeColor: 65535,65535,65535
+
+Text Te1544986853
+Title: Inspect Imported Data
+NodeLocation: 400,456,-1
+NodeSize: 376,128
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+NodeColor: 65535,65535,65535
+
+FormNode New1551412451
+Title: Path to Test File
+Definition: 0
+NodeLocation: 408,76,1
+NodeSize: 368,20
+NodeInfo: 1,0,0,1,0,0,0,542,0,,0,,,0
+NodeColor: 49344,49344,49344
+Original: Path_to_Global_Data
+
+FormNode New1551412452
+Title: Data to Import
+Definition: 0
+NodeLocation: 176,196,1
+NodeSize: 136,20
+NodeColor: 49344,49344,49344
+Original: Data_to_Import
+
+FormNode New1551412453
+Title: Dataset to View
+Definition: 0
+NodeLocation: 240,388,1
+NodeSize: 200,20
+NodeInfo: 1,,,,,,0,239,,,,,,0
+Original: Dataset_to_View
+
+FormNode New1551412454
+Title: Raw Imported Data
+Definition: 1
+NodeLocation: 240,428,1
+NodeSize: 200,20
+NodeInfo: 1,,,,,,0,72,,,,,,0
+NodeColor: 65278,37008,6168
+Original: Raw_Imported_Data
+
+FormNode New1551412455
+Title: Cleaned Import Data
+Definition: 1
+NodeLocation: 240,468,1
+NodeSize: 200,20
+NodeInfo: 1,,,,,,0,72,,,,,,0
+NodeColor: 65278,37008,6168
+Original: Format_Import_Data
+
+FormNode New1551412456
+Title: Check for Index Errors
+Definition: 1
+NodeLocation: 240,508,1
+NodeSize: 200,20
+NodeInfo: 1,,,,,,0,72,,,,,,0
+NodeColor: 65278,37008,6168
+Original: Check_Index_Errors
+
+FormNode New1551412457
+Title: Check for Data Type Errors
+Definition: 1
+NodeLocation: 240,548,1
+NodeSize: 200,20
+NodeInfo: 1,,,,,,0,72,,,,,,0
+NodeColor: 65278,37008,6168
+Original: Check_DataType_Error
+
+FormNode New1551412458
+Title: Apply Index Checks?
+Definition: 0
+NodeLocation: 176,276,1
+NodeSize: 136,20
+NodeColor: 49344,49344,49344
+Original: Apply_Index_Checks
+
+FormNode New1551412459
+Title: Apply Data Type Checks?
+Definition: 0
+NodeLocation: 176,236,1
+NodeSize: 136,20
+NodeColor: 49344,49344,49344
+Original: Apply_DataType_Check
+
+FormNode New1551412538
+Title: Last Import Time
+Definition: 1
+NodeLocation: 504,272,1
+NodeSize: 120,16
+NodeInfo: 1,,,,,,0,72,,,,,,0
+NodeColor: 65278,37008,6168
+Original: Last_Import_Time
+
+FormNode New1551412539
+Title: Import Categorial Indexes
+Definition: 0
+NodeLocation: 176,116,1
+NodeSize: 136,20
+Original: Import_Categor_Index
+
+FormNode New1551412540
+Title: Import Sequential Indexes?
+Definition: 0
+NodeLocation: 176,156,1
+NodeSize: 136,20
+Original: Import_Sequent_Index
+
+Alias New1551412541
+Title: Import from Excel
+Definition: 1
+NodeLocation: 400,168,1
+NodeSize: 64,40
+Original: Import_from_Excel
+
+Close Import_Worksheets
+
