@@ -11,7 +11,7 @@ Date: Tue, Mar 29, 2022 11:58 AM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,,,,,,,,,,,0
-DiagState: 2,1986,35,1733,620,17,10
+DiagState: 2,1077,298,1733,620,17,10
 WindState: 2,2271,111,720,350
 NodeColor: 65535,65535,65535
 FontStyle: Arial Narrow,19
@@ -85,7 +85,7 @@ Definition: ['Higher Education','Hospitals','K-12','Air Transportation','Art_Mus
 NodeLocation: 632,472,1
 NodeSize: 64,40
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 282,252}
+{!40300|Att_SlicerPopupSize: 287,252}
 
 Decision Map_All_to_Aggregate
 Title: Map All to Aggregated Sectors
@@ -102,7 +102,7 @@ Description: Simulated PV adoption that is enabled by NYPA.
 Definition: Aggregate(NYPA_Enabled_PV_Adop,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
 NodeLocation: 776,352,1
 NodeSize: 64,40
-ValueState: 2,2373,104,890,679,1,MIDM
+ValueState: 2,735,164,890,679,1,MIDM
 Aliases: FormNode Fo1042431523
 GraphSetup: Graph_FillTransparen:59~
 Att_ContLineStyle Graph_Primary_Valdim:1~
@@ -114,8 +114,8 @@ Att_AreaFill Graph_Primary_Valdim:1~
 Att_GraphValueRange NYPA_Enabled_PV_Ado1:1,,1,1,,,,0,1000,0
 ReformVal: [Output_Periods,Spatial_ID]
 NumberFormat: 2,F,2,1,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Sectors_Aggregated,Spatial_ID,Area_Type]
-Att_ResultSliceState: [Sectors_Aggregated,0,Area_Type,0,Spatial_ID,0,Word_of_Mouth_Coeff1,3,Advertising_Coeffici,4,Output_Periods,108]
+Att__TotalsIndex: [Sectors_Aggregated,Area_Type,Spatial_ID]
+Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,BESS_Incentive_Scen,3,Spatial_ID,1,Output_Periods,108]
 {!40600|Att_StackingIndex: Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
 
@@ -165,16 +165,16 @@ Description: Percentage of total NYPA enabled PV adoption by sector, geography, 
 Definition: ZIDZ(NYPA_Enabled_PV_Ado1,sum(NYPA_Enabled_PV_Ado1,Spatial_ID,Area_Type,Sectors_Aggregated))
 NodeLocation: 816,576,1
 NodeSize: 64,40
-ValueState: 2,386,31,1044,647,1,MIDM
+ValueState: 2,589,43,1044,647,1,MIDM
 Aliases: FormNode Fo1872903715
 GraphSetup: {!50000|Graph_SortBySpread:1}~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_GraphValueRange NYPA_Enabled_PV_Ado2:1,,0,,,,,0,0.45,0
-ReformVal: [Sectors_Aggregated,Area_Type]
+ReformVal: [Sectors_Aggregated,Spatial_ID]
 NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Sectors_Aggregated,Area_Type,Spatial_ID]
 Att_ResultSliceState: [Output_Periods,108,Spatial_ID,0,Area_Type,0,Sectors_Aggregated,0]
-{!40600|Att_StackingIndex: Area_Type}
+{!40600|Att_StackingIndex: Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
 
 Variable Total_PV_MW_DC_Tech_
@@ -194,12 +194,12 @@ NYPA enabled: the portion of the total "natural" market adoption enabled by NYPA
 Definition: Table(Potential_Type)(Total_PV_MW_DC_Tech_,PV_Cumul_MW_DC1,NYPA_Enabled_PV_Ado1)
 NodeLocation: 968,576,1
 NodeSize: 64,40
-ValueState: 2,524,77,927,685,,MIDM
+ValueState: 2,711,100,927,685,,MIDM
 Aliases: FormNode Fo1687511331
 GraphSetup: Att_GraphValueRange PV_Potential_by_Type:1,,1,,,,,0,2670.3765988349915,0
 ReformVal: [Output_Periods,Potential_Type]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Area_Type,Sectors_Aggregated,Spatial_ID]
+Att__TotalsIndex: [Spatial_ID,Area_Type,Sectors_Aggregated]
 Att_ResultSliceState: [Spatial_ID,0,Area_Type,0,Sectors_Aggregated,0,Potential_Type,1,Output_Periods,1]
 
 Variable PV_Cumul_MW_DC
@@ -260,7 +260,7 @@ Att_ContLineStyle Graph_Primary_Valdim:1~
 Graph_FillTransparen:55
 ReformVal: [Time_Storage,BESS_Spatial_ID]
 Att__TotalsIndex: [BESS_Spatial_ID,Sectors_Aggregated,Area_Type]
-Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,BESS_Spatial_ID,1,Time_Storage,37]
+Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,BESS_Incentive_Scen,3,BESS_Spatial_ID,1,Time_Storage,37]
 {!40600|Att_StackingIndex: BESS_Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
 
@@ -313,11 +313,12 @@ Definition: LRMS_by_PV_Time[@PV_Sectors=1]
 NodeLocation: 1296,152,1
 NodeSize: 64,40
 WindState: 2,2334,170,720,350
-ValueState: 2,2247,83,1002,601,,MIDM
+ValueState: 2,282,98,1002,601,,MIDM
 Aliases: FormNode Fo617935139
 GraphSetup: Graph_AxisLabelFont:,20,0
+ReformVal: [Time_Solar_PV,BESS_Incentive_Scen]
 NumberFormat: 2,%,4,0,0,0,4,1,$,0,"ABBREV",0,,,0,0,15,
-Att_ResultSliceState: [System_Types,1,Area_Type,3,PV_Spatial_ID,1,Time_Solar_PV,1]
+Att_ResultSliceState: [System_Types,2,Area_Type,2,PV_Spatial_ID,1,PV_Sectors,1,Time_Solar_PV,1]
 
 Alias Al2033486115
 Title: Dispatch Flows
@@ -336,12 +337,12 @@ Flow_Scaling_Factor, PV_Climate_Zone) {converts dispatch flow output to a standa
 NodeLocation: 272,64,1
 NodeSize: 64,40
 WindState: 2,2306,207,720,350
-ValueState: 2,2169,43,1213,673,1,MIDM
-Aliases: FormNode Fo340429091, FormNode Clipboard_Fo34042909
-GraphSetup: Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,0,,,,,2,82,1
-ReformVal: [Viewed_Dispatch_Tim2,Flow_Types1]
+ValueState: 2,954,28,858,775,1,MIDM
+Aliases: FormNode Fo340429091
+GraphSetup: Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,1,,,,,24,51,1
+ReformVal: [Viewed_Dispatch_Tim2,Rate_Names_and_Start]
 Att__TotalsIndex: [Viewed_Dispatch_Tim2]
-Att_ResultSliceState: [Month,8,Rate_Names_and_Start,1,Flow_Types1,2,Viewed_Dispatch_Tim2,0]
+Att_ResultSliceState: [Month,8,Rate_Names_and_Start,2,Flow_Types1,2,Viewed_Dispatch_Tim2,0]
 {!40700|Att_CellFormat: CellSpan(Viewed_Dispatch_Tim2,CellNumberFormat('Fixed Point',0,0,1,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:0),169,header:0)}
 {!50000|Att_ColumnWidths: [126]}
 

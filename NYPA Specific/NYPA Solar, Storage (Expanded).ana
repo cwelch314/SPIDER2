@@ -10,7 +10,7 @@ Author: CWelch
 Date: Thu, Mar 31, 2022 3:05 PM
 DefaultSize: 64,32
 NodeSize: 64,40
-DiagState: 2,31,7,1866,739,17,10
+DiagState: 2,13,12,1866,875,17,10
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
 FileInfo: 0,LinkModule NYPA_Solar_Storage1,2,2,0,0,NYPA Specific\NYPA Solar, Storage (Expanded).ana
@@ -19,14 +19,14 @@ AcpStyles: Framenode: NYPA_DER_F1649160483
 FormNode Fo1696948515
 Title: Market Share Illustration
 Definition: 1
-NodeLocation: 676,1132,1
+NodeLocation: 668,1132,1
 NodeSize: 204,20
 Original: Long_Run_Market_Sha3
 
 FormNode Fo1439994147
 Title: Logit Price Coefficient
 Definition: 0
-NodeLocation: 676,932,1
+NodeLocation: 668,932,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Logit_Price_Coeff
@@ -34,7 +34,7 @@ Original: Logit_Price_Coeff
 FormNode Fo903123235
 Title: Logit Tech Coefficient
 Definition: 0
-NodeLocation: 676,972,1
+NodeLocation: 668,972,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Logit_Tech_Coeff
@@ -42,7 +42,7 @@ Original: Logit_Tech_Coeff
 FormNode Fo653512995
 Title: Market Share Function
 Definition: 1
-NodeLocation: 676,1092,1
+NodeLocation: 668,1092,1
 NodeSize: 204,20
 Original: Market_Share_Functio
 
@@ -232,7 +232,7 @@ Title: PV Incentive Scenario
 Definition: 0
 NodeLocation: 236,892,1
 NodeSize: 204,20
-NodeInfo: 1,,,,,,,150,,,,,,0
+NodeInfo: 1,,,,,,,150
 Original: PV_Incent_Scenario
 
 FormNode Fo839618851
@@ -321,7 +321,7 @@ Description: 1. Revenue, TBtu, and GHG emissions outputs~
 2. Additional input visibility~
 3. Additional desired scenario inputs~
 4. Additional desired output
-NodeLocation: 1096,908,2
+NodeLocation: 208,1324,2
 NodeSize: 184,60
 NodeInfo: 1,,,,0
 NodeFontColor: 3855,26214,35209
@@ -346,7 +346,7 @@ NodeColor: 65535,65535,65535
 
 Text Te1917595939
 Title: NYPA Product Portfolio Model: Solar + Storage
-NodeLocation: 468,64,-23
+NodeLocation: 468,56,-23
 NodeSize: 164,32
 NodeInfo: 1,,,,0,,1,,,,,,1
 NodeFont: Arial,19
@@ -414,7 +414,7 @@ Original: Value_of_generation1
 FormNode Fo842592547
 Title: PV Ad Effectiveness
 Definition: 0
-NodeLocation: 676,1012,1
+NodeLocation: 668,1012,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: PV_Ad_Effectiveness
@@ -422,7 +422,7 @@ Original: PV_Ad_Effectiveness
 FormNode Fo1446572323
 Title: PV Word of Mouth
 Definition: 0
-NodeLocation: 676,1052,1
+NodeLocation: 668,1052,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: PV_Word_of_Mouth
@@ -437,7 +437,7 @@ Original: Cost_of_Elect_Ratio2
 FormNode Fo617935139
 Title: Long Run Market Share
 Definition: 1
-NodeLocation: 676,1212,1
+NodeLocation: 668,1212,1
 NodeSize: 204,20
 Original: Long_Run_Market_Sha1
 
@@ -451,7 +451,7 @@ NodeFontColor: 3855,26214,35209
 FormNode Fo274919715
 Title: Market Adoption Percent
 Definition: 1
-NodeLocation: 676,1172,1
+NodeLocation: 668,1172,1
 NodeSize: 204,20
 Original: Market_Adoption_Illu
 
@@ -461,6 +461,14 @@ Definition: 1
 NodeLocation: 668,668,1
 NodeSize: 204,20
 Original: Hourly_Energy_Flows
+
+Text Te1395493155
+Description: WORKING DRAFT: NOT FINAL
+NodeLocation: 464,90,-1
+NodeSize: 152,12
+NodeInfo: 1,,,,0,0,1,,,,,,1
+NodeFont: Arial,19
+NodeFontColor: 65535,1,1
 
 Close NYPA_Solar_Storage1
 

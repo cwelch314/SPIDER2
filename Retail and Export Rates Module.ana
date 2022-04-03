@@ -1172,8 +1172,9 @@ Also, all $/kW charges are rolled into the hourly cents/kWh rate and are therefo
 Definition: Electric_Rates[Tiers='tier0',Rate_Component='Energy (cents/kWh)'] / 100
 NodeLocation: 744,296,1
 NodeSize: 64,56
-ValueState: 2,255,126,1190,647,,MIDM
+ValueState: 2,29,28,908,777,,MIDM
 Aliases: FormNode Fo839618851
+GraphSetup: Att_GraphIndexRange Day_Type_and_Hour:1,,1,,,,,1,28,1
 ReformVal: [Day_Type_and_Hour,Rate_Names_and_Start]
 NumberFormat: 2,F,4,3,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
 Att_ResultSliceState: [Month,8,Rate_Names_and_Start,1,Day_Type_and_Hour,1]
@@ -1501,7 +1502,7 @@ DiagState: 2,2268,84,1135,683,17,10
 NodeColor: 57311,57311,57311
 
 Index Rate_Names
-Att_PrevIndexValue: ['AL-TOU Secondary (0-500 KW) | 2019-01','NYPA Downstate (NYC, Zone J) | 2021-01','NYPA LI/Hudson Valley (Central Hudson,Zone G) | 2021-01','NYPA LI/Hudson Valley (NYSEG Lower Hudson, Zone G) | 2021-01','NYPA LI/Hudson Valley (PSEG-LI, Zone K) | 2021-01','NYPA Test | 2019-01','NYPA Test 2 | 2019-01','NYPA Upstate (NYSEG - Rest of State, Zone C) | 2021-01']
+Att_PrevIndexValue: ['AL-TOU Secondary (0-500 KW) | 2019-01','NYPA Downstate (NYC, Zone J) | 2021-01','NYPA Hudson Valley (Central Hudson,Zone G) | 2021-01','NYPA Hudson Valley (NYSEG Lower Hudson, Zone G) | 2021-01','NYPA Long Island (PSEG-LI, Zone K) | 2021-01','NYPA Test | 2019-01','NYPA Test 2 | 2019-01','NYPA Upstate (NYSEG - Rest of State, Zone C) | 2021-01']
 Title: Rate Names
 Definition: INDEX names:=CopyIndex(Rate_Names_and_Dates);~
 SortIndex(names)
@@ -4527,10 +4528,10 @@ NodeSize: 64,40
 WindState: 2,801,147,720,350
 ValueState: 2,65,48,1674,780,,MIDM
 Aliases: FormNode Fo1729847587
-GraphSetup: Att_ContLineStyle Graph_Primary_Valdim:1~
+GraphSetup: Graph_KeyFont:,16,0~
+Att_GraphValueRange Electric_Rate_8760:1,,1,,,,,0,0.18353909254074097,0~
 Att_GraphIndexRange Hourly_Profile_Rows:1,,1,,,,,4015.8838033676147,6773.299813270569,0~
-Att_GraphValueRange Electric_Rate_8760:1,,0,,,,,0,0.18353909254074097,0~
-Graph_KeyFont:,16,0
+Att_ContLineStyle Graph_Primary_Valdim:1
 ReformVal: [Hourly_Profile_Rows,NY_Rate]
 NumberFormat: 2,F,4,2,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
 Att_ResultSliceState: [NY_Rate,5,Hourly_Profile_Rows,1]

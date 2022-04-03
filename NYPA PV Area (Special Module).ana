@@ -10,7 +10,7 @@ Author: CWelch
 Date: Tue, Mar 8, 2022 9:07 AM
 DefaultSize: 64,40
 NodeSize: 64,40
-DiagState: 2,47,23,1711,709,17,10
+DiagState: 2,70,404,1711,643,17,10
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
 
@@ -947,14 +947,16 @@ NodeLocation: 1976,784,1
 NodeSize: 72,40
 ValueState: 2,442,75,1048,658,1,MIDM
 Aliases: FormNode Fo1835757091, FormNode Fo1844145699
-GraphSetup: {!50000|Graph_SortBySpread:1}~
-Att_CatLineStyle Graph_Primary_Valdim:9
+GraphSetup: {!50500|Graph_ShowTitle:1}~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+{!50000|Graph_SortBySpread:1}
 ReformVal: [PV_Sectors,Spatial_ID]
 NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [PV_Sectors,Area_Type,Spatial_ID]
 Att_ResultSliceState: [Spatial_ID,0,Area_Type,0,PV_Sectors,0]
 {!40600|Att_StackingIndex: Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
+{!50500|GraphTitleExpr: ""}
 
 FormNode Fo1835757091
 Title: PV Tech Potential Percentage of Total
