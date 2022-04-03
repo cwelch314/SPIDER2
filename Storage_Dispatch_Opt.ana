@@ -2345,7 +2345,7 @@ ValueState: 2,324,330,637,513,,MIDM
 ReformVal: [Month,Null]
 Att_ColorRole: Null
 
-Variable Compare2
+Variable Compare12
 Definition: [Opt_Peak_Dmd,Bill_Peak_Dmd]
 NodeLocation: 400,208,1
 NodeSize: 64,40
@@ -2524,7 +2524,7 @@ Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Storage_Systems,1,Rate_Vin
 Variable On_Peak_Cost
 Title: On Peak Cost
 Definition: VAR rates:=Compare5[@Compare5=@Opt_or_Bill];~
-VAR demand:=Compare2[@Compare2=@Opt_or_Bill];~
+VAR demand:=Compare12[@Compare12=@Opt_or_Bill];~
 rates * demand
 NodeLocation: 552,208,1
 NodeSize: 64,40

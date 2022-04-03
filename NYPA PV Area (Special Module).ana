@@ -10,7 +10,7 @@ Author: CWelch
 Date: Tue, Mar 8, 2022 9:07 AM
 DefaultSize: 64,40
 NodeSize: 64,40
-DiagState: 2,70,404,1711,643,17,10
+DiagState: 2,80,78,1711,643,17,10
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
 
@@ -129,7 +129,7 @@ Variable Effective_Usable_Are
 Title: Effective Usable Area by Facility
 Units: m2
 Description: Usable area reduced by the constraint that any individual system be less than the max facility system size
-Definition: ZIDZ( System_Size_Constra1 , Theoretical_System_S) * Usable_Facility_Area
+Definition: ZIDZ1( System_Size_Constra1 , Theoretical_System_S) * Usable_Facility_Area
 NodeLocation: 1472,416,1
 NodeSize: 64,40
 ValueState: 2,601,61,369,638,0,MIDM
@@ -655,7 +655,7 @@ Att_ResultSliceState: [Spatial_ID,3,Area_Type,1,PV_Sectors,0]
 Variable Average_PV_kW_Facili
 Title: Average PV kW/Facility
 Units: kW-DC
-Definition: ZIDZ(Total_PV_kW_DC_poten, ~
+Definition: ZIDZ1(Total_PV_kW_DC_poten, ~
 Applied_Building_Stk[Building_Stock_Year=Year_of_Consump_Data,All_Sectors=PV_Sectors,All_Spatial_ID=Spatial_ID])
 NodeLocation: 1632,368,1
 NodeSize: 64,40
@@ -730,7 +730,7 @@ Att_ResultSliceState: [Size_Min_Test,2,Facility_ID_Filtered,1,Area_Type,1]
 Variable Ratio_of_Facility_Ge
 Title: Ratio of Facility Generation Potential to Consumption
 Units: fraction
-Definition: ZIDZ(Facility_PV_Generati,Facility_Consumption)
+Definition: ZIDZ1(Facility_PV_Generati,Facility_Consumption)
 NodeLocation: 1040,752,1
 NodeSize: 72,48
 ValueState: 2,2281,16,837,768,1,MIDM
@@ -897,7 +897,7 @@ Variable Potential_divided_by
 Title: Potential divided by Load
 Units: %
 Description: Total technical potential for solar generation as % of customer load.
-Definition: ZIDZ(sum(Technical_PV_Potenti,PV_Sectors),sum(Customer_Load_by_Sp_,PV_Sectors))
+Definition: ZIDZ1(sum(Technical_PV_Potenti,PV_Sectors),sum(Customer_Load_by_Sp_,PV_Sectors))
 NodeLocation: 1800,776,1
 NodeSize: 64,40
 ValueState: 2,586,93,859,649,1,MIDM
@@ -942,7 +942,7 @@ Title: PV Tech Potential Percentage of Total
 Units: %
 Description: Solar PV technical potential by geographic region, sector, and area type as a percentage of the total potential.
 Definition: local total:=sum(Technical_PV_Potenti,Spatial_ID,PV_Sectors,Area_Type);~
-ZIDZ(Technical_PV_Potenti,total)
+ZIDZ1(Technical_PV_Potenti,total)
 NodeLocation: 1976,784,1
 NodeSize: 72,40
 ValueState: 2,442,75,1048,658,1,MIDM

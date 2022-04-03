@@ -165,7 +165,7 @@ Description: The allocation of total vehicle stock, by aging chain vintage. ~
 The derivation of this formula is presented in Appendix 1 of ~
 Welch, Cory. 2017. Making the Case of Using Analytica for System Dynamics Modeling: A Reference Guide and Comparison with Classical Platform. Presented at the International System Dynamics Conference. Cambridge, MA. July.
 Definition: var Fv:= (1 + Hist_Veh_Growth_Rate[All_Vehicle_Techs=Vehicle_Techs] * Vehicle_Average_Life / Num_Vehicle_Vintages)^(1-Vehicle_Vintage); ~
-ZIDZ(Fv, sum(Fv, Vehicle_Vintage))
+ZIDZ1(Fv, sum(Fv, Vehicle_Vintage))
 NodeLocation: 672,288,1
 NodeSize: 64,40
 WindState: 2,253,70,720,350
@@ -202,7 +202,7 @@ Title: Vehicles Per Stock
 Units: vehicles/bldg unit
 Description: The number of vehicles per building unit (eg, dwelling, premise, etc.). If vehicle stock multipliers are applied, this will represent the number of vehicles associated with some subset of the overall vehicle stock per building unit.
 Definition: VAR bldgTime:=SubIndex(Time_EOP_Map, Slice(EV_Time_EOP_Map, 1), Time);   {Find the building stock time period that corresponds to the end of the first EV simulation period}~
-ZIDZ(sum(Initial_Vehicle_Stoc, Vehicle_Techs) , Total_Building_Stock[Time=bldgTime, All_Sectors=EV_Sectors, All_Spatial_ID=EV_Spatial_ID]);
+ZIDZ1(sum(Initial_Vehicle_Stoc, Vehicle_Techs) , Total_Building_Stock[Time=bldgTime, All_Sectors=EV_Sectors, All_Spatial_ID=EV_Spatial_ID]);
 NodeLocation: 464,288,1
 NodeSize: 64,40
 NodeInfo: 1,1,1,1,1,1,0,0,0,0,,0,1,0
@@ -10494,7 +10494,7 @@ ValueState: 2,145,84,1446,783,1,MIDM
 Variable Vehicle_Vintage_Shar
 Title: Vehicle Vintage Share
 Definition: var total_veh_by_type := Vehicle_Stock_BOP;~
-ZIDZ(total_veh_by_type , sum(total_veh_by_type, Vehicle_Vintage))
+ZIDZ1(total_veh_by_type , sum(total_veh_by_type, Vehicle_Vintage))
 NodeLocation: 296,56,1
 NodeSize: 64,40
 ValueState: 2,200,202,729,410,,MIDM
@@ -10577,7 +10577,7 @@ Description: Share of total vehicle stock coming from each technology, aggregate
 Definition: var total_veh_by_type := Aggregate(sum(Vehicle_Stock_EOP,Vehicle_Vintage, EV_Spatial_ID), Vehicle_Type_Map[All_Vehicle_Techs=Vehicle_Techs], Vehicle_Techs, Vehicle_Types);~
 var total_veh := sum(total_veh_by_type, Vehicle_Types) ;~
 ~
-ZIDZ(total_veh_by_type , total_veh)
+ZIDZ1(total_veh_by_type , total_veh)
 NodeLocation: 616,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,1,1,1,1,0,,0,,0,,,
@@ -10598,7 +10598,7 @@ Units: fraction
 Description: Fraction of new vehicle sales coming from each technology, aggregated over all selected spatial IDs
 Definition: var total_veh_by_type := Aggregate(Sum(New_Vehicle_Sales, EV_Spatial_ID), Vehicle_Type_Map[All_Vehicle_Techs=Vehicle_Techs], Vehicle_Techs, Vehicle_Types);~
 var total_veh := sum(total_veh_by_type, Vehicle_Types);~
-ZIDZ(total_veh_by_type, total_veh)
+ZIDZ1(total_veh_by_type, total_veh)
 NodeLocation: 616,248,1
 NodeSize: 64,40
 NodeInfo: 1,0,1,1,1,1,0,,0,,0,,,
@@ -10684,7 +10684,7 @@ Units: dmnl
 Description: Market share of the total stock of vehicles, by vehicle type (relative to the total stock of vehicles)
 Definition: var total_veh_by_type := sum(Vehicle_Stock_BOP,Vehicle_Vintage);~
 var total_veh := sum(total_veh_by_type, Vehicle_Techs) ;~
-var x:=ZIDZ(total_veh_by_type , total_veh);~
+var x:=ZIDZ1(total_veh_by_type , total_veh);~
 x
 NodeLocation: 264,64,1
 NodeSize: 64,40
@@ -10994,7 +10994,7 @@ Description: The current stock of vehicles as a percentage of the long-run desir
 Definition: var total_veh_by_type := sum(Vehicle_Stock_BOP,Vehicle_Vintage);~
 var total_veh := sum(total_veh_by_type, Vehicle_Techs) * Applied_LRMS;~
 ~
-ZIDZ(total_veh_by_type , total_veh)
+ZIDZ1(total_veh_by_type , total_veh)
 NodeLocation: 248,312,1
 NodeSize: 64,40
 WindState: 2,877,163,984,425

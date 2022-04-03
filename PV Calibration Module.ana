@@ -2039,9 +2039,9 @@ Title: R^2 Stock Delta
 Units: dmnls
 Description: This value calculates the traditional R^2 value often used in linear regression. It calculates the value based on the cumulative PV systems (simulated vs. actual).
 Definition: var SS_Residuals := sum((Delta_PV_Systems * Dates_Incl_in_PV_Opt)^2, Time_Solar_PV);~
-var MeanValue := ZIDZ(Sum(Actual_Cumul_PV_Syst * Dates_Incl_in_PV_Opt, Time_Solar_PV), sum(Dates_Incl_in_PV_Opt, Time_Solar_PV));~
+var MeanValue := ZIDZ1(Sum(Actual_Cumul_PV_Syst * Dates_Incl_in_PV_Opt, Time_Solar_PV), sum(Dates_Incl_in_PV_Opt, Time_Solar_PV));~
 var SS_total := sum((Actual_Cumul_PV_Syst * Dates_Incl_in_PV_Opt - MeanValue)^2, Time_Solar_PV);~
-var rsquared := 1 - ZIDZ(SS_Residuals , SS_total);~
+var rsquared := 1 - ZIDZ1(SS_Residuals , SS_total);~
 {[SS_Residuals, MeanValue, SS_total, rsquared]}~
 rsquared
 NodeLocation: 432,176,1
@@ -2495,9 +2495,9 @@ Objective R_2_Stock_Delta_for_
 Title: R^2 Stock Delta for Aggregate
 Definition: VAR actual := sum(Actual_Cumul_PV_Syst, PV_Spatial_ID);~
 var SS_Residuals := sum((Delta_PV_Systems * Dates_Incl_in_PV_Opt)^2, Time_Solar_PV);~
-var MeanValue := ZIDZ(Sum(actual * Dates_Incl_in_PV_Opt, Time_Solar_PV), sum(Dates_Incl_in_PV_Opt, Time_Solar_PV));~
+var MeanValue := ZIDZ1(Sum(actual * Dates_Incl_in_PV_Opt, Time_Solar_PV), sum(Dates_Incl_in_PV_Opt, Time_Solar_PV));~
 var SS_total := sum((actual * Dates_Incl_in_PV_Opt - MeanValue)^2, Time_Solar_PV);~
-var rsquared := 1 - ZIDZ(SS_Residuals , SS_total);~
+var rsquared := 1 - ZIDZ1(SS_Residuals , SS_total);~
 rsquared
 NodeLocation: 432,80,1
 NodeSize: 64,40
@@ -2837,7 +2837,7 @@ Definition: -6
 NodeLocation: 128,456,1
 NodeSize: 64,40
 WindState: 2,2094,188,720,350
-Aliases: FormNode Fo1526480419, FormNode Fo1439994147, Alias Al1539126683, FormNode Fo1539127221
+Aliases: FormNode Fo1526480419, Alias Al1539126683, FormNode Fo1539127221, FormNode Fo1439994147
 {!40300|DomainExpr: Continuous(PV_PriceCoef_Lwr_Bnd,PV_PriceCoef_Upr_Bnd)}
 
 Decision Logit_Spatial_Coeff
@@ -2885,7 +2885,7 @@ Definition: 5
 NodeLocation: 128,552,1
 NodeSize: 64,40
 WindState: 2,57,96,720,350
-Aliases: FormNode Fo989609507, FormNode Fo903123235, Alias Al1539126687, FormNode Fo1539127223
+Aliases: FormNode Fo989609507, Alias Al1539126687, FormNode Fo1539127223, FormNode Fo903123235
 {!40300|DomainExpr: Continuous(PVLogTechCoef_Lwr_Bn,PVLogTechCoef_Upr_Bn)}
 {!40300|Att_SlicerPopupSize: 227,1001}
 

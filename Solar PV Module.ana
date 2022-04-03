@@ -1690,7 +1690,7 @@ Variable Applied_WOM_PV
 Title: Applied Word of Mouth
 Units: 1/year
 Description: The applied word-of-mouth strength, which may be time changing depending on the calibration settings.
-Definition: var slope:= ZIDZ((Applied_End_WOM - Applied_Start_WOM) , (WOM_Fin_Year - WOM_Start_Year)); {this construct permits enforcing the starting WOM to equal to ending WOM just by setting the WOM Fin Year to be the same as the WOM Start Year}~
+Definition: var slope:= ZIDZ1((Applied_End_WOM - Applied_Start_WOM) , (WOM_Fin_Year - WOM_Start_Year)); {this construct permits enforcing the starting WOM to equal to ending WOM just by setting the WOM Fin Year to be the same as the WOM Start Year}~
 ~
 var linear_WOM:=IF Time_Solar_PV <=WOM_Start_Year THEN Applied_Start_WOM~
 	ELSE MIN([Applied_End_WOM, (Applied_Start_WOM + slope * (Time_Solar_PV - WOM_Start_Year))]); {calculates a linear growth of WOM consistent with the starting WOM & ending WOM}~
@@ -8225,7 +8225,7 @@ Original: FirstYr_Annual_Solar
 Variable First_year_kWh_value
 Title: First year $/kWh value of solar generation
 Units: $/kWh
-Definition: ZIDZ(FirstYr_BillSav_Time , FirstYr_Annual_Solar)
+Definition: ZIDZ1(FirstYr_BillSav_Time , FirstYr_Annual_Solar)
 NodeLocation: 1008,392,1
 NodeSize: 72,40
 ValueState: 2,311,102,1055,700,1,MIDM
@@ -11330,7 +11330,7 @@ Show_description:20
 Variable PPA_to_Value_Ratio
 Title: PPA to Value Ratio
 Units: fraction
-Definition: ZIDZ(Manual_PPA_Rates_by_,Value_of_generation)
+Definition: ZIDZ1(Manual_PPA_Rates_by_,Value_of_generation)
 NodeLocation: 304,272,1
 NodeSize: 64,40
 ValueState: 2,623,216,944,639,1,MIDM
@@ -11891,7 +11891,7 @@ NodeSize: 64,40
 Variable Levelized_Value_of_S
 Title: Levelized Value of Solar Production
 Units: $/kWh
-Definition: ZIDZ(NPV_of_Bill_Savings, NPV_of_Solar_Product)
+Definition: ZIDZ1(NPV_of_Bill_Savings, NPV_of_Solar_Product)
 NodeLocation: 208,840,1
 NodeSize: 64,40
 ValueState: 2,566,168,659,631,,MIDM
@@ -11921,7 +11921,7 @@ Att_ResultSliceState: [System_Types,1,PV_Sectors,1,PV_Climate_Zone,1,Area_Type,1
 
 Variable Cost_to_Value_Ratio
 Title: Cost to Value Ratio
-Definition: ZIDZ(Levelized_cost_of_so,Levelized_Value_of_S)
+Definition: ZIDZ1(Levelized_cost_of_so,Levelized_Value_of_S)
 NodeLocation: 304,720,1
 NodeSize: 64,40
 ValueState: 2,2786,188,902,645,,MIDM
@@ -12059,7 +12059,7 @@ NodeSize: 120,56
 Variable Simple_LCOE_of_PV
 Title: Simple LCOE of PV
 Units: $/kWh
-Definition: ZIDZ(PV_of_System_Cost,PV_of_Solar_Producti)
+Definition: ZIDZ1(PV_of_System_Cost,PV_of_Solar_Producti)
 NodeLocation: 672,352,1
 NodeSize: 64,40
 WindState: 2,2189,228,720,350
@@ -12143,7 +12143,7 @@ Original: Cost_Ratio_Method
 
 Variable Simple_LCOE_to_Value
 Title: Simple LCOE to Value Ratio
-Definition: ZIDZ(Simple_LCOE_of_PV,Value_of_generation)
+Definition: ZIDZ1(Simple_LCOE_of_PV,Value_of_generation)
 NodeLocation: 304,400,1
 NodeSize: 64,40
 ValueState: 2,266,34,999,759,,MIDM
@@ -15075,7 +15075,7 @@ Variable Usable_PV_Area_to_Bu
 Title: Usable PV Area to Buildings Ratio
 Units: PV stock units
 Description: Total usable PV stock (either m2 on usable installation area or # of technicall suitable buildings, depending on the PV building stock basis)
-Definition: local area:=ZIDZ(Usable_PV_Area~
+Definition: local area:=ZIDZ1(Usable_PV_Area~
 , ~
 Applied_Building_Stk[Building_Stock_Year=Year_of_Consump_Data,All_Spatial_ID=PV_Spatial_ID,All_Sectors=PV_Sectors]) ;~
 IF area=null THEN 0 ELSE area

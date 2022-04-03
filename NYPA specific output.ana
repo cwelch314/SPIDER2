@@ -162,7 +162,7 @@ Variable NYPA_Enabled_PV_Ado2
 Title: NYPA Enabled PV Adoption Percentages
 Units: %
 Description: Percentage of total NYPA enabled PV adoption by sector, geography, and area type.
-Definition: ZIDZ(NYPA_Enabled_PV_Ado1,sum(NYPA_Enabled_PV_Ado1,Spatial_ID,Area_Type,Sectors_Aggregated))
+Definition: ZIDZ1(NYPA_Enabled_PV_Ado1,sum(NYPA_Enabled_PV_Ado1,Spatial_ID,Area_Type,Sectors_Aggregated))
 NodeLocation: 816,576,1
 NodeSize: 64,40
 ValueState: 2,589,43,1044,647,1,MIDM
@@ -283,7 +283,7 @@ Variable NYPA_Enabled_Storag2
 Title: NYPA Enabled Storage Adopt Pct
 Units: %
 Description: Percentage of NYPA enabled storage adoption by geography, sector, and area type.
-Definition: ZIDZ(NYPA_Enabled_Storag1,sum(NYPA_Enabled_Storag1,BESS_Spatial_ID,Area_Type,Sectors_Aggregated))
+Definition: ZIDZ1(NYPA_Enabled_Storag1,sum(NYPA_Enabled_Storag1,BESS_Spatial_ID,Area_Type,Sectors_Aggregated))
 NodeLocation: 968,688,1
 NodeSize: 64,40
 ValueState: 2,308,112,1171,680,,MIDM
