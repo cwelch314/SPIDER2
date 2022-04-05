@@ -911,13 +911,13 @@ exp(utility) / (1 + exp(utility))
 NodeLocation: 528,64,1
 NodeSize: 64,40
 WindState: 2,438,332,720,350
-ValueState: 2,657,78,866,623,,MIDM
+ValueState: 2,990,37,866,623,,MIDM
 Aliases: FormNode Fo1696948515
 GraphSetup: Graph_AxisLabelFont:,20,0~
 {!50400|Att_AxisOrKeyTitle Long_Run_Market_Sha3:Long-Run Market Share}
 ReformVal: [PPA_to_Value_Ratio1,Price_Coefficient_Il]
 NumberFormat: 2,%,4,0,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att_ResultSliceState: [Tech_Coefficient_Ill,3,Price_Coefficient_Il,2,PPA_to_Value_Ratio1,1]
+Att_ResultSliceState: [Tech_Coefficient_Ill,5,Price_Coefficient_Il,2,PPA_to_Value_Ratio1,1]
 
 Index Price_Coefficient_Il
 Title: Price Coefficient Illustrator
@@ -933,12 +933,13 @@ NodeSize: 64,40
 
 Variable Market_Share_Functio
 Title: Market Share Function
-Description: calculated marketshare as a function of the ratio of LCOE to "value of solar" prices
+Units: %
+Description: Calculated marketshare as a function of the ratio of LCOE to "value of solar" prices
 Definition: local utility:=PPA_to_Value_Ratio1 * Logit_Price_Coeff + Logit_Tech_Coeff;~
 exp(utility) / (1 + exp(utility))
 NodeLocation: 528,160,1
 NodeSize: 64,40
-ValueState: 2,917,133,757,549,,MIDM
+ValueState: 2,975,196,757,549,,MIDM
 Aliases: FormNode Fo653512995
 GraphSetup: {!50400|Att_AxisOrKeyTitle Market_Share_Functio:Long Run Market Share}~
 Graph_AxisLabelFont:,20,0~
@@ -961,7 +962,7 @@ Definition: Dynamic[Year](Initial_Adoption,self[@Year=@Year-1] + dT1 * Adoption1
 NodeLocation: 712,376,1
 NodeSize: 64,40
 WindState: 2,2071,133,720,350
-ValueState: 2,2435,107,843,602,,MIDM
+ValueState: 2,2469,147,843,602,,MIDM
 Aliases: FormNode Fo274919715
 GraphSetup: Att_GraphValueRange Market_Adoption_Illu:1,,0,1,,,,0,1,0~
 Graph_AxisLabelFont:,20,0
@@ -2235,7 +2236,7 @@ NodeColor: 65535,1,1
 ReformDef: [Spatial_ID,All_PV_Sectors]
 NumberFormat: 2,F,3,4,0,0,3,0,$,0,"ABBREV",0,,,0,0,15,
 TableCellDefault: 0
-Att_EditSliceState: [Area_Type,2,All_PV_Sectors,1,Spatial_ID,1]
+Att_EditSliceState: [Area_Type,1,All_PV_Sectors,1,Spatial_ID,1]
 
 Index All_PV_Sectors
 Att_PrevIndexValue: ['Higher Education','Hospitals','K-12','LG_Air Transportation','LG_Art_Museum','LG_Assisted Living','LG_Community services','LG_Correctional Facility','LG_Unique Education','LG_Government_Office','LG_Housing','LG_Library','LG_Other Transportation','LG_Police and Fire Department','LG_Recreational','LG_Water Supply & Waste Water','SA_Air Transportation','SA_Art_Museum','SA_Assisted Living','SA_Community services','SA_Correctional Facility','SA_Courthouse_Probation','SA_Unique Education','SA_Government_Office','SA_Housing','SA_Library','SA_Other Transportation','SA_Police and Fire Department','SA_Recreational','SA_Water Supply & Waste Water']
@@ -2245,7 +2246,7 @@ NodeLocation: 944,304,1
 NodeSize: 64,40
 ValueState: 2,510,101,448,662,0,MIDM
 Aliases: Alias Al1661443619, Alias Al1896098083
-{!40300|Att_SlicerPopupSize: 257,434}
+{!40300|Att_SlicerPopupSize: 267,434}
 
 Variable Initial_PV_Adopters_
 Title: Initial PV Adopters, InputFract Based
@@ -7104,7 +7105,7 @@ Definition: Table(Value_Type,PV_Climate_Zone)(~
 NodeLocation: 784,192,1
 NodeSize: 64,40
 WindState: 2,664,360,720,350
-DefnState: 2,624,381,697,200,0,DFNM
+DefnState: 2,778,327,697,200,0,DFNM
 Aliases: FormNode Fo48726307, FormNode Fo322661923
 NodeColor: 65535,1,1
 ReformDef: [Value_Type,PV_Climate_Zone]
@@ -8477,13 +8478,13 @@ Description: Investment tax credit expressed as a percentage of the upfront capi
 ~
 This input assumes the system owner is a taxable entity. For the current NYPA analysis, we assume third party ownership for government/non-profit entities. 
 Definition: Table(ITC_Scenario,Static_PV_Time)(~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
 0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.22,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.22,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3)
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.22,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3)
 NodeLocation: 168,176,1
 NodeSize: 64,40
 WindState: 2,457,241,918,488
-DefnState: 2,623,84,595,673,0,DFNM
+DefnState: 2,1082,176,595,673,0,DFNM
 ValueState: 2,247,126,1030,579,1,MIDM
 Aliases: Alias Al1550189910, FormNode Fo1550189910, FormNode Fo1545167107, FormNode Fo1545084105, FormNode Fo1567092849, FormNode Fo1548967851, FormNode Fo1484087587
 NodeColor: 65535,1,1
@@ -8545,9 +8546,10 @@ AcpStyles: Show_index_menus: yes~
 Show_description:20
 
 Index ITC_Scenario
-Att_PrevIndexValue: ['Extended A','Baseline','Extended B']
+Att_PrevIndexValue: ['Low','Medium','High']
 Title: ITC Scenario
-Definition: ['Extended A','Baseline','Extended B']
+Definition: ['Low','Medium','High']
+IndexVals: ['item 1']
 NodeLocation: 88,72,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 237,94}
@@ -8555,7 +8557,7 @@ NodeSize: 64,40
 Decision Selected_ITC_Scen
 Title: ITC Scenario
 Description: Select which ITC scenario you want to model. "Baseline" captures currently planned ITC phase-out for solar PV.
-Definition: Choice(ITC_Scenario,3,1)
+Definition: Choice(ITC_Scenario,2,0)
 IndexVals: ['item 1']
 NodeLocation: 240,72,1
 NodeSize: 64,40
@@ -8699,7 +8701,7 @@ Date: Wed, Feb 6, 2019 6:05 PM
 NodeLocation: 96,488,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,132,58,1688,687,17,10
+DiagState: 2,2447,22,1688,687,17,10
 AcpStyles: Framenode: Taxable_Incent_Frame
 
 Constant kWh_Incen_Dur_Derate
@@ -9746,11 +9748,11 @@ Definition: Table(PV_Climate_Zone,Static_PV_Time,PV_Incentive_Scen)(~
 554.3758058366757,554.3758058366757,554.3758058366757,~
 542.5610029747493,542.5610029747493,542.5610029747493,~
 470.23237236206,470.23237236206,470.23237236206,~
-0,1000,1000,~
-0,1100,1200,~
-0,1200,1300,~
-0,1300,1400,~
-0,1400,1500,~
+1005,1005,1005,~
+1005,1005,1005,~
+1005,1005,1005,~
+0,1005,1005,~
+0,0,1005,~
 0,0,0,~
 0,0,0,~
 0,0,0,~
@@ -9773,11 +9775,11 @@ Definition: Table(PV_Climate_Zone,Static_PV_Time,PV_Incentive_Scen)(~
 554.3758058366757,554.3758058366757,554.3758058366757,~
 542.5610029747493,542.5610029747493,542.5610029747493,~
 470.23237236206,470.23237236206,470.23237236206,~
-0,1000,1000,~
-0,800,1000,~
-0,600,1000,~
-0,400,1000,~
-0,200,1000,~
+170,170,170,~
+170,170,170,~
+170,170,170,~
+0,170,170,~
+0,0,170,~
 0,0,0,~
 0,0,0,~
 0,0,0,~
@@ -9800,11 +9802,11 @@ Definition: Table(PV_Climate_Zone,Static_PV_Time,PV_Incentive_Scen)(~
 554.3758058366757,554.3758058366757,554.3758058366757,~
 542.5610029747493,542.5610029747493,542.5610029747493,~
 470.23237236206,470.23237236206,470.23237236206,~
-0,1000,1000,~
-0,800,1000,~
-0,600,1000,~
-0,400,1000,~
-0,200,1000,~
+170,170,170,~
+170,170,170,~
+170,170,170,~
+0,170,170,~
+0,0,170,~
 0,0,0,~
 0,0,0,~
 0,0,0,~
@@ -9827,11 +9829,11 @@ Definition: Table(PV_Climate_Zone,Static_PV_Time,PV_Incentive_Scen)(~
 554.3758058366757,554.3758058366757,554.3758058366757,~
 542.5610029747493,542.5610029747493,542.5610029747493,~
 470.23237236206,470.23237236206,470.23237236206,~
-0,1000,1000,~
-0,800,1000,~
-0,600,1000,~
-0,400,1000,~
-0,200,1000,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
 0,0,0,~
 0,0,0,~
 0,0,0,~
@@ -9844,7 +9846,7 @@ Definition: Table(PV_Climate_Zone,Static_PV_Time,PV_Incentive_Scen)(~
 NodeLocation: 128,784,1
 NodeSize: 64,40
 WindState: 2,747,462,720,350
-DefnState: 2,606,123,687,632,0,DFNM
+DefnState: 2,2255,122,687,632,0,DFNM
 ValueState: 2,426,65,1030,633,,MIDM
 Aliases: FormNode Fo1580649311, FormNode Fo187916579
 NodeColor: 65535,1,1
@@ -9852,9 +9854,11 @@ GraphSetup: Att_GraphIndexRange Static_PV_Time:1,,0,,,,10,2014.9164547026157,203
 Att_GraphValueRange PV_kW_DC_Incentive:1,,0,,,,,0,1027.4618715047836,0
 ReformDef: [PV_Climate_Zone,Static_PV_Time]
 ReformVal: [Static_PV_Time,PV_Incentive_Scen]
+NumberFormat: 2,F,4,0,1,1,4,0,$,0,"ABBREV",0,,,0,0,15,
 TableCellDefault: 0
 Att_ResultSliceState: [PV_Incentive_Scen,2,All_Sectors,2,Static_PV_Time,1]
 Att_EditSliceState: [PV_Incentive_Scen,2,Static_PV_Time,1,PV_Climate_Zone,1]
+{!40700|Att_CellFormat: CellAlignment('Center')}
 {!50000|Att_ColumnWidths: [,Static_PV_Time,\([,,,,,,,,,,,,,,,,,,,432])]}
 
 Index PV_Incentive_Scen
@@ -9869,7 +9873,7 @@ Aliases: FormNode Fo1580649327
 Decision PV_Incent_Scenario
 Title:  PV Incentive Scenario
 Description: Select which incentive scenario you wish to simulate.
-Definition: Choice(PV_Incentive_Scen,2,1)
+Definition: Choice(PV_Incentive_Scen,2,0)
 IndexVals: ['item 1']
 NodeLocation: 272,880,1
 NodeSize: 64,40
@@ -9903,9 +9907,11 @@ Original: PV_Incentive_Scen
 Variable PV_Incentive_Rate
 Title: PV Incentive Rate
 Units: $/kW-AC
-Definition: PV_kW_DC_Incentive[PV_Incentive_Scen=PV_Incent_Scenario, All_Sectors=PV_Sectors, Static_PV_Time=Annual_Econ_Time]
+Definition: PV_kW_DC_Incentive[PV_Incentive_Scen=PV_Incent_Scenario, All_Sectors=PV_Sectors, Static_PV_Time=Annual_Econ_Time] ~
++ sum(Incentive_PV_kW_Adde,Incentive_Adder_Type)
 NodeLocation: 272,784,1
 NodeSize: 64,40
+ValueState: 2,2052,65,1096,720,,MIDM
 
 Variable PV_System_Incentive
 Title: PV System Incentive
@@ -9926,6 +9932,7 @@ NodeLocation: 568,784,1
 NodeSize: 64,40
 ValueState: 2,404,131,886,755,1,MIDM
 ReformVal: [Time,Installation_Event]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,System_Types,1,Area_Type,1,Installation_Event,1,Time,1]
 
 Variable Implement_Incentives
 Title: Implemented Incentives
@@ -9952,7 +9959,7 @@ Aliases: FormNode Fo1580669552
 Decision Storage_Incentive_Sc
 Title: Storage Incentive Scenario
 Description: Select which storage incentive scenario you wish to model
-Definition: Choice(BESS_Incentive_Scen,2,1)
+Definition: Choice(BESS_Incentive_Scen,2,0)
 IndexVals: ['item 1']
 NodeLocation: 1296,256,1
 NodeSize: 64,40
@@ -9996,18 +10003,18 @@ Definition: Table(BESS_Incentive_Scen,PV_Climate_Zone,Static_PV_Time)(~
 104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
 125,125,125,125,125,125,125,125,125,125,125,125,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
 104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-147.2117,147.2117,147.2117,147.2117,147.2117,147.2117,147.2117,147.2117,147.2117,147.2117,147.2117,147.2117,100,100,100,100,100,0,0,0,0,0,0,0,0,0,0,~
-104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,100,100,100,100,100,0,0,0,0,0,0,0,0,0,0,~
-125,125,125,125,125,125,125,125,125,125,125,125,100,100,100,100,100,0,0,0,0,0,0,0,0,0,0,~
-104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,100,100,100,100,100,0,0,0,0,0,0,0,0,0,0)
+147.2117,147.2117,147.2117,147.2117,147.2117,147.2117,147.2117,147.2117,147.2117,147.2117,147.2117,147.2117,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+125,125,125,125,125,125,125,125,125,125,125,125,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,104.1667,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 NodeLocation: 1056,80,1
 NodeSize: 64,40
 WindState: 2,1104,119,720,350
-DefnState: 2,704,123,625,615,0,DFNM
+DefnState: 2,2693,112,625,615,0,DFNM
 Aliases: FormNode Fo1352896803, FormNode Fo1587777827
 NodeColor: 65535,1,1
 ReformDef: [PV_Climate_Zone,Static_PV_Time]
-Att_EditSliceState: [BESS_Incentive_Scen,3,Static_PV_Time,11,PV_Climate_Zone,1]
+Att_EditSliceState: [BESS_Incentive_Scen,2,Static_PV_Time,11,PV_Climate_Zone,1]
 
 Variable Storage_incentive_ra
 Title: Storage incentive rate
@@ -10040,6 +10047,35 @@ NodeLocation: 1288,144,1
 NodeSize: 152,16
 NodeColor: 65535,65531,1
 Original: Use_simple_storage_i
+
+Index Incentive_Adder_Type
+Att_PrevIndexValue: ['Install Type Adder','Community Adder']
+Title: Incentive Adder Type
+Definition: ['Install Type Adder','Community Adder']
+NodeLocation: 568,880,1
+NodeSize: 64,40
+
+Constant Incentive_PV_kW_Adde
+Title: Incentive PV $/kW Adder
+Units: $/kW-DC
+Description: Additional solar PV incentives dependent on installation type (e.g., parking canopy) or geography. 
+Definition: Table(Incentive_Adder_Type,Area_Type,PV_Climate_Zone)(~
+0,0,0,0,~
+200,0,0,0,~
+0,0,0,0,~
+100,0,0,0,~
+100,0,0,0,~
+100,0,0,0)
+NodeLocation: 424,880,1
+NodeSize: 64,40
+WindState: 2,2140,87,720,350
+DefnState: 2,606,236,439,226,0,DFNM
+Aliases: FormNode Fo1910413603
+NodeColor: 65535,1,1
+ReformDef: [Incentive_Adder_Type,Area_Type]
+NumberFormat: 2,F,4,0,1,1,4,0,$,0,"ABBREV",0,,,0,0,15,
+Att_EditSliceState: [PV_Climate_Zone,1,Area_Type,1,Incentive_Adder_Type,1]
+{!40700|Att_CellFormat: CellAlignment('Center')}
 
 Close Taxable_Incents
 
@@ -10943,7 +10979,7 @@ Att_ResultSliceState: [All_Equipment_Types,1,PV_Climate_Zone,4,Area_Type,3,Stati
 Decision Select_DER_Cost_Scen
 Title: DER Cost Scenario
 Description: Select the DER cost scenario to apply.
-Definition: Choice(DER_Cost_Scenario,2,1)
+Definition: Choice(DER_Cost_Scenario,2,0)
 IndexVals: ['item 1']
 NodeLocation: 264,232,1
 NodeSize: 64,40
@@ -12255,7 +12291,7 @@ Definition: [Simple_LCOE_of_PV1,Value_of_generation1]
 NodeLocation: 304,496,1
 NodeSize: 64,40
 WindState: 2,953,224,720,557
-ValueState: 2,703,108,1084,672,1,MIDM
+ValueState: 2,361,98,1084,672,1,MIDM
 Aliases: FormNode Fo89932067
 GraphSetup: Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2021,2030,0~
 Att_GraphValueRange Simple_LCOE_vs_Value:1,,1,,,,,0.17367490082979203,0.2686929821968079,0~
@@ -12264,7 +12300,7 @@ Att_GraphIndexRange Cost_Forecast_Year:1,,1,,,,,2022.0101600289345,2031,0
 ReformVal: [Cost_Forecast_Year,Self]
 NumberFormat: 2,F,4,3,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Climate_Zone,3,System_Types,1,Area_Type,3,Self,1,Cost_Forecast_Year,1]
+Att_ResultSliceState: [System_Types,1,Area_Type,3,PV_Climate_Zone,3,Self,2,Cost_Forecast_Year,1]
 {!40300|Att_SlicerPopupSize: 257,64}
 
 Text Te1891843619
@@ -12302,7 +12338,7 @@ Att_GraphIndexRange Annual_Econ_Time:1,,1,,,,10,2022.0709496736526,2032,0
 ReformVal: [Annual_Econ_Time,System_Types]
 NumberFormat: 2,F,1,2,0,0,1,1,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: []
-Att_ResultSliceState: [Area_Type,2,PV_Climate_Zone,1,BESS_Incentive_Scen,2,System_Types,2,Cost_Forecast_Year,1]
+Att_ResultSliceState: [Area_Type,3,PV_Climate_Zone,4,System_Types,2,Cost_Forecast_Year,1]
 
 Close Annual_Cost_of_Syste
 
@@ -15100,7 +15136,7 @@ Definition: ['Roof','Parking','Land']
 NodeLocation: 104,384,1
 NodeSize: 64,40
 WindState: 2,408,-14,824,781
-{!40300|Att_SlicerPopupSize: 647,80}
+{!40300|Att_SlicerPopupSize: 652,80}
 
 Include 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
 
@@ -15337,7 +15373,7 @@ Show_description:20
 
 Constant PV_suitability
 Title: PV suitability
-Units: fraction
+Units: %
 Description: m2 of usable area divided by m2 of input total PV area (when m2 is the PV building stock basis)
 Definition: Table(All_PV_Sectors,Area_Type)(~
 0.8,0.8,0.05,~
@@ -15376,6 +15412,7 @@ DefnState: 2,836,232,503,654,0,DFNM
 Aliases: Alias Al25917987, FormNode Fo341637667, FormNode Fo120842787, FormNode Fo39555363
 ReformDef: [Area_Type,All_PV_Sectors]
 NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+{!40700|Att_CellFormat: CellAlignment('Center')}
 {!50000|Att_ColumnWidths: [,Area_Type,\([,,64])]}
 
 FormNode Fo120842787

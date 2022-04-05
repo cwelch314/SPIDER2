@@ -11,7 +11,7 @@ Date: Tue, Mar 29, 2022 11:58 AM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,,,,,,,,,,,0
-DiagState: 2,1820,62,1597,691,17,10
+DiagState: 2,112,35,1597,691,17,10
 WindState: 2,2271,111,720,350
 NodeColor: 65535,65535,65535
 FontStyle: Arial Narrow,19
@@ -27,40 +27,41 @@ NodeSize: 64,40
 NodeColor: 65535,1,1
 Original: PV_Cumul_Adoption
 
-Constant Assumed_NYPA_fractio
-Title: Assumed NYPA fraction of natural market
-Description: The assumed fraction of the total "natural" market adoption that is enabled by NYPA.
+Constant NYPA_of_Natural_Mark
+Title: NYPA % of Natural Market
+Units: %
+Description: The assumed percent of the total "natural" market adoption that is enabled by NYPA.
 Definition: Table(Spatial_ID,All_PV_Sectors,Area_Type)(~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
-0.2,0.2,0.2,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
+0.25,0.25,0.25,~
 0.2,0.2,0.2,~
 0.2,0.2,0.2,~
 0.2,0.2,0.2,~
@@ -153,17 +154,19 @@ Definition: Table(Spatial_ID,All_PV_Sectors,Area_Type)(~
 0.2,0.2,0.2)
 NodeLocation: 592,288,1
 NodeSize: 72,40
-DefnState: 2,617,134,768,667,0,DFNM
+DefnState: 2,2453,89,768,667,0,DFNM
 ValueState: 2,1167,229,624,551,,MIDM
 Aliases: FormNode Fo471309859, FormNode Fo517300515
 NodeColor: 65535,1,1
 ReformDef: [Spatial_ID,All_PV_Sectors]
-Att_EditSliceState: [Area_Type,1,All_PV_Sectors,1,Spatial_ID,1]
+NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att_EditSliceState: [Area_Type,3,All_PV_Sectors,1,Spatial_ID,1]
+{!40700|Att_CellFormat: CellAlignment('Center')}
 
 Variable NYPA_Enabled_PV_Adop
 Title: NYPA Enabled PV Adoption
 Units: MW-DC
-Definition: Assumed_NYPA_fractio[All_PV_Sectors=PV_Sectors] * PV_Cumul_MW_DC
+Definition: NYPA_of_Natural_Mark[All_PV_Sectors=PV_Sectors] * PV_Cumul_MW_DC
 NodeLocation: 744,240,1
 NodeSize: 64,40
 ValueState: 2,356,10,1231,711,1,MIDM
@@ -193,7 +196,7 @@ Definition: ['Higher Education','Hospitals','K-12','Air Transportation','Art_Mus
 NodeLocation: 632,472,1
 NodeSize: 64,40
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 287,252}
+{!40300|Att_SlicerPopupSize: 297,252}
 
 Decision Map_All_to_Aggregate
 Title: Map All to Aggregated Sectors
@@ -210,7 +213,7 @@ Description: Simulated PV adoption that is enabled by NYPA.
 Definition: Aggregate(NYPA_Enabled_PV_Adop,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
 NodeLocation: 776,352,1
 NodeSize: 64,40
-ValueState: 2,735,164,890,679,1,MIDM
+ValueState: 2,637,7,946,740,1,MIDM
 Aliases: FormNode Fo1042431523
 GraphSetup: Graph_FillTransparen:59~
 Att_ContLineStyle Graph_Primary_Valdim:1~
@@ -219,11 +222,12 @@ Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_GraphIndexRange Output_Periods:1,0,,,,,10~
 Att_Stacked_Lines Graph_Primary_Valdim:1~
 Att_AreaFill Graph_Primary_Valdim:1~
-Att_GraphValueRange NYPA_Enabled_PV_Ado1:1,,1,1,,,,0,1000,0
+Att_GraphValueRange NYPA_Enabled_PV_Ado1:1,,1,1,,,,0,1000,0~
+{!40403|Att_ReverseOrder Spatial_ID:}
 ReformVal: [Output_Periods,Spatial_ID]
 NumberFormat: 2,F,2,1,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Sectors_Aggregated,Area_Type,Spatial_ID]
-Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,BESS_Incentive_Scen,3,Spatial_ID,1,Output_Periods,108]
+Att__TotalsIndex: [Area_Type,Sectors_Aggregated]
+Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,Spatial_ID,4,Output_Periods,108]
 {!40600|Att_StackingIndex: Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
 
@@ -234,7 +238,7 @@ NodeLocation: 596,336,1
 NodeSize: 60,16
 NodeInfo: 1,,,0
 NodeColor: 65535,1,1
-Original: Assumed_NYPA_fractio
+Original: NYPA_of_Natural_Mark
 
 FormNode Fo1916001827
 Title: EV Ad Effectiveness
@@ -302,13 +306,13 @@ NYPA enabled: the portion of the total "natural" market adoption enabled by NYPA
 Definition: Table(Potential_Type)(Total_PV_MW_DC_Tech_,PV_Cumul_MW_DC1,NYPA_Enabled_PV_Ado1)
 NodeLocation: 968,576,1
 NodeSize: 64,40
-ValueState: 2,711,100,927,685,,MIDM
+ValueState: 2,2296,28,1022,827,,MIDM
 Aliases: FormNode Fo1687511331
-GraphSetup: Att_GraphValueRange PV_Potential_by_Type:1,,1,,,,,0,2670.3765988349915,0
-ReformVal: [Output_Periods,Potential_Type]
+GraphSetup: Att_GraphValueRange PV_Potential_by_Type:1,,1,,,,,0,2974.0896821022034,0
+ReformVal: [Output_Periods,Spatial_ID]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Spatial_ID,Area_Type,Sectors_Aggregated]
-Att_ResultSliceState: [Spatial_ID,0,Area_Type,0,Sectors_Aggregated,0,Potential_Type,1,Output_Periods,1]
+Att__TotalsIndex: [Spatial_ID,Sectors_Aggregated,Area_Type]
+Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,Potential_Type,3,Spatial_ID,0,Output_Periods,1]
 
 Variable PV_Cumul_MW_DC
 Title: PV Cumul MW DC
@@ -345,7 +349,7 @@ Original: BESS_Adoption_EOP
 Variable NYPA_Enabled_Storage
 Title: NYPA Enabled Storage Adoption
 Units: MW
-Definition: Assumed_NYPA_fractio[All_PV_Sectors=BESS_Sectors,Spatial_ID=BESS_Spatial_ID] * BESS_Adoption_EOP
+Definition: NYPA_of_Natural_Mark[All_PV_Sectors=BESS_Sectors,Spatial_ID=BESS_Spatial_ID] * BESS_Adoption_EOP
 NodeLocation: 664,688,1
 NodeSize: 64,40
 ValueState: 2,233,103,829,599,,MIDM
@@ -357,7 +361,7 @@ Description: NYPA enabled adoption of storage systems. Currently, only "paired" 
 Definition: sum(Aggregate(NYPA_Enabled_Storage,Map_All_to_Aggregate[All_PV_Sectors=BESS_Sectors],BESS_Sectors,Sectors_Aggregated,"Sum"), BESS_types)
 NodeLocation: 816,688,1
 NodeSize: 64,40
-ValueState: 2,484,95,959,657,1,MIDM
+ValueState: 2,698,39,959,657,1,MIDM
 Aliases: FormNode Fo1849909539
 GraphSetup: Att_AreaFill Graph_Primary_Valdim:1~
 Att_Stacked_Lines Graph_Primary_Valdim:1~
@@ -424,9 +428,9 @@ WindState: 2,2334,170,720,350
 ValueState: 2,282,98,1002,601,,MIDM
 Aliases: FormNode Fo617935139
 GraphSetup: Graph_AxisLabelFont:,20,0
-ReformVal: [Time_Solar_PV,BESS_Incentive_Scen]
+ReformVal: [Time_Solar_PV,Area_Type]
 NumberFormat: 2,%,4,0,0,0,4,1,$,0,"ABBREV",0,,,0,0,15,
-Att_ResultSliceState: [System_Types,2,Area_Type,2,PV_Spatial_ID,1,PV_Sectors,1,Time_Solar_PV,1]
+Att_ResultSliceState: [System_Types,1,PV_Spatial_ID,3,Area_Type,1,Time_Solar_PV,1]
 
 Alias Al2033486115
 Title: Dispatch Flows
@@ -550,13 +554,12 @@ Description: This file must first be uploaded to the ACP cloud server.
 Definition: 'NYPA DER Inputs.xlsx'
 NodeLocation: 104,592,1
 NodeSize: 64,40
-Aliases: FormNode Fo487385379, FormNode Clipboard_Fo48738537, FormNode Fo2064443683
+Aliases: FormNode Fo487385379
 
 Button Import_Custom_DER_In
 Title: Import Custom DER Inputs
 NodeLocation: 280,592,1
 NodeSize: 64,40
-Aliases: Alias Al1190455587
 OnClick: Select_Model_for_Dat:= 'SPIDER';~
 Import_Data_Tabs1
 

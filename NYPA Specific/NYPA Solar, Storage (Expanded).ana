@@ -10,7 +10,7 @@ Author: CWelch
 Date: Thu, Mar 31, 2022 3:05 PM
 DefaultSize: 64,32
 NodeSize: 64,40
-DiagState: 2,34,-1,1866,875,17,10
+DiagState: 2,189,7,1566,763,17,10
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
 FileInfo: 0,LinkModule NYPA_Solar_Storage1,2,2,0,0,NYPA Specific\NYPA Solar, Storage (Expanded).ana
@@ -28,6 +28,7 @@ Title: Logit Price Coefficient
 Definition: 0
 NodeLocation: 668,932,1
 NodeSize: 204,20
+NodeInfo: 1,,,,,,,94,,,,,,0
 NodeColor: 49151,49151,49151
 Original: Logit_Price_Coeff
 
@@ -36,6 +37,7 @@ Title: Logit Tech Coefficient
 Definition: 0
 NodeLocation: 668,972,1
 NodeSize: 204,20
+NodeInfo: 1,,,,,,,94,,,,,,0
 NodeColor: 49151,49151,49151
 Original: Logit_Tech_Coeff
 
@@ -49,35 +51,35 @@ Original: Market_Share_Functio
 FormNode Fo770403875
 Title: Technical PV Potential
 Definition: 1
-NodeLocation: 236,340,1
+NodeLocation: 236,292,1
 NodeSize: 204,20
 Original: Technical_PV_Potenti
 
 FormNode Fo1844145699
 Title: PV Tech Potential Percentage of Total
 Definition: 1
-NodeLocation: 236,460,1
+NodeLocation: 236,412,1
 NodeSize: 204,20
 Original: PV_Tech_Potential_Pe
 
 FormNode Fo501968419
 Title: Total PV MW DC Potential
 Definition: 1
-NodeLocation: 236,300,1
+NodeLocation: 236,252,1
 NodeSize: 204,20
 Original: Total_PV_MW_DC_Poten
 
 FormNode Fo710635043
 Title: Potential divided by Load
 Definition: 1
-NodeLocation: 236,420,1
+NodeLocation: 236,372,1
 NodeSize: 204,20
 Original: Potential_divided_by
 
 FormNode Fo1121676835
 Title: Load vs. PV Potential
 Definition: 1
-NodeLocation: 236,380,1
+NodeLocation: 236,332,1
 NodeSize: 204,20
 Original: Load_vs_PV_Potential
 
@@ -123,7 +125,7 @@ Definition: 0
 NodeLocation: 668,172,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
-Original: Assumed_NYPA_fractio
+Original: NYPA_of_Natural_Mark
 
 FormNode Fo1591042339
 Title: PV Init Adop Fraction
@@ -136,7 +138,7 @@ Original: PV_Init_Adop_Fractio
 FormNode Fo1484087587
 Title: Investment Tax Credit
 Definition: 0
-NodeLocation: 236,692,1
+NodeLocation: 236,644,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Invest_Tax_Credit
@@ -144,7 +146,7 @@ Original: Invest_Tax_Credit
 FormNode Fo947216675
 Title: ITC Scenario
 Definition: 0
-NodeLocation: 236,732,1
+NodeLocation: 236,684,1
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,150,,,,,,0
 Original: Selected_ITC_Scen
@@ -160,7 +162,7 @@ Original: Simple_LCOE_Discount
 FormNode Fo328032547
 Title: Equipment Price Multiplier
 Definition: 0
-NodeLocation: 236,1036,1
+NodeLocation: 236,1020,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Base_Cost_Multiplier
@@ -182,7 +184,7 @@ Original: NYPA_Enabled_Storag2
 FormNode Fo187916579
 Title: PV kW-AC Incentive
 Definition: 0
-NodeLocation: 236,852,1
+NodeLocation: 236,804,1
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,72,,,,,
 NodeColor: 49151,49151,49151
@@ -198,7 +200,7 @@ Original: Electric_Rate_8760
 FormNode Fo1235587363
 Title: DER Cost Change Rate
 Definition: 0
-NodeLocation: 236,1076,1
+NodeLocation: 236,1060,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: DER_Cost_Change_Rate
@@ -206,7 +208,7 @@ Original: DER_Cost_Change_Rate
 FormNode Fo598053155
 Title: DER Cost Scenario
 Definition: 0
-NodeLocation: 236,1116,1
+NodeLocation: 236,1100,1
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,142,,,,,,0
 Original: Select_DER_Cost_Scen
@@ -214,7 +216,7 @@ Original: Select_DER_Cost_Scen
 FormNode Fo1587777827
 Title: Storage KWh Incentive
 Definition: 0
-NodeLocation: 236,772,1
+NodeLocation: 236,724,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Storage_KWh_Incentiv
@@ -222,7 +224,7 @@ Original: Storage_KWh_Incentiv
 FormNode Fo1553174819
 Title: PV Incentive Scenario
 Definition: 0
-NodeLocation: 236,812,1
+NodeLocation: 236,764,1
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,150,,,,,,0
 Original: Storage_Incentive_Sc
@@ -230,7 +232,7 @@ Original: Storage_Incentive_Sc
 FormNode Fo357798179
 Title: PV Incentive Scenario
 Definition: 0
-NodeLocation: 236,892,1
+NodeLocation: 236,844,1
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,150
 Original: PV_Incent_Scenario
@@ -244,15 +246,15 @@ Original: Electric_Rates2
 
 Text Te1605079331
 Title: Equipment Costs
-NodeLocation: 236,1060,-1
+NodeLocation: 236,1044,-1
 NodeSize: 212,124
 NodeInfo: 1,,,,1
 NodeFontColor: 3855,26214,35209
 
 Text Te90935587
 Title: Credits & Incentives
-NodeLocation: 236,784,-1
-NodeSize: 212,144
+NodeLocation: 236,752,-1
+NodeSize: 212,160
 NodeFont: Arial,19
 NodeFontColor: 3855,26214,35209
 
@@ -265,7 +267,7 @@ NodeFontColor: 3855,26214,35209
 
 Text Te874221859
 Title: Technical Potential
-NodeLocation: 236,328,-1
+NodeLocation: 236,280,-1
 NodeSize: 212,160
 NodeInfo: 1,,,,1
 NodeFontColor: 3855,26214,35209
@@ -273,14 +275,14 @@ NodeFontColor: 3855,26214,35209
 FormNode Fo748392739
 Title: Building Count from Facillity Data
 Definition: 1
-NodeLocation: 236,556,1
+NodeLocation: 236,508,1
 NodeSize: 204,20
 Original: Building_Count_from1
 
 FormNode Fo194744611
 Title: System Size Constraints
 Definition: 0
-NodeLocation: 236,260,1
+NodeLocation: 236,212,1
 NodeSize: 204,20
 NodeColor: 52428,52428,52428
 Original: System_Size_Constra2
@@ -288,7 +290,7 @@ Original: System_Size_Constra2
 FormNode Fo39555363
 Title: PV suitability
 Definition: 0
-NodeLocation: 236,220,1
+NodeLocation: 236,172,1
 NodeSize: 204,20
 NodeColor: 52428,52428,52428
 Original: PV_suitability
@@ -296,13 +298,13 @@ Original: PV_suitability
 FormNode Fo867930403
 Title: Customer Consumption
 Definition: 1
-NodeLocation: 236,596,1
+NodeLocation: 236,548,1
 NodeSize: 204,20
 Original: Customer_Load1
 
 Text Te1383829795
 Title: Market Characterization
-NodeLocation: 236,564,-1
+NodeLocation: 236,516,-1
 NodeSize: 212,68
 NodeInfo: 1,,,,1
 NodeFontColor: 3855,26214,35209
@@ -313,20 +315,20 @@ Description: 1. Revenue, TBtu, and GHG emissions outputs~
 2. Additional input visibility~
 3. Additional desired scenario inputs~
 4. Additional desired output
-NodeLocation: 208,1324,2
-NodeSize: 184,60
+NodeLocation: 216,1220,2
+NodeSize: 184,44
 NodeInfo: 1,,,,0
 NodeFontColor: 3855,26214,35209
 
 Text Te306983203
-NodeLocation: 452,632,-25
-NodeSize: 444,624
+NodeLocation: 452,644,-25
+NodeSize: 444,636
 NodeInfo: 1,,,,1,1
 NodeColor: 3855,26214,35209
 
 Text Te1380725027
-NodeLocation: 452,680,-22
-NodeSize: 436,568
+NodeLocation: 452,692,-22
+NodeSize: 436,580
 NodeInfo: 1,,,,1,1
 NodeColor: 65535,65535,65535
 
@@ -384,7 +386,7 @@ AcpStyles: Show_Object:No
 FormNode Fo103510307
 Title: Installed Cost in Base Year (2021)
 Definition: 0
-NodeLocation: 236,996,1
+NodeLocation: 236,980,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Base_Year_Cost
@@ -392,7 +394,7 @@ Original: Base_Year_Cost
 FormNode Fo430666019
 Title: Equipment Cost Forecast
 Definition: 1
-NodeLocation: 236,1156,1
+NodeLocation: 236,1140,1
 NodeSize: 204,20
 Original: Equipment_Cost_Forec
 
@@ -408,6 +410,7 @@ Title: PV Ad Effectiveness
 Definition: 0
 NodeLocation: 668,1012,1
 NodeSize: 204,20
+NodeInfo: 1,,,,,,,94,,,,,,0
 NodeColor: 49151,49151,49151
 Original: PV_Ad_Effectiveness
 
@@ -416,6 +419,7 @@ Title: PV Word of Mouth
 Definition: 0
 NodeLocation: 668,1052,1
 NodeSize: 204,20
+NodeInfo: 1,,,,,,,94,,,,,,0
 NodeColor: 49151,49151,49151
 Original: PV_Word_of_Mouth
 
@@ -462,24 +466,18 @@ NodeInfo: 1,,,,0,0,1,,,,,,1
 NodeFont: Arial,19
 NodeFontColor: 65535,1,1
 
-Alias Al1190455587
-Title: Import DER Inputs
-Definition: 1
-NodeLocation: 1440,828,1
-NodeSize: 104,20
-Original: Import_Custom_DER_In
-
 Text Te1240787235
 NodeLocation: 1352,408,-26
 NodeSize: 440,392
+NodeInfo: 1,,,,0
 
-FormNode Fo2064443683
-Title: Custom Input Filename
+FormNode Fo1910413603
+Title: Incentive PV $/kW Adder
 Definition: 0
-NodeLocation: 1112,832,1
-NodeSize: 208,16
-NodeInfo: 1,,,,,,,166,,,,,,0
-Original: Custom_Input_Filenam
+NodeLocation: 236,884,1
+NodeSize: 204,20
+NodeColor: 49151,49151,49151
+Original: Incentive_PV_kW_Adde
 
 Close NYPA_Solar_Storage1
 

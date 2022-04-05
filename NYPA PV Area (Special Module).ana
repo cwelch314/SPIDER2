@@ -973,14 +973,14 @@ Description: Total technical potential for solar PV installations if all calcula
 Definition: Total_PV_kW_DC_poten / 1000
 NodeLocation: 1968,472,1
 NodeSize: 64,40
-ValueState: 2,430,50,1038,716,1,MIDM
+ValueState: 2,430,50,1038,716,0,MIDM
 Aliases: FormNode Fo954953251, FormNode Fo501968419
 GraphSetup: {!50000|Graph_SortBySpread:1}~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_GraphValueRange Total_PV_MW_DC_Poten:1,,1,,,,,0,481.7144274711609,0
 ReformVal: [PV_Sectors,Spatial_ID]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Spatial_ID,Area_Type]
+Att__TotalsIndex: [Spatial_ID,Area_Type,PV_Sectors]
 Att_ResultSliceState: [PV_Sectors,9,Spatial_ID,0,Area_Type,0]
 {!40600|Att_StackingIndex: Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
@@ -1012,13 +1012,14 @@ Definition: Table(Spatial_ID,Area_Type,Min_Max)(~
 NodeLocation: 1312,72,1
 NodeSize: 64,40
 WindState: 2,374,145,720,350
-DefnState: 2,717,374,629,301,0,DFNM
+DefnState: 2,787,422,478,235,0,DFNM
 ValueState: 2,2193,346,821,420,,MIDM
 Aliases: FormNode Fo194744611
 NodeColor: 65535,1,1
-ReformDef: [Min_Max,Spatial_ID]
-NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att_EditSliceState: [Area_Type,1,Spatial_ID,1,Min_Max,2]
+ReformDef: [Area_Type,Spatial_ID]
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+Att_EditSliceState: [Min_Max,2,Spatial_ID,1,Area_Type,1]
+{!40700|Att_CellFormat: CellAlignment('Center')}
 
 Variable Consumption_by_Sect1
 Title: Consumption by Sector from Facility Data

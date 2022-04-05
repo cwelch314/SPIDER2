@@ -2604,7 +2604,7 @@ Decision PV_Ad_Effectiveness
 Title: PV Ad Effectiveness
 Units: fraction/year
 Description: Advertising effectiveness, also known as the "p" coefficient in the classic Bass diffusion model.
-Definition: 0.05
+Definition: Choice(Advertising_Coeffici,6,0)
 NodeLocation: 128,72,1
 NodeSize: 64,40
 WindState: 2,36,8,1180,547
@@ -2619,7 +2619,7 @@ Decision PV_Word_of_Mouth
 Title: PV Word of Mouth
 Units: fraction/year
 Description: The strength of word-of-mouth effectiveness, also known as the "q" parameter in the classic Bass diffusion model.
-Definition: 0.4
+Definition: Choice(Word_of_Mouth_Coeff1,4,0)
 NodeLocation: 128,264,1
 NodeSize: 64,40
 WindState: 2,5,426,720,350
@@ -2833,7 +2833,7 @@ Units: dimensionless
 Description: Sensitivity of market share to the cost of electricity ratio. More negative values indicate that market share will increase (or drop off) faster for the same change in the cost of electricity ratio (i.e., more price sensitive).~
 ~
 See the "Long-Run Market Share Illustration" output for a visualization of market share as a function of this input.
-Definition: -6
+Definition: Choice(Price_Coefficient_Il,2,0)
 NodeLocation: 128,456,1
 NodeSize: 64,40
 WindState: 2,2094,188,720,350
@@ -2881,7 +2881,7 @@ Units: dimensionless
 Description: Coefficient representative the inherent preference for "doing nothing" (i.e., not installing a system. Higher values indicate a stronger preference for NOT installing a system, all else equal (i.e., for the same cost of electricity ratio). ~
 ~
 See the "Long-Run Market Share Illustration" output for a visualization of market share as a function of this input.
-Definition: 5
+Definition: Choice(Tech_Coefficient_Ill,3,0)
 NodeLocation: 128,552,1
 NodeSize: 64,40
 WindState: 2,57,96,720,350

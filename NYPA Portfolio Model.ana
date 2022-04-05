@@ -72,17 +72,11 @@ DisplayOutputs SysFunction: Variable Lower_Pctile, Variable Upper_Pctile, Variab
 DisplayOutputs Function: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi, Decision Dates_Incl_in_PV_Opt, Decision Opt_Settings_PV, Decision Opt_Settings_BESS, Function ACP_Summary_of_modul, Variable ACP_Prefix_by_module
 DisplayOutputs SysVar: Variable Lower_Pctile, Variable Upper_Pctile
 {!-50299|DiagramColor Model: 65535,65535,65535}
-{!-50299|NodeColor Model: 65535,65535,65535}
 {!-50299|DiagramColor Module: 65535,65535,65535}
-{!-50299|NodeColor Module: 65535,65535,65535}
 {!-50299|DiagramColor LinkModule: 65535,65535,65535}
-{!-50299|NodeColor LinkModule: 65535,65535,65535}
 {!-50299|DiagramColor Library: 65535,65535,65535}
-{!-50299|NodeColor Library: 65535,65535,65535}
 {!-50299|DiagramColor LinkLibrary: 65535,65535,65535}
-{!-50299|NodeColor LinkLibrary: 65535,65535,65535}
 {!-50299|DiagramColor Form: 65535,65535,65535}
-{!-50299|NodeColor Form: 65535,65535,65535}
 {!50500|NodeColor MissingLinkModule: 65535,65535,65535}
 {!50500|NodeColor MissingLinkLibrary: 65535,65535,65535}
 NodeColor Variable: 65535,65535,65535
@@ -141,7 +135,7 @@ Author: CWelch
 Date: Tue, Apr 20, 2021 10:09 AM
 DefaultSize: 64,32
 NodeInfo: 1,,,,,,,,,,,0
-DiagState: 2,30,24,1851,737,17,10
+DiagState: 2,20,18,1851,737,17,10
 FontStyle: Arial,15
 FileInfo: 0,Model Nexant_Model_Templat,2,2,0,0,C:\Users\cwelch\Documents\Repos\Nexant\SPIDER\NYPA Portfolio Model.ana
 {!50000|DefaultFontColor: 0,0,0}
@@ -904,7 +898,7 @@ Original: Output_Ident8
 
 Index Output_Ident8
 Title: Output Ident
-Definition: [Assumed_NYPA_fractio,PV_Init_Adop_Fractio]
+Definition: [NYPA_of_Natural_Mark,PV_Init_Adop_Fractio]
 NodeLocation: 992,912,1
 NodeSize: 64,40
 WindState: 2,2451,172,720,638
