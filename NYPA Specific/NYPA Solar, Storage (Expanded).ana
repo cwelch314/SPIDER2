@@ -10,7 +10,7 @@ Author: CWelch
 Date: Thu, Mar 31, 2022 3:05 PM
 DefaultSize: 64,32
 NodeSize: 64,40
-DiagState: 2,13,12,1866,875,17,10
+DiagState: 2,34,-1,1866,875,17,10
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
 FileInfo: 0,LinkModule NYPA_Solar_Storage1,2,2,0,0,NYPA Specific\NYPA Solar, Storage (Expanded).ana
@@ -265,8 +265,8 @@ NodeFontColor: 3855,26214,35209
 
 Text Te874221859
 Title: Technical Potential
-NodeLocation: 236,304,-1
-NodeSize: 212,184
+NodeLocation: 236,328,-1
+NodeSize: 212,160
 NodeInfo: 1,,,,1
 NodeFontColor: 3855,26214,35209
 
@@ -280,7 +280,7 @@ Original: Building_Count_from1
 FormNode Fo194744611
 Title: System Size Constraints
 Definition: 0
-NodeLocation: 236,252,1
+NodeLocation: 236,260,1
 NodeSize: 204,20
 NodeColor: 52428,52428,52428
 Original: System_Size_Constra2
@@ -288,18 +288,10 @@ Original: System_Size_Constra2
 FormNode Fo39555363
 Title: PV suitability
 Definition: 0
-NodeLocation: 236,172,1
+NodeLocation: 236,220,1
 NodeSize: 204,20
 NodeColor: 52428,52428,52428
 Original: PV_suitability
-
-FormNode Fo1950060835
-Title: PV Capacity Factor
-Definition: 0
-NodeLocation: 236,212,1
-NodeSize: 204,20
-NodeColor: 52428,52428,52428
-Original: PV_Capacity_Factor
 
 FormNode Fo867930403
 Title: Customer Consumption
@@ -469,6 +461,25 @@ NodeSize: 152,12
 NodeInfo: 1,,,,0,0,1,,,,,,1
 NodeFont: Arial,19
 NodeFontColor: 65535,1,1
+
+Alias Al1190455587
+Title: Import DER Inputs
+Definition: 1
+NodeLocation: 1440,828,1
+NodeSize: 104,20
+Original: Import_Custom_DER_In
+
+Text Te1240787235
+NodeLocation: 1352,408,-26
+NodeSize: 440,392
+
+FormNode Fo2064443683
+Title: Custom Input Filename
+Definition: 0
+NodeLocation: 1112,832,1
+NodeSize: 208,16
+NodeInfo: 1,,,,,,,166,,,,,,0
+Original: Custom_Input_Filenam
 
 Close NYPA_Solar_Storage1
 

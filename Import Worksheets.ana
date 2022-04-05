@@ -33,7 +33,7 @@ Title: Release Spreadsheet
 Description: After viewing a specific dataset, it may be necessary to "release" the spreadsheet so it can be opened and viewed (Analytica will open the spreadsheet to perform the import, but the spreadsheet may not be visible on the desktop). Pressing this button will release the spreadsheet, but it will also discard the data chosen for temporary viewing (though it does not discard any of the data stored in the model).
 NodeLocation: 672,512,1
 NodeSize: 64,40
-Aliases: Alias New1004128547, Alias New2010761507, Alias New1608108323, Alias Clipboard_New1608108, Alias New1397893411
+Aliases: Alias New1004128547, Alias New2010761507, Alias New1608108323, Alias New1397893411
 OnClick: (Import_Reset1:=NOT Import_Reset1)
 
 Module Structural_Settings_
@@ -42,7 +42,7 @@ Author: JamesMilford
 Date: Fri, Dec 21, 2018 10:51 AM
 NodeLocation: 696,304,1
 NodeSize: 64,40
-DiagState: 2,-13,-7,1823,755,17,10
+DiagState: 2,48,30,1823,755,17,10
 NodeColor: 65535,65535,65535
 
 Module Excel_Import_Logic
@@ -59,7 +59,7 @@ Author: JamesMilford
 Date: Sun, Dec 16, 2018 8:07 AM
 NodeLocation: 216,184,1
 NodeSize: 64,40
-DiagState: 2,14,176,1787,796,17,10
+DiagState: 2,1937,19,1787,741,17,10
 
 Index Import_Fixed_Params
 Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
@@ -245,15 +245,15 @@ Checkbox(0),Path_to_Global_Data1,'EUI','A7',Choice(Import_Data_Types,1,0),Null,H
 Checkbox(0),Path_to_Global_Data1,'Facility_Data','A1',Choice(Import_Data_Types,1,0),Null,Handle(Facility_Data1),Handle(Facility_Parameter),Handle(Facility_Identifier),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Park_To_GFA_Ratio','A7',Choice(Import_Data_Types,1,0),Null,Handle(Ratio_of_Parking_Ar1),Handle(Spatial_ID),Handle(All_PV_Sectors),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'PV_Suitability','A7',Choice(Import_Data_Types,1,0),Null,Handle(PV_suitability),Handle(Area_Type),Handle(All_PV_Sectors),Null,Null,Null,~
-Checkbox(1),Path_to_Global_Data1,'System_Size_Constraints','A7',Choice(Import_Data_Types,1,0),Null,Handle(System_Size_Constra2),Handle(Min_Max),Handle(Spatial_ID),Handle(Area_Type),Null,Null,~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
+Checkbox(0),Path_to_Global_Data1,'System_Size_Constraints','A7',Choice(Import_Data_Types,1,0),Null,Handle(System_Size_Constra2),Handle(Min_Max),Handle(Spatial_ID),Handle(Area_Type),Null,Null,~
+Checkbox(1),Custom_Input_Filenam,'NYPA Market Fraction','A1',Choice(Import_Data_Types,1,0),Null,Handle(Assumed_NYPA_fractio),Handle(Spatial_ID),Handle(All_PV_Sectors),Handle(Area_Type),Null,Null,~
 Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
 Checkbox(0),Path_to_Global_Data1,'Feasibility','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Feasibility),Handle(All_PV_Sectors),Handle(All_Measures),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Applicability','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Applicability),Handle(All_PV_Sectors),Handle(All_Measures),Handle(Region),Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'PercentNotComplete','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Percent_Not_Comp),Handle(All_PV_Sectors),Handle(All_Measures),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Meas Fuel EndUse','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Measure_Fuel_End),Handle(Fuel__End_Use),Handle(All_Measures),Null,Null,Null,~
-Checkbox(0),Path_to_Global_Data1,'Measure Char','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Measure_Characte),Handle(Measure_Parameter),Handle(All_Measures),Handle(RET_or_MD),Null,Null,~
-Checkbox(1),Path_to_Global_Data1,'EUI','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_EUI_by_Bldg_EndU),Handle(End_Use),Handle(Region),Handle(All_PV_Sectors),Handle(Primary_Fuel_Type),Null,~
+Checkbox(1),Path_to_Global_Data1,'Measure Char','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Measure_Characte),Handle(Measure_Parameter),Handle(All_Measures),Handle(RET_or_MD),Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'EUI','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_EUI_by_Bldg_EndU),Handle(End_Use),Handle(Region),Handle(All_PV_Sectors),Handle(Primary_Fuel_Type),Null,~
 Checkbox(0),Path_to_Global_Data1,'Fuel Interactive Factor','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Fuel_Interaction),Handle(Region),Handle(All_Measures),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Penetration','A4',Choice(Import_Data_Types,1,0),Null,Handle(EE_Penetration),Handle(Study_Year),Handle(All_Measures),Handle(EE_Scenario),Handle(All_PV_Sectors),Handle(Replacement_Type),~
 Checkbox(0),Path_to_Global_Data1,'Include Replacement Type','A5',Choice(Import_Data_Types,1,0),Null,Handle(All_Include_Replacem),Handle(Replacement_Type),Handle(All_Measures),Null,Null,Null,~
@@ -341,12 +341,12 @@ Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),
 NodeLocation: 88,552,1
 NodeSize: 64,40
 WindState: 2,64,77,1746,780
-DefnState: 2,75,-1,1677,839,0,DFNM
+DefnState: 2,1980,27,1677,839,0,DFNM
 ValueState: 2,-66,109,1540,509,0,MIDM
 Aliases: FormNode New1771965635, FormNode New1859766563, FormNode New1675217187
 ReformDef: [Excel_Import_Params,Imported_Dataset_Num]
 TableCellDefault: Import_Param_Default
-Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),2,Imported_Dataset_Num,1,Excel_Import_Params,1]
+Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),1,Imported_Dataset_Num,1,Excel_Import_Params,1]
 {!40700|Att_CellFormat: CellFormats(CellSpan(Imported_Dataset_Num,CellFill(0xffff0000),1,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellNumberFormat('Fixed Point',7,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:7),79,header:0),6,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellNumberFormat('Fixed Point',5,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:5),18,header:0),6,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffffff),1,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellFill(0xffff0000),1,header:0),3,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellFill(0xffffffff),1,header:0),3,header:0))}
 
 Decision Number_of_Datasets
@@ -468,7 +468,7 @@ Title: Populated Rows
 Definition: Data_Start_Row1..End_Row1
 NodeLocation: 688,80,1
 NodeSize: 64,40
-ValueState: 2,17,98,416,303,,MIDM
+ValueState: 2,17,98,416,303,0,MIDM
 
 Index Expected_Cols
 Title: Expected Cols
@@ -483,7 +483,7 @@ CopyIndex(cols)
 NodeLocation: 688,168,1
 NodeSize: 64,40
 WindState: 2,51,200,720,350
-ValueState: 2,1136,217,648,393,,MIDM
+ValueState: 2,1136,217,648,393,0,MIDM
 
 Index Index_Titles
 Title: Index Titles
@@ -578,14 +578,14 @@ NodeSize: 64,40
 
 Decision Last_Import_Time
 Title: Last Import Time
-Definition: 3-Apr-2022 17:09:31.854000
+Definition: 4-Apr-2022 18:17:42.197000
 NodeLocation: 544,848,1
 NodeSize: 64,40
 Aliases: FormNode New1910098211, FormNode New2017052963
 NumberFormat: 3,F,4,4,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 
 Index Tab_Names
-Att_PrevIndexValue: ['Feasibility','Applicability','PercentNotComplete','Meas Fuel EndUse','Measure Char','EUI','Fuel Interactive Factor','Penetration','Include Replacement Type','ForceCostEffective','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName']
+Att_PrevIndexValue: ['SGIP_Data','Single_Cell_Inputs','Hourly_Profiles','Holiday_Dates','SheetName','PV_CapFactor','PV_NewConstr_Size','Battery_Specs','SheetName','DC_to_AC_Ratio','Finance_Rates','Fed_ITC','Strg_Duration_Incent','Vehicle_Stock_Data','Struct_Single_Cell_Inputs','Hist_Vehicle_Growth','EV_MktShare_Mults','Building_Stock','Aggreg_Spatial_ID','EV_Map_Increm_to_Cumul','Climate_Zone_Map','Fuel_Prices','MPG','VMT','Fuel_Mix','Vehicle_Price','Vehicle_Range','Maint_Costs','Veh_Type_Map','Vehicle_Tech_Pref','Veh_Incentives','Veh_DecisionVars','Veh_OptStatus','Veh_R2Thresh','Veh_CalibDates','Veh_CalibDecisions','Veh_OptSetting','Veh_DecisBounds','Veh_Stock_Mults','Equip_Prices','DER_PriceChangeRate','Equip_Lifetime','OM_Cost','Interconn_Fee','PV_Hist_Capacity_Installs','PV_Historical_Installs','SheetName','SheetName','SheetName','NewConstr_Suitability','SheetName','SheetName','SheetName','SheetName','Stock_Basis','PV_Power_Density','SheetName','PV_Module_to_Area','PV_CalibDecis','PV_Constraints','PV_CalibDates','PV_R2Thresh','PV_CalibToler','PV_OptSetting','PV_DecisBounds','PV_DecisionVars','PV_OptStatus','Strg_Cap_Derate','Strg_Incent_BaseRate','SheetName','SheetName','Incent_StartMonth','MACRS','Tax_Rates','Bonus_Deprec','NewConstr_Share','Vehicle_Impact','PV_Scale_Load','Consumption_by_Sector','Load_Profiles','Solar_Profile_Map','PV_Init_Adop_Fraction','Total_PV_Area','EUI','Facility_Data','Park_To_GFA_Ratio','PV_Suitability','System_Size_Constraints','NYPA Market Fraction','SheetName']
 Title: Tab Names
 Definition: CopyIndex(Tab_Names_by_Number)
 NodeLocation: 240,872,1
@@ -731,7 +731,7 @@ Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),2,Categ_Index_Params,1,Categ_
 {!40700|Att_CellFormat: CellFormats(CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xff80ff80),5,17,header:0),1,header:0),CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xffff0000),14,header:0),2,header:0),CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xffff0000),14,16,header:0),2,header:0),CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xffffffff),14,20,header:0),2,header:0),CellSpan(Categ_Index_Params,CellFill(0xffffffff),5,17,header:0))}
 
 Index Cat_Index_Tab_Names
-Att_PrevIndexValue: ['Categorical_Indexes','SheetName']
+Att_PrevIndexValue: ['Categorical_Indexes','Struct_Categ_Indexes']
 Title: Categ Index Tab Names
 Definition: CopyIndex(Categ_Index_Tab_Opt1)
 NodeLocation: 1016,784,1
@@ -911,7 +911,7 @@ TableCellDefault: Seq_Index_Default1
 Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),1,Seq_Index_Params1,1,Seq_Index_Tabs1,1]
 
 Index Seq_Index_Tab_Names1
-Att_PrevIndexValue: ['SheetName','SheetName']
+Att_PrevIndexValue: ['Sequence_Index_Inputs','Struct_Seq_Index_Inputs']
 Title: Sequence Index Tab Names
 Definition: CopyIndex(Seq_Index_Tab_Opt1)
 NodeLocation: 1336,784,1
@@ -986,7 +986,7 @@ Title: Import from Excel
 Description: Press this button to import data from Excel. If selected, this will read the categorical and/or sequential indexes before importing the data tabs.
 NodeLocation: 1520,168,1
 NodeSize: 64,40
-Aliases: Alias New272222499, Alias New607766819
+Aliases: Alias New272222499, Alias New607766819, Alias Al649390371
 OnClick: IF Import_Categor_Inde1 THEN Import_Categ_Indexe1 ELSE Null;   {Import categorical indexes if desired}~
 IF Import_Sequent_Inde1 THEN Import_Seq_Index1 ELSE Null;   {Import sequential indexes if desired}~
 Import_Data_Tabs1   {Import selected data tabs}
@@ -1267,7 +1267,7 @@ Title: Data to Import
 Definition: subtable(Excel_Import_Setting[Excel_Import_Params=SubTab_Index])
 NodeLocation: 88,768,1
 NodeSize: 64,40
-DefnState: 2,760,105,564,676,0,DFNM
+DefnState: 2,934,151,539,387,0,DFNM
 Aliases: FormNode Fo1584253219, FormNode Fo1320012067
 ReformDef: [SubTab_Index,Imported_Dataset_Num]
 Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),2,Imported_Dataset_Num,1,SubTab_Index,1]
@@ -1309,6 +1309,13 @@ Title: Sequence Tab Param
 Definition: MultiChoice(Seq_Index_Fix_Param1,1,3)
 NodeLocation: 1336,1000,1
 NodeSize: 64,40
+
+Alias Al649390371
+Title: Import from Excel
+Definition: 1
+NodeLocation: 1520,272,1
+NodeSize: 64,40
+Original: Import_from_Excel1
 
 Close Import_Auxiliary_Var
 
@@ -1547,7 +1554,7 @@ Author: JamesMilford
 Date: Fri, Dec 21, 2018 10:51 AM
 NodeLocation: 440,80,1
 NodeSize: 64,40
-DiagState: 2,541,-2,1003,613,17,10
+DiagState: 2,541,0,1003,613,17,10
 
 Variable Raw_Imported_Data1
 Title: Raw Imported Data
@@ -1604,7 +1611,7 @@ Definition: VAR colOffset:=PositionInIndex(Raw_Imported_Data1.Column, Start_Col1
 Raw_Imported_Data1[.Row=Populated_Rows, @.Column=@Expected_Cols+colOffset]
 NodeLocation: 272,80,1
 NodeSize: 64,40
-ValueState: 2,94,169,1215,436,0,MIDM
+ValueState: 2,292,82,1444,698,0,MIDM
 ReformVal: [Expected_Cols,Populated_Rows]
 
 Variable Format_Import_Data1
@@ -1744,7 +1751,7 @@ WindState: 2,18,191,720,350
 
 Variable Import_Reset1
 Title: Import Reset
-Definition: 1
+Definition: 0
 NodeLocation: 144,128,1
 NodeSize: 64,40
 
@@ -1753,7 +1760,7 @@ Title: Path to Global Data
 Description: The path to the spreadsheet whose data will be imported. ~
 ~
 e.g. 'C:\Users\RickyBobby\Documents\Filename.xlsx'
-Definition: DetermTable(Select_Model_for_Dat)('NYPA DER Data Copy.xlsx','C:\Users\cwelch\Documents\Repos\Nexant\SPIDER\NYPA Efficiency Model\NYPA Model Data Copy.xlsx')
+Definition: DetermTable(Select_Model_for_Dat)('NYPA DER Data Copy.xlsx','C:\Users\cwelch\Documents\Repos\Nexant\SPIDER\NYPA Efficiency Model\NYPA Model Data.xl')
 NodeLocation: 144,224,1
 NodeSize: 64,40
 WindState: 2,98,82,720,547
@@ -1764,7 +1771,7 @@ TableCellDefault: 'C:\Documents\Filename.xlsx'
 Decision Dataset_to_View1
 Title: Dataset to View
 Description: Select the tab name of the dataset you wish to view in greater detail.
-Definition: Choice(Tab_Names,6,0)
+Definition: Choice(Tab_Names,89,0)
 NodeLocation: 112,520,1
 NodeSize: 64,40
 WindState: 2,7,277,720,350
@@ -1842,7 +1849,7 @@ ELSE FOR K:=@Index_Titles DO (~
 
 NodeLocation: 272,208,1
 NodeSize: 64,40
-ValueState: 2,1418,334,327,497,0,MIDM
+ValueState: 2,582,11,766,678,0,MIDM
 ReformVal: [Sys_LocalIndex('Index_Names'),Sys_LocalIndex('Number_Missing')]
 NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 
@@ -1901,7 +1908,7 @@ Missing Subscripts - indicates whether any combination of fact column coordinate
 Incorrect Subscripts - indicates when coordinates/subscripts in a given fact column do not match any of the elements of the index that is assigned to that fact column.~
 ~
 Repeated Subscripts - indicates when a specific combination of coordinates/subscripts are repeated across two or more rows of the import data. In these instances, the model is not able to determine which row should be assigned to the coordinates, so it sums all rows having those coordinates.
-Definition: Table(All_Index_Checks)(Checkbox(0),Checkbox(0),Checkbox(0))
+Definition: Table(All_Index_Checks)(Checkbox(1),Checkbox(1),Checkbox(0))
 NodeLocation: 496,64,1
 NodeSize: 64,40
 WindState: 2,36,91,978,453
@@ -2130,10 +2137,11 @@ Aliases: FormNode Fo1124452643
 
 Decision Select_Model_for_Dat
 Title: Select Model for Data Import
-Definition: Choice(Model_for_Data_Impo1,2,0)
+Description: Choice(Model_for_Data_Impo1,1,0)
+Definition: Choice(Model_for_Data_Impo1,1,0)
 NodeLocation: 584,368,1
 NodeSize: 64,40
-Aliases: FormNode Fo1385416995
+Aliases: FormNode Fo1385416995, FormNode Fo376760611
 {!40300|DomainExpr: Model_for_Data_Impo1}
 
 Close Data_Import1
