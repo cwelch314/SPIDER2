@@ -290,14 +290,15 @@ NodeLocation: 1968,672,1
 NodeSize: 64,40
 ValueState: 2,318,52,1334,701,1,MIDM
 Aliases: FormNode Fo1121676835
-GraphSetup: ShowKey:1~
-Att_StackedBar Graph_Primary_Valdim:0~
-Att_CatLineStyle Graph_Primary_Valdim:9~
+GraphSetup: {!50000|Graph_SortBySpread:1}~
+Graph_AxisLabelFont:,14,0~
 Graph_AxisTitleFont:Arial,20,1~
-Graph_AxisLabelFont:,14,0
+Att_CatLineStyle Graph_Primary_Valdim:9~
+Att_StackedBar Graph_Primary_Valdim:0
 ReformVal: [PV_Sectors,Self]
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [PV_Sectors,Spatial_ID]
-Att_ResultSliceState: [Spatial_ID,0,Self,1,PV_Sectors,0]
+Att_ResultSliceState: [Spatial_ID,0,Self,2,Self,1,PV_Sectors,0]
 {!40600|Att_ClusterIndex: Load_vs_PV_Potential}
 {!40700|Att_CellFormat: CellNumberFormat('Fixed Point',0,0,1,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:0)}
 
@@ -973,7 +974,7 @@ Description: Total technical potential for solar PV installations if all calcula
 Definition: Total_PV_kW_DC_poten / 1000
 NodeLocation: 1968,472,1
 NodeSize: 64,40
-ValueState: 2,430,50,1038,716,0,MIDM
+ValueState: 2,430,50,1038,716,1,MIDM
 Aliases: FormNode Fo954953251, FormNode Fo501968419
 GraphSetup: {!50000|Graph_SortBySpread:1}~
 Att_CatLineStyle Graph_Primary_Valdim:9~
@@ -1070,11 +1071,15 @@ Description: Total building count from parcel data.
 Definition: Building_Count_from_[Building_Stock_Year=2021]
 NodeLocation: 280,1064,1
 NodeSize: 64,40
-ValueState: 2,887,34,844,721,0,MIDM
+ValueState: 2,251,12,1050,762,1,MIDM
 Aliases: FormNode Fo748392739
-ReformVal: [Spatial_ID,All_PV_Sectors]
+GraphSetup: {!50000|Graph_SortBySpread:1}~
+Att_CatLineStyle Graph_Primary_Valdim:9
+ReformVal: [All_PV_Sectors,Spatial_ID]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Spatial_ID,All_PV_Sectors]
+{!40600|Att_StackingIndex: Spatial_ID}
+{!40600|Att_ClusterIndex: Null}
 {!40700|Att_CellFormat: CellFormats(CellFont(size:14),CellAlignment('Center'))}
 
 Variable Customer_Load1
@@ -1084,9 +1089,11 @@ Description: Estimated annual customer MWh load of eligible customers.
 Definition: Consumption_by_Sect1 / 1000
 NodeLocation: 592,800,1
 NodeSize: 64,40
-ValueState: 2,924,45,822,694,0,MIDM
+ValueState: 2,278,61,1049,692,1,MIDM
 Aliases: FormNode Fo867930403
-ReformVal: [Spatial_ID,All_PV_Sectors]
+GraphSetup: {!50000|Graph_SortBySpread:1}~
+Att_CatLineStyle Graph_Primary_Valdim:9
+ReformVal: [All_PV_Sectors,Spatial_ID]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [All_PV_Sectors,Spatial_ID]
 {!40700|Att_CellFormat: CellFont(size:14)}
