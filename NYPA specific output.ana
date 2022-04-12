@@ -11,7 +11,7 @@ Date: Tue, Mar 29, 2022 11:58 AM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,0,0,,,,,,,,,0
-DiagState: 2,769,36,1597,691,17,10
+DiagState: 2,57,133,1597,691,17,10
 WindState: 2,2271,111,720,350
 NodeColor: 65535,65535,65535
 FontStyle: Arial Narrow,19
@@ -32,36 +32,36 @@ Title: NYPA % of Natural Market
 Units: %
 Description: The assumed percent of the total "natural" market adoption that is enabled by NYPA.
 Definition: Table(Spatial_ID,All_PV_Sectors,Area_Type)(~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
-0.25,0.25,0.25,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
+0.2,0.2,0.2,~
 0.2,0.2,0.2,~
 0.2,0.2,0.2,~
 0.2,0.2,0.2,~
@@ -154,7 +154,7 @@ Definition: Table(Spatial_ID,All_PV_Sectors,Area_Type)(~
 0.2,0.2,0.2)
 NodeLocation: 592,288,1
 NodeSize: 72,40
-DefnState: 2,2453,89,768,667,0,DFNM
+DefnState: 2,185,94,768,667,0,DFNM
 ValueState: 2,1167,229,624,551,,MIDM
 Aliases: FormNode Fo471309859, FormNode Fo517300515
 NodeColor: 65535,1,1
@@ -213,20 +213,21 @@ Description: Simulated PV adoption that is enabled by NYPA.
 Definition: Aggregate(NYPA_Enabled_PV_Adop,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
 NodeLocation: 776,352,1
 NodeSize: 64,40
-ValueState: 2,637,7,946,740,1,MIDM
+ValueState: 2,426,52,946,740,1,MIDM
 Aliases: FormNode Fo1042431523
-GraphSetup: Graph_FillTransparen:59~
-Att_ContLineStyle Graph_Primary_Valdim:1~
-{!50000|Graph_SortBySpread:1}~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_GraphIndexRange Output_Periods:1,0,,,,,10~
-Att_Stacked_Lines Graph_Primary_Valdim:1~
-Att_AreaFill Graph_Primary_Valdim:1~
+GraphSetup: Flip:0~
 Att_GraphValueRange NYPA_Enabled_PV_Ado1:1,,1,1,,,,0,1000,0~
-{!40403|Att_ReverseOrder Spatial_ID:}
+Att_AreaFill Graph_Primary_Valdim:1~
+Att_Stacked_Lines Graph_Primary_Valdim:1~
+Att_GraphIndexRange Output_Periods:1,0,,,,,10~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+Att_ContLineStyle Graph_Primary_Valdim:5~
+Graph_FillTransparen:59~
+Att_ForceCategorical Graph_Primary_Valdim:~
+{!50000|Graph_SortBySpread:0}
 ReformVal: [Output_Periods,Spatial_ID]
 NumberFormat: 2,F,2,1,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Area_Type,Sectors_Aggregated]
+Att__TotalsIndex: [Area_Type,Sectors_Aggregated,Spatial_ID]
 Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,Spatial_ID,4,Output_Periods,108]
 {!40600|Att_StackingIndex: Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
@@ -277,7 +278,8 @@ Description: Percentage of total NYPA enabled PV adoption by sector, geography, 
 Definition: ZIDZ1(NYPA_Enabled_PV_Ado1,sum(NYPA_Enabled_PV_Ado1,Spatial_ID,Area_Type,Sectors_Aggregated))
 NodeLocation: 816,576,1
 NodeSize: 64,40
-ValueState: 2,589,43,1044,647,1,MIDM
+ValueState: 2,282,8,1244,774,1,MIDM
+Aliases: FormNode Fo693572899
 GraphSetup: {!50000|Graph_SortBySpread:1}~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_GraphValueRange NYPA_Enabled_PV_Ado2:1,,0,,,,,0,0.45,0
@@ -305,9 +307,10 @@ NYPA enabled: the portion of the total "natural" market adoption enabled by NYPA
 Definition: Table(Potential_Type)(Total_PV_MW_DC_Tech_,PV_Cumul_MW_DC1,NYPA_Enabled_PV_Ado1)
 NodeLocation: 968,576,1
 NodeSize: 64,40
-ValueState: 2,2296,28,1022,827,,MIDM
+ValueState: 2,359,47,1022,681,,MIDM
 Aliases: FormNode Fo1687511331
-GraphSetup: Att_GraphValueRange PV_Potential_by_Type:1,,1,,,,,0,2974.0896821022034,0
+GraphSetup: Flip:0~
+Att_GraphValueRange PV_Potential_by_Type:1,,1,,,,,0,100.12953341007233,0
 ReformVal: [Output_Periods,Spatial_ID]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Spatial_ID,Sectors_Aggregated,Area_Type]
@@ -329,6 +332,7 @@ Title: Potential Type
 Definition: ['Total Technical','Total Market','NYPA Enabled']
 NodeLocation: 1208,576,1
 NodeSize: 64,40
+{!40300|Att_SlicerPopupSize: 227,80}
 
 Variable PV_Cumul_MW_DC1
 Title: PV Cumul MW DC
@@ -360,15 +364,15 @@ Description: NYPA enabled adoption of storage systems. Currently, only "paired" 
 Definition: sum(Aggregate(NYPA_Enabled_Storage,Map_All_to_Aggregate[All_PV_Sectors=BESS_Sectors],BESS_Sectors,Sectors_Aggregated,"Sum"), BESS_types)
 NodeLocation: 816,688,1
 NodeSize: 64,40
-ValueState: 2,698,39,959,657,1,MIDM
+ValueState: 2,414,39,959,657,1,MIDM
 Aliases: FormNode Fo1849909539
-GraphSetup: Att_AreaFill Graph_Primary_Valdim:1~
-Att_Stacked_Lines Graph_Primary_Valdim:1~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-{!50000|Graph_SortBySpread:1}~
-Att_GraphValueRange NYPA_Enabled_Storag1:1,,1,,,,,0,17.05717697739601,0~
+GraphSetup: Flip:0~
+Graph_FillTransparen:55~
 Att_ContLineStyle Graph_Primary_Valdim:1~
-Graph_FillTransparen:55
+Att_GraphValueRange NYPA_Enabled_Storag1:1,,1,,,,,0,17.05717697739601,0~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+Att_Stacked_Lines Graph_Primary_Valdim:1~
+Att_AreaFill Graph_Primary_Valdim:1
 ReformVal: [Time_Storage,BESS_Spatial_ID]
 Att__TotalsIndex: [BESS_Spatial_ID,Sectors_Aggregated,Area_Type]
 Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,BESS_Incentive_Scen,3,BESS_Spatial_ID,1,Time_Storage,37]
@@ -397,16 +401,16 @@ Description: Percentage of NYPA enabled storage adoption by geography, sector, a
 Definition: ZIDZ1(NYPA_Enabled_Storag1,sum(NYPA_Enabled_Storag1,BESS_Spatial_ID,Area_Type,Sectors_Aggregated))
 NodeLocation: 968,688,1
 NodeSize: 64,40
-ValueState: 2,308,112,1171,680,,MIDM
+ValueState: 2,518,6,1171,680,,MIDM
 Aliases: FormNode Fo507732259
 GraphSetup: Att_ForceCategorical Graph_Primary_Valdim:1~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 {!50000|Graph_SortBySpread:1}
-ReformVal: [Sectors_Aggregated,BESS_Spatial_ID]
+ReformVal: [Sectors_Aggregated,Area_Type]
 NumberFormat: 2,%,4,2,0,0,4,1,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [BESS_Spatial_ID,Area_Type,Sectors_Aggregated]
 Att_ResultSliceState: [Time_Storage,37,Area_Type,0,Sectors_Aggregated,0,Time_Storage,37,BESS_Spatial_ID,0]
-{!40600|Att_StackingIndex: BESS_Spatial_ID}
+{!40600|Att_StackingIndex: Area_Type}
 {!40600|Att_ClusterIndex: Null}
 
 Alias Al60092707
@@ -424,9 +428,10 @@ Definition: LRMS_by_PV_Time[@PV_Sectors=1]
 NodeLocation: 1296,152,1
 NodeSize: 64,40
 WindState: 2,2334,170,720,350
-ValueState: 2,282,98,1002,601,,MIDM
+ValueState: 2,476,177,1002,601,,MIDM
 Aliases: FormNode Fo617935139
-GraphSetup: Graph_AxisLabelFont:,20,0
+GraphSetup: Flip:0~
+Graph_AxisLabelFont:,20,0
 ReformVal: [Time_Solar_PV,Area_Type]
 NumberFormat: 2,%,4,0,0,0,4,1,$,0,"ABBREV",0,,,0,0,15,
 Att_ResultSliceState: [System_Types,1,PV_Spatial_ID,3,Area_Type,1,Time_Solar_PV,1]
@@ -448,12 +453,14 @@ Flow_Scaling_Factor, PV_Climate_Zone) {converts dispatch flow output to a standa
 NodeLocation: 272,64,1
 NodeSize: 64,40
 WindState: 2,2306,207,720,350
-ValueState: 2,954,28,858,775,1,MIDM
+ValueState: 2,131,52,1632,685,1,MIDM
 Aliases: FormNode Fo340429091
-GraphSetup: Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,1,,,,,24,51,1
-ReformVal: [Viewed_Dispatch_Tim2,Rate_Names_and_Start]
+GraphSetup: Flip:0~
+Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,1,,,,,48,80,1~
+Att_CatLineStyle Graph_Primary_Valdim:5
+ReformVal: [Viewed_Dispatch_Tim2,Flow_Types1]
 Att__TotalsIndex: [Viewed_Dispatch_Tim2]
-Att_ResultSliceState: [Month,8,Rate_Names_and_Start,2,Flow_Types1,2,Viewed_Dispatch_Tim2,0]
+Att_ResultSliceState: [Month,8,Rate_Names_and_Start,1,Flow_Types1,2,Viewed_Dispatch_Tim2,0]
 {!40700|Att_CellFormat: CellSpan(Viewed_Dispatch_Tim2,CellNumberFormat('Fixed Point',0,0,1,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:0),169,header:0)}
 {!50000|Att_ColumnWidths: [126]}
 

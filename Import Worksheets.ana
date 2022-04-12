@@ -11,7 +11,7 @@ Author: Max Henrion & Paul Sanford
 Date: Sun, Jul 27, 2014 2:56 PM
 DefaultSize: 64,40
 NodeSize: 80,56
-DiagState: 2,2219,184,1441,567,17,10
+DiagState: 2,358,112,1441,612,17,10
 WindState: 2,355,67,533,321
 Aliases: Alias Al169572643
 NodeColor: 65535,65535,65535
@@ -250,13 +250,13 @@ Checkbox(0),Path_to_Global_Data1,'System_Size_Constraints','A7',Choice(Import_Da
 Checkbox(1),Custom_Input_Filenam,'NYPA Market Fraction','A1',Choice(Import_Data_Types,1,0),Null,Handle(NYPA_of_Natural_Mark),Handle(Spatial_ID),Handle(All_PV_Sectors),Handle(Area_Type),Null,Null,~
 Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
 Checkbox(0),Path_to_Global_Data1,'Feasibility','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Feasibility),Handle(All_PV_Sectors),Handle(All_Measures),Null,Null,Null,~
-Checkbox(1),Path_to_Global_Data1,'Applicability','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Applicability),Handle(All_PV_Sectors),Handle(All_Measures),Handle(Region),Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Applicability','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Applicability),Handle(All_PV_Sectors),Handle(All_Measures),Handle(Region),Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'PercentNotComplete','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Percent_Not_Comp),Handle(All_PV_Sectors),Handle(All_Measures),Null,Null,Null,~
-Checkbox(1),Path_to_Global_Data1,'Meas Fuel EndUse','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Measure_Fuel_End),Handle(Meas_Param_2),Handle(All_Measures),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Meas Fuel EndUse','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Measure_Fuel_End),Handle(Meas_Param_2),Handle(All_Measures),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Measure Char','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Measure_Characte),Handle(Measure_Parameter),Handle(All_Measures),Handle(RET_or_MD),Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'EUI','A4',Choice(Import_Data_Types,1,0),Null,Handle(End_Use_Intensity),Handle(End_Use),Handle(Region),Handle(All_PV_Sectors),Handle(Primary_Fuel_Type),Null,~
 Checkbox(0),Path_to_Global_Data1,'Fuel Interactive Factor','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Fuel_Interaction),Handle(Region),Handle(All_Measures),Null,Null,Null,~
-Checkbox(0),Path_to_Global_Data1,'Penetration','A4',Choice(Import_Data_Types,1,0),Null,Handle(EE_Penetration),Handle(Study_Year),Handle(All_Measures),Handle(EE_Scenario),Handle(All_PV_Sectors),Handle(Replacement_Type),~
+Checkbox(1),Path_to_Global_Data1,'Penetration','A4',Choice(Import_Data_Types,1,0),Null,Handle(EE_Penetration),Handle(Study_Year),Handle(All_Measures),Handle(EE_Scenario),Handle(All_PV_Sectors),Handle(Replacement_Type),~
 Checkbox(0),Path_to_Global_Data1,'Include Replacement Type','A5',Choice(Import_Data_Types,1,0),Null,Handle(All_Include_Replacem),Handle(Replacement_Type),Handle(All_Measures),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'ForceCostEffective','A4',Choice(Import_Data_Types,1,0),ModelDriven_Label,Handle(All_Force_Cost_Effec),Null,Handle(All_Measures),Handle(Replacement_Type),Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
@@ -579,7 +579,7 @@ NodeSize: 64,40
 
 Decision Last_Import_Time
 Title: Last Import Time
-Definition: 8-Apr-2022 13:15:29.390000
+Definition: 11-Apr-2022 16:17:03.195000
 NodeLocation: 544,848,1
 NodeSize: 64,40
 Aliases: FormNode New1910098211, FormNode New2017052963
@@ -594,7 +594,7 @@ NodeSize: 64,40
 
 Decision Import_in_Progress
 Title: Import in Progress
-Definition: 0
+Definition: 1
 NodeLocation: 544,656,1
 NodeSize: 64,40
 Aliases: FormNode New836356387
@@ -1762,7 +1762,7 @@ TableCellDefault: 'C:\Documents\Filename.xlsx'
 Decision Dataset_to_View1
 Title: Dataset to View
 Description: Select the tab name of the dataset you wish to view in greater detail.
-Definition: Choice(Tab_Names,4,0)
+Definition: Choice(Tab_Names,8,0)
 NodeLocation: 112,520,1
 NodeSize: 64,40
 WindState: 2,7,277,720,350
@@ -1840,7 +1840,7 @@ ELSE FOR K:=@Index_Titles DO (~
 
 NodeLocation: 272,208,1
 NodeSize: 64,40
-ValueState: 2,117,179,875,678,0,MIDM
+ValueState: 2,31,55,791,633,0,MIDM
 ReformVal: [Sys_LocalIndex('Index_Names'),Sys_LocalIndex('Number_Missing')]
 NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 
@@ -1889,7 +1889,7 @@ ELSE CopyIndex(repeatSubs)
 NodeLocation: 272,400,1
 NodeSize: 64,40
 WindState: 2,29,62,720,350
-ValueState: 2,981,497,675,474,0,MIDM
+ValueState: 2,1098,189,675,474,0,MIDM
 
 Decision Apply_Index_Checks1
 Title: Apply Index Checks?
@@ -2804,7 +2804,7 @@ OnClick: Release_Spreadsheet;~
 IF Import_Categor_Inde1 THEN Import_Categ_Indexe1 ELSE Null;   {Import categorical indexes if desired}~
 IF Import_Sequent_Inde1 THEN Import_Seq_Index1 ELSE Null;   {Import sequential indexes if desired}~
 Import_Data_Tabs1;   {Import selected data tabs}~
-Release_Spreadsheet
+
 
 Button Clear_Imported_Vari1
 Title: Clear Imported Variables

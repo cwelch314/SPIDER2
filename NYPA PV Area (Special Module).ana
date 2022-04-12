@@ -235,17 +235,17 @@ Description: Total technical potential for solar PV installations if all calcula
 Definition: Total_PV_kW_DC_poten * PV_kWh_per_KW_DC / 1E6
 NodeLocation: 1800,568,1
 NodeSize: 64,40
-ValueState: 2,403,82,1028,679,1,MIDM
+ValueState: 2,323,77,1028,679,1,MIDM
 Aliases: FormNode Fo304836131, FormNode Fo770403875
 NodeColor: 65535,1,1
-GraphSetup: {!50000|Graph_SortBySpread:1}~
-Att_StackedBar Graph_Primary_Valdim:1~
-Att_CatLineStyle Graph_Primary_Valdim:9
-ReformVal: [PV_Sectors,Spatial_ID]
+GraphSetup: Flip:0~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+Att_StackedBar Graph_Primary_Valdim:1
+ReformVal: [Spatial_ID,PV_Sectors]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Spatial_ID,PV_Spatial_ID,Area_Type]
 Att_ResultSliceState: [Area_Type,0,Spatial_ID,1,PV_Sectors,10]
-{!40600|Att_StackingIndex: Spatial_ID}
+{!40600|Att_StackingIndex: PV_Sectors}
 {!40600|Att_ClusterIndex: Null}
 
 Variable Customer_Load_by_Sp_
@@ -947,7 +947,7 @@ Definition: local total:=sum(Technical_PV_Potenti,Spatial_ID,PV_Sectors,Area_Typ
 ZIDZ1(Technical_PV_Potenti,total)
 NodeLocation: 1976,784,1
 NodeSize: 72,40
-ValueState: 2,442,75,1048,658,1,MIDM
+ValueState: 2,290,44,1131,728,1,MIDM
 Aliases: FormNode Fo1835757091, FormNode Fo1844145699
 GraphSetup: {!50500|Graph_ShowTitle:1}~
 Att_CatLineStyle Graph_Primary_Valdim:9~
@@ -974,15 +974,16 @@ Description: Total technical potential for solar PV installations if all calcula
 Definition: Total_PV_kW_DC_poten / 1000
 NodeLocation: 1968,472,1
 NodeSize: 64,40
-ValueState: 2,430,50,1038,716,1,MIDM
+ValueState: 2,183,7,1267,794,1,MIDM
 Aliases: FormNode Fo954953251, FormNode Fo501968419
-GraphSetup: {!50000|Graph_SortBySpread:1}~
+GraphSetup: Flip:8~
+Att_GraphValueRange Total_PV_MW_DC_Poten:1,,1,,,,,0,481.7144274711609,0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_GraphValueRange Total_PV_MW_DC_Poten:1,,1,,,,,0,481.7144274711609,0
+Graph_HLabelRotation:90
 ReformVal: [PV_Sectors,Spatial_ID]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Spatial_ID,Area_Type,PV_Sectors]
-Att_ResultSliceState: [PV_Sectors,9,Spatial_ID,0,Area_Type,0]
+Att_ResultSliceState: [PV_Sectors,0,Area_Type,0,Spatial_ID,0]
 {!40600|Att_StackingIndex: Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
 

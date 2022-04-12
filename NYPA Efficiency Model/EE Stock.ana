@@ -12,7 +12,7 @@ DefaultSize: 64,32
 NodeSize: 64,32
 DiagState: 2,241,27,1255,634,17,10
 FontStyle: Arial,15
-FileInfo: 0,LinkModule EE_Stock,2,2,0,0,EE Stock.ana
+FileInfo: 0,LinkModule EE_Stock,2,2,0,0,..\NYPA Efficiency Model\EE Stock.ana
 
 Variable Study_Start_Year
 Title: Study Start Year
@@ -33,10 +33,13 @@ Units: sqft
 Definition: Floor_Area * (1 + Blding_Stock_Growt) ^ (Study_Year - Study_Start_Year)
 NodeLocation: 128,248,1
 NodeSize: 64,32
-ValueState: 2,150,128,797,698,0,MIDM
+ValueState: 2,390,62,797,698,1,MIDM
+GraphSetup: Flip:0
+ReformVal: [Study_Year,Null]
 NumberFormat: 2,D,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [Region,Building_Type]
-Att_ResultSliceState: [Region,0,Building_Type,1,Study_Year,1]
+Att__TotalsIndex: [Spatial_ID,All_PV_Sectors]
+Att_ResultSliceState: [Spatial_ID,0,All_PV_Sectors,0,Study_Year,1]
+Att_ColorRole: Null
 
 Constant Blding_Stock_Demo_Ra
 Title: Blding Stock Demo Rate
@@ -48,18 +51,19 @@ NodeColor: 65535,1,1
 Variable Cumul_Stock_by_New_1
 Title: Cumul Stock by New/Exist
 Units: sqft
-Definition: local existing_stock := Floor_Area * (1 - Blding_Stock_Demo_Ra) ^ (Study_Year - Study_Start_Year + 1) * (1 - Blding_Stock_Growt);~
+Definition: local existing_stock := Floor_Area * (1 - Blding_Stock_Demo_Ra) ^ (Study_Year - Study_Start_Year + 1) * (1 - Blding_Stock_Growt) ;~
 local new_stock := Bldg_Stock_by_Study_ - existing_stock;~
 IF (Stock_Type = NewStock_Label) THEN new_stock ELSE existing_stock
 NodeLocation: 288,152,1
 NodeSize: 64,32
-ValueState: 2,808,301,848,272,0,MIDM
-GraphSetup: Att_AreaFill Graph_Primary_Valdim:1~
-Att_Stacked_Lines Graph_Primary_Valdim:1
+ValueState: 2,301,166,1312,635,1,MIDM
+GraphSetup: Flip:0~
+Att_Stacked_Lines Graph_Primary_Valdim:1~
+Att_AreaFill Graph_Primary_Valdim:1
 ReformVal: [Study_Year,Stock_Type]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [Stock_Type,Region]
-Att_ResultSliceState: [Region,0,Stock_Type,1,Study_Year,1]
+Att__TotalsIndex: [Stock_Type,Region,Spatial_ID,All_PV_Sectors]
+Att_ResultSliceState: [Spatial_ID,0,All_PV_Sectors,0,Stock_Type,1,Study_Year,1]
 
 Variable Stock_w_NewCon_Incre
 Title: Stock w NewCon Incremental
