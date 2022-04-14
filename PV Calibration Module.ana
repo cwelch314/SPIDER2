@@ -439,7 +439,7 @@ Original: PVEndWOM_Label
 Decision Handles_for_PV_Decis
 Title: Handles for PV Decisions
 Description: The handles to decision variables considered in the PV optimization.
-Definition: Table(All_PV_Decisions)(handle(PV_Ad_Effectiveness),handle(PV_Word_of_Mouth),handle(PV_Ending_WOM),handle(PV_Payback_Coeff),handle(PV_LongRun_Mkt_Share),handle(Logit_Price_Coeff),handle(Logit_Tech_Coeff),handle(Logit_Spatial_Coeff),handle(Payback_Spatial_Coef))
+Definition: Table(All_PV_Decisions)(handle(Ad_Effectiveness),handle(Word_of_Mouth2),handle(PV_Ending_WOM),handle(PV_Payback_Coeff),handle(PV_LongRun_Mkt_Share),handle(Price_Coeff),handle(Tech_Coeff),handle(Logit_Spatial_Coeff),handle(Payback_Spatial_Coef))
 NodeLocation: 96,64,1
 NodeSize: 64,40
 WindState: 2,1980,152,1666,586
@@ -1011,7 +1011,7 @@ NodeInfo: 1,0,0,0,0,0,0,78,0,,0,,,
 Original: Stages_to_Calib_PV
 
 Index All_PV_Dec_Handles
-Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coeff,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef]
+Att_PrevIndexValue: [Ad_Effectiveness,Word_of_Mouth2,PV_Ending_WOM,PV_Payback_Coeff,PV_LongRun_Mkt_Share,Price_Coeff,Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef]
 Title: All PV Dec Handles
 Definition: CopyIndex(Handles_for_PV_Decis)
 NodeLocation: 840,64,1
@@ -1595,7 +1595,7 @@ Description: Pushing this button will assign the default values for each EV diff
 NodeLocation: 352,284,1
 NodeSize: 64,52
 NodeColor: 65535,52427,52427
-OnClick: (PV_Ad_Effectiveness:=Default_PVAdEff);~
+OnClick: (Ad_Effectiveness:=Default_PVAdEff);~
 (PV_Word_of_Mouth:=Default_PV_WOM);~
 (PV_Ending_WOM:=Default_PV_End_WOM);~
 (PV_LongRun_Mkt_Share:=Default_PV_LRMS);~
@@ -2582,7 +2582,7 @@ Definition: 0
 NodeLocation: 908,84,1
 NodeSize: 188,20
 NodeColor: 49344,49344,49344
-Original: PV_Ad_Effectiveness
+Original: Ad_Effectiveness
 
 FormNode Fo1535066223
 Title: EV Word of Mouth
@@ -2590,7 +2590,7 @@ Definition: 0
 NodeLocation: 908,124,1
 NodeSize: 188,20
 NodeColor: 49344,49344,49344
-Original: PV_Word_of_Mouth
+Original: Word_of_Mouth2
 
 FormNode Fo1535066224
 Title: Initial EV Familiarity
@@ -2600,31 +2600,29 @@ NodeSize: 188,20
 NodeColor: 49344,49344,49344
 Original: PV_Ending_WOM
 
-Decision PV_Ad_Effectiveness
-Title: PV Ad Effectiveness
-Units: fraction/year
+Decision Ad_Effectiveness
+Title: Ad Effectiveness
 Description: Advertising effectiveness, also known as the "p" coefficient in the classic Bass diffusion model.
 Definition: Choice(Advertising_Coeffici,6,0)
 NodeLocation: 128,72,1
 NodeSize: 64,40
 WindState: 2,36,8,1180,547
 DefnState: 2,992,310,295,412,0,DFNM
-Aliases: FormNode Fo1916001827, Alias Al2, FormNode Fo1535066222, FormNode Fo842592547
+Aliases: FormNode Fo1916001827, Alias Al2, FormNode Fo1535066222, FormNode Fo842592547, FormNode Clipboard_Fo84259254, FormNode Fo175469859
 {!40300|DomainExpr: Continuous(PV_AdEff_Lwr_Bnd, PV_AdEff_Upr_Bnd)}
 TableCellDefault: Default_PVAdEff
 {!40300|OptInitialGuess: 0.001}
 UnoptimizedDef: 0.02
 
-Decision PV_Word_of_Mouth
-Title: PV Word of Mouth
-Units: fraction/year
+Decision Word_of_Mouth2
+Title: Word of Mouth
 Description: The strength of word-of-mouth effectiveness, also known as the "q" parameter in the classic Bass diffusion model.
 Definition: Choice(Word_of_Mouth_Coeff1,4,0)
 NodeLocation: 128,264,1
 NodeSize: 64,40
 WindState: 2,5,426,720,350
 DefnState: 2,1002,261,455,530,0,DFNM
-Aliases: FormNode Fo171171363, Alias Al4, FormNode Fo1535066223, FormNode Fo1446572323
+Aliases: FormNode Fo171171363, Alias Al4, FormNode Fo1535066223, FormNode Fo1446572323, FormNode Clipboard_Fo14465723, FormNode Fo1249211683
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 {!40300|DomainExpr: Continuous(PV_StartWOM_Lwr_Bnd,PV_StartWOM_Upr_Bnd)}
 TableCellDefault: Default_PV_WOM
@@ -2684,7 +2682,7 @@ Variable Stored_AdEff_PV
 Title: Stored AdEff PV
 Units: fraction/year
 Description: Stored optimal solutions for the corresponding decision variables.
-Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(PV_Ad_Effectiveness)]
+Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(Ad_Effectiveness)]
 NodeLocation: 456,72,1
 NodeSize: 64,40
 WindState: 2,273,212,1028,559
@@ -2723,7 +2721,7 @@ Variable Stored_WOM_PV
 Title: Stored WOM PV
 Units: fraction/year
 Description: Stored optimal solutions for the corresponding decision variables.
-Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(PV_Word_of_Mouth)]
+Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(Word_of_Mouth2)]
 NodeLocation: 456,264,1
 NodeSize: 64,40
 DefnState: 2,737,161,597,632,0,DFNM
@@ -2782,7 +2780,7 @@ Att_ColorRole: Null
 {!50000|Att_ColumnWidths: [,PV_Stored_Decisions,\([,,,,37,33,37,37,174,604])]}
 
 Index PV_Stored_Decisions
-Att_PrevIndexValue: [PV_Ad_Effectiveness,PV_Word_of_Mouth,PV_Ending_WOM,PV_Payback_Coeff,PV_LongRun_Mkt_Share,Logit_Price_Coeff,Logit_Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef,'Opt Status']
+Att_PrevIndexValue: [Ad_Effectiveness,Word_of_Mouth2,PV_Ending_WOM,PV_Payback_Coeff,PV_LongRun_Mkt_Share,Price_Coeff,Tech_Coeff,Logit_Spatial_Coeff,Payback_Spatial_Coef,'Opt Status']
 Title: PV Stored Decisions
 Definition: Concat(All_PV_Dec_Handles, Opt_Status_Label)
 NodeLocation: 608,552,1
@@ -2827,9 +2825,8 @@ Definition: ['Opt Status']
 NodeLocation: 608,120,1
 NodeSize: 64,40
 
-Decision Logit_Price_Coeff
-Title: Logit Price Coefficient
-Units: dimensionless
+Decision Price_Coeff
+Title: Price Coeff
 Description: Sensitivity of market share to the cost of electricity ratio. More negative values indicate that market share will increase (or drop off) faster for the same change in the cost of electricity ratio (i.e., more price sensitive).~
 ~
 See the "Long-Run Market Share Illustration" output for a visualization of market share as a function of this input.
@@ -2837,7 +2834,7 @@ Definition: Choice(Price_Coefficient_Il,2,0)
 NodeLocation: 128,456,1
 NodeSize: 64,40
 WindState: 2,2094,188,720,350
-Aliases: FormNode Fo1526480419, Alias Al1539126683, FormNode Fo1539127221, FormNode Fo1439994147
+Aliases: FormNode Fo1526480419, Alias Al1539126683, FormNode Fo1539127221, FormNode Fo1439994147, FormNode Clipboard_Fo14399941, FormNode Fo813004067
 {!40300|DomainExpr: Continuous(PV_PriceCoef_Lwr_Bnd,PV_PriceCoef_Upr_Bnd)}
 
 Decision Logit_Spatial_Coeff
@@ -2867,7 +2864,7 @@ Variable Stored_Logit_Price_C
 Title: Stored Logit Price Coefficient
 Units: utility/ratio
 Description: The amount of utility derived per unit of the cost of electricity ratio. These are stored values found by the calibration optimization.
-Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(Logit_Price_Coeff)]
+Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(Price_Coeff)]
 NodeLocation: 456,456,1
 NodeSize: 64,40
 DefnState: 2,2256,394,1178,303,,DFNM
@@ -2875,9 +2872,8 @@ Aliases: Alias Al1539126686
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2
 TableCellDefault: 0
 
-Decision Logit_Tech_Coeff
-Title: Logit Tech Coefficient
-Units: dimensionless
+Decision Tech_Coeff
+Title: Tech Coeff
 Description: Coefficient representative the inherent preference for "doing nothing" (i.e., not installing a system. Higher values indicate a stronger preference for NOT installing a system, all else equal (i.e., for the same cost of electricity ratio). ~
 ~
 See the "Long-Run Market Share Illustration" output for a visualization of market share as a function of this input.
@@ -2885,7 +2881,7 @@ Definition: Choice(Tech_Coefficient_Ill,3,0)
 NodeLocation: 128,552,1
 NodeSize: 64,40
 WindState: 2,57,96,720,350
-Aliases: FormNode Fo989609507, Alias Al1539126687, FormNode Fo1539127223, FormNode Fo903123235
+Aliases: FormNode Fo989609507, Alias Al1539126687, FormNode Fo1539127223, FormNode Fo903123235, FormNode Clipboard_Fo90312323, FormNode Fo1886745891
 {!40300|DomainExpr: Continuous(PVLogTechCoef_Lwr_Bn,PVLogTechCoef_Upr_Bn)}
 {!40300|Att_SlicerPopupSize: 227,1001}
 
@@ -2893,7 +2889,7 @@ Variable Stored_Tech_Coeff
 Title: Stored Tech Coefficient
 Units: utility
 Description: The amount of utility explained by preference for a particular technology regardless of differences in economics. These are stored values found by the calibration optimization.
-Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(Logit_Tech_Coeff)]
+Definition: Stored_PV_Dec_Vars[All_PV_Dec_Handles=Handle(Tech_Coeff)]
 NodeLocation: 456,552,1
 NodeSize: 64,40
 Aliases: Alias Al1539126688
@@ -2907,7 +2903,7 @@ NodeLocation: 908,244,1
 NodeSize: 188,20
 NodeInfo: 1,,,,,,,72,,,,,
 NodeColor: 49344,49344,49344
-Original: Logit_Price_Coeff
+Original: Price_Coeff
 
 FormNode Fo1539127222
 Title: Logit Spatial Coefficient
@@ -2925,7 +2921,7 @@ NodeLocation: 908,284,1
 NodeSize: 188,20
 NodeInfo: 1,,,,,,,72,,,,,
 NodeColor: 49344,49344,49344
-Original: Logit_Tech_Coeff
+Original: Tech_Coeff
 
 Decision Payback_Spatial_Coef
 Title: Payback Spatial Coefficient

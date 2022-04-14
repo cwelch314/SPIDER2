@@ -1,21 +1,22 @@
-{ Analytica Model NYPA_Solar_Storage1, encoding="UTF-8" }
+{ Analytica Model NYPA_Solar_Storage_A, encoding="UTF-8" }
 SoftwareVersion 6.1.0
 
 {!-60000|Attribute AcpStyles}
 
 
-LinkModule NYPA_Solar_Storage1
-Title: NYPA Solar, Storage
+LinkModule NYPA_Solar_Storage_A
+Title: NYPA Solar, Storage All
 Author: CWelch
 Date: Thu, Mar 31, 2022 3:05 PM
 DefaultSize: 64,32
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,115,3,1483,872,17,10
+DiagState: 2,50,184,1719,769,17,10,
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
-FileInfo: 0,LinkModule NYPA_Solar_Storage1,2,2,0,0,NYPA Specific\NYPA Solar, Storage (Expanded).ana
-AcpStyles: Framenode: NYPA_DER_F1649160483
+FileInfo: 0,LinkModule NYPA_Solar_Storage_A,2,2,0,0,NYPA Specific\NYPA Solar, Storage (Expanded).ana
+AcpStyles: Framenode: NYPA_DER_F1649160483~
+show_as_tab: No
 
 FormNode Fo1696948515
 Title: Market Share Illustration
@@ -31,7 +32,7 @@ NodeLocation: 668,972,1
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,94,,,,,,0
 NodeColor: 49151,49151,49151
-Original: Logit_Price_Coeff
+Original: Price_Coeff
 
 FormNode Fo903123235
 Title: Logit Tech Coefficient
@@ -40,7 +41,7 @@ NodeLocation: 668,1012,1
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,94,,,,,,0
 NodeColor: 49151,49151,49151
-Original: Logit_Tech_Coeff
+Original: Tech_Coeff
 
 FormNode Fo653512995
 Title: Market Share Function
@@ -398,7 +399,7 @@ NodeLocation: 668,1052,1
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,94,,,,,,0
 NodeColor: 49151,49151,49151
-Original: PV_Ad_Effectiveness
+Original: Ad_Effectiveness
 
 FormNode Fo1446572323
 Title: PV Word of Mouth
@@ -407,7 +408,7 @@ NodeLocation: 668,1092,1
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,94,,,,,,0
 NodeColor: 49151,49151,49151
-Original: PV_Word_of_Mouth
+Original: Word_of_Mouth2
 
 FormNode Fo1878585635
 Title: Cost of Electricity Ratio
@@ -453,7 +454,7 @@ NodeFont: Arial,19
 NodeFontColor: 65535,1,1
 
 Text Te1240787235
-NodeLocation: 1352,408,-26
+NodeLocation: 1352,440,-26
 NodeSize: 440,392
 NodeInfo: 1,,,,0
 
@@ -488,5 +489,13 @@ NodeSize: 204,20
 NodeInfo: 1,,,,,,,150,,,,,,0,,,,
 Original: PV_Incent_Scenario
 
-Close NYPA_Solar_Storage1
+FormNode ACP_New646280483
+Title: Minimum Resolution
+Definition: 0
+NodeLocation: 1100,24,1
+NodeSize: 196,16
+NodeInfo: 1,,,,,,,200,,,,,,0,,,,
+Original: ACP_Screen_size
+
+Close NYPA_Solar_Storage_A
 

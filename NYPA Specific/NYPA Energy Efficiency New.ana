@@ -11,7 +11,7 @@ Date: Thu, Mar 31, 2022 12:18 PM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,0,0,,,,,,,,,0
-DiagState: 2,16,14,1558,801,17,10
+DiagState: 2,16,14,1968,1008,17,10,
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
 FileInfo: 0,LinkModule NYPA_Energy_Efficien,2,2,0,0,NYPA Specific\NYPA Energy Efficiency New.ana
@@ -508,7 +508,7 @@ NodeLocation: 1064,176,1
 NodeSize: 64,32
 ValueState: 2,1143,349,416,303,0,MIDM
 Aliases: Alias Al1699929923
-{!40300|Att_SlicerPopupSize: 502,80}
+{!40300|Att_SlicerPopupSize: 507,80}
 {!40600|Att_ColorSequence: [0xfff9a433,0xffe03c33,0xff7f7f7f,0xff000000,0xff0f6689]}
 
 Text Te1808588611
@@ -1703,7 +1703,7 @@ Author: CWelch
 Date: Fri, Nov 5, 2021 2:30 PM
 NodeLocation: 1240,384,1
 NodeSize: 64,32
-DiagState: 2,116,17,1663,769,17,10
+DiagState: 2,116,17,1663,687,17,10
 
 Variable Consumption_TBtu
 Title: Consumption TBtu
@@ -1835,7 +1835,7 @@ Att_ColorRole: Null
 Variable Cumulative_Potenti_2
 Title: Cumulative  Potential
 Units: TBtu
-Definition: sum(Cumulative_Potential  * NYPA_of_Natural_Mar1[Measure_Category=Measure_Category1] * (IF Savings_Fuel_Type = 'E' THEN MMBtu_Mwh ELSE 1),Primary_Fuel_Type{, Replacement_Type}) / 1E6
+Definition: sum(Cumulative_Potential  * NYPA_of_Natural_Mar1[Measure_Category=Measure_Category1] * (IF Savings_Fuel_Type = 'E' THEN MMBtu_Mwh ELSE 1),Primary_Fuel_Type, Replacement_Type) / 1E6
 NodeLocation: 376,48,1
 NodeSize: 64,32
 ValueState: 2,419,203,1159,384,0,MIDM
@@ -2133,8 +2133,8 @@ Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_GraphIndexRange Top_X_Measures:1,,1,,,,,1,29,1~
 Graph_ColorSeq:[63993,42148,13107,57568,15420,13107,32639,32639,32639,0,0,0,34952,29298,56540,29298,53713,56540,56540,29298,55769,53456,44975,25186,65535,0,0,0,0,65535,65535,46003,65535,0,65535,65535,0,32896,0,65535,42405,0,0,0,35723,42405,10794,10794,65535,49344,52171,65535,65535,0,0,65535,0,32896,0,0,28784,32896,37008,0,32896,32896,32896,0,32896,37008,61166,37008,3855,26214,35209]
 ReformVal: [Top_X_Measures,Savings_Fuel_Type]
-Att__TotalsIndex: [Spatial_ID]
-Att_ResultSliceState: [Savings_Fuel_Type,2,Savings_Fuel_Type,1,Top_X_Measures,1]
+Att__TotalsIndex: [Spatial_ID,Savings_Fuel_Type]
+Att_ResultSliceState: [Savings_Fuel_Type,0,Savings_Fuel_Type,0,Top_X_Measures,1]
 Att_ColorRole: Null
 {!40600|Att_StackingIndex: Savings_Fuel_Type}
 {!40600|Att_ClusterIndex: Null}
