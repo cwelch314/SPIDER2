@@ -11,7 +11,7 @@ Date: Sat, Oct 30, 2021 12:32 PM
 DefaultSize: 64,32
 NodeSize: 64,32
 NodeInfo: 1,0,0
-DiagState: 2,-388,75,1387,626,17,10
+DiagState: 2,2123,62,1476,705,17,10
 FontStyle: Arial,15
 FileInfo: 0,LinkModule All_Imported_EE_Data,2,2,0,0,..\NYPA Efficiency Model\All Imported EE Data.ana
 
@@ -13781,7 +13781,7 @@ For replacement of working motors, the new motor efficiency must be at least NEM
 'G','Total FF','N/A',1,Null,'Energy Management',1,Null,~
 'O','Total FF','N/A',1,Null,'Energy Management',1,Null,~
 'Prp','Total FF','N/A',1,Null,'Energy Management',1,Null,~
-'G','Other','N/A',1,Null,'Water/Wastewater',1,Null,~
+'G','Heating','N/A',1,Null,'Water/Wastewater',1,Null,~
 'E','Total Electric','N/A',1,Null,'Energy Management',1,Null,~
 'E','Total Electric','N/A',1,Null,'Energy Management',1,Null,~
 'E','Total Electric','N/A',1,Null,'Energy Management',1,Null,~
@@ -16281,12 +16281,12 @@ Units: Various
 Definition: SubTable(All_Measure_Characte[ All_Measures=Measure])
 NodeLocation: 800,64,1
 NodeSize: 64,32
-DefnState: 2,36,24,1744,791,0,DFNM
+DefnState: 2,493,16,960,844,0,DFNM
 ValueState: 2,2923,-4,842,856,0,MIDM
 Aliases: FormNode Fo143772963
 ReformDef: [RET_or_MD,Measure]
 ReformVal: [RET_or_MD,Measure]
-Att_EditSliceState: [Measure_Parameter,8,Measure,1,RET_or_MD,1]
+Att_EditSliceState: [Measure_Parameter,2,Measure,1,RET_or_MD,1]
 
 Variable Measure_Categorizati
 Title: Measure Categorization
@@ -16294,10 +16294,11 @@ Units: Various
 Definition: SubTable(All_Measure_Categori[All_Measures=Measure])
 NodeLocation: 800,144,1
 NodeSize: 64,32
-DefnState: 2,213,-8,1230,853,0,DFNM
+DefnState: 2,40,10,1706,884,0,DFNM
 Aliases: FormNode Fo1217514787
-ReformDef: [Null,Measure]
+ReformDef: [Meas_Param_2,Measure]
 Att_EditSliceState: [Meas_Param_2,8,Measure,1]
+{!50000|Att_RowHeights: [,Measure,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
 
 Variable Applicability1
 Title: Applicability
@@ -16307,7 +16308,7 @@ Definition: SubTable(All_Applicability[All_PV_Sectors=EE_Sectors,All_Measures=Me
 NodeLocation: 800,304,1
 NodeSize: 64,32
 WindState: 2,98,82,794,350
-DefnState: 2,351,103,978,551,0,DFNM
+DefnState: 2,351,103,1136,577,0,DFNM
 Aliases: FormNode Fo680643875
 ReformDef: [EE_Sectors,Measure]
 
@@ -16340,7 +16341,11 @@ Definition: local x:=All_Measure_Characte[Measure_Parameter='Measure Description
 if x[RET_or_MD=MDLabel]<>null THEN x[RET_or_MD=MDLabel] ELSE x[RET_or_MD=RET_fm_RETMD_Label]
 NodeLocation: 992,64,1
 NodeSize: 64,32
-ValueState: 2,180,66,1588,658,0,MIDM
+ValueState: 2,84,75,1613,537,0,MIDM
+Aliases: FormNode Fo1009892643
+ReformVal: [Null,Null]
+Att_ResultSliceState: [Measure,15]
+{!50000|Att_ColumnWidths: [1446]}
 
 Constant Co4
 NodeLocation: 1248,64,1
@@ -16432,18 +16437,21 @@ NodeLocation: 432,488,1
 NodeSize: 64,32
 ValueState: 2,953,34,881,860,,MIDM
 
-Variable Va37
+Variable Cost_Table
+Title: Cost Table
+Units: $/kWh or $/MMBtu
+Description: Equipment installation cost per unit of savings.
 Definition: MultiTable(Ret_MD_Units)(Retrofit_Cost1,Incremental_Cost,Mid(Cost_Units))
 NodeLocation: 472,304,1
 NodeSize: 64,32
-DefnState: 2,2468,1,943,874,0,DFNM
+DefnState: 2,402,-2,943,874,0,DFNM
 ValueState: 2,475,-9,1002,897,0,MIDM
 Aliases: FormNode Fo1433001251
 ReformDef: [Ret_MD_Units,All_Measures]
 ReformVal: [Ret_MD_Units,Measure]
 Att__TotalsIndex: [EE_Sectors]
 Att_ResultSliceState: [EE_Sectors,0,Measure,1,Ret_MD_Units,1]
-Att_EditSliceState: [EE_Sectors,16,Measure,1,Ret_MD_Units,1]
+Att_EditSliceState: [EE_Sectors,1,Measure,1,Ret_MD_Units,1]
 {!50000|Att_ColumnWidths: [,Ret_MD_Units,\([,,131])]}
 
 Index Ret_MD_Units
@@ -16483,13 +16491,6 @@ Title: Aggregate Measure
 Definition: ['Room Air Conditioner_Com, E - Cool','Fast Acting Doors_Com, E - Cool','Chiller Systems_Com, E - Cool','Chiller Tuneup_Com, E - Cool','Computer Room Air Conditioner_Com, E - Cool','Mini Split Ductless AC_Com, E - Cool','Eff Unitary AC_Com, E - Cool','PTAC_Com, E - Cool','Unitary Equipment Economizer_Com, E - Cool','Guest Room EM_Com, E - Cool+Heat [Building w Elec Heat]','Guest Room EM_Com, E - Cool+Heat [Building w Gas Heat]','Guest Room EM_Com, E - Cool+Heat [Building w Oil Heat]','Guest Room EM_Com, E - Cool+Heat [Building w Propane Heat]','AC Tuneup_Com, E - Cool+Heat [ASHP]','AC Tuneup_Com, E - Cool [Unitary AC]','DCV_Com, E - Cool+Heat+Vent [Building w Elec Heat]','DCV_Com, E - Cool+Heat+Vent [Building w Gas Heat]','DCV_Com, E - Cool+Heat+Vent [Building w Oil Heat]','DCV_Com, E - Cool+Heat+Vent [Building w Propane Heat]','Controls for Unitary AC_Com, E - Cool','Optimized Unitary AC Sys_Com, E - Cool+Heat [Building w Elec Heat]','Optimized Unitary AC Sys_Com, E - Cool+Heat [Building w Gas Heat]','Optimized Unitary AC Sys_Com, E - Cool+Heat [Building w Oil Heat]','Optimized Unitary AC Sys_Com, E - Cool+Heat [Building w Propane Heat]','Optimized Chiller Sys_Com, E - Cool','Cool Roof_Com, E - Cool+Heat [Building w Elec Heat]','Cool Roof_Com, E - Cool+Heat [Building w Gas Heat]','Cool Roof_Com, E - Cool+Heat [Building w Oil Heat]','Cool Roof_Com, E - Cool+Heat [Building w Propane Heat]','GSHP_Com, E - Cool+Heat','Unitary HP_Com, E - Cool+Heat','PTHP_Com, E - Cool+Heat','Minisplit Ductless HP_Com, E - Cool+Heat','Programmable TStat_Com, E - Cool+Heat [Building w Elec Heat]','Programmable TStat_Com, E - Cool+Heat [Building w Gas Heat]','Programmable TStat_Com, E - Cool+Heat [Building w Propane Heat]','Programmable TStat_Com, E - Cool+Heat [Building w Oil Heat]','Smart TStat_Com, E - Cool+Heat [Building w Elec Heat]','Smart TStat_Com, E - Cool+Heat [Building w Gas Heat]','Smart TStat_Com, E - Cool+Heat [Building w Propane Heat]','Smart TStat_Com, E - Cool+Heat [Building w Oil Heat]','Boiler Blowdown Controls_Com, G - Heat','Boiler Blowdown Controls_Com, O - Heat','Boiler Blowdown Controls_Com, P - Heat','Boiler Modifications_Com, G - Heat','Boiler Modifications_Com, O - Heat','Boiler Modifications_Com, P - Heat','Boilers_Com, G - Heat','Boilers_Com, O - Heat','Boilers_Com, P - Heat','Furnace_Com, G - Heat','Furnace_Com, O - Heat','Furnace_Com, P - Heat','Unit Heater_Com, G - Heat','Unit Heater_Com, P - Heat','Destratification Fans_Com, G - Heat','Destratification Fans_Com, O - Heat','Destratification Fans_Com, P - Heat','Energy Recovery Ventilator_Com, G - Heat','Energy Recovery Ventilator_Com, O - Heat','Energy Recovery Ventilator_Com, P - Heat','Forced Air Heating Maintenance_Com, G - Heat','Forced Air Heating Maintenance_Com, O - Heat','Forced Air Heating Maintenance_Com, P - Heat','Infrared Heater_Com, G - Heat','Infrared Heater_Com, P - Heat','Steam Trap Maintenance_Com, G - Heat','Steam Trap Maintenance_Com, O - Heat','Steam Trap Maintenance_Com, P - Heat','Windows_Com, E - Cool+Heat [Building w Elec Heat]','Windows_Com, E - Cool+Heat [Building w Gas Heat]','Windows_Com, E - Cool+Heat [Building w Oil Heat]','Windows_Com, E - Cool+Heat [Building w Propane Heat]','Window Film_Com, E - Cool+Heat [Building w Elec Heat]','Window Film_Com, E - Cool+Heat [Building w Gas Heat]','Window Film_Com, E - Cool+Heat [Building w Oil Heat]','Window Film_Com, E - Cool+Heat [Building w Propane Heat]','Motors and Fans_Com, E - Vent','ECM Furnace Motors_Com, E - Vent','VFD on HVAC System_Com, E - Vent','Kitchen DCV_Com, E - Vent+Heat [Building w Elec Heat]','Kitchen DCV_Com, E - Vent+Heat [Building w Gas Heat]','Kitchen DCV_Com, E - Vent+Heat [Building w Oil Heat]','Kitchen DCV_Com, P - Vent+Heat [Building w Propane Heat]','Duct Sealing Regulated_Com, E - Vent+Heat+Cool [Building w Elec Heat]','Duct Sealing Regulated_Com, E - Vent+Heat+Cool [Building w Gas Heat]','Duct Sealing Non Regulated_Com, E - Vent+Heat+Cool [Building w Oil Heat]','Duct Sealing Non Regulated_Com, E - Vent+Heat+Cool [Building w Propane Heat]','Power Strip_Com, E - Plug [Tier 1]','Power Strip_Com, E - Plug [Tier 2]','Computer Power Management_Com, E - Plug','Vending Machine Controls_Com, E - Plug [Non-Refrigerated]','Vending Machine Controls_Com, E - Plug [Refrigerated]','Ovens_Com, E - Cook','Ovens_Com, G - Cook','Ovens_Com, P - Cook','Fryers_Com, E - Cook','Fryers_Com, G - Cook','Fryers_Com, P - Cook','Griddles_Com, E - Cook','Griddles_Com, G - Cook','Griddles_Com, P - Cook','Hot Food Holding Cabinet_Com, E - Cook','Steamers_Com, E - Cook','Steamers_Com, G - Cook','Steamers_Com, P - Cook','ES Refrigerator and Freezer_Com, E - Refr','Anti Sweat Heat Control_Com, E - Refr','Case Night Covers_Com, E - Refr','Loading Dock Pit Seals_Com, E - Refr','ECM Comp Cond Fan Motor_Com, E - Refr','Evap Fan Motor Replacement_Com, E - Refr','Evap Fan Speed Controls_Com, E - Refr','LowHeat NoHeat Doors_Com, E - Refr','Refrigerated Vending Machine_Com, E - Refr','Walk In Refrigeration_Com, E - Refr','Refrigeration Tune Up_Com, E - Refr','ES Ice Machine_Com, E - Refr','Walk In Cooler Retroft_Com, E - Refr','HE Built Up Refrig_Com, E - Refr','Door Gasket Replacement_Com, E - Refr','EnergyStar Dehumidifier_Com, E - Appl','Clothes Washer Elec WH_Com, E - Washer+Dryer+WaterHeater [unit w/ elec dry]','Clothes Washer Elec WH_Com, E - Washer+Dryer+WaterHeater [unit w/ gas dry]','Clothes Washer Elec WH_Com, E - Washer+Dryer+WaterHeater [unit w/ propane dry]','Clothes Washer Gas WH_Com, E - Washer+Dryer+WaterHeater [unit w/ elec dry]','Clothes Washer Gas WH_Com, E - Washer+Dryer+WaterHeater [unit w/ gas dry]','Clothes Washer Gas WH_Com, E - Washer+Dryer+WaterHeater [unit w/ propane dry]','Clothes Washer Oil WH_Com, E - Washer+Dryer+WaterHeater [unit w/ elec dry]','Clothes Washer Oil WH_Com, E - Washer+Dryer+WaterHeater [unit w/ gas dry]','Clothes Washer Oil WH_Com, E - Washer+Dryer+WaterHeater [unit w/ propane dry]','Clothes Washer Propane WH_Com, E - Washer+Dryer+WaterHeater [unit w/ elec dry]','Clothes Washer Propane WH_Com, E - Washer+Dryer+WaterHeater [unit w/ gas dry]','Clothes Washer Propane WH_Com, E - Washer+Dryer+WaterHeater [unit w/ propane dry]','Ozone Laundry_Com, E - HWat','Ozone Laundry_Com, G - HWat','Ozone Laundry_Com, O - HWat','Ozone Laundry_Com, P - HWat','Dishwasher_Com, E - Appl+Hwat [Building w elec WH]','Dishwasher_Com, E - Appl+Hwat [Building w gas WH]','Dishwasher_Com, E - Appl+HWat [Building w oil WH]','Dishwasher_Com, E - Appl+HWat [Building w propane WH]','Faucet Aerator_Com, E - HWat','Faucet Aerator_Com, G - HWat','Faucet Aerator_Com, O - HWat','Faucet Aerator_Com, P - HWat','Pre Rinse Sprayers_Com, E - HWat','Pre Rinse Sprayers_Com, G - HWat','Pre Rinse Sprayers_Com, O - HWat','Pre Rinse Sprayers_Com, P - HWat','Heat Pump Water Heater_Com, E - HWat','FF Storage Water Heater_Com, G - HWat','FF Storage Water Heater_Com, O - HWat','FF Storage Water Heater_Com, P - HWat','FF Instantaneous Water Heater_Com, G - HWat','FF Instantaneous Water Heater_Com, O - HWat','FF Instantaneous Water Heater_Com, P - HWat','Clothes Dryer_Com, E - Appl','Clothes Dryer_Com, G - Oth','Clothes Dryer_Com, P - Oth','Pnemautic to DDC_Com, E - TotE [Building w Elec Heat]','Pnemautic to DDC_Com, E - TotE [Building w Gas Heat]','Pnemautic to DDC_Com, E - TotE [Building w Oil Heat]','Pnemautic to DDC_Com, E - TotE [Building w Propane Heat]','Data Center_Com, E - TotE [Building w Elec Heat]','Data Center_Com, E - TotE [Building w Gas Heat]','Data Center_Com, E - TotE [Building w Oil Heat]','Data Center_Com, E - TotE [Building w Propane Heat]','RCx_Com, E - TotE [Building w Elec Heat]','RCx_Com, E - TotE [Building w Gas Heat]','RCx_Com, E - TotE [Building w Oil Heat]','RCx_Com, E - TotE [Building w Propane Heat]','Commissioning_Com, E - TotE [Building w Elec Heat]','Commissioning_Com, E - TotE [Building w Gas Heat]','Commissioning_Com, E - TotE [Building w Oil Heat]','Commissioning_Com, E - TotE [Building w Propane Heat]','Integrated Building Design_Com, E - TotE [Building w Elec Heat]','Integrated Building Design_Com, E - TotE [Building w Gas Heat]','Integrated Building Design_Com, E - TotE [Building w Oil Heat]','Integrated Building Design_Com, E - TotE [Building w Propane Heat]','Deep Energy Retrofit_Com, E - TotE [Building w Elec Heat]','Deep Energy Retrofit_Com, E - TotE [Building w Gas Heat]','Deep Energy Retrofit_Com, E - TotE [Building w Oil Heat]','Deep Energy Retrofit_Com, E - TotE [Building w Propane Heat]','EMS_Com, E - TotE [Building w Elec Heat]','EMS_Com, E - TotE [Building w Gas Heat]','EMS_Com, E - TotE [Building w Oil Heat]','EMS_Com, E - TotE [Building w Propane Heat]','VFDs on HVAC Pumps_Com, E - Oth','ECM Circulators_Com, E - Oth','Motors_Com, E - Oth','Ext Area Ltg_Com, E - ExtL','Street Ltg_Com, E - ExtL','Ext Ltg Ctrls_Com, E - ExtL','Ext Ltg Dsgn_Com, E - ExtL','Int Ltg Ctrls_Com, E - IntL [No Heat]','Int Ltg Ctrls_Com, E - IntL [Electric Heat]','Int Ltg Ctrls_Com, E/G - IntL','Int Ltg Ctrls_Com, E/O - IntL','Int Ltg Ctrls_Com, E/P - IntL','Exit Sign RetFit_Com, E - IntL [No Heat]','Exit Sign RetFit_Com, E - IntL [Electric Heat]','Exit Sign RetFit_Com, E/G - IntL','Exit Sign RetFit_Com, E/O - IntL','Exit Sign RetFit_Com, E/P - IntL','LED HiLo Bay_Com, E - IntL [No Heat]','LED HiLo Bay_Com, E - IntL [Electric Heat]','LED HiLo Bay_Com, E/G - IntL','LED HiLo Bay_Com, E/O - IntL','LED HiLo Bay_Com, E/P - IntL','Repl Scre_Com, E - IntL [No Heat]','Repl Scre_Com, E - IntL [Electric Heat]','Repl Scre_Com, E/G - IntL','Repl Scre_Com, E/O - IntL','Repl Scre_Com, E/P - IntL','Lin LED Fixture_Com, E - IntL [No Heat]','Lin LED Fixture_Com, E - IntL [Electric Heat]','Lin LED Fixture_Com, E/G - IntL','Lin LED Fixture_Com, E/O - IntL','Lin LED Fixture_Com, E/P - IntL','LED Tube Repl_Com, E - IntL [No Heat]','LED Tube Repl_Com, E - IntL [Electric Heat]','LED Tube Repl_Com, E/G - IntL','LED Tube Repl_Com, E/O - IntL','LED Tube Repl_Com, E/P - IntL','Repl pin CFL wLED_Com, E - IntL [No Heat]','Repl pin CFL wLED_Com, E - IntL [Electric Heat]','Repl pin CFL wLED_Com, E/G - IntL','Repl pin CFL wLED_Com, E/O - IntL','Repl pin CFL wLED_Com, E/P - IntL','Refrig Case LED_Com, E - IntL','Refrig Case Ctrls_Com, E - IntL','Stair Occ Sensor_Com, E - IntL [No Heat]','Stair Occ Sensor_Com, E - IntL [Electric Heat]','Stair Occ Sensor_Com, E/G - IntL','Stair Occ Sensor_Com, E/O - IntL','Stair Occ Sensor_Com, E/P - IntL','Int Delamping_Com, E - IntL [No Heat]','Int Delamping_Com, E - IntL [Electric Heat]','Int Delamping_Com, E/G - IntL','Int Delamping_Com, E/O - IntL','Int Delamping_Com, E/P - IntL','Int Ltg Dsgn_Com, E - IntL [No Heat]','Int Ltg Dsgn_Com, E - IntL [Electric Heat]','Int Ltg Dsgn_Com, E/G - IntL','Int Ltg Dsgn_Com, E/O - IntL','Int Ltg Dsgn_Com, E/P - IntL','Unitary HP replacing Boiler_Com, E-Cool+Heat [Building w Gas Heat]','VRF replacing Boiler_Com, E-Cool+Heat [Building w Gas Heat]','GSHP replacing Boiler_Com, E-Cool+Heat [Building w Gas Heat]','Unitary HP replacing Boiler_Com, E-Cool+Heat [Building w Oil Heat]','VRF replacing Boiler_Com, E-Cool+Heat [Building w Oil Heat]','GSHP replacing Boiler_Com, E-Cool+Heat [Building w Oil Heat]','Unitary HP replacing Boiler_Com, E-Cool+Heat [Building w Prop Heat]','VRF replacing Boiler_Com, E-Cool+Heat [Building w Prop Heat]','GSHP replacing Boiler_Com, E-Cool+Heat [Building w Prop Heat]','Unitary HP replacing Furnace_Com, E-Cool+Heat [Building w Gas Heat]','VRF replacing Furnace_Com, E-Cool+Heat [Building w Gas Heat]','GSHP replacing Furnace_Com, E-Cool+Heat [Building w Gas Heat]','Unitary HP replacing Furnace_Com, E-Cool+Heat [Building w Oil Heat]','VRF replacing Furnace_Com, E-Cool+Heat [Building w Oil Heat]','GSHP replacing Furnace_Com, E-Cool+Heat [Building w Oil Heat]','Unitary HP replacing Furnace_Com, E-Cool+Heat [Building w Prop Heat]','VRF replacing Furnace_Com, E-Cool+Heat [Building w Prop Heat]','GSHP replacing Furnace_Com, E-Cool+Heat [Building w Prop Heat]','HPWH replacing FF Storage Water Heater_Com, G-Wheat','HPWH replacing FF Storage Water Heater_Com, O-Wheat','HPWH replacing FF Storage Water Heater_Com, Prop-Wheat','HPWH replacing FF Instantaneous Water Heater_Com, G-Wheat','HPWH replacing FF Instantaneous Water Heater_Com, O-Wheat','HPWH replacing FF Instantaneous Water Heater_Com, Prop-Wheat','Pump Optimization (Efficient motor and pump system)','VFD for motors','Motor Upgrade (Blowers, Other processes)','System optimization & Control (SCADA & EMS)','Strategic Energy Management (Managerial)','High Efficiency Bubble (fine) Diffusers/Aeration Efficiency','Energy Recovery & Use','Water leaks detection','EIS_Com, E - TotE [Building w Elec Heat]','EIS_Com, E - TotE [Building w Gas Heat]','EIS_Com, E - TotE [Building w Oil Heat]','EIS_Com, E - TotE [Building w Propane Heat]','FDD_Com, E - TotE [Building w Elec Heat]','FDD_Com, E - TotE [Building w Gas Heat]','FDD_Com, E - TotE [Building w Oil Heat]','FDD_Com, E - TotE [Building w Propane Heat]']
 NodeLocation: 568,560,1
 NodeSize: 64,32
-
-FormNode Fo1433001251
-Title: Va37
-Definition: 0
-NodeLocation: 308,392,1
-NodeSize: 68,16
-Original: Va37
 
 Variable Measure_Life
 Title: Measure Life
