@@ -11,7 +11,7 @@ Date: Tue, Mar 29, 2022 11:58 AM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,0,0,,,,,,,,,0
-DiagState: 2,-47,54,1968,1008,17,10,
+DiagState: 2,-346,33,1968,724,17,10,
 WindState: 2,2271,111,720,350
 NodeColor: 65535,65535,65535
 FontStyle: Arial Narrow,19
@@ -156,7 +156,7 @@ NodeLocation: 592,288,1
 NodeSize: 72,40
 DefnState: 2,432,83,768,667,0,DFNM
 ValueState: 2,1167,229,624,551,,MIDM
-Aliases: FormNode Fo471309859, FormNode Fo517300515, FormNode Fo1525691683, FormNode Clipboard_Fo51730051, FormNode Fo1404400931
+Aliases: FormNode Fo471309859, FormNode Fo1525691683, FormNode Fo517300515, FormNode Fo1404400931
 NodeColor: 65535,1,1
 ReformDef: [Spatial_ID,All_PV_Sectors]
 NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
@@ -196,7 +196,7 @@ Definition: ['Higher Education','Hospitals','K-12','Air Transportation','Art_Mus
 NodeLocation: 632,472,1
 NodeSize: 64,40
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 297,252}
+{!40300|Att_SlicerPopupSize: 302,252}
 
 Decision Map_All_to_Aggregate
 Title: Map All to Aggregated Sectors
@@ -213,8 +213,8 @@ Description: Simulated PV adoption that is enabled by NYPA.
 Definition: Aggregate(NYPA_Enabled_PV_Adop,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
 NodeLocation: 776,352,1
 NodeSize: 64,40
-ValueState: 2,479,41,946,740,1,MIDM
-Aliases: FormNode Fo1042431523, FormNode Clipboard_Fo10424315, FormNode Fo599094563
+ValueState: 2,345,18,946,740,1,MIDM
+Aliases: FormNode Fo1042431523, FormNode Fo599094563
 GraphSetup: Flip:0~
 Att_GraphValueRange NYPA_Enabled_PV_Ado1:1,,1,1,,,,0,1000,0~
 Att_AreaFill Graph_Primary_Valdim:1~
@@ -278,11 +278,10 @@ Description: Percentage of total NYPA enabled PV adoption by sector, geography, 
 Definition: ZIDZ1(NYPA_Enabled_PV_Ado1,sum(NYPA_Enabled_PV_Ado1,Spatial_ID,Area_Type,Sectors_Aggregated))
 NodeLocation: 816,576,1
 NodeSize: 64,40
-ValueState: 2,282,8,1244,774,1,MIDM
-Aliases: FormNode Fo693572899, FormNode Clipboard_Fo69357289, FormNode Fo544568611
-GraphSetup: {!50000|Graph_SortBySpread:1}~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_GraphValueRange NYPA_Enabled_PV_Ado2:1,,0,,,,,0,0.45,0
+ValueState: 2,385,22,1199,852,1,MIDM
+Aliases: FormNode Fo693572899, FormNode Fo544568611
+GraphSetup: Att_GraphValueRange NYPA_Enabled_PV_Ado2:1,,1,,,,,0,0.45,0~
+Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [Sectors_Aggregated,Spatial_ID]
 NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Sectors_Aggregated,Area_Type,Spatial_ID]
@@ -307,11 +306,11 @@ NYPA enabled: the portion of the total "natural" market adoption enabled by NYPA
 Definition: Table(Potential_Type)(Total_PV_MW_DC_Tech_,PV_Cumul_MW_DC1,NYPA_Enabled_PV_Ado1)
 NodeLocation: 968,576,1
 NodeSize: 64,40
-ValueState: 2,357,33,1022,681,,MIDM
-Aliases: FormNode Fo1687511331, FormNode Clipboard_Fo16875113, FormNode Fo330659107
+ValueState: 2,355,32,1022,681,,MIDM
+Aliases: FormNode Fo1687511331, FormNode Fo330659107
 GraphSetup: Flip:0~
 Att_GraphValueRange PV_Potential_by_Type:1,,1,,,,,0,100.12953341007233,0
-ReformVal: [Output_Periods,Spatial_ID]
+ReformVal: [Output_Periods,Area_Type]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Sectors_Aggregated,Area_Type,Spatial_ID]
 Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,Spatial_ID,0,Potential_Type,3,Output_Periods,1]
@@ -330,9 +329,9 @@ Index Potential_Type
 Att_PrevIndexValue: ['Total Technical','Total Market','NYPA Enabled']
 Title: Potential Type
 Definition: ['Total Technical','Total Market','NYPA Enabled']
-NodeLocation: 1208,576,1
+NodeLocation: 1400,456,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 227,80}
+{!40300|Att_SlicerPopupSize: 232,80}
 
 Variable PV_Cumul_MW_DC1
 Title: PV Cumul MW DC
@@ -365,7 +364,7 @@ Definition: sum(Aggregate(NYPA_Enabled_Storage,Map_All_to_Aggregate[All_PV_Secto
 NodeLocation: 816,688,1
 NodeSize: 64,40
 ValueState: 2,414,39,959,657,1,MIDM
-Aliases: FormNode Fo1849909539, FormNode Clipboard_Fo18499095, FormNode Fo1807054115
+Aliases: FormNode Fo1849909539, FormNode Fo1807054115
 GraphSetup: Att_AreaFill Graph_Primary_Valdim:1~
 Att_Stacked_Lines Graph_Primary_Valdim:1~
 Att_CatLineStyle Graph_Primary_Valdim:9~
@@ -401,16 +400,16 @@ Description: Percentage of NYPA enabled storage adoption by geography, sector, a
 Definition: ZIDZ1(NYPA_Enabled_Storag1,sum(NYPA_Enabled_Storag1,BESS_Spatial_ID,Area_Type,Sectors_Aggregated))
 NodeLocation: 968,688,1
 NodeSize: 64,40
-ValueState: 2,382,34,1171,680,,MIDM
-Aliases: FormNode Fo507732259, FormNode Clipboard_Fo50773225, FormNode Fo464876835
+ValueState: 2,337,12,1207,788,,MIDM
+Aliases: FormNode Fo507732259, FormNode Fo464876835
 GraphSetup: Att_ForceCategorical Graph_Primary_Valdim:1~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 {!50000|Graph_SortBySpread:1}
-ReformVal: [Sectors_Aggregated,Area_Type]
+ReformVal: [BESS_Spatial_ID,Sectors_Aggregated]
 NumberFormat: 2,%,4,2,0,0,4,1,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [BESS_Spatial_ID,Area_Type,Sectors_Aggregated]
 Att_ResultSliceState: [Time_Storage,37,Area_Type,0,Sectors_Aggregated,0,Time_Storage,37,BESS_Spatial_ID,0]
-{!40600|Att_StackingIndex: Area_Type}
+{!40600|Att_StackingIndex: Sectors_Aggregated}
 {!40600|Att_ClusterIndex: Null}
 
 Alias Al60092707
@@ -429,7 +428,7 @@ NodeLocation: 1296,152,1
 NodeSize: 64,40
 WindState: 2,2334,170,720,350
 ValueState: 2,499,108,1002,601,,MIDM
-Aliases: FormNode Fo617935139, FormNode Clipboard_Fo61793513, FormNode Fo1786082595
+Aliases: FormNode Fo617935139, FormNode Fo1786082595
 GraphSetup: Flip:0~
 Graph_AxisLabelFont:,20,0
 ReformVal: [Time_Solar_PV,Area_Type]
@@ -454,7 +453,7 @@ NodeLocation: 272,64,1
 NodeSize: 64,40
 WindState: 2,2306,207,720,350
 ValueState: 2,131,52,1632,685,1,MIDM
-Aliases: FormNode Fo340429091, FormNode Clipboard_Fo34042909, FormNode Fo1517647139
+Aliases: FormNode Fo340429091, FormNode Fo1517647139
 GraphSetup: Flip:0~
 Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,1,,,,,48,80,1~
 Att_CatLineStyle Graph_Primary_Valdim:5
@@ -560,7 +559,7 @@ Description: This file must first be uploaded to the ACP cloud server.
 Definition: 'NYPA DER Inputs.xlsx'
 NodeLocation: 1224,352,1
 NodeSize: 64,40
-Aliases: FormNode Fo487385379, FormNode Fo11547939, FormNode Fo1488467235, FormNode Fo1555576099
+Aliases: FormNode Fo487385379, FormNode Fo1488467235, FormNode Fo11547939, FormNode Fo1555576099
 AcpStyles: Show_Object:no
 
 Button Import_Custom_DER_In
@@ -604,6 +603,20 @@ AcpStyles: Show_Object:no~
 Upload_spreadsheet~
 Upload_filename_variable: Custom_Input_Filenam~
 
+
+Variable Incremental_Potenti2
+Title: Incremental Potential
+Units: MW-DC
+Definition: PV_Potential_by_Type - (IF Potential_Type='Total Technical' THEN 0 ELSE PV_Potential_by_Type[Output_Periods=31-Jan-2022])
+NodeLocation: 1136,576,1
+NodeSize: 64,40
+ValueState: 2,278,7,1230,852,,MIDM
+Aliases: FormNode Fo1565842723
+ReformVal: [Spatial_ID,Sectors_Aggregated]
+Att__TotalsIndex: [Area_Type,Sectors_Aggregated]
+Att_ResultSliceState: [Area_Type,0,Output_Periods,1,Potential_Type,3,Sectors_Aggregated,0,Spatial_ID,1]
+{!40600|Att_StackingIndex: Sectors_Aggregated}
+{!40600|Att_ClusterIndex: Null}
 
 Close NYPA_specific_output
 

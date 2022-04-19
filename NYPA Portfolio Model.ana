@@ -134,7 +134,7 @@ Author: CWelch
 Date: Tue, Apr 20, 2021 10:09 AM
 DefaultSize: 64,32
 NodeInfo: 1,,,,,,,,,,,0
-DiagState: 2,29,16,1497,664,17,10,
+DiagState: 2,114,22,1497,664,17,10,
 FontStyle: Arial,15
 FileInfo: 0,Model Nexant_Model_Templat,2,2,0,0,C:\Users\cwelch\Documents\Repos\Nexant\SPIDER\NYPA Portfolio Model.ana
 {!50000|DefaultFontColor: 0,0,0}
@@ -4077,7 +4077,7 @@ Definition: Choice(Self,1,0)
 NodeLocation: 472,104,1
 NodeSize: 88,16
 WindState: 2,737,92,759,737
-Aliases: Alias ACP_New1418951555, FormNode ACP_New915635075, FormNode ACP_New646280483, FormNode Clipboard_ACP_New646, FormNode ACP_New229995811, FormNode ACP_New62223651
+Aliases: Alias ACP_New1418951555, FormNode ACP_New915635075, FormNode ACP_New646280483, FormNode ACP_New229995811, FormNode ACP_New62223651
 {!40300|DomainExpr: ACP_Dash_size_option}
 OnChange: ACP_SetDashSize(self, ACP_Margin)
 {!60005|Att_AttsToShow: Object Object, Object Attribute, Attribute Value, Attribute Att_AxisOrKeyTitle, Attribute OnGraphDraw}
@@ -4207,7 +4207,7 @@ NodeFont: Arial Black, 15
 AcpStyles: Show_description:30
 
 Index ACP_top_modules
-Att_PrevIndexValue: [Nexant_Model_Templat,NYPA_Solar_Storage_A,NYPA_Dropdowns,Model_Details,NYPA_specific_output,NYPA_Solar_Storage_S,Other_Input,NYPA_Solar_Storage,NYPA_Solar_Storage_3,Other_Output,ACP_Styles,NYPA_Energy_Efficie1,NYPA_Energy_Efficien,SS_LibXL_Lib,NYPA_Aggregate_Outpu,Mo4,Standard_SPIDER_Inte,Old_NYPA]
+Att_PrevIndexValue: [Nexant_Model_Templat,NYPA_Solar_Storage_A,NYPA_Dropdowns,Model_Details,NYPA_specific_output,NYPA_Solar_Storage_S,Other_Input,NYPA_Solar_Storage,NYPA_Solar_Storage_3,Other_Output,ACP_Styles,NYPA_Energy_Efficie1,SS_LibXL_Lib,NYPA_Energy_Efficien,NYPA_Aggregate_Outpu,Mo4,Standard_SPIDER_Inte,Old_NYPA]
 Title: Top modules
 Description: Potential ACP dashboards, i.e. top model and modules in the top model ~
 (but not submodules in those modules), ordered from left to right.~
@@ -4234,7 +4234,7 @@ Description: Select the modules that you want to appear as a tab in ACP. ~
 They may include the main model and its immediate submodules.~
 ~
 Ctrl+A to select all of them.
-Definition: MultiChoice(ACP_top_modules,6,9,12,15,allowNone:0,returnList:1)
+Definition: MultiChoice(ACP_top_modules,6,9,14,15,allowNone:0,returnList:1)
 NodeLocation: 280,96,1
 NodeSize: 88,16
 WindState: 2,1998,151,923,617
@@ -4424,7 +4424,7 @@ ACP_style_set('Show_title', self)
 Variable ACP_model_Reset
 Title: ACP model Reset
 Description: Reset ACP Styles variables to reflect changes in the parent model.
-Definition: Checkbox(1)
+Definition: Checkbox(0)
 NodeLocation: 96,216,1
 NodeSize: 72,24
 NodeInfo: 1,,,,,,,0,,,,,,0
@@ -4698,7 +4698,7 @@ OnChange: ACP_Set_Autocalc((ACP_top_modules),  ~
 {!60005|Att_AttsToShow: Object Object, Object Attribute, Attribute OnChange}
 
 Index ACP_Diags_with_User_
-Att_PrevIndexValue: [Nodes_for_Illustrati,NYPA_specific_output,Mo2,Profiler_details,Sequential_Historic_,Deltas_from_Base_Per,Import_Auxiliary_Var,Data_Import1,Import_Error_Checks1,Categ_Index_Import1,Seq_Index_Import1,Output_Calcs,Forecast_Accuracy,Logit_Diagnostics,Illustrators,Multi_Stage_Calibra2,PV_Objective,Stored_Decison_Data,Misc_Output,Solar_Energy_Product,Customer_Load,Utility_Bills_and_Bi,Equipment_Costs,NYPA_Input_Tables,Annual_Cost_of_Syste,Old_Cost_Ratio_Calcs,Monthly_Payback_Logi,Simple_LCOE_Calculat,Technical_Potential,Facility_Level_Area_,Rate_Values_by_Perio,Rate_Saving_Details,Rates_to_View,NYSERDA_Value_Stack,Daily_Profile_Logic,Building_Stocks,EV_Stock_Initializat,EV_Misc,EV_Adoption_Logic,Market_Share_Calcula,Vehicle_Choice_Logi1,Multi_Stage_Calibra1,EV_Objective,Stored_Decision_Data,Storage_Optimizati10,Misc6,Storage_Opt_Diagnos2,DOE_Load_Profiles,Misc_Output1,Storage_Opt_Diagnost,Outputs_for_E_Source,Filter_USURDB_Data1,System_Analysis,Storage_Adoption,Market_Share2,Multi_Stage_Calibra3,BESS_Objective,Stored_Decison_Data1,EE_Model_Details,EE_Output_Tables]
+Att_PrevIndexValue: [Nodes_for_Illustrati,NYPA_specific_output,Mo2,Profiler_details,Sequential_Historic_,Deltas_from_Base_Per,Import_Auxiliary_Var,Data_Import1,Import_Error_Checks1,Categ_Index_Import1,Seq_Index_Import1,Output_Calcs,Forecast_Accuracy,Logit_Diagnostics,Illustrators,Multi_Stage_Calibra2,PV_Objective,Stored_Decison_Data,Misc_Output,Solar_Energy_Product,Customer_Load,Utility_Bills_and_Bi,Equipment_Costs,NYPA_Input_Tables,Annual_Cost_of_Syste,Old_Cost_Ratio_Calcs,Monthly_Payback_Logi,Simple_LCOE_Calculat,Technical_Potential,Facility_Level_Area_,Rate_Values_by_Perio,Rate_Saving_Details,Rates_to_View,NYSERDA_Value_Stack,Daily_Profile_Logic,Building_Stocks,EV_Stock_Initializat,EV_Misc,EV_Adoption_Logic,Market_Share_Calcula,Vehicle_Choice_Logi1,Multi_Stage_Calibra1,EV_Objective,Stored_Decision_Data,Storage_Optimizati10,Misc6,Storage_Opt_Diagnos2,DOE_Load_Profiles,Misc_Output1,Storage_Opt_Diagnost,Outputs_for_E_Source,Filter_USURDB_Data1,System_Analysis,Storage_Adoption,Market_Share2,Multi_Stage_Calibra3,BESS_Objective,Stored_Decison_Data1,Replacement_Type_Ap1,EE_Model_Details,EE_Output_Tables,Compare_by_End_Use]
 Title: Diags with User outputs or Framenodes
 Description: All diagrams that contain user outputs.
 Definition: ACP_model_Reset;~
@@ -5417,7 +5417,7 @@ Aliases: Alias Al1198090051
 MetaOnly: 1
 
 Index ACP_User_output_and_
-Att_PrevIndexValue: [Output_1,Output_2,Output_5,Output_4,Output_6,NYPA_Enabled_PV_Ado1,NYPA_Enabled_PV_Ado2,PV_Potential_by_Type,NYPA_Enabled_Storag1,NYPA_Enabled_Storag2,Long_Run_Market_Sha1,Hourly_Energy_Flows,Nodes_to_change,Colored_nodes_to_fix,Uncolored_Nodes,Left_to_Review,Performance_profiles,EV_Cumul_MW_Impact,Cumulative_EV_Delta,Last_Import_Time,Raw_Imported_Data1,Format_Import_Data1,Check_Index_Errors1,Check_DataType_Erro1,Raw_Categ_Index_Dat1,Format_CategInd_Dat1,Raw_Seq_Index_Data1,Format_Seq_Ind_Data1,Cumulative_Actual_In,Compare_Prior_Fcsts,Mkt_Share_Example,Long_Run_Market_Sha3,Market_Share_Functio,Market_Adoption_Illu,Failed_Spat_ID_PV,Sim_vs_Act_PV_System,Sim_vs_Act_PV_Rate,R_2_Applied,All_Stored_Coeffs_PV,Stored_Coeff_for_PV_,Installs_by_Type,Cumulative_PV_Instal,Pct_Load_Met_bySolar,PrePost_Load_by_OpYr,Scaled_Ann_Net_Load,PrePost_Load_Solar,FirstYr_Bill_by_Vint,FirstYr_Bill_Compare,Value_of_generation1,Base_Installed_Cost_,Equipment_Cost_Resul,Equipment_Cost_Forec,Cost_of_Elect_Ratio,Simple_Payback_Time,CostOf_Elect_Compare,Tot_Price_Aft_Incent,Simple_LCOE_of_PV1,Simple_LCOE_vs_Value,Cost_of_Elect_Ratio2,PV_Stock_Basis_by_Se,Technical_PV_Potenti,Load_vs_PV_Potential,Total_PV_kW_DC_poten,Potential_divided_by,PV_Tech_Potential_Pe,Total_PV_MW_DC_Poten,Building_Count_from1,Customer_Load1,Rate_Data_TOU_Sched,Electric_Rates2,Flat_Demand_Schedule,Rate_Name_to_Save,Demand_TOU_Sched,Energy_TOU_Schedule,View_Saved_Rates,View_Existing_Rates,Discrete_Rate,Compare9,Period_of_Rate,Electric_Rate_8760,Saved_Daily_Profiles,Saved_Day_Counts,Bldg_Stock_by_Time,Vehicle_Stk_Share_Ac,Tech_Share_Veh_Stock,Share_New_Veh_Sales,Aggreg_New_Veh_Sales,Cumul_EV_Stock_byTec,PHEV_Market_Share,Vehicle_Stock_Share1,Market_Share1,EV_Mkt_Share,Tornado__EV_Mkt_Shar,Vehicle__Utility_,Logit_Attrib_Ratios1,Logit_Equiv_Cost1,Logit_Attrib_Utilit1,Veh_Tech_Mkt_Share1,Vehicle_Logit_MktSh1,Failed_Spat_ID_EV,Simulated_EV_Stock,Sim_vs_Act_EV_Stock,Sim_vs_Act_EV_Sales,Sim_vs_Act_EV_Stock_,R2_Stock_Delta,R2_Thresh_Failure_EV,EV_Decision_Values,All_Stored_Coefficie,Stored_Coeff_for_EV_,Lev_Utility_Bill,Current_BESS_Sector,Flows_by_Opt_Hour,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Building_Loads,BESS_Shr_ResHousing,Dispatch_Flows,Cumul_BESS_Adoption,Electric_Rates3,PV_Generation,Compare_BESS_Potenti,LRMS_by_BESS_Time,Payback_Accept_Curv1,BESS_Payback_Time,Failed_Spat_ID_BESS,Sim_vs_Act_BESS_Cap,Sim_vs_Act_BESS_Rate,R2_Applied_BESS,All_Stored_Coeffs_P1,Stored_Coef_for_BESS,Economic_Potl_Before,Consumption_TBtu,Potential_by_Measure,Potential_by_Measur1,Cumulative_Potenti_2,Potential_by_Measur2,Achievable_Potential,Potential_of_Top_Mea,Potential_by_Facilit,Potential_vs_Consump]
+Att_PrevIndexValue: [Output_1,Output_2,Output_5,Output_4,Output_6,NYPA_Enabled_PV_Ado1,NYPA_Enabled_PV_Ado2,PV_Potential_by_Type,NYPA_Enabled_Storag1,NYPA_Enabled_Storag2,Long_Run_Market_Sha1,Hourly_Energy_Flows,Nodes_to_change,Colored_nodes_to_fix,Uncolored_Nodes,Left_to_Review,Performance_profiles,EV_Cumul_MW_Impact,Cumulative_EV_Delta,Last_Import_Time,Raw_Imported_Data1,Format_Import_Data1,Check_Index_Errors1,Check_DataType_Erro1,Raw_Categ_Index_Dat1,Format_CategInd_Dat1,Raw_Seq_Index_Data1,Format_Seq_Ind_Data1,Cumulative_Actual_In,Compare_Prior_Fcsts,Mkt_Share_Example,Long_Run_Market_Sha3,Market_Share_Functio,Market_Adoption_Illu,Failed_Spat_ID_PV,Sim_vs_Act_PV_System,Sim_vs_Act_PV_Rate,R_2_Applied,All_Stored_Coeffs_PV,Stored_Coeff_for_PV_,Installs_by_Type,Cumulative_PV_Instal,Pct_Load_Met_bySolar,PrePost_Load_by_OpYr,Scaled_Ann_Net_Load,PrePost_Load_Solar,FirstYr_Bill_by_Vint,FirstYr_Bill_Compare,Value_of_generation1,Base_Installed_Cost_,Equipment_Cost_Resul,Equipment_Cost_Forec,Cost_of_Elect_Ratio,Simple_Payback_Time,CostOf_Elect_Compare,Tot_Price_Aft_Incent,Simple_LCOE_of_PV1,Simple_LCOE_vs_Value,Cost_of_Elect_Ratio2,PV_Stock_Basis_by_Se,Technical_PV_Potenti,Load_vs_PV_Potential,Total_PV_kW_DC_poten,Average_PV_kW_Facili,Potential_divided_by,PV_Tech_Potential_Pe,Total_PV_MW_DC_Poten,Building_Count_from1,Customer_Load1,Rate_Data_TOU_Sched,Electric_Rates2,Flat_Demand_Schedule,Rate_Name_to_Save,Demand_TOU_Sched,Energy_TOU_Schedule,View_Saved_Rates,View_Existing_Rates,Discrete_Rate,Compare9,Period_of_Rate,Electric_Rate_8760,Saved_Daily_Profiles,Saved_Day_Counts,Bldg_Stock_by_Time,Vehicle_Stk_Share_Ac,Tech_Share_Veh_Stock,Share_New_Veh_Sales,Aggreg_New_Veh_Sales,Cumul_EV_Stock_byTec,PHEV_Market_Share,Vehicle_Stock_Share1,Market_Share1,EV_Mkt_Share,Tornado__EV_Mkt_Shar,Vehicle__Utility_,Logit_Attrib_Ratios1,Logit_Equiv_Cost1,Logit_Attrib_Utilit1,Veh_Tech_Mkt_Share1,Vehicle_Logit_MktSh1,Failed_Spat_ID_EV,Simulated_EV_Stock,Sim_vs_Act_EV_Stock,Sim_vs_Act_EV_Sales,Sim_vs_Act_EV_Stock_,R2_Stock_Delta,R2_Thresh_Failure_EV,EV_Decision_Values,All_Stored_Coefficie,Stored_Coeff_for_EV_,Lev_Utility_Bill,Current_BESS_Sector,Flows_by_Opt_Hour,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Building_Loads,BESS_Shr_ResHousing,Dispatch_Flows,Cumul_BESS_Adoption,Electric_Rates3,PV_Generation,Compare_BESS_Potenti,LRMS_by_BESS_Time,Payback_Accept_Curv1,BESS_Payback_Time,Failed_Spat_ID_BESS,Sim_vs_Act_BESS_Cap,Sim_vs_Act_BESS_Rate,R2_Applied_BESS,All_Stored_Coeffs_P1,Stored_Coef_for_BESS,Replacement_Type_Ap4,Economic_Potl_Before,Consumption_TBtu,Potential_by_Measure,Potential_by_Catego1,Cumulative_Potenti_2,Potential_by_Measur2,Cumulative_Potentia2,Potential_of_Top_Mea,Potential_by_Categor,Potential_vs_Consump,Potential_by_Region_,Potential_by_End_Use,Potential_by_Sector_,Incremental_Potenti2]
 Title: User output and Frame nodes
 Description: User output nodes and Frame nodes, excluding those in ACP_styles library.~
 
@@ -5447,7 +5447,7 @@ Show_Description: 0.2.2
 Decision ACP_Objects_w_non_de
 Title: Objects w nondefault styles
 Description: Select any objects for which you want to specify non-default result table or graph styles. You can then select their styles from "Set result styles by node" just below.
-Definition: MultiChoice(ACP_User_output_and_,66,allowNone:1,returnList:1)
+Definition: MultiChoice(ACP_User_output_and_,,allowNone:1,returnList:1)
 NodeLocation: 488,96,1
 NodeSize: 72,24
 WindState: 2,373,311,720,350
@@ -5496,6 +5496,12 @@ Title: Set styles by node
 Description: Select the "Show index" and "Description" style for each Frame or Tall node.~
 "Default" means use the model default styles.
 Definition: Table(ACP_User_output_and_,ACP_Node_styles)(~
+Choice(ACP_Default_yes_no,1,0),Choice(ACP_Default_yes_no,1,0),Choice(ACP_Descrip_opts_w_d,1,0),Choice(ACP_Index_menu_optio,1,0),~
+Choice(ACP_Default_yes_no,1,0),Choice(ACP_Default_yes_no,1,0),Choice(ACP_Descrip_opts_w_d,1,0),Choice(ACP_Index_menu_optio,1,0),~
+Choice(ACP_Default_yes_no,1,0),Choice(ACP_Default_yes_no,1,0),Choice(ACP_Descrip_opts_w_d,1,0),Choice(ACP_Index_menu_optio,1,0),~
+Choice(ACP_Default_yes_no,1,0),Choice(ACP_Default_yes_no,1,0),Choice(ACP_Descrip_opts_w_d,1,0),Choice(ACP_Index_menu_optio,1,0),~
+Choice(ACP_Default_yes_no,1,0),Choice(ACP_Default_yes_no,1,0),Choice(ACP_Descrip_opts_w_d,1,0),Choice(ACP_Index_menu_optio,1,0),~
+Choice(ACP_Default_yes_no,1,0),Choice(ACP_Default_yes_no,1,0),Choice(ACP_Descrip_opts_w_d,1,0),Choice(ACP_Index_menu_optio,1,0),~
 Choice(ACP_Default_yes_no,1,0),Choice(ACP_Default_yes_no,1,0),Choice(ACP_Descrip_opts_w_d,1,0),Choice(ACP_Index_menu_optio,1,0),~
 Choice(ACP_Default_yes_no,1,0),Choice(ACP_Default_yes_no,1,0),Choice(ACP_Descrip_opts_w_d,1,0),Choice(ACP_Index_menu_optio,1,0),~
 Choice(ACP_Default_yes_no,1,0),Choice(ACP_Default_yes_no,1,0),Choice(ACP_Descrip_opts_w_d,1,0),Choice(ACP_Index_menu_optio,1,0),~
@@ -5691,7 +5697,7 @@ Original: ACP_Objects_w_non_de
 Decision ACP_User_outputs_w_n
 Title: User outputs w non default Autocalc
 Description: Select one or more user output variables for which you want to specify non-default Autocalc options. You can then use "Set Autocalc by node" just below to select your prefered Autocalc options for those variables
-Definition: MultiChoice(ACP_User_output_node,66,allowNone:1,returnList:1)
+Definition: MultiChoice(ACP_User_output_node,,allowNone:1,returnList:1)
 NodeLocation: 688,96,1
 NodeSize: 72,24
 WindState: 2,497,230,720,350
@@ -5704,7 +5710,7 @@ Decision ACP_Autocalc_by_node
 Title: Autocalc by node
 Description: Select the "Show index" and "Description" style for each Frame or Tall node.~
 "Default" means use the model default styles.
-Definition: Table(ACP_User_output_node)(Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,3,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0))
+Definition: Table(ACP_User_output_node)(Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,3,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0),Choice(ACP_Autocalc_options,1,0))
 NodeLocation: 688,336,1
 NodeSize: 72,24
 WindState: 2,841,377,750,487
@@ -5738,7 +5744,7 @@ Show_index_menus: Fly-in~
 Show_graph_table_icon: Yes
 
 Index ACP_User_output_node
-Att_PrevIndexValue: [Output_1,Output_2,Output_5,Output_4,Output_6,NYPA_Enabled_PV_Ado1,NYPA_Enabled_PV_Ado2,PV_Potential_by_Type,NYPA_Enabled_Storag1,NYPA_Enabled_Storag2,Long_Run_Market_Sha1,Hourly_Energy_Flows,Nodes_to_change,Colored_nodes_to_fix,Uncolored_Nodes,Left_to_Review,Performance_profiles,EV_Cumul_MW_Impact,Cumulative_EV_Delta,Last_Import_Time,Raw_Imported_Data1,Format_Import_Data1,Check_Index_Errors1,Check_DataType_Erro1,Raw_Categ_Index_Dat1,Format_CategInd_Dat1,Raw_Seq_Index_Data1,Format_Seq_Ind_Data1,Cumulative_Actual_In,Compare_Prior_Fcsts,Mkt_Share_Example,Long_Run_Market_Sha3,Market_Share_Functio,Market_Adoption_Illu,Failed_Spat_ID_PV,Sim_vs_Act_PV_System,Sim_vs_Act_PV_Rate,R_2_Applied,All_Stored_Coeffs_PV,Stored_Coeff_for_PV_,Installs_by_Type,Cumulative_PV_Instal,Pct_Load_Met_bySolar,PrePost_Load_by_OpYr,Scaled_Ann_Net_Load,PrePost_Load_Solar,FirstYr_Bill_by_Vint,FirstYr_Bill_Compare,Value_of_generation1,Base_Installed_Cost_,Equipment_Cost_Resul,Equipment_Cost_Forec,Cost_of_Elect_Ratio,Simple_Payback_Time,CostOf_Elect_Compare,Tot_Price_Aft_Incent,Simple_LCOE_of_PV1,Simple_LCOE_vs_Value,Cost_of_Elect_Ratio2,PV_Stock_Basis_by_Se,Technical_PV_Potenti,Load_vs_PV_Potential,Total_PV_kW_DC_poten,Potential_divided_by,PV_Tech_Potential_Pe,Total_PV_MW_DC_Poten,Building_Count_from1,Customer_Load1,Rate_Data_TOU_Sched,Electric_Rates2,Flat_Demand_Schedule,Rate_Name_to_Save,Demand_TOU_Sched,Energy_TOU_Schedule,View_Saved_Rates,View_Existing_Rates,Discrete_Rate,Compare9,Period_of_Rate,Electric_Rate_8760,Saved_Daily_Profiles,Saved_Day_Counts,Bldg_Stock_by_Time,Vehicle_Stk_Share_Ac,Tech_Share_Veh_Stock,Share_New_Veh_Sales,Aggreg_New_Veh_Sales,Cumul_EV_Stock_byTec,PHEV_Market_Share,Vehicle_Stock_Share1,Market_Share1,EV_Mkt_Share,Tornado__EV_Mkt_Shar,Vehicle__Utility_,Logit_Attrib_Ratios1,Logit_Equiv_Cost1,Logit_Attrib_Utilit1,Veh_Tech_Mkt_Share1,Vehicle_Logit_MktSh1,Failed_Spat_ID_EV,Simulated_EV_Stock,Sim_vs_Act_EV_Stock,Sim_vs_Act_EV_Sales,Sim_vs_Act_EV_Stock_,R2_Stock_Delta,R2_Thresh_Failure_EV,EV_Decision_Values,All_Stored_Coefficie,Stored_Coeff_for_EV_,Lev_Utility_Bill,Current_BESS_Sector,Flows_by_Opt_Hour,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Building_Loads,BESS_Shr_ResHousing,Dispatch_Flows,Cumul_BESS_Adoption,Electric_Rates3,PV_Generation,Compare_BESS_Potenti,LRMS_by_BESS_Time,Payback_Accept_Curv1,BESS_Payback_Time,Failed_Spat_ID_BESS,Sim_vs_Act_BESS_Cap,Sim_vs_Act_BESS_Rate,R2_Applied_BESS,All_Stored_Coeffs_P1,Stored_Coef_for_BESS,Economic_Potl_Before,Consumption_TBtu,Potential_by_Measure,Potential_by_Measur1,Cumulative_Potenti_2,Potential_by_Measur2,Achievable_Potential,Potential_of_Top_Mea,Potential_by_Facilit,Potential_vs_Consump]
+Att_PrevIndexValue: [Output_1,Output_2,Output_5,Output_4,Output_6,NYPA_Enabled_PV_Ado1,NYPA_Enabled_PV_Ado2,PV_Potential_by_Type,NYPA_Enabled_Storag1,NYPA_Enabled_Storag2,Long_Run_Market_Sha1,Hourly_Energy_Flows,Nodes_to_change,Colored_nodes_to_fix,Uncolored_Nodes,Left_to_Review,Performance_profiles,EV_Cumul_MW_Impact,Cumulative_EV_Delta,Last_Import_Time,Raw_Imported_Data1,Format_Import_Data1,Check_Index_Errors1,Check_DataType_Erro1,Raw_Categ_Index_Dat1,Format_CategInd_Dat1,Raw_Seq_Index_Data1,Format_Seq_Ind_Data1,Cumulative_Actual_In,Compare_Prior_Fcsts,Mkt_Share_Example,Long_Run_Market_Sha3,Market_Share_Functio,Market_Adoption_Illu,Failed_Spat_ID_PV,Sim_vs_Act_PV_System,Sim_vs_Act_PV_Rate,R_2_Applied,All_Stored_Coeffs_PV,Stored_Coeff_for_PV_,Installs_by_Type,Cumulative_PV_Instal,Pct_Load_Met_bySolar,PrePost_Load_by_OpYr,Scaled_Ann_Net_Load,PrePost_Load_Solar,FirstYr_Bill_by_Vint,FirstYr_Bill_Compare,Value_of_generation1,Base_Installed_Cost_,Equipment_Cost_Resul,Equipment_Cost_Forec,Cost_of_Elect_Ratio,Simple_Payback_Time,CostOf_Elect_Compare,Tot_Price_Aft_Incent,Simple_LCOE_of_PV1,Simple_LCOE_vs_Value,Cost_of_Elect_Ratio2,PV_Stock_Basis_by_Se,Technical_PV_Potenti,Load_vs_PV_Potential,Total_PV_kW_DC_poten,Average_PV_kW_Facili,Potential_divided_by,PV_Tech_Potential_Pe,Total_PV_MW_DC_Poten,Building_Count_from1,Customer_Load1,Rate_Data_TOU_Sched,Electric_Rates2,Flat_Demand_Schedule,Rate_Name_to_Save,Demand_TOU_Sched,Energy_TOU_Schedule,View_Saved_Rates,View_Existing_Rates,Discrete_Rate,Compare9,Period_of_Rate,Electric_Rate_8760,Saved_Daily_Profiles,Saved_Day_Counts,Bldg_Stock_by_Time,Vehicle_Stk_Share_Ac,Tech_Share_Veh_Stock,Share_New_Veh_Sales,Aggreg_New_Veh_Sales,Cumul_EV_Stock_byTec,PHEV_Market_Share,Vehicle_Stock_Share1,Market_Share1,EV_Mkt_Share,Tornado__EV_Mkt_Shar,Vehicle__Utility_,Logit_Attrib_Ratios1,Logit_Equiv_Cost1,Logit_Attrib_Utilit1,Veh_Tech_Mkt_Share1,Vehicle_Logit_MktSh1,Failed_Spat_ID_EV,Simulated_EV_Stock,Sim_vs_Act_EV_Stock,Sim_vs_Act_EV_Sales,Sim_vs_Act_EV_Stock_,R2_Stock_Delta,R2_Thresh_Failure_EV,EV_Decision_Values,All_Stored_Coefficie,Stored_Coeff_for_EV_,Lev_Utility_Bill,Current_BESS_Sector,Flows_by_Opt_Hour,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Building_Loads,BESS_Shr_ResHousing,Dispatch_Flows,Cumul_BESS_Adoption,Electric_Rates3,PV_Generation,Compare_BESS_Potenti,LRMS_by_BESS_Time,Payback_Accept_Curv1,BESS_Payback_Time,Failed_Spat_ID_BESS,Sim_vs_Act_BESS_Cap,Sim_vs_Act_BESS_Rate,R2_Applied_BESS,All_Stored_Coeffs_P1,Stored_Coef_for_BESS,Replacement_Type_Ap4,Economic_Potl_Before,Consumption_TBtu,Potential_by_Measure,Potential_by_Catego1,Cumulative_Potenti_2,Potential_by_Measur2,Cumulative_Potentia2,Potential_of_Top_Mea,Potential_by_Categor,Potential_vs_Consump,Potential_by_Region_,Potential_by_End_Use,Potential_by_Sector_,Incremental_Potenti2]
 Title: User output nodes
 Description: All variables that have user outputs (including tall nodes),~
 excluding those in the ACP_styles library.
@@ -7681,7 +7687,7 @@ Date: Wed, Jul 7, 2021 11:39 PM
 NodeLocation: 624,288,1
 NodeSize: 96,24
 NodeInfo: 1,0,0
-DiagState: 2,2173,296,1121,573,23,10,
+DiagState: 2,12,296,1121,573,23,10,
 AcpStyles: show_as_tab: No
 {!40300|ProactivelyEvaluate: 4}
 
@@ -8119,7 +8125,7 @@ NodeLocation: 552,72,1
 NodeSize: 64,40
 DiagState: ,,,1968,1008,,,
 NodeColor: 65535,65535,65535
-AcpStyles: 
+AcpStyles: show_as_tab: No
 
 Picture Pi258594083
 NodeLocation: 320,240,-2
@@ -8136,8 +8142,8 @@ Copyright (2017) Lumina Decision Systems, Inc.
 Author: Max Henrion
 Date: Mon, Nov 20, 2017 1:43 PM
 DefaultSize: 48,24
-NodeLocation: 704,176,1
-NodeSize: 72,24
+NodeLocation: 680,176,1
+NodeSize: 72,40
 NodeInfo: 1,0,0
 DiagState: 2,-62,87,1968,1008,21,10,
 WindState: 2,709,424,720,350
@@ -9178,6 +9184,8 @@ Original: SS_use_orig_funcs
 Close SS_LibXL_Lib
 
 Module Mo4
+Author: CWelch
+Date: Thu, Apr 14, 2022 12:15 PM
 NodeLocation: 864,176,1
 NodeSize: 64,32
 AcpStyles: Show_Object:no~
@@ -9443,7 +9451,7 @@ DefaultSize: 64,32
 NodeLocation: 400,72,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,207,21,1719,799,17,10,
+DiagState: 2,-310,14,1719,799,17,10,
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
 AcpStyles: Framenode: Te2008380707
@@ -9498,7 +9506,7 @@ Original: Simple_LCOE_vs_Value
 FormNode Fo343242019
 Title: Investment Tax Credit
 Definition: 0
-NodeLocation: 236,316,1
+NodeLocation: 236,356,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Invest_Tax_Credit
@@ -9506,7 +9514,7 @@ Original: Invest_Tax_Credit
 FormNode Fo1416983843
 Title: ITC Scenario
 Definition: 0
-NodeLocation: 236,356,1
+NodeLocation: 236,396,1
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,150,,,,,,0
 Original: Selected_ITC_Scen
@@ -9522,7 +9530,7 @@ Original: Simple_LCOE_Discount
 FormNode Fo1953854755
 Title: Equipment Price Multiplier
 Definition: 0
-NodeLocation: 236,692,1
+NodeLocation: 236,724,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Base_Cost_Multiplier
@@ -9530,7 +9538,7 @@ Original: Base_Cost_Multiplier
 FormNode Fo745895203
 Title: PV kW-AC Incentive
 Definition: 0
-NodeLocation: 236,396,1
+NodeLocation: 236,436,1
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,72,,,,,
 NodeColor: 49151,49151,49151
@@ -9546,7 +9554,7 @@ Original: Electric_Rate_8760
 FormNode Fo477459747
 Title: DER Cost Change Rate
 Definition: 0
-NodeLocation: 236,732,1
+NodeLocation: 236,764,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: DER_Cost_Change_Rate
@@ -9554,7 +9562,7 @@ Original: DER_Cost_Change_Rate
 FormNode Fo1551201571
 Title: DER Cost Scenario
 Definition: 0
-NodeLocation: 236,772,1
+NodeLocation: 236,804,1
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,142,,,,,,0
 Original: Select_DER_Cost_Scen
@@ -9562,7 +9570,7 @@ Original: Select_DER_Cost_Scen
 FormNode Fo1014330659
 Title: Storage KWh Incentive
 Definition: 0
-NodeLocation: 236,516,1
+NodeLocation: 236,556,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Storage_KWh_Incentiv
@@ -9570,7 +9578,7 @@ Original: Storage_KWh_Incentiv
 FormNode Fo2088072483
 Title: PV Incentive Scenario
 Definition: 0
-NodeLocation: 236,556,1
+NodeLocation: 236,596,1
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,150,,,,,,0
 Original: Storage_Incentive_Sc
@@ -9584,14 +9592,14 @@ Original: Electric_Rates2
 
 Text Te196441379
 Title: Equipment Costs
-NodeLocation: 236,728,-1
-NodeSize: 212,136
+NodeLocation: 236,748,-1
+NodeSize: 212,116
 NodeInfo: 1,,,,1
 NodeFontColor: 3855,26214,35209
 
 Text Te1270183203
 Title: Credits & Incentives
-NodeLocation: 236,424,-1
+NodeLocation: 236,464,-1
 NodeSize: 212,160
 NodeFont: Arial,19
 NodeFontColor: 3855,26214,35209
@@ -9619,8 +9627,8 @@ Original: Customer_Load1
 
 Text Te464876835
 Title: Market Characterization
-NodeLocation: 236,188,-1
-NodeSize: 212,68
+NodeLocation: 236,208,-1
+NodeSize: 212,88
 NodeInfo: 1,,,,1
 NodeFontColor: 3855,26214,35209
 
@@ -9683,7 +9691,7 @@ AcpStyles: Show_Object:No
 FormNode Fo1383429411
 Title: Installed Cost in Base Year (2021)
 Definition: 0
-NodeLocation: 236,652,1
+NodeLocation: 236,684,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Base_Year_Cost
@@ -9691,7 +9699,7 @@ Original: Base_Year_Cost
 FormNode Fo846558499
 Title: Equipment Cost Forecast
 Definition: 1
-NodeLocation: 236,812,1
+NodeLocation: 236,844,1
 NodeSize: 204,20
 Original: Equipment_Cost_Forec
 
@@ -9771,7 +9779,7 @@ NodeInfo: 1,,,,0
 FormNode Fo980776227
 Title: Incentive PV $/kW Adder
 Definition: 0
-NodeLocation: 236,476,1
+NodeLocation: 236,516,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Incentive_PV_kW_Adde
@@ -9787,7 +9795,7 @@ Original: Additional_Value_Sc1
 FormNode Fo1182102819
 Title: PV Incentive Scenario
 Definition: 0
-NodeLocation: 236,436,1
+NodeLocation: 236,476,1
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,150,,,,,,0,,,,
 Original: PV_Incent_Scenario
@@ -9799,6 +9807,13 @@ NodeLocation: 1100,24,1
 NodeSize: 196,16
 NodeInfo: 1,,,,,,,200,,,,,,0,,,,
 Original: ACP_Screen_size
+
+FormNode Fo1558109475
+Title: Average PV kW/Facility
+Definition: 1
+NodeLocation: 236,260,1
+NodeSize: 204,20
+Original: Average_PV_kW_Facili
 
 Close NYPA_Solar_Storage_3
 
