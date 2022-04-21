@@ -584,6 +584,7 @@ Author: JamesMilford
 Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 768,672,1
 NodeSize: 64,40
+DiagState: 2,0,0,944,480,17,10
 
 Index Cell_Colors
 Att_PrevIndexValue: ['AliceBlue','AntiqueWhite','Aqua','Aquamarine','Azure','Beige','Bisque','Black','BlanchedAlmond','Blue','BlueViolet','Brown','BurlyWood','CadetBlue','Chartreuse','Chocolate','Coral','CornflowerBlue','Cornsilk','Crimson','Cyan','DarkBlue','DarkCyan','DarkGoldenrod','DarkGray','DarkGreen','DarkKhaki','DarkMagenta','DarkOliveGreen','DarkOrange','DarkOrchid','DarkRed','DarkSalmon','DarkSeaGreen','DarkSlateBlue','DarkSlateGray','DarkTurquoise','DarkViolet','DeepPink','DeepSkyBlue','DimGray','DodgerBlue','Firebrick','FloralWhite','ForestGreen','Fuchsia','Gainsboro','GhostWhite','Gold','Goldenrod','Gray','Green','GreenYellow','Honeydew','HotPink','IndianRed','Indigo','Ivory','Khaki','Lavender','LavenderBlush','LawnGreen','LemonChiffon','LightBlue','LightCoral','LightCyan','LightGray','LightGreen','LightPink','LightSalmon','LightSeaGreen','LightSkyBlue','LightSlateGray','LightSteelBlue','LightYellow','Lime','LimeGreen','Linen','Magenta','Maroon','MediumAquamarine','MediumBlue','MediumOrchid','MediumPurple','MediumSeaGreen','MediumSlateBlue','MediumSpringGreen','MediumTurquoise','MediumVioletRed','MidnightBlue','MintCream','MistyRose','Moccasin','NavajoWhite','Navy','OldLace','Olive','OliveDrab','Orange','OrangeRed','Orchid','PaleGoldenrod','PaleGreen','PaleTurquoise','PaleVioletRed','PapayaWhip','PeachPuff','PeaGreen','Peru','Pink','Plum','PowderBlue','Purple','Red','RedPeach','RosyBrown','RoyalBlue','SaddleBrown','Salmon','SandyBrown','SeaGreen','SeaShell','Sienna','Silver','SkyBlue','SlateBlue','SlateGray','SmoothBlue','Snow','SpringGreen','SteelBlue','Tan','Teal','Thistle','Tomato','Turquoise','Violet','Wheat','White','WhiteSmoke','Yellow','YellowGreen']
@@ -598,7 +599,7 @@ Definition: Table(Cell_Colors)(Null,Null,Null,Null,Null,Null,Null,Null,Null,Null
 NodeLocation: 272,96,1
 NodeSize: 64,40
 DefnState: 2,328,53,416,580,,DFNM
-ValueState: 2,679,51,461,655,,MIDM
+ValueState: 2,730,30,421,822,0,MIDM
 TableCellDefault: Null
 {!40700|CellFormatExpression: CellFill(color: Cell_Colors)}
 
@@ -608,7 +609,7 @@ Definition: VAR minim:=MIN(Self, Month, Time_of_Day);~
 VAR range:=MAX(Self, Month, Time_of_Day) - minim;~
 VAR delta:=Self - minim;~
 CellFill('Green', .8 -  .7*Divide(delta, range))
-NodeLocation: 280,184,1
+NodeLocation: 272,184,1
 NodeSize: 64,40
 
 Close Cell_Fill_Examples
@@ -694,7 +695,7 @@ NodeSize: 64,40
 WindState: 2,828,21,720,720
 ValueState: 2,32,55,450,292,0,MIDM
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 1297,785}
+{!40300|Att_SlicerPopupSize: 1307,785}
 
 Module Global_Calibration_L
 Title: Global Calibration Logic

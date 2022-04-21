@@ -13707,13 +13707,13 @@ For replacement of working motors, the new motor efficiency must be at least NEM
 'O','Total FF','N/A',1,Null,'Design/Holistic',0,'Comprehensive Retrofit of existing building aiming for deep savings.',~
 'E','Total Electric','N/A',1,Null,'Design/Holistic',0,'Comprehensive Retrofit of existing building aiming for deep savings.',~
 'Prp','Total FF','N/A',1,Null,'Design/Holistic',0,'Comprehensive Retrofit of existing building aiming for deep savings.',~
-'E','Total Electric','N/A',0,Null,'Energy Management',0,'Install an Energy Management System (EMS) in new construction projects. An EMS consists of computer aided tools and sensors used to monitor and optimize energy consumption in HVAC, lighting, and other major end uses.',~
-'E','Total Electric','N/A',0,Null,'Energy Management',0,'Install an Energy Management System (EMS) in new construction projects. An EMS consists of computer aided tools and sensors used to monitor and optimize energy consumption in HVAC, lighting, and other major end uses.',~
-'G','Total FF','N/A',0,Null,'Energy Management',0,'Install an Energy Management System (EMS) in new construction projects. An EMS consists of computer aided tools and sensors used to monitor and optimize energy consumption in HVAC, lighting, and other major end uses.',~
-'E','Total Electric','N/A',0,Null,'Energy Management',0,'Install an Energy Management System (EMS) in new construction projects. An EMS consists of computer aided tools and sensors used to monitor and optimize energy consumption in HVAC, lighting, and other major end uses.',~
-'O','Total FF','N/A',0,Null,'Energy Management',0,'Install an Energy Management System (EMS) in new construction projects. An EMS consists of computer aided tools and sensors used to monitor and optimize energy consumption in HVAC, lighting, and other major end uses.',~
-'E','Total Electric','N/A',0,Null,'Energy Management',0,'Install an Energy Management System (EMS) in new construction projects. An EMS consists of computer aided tools and sensors used to monitor and optimize energy consumption in HVAC, lighting, and other major end uses.',~
-'Prp','Total FF','N/A',0,Null,'Energy Management',0,'Install an Energy Management System (EMS) in new construction projects. An EMS consists of computer aided tools and sensors used to monitor and optimize energy consumption in HVAC, lighting, and other major end uses.',~
+'E','Total Electric','N/A',1,Null,'Energy Management',0,'Install an Energy Management System (EMS) in new construction projects. An EMS consists of computer aided tools and sensors used to monitor and optimize energy consumption in HVAC, lighting, and other major end uses.',~
+'E','Total Electric','N/A',1,Null,'Energy Management',0,'Install an Energy Management System (EMS) in new construction projects. An EMS consists of computer aided tools and sensors used to monitor and optimize energy consumption in HVAC, lighting, and other major end uses.',~
+'G','Total FF','N/A',1,Null,'Energy Management',0,'Install an Energy Management System (EMS) in new construction projects. An EMS consists of computer aided tools and sensors used to monitor and optimize energy consumption in HVAC, lighting, and other major end uses.',~
+'E','Total Electric','N/A',1,Null,'Energy Management',0,'Install an Energy Management System (EMS) in new construction projects. An EMS consists of computer aided tools and sensors used to monitor and optimize energy consumption in HVAC, lighting, and other major end uses.',~
+'O','Total FF','N/A',1,Null,'Energy Management',0,'Install an Energy Management System (EMS) in new construction projects. An EMS consists of computer aided tools and sensors used to monitor and optimize energy consumption in HVAC, lighting, and other major end uses.',~
+'E','Total Electric','N/A',1,Null,'Energy Management',0,'Install an Energy Management System (EMS) in new construction projects. An EMS consists of computer aided tools and sensors used to monitor and optimize energy consumption in HVAC, lighting, and other major end uses.',~
+'Prp','Total FF','N/A',1,Null,'Energy Management',0,'Install an Energy Management System (EMS) in new construction projects. An EMS consists of computer aided tools and sensors used to monitor and optimize energy consumption in HVAC, lighting, and other major end uses.',~
 'E','Other','N/A',1,Null,'Ventilation and Circulation',0,'Installation of a variable speed drives on HVAC pumps to vary the speed of the motor in a HVAC application with a diversified load.',~
 'E','Other','N/A',1,Null,'Ventilation and Circulation',0,'Electronically commutated (EC) circulators (pumps) are high-efficiency brushless DC motors. They are typically fractional horsepower motors that enjoy several benefits over the more common permanent split capacitor (PSC) fractional horsepower motor. Assumed DHW circulator, heating water circulators, and cooling water circulator applications.',~
 'E','Other','N/A',1,Null,'Other Process',0,'This measure includes one-for-one replacement of working or failed/near-failure 1-200 hp motors with motors that meet or exceed NEMA Premium Efficiency levels in industrial and non-industrial applications, as well as installation of motors in new construction.~
@@ -13802,9 +13802,9 @@ For replacement of working motors, the new motor efficiency must be at least NEM
 'O','Heating','E',1,56,'Electrification',1,Null,~
 'Prp','Heating','E',1,59,'Electrification',1,Null,~
 'E','Other','N/A',1,Null,'Water/Wastewater',1,Null,~
-'G','Water Heating','E',1,Null,'Electrification',1,Null,~
-'O','Water Heating','E',1,Null,'Electrification',1,Null,~
-'Prp','Water Heating','E',1,Null,'Electrification',1,Null,~
+'G','Water Heating','E',0,Null,'Electrification',1,Null,~
+'O','Water Heating','E',0,Null,'Electrification',1,Null,~
+'Prp','Water Heating','E',0,Null,'Electrification',1,Null,~
 'G','Water Heating','E',1,Null,'Electrification',1,Null,~
 'O','Water Heating','E',1,Null,'Electrification',1,Null,~
 'Prp','Water Heating','E',1,Null,'Electrification',1,Null,~
@@ -16234,25 +16234,6 @@ NodeLocation: 1152,376,1
 NodeSize: 64,40
 Original: All_PV_Sectors
 
-Variable Include_Measure
-Title: Include Measure
-Units: Binary
-Definition: Subtable(All_Measure_Categori[Meas_Param_2='Include Measure',All_Measures=Measure])
-NodeLocation: 992,144,1
-NodeSize: 64,32
-WindState: 2,98,82,720,350
-DefnState: 2,446,52,836,781,0,DFNM
-ValueState: 2,116,122,820,554,,MIDM
-Aliases: FormNode Fo792475939, FormNode Fo1351732515
-{!40700|Att_CellFormat: CellAlignment('Center')}
-
-FormNode Fo792475939
-Title: Manual Include Measure
-Definition: 0
-NodeLocation: 184,488,1
-NodeSize: 144,16
-Original: Include_Measure
-
 Variable Percent_Not_Complete
 Title: Percent Not Complete
 Units: Fraction
@@ -16298,7 +16279,7 @@ DefnState: 2,40,10,1706,884,0,DFNM
 Aliases: FormNode Fo1217514787
 ReformDef: [Meas_Param_2,Measure]
 Att_EditSliceState: [Meas_Param_2,8,Measure,1]
-{!50000|Att_RowHeights: [,Measure,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
+{!50000|Att_RowHeights: [,Measure,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
 
 Variable Applicability1
 Title: Applicability

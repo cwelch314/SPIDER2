@@ -11,7 +11,7 @@ Author: Max Henrion & Paul Sanford
 Date: Sun, Jul 27, 2014 2:56 PM
 DefaultSize: 64,40
 NodeSize: 80,56
-DiagState: 2,348,96,1441,664,17,10
+DiagState: 2,207,21,1441,664,17,10
 WindState: 2,355,67,533,321
 Aliases: Alias Al169572643
 NodeColor: 65535,65535,65535
@@ -262,15 +262,15 @@ Checkbox(0),Path_to_Global_Data1,'SheetName','A1',Choice(Import_Data_Types,1,0),
 Checkbox(0),Path_to_Global_Data1,'Feasibility','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Feasibility),Handle(All_PV_Sectors),Handle(All_Measures),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Applicability','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Applicability),Handle(All_PV_Sectors),Handle(All_Measures),Handle(Region),Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'PercentNotComplete','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Percent_Not_Comp),Handle(All_PV_Sectors),Handle(All_Measures),Null,Null,Null,~
-Checkbox(0),Path_to_Global_Data1,'Meas Fuel EndUse','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Measure_Categori),Handle(Meas_Param_2),Handle(All_Measures),Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data1,'Meas Fuel EndUse','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Measure_Categori),Handle(Meas_Param_2),Handle(All_Measures),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Measure Char','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Measure_Characte),Handle(Measure_Parameter),Handle(All_Measures),Handle(RET_or_MD),Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'EUI','A4',Choice(Import_Data_Types,1,0),Null,Handle(End_Use_Intensity),Handle(End_Use),Handle(Region),Handle(All_PV_Sectors),Handle(Primary_Fuel_Type),Null,~
 Checkbox(0),Path_to_Global_Data1,'Fuel Interactive Factor','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Fuel_Interaction),Handle(Region),Handle(All_Measures),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Penetration','A4',Choice(Import_Data_Types,1,0),Null,Handle(EE_Penetration),Handle(Study_Year),Handle(All_Measures),Handle(EE_Scenario),Handle(All_PV_Sectors),Handle(Replacement_Type),~
 Checkbox(0),Path_to_Global_Data1,'Include Replacement Type','A5',Choice(Import_Data_Types,1,0),Null,Handle(All_Include_Replacem),Handle(Replacement_Type),Handle(All_Measures),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'ForceCostEffective','A4',Choice(Import_Data_Types,1,0),ModelDriven_Label,Handle(All_Force_Cost_Effec),Null,Handle(All_Measures),Handle(Replacement_Type),Null,Null,~
-Checkbox(1),Path_to_Global_Data1,'Retrofit Cost','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Retrofit_Cost),Handle(All_PV_Sectors),Handle(All_Measures),Null,Null,Null,~
-Checkbox(1),Path_to_Global_Data1,'Incremental Cost','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Incremental_Cost),Handle(All_PV_Sectors),Handle(All_Measures),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Retrofit Cost','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Retrofit_Cost),Handle(All_PV_Sectors),Handle(All_Measures),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Incremental Cost','A4',Choice(Import_Data_Types,1,0),Null,Handle(All_Incremental_Cost),Handle(All_PV_Sectors),Handle(All_Measures),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Aggregate Measure Map','A4',Choice(Import_Data_Types,1,0),Null,Handle(Aggregate_Measure_Ma),Null,Handle(All_Measures),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
 Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),~
@@ -602,7 +602,7 @@ NodeSize: 64,40
 
 Decision Last_Import_Time
 Title: Last Import Time
-Definition: 18-Apr-2022 13:29:17.242000
+Definition: 20-Apr-2022 16:26:25.630000
 NodeLocation: 544,848,1
 NodeSize: 64,40
 Aliases: FormNode New1910098211, FormNode New2017052963
@@ -1768,7 +1768,7 @@ WindState: 2,18,191,720,350
 
 Variable Import_Reset1
 Title: Import Reset
-Definition: 0
+Definition: 1
 NodeLocation: 144,128,1
 NodeSize: 64,40
 
@@ -1790,7 +1790,7 @@ TableCellDefault: 'C:\Documents\Filename.xlsx'
 Decision Dataset_to_View1
 Title: Dataset to View
 Description: Select the tab name of the dataset you wish to view in greater detail.
-Definition: Choice(Tab_Names,12,0)
+Definition: Choice(Tab_Names,4,0)
 NodeLocation: 112,520,1
 NodeSize: 64,40
 WindState: 2,7,277,720,350
