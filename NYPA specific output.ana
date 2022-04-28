@@ -11,7 +11,7 @@ Date: Tue, Mar 29, 2022 11:58 AM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,0,0,,,,,,,,,0
-DiagState: 2,-346,33,1968,724,17,10,
+DiagState: 2,24,15,1908,724,17,10,
 WindState: 2,2271,111,720,350
 NodeColor: 65535,65535,65535
 FontStyle: Arial Narrow,19
@@ -163,22 +163,34 @@ NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att_EditSliceState: [Area_Type,3,All_PV_Sectors,1,Spatial_ID,1]
 {!40700|Att_CellFormat: CellAlignment('Center')}
 
-Variable NYPA_Enabled_PV_Adop
-Title: NYPA Enabled PV Adoption
+Variable Adoption_vs_System_S
+Title: Adoption vs. System Size
 Units: MW-DC
 Definition: NYPA_of_Natural_Mark[All_PV_Sectors=PV_Sectors] * PV_Cumul_MW_DC
 NodeLocation: 744,240,1
 NodeSize: 64,40
-ValueState: 2,380,67,1231,711,1,MIDM
-GraphSetup: ShowKey:2~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_GraphIndexRange Output_Periods:1,,1,,,,10,44278.27083802223,44589.50791597366,0~
-Att_Stacked_Lines Graph_Primary_Valdim:1~
+ValueState: 2,542,36,842,681,1,MIDM
+Aliases: FormNode Fo1072958243
+GraphSetup: SymbolSize:12~
+{!50400|Att_AxisOrKeyTitle Adoption_vs_System_S:Achievable Potential (MW-DC)}~
+Att_GraphValueRange Average_PV_kW_Facili:1,,0,,1,,,232.66691528051018,4999.999999999999,0~
+Att_ContLineStyle Graph_Primary_Valdim:4~
 Att_AreaFill Graph_Primary_Valdim:1~
-{!50000|Graph_SortBySpread:1}
-ReformVal: [PV_Sectors,Area_Type]
-Att__TotalsIndex: [PV_Sectors,Spatial_ID,Area_Type]
-Att_ResultSliceState: [Output_Periods,92,Area_Type,0,Spatial_ID,0,PV_Sectors,0]
+Att_Stacked_Lines Graph_Primary_Valdim:0~
+Att_GraphIndexRange Output_Periods:1,,1,,,,10,44278.27083802223,44589.50791597366,0~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+ShowKey:2~
+Att_GraphValueRange Adoption_vs_System_S:1,,0,,1,,,0.9669025625456786,97.51044666872538,0~
+Graph_SymbolKey:1
+ReformVal: [Spatial_ID,Spatial_ID]
+XyExpr: Average_PV_kW_Facili
+Att__TotalsIndex: [Area_Type,Spatial_ID]
+Att_ResultSliceState: [Output_Periods,108,PV_Sectors,3,Spatial_ID,-1,Area_Type,0]
+Att_XRole: Self
+Att_YRole: 1
+Att_ColorRole: Area_Type
+Att_SymbolRole: PV_Sectors
+Att_SymbolSizeRole: PV_Sectors
 {!40600|Att_StackingIndex: Area_Type}
 {!40600|Att_ClusterIndex: Null}
 
@@ -195,6 +207,7 @@ Title: Sectors Aggregated
 Definition: ['Higher Education','Hospitals','K-12','Air Transportation','Art_Museum','Assisted Living','Community services','Correctional Facility','Unique Education','Government_Office','Housing','Library','Other Transportation','Police and Fire Department','Recreational','Water Supply & Waste Water','Courthouse_Probation']
 NodeLocation: 632,472,1
 NodeSize: 64,40
+WindState: 2,98,82,720,575
 {!50400|Att_AxisOrKeyTitle: ""}
 {!40300|Att_SlicerPopupSize: 302,252}
 
@@ -210,7 +223,7 @@ Variable NYPA_Enabled_PV_Ado1
 Title: NYPA Enabled PV Adoption
 Units: MW-DC
 Description: Simulated PV adoption that is enabled by NYPA.
-Definition: Aggregate(NYPA_Enabled_PV_Adop,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
+Definition: Aggregate(Adoption_vs_System_S,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
 NodeLocation: 776,352,1
 NodeSize: 64,40
 ValueState: 2,345,18,946,740,1,MIDM
@@ -278,7 +291,7 @@ Description: Percentage of total NYPA enabled PV adoption by sector, geography, 
 Definition: ZIDZ1(NYPA_Enabled_PV_Ado1,sum(NYPA_Enabled_PV_Ado1,Spatial_ID,Area_Type,Sectors_Aggregated))
 NodeLocation: 816,576,1
 NodeSize: 64,40
-ValueState: 2,385,22,1199,852,1,MIDM
+ValueState: 2,334,17,1199,852,1,MIDM
 Aliases: FormNode Fo693572899, FormNode Fo544568611
 GraphSetup: Att_GraphValueRange NYPA_Enabled_PV_Ado2:1,,1,,,,,0,0.45,0~
 Att_CatLineStyle Graph_Primary_Valdim:9
@@ -306,11 +319,11 @@ NYPA enabled: the portion of the total "natural" market adoption enabled by NYPA
 Definition: Table(Potential_Type)(Total_PV_MW_DC_Tech_,PV_Cumul_MW_DC1,NYPA_Enabled_PV_Ado1)
 NodeLocation: 968,576,1
 NodeSize: 64,40
-ValueState: 2,355,32,1022,681,,MIDM
+ValueState: 2,353,11,1022,681,,MIDM
 Aliases: FormNode Fo1687511331, FormNode Fo330659107
 GraphSetup: Flip:0~
 Att_GraphValueRange PV_Potential_by_Type:1,,1,,,,,0,100.12953341007233,0
-ReformVal: [Output_Periods,Area_Type]
+ReformVal: [Output_Periods,Spatial_ID]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Sectors_Aggregated,Area_Type,Spatial_ID]
 Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,Spatial_ID,0,Potential_Type,3,Output_Periods,1]
@@ -363,7 +376,7 @@ Description: NYPA enabled adoption of storage systems. Currently, only "paired" 
 Definition: sum(Aggregate(NYPA_Enabled_Storage,Map_All_to_Aggregate[All_PV_Sectors=BESS_Sectors],BESS_Sectors,Sectors_Aggregated,"Sum"), BESS_types)
 NodeLocation: 816,688,1
 NodeSize: 64,40
-ValueState: 2,414,39,959,657,1,MIDM
+ValueState: 2,392,24,959,657,1,MIDM
 Aliases: FormNode Fo1849909539, FormNode Fo1807054115
 GraphSetup: Att_AreaFill Graph_Primary_Valdim:1~
 Att_Stacked_Lines Graph_Primary_Valdim:1~
@@ -400,7 +413,7 @@ Description: Percentage of NYPA enabled storage adoption by geography, sector, a
 Definition: ZIDZ1(NYPA_Enabled_Storag1,sum(NYPA_Enabled_Storag1,BESS_Spatial_ID,Area_Type,Sectors_Aggregated))
 NodeLocation: 968,688,1
 NodeSize: 64,40
-ValueState: 2,337,12,1207,788,,MIDM
+ValueState: 2,369,-15,1032,789,,MIDM
 Aliases: FormNode Fo507732259, FormNode Fo464876835
 GraphSetup: Att_ForceCategorical Graph_Primary_Valdim:1~
 Att_CatLineStyle Graph_Primary_Valdim:9~
@@ -617,6 +630,14 @@ Att__TotalsIndex: [Area_Type,Sectors_Aggregated]
 Att_ResultSliceState: [Area_Type,0,Output_Periods,1,Potential_Type,3,Sectors_Aggregated,0,Spatial_ID,1]
 {!40600|Att_StackingIndex: Sectors_Aggregated}
 {!40600|Att_ClusterIndex: Null}
+
+Variable NYPA_Enabled_PV_Ado3
+Title: NYPA Enabled PV Adoption
+Units: MW-AC
+Definition: NYPA_Enabled_PV_Ado1[@Output_Periods=size(Output_Periods)]
+NodeLocation: 928,352,1
+NodeSize: 64,40
+ValueState: 2,273,69,966,698,,MIDM
 
 Close NYPA_specific_output
 

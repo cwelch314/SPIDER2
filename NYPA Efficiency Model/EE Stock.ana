@@ -10,7 +10,7 @@ Author: CWelch
 Date: Fri, Oct 29, 2021 5:31 PM
 DefaultSize: 64,32
 NodeSize: 64,32
-DiagState: 2,277,43,1255,634,17,10
+DiagState: 2,267,86,1240,567,17,10
 FontStyle: Arial,15
 FileInfo: 0,LinkModule EE_Stock,2,2,0,0,..\NYPA Efficiency Model\EE Stock.ana
 
@@ -25,7 +25,6 @@ Title: Building Stock Growth Rate
 Definition: 0
 NodeLocation: 128,352,1
 NodeSize: 88,32
-NodeColor: 65535,1,1
 
 Variable Bldg_Stock_by_Study_
 Title: Bldg Stock by Study Year
@@ -33,7 +32,7 @@ Units: sqft
 Definition: Floor_Area * (1 + Blding_Stock_Growt) ^ (Study_Year - Study_Start_Year)
 NodeLocation: 128,248,1
 NodeSize: 64,32
-ValueState: 2,390,62,797,698,1,MIDM
+ValueState: 2,863,93,797,698,1,MIDM
 GraphSetup: Flip:0
 ReformVal: [Study_Year,Null]
 NumberFormat: 2,D,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
@@ -46,14 +45,13 @@ Title: Blding Stock Demo Rate
 Definition: 0.0125 {0.0125 seems to align best with the NYSERDA report output when comparing RET measures. This specific value is not reported in the NYSERDA report.}
 NodeLocation: 288,256,1
 NodeSize: 80,32
-NodeColor: 65535,1,1
 
 Variable Cumul_Stock_by_New_1
 Title: Cumul Stock by New/Exist
 Units: sqft
 Definition: local existing_stock := Floor_Area * (1 - Blding_Stock_Demo_Ra) ^ (Study_Year - Study_Start_Year + 1) * (1 - Blding_Stock_Growt) ;~
 local new_stock := Bldg_Stock_by_Study_ - existing_stock;~
-IF (Stock_Type = NewStock_Label) THEN new_stock ELSE existing_stock
+IF (Stock_Type = NewStock_Label) THEN new_stock * Higher_Ed_Multiplier ELSE existing_stock * Higher_Ed_Multiplier
 NodeLocation: 288,152,1
 NodeSize: 64,32
 ValueState: 2,301,166,1312,635,1,MIDM
@@ -81,6 +79,50 @@ Definition: 1
 NodeLocation: 320,352,1
 NodeSize: 64,40
 Original: Floor_Area
+
+Variable Consumption_per_Buil
+Title: Consumption per Building
+NodeLocation: 128,464,1
+NodeSize: 64,32
+
+Constant Higher_Ed_Breakdown
+Title: Higher Ed Breakdown
+Definition: Table(Spatial_ID,Higher_Ed_Type)(~
+0.6,0.2,0.2,0.2,~
+0.6,0.2,0.2,0.2,~
+0.6,0.2,0.2,0.2,~
+0.6,0.2,0.2,0.2)
+NodeLocation: 736,320,1
+NodeSize: 64,32
+DefnState: 2,464,385,823,188,0,DFNM
+Aliases: FormNode Fo1813435171
+NodeColor: 65535,1,1
+ReformDef: [Spatial_ID,Higher_Ed_Type]
+
+Index Higher_Ed_Type
+Att_PrevIndexValue: ['SUNY','CUNY','Private Non-Profit','Other (e.g., community colleges)']
+Definition: ['SUNY','CUNY','Private Non-Profit','Other (e.g., community colleges)']
+NodeLocation: 736,128,1
+NodeSize: 72,32
+NodeInfo: 1,,,,,,,0,,,,,,0
+
+Decision Include_Higher_Ed_Ty
+Title: Include Higher Ed Type?
+Units: fraction
+Description: Check whether to include the type of higher education listed in the Higher Education potential estimates.
+Definition: Table(Higher_Ed_Type)(Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
+NodeLocation: 896,320,1
+NodeSize: 64,32
+DefnState: 2,1105,85,370,219,0,DFNM
+Aliases: FormNode Fo2130924323
+TableCellDefault: Checkbox(1)
+
+Variable Higher_Ed_Multiplier
+Title: Higher Ed Multiplier
+Definition: IF All_PV_Sectors='Higher Education' THEN sum(Higher_Ed_Breakdown * Include_Higher_Ed_Ty, Higher_Ed_Type) ELSE 1
+NodeLocation: 736,240,1
+NodeSize: 64,32
+ValueState: 2,84,90,1148,497,0,MIDM
 
 Close EE_Stock
 
