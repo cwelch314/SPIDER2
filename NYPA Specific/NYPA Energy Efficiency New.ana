@@ -45,17 +45,17 @@ Definition: Cumul_Stock_by_New_1[All_PV_Sectors=EE_Sectors] * End_Use_Intensity[
 
 NodeLocation: 376,704,1
 NodeSize: 64,32
-ValueState: 2,460,54,1255,752,1,MIDM
+ValueState: 2,15,15,971,800,1,MIDM
 Aliases: Alias Al203006755
 GraphSetup: ShowKey:2~
 Att_GraphValueRange Consumption_Disaggre:1,,,1~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 {!50000|Graph_SortBySpread:1}
-ReformVal: [Stock_Type,EE_Sectors]
+ReformVal: [End_Use,Primary_Fuel_Type]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [Region,End_Use,Spatial_ID,Stock_Type,EE_Sectors]
-Att_ResultSliceState: [Primary_Fuel_Type,1,Spatial_ID,0,End_Use,0,Study_Year,10,Stock_Type,0,EE_Sectors,0]
-{!40600|Att_StackingIndex: EE_Sectors}
+Att__TotalsIndex: [Region,End_Use]
+Att_ResultSliceState: [Spatial_ID,1,Study_Year,10,Stock_Type,1,EE_Sectors,10,Primary_Fuel_Type,1,End_Use,0]
+{!40600|Att_StackingIndex: Primary_Fuel_Type}
 {!40600|Att_ClusterIndex: Null}
 {!50000|Att_ColumnWidths: [,Study_Year,\([123,123,123,123,123,123,123,123,,])]}
 
@@ -352,10 +352,10 @@ Definition: ['Existing','New']
 NodeLocation: 784,272,1
 NodeSize: 64,32
 Aliases: Alias Al1220656963
-{!40300|Att_SlicerPopupSize: 277,48}
+{!40300|Att_SlicerPopupSize: 282,48}
 
 Index Measure
-Att_PrevIndexValue: ['GSHP replacing Boiler_Com, G - Heat','GSHP replacing Boiler_Com, O-Heat','GSHP replacing Boiler_Com, Prop-Heat','GSHP replacing Furnace_Com, G-Heat','GSHP replacing Furnace_Com, O-Heat','GSHP replacing Furnace_Com, Prop-Heat','HPWH replacing FF Storage Water Heater_Com, G-Wheat','HPWH replacing FF Storage Water Heater_Com, O-Wheat','HPWH replacing FF Storage Water Heater_Com, Prop-Wheat','Unitary HP replacing Boiler_Com, G-Heat','Unitary HP replacing Boiler_Com, O- Heat','Unitary HP replacing Boiler_Com, Prop-Heat','Unitary HP replacing Furnace_Com, G-Heat','Unitary HP replacing Furnace_Com, O-Heat','Unitary HP replacing Furnace_Com, Prop-Heat','VRF replacing Boiler_Com, G-Heat','VRF replacing Boiler_Com, O-Heat','VRF replacing Boiler_Com, Prop-Heat','VRF replacing Furnace_Com, G-Heat','VRF replacing Furnace_Com, O-Heat','VRF replacing Furnace_Com, Prop-Heat']
+Att_PrevIndexValue: ['EIS_Com, E - TotE [Building w Elec Heat]','EIS_Com, E - TotE [Building w Gas Heat]','EIS_Com, E - TotE [Building w Oil Heat]','EIS_Com, E - TotE [Building w Propane Heat]','EIS_Com, G - TotF [Building w Gas Heat]','EIS_Com, O - TotF [Building w Oil Heat]','EIS_Com, P - TotF [Building w Propane Heat]','Energy Recovery & Use','FDD_Com, E - TotE [Building w Elec Heat]','FDD_Com, E - TotE [Building w Gas Heat]','FDD_Com, E - TotE [Building w Oil Heat]','FDD_Com, E - TotE [Building w Propane Heat]','FDD_Com, G - TotF [Building w Gas Heat]','FDD_Com, O - TotF [Building w Oil Heat]','FDD_Com, P - TotF [Building w Propane Heat]','GSHP replacing Boiler_Com, E-Cool [Building w Gas Heat]','GSHP replacing Boiler_Com, E-Cool [Building w Oil Heat]','GSHP replacing Boiler_Com, E-Cool [Building w Prop Heat]','GSHP replacing Boiler_Com, G - Heat','GSHP replacing Boiler_Com, O-Heat','GSHP replacing Boiler_Com, Prop-Heat','GSHP replacing Furnace_Com, E-Cool [Building w Gas Heat]','GSHP replacing Furnace_Com, E-Cool [Building w Oil Heat]','GSHP replacing Furnace_Com, E-Cool [Building w Prop Heat]','GSHP replacing Furnace_Com, G-Heat','GSHP replacing Furnace_Com, O-Heat','GSHP replacing Furnace_Com, Prop-Heat','High Efficiency Bubble (fine) Diffusers/Aeration Efficiency','HPWH replacing FF Storage Water Heater_Com, G-Wheat','HPWH replacing FF Storage Water Heater_Com, O-Wheat','HPWH replacing FF Storage Water Heater_Com, Prop-Wheat','Motor Upgrade (Blowers, Other processes)','Pump Optimization (Efficient motor and pump system)','Strategic Energy Management (Managerial)','System optimization & Control (SCADA & EMS)','Unitary HP replacing Boiler_Com, E-Cool [Building w Gas Heat]','Unitary HP replacing Boiler_Com, E-Cool [Building w Oil Heat]','Unitary HP replacing Boiler_Com, E-Cool [Building w Prop Heat]','Unitary HP replacing Boiler_Com, G-Heat','Unitary HP replacing Boiler_Com, O- Heat','Unitary HP replacing Boiler_Com, Prop-Heat','Unitary HP replacing Furnace_Com, E-Cool [Building w Gas Heat]','Unitary HP replacing Furnace_Com, E-Cool [Building w Oil Heat]','Unitary HP replacing Furnace_Com, E-Cool [Building w Prop Heat]','Unitary HP replacing Furnace_Com, G-Heat','Unitary HP replacing Furnace_Com, O-Heat','Unitary HP replacing Furnace_Com, Prop-Heat','VFD for motors','VRF replacing Boiler_Com, E-Cool [Building w Gas Heat]','VRF replacing Boiler_Com, E-Cool [Building w Oil Heat]','VRF replacing Boiler_Com, E-Cool [Building w Prop Heat]','VRF replacing Boiler_Com, G-Heat','VRF replacing Boiler_Com, O-Heat','VRF replacing Boiler_Com, Prop-Heat','VRF replacing Furnace_Com, E-Cool [Building w Gas Heat]','VRF replacing Furnace_Com, E-Cool [Building w Oil Heat]','VRF replacing Furnace_Com, E-Cool [Building w Prop Heat]','VRF replacing Furnace_Com, G-Heat','VRF replacing Furnace_Com, O-Heat','VRF replacing Furnace_Com, Prop-Heat','Water leaks detection']
 Title: Measure
 Definition: SortIndex(Subset(Include_Measure_))
 NodeLocation: 920,272,1
@@ -388,7 +388,7 @@ NodeLocation: 256,176,1
 NodeSize: 64,32
 WindState: 2,1888,82,720,503
 ValueState: 2,1059,68,376,487,0,MIDM
-{!40300|Att_SlicerPopupSize: 302,196}
+{!40300|Att_SlicerPopupSize: 332,196}
 
 Index Region
 Att_PrevIndexValue: ['Downstate','Long Island/Hudson Valley','Upstate']
@@ -430,7 +430,7 @@ Definition: ['E','G','O','Prp']
 NodeLocation: 1064,176,1
 NodeSize: 64,32
 Aliases: Alias Al1498603331
-{!40300|Att_SlicerPopupSize: 527,80}
+{!40300|Att_SlicerPopupSize: 537,80}
 
 Index RET_or_MD
 Att_PrevIndexValue: ['MD','RET']
@@ -732,7 +732,7 @@ Definition: MultiChoice(All_PV_Sectors)
 NodeLocation: 1208,176,1
 NodeSize: 64,32
 Aliases: FormNode Fo391395619, FormNode Fo1502827299
-{!40300|Att_SlicerPopupSize: 877,350}
+{!40300|Att_SlicerPopupSize: 917,350}
 
 Constant Include_Measure
 Title: Include Measure
@@ -741,17 +741,17 @@ Description: Uncheck this box if you wish to exclude a measure from the analysis
 Definition: Subtable(All_Measure_Categori[ All_Measures=Measure,Meas_Param_2='Include Measure'])
 NodeLocation: 496,560,1
 NodeSize: 64,40
-WindState: 2,98,82,720,350
-DefnState: 2,1032,3,745,881,0,DFNM
+WindState: 2,98,82,720,536
+DefnState: 2,360,14,661,829,0,DFNM
 Aliases: FormNode Fo1937163043, FormNode Fo2073252643
 TableCellDefault: Checkbox(1)
-{!50000|Att_RowHeights: [,Measure,\([,,,,,,,,,,,,,,,,,,,,])]}
+{!50000|Att_RowHeights: [,Measure,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
 
 Constant Include_Measure_Cate
 Title: Include Measure Category
 Units: binary
 Description: Uncheck to exclude a measure category
-Definition: Table(Measure_Category)(Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
+Definition: Table(Measure_Category)(Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
 NodeLocation: 176,560,1
 NodeSize: 64,40
 DefnState: 2,410,84,441,590,0,DFNM
@@ -1759,7 +1759,7 @@ Author: CWelch
 Date: Fri, Nov 5, 2021 2:30 PM
 NodeLocation: 1536,400,1
 NodeSize: 64,32
-DiagState: 2,835,75,1776,865,17,10
+DiagState: 2,-23,42,1776,710,17,10
 
 Variable Consumption_TBtu
 Title: Consumption TBtu
@@ -1768,7 +1768,8 @@ Description: Base year (2022) customer consumption.
 Definition: sum(Consumption_Disaggre[@Study_Year=1] * MWh_MMBtu_to_TBtu,Stock_Type)
 NodeLocation: 72,48,1
 NodeSize: 64,32
-ValueState: 2,389,43,1078,819,1,MIDM
+WindState: 2,941,341,720,350
+ValueState: 2,297,0,706,734,0,MIDM
 Aliases: FormNode Fo1213420323
 GraphSetup: Att_GraphIndexRange End_Use:1,,1,,,,,6,8,1~
 Att_StackedBar Graph_Primary_Valdim:1~
@@ -1777,10 +1778,10 @@ Att_CatLineStyle Graph_Primary_Valdim:9~
 Graph_HLabelRotation:90~
 Att_GraphValueRange Consumption_TBtu:1,,1,,,,,0,35,0~
 Att_GraphIndexRange EE_Sectors:1,,1,,,,,1,3,1
-ReformVal: [EE_Sectors,Primary_Fuel_Type]
-NumberFormat: 2,G,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,3,
-Att__TotalsIndex: [Stock_Type,End_Use,EE_Sectors,Primary_Fuel_Type,Spatial_ID]
-Att_ResultSliceState: [Spatial_ID,0,End_Use,0,Primary_Fuel_Type,0,EE_Sectors,0]
+ReformVal: [Primary_Fuel_Type,EE_Sectors]
+NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Stock_Type,EE_Sectors,Primary_Fuel_Type]
+Att_ResultSliceState: [Spatial_ID,1,End_Use,1,Primary_Fuel_Type,1,EE_Sectors,0]
 {!40600|Att_StackingIndex: Primary_Fuel_Type}
 {!40600|Att_ClusterIndex: Null}
 
@@ -2653,6 +2654,16 @@ ReformVal: [Study_Year,Potential_vs_Consum1]
 Att__TotalsIndex: []
 Att_ResultSliceState: [Spatial_ID,1,Savings_Fuel_Type,1,EE_Sectors,1,Potential_vs_Consum1,1,Study_Year,1]
 
+Variable Va48
+Definition: Consumption_TBtu / sum(Consumption_TBtu,Primary_Fuel_Type)
+NodeLocation: 216,48,1
+NodeSize: 64,40
+ValueState: 2,334,68,792,703,0,MIDM
+ReformVal: [Primary_Fuel_Type,EE_Sectors]
+Att__TotalsIndex: [Primary_Fuel_Type]
+Att_ResultSliceState: [Spatial_ID,1,End_Use,1,EE_Sectors,1,Primary_Fuel_Type,1]
+{!50000|Att_ColumnWidths: [,Primary_Fuel_Type,\([,69,149,149])]}
+
 Close EE_Output_Tables
 
 Variable Add_final_interactiv
@@ -2678,7 +2689,7 @@ DiagState: 2,2083,0,1543,711,17,10
 
 Constant Both_RET_and_REP_Sav
 Title: Both RET and REP Saved
-Definition: Table(Measure)(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+Definition: Table(Measure)(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 NodeLocation: 456,264,1
 NodeSize: 64,32
 DefnState: 2,524,12,728,697,0,DFNM
@@ -2950,7 +2961,7 @@ Author: CWelch
 Date: Wed, Apr 20, 2022 10:07 AM
 NodeLocation: 1544,232,1
 NodeSize: 64,40
-DiagState: 2,36,14,1638,766,17,10
+DiagState: 2,30,93,1843,702,17,10
 
 Alias Al840555811
 Title: Cumulative Potential Adopted
@@ -3017,7 +3028,7 @@ NodeSize: 64,40
 ValueState: 2,899,45,795,860,0,MIDM
 
 Index Sorted_Aggregate_Mea
-Att_PrevIndexValue: ['Clothes Washer Elec WH_Com, E - Washer+Dryer+WaterHeater [unit w/ elec dry]','Clothes Washer Elec WH_Com, E - Washer+Dryer+WaterHeater [unit w/ gas dry]','Clothes Washer Elec WH_Com, E - Washer+Dryer+WaterHeater [unit w/ propane dry]','Clothes Washer Gas WH_Com, E - Washer+Dryer+WaterHeater [unit w/ elec dry]','Clothes Washer Gas WH_Com, E - Washer+Dryer+WaterHeater [unit w/ gas dry]','Clothes Washer Gas WH_Com, E - Washer+Dryer+WaterHeater [unit w/ propane dry]','Clothes Washer Oil WH_Com, E - Washer+Dryer+WaterHeater [unit w/ elec dry]','Clothes Washer Oil WH_Com, E - Washer+Dryer+WaterHeater [unit w/ gas dry]','Clothes Washer Oil WH_Com, E - Washer+Dryer+WaterHeater [unit w/ propane dry]','Dishwasher_Com, E - Appl+Hwat [Building w elec WH]','Dishwasher_Com, E - Appl+Hwat [Building w gas WH]','Dishwasher_Com, E - Appl+HWat [Building w oil WH]','Dishwasher_Com, E - Appl+HWat [Building w propane WH]','Door Gasket Replacement_Com, E - Refr','Kitchen DCV_Com, P - Vent+Heat [Building w Propane Heat]','Mini Split Ductless AC_Com, E - Cool','Energy Recovery & Use','Pre Rinse Sprayers_Com, G - HWat','Pre Rinse Sprayers_Com, P - HWat','Pre Rinse Sprayers_Com, O - HWat','Pre Rinse Sprayers_Com, E - HWat','Guest Room EM_Com, E - Cool+Heat [Building w Oil Heat]','Kitchen DCV_Com, E - Vent+Heat [Building w Gas Heat]','Infrared Heater_Com, G - Heat','Infrared Heater_Com, P - Heat','Guest Room EM_Com, E - Cool+Heat [Building w Gas Heat]','Optimized Unitary AC Sys_Com, E - Cool+Heat [Building w Gas Heat]','Integrated Building Design_Com, E - TotE [Building w Gas Heat]','Faucet Aerator_Com, O - HWat','Faucet Aerator_Com, P - HWat','Faucet Aerator_Com, G - HWat','System optimization & Control (SCADA & EMS)','Kitchen DCV_Com, E - Vent+Heat [Building w Oil Heat]','Faucet Aerator_Com, E - HWat','Steam Trap Maintenance_Com, G - Heat','DCV_Com, E - Cool+Heat+Vent [Building w Gas Heat]','Steam Trap Maintenance_Com, O - Heat','Integrated Building Design_Com, E - TotE [Building w Oil Heat]','Chiller Systems_Com, E - Cool','Optimized Unitary AC Sys_Com, E - Cool+Heat [Building w Oil Heat]','Integrated Building Design_Com, E - TotE [Building w Elec Heat]','EIS_Com, E - TotE [Building w Elec Heat]','EIS_Com, E - TotE [Building w Gas Heat]','Guest Room EM_Com, E - Cool+Heat [Building w Elec Heat]','ES Ice Machine_Com, E - Refr','Kitchen DCV_Com, E - Vent+Heat [Building w Elec Heat]','Boiler Modifications_Com, G - Heat','Refrigeration Tune Up_Com, E - Refr','Int Delamping_Com, E - IntL [Electric Heat]','Ozone Laundry_Com, P - HWat','Ozone Laundry_Com, G - HWat','Ozone Laundry_Com, O - HWat','Int Delamping_Com, E - IntL [No Heat]','Energy Recovery Ventilator_Com, G - Heat','Walk In Refrigeration_Com, E - Refr','Vending Machine Controls_Com, E - Plug [Refrigerated]','Integrated Building Design_Com, E - TotE [Building w Propane Heat]','DCV_Com, E - Cool+Heat+Vent [Building w Oil Heat]','Duct Sealing Regulated_Com, E - Vent+Heat+Cool [Building w Gas Heat]','LED Tube Repl_Com, E - IntL [No Heat]','Energy Recovery Ventilator_Com, O - Heat','Ozone Laundry_Com, E - HWat','EIS_Com, E - TotE [Building w Oil Heat]','LED Tube Repl_Com, E - IntL [Electric Heat]','Strategic Energy Management (Managerial)','Water leaks detection','Unit Heater_Com, G - Heat','ECM Comp Cond Fan Motor_Com, E - Refr','Programmable TStat_Com, E - Cool+Heat [Building w Oil Heat]','ECM Furnace Motors_Com, E - Vent','VFD for motors','Walk In Cooler Retroft_Com, E - Refr','Int Delamping_Com, E/O - IntL','Furnace_Com, G - Heat','RCx_Com, E - TotE [Building w Gas Heat]','LowHeat NoHeat Doors_Com, E - Refr','Evap Fan Speed Controls_Com, E - Refr','LED Tube Repl_Com, E/O - IntL','Programmable TStat_Com, E - Cool+Heat [Building w Gas Heat]','Boiler Modifications_Com, O - Heat','Int Delamping_Com, E/G - IntL','VFD on HVAC System_Com, E - Vent','Commissioning_Com, E - TotE [Building w Gas Heat]','Power Strip_Com, E - Plug [Tier 1]','Chiller Tuneup_Com, E - Cool','Energy Recovery Ventilator_Com, P - Heat','Int Delamping_Com, E/P - IntL','Exit Sign RetFit_Com, E - IntL [No Heat]','LED Tube Repl_Com, E/G - IntL','Duct Sealing Non Regulated_Com, E - Vent+Heat+Cool [Building w Oil Heat]','Boilers_Com, P - Heat','Unit Heater_Com, P - Heat','Pump Optimization (Efficient motor and pump system)','LED Tube Repl_Com, E/P - IntL','Int Ltg Dsgn_Com, E - IntL [Electric Heat]','EIS_Com, E - TotE [Building w Propane Heat]','Int Ltg Dsgn_Com, E - IntL [No Heat]','Exit Sign RetFit_Com, E - IntL [Electric Heat]','Deep Energy Retrofit_Com, E - TotE [Building w Gas Heat]','AC Tuneup_Com, E - Cool+Heat [ASHP]','Furnace_Com, O - Heat','Computer Room Air Conditioner_Com, E - Cool','ES Refrigerator and Freezer_Com, E - Refr','Evap Fan Motor Replacement_Com, E - Refr','Computer Power Management_Com, E - Plug','RCx_Com, E - TotE [Building w Oil Heat]','DCV_Com, E - Cool+Heat+Vent [Building w Elec Heat]','RCx_Com, E - TotE [Building w Elec Heat]','Int Ltg Ctrls_Com, E - IntL [No Heat]','Forced Air Heating Maintenance_Com, G - Heat','Stair Occ Sensor_Com, E - IntL [No Heat]','FDD_Com, E - TotE [Building w Elec Heat]','Room Air Conditioner_Com, E - Cool','Repl Scre_Com, E - IntL [No Heat]','FDD_Com, E - TotE [Building w Gas Heat]','Furnace_Com, P - Heat','Commissioning_Com, E - TotE [Building w Oil Heat]','Refrig Case LED_Com, E - IntL','Commissioning_Com, E - TotE [Building w Elec Heat]','Refrigerated Vending Machine_Com, E - Refr','AC Tuneup_Com, E - Cool [Unitary AC]','Exit Sign RetFit_Com, E/O - IntL','Int Ltg Dsgn_Com, E/O - IntL','Smart TStat_Com, E - Cool+Heat [Building w Oil Heat]','DCV_Com, E - Cool+Heat+Vent [Building w Propane Heat]','Exit Sign RetFit_Com, E/G - IntL','VFDs on HVAC Pumps_Com, E - Oth','Controls for Unitary AC_Com, E - Cool','Forced Air Heating Maintenance_Com, O - Heat','Exit Sign RetFit_Com, E/P - IntL','Stair Occ Sensor_Com, E - IntL [Electric Heat]','Repl Scre_Com, E - IntL [Electric Heat]','Boiler Modifications_Com, P - Heat','Anti Sweat Heat Control_Com, E - Refr','Int Ltg Ctrls_Com, E - IntL [Electric Heat]','EMS_Com, E - TotE [Building w Gas Heat]','Duct Sealing Regulated_Com, E - Vent+Heat+Cool [Building w Elec Heat]','Deep Energy Retrofit_Com, E - TotE [Building w Oil Heat]','EMS_Com, E - TotE [Building w Elec Heat]','Clothes Washer Propane WH_Com, E - Washer+Dryer+WaterHeater [unit w/ elec dry]','Clothes Washer Propane WH_Com, E - Washer+Dryer+WaterHeater [unit w/ propane dry]','Int Ltg Dsgn_Com, E/G - IntL','Smart TStat_Com, E - Cool+Heat [Building w Gas Heat]','Int Ltg Ctrls_Com, E/O - IntL','Deep Energy Retrofit_Com, E - TotE [Building w Elec Heat]','Guest Room EM_Com, E - Cool+Heat [Building w Propane Heat]','Int Ltg Dsgn_Com, E/P - IntL','PTHP_Com, E - Cool+Heat','RCx_Com, E - TotE [Building w Propane Heat]','Forced Air Heating Maintenance_Com, P - Heat','Duct Sealing Non Regulated_Com, E - Vent+Heat+Cool [Building w Propane Heat]','Power Strip_Com, E - Plug [Tier 2]','Clothes Dryer_Com, G - Oth','Int Ltg Ctrls_Com, E/G - IntL','Boilers_Com, G - Heat','ECM Circulators_Com, E - Oth','Int Ltg Ctrls_Com, E/P - IntL','Repl Scre_Com, E/O - IntL','Commissioning_Com, E - TotE [Building w Propane Heat]','Clothes Dryer_Com, P - Oth','LED HiLo Bay_Com, E - IntL [No Heat]','Vending Machine Controls_Com, E - Plug [Non-Refrigerated]','FDD_Com, E - TotE [Building w Oil Heat]','Repl Scre_Com, E/G - IntL','Repl Scre_Com, E/P - IntL','Stair Occ Sensor_Com, E/O - IntL','Repl pin CFL wLED_Com, E - IntL [No Heat]','Stair Occ Sensor_Com, E/G - IntL','Stair Occ Sensor_Com, E/P - IntL','Pnemautic to DDC_Com, E - TotE [Building w Gas Heat]','Data Center_Com, E - TotE [Building w Gas Heat]','Data Center_Com, E - TotE [Building w Elec Heat]','Data Center_Com, E - TotE [Building w Propane Heat]','Data Center_Com, E - TotE [Building w Oil Heat]','Motor Upgrade (Blowers, Other processes)','Programmable TStat_Com, E - Cool+Heat [Building w Elec Heat]','Deep Energy Retrofit_Com, E - TotE [Building w Propane Heat]','Repl pin CFL wLED_Com, E - IntL [Electric Heat]','Clothes Washer Propane WH_Com, E - Washer+Dryer+WaterHeater [unit w/ gas dry]','EMS_Com, E - TotE [Building w Oil Heat]','Lin LED Fixture_Com, E - IntL [No Heat]','LED HiLo Bay_Com, E - IntL [Electric Heat]','Minisplit Ductless HP_Com, E - Cool+Heat','GSHP_Com, E - Cool+Heat','PTAC_Com, E - Cool','Lin LED Fixture_Com, E - IntL [Electric Heat]','Heat Pump Water Heater_Com, E - HWat','Boiler Blowdown Controls_Com, G - Heat','Windows_Com, E - Cool+Heat [Building w Gas Heat]','Refrig Case Ctrls_Com, E - IntL','Repl pin CFL wLED_Com, E/O - IntL','Destratification Fans_Com, G - Heat','Programmable TStat_Com, E - Cool+Heat [Building w Propane Heat]','Motors and Fans_Com, E - Vent','Unitary Equipment Economizer_Com, E - Cool','Optimized Chiller Sys_Com, E - Cool','Destratification Fans_Com, O - Heat','FDD_Com, E - TotE [Building w Propane Heat]','Repl pin CFL wLED_Com, E/G - IntL','Optimized Unitary AC Sys_Com, E - Cool+Heat [Building w Propane Heat]','Lin LED Fixture_Com, E/O - IntL','LED HiLo Bay_Com, E/P - IntL','LED HiLo Bay_Com, E/G - IntL','LED HiLo Bay_Com, E/O - IntL','Eff Unitary AC_Com, E - Cool','Repl pin CFL wLED_Com, E/P - IntL','Motors_Com, E - Oth','EMS_Com, E - TotE [Building w Propane Heat]','Pnemautic to DDC_Com, E - TotE [Building w Elec Heat]','Lin LED Fixture_Com, E/G - IntL','FF Storage Water Heater_Com, G - HWat','Lin LED Fixture_Com, E/P - IntL','Destratification Fans_Com, P - Heat','FF Storage Water Heater_Com, P - HWat','Pnemautic to DDC_Com, E - TotE [Building w Oil Heat]','Unitary HP_Com, E - Cool+Heat','Loading Dock Pit Seals_Com, E - Refr','Optimized Unitary AC Sys_Com, E - Cool+Heat [Building w Elec Heat]','FF Storage Water Heater_Com, O - HWat','Windows_Com, E - Cool+Heat [Building w Oil Heat]','Smart TStat_Com, E - Cool+Heat [Building w Elec Heat]','HE Built Up Refrig_Com, E - Refr','Case Night Covers_Com, E - Refr','FF Instantaneous Water Heater_Com, G - HWat','FF Instantaneous Water Heater_Com, O - HWat','Smart TStat_Com, E - Cool+Heat [Building w Propane Heat]','FF Instantaneous Water Heater_Com, P - HWat','Boiler Blowdown Controls_Com, O - Heat','Pnemautic to DDC_Com, E - TotE [Building w Propane Heat]','Windows_Com, E - Cool+Heat [Building w Elec Heat]','High Efficiency Bubble (fine) Diffusers/Aeration Efficiency','Windows_Com, E - Cool+Heat [Building w Propane Heat]','Boiler Blowdown Controls_Com, P - Heat','Boilers_Com, O - Heat','Steam Trap Maintenance_Com, P - Heat']
+Att_PrevIndexValue: ['GSHP replacing Boiler_Com, E-Cool+Heat [Building w Gas Heat]','GSHP replacing Boiler_Com, E-Cool+Heat [Building w Oil Heat]','GSHP replacing Boiler_Com, E-Cool+Heat [Building w Prop Heat]','GSHP replacing Furnace_Com, E-Cool+Heat [Building w Gas Heat]','GSHP replacing Furnace_Com, E-Cool+Heat [Building w Oil Heat]','GSHP replacing Furnace_Com, E-Cool+Heat [Building w Prop Heat]','HPWH replacing FF Storage Water Heater_Com, G-Wheat','HPWH replacing FF Storage Water Heater_Com, O-Wheat','HPWH replacing FF Storage Water Heater_Com, Prop-Wheat','Unitary HP replacing Boiler_Com, E-Cool+Heat [Building w Gas Heat]','Unitary HP replacing Boiler_Com, E-Cool+Heat [Building w Oil Heat]','Unitary HP replacing Boiler_Com, E-Cool+Heat [Building w Prop Heat]','Unitary HP replacing Furnace_Com, E-Cool+Heat [Building w Gas Heat]','Unitary HP replacing Furnace_Com, E-Cool+Heat [Building w Oil Heat]','Unitary HP replacing Furnace_Com, E-Cool+Heat [Building w Prop Heat]','VRF replacing Boiler_Com, E-Cool+Heat [Building w Gas Heat]','VRF replacing Boiler_Com, E-Cool+Heat [Building w Oil Heat]','VRF replacing Boiler_Com, E-Cool+Heat [Building w Prop Heat]','VRF replacing Furnace_Com, E-Cool+Heat [Building w Gas Heat]','VRF replacing Furnace_Com, E-Cool+Heat [Building w Oil Heat]','VRF replacing Furnace_Com, E-Cool+Heat [Building w Prop Heat]']
 Title: Sorted Aggregate Measure
 Definition: local x:=SortIndex(Levelized_MMBtu);~
 subset(x<>null)
@@ -3091,11 +3102,11 @@ Units: MWh or MMBtu
 Definition: Aggregate(sum(Fuel_Savings_with_In,Primary_Fuel_Type),Aggregate_Measure_Ma[All_Measures=Measure],Measure,Aggregate_Measure_In,"Sum")
 NodeLocation: 448,744,1
 NodeSize: 64,40
-ValueState: 2,670,29,1017,844,0,MIDM
+ValueState: 2,985,117,887,844,0,MIDM
 ReformVal: [Savings_Fuel_Type,Aggregate_Measure_In]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Spatial_ID,EE_Sectors]
-Att_ResultSliceState: [Spatial_ID,0,Replacement_Type,3,EE_Sectors,0,Aggregate_Measure_In,1,Savings_Fuel_Type,1]
+Att__TotalsIndex: []
+Att_ResultSliceState: [Spatial_ID,1,Replacement_Type,3,EE_Sectors,10,Aggregate_Measure_In,1,Savings_Fuel_Type,1]
 
 Variable Fuel_Savings_with_In
 Title: Fuel Savings with Interactive Effects
@@ -3105,12 +3116,12 @@ MMBtu saved / MMBtu consumed for fossil fuels.
 Definition: Tech_Potl_After_Inte[@Study_Year=1]
 NodeLocation: 264,744,1
 NodeSize: 64,40
-ValueState: 2,615,49,1116,738,0,MIDM
+ValueState: 2,792,17,935,901,0,MIDM
 GraphSetup: Flip:0
 ReformVal: [Savings_Fuel_Type,Measure]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Primary_Fuel_Type]
-Att_ResultSliceState: [Spatial_ID,3,Replacement_Type,3,EE_Sectors,10,Primary_Fuel_Type,0,Measure,1,Savings_Fuel_Type,1]
+Att_ResultSliceState: [Spatial_ID,1,Replacement_Type,3,EE_Sectors,10,Primary_Fuel_Type,0,Measure,1,Savings_Fuel_Type,1]
 {!50000|Att_ColumnWidths: [,Savings_Fuel_Type,\([146,146,146,146])]}
 
 Variable Savings_Cost_at_Reta
@@ -3120,12 +3131,12 @@ Description: Used to allocate costs across savings types for measures that are c
 Definition: Technical_Savings_Ag * Average_Rates2
 NodeLocation: 624,744,1
 NodeSize: 64,40
-ValueState: 2,67,103,1145,745,0,MIDM
+ValueState: 2,402,95,1145,642,0,MIDM
 GraphSetup: Flip:0
 ReformVal: [Savings_Fuel_Type,Aggregate_Measure_In]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Savings_Fuel_Type]
-Att_ResultSliceState: [Spatial_ID,3,Replacement_Type,3,EE_Sectors,3,Aggregate_Measure_In,1,Savings_Fuel_Type,1]
+Att_ResultSliceState: [Spatial_ID,1,Replacement_Type,3,EE_Sectors,3,Aggregate_Measure_In,1,Savings_Fuel_Type,1]
 {!50000|Att_ColumnWidths: [,Savings_Fuel_Type,\([,,,,137])]}
 
 Variable Cost_Allocation_to_S
@@ -3413,7 +3424,7 @@ NodeSize: 64,40
 Variable Summed_Cost_of_Savin
 Title: Summed Cost of Savings
 Definition: sum(Theoretical_cost_of1,Spatial_ID,EE_Sectors)
-NodeLocation: 576,1240,1
+NodeLocation: 520,1136,1
 NodeSize: 64,40
 ValueState: 2,344,48,1021,669,,MIDM
 NodeColor: 65535,1,1
@@ -3421,7 +3432,7 @@ NodeColor: 65535,1,1
 Variable Summed_Savings
 Title: Summed Savings
 Definition: sum(Technical_Savings_Ag,Spatial_ID,EE_Sectors)
-NodeLocation: 576,1344,1
+NodeLocation: 520,1240,1
 NodeSize: 64,40
 ValueState: 2,352,143,808,593,,MIDM
 NodeColor: 65535,1,1
@@ -3431,7 +3442,7 @@ Title: Cost of first year savings
 Definition: local x:=ZIDZ(Summed_Cost_of_Savin,Summed_Savings);~
 local y:=IF x=0 THEN Null Else x;~
 MIN(x,Replacement_Type)
-NodeLocation: 736,1280,1
+NodeLocation: 680,1176,1
 NodeSize: 64,40
 ValueState: 2,273,5,1078,801,0,MIDM
 NodeColor: 65535,1,1
@@ -3447,7 +3458,7 @@ Title: Levelized Cost of Savings
 Units: $/kWh, $/MMBtu
 Definition: Cost_of_first_year_1 / -PV(Discount_Rate_for_Le,Aggregate_Measure_Li,1) / ~
 (IF Savings_Fuel_Type='E' THEN 1000 ELSE 1)
-NodeLocation: 896,1280,1
+NodeLocation: 840,1176,1
 NodeSize: 64,40
 ValueState: 2,367,17,1006,841,0,MIDM
 NodeColor: 65535,1,1
@@ -3458,7 +3469,7 @@ Title: Leve cost of svgs
 Units: $/MMBtu
 Definition: local x:=Levelized_Cost_of_S1 * (IF Savings_Fuel_Type='E' THEN 1000 / MMBtu_Mwh ELSE 1);~
 IF x=0 THEN Null ELSE x
-NodeLocation: 1056,1280,1
+NodeLocation: 1000,1176,1
 NodeSize: 64,40
 ValueState: 2,325,41,1010,808,0,MIDM
 NodeColor: 65535,1,1
@@ -3474,7 +3485,7 @@ ValueState: 2,68,74,929,606,,MIDM
 Variable Levelized_Cost_of_S3
 Title: Levelized Cost of Savings
 Definition: Leve_cost_of_svgs[Aggregate_Measure_In=Sort_Meas,Savings_Fuel_Type=Fuel_Type_Subset]
-NodeLocation: 1208,1280,1
+NodeLocation: 1152,1176,1
 NodeSize: 64,40
 ValueState: 2,205,6,1424,847,1,MIDM
 NodeColor: 65535,1,1
@@ -3505,7 +3516,7 @@ Variable Levelized_Cost1
 Title: Levelized Cost 
 Units: $/kWh(E),$/MMBtu(FF)
 Definition: Levelized_Cost_of_S3 * (IF Fuel_Type_Subset='E' THEN MMBtu_Mwh / 1000 ELSE 1)
-NodeLocation: 1360,1280,1
+NodeLocation: 1304,1176,1
 NodeSize: 64,40
 ValueState: 2,128,12,1322,766,,MIDM
 NodeColor: 65535,1,1
@@ -3524,15 +3535,15 @@ IF x=0 THEN Null ELSE (IF x<0 THEN INF ELSE x)
 NodeLocation: 848,704,1
 NodeSize: 64,40
 WindState: 2,98,82,1235,609
-ValueState: 2,56,85,1616,610,0,MIDM
+ValueState: 2,231,-9,1287,902,1,MIDM
 Aliases: FormNode Fo1371702051, FormNode Fo1012093731
-GraphSetup: Att_GraphIndexRange Aggregate_Measure_In:1,,1,,,1,,194,232,1~
+GraphSetup: Att_GraphValueRange Simple_Payback_Time2:1,,0,,,,,0,2.110256813466549,0~
 Att_CatLineStyle Graph_Primary_Valdim:4~
-Att_GraphValueRange Simple_Payback_Time2:1,,1,,,,,0,0.2473185583949089,0
-ReformVal: [EE_Sectors,Aggregate_Measure_In]
+Att_GraphIndexRange Aggregate_Measure_In:1,,1,,,1,,2,2,1
+ReformVal: [Aggregate_Measure_In,Aggregate_Measure_In]
 NumberFormat: 2,F,5,2,0,0,5,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [EE_Sectors]
-Att_ResultSliceState: [Replacement_Type,3,Spatial_ID,3,Aggregate_Measure_In,13,EE_Sectors,-1]
+Att__TotalsIndex: [EE_Sectors,Spatial_ID]
+Att_ResultSliceState: [Replacement_Type,2,EE_Sectors,-1,Spatial_ID,-1,EE_Sectors,-1,Aggregate_Measure_In,13]
 Att_ColorRole: Null
 {!40700|CellFormatExpression: local threshold:=Target_Maximum_Payba; ~
 IF Auto_Cell_Formatting THEN~
@@ -3543,7 +3554,7 @@ IF Auto_Cell_Formatting THEN~
 ELSE Null}
 {!40700|Att_CellFormat: CellAlignment('Center')}
 
-Constant Average_Rates
+Variable Average_Rates
 Title: Average Rates
 Units: $/MWh(E),$/MMBtu(FF)
 Description: Table(Savings_Fuel_Type,Spatial_ID)(~
@@ -3556,26 +3567,26 @@ Definition: DetermTable(Savings_Fuel_Type,Spatial_ID,Customer_Type)(~
 91,102,~
 68,77,~
 164,204,~
-10,10,~
-10,10,~
-10,10,~
-10,10,~
-30,30,~
-30,30,~
-30,30,~
-30,30,~
-20,20,~
-20,20,~
-20,20,~
-20,20)
+6.75,6.75,~
+6.75,6.75,~
+6.75,6.75,~
+6.75,6.75,~
+24,24,~
+24,24,~
+24,24,~
+24,24,~
+33,33,~
+33,33,~
+33,33,~
+33,33)
 NodeLocation: 1240,704,1
 NodeSize: 64,40
 DefnState: 2,651,392,758,191,0,DFNM
 ValueState: 2,463,289,414,208,0,MIDM
 NodeColor: 65535,1,1
-ReformDef: [Spatial_ID,(Domain Of Customer_Type)]
+ReformDef: [Spatial_ID,Savings_Fuel_Type]
 ReformVal: [Null,Spatial_ID]
-Att_EditSliceState: [Savings_Fuel_Type,3,Sys_LocalIndex('DomainIndex'),1,Spatial_ID,1]
+Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),2,Savings_Fuel_Type,3,Spatial_ID,1]
 {!40700|Att_CellFormat: CellSpan(Savings_Fuel_Type,CellFill(0xffff0000),3,4,header:0)}
 
 Constant Target_Maximum_Payba
@@ -3601,7 +3612,7 @@ NodeSize: 192,16
 Original: Target_Maximum_Payba
 
 Variable Va42
-NodeLocation: 728,1400,1
+NodeLocation: 672,1296,1
 NodeSize: 64,40
 NodeColor: 65535,1,1
 
@@ -3846,7 +3857,7 @@ GraphSetup: {!50000|Graph_SortBySpread:0}~
 Att_GraphValueRange Levelized_Cost:1,,0,,,,,0,105.21533489227295,0~
 Att_GraphIndexRange Sorted_Aggregate_Mea:1,,1,,,,,99,102,1~
 Att_CatLineStyle Graph_Primary_Valdim:6
-{!40700|Att_CellFormat: CellFormats(CellSpan(Sorted_Aggregate_Mea,CellFill(0xffff8000),1,17,header:0),CellSpan(Sorted_Aggregate_Mea,CellFill(0xfff9a433),231,235,header:0))}
+{!40700|Att_CellFormat: CellFormats(CellSpan(Sorted_Aggregate_Mea,CellFill(0xffff8000),1,17,header:0))}
 
 Variable Cumul_Svgs_Sorted_In
 Title: Cumul Svgs Sorted, Incremental
@@ -3992,11 +4003,11 @@ Title: Savings Cost at Retail Rates
 Definition: Fuel_Savings_with_In * Average_Rates2
 NodeLocation: 520,1000,1
 NodeSize: 64,40
-ValueState: 2,672,19,898,773,0,MIDM
+ValueState: 2,41,68,898,773,0,MIDM
 ReformVal: [Savings_Fuel_Type,Measure]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Primary_Fuel_Type,Savings_Fuel_Type]
-Att_ResultSliceState: [Spatial_ID,3,Replacement_Type,3,Primary_Fuel_Type,0,EE_Sectors,3,Measure,1,Savings_Fuel_Type,1]
+Att_ResultSliceState: [Spatial_ID,1,Replacement_Type,3,Primary_Fuel_Type,0,EE_Sectors,10,Measure,1,Savings_Fuel_Type,1]
 
 Variable A_MMBtu_rates
 Title: $/MMBtu rates
@@ -4054,12 +4065,12 @@ Title: Building Count from Facillity Data
 Definition: 1
 NodeLocation: 376,872,1
 NodeSize: 64,40
-Original: Building_Count_from1
+Original: Total_Facility_Count
 
 Variable Consumption_per_Bui1
 Title: Consumption per Building
 Units: MWh or MMBtu per bldg
-Definition: ZIDZ(sum(Consumption_Disaggre[@Study_Year=1],Stock_Type,End_Use),Building_Count_from1[All_PV_Sectors=EE_Sectors])
+Definition: ZIDZ(sum(Consumption_Disaggre[@Study_Year=1],Stock_Type,End_Use),Total_Facility_Count[All_PV_Sectors=EE_Sectors])
 NodeLocation: 528,824,1
 NodeSize: 64,40
 ValueState: 2,1049,201,824,699,0,MIDM
@@ -4128,7 +4139,7 @@ Units: MWh (Elec), MMBtu
 Definition: sum(Consumption_Disaggre[@Study_Year=1],Stock_Type,End_Use)
 NodeLocation: 440,1016,1
 NodeSize: 64,40
-ValueState: 2,362,77,1070,741,,MIDM
+ValueState: 2,362,77,1070,741,0,MIDM
 Aliases: FormNode Fo173232931
 ReformVal: [EE_Sectors,Spatial_ID]
 Att__TotalsIndex: [Spatial_ID]
@@ -4173,7 +4184,7 @@ NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 
 Variable Average_MWh_per_Faci
 Title: Average MWh per Facility Type
-Definition: local x:=ZIDZ(sum(Consumption_Disaggre[@Study_Year=1],Stock_Type,End_Use,Spatial_ID),sum(Building_Count_from1[All_PV_Sectors=EE_Sectors],Spatial_ID));~
+Definition: local x:=ZIDZ(sum(Consumption_Disaggre[@Study_Year=1],Stock_Type,End_Use,Spatial_ID),sum(Total_Facility_Count[All_PV_Sectors=EE_Sectors],Spatial_ID));~
 x[Primary_Fuel_Type='E']
 NodeLocation: 776,1152,1
 NodeSize: 64,40

@@ -10,7 +10,7 @@ Author: CWelch
 Date: Tue, Mar 8, 2022 9:07 AM
 DefaultSize: 64,40
 NodeSize: 64,40
-DiagState: 2,22,-2,1819,815,17,10
+DiagState: 2,1927,35,1908,731,17,10
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
 
@@ -60,6 +60,7 @@ Units: m2
 Definition: Facility_Data_Filter[Facility_Parameter= 'Finalized Bldg Footprints (m2)']
 NodeLocation: 528,600,1
 NodeSize: 64,40
+ValueState: 2,132,138,613,557,,MIDM
 
 Index Facility_ID_Filtered
 Title: Facility ID Filtered
@@ -101,7 +102,7 @@ ValueState: 2,36,42,878,611,,MIDM
 Variable Design_Parking_Area
 Title: Design Parking Area
 Units: m2
-Definition: Facility_floor_area * Ratio_of_Parking_Ar1[All_PV_Sectors=Facility_Sector_Filt]
+Definition: Facility_floor_area * Ratio_of_Parking_Ar1[All_PV_Sectors=Facility_Sector_Filt,Spatial_ID=Facility_Spatial_ID]
 NodeLocation: 696,320,1
 NodeSize: 64,40
 ValueState: 2,402,101,1123,658,,MIDM
@@ -142,6 +143,7 @@ Units: m2
 Definition: Facility_Footprint_m
 NodeLocation: 864,520,1
 NodeSize: 64,40
+ValueState: 2,120,104,546,471,,MIDM
 
 Variable Total_Facility_Area_
 Title: Total Facility Area by Type
@@ -165,7 +167,7 @@ Units: kW
 Definition: Usable_Facility_Area * DC_Watts_per_m2_usab[PV_Sectors=Facility_Sector_Filt] / 1000
 NodeLocation: 1320,320,1
 NodeSize: 64,40
-ValueState: 2,673,207,601,738,0,MIDM
+ValueState: 2,570,49,601,738,0,MIDM
 GraphSetup: Att_GraphValueRange Theoretical_System_S:1,,1,,,,,0,19494.313299655914,0
 ReformVal: [Area_Type,Facility_ID_Filtered]
 Att_ResultSliceState: [Spatial_ID,1,Facility_ID_Filtered,1,Area_Type,1]
@@ -175,20 +177,11 @@ Title: System Size Constrained Area
 Definition: MIN([Max_Facility_System_,Theoretical_System_S]) * (Theoretical_System_S>=Min_Facility_System1)
 NodeLocation: 1472,320,1
 NodeSize: 64,40
-ValueState: 2,12,55,564,666,0,MIDM
+ValueState: 2,769,114,383,680,0,MIDM
 ReformVal: [Area_Type,Facility_ID_Filtered]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Facility_ID_Filtered]
 Att_ResultSliceState: [Area_Type,3,Facility_ID_Filtered,1]
-
-Variable Max_Facility_System_
-Title: Max Facility System Size
-Units: kW
-Definition: System_Size_Constra2[Min_Max=Maximum_Label,Spatial_ID=Facility_Spatial_ID]
-NodeLocation: 1312,192,1
-NodeSize: 64,40
-ValueState: 2,494,159,862,393,0,MIDM
-ReformVal: [Area_Type,Facility_ID_Filtered]
 
 Index Conglomeration_Index
 Att_PrevIndexValue: [Spatial_ID,All_PV_Sectors,'Value']
@@ -198,7 +191,7 @@ NodeLocation: 2168,560,1
 NodeSize: 72,40
 ValueState: 2,1086,224,416,303,0,MIDM
 ReformVal: [Null,Self]
-{!40300|Att_SlicerPopupSize: 227,64}
+{!40300|Att_SlicerPopupSize: 232,64}
 
 Variable Effective_Area_Flat
 Title: Effective Area Flat
@@ -209,7 +202,7 @@ DefnState: 2,876,350,416,303,0,DFNM
 ValueState: 2,130,93,1229,630,0,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [Spatial_ID,Facility_ID_Filtered]
-Att_ResultSliceState: [Area_Type,2,Conglomeration_Index,3,Facility_ID_Filtered,1,Spatial_ID,1]
+Att_ResultSliceState: [Area_Type,1,Conglomeration_Index,3,Facility_ID_Filtered,1,Spatial_ID,1]
 Att_ColorRole: Null
 {!40600|Att_StackingIndex: Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
@@ -343,14 +336,6 @@ Definition: ['Minimum','Maximum']
 IndexVals: ['item 1']
 NodeLocation: 656,56,1
 NodeSize: 64,40
-
-Variable Min_Facility_System1
-Title: Min Facility System Size
-Units: kW
-Definition: System_Size_Constra2[Min_Max=Minimum_Label,Spatial_ID=Facility_Spatial_ID]
-NodeLocation: 1472,192,1
-NodeSize: 64,40
-ValueState: 2,348,208,416,303,0,MIDM
 
 Constant Ratio_of_Parking_Ar1
 Title: Ratio of Parking Area to Floor Area
@@ -539,7 +524,7 @@ NodeLocation: 96,288,1
 NodeSize: 64,40
 WindState: 2,480,230,720,350
 DefnState: 2,700,85,900,689,0,DFNM
-ValueState: 2,2302,129,1014,765,0,MIDM
+ValueState: 2,131,88,1014,765,0,MIDM
 ReformDef: [Spatial_ID,All_PV_Sectors]
 ReformVal: [Spatial_ID,All_PV_Sectors]
 Att__TotalsIndex: [All_PV_Sectors]
@@ -647,33 +632,39 @@ Units: kW
 Definition: DC_Watts_per_m2_usab * Effective_Usable_Ar2[All_PV_Sectors=PV_Sectors] * kW_per_W
 NodeLocation: 1632,472,1
 NodeSize: 64,40
-ValueState: 2,625,296,646,202,0,MIDM
+ValueState: 2,590,187,686,629,0,MIDM
 Aliases: FormNode Fo1378577955
 GraphSetup: Att_GraphValueRange Total_PV_kW_DC_poten:1,,1,,,,,0,369091.07863903046,0~
 Att_CatLineStyle Graph_Primary_Valdim:9
-ReformVal: [Spatial_ID,Area_Type]
+ReformVal: [Area_Type,Design_Parking_Area]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [PV_Sectors,Area_Type,Spatial_ID]
-Att_ResultSliceState: [Spatial_ID,3,Area_Type,1,PV_Sectors,0]
+Att_ResultSliceState: [Spatial_ID,0,PV_Sectors,0,Design_Parking_Area,1,Area_Type,1]
 {!40600|Att_StackingIndex: Area_Type}
 {!40600|Att_ClusterIndex: Null}
 
-Variable Average_PV_kW_Facili
-Title: Average PV kW/Facility
+Variable Average_PV_kW_Includ
+Title: Average PV kW/Included Facility
 Units: kW-DC
-Definition: ZIDZ1(Total_PV_kW_DC_poten, ~
-Applied_Building_Stk[Building_Stock_Year=Year_of_Consump_Data,All_Sectors=PV_Sectors,All_Spatial_ID=Spatial_ID])
+Definition: local x:=ZIDZ1(Total_PV_kW_DC_poten, ~
+System_Counts_Includ[All_PV_Sectors=PV_Sectors]);~
+x
 NodeLocation: 1632,368,1
 NodeSize: 64,40
-ValueState: 2,881,14,971,839,1,MIDM
-Aliases: FormNode Fo1558109475
-GraphSetup: {!50007|Graph_BarOutline:0}~
+ValueState: 2,345,15,1228,887,1,MIDM
+Aliases: FormNode Fo1558109475, Alias Al1407302435
+GraphSetup: Graph_SymbolKey:1~
+Att_GraphValueRange Average_PV_kW_Includ:1,,0,,,,,995.6656247377396,3500,0~
+Att_CatLineStyle Graph_Primary_Valdim:4~
 Att_StackedBar Graph_Primary_Valdim:0~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_GraphValueRange Average_PV_kW_Facili:1,,1,,,,,0,1120.4013228416443,0
+{!50007|Graph_BarOutline:0}~
+ShowKey:2
 ReformVal: [PV_Sectors,Spatial_ID]
-Att_ResultSliceState: [Area_Type,3,Spatial_ID,3,Spatial_ID,3,PV_Sectors,1]
-Att_ColorRole: Null
+NumberFormat: 2,F,4,3,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Area_Type]
+Att_ResultSliceState: [Spatial_ID,1,Min_PV_System_Size,1,Spatial_ID,1,PV_Sectors,1]
+Att_ColorRole: Area_Type
+Att_SymbolRole: Null
 {!40600|Att_ClusterIndex: Null}
 
 Variable PV_kWh_per_KW_DC
@@ -687,7 +678,7 @@ Aliases: Alias Al1380468259
 Alias Al1428421155
 Title: Spatial ID to CZ Map
 Definition: 1
-NodeLocation: 1472,72,1
+NodeLocation: 1640,72,1
 NodeSize: 64,40
 Original: All_Spatial_ID_to_CZ
 
@@ -742,7 +733,7 @@ Variable Ratio_of_Facility_Ge
 Title: Ratio of Facility Generation Potential to Consumption
 Units: fraction
 Definition: ZIDZ1(Facility_PV_Generati,Facility_Consumption)
-NodeLocation: 1040,752,1
+NodeLocation: 992,768,1
 NodeSize: 72,48
 ValueState: 2,2281,16,837,768,1,MIDM
 GraphSetup: {!50000|Graph_SortBySpread:1}~
@@ -756,7 +747,7 @@ Att_ColorRole: Null
 Variable Size_Min_Test
 Title: Size Min Test
 Definition: 250
-NodeLocation: 1640,72,1
+NodeLocation: 1800,72,1
 NodeSize: 64,40
 
 Variable PV_Generation_to_Off
@@ -765,7 +756,7 @@ Units: kWh/year
 Description: This is the expected PV generation for each site constrained by the minimum and maximum fraction of customer load. It is intended to represent potential for systems offsetting customer load, as opposed to systems installed for community solar, for instance.
 Definition: local upper_bound:=MIN([Facility_Consumption * PV_Max_Generation_Fr,Facility_PV_Generati]);~
 upper_bound * (Ratio_of_Facility_Ge>=PV_Min_Generation_fr)
-NodeLocation: 696,888,1
+NodeLocation: 720,888,1
 NodeSize: 64,40
 ValueState: 2,1945,122,1521,631,0,MIDM
 GraphSetup: Att_GraphValueRange PV_Generation_to_Off:1,,0,,,,,316966.47107601166,366711.0800743103,0
@@ -807,7 +798,7 @@ ValueState: 2,2173,69,712,610,,MIDM
 Constant Order_of_Assumed_Ins
 Title: Order of Assumed Installation
 Definition: Table(Area_Type)(1,3,2)
-NodeLocation: 504,1000,1
+NodeLocation: 720,1208,1
 NodeSize: 64,40
 ValueState: 2,2073,250,416,303,0,MIDM
 NodeColor: 65535,1,1
@@ -820,7 +811,7 @@ demand:Max(PV_Generation_to_Off,Area_Type),~
 capacity:PV_Generation_to_Off[Area_Type=Sorted_Area_Type],~
 resource:Sorted_Area_Type)~
 
-NodeLocation: 696,1000,1
+NodeLocation: 720,1000,1
 NodeSize: 64,40
 ValueState: 2,2816,16,526,852,0,MIDM
 ReformVal: [Area_Type,Facility_ID_Filtered]
@@ -831,7 +822,7 @@ Att_ResultSliceState: [Size_Min_Test,1,Facility_ID_Filtered,1,Sorted_Area_Type,1
 Index Sorted_Area_Type
 Title: Sorted Area Type
 Definition: sortindex(Order_of_Assumed_Ins)
-NodeLocation: 504,1096,1
+NodeLocation: 696,1304,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 252,80}
 
@@ -849,7 +840,7 @@ Variable PV_Generation_by_Typ
 Title: PV Generation by Type
 Units: kWh/year
 Definition: Table(Onsite_vs_Community_)(PV_Generation_to_Of1,Remaining_PV_Generat)
-NodeLocation: 696,1112,1
+NodeLocation: 720,1112,1
 NodeSize: 64,40
 DefnState: 2,1992,158,416,303,0,DFNM
 ValueState: 2,2723,496,914,256,0,MIDM
@@ -951,21 +942,22 @@ Original: Total_PV_kW_DC_poten
 Variable PV_Tech_Potential_Pe
 Title: PV Tech Potential Percentage of Total
 Units: %
-Description: Solar PV technical potential by geographic region, sector, and area type as a percentage of the total potential.
-Definition: local total:=sum(Technical_PV_Potenti,Spatial_ID,PV_Sectors,Area_Type);~
-ZIDZ1(Technical_PV_Potenti,total)
-NodeLocation: 1976,784,1
+Description: Solar PV technical potential by geographic region, sector, and area type as a percentage of the total potential MW-DC.
+Definition: local total:=sum(Total_PV_kW_DC_poten,Spatial_ID,PV_Sectors,Area_Type);~
+ZIDZ1(Total_PV_kW_DC_poten,total)
+NodeLocation: 1968,368,1
 NodeSize: 72,40
-ValueState: 2,70,16,1129,771,1,MIDM
+ValueState: 2,428,24,935,710,1,MIDM
 Aliases: FormNode Fo1835757091, FormNode Fo1844145699, FormNode Fo1572173091
-GraphSetup: {!50500|Graph_ShowTitle:1}~
+GraphSetup: Flip:8~
+Att_GraphIndexRange PV_Sectors:1,,1,,,,,1,9,1~
 Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_GraphIndexRange PV_Sectors:1,,1,,,,,1,9,1
-ReformVal: [Spatial_ID,PV_Sectors]
+{!50500|Graph_ShowTitle:1}
+ReformVal: [Area_Type,Spatial_ID]
 NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [PV_Sectors,Area_Type,Spatial_ID]
-Att_ResultSliceState: [Area_Type,0,Spatial_ID,4,Spatial_ID,4,PV_Sectors,0]
-{!40600|Att_StackingIndex: PV_Sectors}
+Att_ResultSliceState: [Area_Type,0,Spatial_ID,0,PV_Sectors,0]
+{!40600|Att_StackingIndex: Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
 {!50500|GraphTitleExpr: ""}
 
@@ -983,16 +975,17 @@ Description: Total technical potential for solar PV installations if all calcula
 Definition: Total_PV_kW_DC_poten / 1000
 NodeLocation: 1968,472,1
 NodeSize: 64,40
-ValueState: 2,387,20,1039,748,1,MIDM
+WindState: 2,98,82,720,545
+ValueState: 2,218,16,861,768,1,MIDM
 Aliases: FormNode Fo954953251, FormNode Fo501968419, FormNode Fo1035302179
-GraphSetup: Att_GraphValueRange Total_PV_MW_DC_Poten:1,,1,,,,,0,481.7144274711609,0~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-Graph_HLabelRotation:90~
-Att_GraphIndexRange PV_Sectors:1,,1,,,,,2,12,1
-ReformVal: [PV_Sectors,Area_Type]
+GraphSetup: Att_GraphIndexRange PV_Sectors:1,,1,,,,,2,10,1~
+Graph_AxisLabelFont:,16,0~
+Flip:8
+ReformVal: [Spatial_ID,Area_Type]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [PV_Sectors,Spatial_ID,Area_Type]
-Att_ResultSliceState: [Spatial_ID,0,Area_Type,0,Area_Type,0,PV_Sectors,0]
+Att__TotalsIndex: [Spatial_ID,Area_Type,PV_Sectors]
+Att_GraphValueRange: 1,,1,,,,,0,481.7144274711609,0
+Att_ResultSliceState: [Min_PV_System_Size,2,Area_Type,0,Spatial_ID,0,PV_Sectors,0]
 {!40300|ProactivelyEvaluate: 4}
 {!40600|Att_StackingIndex: Area_Type}
 {!40600|Att_ClusterIndex: Null}
@@ -1004,40 +997,11 @@ NodeLocation: 312,760,1
 NodeSize: 192,16
 Original: Total_PV_MW_DC_Poten
 
-Constant System_Size_Constra2
-Title: System Size Constraints
-Units: kW
-Description: Maximum and minimum assumed system sizes installed in this simulation. Increasing the maximum system size will increase total technical potential, since calculated usable "area" would therefore effectively increase in some circumstances.
-Definition: Table(Spatial_ID,Area_Type,Min_Max)(~
-250,5000,~
-250,5000,~
-250,5000,~
-250,5000,~
-250,5000,~
-250,5000,~
-250,5000,~
-250,5000,~
-250,5000,~
-250,5000,~
-250,5000,~
-250,5000)
-NodeLocation: 1312,72,1
-NodeSize: 64,40
-WindState: 2,374,145,720,350
-DefnState: 2,729,364,478,235,0,DFNM
-ValueState: 2,2193,346,821,420,,MIDM
-Aliases: FormNode Fo194744611, FormNode Fo1471509795
-NodeColor: 65535,1,1
-ReformDef: [Area_Type,Spatial_ID]
-NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att_EditSliceState: [Min_Max,2,Spatial_ID,1,Area_Type,1]
-{!40700|Att_CellFormat: CellAlignment('Center')}
-
 Variable Consumption_by_Sect1
 Title: Consumption by Sector from Facility Data
-Definition: local x:=MdTable(Consumption_by_Type,Facility_ID_Filtered,Conglomeration_Index,conglomerationFn:"Sum" );~
+Definition: local x:=MdTable(Facility_Count_Congl,Facility_ID_Filtered,Conglomeration_Index,conglomerationFn:"Sum" );~
 IF x=null THEN 0 ELSE x
-NodeLocation: 440,864,1
+NodeLocation: 392,856,1
 NodeSize: 64,40
 ValueState: 2,691,123,866,680,0,MIDM
 Aliases: Alias Al1082319139
@@ -1046,19 +1010,21 @@ NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [All_PV_Sectors,Spatial_ID]
 Att_ResultSliceState: [Included_Area_Types,3,All_PV_Sectors,1,Spatial_ID,1]
 
-Variable Consumption_by_Type
-Title: Consumption by Type
+Variable Facility_Count_Congl
+Title: Facility Count Conglom
 Definition: Table(Conglomeration_Index)(Facility_Spatial_ID,Facility_Sector_Filt,Facility_Consumption)
-NodeLocation: 280,864,1
+NodeLocation: 280,960,1
 NodeSize: 64,40
-ValueState: 2,2275,333,416,303,,MIDM
+DefnState: 2,723,421,788,303,0,DFNM
+ValueState: 2,884,143,885,644,0,MIDM
+ReformVal: [Conglomeration_Index,Facility_ID_Filtered]
 
 Variable Building_Count_from_
 Title: Building Count from Facility Data
 Units: Buildings
-Definition: MdTable(Consumption_by_Type,Facility_ID_Filtered,Conglomeration_Index,conglomerationFn:"Count" )~
+Definition: MdTable(Facility_Count_Congl,Facility_ID_Filtered,Conglomeration_Index,conglomerationFn:"Count" )~
 * (1+Building_Stock_Growt)^(Building_Stock_Year - Year_of_Consump_Data)
-NodeLocation: 280,960,1
+NodeLocation: 280,1056,1
 NodeSize: 64,40
 WindState: 2,339,235,720,350
 ValueState: 2,2362,78,866,680,0,MIDM
@@ -1066,29 +1032,30 @@ Aliases: Alias Al638771491
 ReformVal: [Spatial_ID,All_PV_Sectors]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [All_PV_Sectors,Spatial_ID]
-Att_ResultSliceState: [Building_Stock_Year,28,All_PV_Sectors,1,Spatial_ID,1]
+Att_ResultSliceState: [Building_Stock_Year,28,Facility_Count_Congl,1,All_PV_Sectors,1,Spatial_ID,1]
 
 Constant Building_Stock_Growt
 Title: Building Stock Growth Rate
 Definition: 0.57%
-NodeLocation: 88,1056,1
+NodeLocation: 96,1056,1
 NodeSize: 64,40
 NodeColor: 65535,1,1
 
-Variable Building_Count_from1
-Title: Building Count from Facillity Data
+Variable Total_Facility_Count
+Title: Total Facility Count 
 Units: Buildings
-Description: Total building count from parcel data.
+Description: Total facility count from parcel data (before filtering out any facilities with system sizes that do not meet the input minimum threshold system size).
 Definition: Building_Count_from_[Building_Stock_Year=2021] * Higher_Ed_Multiplier
-NodeLocation: 280,1064,1
+NodeLocation: 280,1160,1
 NodeSize: 64,40
-ValueState: 2,905,217,1050,762,1,MIDM
-Aliases: Alias Al1830396707, FormNode Fo748392739, FormNode Fo1114993955
+ValueState: 2,654,132,1050,762,0,MIDM
+Aliases: Alias Al1830396707, FormNode Fo1114993955
 GraphSetup: {!50000|Graph_SortBySpread:1}~
 Att_CatLineStyle Graph_Primary_Valdim:9
-ReformVal: [All_PV_Sectors,Spatial_ID]
+ReformVal: [Spatial_ID,All_PV_Sectors]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Spatial_ID,All_PV_Sectors]
+Att_ResultSliceState: [Facility_Count_Congl,1,Spatial_ID,1,All_PV_Sectors,1]
 {!40600|Att_StackingIndex: Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
 {!40700|Att_CellFormat: CellFormats(CellFont(size:14),CellAlignment('Center'))}
@@ -1128,13 +1095,171 @@ Aliases: Alias Al2048141603
 ReformVal: [Spatial_ID,All_PV_Sectors]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 
-Variable Include_Facility_
-Title: Include Facility?
+Variable Include_Facility_by_
+Title: Include Facility by Type,MinSizeOnly
 Definition: (Theoretical_System_S>=Min_Facility_System1)
-NodeLocation: 1128,136,1
-NodeSize: 64,40
-ValueState: 2,522,69,703,652,0,MIDM
+NodeLocation: 1168,192,1
+NodeSize: 80,40
+ValueState: 2,709,15,457,774,0,MIDM
 ReformVal: [Spatial_ID,Facility_ID_Filtered]
+Att__TotalsIndex: [Area_Type]
+
+Variable Filtered_Building_Co
+Title: Filtered Building Count
+Description: Count of facilities after removing any facility whose minimum system size did not meet the user input minimum size threshold.
+NodeLocation: 280,1264,1
+NodeSize: 64,40
+
+Index In5
+NodeLocation: 104,864,1
+NodeSize: 64,40
+
+Variable Va47
+NodeLocation: 1480,1240,1
+NodeSize: 64,40
+
+Variable Include_Facility
+Title: Include Facility
+Definition: Sum(Include_Facility_by_,Area_Type)>0
+NodeLocation: 1096,88,1
+NodeSize: 64,40
+ValueState: 2,266,106,916,708,0,MIDM
+Att__TotalsIndex: [Facility_ID_Filtered]
+
+Variable Facility_Count_Filte
+Title: Facility Count Filtered
+Description: Facility Count if filtered by minimum expected PV system size (across any installation area type)
+Definition: Table(Conglomeration_Index)(Facility_Spatial_ID,Facility_Sector_Filt,Include_Facility)
+NodeLocation: 440,960,1
+NodeSize: 64,40
+DefnState: 2,548,373,416,303,0,DFNM
+ValueState: 2,1004,219,609,542,0,MIDM
+ReformVal: [Area_Type,Facility_ID_Filtered]
+Att__TotalsIndex: []
+Att_ResultSliceState: [Conglomeration_Index,3,Facility_ID_Filtered,1,Area_Type,1]
+
+Index CongIndAreaType
+Title: Conglomeration Index w Area Type
+Definition: Concat(Copyindex([handle(Spatial_ID),handle(All_PV_Sectors)]),Area_Type)
+NodeLocation: 2168,656,1
+NodeSize: 72,40
+ValueState: 2,1086,224,416,303,0,MIDM
+ReformVal: [Null,Self]
+{!40300|Att_SlicerPopupSize: 227,64}
+
+Variable Facilities_Included
+Title: Facilities Included
+Description: Facility count once facility data are filtered to exclude any facilities with minimum PV system sizes that do not meet the user input system size threshold (e.g., 250 kW or 500 kW minimum PV size, etc.)
+Definition: MdTable(Facility_Count_Filte,Facility_ID_Filtered,Conglomeration_Index, conglomerationFn:"Sum" ,defaultValue:0)
+NodeLocation: 440,1160,1
+NodeSize: 64,40
+ValueState: 2,2102,126,836,673,0,MIDM
+Aliases: FormNode Fo1969204003
+ReformVal: [Spatial_ID,All_PV_Sectors]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [All_PV_Sectors,Spatial_ID]
+Att_ResultSliceState: [System_Size_Constra2,3,All_PV_Sectors,1,Spatial_ID,1]
+
+Index In6
+Definition: [Area_Type]
+NodeLocation: 448,1272,1
+NodeSize: 64,40
+MetaOnly: 1
+
+Variable System_Count_by_Area
+Title: System Count by Area Type
+Definition: Table(Conglomeration_Index)(Facility_Spatial_ID,Facility_Sector_Filt,Include_Facility_by_)
+NodeLocation: 576,960,1
+NodeSize: 64,40
+ValueState: 2,497,314,630,464,0,MIDM
+ReformVal: [Area_Type,Facility_ID_Filtered]
+Att_ResultSliceState: [Conglomeration_Index,3,Facility_ID_Filtered,1,Area_Type,1]
+
+Variable System_Counts_Includ
+Title: System Counts Included
+Definition: MdTable(System_Count_by_Area,Facility_ID_Filtered,Conglomeration_Index, conglomerationFn:"Sum" ,defaultValue:0)
+NodeLocation: 576,1160,1
+NodeSize: 64,40
+ValueState: 2,2995,131,767,669,0,MIDM
+ReformVal: [Spatial_ID,All_PV_Sectors]
+
+Module System_Size_Constrai
+Title: System Size Constraints
+Author: CWelch
+Date: Fri, Apr 29, 2022 10:15 AM
+NodeLocation: 1392,168,1
+NodeSize: 64,40
+DiagState: 2,886,136,944,480,17,10
+
+Variable Max_Facility_System_
+Title: Max Facility System Size
+Units: kW
+Definition: System_Size_Constra2[Min_Max=Maximum_Label]
+NodeLocation: 112,184,1
+NodeSize: 64,40
+ValueState: 2,494,159,862,393,0,MIDM
+ReformVal: [Area_Type,Facility_ID_Filtered]
+
+Variable Min_Facility_System1
+Title: Min Facility System Size
+Units: kW
+Definition: System_Size_Constra2[Min_Max=Minimum_Label]
+NodeLocation: 272,184,1
+NodeSize: 64,40
+ValueState: 2,348,208,416,303,0,MIDM
+
+Constant System_Size_Constra2
+Title: System Size Constraints
+Units: kW
+Description: Maximum and minimum assumed system sizes installed in this simulation. Increasing the maximum system size will increase total technical potential, since calculated usable "area" would therefore effectively increase in some circumstances.
+Definition: Table(Min_Max)(Min_PV_System_Size,5000)
+NodeLocation: 112,64,1
+NodeSize: 64,40
+WindState: 2,374,145,720,350
+DefnState: 2,729,364,478,235,0,DFNM
+ValueState: 2,12,346,821,420,0,MIDM
+Aliases: FormNode Fo194744611
+NodeColor: 65535,1,1
+ReformDef: [Area_Type,Spatial_ID]
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+Att_EditSliceState: [Min_Max,2,Spatial_ID,1,Area_Type,1]
+{!40700|Att_CellFormat: CellFormats(CellAlignment('Center'),CellSpan(Min_Max,CellFormats(CellNumberFormat('Fixed Point',0,0,1,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:4,zeroes_:0),CellEntry(0,0,0,0,1)),1,header:0),CellSpan(Min_Max,CellFormats(CellNumberFormat('Fixed Point',0,0,1,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:4,zeroes_:0),CellFill(0xffc0c0c0)),1,header:0))}
+
+Decision Min_PV_System_Size
+Title: Min PV System Size
+Units: kW
+Description: Minimum system size included in the analysis. Selecting higher values will filter facility count data and potential estimates to exclude any facilities (and installation area types) that do not meet this minimum size threshold. Check more than one box to run the model using this input as a scenario variable.
+Definition: Choice(Self,3,Not ACP_Version)
+NodeLocation: 368,64,1
+NodeSize: 64,40
+WindState: 2,302,160,781,516
+Aliases: FormNode Fo1782606627, FormNode Fo1312844579
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+{!40300|DomainExpr: Discrete(100,250,500,750,1000)}
+{!40300|Att_SlicerPopupSize: 232,96}
+
+FormNode Fo1782606627
+Title: Min PV System Size
+Definition: 0
+NodeLocation: 340,288,1
+NodeSize: 148,16
+NodeInfo: 1,,,,,,,120,,,,,,0
+Original: Min_PV_System_Size
+
+Close System_Size_Constrai
+
+Variable Avg_PVkW_facil_by_CZ
+Title: Avg PVkW/facil, by CZ
+Definition: local count:=Aggregate(System_Counts_Includ[All_PV_Sectors=PV_sectors],Climate_Zone_Map[PV_Spatial_ID=Spatial_ID],Spatial_ID,PV_Climate_Zone);~
+local potential:=Aggregate(Total_PV_kW_DC_poten,Climate_Zone_Map[PV_Spatial_ID=Spatial_ID],Spatial_ID,PV_Climate_Zone);~
+ZIDZ(potential,count)
+NodeLocation: 1528,792,1
+NodeSize: 64,40
+ValueState: 2,544,196,917,694,0,MIDM
+Aliases: Alias Al145341219, Alias Al1967504163
+ReformVal: [PV_Climate_Zone,PV_Sectors]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att_ResultSliceState: [Area_Type,3,PV_Sectors,1,PV_Climate_Zone,1]
 
 Close Facility_Level_Area_
 

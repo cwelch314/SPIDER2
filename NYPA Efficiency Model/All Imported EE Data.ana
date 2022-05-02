@@ -13789,15 +13789,15 @@ For replacement of working motors, the new motor efficiency must be at least NEM
 'G','Total FF','N/A',1,Null,'Energy Management',1,Null,~
 'O','Total FF','N/A',1,Null,'Energy Management',1,Null,~
 'Prp','Total FF','N/A',1,Null,'Energy Management',1,Null,~
-'E','Cooling','E',0,3,'Electrification',1,Null,~
-'E','Cooling','E',0,6,'Electrification',1,Null,~
-'E','Cooling','E',0,9,'Electrification',1,Null,~
+'E','Cooling','E',1,3,'Electrification',1,Null,~
+'E','Cooling','E',1,6,'Electrification',1,Null,~
+'E','Cooling','E',1,9,'Electrification',1,Null,~
 'G','Heating','E',1,3,'Electrification',1,Null,~
 'O','Heating','E',1,6,'Electrification',1,Null,~
 'Prp','Heating','E',1,9,'Electrification',1,Null,~
-'E','Cooling','E',0,53,'Electrification',1,Null,~
-'E','Cooling','E',0,56,'Electrification',1,Null,~
-'E','Cooling','E',0,59,'Electrification',1,Null,~
+'E','Cooling','E',1,53,'Electrification',1,Null,~
+'E','Cooling','E',1,56,'Electrification',1,Null,~
+'E','Cooling','E',1,59,'Electrification',1,Null,~
 'G','Heating','E',1,53,'Electrification',1,Null,~
 'O','Heating','E',1,56,'Electrification',1,Null,~
 'Prp','Heating','E',1,59,'Electrification',1,Null,~
@@ -13812,28 +13812,28 @@ For replacement of working motors, the new motor efficiency must be at least NEM
 'E','Pumping','N/A',1,Null,'Water/Wastewater',1,Null,~
 'E','Total Electric','N/A',1,Null,'Water/Wastewater',1,Null,~
 'E','Total Electric','N/A',1,Null,'Water/Wastewater',1,Null,~
-'E','Cooling','E',0,1,'Electrification',1,Null,~
-'E','Cooling','E',0,4,'Electrification',1,Null,~
-'E','Cooling','E',0,7,'Electrification',1,Null,~
+'E','Cooling','E',1,1,'Electrification',1,Null,~
+'E','Cooling','E',1,4,'Electrification',1,Null,~
+'E','Cooling','E',1,7,'Electrification',1,Null,~
 'G','Heating','E',1,1,'Electrification',1,Null,~
 'O','Heating','E',1,4,'Electrification',1,Null,~
 'Prp','Heating','E',1,7,'Electrification',1,Null,~
-'E','Cooling','E',0,51,'Electrification',1,Null,~
-'E','Cooling','E',0,54,'Electrification',1,Null,~
-'E','Cooling','E',0,57,'Electrification',1,Null,~
+'E','Cooling','E',1,51,'Electrification',1,Null,~
+'E','Cooling','E',1,54,'Electrification',1,Null,~
+'E','Cooling','E',1,57,'Electrification',1,Null,~
 'G','Heating','E',1,51,'Electrification',1,Null,~
 'O','Heating','E',1,54,'Electrification',1,Null,~
 'Prp','Heating','E',1,57,'Electrification',1,Null,~
 'E','Other','N/A',1,Null,'Water/Wastewater',1,Null,~
-'E','Cooling','E',0,2,'Electrification',1,Null,~
-'E','Cooling','E',0,5,'Electrification',1,Null,~
-'E','Cooling','E',0,8,'Electrification',1,Null,~
+'E','Cooling','E',1,2,'Electrification',1,Null,~
+'E','Cooling','E',1,5,'Electrification',1,Null,~
+'E','Cooling','E',1,8,'Electrification',1,Null,~
 'G','Heating','E',1,2,'Electrification',1,Null,~
 'O','Heating','E',1,5,'Electrification',1,Null,~
 'Prp','Heating','E',1,8,'Electrification',1,Null,~
-'E','Cooling','E',0,52,'Electrification',1,Null,~
-'E','Cooling','E',0,55,'Electrification',1,Null,~
-'E','Cooling','E',0,58,'Electrification',1,Null,~
+'E','Cooling','E',1,52,'Electrification',1,Null,~
+'E','Cooling','E',1,55,'Electrification',1,Null,~
+'E','Cooling','E',1,58,'Electrification',1,Null,~
 'G','Heating','E',1,52,'Electrification',1,Null,~
 'O','Heating','E',1,55,'Electrification',1,Null,~
 'Prp','Heating','E',1,58,'Electrification',1,Null,~
@@ -14939,12 +14939,12 @@ Null,Null,Null,Null,~
 NodeLocation: 848,232,1
 NodeSize: 64,32
 DefnState: 2,1130,167,647,716,0,DFNM
-ValueState: 2,144,62,1515,783,0,MIDM
+ValueState: 2,31,156,678,544,0,MIDM
 Aliases: FormNode Fo965956387
 ReformDef: [Primary_Fuel_Type,All_PV_Sectors]
-ReformVal: [End_Use,0]
-Att__TotalsIndex: [End_Use]
-Att_ResultSliceState: [Region,1,Primary_Fuel_Type,1,All_PV_Sectors,1,End_Use,1]
+ReformVal: [Primary_Fuel_Type,End_Use]
+Att__TotalsIndex: []
+Att_ResultSliceState: [Region,1,All_PV_Sectors,10,End_Use,1,Primary_Fuel_Type,1]
 Att_EditSliceState: [Primary_Fuel_Type,1,End_Use,1,All_PV_Sectors,16,Region,1]
 
 Constant All_Fuel_Interaction
@@ -16265,7 +16265,7 @@ Units: Various
 Definition: SubTable(All_Measure_Characte[ All_Measures=Measure])
 NodeLocation: 1016,72,1
 NodeSize: 64,32
-DefnState: 2,493,16,960,844,0,DFNM
+DefnState: 2,128,18,784,775,0,DFNM
 ValueState: 2,2923,-4,842,856,0,MIDM
 Aliases: FormNode Fo1569936163
 ReformDef: [RET_or_MD,Measure]
@@ -16284,7 +16284,7 @@ Aliases: FormNode Fo1033065251
 ReformDef: [Meas_Param_2,Measure]
 ReformVal: [Meas_Param_2,Measure]
 Att_EditSliceState: [Meas_Param_2,8,Measure,1]
-{!50000|Att_RowHeights: [,Measure,\([,,,,,,,,,,,,,,,,,,,,])]}
+{!50000|Att_RowHeights: [,Measure,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
 
 Variable Applicability1
 Title: Applicability
@@ -16294,10 +16294,12 @@ Definition: SubTable(All_Applicability[All_PV_Sectors=EE_Sectors,All_Measures=Me
 NodeLocation: 1016,312,1
 NodeSize: 64,32
 WindState: 2,98,82,794,350
-DefnState: 2,207,11,1250,724,0,DFNM
+DefnState: 2,228,117,1380,639,0,DFNM
 Aliases: FormNode Fo2106807075
-ReformDef: [Region,Measure]
-Att_EditSliceState: [EE_Sectors,3,Measure,1,Region,2]
+ReformDef: [EE_Sectors,Measure]
+NumberFormat: 2,F,2,2,0,0,2,1,$,0,"ABBREV",0,,,0,0,15,
+Att_EditSliceState: [EE_Sectors,15,Measure,1,Region,2]
+{!40700|Att_CellFormat: CellSpan(Measure,CellFill(0xffff8000),6,header:0)}
 
 Variable Fuel_Interaction_Mu1
 Title: Fuel Interaction Multiplier
@@ -16305,7 +16307,7 @@ Units: Various
 Definition: SubTable(All_Fuel_Interaction[All_Measures=Interacting_Measures])
 NodeLocation: 1016,392,1
 NodeSize: 64,32
-DefnState: 2,387,102,993,790,0,DFNM
+DefnState: 2,516,117,849,494,0,DFNM
 Aliases: FormNode Fo59986723
 ReformDef: [Region,Measure]
 NumberFormat: 2,F,2,5,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
@@ -16432,10 +16434,10 @@ Description: Equipment installation cost per unit of savings.
 Definition: MultiTable(Ret_MD_Units)(Retrofit_Cost1,Incremental_Cost,Mid(Cost_Units))
 NodeLocation: 472,304,1
 NodeSize: 64,32
-DefnState: 2,402,-2,943,874,0,DFNM
+DefnState: 2,648,269,811,556,0,DFNM
 ValueState: 2,475,-9,1002,897,0,MIDM
 Aliases: FormNode Fo237290275, FormNode Fo1939034915
-ReformDef: [Ret_MD_Units,All_Measures]
+ReformDef: [Ret_MD_Units,Measure]
 ReformVal: [Ret_MD_Units,Measure]
 Att__TotalsIndex: [EE_Sectors]
 Att_ResultSliceState: [EE_Sectors,0,Measure,1,Ret_MD_Units,1]
