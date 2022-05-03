@@ -11,7 +11,7 @@ Date: Thu, Mar 31, 2022 12:18 PM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,0,0,,,,,,,,,0
-DiagState: 2,35,13,1619,752,17,10,
+DiagState: 2,35,13,1729,752,17,10,
 Aliases: Alias Al1596706083
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
@@ -312,7 +312,7 @@ Att_ResultSliceState: [Spatial_ID,2,Measure,1,EE_Sectors,1]
 Variable Fuel_Interaction_Mul
 Title: Fuel Interaction Multiplier
 Definition: All_Fuel_Interaction[All_Measures=Measure,Region=Region_of_Spatial_ID,All_PV_Sectors=EE_Sectors]
-NodeLocation: 1040,848,1
+NodeLocation: 1040,832,1
 NodeSize: 64,32
 ValueState: 2,204,5,1152,739,0,MIDM
 ReformVal: [Spatial_ID,Measure]
@@ -4258,6 +4258,20 @@ NodeLocation: 192,220,2
 NodeSize: 184,44
 NodeInfo: 1,,,,0
 NodeFontColor: 3855,26214,35209
+
+Alias Al1203586851
+Title: Cooling Interactive Factor
+Definition: 1
+NodeLocation: 1440,920,1
+NodeSize: 64,32
+Original: Cooling_Interactive_
+
+Variable Cooling_Interactive1
+Title: Cooling Interactive Factor by Svgs Fuel Type
+Definition: IF (Primary_Fuel_Type = Meas_Primary_Fuel_Ty AND Savings_Fuel_Type='E') THEN Cooling_Interactive_ ELSE 0
+NodeLocation: 1256,920,1
+NodeSize: 64,40
+ValueState: 2,2236,158,1249,685,0,MIDM
 
 Close NYPA_EE_Details
 
