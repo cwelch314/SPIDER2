@@ -11,7 +11,7 @@ Date: Thu, Mar 31, 2022 12:18 PM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,0,0,,,,,,,,,0
-DiagState: 2,35,13,1619,711,17,10,
+DiagState: 2,35,13,1619,752,17,10,
 Aliases: Alias Al1596706083
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
@@ -3535,11 +3535,12 @@ IF x=0 THEN Null ELSE (IF x<0 THEN INF ELSE x)
 NodeLocation: 848,704,1
 NodeSize: 64,40
 WindState: 2,98,82,1235,609
-ValueState: 2,231,-9,1287,902,1,MIDM
+ValueState: 2,2097,45,1509,833,1,MIDM
 Aliases: FormNode Fo1371702051, FormNode Fo1012093731
-GraphSetup: Att_GraphValueRange Simple_Payback_Time2:1,,0,,,,,0,2.110256813466549,0~
+GraphSetup: Flip:8~
+Att_GraphIndexRange Aggregate_Measure_In:1,,0,,,1,,7,9,1~
 Att_CatLineStyle Graph_Primary_Valdim:4~
-Att_GraphIndexRange Aggregate_Measure_In:1,,1,,,1,,2,2,1
+Att_GraphValueRange Simple_Payback_Time2:1,,1,,,,,0,2.110256813466549,0
 ReformVal: [Aggregate_Measure_In,Aggregate_Measure_In]
 NumberFormat: 2,F,5,2,0,0,5,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [EE_Sectors,Spatial_ID]

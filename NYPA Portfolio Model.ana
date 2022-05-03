@@ -57,7 +57,7 @@ Graph_ColorSeq := [3855,26214,35209,57568,15420,13107,32639,32639,32639,0,0,0,34
 {!40600|NodeLocation MaxModelThreads: 880,64,1}
 {!40600|NodeSize MaxModelThreads: 48,24}
 {!40600|NodeInfo MaxModelThreads: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
-{!50000|OutlinerState Sys_FoundSet: 2,394,112,1112,693}
+{!50000|OutlinerState Sys_FoundSet: 2,2083,112,1112,693}
 {!50000|NodeLocation DecimalForCopyPaste: 1024,64,1}
 {!50000|NodeSize DecimalForCopyPaste: 72,24}
 {!50000|NodeInfo DecimalForCopyPaste: 1,1,1,1,1,1,0,0,0,0,,0,1,0}
@@ -484,7 +484,7 @@ Original: Output_Ident7
 
 Index Output_Ident7
 Title: Output Ident
-Definition: [NYPA_Enabled_Potent1,NYPA_Enabled_PV_Perc,PV_Potential_by_Type,NYPA_Enabled_Storag1,NYPA_Enabled_Storag2]
+Definition: [NYPA_Enabled_PV_Pote,NYPA_Enabled_PV_Perc,PV_Potential_by_Type,NYPA_Enabled_Storag1,NYPA_Enabled_Storag2]
 NodeLocation: 992,680,1
 NodeSize: 64,40
 WindState: 2,2451,172,720,638
@@ -4355,7 +4355,7 @@ OnChange: ACP_Set_Autocalc((ACP_top_modules),  ~
 {!60005|Att_AttsToShow: Object Object, Object Attribute, Attribute OnChange}
 
 Index ACP_Diags_with_User_
-Att_PrevIndexValue: [NYPA_specific_output,Mo2,Profiler_details,Sequential_Historic_,Deltas_from_Base_Per,Import_Auxiliary_Var,Data_Import1,Import_Error_Checks1,Categ_Index_Import1,Seq_Index_Import1,Output_Calcs,Forecast_Accuracy,Logit_Diagnostics,Illustrators,Multi_Stage_Calibra2,PV_Objective,Stored_Decison_Data,Misc_Output,Solar_Energy_Product,Customer_Load,Utility_Bills_and_Bi,Equipment_Costs,NYPA_Input_Tables,Annual_Cost_of_Syste,Old_Cost_Ratio_Calcs,Monthly_Payback_Logi,Simple_LCOE_Calculat,Technical_Potential,Facility_Level_Area_,Rate_Values_by_Perio,Rate_Saving_Details,Rates_to_View,NYSERDA_Value_Stack,Daily_Profile_Logic,Building_Stocks,EV_Stock_Initializat,EV_Misc,EV_Adoption_Logic,Market_Share_Calcula,Vehicle_Choice_Logi1,Multi_Stage_Calibra1,EV_Objective,Stored_Decision_Data,Storage_Optimizati10,Misc6,Storage_Opt_Diagnos2,DOE_Load_Profiles,Misc_Output1,Storage_Opt_Diagnost,Outputs_for_E_Source,Filter_USURDB_Data1,System_Analysis,Storage_Adoption,Market_Share2,Multi_Stage_Calibra3,BESS_Objective,Stored_Decison_Data1,All_Imported_EE_Data,Replacement_Type_Ap1,NYPA_EE_Details,EE_Output_Tables,Compare_by_End_Use,Costs,Nodes_for_Illustrati]
+Att_PrevIndexValue: [NYPA_specific_output,Storage_Output,Mo2,Profiler_details,Sequential_Historic_,Deltas_from_Base_Per,Import_Auxiliary_Var,Data_Import1,Import_Error_Checks1,Categ_Index_Import1,Seq_Index_Import1,Output_Calcs,Forecast_Accuracy,Logit_Diagnostics,Illustrators,Multi_Stage_Calibra2,PV_Objective,Stored_Decison_Data,Misc_Output,Solar_Energy_Product,Customer_Load,Utility_Bills_and_Bi,Taxable_Incents,Equipment_Costs,NYPA_Input_Tables,Annual_Cost_of_Syste,Old_Cost_Ratio_Calcs,Monthly_Payback_Logi,Simple_LCOE_Calculat,Technical_Potential,Facility_Level_Area_,Rate_Values_by_Perio,Rate_Saving_Details,Rates_to_View,NYSERDA_Value_Stack,Daily_Profile_Logic,Building_Stocks,EV_Stock_Initializat,EV_Misc,EV_Adoption_Logic,Market_Share_Calcula,Vehicle_Choice_Logi1,Multi_Stage_Calibra1,EV_Objective,Stored_Decision_Data,Storage_Optimizati10,Misc6,Storage_Opt_Diagnos2,DOE_Load_Profiles,Misc_Output1,Storage_Opt_Diagnost,Outputs_for_E_Source,Filter_USURDB_Data1,System_Analysis,Storage_Adoption,Market_Share2,Multi_Stage_Calibra3,BESS_Objective,Stored_Decison_Data1,All_Imported_EE_Data,Replacement_Type_Ap1,NYPA_EE_Details,EE_Output_Tables,Compare_by_End_Use,Costs,Nodes_for_Illustrati]
 Title: Diags with User outputs or Framenodes
 Description: All diagrams that contain user outputs.
 Definition: ACP_model_Reset;~
@@ -5074,7 +5074,7 @@ Aliases: Alias Al1198090051
 MetaOnly: 1
 
 Index ACP_User_output_and_
-Att_PrevIndexValue: [Nat_Mkt_Pot_l_vs_PV_,NYPA_Enabled_Potent1,NYPA_Enabled_PV_Perc,PV_Potential_by_Type,NYPA_Enabled_Storag1,NYPA_Enabled_Storag2,Long_Run_Market_Sha1,Hourly_Energy_Flows,Incremental_Potenti2,Nodes_to_change,Colored_nodes_to_fix,Uncolored_Nodes,Left_to_Review,Performance_profiles,EV_Cumul_MW_Impact,Cumulative_EV_Delta,Last_Import_Time,Raw_Imported_Data1,Format_Import_Data1,Check_Index_Errors1,Check_DataType_Erro1,Raw_Categ_Index_Dat1,Format_CategInd_Dat1,Raw_Seq_Index_Data1,Format_Seq_Ind_Data1,Cumulative_Actual_In,Compare_Prior_Fcsts,Mkt_Share_Example,Long_Run_Market_Sha3,Market_Share_Functio,Market_Adoption_Illu,Failed_Spat_ID_PV,Sim_vs_Act_PV_System,Sim_vs_Act_PV_Rate,R_2_Applied,All_Stored_Coeffs_PV,Stored_Coeff_for_PV_,Installs_by_Type,Cumulative_PV_Instal,Pct_Load_Met_bySolar,PrePost_Load_by_OpYr,Scaled_Ann_Net_Load,PrePost_Load_Solar,FirstYr_Bill_by_Vint,FirstYr_Bill_Compare,Value_of_generation1,Base_Installed_Cost_,Equipment_Cost_Resul,Equipment_Cost_Forec,Cost_of_Elect_Ratio,Simple_Payback_Time,CostOf_Elect_Compare,Tot_Price_Aft_Incent,Simple_LCOE_of_PV1,Simple_LCOE_vs_Value,Cost_of_Elect_Ratio2,PV_Stock_Basis_by_Se,Technical_PV_Potenti,Load_vs_PV_Potential,Total_PV_kW_DC_poten,Average_PV_kW_Includ,Potential_divided_by,PV_Tech_Potential_Pe,Total_PV_MW_DC_Poten,Total_Facility_Count,Customer_Load1,Facilities_Included,Rate_Data_TOU_Sched,Electric_Rates2,Flat_Demand_Schedule,Rate_Name_to_Save,Demand_TOU_Sched,Energy_TOU_Schedule,View_Saved_Rates,View_Existing_Rates,Discrete_Rate,Compare9,Period_of_Rate,Electric_Rate_8760,Saved_Daily_Profiles,Saved_Day_Counts,Bldg_Stock_by_Time,Vehicle_Stk_Share_Ac,Tech_Share_Veh_Stock,Share_New_Veh_Sales,Aggreg_New_Veh_Sales,Cumul_EV_Stock_byTec,PHEV_Market_Share,Vehicle_Stock_Share1,Market_Share1,EV_Mkt_Share,Tornado__EV_Mkt_Shar,Vehicle__Utility_,Logit_Attrib_Ratios1,Logit_Equiv_Cost1,Logit_Attrib_Utilit1,Veh_Tech_Mkt_Share1,Vehicle_Logit_MktSh1,Failed_Spat_ID_EV,Simulated_EV_Stock,Sim_vs_Act_EV_Stock,Sim_vs_Act_EV_Sales,Sim_vs_Act_EV_Stock_,R2_Stock_Delta,R2_Thresh_Failure_EV,EV_Decision_Values,All_Stored_Coefficie,Stored_Coeff_for_EV_,Lev_Utility_Bill,Current_BESS_Sector,Flows_by_Opt_Hour,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Building_Loads,BESS_Shr_ResHousing,Dispatch_Flows,Cumul_BESS_Adoption,Electric_Rates3,PV_Generation,Compare_BESS_Potenti,LRMS_by_BESS_Time,Payback_Accept_Curv1,BESS_Payback_Time,Failed_Spat_ID_BESS,Sim_vs_Act_BESS_Cap,Sim_vs_Act_BESS_Rate,R2_Applied_BESS,All_Stored_Coeffs_P1,Stored_Coef_for_BESS,Measure_Description,Replacement_Type_Ap4,Economic_Potl_Before,Consumption_TBtu,Potential_by_Measure,Potential_by_Catego1,Cumulative_Potenti_2,Potential_by_Measur2,Cumulative_Potentia2,Potential_of_Top_Mea,Potential_by_Categor,Potential_vs_Consump,Potential_by_Region_,Potential_by_End_Use,Potential_by_Sector_,Annual_Potential_by_,Levelized_Cost_of_Sa,Simple_Payback_Time2,Levelized_cost_per_1,Consumption_per_Bui1,Consumption_per_Bui2,GHG_per_Building,Total_GHG,Consumption1,Potential_vs_Buildin,Output_1,Output_2,Output_5,Output_4,Output_6,Sorted_Potential_Lis,PV_Potential_by_Typ1]
+Att_PrevIndexValue: [Nat_Mkt_Pot_l_vs_PV_,NYPA_Enabled_PV_Pote,NYPA_Enabled_PV_Perc,PV_Potential_by_Type,NYPA_Enabled_Storag1,NYPA_Enabled_Storag2,Long_Run_Market_Sha1,Hourly_Energy_Flows,Incremental_Potenti2,Nodes_to_change,Colored_nodes_to_fix,Uncolored_Nodes,Left_to_Review,Performance_profiles,EV_Cumul_MW_Impact,Cumulative_EV_Delta,Last_Import_Time,Raw_Imported_Data1,Format_Import_Data1,Check_Index_Errors1,Check_DataType_Erro1,Raw_Categ_Index_Dat1,Format_CategInd_Dat1,Raw_Seq_Index_Data1,Format_Seq_Ind_Data1,Cumulative_Actual_In,Compare_Prior_Fcsts,Mkt_Share_Example,Long_Run_Market_Sha3,Market_Share_Functio,Market_Adoption_Illu,Failed_Spat_ID_PV,Sim_vs_Act_PV_System,Sim_vs_Act_PV_Rate,R_2_Applied,All_Stored_Coeffs_PV,Stored_Coeff_for_PV_,Installs_by_Type,Cumulative_PV_Instal,Pct_Load_Met_bySolar,PrePost_Load_by_OpYr,Scaled_Ann_Net_Load,PrePost_Load_Solar,FirstYr_Bill_by_Vint,FirstYr_Bill_Compare,Value_of_generation1,Base_Installed_Cost_,Equipment_Cost_Resul,Equipment_Cost_Forec,Cost_of_Elect_Ratio,Simple_Payback_Time,CostOf_Elect_Compare,Tot_Price_Aft_Incent,Simple_LCOE_of_PV1,Simple_LCOE_vs_Value,Cost_of_Elect_Ratio2,PV_Stock_Basis_by_Se,Technical_PV_Potenti,Load_vs_PV_Potential,Total_PV_kW_DC_poten,Average_PV_kW_Includ,Potential_divided_by,PV_Tech_Potential_Pe,Total_PV_MW_DC_Poten,Total_Facility_Count,Customer_Load1,Facilities_Included,Rate_Data_TOU_Sched,Electric_Rates2,Flat_Demand_Schedule,Rate_Name_to_Save,Demand_TOU_Sched,Energy_TOU_Schedule,View_Saved_Rates,View_Existing_Rates,Discrete_Rate,Compare9,Period_of_Rate,Electric_Rate_8760,Saved_Daily_Profiles,Saved_Day_Counts,Bldg_Stock_by_Time,Vehicle_Stk_Share_Ac,Tech_Share_Veh_Stock,Share_New_Veh_Sales,Aggreg_New_Veh_Sales,Cumul_EV_Stock_byTec,PHEV_Market_Share,Vehicle_Stock_Share1,Market_Share1,EV_Mkt_Share,Tornado__EV_Mkt_Shar,Vehicle__Utility_,Logit_Attrib_Ratios1,Logit_Equiv_Cost1,Logit_Attrib_Utilit1,Veh_Tech_Mkt_Share1,Vehicle_Logit_MktSh1,Failed_Spat_ID_EV,Simulated_EV_Stock,Sim_vs_Act_EV_Stock,Sim_vs_Act_EV_Sales,Sim_vs_Act_EV_Stock_,R2_Stock_Delta,R2_Thresh_Failure_EV,EV_Decision_Values,All_Stored_Coefficie,Stored_Coeff_for_EV_,Lev_Utility_Bill,Current_BESS_Sector,Flows_by_Opt_Hour,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Building_Loads,BESS_Shr_ResHousing,Dispatch_Flows,Cumul_BESS_Adoption,Electric_Rates3,PV_Generation,Compare_BESS_Potenti,LRMS_by_BESS_Time,Payback_Accept_Curv1,BESS_Payback_Time,Failed_Spat_ID_BESS,Sim_vs_Act_BESS_Cap,Sim_vs_Act_BESS_Rate,R2_Applied_BESS,All_Stored_Coeffs_P1,Stored_Coef_for_BESS,Measure_Description,Replacement_Type_Ap4,Economic_Potl_Before,Consumption_TBtu,Potential_by_Measure,Potential_by_Catego1,Cumulative_Potenti_2,Potential_by_Measur2,Cumulative_Potentia2,Potential_of_Top_Mea,Potential_by_Categor,Potential_vs_Consump,Potential_by_Region_,Potential_by_End_Use,Potential_by_Sector_,Annual_Potential_by_,Levelized_Cost_of_Sa,Simple_Payback_Time2,Levelized_cost_per_1,Consumption_per_Bui1,Consumption_per_Bui2,GHG_per_Building,Total_GHG,Consumption1,Potential_vs_Buildin,Output_1,Output_2,Output_5,Output_4,Output_6,Sorted_Potential_Lis,Undefined]
 Title: User output and Frame nodes
 Description: User output nodes and Frame nodes, excluding those in ACP_styles library.~
 
@@ -5416,7 +5416,7 @@ Show_index_menus: Fly-in~
 Show_graph_table_icon: Yes
 
 Index ACP_User_output_node
-Att_PrevIndexValue: [Nat_Mkt_Pot_l_vs_PV_,NYPA_Enabled_Potent1,NYPA_Enabled_PV_Perc,PV_Potential_by_Type,NYPA_Enabled_Storag1,NYPA_Enabled_Storag2,Long_Run_Market_Sha1,Hourly_Energy_Flows,Incremental_Potenti2,Nodes_to_change,Colored_nodes_to_fix,Uncolored_Nodes,Left_to_Review,Performance_profiles,EV_Cumul_MW_Impact,Cumulative_EV_Delta,Last_Import_Time,Raw_Imported_Data1,Format_Import_Data1,Check_Index_Errors1,Check_DataType_Erro1,Raw_Categ_Index_Dat1,Format_CategInd_Dat1,Raw_Seq_Index_Data1,Format_Seq_Ind_Data1,Cumulative_Actual_In,Compare_Prior_Fcsts,Mkt_Share_Example,Long_Run_Market_Sha3,Market_Share_Functio,Market_Adoption_Illu,Failed_Spat_ID_PV,Sim_vs_Act_PV_System,Sim_vs_Act_PV_Rate,R_2_Applied,All_Stored_Coeffs_PV,Stored_Coeff_for_PV_,Installs_by_Type,Cumulative_PV_Instal,Pct_Load_Met_bySolar,PrePost_Load_by_OpYr,Scaled_Ann_Net_Load,PrePost_Load_Solar,FirstYr_Bill_by_Vint,FirstYr_Bill_Compare,Value_of_generation1,Base_Installed_Cost_,Equipment_Cost_Resul,Equipment_Cost_Forec,Cost_of_Elect_Ratio,Simple_Payback_Time,CostOf_Elect_Compare,Tot_Price_Aft_Incent,Simple_LCOE_of_PV1,Simple_LCOE_vs_Value,Cost_of_Elect_Ratio2,PV_Stock_Basis_by_Se,Technical_PV_Potenti,Load_vs_PV_Potential,Total_PV_kW_DC_poten,Average_PV_kW_Includ,Potential_divided_by,PV_Tech_Potential_Pe,Total_PV_MW_DC_Poten,Total_Facility_Count,Customer_Load1,Facilities_Included,Rate_Data_TOU_Sched,Electric_Rates2,Flat_Demand_Schedule,Rate_Name_to_Save,Demand_TOU_Sched,Energy_TOU_Schedule,View_Saved_Rates,View_Existing_Rates,Discrete_Rate,Compare9,Period_of_Rate,Electric_Rate_8760,Saved_Daily_Profiles,Saved_Day_Counts,Bldg_Stock_by_Time,Vehicle_Stk_Share_Ac,Tech_Share_Veh_Stock,Share_New_Veh_Sales,Aggreg_New_Veh_Sales,Cumul_EV_Stock_byTec,PHEV_Market_Share,Vehicle_Stock_Share1,Market_Share1,EV_Mkt_Share,Tornado__EV_Mkt_Shar,Vehicle__Utility_,Logit_Attrib_Ratios1,Logit_Equiv_Cost1,Logit_Attrib_Utilit1,Veh_Tech_Mkt_Share1,Vehicle_Logit_MktSh1,Failed_Spat_ID_EV,Simulated_EV_Stock,Sim_vs_Act_EV_Stock,Sim_vs_Act_EV_Sales,Sim_vs_Act_EV_Stock_,R2_Stock_Delta,R2_Thresh_Failure_EV,EV_Decision_Values,All_Stored_Coefficie,Stored_Coeff_for_EV_,Lev_Utility_Bill,Current_BESS_Sector,Flows_by_Opt_Hour,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Building_Loads,BESS_Shr_ResHousing,Dispatch_Flows,Cumul_BESS_Adoption,Electric_Rates3,PV_Generation,Compare_BESS_Potenti,LRMS_by_BESS_Time,Payback_Accept_Curv1,BESS_Payback_Time,Failed_Spat_ID_BESS,Sim_vs_Act_BESS_Cap,Sim_vs_Act_BESS_Rate,R2_Applied_BESS,All_Stored_Coeffs_P1,Stored_Coef_for_BESS,Measure_Description,Replacement_Type_Ap4,Economic_Potl_Before,Consumption_TBtu,Potential_by_Measure,Potential_by_Catego1,Cumulative_Potenti_2,Potential_by_Measur2,Cumulative_Potentia2,Potential_of_Top_Mea,Potential_by_Categor,Potential_vs_Consump,Potential_by_Region_,Potential_by_End_Use,Potential_by_Sector_,Annual_Potential_by_,Levelized_Cost_of_Sa,Simple_Payback_Time2,Levelized_cost_per_1,Consumption_per_Bui1,Consumption_per_Bui2,GHG_per_Building,Total_GHG,Consumption1,Potential_vs_Buildin,Output_1,Output_2,Output_5,Output_4,Output_6,Sorted_Potential_Lis,PV_Potential_by_Typ1]
+Att_PrevIndexValue: [Nat_Mkt_Pot_l_vs_PV_,NYPA_Enabled_PV_Pote,NYPA_Enabled_PV_Perc,PV_Potential_by_Type,NYPA_Enabled_Storag1,NYPA_Enabled_Storag2,Long_Run_Market_Sha1,Hourly_Energy_Flows,Incremental_Potenti2,Nodes_to_change,Colored_nodes_to_fix,Uncolored_Nodes,Left_to_Review,Performance_profiles,EV_Cumul_MW_Impact,Cumulative_EV_Delta,Last_Import_Time,Raw_Imported_Data1,Format_Import_Data1,Check_Index_Errors1,Check_DataType_Erro1,Raw_Categ_Index_Dat1,Format_CategInd_Dat1,Raw_Seq_Index_Data1,Format_Seq_Ind_Data1,Cumulative_Actual_In,Compare_Prior_Fcsts,Mkt_Share_Example,Long_Run_Market_Sha3,Market_Share_Functio,Market_Adoption_Illu,Failed_Spat_ID_PV,Sim_vs_Act_PV_System,Sim_vs_Act_PV_Rate,R_2_Applied,All_Stored_Coeffs_PV,Stored_Coeff_for_PV_,Installs_by_Type,Cumulative_PV_Instal,Pct_Load_Met_bySolar,PrePost_Load_by_OpYr,Scaled_Ann_Net_Load,PrePost_Load_Solar,FirstYr_Bill_by_Vint,FirstYr_Bill_Compare,Value_of_generation1,Base_Installed_Cost_,Equipment_Cost_Resul,Equipment_Cost_Forec,Cost_of_Elect_Ratio,Simple_Payback_Time,CostOf_Elect_Compare,Tot_Price_Aft_Incent,Simple_LCOE_of_PV1,Simple_LCOE_vs_Value,Cost_of_Elect_Ratio2,PV_Stock_Basis_by_Se,Technical_PV_Potenti,Load_vs_PV_Potential,Total_PV_kW_DC_poten,Average_PV_kW_Includ,Potential_divided_by,PV_Tech_Potential_Pe,Total_PV_MW_DC_Poten,Total_Facility_Count,Customer_Load1,Facilities_Included,Rate_Data_TOU_Sched,Electric_Rates2,Flat_Demand_Schedule,Rate_Name_to_Save,Demand_TOU_Sched,Energy_TOU_Schedule,View_Saved_Rates,View_Existing_Rates,Discrete_Rate,Compare9,Period_of_Rate,Electric_Rate_8760,Saved_Daily_Profiles,Saved_Day_Counts,Bldg_Stock_by_Time,Vehicle_Stk_Share_Ac,Tech_Share_Veh_Stock,Share_New_Veh_Sales,Aggreg_New_Veh_Sales,Cumul_EV_Stock_byTec,PHEV_Market_Share,Vehicle_Stock_Share1,Market_Share1,EV_Mkt_Share,Tornado__EV_Mkt_Shar,Vehicle__Utility_,Logit_Attrib_Ratios1,Logit_Equiv_Cost1,Logit_Attrib_Utilit1,Veh_Tech_Mkt_Share1,Vehicle_Logit_MktSh1,Failed_Spat_ID_EV,Simulated_EV_Stock,Sim_vs_Act_EV_Stock,Sim_vs_Act_EV_Sales,Sim_vs_Act_EV_Stock_,R2_Stock_Delta,R2_Thresh_Failure_EV,EV_Decision_Values,All_Stored_Coefficie,Stored_Coeff_for_EV_,Lev_Utility_Bill,Current_BESS_Sector,Flows_by_Opt_Hour,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Building_Loads,BESS_Shr_ResHousing,Dispatch_Flows,Cumul_BESS_Adoption,Electric_Rates3,PV_Generation,Compare_BESS_Potenti,LRMS_by_BESS_Time,Payback_Accept_Curv1,BESS_Payback_Time,Failed_Spat_ID_BESS,Sim_vs_Act_BESS_Cap,Sim_vs_Act_BESS_Rate,R2_Applied_BESS,All_Stored_Coeffs_P1,Stored_Coef_for_BESS,Measure_Description,Replacement_Type_Ap4,Economic_Potl_Before,Consumption_TBtu,Potential_by_Measure,Potential_by_Catego1,Cumulative_Potenti_2,Potential_by_Measur2,Cumulative_Potentia2,Potential_of_Top_Mea,Potential_by_Categor,Potential_vs_Consump,Potential_by_Region_,Potential_by_End_Use,Potential_by_Sector_,Annual_Potential_by_,Levelized_Cost_of_Sa,Simple_Payback_Time2,Levelized_cost_per_1,Consumption_per_Bui1,Consumption_per_Bui2,GHG_per_Building,Total_GHG,Consumption1,Potential_vs_Buildin,Output_1,Output_2,Output_5,Output_4,Output_6,Sorted_Potential_Lis,Undefined]
 Title: User output nodes
 Description: All variables that have user outputs (including tall nodes),~
 excluding those in the ACP_styles library.
@@ -7766,7 +7766,7 @@ Author: CWelch
 Date: Tue, Apr 12, 2022 4:11 PM
 NodeLocation: 376,160,1
 NodeSize: 64,40
-DiagState: ,,,1968,1008,,,
+DiagState: 2,1819,13,1968,1008,17,10,
 NodeColor: 45875,45875,45875
 AcpStyles: show_as_tab: No
 
@@ -8834,7 +8834,7 @@ DefaultSize: 64,32
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,2880,9,930,769,17,10,
+DiagState: 2,407,20,924,652,17,10,
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
 AcpStyles: Framenode: Te1941271843
@@ -8879,7 +8879,7 @@ Title: NYPA Enabled PV Adoption
 Definition: 1
 NodeLocation: 668,252,1
 NodeSize: 204,20
-Original: NYPA_Enabled_Potent1
+Original: NYPA_Enabled_PV_Pote
 
 FormNode Fo330659107
 Title: Potential by Type
@@ -8920,8 +8920,8 @@ Original: NYPA_Enabled_Storag2
 
 Text Te1840608547
 Title: Technical Potential
-NodeLocation: 236,300,-1
-NodeSize: 212,180
+NodeLocation: 236,260,-1
+NodeSize: 212,140
 NodeInfo: 1,,,,1
 NodeFontColor: 3855,26214,35209
 
@@ -8934,14 +8934,14 @@ NodeColor: 52428,52428,52428
 Original: PV_suitability
 
 Text Te1035302179
-NodeLocation: 452,252,-25
-NodeSize: 444,244
+NodeLocation: 452,316,-25
+NodeSize: 444,308
 NodeInfo: 1,,,,1,1
 NodeColor: 3855,26214,35209
 
 Text Te2109044003
-NodeLocation: 452,300,-22
-NodeSize: 436,188
+NodeLocation: 452,364,-22
+NodeSize: 436,252
 NodeInfo: 1,,,,1,1
 NodeColor: 65535,65535,65535
 
@@ -8976,8 +8976,8 @@ NodeInfo: 1,,,0,0
 
 Text Te1672836387
 Title: Achievable Potential
-NodeLocation: 668,300,-1
-NodeSize: 212,180
+NodeLocation: 668,280,-1
+NodeSize: 212,160
 NodeFont: Arial,19
 NodeFontColor: 3855,26214,35209
 
@@ -8991,15 +8991,17 @@ AcpStyles: Show_Object:No
 
 Text Te867530019
 Description: WORKING DRAFT: NOT FINAL
-NodeLocation: 464,90,-1
+NodeLocation: 176,732,-1
 NodeSize: 152,12
 NodeInfo: 1,,,,0,0,1,,,,,,1
 NodeFont: Arial,19
 NodeFontColor: 65535,1,1
+AcpStyles: Show_object: No
 
 Text Te1941271843
 NodeLocation: 1352,440,-26
 NodeSize: 440,392
+NodeInfo: 1,,,,0
 
 FormNode Fo544568611
 Title: NYPA Enabled PV Adoption Percentages
@@ -9014,7 +9016,7 @@ Description: 1. Revenue, TBtu, and GHG emissions outputs~
 2. Additional input visibility~
 3. Additional desired scenario inputs~
 4. Additional desired output
-NodeLocation: 208,604,2
+NodeLocation: 208,804,2
 NodeSize: 184,44
 NodeInfo: 1,,,,0
 NodeFontColor: 3855,26214,35209
@@ -9023,14 +9025,14 @@ AcpStyles: Show_object: No
 FormNode Fo1072958243
 Title: NYPA Enabled PV Adoption
 Definition: 1
-NodeLocation: 660,668,1
+NodeLocation: 668,492,3
 NodeSize: 204,20
 Original: Nat_Mkt_Pot_l_vs_PV_
 
 FormNode Fo1312844579
 Title: Min PV System Size
 Definition: 0
-NodeLocation: 660,588,1
+NodeLocation: 236,500,4
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,120,,,,,,0
 Original: Min_PV_System_Size
@@ -9038,7 +9040,7 @@ Original: Min_PV_System_Size
 FormNode Fo659581731
 Title: Minimum Market Potential Threshold
 Definition: 0
-NodeLocation: 660,628,1
+NodeLocation: 236,540,5
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,120,,,,,,0
 Original: Minimum_Market_Poten
@@ -9046,7 +9048,7 @@ Original: Minimum_Market_Poten
 FormNode Fo775449379
 Title: PV Output Period
 Definition: 0
-NodeLocation: 660,548,1
+NodeLocation: 236,460,6
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,120,,,,,,0,,,,
 Original: PV_Output_Period
@@ -9054,7 +9056,7 @@ Original: PV_Output_Period
 FormNode Fo578951971
 Title: Sort Opportunity By
 Definition: 0
-NodeLocation: 660,788,1
+NodeLocation: 660,780,1
 NodeSize: 204,20
 NodeInfo: 1,,,,,,,208,,,,,,0
 Original: Sort_Opportunity_By
@@ -9062,20 +9064,44 @@ Original: Sort_Opportunity_By
 FormNode Fo1652693795
 Title: Sorted Achievable Potential
 Definition: 1
-NodeLocation: 660,708,1
+NodeLocation: 668,532,7
 NodeSize: 204,20
 Original: Sorted_Potential_Lis
 
 Variable Over_dimensioned
 Title: Over dimensioned
 Definition: (size(Minimum_Market_Poten)>1) OR (size(Min_PV_System_Size)>1)
-NodeLocation: 104,904,1
+NodeLocation: 520,848,1
 NodeSize: 64,32
+AcpStyles: Show_object: No
 
-Text Te2073697059
-Description: IF ((size(Min_PV_System_Size)>1) OR (size(Minimum_Market_Poten)>1)) THEN Error("Select only one minimum PV system size and minimum market potential to view this output.","Too many dimensions.")
-NodeLocation: 460,904,-1
-NodeSize: 260,32
+FormNode Fo1969204003
+Title: Facilities Included
+Definition: 1
+NodeLocation: 236,580,1
+NodeSize: 204,20
+Original: Facilities_Included
+
+FormNode Fo1053099811
+Title: NYPA Enabled Achievable, Final
+Definition: 1
+NodeLocation: 668,572,8
+NodeSize: 204,20
+Original: NYPA_Enabled_Achiev3
+
+Text Te858818339
+Title: Filtering 
+NodeLocation: 236,508,-1
+NodeSize: 212,100
+NodeFont: Arial,19
+NodeFontColor: 3855,26214,35209
+
+Text Te783320867
+Title: Targeting
+NodeLocation: 668,528,-1
+NodeSize: 212,80
+NodeFont: Arial,19
+NodeFontColor: 3855,26214,35209
 
 Close NYPA_Solar_Storage_S
 
@@ -9087,7 +9113,7 @@ DefaultSize: 64,32
 NodeLocation: 256,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,1928,10,924,759,17,10,
+DiagState: 2,2001,-25,1097,887,17,10,
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
 AcpStyles: Framenode: Te2008380707
@@ -9390,14 +9416,6 @@ NodeLocation: 668,380,1
 NodeSize: 204,20
 Original: Hourly_Energy_Flows
 
-Text Te934638883
-Description: WORKING DRAFT: NOT FINAL
-NodeLocation: 464,90,-1
-NodeSize: 152,12
-NodeInfo: 1,,,,0,0,1,,,,,,1
-NodeFont: Arial,19
-NodeFontColor: 65535,1,1
-
 Text Te2008380707
 NodeLocation: 1352,440,-26
 NodeSize: 440,392
@@ -9426,13 +9444,6 @@ NodeLocation: 236,260,1
 NodeSize: 204,20
 Original: Average_PV_kW_Includ
 
-FormNode Fo1969204003
-Title: Facilities Included
-Definition: 1
-NodeLocation: 148,144,1
-NodeSize: 116,16
-Original: Facilities_Included
-
 FormNode Fo1194179363
 Title: PV Incent Adder
 Definition: 0
@@ -9452,7 +9463,7 @@ Original: Base_Yr_PV_Incent
 FormNode Fo1731050275
 Title: Installation Type Adder
 Definition: 0
-NodeLocation: 236,908,1
+NodeLocation: 228,940,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Installation_Type_Ad
@@ -9460,7 +9471,7 @@ Original: Installation_Type_Ad
 FormNode Fo388872995
 Title: Incentive Phase-out Mult
 Definition: 0
-NodeLocation: 236,948,1
+NodeLocation: 228,980,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Incentive_Phase_out_
@@ -9468,16 +9479,16 @@ Original: Incentive_Phase_out_
 FormNode Fo1299036963
 Title: PV Incentive over Time
 Definition: 1
-NodeLocation: 236,988,1
+NodeLocation: 228,1060,1
 NodeSize: 204,20
 Original: PV_Incentive_over_Ti
 
 FormNode Fo1434434339
 Title: Test Cost Multiplier
 Definition: 0
-NodeLocation: 180,1032,1
-NodeSize: 156,16
-NodeColor: 65535,1,1
+NodeLocation: 228,1020,1
+NodeSize: 204,20
+NodeColor: 49151,49151,49151
 Original: Test_Cost_Multiplier
 
 Close NYPA_Solar_Storage_3
