@@ -11,7 +11,7 @@ Date: Thu, Mar 31, 2022 12:18 PM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,0,0,,,,,,,,,0
-DiagState: 2,35,13,1729,752,17,10,
+DiagState: 2,12,13,1845,658,17,10,
 Aliases: Alias Al1596706083
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
@@ -155,22 +155,23 @@ Title: Fuel Inter Mult by Svgs Fuel Type
 Definition: IF Primary_Fuel_Type = Meas_Primary_Fuel_Ty AND Interactive_Fuel_Ty1 = Savings_Fuel_Type THEN Fuel_Interaction_Mul ELSE 0
 NodeLocation: 1040,736,1
 NodeSize: 64,32
-ValueState: 2,330,31,1065,704,0,MIDM
+ValueState: 2,431,99,1065,704,0,MIDM
 ReformVal: [Savings_Fuel_Type,Measure]
+NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: []
-Att_ResultSliceState: [Primary_Fuel_Type,1,Spatial_ID,1,EE_Sectors,1,Measure,1,Savings_Fuel_Type,1]
+Att_ResultSliceState: [Primary_Fuel_Type,4,Spatial_ID,1,EE_Sectors,1,Measure,1,Savings_Fuel_Type,1]
 
 Variable Interactive_Savings_
 Title: Interactive Savings Addition
 Units: MWh (Elec), MMBtu
-Definition: Technical_Savings_Po * Fuel_Inter_Mult_by_3
+Definition: Technical_Savings_Po * (Fuel_Inter_Mult_by_3 + Cooling_Interactive1)
 NodeLocation: 1040,616,1
 NodeSize: 64,32
 ValueState: 2,564,9,914,785,0,MIDM
 ReformVal: [Savings_Fuel_Type,Measure]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [Primary_Fuel_Type]
-Att_ResultSliceState: [Spatial_ID,1,Study_Year,1,Replacement_Type,1,Primary_Fuel_Type,0,EE_Sectors,1,Measure,1,Savings_Fuel_Type,1]
+Att__TotalsIndex: []
+Att_ResultSliceState: [Spatial_ID,1,Study_Year,1,Replacement_Type,3,Primary_Fuel_Type,2,EE_Sectors,1,Measure,1,Savings_Fuel_Type,1]
 {!50000|Att_ColumnWidths: [,Savings_Fuel_Type,\([63,63,63,63])]}
 
 Variable Interactive_Fuel_Ty1
@@ -230,7 +231,7 @@ Date: Wed, Oct 27, 2021 6:27 PM
 NodeLocation: 1816,112,1
 NodeSize: 64,32
 NodeInfo: 1,0,0
-DiagState: 2,2957,203,944,480,17
+DiagState: 2,2428,118,944,480,17,10
 
 Close Labels
 
@@ -244,9 +245,10 @@ ValueState: 2,220,32,1460,850,0,MIDM
 Aliases: Alias Al1225572547
 GraphSetup: Flip:0
 ReformVal: [Savings_Fuel_Type,Measure]
-Att__TotalsIndex: [Measure,Region,Primary_Fuel_Type,EE_Sectors,Spatial_ID]
-Att_ResultSliceState: [Spatial_ID,0,Study_Year,7,Replacement_Type,1,Primary_Fuel_Type,0,EE_Sectors,0,Measure,1,Savings_Fuel_Type,1]
-{!50000|Att_ColumnWidths: [,Replacement_Type,\([,63])]}
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Measure,Region,EE_Sectors,Spatial_ID,Replacement_Type,Primary_Fuel_Type]
+Att_ResultSliceState: [Spatial_ID,0,Study_Year,7,Replacement_Type,0,Primary_Fuel_Type,0,EE_Sectors,0,Measure,1,Savings_Fuel_Type,1]
+{!50000|Att_ColumnWidths: [,Replacement_Type,[,63],Savings_Fuel_Type,\([108,116])]}
 
 Variable Cumulative_Potential
 Title: Cumulative Potential Adopted
@@ -297,8 +299,7 @@ NodeColor: 65535,1,1
 Variable Applicability
 Title: Applicability
 Definition: local x:=All_Applicability[All_Measures=Measure,Region=Region_of_Spatial_ID,All_PV_Sectors=EE_Sectors];~
-	IF Include_Electrificat THEN x ELSE ~
-		(IF Is_Electrification_M THEN 0 ELSE x)~
+x~
 /*All_Applicability[All_Measures=Measure,Region=Region_of_Spatial_ID,All_PV_Sectors=EE_Sectors] /** ~
 (IF (NOT Electrification_Incl) THEN 1 ELSE Is_Electrification_M)
 NodeLocation: 696,320,1
@@ -312,10 +313,11 @@ Att_ResultSliceState: [Spatial_ID,2,Measure,1,EE_Sectors,1]
 Variable Fuel_Interaction_Mul
 Title: Fuel Interaction Multiplier
 Definition: All_Fuel_Interaction[All_Measures=Measure,Region=Region_of_Spatial_ID,All_PV_Sectors=EE_Sectors]
-NodeLocation: 1040,832,1
+NodeLocation: 976,904,1
 NodeSize: 64,32
 ValueState: 2,204,5,1152,739,0,MIDM
 ReformVal: [Spatial_ID,Measure]
+NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 
 Variable Feasibility
 Title: Feasibility
@@ -334,12 +336,12 @@ Date: Sat, Oct 30, 2021 12:12 PM
 NodeLocation: 856,152,1
 NodeSize: 64,32
 NodeInfo: 1,,0
-DiagState: 2,169,42,1513,762,17,10
+DiagState: 2,169,42,1513,705,17,10
 
 Variable Include_Measure_
 Title: Include Measure?
 Definition: All_Measure_Categori[Meas_Param_2=InclMeasure_Label] * Include_in_End_Use_F * Include_Measure_Cate[Measure_Category=All_Measure_Categori[Meas_Param_2=MeasCatLabel]]~
-* (IF Only_New_Measures_ THEN Is_New_Measure ELSE 1)
+* (IF Only_New_Mktshare THEN Use_New_Mktshare ELSE 1)
 NodeLocation: 736,408,1
 NodeSize: 64,32
 ValueState: 2,1053,5,818,837,0,MIDM
@@ -355,7 +357,7 @@ Aliases: Alias Al1220656963
 {!40300|Att_SlicerPopupSize: 282,48}
 
 Index Measure
-Att_PrevIndexValue: ['EIS_Com, E - TotE [Building w Elec Heat]','EIS_Com, E - TotE [Building w Gas Heat]','EIS_Com, E - TotE [Building w Oil Heat]','EIS_Com, E - TotE [Building w Propane Heat]','EIS_Com, G - TotF [Building w Gas Heat]','EIS_Com, O - TotF [Building w Oil Heat]','EIS_Com, P - TotF [Building w Propane Heat]','Energy Recovery & Use','FDD_Com, E - TotE [Building w Elec Heat]','FDD_Com, E - TotE [Building w Gas Heat]','FDD_Com, E - TotE [Building w Oil Heat]','FDD_Com, E - TotE [Building w Propane Heat]','FDD_Com, G - TotF [Building w Gas Heat]','FDD_Com, O - TotF [Building w Oil Heat]','FDD_Com, P - TotF [Building w Propane Heat]','GSHP replacing Boiler_Com, E-Cool [Building w Gas Heat]','GSHP replacing Boiler_Com, E-Cool [Building w Oil Heat]','GSHP replacing Boiler_Com, E-Cool [Building w Prop Heat]','GSHP replacing Boiler_Com, G - Heat','GSHP replacing Boiler_Com, O-Heat','GSHP replacing Boiler_Com, Prop-Heat','GSHP replacing Furnace_Com, E-Cool [Building w Gas Heat]','GSHP replacing Furnace_Com, E-Cool [Building w Oil Heat]','GSHP replacing Furnace_Com, E-Cool [Building w Prop Heat]','GSHP replacing Furnace_Com, G-Heat','GSHP replacing Furnace_Com, O-Heat','GSHP replacing Furnace_Com, Prop-Heat','High Efficiency Bubble (fine) Diffusers/Aeration Efficiency','HPWH replacing FF Storage Water Heater_Com, G-Wheat','HPWH replacing FF Storage Water Heater_Com, O-Wheat','HPWH replacing FF Storage Water Heater_Com, Prop-Wheat','Motor Upgrade (Blowers, Other processes)','Pump Optimization (Efficient motor and pump system)','Strategic Energy Management (Managerial)','System optimization & Control (SCADA & EMS)','Unitary HP replacing Boiler_Com, E-Cool [Building w Gas Heat]','Unitary HP replacing Boiler_Com, E-Cool [Building w Oil Heat]','Unitary HP replacing Boiler_Com, E-Cool [Building w Prop Heat]','Unitary HP replacing Boiler_Com, G-Heat','Unitary HP replacing Boiler_Com, O- Heat','Unitary HP replacing Boiler_Com, Prop-Heat','Unitary HP replacing Furnace_Com, E-Cool [Building w Gas Heat]','Unitary HP replacing Furnace_Com, E-Cool [Building w Oil Heat]','Unitary HP replacing Furnace_Com, E-Cool [Building w Prop Heat]','Unitary HP replacing Furnace_Com, G-Heat','Unitary HP replacing Furnace_Com, O-Heat','Unitary HP replacing Furnace_Com, Prop-Heat','VFD for motors','VRF replacing Boiler_Com, E-Cool [Building w Gas Heat]','VRF replacing Boiler_Com, E-Cool [Building w Oil Heat]','VRF replacing Boiler_Com, E-Cool [Building w Prop Heat]','VRF replacing Boiler_Com, G-Heat','VRF replacing Boiler_Com, O-Heat','VRF replacing Boiler_Com, Prop-Heat','VRF replacing Furnace_Com, E-Cool [Building w Gas Heat]','VRF replacing Furnace_Com, E-Cool [Building w Oil Heat]','VRF replacing Furnace_Com, E-Cool [Building w Prop Heat]','VRF replacing Furnace_Com, G-Heat','VRF replacing Furnace_Com, O-Heat','VRF replacing Furnace_Com, Prop-Heat','Water leaks detection']
+Att_PrevIndexValue: ['Boiler Modifications_Com, G - Heat','Boiler Modifications_Com, O - Heat','Boiler Modifications_Com, P - Heat','Boilers_Com, G - Heat','Boilers_Com, O - Heat','Boilers_Com, P - Heat','Faucet Aerator_Com, E - HWat','Faucet Aerator_Com, G - HWat','Faucet Aerator_Com, O - HWat','Faucet Aerator_Com, P - HWat','FF Instantaneous Water Heater_Com, G - HWat','FF Instantaneous Water Heater_Com, O - HWat','FF Instantaneous Water Heater_Com, P - HWat','FF Storage Water Heater_Com, G - HWat','FF Storage Water Heater_Com, O - HWat','FF Storage Water Heater_Com, P - HWat','Furnace_Com, G - Heat','Furnace_Com, O - Heat','Furnace_Com, P - Heat','GSHP replacing Boiler_Com, G - Heat','GSHP replacing Boiler_Com, O-Heat','GSHP replacing Boiler_Com, Prop-Heat','GSHP replacing Furnace_Com, G-Heat','GSHP replacing Furnace_Com, O-Heat','GSHP replacing Furnace_Com, Prop-Heat','Heat Pump Water Heater_Com, E - HWat','HPWH replacing FF Instantaneous Water Heater_Com, G-Wheat','HPWH replacing FF Instantaneous Water Heater_Com, O-Wheat','HPWH replacing FF Instantaneous Water Heater_Com, Prop-Wheat','HPWH replacing FF Storage Water Heater_Com, G-Wheat','HPWH replacing FF Storage Water Heater_Com, O-Wheat','HPWH replacing FF Storage Water Heater_Com, Prop-Wheat','Ozone Laundry_Com, E - HWat','Ozone Laundry_Com, G - HWat','Ozone Laundry_Com, O - HWat','Ozone Laundry_Com, P - HWat','Pre Rinse Sprayers_Com, E - HWat','Pre Rinse Sprayers_Com, G - HWat','Pre Rinse Sprayers_Com, O - HWat','Pre Rinse Sprayers_Com, P - HWat','Unitary HP replacing Boiler_Com, G-Heat','Unitary HP replacing Boiler_Com, O- Heat','Unitary HP replacing Boiler_Com, Prop-Heat','Unitary HP replacing Furnace_Com, G-Heat','Unitary HP replacing Furnace_Com, O-Heat','Unitary HP replacing Furnace_Com, Prop-Heat','VRF replacing Boiler_Com, G-Heat','VRF replacing Boiler_Com, O-Heat','VRF replacing Boiler_Com, Prop-Heat','VRF replacing Furnace_Com, G-Heat','VRF replacing Furnace_Com, O-Heat','VRF replacing Furnace_Com, Prop-Heat']
 Title: Measure
 Definition: SortIndex(Subset(Include_Measure_))
 NodeLocation: 920,272,1
@@ -404,7 +406,7 @@ Title: Study Year
 Definition: [2022,2023,2024,2025,2026,2027,2028,2029,2030,2031]
 NodeLocation: 104,272,1
 NodeSize: 64,32
-{!40300|Att_SlicerPopupSize: 347,176}
+{!40300|Att_SlicerPopupSize: 362,176}
 
 Index Replacement_Type
 Att_PrevIndexValue: ['NC','RET','REPL']
@@ -413,7 +415,7 @@ Definition: ['NC','RET','REPL']
 NodeLocation: 928,176,1
 NodeSize: 64,32
 Aliases: Alias Al424861507
-{!40300|Att_SlicerPopupSize: 1030,145}
+{!40300|Att_SlicerPopupSize: 1085,145}
 
 Index EE_Scenario
 Att_PrevIndexValue: ['Economic','Max Achievable','Constrained Achievable']
@@ -430,7 +432,7 @@ Definition: ['E','G','O','Prp']
 NodeLocation: 1064,176,1
 NodeSize: 64,32
 Aliases: Alias Al1498603331
-{!40300|Att_SlicerPopupSize: 537,80}
+{!40300|Att_SlicerPopupSize: 547,80}
 
 Index RET_or_MD
 Att_PrevIndexValue: ['MD','RET']
@@ -440,7 +442,7 @@ Definition: ['MD','RET']
 NodeLocation: 792,176,1
 NodeSize: 64,32
 Aliases: Alias Al961732419
-{!40300|Att_SlicerPopupSize: 257,48}
+{!40300|Att_SlicerPopupSize: 262,48}
 
 Index Measure_Parameter
 Att_PrevIndexValue: ['Life','Percent Savings (Primary Fuel)','Inc. Cost Per kWh or MMBtu Saved','Primary Fuel (redundant)','Life Source','Percent Savings (Primary Fuel) Source','Inc. Cost Per kWh or MMBtu Saved Source','Measure Description']
@@ -449,14 +451,15 @@ Definition: ['Life','Percent Savings (Primary Fuel)','Inc. Cost Per kWh or MMBtu
 NodeLocation: 1344,272,1
 NodeSize: 64,32
 Aliases: Alias Al2035474243
-{!40300|Att_SlicerPopupSize: 372,128}
+{!40300|Att_SlicerPopupSize: 377,128}
 
 Index Meas_Param_2
-Att_PrevIndexValue: ['Fuel Type','End Use','Interactive Fuel Type','Include Measure','Electrification Group','Measure Category','Is New Measure?','Measure Description']
+Att_PrevIndexValue: ['Fuel Type','End Use','Interactive Fuel Type','Include Measure','Electrification Group','Measure Category','Split Applicability?','Use New Marketshare (1,0)','Measure Description']
 Title: Meas Param 2
-Definition: ['Fuel Type','End Use','Interactive Fuel Type','Include Measure','Electrification Group','Measure Category','Is New Measure?','Measure Description']
+Definition: ['Fuel Type','End Use','Interactive Fuel Type','Include Measure','Electrification Group','Measure Category','Split Applicability?','Use New Marketshare (1,0)','Measure Description']
 NodeLocation: 1344,176,1
 NodeSize: 64,32
+WindState: 2,386,92,720,350
 ValueState: 2,713,223,416,303,,MIDM
 Aliases: Alias Al89317187
 {!40300|Att_SlicerPopupSize: 232,128}
@@ -483,7 +486,7 @@ NodeLocation: 1064,176,1
 NodeSize: 64,32
 ValueState: 2,1143,349,416,303,0,MIDM
 Aliases: Alias Al1699929923
-{!40300|Att_SlicerPopupSize: 707,80}
+{!40300|Att_SlicerPopupSize: 777,80}
 {!40600|Att_ColorSequence: [0xfff9a433,0xffe03c33,0xff7f7f7f,0xff000000,0xff0f6689]}
 
 Text Te1808588611
@@ -502,7 +505,7 @@ Author: CWelch
 Date: Sat, Oct 30, 2021 1:46 PM
 NodeLocation: 136,408,1
 NodeSize: 64,32
-DiagState: 2,325,105,1324,666,17,10
+DiagState: 2,325,105,1324,651,17,10
 
 Decision NC_ReplType_Label
 Title: NC ReplType Label
@@ -673,10 +676,16 @@ Definition: Choice(Meas_Param_2,6,0)
 NodeLocation: 112,504,1
 NodeSize: 64,32
 
-Decision IsNewMeas_Label
-Title: IsNewMeas Label
-Definition: Choice(Meas_Param_2,7,0)
+Decision UseNewMktshare_Label
+Title: UseNewMktshare_Label
+Definition: Choice(Meas_Param_2,8,0)
 NodeLocation: 112,576,1
+NodeSize: 64,32
+
+Decision Split_Appl_Label
+Title: Split Appl Label
+Definition: Choice(Meas_Param_2,7,0)
+NodeLocation: 112,648,1
 NodeSize: 64,32
 
 Close Labels1
@@ -708,7 +717,8 @@ Title: Include in End Use Filter
 Definition: Include_End_Use[End_Use_with_Totals=All_Measure_Categori[Meas_Param_2=endUse_Label]]
 NodeLocation: 488,408,1
 NodeSize: 64,32
-ValueState: 2,2210,183,628,617,,MIDM
+ValueState: 2,2210,183,628,617,0,MIDM
+Att__TotalsIndex: [All_Measures]
 
 FormNode Fo311058627
 Title: Include End Use?
@@ -718,9 +728,9 @@ NodeSize: 184,20
 Original: Include_End_Use
 
 Index Measure_Category
-Att_PrevIndexValue: ['Air Sealing','Boilers','Chillers','Data Center','Design/Holistic','Electrification','Energy Management','Food Prep.','Furnaces','General Lighting','HVAC Controls','HVAC Modular','HVAC O&M','HVAC Other','HVAC Unitary','Lighting Controls','Misc. Appliances','Misc. Lighting','Office Equip.','Other Process','Refrigeration','Shell','Task Lighting','Ventilation and Circulation','Water Heating','Water/Wastewater','Comm/RCx']
+Att_PrevIndexValue: ['Air Sealing','Boilers','Chillers','Comm/RCx','Data Center','Design/Holistic','Electrification -- Water Heating','Electrification -- Space Heating','Energy Management','Food Prep.','Furnaces','General Lighting','HVAC Controls','HVAC Modular','HVAC O&M','HVAC Other','HVAC Unitary','Lighting Controls','Misc. Appliances','Misc. Lighting','Office Equip.','Other Process','Refrigeration','Shell','Task Lighting','Ventilation and Circulation','Water Heating','Water/Wastewater']
 Title: Measure Category
-Definition: ['Air Sealing','Boilers','Chillers','Data Center','Design/Holistic','Electrification','Energy Management','Food Prep.','Furnaces','General Lighting','HVAC Controls','HVAC Modular','HVAC O&M','HVAC Other','HVAC Unitary','Lighting Controls','Misc. Appliances','Misc. Lighting','Office Equip.','Other Process','Refrigeration','Shell','Task Lighting','Ventilation and Circulation','Water Heating','Water/Wastewater','Comm/RCx']
+Definition: ['Air Sealing','Boilers','Chillers','Comm/RCx','Data Center','Design/Holistic','Electrification -- Water Heating','Electrification -- Space Heating','Energy Management','Food Prep.','Furnaces','General Lighting','HVAC Controls','HVAC Modular','HVAC O&M','HVAC Other','HVAC Unitary','Lighting Controls','Misc. Appliances','Misc. Lighting','Office Equip.','Other Process','Refrigeration','Shell','Task Lighting','Ventilation and Circulation','Water Heating','Water/Wastewater']
 NodeLocation: 392,176,1
 NodeSize: 64,32
 {!40300|Att_SlicerPopupSize: 257,378}
@@ -732,29 +742,29 @@ Definition: MultiChoice(All_PV_Sectors)
 NodeLocation: 1208,176,1
 NodeSize: 64,32
 Aliases: FormNode Fo391395619, FormNode Fo1502827299
-{!40300|Att_SlicerPopupSize: 917,350}
+{!40300|Att_SlicerPopupSize: 1092,350}
 
 Constant Include_Measure
 Title: Include Measure
-Units: binary
 Description: Uncheck this box if you wish to exclude a measure from the analysis.
-Definition: Subtable(All_Measure_Categori[ All_Measures=Measure,Meas_Param_2='Include Measure'])
+Definition: Subtable(All_Measure_Categori[Meas_Param_2='Include Measure'])
 NodeLocation: 496,560,1
 NodeSize: 64,40
 WindState: 2,98,82,720,536
-DefnState: 2,360,14,661,829,0,DFNM
+DefnState: 2,360,14,790,862,0,DFNM
 Aliases: FormNode Fo1937163043, FormNode Fo2073252643
 TableCellDefault: Checkbox(1)
-{!50000|Att_RowHeights: [,Measure,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
+{!50000|Att_RowHeights: [,Measure,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
 
 Constant Include_Measure_Cate
 Title: Include Measure Category
 Units: binary
 Description: Uncheck to exclude a measure category
-Definition: Table(Measure_Category)(Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
+Definition: Table(Measure_Category)(Checkbox(0),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(0))
 NodeLocation: 176,560,1
 NodeSize: 64,40
-DefnState: 2,410,84,441,590,0,DFNM
+DefnState: 2,459,53,441,729,0,DFNM
+ValueState: 2,1003,278,373,607,0,MIDM
 Aliases: FormNode Fo798184227
 TableCellDefault: Checkbox(1)
 
@@ -764,17 +774,18 @@ NodeLocation: 336,560,1
 NodeSize: 64,40
 ValueState: 2,903,232,769,609,,MIDM
 
-Variable Is_New_Measure
-Title: Is New Measure
-Definition: All_Measure_Categori[Meas_Param_2='Is New Measure?']
+Variable Use_New_Mktshare
+Title: Use New Mktshare
+Definition: All_Measure_Categori[Meas_Param_2=UseNewMktshare_Label]
 NodeLocation: 736,560,1
 NodeSize: 64,40
 ValueState: 2,468,199,839,636,0,MIDM
+Att__TotalsIndex: [All_Measures]
 
-Decision Only_New_Measures_
-Title: Only New Measures?
-Description: Check this box to filter for only new measures added by RI and not included in the NYSERDA study (still don't have electrification measures in there yet).
-Definition: Checkbox(1)
+Decision Only_New_Mktshare
+Title: Only New Mktshare
+Description: Check this box to filter for only new measures added by RI (or where RI selected to use its own marketshare calculations for the measure) and not included in the NYSERDA study
+Definition: Checkbox(0)
 NodeLocation: 928,480,1
 NodeSize: 64,40
 Aliases: FormNode Fo495222051, FormNode Fo731075363
@@ -784,7 +795,7 @@ Title: Only New Measures?
 Definition: 0
 NodeLocation: 968,552,1
 NodeSize: 96,16
-Original: Only_New_Measures_
+Original: Only_New_Mktshare
 
 FormNode Fo1937163043
 Title: Include Measure
@@ -796,7 +807,7 @@ Original: Include_Measure
 Decision Include_Measure_Cat1
 Title: Include Measure Category
 Description: Uncheck this box to exclude an entire measure category
-Definition: Table(Measure_Category)(Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
+Definition: Table(Measure_Category)(Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
 NodeLocation: 176,664,1
 NodeSize: 64,40
 TableCellDefault: Checkbox(1)
@@ -808,6 +819,26 @@ Definition: Include_Measure_Cat1[Measure_Category=All_Measure_Categori[Meas_Para
 NodeLocation: 336,664,1
 NodeSize: 64,40
 ValueState: 2,646,164,724,601,0,MIDM
+
+Constant Include_Measure1
+Title: Include Measure
+Units: binary
+Description: Uncheck this box if you wish to exclude a measure from the analysis.
+Definition: Subtable(All_Measure_Categori[Meas_Param_2='Include Measure',All_Measures=Measure])
+NodeLocation: 496,656,1
+NodeSize: 64,40
+WindState: 2,98,82,720,536
+DefnState: 2,360,14,790,862,0,DFNM
+Aliases: FormNode Fo2083546915
+TableCellDefault: Checkbox(1)
+{!50000|Att_RowHeights: [,Measure,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
+
+Index Electrification_Grou
+Title: Electrification Group
+Definition: Unique(All_Measure_Categori[Meas_Param_2=ElectGroupLabel],condition:All_Measure_Categori[Meas_Param_2=ElectGroupLabel]<>Null)
+NodeLocation: 1200,384,1
+NodeSize: 64,40
+ValueState: 2,2965,434,287,364,0,MIDM
 
 Close Indexes
 
@@ -840,11 +871,6 @@ NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Building_Type]
 Att_ResultSliceState: [Stock_Type,2,Building_Type,0,Region,1,Study_Year,1,End_Use_with_Totals,1,Primary_Fuel_Type,1]
 
-Text Te736550723
-Title: How to deal with Pct Not complete with the RET /REPL issue?
-NodeLocation: 1596,328,-1
-NodeSize: 100,32
-
 Decision Select_RET_or_REPL_f
 Title: Select RET or REPL for Overlap
 NodeLocation: 384,232,1
@@ -858,7 +884,7 @@ Date: Mon, Nov 1, 2021 3:29 PM
 NodeLocation: 1216,616,1
 NodeSize: 64,32
 NodeInfo: 1,0
-DiagState: 2,120,65,1540,693,17,10
+DiagState: 2,2165,44,1540,693,17,10
 
 Variable Tech_Potl
 Title: Tech Potl
@@ -954,14 +980,18 @@ NodeLocation: 448,56,1
 NodeSize: 64,32
 DefnState: 2,1191,320,416,303,0,DFNM
 ValueState: 2,143,42,1611,830,1,MIDM
-GraphSetup: Att_GraphIndexRange End_Use_with_Totals:1,,1,,,,,11,11,1~
-Att_GraphValueRange Compare2:1,,1,,,,,0,8252766.728401184,0
-ReformVal: [Study_Year,Comparison_Index]
+GraphSetup: {!50000|Graph_SortBySpread:1}~
+{!50007|Graph_BarOutline:0}~
+Att_StackedBar Graph_Primary_Valdim:0~
+Att_GraphValueRange Compare2:1,,1,,,,,0,8252766.728401184,0~
+Att_GraphIndexRange End_Use_with_Totals:1,,1,,,,,11,11,1
+ReformVal: [End_Use_with_Totals,Comparison_Index]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Spatial_ID,End_Use_with_Totals]
-Att_ResultSliceState: [Savings_Fuel_Type,1,End_Use_with_Totals,0,Comparison_Index,1,Study_Year,1]
+Att_ResultSliceState: [Savings_Fuel_Type,3,Study_Year,10,Comparison_Index,1,End_Use_with_Totals,0]
 {!40300|Att_SlicerPopupSize: 237,80}
-{!40600|Att_ClusterIndex: Compare2}
+{!40600|Att_StackingIndex: Comparison_Index}
+{!40600|Att_ClusterIndex: Null}
 
 Variable Cumul_Potential_Adop
 Title: Cumul Potential Adopted by End Use & Totals
@@ -1018,6 +1048,7 @@ Definition: Potential_Compariso1 * MWh_MMBtu_to_TBtu[Primary_Fuel_Type=Savings_F
 NodeLocation: 816,56,1
 NodeSize: 64,32
 ValueState: 2,429,91,1276,730,1,MIDM
+Aliases: FormNode Fo816058147
 GraphSetup: {!50000|Graph_SortBySpread:1}~
 Att_GraphValueRange Potential_comparison:1,,1,,,,10,0,13728111.982345581,0~
 Att_StackedBar Graph_Primary_Valdim:0~
@@ -1025,8 +1056,8 @@ Att_GraphIndexRange End_Use_with_Totals:1,,,,,,10~
 Graph_HLabelRotation:45~
 Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [End_Use_with_Totals,Selected_Comparison]
-Att__TotalsIndex: []
-Att_ResultSliceState: [Study_Year,10,EE_Scenario,3,Savings_Fuel_Type,1,Selected_Comparison,1,End_Use_with_Totals,12]
+Att__TotalsIndex: [Savings_Fuel_Type]
+Att_ResultSliceState: [Study_Year,10,Savings_Fuel_Type,0,Selected_Comparison,1,End_Use_with_Totals,12]
 {!40600|Att_ClusterIndex: Selected_Comparison}
 
 FormNode Fo1583464643
@@ -1473,11 +1504,16 @@ Units: MWh,MMBtu
 Definition: Compare2[Comparison_Index=Selected_Comparison] 
 NodeLocation: 624,56,1
 NodeSize: 64,32
-ValueState: 2,371,142,1075,613,1,MIDM
-ReformVal: [Study_Year,Selected_Comparison]
+ValueState: 2,2143,17,1312,837,1,MIDM
+Aliases: FormNode Fo1017384739
+GraphSetup: Att_GraphIndexRange End_Use_with_Totals:1,,0,,,,,1,4,1~
+Att_StackedBar Graph_Primary_Valdim:0
+ReformVal: [End_Use_with_Totals,Selected_Comparison]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Spatial_ID,End_Use_with_Totals]
-Att_ResultSliceState: [Savings_Fuel_Type,1,End_Use_with_Totals,0,Selected_Comparison,1,Study_Year,1]
+Att_ResultSliceState: [Savings_Fuel_Type,2,Study_Year,10,Selected_Comparison,1,End_Use_with_Totals,0]
+{!40600|Att_StackingIndex: Selected_Comparison}
+{!40600|Att_ClusterIndex: Null}
 
 Close EE_Comparisons
 
@@ -1487,7 +1523,7 @@ Author: CWelch
 Date: Mon, Nov 1, 2021 3:29 PM
 NodeLocation: 544,320,1
 NodeSize: 64,32
-DiagState: 2,863,256,956,498,17,10
+DiagState: 2,662,184,956,498,17,10
 
 Variable Meas_Char_by_Repl_Ty
 Title: Meas Char by Repl Type
@@ -1540,14 +1576,6 @@ NodeSize: 236,16
 NodeInfo: 1,,,,,,,250,,,,,,0
 Original: RET_REPL_Overlap_Met
 
-Variable Is_Electrification_M
-Title: Is Electrification Measure?
-Definition: All_Measure_Categori[Meas_Param_2=MeasCatLabel,All_Measures=Measure]='Electrification'
-NodeLocation: 112,256,1
-NodeSize: 64,32
-ValueState: 2,386,122,839,655,0,MIDM
-NodeColor: 65535,1,1
-
 Variable Both_RET_and_REP_
 Title: Both RET and REP?
 Definition: sum(Replacement_Type_Ap2[Replacement_Type=RET_or_REP],RET_or_REP)=2
@@ -1598,14 +1626,14 @@ Att_ResultSliceState: [Spatial_ID,1,Replacement_Type,1,Primary_Fuel_Type,2,Savin
 Variable Penetration1
 Title: Penetration
 Definition: local NYSERDA_Penetration:=EE_Penetration[All_Measures=Measure,All_PV_Sectors=EE_Sectors,EE_Scenario=Scenario_for_Output]; {penetration imported from NYSERDA model for their study measures}~
-IF Is_New_Measure_ THEN New_Measure_Pen_Appl ELSE NYSERDA_Penetration
+IF Use_New_Mktshare_ THEN New_Measure_Pen_Appl ELSE NYSERDA_Penetration
 NodeLocation: 1216,232,1
 NodeSize: 64,32
-ValueState: 2,226,20,1511,779,0,MIDM
+ValueState: 2,505,112,1123,672,0,MIDM
 ReformVal: [Study_Year,Measure]
 NumberFormat: 2,F,4,3,0,0,4,1,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [All_PV_Sectors]
-Att_ResultSliceState: [EE_Sectors,17,Replacement_Type,1,Measure,11,Study_Year,1]
+Att__TotalsIndex: [All_PV_Sectors,Study_Year]
+Att_ResultSliceState: [Replacement_Type,2,Spatial_ID,3,EE_Sectors,11,Measure,11,Study_Year,10]
 
 Variable Incremental_Baseline
 Title: Incremental Baseline Cons
@@ -1759,7 +1787,7 @@ Author: CWelch
 Date: Fri, Nov 5, 2021 2:30 PM
 NodeLocation: 1536,400,1
 NodeSize: 64,32
-DiagState: 2,-23,42,1776,710,17,10
+DiagState: 2,66,30,1776,710,17,10
 
 Variable Consumption_TBtu
 Title: Consumption TBtu
@@ -1925,22 +1953,23 @@ Description: Cumulative achievable potential at the "year for detailed output" s
 Definition: sum(Potential_by_Measure[Measures_Included=Sorted_Measures],Savings_Fuel_Type,Spatial_ID) * (Measure_Category=Measure_Category1[Measure=Sorted_Measures])
 NodeLocation: 768,112,1
 NodeSize: 64,32
-ValueState: 2,360,45,1116,807,1,MIDM
+ValueState: 2,473,20,897,725,1,MIDM
 Aliases: FormNode Fo310081827, FormNode Fo542331683
-GraphSetup: Att_GraphValueRange Potential_by_Measur2:1,,1,,,,,0,0.7596399784088135,0~
-ShowKey:0~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_GraphIndexRange Measures_Included:1,,1,,,,,1,20,1~
-{!50500|Graph_ShowTitle:1}~
+GraphSetup: Flip:8~
+Att_GraphIndexRange Measure_Category:1,,1,,,,,1,2,1~
 {!50400|Att_AxisOrKeyTitle Potential_by_Measur2:Cumulative Achievable Potential (TBtu)}~
-Att_GraphIndexRange Measure_Category:1,,1,,,,,1,3,1
+{!50500|Graph_ShowTitle:1}~
+Att_GraphIndexRange Measures_Included:1,,1,,,,,1,20,1~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+ShowKey:0~
+Att_GraphValueRange Potential_by_Measur2:1,,1,,,,,3.219623369589448,3.2199166486263278,0
 ReformVal: [Measure_Category,Measures_Included]
 NumberFormat: 2,F,5,5,0,0,5,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Spatial_ID,Measure,Measure_Category,Measures_Included]
 Att_ResultSliceState: [Spatial_ID,0,Measure_Category,0,Measure,1]
 {!40600|Att_StackingIndex: Measures_Included}
 {!40600|Att_ClusterIndex: Null}
-{!50000|Att_ColumnWidths: [,Measure_Category,\([,,,,121])]}
+{!50000|Att_ColumnWidths: [,Measure_Category,\([,,,,,121,,,,,,,,,,,,,,,,,,,,,,])]}
 {!50500|GraphTitleExpr: "Click on bar to view measure name. Click & drag to zoom in."}
 
 FormNode Fo237402403
@@ -2023,7 +2052,7 @@ NodeSize: 64,40
 Decision View_Top_X_Measures
 Title: View Top X Measures
 Description: Input the number of measures you wish to display in the graphical and tabular output.
-Definition: 50
+Definition: 60
 NodeLocation: 1240,672,1
 NodeSize: 64,40
 Aliases: FormNode Fo556333347, FormNode Fo1616073507
@@ -2172,6 +2201,10 @@ Definition: Table(Measure_Category,Spatial_ID,EE_Sectors)(~
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 NodeLocation: 1400,672,1
 NodeSize: 64,40
@@ -2188,19 +2221,22 @@ Title: Potential of Top Measures
 Units: TBtu
 Description: Cumulative achievable potential at the "year for detailed output" selected for the top XX measures.
 Definition: Potential_by_Measure[Measures_Included=Top_X_Measures]
-NodeLocation: 592,160,1
+NodeLocation: 608,136,1
 NodeSize: 64,40
 WindState: 2,98,82,720,491
-ValueState: 2,335,9,1192,841,1,MIDM
+ValueState: 2,2067,11,1512,869,1,MIDM
 Aliases: FormNode Fo273896227
-GraphSetup: {!50400|Att_AxisOrKeyTitle Potential_of_Top_Mea:Potential of Top Measures (TBtu)}~
+GraphSetup: Att_GraphValueRange Potential_of_Top_Mea:1,,1,,,,,0.2736973762512207,0.29252698421478274,0~
+{!50400|Att_AxisOrKeyTitle Potential_of_Top_Mea:Potential of Top Measures (TBtu)}~
 Graph_AxisLabelFont:,12,0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_GraphIndexRange Top_X_Measures:1,,0,,,,,1,34,1~
-Graph_ColorSeq:[63993,42148,13107,57568,15420,13107,32639,32639,32639,0,0,0,34952,29298,56540,29298,53713,56540,56540,29298,55769,53456,44975,25186,65535,0,0,0,0,65535,65535,46003,65535,0,65535,65535,0,32896,0,65535,42405,0,0,0,35723,42405,10794,10794,65535,49344,52171,65535,65535,0,0,65535,0,32896,0,0,28784,32896,37008,0,32896,32896,32896,0,32896,37008,61166,37008,3855,26214,35209]
+Att_GraphIndexRange Top_X_Measures:1,,0,,,,,1,21,1~
+Graph_ColorSeq:[63993,42148,13107,57568,15420,13107,32639,32639,32639,0,0,0,34952,29298,56540,29298,53713,56540,56540,29298,55769,53456,44975,25186,65535,0,0,0,0,65535,65535,46003,65535,0,65535,65535,0,32896,0,65535,42405,0,0,0,35723,42405,10794,10794,65535,49344,52171,65535,65535,0,0,65535,0,32896,0,0,28784,32896,37008,0,32896,32896,32896,0,32896,37008,61166,37008,3855,26214,35209]~
+Flip:8
 ReformVal: [Top_X_Measures,Savings_Fuel_Type]
+NumberFormat: 2,F,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Spatial_ID]
-Att_ResultSliceState: [Savings_Fuel_Type,1,Savings_Fuel_Type,4,Top_X_Measures,1]
+Att_ResultSliceState: [Savings_Fuel_Type,3,Savings_Fuel_Type,3,Top_X_Measures,1]
 {!40600|Att_StackingIndex: Savings_Fuel_Type}
 {!40600|Att_ClusterIndex: Null}
 
@@ -2261,13 +2297,12 @@ NodeSize: 64,40
 WindState: 2,578,156,720,507
 ValueState: 2,170,9,1326,834,1,MIDM
 Aliases: FormNode Fo676549411
-GraphSetup: Att_GraphValueRange Potential_vs_Consump:1,,0,,,,,0,31.90458118915558,0~
+GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
 Graph_AxisLabelFont:,20,0~
-Att_Stacked_Lines Graph_Primary_Valdim:0~
-Flip:0
+Att_GraphValueRange Potential_vs_Consump:1,,1,,,,,0,31.90458118915558,0
 ReformVal: [Study_Year,Self]
-Att__TotalsIndex: [EE_Sectors,Spatial_ID,Savings_Fuel_Type]
-Att_ResultSliceState: [Spatial_ID,0,Savings_Fuel_Type,0,EE_Sectors,0,Self,2,Study_Year,10]
+Att__TotalsIndex: [EE_Sectors,Spatial_ID]
+Att_ResultSliceState: [Spatial_ID,0,Savings_Fuel_Type,2,EE_Sectors,0,Self,1,Study_Year,10]
 {!40600|Att_StackingIndex: Savings_Fuel_Type}
 {!40600|Att_ClusterIndex: Null}
 
@@ -2301,126 +2336,126 @@ Constant NYPA_of_Natural_Mar1
 Title: NYPA % of Natural Market
 Units: %
 Definition: Table(EE_Sectors,Spatial_ID,Measure_Category)(~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
-0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6)
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,~
+0.6,0.6,0.6,0.6,0.6,0.6,0.6,0,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6)
 NodeLocation: 544,472,1
 NodeSize: 64,40
 DefnState: 2,137,55,1509,696,0,DFNM
@@ -2494,10 +2529,6 @@ NodeLocation: 760,768,1
 NodeSize: 64,40
 ValueState: 2,312,137,833,678,0,MIDM
 
-Variable Va36
-NodeLocation: 936,112,1
-NodeSize: 64,40
-
 Variable Potential_by_Region_
 Title: Potential by Region, Sector
 Units: TBtu
@@ -2507,7 +2538,8 @@ NodeLocation: 856,264,1
 NodeSize: 64,40
 ValueState: 2,382,27,936,775,,MIDM
 Aliases: FormNode Fo206787363
-GraphSetup: ShowKey:2
+GraphSetup: Flip:8~
+ShowKey:2
 ReformVal: [EE_Sectors,Spatial_ID]
 {!40600|Att_StackingIndex: Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
@@ -2594,14 +2626,20 @@ ReformVal: [Spatial_ID,EE_Sectors]
 
 Variable Potential_by_Measur3
 Title: Potential by Measure
+Units: TBtu
 Definition: sum(Cumulative_Potenti_2[Study_Year=Year_for_Detailed_Ou]~
 ,EE_Sectors,Spatial_ID)~
 
 NodeLocation: 536,48,1
 NodeSize: 64,40
-ValueState: 2,205,89,1077,776,0,MIDM
-ReformVal: [Savings_Fuel_Type,Measure]
+ValueState: 2,120,11,1519,776,1,MIDM
+GraphSetup: Flip:8~
+Att_GraphIndexRange Measure:1,,0,,,,,1,24,1
+ReformVal: [Measure,Savings_Fuel_Type]
 Att__TotalsIndex: [Savings_Fuel_Type]
+Att_ColorRole: Null
+{!40600|Att_StackingIndex: Savings_Fuel_Type}
+{!40600|Att_ClusterIndex: Null}
 
 Index Value_Description
 Title: Value, Description
@@ -2654,16 +2692,6 @@ ReformVal: [Study_Year,Potential_vs_Consum1]
 Att__TotalsIndex: []
 Att_ResultSliceState: [Spatial_ID,1,Savings_Fuel_Type,1,EE_Sectors,1,Potential_vs_Consum1,1,Study_Year,1]
 
-Variable Va48
-Definition: Consumption_TBtu / sum(Consumption_TBtu,Primary_Fuel_Type)
-NodeLocation: 216,48,1
-NodeSize: 64,40
-ValueState: 2,334,68,792,703,0,MIDM
-ReformVal: [Primary_Fuel_Type,EE_Sectors]
-Att__TotalsIndex: [Primary_Fuel_Type]
-Att_ResultSliceState: [Spatial_ID,1,End_Use,1,EE_Sectors,1,Primary_Fuel_Type,1]
-{!50000|Att_ColumnWidths: [,Primary_Fuel_Type,\([,69,149,149])]}
-
 Close EE_Output_Tables
 
 Variable Add_final_interactiv
@@ -2689,7 +2717,7 @@ DiagState: 2,2083,0,1543,711,17,10
 
 Constant Both_RET_and_REP_Sav
 Title: Both RET and REP Saved
-Definition: Table(Measure)(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+Definition: Table(Measure)(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 NodeLocation: 456,264,1
 NodeSize: 64,32
 DefnState: 2,524,12,728,697,0,DFNM
@@ -2961,7 +2989,7 @@ Author: CWelch
 Date: Wed, Apr 20, 2022 10:07 AM
 NodeLocation: 1544,232,1
 NodeSize: 64,40
-DiagState: 2,30,93,1843,702,17,10
+DiagState: 2,19,27,1843,740,17,10
 
 Alias Al840555811
 Title: Cumulative Potential Adopted
@@ -3077,11 +3105,11 @@ Definition: Fuel_Savings_with_In[Savings_Fuel_Type=Meas_Primary_Fuel_Ty, Primary
  * Cost_by_Replacement_ * (IF Meas_Primary_Fuel_Ty='E' THEN 1000 ELSE 1)
 NodeLocation: 264,536,1
 NodeSize: 64,40
-ValueState: 2,268,13,1264,745,0,MIDM
+ValueState: 2,223,229,1430,619,0,MIDM
 ReformVal: [Fuel_Savings_with_In,Measure]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [EE_Sectors]
-Att_ResultSliceState: [Spatial_ID,1,Replacement_Type,3,Measure,1,EE_Sectors,0]
+Att_ResultSliceState: [Spatial_ID,1,Replacement_Type,2,Measure,1,EE_Sectors,0]
 {!40700|Att_CellFormat: Undefined}
 
 Variable Theoretical_cost_of1
@@ -3116,12 +3144,12 @@ MMBtu saved / MMBtu consumed for fossil fuels.
 Definition: Tech_Potl_After_Inte[@Study_Year=1]
 NodeLocation: 264,744,1
 NodeSize: 64,40
-ValueState: 2,792,17,935,901,0,MIDM
+ValueState: 2,402,99,1294,643,0,MIDM
 GraphSetup: Flip:0
 ReformVal: [Savings_Fuel_Type,Measure]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Primary_Fuel_Type]
-Att_ResultSliceState: [Spatial_ID,1,Replacement_Type,3,EE_Sectors,10,Primary_Fuel_Type,0,Measure,1,Savings_Fuel_Type,1]
+Att_ResultSliceState: [Spatial_ID,1,Replacement_Type,2,EE_Sectors,10,Primary_Fuel_Type,0,Measure,1,Savings_Fuel_Type,1]
 {!50000|Att_ColumnWidths: [,Savings_Fuel_Type,\([146,146,146,146])]}
 
 Variable Savings_Cost_at_Reta
@@ -3131,12 +3159,12 @@ Description: Used to allocate costs across savings types for measures that are c
 Definition: Technical_Savings_Ag * Average_Rates2
 NodeLocation: 624,744,1
 NodeSize: 64,40
-ValueState: 2,402,95,1145,642,0,MIDM
+ValueState: 2,619,219,1145,313,0,MIDM
 GraphSetup: Flip:0
 ReformVal: [Savings_Fuel_Type,Aggregate_Measure_In]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Savings_Fuel_Type]
-Att_ResultSliceState: [Spatial_ID,1,Replacement_Type,3,EE_Sectors,3,Aggregate_Measure_In,1,Savings_Fuel_Type,1]
+Att_ResultSliceState: [Spatial_ID,4,Replacement_Type,2,EE_Sectors,1,Aggregate_Measure_In,1,Savings_Fuel_Type,1]
 {!50000|Att_ColumnWidths: [,Savings_Fuel_Type,\([,,,,137])]}
 
 Variable Cost_Allocation_to_S
@@ -3172,17 +3200,17 @@ Definition: Install_cost_of_firs / -PV(Discount_Rate_for_Le,Aggregate_Measure_Li
 (IF Savings_Fuel_Type='E' THEN 1000 ELSE 1)
 NodeLocation: 848,608,1
 NodeSize: 64,40
-ValueState: 2,371,9,1207,861,1,MIDM
+ValueState: 2,464,6,1207,861,1,MIDM
 Aliases: FormNode Fo575886115
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:4~
 Att_GraphIndexRange Aggregate_Measure_In:1,,1,,,1,,44,83,1~
-Att_GraphValueRange Levelized_Cost_of_Sa:1,,1,,,0,,0,0.1787733256816864,0
+Att_GraphValueRange Levelized_Cost_of_Sa:1,,1,1,,0,,0,0.1787733256816864,0~
+Flip:8
 ReformVal: [Aggregate_Measure_In,Spatial_ID]
 NumberFormat: 2,F,2,3,0,1,2,1,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [EE_Sectors,Replacement_Type]
-Att_ResultSliceState: [EE_Sectors,-1,Savings_Fuel_Type,1,Replacement_Type,-1,Spatial_ID,1,Replacement_Type,-1,Aggregate_Measure_In,1]
-Att_ColorRole: Null
+Att_ResultSliceState: [EE_Sectors,-1,Savings_Fuel_Type,2,Replacement_Type,-1,Spatial_ID,1,Aggregate_Measure_In,1]
 {!40600|Att_ClusterIndex: Null}
 {!40700|CellFormatExpression: IF Auto_Cell_Formatting THEN~
 Cellformats(~
@@ -3389,15 +3417,15 @@ Definition: local x:=Levelized_Cost_of_Sa * (IF Savings_Fuel_Type='E' THEN 1000 
 IF x=0 THEN Null ELSE x
 NodeLocation: 1008,552,1
 NodeSize: 64,40
-ValueState: 2,314,4,1556,895,0,MIDM
+ValueState: 2,525,10,975,895,0,MIDM
 NodeColor: 65535,1,1
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:4~
 Att_GraphIndexRange Aggregate_Measure_In:1,,1,,,1,,187,231,1~
 Att_GraphValueRange Levelized_Cost_of_S2:1,,1,,,,,0,5.499792471528053,0~
 ShowKey:2
 ReformVal: [Replacement_Type,Aggregate_Measure_In]
-Att__TotalsIndex: []
-Att_ResultSliceState: [Spatial_ID,2,EE_Sectors,10,Replacement_Type,3,Aggregate_Measure_In,1,Savings_Fuel_Type,2]
+Att__TotalsIndex: [Savings_Fuel_Type]
+Att_ResultSliceState: [Spatial_ID,2,EE_Sectors,25,Savings_Fuel_Type,0,Aggregate_Measure_In,1,Replacement_Type,3]
 {!40600|Att_ClusterIndex: Null}
 
 Variable Va41
@@ -3535,18 +3563,17 @@ IF x=0 THEN Null ELSE (IF x<0 THEN INF ELSE x)
 NodeLocation: 848,704,1
 NodeSize: 64,40
 WindState: 2,98,82,1235,609
-ValueState: 2,2097,45,1509,833,1,MIDM
-Aliases: FormNode Fo1371702051, FormNode Fo1012093731
+ValueState: 2,349,85,1408,554,0,MIDM
+Aliases: Alias Al304850723, FormNode Fo1371702051, FormNode Fo1012093731
 GraphSetup: Flip:8~
-Att_GraphIndexRange Aggregate_Measure_In:1,,0,,,1,,7,9,1~
+Att_GraphIndexRange Aggregate_Measure_In:1,,1,,,1,,1,6,1~
 Att_CatLineStyle Graph_Primary_Valdim:4~
-Att_GraphValueRange Simple_Payback_Time2:1,,1,,,,,0,2.110256813466549,0
-ReformVal: [Aggregate_Measure_In,Aggregate_Measure_In]
-NumberFormat: 2,F,5,2,0,0,5,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [EE_Sectors,Spatial_ID]
-Att_ResultSliceState: [Replacement_Type,2,EE_Sectors,-1,Spatial_ID,-1,EE_Sectors,-1,Aggregate_Measure_In,13]
-Att_ColorRole: Null
-{!40700|CellFormatExpression: local threshold:=Target_Maximum_Payba; ~
+Att_GraphValueRange Simple_Payback_Time2:1,,0,,,,,0,60.070512890815735,0
+ReformVal: [EE_Sectors,Aggregate_Measure_In]
+NumberFormat: 2,G,1,1,1,0,1,0,$,0,"ABBREV",0,,,0,0,3,
+Att__TotalsIndex: []
+Att_ResultSliceState: [Replacement_Type,3,Spatial_ID,3,Aggregate_Measure_In,13,EE_Sectors,25]
+{!40700|CellFormatExpression: local threshold:=Max_Payback_for_Cell; ~
 IF Auto_Cell_Formatting THEN~
 (CellFormats(~
    CellFill(IF (self=0 OR self=Null OR self=threshold) THEN 'White' ELSE (IF self <= threshold THEN 'Green' ELSE 'Red'), ~
@@ -3590,10 +3617,10 @@ ReformVal: [Null,Spatial_ID]
 Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),2,Savings_Fuel_Type,3,Spatial_ID,1]
 {!40700|Att_CellFormat: CellSpan(Savings_Fuel_Type,CellFill(0xffff0000),3,4,header:0)}
 
-Constant Target_Maximum_Payba
-Title: Target Maximum Payback Time
+Constant Max_Payback_for_Cell
+Title: Max Payback for Cell Formatting
 Units: Years
-Definition: 15
+Definition: 30
 NodeLocation: 1376,952,1
 NodeSize: 64,40
 Aliases: FormNode Fo1774355235, FormNode Fo2085835555
@@ -3610,7 +3637,7 @@ Title: Target Maximum Payback Time
 Definition: 0
 NodeLocation: 1328,800,1
 NodeSize: 192,16
-Original: Target_Maximum_Payba
+Original: Max_Payback_for_Cell
 
 Variable Va42
 NodeLocation: 672,1296,1
@@ -3620,7 +3647,7 @@ NodeColor: 65535,1,1
 Decision Auto_Cell_Formatting
 Title: Auto Cell-Formatting?
 Description: Checking this box will auto-format cells in the simple payback and levelized cost outputs to highlight high and low values. However, it results in longer computational times and delays in rendering the table ... so if you check it, be patient.
-Definition: Checkbox(0)
+Definition: Checkbox(1)
 NodeLocation: 96,1104,1
 NodeSize: 64,40
 Aliases: FormNode Fo798278435, FormNode Fo39015203
@@ -3708,10 +3735,6 @@ This function will output the fill color.
 NodeLocation: 104,536,1
 NodeSize: 80,40
 WindState: 2,396,128,720,350
-
-Variable Va44
-NodeLocation: 120,632,1
-NodeSize: 64,40
 
 Module Cell_Formats
 Title: Cell Formats
@@ -3955,34 +3978,15 @@ Units: $/TonCO2eq
 Definition: Installed_cost_per_1 / -PV(Discount_Rate_for_Le,Aggregate_Measure_Li,1)
 NodeLocation: 864,952,1
 NodeSize: 64,40
-ValueState: 2,137,3,1652,843,1,MIDM
+ValueState: 2,137,3,1652,843,0,MIDM
 Aliases: FormNode Fo1649627939
 GraphSetup: Att_GraphValueRange Levelized_cost_per_1:1,,1,,,,,0,100.02078056335449,0~
 Att_CatLineStyle Graph_Primary_Valdim:4~
 Att_GraphIndexRange Aggregate_Measure_In:1,,,,,1
-ReformVal: [Aggregate_Measure_In,EE_Sectors]
+ReformVal: [Spatial_ID,Aggregate_Measure_In]
 Att__TotalsIndex: [Spatial_ID]
-Att_ResultSliceState: [Spatial_ID,-1,Customer_Type,1,Replacement_Type,3,EE_Sectors,3,Aggregate_Measure_In,1]
+Att_ResultSliceState: [Replacement_Type,3,EE_Sectors,28,Aggregate_Measure_In,1,Spatial_ID,-1]
 {!40600|Att_ClusterIndex: Null}
-
-Constant Retail_rate_by_fuel_
-Title: Retail rate by fuel type
-Units: $/MWh,$/MMBtu
-Definition: Table(Savings_Fuel_Type)(0,0,4,2)
-NodeLocation: 96,1000,1
-NodeSize: 64,40
-DefnState: 2,623,284,416,303,0,DFNM
-Aliases: FormNode Fo1603490595
-
-Variable Va40
-Definition: Retail_rate_by_fuel_ / GHG_Unit_Conversion_
-NodeLocation: 256,1000,1
-NodeSize: 64,40
-ValueState: 2,647,347,510,486,,MIDM
-
-Variable Va45
-NodeLocation: 256,1112,1
-NodeSize: 64,40
 
 Variable Average_Rates2
 Title: Average Rates
@@ -4016,10 +4020,6 @@ Definition: Average_Rates2 * (IF Savings_Fuel_Type='E' THEN 1/MMBtu_Mwh ELSE 1)
 NodeLocation: 1024,904,1
 NodeSize: 64,40
 ValueState: 2,1048,470,765,317,0,MIDM
-
-Variable Va46
-NodeLocation: 320,632,1
-NodeSize: 64,40
 
 Index Customer_Type
 Title: Customer Type
@@ -4140,9 +4140,10 @@ Units: MWh (Elec), MMBtu
 Definition: sum(Consumption_Disaggre[@Study_Year=1],Stock_Type,End_Use)
 NodeLocation: 440,1016,1
 NodeSize: 64,40
-ValueState: 2,362,77,1070,741,0,MIDM
+ValueState: 2,362,77,1070,741,1,MIDM
 Aliases: FormNode Fo173232931
 ReformVal: [EE_Sectors,Spatial_ID]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Spatial_ID]
 Att_ResultSliceState: [Primary_Fuel_Type,1,Spatial_ID,0,EE_Sectors,1]
 {!40600|Att_StackingIndex: Spatial_ID}
@@ -4254,7 +4255,7 @@ Description: 1. Revenue, TBtu, and GHG emissions outputs~
 2. Additional input visibility~
 3. Additional desired scenario inputs~
 4. Additional desired output
-NodeLocation: 192,220,2
+NodeLocation: 184,420,2
 NodeSize: 184,44
 NodeInfo: 1,,,,0
 NodeFontColor: 3855,26214,35209
@@ -4262,16 +4263,19 @@ NodeFontColor: 3855,26214,35209
 Alias Al1203586851
 Title: Cooling Interactive Factor
 Definition: 1
-NodeLocation: 1440,920,1
+NodeLocation: 1352,928,1
 NodeSize: 64,32
 Original: Cooling_Interactive_
 
 Variable Cooling_Interactive1
 Title: Cooling Interactive Factor by Svgs Fuel Type
-Definition: IF (Primary_Fuel_Type = Meas_Primary_Fuel_Ty AND Savings_Fuel_Type='E') THEN Cooling_Interactive_ ELSE 0
-NodeLocation: 1256,920,1
+Definition: IF Primary_Fuel_Type = Meas_Primary_Fuel_Ty AND Savings_Fuel_Type='E' THEN Cooling_Interactive_ ELSE 0
+NodeLocation: 1168,928,1
 NodeSize: 64,40
-ValueState: 2,2236,158,1249,685,0,MIDM
+ValueState: 2,2132,116,1375,742,0,MIDM
+ReformVal: [EE_Sectors,Measure]
+NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att_ResultSliceState: [Primary_Fuel_Type,2,Savings_Fuel_Type,1,Measure,1,EE_Sectors,1]
 
 Close NYPA_EE_Details
 

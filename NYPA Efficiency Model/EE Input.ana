@@ -10,7 +10,7 @@ Author: CWelch
 Date: Wed, Apr 21, 2021 2:25 PM
 DefaultSize: 64,32
 NodeSize: 64,40
-DiagState: 2,205,38,1015,730,17,10
+DiagState: 2,66,21,906,749,17,10
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
 FileInfo: 0,LinkModule NYPA_EE_Input,2,2,0,0,NYPA Efficiency Model\EE Input.ana
@@ -82,7 +82,7 @@ NodeFont: Arial,19
 NodeFontColor: 65535,1,1
 
 Text Te1167282979
-Title: Technical Potential Input
+Title: Key Input
 NodeLocation: 236,320,-1
 NodeSize: 212,200
 NodeInfo: 1,,,,1
@@ -222,8 +222,8 @@ Original: Include_End_Use
 FormNode Fo2073252643
 Title: Include Measure?
 Definition: 0
-NodeLocation: 236,652,1
-NodeSize: 204,20
+NodeLocation: 188,652,1
+NodeSize: 156,20
 NodeColor: 49151,49151,49151
 Original: Include_Measure
 
@@ -258,14 +258,6 @@ NodeLocation: 668,500,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: GHG_Unit_Conversion_
-
-FormNode Fo1603490595
-Title: Retail rate by fuel type
-Definition: 0
-NodeLocation: 668,540,1
-NodeSize: 204,20
-NodeColor: 49151,49151,49151
-Original: Retail_rate_by_fuel_
 
 Text EEFrameNod1481855779
 NodeLocation: 1360,408,-26
@@ -302,6 +294,15 @@ NodeLocation: 236,812,1
 NodeSize: 204,20
 NodeColor: 49151,49151,49151
 Original: Higher_Ed_Breakdown
+
+FormNode Fo2083546915
+Title: Include Measure
+Definition: 0
+NodeLocation: 392,652,1
+NodeSize: 48,20
+NodeInfo: 1,,,0,,,,72,,,,,,0
+NodeColor: 49151,49151,49151
+Original: Include_Measure1
 
 Close NYPA_EE_Input
 

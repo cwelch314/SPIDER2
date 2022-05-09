@@ -10,7 +10,7 @@ Author: CWelch
 Date: Tue, Mar 8, 2022 9:07 AM
 DefaultSize: 64,40
 NodeSize: 64,40
-DiagState: 2,1952,168,1811,761,17,10
+DiagState: 2,174,92,1713,693,17,10
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
 
@@ -234,9 +234,9 @@ NodeSize: 64,40
 ValueState: 2,629,15,897,754,1,MIDM
 Aliases: FormNode Fo304836131, FormNode Fo770403875, FormNode Fo498431267
 NodeColor: 65535,1,1
-GraphSetup: Flip:0~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_StackedBar Graph_Primary_Valdim:1
+GraphSetup: Flip:8~
+Att_StackedBar Graph_Primary_Valdim:1~
+Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [Spatial_ID,Area_Type]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [PV_Spatial_ID,Area_Type,Spatial_ID,PV_Sectors]
@@ -290,11 +290,12 @@ GraphSetup: Att_GraphIndexRange PV_Sectors:1,,1,,,,,1,11,1~
 Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Graph_AxisTitleFont:Arial,20,1~
-Graph_AxisLabelFont:,14,0
+Graph_AxisLabelFont:,14,0~
+Flip:0
 ReformVal: [PV_Sectors,Self]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [PV_Sectors]
-Att_ResultSliceState: [Spatial_ID,1,Self,1,PV_Sectors,0]
+Att__TotalsIndex: [PV_Sectors,Spatial_ID]
+Att_ResultSliceState: [Spatial_ID,0,Self,1,PV_Sectors,0]
 {!40600|Att_ClusterIndex: Load_vs_PV_Potential}
 {!40700|Att_CellFormat: CellNumberFormat('Fixed Point',0,0,1,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:0)}
 
@@ -651,7 +652,7 @@ System_Counts_Includ[All_PV_Sectors=PV_Sectors]);~
 x
 NodeLocation: 1632,368,1
 NodeSize: 64,40
-ValueState: 2,1045,10,518,455,1,MIDM
+ValueState: 2,626,2,896,870,1,MIDM
 Aliases: Alias Al1407302435, FormNode Fo1558109475
 GraphSetup: Graph_SymbolSizeKey:0~
 {!50000|Graph_SortBySpread:0}~
@@ -661,12 +662,10 @@ Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:4~
 Att_GraphValueRange Average_PV_kW_Includ:1,,1,,,,,995.6656247377396,3500,0~
 SymbolSize:11
-ReformVal: [Spatial_ID,Spatial_ID]
+ReformVal: [PV_Sectors,Area_Type]
 NumberFormat: 2,F,4,3,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Area_Type]
-Att_ResultSliceState: [PV_Sectors,1,PV_Sectors,1,Spatial_ID,1]
-Att_ColorRole: Area_Type
-Att_SymbolRole: Area_Type
+Att_ResultSliceState: [Spatial_ID,3,Area_Type,1,PV_Sectors,1]
 {!40600|Att_ClusterIndex: Null}
 
 Variable PV_kWh_per_KW_DC
@@ -949,7 +948,7 @@ Definition: local total:=sum(Technical_PV_Potent1,Spatial_ID,Sectors_Aggregated,
 ZIDZ1(Technical_PV_Potent1,total)
 NodeLocation: 1968,368,1
 NodeSize: 72,40
-ValueState: 2,2149,4,1089,640,0,MIDM
+ValueState: 2,12,4,1089,640,1,MIDM
 Aliases: FormNode Fo1835757091, FormNode Fo1844145699, FormNode Fo1572173091
 GraphSetup: Flip:8~
 Att_GraphIndexRange PV_Sectors:1,,1,,,,,1,9,1~
@@ -970,24 +969,24 @@ NodeLocation: 336,728,1
 NodeSize: 216,16
 Original: PV_Tech_Potential_Pe
 
-Variable Total_PV_MW_DC_Poten
-Title: Total PV MW DC Potential
+Variable Total_PV_Potential_D
+Title: Total PV Potential, Disagg
 Units: MW-DC
 Description: Total technical potential for solar PV installations if all calculated usable area were utilized for solar PV.
 Definition: Total_PV_kW_DC_poten / 1000
 NodeLocation: 1968,472,1
 NodeSize: 64,40
 WindState: 2,98,82,720,545
-ValueState: 2,73,57,648,590,1,MIDM
+ValueState: 2,353,85,648,590,1,MIDM
 Aliases: FormNode Fo954953251, FormNode Fo501968419, FormNode Fo1035302179
 GraphSetup: Att_GraphIndexRange PV_Sectors:1,,1,,,,,2,10,1~
 Graph_AxisLabelFont:,16,0~
 Flip:8
 ReformVal: [Spatial_ID,Area_Type]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Area_Type,Spatial_ID]
+Att__TotalsIndex: [Area_Type,Spatial_ID,PV_Sectors]
 Att_GraphValueRange: 1,,1,,,,,0,481.7144274711609,0
-Att_ResultSliceState: [PV_Sectors,3,Area_Type,0,Spatial_ID,0]
+Att_ResultSliceState: [PV_Sectors,0,Area_Type,0,Spatial_ID,0]
 {!40300|ProactivelyEvaluate: 4}
 {!40600|Att_StackingIndex: Area_Type}
 {!40600|Att_ClusterIndex: Null}
@@ -997,7 +996,7 @@ Title: Total PV MW DC Potential
 Definition: 1
 NodeLocation: 312,760,1
 NodeSize: 192,16
-Original: Total_PV_MW_DC_Poten
+Original: Total_PV_Potential_D
 
 Variable Consumption_by_Sect1
 Title: Consumption by Sector from Facility Data
@@ -1050,6 +1049,7 @@ Description: Total facility count from parcel data (before filtering out any fac
 Definition: Building_Count_from_[Building_Stock_Year=2021] * Higher_Ed_Multiplier
 NodeLocation: 280,1160,1
 NodeSize: 64,40
+WindState: 2,98,82,720,350
 ValueState: 2,654,132,1050,762,0,MIDM
 Aliases: Alias Al1830396707, FormNode Fo1114993955
 GraphSetup: {!50000|Graph_SortBySpread:1}~
@@ -1069,9 +1069,9 @@ Description: Estimated annual customer MWh load of eligible customers.
 Definition: Consumption_by_Sect1 / 1000
 NodeLocation: 592,800,1
 NodeSize: 64,40
-ValueState: 2,666,55,1049,692,1,MIDM
+ValueState: 2,627,29,1049,692,1,MIDM
 Aliases: FormNode Fo867930403, FormNode Fo309687587
-GraphSetup: {!50000|Graph_SortBySpread:1}~
+GraphSetup: Flip:8~
 Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [All_PV_Sectors,Spatial_ID]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
@@ -1156,12 +1156,13 @@ Description: Facility count once facility data are filtered to exclude any facil
 Definition: MdTable(Facility_Count_Filte,Facility_ID_Filtered,Conglomeration_Index, conglomerationFn:"Sum" ,defaultValue:0)
 NodeLocation: 440,1160,1
 NodeSize: 64,40
-ValueState: 2,2102,126,836,673,0,MIDM
-Aliases: FormNode Fo1969204003
+ValueState: 2,436,91,836,673,0,MIDM
+Aliases: FormNode Fo1969204003, FormNode Fo692889379
 ReformVal: [Spatial_ID,All_PV_Sectors]
-NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [All_PV_Sectors,Spatial_ID]
 Att_ResultSliceState: [System_Size_Constra2,3,All_PV_Sectors,1,Spatial_ID,1]
+{!40700|Att_CellFormat: CellAlignment('Center')}
 
 Index In6
 Definition: [Area_Type]
@@ -1265,17 +1266,21 @@ NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att_ResultSliceState: [Area_Type,3,PV_Sectors,1,PV_Climate_Zone,1]
 
 Variable Technical_PV_Potent1
-Title: Technical PV Potential
+Title: Technical PV Potential, Aggreg
 Units: MW-DC
-Definition: Aggregate(Total_PV_MW_DC_Poten, Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated)
+Definition: Aggregate(Total_PV_Potential_D, Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated)
 NodeLocation: 2112,472,1
 NodeSize: 64,40
-ValueState: 2,41,12,487,452,,MIDM
-GraphSetup: {!50000|Graph_SortBySpread:0}~
-Flip:8
-ReformVal: [Spatial_ID,Area_Type]
-Att_ResultSliceState: [Sectors_Aggregated,10,Area_Type,1,Spatial_ID,1]
-{!40600|Att_StackingIndex: Area_Type}
+ValueState: 2,430,2,901,824,1,MIDM
+Aliases: FormNode Fo1921173283
+GraphSetup: Graph_AxisLabelFont:,20,0~
+Flip:8~
+Att_GraphIndexRange Sectors_Aggregated:1,,1,,,,,2,10,1
+ReformVal: [Sectors_Aggregated,Spatial_ID]
+NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Spatial_ID,Area_Type]
+Att_ResultSliceState: [Area_Type,0,Spatial_ID,0,Sectors_Aggregated,10]
+{!40600|Att_StackingIndex: Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
 
 Variable Average_PV_kW_Inclu1
@@ -1296,6 +1301,39 @@ NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att_ResultSliceState: [Sectors_Aggregated,10,Area_Type,1,Spatial_ID,1]
 {!40600|Att_StackingIndex: Area_Type}
 {!40600|Att_ClusterIndex: Null}
+
+Variable Tech_PV_Potential_Se
+Title: Tech PV Potential, Segment
+Units: MW-DC
+Definition: Aggregate(Total_PV_Potential_D, Map_Facilities_to_Se,PV_Sectors,Customer_Segment)
+NodeLocation: 2256,472,1
+NodeSize: 64,40
+ValueState: 2,343,68,845,797,,MIDM
+Aliases: FormNode Fo1643956003
+GraphSetup: {!50400|Att_AxisOrKeyTitle Customer_Segment:""}~
+Flip:8~
+Graph_AxisLabelFont:,20,0
+ReformVal: [Customer_Segment,Spatial_ID]
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Area_Type,Spatial_ID]
+Att_ResultSliceState: [Spatial_ID,0,Area_Type,0,Customer_Segment,1]
+{!40600|Att_StackingIndex: Spatial_ID}
+{!40600|Att_ClusterIndex: Null}
+
+Index Customer_Segment
+Att_PrevIndexValue: ['Higher Education','K-12','Hospitals','Local Governments','State Agencies']
+Title: Customer Segment
+Definition: ['Higher Education','K-12','Hospitals','Local Governments','State Agencies']
+NodeLocation: 2328,288,1
+NodeSize: 64,40
+
+Decision Map_Facilities_to_Se
+Title: Map Facilities to Segments
+Definition: Table(PV_Sectors)(Choice(Customer_Segment,1,0),Choice(Customer_Segment,3,0),Choice(Customer_Segment,2,0),Choice(Customer_Segment,4,0),Choice(Customer_Segment,4,0),Choice(Customer_Segment,4,0),Choice(Customer_Segment,4,0),Choice(Customer_Segment,4,0),Choice(Customer_Segment,4,0),Choice(Customer_Segment,4,0),Choice(Customer_Segment,4,0),Choice(Customer_Segment,4,0),Choice(Customer_Segment,4,0),Choice(Customer_Segment,4,0),Choice(Customer_Segment,4,0),Choice(Customer_Segment,4,0),Choice(Customer_Segment,5,0),Choice(Customer_Segment,5,0),Choice(Customer_Segment,5,0),Choice(Customer_Segment,5,0),Choice(Customer_Segment,5,0),Choice(Customer_Segment,5,0),Choice(Customer_Segment,5,0),Choice(Customer_Segment,5,0),Choice(Customer_Segment,5,0),Choice(Customer_Segment,5,0),Choice(Customer_Segment,5,0),Choice(Customer_Segment,5,0),Choice(Customer_Segment,5,0),Choice(Customer_Segment,5,0))
+NodeLocation: 2312,384,1
+NodeSize: 64,40
+DefnState: 2,2311,122,577,772,0,DFNM
+TableCellDefault: Choice(Customer_Segment,1,0)
 
 Close Facility_Level_Area_
 
