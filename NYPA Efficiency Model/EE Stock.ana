@@ -88,22 +88,25 @@ NodeSize: 64,32
 Constant Higher_Ed_Breakdown
 Title: Higher Ed Breakdown
 Definition: Table(Spatial_ID,Higher_Ed_Type)(~
-0.6,0.2,0.2,0.2,~
-0.6,0.2,0.2,0.2,~
-0.6,0.2,0.2,0.2,~
-0.6,0.2,0.2,0.2)
+0.021,0.062,0.046,0.111,~
+0.032,0,0.001,0.046,~
+0.384,0,0.014,0.235,~
+0.03,0,0.008,0.011)
 NodeLocation: 736,320,1
 NodeSize: 64,32
-DefnState: 2,1007,623,823,188,0,DFNM
+DefnState: 2,618,400,823,188,0,DFNM
 ValueState: 2,650,191,773,495,,MIDM
 Aliases: FormNode Fo1813435171
 NodeColor: 65535,1,1
 GraphSetup: Flip:8
 ReformDef: [Spatial_ID,Higher_Ed_Type]
+NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+{!40700|Att_CellFormat: CellAlignment('Center')}
 
 Index Higher_Ed_Type
-Att_PrevIndexValue: ['SUNY','CUNY','Private Non-Profit','Other (e.g., community colleges)']
-Definition: ['SUNY','CUNY','Private Non-Profit','Other (e.g., community colleges)']
+Att_PrevIndexValue: ['SUNY','CUNY','Other (e.g., community colleges)','Private Non-Profit']
+Definition: ['SUNY','CUNY','Other (e.g., community colleges)','Private Non-Profit']
+IndexVals: ['item 1']
 NodeLocation: 736,128,1
 NodeSize: 72,32
 NodeInfo: 1,,,,,,,0,,,,,,0
