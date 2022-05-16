@@ -234,7 +234,7 @@ SymbolSize:11
 ReformVal: [Output_Periods,Spatial_ID]
 NumberFormat: 2,F,2,1,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Area_Type,Sectors_Aggregated,Spatial_ID]
-Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,Min_PV_System_Size,3,Spatial_ID,0,Output_Periods,108]
+Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,Test_Cost_Multiplier,1,Spatial_ID,0,Output_Periods,108]
 {!40600|Att_StackingIndex: Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
 {!50500|GraphTitleExpr: ""}
@@ -246,7 +246,7 @@ Description: Percentage of total NYPA enabled PV adoption by sector, geography, 
 Definition: ZIDZ1(NYPA_Enabled_Achiev3,sum(NYPA_Enabled_Achiev3,Spatial_ID,Area_Type,Sectors_Aggregated))
 NodeLocation: 896,336,1
 NodeSize: 64,40
-ValueState: 2,2204,66,921,632,1,MIDM
+ValueState: 2,12,66,921,632,1,MIDM
 Aliases: FormNode Fo544568611
 GraphSetup: Flip:8~
 Att_CatLineStyle Graph_Primary_Valdim:9~
@@ -655,7 +655,7 @@ Description: NYPA enabled adoption of storage systems. Currently, only "paired" 
 Definition: sum(Aggregate(NYPA_Enabled_Storage,Map_All_to_Aggregate[All_PV_Sectors=BESS_Sectors],BESS_Sectors,Sectors_Aggregated,"Sum"), BESS_types)
 NodeLocation: 536,328,1
 NodeSize: 64,40
-ValueState: 2,467,79,750,645,1,MIDM
+ValueState: 2,470,84,750,645,1,MIDM
 Aliases: FormNode Fo1849909539, FormNode Fo1807054115
 GraphSetup: Att_GraphIndexRange Time_Storage:1,,0,,,,,43100,46371.209789931774,0~
 Graph_FillTransparen:55~

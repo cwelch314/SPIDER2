@@ -11463,14 +11463,14 @@ Constant Test_Cost_Multiplier
 Title: Test Cost Multiplier
 Units: fraction
 Description: Use this input to run scenario analysis on increasing (or decreasing) installed PV cost assumptions by this multiple. 
-Definition: Table(PV_Climate_Zone)(1,1,1,1)
+Definition: Table(PV_Climate_Zone)([1,1.5],1,1,1)
 NodeLocation: 704,360,1
 NodeSize: 64,40
 DefnState: 2,693,297,416,303,0,DFNM
 Aliases: FormNode Fo1434434339
 NodeColor: 65535,1,1
 TableCellDefault: 1
-{!40300|Att_SlicerPopupSize: 227,64}
+{!40300|Att_SlicerPopupSize: 232,64}
 {!40700|Att_CellFormat: CellAlignment('Center')}
 
 Close Equipment_Costs
@@ -12471,8 +12471,8 @@ Att_GraphIndexRange Cost_Forecast_Year:1,,1,,,,,2022.0101600289345,2031,0~
 Graph_SymbolKey:0
 ReformVal: [Cost_Forecast_Year,Self]
 NumberFormat: 2,F,4,3,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Area_Type]
-Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,1,PV_Sectors,1,Area_Type,-1,Test_Cost_Multiplier,1,Self,1,Cost_Forecast_Year,1]
+Att__TotalsIndex: []
+Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,1,PV_Sectors,1,Area_Type,1,Test_Cost_Multiplier,2,Self,1,Cost_Forecast_Year,1]
 {!40300|Att_SlicerPopupSize: 287,64}
 
 Text Te1891843619
@@ -15311,7 +15311,7 @@ Definition: ['Roof','Parking','Land']
 NodeLocation: 104,384,1
 NodeSize: 64,40
 WindState: 2,408,-14,824,781
-{!40300|Att_SlicerPopupSize: 902,80}
+{!40300|Att_SlicerPopupSize: 922,80}
 
 Include 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
 

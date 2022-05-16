@@ -4355,7 +4355,7 @@ OnChange: ACP_Set_Autocalc((ACP_top_modules),  ~
 {!60005|Att_AttsToShow: Object Object, Object Attribute, Attribute OnChange}
 
 Index ACP_Diags_with_User_
-Att_PrevIndexValue: [NYPA_specific_output,Storage_Output,Mo2,Profiler_details,Sequential_Historic_,Deltas_from_Base_Per,Import_Auxiliary_Var,Data_Import1,Import_Error_Checks1,Categ_Index_Import1,Seq_Index_Import1,Output_Calcs,Forecast_Accuracy,Logit_Diagnostics,Illustrators,Multi_Stage_Calibra2,PV_Objective,Stored_Decison_Data,Misc_Output,Solar_Energy_Product,Customer_Load,Utility_Bills_and_Bi,Taxable_Incents,Equipment_Costs,NYPA_Input_Tables,Annual_Cost_of_Syste,Old_Cost_Ratio_Calcs,Monthly_Payback_Logi,Simple_LCOE_Calculat,Technical_Potential,Facility_Level_Area_,Rate_Values_by_Perio,Rate_Saving_Details,Rates_to_View,NYSERDA_Value_Stack,Daily_Profile_Logic,Building_Stocks,EV_Stock_Initializat,EV_Misc,EV_Adoption_Logic,Market_Share_Calcula,Vehicle_Choice_Logi1,Multi_Stage_Calibra1,EV_Objective,Stored_Decision_Data,Storage_Optimizati10,Misc6,Storage_Opt_Diagnos2,DOE_Load_Profiles,Misc_Output1,Storage_Opt_Diagnost,Outputs_for_E_Source,Filter_USURDB_Data1,System_Analysis,Storage_Adoption,Market_Share2,Multi_Stage_Calibra3,BESS_Objective,Stored_Decison_Data1,All_Imported_EE_Data,EE_Comparisons,Replacement_Type_Ap1,NYPA_EE_Details,EE_Output_Tables,Compare_by_End_Use,Costs,Nodes_for_Illustrati]
+Att_PrevIndexValue: [NYPA_specific_output,Storage_Output,Mo2,Profiler_details,Sequential_Historic_,Deltas_from_Base_Per,Import_Auxiliary_Var,Data_Import1,Import_Error_Checks1,Categ_Index_Import1,Seq_Index_Import1,Output_Calcs,Forecast_Accuracy,Logit_Diagnostics,Illustrators,Multi_Stage_Calibra2,PV_Objective,Stored_Decison_Data,Misc_Output,Solar_Energy_Product,Customer_Load,Utility_Bills_and_Bi,Taxable_Incents,Equipment_Costs,NYPA_Input_Tables,Annual_Cost_of_Syste,Old_Cost_Ratio_Calcs,Monthly_Payback_Logi,Simple_LCOE_Calculat,Technical_Potential,Facility_Level_Area_,Rate_Values_by_Perio,Rate_Saving_Details,Rates_to_View,NYSERDA_Value_Stack,Daily_Profile_Logic,Building_Stocks,EV_Stock_Initializat,EV_Misc,EV_Adoption_Logic,Market_Share_Calcula,Vehicle_Choice_Logi1,Multi_Stage_Calibra1,EV_Objective,Stored_Decision_Data,Storage_Optimizati10,Misc6,Storage_Opt_Diagnos2,DOE_Load_Profiles,Misc_Output1,Storage_Opt_Diagnost,Outputs_for_E_Source,Filter_USURDB_Data1,System_Analysis,Storage_Adoption,Market_Share2,Multi_Stage_Calibra3,BESS_Objective,Stored_Decison_Data1,All_Imported_EE_Data,EE_Comparisons,Replacement_Type_Ap1,NYPA_EE_Details,EE_Output_Tables,Compare_by_End_Use,Costs,Nodes_for_Illustrati,Electrification_Simu]
 Title: Diags with User outputs or Framenodes
 Description: All diagrams that contain user outputs.
 Definition: ACP_model_Reset;~
@@ -8834,7 +8834,7 @@ DefaultSize: 64,32
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,2002,13,906,723,17,10,
+DiagState: 2,1913,5,906,723,17,10,
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
 AcpStyles: Framenode: Te1941271843
@@ -9134,7 +9134,7 @@ DefaultSize: 64,32
 NodeLocation: 256,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,1924,6,902,851,17,10,
+DiagState: 2,2836,-2,902,851,17,10,
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
 AcpStyles: Framenode: Te2008380707
@@ -9963,9 +9963,11 @@ Close Template
 
 Module Electrification_Simu
 Title: Electrification Simulator
+Author: CWelch
+Date: Fri, May 13, 2022 6:39 AM
 NodeLocation: 768,64,1
 NodeSize: 64,32
-DiagState: 2,74,19,1789,759,17,10
+DiagState: 2,124,59,1674,694,17,10
 NodeColor: 65535,65535,65535
 
 Constant IEER
@@ -9979,7 +9981,7 @@ NodeLocation: 88,544,1
 NodeSize: 64,32
 DefnState: 2,353,450,639,194,0,DFNM
 ValueState: 2,1026,471,406,341,0,MIDM
-Aliases: FormNode Fo1795743523
+Aliases: FormNode Fo1795743523, FormNode Fo245940003
 ReformDef: [Sys_LocalIndex('DomainIndex'),Technology]
 {!40700|Att_CellFormat: CellAlignment('Center')}
 
@@ -9994,7 +9996,7 @@ NodeLocation: 96,64,1
 NodeSize: 64,32
 DefnState: 2,711,424,620,200,0,DFNM
 ValueState: 2,1057,378,415,191,0,MIDM
-Aliases: FormNode Fo453566243
+Aliases: FormNode Fo453566243, FormNode Fo1319681827
 ReformDef: [Sys_LocalIndex('DomainIndex'),Technology]
 NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 {!40700|Att_CellFormat: CellAlignment('Center')}
@@ -10019,7 +10021,7 @@ NodeLocation: 696,112,1
 NodeSize: 64,32
 DefnState: 2,546,461,706,147,0,DFNM
 ValueState: 2,921,525,404,201,,MIDM
-Aliases: FormNode Fo1527308067, FormNode Fo1668603683
+Aliases: FormNode Fo1527308067, FormNode Fo1668603683, FormNode Fo782810915, FormNode Fo564707107
 NumberFormat: 2,F,2,2,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 
 Index Technology
@@ -10040,10 +10042,10 @@ ValueState: 2,887,443,787,218,0,MIDM
 Constant Heating_Output_Requi
 Title: Heating Output Required
 Units: Btu/Hr
-Definition: 12E6
+Definition: 60000
 NodeLocation: 88,152,1
 NodeSize: 64,32
-Aliases: FormNode Fo990437155
+Aliases: FormNode Fo990437155, FormNode Fo1856552739
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 
 Variable Heating_Cost
@@ -10117,7 +10119,7 @@ NodeLocation: 856,440,1
 NodeSize: 64,32
 WindState: 2,98,82,825,623
 ValueState: 2,621,205,493,382,0,MIDM
-Aliases: FormNode Fo1491656483
+Aliases: FormNode Fo1491656483, FormNode Fo1051246371
 ReformVal: [Electricity_Price,Fuel_Price]
 NumberFormat: 2,F,4,0,1,1,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att_ResultSliceState: [Selected_Sectors,2,Electrification_Meas,3,Fuel_Price,1,Electricity_Price,1]
@@ -10152,8 +10154,8 @@ Units: Years
 Definition: IF Annual_Savings>0 THEN (Installed_Cost1[Technology='Electrification Measure '] - Installed_Cost1[Technology='Baseline (FF heating w/Baseline A/C)']) / Annual_Savings ELSE INF
 NodeLocation: 1000,368,1
 NodeSize: 64,32
-ValueState: 2,576,38,820,595,1,MIDM
-Aliases: FormNode Fo954785571
+ValueState: 2,46,34,820,595,1,MIDM
+Aliases: FormNode Fo954785571, FormNode Fo2124988195
 GraphSetup: Att_GraphIndexRange Fuel_Price:1,,,1~
 ShowKey:2~
 Att_GraphValueRange Simple_Payback_Time3:1,,0,,,,,0,49.81319308280945,0~
@@ -10164,7 +10166,7 @@ Graph_AxisLabelFont:,20,0
 ReformVal: [Fuel_Price,Electricity_Price]
 NumberFormat: 2,F,2,1,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: []
-Att_ResultSliceState: [Combustion_Tech,2,Selected_Sectors,1,Electrification_Meas,3,Electricity_Price,1,Fuel_Price,1]
+Att_ResultSliceState: [Combustion_Tech,2,Electrification_Meas,2,Selected_Sectors,11,Electricity_Price,1,Fuel_Price,1]
 {!40600|Att_StackingIndex: Electricity_Price}
 {!40600|Att_ClusterIndex: Null}
 {!40700|CellFormatExpression: CellColor_Higher_Red(self,30)}
@@ -10202,7 +10204,7 @@ Definition: MultiChoice(Self,1,2,6,7,allowNone:0,returnList:1)
 NodeLocation: 640,648,1
 NodeSize: 64,32
 WindState: 2,98,82,720,576
-Aliases: FormNode Fo508092195
+Aliases: FormNode Fo508092195, FormNode Fo514375459
 NumberFormat: 2,F,2,3,0,1,2,1,$,0,"ABBREV",0,,,0,0,15,
 {!40300|DomainExpr: Discrete(0.077,0.102,0.12,0.14,0.16,0.199,0.204)}
 {!40300|Att_SlicerPopupSize: 267,252}
@@ -10214,7 +10216,7 @@ Definition: MultiChoice(Self,allowNone:0,returnList:1)
 NodeLocation: 504,648,1
 NodeSize: 64,32
 WindState: 2,98,82,712,582
-Aliases: FormNode Fo1581834019
+Aliases: FormNode Fo1581834019, FormNode Fo1588117283
 NumberFormat: 2,F,2,2,0,1,2,1,$,0,"ABBREV",0,,,0,0,15,
 {!40300|DomainExpr: Discrete(5.00,6.00,6.75,8.00,10.00,12.00,14.00,16.00,18.00,20.00,22.00,24.00,33.00)}
 {!40300|Att_SlicerPopupSize: 237,210}
@@ -10280,24 +10282,24 @@ Original: Fuel_Price
 FormNode Fo1491656483
 Title: Annual Savings
 Definition: 1
-NodeLocation: 1400,572,1
+NodeLocation: 1400,652,1
 NodeSize: 232,20
 Original: Annual_Savings
 
 FormNode Fo954785571
 Title: Simple Payback Time
 Definition: 1
-NodeLocation: 1400,532,1
+NodeLocation: 1400,612,1
 NodeSize: 232,20
 Original: Simple_Payback_Time3
 
 Index Selected_Sectors
 Title: Selected Sectors
-Definition: MultiChoice(EE_Sectors,2,3,10,11,returnList:0)
+Definition: MultiChoice(EE_Sectors,returnList:0)
 NodeLocation: 368,648,1
 NodeSize: 64,32
-Aliases: FormNode Fo679010083
-{!40300|Att_SlicerPopupSize: 317,96}
+Aliases: FormNode Fo679010083, FormNode Fo27836195
+{!40300|Att_SlicerPopupSize: 383,314}
 
 Constant EFLH_by_Sector
 Title: EFLH by Sector
@@ -10308,7 +10310,7 @@ Definition: Table(Heating_or_Cooling,All_PV_Sectors)(~
 NodeLocation: 192,232,1
 NodeSize: 64,32
 DefnState: 2,557,68,462,650,0,DFNM
-Aliases: FormNode Fo1048108835
+Aliases: FormNode Fo1048108835, FormNode Fo1101578019
 ReformDef: [Heating_or_Cooling,All_PV_Sectors]
 NumberFormat: 2,F,2,2,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 {!40700|Att_CellFormat: CellAlignment('Center')}
@@ -10335,9 +10337,9 @@ Definition: Choice(Self,0,1)
 NodeLocation: 928,648,1
 NodeSize: 64,32
 NodeInfo: 1,,0
-Aliases: FormNode Fo326426403
+Aliases: FormNode Fo326426403, FormNode Fo1638448931
 {!40300|DomainExpr: Discrete('ASHP','VRF','GSHP',type:['text'])}
-{!40300|Att_SlicerPopupSize: 477,80}
+{!40300|Att_SlicerPopupSize: 507,80}
 
 Decision Combustion_Tech
 Title: Combustion Tech
@@ -10345,9 +10347,9 @@ Definition: Choice(Self,0,1)
 NodeLocation: 784,648,1
 NodeSize: 64,32
 NodeInfo: 1,,0
-Aliases: FormNode Fo1400168227
+Aliases: FormNode Fo1400168227, FormNode Fo296271651
 {!40300|DomainExpr: Discrete('Furnace','Boiler',type:['text'])}
-{!40300|Att_SlicerPopupSize: 287,64}
+{!40300|Att_SlicerPopupSize: 292,64}
 
 Constant Electrification_Syst
 Title: Electrification System Cost
@@ -10355,7 +10357,7 @@ Units: $/Ton
 Definition: DetermTable(Electrification_Meas)(3900,8300,12000)
 NodeLocation: 696,200,1
 NodeSize: 64,32
-Aliases: FormNode Fo863297315
+Aliases: FormNode Fo863297315, FormNode Fo1370013475
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 
 Variable System_Cost
@@ -10368,8 +10370,9 @@ ValueState: 2,36,42,768,616,,MIDM
 FormNode Fo1668603683
 Title: Combustion System Cost
 Definition: 0
-NodeLocation: 1400,612,1
+NodeLocation: 1400,532,1
 NodeSize: 232,20
+NodeColor: 49151,49151,49151
 Original: Combustion_System_Co
 
 FormNode Fo326426403
@@ -10404,12 +10407,13 @@ Definition: Total_Annual_Cost[Technology='Electrification Measure ']/Total_Annua
 NodeLocation: 672,544,1
 NodeSize: 64,32
 WindState: 2,98,82,720,532
-ValueState: 2,239,216,849,596,1,MIDM
+ValueState: 2,913,38,849,596,1,MIDM
+Aliases: FormNode Fo1697169187, FormNode Fo1906884387
 GraphSetup: {!40403|Att_ReverseOrder Electricity_Price:1}~
 Att_GraphIndexRange Fuel_Price:1,,1,,,,,5,6.911336332559586,0~
 ShowKey:2
 ReformVal: [Fuel_Price,Electricity_Price]
-Att_ResultSliceState: [Selected_Sectors,1,Electrification_Meas,3,Electricity_Price,2,Fuel_Price,3]
+Att_ResultSliceState: [Electrification_Meas,2,Selected_Sectors,11,Electricity_Price,2,Fuel_Price,3]
 {!40600|Att_StackingIndex: Electricity_Price}
 {!40600|Att_ClusterIndex: Null}
 {!40700|CellFormatExpression: CellColor_Higher_Red(self,1)}
@@ -10421,7 +10425,7 @@ Definition: Choice(Self,1,1)
 NodeLocation: 1080,648,1
 NodeSize: 64,32
 NodeInfo: 1,,0
-Aliases: FormNode Fo19062563
+Aliases: FormNode Fo19062563, FormNode Fo833142563
 {!40300|DomainExpr: Discrete(1,1.5,2,2.5)}
 
 FormNode Fo19062563
@@ -10432,21 +10436,9 @@ NodeSize: 232,20
 NodeInfo: 1,,,,,,,144,,,,,,0,,,,
 Original: Combustion_System_C1
 
-Variable GHG_Emissions
-Title: GHG Emissions
-NodeLocation: 856,64,1
-NodeSize: 64,32
-
-Alias Al1421467427
-Title: Tons COeq per MMBtu
-Definition: 1
-NodeLocation: 1048,64,1
-NodeSize: 64,40
-Original: Tons_COeq_per_MMBtu
-
 Decision Fuel_for_GHG_Calcs
 Title: Fuel for GHG Calcs
-NodeLocation: 1080,568,1
+NodeLocation: 96,728,1
 NodeSize: 64,32
 
 Variable Bill_Savings
@@ -10463,7 +10455,149 @@ NumberFormat: 2,%,4,0,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att_ResultSliceState: [Selected_Sectors,1,Electrification_Meas,1,Electricity_Price,1,Fuel_Price,1]
 Att_CoordinateIndex: Electricity_Price
 
+FormNode Fo1697169187
+Title: Energy Bill Ratio
+Definition: 1
+NodeLocation: 1400,572,1
+NodeSize: 232,20
+Original: Energy_Bill_Ratio
+
 Close Electrification_Simu
+
+Module Electrification
+Title: Electrification 
+Author: CWelch
+Date: Mon, May 16, 2022 7:48 AM
+NodeLocation: 920,64,1
+NodeSize: 64,32
+DiagState: 2,2044,26,552,703,17,10
+
+FormNode Fo245940003
+Title: IEER
+Definition: 0
+NodeLocation: 280,492,1
+NodeSize: 232,20
+NodeColor: 49151,49151,49151
+Original: IEER
+
+FormNode Fo1319681827
+Title: Heating Efficiency/COP
+Definition: 0
+NodeLocation: 280,372,1
+NodeSize: 232,20
+NodeColor: 49151,49151,49151
+Original: Heating_Efficiency_C
+
+FormNode Fo782810915
+Title: Installed Cost
+Definition: 0
+NodeLocation: 280,292,1
+NodeSize: 232,20
+NodeColor: 49151,49151,49151
+Original: Combustion_System_Co
+
+FormNode Fo1856552739
+Title: Heating Output Required
+Definition: 0
+NodeLocation: 280,412,1
+NodeSize: 232,20
+NodeColor: 49151,49151,49151
+Original: Heating_Output_Requi
+
+FormNode Fo514375459
+Title: Electricity Price
+Definition: 0
+NodeLocation: 280,132,1
+NodeSize: 232,20
+NodeInfo: 1,,,,,,,144,,,,,,0
+Original: Electricity_Price
+
+FormNode Fo1588117283
+Title: Fuel Price
+Definition: 0
+NodeLocation: 280,92,1
+NodeSize: 232,20
+NodeInfo: 1,,,,,,,144,,,,,,0
+Original: Fuel_Price
+
+FormNode Fo1051246371
+Title: Annual Savings
+Definition: 1
+NodeLocation: 280,652,1
+NodeSize: 232,20
+Original: Annual_Savings
+
+FormNode Fo2124988195
+Title: Simple Payback Time
+Definition: 1
+NodeLocation: 280,612,1
+NodeSize: 232,20
+Original: Simple_Payback_Time3
+
+FormNode Fo27836195
+Title: Selected Sectors
+Definition: 0
+NodeLocation: 280,52,1
+NodeSize: 232,20
+NodeInfo: 1,,,,,,,144,,,,,,0,,,,
+Original: Selected_Sectors
+
+FormNode Fo1101578019
+Title: EFLH by Sector
+Definition: 0
+NodeLocation: 280,452,1
+NodeSize: 232,20
+NodeColor: 49151,49151,49151
+Original: EFLH_by_Sector
+
+FormNode Fo564707107
+Title: Combustion System Cost
+Definition: 0
+NodeLocation: 280,532,1
+NodeSize: 232,20
+NodeColor: 49151,49151,49151
+Original: Combustion_System_Co
+
+FormNode Fo1638448931
+Title: Electrification Measure
+Definition: 0
+NodeLocation: 280,172,1
+NodeSize: 232,20
+NodeInfo: 1,,,,,,,144,,,,,,0,,,,
+Original: Electrification_Meas
+
+FormNode Fo296271651
+Title: Combustion Tech
+Definition: 0
+NodeLocation: 280,212,1
+NodeSize: 232,20
+NodeInfo: 1,,,,,,,144,,,,,,0,,,,
+Original: Combustion_Tech
+
+FormNode Fo1370013475
+Title: Electrification System Cost
+Definition: 0
+NodeLocation: 280,332,1
+NodeSize: 232,20
+NodeColor: 49151,49151,49151
+Original: Electrification_Syst
+
+FormNode Fo833142563
+Title: Combustion System Cost Mult
+Definition: 0
+NodeLocation: 280,252,1
+NodeSize: 232,20
+NodeInfo: 1,,,,,,,144,,,,,,0,,,,
+Original: Combustion_System_C1
+
+FormNode Fo1906884387
+Title: Energy Bill Ratio
+Definition: 1
+NodeLocation: 280,572,1
+NodeSize: 232,20
+Original: Energy_Bill_Ratio
+
+Close Electrification
 
 Close Nexant_Model_Templat
 

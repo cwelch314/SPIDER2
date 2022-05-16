@@ -10,7 +10,7 @@ Author: CWelch
 Date: Tue, Mar 8, 2022 9:07 AM
 DefaultSize: 64,40
 NodeSize: 64,40
-DiagState: 2,174,92,1713,693,17,10
+DiagState: 2,104,90,1713,693,17,10
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
 
@@ -917,12 +917,12 @@ Att_ResultSliceState: [PV_Sectors,1,Area_Type,1,Spatial_ID,1]
 Alias Al2147194403
 Title: Scale PV Size by % Covered by Solar
 Definition: 1
-NodeLocation: 200,472,1
+NodeLocation: 136,472,1
 NodeSize: 64,40
 Original: Scale_PV_Size_by_Cov
 
 Constant Co2
-NodeLocation: 200,568,1
+NodeLocation: 136,568,1
 NodeSize: 64,40
 
 FormNode Fo304836131
@@ -978,7 +978,7 @@ NodeLocation: 1968,472,1
 NodeSize: 64,40
 WindState: 2,98,82,720,545
 ValueState: 2,353,85,648,590,1,MIDM
-Aliases: FormNode Fo954953251, FormNode Fo501968419, FormNode Fo1035302179
+Aliases: FormNode Fo954953251, FormNode Fo1035302179
 GraphSetup: Att_GraphIndexRange PV_Sectors:1,,1,,,,,2,10,1~
 Graph_AxisLabelFont:,16,0~
 Flip:8
@@ -1096,6 +1096,7 @@ ValueState: 2,2039,151,906,660,0,MIDM
 Aliases: Alias Al2048141603
 ReformVal: [Spatial_ID,All_PV_Sectors]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [All_PV_Sectors,Spatial_ID]
 
 Variable Include_Facility_by_
 Title: Include Facility by Type,MinSizeOnly
