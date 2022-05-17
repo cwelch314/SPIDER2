@@ -1,0 +1,772 @@
+{ Analytica Model NYPA_specific_output, encoding="UTF-8" }
+SoftwareVersion 6.1.0
+
+{!-60000|Attribute AcpStyles}
+
+
+LinkModule NYPA_specific_output
+Title: NYPA specific output
+Author: CWelch
+Date: Tue, Mar 29, 2022 11:58 AM
+DefaultSize: 64,40
+NodeSize: 64,40
+NodeInfo: 1,0,0,,,,,,,,,0
+DiagState: 2,-85,260,1767,691,17,10,
+WindState: 2,2271,111,720,350
+NodeColor: 65535,65535,65535
+FontStyle: Arial Narrow,19
+FileInfo: 0,LinkModule NYPA_specific_output,2,2,0,0,NYPA specific output.ana
+AcpStyles: Show_Object:No~
+show_as_tab: No
+
+Constant NYPA_of_Natural_Mark
+Title: NYPA % of Natural Market
+Units: %
+Description: The assumed percent of the total "natural" market adoption that is enabled by NYPA.
+Definition: Table(Spatial_ID,All_PV_Sectors,Area_Type)(~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3,~
+0.3,0.3,0.3)
+NodeLocation: 592,48,1
+NodeSize: 72,40
+DefnState: 2,432,83,768,667,0,DFNM
+ValueState: 2,1167,229,624,551,,MIDM
+Aliases: FormNode Fo1525691683, FormNode Fo517300515, FormNode Fo1404400931
+NodeColor: 65535,1,1
+ReformDef: [Spatial_ID,All_PV_Sectors]
+NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att_EditSliceState: [Area_Type,1,All_PV_Sectors,1,Spatial_ID,1]
+{!40700|Att_CellFormat: CellAlignment('Center')}
+
+Variable Nat_Mkt_Pot_l_vs_PV_
+Title: Nat Mkt Pot'l vs PV Size
+Units: MW-DC
+Description: Natural Market Achievable Potential at the selected output period compared with average system size
+Definition: IF Meets_Potential_Thre THEN New_PV_Cumul_MW_DC[Output_Periods=PV_Output_Period] ELSE Null
+NodeLocation: 128,152,1
+NodeSize: 64,40
+ValueState: 2,415,38,1050,791,1,MIDM
+Aliases: FormNode Fo1072958243
+GraphSetup: {!50400|Att_AxisOrKeyTitle Average_PV_kW_Includ:Average PV System Size (kW-DC)}~
+SymbolSize:12~
+{!50400|Att_AxisOrKeyTitle Nat_Mkt_Pot_l_vs_PV_:Natural Market Achievable Potential (MW-DC)}~
+Att_GraphValueRange Average_PV_kW_Includ:1,,,,~
+Att_ContLineStyle Graph_Primary_Valdim:4~
+Att_AreaFill Graph_Primary_Valdim:1~
+Att_Stacked_Lines Graph_Primary_Valdim:0~
+Att_GraphIndexRange Output_Periods:1,,1,,,,10,44278.27083802223,44589.50791597366,0~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+ShowKey:2~
+Att_GraphValueRange Nat_Mkt_Pot_l_vs_PV_:1,,1,,1,,,4,79.04749200950145,0~
+Graph_SymbolKey:1~
+Graph_AxisLabelFont:,16,0~
+Flip:8
+ReformVal: [Spatial_ID,Spatial_ID]
+NumberFormat: 2,F,4,5,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+XyExpr: Average_PV_kW_Includ
+Att__TotalsIndex: [Area_Type,Spatial_ID]
+Att_ResultSliceState: [PV_Sectors,21,Spatial_ID,-1,Area_Type,-1]
+Att_XRole: Self
+Att_YRole: 1
+Att_ColorRole: Area_Type
+Att_SymbolRole: PV_Sectors
+Att_SymbolSizeRole: PV_Sectors
+{!40600|Att_StackingIndex: Area_Type}
+{!40600|Att_ClusterIndex: Null}
+
+Index Sectors_Aggregated
+Att_PrevIndexValue: ['Higher Education','Hospitals','K-12','Air Transportation','Art_Museum','Assisted Living','Community services','Correctional Facility','Unique Education','Government_Office','Housing','Library','Other Transportation','Police and Fire Department','Recreational','Water Supply & Waste Water','Courthouse_Probation']
+Title: Sectors Aggregated
+Definition: ['Higher Education','Hospitals','K-12','Air Transportation','Art_Museum','Assisted Living','Community services','Correctional Facility','Unique Education','Government_Office','Housing','Library','Other Transportation','Police and Fire Department','Recreational','Water Supply & Waste Water','Courthouse_Probation']
+NodeLocation: 104,360,1
+NodeSize: 64,40
+WindState: 2,98,82,720,575
+{!50400|Att_AxisOrKeyTitle: ""}
+{!40300|Att_SlicerPopupSize: 452,252}
+
+Decision Map_All_to_Aggregate
+Title: Map All to Aggregated Sectors
+Definition: Table(All_PV_Sectors)(Choice(Sectors_Aggregated,1,0),Choice(Sectors_Aggregated,2,0),Choice(Sectors_Aggregated,3,0),Choice(Sectors_Aggregated,4,0),Choice(Sectors_Aggregated,5,0),Choice(Sectors_Aggregated,6,0),Choice(Sectors_Aggregated,7,0),Choice(Sectors_Aggregated,8,0),Choice(Sectors_Aggregated,9,0),Choice(Sectors_Aggregated,10,0),Choice(Sectors_Aggregated,11,0),Choice(Sectors_Aggregated,12,0),Choice(Sectors_Aggregated,13,0),Choice(Sectors_Aggregated,14,0),Choice(Sectors_Aggregated,15,0),Choice(Sectors_Aggregated,16,0),Choice(Sectors_Aggregated,4,0),Choice(Sectors_Aggregated,5,0),Choice(Sectors_Aggregated,6,0),Choice(Sectors_Aggregated,7,0),Choice(Sectors_Aggregated,8,0),Choice(Sectors_Aggregated,17,0),Choice(Sectors_Aggregated,9,0),Choice(Sectors_Aggregated,10,0),Choice(Sectors_Aggregated,11,0),Choice(Sectors_Aggregated,12,0),Choice(Sectors_Aggregated,13,0),Choice(Sectors_Aggregated,14,0),Choice(Sectors_Aggregated,15,0),Choice(Sectors_Aggregated,16,0))
+NodeLocation: 1136,464,1
+NodeSize: 64,40
+NodeInfo: 1,,0
+DefnState: 2,719,154,573,746,0,DFNM
+TableCellDefault: Choice(Sectors_Aggregated,1,0)
+
+Variable NYPA_Enabled_PV_Pote
+Title: NYPA Enabled PV Potential
+Units: MW-DC
+Description: Simulated PV adoption that is enabled by NYPA.
+Definition: Aggregate(NYPA_Enabled_Achieva,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
+NodeLocation: 584,336,1
+NodeSize: 72,40
+ValueState: 2,454,27,966,780,1,MIDM
+Aliases: FormNode Fo599094563
+GraphSetup: Flip:8~
+Graph_AxisLabelFont:,20,0~
+{!50500|Graph_ShowTitle:1}~
+Graph_FillTransparen:59~
+Att_ContLineStyle Graph_Primary_Valdim:5~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+Att_GraphIndexRange Output_Periods:1,0,,,,,10~
+Att_Stacked_Lines Graph_Primary_Valdim:0~
+Att_AreaFill Graph_Primary_Valdim:0~
+Att_GraphValueRange NYPA_Enabled_PV_Pote:1,,1,1,,,,0,1000,0~
+{!50400|Att_AxisOrKeyTitle Output_Periods:""}~
+SymbolSize:11
+ReformVal: [Sectors_Aggregated,Area_Type]
+NumberFormat: 2,F,2,1,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Spatial_ID]
+Att_ResultSliceState: [Test_Cost_Multiplier,2,Output_Periods,108,Spatial_ID,0,Area_Type,2,Sectors_Aggregated,8]
+{!40600|Att_StackingIndex: Area_Type}
+{!40600|Att_ClusterIndex: Null}
+{!50500|GraphTitleExpr: ""}
+
+Variable NYPA_Enabled_PV_Perc
+Title: NYPA Enabled PV Percentages
+Units: %
+Description: Percentage of total NYPA enabled PV adoption by sector, geography, and area type.
+Definition: ZIDZ1(NYPA_Enabled_Achiev3,sum(NYPA_Enabled_Achiev3,Spatial_ID,Area_Type,Sectors_Aggregated))
+NodeLocation: 896,336,1
+NodeSize: 64,40
+ValueState: 2,12,66,921,632,1,MIDM
+Aliases: FormNode Fo544568611
+GraphSetup: Flip:8~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+Att_GraphValueRange NYPA_Enabled_PV_Perc:1,,1,,,,,0,0.45,0
+ReformVal: [Spatial_ID,Area_Type]
+NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Sectors_Aggregated,Spatial_ID,Area_Type]
+Att_ResultSliceState: [Area_Type,0,Test_Cost_Multiplier,1,Sectors_Aggregated,0,Area_Type,0,Spatial_ID,0]
+Att_ColorRole: Null
+{!40600|Att_StackingIndex: Area_Type}
+{!40600|Att_ClusterIndex: Null}
+
+Variable PV_Potential_by_Type
+Title: PV Potential by Type, Time
+Units: MW-DC
+Description: PV potential by type. ~
+Total technical: assumes all usable area converted to solar PV~
+Total market: the "natural" market adoption of solar PV considering system economics and likely technology diffusion. ~
+NYPA enabled: the portion of the total "natural" market adoption enabled by NYPA services.
+Definition: Table(Potential_Type)(Total_PV_Cumul_MW_DC,NYPA_Enabled_PV_Pote)
+NodeLocation: 568,456,1
+NodeSize: 64,40
+WindState: 2,1989,91,720,350
+ValueState: 2,624,28,696,644,1,MIDM
+Aliases: FormNode Fo1687511331, FormNode Fo330659107
+GraphSetup: {!50400|Att_AxisOrKeyTitle Output_Periods:""}~
+{!50500|Graph_ShowTitle:1}~
+Att_GraphValueRange PV_Potential_by_Type:1,,1,,,,,0,4178.815126419067,0~
+Att_GraphIndexRange Output_Periods:1,,1,,,,10,43100,45116.778254151344,0~
+Graph_AxisLabelFont:,16,0~
+{!50400|Att_AxisOrKeyTitle PV_Potential_by_Type:PV Potential (MW-DC)}
+ReformVal: [Output_Periods,Spatial_ID]
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Area_Type,Sectors_Aggregated,Spatial_ID]
+Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,Spatial_ID,0,Potential_Type,2,PV_Incentive_Scen,1,Output_Periods,108]
+{!40600|Att_StackingIndex: Spatial_ID}
+{!40600|Att_ClusterIndex: Null}
+{!50500|GraphTitleExpr: ""}
+
+Variable New_PV_Cumul_MW_DC
+Title: New PV Cumul MW DC
+Units: MW DC
+Description: New Natural Market Potential starting from the beginning of the study period.
+Definition: local cumulData:=Cumulative_PV_Adopte[Time_Solar_PV=Output_Prd_Plus_Map];~
+cumulData[Output_Periods_Plus=Output_Periods] - cumulData[Output_Periods_Plus=Base_Period_Deltas]
+NodeLocation: 312,264,1
+NodeSize: 64,40
+ValueState: 2,717,211,1066,595,1,MIDM
+GraphSetup: Flip:0
+ReformVal: [Output_Periods,Spatial_ID]
+NumberFormat: 2,F,1,2,1,0,1,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Spatial_ID]
+Att_ResultSliceState: [Area_Type,3,PV_Sectors,3,Spatial_ID,3,Output_Periods,1]
+
+Index Potential_Type
+Att_PrevIndexValue: ['Total Natural Market','NYPA Enabled']
+Title: Potential Type
+Definition: ['Total Natural Market','NYPA Enabled']
+NodeLocation: 1752,600,1
+NodeSize: 64,40
+{!40300|Att_SlicerPopupSize: 282,80}
+
+Variable Total_PV_Cumul_MW_DC
+Title: Total PV Cumul MW DC
+Units: MW-DC
+Description: Total Natural Market Potential including all historical adoption.
+Definition: Aggregate(New_PV_Cumul_MW_DC,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
+NodeLocation: 408,368,1
+NodeSize: 64,40
+ValueState: 2,2055,149,912,310,0,MIDM
+GraphSetup: Flip:0
+ReformVal: [Output_Periods,Spatial_ID]
+Att__TotalsIndex: [Spatial_ID]
+
+Alias Al60092707
+Title: LRMS by PV Time
+Definition: 1
+NodeLocation: 1752,144,1
+NodeSize: 64,40
+Original: LRMS_by_PV_Time
+
+Variable Long_Run_Market_Sha1
+Title: Long Run Market Share
+Units: %
+Description: The long-run expected market share of DERs (i.e., the expected long-run saturation of DER adoption, given sufficient time). The speed at which adoption approaches this long-run market share is determined by the diffusion coefficients.
+Definition: LRMS_by_PV_Time[@PV_Sectors=1]
+NodeLocation: 1760,232,1
+NodeSize: 64,40
+WindState: 2,2334,170,720,350
+ValueState: 2,811,210,1002,601,,MIDM
+Aliases: FormNode Fo617935139, FormNode Fo1786082595
+GraphSetup: Flip:0~
+Graph_AxisLabelFont:,20,0
+ReformVal: [Time_Solar_PV,Area_Type]
+NumberFormat: 2,%,4,0,0,0,4,1,$,0,"ABBREV",0,,,0,0,15,
+Att_ResultSliceState: [System_Types,1,PV_Spatial_ID,1,Area_Type,1,Time_Solar_PV,1]
+
+Variable Incremental_Potenti2
+Title: Incremental Potential
+Units: MW-DC
+Definition: PV_Potential_by_Type - (IF Potential_Type='Total Technical' THEN 0 ELSE PV_Potential_by_Type[Output_Periods=31-Jan-2022])
+NodeLocation: 568,560,1
+NodeSize: 64,40
+ValueState: 2,278,7,1230,852,,MIDM
+Aliases: FormNode Fo1565842723
+ReformVal: [Spatial_ID,Sectors_Aggregated]
+Att__TotalsIndex: [Area_Type,Sectors_Aggregated]
+Att_ResultSliceState: [Area_Type,0,Output_Periods,1,Potential_Type,3,Sectors_Aggregated,0,Spatial_ID,1]
+{!40600|Att_StackingIndex: Sectors_Aggregated}
+{!40600|Att_ClusterIndex: Null}
+
+Variable NYPA_Enabled_Achiev3
+Title: NYPA Enabled Achievable, Final
+Units: MW-DC
+Description: Simulated PV adoption that is enabled by NYPA at the user selected output period. 
+Definition: NYPA_Enabled_PV_Pote[Output_Periods=PV_Output_Period]
+NodeLocation: 744,336,1
+NodeSize: 64,40
+ValueState: 2,728,33,685,784,1,MIDM
+Aliases: FormNode Fo1053099811
+GraphSetup: Flip:8~
+{!50000|Graph_SortBySpread:1}
+ReformVal: [Sectors_Aggregated,Spatial_ID]
+NumberFormat: 2,F,2,11,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Area_Type,Spatial_ID]
+Att_ResultSliceState: [Spatial_ID,0,Area_Type,0,Sectors_Aggregated,4]
+{!40600|Att_StackingIndex: Spatial_ID}
+{!40600|Att_ClusterIndex: Null}
+
+Variable NYPA_Enabled_Achieva
+Title: NYPA Enabled Achievable Potential
+Units: MW-DC
+Description: Natural Market Achievable Potential
+Definition: New_PV_Cumul_MW_DC * NYPA_of_Natural_Mark[All_PV_Sectors=PV_Sectors] * Meets_Potential_Thre
+NodeLocation: 584,160,1
+NodeSize: 72,40
+ValueState: 2,268,54,733,780,1,MIDM
+GraphSetup: Att_GraphValueRange NYPA_Enabled_Achieva:1,,1,,,,,0,2.7108434587717056,0~
+Flip:8~
+Att_GraphIndexRange PV_Sectors:1,,0,,,,,1,21,1
+ReformVal: [PV_Sectors,Spatial_ID]
+Att__TotalsIndex: [Area_Type,Spatial_ID]
+Att_ResultSliceState: [Output_Periods,108,Area_Type,0,Spatial_ID,0,PV_Sectors,1]
+{!40600|Att_StackingIndex: Spatial_ID}
+{!40600|Att_ClusterIndex: Null}
+{!40700|Att_CellFormat: CellSpan(Spatial_ID,CellNumberFormat('Fixed Point',4,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:4),5,header:0)}
+
+Decision Minimum_Market_Poten
+Title: Minimum Market Potential Threshold
+Units: MW-DC
+Description: Minimum threshold for natural market potential at the end of the study to be used for filtering NYPA Enabled Potential (assuming NYPA only focuses on those facility types with greatest potential)
+Definition: Choice(Self,3,Not ACP_Version)
+NodeLocation: 312,56,1
+NodeSize: 72,40
+Aliases: FormNode Fo659581731
+{!40300|DomainExpr: Discrete(0.25,1,5,10,20,type:'number')}
+{!40300|Att_SlicerPopupSize: 227,112}
+
+Variable Meets_Potential_Thre
+Title: Meets Potential Threshold
+Definition: New_PV_Cumul_MW_DC[@Output_Periods=size(Output_Periods)]>=Minimum_Market_Poten
+NodeLocation: 312,152,1
+NodeSize: 64,40
+ValueState: 2,330,34,757,683,0,MIDM
+ReformVal: [Spatial_ID,PV_Sectors]
+Att_ResultSliceState: [Area_Type,2,PV_Sectors,1,Spatial_ID,1]
+
+Variable NYPA_Enabled_Achiev1
+Title: NYPA Enabled Achievable Potential, Flat
+Definition: IF Total_NYPA_Enabled_P=0 THEN Null ELSE Total_NYPA_Enabled_P
+NodeLocation: 1208,72,1
+NodeSize: 72,40
+ValueState: 2,526,162,738,661,0,MIDM
+ReformVal: [Area_Type,PV_Sectors]
+Att__TotalsIndex: []
+Att_ResultSliceState: [Spatial_ID,1,PV_Sectors,1,Area_Type,0]
+
+Decision PV_Output_Period
+Title: PV Output Period
+Definition: Choice(Output_Periods,108,0)
+NodeLocation: 1288,464,1
+NodeSize: 64,40
+NodeInfo: 1,,0
+Aliases: FormNode Fo775449379
+
+Variable Total_NYPA_Enabled_P
+Title: Total NYPA Enabled Potential
+Units: MW-DC
+Definition: NYPA_Enabled_Achieva[Output_Periods=PV_Output_Period]
+NodeLocation: 1000,72,1
+NodeSize: 64,40
+ValueState: 2,431,35,1214,681,,MIDM
+GraphSetup: Flip:0
+ReformVal: [Min_PV_System_Size,Minimum_Market_Poten]
+Att__TotalsIndex: [PV_Sectors,Area_Type]
+Att_ResultSliceState: [Area_Type,0,Spatial_ID,1,PV_Sectors,0]
+
+Index PV_Order_Col
+Title: PV Order Col
+Definition: Copyindex([handle(PV_Sectors),handle(Area_Type),handle(Spatial_ID),'Potential MW-DC'])
+NodeLocation: 1752,328,1
+NodeSize: 64,40
+
+Index Sorted_Row
+Title: Sorted Row
+Definition: index row:=CopyIndex(Potential_Table1.Row);~
+sortindex(Potential_Table1[Potential_Table_Cols=Sort_Opportunity_By],descending:True)
+NodeLocation: 1752,416,1
+NodeSize: 64,40
+ValueState: 2,788,173,339,597,0,MIDM
+
+Index Opportunity
+Title: Opportunity
+Definition: Copyindex(@Sorted_Row)
+NodeLocation: 1752,504,1
+NodeSize: 64,40
+
+Index Value_Col
+Att_PrevIndexValue: ['Total Market Achievable (MW-DC)','NYPA Enabled Potential (MW-DC)','Average System Size (kW)']
+Title: Value Col
+Definition: ['Total Market Achievable (MW-DC)','NYPA Enabled Potential (MW-DC)','Average System Size (kW)']
+NodeLocation: 1584,432,1
+NodeSize: 64,40
+
+Variable NYPA_Potential_Avg_S
+Title: NYPA Potential & Avg System Size
+Definition: Table(Value_Col)(Total_Market_Potenti,NYPA_Enabled_Achiev1,Average_PV_System_Si)
+NodeLocation: 1424,240,1
+NodeSize: 72,40
+DefnState: 2,196,202,576,188,0,DFNM
+ValueState: 2,189,38,1196,706,0,MIDM
+ReformVal: [Value_Col,PV_Sectors]
+
+Variable Potential_Table1
+Title: Potential Table
+Definition: IF Over_dimensioned THEN (MsgBox("Please select only one minimum PV system size and minimum market potential to view this output.", 0,"Too many dimensions." );null) ELSE MdArrayToTable(NYPA_Potential_Avg_S,Col:Potential_Table_Cols,valueIndex:Value_Col, omitNull:True,omitZero:True )
+NodeLocation: 1584,240,1
+NodeSize: 64,40
+WindState: 2,818,262,720,350
+ValueState: 2,375,102,1033,668,0,MIDM
+
+Index Potential_Table_Cols
+Att_PrevIndexValue: [PV_Sectors,Area_Type,Spatial_ID,'Total Market Achievable (MW-DC)','NYPA Enabled Potential (MW-DC)','Average System Size (kW)']
+Title: Potential Table Cols
+Definition: index i:=[handle(PV_Sectors),handle(Area_Type),handle(Spatial_ID)];~
+Concat(i,Value_Col)
+NodeLocation: 1912,328,1
+NodeSize: 64,40
+
+Variable Sorted_Potential_Lis
+Title: Sorted Potential List
+Units: MW-DC,kW/system
+Description: Sorted list of largest opportunities for NYPA Enabled Achievable Potential.
+Definition: IF Over_dimensioned THEN (MsgBox("Please select only one minimum PV system size and minimum market potential to view this output.", 0  ,"Too many dimensions."  );null) ELSE ~
+(local x:=Potential_Table1[.Row=Sorted_Row];~
+x[@Sorted_Row=Opportunity])
+NodeLocation: 1584,344,1
+NodeSize: 64,40
+WindState: 2,1055,291,720,350
+ValueState: 2,384,15,1333,819,0,MIDM
+Aliases: FormNode Fo1652693795
+ReformVal: [Potential_Table_Cols,Opportunity]
+{!40700|Att_CellFormat: CellFormats(CellSpan(Potential_Table_Cols,CellNumberFormat('Fixed Point',0,0,1,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:0),6,header:0),CellSpan(Potential_Table_Cols,CellNumberFormat('Fixed Point',1,1,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:1),5,header:0),CellSpan(Potential_Table_Cols,CellNumberFormat('Fixed Point',1,1,1,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:1),4,header:0),CellSpan(Potential_Table_Cols,CellNumberFormat('Fixed Point',2,1,1,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:1,zeroes_:2),4,5,header:0),CellSpan(Potential_Table_Cols,CellAlignment('Center'),4,6,header:0))}
+{!50000|Att_ColumnWidths: [,Potential_Table_Cols,\([,,,,,])]}
+
+Decision Sort_Opportunity_By
+Title: Sort Opportunity By
+Definition: Choice(Value_Col,2,0)
+NodeLocation: 1912,424,1
+NodeSize: 64,40
+Aliases: FormNode Fo578951971
+AcpStyles: Show_object: No
+
+Variable Average_PV_System_Si
+Title: Average PV System Size for Opp List
+Definition: IF NYPA_Enabled_Achiev1=null THEN null ELSE Average_PV_kW_Includ
+NodeLocation: 1208,176,1
+NodeSize: 64,40
+
+Variable Total_Market_Potenti
+Title: Total Market Potential
+Units: MW-DC
+Definition: IF Total_NYPA_Enabled_P=0 THEN Null ELSE New_PV_Cumul_MW_DC[Output_Periods=PV_Output_Period]
+NodeLocation: 992,240,1
+NodeSize: 64,40
+
+Variable Technical_Potential3
+Title: Technical Potential
+Units: MW-DC
+Definition: IF NYPA_Enabled_Achiev1=null THEN null ELSE Total_PV_Potential_D
+NodeLocation: 1416,72,1
+NodeSize: 64,40
+ValueState: 2,2205,88,1060,592,,MIDM
+
+Decision ACP_Version
+Title: ACP Version
+Definition: Checkbox(0)
+NodeLocation: 104,56,1
+NodeSize: 64,40
+Aliases: FormNode Fo1792088867
+
+FormNode Fo1792088867
+Title: ACP Version
+Definition: 0
+NodeLocation: 148,80,1
+NodeSize: 20,16
+NodeInfo: 1,,,0
+Original: ACP_Version
+
+Variable Cumulative_PV_Adopte
+Title: Cumulative PV Adopted
+Definition: Cumul_CEC_MW_Cap[PV_Spatial_ID=Spatial_ID] * DC_to_AC_Ratio[All_PV_Sectors=PV_Sectors,PV_Climate_Zone=Climate_Zone_Map[PV_Spatial_ID=Spatial_ID]]
+NodeLocation: 112,264,1
+NodeSize: 64,40
+ValueState: 2,2057,500,854,308,0,MIDM
+ReformVal: [Time_Solar_PV,Spatial_ID]
+NumberFormat: 2,F,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Spatial_ID,Time_Solar_PV]
+Att_ResultSliceState: [PV_Sectors,1,Area_Type,1,Spatial_ID,1,Time_Solar_PV,1]
+{!40700|Att_CellFormat: Undefined}
+
+Module ACP_Import
+Title: ACP Import
+Author: CWelch
+Date: Mon, May 2, 2022 9:03 AM
+NodeLocation: 104,544,1
+NodeSize: 64,40
+
+Variable Va17
+Definition: SpreadsheetOpen('x',showDialog:True,title:'Select the import file' )
+NodeLocation: 112,64,1
+NodeSize: 64,40
+ValueState: 2,164,83,1418,732,,MIDM
+{!50000|Att_ColumnWidths: [1101]}
+
+Variable Va30
+Definition: SpreadsheetRange(Va17,'NYPA_Mkt_Fraction')
+NodeLocation: 256,64,1
+NodeSize: 64,40
+ValueState: 2,456,8,867,907,0,MIDM
+ReformVal: [Sys_LocalIndex('Col'),Sys_LocalIndex('Row')]
+
+Button Bu1
+NodeLocation: 112,160,1
+NodeSize: 64,40
+
+Constant Custom_Input_Filenam
+Title: Custom Input Filename
+Description: This file must first be uploaded to the ACP cloud server.
+Definition: 'NYPA DER Inputs.xlsx'
+NodeLocation: 120,320,1
+NodeSize: 64,40
+Aliases: FormNode Fo11547939, FormNode Fo1555576099
+AcpStyles: Show_Object:no
+
+Button Import_Custom_DER_In
+Title: Import Custom DER Inputs
+NodeLocation: 256,160,1
+NodeSize: 64,40
+Aliases: Alias Al1685599523
+AcpStyles: Show_Object:no
+OnClick: Select_Model_for_Dat:= 'SPIDER';~
+Import_Data_Tabs1
+
+Button Upload_New_Input_Fil
+Title: Upload New Input File
+NodeLocation: 400,160,1
+NodeSize: 64,40
+Aliases: Alias Al1782723875
+AcpStyles: Show_Object:no~
+Upload_spreadsheet~
+Upload_filename_variable: Custom_Input_Filenam~
+
+
+Close ACP_Import
+
+Module Storage_Output
+Title: Storage Output
+Author: CWelch
+Date: Mon, May 2, 2022 9:03 AM
+NodeLocation: 256,544,1
+NodeSize: 64,40
+NodeInfo: 1,0
+DiagState: 2,2130,63,944,629,17,10
+
+Alias Al1508540707
+Title: BESS Adoption EOP
+Definition: 1
+NodeLocation: 280,440,1
+NodeSize: 64,40
+NodeColor: 65535,65535,65535
+Original: BESS_Adoption_EOP
+
+Variable NYPA_Enabled_Storage
+Title: NYPA Enabled Storage Adoption
+Units: MW
+Definition: NYPA_of_Natural_Mark[All_PV_Sectors=BESS_Sectors,Spatial_ID=BESS_Spatial_ID] * BESS_Adoption_EOP
+NodeLocation: 384,328,1
+NodeSize: 64,40
+ValueState: 2,233,103,829,599,,MIDM
+
+Variable NYPA_Enabled_Storag1
+Title: NYPA Enabled Storage Adoption
+Units: MW-AC
+Description: NYPA enabled adoption of storage systems. Currently, only "paired" solar + storage systems are modeled (not stand-alone).
+Definition: sum(Aggregate(NYPA_Enabled_Storage,Map_All_to_Aggregate[All_PV_Sectors=BESS_Sectors],BESS_Sectors,Sectors_Aggregated,"Sum"), BESS_types)
+NodeLocation: 536,328,1
+NodeSize: 64,40
+ValueState: 2,470,84,750,645,1,MIDM
+Aliases: FormNode Fo1849909539, FormNode Fo1807054115
+GraphSetup: Att_GraphIndexRange Time_Storage:1,,0,,,,,43100,46371.209789931774,0~
+Graph_FillTransparen:55~
+Att_ContLineStyle Graph_Primary_Valdim:5~
+Att_GraphValueRange NYPA_Enabled_Storag1:1,,1,,,,,0,17.05717697739601,0~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+Att_Stacked_Lines Graph_Primary_Valdim:1~
+Att_AreaFill Graph_Primary_Valdim:1~
+{!50400|Att_AxisOrKeyTitle Time_Storage:""}
+ReformVal: [Time_Storage,BESS_Spatial_ID]
+Att__TotalsIndex: [Sectors_Aggregated,Area_Type]
+Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,BESS_Incentive_Scen,3,BESS_Spatial_ID,1,Time_Storage,37]
+{!40600|Att_StackingIndex: BESS_Spatial_ID}
+{!40600|Att_ClusterIndex: Null}
+
+Variable NYPA_Enabled_Storag2
+Title: NYPA Enabled Storage Adopt Pct
+Units: %
+Description: Percentage of NYPA enabled storage adoption by geography, sector, and area type.
+Definition: ZIDZ1(NYPA_Enabled_Storag1,sum(NYPA_Enabled_Storag1,BESS_Spatial_ID,Area_Type,Sectors_Aggregated))
+NodeLocation: 688,424,1
+NodeSize: 64,40
+ValueState: 2,652,34,883,757,1,MIDM
+Aliases: FormNode Fo507732259, FormNode Fo464876835
+GraphSetup: Flip:8~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+Att_ForceCategorical Graph_Primary_Valdim:1~
+ShowKey:1
+ReformVal: [BESS_Spatial_ID,Sectors_Aggregated]
+NumberFormat: 2,%,4,2,0,0,4,1,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [BESS_Spatial_ID,Area_Type,Sectors_Aggregated]
+Att_ResultSliceState: [Time_Storage,109,Area_Type,0,Sectors_Aggregated,0,BESS_Spatial_ID,0]
+{!40600|Att_StackingIndex: Sectors_Aggregated}
+{!40600|Att_ClusterIndex: Null}
+
+Alias Al2033486115
+Title: Dispatch Flows
+Definition: 1
+NodeLocation: 496,88,1
+NodeSize: 64,40
+Original: Dispatch_Flows2
+
+Variable Hourly_Energy_Flows
+Title: Hourly Energy Flows
+Units: kWh
+Description: Illustrative optimized hourly energy flows assuming a 1 MW-DC solar PV DC system installed and a 660 kW-AC battery storage system with 3.5 hrs of storage at peak capacity.
+Definition: sum(Dispatch_Flows2[Opt_Sectors=Hrly_flow_sector_sel,@Opt_Storage_Systems=1,Area_Type=Hrly_flow_area_type_] * ~
+Flow_Scaling_Factor, PV_Climate_Zone) {converts dispatch flow output to a standard system size of 1000 kW}~
+
+NodeLocation: 272,176,1
+NodeSize: 64,40
+WindState: 2,2306,207,720,350
+ValueState: 2,721,124,908,708,1,MIDM
+Aliases: FormNode Fo340429091, FormNode Fo1517647139
+GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
+Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,0,,,,,1,49,1
+ReformVal: [Viewed_Dispatch_Tim2,Flow_Types1]
+Att__TotalsIndex: [Viewed_Dispatch_Tim2]
+Att_ResultSliceState: [Month,8,Rate_Names_and_Start,4,Flow_Types1,2,Viewed_Dispatch_Tim2,0]
+{!40700|Att_CellFormat: CellSpan(Viewed_Dispatch_Tim2,CellNumberFormat('Fixed Point',0,0,1,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:0),169,header:0)}
+{!50000|Att_ColumnWidths: [126]}
+
+Variable Flow_Scaling_Factor
+Title: Flow Scaling Factor
+Definition: 1000/PV_DC_System_Size_fo[PV_Sectors=Hrly_flow_sector_sel, Area_Type=Hrly_flow_area_type_] {normalized hourly energy flow output to show value for a 1000 kW system}~
+/ (IF Flow_Types1='Total Solar Output' THEN Levelized_Degradatio ELSE 1) {solar flows show levelized value. this converts back into first year flows. does not apply to storage dispatch flows}
+NodeLocation: 112,176,1
+NodeSize: 64,40
+ValueState: 2,242,154,964,628,,MIDM
+
+Decision Hrly_flow_sector_sel
+Title: Hrly flow sector selected
+Definition: Choice(Opt_Sectors,1,0)
+NodeLocation: 112,272,1
+NodeSize: 64,40
+
+Decision Hrly_flow_area_type_
+Title: Hrly flow area type selected
+Definition: Choice(Area_Type,1,0)
+NodeLocation: 112,360,1
+NodeSize: 64,40
+
+Variable NYPA_Enabled_Storag3
+Title: NYPA Enabled Storage Adoption
+NodeLocation: 696,264,1
+NodeSize: 64,56
+
+Close Storage_Output
+
+Variable Aggregate_by_Govt_ty
+Title: Aggregate by Govt type
+NodeLocation: 840,616,1
+NodeSize: 64,40
+
+Variable NYPA_Enabled_Achiev_
+Title: NYPA Enabled Achiev, Segment
+Units: MW-DC
+Definition: Aggregate(NYPA_Enabled_Achieva[Output_Periods=PV_Output_Period],Map_Facilities_to_Se,PV_Sectors,Customer_Segment,"Sum")
+NodeLocation: 896,448,1
+NodeSize: 64,56
+ValueState: 2,189,110,893,717,,MIDM
+Aliases: FormNode Fo966567715
+GraphSetup: {!50400|Att_AxisOrKeyTitle Customer_Segment:""}~
+Flip:8~
+Graph_AxisLabelFont:,20,0
+ReformVal: [Customer_Segment,Area_Type]
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Area_Type,Spatial_ID]
+Att_ResultSliceState: [Test_Cost_Multiplier,2,Spatial_ID,0,Customer_Segment,1,Area_Type,0]
+{!40600|Att_StackingIndex: Area_Type}
+{!40600|Att_ClusterIndex: Null}
+
+Close NYPA_specific_output
+

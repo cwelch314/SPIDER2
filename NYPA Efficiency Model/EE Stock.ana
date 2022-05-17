@@ -1,0 +1,148 @@
+{ Analytica Model EE_Stock, encoding="UTF-8" }
+SoftwareVersion 6.1.0
+
+{!-60000|Attribute AcpStyles}
+
+
+LinkModule EE_Stock
+Title: EE Stock
+Author: CWelch
+Date: Fri, Oct 29, 2021 5:31 PM
+DefaultSize: 64,32
+NodeSize: 64,32
+DiagState: 2,375,120,1240,567,17,10
+FontStyle: Arial,15
+FileInfo: 0,LinkModule EE_Stock,2,2,0,0,..\NYPA Efficiency Model\EE Stock.ana
+
+Variable Study_Start_Year
+Title: Study Start Year
+Definition: Slice(Study_Year,1)
+NodeLocation: 128,152,1
+NodeSize: 64,32
+
+Constant Blding_Stock_Growt
+Title: Building Stock Growth Rate
+Definition: 0
+NodeLocation: 128,352,1
+NodeSize: 88,32
+
+Variable Bldg_Stock_by_Study_
+Title: Bldg Stock by Study Year
+Units: sqft
+Definition: Floor_Area * (1 + Blding_Stock_Growt) ^ (Study_Year - Study_Start_Year)
+NodeLocation: 128,248,1
+NodeSize: 64,32
+ValueState: 2,863,93,797,698,1,MIDM
+GraphSetup: Flip:0
+ReformVal: [Study_Year,Null]
+NumberFormat: 2,D,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
+Att__TotalsIndex: [Spatial_ID,All_PV_Sectors]
+Att_ResultSliceState: [Spatial_ID,0,All_PV_Sectors,0,Study_Year,1]
+Att_ColorRole: Null
+
+Constant Blding_Stock_Demo_Ra
+Title: Blding Stock Demo Rate
+Definition: 0.0125 {0.0125 seems to align best with the NYSERDA report output when comparing RET measures. This specific value is not reported in the NYSERDA report.}
+NodeLocation: 288,256,1
+NodeSize: 80,32
+
+Variable Cumul_Stock_by_New_1
+Title: Cumul Stock by New/Exist
+Units: sqft
+Definition: local existing_stock := Floor_Area * (1 - Blding_Stock_Demo_Ra) ^ (Study_Year - Study_Start_Year + 1) * (1 - Blding_Stock_Growt) ;~
+local new_stock := Bldg_Stock_by_Study_ - existing_stock;~
+IF (Stock_Type = NewStock_Label) THEN new_stock * Higher_Ed_Multiplier ELSE existing_stock * Higher_Ed_Multiplier
+NodeLocation: 288,152,1
+NodeSize: 64,32
+ValueState: 2,301,166,1312,635,0,MIDM
+GraphSetup: Flip:0~
+Att_Stacked_Lines Graph_Primary_Valdim:1~
+Att_AreaFill Graph_Primary_Valdim:1
+ReformVal: [Study_Year,Stock_Type]
+NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
+Att__TotalsIndex: [Stock_Type,Region,Spatial_ID,All_PV_Sectors]
+Att_ResultSliceState: [Spatial_ID,0,All_PV_Sectors,0,Stock_Type,1,Study_Year,1]
+
+Variable Stock_w_NewCon_Incre
+Title: Stock w NewCon Incremental
+Units: sqft
+Description: New Construction Stock is the incremental stock each year instead of cumulative. This can then be applied to adoption percentages each year. 
+Definition: IF Stock_Type = NewStock_Label THEN Uncumulate(Cumul_Stock_by_New_1,Study_Year) ELSE Cumul_Stock_by_New_1
+NodeLocation: 472,152,1
+NodeSize: 64,32
+ValueState: 2,733,215,950,504,,MIDM
+Att_ResultSliceState: [Region,1,Stock_Type,2,Building_Type,1,Study_Year,1]
+
+Alias Al2048141603
+Title: Floor Area
+Definition: 1
+NodeLocation: 320,352,1
+NodeSize: 64,40
+Original: Floor_Area
+
+Variable Consumption_per_Buil
+Title: Consumption per Building
+NodeLocation: 128,464,1
+NodeSize: 64,32
+
+Constant Higher_Ed_Breakdown
+Title: Higher Ed Breakdown
+Definition: Table(Spatial_ID,Higher_Ed_Type)(~
+0.021,0.062,0.046,0.111,~
+0.032,0,0.001,0.046,~
+0.384,0,0.014,0.235,~
+0.03,0,0.008,0.011)
+NodeLocation: 736,320,1
+NodeSize: 64,32
+DefnState: 2,618,400,823,188,0,DFNM
+ValueState: 2,900,432,881,246,0,MIDM
+Aliases: FormNode Fo1813435171
+GraphSetup: Flip:8
+ReformDef: [Spatial_ID,Higher_Ed_Type]
+NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Higher_Ed_Type,Spatial_ID]
+{!40700|Att_CellFormat: CellAlignment('Center')}
+
+Index Higher_Ed_Type
+Att_PrevIndexValue: ['SUNY','CUNY','Other (e.g., community colleges)','Private Non-Profit']
+Definition: ['SUNY','CUNY','Other (e.g., community colleges)','Private Non-Profit']
+IndexVals: ['item 1']
+NodeLocation: 736,128,1
+NodeSize: 72,32
+NodeInfo: 1,,,,,,,0,,,,,,0
+
+Decision Include_Higher_Ed_Ty
+Title: Include Higher Ed Type?
+Units: fraction
+Description: Check whether to include the type of higher education listed in the Higher Education potential estimates.
+Definition: Table(Higher_Ed_Type)(Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0))
+NodeLocation: 896,320,1
+NodeSize: 64,32
+DefnState: 2,1105,85,370,219,0,DFNM
+Aliases: FormNode Fo2130924323
+TableCellDefault: Checkbox(1)
+
+Variable Higher_Ed_Multiplier
+Title: Higher Ed Multiplier
+Definition: IF All_PV_Sectors='Higher Education' THEN ~
+ZIDZ(sum(Higher_Ed_Breakdown * Include_Higher_Ed_Ty, Higher_Ed_Type),sum(Higher_Ed_Breakdown , Higher_Ed_Type)) ELSE 1
+NodeLocation: 736,240,1
+NodeSize: 64,32
+ValueState: 2,194,354,1442,261,0,MIDM
+Att__TotalsIndex: [Spatial_ID]
+
+Variable Va32
+Definition: ZIDZ(Cumul_Stock_by_New_1,sqft_per_m2)
+NodeLocation: 432,48,1
+NodeSize: 64,32
+ValueState: 2,411,194,995,620,0,MIDM
+Att__TotalsIndex: [Stock_Type,Spatial_ID,All_PV_Sectors]
+Att_ResultSliceState: [Spatial_ID,0,Stock_Type,0,All_PV_Sectors,1,Study_Year,1]
+
+Variable Va36
+Definition: Higher_Ed_Breakdown * Include_Higher_Ed_Ty
+NodeLocation: 584,320,1
+NodeSize: 64,32
+
+Close EE_Stock
+

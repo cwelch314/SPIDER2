@@ -1,0 +1,28 @@
+{ Analytica Model Saved_Allow_Chargin1, encoding="UTF-8" }
+SoftwareVersion 6.1.0
+
+{!-60000|Attribute AcpStyles}
+
+
+LinkModule Saved_Allow_Chargin1
+Title: Saved Allow Charging
+DefaultSize: 64,40
+NodeSize: 64,40
+FontStyle: Arial Narrow,19
+FileInfo: 0,LinkModule Saved_Allow_Chargin1,2,2,0,0,Saved Storage Data\Saved Allow Charging.ana
+
+Constant Saved_Allow_Charging
+Title: Saved Allow Charging
+Units: boolean
+Description: The decision variable indicating the hours in which charging is allowed. This ensures that charging and discharging cannot occur simultaneously during a given hour.
+Definition: Null
+NodeLocation: 112,64,9
+NodeSize: 64,40
+DefnState: 2,340,67,1305,726,0,DFNM
+Aliases: FormNode New1556843701, Alias Al60765219
+ReformDef: [Month,Opt_Hours]
+Att_EditSliceState: [Opt_Sectors,1,Rate_Vintage,4,PV_Climate_Zone,1,Opt_Storage_Systems,2,Seq_Opt_Number,1,Opt_Hours,1,Month,1]
+{!40200|OptDimensions: [Opt_Hours]}
+
+Close Saved_Allow_Chargin1
+

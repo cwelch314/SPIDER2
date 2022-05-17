@@ -1,0 +1,1054 @@
+{ Analytica Model SS_LibXL_Lib, encoding="UTF-8" }
+SoftwareVersion 6.1.0
+
+{!-60000|Attribute AcpStyles}
+
+
+LinkLibrary SS_LibXL_Lib
+Title: SS LibXL Lib
+Description: A library of Analytica functions to read and wite spreadsheet files using LibXL COM object. These replace the built-in functions, SpreadsheetOpen, SpreadsheetSave, SpreadsheetRange, SpreadsheetSetRange, and so on. They use LibXL COM to open and access the spreadsheet file as XML instead of using Microsoft Excel, and are more reliable, especially when running on a server environment, used by ADE or ACP. You must first install the LibXL COM dll and register it before you can use thes functions.~
+~
+Copyright (2017) Lumina Decision Systems, Inc.
+Author: Max Henrion
+Date: Mon, Nov 20, 2017 1:43 PM
+DefaultSize: 48,24
+NodeSize: 72,24
+NodeInfo: 1,0,0
+DiagState: 2,305,68,878,673,21,10,
+WindState: 2,709,424,720,350
+FontStyle: Arial,15
+FileInfo: 0,LinkLibrary SS_LibXL_Lib,2,2,0,0,C:\Users\cwelch\Documents\Repos\Nexant\SPIDER\SS_Lib_XL.ana
+
+Decision Excel_file_name
+Title: Excel file name
+Definition: 'NYPA DER Inputs.xlsx'
+NodeLocation: 560,112,1
+NodeSize: 72,16
+WindState: 2,-44,266,720,350
+ValueState: 2,1156,148,416,303,,MIDM
+
+Function SS_Open(file: Text; dir: = ''; showDialog: Optional Boolean; Title: = '')
+Title: SS_Open(file)
+Description: Open «file» in directory «dir» (defaults to Current model folder) as an Excel file and returns the spreadsheet object to read or write by the other SS_functions().  If it can't find a file with that name, or it's extension is not '.xls' or '.xlsx', it gives an error message and returns NULL.~
+~
+It replaces the built-in function SpreadsheetOpen(), using XLLib instead of MS Excel.~
+~
+Currently, it ignores «showDialog» and never shows a browser dialog.~
+~
+{TBD: Normally, it opens a browser to let you select the file from the directory only if it can't find it. If you set «ShowDialog» to 1, it always opens that dialog. If you set «ShowDialog» to 0, it never does. Either way, it flags an error if it doesn't end up finding a file.~
+}
+Definition: IF SS_use_orig_funcs THEN SpreadsheetOpen(file, showDialog, Title)~
+ELSE IF CheckFileExt(file,  'XLS', 'XLSX') THEN BEGIN~
+	SS_Trace(file, 'Open a new file: ');~
+	IF dir='' THEN dir := CurrentDatafolder();~
+    	IF NOT Does_file_exist(file, dir) ~
+	THEN MSGBox("Sorry, the file '"& file & "' cannot be found n directory '"&dir&"'.")~
+	ELSE BEGIN~
+		file := dir & file;~
+	~
+{ The following code won't work in ACP until ACP supports AskMSGChoice } ~
+	{ IF IsNotSpecified(showDialog) THEN IF NOT Does_file_exist(dir & file) ~
+	THEN file := AskMSGChoice("Sorry, file '"& file & "' does not exist. ~
+	Select from one of these:", 'File name', Files_in_folder(dir, '.XLS'), '')~
+	ELSE IF showDialog THEN BEGIN ~
+		IF NOT Does_file_exist(dir & file) THEN file := Slice(Files_in_folder(dir, '.XLS'), file), 1);~
+		file := AskMSGChoice("Select a spreadsheet file:", 'File name', ~
+			Files_in_folder(dir, '.XLS'), file)~
+	END~
+	}~
+		Local ss := COMCreateObject("LibXLCOM.XL");  ~
+		IF NOT (ss -> load(file)) ~
+		THEN MsgBox("Unable to open Excel file " & ~
+			file & chr(13) & ss -> errorMessage ); ~
+		ss~
+		END~
+	END ~
+ELSE null
+NodeLocation: 136,64,1
+NodeSize: 128,16
+WindState: 2,103,49,740,733
+
+Function SS_GetCell(ss; sheet, col, row: Number)
+Title: SS_GetCell(ss, sheet, col, row)
+Description: From a spreadsheet workbook ss, return the value of cell for sheetnum, col and row, each specified as an integer number.
+Definition: ss -> GetCellValue(sheet, col, row)
+NodeLocation: 136,216,1
+NodeSize: 128,16
+WindState: 2,653,132,720,350
+
+Function SS_sheets(ss)
+Title: SS_sheets(ss)
+Description: Returns a local index sheets containing a list of the sheet names in spreadsheet «ss»
+Definition: INDEX Sheets := ss -> Sheets();~
+Copyindex(sheets)
+NodeLocation: 136,488,1
+NodeSize: 128,16
+WindState: 2,449,390,720,350
+
+Variable eg_SS_readcell
+Title: eg SS_readcell
+Definition: SS_GetCell(eg_SS_Open,   1, Eg_Cols, Eg_Rows )
+NodeLocation: 368,216,1
+NodeSize: 80,16
+ValueState: 2,608,133,651,382,,MIDM
+
+Index Eg_Cols
+Title: Eg Cols
+Definition: 1..4
+NodeLocation: 544,400,1
+NodeSize: 64,16
+WindState: 2,102,82,720,350
+DisplayOutputs: Index Eg_Rows
+
+Index Eg_Rows
+Title: Eg Rows
+Definition: 1..4
+NodeLocation: 680,400,1
+NodeSize: 64,16
+DisplayInputs: Object Index, Index Eg_Cols
+
+Variable eg_SS_sheets
+Att_PrevIndexValue: ['Sheet1','Sheet q']
+Title: eg SS_sheets
+Definition: SS_sheets(eg_SS_Open )
+NodeLocation: 368,488,1
+NodeSize: 80,16
+ValueState: 2,975,65,687,618,,MIDM
+
+Variable eg_SS_Open
+Title: eg SS_Open
+Definition: SS_Open(Excel_file_name)
+NodeLocation: 368,64,1
+NodeSize: 80,16
+ValueState: 2,821,109,382,161,,MIDM
+
+Variable eg_SS_Open_bad
+Title: eg SS_Open bad
+Definition: SS_Open('Unknown 12341324.XLS')
+NodeLocation: 560,64,1
+NodeSize: 72,16
+ValueState: 2,719,51,416,303,,MIDM
+
+Function SS_SetCell(ss; sheet, col, row: Number; x)
+Title: SS_SetCell(ss, sheet, col, row, x)
+Description: In spreadsheet «ss», set the cell in «sheet», at «col», «row» (each a positive integer) to the value «x».
+Definition: IF NOT (ss -> SetCellValue(sheet, col, row, x)) ~
+THEN MsgBox("Unable to set cell in Excel file " ~
+		 & chr(13) & ss -> errorMessage )~
+ELSE x
+NodeLocation: 136,264,1
+NodeSize: 128,16
+WindState: 2,746,213,720,349
+
+Variable eg_SS_setcell
+Title: eg SS_setcell
+Definition:  SS_SetCell(eg_SS_Open, 2, 2, 2,  'Helloooo')
+NodeLocation: 368,264,1
+NodeSize: 80,16
+WindState: 2,661,603,720,350
+ValueState: 2,967,230,651,382,,MIDM
+
+Function SS_SetRange(ss; range: Text; values; cols, rows: Index Optional; sheetNum: Optional Number; ifNull: =''; howToIndex: =0)
+Title: SS_SetRange(ss, range, cols, rows, sheetNum)
+Description: Set «range» in spreadsheet «ss» to «values».~
+«range» can be a single cell, e.g. 'C7', cell range, e.g. 'A1:G10', named range, e.g. 'parameters'. ~
+If «range» is not a named range, you should either specify «sheetNum» (the number of the sheet from 1 to n) or include the sheetName in «range» as in 'First!A1:G10'.~
+~
+«value» may be an atom (single number or text), or an array with one or two dimensions. If 1D, you must specify its index, either «cols» or «rows». If 2D, you must specify both indexes. Ideally, the size of «range» matches the size of «values» -- i.e. they have the same number of columns as «cols» and rows as «rows».  If «range» has multiple columns, but «value» has no «cols» index, it repeats «value» across each column of «range». Similarly, it «range» has multiple rows, but «value» has no  «rows» index, it repeats «value» across each row of «range».  Otherwise, if «values» is smaller in either dimension, it pads out the extra cells of «range» with NULL. ~
+If «values» is larger than «range» in either dimension, it writes only what fits in «range», and ignores the rest. ~
+~
+IF howToIndex = 16 it gives an error message if the size of cols or rows doesn't match the size of the cell address.~
+~
+It is similar to the built-in function SpreadsheetSetRange(), but it uses LibXL to access a spreadsheet file.
+Definition: range := SS_SheetnumToRange(ss, range, sheetNum);~
+Local posn := ss -> RangeToPos(range);~
+INDEX newcols := 1.. (Slice(posn, 4) - Slice(posn, 2)+1);~
+INDEX newrows := 1..(Slice(posn, 5) - Slice(posn, 3)+1);~
+~
+IF IsNotSpecified(cols) THEN (values := IF newcols=1 THEN values ELSE ifNull)~
+ELSE IF NOT FlagTrue(howToIndex, 16) AND Size(newcols) <> Size(cols)~
+	THEN Error('Size of parameter «cols» does not match the number of columns in «range»')~
+ELSE values := values[@cols = newcols, defVal: ifNull];~
+~
+IF IsNotSpecified(rows) THEN (values := IF rows=1 THEN values ELSE ifNull)~
+ELSE IF NOT FlagTrue(howToIndex, 16) AND Size(newrows) <> Size(rows)~
+	THEN Error('Size of parameter «rows» does not match the number of rows in «range»')~
+ELSE values := values[@rows = newrows, defVal: ifNull];~
+Index i := Indexesof(values);~
+SS_Trace(values, ' in range: '&range);~
+ss -> SetValues(range, COMArray(values, newrows, newcols));~
+values
+NodeLocation: 136,400,1
+NodeSize: 128,24
+WindState: 2,100,213,876,852
+
+Variable eg_SS_SetRange
+Title: eg SS_SetRange()
+Definition: SS_SetRange(eg_SS_Open,  eg_range,  eg_array, Eg_Cols, Eg_Rows, ifNull: '')
+NodeLocation: 368,400,1
+NodeSize: 80,16
+WindState: 2,575,657,720,294
+ValueState: 2,691,703,520,237,,MIDM
+ReformVal: [Sys_LocalIndex('newcols'),Sys_LocalIndex('newrows')]
+
+Variable eg_SS_SetRange1
+Title: eg SS_SetRange()
+Definition: SS_SetRange(eg_SS_Open,  eg_range,  eg_array, Eg_Cols, Eg_Rows, ifNull: '')
+NodeLocation: 368,440,1
+NodeSize: 80,16
+WindState: 2,910,18,720,350
+ValueState: 2,679,434,685,275,,MIDM
+ReformVal: [Sys_LocalIndex('dim1'),Sys_LocalIndex('dim2')]
+
+Function SS_Save(ss; file: Text; dir: = '')
+Title: SS_Save(ss, file)
+Description: Save spreadsheet «ss», which was originally opened with SS_Open(file) and may have been changed -- e.g. with SS_Setrange(ss,). It saves it under its existing name unless you specify a different «file» name, into the Current model folder, unless you specify a different directory «dir».~
+It gives an error message if it can't find a file with that name, or it's extension is not '.xls' or '.xlsx'.  ~
+~
+It replaces the built-in function SpreadsheetSave(wb, file), using XLLib instead of MS Excel.
+Definition: IF NOT CheckFileExt(file, 'XLS', 'XLSX') ~
+	THEN (MsgBox('Sorry, you cannot save file "'&file&"' as a spreadsheet because it does not have extensions '.XLS' or '.XLSX'"); 0)~
+ELSE BEGIN~
+	SS_Trace(file, 'Closing file: ');~
+	IF dir='' THEN dir := CurrentDatafolder();~
+	file := dir & file;~
+	IF NOT (ss -> SaveAs(file)) ~
+	THEN MsgBox("Unable to save as Excel file " & file & ". Perhaps it's already open."~
+	& chr(13) & ss->errorMessage ); ~
+	ss~
+END
+NodeLocation: 136,112,1
+NodeSize: 128,16
+WindState: 2,222,435,804,525
+
+Function SS_NamedRanges(ss; sheetNum: = 0; flags: = 0)
+Title: SS_NamedRanges(ss)
+Description: Returns a list of the named ranges defined in spreadsheet «ss».~
+If you set sheetNum to an integer>0, it returns only those named ranges in that numbered sheet.~
+If you set flags: 1 it includes hidden named ranges~
+or 2 it includes only ranges with global scope, or 3 both.~
+~
+It is similar to the built-in function SpreadsheetInfo('Names'), but it uses LibXL to access a spreadsheet file.
+Definition: CopyIndex(ss -> NamedRanges(sheetNum, flags))
+NodeLocation: 136,584,1
+NodeSize: 128,16
+WindState: 2,88,70,1042,985
+
+Variable eg_SS_save
+Title: eg SS_save
+Definition: SS_Save(eg_SS_Open, Excel_file_name)
+NodeLocation: 368,112,1
+NodeSize: 80,16
+WindState: 2,102,83,720,350
+ValueState: 2,1077,80,416,303,,MIDM
+
+Function SS_Close(ss: Variable; file: Text; dir: = '')
+Title: SS_Close(ss, file)
+Description: Save spreadsheet «ss» into «file» and then close it -- i.e., reclaim the in-memory copy of the spreadsheet.~
+You may call this function only from the OnClick attribute of a button (or OnChange attribute) since it calls InvalidateResult(«ss»), which deletes ~
+~
+ was originally opened with SS_Open(«file»). ~
+~
+It replaces the built-in function SpreadsheetSave(wb, file), using XLLib instead of MS Excel.~
+Unlike with SpreadsheetSave() changes will not appear in the spreadsheet until you call Save.~
+~
+It saves it under its existing name unless you specify a different «file» name, and into the Current model folder, unless you specify a different directory «dir». It gives an error message if it can't find a file with that name, or it's extension is not '.xls' or '.xlsx'.  ~
+~
+~
+~
+
+Definition: SS_Save(ss, file, dir);~
+InvalidateResult(ss)
+NodeLocation: 136,160,1
+NodeSize: 128,16
+WindState: 2,335,112,835,659
+
+Variable eg_SS_NamedRanges
+Title: eg SS_NamedRanges
+Definition: SS_NamedRanges(eg_SS_Open )
+NodeLocation: 368,584,1
+NodeSize: 88,16
+ValueState: 2,701,35,461,333,,MIDM
+
+Variable eg_range
+Title: eg range
+Definition: 'Second!C3:F6'
+NodeLocation: 544,352,1
+NodeSize: 64,16
+WindState: 2,102,82,720,350
+ValueState: 2,891,95,416,303,,MIDM
+
+Variable eg_array
+Title: eg array
+Definition: IF Eg_Rows = Eg_Cols THEN 'Diagonal' ELSE 10* Eg_Rows + Eg_Cols
+NodeLocation: 544,440,1
+NodeSize: 64,16
+ValueState: 2,1219,22,416,220,,MIDM
+
+Function SS_GetRange(ss; range: Text; column, row: Index Optional; sheetNum: Optional; howToIndex: = 0;  ifNull: Optional)
+Title: SS_GetRange(ss, range, cols, rows, sheetNum)
+Description: Read «range» from spreadsheet «ss». It is similar to the built-in function SpreadsheetRange(), but it uses LibXL to access a spreadsheet file.~
+~
+«range» can be a single cell address, e.g. 'C7', cell range,  'A1:G10', or range name,  'parameters'. You can put the sheetname at the start of the «range» -- e.g. 'Sheet1!A1:G10' or 'Sheet2!parameters' -- or set «sheetNum» to a sheet number from 1 to n. If «range» has the sheet name with '!' and no cell address, e.g. 'sheet 4!', it returns the smallest range that includes all used cells in the sheet.~
+~
+If you omit index «column» and/or «row», it returns an array with local index(es) .column and .row, unless the result has only one element in each dimension. If you provide «column» and/or «row», it uses them in the array. It gives an error if the size of  «column» or «row» doesn't match the number of columns or rows in «range», unless you set  «howToIndex»: 16. ~
+~
+«ifNull»: (optional) If a cell is empty it returns NULL, or whatever you put in «ifNull» - e.g. 0 or '' (blank).~
+~
+«howToIndex»: (optional) Flags controlling how to index the result when «colIndex» or «rowIndex» are not specified. You can add the values of flags to combine their effects:~
+1: Force a column index even if the range spans only a single column. Has no effect if you specify «cols».~
+2: Force a row index even if the range spans only a single row. Has no effect if you specify «rows».~
+4: Use the first row of «range» as column labels in the local index .Column. Exclude this first row in the result returned.~
+8: (not yet implemented) Use the first column of «range» as labels in the local index .Row. Exclude this first column in the result returned..~
+16: Suppress the error message if the sizes of «column» or «row» don't match the size of the range. If  «range» is larger, it omits cells beyond the size of «column» or «row». If it's smaller, it pads extra cells with «ifNull».
+Definition: IF NOT IsNotspecified(sheetNum) THEN range := SS_SheetnumToRange(ss, range, sheetNum);~
+SS_Trace('Range is:' & range );~
+Local r := ss -> ReadValues(range);~
+~
+Local exit := False;~
+Local row1 := 0;~
+IF IsNotSpecified(column) THEN ~
+	IF Size(r.dim1)=1 AND NOT FlagTrue(howToIndex, 1) THEN r := r[@.dim1=1]  { No column index used }~
+	ELSE IF FlagTrue(howToIndex, 4) THEN BEGIN~
+		column := CopyIndex(r[@.dim2 = 1]); ~
+		r := r[@.dim1 = @column];~
+		row1 := 1;~
+		END~
+	ELSE (column := CopyIndex(r.dim1); r := r[@.dim1 = @column])~
+ELSE IF Size(r.dim1) <> Size(column) AND NOT FlagTrue(howToIndex, 16) ~
+	THEN IF MsgBox('Parameter «range» has '&Size(r.dim1)&' columns but Index «column» has '&Size(column)& ' elements.~
+Do you want to ignore this?', 3 )<>3 THEN exit := true~
+	ELSE r := r[@.dim1 = @column, defVal:NULL]~
+	ELSE r := r[@.dim1 = @column, defVal:NULL];~
+~
+IF NOT exit THEN BEGIN~
+	IF FlagTrue(howToIndex, 8) THEN Error('Sorry. Function SS_Range() does not yet handle howToIndex: 8 -- to use the first column as values for «row» index.');~
+	IF  IsNotSpecified(row) THEN~
+		IF Size(r.dim2)=1 AND NOT FlagTrue(howToIndex, 2) ~
+		THEN r := r[@.dim2=1]   { No row index used }~
+		ELSE (row := 1.. (Size(r.dim2) - row1); r := r[@.dim2 = row + row1])~
+	ELSE IF Size(r.dim2) - row1 <> Size(row) AND NOT FlagTrue(howToIndex, 16) ~
+		THEN IF MsgBox('Parameter «range» has '&Size(r.dim2)&' rows, but Index «row» has '&Size(row)& ' elements.~
+Do you want to ignore this?', 3 )<>3 THEN exit := true~
+		ELSE r := r[@.dim2 = @row, defVal:NULL]~
+		ELSE r := r[@.dim2 = @row, defVal:NULL];~
+END;~
+~
+IF exit THEN NULL~
+ELSE IF IsNotSpecified(ifNull) THEN r~
+ELSE IF r=Null THEN ifNull ELSE r
+NodeLocation: 136,336,1
+NodeSize: 128,24
+WindState: 2,-65,58,1042,926
+
+Variable eg_SS_range4
+Title: eg SS_range()
+Definition: SS_GetRange(eg_SS_Open, '',   sheetNum:2, ifNull: '', howToIndex:4)
+NodeLocation: 368,312,1
+NodeSize: 80,16
+WindState: 2,554,231,720,350
+ValueState: 2,625,81,358,218,,MIDM
+
+Variable eg_SS_range5
+Title: eg SS_range()
+Definition: SS_GetRange(eg_SS_Open, eg_range, Eg_Cols, Eg_Rows, ifNull: '', howToIndex: 16+4)
+NodeLocation: 368,352,1
+NodeSize: 80,16
+WindState: 2,303,43,720,350
+ValueState: 2,887,77,398,209,,MIDM
+ReformVal: [Sys_LocalIndex('dim1'),Sys_LocalIndex('dim2')]
+
+Module LibXL_helper_functio
+Title: LibXL helper functions
+Description: Functions that assist the main SS_functions that use LibXL
+Author: Lumina
+Date: Tue, Dec 5, 2017 3:42 PM
+NodeLocation: 544,512,1
+NodeSize: 64,32
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+DiagState: 2,121,312,672,207,23,,
+
+Library Files_library
+Title: Files library
+Description: Functions to find the files in a folder, check if a file exists, copy a file to a new file, and more.~
+~
+Copyright 2017 All rights reserved. Lumina Decision Systems, Inc.
+Author: Lumina
+Date: Thu, Sep 15, 2016 5:12 PM
+NodeLocation: 400,232,0
+NodeSize: 120,16
+NodeInfo: 1,,,,,,0,0,,,,,,0
+DiagState: 2,513,250,492,443,17
+WindState: 2,657,76,720,350
+
+Function ACP_Download_SS(b, file: Text)
+Title: ACP_Download_SS(b, file)
+Description: Call this function from the OnClick of a button b (setting b to Self) to download spreadsheet file from the current ACP project folder to the user's computer. ~
+If running in ADE (i.e. ACP), it asks the user whether she wants to download the file.~
+If so, it prompts the user with a file browser to select the folder and file name.~
+~
+It uses a special ACP hack, which sets the CloudPlayerStyles of the button to ~
+   Download_spreadsheet: <file>~
+to make this happen.
+Definition: IF AnalyticaEdition='ADE' THEN ~
+IF MsgBox("Would you like to download this spreadsheet '"&file&"'?",  4 + 32, 'Question')=6~
+THEN CloudPlayerStyles OF b:= 'Download_Spreadsheet:' & file~
+ELSE CloudPlayerStyles OF b:= ''
+NodeLocation: 144,208,1
+NodeSize: 120,24
+WindState: 2,870,67,769,408
+
+Function Files_in_folder(dir: = 'Models'; substring: = '')
+Title: Files_in_folder(dir, ext)
+Description: Get a list of the names of all the files in directory dir (defaults to Model directory) that contain  substring (defaults to all files). For example, set substring to ".xlsx" or ".ana" to return only files with those extensions. Set dir to "Data" for Current data directory. Or set dir to any directory name or path relative to the Model directory. Directory name and substring are case insensitive.
+Definition: dir := TextUpperCase(dir);~
+dir := IF dir = '' OR dir = 'MODELS' THEN CurrentModelFolder()~
+   ELSE IF dir = 'DATA' THEN CurrentDataFolder()~
+   ELSE dir;~
+INDEX x := COM_Find_Files(dir);~
+IF substring = '' THEN Slice(x, 1..(Size(x)-1))~
+ELSE Subset(FindInText(substring, x, caseInsensitive:True)>0)
+NodeLocation: 144,40,1
+NodeSize: 120,24
+WindState: 2,716,249,658,616
+
+Function Copy_file(file: Text; oldDir, newFile, newDir: = '')
+Title: Copy_file(file)
+Description: Makes a copy of file from directory dirOld (defaults to current model directory). If it can't find a file with that name, it prompts for another. It prompts for a new name (default newFile, or file, if newFile is omitted) to save it under that does not already exist. Once it gets a good name, it saves the file under that name in newDir (default current model directory). It returns the new filename with newDir path if specified.
+Definition: WHILE NOT Does_file_exist(file, oldDir) DO ~
+	file := AskMsgText("Trying to make a copy of file '"& file &"' from directory '"&oldDir&"', ~
+but can't find it. Please select another name:", 'Question', 50, file);~
+IF newFile='' THEN newFile := file;~
+newfile	:= AskMsgText('Name for new spreadsheet: ', 	'Question', 50, newFile);~
+WHILE Does_file_exist(newfile, newDir) DO ~
+	newfile	:= AskMsgText( 'Sorry, there already is a file with that name in directory '&newDir&'. Try another: ', 	~
+		'Question',  50, newfile);~
+IF oldDir<>'' THEN file := oldDir&'\'&file;~
+IF newDir<>'' THEN newfile := newDir&'\'&newfile;~
+VAR copyArg := 'cmd /c copy  "' & file & '" "' & newfile & '"';~
+{ MsgBox('Running consoleprocess with '&copyarg); }~
+RunConsoleProcess('c:\Windows\System32\cmd.exe', copyarg);~
+VAR wb := SpreadsheetOpen(newfile); wb->Save; ~
+newfile
+NodeLocation: 144,152,1
+NodeSize: 120,24
+WindState: 2,861,156,795,668
+
+Variable test_copy_file
+Title: Eg Copy_file
+Description: Variable for testing function Copy_file(file).  Modify the variable definition with optional parameter file to test specific examples.
+Definition: Copy_file('testfile', CurrentModelFolder() , 'hello.xlsx', CurrentModelFolder() )
+NodeLocation: 368,152,1
+NodeSize: 64,24
+ValueState: 2,715,745,1032,303,0,MIDM
+
+Variable Eg_files_in_folder
+Title: Eg files_in_folder
+Description: Variable for testing function Files_in_folder(dir, ext).  Modify the variable definition with optional parameters dir, ext to test specific examples.
+Definition: Files_in_folder( )
+NodeLocation: 368,40,1
+NodeSize: 64,24
+ValueState: 2,511,169,941,777,0,MIDM
+
+Function Does_file_exist(file: Text; dir: = '')
+Title: Does_file_exist(file)
+Description: Returns True (1) if file with that name (including extension) exists in Current model folder (or in dir if specified), otherwise False (0). (Not case sensitive.)
+Definition: Sum(TextUpperCase(Files_in_folder(dir))=TextUpperCase(file))=1
+NodeLocation: 144,96,1
+NodeSize: 120,24
+WindState: 2,670,175,689,520
+
+Variable Eg_Does_file_exist
+Title: Eg Does_file_exist
+Description: Variable for testing function Does_file_exist(file).  Modify the variable definition by changing the file parameter to test specific examples.
+Definition: Does_file_exist('Filename.xls', CurrentDataFolder())
+NodeLocation: 368,96,1
+NodeSize: 64,24
+ValueState: 2,226,667,416,303,,MIDM
+
+Button eg_download
+Title: eg download
+NodeLocation: 368,212,1
+NodeSize: 48,28
+OnClick: ACP_Download_SS(self, Eg_Does_file_exist)
+
+Function COM_Find_Files(dir: = 'Models')
+Title: COM Find Files
+Definition: { Alternative implementation that uses COM instead of RunConsoleProcess to ~
+bypass ACP security }~
+~
+Local fs := COMCreateObject("Scripting.FileSystemObject");~
+Unique ( COMEnumerate(fs->GetFolder( dir )->Files)->Name )
+NodeLocation: 152,288,1
+NodeSize: 128,24
+Aliases: Alias Al723588611
+
+Close Files_library
+
+Function CheckFileExt(file, ext: Text; ext2: Text Optional)
+Title: CheckFileExt(file, ext1, ext2)
+Description: Returns True if the «file» has an extension ('.' followed by 1 to 4 chars at the end of the name) that matches «ext» (or «ext2» if provided). Parameters «ext» and «ext2» should not include the initial '.'. Match is insensitive to case. If match fails, it shows a message that it can't open the file because it doesn't have the expected extension and returns False.
+Definition: Local e := TextUpperCase(FindInText('(\.\w*)', file, re: True, return: 'S'));~
+ext := '.'&TextUpperCase(ext); ext2 := '.'&TextUpperCase(ext2);~
+IF e=ext OR (IF IsNotSpecified(ext2) THEN 0 ELSE e=ext2)  THEN 1~
+ELSE (MsgBox('Unable to open file '&file&", because it doesn't have extension "&~
+	ext&(IF IsNOTSPecified(ext2) THEN '' ELSE ' or '&ext2)&'.', 0+48, 'Warning'); 0)
+NodeLocation: 136,24,1
+NodeSize: 120,16
+WindState: 2,218,141,747,441
+
+Variable eg_CheckfileExt
+Title: eg CheckfileExt
+Definition: CheckFileExt('Some file.XLX',  'xlsx', 'XLS')
+NodeLocation: 352,24,1
+NodeSize: 72,16
+WindState: 2,571,242,720,350
+ValueState: 2,899,401,416,303,,MIDM
+
+Function SS_SheetnumToRange(ss; range: Text; sheetNum: Optional Number)
+Title: SS_SheetnumToRange(ss, range, sheetNum)
+Description: If «sheetNum» is an integer 1 to n, it converts it into the corresponding sheetname from spreadsheet «ss» and returns «range» including that name. For example, if the 2nd sheet 'Two', SS_SheetNumToRange(ss, 'A1:F10', 2) -> 'Two!A1:F10'. ~
+If n<1 or n>number of sheets in «ss», it gives an error message.~
+If «range» already contains a sheet name, as in  'Intro!A1:G10', it checks if 'Intro' exists in spreadsheet «ss» (case sensitive), and gives an error message if it does not. Otherwise it returns «range» as it is.
+Definition: INDEX sheets := SS_Sheets(ss);~
+VAR sheetName := FindInText('(?<sheet>.*)!', range, re:True, return: 'S' , subpattern:'sheet' );~
+IF sheetName = '' THEN sheetName := Null;~
+~
+IF IsNotSpecified(sheetNum) THEN ~
+	IF sheetName=NULL ~
+	THEN Error("You must specify either a sheetname in range '"&range&"' or a number for parameter sheetNum.")~
+	ELSE IF @[sheets = sheetName] > 0 THEN range~
+	ELSE Error("The name '"&sheetName&"' in range '"&range&"' is not a sheet in this spreadsheet.")~
+ELSE IF sheetNum > Size(sheets) OR sheetNum < 1~
+	THEN Error('Parameter «sheetNum» = '&sheetNum&' is <1 or more than the number of sheets in this spreadsheet')~
+ELSE Slice(sheets, sheetNum)&'!'&range
+NodeLocation: 136,72,1
+NodeSize: 120,16
+WindState: 2,231,259,1042,559
+DisplayOutputs: Function SS_Range2, Function SS_Range1, Function SS_RangeAddress
+
+Variable eg_SS_Sheet_NumtoRan
+Title: eg SS_Sheet NumtoRange
+Definition: SS_SheetnumToRange(eg_SS_Open,   '', 2)
+NodeLocation: 352,72,1
+NodeSize: 72,16
+ValueState: 2,821,174,416,303,,MIDM
+
+Index flag_combins
+Title: flag combins
+Definition: 0..31
+NodeLocation: 496,120,1
+NodeSize: 48,24
+
+Index flag_vals
+Title: flag vals
+Definition: [1,2,4,8,16]
+NodeLocation: 608,120,1
+NodeSize: 48,24
+
+Function FlagTrue(v, flag: Number)
+Title: FlagTrue(v, flag)
+Description: True if v (a sum of powers of 2) contains flag, a particular power of 2.~
+For example, Flagged(4, 1) -> False, Flagged(6, 2) -> True, Flagged(4, 4) -> True
+Definition: Mod(Floor(v/flag), 2)
+NodeLocation: 136,120,1
+NodeSize: 120,16
+WindState: 2,206,66,720,350
+DisplayOutputs: Function SS_Range2, Function SS_Range1, Function SS_RangeAddress
+
+Module Under_construction
+Title: Under construction
+Author: Lumina
+Date: Tue, Dec 5, 2017 10:45 AM
+NodeLocation: 136,312,0
+NodeSize: 64,24
+NodeInfo: 1,0,1,1,1,1,0,0,0,,0,,,0
+DiagState: 2,349,296,961,500,17
+
+Index SS_column_letters
+Title: SS column letters
+Definition: Sequence('A', 'ZZZ')
+NodeLocation: 208,48,1
+NodeSize: 48,24
+ReformVal: [Undefined,Self]
+
+Decision SS_Max_cols
+Title: SS Max cols
+Definition: 1000
+NodeLocation: 96,48,1
+NodeSize: 48,24
+
+Variable test_readrange
+Title: test readrange
+Definition: eg_SS_Open -> ReadValues(Select_sheet&'!'&'A1:C6')
+NodeLocation: 584,48,1
+NodeSize: 48,24
+ValueState: 2,857,45,406,225,,MIDM
+ReformVal: [Sys_LocalIndex('dim1'),Sys_LocalIndex('dim2')]
+
+Function SS_Range2(ss; range: Text; column, row: Index Optional; sheetNum: Optional; howToIndex: = 0; ifNull: Optional)
+Title: SS_Range2(ss, range, column, row, sheetNum)
+Description: Read «range» from spreadsheet «ss». It is similar to the built-in function SpreadsheetRange(), but it uses LibXL to access a spreadsheet file~
+~
+«range» can be a single cell address, e.g. 'C7', cell range, 'A1:G10', range name,  'parameters'. You can put the sheetname at the start of the «range» -- e.g. 'Sheet1!A1:G10' or 'Sheet2!parameters' -- or set «sheetNum» to a sheet number from 1 to n. If «range» has more than one column or row, and you don't specify index «column» (and/or «row»), it returns an array with local index .column (.row,). If you specify index «column» («row»), it returns an array with that index (those indexes). Unless you set  «howToIndex»: 16, it gives an error if the size of  «column» or «row» doesn't match the number of columns or rows in «range». ~
+~
+If a cell is empty it returns NULL, or whatever you put in «ifNull» - e.g. 0 or '' (blank).~
+It ignores «howToIndex»~
+«howToIndex» (optional) Flags controlling how to index the result when «colIndex» or «rowIndex» are not specified. You can add the values of flags to combine their effects:~
+1: Force a column index even if the range spans only a single column. Has no effect if you specify «cols».~
+2: Force a row index even if the range spans only a single row. Has no effect if you specify «rows».~
+4: Use the first row of «range» as column labels in the local index .Column. Exclude this first row in the result returned.~
+8: Use the first column of «range» as labels in the local index .Row. Exclude this first column in the result returned..~
+16: Suppress the error message that is otherwise given if the sizes of «column» or «row» index don't match the size of «range».
+Definition: range := SS_SheetnumToRange(ss, range, sheetNum);~
+Local r := ss -> ReadValues(range);~
+~
+Local colRow1 := IsNotSpecified(column) AND FlagTrue(howToIndex, 4);~
+Local rowCol1 := IsNotSpecified(row) AND FlagTrue(howToIndex, 8);~
+IF colRow1 THEN IF rowCol1~
+	THEN BEGIN { column is top row, and row is first column }~
+		column := CopyIndex(r[@.dim2=1, .dim1=2..Size(r.dim1)]); { col index is first rpw }~
+		row := CopyIndex(r[@.dim1=2, .dim2=2..Size(r.dim2)]); { row index is first col }~
+		r := r[.dim1 = @column+1, .dim2 = @row +1]~
+		END~
+	ELSE BEGIN { column is top row, and row is 1 to n-1 }~
+		column := CopyIndex(r[@.dim2=1]); { col index is first row }~
+		IF IsNotSpecified(row) THEN row := 1 .. (Size(r.dim2)-1)~
+		ELSE IF Size(row)<>Size(r.dim2)-1 AND NOT FlagTrue(howToIndex, 16)~
+			THEN Error('Parameter «range» has '&Size(r.dim1)&~
+					' columns which is different from Index «cols».');~
+		r := r[.dim1 = @column, .dim2 = @row+1, defVal:ifNull]~
+		END~
+ELSE IF rowCol1 THEN BEGIN { row is first column, and column is  2 to n }~
+		row := CopyIndex(r.dim2); ~
+		IF IsNotSpecified(column) THEN column := CopyIndex(r.dim1)~
+		ELSE IF Size(r.dim1) <> Size(column) AND NOT FlagTrue(howToIndex, 16)~
+			THEN Error('Parameter «range» has '&Size(r.dim1)&~
+				' columns which is different from Index «cols».')~
+		r := r[.dim1 =@column, .dim2 = @row, defVal:ifNull]~
+		END~
+ELSE BEGIN { row and column are each 1 to n }~
+		row := CopyIndex(r.dim1=1]); { col index is first row }~
+		column := 1 .. (Size(r.dim1)-1);~
+		r := r[.dim1 = @column+1, .dim2 = @row, defVal:ifNull]) ~
+	END;~
+~
+~
+THEN ~
+       IF Size(r.dim1)=1 AND NOT FlagTrue(howToIndex, 1) ~
+		THEN column := NULL { No column index }~
+	ELSE IF FlagTrue(howToIndex, 4) ~
+		THEN IF FlagTrue(howToIndex, 8) AND IsNotSpecified(row) ~
+			THEN BEGIN~
+				column := CopyIndex(r[@.dim2=1, .dim1=2..Size(r.dim1)]); { col index is first rpw }~
+				row := CopyIndex(r[@.dim1=2, .dim2=2..Size(r.dim2)]); { row index is first col }~
+				r := r[.dim1 = @column+1, .dim2 = @row +1]~
+				END~
+			ELSE (column := CopyIndex(r[@.dim2=1]); { column index is top row }~
+				r := r[.dim1 = @column+1])~
+		ELSE (column := CopyIndex(r.dim1); { Column is 1 to n }~
+			   r := r[.dim1 = @column])~
+ELSE IF Size(r.dim1) <> Size(column) AND NOT FlagTrue(howToIndex, 16)~
+	THEN Error('Parameter «range» has '&Size(r.dim1)&' columns which is different from Index «cols».')~
+	ELSE r := r[@.dim1 = @column, defVal: Null];~
+~
+IF IsNotSpecified(row) THEN ~
+	(IF Size(r.dim2)=1 AND NOT FlagTrue(howToIndex, 2) ~
+		THEN row := NULL  r := r[.dim2=1] { No row index }~
+	ELSE IF FlagTrue(howToIndex, 8)  AND NOT ~
+			THEN (IF FlagTrue(howToIndex, 4) AND column<>NULL ~
+				THEN Null { already done above }~
+				ELSE (row := CopyIndex(r[@column =1]); ~
+					r := r[.dim2 = @column+1]))~
+	ELSE (row := CopyIndex(r.dim2);  r :=r[.dim2 = @row+1]))~
+ELSE IF Size(r.dim2) <> Size(row) AND NOT FlagTrue(howToIndex, 16) ~
+	THEN Error('Parameter «range» has '&Size(r.dim2)&' rows, which is different from Index «row».') ~
+	ELSE r := r[@.dim2 = @row, defVal: Null];~
+r := r[@.dim1 = IF column=Null THEN 1 ELSE IF FlatTrue(howToIndex, 4) THEN @column+1 ELSE @column,~
+	@.dim1 = IF row=Null THEN 1 ELSE IF FlatTrue(howToIndex, 8) THEN @row+1 ELSE @row]~
+IF IsNotSpecified(ifNull) THEN r~
+ELSE IF r=Null THEN ifNull ELSE r
+NodeLocation: 168,208,1
+NodeSize: 120,24
+WindState: 2,294,-7,957,971
+DisplayInputs: Object Function, Function SS_SheetnumToRange, Function FlagTrue
+
+Variable eg_SS_range
+Title: eg SS_range()
+Definition: SS_Range2(eg_SS_Open, 'Second!A1:D2',   ifNull: '', howToIndex:12)
+NodeLocation: 376,208,1
+NodeSize: 72,16
+ValueState: 2,625,81,358,218,,MIDM
+
+Decision Select_sheet
+Title: Select sheet
+Definition: Choice(eg_SS_sheets,2,0)
+NodeLocation: 96,112,1
+NodeSize: 48,24
+ValueState: 2,1208,183,416,303,,MIDM
+
+Variable e_g_set_range
+Title: e.g set range
+Definition: eg_SS_Open -> SetValues(Select_sheet&'A4:C8', 333)
+NodeLocation: 600,104,1
+NodeSize: 64,24
+ValueState: 2,1003,-8,416,303,,MIDM
+
+Variable eg_SS_range1
+Title: eg SS_range()
+Definition: SS_Range2(eg_SS_Open, eg_range, howToIndex: 4)
+NodeLocation: 376,256,1
+NodeSize: 72,16
+WindState: 2,910,18,720,350
+ValueState: 2,528,572,363,266,,MIDM
+ReformVal: [Sys_LocalIndex('dim1'),Sys_LocalIndex('dim2')]
+
+Variable range_test
+Title: range test
+Definition: eg_SS_Open ->ReadValues('A3_D5_range')
+NodeLocation: 96,48,1
+NodeSize: 48,24
+ValueState: 2,980,455,392,300,,MIDM
+ReformVal: [Sys_LocalIndex('dim1'),Sys_LocalIndex('dim2')]
+
+Variable test_setcell
+Title: test setcell
+Definition: eg_SS_Open -> Setcellvalue(1, 4, 5, 'see ya');~
+SS_GetCell(eg_SS_Open, 1, 4, 4);  ~
+SS_Close(eg_SS_Open,Excel_file_name );~
+SS_GetCell(eg_SS_Open, 1, 4, 5)
+NodeLocation: 600,272,1
+NodeSize: 48,24
+WindState: 2,565,121,720,350
+ValueState: 2,744,70,732,284,,MIDM
+ReformVal: [Sys_LocalIndex('dim1'),Sys_LocalIndex('dim2')]
+
+Decision new_name
+Title: new name
+Definition: 'new '&Excel_file_name
+NodeLocation: 96,48,1
+NodeSize: 48,24
+
+Variable test_rangetopos
+Title: test rangetopos
+Definition: eg_SS_Open -> Rangetopos('A1:C5')
+NodeLocation: 600,160,1
+NodeSize: 56,24
+ValueState: 2,1080,136,416,303,,MIDM
+
+Variable test_setcell1
+Title: test setcell
+Definition: eg_SS_Open -> Setcellvalue(1, 4, 4, eg_array);~
+SS_Close(eg_SS_Open,Excel_file_name );~
+SS_GetCell(eg_SS_Open, 1, 4, 4)~
+
+NodeLocation: 592,216,1
+NodeSize: 48,24
+ValueState: 2,262,96,732,284,,MIDM
+ReformVal: [Sys_LocalIndex('dim1'),Sys_LocalIndex('dim2')]
+
+Variable test_setvalues
+Title: test setvalues
+Definition: eg_SS_Open -> SetValues(eg_range, eg_array);~
+SS_Close(eg_SS_Open,Excel_file_name );~
+SS_Range2(eg_SS_Open, eg_range)
+NodeLocation: 384,64,1
+NodeSize: 48,24
+ValueState: 2,40,42,416,303,,MIDM
+
+Variable check_set_range
+Title: check set range
+NodeLocation: 688,48,1
+NodeSize: 48,24
+
+Variable test_SSrange
+Title: test SSrange
+Definition: eg_SS_save -> ReadValues(eg_range);
+NodeLocation: 264,120,1
+NodeSize: 48,24
+ValueState: 2,849,10,372,215,,MIDM
+ReformVal: [Sys_LocalIndex('dim1'),Sys_LocalIndex('dim2')]
+
+Variable asdfasdf
+Title: asdfasdf
+Definition: Local pos := eg_SS_Open -> RangeToPos(eg_range);~
+Local sheet := Slice(pos, 1);~
+Local c1 := Slice(pos, 2);~
+Local r1 := Slice(pos, 3);~
+Local c2 := Slice(pos, 4);~
+Local r2 := Slice(pos, 5);~
+eg_SS_Open -> SetValuesByPos(sheet, c1, r1, c2, r2, eg_array);~
+SS_Close(eg_SS_Open, Excel_file_name);~
+eg_SS_Open -> GetValuesByPos(sheet, c1, r1, c2, r2)~
+
+NodeLocation: 488,120,1
+NodeSize: 48,24
+ValueState: 2,820,85,416,303,,MIDM
+
+Variable asdfasdf1
+Title: asdfasdf
+Definition: Local pos := eg_SS_Open -> RangeToPos(test_SSrange);~
+Local sheet := Slice(pos, 1);~
+Local c1 := Slice(pos, 2);~
+Local r1 := Slice(pos, 3);~
+Local c2 := Slice(pos, 4);~
+Local r2 := Slice(pos, 5);~
+eg_SS_Open -> ReadValuesByPos(sheet, c1, r1, c2, r2)~
+
+NodeLocation: 376,120,1
+NodeSize: 48,24
+ValueState: 2,820,85,416,303,,MIDM
+
+Variable poses
+Title: poses
+Definition: eg_SS_Open -> RangeToPos(eg_range)
+NodeLocation: 736,336,1
+NodeSize: 48,24
+ValueState: 2,863,64,416,303,,MIDM
+
+Variable Eg_Setvaluesby_pos
+Title: Eg Setvaluesby pos
+Definition: eg_SS_Open -> SetValuesByPos(Slice(poses, 1), Slice(poses, 2),  Slice(poses, 3), Slice(poses, 4), Slice(poses, 5), COMArray(eg_array, Eg_Rows, Eg_Cols));~
+SS_Close(eg_SS_Open, Excel_file_name);~
+SS_Range2(eg_SS_Open, eg_range)
+NodeLocation: 608,336,1
+NodeSize: 56,32
+ValueState: 2,914,46,416,303,,MIDM
+ReformVal: [Sys_LocalIndex('column'),Sys_LocalIndex('row')]
+
+Variable Eg_Setvalues
+Title: Eg Setvalues
+Definition: eg_SS_Open -> SetValues(eg_range, COMArray(eg_array, Eg_Rows, Eg_Cols));~
+SS_Close(eg_SS_Open, Excel_file_name);~
+SS_Range2(eg_SS_Open, eg_range)
+NodeLocation: 440,384,1
+NodeSize: 56,32
+ValueState: 2,486,107,416,303,,MIDM
+ReformVal: [Sys_LocalIndex('column'),Sys_LocalIndex('row')]
+
+Variable get_ss_range
+Title: get ss_range
+Definition: SS_Range2(eg_SS_save, eg_range)
+NodeLocation: 248,360,1
+NodeSize: 48,24
+
+Variable sadsad
+Title: sadsad
+Definition: eg_SS_Open -> SetValues(eg_range, 124);~
+SS_Close(eg_SS_Open, Excel_file_name);~
+SS_Range2(eg_SS_Open, eg_range)
+NodeLocation: 88,376,1
+NodeSize: 48,24
+
+Variable dsfsdf
+Title: dsfsdf
+Definition: COMArray(1, Eg_Cols, Eg_Rows)
+NodeLocation: 589,415,1
+NodeSize: 48,24
+
+Variable flag
+Title: flag
+Definition: Mod(Floor(flag_combins/flag_vals), 2)
+NodeLocation: 245,423,1
+NodeSize: 48,24
+ValueState: 2,113,181,1131,352,,MIDM
+
+Variable flag1
+Title: flag
+Definition: Floor(flag_combins/flag_vals)
+NodeLocation: 368,448,1
+NodeSize: 48,24
+ValueState: 2,113,181,1131,352,,MIDM
+
+Function terst(i: Optional Index)
+Title: terst(i)
+Definition: IF IsNotSpecified(i) THEN i := [1,2,5];~
+~
+i^2
+NodeLocation: 685,407,1
+NodeSize: 48,24
+WindState: 2,102,82,720,350
+
+Variable dfds
+Title: dfds
+Definition: terst(Eg_Rows)
+NodeLocation: 701,217,1
+NodeSize: 49,24
+ValueState: 2,753,97,416,205,,MIDM
+
+Function SS_Range1(ss; range: Text; column, row: Index Optional; sheetNum: Optional; howToIndex: = 0; ifNull: Optional)
+Title: SS_Range1(ss, range, column, row, sheetNum)
+Description: Read «range» from spreadsheet «ss». It is similar to the built-in function SpreadsheetRange(), but it uses LibXL to access a spreadsheet file~
+~
+«range» can be a single cell address, e.g. 'C7', cell range, 'A1:G10', range name,  'parameters'. You can put the sheetname at the start of the «range» -- e.g. 'Sheet1!A1:G10' or 'Sheet2!parameters' -- or set «sheetNum» to a sheet number from 1 to n. If «range» has more than one column or row, and you don't specify index «column» (and/or «row»), it returns an array with local index .column (.row,). If you specify index «column» («row»), it returns an array with that index (those indexes). Unless you set  «howToIndex»: 16, it gives an error if the size of  «column» or «row» doesn't match the number of columns or rows in «range». ~
+~
+If a cell is empty it returns NULL, or whatever you put in «ifNull» - e.g. 0 or '' (blank).~
+It ignores «howToIndex»~
+«howToIndex» (optional) Flags controlling how to index the result when «colIndex» or «rowIndex» are not specified. You can add the values of flags to combine their effects:~
+1: Force a column index even if the range spans only a single column. Has no effect if you specify «cols».~
+2: Force a row index even if the range spans only a single row. Has no effect if you specify «rows».~
+4: Use the first row of «range» as column labels in the local index .Column. Exclude this first row in the result returned.~
+8: Use the first column of «range» as labels in the local index .Row. Exclude this first column in the result returned..~
+16: Suppress the error message that is otherwise given if the sizes of «colIndex» or «rowIndex» do not match the size of the range.~
+~
+cases:  cols and flag 8  or rows specified and flag 4 (not sensible)  cols not spec and 1 or rows not spec and 2.~
+cols not specified,~
+Flag 4 (use first col as row headers) means cols omit first col~
+Flag 8 (use first row as col headers) means rows omit first row
+Definition: range := SS_SheetnumToRange(ss, range, sheetNum);~
+Local r := ss -> ReadValues(range);~
+~
+IF IsNotSpecified(column) THEN column := ~
+	IF Size(r.dim1)=1 AND NOT FlagTrue(howToIndex, 1) THEN [] { No column index }~
+	ELSE IF FlagTrue(howToIndex, 4) { column index is top row }~
+		THEN IF FlagTrue(howToIndex, 8) AND IsNotSpecified(rows)~
+			THEN (column := CopyIndex(r[@.dim2=1, .dim1=2..Size(r.dim1)]); ~
+			ELSE (column := CopyIndex(r[@.dim2=1]); r := r[.dim1 = column]) ~
+		 ELSE (column := CopyIndex(r.dim1);  r := r[.dim1 = column])~
+ELSE IF Size(r.dim1) <> Size(cols) AND NOT FlagTrue(howToIndex, 16)~
+	THEN Error('Parameter «range» has '&Size(r.dim1)&' columns which is different from Index «cols».')~
+	ELSE r := r[@.dim1 = @cols, defVal: Null];~
+LocalIndex row := [];~
+IF  IsNotSpecified(rows) THEN ~
+	IF Size(r.dim2)=1 AND NOT FlagTrue(howToIndex, 2) THEN r := r[.dim2=1]~
+	ELSE IF FlagTrue(howToIndex, 8) ~
+		THEN IF FlagTrue(howToIndex, 4) AND IsNotSpecified(cols)~
+			THEN (row := CopyIndex(r[@column=1, .dim2=2..Size(r.dim2)]); ~
+				r := r[.dim2 = @row + 1]) ~
+			ELSE (row := CopyIndex(IF IsNotSpecified(cols) THEN r[@column=1] ELSE r[@cols=1]); r := r[.dim2 = row]) ~
+		 ELSE (row := CopyIndex(r.dim2);  r := r[.dim2 = row])~
+ELSE IF Size(r.dim2) <> Size(rows) AND NOT FlagTrue(howToIndex, 16) ~
+	THEN Error('Parameter «range» has '&Size(r.dim2)&' rows, which is different from Index «row».') ~
+	ELSE r := r[@.dim2 = @rows, defVal: Null];~
+IF IsNotSpecified(ifNull) THEN r~
+ELSE IF r=Null THEN ifNull ELSE r
+NodeLocation: 168,264,1
+NodeSize: 120,24
+WindState: 2,203,34,1093,900
+DisplayInputs: Object Function, Function SS_SheetnumToRange, Function FlagTrue
+
+Function SS_RangeAddress(ss; range: Text)
+Title: SS_RangeAddress(ss, range, cols, rows, sheetNum)
+Description: Give the cell address of «range» from spreadsheet «ss», as a '
+Definition: IF NOT IsNotspecified(sheetNum) THEN range := SS_SheetnumToRange(ss, range, sheetNum);~
+Local r := ss -> ReadValues(range);~
+
+NodeLocation: 832,112,1
+NodeSize: 128,24
+WindState: 2,90,243,1042,725
+DisplayInputs: Object Function, Function SS_SheetnumToRange, Function FlagTrue
+
+Close Under_construction
+
+Variable eg_FlagTrue
+Title: eg FlagTrue()
+Definition: FlagTrue(flag_combins, flag_vals)
+NodeLocation: 352,120,1
+NodeSize: 72,16
+WindState: 2,571,242,720,350
+ValueState: 2,294,214,416,303,,MIDM
+
+Function SS_Trace(x; msg: Text = '')
+Title: SS_Trace(x)
+Description: IF SS_Trace_on is True, it shows a message box showing value of x if 0D or 1D, and indexes if <=2D and optional message msg.
+Definition: IF SS_Trace_on THEN MsgBox((IF msg<>'' THEN msg ELSE ('In function '& Identifier OF HandleFromIdentifier('_caller')&': '))&~
+	(LocalIndex is := IndexesOF(x); IF Size(is) THEN x ELSE IF Size(is)=1 THEN (LocalAlias i := Slice(is, 1); Jointext(x, i, ', ')) ELSE ' has indexes '&Jointext(is, is, ', ')));
+NodeLocation: 136,168,1
+NodeSize: 120,16
+WindState: 2,102,82,974,682
+
+Decision SS_Trace_on
+Description: Check to show Trace messages in selected SS_ functions.
+Definition: Checkbox(0)
+NodeLocation: 136,232,1
+NodeSize: 64,24
+NodeInfo: 1,1,1,1,1,1,0,0,0,0,,0,1,0
+
+Alias Al723588611
+Title: COM Find Files
+Definition: 1
+NodeLocation: 400,304,1
+NodeSize: 128,24
+Original: COM_Find_Files
+
+Close LibXL_helper_functio
+
+Button eg_SS_close1
+Title: eg SS_close
+Description: Click to close the spreadsheet after saving any changes.
+NodeLocation: 368,160,1
+NodeSize: 80,16
+WindState: 2,437,478,720,350
+OnClick: SS_Close(eg_SS_Open, Excel_file_name)
+
+Button Eg_Delete_internal_S
+Title: Eg Delete internal SS data
+Description: Click to delete the in-memory spreadsheet data. This shows you how to do that in case you need to.  It loses anyhin that you have written to the spreadsheet, unless you call SS_Save() first.  SS_Close(ss, file) does this automatically after saving.
+NodeLocation: 560,164,1
+NodeSize: 72,16
+WindState: 2,372,429,720,350
+OnClick: InvalidateResult(eg_SS_Open)
+
+Function SS_AddSheet(ss; name: Text; n: = 0)
+Title: SS_AddSheet(ss, name, n)
+Description: Add a new sheet with «name» to spreadsheet «ss».~
+By default, it adds it as the last sheet. If «n»>0 and <the number of sheets, it adds the new sheet as the «n»th sheet.~
+If «n»<0 it will have -«n» sheets after it.~
+~
+It is similar to the built-in function SpreadsheetInfo('Names'), but it uses LibXL to access a spreadsheet file.
+Definition: INDEX sheets := SS_sheets(ss);~
+Local newN := IF n>0 AND n<=Size(sheets) THEN n ELSE IF n<0 THEN Size(sheets)+n ELSE Size(sheets)+1;~
+IF @[sheets = name]>0 ~
+THEN Error("Failed to add sheet '"& name &"' to spreadsheet because it already exists. ")~
+ELSE  BEGIN~
+	ss -> AddSheet(name, n);  ~
+	ss -> SetCellValue(newN, 1, 1, 'New'); { Set cell 'A1' to 'New', because a LiXL bug means GetRange() doesn't work on an empty sheet }~
+	name~
+END
+NodeLocation: 136,536,1
+NodeSize: 128,16
+WindState: 2,312,237,1042,576
+
+Variable eg_SS_sheets2
+Title: eg SS_sheets
+Definition: SS_AddSheet(eg_SS_Open, 'old sheet', -1)
+NodeLocation: 368,536,1
+NodeSize: 80,16
+WindState: 2,569,527,720,350
+ValueState: 2,975,65,687,618,,MIDM
+
+Function SS_Files(dir: Text Optional)
+Title: SS_Files(dir)
+Description: Returns a list of the spreadsheet files (with extension .XLSX or .XLS) in directory dir (defaults to CurrentModelfolder).  Useful to provide a list from which user can select file to open.
+Definition: IF IsNotSpecified(dir) THEN dir := CurrentModelFolder();~
+SS_reset_files; Files_in_folder(dir, substring: '.XLS' )
+NodeLocation: 136,24,1
+NodeSize: 128,16
+WindState: 2,1055,211,743,411
+
+Variable eg_SS_Files
+Title: eg SS_Files
+Definition: SS_Files(Excel_file_name)
+NodeLocation: 368,24,1
+NodeSize: 80,16
+ValueState: 2,821,109,382,161,,MIDM
+
+Decision SS_use_orig_funcs
+Title: Use built-in SS functions
+Description: Check if you want the SS_functions to use the original built in spreadsheet functions instead of the LibXL functions.  This is useful when you are testing the new LibXL functions against the original ones.
+Definition: Checkbox(0)
+NodeLocation: 560,232,1
+NodeSize: 48,32
+NodeInfo: 1,1,1,1,1,1,0,,0,,0,,,
+WindState: 2,1051,524,720,350
+Aliases: FormNode Fo2007532803
+
+FormNode Fo2007532803
+Title: Use built-in SS functions
+Definition: 0
+NodeLocation: 572,288,1
+NodeSize: 108,16
+Original: SS_use_orig_funcs
+
+Close SS_LibXL_Lib
+

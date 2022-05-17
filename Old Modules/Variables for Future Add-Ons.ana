@@ -1,0 +1,194 @@
+{ Analytica Model Variables_for_Future, encoding="UTF-8" }
+SoftwareVersion 6.0.10
+
+{!-60000|Attribute AcpStyles}
+
+
+LinkModule Variables_for_Future
+Title: Variables for Future Add-Ons
+Author: JamesMilford
+Date: Thu, Oct 4, 2018 8:27 AM
+DefaultSize: 64,40
+NodeSize: 64,40
+NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
+DiagState: 2,400,169,920,465,17
+NodeColor: 57311,57311,57311
+FontStyle: Arial Narrow,19
+FileInfo: 0,LinkModule Variables_for_Future,2,2,0,0,Old Modules\Variables for Future Add-Ons.ana
+AcpStyles: Show_Object:no
+
+Constant Install_Price_Markup
+Title: Installer Price Markup
+Units: fraction
+Description: The markup above system equipment costs charged by system installers.
+Definition: Table(All_Sectors,All_Equipment_Types)(~
+0.6,0.6,~
+0.6,0.6,~
+0,0)
+NodeLocation: 88,368,1
+NodeSize: 64,40
+DefnState: 2,14,382,416,303,,DFNM
+NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+{!40700|Att_CellFormat: CellSpan(All_Sectors,CellNumberFormat('Percentage',4,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0),1,2,header:0)}
+
+Variable Price_Markup
+Title: Price Markup
+Units: fraction
+Description: The markup above system equipment costs charged by system installers.
+Definition: Install_Price_Markup[All_Sectors=PV_Sectors, All_Equipment_Types=Equipment_Types]
+NodeLocation: 240,368,1
+NodeSize: 64,40
+
+Constant Exogenous_Debt_Ratio
+Title: Exogenous Debt Ratio
+Units: fraction
+Description: The debt ratio specified exogenously, rather than being found through an optimization.
+Definition: Table(All_Sectors)(1,0.4,0)
+NodeLocation: 120,80,1
+NodeSize: 64,40
+DefnState: 2,370,15,416,303,,DFNM
+NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+
+Decision Stored_Opt_DebtRatio
+Title: Stored Optimal Debt Ratio
+Units: fraction/year
+Description: The debt ratio found through optimization, whereby the optimization finds the lowest system NPV, given constraints on minimum debt service coverage ratios.
+Definition: Table(All_Sectors,All_Technologies,Static_PV_Time)(~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+NodeLocation: 120,256,1
+NodeSize: 64,40
+WindState: 2,438,188,720,350
+
+Constant DSCR_Ratio
+Title: Debt Service Coverage Ratio
+Units: fraction
+Description: The minimum ratio of EBITDA to debt payment that must be maintained. 
+Definition: Table(All_Sectors)(1.3,1.3,0)
+NodeLocation: 120,168,1
+NodeSize: 64,40
+DefnState: 2,294,453,416,303,,DFNM
+
+Constant Upfront_Incentives
+Title: Upfront Incentives
+Units: $/system
+Description: The upfront incentives provided by source.
+Definition: Table(Incentive_Source,Static_PV_Time)(~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+NodeLocation: 432,96,1
+NodeSize: 64,40
+WindState: 2,163,23,720,350
+DefnState: 2,376,182,416,499,,DFNM
+NodeColor: 65535,1,1
+ReformDef: [Incentive_Source,Static_PV_Time]
+
+Constant Perform_Based_Incent
+Title: Performance Based Incentives
+Units: $/kWh
+Description: A per-kWh incentive applied to system production.
+Definition: Table(Incentive_Source,Static_PV_Time)(~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+NodeLocation: 432,184,1
+NodeSize: 64,40
+WindState: 2,98,82,939,524
+NodeColor: 65535,1,1
+
+Text Te1537824488
+Title: Might need to index these by monthly time.
+NodeLocation: 448,124,-1
+NodeSize: 88,108
+NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
+NodeColor: 65535,65531,1
+NodeFont: Arial Narrow,15
+
+Decision Inflate_Incentives
+Title: Inflate Incentives
+Units: boolean
+Description: Check this box to inflate incentives over time.
+Definition: Checkbox(0)~
+
+NodeLocation: 616,88,1
+NodeSize: 64,40
+
+Decision BaseYr_Incent_Inflat
+Title: Base Year for Incentive Inflation
+Units: year
+Description: The base year for incentive inflation, meaning this year will have an inflation factor of 1.0.
+Definition: 2018
+NodeLocation: 616,176,1
+NodeSize: 64,40
+
+Constant Length_of_PBI_Incent
+Title: Length of PBI Incentive
+Units: years
+Description: The number of years that a performance-based incentive is available.
+Definition: Table(Incentive_Source,Static_PV_Time)(~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+NodeLocation: 432,280,1
+NodeSize: 64,40
+DefnState: 2,72,74,412,541,,DFNM
+NodeColor: 65535,1,1
+ReformDef: [Incentive_Source,Static_PV_Time]
+
+Decision Taxable_Incentives
+Title: Taxable Incentives
+Units: boolean
+Description: Flags indicating which incentives are taxable.
+Definition: Table(Incentive_Type,Incentive_Source,All_Sectors,Tax_Entity)(~
+Checkbox(0),Checkbox(1),~
+Checkbox(0),Checkbox(0),~
+Checkbox(0),Checkbox(0),~
+Checkbox(0),Checkbox(1),~
+Checkbox(0),Checkbox(0),~
+Checkbox(0),Checkbox(0),~
+Checkbox(0),Checkbox(1),~
+Checkbox(0),Checkbox(0),~
+Checkbox(0),Checkbox(0),~
+Checkbox(0),Checkbox(1),~
+Checkbox(0),Checkbox(0),~
+Checkbox(0),Checkbox(0),~
+,,~
+,,~
+,,~
+,,~
+,,~
+,,~
+,,~
+,,~
+,,~
+,,~
+,,~
+,)
+NodeLocation: 272,80,1
+NodeSize: 64,40
+WindState: 2,261,132,1061,574
+DefnState: 2,411,187,541,455,0,DFNM
+ReformDef: [Incentive_Source,All_Sectors]
+TableCellDefault: Checkbox(0)
+Att_EditSliceState: [Incentive_Type,1,Tax_Entity,2,All_Sectors,1,Incentive_Source,1]
+
+Constant Min_Solar_Charging
+Title: Minimum Charging from PV
+Units: fraction
+Description: The minimum percent of charging energy that must come from PV in order to receive an ITC for storage technologies.
+Definition: .75
+NodeLocation: 432,368,1
+NodeSize: 64,40
+NodeColor: 65535,1,1
+NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+
+Close Variables_for_Future
+

@@ -1,7 +1,7 @@
 { Analytica Model Impact___Uncertainty, encoding="UTF-8" }
-SoftwareVersion 5.4.6
+SoftwareVersion 6.1.0
 
-{!-40203|Attribute CloudPlayerStyles}
+{!-60000|Attribute AcpStyles}
 
 
 LinkModule Impact___Uncertainty
@@ -10,14 +10,12 @@ Author: CoryWelch
 Date: Mon, Jul 9, 2018 1:00 PM
 DefaultSize: 64,40
 NodeSize: 80,56
-NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,332,2,1267,870,17
 DiagramColor: 52428,52428,52428
 Pict: (000000000000002D003900046901000089504E470D0A1A0A0000000D49484452000000390000002D0806000000145FC308000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA864000000EE494441546843ED8FBBB1023110041506693C833C8900E705462688C210B5B535AC465F438CD1C6CDED5D75A79CF3F1A4E7ED92DFF81727A1C85350E42928B295BFFF94BFE16F77A2C85650902237A1C8561469B6DD28B215459A6D37DD91451ED173B712454620D1916D258A8C60E5D96D258A8C60E5D96D258A8C60E5A30D61EF66A1C80824357B9B85222358D1916D168A8C604547B65928D252243CE8A6672B1E087BD783222D5E0C898E6CC88375ABA1488B1743A2231BF260DD6AC01F150984BF29CFA31BF2281BC2DED55064B431372D1BF260B71A8A8C36E6A665431EEC56E3F3D191DCAF8F1F89CCE90506011C2C460ACD4A0000000049454E44AE426082)
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule Impact___Uncertainty,2,2,0,0,Impact and Uncert Module.ana
-{!40400|CloudPlayerStyles: Show_Object:no}
-{!40204-40399|AWP_Attrib:Show_Object:no}
+AcpStyles: Show_Object:no
 
 Variable PV_Peak_Load
 Title: PV Peak Load
@@ -27,7 +25,7 @@ Definition: Max(Solar_Hourly_Impact * Peak_Periods, Month, Day_and_Hour)
 NodeLocation: 632,432,1
 NodeSize: 64,40
 ValueState: 2,224,134,829,627,0,MIDM
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 ReformVal: [Start_of_Year,Spatial_IDs]
 Att__TotalsIndex: [Spatial_IDs]
 Att_ResultSliceState: [Spatial_IDs,0,Start_of_Year,1]
@@ -57,7 +55,7 @@ NodeLocation: 416,616,1
 NodeSize: 64,40
 WindState: 2,102,82,1208,612
 DefnState: 2,499,91,751,411,0,DFNM
-ValueState: 2,128,5,1053,820,1,MIDM
+ValueState: 2,400,18,1053,820,1,MIDM
 GraphSetup: Att_GraphValueRange Forecast_Load_Impact:1,,1,,,,,-1146.068499237299,162.95225620269775,0~
 Graph_KeyFont:,20,0~
 Graph_KeyTitleFont:,20,1~
@@ -116,13 +114,13 @@ NodeLocation: 1048,64,1
 NodeSize: 64,40
 
 Index All_DER_Types
+Att_PrevIndexValue: ['Solar PV','Electric Vehicles','Energy Efficiency','Demand Response','Battery Storage']
 Title: All DER Types
 Definition: ['Solar PV','Electric Vehicles','Energy Efficiency','Demand Response','Battery Storage']
 NodeLocation: 1048,152,1
 NodeSize: 64,40
 WindState: 2,33,362,720,350
 {!40300|Att_SlicerPopupSize: 257,98}
-Att_PrevIndexValue: ['Solar PV','Electric Vehicles','Energy Efficiency','Demand Response','Battery Storage']
 
 Module Battery_Impact
 Title: Battery Impact
@@ -135,7 +133,7 @@ DiagState: 2,314,42,1231,484,17
 
 Decision Select_Battery_Techs
 Title: Select Battery Techs
-Definition: Table(Static_Profile_Names)(Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
+Definition: Table(Static_Profile_Names)(Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
 NodeLocation: 128,72,1
 NodeSize: 64,40
 DefnState: 2,324,46,914,672,0,DFNM
@@ -394,7 +392,6 @@ Definition: Choice(All_DER_Types,1,0)
 NodeLocation: 896,56,1
 NodeSize: 64,40
 Aliases: FormNode Fo1543006097
-{!40200|Att_ChoiceIndexes: Index All_DER_Types}
 
 FormNode Fo1543006097
 Title: Solar PV Label
@@ -410,7 +407,6 @@ Definition: Choice(All_DER_Types,2,0)
 NodeLocation: 896,168,1
 NodeSize: 64,40
 Aliases: FormNode Fo1543009026
-{!40200|Att_ChoiceIndexes: Index All_DER_Types}
 
 FormNode Fo1543009026
 Title: Solar PV Label
@@ -426,7 +422,6 @@ Definition: Choice(All_DER_Types,5,0)
 NodeLocation: 896,280,1
 NodeSize: 64,40
 Aliases: FormNode Fo1579112009
-{!40200|Att_ChoiceIndexes: Index All_DER_Types}
 
 FormNode Fo1579112009
 Title: Solar PV Label
@@ -444,7 +439,7 @@ Definition: Table(DER)(PV_Impact,Cumul_EV_Impact[Time_vehicles=Time],Storage_Imp
 NodeLocation: 216,128,1
 NodeSize: 56,32
 ValueState: 2,344,33,1117,743,1,PDFP
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 GraphSetup: Graph_FillTransparen:172~
 {!40400|Sys_PdfSmoothMethod:1}~
 Att_GraphIndexRange Time:1,,0,,,,,36.891K,46.022K,0~
