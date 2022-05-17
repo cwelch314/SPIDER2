@@ -8834,7 +8834,7 @@ DefaultSize: 64,32
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,1913,5,906,723,17,10,
+DiagState: 2,968,9,906,723,17,10,
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
 AcpStyles: Framenode: Te1941271843
@@ -9134,7 +9134,7 @@ DefaultSize: 64,32
 NodeLocation: 256,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,2836,-2,902,851,17,10,
+DiagState: 2,24,8,902,851,17,10,
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
 AcpStyles: Framenode: Te2008380707
@@ -9967,7 +9967,7 @@ Author: CWelch
 Date: Fri, May 13, 2022 6:39 AM
 NodeLocation: 768,64,1
 NodeSize: 64,32
-DiagState: 2,124,59,1674,694,17,10
+DiagState: 2,68,8,1724,793,17,10
 NodeColor: 65535,65535,65535
 
 Constant IEER
@@ -10154,19 +10154,20 @@ Units: Years
 Definition: IF Annual_Savings>0 THEN (Installed_Cost1[Technology='Electrification Measure '] - Installed_Cost1[Technology='Baseline (FF heating w/Baseline A/C)']) / Annual_Savings ELSE INF
 NodeLocation: 1000,368,1
 NodeSize: 64,32
-ValueState: 2,46,34,820,595,1,MIDM
+ValueState: 2,54,146,820,595,1,MIDM
 Aliases: FormNode Fo954785571, FormNode Fo2124988195
-GraphSetup: Att_GraphIndexRange Fuel_Price:1,,,1~
-ShowKey:2~
-Att_GraphValueRange Simple_Payback_Time3:1,,0,,,,,0,49.81319308280945,0~
-Att_GraphIndexRange Electricity_Price:1,,,,~
+GraphSetup: Graph_AxisLabelFont:,20,0~
+Flip:0~
 {!40403|Att_ReverseOrder Electricity_Price:1}~
-Flip:8~
-Graph_AxisLabelFont:,20,0
-ReformVal: [Fuel_Price,Electricity_Price]
+Att_GraphIndexRange Electricity_Price:1,,,,~
+Att_GraphValueRange Simple_Payback_Time3:1,,1,,,,,0,49.81319308280945,0~
+ShowKey:2~
+Att_GraphIndexRange Fuel_Price:1,,,1~
+Att_CatLineStyle Graph_Primary_Valdim:5
+ReformVal: [Electrification_Meas,Electricity_Price]
 NumberFormat: 2,F,2,1,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: []
-Att_ResultSliceState: [Combustion_Tech,2,Electrification_Meas,2,Selected_Sectors,11,Electricity_Price,1,Fuel_Price,1]
+Att_ResultSliceState: [Combustion_Tech,2,Selected_Sectors,11,Fuel_Price,13,Electricity_Price,1,Electrification_Meas,2]
 {!40600|Att_StackingIndex: Electricity_Price}
 {!40600|Att_ClusterIndex: Null}
 {!40700|CellFormatExpression: CellColor_Higher_Red(self,30)}
@@ -10299,7 +10300,7 @@ Definition: MultiChoice(EE_Sectors,returnList:0)
 NodeLocation: 368,648,1
 NodeSize: 64,32
 Aliases: FormNode Fo679010083, FormNode Fo27836195
-{!40300|Att_SlicerPopupSize: 383,314}
+{!40300|Att_SlicerPopupSize: 388,314}
 
 Constant EFLH_by_Sector
 Title: EFLH by Sector
@@ -10407,13 +10408,14 @@ Definition: Total_Annual_Cost[Technology='Electrification Measure ']/Total_Annua
 NodeLocation: 672,544,1
 NodeSize: 64,32
 WindState: 2,98,82,720,532
-ValueState: 2,913,38,849,596,1,MIDM
+ValueState: 2,990,149,739,598,1,MIDM
 Aliases: FormNode Fo1697169187, FormNode Fo1906884387
-GraphSetup: {!40403|Att_ReverseOrder Electricity_Price:1}~
+GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
+ShowKey:2~
 Att_GraphIndexRange Fuel_Price:1,,1,,,,,5,6.911336332559586,0~
-ShowKey:2
-ReformVal: [Fuel_Price,Electricity_Price]
-Att_ResultSliceState: [Electrification_Meas,2,Selected_Sectors,11,Electricity_Price,2,Fuel_Price,3]
+{!40403|Att_ReverseOrder Electricity_Price:1}
+ReformVal: [Electrification_Meas,Electricity_Price]
+Att_ResultSliceState: [Selected_Sectors,25,Fuel_Price,3,Electricity_Price,2,Electrification_Meas,2]
 {!40600|Att_StackingIndex: Electricity_Price}
 {!40600|Att_ClusterIndex: Null}
 {!40700|CellFormatExpression: CellColor_Higher_Red(self,1)}
@@ -10470,7 +10472,7 @@ Author: CWelch
 Date: Mon, May 16, 2022 7:48 AM
 NodeLocation: 920,64,1
 NodeSize: 64,32
-DiagState: 2,2044,26,552,703,17,10
+DiagState: 2,564,70,552,703,17,10
 
 FormNode Fo245940003
 Title: IEER

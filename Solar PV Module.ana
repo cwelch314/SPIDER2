@@ -11427,7 +11427,7 @@ Graph_SymbolKey:1~
 Att_GraphValueRange Equipment_Cost_Forec:|1:1,,1,,,,,1134.5600336790085,1483.9999824762344,0
 ReformVal: [Cost_Forecast_Year,PV_Climate_Zone]
 NumberFormat: 2,F,4,0,1,1,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att_ResultSliceState: [All_Equipment_Types,1,Area_Type,1,PV_Climate_Zone,3,Cost_Forecast_Year,1]
+Att_ResultSliceState: [Test_Cost_Multiplier,1,PV_Climate_Zone,3,Cost_Forecast_Year,1]
 Att_XRole: Cost_Forecast_Year
 Att_YRole: -1
 Att_ColorRole: Area_Type
@@ -12459,7 +12459,7 @@ Definition: [Simple_LCOE_of_PV1,Value_of_generation1]
 NodeLocation: 304,496,1
 NodeSize: 64,40
 WindState: 2,953,224,720,557
-ValueState: 2,453,118,970,721,1,MIDM
+ValueState: 2,28,43,876,713,1,MIDM
 Aliases: FormNode Fo89932067, FormNode Fo74806563
 GraphSetup: Graph_AxisLabelFont:,20,0~
 SymbolSize:11~
@@ -12469,11 +12469,11 @@ Att_GraphValueRange Simple_LCOE_vs_Value:1,,1,,,,,0,0.21799230456352234,0~
 Att_CatLineStyle Graph_Primary_Valdim:5~
 Att_GraphIndexRange Cost_Forecast_Year:1,,1,,,,,2022.0101600289345,2031,0~
 Graph_SymbolKey:0
-ReformVal: [Cost_Forecast_Year,Self]
+ReformVal: [Cost_Forecast_Year,Test_Cost_Multiplier]
 NumberFormat: 2,F,4,3,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,1,PV_Sectors,1,Area_Type,1,Test_Cost_Multiplier,2,Self,1,Cost_Forecast_Year,1]
-{!40300|Att_SlicerPopupSize: 287,64}
+Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,1,PV_Sectors,1,Area_Type,1,Self,1,Test_Cost_Multiplier,2,Cost_Forecast_Year,1]
+{!40300|Att_SlicerPopupSize: 292,64}
 
 Text Te1891843619
 Title: Current modified approach for NYPA will not work for stand-alone storage, due to LCOE calculation methodology
@@ -13271,7 +13271,7 @@ NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 Att_GraphIndexRange: 1,,0,,,,,1,11,1
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 1408,353}
+{!40300|Att_SlicerPopupSize: 1418,353}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
@@ -15311,7 +15311,7 @@ Definition: ['Roof','Parking','Land']
 NodeLocation: 104,384,1
 NodeSize: 64,40
 WindState: 2,408,-14,824,781
-{!40300|Att_SlicerPopupSize: 922,80}
+{!40300|Att_SlicerPopupSize: 932,80}
 
 Include 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
 

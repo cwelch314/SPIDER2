@@ -199,7 +199,7 @@ NodeLocation: 104,360,1
 NodeSize: 64,40
 WindState: 2,98,82,720,575
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 447,252}
+{!40300|Att_SlicerPopupSize: 452,252}
 
 Decision Map_All_to_Aggregate
 Title: Map All to Aggregated Sectors
@@ -217,25 +217,25 @@ Description: Simulated PV adoption that is enabled by NYPA.
 Definition: Aggregate(NYPA_Enabled_Achieva,Map_All_to_Aggregate[All_PV_Sectors=PV_Sectors],PV_Sectors,Sectors_Aggregated,"Sum")
 NodeLocation: 584,336,1
 NodeSize: 72,40
-ValueState: 2,340,70,885,733,1,MIDM
+ValueState: 2,454,27,966,780,1,MIDM
 Aliases: FormNode Fo599094563
-GraphSetup: Flip:0~
+GraphSetup: Flip:8~
 Graph_AxisLabelFont:,20,0~
 {!50500|Graph_ShowTitle:1}~
 Graph_FillTransparen:59~
 Att_ContLineStyle Graph_Primary_Valdim:5~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_GraphIndexRange Output_Periods:1,0,,,,,10~
-Att_Stacked_Lines Graph_Primary_Valdim:1~
-Att_AreaFill Graph_Primary_Valdim:1~
+Att_Stacked_Lines Graph_Primary_Valdim:0~
+Att_AreaFill Graph_Primary_Valdim:0~
 Att_GraphValueRange NYPA_Enabled_PV_Pote:1,,1,1,,,,0,1000,0~
 {!50400|Att_AxisOrKeyTitle Output_Periods:""}~
 SymbolSize:11
-ReformVal: [Output_Periods,Spatial_ID]
+ReformVal: [Sectors_Aggregated,Area_Type]
 NumberFormat: 2,F,2,1,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Area_Type,Sectors_Aggregated,Spatial_ID]
-Att_ResultSliceState: [Area_Type,0,Sectors_Aggregated,0,Test_Cost_Multiplier,1,Spatial_ID,0,Output_Periods,108]
-{!40600|Att_StackingIndex: Spatial_ID}
+Att__TotalsIndex: [Spatial_ID]
+Att_ResultSliceState: [Test_Cost_Multiplier,2,Output_Periods,108,Spatial_ID,0,Area_Type,2,Sectors_Aggregated,8]
+{!40600|Att_StackingIndex: Area_Type}
 {!40600|Att_ClusterIndex: Null}
 {!50500|GraphTitleExpr: ""}
 
@@ -251,10 +251,10 @@ Aliases: FormNode Fo544568611
 GraphSetup: Flip:8~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_GraphValueRange NYPA_Enabled_PV_Perc:1,,1,,,,,0,0.45,0
-ReformVal: [Sectors_Aggregated,Area_Type]
+ReformVal: [Spatial_ID,Area_Type]
 NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Sectors_Aggregated,Spatial_ID,Area_Type]
-Att_ResultSliceState: [Area_Type,0,Spatial_ID,0,Area_Type,0,Sectors_Aggregated,0]
+Att_ResultSliceState: [Area_Type,0,Test_Cost_Multiplier,1,Sectors_Aggregated,0,Area_Type,0,Spatial_ID,0]
 Att_ColorRole: Null
 {!40600|Att_StackingIndex: Area_Type}
 {!40600|Att_ClusterIndex: Null}
@@ -756,14 +756,17 @@ Units: MW-DC
 Definition: Aggregate(NYPA_Enabled_Achieva[Output_Periods=PV_Output_Period],Map_Facilities_to_Se,PV_Sectors,Customer_Segment,"Sum")
 NodeLocation: 896,448,1
 NodeSize: 64,56
-ValueState: 2,2138,55,788,658,,MIDM
+ValueState: 2,189,110,893,717,,MIDM
 Aliases: FormNode Fo966567715
 GraphSetup: {!50400|Att_AxisOrKeyTitle Customer_Segment:""}~
 Flip:8~
 Graph_AxisLabelFont:,20,0
+ReformVal: [Customer_Segment,Area_Type]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Area_Type]
-Att_ResultSliceState: [Area_Type,0,Spatial_ID,1,Customer_Segment,1]
+Att__TotalsIndex: [Area_Type,Spatial_ID]
+Att_ResultSliceState: [Test_Cost_Multiplier,2,Spatial_ID,0,Customer_Segment,1,Area_Type,0]
+{!40600|Att_StackingIndex: Area_Type}
+{!40600|Att_ClusterIndex: Null}
 
 Close NYPA_specific_output
 
