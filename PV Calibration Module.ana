@@ -857,7 +857,7 @@ Original: PV_Dates_Incl_by_Stg
 Decision PV_Calibration_Start
 Title: PV Calibration Start
 Description: The time period for which PV calibration begin.
-Definition: Choice(PV_Sim_Strt_Yr_Opt,37,0)
+Definition: 1-Jan-2002
 NodeLocation: 112,176,1
 NodeSize: 64,40
 Aliases: Alias Al1568908169, FormNode Fo1568908169, FormNode Fo1542054649, FormNode Fo1535066244
@@ -874,7 +874,7 @@ Original: PV_Calibration_Start
 Decision PV_Calibration_End
 Title: PV Calibration End
 Description: The time period for which PV calibration end.
-Definition: Choice(PV_Sim_End_Yr_Option,156,0)
+Definition: 31-Dec-2021
 NodeLocation: 256,176,1
 NodeSize: 64,40
 Aliases: Alias Al1568908170, FormNode Fo1568908170, FormNode Fo1542054650, FormNode Fo1535066245
@@ -2056,9 +2056,9 @@ Title: R^2 Threshold
 Units: dmnl
 Description: Input the minimum desired value of the R-squared metric indicating the closeness of fit between historic data and calibrated results. If a calibration stage returns a fit that does not meet this R-squared threshold, more decision variables will be considered in the optimization (e.g., when there is not a good fit using only the long-run market share as the only decision variable, the user can choose to add decision variables to the optimization only for those spatial IDs that do not have a good enough fit).
 Definition: Table(All_Sectors,PV_Calibration_Stage)(~
-0.95,0.9,0.8,0.7,0.5,~
-0.7,0.6,0.5,0.5,0.5,~
-0.9,0.9,0.9,0.9,0.5)
+0.9,0.9,0.9,0.9,0.9,~
+0.9,0.9,0.9,0.9,0.9,~
+,,,,)
 NodeLocation: 736,80,1
 NodeSize: 64,40
 WindState: 2,317,127,1114,627
@@ -2204,7 +2204,7 @@ Units: periods
 Description: Specify the number of periods for which PV installations will be averaged. This average will be used in the slope constraint.~
 ~
 SubTable(StructSingCell_Input[StructSingCell_Names=PV_Avg_Period_Label])
-Definition: Table(All_Sectors)(4,36,0)
+Definition: Table(All_Sectors)(0,0,)
 NodeLocation: 88,192,1
 NodeSize: 64,40
 WindState: 2,0,264,720,350
@@ -2793,12 +2793,9 @@ Constant Stored_Opt_Status_PV
 Title: Stored Opt Status PV
 Description: Stores the status of the optimization (e.g., whether an optimal solution was found, the optimization timed out, etc.)
 Definition: Table(All_Spatial_ID,All_Sectors)(~
-'Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Not Yet Solved.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Not Yet Solved.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Not Yet Solved.','The Solver has converged to the current solution.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Not Yet Solved.','The Solver has converged to the current solution.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Not Yet Solved.','The Solver has converged to the current solution.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Not Yet Solved.','The Solver has converged to the current solution.','Optimal solution has been found.','Not Yet Solved.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Not Yet Solved.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Not Yet Solved.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.',~
-'Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Not Yet Solved.','The Solver has converged to the current solution.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Not Yet Solved.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Not Yet Solved.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Not Yet Solved.','Optimal solution has been found.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Not Yet Solved.','The Solver has converged to the current solution.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Not Yet Solved.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Not Yet Solved.','Optimal solution has been found.','Optimal solution has been found.','Not Yet Solved.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','The Solver has converged to the current solution.','Not Yet Solved.','The Solver has converged to the current solution.','Optimal solution has been found.','Not Yet Solved.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Probable global optimum reached. Returned when MSL (Bayesian) global optimality test has been satisfied.',~
-'Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.',~
-'Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.',~
-'Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.',~
-'Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.')
+'Not Yet Solved.','Not Yet Solved.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.',~
+'Not Yet Solved.','Not Yet Solved.','Probable global optimum reached. Returned when MSL (Bayesian) global optimality test has been satisfied.',~
+'Not Yet Solved.','Not Yet Solved.','Not Yet Solved.')
 NodeLocation: 608,456,1
 NodeSize: 64,40
 WindState: 2,98,82,720,503
@@ -3002,189 +2999,12 @@ Original: PV_Payback_Coeff
 Constant Stored_PV_Dec_Vars
 Title: Stored PV Dec Vars
 Definition: Table(All_Spatial_ID,All_Sectors,All_PV_Dec_Handles)(~
-0,0,0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,0,0,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.0007407322253213581,0.669277800453689,0,-0.2777058051300385,0,0,0,0,0,~
-0,0.2840039278729411,0,-0.2,0,0,0,0,0,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.024433476443433855,0.5747228102276821,0,-0.2777058051300385,0,0,0,0,-1.2929609910657711,~
-0,0.08620550130151111,0,-0.2,0,0,0,0,4.6590326131767,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.0010002196167346253,0.7664421456365933,0,-0.2777058051300385,0,0,0,0,-1.1482958330433628,~
-0.03,2,0,-0.2,0,0,0,0,8.261138614728294,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.0010026245437341002,0.5355408904052251,0,-0.2777058051300385,0,0,0,0,0,~
-0.029154031270388153,2,0,-0.2,0,0,0,0,3.131790741708172,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.0010071839511716142,0.5790963391702046,0,-0.2777058051300385,0,0,0,0,0,~
-0.03,0.003902208071306267,0,-0.2,0,0,0,0,-15,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.026129969976985683,0.4867952499456711,0,-0.2777058051300385,0,0,0,0,0,~
-0,0.23143195223591567,0,-0.2,0,0,0,0,-1.8083897365992287,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.02067996384946446,0.4739236032814012,0,-0.2777058051300385,0,0,0,0,0,~
-0,0.24760529681620916,0,-0.2,0,0,0,0,0,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.0010114975911643216,0.7711454461619045,0,-0.2777058051300385,0,0,0,0,0.4222064691598921,~
-0.03,0,0,-0.2,0,0,0,0,-15,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.026126728964211494,0.8763406152985085,0,-0.2777058051300385,0,0,0,0,-0.9030493640496502,~
-0.02875824524128509,1.44496429365811,0,-0.2,0,0,0,0,3.8668376402901865,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 0.001187451592433643,1.1348638996009184,0,-0.2777058051300385,0,0,0,0,1.191582769155716,~
-0,0.2840039278729411,0,-0.2,0,0,0,0,0,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.03,0.4247535228983953,0,-0.2777058051300385,0,0,0,0,0,~
-0.0018094317920694272,1.5682579156176253,0,-0.2,0,0,0,0,6.357728410916431,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.017083337214598024,0.8866519246086043,0,-0.2777058051300385,0,0,0,0,2.181417116505243,~
-0.011859066859690442,0,0,-0.2,0,0,0,0,-8.024685984817657,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.0015263388057331453,0.5713904386825772,0,-0.2777058051300385,0,0,0,0,6.3359575128716905,~
-0.0016811046793399047,2,0,-0.2,0,0,0,0,-1.1493370436282937,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.03,0.2975160754594884,0,-0.2777058051300385,0,0,0,0,0,~
-0.011346417304527835,0.10840322182171949,0,-0.2,0,0,0,0,-13.3345643734079,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.03,0.05524141189865936,0,-0.2777058051300385,0,0,0,0,0,~
-0.0000046714003232047044,2,0,-0.2,0,0,0,0,15,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.0250164834553374,0.6395068671079607,0,-0.2777058051300385,0,0,0,0,-2.3385457898063837,~
-0,0,0,-0.2,0,0,0,0,0.37585891194319826,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0,1.0447552301327778,0,-0.2777058051300385,0,0,0,0,0,~
-1.1102230246251566e-019,0.36733364628329146,0,-0.2,0,0,0,0,0,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0.0010095427828509254,0.6099100449796054,0,-0.2777058051300385,0,0,0,0,0.8559677986816443,~
-0.01650400385766047,0.11468492968548223,0,-0.2,0,0,0,0,0,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0,0.7515888881361228,0,-0.2777058051300385,0,0,0,0,0,~
-0,0.356594034376774,0,-0.2,0,0,0,0,0,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0,0,0,-0.2777058051300385,0,0,0,0,-13.888376452442433,~
 0,0,0,-0.2,0,0,0,0,14.999999999999998,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null)
@@ -3201,7 +3021,7 @@ DisplayOutputs: Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
 TableCellDefault: Null
 Att_ResultSliceState: [All_Sectors,1,All_Spatial_ID,1,All_PV_Dec_Handles,1]
 Att_EditSliceState: [All_Spatial_ID,2,All_Sectors,1,All_PV_Dec_Handles,1]
-{!50000|Att_ColumnWidths: [,All_PV_Dec_Handles,\([,,93,,92]),All_Spatial_ID,\([,,,,,])]}
+{!50000|Att_ColumnWidths: [,All_PV_Dec_Handles,[,,93,,92],All_Spatial_ID,\([,,])]}
 
 Variable Stored_Coeff_for_PV_
 Title: Stored Coeff for PV Spat ID

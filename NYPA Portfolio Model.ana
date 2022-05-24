@@ -134,7 +134,7 @@ Author: CWelch
 Date: Tue, Apr 20, 2021 10:09 AM
 DefaultSize: 64,32
 NodeInfo: 1,,,,,,,,,,,0
-DiagState: 2,47,15,1324,778,17,10,
+DiagState: 2,2238,40,863,730,17,10,
 FontStyle: Arial,15
 FileInfo: 0,Model Nexant_Model_Templat,2,2,0,0,C:\Users\cwelch\Documents\Repos\Nexant\SPIDER\NYPA Portfolio Model.ana
 {!50000|DefaultFontColor: 0,0,0}
@@ -8834,7 +8834,7 @@ DefaultSize: 64,32
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,968,9,906,723,17,10,
+DiagState: 2,244,9,1028,807,17,10,
 NodeColor: 65535,65535,65535
 FontStyle: Arial,15
 AcpStyles: Framenode: Te1941271843
@@ -10300,7 +10300,7 @@ Definition: MultiChoice(EE_Sectors,returnList:0)
 NodeLocation: 368,648,1
 NodeSize: 64,32
 Aliases: FormNode Fo679010083, FormNode Fo27836195
-{!40300|Att_SlicerPopupSize: 388,314}
+{!40300|Att_SlicerPopupSize: 403,314}
 
 Constant EFLH_by_Sector
 Title: EFLH by Sector
@@ -10340,7 +10340,7 @@ NodeSize: 64,32
 NodeInfo: 1,,0
 Aliases: FormNode Fo326426403, FormNode Fo1638448931
 {!40300|DomainExpr: Discrete('ASHP','VRF','GSHP',type:['text'])}
-{!40300|Att_SlicerPopupSize: 507,80}
+{!40300|Att_SlicerPopupSize: 527,80}
 
 Decision Combustion_Tech
 Title: Combustion Tech
@@ -10408,14 +10408,14 @@ Definition: Total_Annual_Cost[Technology='Electrification Measure ']/Total_Annua
 NodeLocation: 672,544,1
 NodeSize: 64,32
 WindState: 2,98,82,720,532
-ValueState: 2,990,149,739,598,1,MIDM
+ValueState: 2,419,2,1019,845,1,MIDM
 Aliases: FormNode Fo1697169187, FormNode Fo1906884387
-GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
+GraphSetup: {!40403|Att_ReverseOrder Electricity_Price:1}~
+Att_GraphIndexRange Fuel_Price:1,,0,,,,,5,10.008677542209625,0~
 ShowKey:2~
-Att_GraphIndexRange Fuel_Price:1,,1,,,,,5,6.911336332559586,0~
-{!40403|Att_ReverseOrder Electricity_Price:1}
-ReformVal: [Electrification_Meas,Electricity_Price]
-Att_ResultSliceState: [Selected_Sectors,25,Fuel_Price,3,Electricity_Price,2,Electrification_Meas,2]
+Att_CatLineStyle Graph_Primary_Valdim:5
+ReformVal: [Fuel_Price,Electricity_Price]
+Att_ResultSliceState: [Selected_Sectors,11,Electrification_Meas,3,Electricity_Price,2,Fuel_Price,3]
 {!40600|Att_StackingIndex: Electricity_Price}
 {!40600|Att_ClusterIndex: Null}
 {!40700|CellFormatExpression: CellColor_Higher_Red(self,1)}
@@ -10472,7 +10472,7 @@ Author: CWelch
 Date: Mon, May 16, 2022 7:48 AM
 NodeLocation: 920,64,1
 NodeSize: 64,32
-DiagState: 2,564,70,552,703,17,10
+DiagState: 2,577,29,552,703,17,10
 
 FormNode Fo245940003
 Title: IEER

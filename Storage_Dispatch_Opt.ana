@@ -1576,7 +1576,6 @@ WindState: 2,395,256,883,350
 ValueState: 2,712,185,772,660,0,MIDM
 ReformVal: [PV_Climate_Zone,Opt_Hours]
 Att_ResultSliceState: [Opt_Sectors,22,Opt_Storage_Systems,1,Seq_Opt_Number,1,Opt_Hours,1,PV_Climate_Zone,1]
-{!40700|Att_CellFormat: CellSpan(PV_Climate_Zone,CellNumberFormat('Fixed Point',5,1,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:5),2,header:0)}
 
 Constraint Min_Stored_PV2
 Title: Min Stored PV
@@ -1600,7 +1599,7 @@ NodeSize: 64,40
 WindState: 2,11,113,813,350
 ValueState: 2,674,332,773,619,0,MIDM
 ReformVal: [PV_Climate_Zone,Opt_Hours]
-{!40700|Att_CellFormat: CellSpan(PV_Climate_Zone,CellNumberFormat('Fixed Point',5,1,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:5),2,5,header:0)}
+{!40700|Att_CellFormat: CellSpan(PV_Climate_Zone,CellNumberFormat('Fixed Point',5,1,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:5),2,header:0)}
 
 Constraint Load_Balance2
 Title: Load Balance
@@ -1722,7 +1721,7 @@ NodeLocation: 112,472,1
 NodeSize: 64,40
 ValueState: 2,526,181,865,677,0,MIDM
 NumberFormat: 2,F,2,4,0,0,2,1,$,0,"ABBREV",0,,,0,0,15,
-{!40700|Att_CellFormat: CellSpan(PV_Climate_Zone,CellNumberFormat('Fixed Point',8,1,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:4,zeroes_:8),2,5,header:0)}
+{!40700|Att_CellFormat: CellSpan(PV_Climate_Zone,CellNumberFormat('Fixed Point',8,1,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:4,zeroes_:8),2,header:0)}
 
 Variable Max_Battery_SOC
 Title: Max Battery SOC
@@ -1732,7 +1731,7 @@ Definition: Divide(Storage_Capacity[System_Types=Opt_System2, PV_Sectors=Opt_Sec
 NodeLocation: 112,568,1
 NodeSize: 64,40
 ValueState: 2,68,74,865,677,0,MIDM
-{!40700|Att_CellFormat: CellSpan(PV_Climate_Zone,CellNumberFormat('Fixed Point',6,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:6),2,5,header:0)}
+{!40700|Att_CellFormat: CellSpan(PV_Climate_Zone,CellNumberFormat('Fixed Point',6,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:6),2,header:0)}
 
 Constraint DischLoadRed_LTE_Tot
 Title: Discharge Load Reduct LTE Total
