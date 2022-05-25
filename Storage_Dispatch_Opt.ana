@@ -3006,34 +3006,6 @@ Title: Selected Storage Rate Vintages
 Description: Select the rate vintages that will be evaluated in the storage optimization routines.
 Definition: Table(Opt_Sectors,Rate_Vintage)(~
 Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
-Checkbox(1),~
 Checkbox(1))
 NodeLocation: 616,208,1
 NodeSize: 64,40
@@ -3070,7 +3042,7 @@ Decision Select_Strg_System2
 Title: Selected Storage Systems
 Description: Select the storage systems that will be evaluated in the storage optimization routines. Note that only the storage system subset selected in Select_System_Types will actually be evaluated.
 Definition: Table(Opt_Storage_Systems,Opt_Sectors)(~
-Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
+Checkbox(1),Checkbox(1))
 NodeLocation: 464,208,1
 NodeSize: 64,40
 WindState: 2,30,73,720,350
@@ -4429,7 +4401,7 @@ WindState: 2,323,77,720,350
 Decision Select_Strg_Sector2
 Title: Selected Storage Sectors
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,30,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,allowNone:0,returnList:1)
 NodeLocation: 128,288,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348264, Alias Al513733155
@@ -4472,7 +4444,6 @@ ReformVal: [Month,Opt_Sectors]
 NumberFormat: 2,F,2,2,0,0,2,0,$,0,"mm:ssssss",0,,,0,1,15,
 Att__TotalsIndex: [Month]
 Att_ResultSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Opt_Storage_Systems,1,Seq_Opt_Number,1,Opt_Sectors,1,Month,1]
-{!40700|Att_CellFormat: CellFormats(CellSpan(Opt_Sectors,CellSpan(Month,CellNumberFormat('Fixed Point',2,0,0,dateFormat:'mm:ssssssssss',fullPrecision:0,numbersAsDates:1,datesAsNumbers:0),1,header:0),11,12,header:0),CellSpan(Opt_Sectors,CellSpan(Month,CellNumberFormat('Suffix',2,0,0,dateFormat:'mm:sssssss',fullPrecision:0,numbersAsDates:1,datesAsNumbers:0),1,header:0),10,11,header:0),CellSpan(Opt_Sectors,CellSpan(Month,CellNumberFormat('Suffix',2,0,0,dateFormat:'mm:sssssssssssssss',fullPrecision:0,numbersAsDates:1,datesAsNumbers:0),1,header:0),10,12,header:0))}
 
 Alias Al513733155
 Title: Selected Storage Sectors
