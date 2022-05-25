@@ -1508,16 +1508,16 @@ Title: Event Dates
 Units: fraction
 Description: Dates for key events impacting PV adoption.
 Definition: Table(All_Event_Names,Mkt_Share_ImpactType,Date_Type)(~
-Choice(PV_Sim_Strt_Yr_Opt,72,0),Choice(PV_Sim_Strt_Yr_Opt,82,0),Choice(PV_Sim_Strt_Yr_Opt,84,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,97,0),Choice(PV_Sim_Strt_Yr_Opt,109,0),~
-Choice(PV_Sim_Strt_Yr_Opt,78,0),Choice(PV_Sim_Strt_Yr_Opt,88,0),Choice(PV_Sim_Strt_Yr_Opt,90,0),~
-Choice(PV_Sim_Strt_Yr_Opt,91,0),Choice(PV_Sim_Strt_Yr_Opt,103,0),Choice(PV_Sim_Strt_Yr_Opt,115,0),~
-Choice(PV_Sim_Strt_Yr_Opt,120,0),Choice(PV_Sim_Strt_Yr_Opt,130,0),Choice(PV_Sim_Strt_Yr_Opt,132,0),~
-Choice(PV_Sim_Strt_Yr_Opt,133,0),Choice(PV_Sim_Strt_Yr_Opt,145,0),Choice(PV_Sim_Strt_Yr_Opt,157,0),~
-Choice(PV_Sim_Strt_Yr_Opt,132,0),Choice(PV_Sim_Strt_Yr_Opt,142,0),Choice(PV_Sim_Strt_Yr_Opt,144,0),~
-Choice(PV_Sim_Strt_Yr_Opt,145,0),Choice(PV_Sim_Strt_Yr_Opt,157,0),Choice(PV_Sim_Strt_Yr_Opt,169,0),~
-Choice(PV_Sim_Strt_Yr_Opt,144,0),Choice(PV_Sim_Strt_Yr_Opt,154,0),Choice(PV_Sim_Strt_Yr_Opt,156,0),~
-Choice(PV_Sim_Strt_Yr_Opt,157,0),Choice(PV_Sim_Strt_Yr_Opt,169,0),Choice(PV_Sim_Strt_Yr_Opt,181,0))
+Choice(PV_Sim_Strt_Yr_Opt,156,0),Choice(PV_Sim_Strt_Yr_Opt,166,0),Choice(PV_Sim_Strt_Yr_Opt,168,0),~
+Choice(PV_Sim_Strt_Yr_Opt,169,0),Choice(PV_Sim_Strt_Yr_Opt,181,0),Choice(PV_Sim_Strt_Yr_Opt,193,0),~
+Choice(PV_Sim_Strt_Yr_Opt,162,0),Choice(PV_Sim_Strt_Yr_Opt,172,0),Choice(PV_Sim_Strt_Yr_Opt,174,0),~
+Choice(PV_Sim_Strt_Yr_Opt,175,0),Choice(PV_Sim_Strt_Yr_Opt,187,0),Choice(PV_Sim_Strt_Yr_Opt,199,0),~
+Choice(PV_Sim_Strt_Yr_Opt,204,0),Choice(PV_Sim_Strt_Yr_Opt,214,0),Choice(PV_Sim_Strt_Yr_Opt,216,0),~
+Choice(PV_Sim_Strt_Yr_Opt,217,0),Choice(PV_Sim_Strt_Yr_Opt,229,0),Choice(PV_Sim_Strt_Yr_Opt,241,0),~
+Choice(PV_Sim_Strt_Yr_Opt,216,0),Choice(PV_Sim_Strt_Yr_Opt,226,0),Choice(PV_Sim_Strt_Yr_Opt,228,0),~
+Choice(PV_Sim_Strt_Yr_Opt,229,0),Choice(PV_Sim_Strt_Yr_Opt,241,0),Choice(PV_Sim_Strt_Yr_Opt,253,0),~
+Choice(PV_Sim_Strt_Yr_Opt,228,0),Choice(PV_Sim_Strt_Yr_Opt,238,0),Choice(PV_Sim_Strt_Yr_Opt,240,0),~
+Choice(PV_Sim_Strt_Yr_Opt,241,0),Choice(PV_Sim_Strt_Yr_Opt,253,0),Choice(PV_Sim_Strt_Yr_Opt,265,0))
 NodeLocation: 80,288,1
 NodeSize: 64,40
 WindState: 2,98,82,936,615
@@ -2747,7 +2747,7 @@ DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 Constant PV_Stock_Start_Year
 Title: PV Stock Start Year
 Description: The first date in which vehicle stock data are available. This must be input in date format (e.g., 1/1/2014). It must start on the first day of the month.
-Definition: 1/1/2009
+Definition: 1/1/2002
 NodeLocation: 96,168,1
 NodeSize: 64,40
 WindState: 2,-22,410,720,412
@@ -2789,7 +2789,7 @@ Title: PV Sim Start Year
 Description: The year in which you want the adoption simulation to start. The simulation will then use the appropriate starting point for instalaltions at this point in time. In some cases, depending on the data, you may not want to start the simulation as early as the stock data are available. Typically for PV, you will want to start the PV simulation exactly one period (e.g., month) after the latest reliable data are available regarding historical installations. That said, the latest month in the interconnection databases are typically unreliable due to previous applications that have not yet come through. So, it is typically wise to ignore the last month (or even two, depending on the time delays) of interconnection data. ~
 ~
 During calibration, this time is set to an earlier period to "back cast" adoption and compare it with actual adoption for purposes of estimating diffusion coefficients.
-Definition: Choice(PV_Sim_Strt_Yr_Opt,157,0)
+Definition: Choice(PV_Sim_Strt_Yr_Opt,241,0)
 NodeLocation: 96,272,1
 NodeSize: 64,40
 ValueState: 2,795,362,320,151,,MIDM
@@ -2798,7 +2798,7 @@ NodeColor: 65535,65531,1
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
 
 Index PV_Sim_Strt_Yr_Opt
-Att_PrevIndexValue: [1-Jan-2009,1-Feb-2009,1-Mar-2009,1-Apr-2009,1-May-2009,1-Jun-2009,1-Jul-2009,1-Aug-2009,1-Sep-2009,1-Oct-2009,1-Nov-2009,1-Dec-2009,1-Jan-2010,1-Feb-2010,1-Mar-2010,1-Apr-2010,1-May-2010,1-Jun-2010,1-Jul-2010,1-Aug-2010,1-Sep-2010,1-Oct-2010,1-Nov-2010,1-Dec-2010,1-Jan-2011,1-Feb-2011,1-Mar-2011,1-Apr-2011,1-May-2011,1-Jun-2011,1-Jul-2011,1-Aug-2011,1-Sep-2011,1-Oct-2011,1-Nov-2011,1-Dec-2011,1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018,1-Sep-2018,1-Oct-2018,1-Nov-2018,1-Dec-2018,1-Jan-2019,1-Feb-2019,1-Mar-2019,1-Apr-2019,1-May-2019,1-Jun-2019,1-Jul-2019,1-Aug-2019,1-Sep-2019,1-Oct-2019,1-Nov-2019,1-Dec-2019,1-Jan-2020,1-Feb-2020,1-Mar-2020,1-Apr-2020,1-May-2020,1-Jun-2020,1-Jul-2020,1-Aug-2020,1-Sep-2020,1-Oct-2020,1-Nov-2020,1-Dec-2020,1-Jan-2021,1-Feb-2021,1-Mar-2021,1-Apr-2021,1-May-2021,1-Jun-2021,1-Jul-2021,1-Aug-2021,1-Sep-2021,1-Oct-2021,1-Nov-2021,1-Dec-2021,1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023,1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030,1-Jan-2031,1-Feb-2031,1-Mar-2031,1-Apr-2031,1-May-2031,1-Jun-2031,1-Jul-2031,1-Aug-2031,1-Sep-2031,1-Oct-2031,1-Nov-2031,1-Dec-2031]
+Att_PrevIndexValue: [1-Jan-2002,1-Feb-2002,1-Mar-2002,1-Apr-2002,1-May-2002,1-Jun-2002,1-Jul-2002,1-Aug-2002,1-Sep-2002,1-Oct-2002,1-Nov-2002,1-Dec-2002,1-Jan-2003,1-Feb-2003,1-Mar-2003,1-Apr-2003,1-May-2003,1-Jun-2003,1-Jul-2003,1-Aug-2003,1-Sep-2003,1-Oct-2003,1-Nov-2003,1-Dec-2003,1-Jan-2004,1-Feb-2004,1-Mar-2004,1-Apr-2004,1-May-2004,1-Jun-2004,1-Jul-2004,1-Aug-2004,1-Sep-2004,1-Oct-2004,1-Nov-2004,1-Dec-2004,1-Jan-2005,1-Feb-2005,1-Mar-2005,1-Apr-2005,1-May-2005,1-Jun-2005,1-Jul-2005,1-Aug-2005,1-Sep-2005,1-Oct-2005,1-Nov-2005,1-Dec-2005,1-Jan-2006,1-Feb-2006,1-Mar-2006,1-Apr-2006,1-May-2006,1-Jun-2006,1-Jul-2006,1-Aug-2006,1-Sep-2006,1-Oct-2006,1-Nov-2006,1-Dec-2006,1-Jan-2007,1-Feb-2007,1-Mar-2007,1-Apr-2007,1-May-2007,1-Jun-2007,1-Jul-2007,1-Aug-2007,1-Sep-2007,1-Oct-2007,1-Nov-2007,1-Dec-2007,1-Jan-2008,1-Feb-2008,1-Mar-2008,1-Apr-2008,1-May-2008,1-Jun-2008,1-Jul-2008,1-Aug-2008,1-Sep-2008,1-Oct-2008,1-Nov-2008,1-Dec-2008,1-Jan-2009,1-Feb-2009,1-Mar-2009,1-Apr-2009,1-May-2009,1-Jun-2009,1-Jul-2009,1-Aug-2009,1-Sep-2009,1-Oct-2009,1-Nov-2009,1-Dec-2009,1-Jan-2010,1-Feb-2010,1-Mar-2010,1-Apr-2010,1-May-2010,1-Jun-2010,1-Jul-2010,1-Aug-2010,1-Sep-2010,1-Oct-2010,1-Nov-2010,1-Dec-2010,1-Jan-2011,1-Feb-2011,1-Mar-2011,1-Apr-2011,1-May-2011,1-Jun-2011,1-Jul-2011,1-Aug-2011,1-Sep-2011,1-Oct-2011,1-Nov-2011,1-Dec-2011,1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018,1-Sep-2018,1-Oct-2018,1-Nov-2018,1-Dec-2018,1-Jan-2019,1-Feb-2019,1-Mar-2019,1-Apr-2019,1-May-2019,1-Jun-2019,1-Jul-2019,1-Aug-2019,1-Sep-2019,1-Oct-2019,1-Nov-2019,1-Dec-2019,1-Jan-2020,1-Feb-2020,1-Mar-2020,1-Apr-2020,1-May-2020,1-Jun-2020,1-Jul-2020,1-Aug-2020,1-Sep-2020,1-Oct-2020,1-Nov-2020,1-Dec-2020,1-Jan-2021,1-Feb-2021,1-Mar-2021,1-Apr-2021,1-May-2021,1-Jun-2021,1-Jul-2021,1-Aug-2021,1-Sep-2021,1-Oct-2021,1-Nov-2021,1-Dec-2021,1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023,1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030,1-Jan-2031,1-Feb-2031,1-Mar-2031,1-Apr-2031,1-May-2031,1-Jun-2031,1-Jul-2031,1-Aug-2031,1-Sep-2031,1-Oct-2031,1-Nov-2031,1-Dec-2031]
 Title: PV Sim Strt Yr Option
 Description: The options permissible for when the vehicle simulation can be started.
 Definition: Sequence(PV_Stock_Start_Year, PV_Stock_End_Year, step: Timestep_Months[Timestep_Options=PV_Data_dT_Choice], dateUnit: 'M')
@@ -3085,7 +3085,7 @@ Att_ResultSliceState: [Data_Type,2,Rate_Names,2,Day_and_Hour,1,Month,1]
 Decision Rate_Name_Peak_Prd
 Title: Rate Name for Peak Period
 Description: Select the rate name that describes the peak period.
-Definition: Choice(Rate_Names,8,0)
+Definition: Choice(Rate_Names,2,0)
 NodeLocation: 272,256,1
 NodeSize: 64,40
 Aliases: FormNode Fo1542261445
@@ -3680,7 +3680,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,58,82,1734,589,17,10
+DiagState: 2,2058,36,1734,589,17,10
 Aliases: Alias Al1579800542
 AcpStyles: FrameNode: Load_Frame
 
@@ -3730,7 +3730,7 @@ NodeLocation: 1056,192,1
 NodeSize: 64,40
 WindState: 2,546,219,720,350
 DefnState: 2,1094,392,416,303,0,DFNM
-ValueState: 2,2100,216,1276,374,0,MIDM
+ValueState: 2,2236,60,1343,742,1,MIDM
 Aliases: FormNode Fo1534438380, FormNode Fo1572476391
 NodeColor: 19661,48336,65535
 GraphSetup: Graph_AxisLabelFont:,14,0~
@@ -3738,10 +3738,10 @@ Att_CatLineStyle Graph_Primary_Valdim:5~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_GraphValueRange PrePost_Load_by_OpYr:1,,1,,,,10,0,421.10850512981415,0
-ReformVal: [Profile_Hours,Area_Type]
-Att__TotalsIndex: [Pre_and_Post_System,System_Types]
+ReformVal: [Profile_Hours,Pre_and_Post_System]
+Att__TotalsIndex: []
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [PV_Climate_Zone,1,Month,8,PV_Operating_Year,1,System_Types,0,Pre_and_Post_System,0,Rate_Vintage,1,PV_Sectors,4,Area_Type,3,Profile_Hours,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,Month,12,System_Types,1,Rate_Vintage,1,PV_Sectors,1,Area_Type,1,Pre_and_Post_System,1,Profile_Hours,1]
 
 Variable Scaled_Annual_Load
 Title: Scaled Annual Load
@@ -4017,7 +4017,7 @@ Description: Multipliers to adjust the modeled hours in the optimization window 
 Definition: Applied_Monthly_Mult[Static_Profile_Names=Loadshape_Map[All_Sectors=PV_Sectors]]
 NodeLocation: 712,776,1
 NodeSize: 64,40
-ValueState: 2,225,104,1438,668,1,MIDM
+ValueState: 2,225,104,1438,668,0,MIDM
 ReformVal: [Profile_Hours,Month]
 Att_ResultSliceState: [PV_Sectors,30,Month,1,Profile_Hours,1]
 
@@ -4691,7 +4691,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,163,8,1554,717,17,10
+DiagState: 2,163,8,1554,702,17,10
 Aliases: Alias Al1548967138
 AcpStyles: FrameNode: FrameNode_1544919985
 
@@ -5062,7 +5062,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 256,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,168,27,1325,758,17,10
+DiagState: 2,168,27,1325,683,17,10
 Aliases: Alias Al1548967139
 AcpStyles: FrameNode: FrameNode_1544920029
 
@@ -5352,7 +5352,7 @@ AcpStyles: FrameNode: FrameNode_1545067302
 
 Decision Rate_Setting_Default
 Title: Rate Setting Default
-Definition: Table(Rate_Setting)(Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,1,0),Checkbox(0))
+Definition: Table(Rate_Setting)(Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(0))
 NodeLocation: 72,376,1
 NodeSize: 64,40
 DefnState: 2,616,576,416,345,,DFNM
@@ -5633,21 +5633,21 @@ Attribute options:~
 "adj" - typically used to define an adjustment charge (or credit if negative). Often this is additive with the 'rate' charge.~
 "sell" - typically used to define a compensation rate for energy exported to the grid when the export rate is different from some combination of the "rate" or "adj" attributes (ie, full net-metering)
 Definition: Table(Rate_Vintage,PV_Climate_Zone,Pre_and_Post_System,All_Sectors,Rate_Attribute_Setti)(~
-Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(0),~
+Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(1),~
+Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(1),~
+Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(1),~
+Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(1),~
 Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(0),~
 Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(0))
 NodeLocation: 408,312,1
 NodeSize: 64,40
-WindState: 2,291,42,1224,616
+WindState: 2,358,80,1224,565
 DefnState: 2,600,317,974,280,0,DFNM
 Aliases: FormNode Fo1547766195, Alias Al1547767161, FormNode Fo1547767167, FormNode Fo1547828220
 NodeColor: 65535,65531,1
 ReformDef: [Rate_Attribute_Setti,PV_Climate_Zone]
 TableCellDefault: Energy_DefaultAttrib
-Att_EditSliceState: [All_Sectors,2,Rate_Vintage,1,Pre_and_Post_System,1,PV_Climate_Zone,1,Rate_Attribute_Setti,1]
+Att_EditSliceState: [All_Sectors,1,Rate_Vintage,1,Pre_and_Post_System,1,PV_Climate_Zone,1,Rate_Attribute_Setti,1]
 
 Module Rate_Attribute_Mappi
 Title: Rate Attribute Mapping
@@ -5656,7 +5656,7 @@ Date: Thu, Jan 24, 2019 11:22 AM
 NodeLocation: 944,800,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1,0,791,594,17
+DiagState: 2,1,0,791,594,17,10
 
 Decision NonCoinc_Dmd_Default
 Title: Non-Coinc Dmd Default Attributes
@@ -5731,7 +5731,7 @@ Att_ResultSliceState: [PV_Sectors,2,Pre_and_Post_System,1,Data_Attribute,3,PV_Cl
 Decision Energy_DefaultAttrib
 Title: Energy Default Attributes
 Description: Default data attribute assignments for energy rates.
-Definition: Table(Rate_Attribute_Setti)(Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(0))
+Definition: Table(Rate_Attribute_Setti)(Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(1))
 NodeLocation: 96,424,1
 NodeSize: 64,40
 DefnState: 2,107,348,416,303,,DFNM
@@ -5761,7 +5761,7 @@ Definition: Energy_Rate_Attribs[All_Sectors=PV_Sectors, Rate_Attribute_Setti=Map
 NodeLocation: 552,424,1
 NodeSize: 64,40
 ValueState: 2,194,293,818,480,0,MIDM
-Att_ResultSliceState: [PV_Sectors,2,Pre_and_Post_System,1,Data_Attribute,3,PV_Climate_Zone,1,Rate_Vintage,1]
+Att_ResultSliceState: [Pre_and_Post_System,1,PV_Climate_Zone,1,Rate_Vintage,1,PV_Sectors,2,Data_Attribute,3]
 
 Alias Al1547766712
 Title: Non-Coinc Demand Rate Attributes
@@ -5849,14 +5849,14 @@ Description: Environmental and other adders (e.g. community credit or other envi
 ~
 Although LSRV values would actually vary by hour of day, we offer the ability to input an overall average LSRV for simplicity of data input.
 Definition: Table(Additional_Value_Sce,Value_Type,PV_Climate_Zone)(~
-0.031,~
 0,~
 0,~
-0.031,~
 0,~
 0,~
-0.031,~
-0.02,~
+0,~
+0,~
+0,~
+0,~
 0)
 NodeLocation: 784,192,1
 NodeSize: 64,40
@@ -5866,7 +5866,7 @@ Aliases: FormNode Fo48726307, FormNode Fo322661923, FormNode Fo947221795
 NodeColor: 65535,1,1
 ReformDef: [Value_Type,PV_Climate_Zone]
 NumberFormat: 2,F,3,4,0,1,3,0,$,0,"ABBREV",0,,,0,0,15,
-Att_EditSliceState: [Additional_Value_Sce,2,PV_Climate_Zone,1,Value_Type,1]
+Att_EditSliceState: [Additional_Value_Sce,1,PV_Climate_Zone,1,Value_Type,1]
 {!40700|Att_CellFormat: CellAlignment('Center')}
 {!50000|Att_ColumnWidths: [,Value_Type,\([,164,92])]}
 
@@ -5942,6 +5942,7 @@ Title: Additional Value Scenario
 Definition: ['Low','Medium','High']
 NodeLocation: 784,312,1
 NodeSize: 64,40
+{!40300|Att_SlicerPopupSize: 227,109}
 
 Decision Additional_Value_Sc1
 Title: Additional Value Scenario
@@ -6174,43 +6175,7 @@ Decision Map_Component_to_Prd
 Title: Map Component to Period
 Description: Maps the TOU billing components' names to each TOU period.
 Definition: Table(All_Sectors,Rate_Vintage,All_Periods,Pre_and_Post_System)(~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,4,0),Choice(Bill_Components_None,4,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
@@ -6227,36 +6192,18 @@ Choice(Bill_Components_None,9,0),Choice(Bill_Components_None,9,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0))
 NodeLocation: 88,184,1
 NodeSize: 64,40
 WindState: 2,841,241,720,490
-DefnState: 2,124,237,1552,414,0,DFNM
+DefnState: 2,578,345,1128,291,0,DFNM
 ValueState: 2,194,195,975,518,0,MIDM
 Aliases: FormNode Fo1574745288
 NodeColor: 65535,65531,1
 ReformDef: [All_Sectors,All_Periods]
 ReformVal: [All_Periods,Rate_Vintage]
 TableCellDefault: Choice(Bill_Components_None,1,0)
-Att_EditSliceState: [Rate_Vintage,1,Pre_and_Post_System,1,All_Periods,1,All_Sectors,29]
+Att_EditSliceState: [Rate_Vintage,1,Pre_and_Post_System,2,All_Periods,1,All_Sectors,29]
 
 Variable Energy_Costs_by_Comp
 Title: Energy Costs by Component
@@ -6266,10 +6213,10 @@ Definition: Sum(Energy_Cost_Tier_Prd, Tiers)[Periods=Map_Prd_to_Component]
 NodeLocation: 240,296,1
 NodeSize: 64,40
 WindState: 2,98,71,720,361
-ValueState: 2,605,286,667,561,0,MIDM
+ValueState: 2,973,265,543,538,0,MIDM
 ReformVal: [Pre_and_Post_System,Bill_Components]
 Att__TotalsIndex: [Month]
-Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,3,PV_Climate_Zone,1,System_Types,1,Month,0,PV_Operating_Year,1,Bill_Components,1,Pre_and_Post_System,1]
+Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,1,System_Types,1,Area_Type,1,Bill_Components,1,Pre_and_Post_System,1]
 
 Variable Map_Prd_to_Component
 Title: Map Period to Component
@@ -10566,7 +10513,7 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 256,288,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,12,110,1707,651,17,10
+DiagState: 2,40,96,1707,614,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -10887,7 +10834,7 @@ WindState: 2,98,82,1059,632
 {!40300|Att_SlicerPopupSize: 372,140}
 
 Index Rate_Names_with_None
-Att_PrevIndexValue: ['None','AL-TOU Secondary (0-500 KW) | 2019-01','NYPA Downstate (NYC, Zone J) | 2021-01','NYPA Hudson Valley (Central Hudson,Zone G) | 2021-01','NYPA Hudson Valley (NYSEG Lower Hudson, Zone G) | 2021-01','NYPA Long Island (PSEG-LI, Zone K) | 2021-01','NYPA Test | 2019-01','NYPA Test 2 | 2019-01','NYPA Upstate (NYSEG - Rest of State, Zone C) | 2021-01']
+Att_PrevIndexValue: ['None','AL-TOU Secondary (0-500 KW) | 2019-01','Residential Net Metering | 2002-01']
 Title: Rate Names with None
 Definition: Concat(None_Label, Rate_Names)
 NodeLocation: 384,1104,1
@@ -11094,7 +11041,7 @@ NodeLocation: 240,256,1
 NodeSize: 64,40
 WindState: 2,102,21,1089,879
 ValueState: 2,992,329,416,303,,MIDM
-{!40300|Att_SlicerPopupSize: 947,112}
+{!40300|Att_SlicerPopupSize: 952,112}
 
 Index New_or_Retrofit
 Att_PrevIndexValue: ['NewConstr','Retrofit']
@@ -11256,7 +11203,7 @@ Title: Pre and Post System
 Definition: ['Pre-System','Post-System']
 NodeLocation: 528,616,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 265,80}
+{!40300|Att_SlicerPopupSize: 270,80}
 
 Index Bill_Components
 Att_PrevIndexValue: ['Basic Service Fees','Minimum Charges','Summer Energy','Summer On-Peak Energy','Summer Off-Peak Energy','Summer Super-Off Peak Energy','Summer Semi-Peak Energy','Winter Energy','Winter On-Peak Energy','Winter Off-Peak Energy','Winter Super-Off Peak Energy','Winter Semi-Peak Energy','Non-Coincident Demand','Summer On-Peak Demand','Winter On-Peak Demand','Net Total']
@@ -11946,6 +11893,7 @@ Title: Rate Attribute Settings
 Definition: ['Structure Type',"Include 'rate' Attribute","Include 'adj' Attribute","Include 'sell' Attribute"]
 NodeLocation: 1680,608,1
 NodeSize: 64,40
+WindState: 2,98,82,720,681
 ValueState: 2,56,58,478,378,,MIDM
 
 Decision Rate_Structure_Label
@@ -12752,7 +12700,7 @@ Definition: ['Roof','Parking','Land']
 NodeLocation: 104,384,1
 NodeSize: 64,40
 WindState: 2,408,-14,824,781
-{!40300|Att_SlicerPopupSize: 937,80}
+{!40300|Att_SlicerPopupSize: 942,80}
 
 Include 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
 
