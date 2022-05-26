@@ -2515,7 +2515,7 @@ Author: JamesMilford
 Date: Fri, Feb 8, 2019 8:50 PM
 NodeLocation: 320,288,1
 NodeSize: 80,56
-DiagState: 2,12,119,1403,850,17,10
+DiagState: 2,1956,75,1403,850,17,10
 Aliases: Alias Al1538428922
 ReformVal: [Hour1,System_Type1]
 Att_ResultSliceState: [PV_Climate_Zone,1,Month,3,Weekday_or_Weekend,1,System_Type1,1,Hour1,1]
@@ -2725,25 +2725,26 @@ ignorewarnings( x[Stored_ID_Interconn=All_Spatial_ID]);   {warnings ignored if y
 NodeLocation: 752,504,1
 NodeSize: 64,40
 WindState: 2,102,82,1165,350
-ValueState: 2,346,12,837,770,0,MIDM
-GraphSetup: {!40000|Att_ForceCategorical Graph_Primary_Valdim:1}~
-{!40000|Graph_HLabelRotation:60}~
-{!40000|Graph_AxisLabelFont:,26,0}~
-{!40000|Att_GraphValueRange Capacity_Installat:1,,,,,,5}~
+ValueState: 2,346,12,1416,782,1,MIDM
+GraphSetup: Att_ForceCategorical Graph_Primary_Valdim:1~
+Graph_HLabelRotation:60~
+Graph_AxisLabelFont:,26,0~
+Att_GraphValueRange Capacity_Installat:1,,,,,,5~
 Grid:0~
-{!40000|Att_ContLineStyle Graph_Primary_Valdim:1}~
-{!40000|Att_AreaFill Graph_Primary_Valdim:1}~
-{!40000|Att_GraphIndexRange Interconnect_Date:1,0,0,,,,,37256,41517,0}~
-{!40000|Att_Stacked_Lines Graph_Primary_Valdim:1}~
+Att_ContLineStyle Graph_Primary_Valdim:1~
+Att_AreaFill Graph_Primary_Valdim:1~
+Att_GraphIndexRange Interconnect_Date:1,0,1,,,,,37256,41517,0~
+Att_Stacked_Lines Graph_Primary_Valdim:1~
 {!50007|Graph_BarOutline:0}~
-{!40000|Att_StackedBar Graph_Primary_Valdim:1}~
-{!40000|Graph_KeyFont:,20,0}
-ReformVal: [All_Sectors,Null]
+Att_StackedBar Graph_Primary_Valdim:1~
+Graph_KeyFont:,20,0~
+{!50000|Graph_SortBySpread:0}
+ReformVal: [Interconnect_Date,All_Sectors]
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"M/yyyy",0,,,0,0,15
 Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utilities,All_Spatial_ID,All_Sectors,Interconnect_Date]
 Att_ResultSliceState: [All_Spatial_ID,0,All_Utilities,1,Interconnect_Date,0,All_Sectors,1]
 {!40600|Att_StackingIndex: All_Sectors}
-{!40600|Att_ClusterIndex: All_Sectors}
+{!40600|Att_ClusterIndex: Null}
 
 Variable Installation__Count
 Title: Installation  Count
@@ -3069,7 +3070,7 @@ Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 920,328,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1967,3,2443,753,17,10
+DiagState: 2,1135,35,2443,711,17,10
 
 Variable PV_AC_SystSize_Econ
 Title: PV AC System Size for Economics
@@ -3171,7 +3172,7 @@ NodeLocation: 232,96,1
 NodeSize: 64,40
 WindState: 2,102,82,980,350
 ValueState: 2,209,361,845,369,0,MIDM
-ReformVal: [Null,PV_Sectors]
+ReformVal: [Interconnect_Date,PV_Sectors]
 Att__TotalsIndex: [Interconnect_Date,PV_Sectors]
 
 Constant Historical_PV_Capaci
@@ -3730,7 +3731,7 @@ Description: This is for economic calculations only and recognizes that historic
 Definition: Table(All_PV_Sectors)(1,1)
 NodeLocation: 2216,104,1
 NodeSize: 64,40
-DefnState: 2,517,60,508,654,0,DFNM
+DefnState: 2,946,341,508,296,0,DFNM
 ValueState: 2,480,266,706,524,0,MIDM
 Aliases: FormNode Fo267971107, Alias Al2147194403
 NodeColor: 65535,1,1
@@ -3826,8 +3827,8 @@ Units: kW-DC/system
 Definition: Average_PV_kW_DC_bui * Scale_PV_Size_by_Cov[All_PV_Sectors=PV_Sectors]
 NodeLocation: 2216,472,1
 NodeSize: 64,40
-ValueState: 2,2278,219,1014,605,,MIDM
-GraphSetup: Att_GraphIndexRange PV_Sectors:1,,0,,,,,10,21,1
+ValueState: 2,2278,219,1014,605,0,MIDM
+GraphSetup: Att_GraphIndexRange PV_Sectors:1,,1,,,,,10,21,1
 ReformVal: [PV_Sectors,Area_Type]
 
 FormNode Fo1363428899
@@ -3843,7 +3844,7 @@ Units: kW-DC/system
 Definition: PV_kW_DC_at_of_load_ 
 NodeLocation: 1992,336,1
 NodeSize: 64,40
-ValueState: 2,443,207,848,589,,MIDM
+ValueState: 2,443,207,848,589,0,MIDM
 
 Variable PV_DC_System_Size_f2
 Title: PV DC System Size for Economics, Hist
@@ -3852,7 +3853,7 @@ Description: The solar PV DC system sized used for PV economics.
 Definition: PV_AC_SystSize_Econ * DC_to_AC_Ratio[All_PV_Sectors=PV_Sectors]
 NodeLocation: 1632,336,1
 NodeSize: 64,40
-ValueState: 2,451,46,885,745,1,MIDM
+ValueState: 2,451,46,885,745,0,MIDM
 ReformVal: [PV_Climate_Zone,PV_Sectors]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 
@@ -3907,7 +3908,7 @@ Title: PV DC Sys Size for Econ
 Definition: DetermTable(PV_Sizing_Method)(PV_DC_System_Size_f2,PV_DC_System_Size_f1)
 NodeLocation: 1792,200,1
 NodeSize: 64,40
-ValueState: 2,331,225,989,592,,MIDM
+ValueState: 2,331,225,989,592,0,MIDM
 
 FormNode Fo951171875
 Title: PV Sizing Method
@@ -3923,6 +3924,16 @@ Definition: 1
 NodeLocation: 2144,360,1
 NodeSize: 64,40
 Original: Avg_PVkW_facil_by_CZ
+
+Variable Monthly_average_syst
+Title: Monthly average system size
+Units: kW-AC
+Definition: ZIDZ(Agg_CapacityInstalls,Aggregate_System_Ins) * 1000
+NodeLocation: 232,200,1
+NodeSize: 64,40
+ValueState: 2,2283,199,961,648,,MIDM
+GraphSetup: Att_GraphIndexRange Interconnect_Date:1,,0,,,,,40101.02500528097,43100,0~
+Att_GraphValueRange Monthly_average_syst:1,,0,,,,,0,10.793829709291458,0
 
 Close Formatted_Installati
 

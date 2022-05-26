@@ -22,7 +22,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 416,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-6,27,1780,655,17,10
+DiagState: 2,0,27,1780,780,17,10
 
 Decision Stored_Grid_Elect1
 Title: Stored Grid Electricity
@@ -1878,7 +1878,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 264,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,99,34,1649,698,17,10
+DiagState: 2,74,27,1649,727,17,10
 
 Variable Lev_NCDmdPrice_Opt
 Title: Lev NC Dmd Price for Opt
@@ -2121,11 +2121,11 @@ NodeColor: 65535,65535,65535
 Decision Map_Tier_Wts_to_Str2
 Title: Map Tier Weights to Storage Syst
 Description: Maps storage systems to a similar non-storage system in order to estimate the weights by tier that determine average retail energy/demand rates. 
-Definition: Table(All_Storage_Systems)(Choice(All_System_Types,1,0),Choice(All_System_Types,1,0),Choice(All_System_Types,1,0),Choice(All_System_Types,1,0),Choice(All_System_Types,1,0))
+Definition: Table(All_Storage_Systems)(Choice(All_System_Types,1,0),Choice(All_System_Types,1,0),Choice(All_System_Types,1,0),Choice(All_System_Types,6,0),Choice(All_System_Types,7,0))
 NodeLocation: 104,416,1
 NodeSize: 64,40
 WindState: 2,419,215,720,680
-DefnState: 2,328,330,618,291,0,DFNM
+DefnState: 2,904,161,565,248,0,DFNM
 Aliases: FormNode Fo1552348254
 NodeColor: 65535,65531,1
 ReformDef: [0,Opt_Storage_Systems]
@@ -2138,7 +2138,7 @@ Definition: Table(All_Storage_Systems)(Choice(Pre_and_Post_System,2,0),Choice(Pr
 NodeLocation: 104,504,1
 NodeSize: 64,40
 WindState: 2,326,439,720,499
-DefnState: 2,611,612,618,249,0,DFNM
+DefnState: 2,360,162,472,249,0,DFNM
 Aliases: FormNode Fo1552348255
 NodeColor: 65535,65531,1
 ReformDef: [0,Opt_Storage_Systems]
@@ -2689,7 +2689,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,0,53,1823,715,17,10
+DiagState: 2,8,13,1823,715,17,10
 
 Decision Opt_Seq_Number
 Title: Opt Sequential Number
@@ -2783,7 +2783,7 @@ ELSE DefineOptimization(~
 NodeLocation: 968,216,1
 NodeSize: 64,40
 WindState: 2,-33,94,1540,840
-ValueState: 2,610,397,711,252,0,MIDM
+ValueState: 2,683,432,711,252,0,MIDM
 ReformVal: [Month,Opt_Sectors]
 {!40300|Att_DerefReformVal: [Undefined,Sys_LocalIndex('Item')]}
 Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Opt_Storage_Systems,1,Area_Type,3,Seq_Opt_Number,1,Opt_Sectors,1,Month,1]
@@ -2845,7 +2845,6 @@ OnClick: FOR J:=@All_Strg_Decisions2 DO (~
 );
 
 Index All_Strg_Decisions2
-Att_PrevIndexValue: [Stored_Grid_Elect1,Discharge_ReduceLoa1,Total_Discharge4,PV_to_Reduce_Load2,Stored_PV_Elect1,On_Peak_Dmd2,Non_Coinc_Demand2,Pos_Charge_Delta1,Neg_Charge_Delta1,Ending_Charge_Level,Charging_Start1,Initial_Charge_Leve2,Allow_Charging2]
 Title: All Storage Decisions
 Definition: [Stored_Grid_Elect1,Discharge_ReduceLoa1,Total_Discharge4,PV_to_Reduce_Load2,Stored_PV_Elect1,On_Peak_Dmd2,Non_Coinc_Demand2,Pos_Charge_Delta1,Neg_Charge_Delta1,Ending_Charge_Level,Charging_Start1,Initial_Charge_Leve2,Allow_Charging2]
 NodeLocation: 256,656,1
@@ -3005,8 +3004,8 @@ Decision Select_Strg_Rate2
 Title: Selected Storage Rate Vintages
 Description: Select the rate vintages that will be evaluated in the storage optimization routines.
 Definition: Table(Opt_Sectors,Rate_Vintage)(~
-Checkbox(1),~
-Checkbox(1))
+Checkbox(1),Checkbox(0),~
+Checkbox(1),Checkbox(0))
 NodeLocation: 616,208,1
 NodeSize: 64,40
 DefnState: 2,805,159,470,667,0,DFNM

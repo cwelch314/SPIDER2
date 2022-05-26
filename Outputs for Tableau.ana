@@ -476,22 +476,20 @@ Definition: PV_Sequent_Outputs[Sequential_Outputs=Seq_Cumul_MW_Label, All_Sector
 NodeLocation: 888,128,1
 NodeSize: 64,40
 WindState: 2,102,82,1261,505
-ValueState: 2,448,90,1047,682,1,MIDM
+ValueState: 2,2292,107,1047,682,1,MIDM
 NodeColor: 65535,1,1
-GraphSetup: Flip:0~
-Att_ContLineStyle Graph_Primary_Valdim:5~
-Att_GraphIndexRange Output_Periods:1,0,0,,,,10,43361.73436751962,46752,0~
-Att_GraphValueRange PV_Cumul_Adoption:1,,1,,,0,,0,49.4598925113678,0~
-Att_Stacked_Lines Graph_Primary_Valdim:1~
-Att_AreaFill Graph_Primary_Valdim:1~
-Att_CatLineStyle Graph_Primary_Valdim:9~
+GraphSetup: {!50007|Graph_BarOutline:0}~
 Graph_FillTransparen:0~
-{!50007|Graph_BarOutline:0}
-ReformVal: [Output_Periods,Null]
+Att_CatLineStyle Graph_Primary_Valdim:9~
+Att_AreaFill Graph_Primary_Valdim:0~
+Att_Stacked_Lines Graph_Primary_Valdim:0~
+Att_GraphValueRange PV_Cumul_Adoption:1,,1,,,0,,0,49.4598925113678,0~
+Att_GraphIndexRange Output_Periods:1,0,1,,,,10,43100,44297.46465134621,0~
+Att_ContLineStyle Graph_Primary_Valdim:5
+ReformVal: [Output_Periods,PV_Sectors]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [Area_Type]
-Att_ResultSliceState: [Act_vs_Sim,2,PV_Sectors,1,Area_Type,0,Spatial_ID,1,Output_Periods,167]
-Att_ColorRole: Null
+Att__TotalsIndex: []
+Att_ResultSliceState: [Act_vs_Sim,2,Area_Type,1,Spatial_ID,1,PV_Sectors,1,Output_Periods,167]
 {!40600|Att_StackingIndex: PV_Sectors}
 {!40600|Att_ClusterIndex: Null}
 
@@ -5013,7 +5011,7 @@ Title: Output Start Period
 Description: The start period for the output horizon.~
 ~
 Choice(Time,1,0)
-Definition: Choice(Time,38,0)
+Definition: Choice(Time,122,0)
 NodeLocation: 248,1080,1
 NodeSize: 64,40
 ValueState: 2,795,362,320,151,,MIDM
@@ -5022,7 +5020,7 @@ Aliases: FormNode Fo1542347298, Alias Al1550771680, FormNode Fo1550771684
 Constant Output_End_Period
 Title: Output End Period
 Description: The end period for the output horizon.
-Definition: Choice(Time,276,0)
+Definition: Choice(Time,360,0)
 NodeLocation: 248,1192,1
 NodeSize: 64,40
 WindState: 2,501,236,909,580
