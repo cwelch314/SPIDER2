@@ -31,7 +31,7 @@ Author: coryw
 Date: Sun, Aug 5, 2018 9:08 AM
 NodeLocation: 464,184,1
 NodeSize: 72,64
-DiagState: 2,290,8,1075,739,17,10
+DiagState: 2,367,30,1075,711,17,10
 Pict: (000000000000002D003A00042505000089504E470D0A1A0A0000000D494844520000003A0000002D0806000000FF68780B000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA864000004AA494441546843ED994B48545118C7AD2804292CCA5C444A0B7355B6905A8449B810DC589BC645658BC06891D54608B24D480F7A8831663483AFCC34A6EC316294454E6246A25993144CD943CB48B3870FF49EEEFFD077B9733D9A3373EFDCABB5F83BC3DC73CF3DBFFB3FE7FBCE778C608CFD138A90CEC432487B61B6E93FE84CD087EFBE78C7B382BCBD77D3DDBB1B521BA1FC47D9CEC191FE686DDB19097AAFDB9509A875E5114CA42FBF7A00E477CF8C026DED6D4CB5DD4C6A23A0F5972287E020C0718D24BA774680C2A1BC87B62A024CAB8DEDA978713A77646C2852D45E24CB835E7FEDCC4EA98EEE27078BDBF38F040248B22C28020AA625B98880235A7BD3952541114DB7D4257A010837E1AAA85D20B21CE8CBAF6D493455010B6851BB40652950401124A6AA281F062BCB8022C064B8E27D80448E0C26E04C25CB80229AD274D5D349922540114D913A00DAD1D7BC41D42654590294D2083E45D7F590E9A088B28084A3A1E4C9BFC974D003F7335D003DF924F7B4E8FAA4FAF929567A732F5D6A3E7184B973AA58EDD64645F2356D7B5341B1190FC84DC03D2DC9952AD3DA68DC22B16FDD1372AFA9A05489A0A6145D27C139B8A686E163BE96E586A3D2F3CBD9EC9D2755D1D8F084D4641A28B9894A449833E5C172F71CC93E05AE286E8803BF76678A60A69269A0E426CA2DED35A9CB65F303C4F78ED21C36FC2DE8FC6A0A288A63A19B00C1742440AC45B8A7BA375899024A91D66F6DCA904A90B1AFEEE70EAAEE09556107F57C70A703D22FD2623D566734F3B1C8D354941E4255D84177B837344F70F3C62E970229480D7A28ACA0B4714795A2AC4DCFD1023E0679BAB2AFAF12B5F788E41BF026D6FBAA6CE80F1B0D3AEA24897272D840290041745287FC47CFE7B952730F841782E90E2840D0E67F2A898AF5B080C2012AA83160FEBBEC1EF2227FBE26F0A04CABE9B2E7A0F8D6424098110868E80BEDE8989324CACB8683E2ED52418D234BFE3B82CF9F08CB1E1C56F6B868AB3E102321E716B6E515C0D9606B5543413128DA18C01DE54DD376AE6CA317D0F81DEEA8A725A629DCD2AB08370C540D894F3E606CDB1AF639F933B19DFBDC9904172912437054B4C6429521A04248EC7AE4128A20117C301569ED627A1B75BA00E90EAA86C4E039A45C514817D6F4F067C99F701269815C4460E1ED04FDE9255D4191BFD4901F07BA562B7912CF901D1D1DEC8EA380833529DAD41B21DD40914228BA02B6CF5BB5D3AF0291EB469CB8531B4062EA8AFA3242BA80626DD15A3B787BA367B47E4F25F53B5EB1B9FD6ECBA163F42F0608DFF162447D19A5904191DFB843E573D88D2BC9CF257BC200072C5A39DC5497D1482F00829B7AFC1F2518050D4A6921A56C2E3B5E12C57ED8577DA7BEDA1D89BD19A5F3381C8476D89B8AFA0997020645C041C4DC5E1635E22859C8060B6325EAC35BB494ED762CE0705883475B72ECE19EA29369DAA06F3F3F49AEB9B3CD75F5FCE2B1F785CBF83DA4D6734BD8FE8B911C103B1A4C4FA3D345A09A003ADAD7B9F665C7B95C5FD3A1532F6E65D53D76267CF215C58CABC1A0BEC2185653BC88D99CF3F9F60E69625A4796264901C5C0D5205A0D9F5DCE9DAB70AEE82FB8B9C983BD294EF244958215A580CE5AE1D402A0F8236C305BC44159C46F6FC836BBF705ED2A0000000049454E44AE426082)
 AcpStyles: FrameNode: PVAdoption_Frame
 
@@ -299,7 +299,7 @@ Units: boolean
 Description: NEED TO IMPORT~
 ~
 Determines whether new construction market share for PV is forced (e.g., to meet a new construction code) or whether it is determined instead by the automated long run market share calculations.
-Definition: Table(All_Sectors)(1,1,0)
+Definition: Table(All_Sectors)(0,0,0)
 NodeLocation: 664,520,1
 NodeSize: 64,40
 DefnState: 2,484,490,378,414,0,DFNM
@@ -355,7 +355,7 @@ Original: PV_LongRun_Mkt_Share
 Decision Market_Share_Method
 Title: Market Share Method
 Description: Select the price metric used in the long-run market share model.
-Definition: Table(All_Sectors)(Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1))
+Definition: Table(All_Sectors)(Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,1,1))
 NodeLocation: 656,168,1
 NodeSize: 64,40
 DefnState: 2,936,73,520,805,0,DFNM
@@ -376,7 +376,7 @@ ELSE LinearInterp(EOY_Date_for_Econ_Yr, Applied_PV_LRMS, Time_Solar_PV, Annual_E
 NodeLocation: 656,296,1
 NodeSize: 64,40
 WindState: 2,319,13,1158,657
-ValueState: 2,409,118,900,681,1,MIDM
+ValueState: 2,2146,68,1230,712,1,MIDM
 Aliases: Alias Al60092707, Alias Al87752227
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:4~
 Att_GraphIndexRange PV_Spatial_ID:1,1~
@@ -408,7 +408,7 @@ Definition: MIN([1, Exp(Applied_PV_Pybk_Coef * (Payback_Time + Applied_Payback_A
 NodeLocation: 496,296,1
 NodeSize: 64,40
 WindState: 2,374,142,720,350
-ValueState: 2,450,125,891,640,1,MIDM
+ValueState: 2,1976,18,1131,715,1,MIDM
 GraphSetup: Att_GraphValueRange Payback_LRMS:1,,1,,,,,0,0.45950403809547424,0
 ReformVal: [Time_Solar_PV,PV_Sectors]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
@@ -421,9 +421,9 @@ Description: The simple payback time by spatial ID.
 Definition: Mthly_Simple_Payback[PV_Climate_Zone=Climate_Zone_Map, Time=Time_Solar_PV]
 NodeLocation: 288,296,1
 NodeSize: 64,40
-ValueState: 2,2537,122,1142,706,1,MIDM
-GraphSetup: Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,46104.41218471527,46752,0~
-Att_GraphValueRange Payback_Time:1,,1,,,,,0,19.501038789749146,0
+ValueState: 2,2250,33,1142,706,1,MIDM
+GraphSetup: Att_GraphValueRange Payback_Time:1,,1,,,,,0,19.501038789749146,0~
+Att_GraphIndexRange Time_Solar_PV:1,,0,,,,,38851.640651240945,54762.737165629864,0
 ReformVal: [Time_Solar_PV,PV_Sectors]
 Att_ResultSliceState: [Area_Type,1,System_Types,1,PV_Spatial_ID,1,PV_Sectors,1,Time_Solar_PV,1]
 
@@ -691,11 +691,11 @@ Definition: Cost_of_Elect_Ratio[PV_Climate_Zone=Climate_Zone_Map]
 NodeLocation: 96,136,1
 NodeSize: 64,40
 WindState: 2,102,82,1197,536
-ValueState: 2,403,49,1100,720,1,MIDM
+ValueState: 2,467,150,1100,626,1,MIDM
 NodeColor: 65535,1,1
 GraphSetup: Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2020.9203501939774,2031.8370641469955,0
 ReformVal: [Annual_Econ_Time,PV_Spatial_ID]
-Att_ResultSliceState: [PV_Sectors,1,Area_Type,1,System_Types,2,PV_Spatial_ID,1,Annual_Econ_Time,1]
+Att_ResultSliceState: [PV_Sectors,1,Area_Type,1,System_Types,1,PV_Spatial_ID,1,Annual_Econ_Time,1]
 
 Variable Economic_Utility
 Title: Economic Utility
@@ -773,7 +773,8 @@ Description: The weighted average cost of electricity ratio across spatial IDs. 
 Definition: Sum(Installation_Weights * Cost_Elect_Ratio_ID, PV_Spatial_ID)
 NodeLocation: 112,264,1
 NodeSize: 64,40
-ValueState: 2,298,54,1205,705,0,MIDM
+ValueState: 2,298,54,1205,705,1,MIDM
+ReformVal: [Annual_Econ_Time,PV_Sectors]
 Att_ResultSliceState: [Retrofit_System_Type,1,PV_Sectors,1,Annual_Econ_Time,1]
 
 Variable Installation_Weights
@@ -2049,7 +2050,7 @@ Author: CWelch
 Date: Sun, Jan 9, 2022 3:29 PM
 NodeLocation: 632,208,1
 NodeSize: 72,56
-DiagState: 2,12,45,1263,618,17,10
+DiagState: 2,2114,8,1263,618,17,10
 
 Variable Initial_PV_Adopters1
 Title: Initial PV Adopters
@@ -2110,7 +2111,7 @@ NodeLocation: 944,304,1
 NodeSize: 64,40
 ValueState: 2,510,101,448,662,0,MIDM
 Aliases: Alias Al1896098083
-{!40300|Att_SlicerPopupSize: 342,434}
+{!40300|Att_SlicerPopupSize: 347,434}
 
 Variable Initial_PV_Adopters_
 Title: Initial PV Adopters, InputFract Based
@@ -2717,7 +2718,7 @@ Date: Fri, Jun 22, 2018 10:48 AM
 NodeLocation: 112,288,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,317,27,1222,535,17,10
+DiagState: 2,2413,141,1222,535,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -2726,13 +2727,13 @@ Title: Max PV Simulation Year
 Description: Must be in the form MM/DD/YYYY~
 ~
 Make more robust. Tie to Time.
-Definition: 12/1/2031
+Definition: 1-Dec-2052
 NodeLocation: 400,168,1
 NodeSize: 64,40
 NodeColor: 65535,1,1
 
 Index Time_Solar_PV
-Att_PrevIndexValue: [1-Jan-2003,1-Feb-2003,1-Mar-2003,1-Apr-2003,1-May-2003,1-Jun-2003,1-Jul-2003,1-Aug-2003,1-Sep-2003,1-Oct-2003,1-Nov-2003,1-Dec-2003,1-Jan-2004,1-Feb-2004,1-Mar-2004,1-Apr-2004,1-May-2004,1-Jun-2004,1-Jul-2004,1-Aug-2004,1-Sep-2004,1-Oct-2004,1-Nov-2004,1-Dec-2004,1-Jan-2005,1-Feb-2005,1-Mar-2005,1-Apr-2005,1-May-2005,1-Jun-2005,1-Jul-2005,1-Aug-2005,1-Sep-2005,1-Oct-2005,1-Nov-2005,1-Dec-2005,1-Jan-2006,1-Feb-2006,1-Mar-2006,1-Apr-2006,1-May-2006,1-Jun-2006,1-Jul-2006,1-Aug-2006,1-Sep-2006,1-Oct-2006,1-Nov-2006,1-Dec-2006,1-Jan-2007,1-Feb-2007,1-Mar-2007,1-Apr-2007,1-May-2007,1-Jun-2007,1-Jul-2007,1-Aug-2007,1-Sep-2007,1-Oct-2007,1-Nov-2007,1-Dec-2007,1-Jan-2008,1-Feb-2008,1-Mar-2008,1-Apr-2008,1-May-2008,1-Jun-2008,1-Jul-2008,1-Aug-2008,1-Sep-2008,1-Oct-2008,1-Nov-2008,1-Dec-2008,1-Jan-2009,1-Feb-2009,1-Mar-2009,1-Apr-2009,1-May-2009,1-Jun-2009,1-Jul-2009,1-Aug-2009,1-Sep-2009,1-Oct-2009,1-Nov-2009,1-Dec-2009,1-Jan-2010,1-Feb-2010,1-Mar-2010,1-Apr-2010,1-May-2010,1-Jun-2010,1-Jul-2010,1-Aug-2010,1-Sep-2010,1-Oct-2010,1-Nov-2010,1-Dec-2010,1-Jan-2011,1-Feb-2011,1-Mar-2011,1-Apr-2011,1-May-2011,1-Jun-2011,1-Jul-2011,1-Aug-2011,1-Sep-2011,1-Oct-2011,1-Nov-2011,1-Dec-2011,1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018,1-Sep-2018,1-Oct-2018,1-Nov-2018,1-Dec-2018,1-Jan-2019,1-Feb-2019,1-Mar-2019,1-Apr-2019,1-May-2019,1-Jun-2019,1-Jul-2019,1-Aug-2019,1-Sep-2019,1-Oct-2019,1-Nov-2019,1-Dec-2019,1-Jan-2020,1-Feb-2020,1-Mar-2020,1-Apr-2020,1-May-2020,1-Jun-2020,1-Jul-2020,1-Aug-2020,1-Sep-2020,1-Oct-2020,1-Nov-2020,1-Dec-2020,1-Jan-2021,1-Feb-2021,1-Mar-2021,1-Apr-2021,1-May-2021,1-Jun-2021,1-Jul-2021,1-Aug-2021,1-Sep-2021,1-Oct-2021,1-Nov-2021,1-Dec-2021,1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023,1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030,1-Jan-2031,1-Feb-2031,1-Mar-2031,1-Apr-2031,1-May-2031,1-Jun-2031,1-Jul-2031,1-Aug-2031,1-Sep-2031,1-Oct-2031,1-Nov-2031,1-Dec-2031,1-Jan-2032,1-Feb-2032,1-Mar-2032,1-Apr-2032,1-May-2032,1-Jun-2032,1-Jul-2032,1-Aug-2032,1-Sep-2032,1-Oct-2032,1-Nov-2032,1-Dec-2032,1-Jan-2033,1-Feb-2033,1-Mar-2033,1-Apr-2033,1-May-2033,1-Jun-2033,1-Jul-2033,1-Aug-2033,1-Sep-2033,1-Oct-2033,1-Nov-2033,1-Dec-2033,1-Jan-2034,1-Feb-2034,1-Mar-2034,1-Apr-2034,1-May-2034,1-Jun-2034,1-Jul-2034,1-Aug-2034,1-Sep-2034,1-Oct-2034,1-Nov-2034,1-Dec-2034,1-Jan-2035,1-Feb-2035,1-Mar-2035,1-Apr-2035,1-May-2035,1-Jun-2035,1-Jul-2035,1-Aug-2035,1-Sep-2035,1-Oct-2035,1-Nov-2035,1-Dec-2035,1-Jan-2036,1-Feb-2036,1-Mar-2036,1-Apr-2036,1-May-2036,1-Jun-2036,1-Jul-2036,1-Aug-2036,1-Sep-2036,1-Oct-2036,1-Nov-2036,1-Dec-2036,1-Jan-2037,1-Feb-2037,1-Mar-2037,1-Apr-2037,1-May-2037,1-Jun-2037,1-Jul-2037,1-Aug-2037,1-Sep-2037,1-Oct-2037,1-Nov-2037,1-Dec-2037,1-Jan-2038,1-Feb-2038,1-Mar-2038,1-Apr-2038,1-May-2038,1-Jun-2038,1-Jul-2038,1-Aug-2038,1-Sep-2038,1-Oct-2038,1-Nov-2038,1-Dec-2038,1-Jan-2039,1-Feb-2039,1-Mar-2039,1-Apr-2039,1-May-2039,1-Jun-2039,1-Jul-2039,1-Aug-2039,1-Sep-2039,1-Oct-2039,1-Nov-2039,1-Dec-2039,1-Jan-2040,1-Feb-2040,1-Mar-2040,1-Apr-2040,1-May-2040,1-Jun-2040,1-Jul-2040,1-Aug-2040,1-Sep-2040,1-Oct-2040,1-Nov-2040,1-Dec-2040,1-Jan-2041,1-Feb-2041,1-Mar-2041,1-Apr-2041,1-May-2041,1-Jun-2041,1-Jul-2041,1-Aug-2041,1-Sep-2041,1-Oct-2041,1-Nov-2041,1-Dec-2041,1-Jan-2042,1-Feb-2042,1-Mar-2042,1-Apr-2042,1-May-2042,1-Jun-2042,1-Jul-2042,1-Aug-2042,1-Sep-2042,1-Oct-2042,1-Nov-2042,1-Dec-2042,1-Jan-2043,1-Feb-2043,1-Mar-2043,1-Apr-2043,1-May-2043,1-Jun-2043,1-Jul-2043,1-Aug-2043,1-Sep-2043,1-Oct-2043,1-Nov-2043,1-Dec-2043,1-Jan-2044,1-Feb-2044,1-Mar-2044,1-Apr-2044,1-May-2044,1-Jun-2044,1-Jul-2044,1-Aug-2044,1-Sep-2044,1-Oct-2044,1-Nov-2044,1-Dec-2044,1-Jan-2045,1-Feb-2045,1-Mar-2045,1-Apr-2045,1-May-2045,1-Jun-2045,1-Jul-2045,1-Aug-2045,1-Sep-2045,1-Oct-2045,1-Nov-2045,1-Dec-2045,1-Jan-2046,1-Feb-2046,1-Mar-2046,1-Apr-2046,1-May-2046,1-Jun-2046,1-Jul-2046,1-Aug-2046,1-Sep-2046,1-Oct-2046,1-Nov-2046,1-Dec-2046,1-Jan-2047,1-Feb-2047,1-Mar-2047,1-Apr-2047,1-May-2047,1-Jun-2047,1-Jul-2047,1-Aug-2047,1-Sep-2047,1-Oct-2047,1-Nov-2047,1-Dec-2047,1-Jan-2048,1-Feb-2048,1-Mar-2048,1-Apr-2048,1-May-2048,1-Jun-2048,1-Jul-2048,1-Aug-2048,1-Sep-2048,1-Oct-2048,1-Nov-2048,1-Dec-2048,1-Jan-2049,1-Feb-2049,1-Mar-2049,1-Apr-2049,1-May-2049,1-Jun-2049,1-Jul-2049,1-Aug-2049,1-Sep-2049,1-Oct-2049,1-Nov-2049,1-Dec-2049,1-Jan-2050,1-Feb-2050,1-Mar-2050,1-Apr-2050,1-May-2050,1-Jun-2050,1-Jul-2050,1-Aug-2050,1-Sep-2050,1-Oct-2050,1-Nov-2050,1-Dec-2050,1-Jan-2051,1-Feb-2051,1-Mar-2051,1-Apr-2051,1-May-2051,1-Jun-2051,1-Jul-2051,1-Aug-2051,1-Sep-2051,1-Oct-2051,1-Nov-2051,1-Dec-2051,1-Jan-2052,1-Feb-2052,1-Mar-2052,1-Apr-2052,1-May-2052,1-Jun-2052,1-Jul-2052,1-Aug-2052,1-Sep-2052,1-Oct-2052,1-Nov-2052,1-Dec-2052]
+Att_PrevIndexValue: [1-Jan-2003,1-Feb-2003,1-Mar-2003,1-Apr-2003,1-May-2003,1-Jun-2003,1-Jul-2003,1-Aug-2003,1-Sep-2003,1-Oct-2003,1-Nov-2003,1-Dec-2003,1-Jan-2004,1-Feb-2004,1-Mar-2004,1-Apr-2004,1-May-2004,1-Jun-2004,1-Jul-2004,1-Aug-2004,1-Sep-2004,1-Oct-2004,1-Nov-2004,1-Dec-2004,1-Jan-2005,1-Feb-2005,1-Mar-2005,1-Apr-2005,1-May-2005,1-Jun-2005,1-Jul-2005,1-Aug-2005,1-Sep-2005,1-Oct-2005,1-Nov-2005,1-Dec-2005,1-Jan-2006,1-Feb-2006,1-Mar-2006,1-Apr-2006,1-May-2006,1-Jun-2006,1-Jul-2006,1-Aug-2006,1-Sep-2006,1-Oct-2006,1-Nov-2006,1-Dec-2006,1-Jan-2007,1-Feb-2007,1-Mar-2007,1-Apr-2007,1-May-2007,1-Jun-2007,1-Jul-2007,1-Aug-2007,1-Sep-2007,1-Oct-2007,1-Nov-2007,1-Dec-2007,1-Jan-2008,1-Feb-2008,1-Mar-2008,1-Apr-2008,1-May-2008,1-Jun-2008,1-Jul-2008,1-Aug-2008,1-Sep-2008,1-Oct-2008,1-Nov-2008,1-Dec-2008,1-Jan-2009,1-Feb-2009,1-Mar-2009,1-Apr-2009,1-May-2009,1-Jun-2009,1-Jul-2009,1-Aug-2009,1-Sep-2009,1-Oct-2009,1-Nov-2009,1-Dec-2009,1-Jan-2010,1-Feb-2010,1-Mar-2010,1-Apr-2010,1-May-2010,1-Jun-2010,1-Jul-2010,1-Aug-2010,1-Sep-2010,1-Oct-2010,1-Nov-2010,1-Dec-2010,1-Jan-2011,1-Feb-2011,1-Mar-2011,1-Apr-2011,1-May-2011,1-Jun-2011,1-Jul-2011,1-Aug-2011,1-Sep-2011,1-Oct-2011,1-Nov-2011,1-Dec-2011,1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018,1-Sep-2018,1-Oct-2018,1-Nov-2018,1-Dec-2018,1-Jan-2019,1-Feb-2019,1-Mar-2019,1-Apr-2019,1-May-2019,1-Jun-2019,1-Jul-2019,1-Aug-2019,1-Sep-2019,1-Oct-2019,1-Nov-2019,1-Dec-2019,1-Jan-2020,1-Feb-2020,1-Mar-2020,1-Apr-2020,1-May-2020,1-Jun-2020,1-Jul-2020,1-Aug-2020,1-Sep-2020,1-Oct-2020,1-Nov-2020,1-Dec-2020,1-Jan-2021,1-Feb-2021,1-Mar-2021,1-Apr-2021,1-May-2021,1-Jun-2021,1-Jul-2021,1-Aug-2021,1-Sep-2021,1-Oct-2021,1-Nov-2021]
 Title: Time-Solar PV
 Description: Ths is the time index used for simulating vehicle adoption. It is allowed to be different from other DERs, for instance, due to differences in the granularity of available historical data on adoption (e.g., solar PV data are monthly, whereas vehicle data are, at best, quarterly, or in some cases, annual)
 Definition: Sequence(PV_Sim_Start_Year, PV_Sim_End_Year,step: Timestep_Months[Timestep_Options=PV_Data_dT_Choice],dateUnit: 'M')
@@ -2811,7 +2812,7 @@ ValueState: 2,586,141,258,345,0,MIDM
 Decision PV_Sim_End_Year
 Title: PV Sim End Year
 Description: The final year of the vehicle simulated forecast.
-Definition: 31-Dec-2052
+Definition: Choice(PV_Sim_End_Yr_Option,612,0)
 NodeLocation: 248,272,1
 NodeSize: 64,40
 WindState: 2,102,82,1083,701
@@ -2828,7 +2829,7 @@ Definition: Sequence(PV_Stock_Start_Year, Max_PV_Simulation_Ye, step: Timestep_M
 NodeLocation: 232,488,1
 NodeSize: 64,40
 WindState: 2,102,82,720,529
-ValueState: 2,723,0,389,910,0,MIDM
+ValueState: 2,723,0,358,910,0,MIDM
 
 FormNode Fo1534871512
 Title: Vehicle Sim Start Year
@@ -3732,7 +3733,7 @@ NodeSize: 64,40
 WindState: 2,546,219,720,350
 DefnState: 2,1094,392,416,303,0,DFNM
 ValueState: 2,2236,60,1343,742,1,MIDM
-Aliases: FormNode Fo1534438380, FormNode Fo1572476391, Alias Al733264035
+Aliases: FormNode Fo1534438380, Alias Al733264035, FormNode Fo1572476391
 NodeColor: 19661,48336,65535
 GraphSetup: Graph_AxisLabelFont:,14,0~
 Att_CatLineStyle Graph_Primary_Valdim:5~
@@ -5427,7 +5428,7 @@ ValueState: 2,21,412,1577,444,0,MIDM
 NumberFormat: 2,G,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Rate_Vintage]
 Att_ResultSliceState: [PV_Climate_Zone,3,Pre_and_Post_System,2,PV_Sectors,1,Time,1]
-{!50000|Att_ColumnWidths: [,Annual_Econ_Time,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
+{!50000|Att_ColumnWidths: [,Annual_Econ_Time,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
 
 Variable Rate_Escalate_byVint
 Title: Rate Escalation by Vintage
@@ -5988,6 +5989,8 @@ Aliases: FormNode Fo807064867, FormNode Fo108360995
 
 Module Non_Net_Metering_Ene
 Title: Non Net Metering Energy Costs
+Author: CWelch
+Date: Thu, May 26, 2022 4:01 PM
 NodeLocation: 776,104,1
 NodeSize: 64,40
 DiagState: 2,143,40,1581,545,17,10
@@ -6571,11 +6574,12 @@ NodeSize: 64,40
 WindState: 2,325,165,720,350
 ValueState: 2,372,119,1040,636,1,MIDM
 Aliases: Alias Al497262115
-GraphSetup: Att_GraphIndexRange Annual_Econ_Time:1,,1,,,,10,2021.1195932030678,2031.6274712085724,0
+GraphSetup: Att_GraphValueRange Value_of_generation:1,,0,,,,,-0.0004224419593811257,0.09999999999999998,0~
+Att_GraphIndexRange Annual_Econ_Time:1,,1,,,,10,2021.1195932030678,2031.6274712085724,0
 ReformVal: [Annual_Econ_Time,System_Types]
 NumberFormat: 2,F,4,2,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: []
-Att_ResultSliceState: [Area_Type,2,PV_Sectors,4,PV_Climate_Zone,1,System_Types,2,Annual_Econ_Time,1]
+Att_ResultSliceState: [Area_Type,1,PV_Sectors,1,PV_Climate_Zone,1,System_Types,2,Annual_Econ_Time,1]
 
 Variable Value_of_generation1
 Title: Value of Generation
@@ -6829,7 +6833,7 @@ ValueState: 2,2594,386,576,284,0,MIDM
 ReformVal: [Equipment_Types,System_Types]
 NumberFormat: 2,F,2,0,1,1,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Equipment_Types]
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,3,Area_Type,1,Annual_Econ_Time,13,System_Types,1,Equipment_Types,2]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Area_Type,1,Annual_Econ_Time,20,System_Types,1,Equipment_Types,2]
 
 Text FrameNode_1544920201
 NodeLocation: 1184,320,-20
@@ -6995,7 +6999,7 @@ Date: Wed, Feb 6, 2019 6:05 PM
 NodeLocation: 96,488,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,100,22,1703,745,17,10
+DiagState: 2,100,22,1703,727,17,10
 AcpStyles: Framenode: Taxable_Incent_Frame
 
 Constant kWh_Incen_Dur_Derate
@@ -8036,7 +8040,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 432,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,32,98,1621,687,17,10
+DiagState: 2,1975,44,1621,624,17,10
 AcpStyles: FrameNode: FrameNode_1544920240
 
 Decision Taxed_as_Commercial
@@ -8136,7 +8140,7 @@ Definition: Table(Static_PV_Time,Tax_Entity)(~
 NodeLocation: 552,224,1
 NodeSize: 64,40
 WindState: 2,258,541,1722,350
-DefnState: 2,939,156,704,713,0,DFNM
+DefnState: 2,1232,120,281,713,0,DFNM
 ValueState: 2,196,202,416,303,0,MIDM
 Aliases: Alias Al1568695868, FormNode Fo1568695868, FormNode Fo1545167166
 ReformDef: [Tax_Entity,Static_PV_Time]
@@ -8358,7 +8362,7 @@ Att_ResultSliceState: [PV_Sectors,2,Pre_and_Post_System,1,Equipment_Types,1,PV_C
 Alias Al1538159919
 Title: Levelized O&M
 Definition: 1
-NodeLocation: 1080,408,1
+NodeLocation: 1160,368,1
 NodeSize: 64,40
 Original: Levelized_O_M
 
@@ -8432,7 +8436,7 @@ NodeSize: 100,52
 
 Decision Assume_Third_Party_O
 Title: Assume Third Party Owned?
-Definition: Checkbox(0)
+Definition: Checkbox(1)
 NodeLocation: 704,488,1
 NodeSize: 64,40
 Aliases: FormNode Fo1141958179
@@ -8449,8 +8453,8 @@ Original: Assume_Third_Party_O
 
 Text Te394931747
 Title: These economics don't seem to work for a TPO system
-NodeLocation: 900,484,-1
-NodeSize: 68,60
+NodeLocation: 924,504,-1
+NodeSize: 100,56
 
 Close Taxes
 
@@ -8807,7 +8811,7 @@ Att_GraphIndexRange Annual_Econ_Time:1,,1,,,,10,2021.0269892215729,2031.28858709
 ReformVal: [Annual_Econ_Time,PV_Sectors]
 NumberFormat: 2,F,4,2,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: []
-Att_ResultSliceState: [Equipment_Types,1,System_Types,2,Area_Type,1,Installation_Event,1,PV_Sectors,2,Base_Yr_of_Cost_Decl,1,Annual_Econ_Time,1]
+Att_ResultSliceState: [Equipment_Types,1,System_Types,1,Area_Type,1,Installation_Event,1,PV_Sectors,2,Annual_Econ_Time,1]
 
 Variable Levelized_O_M
 Title: Levelized O&M
@@ -8904,7 +8908,7 @@ NodeSize: 64,40
 Decision Base_Yr_of_Cost_Decl
 Title: Base Yr of Cost Decline
 Description: Select the base year to which cost decline scenarios will be applied.
-Definition: 2052
+Definition: 2022
 NodeLocation: 416,232,1
 NodeSize: 64,40
 Aliases: Alias Al1568923259, FormNode Fo1568923259, FormNode Fo1543274532, FormNode Fo1544916731
@@ -8926,22 +8930,22 @@ Description: Forecast rate of change in installed PV system prices. ~
 ~
 Sign convention is such that a negative value is a cost decline.
 Definition: Table(All_PV_Sectors,DER_Cost_Scenario,All_Equipment_Types)(~
--0.058,-0.058,~
--0.042,-0.042,~
--0.029,-0.029,~
--0.058,-0.058,~
--0.042,-0.042,~
--0.029,-0.029)
+-0.04,-0.04,~
+-0.03,-0.03,~
+-0.02,-0.02,~
+-0.04,-0.04,~
+-0.03,-0.03,~
+-0.02,-0.02)
 NodeLocation: 120,232,1
 NodeSize: 64,40
 WindState: 2,1067,27,720,495
-DefnState: 2,832,97,434,306,0,DFNM
+DefnState: 2,832,97,558,320,0,DFNM
 ValueState: 2,260,266,759,632,0,MIDM
 Aliases: Alias Al1568696043, FormNode Fo1568696042, FormNode Fo1544633538, FormNode Fo1544635478, FormNode Fo1235587363, FormNode Fo477459747
 NodeColor: 65535,1,1
 ReformDef: [All_Equipment_Types,DER_Cost_Scenario]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att_EditSliceState: [All_Equipment_Types,2,All_PV_Sectors,1,DER_Cost_Scenario,1]
+Att_EditSliceState: [All_PV_Sectors,2,DER_Cost_Scenario,1,All_Equipment_Types,2]
 
 Variable Equipment_Cost_Resul
 Title: Equipment Cost Result
@@ -9647,9 +9651,9 @@ NodeSize: 64,40
 WindState: 2,332,171,1361,658
 ValueState: 2,377,56,1275,767,1,MIDM
 Aliases: Alias Al1548956516
-GraphSetup: Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,40.543K,42.369K,0~
-Att_GraphIndexRange Time:1,,0,,,,,43151.47568100691,47197.564751029015,0~
-Att_GraphValueRange Mthly_Simple_Payback:1,,1,,,,10,0,23.283925354480743,0
+GraphSetup: Att_GraphValueRange Mthly_Simple_Payback:1,,1,,,,10,0,23.283925354480743,0~
+Att_GraphIndexRange Time:1,,1,,,,,43151.47568100691,47197.564751029015,0~
+Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,40.543K,42.369K,0
 ReformVal: [Time,PV_Climate_Zone]
 DisplayOutputs: Variable Payback_Time_by_ID1
 Att__TotalsIndex: [Self]
@@ -9952,7 +9956,7 @@ Author: CWelch
 Date: Fri, Mar 25, 2022 11:08 AM
 NodeLocation: 144,400,1
 NodeSize: 64,40
-DiagState: 2,420,72,1195,642,17,10
+DiagState: 2,418,35,1195,595,17,10
 
 Variable Replace_Val_Fact_Sim
 Title: Replacement Value Factor, Simple
@@ -9997,7 +10001,7 @@ Att_GraphIndexRange Annual_Econ_Time:1,,1,,,,10,2020.11490675807,2032,0
 ReformVal: [Equipment_Types,System_Types]
 NumberFormat: 2,F,4,2,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,3,Area_Type,1,Annual_Econ_Time,13,System_Types,1,Equipment_Types,1]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Area_Type,1,Annual_Econ_Time,21,System_Types,1,Equipment_Types,1]
 
 Variable Total_ITC_Simple
 Title: Total ITC for System, Simple
@@ -10007,11 +10011,11 @@ Definition: Sum_Initial_Repl_Val(ITC_for_System_Event,Replace_Val_Fact_Sim)
 NodeLocation: 280,168,1
 NodeSize: 64,40
 WindState: 2,98,82,1157,590
-ValueState: 2,601,236,1235,377,0,MIDM
+ValueState: 2,190,238,1235,377,0,MIDM
 ReformVal: [Annual_Econ_Time,Equipment_Types]
 NumberFormat: 2,F,2,0,1,1,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,4,Area_Type,1,System_Types,2,Equipment_Types,2,Annual_Econ_Time,14]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Area_Type,1,System_Types,1,Equipment_Types,2,Annual_Econ_Time,14]
 
 Variable PV_of_O_M_Simple
 Title: PV of O&M, Simple
@@ -10026,7 +10030,7 @@ NodeSize: 64,40
 WindState: 2,11,70,1177,361
 ValueState: 2,339,214,1160,587,,MIDM
 NumberFormat: 2,F,4,2,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [Equipment_Types,1,PV_Climate_Zone,4,System_Types,1,Area_Type,1,PV_Sectors,1,Annual_Econ_Time,1]
+Att_ResultSliceState: [Equipment_Types,1,PV_Climate_Zone,1,System_Types,1,PV_Sectors,1,Area_Type,1,Annual_Econ_Time,1]
 
 Variable PV_Taxable_Inc_Smp
 Title: PV Taxable Incentives, Simple
@@ -10077,7 +10081,7 @@ Definition: ZIDZ1(PV_of_System_Cost,PV_of_Solar_Producti)
 NodeLocation: 672,352,1
 NodeSize: 64,40
 WindState: 2,2189,228,720,350
-ValueState: 2,111,53,735,712,1,MIDM
+ValueState: 2,111,53,809,693,1,MIDM
 GraphSetup: Flip:0~
 Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2021.0268869400024,2031.4014666080475,0
 ReformVal: [Annual_Econ_Time,PV_Climate_Zone]
@@ -10118,6 +10122,7 @@ GraphSetup: Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2021.0268869400024,2
 Flip:0
 ReformVal: [Annual_Econ_Time,PV_Climate_Zone]
 NumberFormat: 2,F,4,3,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Cost_Forecast_Year]
 Att_ResultSliceState: [Area_Type,3,System_Types,1,PV_Climate_Zone,3,Cost_Forecast_Year,1]
 
 FormNode Fo75198755
@@ -10166,8 +10171,8 @@ Definition: ZIDZ1(Simple_LCOE_of_PV,Value_of_generation)
 NodeLocation: 304,400,1
 NodeSize: 64,40
 ValueState: 2,266,34,999,759,,MIDM
-GraphSetup: Att_GraphValueRange Simple_LCOE_to_Value:1,,0,,,,,0,2.0010854601860046,0~
-Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2021.1102975606918,2032,0
+GraphSetup: Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2021.1102975606918,2032,0~
+Att_GraphValueRange Simple_LCOE_to_Value:1,,1,,,,,0,2.0010854601860046,0
 ReformVal: [Annual_Econ_Time,PV_Climate_Zone]
 Att_ResultSliceState: [System_Types,1,PV_Sectors,1,Area_Type,1,PV_Climate_Zone,1,Annual_Econ_Time,1]
 
@@ -10191,7 +10196,6 @@ Definition: Table(Annual_Econ_Time,All_System_Types)(~
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
 0.07,0,0.09,0,0,0,0,~
 0.07,0,0.09,0,0,0,0,~
 0.07,0,0.09,0,0,0,0,~
@@ -10212,28 +10216,7 @@ Definition: Table(Annual_Econ_Time,All_System_Types)(~
 0.07,0,0.09,0,0,0,0,~
 0.07,0,0.09,0,0,0,0,~
 0.07,0,0.09,0,0,0,0,~
-0.07,0,0.09,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0)
+0.07,0,0.09,0,0,0,0)
 NodeLocation: 112,664,1
 NodeSize: 64,40
 DefnState: 2,334,471,1057,273,0,DFNM
@@ -10305,7 +10288,7 @@ Definition: [Simple_LCOE_of_PV1,Value_of_generation1]
 NodeLocation: 304,496,1
 NodeSize: 64,40
 WindState: 2,953,224,720,557
-ValueState: 2,28,43,876,713,1,MIDM
+ValueState: 2,28,43,876,713,0,MIDM
 Aliases: FormNode Fo89932067, FormNode Fo74806563
 GraphSetup: Graph_AxisLabelFont:,20,0~
 SymbolSize:11~
@@ -10802,7 +10785,7 @@ ReformVal: [Pre_and_Post_System,Rate_Names_and_Start]
 Att_ResultSliceState: [PV_Sectors,1,Rate_Names_and_Start,1,PV_Climate_Zone,1]
 
 Index Rate_Names_and_Start
-Att_PrevIndexValue: ['NYPA Downstate (NYC, Zone J) | 2021-01','NYPA Hudson Valley (Central Hudson,Zone G) | 2021-01','NYPA Long Island (PSEG-LI, Zone K) | 2021-01','NYPA Upstate (NYSEG - Rest of State, Zone C) | 2021-01']
+Att_PrevIndexValue: ['GSD - Large Commercial Net Metering, Standard | 2002-01','GSD - Large Commercial Net Metering, TOU | 2002-01','GSD - Large Commercial NonNet Metering, Standard | 2018-03','GSD - Large Commercial NonNet Metering, TOU | 2018-03']
 Title: Rate Names and Start Dates
 Definition: VAR names:=MdArrayToTable(Selected_Cust_Rates, omitNull: True);~
 VAR lastCol:=Size(names.Col);~
@@ -11005,7 +10988,7 @@ NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 Att_GraphIndexRange: 1,,0,,,,,1,11,1
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 1433,353}
+{!40300|Att_SlicerPopupSize: 1458,353}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
@@ -11020,7 +11003,7 @@ Index PV_Spatial_ID
 Att_PrevIndexValue: ['All']
 Title: PV Spatial ID
 Description: MultiChoice(All_Spatial_ID, allowNone:0, returnList:1)
-Definition: MultiChoice(Spatial_ID,returnList:1)
+Definition: MultiChoice(Spatial_ID,1,returnList:1)
 NodeLocation: 1536,64,1
 NodeSize: 64,40
 WindState: 2,46,71,816,730
@@ -11078,7 +11061,7 @@ DisplayOutputs: Variable Clipboard_NewConstr_
 {!40300|Att_SlicerPopupSize: 267,42}
 
 Index Annual_Econ_Time
-Att_PrevIndexValue: [2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,2040,2041,2042,2043,2044,2045,2046,2047,2048,2049,2050,2051,2052]
+Att_PrevIndexValue: [2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031]
 Title: Annual Economic Time
 Description: Starts one year prior to the minimum of PV or BESS simulation start years, so that annual economic calculations can be treated as middle-of-year values.
 Definition: (MIN([DatePart(BESS_Calibrat_Start, 'Y'), DatePart(PV_Calibration_Start, 'Y')])-1)..MAX([DatePart(BESS_Sim_End_Year, 'Y'), DatePart(PV_Sim_End_Year, 'Y')])
@@ -11087,7 +11070,7 @@ NodeSize: 64,40
 WindState: 2,228,3,1362,905
 ValueState: 2,472,240,832,491,0,MIDM
 Att_GraphIndexRange: 1,,,,,,10
-{!40300|Att_SlicerPopupSize: 357,336}
+{!40300|Att_SlicerPopupSize: 362,336}
 
 Variable BOY_Date_for_Econ_Yr
 Title: BOY Date for Econ Year
@@ -11315,7 +11298,7 @@ NodeLocation: 240,256,1
 NodeSize: 64,40
 WindState: 2,102,21,1089,879
 ValueState: 2,992,329,416,303,,MIDM
-{!40300|Att_SlicerPopupSize: 967,112}
+{!40300|Att_SlicerPopupSize: 972,112}
 
 Index New_or_Retrofit
 Att_PrevIndexValue: ['NewConstr','Retrofit']
@@ -12974,7 +12957,7 @@ Definition: ['Roof','Parking','Land']
 NodeLocation: 104,384,1
 NodeSize: 64,40
 WindState: 2,408,-14,824,781
-{!40300|Att_SlicerPopupSize: 957,80}
+{!40300|Att_SlicerPopupSize: 962,80}
 
 Include 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
 

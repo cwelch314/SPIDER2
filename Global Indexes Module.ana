@@ -736,7 +736,7 @@ ELSE (~
 
 NodeLocation: 248,152,1
 NodeSize: 64,40
-WindState: 2,71,142,1618,776
+WindState: 2,110,74,1618,776
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 
 Function Check_SpatID_Sel_PV()
@@ -785,7 +785,7 @@ Description: This function is called by a button script and sequentially optimiz
 [der_index]: an optional generic selectable index in case the adoption logic is indexed by more than spatial IDs and sectors.~
 [optDef]: the handle to the variable where the optimization is defined.
 Definition: (decis_switch:=1); {Ensures the optimization uses the actual decision variables when calculating the objective, rather than the stored coefficients}~
-Check_Sector(all_sectors, all_index, der_sectors, der_index);  {Checks to ensure only one sector or generic index element is selected for the diffusion parameter calibration}~
+Check_Sector(all_sectors , all_index, der_sectors, der_index);  {Checks to ensure only one sector or generic index element is selected for the diffusion parameter calibration}~
 {Check_Cost_Scenario(); }{Checks to ensure only one cost scenario is selected for the diffusion parameter calibration}~
 ~
 {assign local variables for use in the function}~
@@ -823,7 +823,7 @@ For i:=remaining_IDs DO (	~
 (decis_switch:=0); {Returns the value of this input to zero to ensure stored coefficients are used in model calculations}
 NodeLocation: 384,152,1
 NodeSize: 64,40
-WindState: 2,13,31,1405,738
+WindState: 2,302,11,1405,828
 DisplayOutputs: Function OG_Multi_Stage_Calib
 
 Function Multi_Stage_Calibrat(select_stages, all_stages, all_spatial_id, nonAg_id, failed_id, calib_time, sim_time, select_decis, all_decis, decis_handles, all_sectors: Index; all_index: Optional Index; ag_stage1, trace_flag, calib_start, calib_end, dates_by_stage, decis_by_stage, setting_by_stage, aggreg_level; der_spatial_id, der_sectors, curr_stage, sim_start, sim_end, decis_switch, dates_in_opt, decis_in_opt, stored_decis, setting_in_opt, stored_status: Variable; der_index: Optional Variable; optDef_handle: Handle)
@@ -908,7 +908,7 @@ This function must be called from within an optimization script to ensure that o
 [stored_decis]: the node where calibrated decision variables will be stored.~
 [stored_status]: the node where the optimization status will be stored.~
 [der_index]: an optional generic selectable index in case the adoption logic is indexed by more than spatial IDs and sectors.
-Definition: Check_Sector(all_sectors, all_index, der_sectors, der_index);~
+Definition: Check_Sector(all_sectors , all_index, der_sectors, der_index);~
 ~
 local coeff:=stored_decis;~
 local status:=stored_status;~
@@ -929,7 +929,7 @@ ELSE (~
 
 NodeLocation: 520,64,1
 NodeSize: 64,40
-WindState: 2,85,145,1520,764
+WindState: 2,173,64,1520,764
 DisplayOutputs: Function OG_Multi_Stage_Calib
 
 Decision Infeasible_Label
