@@ -2812,7 +2812,7 @@ ValueState: 2,586,141,258,345,0,MIDM
 Decision PV_Sim_End_Year
 Title: PV Sim End Year
 Description: The final year of the vehicle simulated forecast.
-Definition: Choice(PV_Sim_End_Yr_Option,239,0)
+Definition: Choice(PV_Sim_End_Yr_Option,468,0)
 NodeLocation: 248,272,1
 NodeSize: 64,40
 WindState: 2,102,82,1083,701
@@ -5070,7 +5070,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 256,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,170,253,1473,778,17,10
+DiagState: 2,158,-17,1473,679,17,10
 Aliases: Alias Al1548967139
 AcpStyles: FrameNode: FrameNode_1544920029
 
@@ -5307,15 +5307,15 @@ Choice(Rate_Names_with_None,8,0),Choice(PV_Sim_Strt_Yr_Opt,196,0),Checkbox(1))
 NodeLocation: 96,216,1
 NodeSize: 64,40
 WindState: 2,108,40,1402,650
-DefnState: 2,191,263,1264,266,0,DFNM
+DefnState: 2,564,190,876,255,0,DFNM
 ValueState: 2,302,51,935,658,0,MIDM
 Aliases: FormNode Fo1547766909, FormNode Fo1547828216
 NodeColor: 65535,65531,1
-ReformDef: [Pre_and_Post_System,All_Sectors]
+ReformDef: [Rate_Setting,Rate_Vintage]
 ReformVal: [Pre_and_Post_System,Rate_Vintage]
 TableCellDefault: Rate_Setting_Default
 Att_ResultSliceState: [All_Sectors,1,PV_Climate_Zone,1,Rate_Setting,2,Rate_Vintage,1,Pre_and_Post_System,1]
-Att_EditSliceState: [PV_Climate_Zone,1,Rate_Setting,3,Rate_Vintage,1,All_Sectors,1,Pre_and_Post_System,1]
+Att_EditSliceState: [PV_Climate_Zone,1,All_Sectors,1,Pre_and_Post_System,2,Rate_Vintage,1,Rate_Setting,2]
 {!50000|Att_ColumnWidths: [,Rate_Vintage,\([,343])]}
 
 Decision Num_of_Rate_Vintages
@@ -5438,7 +5438,7 @@ Description: An escalation factor applied to each rate vintage. The base year fo
 Definition: VAR equivEscalateRate:=(1+Applied_RateEscalate)^(1/Timesteps_Per_Year)-1;   {The compounding monthly equivalent of the annual escalation rate}~
 ~
 IF Select_Customer_Rate[All_Sectors=PV_Sectors, Rate_Setting=Rate_Escalate_Label]~
-THEN (1 + equivEscalateRate)^((Time_Fractional_Year - Decimal_Start_Year[Rate_Vintage=Sorted_Vintages])*Timesteps_Per_Year)~
+THEN Rate_adjustment * (1 + equivEscalateRate)^((Time_Fractional_Year - Decimal_Start_Year[Rate_Vintage=Sorted_Vintages])*Timesteps_Per_Year)~
 ELSE 1;~
 
 NodeLocation: 560,280,1
@@ -5447,7 +5447,7 @@ WindState: 2,240,134,1116,635
 ValueState: 2,123,227,1408,406,0,MIDM
 ReformVal: [Time_Solar_PV,Rate_Escalation_Scen]
 NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [PV_Climate_Zone,1,Pre_and_Post_System,1,Rate_Vintage,2,PV_Sectors,1,Time,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,Pre_and_Post_System,2,Rate_Vintage,1,PV_Sectors,1,Time,1]
 
 Variable Vint_to_Prd_AllocEsc
 Title: Vintage to Period Allocations and Escalation
@@ -5484,6 +5484,15 @@ NodeColor: 65535,65535,65535
 AcpStyles: Show_index_menus: yes~
 Show_description:20
 
+Constant Rate_adjustment
+Title: Rate adjustment (manual correction)
+Description: For JEA we obtained rates in 2022 and are assuming rates at the end of March 2018 (when net metering changed) are lower due to 2.1% assumed inflation from April 2018 to beginning of 2022.
+Definition: 1 / 1.082
+NodeLocation: 376,384,1
+NodeSize: 80,40
+Aliases: FormNode Fo2109940899
+NodeColor: 65535,65531,1
+
 Close Rate_Vintage_Mapping
 
 Decision Retail_Rate_Escalate
@@ -5495,6 +5504,7 @@ NodeLocation: 384,704,1
 NodeSize: 64,40
 WindState: 2,321,147,1008,424
 DefnState: 2,853,409,416,303,0,DFNM
+ValueState: 2,356,362,416,303,0,MIDM
 Aliases: FormNode Fo1544567172, FormNode Fo1544570136, FormNode Fo1548967848
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 
@@ -5678,7 +5688,7 @@ Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(1))
 NodeLocation: 408,312,1
 NodeSize: 64,40
 WindState: 2,358,80,1224,565
-DefnState: 2,663,395,932,245,0,DFNM
+DefnState: 2,2224,399,932,245,0,DFNM
 Aliases: FormNode Fo1547766195, Alias Al1547767161, FormNode Fo1547767167, FormNode Fo1547828220
 NodeColor: 65535,65531,1
 ReformDef: [Rate_Attribute_Setti,Rate_Vintage]
@@ -6223,7 +6233,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 400,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,1973,211,1549,650,17,10
+DiagState: 2,1956,87,1549,650,17,10
 Aliases: Alias Al1548967140
 AcpStyles: FrameNode: FrameNode_1544920081
 
@@ -6586,14 +6596,14 @@ Definition: LinearInterp( Time_Fractional_Year, First_year_kWh_value, Annual_Eco
 NodeLocation: 920,512,1
 NodeSize: 64,40
 WindState: 2,325,165,720,350
-ValueState: 2,364,218,1040,554,1,MIDM
+ValueState: 2,380,32,1169,661,1,MIDM
 Aliases: Alias Al497262115
-GraphSetup: Att_GraphValueRange Value_of_generation:1,,0,,,,,-0.008579409122467019,0.14544848203659066,0~
-Att_GraphIndexRange Annual_Econ_Time:1,,1,,,,10,2021.1195932030678,2031.6274712085724,0
-ReformVal: [Annual_Econ_Time,System_Types]
-NumberFormat: 2,F,4,2,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
+GraphSetup: Att_GraphIndexRange Annual_Econ_Time:1,,1,,,,10,2011.7081689089537,2040.6881594657898,0~
+Att_GraphValueRange Value_of_generation:1,,1,,,,,0.015885363817214965,0.12646059036254884,0
+ReformVal: [Annual_Econ_Time,PV_Sectors]
+NumberFormat: 2,F,4,3,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: []
-Att_ResultSliceState: [Area_Type,1,PV_Sectors,1,PV_Climate_Zone,1,System_Types,2,Annual_Econ_Time,1]
+Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,System_Types,1,PV_Sectors,1,Annual_Econ_Time,1]
 
 Variable Value_of_generation1
 Title: Value of Generation
@@ -8819,13 +8829,13 @@ Val_by_Install_Event(price, 1, Annual_Econ_Time)
 NodeLocation: 568,120,1
 NodeSize: 64,40
 WindState: 2,-48,325,1556,638
-ValueState: 2,2096,94,1166,711,1,MIDM
-GraphSetup: Att_GraphValueRange Per_Unit_Equip_Price:1,,0,,,,,0,3026.1409282684326,0~
-Att_GraphIndexRange Annual_Econ_Time:1,,1,,,,10,2021.0269892215729,2031.2885870933533,0
-ReformVal: [Annual_Econ_Time,PV_Sectors]
+ValueState: 2,2072,123,1166,711,1,MIDM
+GraphSetup: Att_GraphValueRange Per_Unit_Equip_Price:1,,1,,,,,0,3026.1409282684326,0~
+Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2011.0217268019915,2052.1974620223045,0
+ReformVal: [Annual_Econ_Time,Base_Yr_of_Cost_Decl]
 NumberFormat: 2,F,4,2,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: []
-Att_ResultSliceState: [Equipment_Types,1,System_Types,1,Area_Type,1,Installation_Event,1,PV_Sectors,2,Annual_Econ_Time,1]
+Att_ResultSliceState: [Equipment_Types,1,System_Types,1,Area_Type,1,Installation_Event,1,PV_Sectors,2,Base_Yr_of_Cost_Decl,1,Annual_Econ_Time,1]
 
 Variable Levelized_O_M
 Title: Levelized O&M
@@ -9663,11 +9673,11 @@ ELSE Divide(numerator, FirstYr_BillSav_Time, False)
 NodeLocation: 928,168,1
 NodeSize: 64,40
 WindState: 2,332,171,1361,658
-ValueState: 2,377,56,1275,767,1,MIDM
+ValueState: 2,2104,47,1275,767,1,MIDM
 Aliases: Alias Al1548956516
-GraphSetup: Att_GraphValueRange Mthly_Simple_Payback:1,,1,,,,10,0,22.62140601873398,0~
-Att_GraphIndexRange Time:1,,0,,,,,40014.664690598845,46059.5318736434,0~
-Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,40.543K,42.369K,0
+GraphSetup: Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,40.543K,42.369K,0~
+Att_GraphIndexRange Time:1,,0,,,,,39575.485336348414,53472.32119703293,0~
+Att_GraphValueRange Mthly_Simple_Payback:1,,1,,,,10,9.41852867603302,22.297139167785645,0
 ReformVal: [Time,PV_Sectors]
 DisplayOutputs: Variable Payback_Time_by_ID1
 Att__TotalsIndex: [Self]
@@ -11026,7 +11036,7 @@ NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 Att_GraphIndexRange: 1,,0,,,,,1,11,1
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 1458,353}
+{!40300|Att_SlicerPopupSize: 1468,353}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
@@ -11566,7 +11576,7 @@ Title: Rate Setting
 Definition: ['Rate Name','Rate Start Date','Allow Rate Escalation']
 NodeLocation: 816,704,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 292,48}
+{!40300|Att_SlicerPopupSize: 297,48}
 
 Decision Name_Setting_Label
 Title: Name Setting Label
