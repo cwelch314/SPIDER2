@@ -2791,7 +2791,7 @@ Title: PV Sim Start Year
 Description: The year in which you want the adoption simulation to start. The simulation will then use the appropriate starting point for instalaltions at this point in time. In some cases, depending on the data, you may not want to start the simulation as early as the stock data are available. Typically for PV, you will want to start the PV simulation exactly one period (e.g., month) after the latest reliable data are available regarding historical installations. That said, the latest month in the interconnection databases are typically unreliable due to previous applications that have not yet come through. So, it is typically wise to ignore the last month (or even two, depending on the time delays) of interconnection data. ~
 ~
 During calibration, this time is set to an earlier period to "back cast" adoption and compare it with actual adoption for purposes of estimating diffusion coefficients.
-Definition: Choice(PV_Sim_Strt_Yr_Opt,13,0)
+Definition: Choice(PV_Sim_Strt_Yr_Opt,240,0)
 NodeLocation: 96,272,1
 NodeSize: 64,40
 ValueState: 2,795,362,320,151,,MIDM
@@ -2812,7 +2812,7 @@ ValueState: 2,586,141,258,345,0,MIDM
 Decision PV_Sim_End_Year
 Title: PV Sim End Year
 Description: The final year of the vehicle simulated forecast.
-Definition: Choice(PV_Sim_End_Yr_Option,468,0)
+Definition: Choice(PV_Sim_End_Yr_Option,612,0)
 NodeLocation: 248,272,1
 NodeSize: 64,40
 WindState: 2,102,82,1083,701
@@ -4693,7 +4693,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,148,31,1554,632,17,10
+DiagState: 2,249,128,1554,632,17,10
 Aliases: Alias Al1548967138
 AcpStyles: FrameNode: FrameNode_1544919985
 
@@ -4780,7 +4780,7 @@ NodeSize: 64,40
 ValueState: 2,252,8,971,600,0,MIDM
 Aliases: Alias Al1236580515
 ReformVal: [Month,Tiers]
-Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,1,PV_Climate_Zone,1,Pre_and_Post_System,2,System_Types,1,Area_Type,1,Tiers,1,Month,1]
+Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,2,PV_Climate_Zone,1,Pre_and_Post_System,2,System_Types,1,Area_Type,1,Tiers,1,Month,1]
 
 Variable Consum_by_Tier_Prd
 Title: Consumption by Tier & Period
@@ -4789,7 +4789,7 @@ Description: The consumption by tier and period.
 Definition: Consum_by_TOU_Prd * Pct_Consump_by_Tier
 NodeLocation: 648,72,1
 NodeSize: 64,40
-ValueState: 2,408,126,1089,672,0,MIDM
+ValueState: 2,108,191,1089,672,0,MIDM
 Aliases: Alias Al699709603
 GraphSetup: Graph_SymbolKey:1~
 Att_CatLineStyle Graph_Primary_Valdim:5
@@ -5070,7 +5070,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 256,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,158,-17,1473,679,17,10
+DiagState: 2,934,139,1473,679,17,10
 Aliases: Alias Al1548967139
 AcpStyles: FrameNode: FrameNode_1544920029
 
@@ -5080,7 +5080,7 @@ Units: $
 Description: The volumetric energy cost by tier and period.
 Definition: IF Any_non_net_metering THEN Energy_Cost_w_Sell ELSE Energy_Cost_Tier_Pr1~
 /*Consum_by_Tier_Prd * Energy_Price
-NodeLocation: 256,208,1
+NodeLocation: 408,200,1
 NodeSize: 64,40
 ValueState: 2,415,282,1051,358,0,MIDM
 GraphSetup: Graph_SymbolKey:1~
@@ -5135,17 +5135,17 @@ Variable Energy_Price
 Title: Energy Price (excluding sell)
 Units: $/kWh
 Description: The volumnetric energy charges by tier and period.
-Definition: (Replace_X_with_Y(Sum(Data_by_Tier_Period[Rate_Names=Selected_Cust_Rates, All_Data_Types=Energy_DataType, All_Periods=Periods, All_Tiers=Tiers] * Incl_Energy_Attribs * (Data_Attribute<>'sell'), Data_Attribute), Null, 0) {+ sum(Additional_Value[Additional_Value_Sce=Additional_Value_Sc1],Value_Type)} )  {only applicable for NYPA situation with Value Stack assumptions, full net metering independent of load}~
+Definition: (Replace_X_with_Y(Sum(Data_by_Tier_Period[Rate_Names=Selected_Cust_Rates, All_Data_Types=Energy_DataType, All_Periods=Periods, All_Tiers=Tiers] * Incl_Energy_Attribs * (Data_Attribute<>Sell_Price_Label), Data_Attribute), Null, 0) {+ sum(Additional_Value[Additional_Value_Sce=Additional_Value_Sc1],Value_Type)} )  {only applicable for NYPA situation with Value Stack assumptions, full net metering independent of load}~
 * OpYr_Inflate_Factor
 NodeLocation: 256,312,1
 NodeSize: 64,40
 WindState: 2,102,82,1080,350
-ValueState: 2,1000,343,479,306,0,MIDM
+ValueState: 2,994,352,479,306,0,MIDM
 Aliases: Alias Al144060707
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:6
 ReformVal: [Rate_Vintage,Allow_Rate_Inflation]
-NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att_ResultSliceState: [PV_Sectors,1,Pre_and_Post_System,1,Tiers,1,Periods,1,PV_Climate_Zone,1,Allow_Rate_Inflation,1,Rate_Vintage,1]
+NumberFormat: 2,F,4,3,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+Att_ResultSliceState: [Pre_and_Post_System,2,Tiers,1,Periods,1,PV_Climate_Zone,1,PV_Sectors,1,Rate_Vintage,1]
 
 Variable Non_Coinc_Dmd_Price
 Title: Non-Coincident Demand Price
@@ -5429,7 +5429,7 @@ ValueState: 2,21,412,1577,444,0,MIDM
 NumberFormat: 2,G,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Rate_Vintage]
 Att_ResultSliceState: [PV_Climate_Zone,3,Pre_and_Post_System,2,PV_Sectors,1,Time,1]
-{!50000|Att_ColumnWidths: [,Annual_Econ_Time,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
+{!50000|Att_ColumnWidths: [,Annual_Econ_Time,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
 
 Variable Rate_Escalate_byVint
 Title: Rate Escalation by Vintage
@@ -5693,7 +5693,7 @@ Aliases: FormNode Fo1547766195, Alias Al1547767161, FormNode Fo1547767167, FormN
 NodeColor: 65535,65531,1
 ReformDef: [Rate_Attribute_Setti,Rate_Vintage]
 TableCellDefault: Energy_DefaultAttrib
-Att_EditSliceState: [All_Sectors,1,Pre_and_Post_System,2,PV_Climate_Zone,1,Rate_Vintage,2,Rate_Attribute_Setti,1]
+Att_EditSliceState: [All_Sectors,3,Pre_and_Post_System,2,PV_Climate_Zone,1,Rate_Vintage,2,Rate_Attribute_Setti,1]
 
 Module Rate_Attribute_Mappi
 Title: Rate Attribute Mapping
@@ -6003,9 +6003,9 @@ Module Non_Net_Metering_Ene
 Title: Non Net Metering Energy Costs
 Author: CWelch
 Date: Thu, May 26, 2022 4:01 PM
-NodeLocation: 776,104,1
+NodeLocation: 256,104,1
 NodeSize: 64,40
-DiagState: 2,1915,177,1581,545,17,10
+DiagState: 2,44,17,1581,545,17,10
 
 Variable Energy_Cost_by_Tier_
 Title: Energy Cost by Tier,Pd,BuySell
@@ -6025,21 +6025,6 @@ Att_ColorRole: Periods
 Att_SymbolRole: Tiers
 {!40600|Att_StackingIndex: Tiers}
 {!40600|Att_ClusterIndex: Null}
-
-Variable Energy_Price_2
-Title: Energy Price 2
-Units: $/kWh
-Description: The volumnetric energy charges by tier and period.
-Definition: (Replace_X_with_Y(Sum(Data_by_Tier_Period[Rate_Names=Selected_Cust_Rates, All_Data_Types=Energy_DataType, All_Periods=Periods, All_Tiers=Tiers] * Incl_Energy_Attribs, Data_Attribute), Null, 0) {+ sum(Additional_Value[Additional_Value_Sce=Additional_Value_Sc1],Value_Type)} )  {only applicable for NYPA situation with Value Stack assumptions, full net metering independent of load}~
-* OpYr_Inflate_Factor
-NodeLocation: 232,488,1
-NodeSize: 64,40
-WindState: 2,102,82,1080,350
-ValueState: 2,225,39,1185,700,0,MIDM
-GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:6
-ReformVal: [PV_Climate_Zone,Periods]
-NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att_ResultSliceState: [PV_Sectors,1,Pre_and_Post_System,1,Tiers,1,Rate_Vintage,1,PV_Operating_Year,1,Periods,1,PV_Climate_Zone,2]
 
 Alias Al380942499
 Title: Consumption by TOU Period
@@ -6115,30 +6100,30 @@ Original: Format_Rate_Values
 
 Variable Energy_Price_Buy_Se1
 Title: Energy Price Buy Sell
-Definition: local sell_if_nonnull:=Data_by_Tier_Period[Rate_Names=Selected_Cust_Rates, All_Data_Types=Energy_DataType, All_Periods=Periods, All_Tiers=Tiers,Data_Attribute='sell'] * OpYr_Inflate_Factor;~
-local buy:=Sum(Data_by_Tier_Period[Rate_Names=Selected_Cust_Rates, All_Data_Types=Energy_DataType, All_Periods=Periods, All_Tiers=Tiers] * Incl_Energy_Attribs * (Data_Attribute<>'sell'), Data_Attribute);~
+Definition: local sell_if_nonnull:=Data_by_Tier_Period[Rate_Names=Selected_Cust_Rates, All_Data_Types=Energy_DataType, All_Periods=Periods, All_Tiers=Tiers,Data_Attribute=Sell_Attribute_Label] * OpYr_Inflate_Factor;~
+local buy:=Sum(Data_by_Tier_Period[Rate_Names=Selected_Cust_Rates, All_Data_Types=Energy_DataType, All_Periods=Periods, All_Tiers=Tiers] * Incl_Energy_Attribs * (Data_Attribute<>Sell_Attribute_Label), Data_Attribute);~
 local sell:=IF sell_if_nonnull=null THEN buy else sell_if_nonnull;~
-local price:=IF Buy_or_Sell_='Sell' THEN sell ELSE ~
+local price:=IF Buy_or_Sell_=Sell_Price_Label THEN sell ELSE ~
 buy;~
 Replace_X_with_Y(price,null,0) * OpYr_Inflate_Factor
 NodeLocation: 672,288,1
 NodeSize: 64,40
-ValueState: 2,172,112,540,325,0,MIDM
-ReformVal: [Buy_or_Sell_,Rate_Vintage]
+ValueState: 2,415,344,540,325,0,MIDM
+ReformVal: [Rate_Vintage,PV_Sectors]
 NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att_ResultSliceState: [PV_Climate_Zone,1,Periods,1,Tiers,1,Pre_and_Post_System,2,PV_Sectors,1,Rate_Vintage,1,Buy_or_Sell_,2]
+Att_ResultSliceState: [PV_Climate_Zone,1,Periods,1,Tiers,1,Pre_and_Post_System,1,Buy_or_Sell_,2,PV_Sectors,1,Rate_Vintage,2]
 
 Alias Al1960622243
 Title: Data by Tier & Period
 Definition: 1
-NodeLocation: 504,472,1
+NodeLocation: 520,496,1
 NodeSize: 64,40
 NodeColor: 65535,39321,39321
 Original: Data_by_Tier_Period
 
 Variable PrePost_Load_BuySell
 Title: PrePost Load, BuySell
-Definition: IF Buy_or_Sell_='Sell' THEN PrePost_Load_by_OpYr * (PrePost_Load_by_OpYr<0) ELSE~
+Definition: IF Buy_or_Sell_=Sell_Price_Label THEN PrePost_Load_by_OpYr * (PrePost_Load_by_OpYr<0) ELSE~
 PrePost_Load_by_OpYr * (PrePost_Load_by_OpYr>=0)
 NodeLocation: 248,64,1
 NodeSize: 64,40
@@ -6151,7 +6136,7 @@ Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,1,System_Type
 Variable Consumption_by_Tier_
 Title: Consumption by Tier,Pd,BuySell
 Definition: Aggregate(PrePost_Load_BuySell * Load_Monthly_Mults, Periods_by_ProfileHr[Data_Types=Energy_Rate_Label], Profile_Hours, Periods) * Pct_Consump_by_Tier
-NodeLocation: 464,64,1
+NodeLocation: 464,104,1
 NodeSize: 72,40
 ValueState: 2,358,83,1038,687,,MIDM
 GraphSetup: {!50000|Graph_SortBySpread:0}~
@@ -6203,6 +6188,38 @@ Title: Need to apply inflation properly here?
 NodeLocation: 1204,376,-1
 NodeSize: 172,24
 
+Decision Sell_Price_Label
+Title: Sell Price Label
+Definition: Choice(Buy_or_Sell_,2,0)
+NodeLocation: 1088,72,1
+NodeSize: 64,40
+NodeInfo: 1,,,,,,,0,,,,,,0
+Aliases: FormNode Fo1332143267
+
+FormNode Fo1332143267
+Title: Sell Attribute Label
+Definition: 0
+NodeLocation: 1092,120,1
+NodeSize: 52,16
+NodeInfo: 1,,,0,,,,74
+Original: Sell_Price_Label
+
+Decision Buy_Price_Label
+Title: Buy Price Label
+Definition: Choice(Buy_or_Sell_,1,0)
+NodeLocation: 1080,184,1
+NodeSize: 64,40
+NodeInfo: 1,,,,,,,0,,,,,,0
+Aliases: FormNode Fo1016521891
+
+FormNode Fo1016521891
+Title: Buy Price Label
+Definition: 0
+NodeLocation: 1096,232,1
+NodeSize: 48,16
+NodeInfo: 1,,,0
+Original: Buy_Price_Label
+
 Close Non_Net_Metering_Ene
 
 Variable Energy_Cost_Tier_Pr1
@@ -6210,7 +6227,7 @@ Title: Energy Cost by Tier and Period
 Units: $
 Description: The volumetric energy cost by tier and period.
 Definition: Consum_by_Tier_Prd * Energy_Price 
-NodeLocation: 256,104,1
+NodeLocation: 256,200,1
 NodeSize: 64,40
 ValueState: 2,784,449,1050,385,0,MIDM
 GraphSetup: Graph_SymbolKey:1~
@@ -6233,7 +6250,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 400,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,1956,87,1549,650,17,10
+DiagState: 2,137,90,1549,650,17,10
 Aliases: Alias Al1548967140
 AcpStyles: FrameNode: FrameNode_1544920081
 
@@ -6488,14 +6505,14 @@ Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0))
 NodeLocation: 88,184,1
 NodeSize: 64,40
 WindState: 2,841,241,720,490
-DefnState: 2,578,345,1128,291,0,DFNM
+DefnState: 2,683,388,1128,291,0,DFNM
 ValueState: 2,194,195,975,518,0,MIDM
 Aliases: FormNode Fo1574745288
 NodeColor: 65535,65531,1
 ReformDef: [All_Sectors,All_Periods]
 ReformVal: [All_Periods,Rate_Vintage]
 TableCellDefault: Choice(Bill_Components_None,1,0)
-Att_EditSliceState: [Rate_Vintage,1,Pre_and_Post_System,2,All_Periods,1,All_Sectors,29]
+Att_EditSliceState: [Rate_Vintage,1,Pre_and_Post_System,1,All_Periods,1,All_Sectors,29]
 
 Variable Energy_Costs_by_Comp
 Title: Energy Costs by Component
@@ -6531,7 +6548,7 @@ Original: Map_Component_to_Prd
 Variable size1
 Title: size
 Definition: SIZE(Lev_BaseYr_Bill)
-NodeLocation: 720,296,1
+NodeLocation: 704,368,1
 NodeSize: 64,40
 
 Text Te244511267
@@ -6795,7 +6812,7 @@ Description: Investment tax credit expressed as a percentage of the upfront capi
 This input assumes the system owner is a taxable entity. For the current NYPA analysis, we assume third party ownership for government/non-profit entities. 
 Definition: Table(All_Sectors,ITC_Scenario,Static_PV_Time)(~
 0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.22,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,~
+0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.22,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
 0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.22,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
 0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.22,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,~
 0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.22,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
@@ -6816,7 +6833,7 @@ ReformVal: [Static_PV_Time,ITC_Scenario]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_GraphValueRange: 1,,,,,,10
 Att_ResultSliceState: [All_Sectors,3,ITC_Scenario,1,Static_PV_Time,1]
-Att_EditSliceState: [All_Sectors,11,Static_PV_Time,1,ITC_Scenario,1]
+Att_EditSliceState: [All_Sectors,2,Static_PV_Time,1,ITC_Scenario,1]
 {!50000|Att_ColumnWidths: [,Static_PV_Time,\([,,,,,,,63,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
 
 Variable ITC_Fraction
@@ -6879,7 +6896,7 @@ NodeSize: 64,40
 Decision Selected_ITC_Scen
 Title: ITC Scenario
 Description: Select which ITC scenario you want to model. "Baseline" captures currently planned ITC phase-out for solar PV.
-Definition: Choice(ITC_Scenario,1,Not ACP_Version)
+Definition: Choice(ITC_Scenario,0,Not ACP_Version)
 IndexVals: ['item 1']
 NodeLocation: 240,72,1
 NodeSize: 64,40
@@ -9324,7 +9341,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 736,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,243,55,1204,640,17,10
+DiagState: 2,555,50,1204,640,17,10
 BalloonHelp: FrameNode: FrameNode_1544920329
 AcpStyles: FrameNode: FrameNode_1544920329
 
@@ -9333,7 +9350,7 @@ Title: Cost of Electricity Ratio
 Units: post/pre ratio
 Description: Ratio of the cost of electricity (when "simple LCOE" method is chosen, this is simply the ratio of the calculated LCOE and the first-year value of solar).
 Definition: DetermTable(Cost_Ratio_Method)(PPA_to_Value_Ratio,Simple_LCOE_to_Value)
-NodeLocation: 472,272,1
+NodeLocation: 480,304,1
 NodeSize: 64,40
 WindState: 2,766,136,720,350
 ValueState: 2,327,107,1067,657,1,MIDM
@@ -9361,7 +9378,7 @@ Att__TotalsIndex: []
 Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,4,PV_Sectors,23,System_Types,2,Annual_Econ_Time,19]
 
 Text FrameNode_1544920329
-NodeLocation: 1296,360,-20
+NodeLocation: 1304,392,-20
 NodeSize: 360,304
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 NodeColor: 65535,65535,65535
@@ -9372,7 +9389,7 @@ Variable PPA_to_Value_Ratio
 Title: PPA to Value Ratio
 Units: fraction
 Definition: ZIDZ1(Manual_PPA_Rates_by_,Value_of_generation)
-NodeLocation: 304,272,1
+NodeLocation: 312,304,1
 NodeSize: 64,40
 ValueState: 2,623,216,944,639,1,MIDM
 GraphSetup: Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2021.938028216362,2031.3760011196136,0
@@ -9383,9 +9400,9 @@ Module Old_Cost_Ratio_Calcs
 Title: Old Cost Ratio Calcs
 Author: CWelch
 Date: Fri, Mar 25, 2022 11:08 AM
-NodeLocation: 144,144,1
+NodeLocation: 152,176,1
 NodeSize: 64,40
-DiagState: 2,324,25,1301,721,17,10
+DiagState: 2,-2,-16,1301,721,17,10
 
 Variable Annual_Loan_Payments
 Title: Annual Loan Payments
@@ -9652,11 +9669,120 @@ Att_ResultSliceState: [System_Comparison,2,PV_Climate_Zone,1,PV_Sectors,2,Annual
 {!40600|Att_StackingIndex: Cost_Component}
 {!40600|Att_ClusterIndex: Cost_Component}
 
+Alias Al1548956516
+Title: Monthly Simple Payback Time
+Definition: 1
+NodeLocation: 592,104,1
+NodeSize: 64,40
+Original: Mthly_Simple_Payback
+
+Text Te949545507
+Title: Change cost of electricity ratio calc
+NodeLocation: 848,320,-1
+NodeSize: 64,40
+
+Alias Al1047325219
+Title: Levelized Solar Production
+Definition: 1
+NodeLocation: 144,384,1
+NodeSize: 64,40
+Original: NPV_of_Solar_Product
+
+Variable Levelized_cost_of_so
+Title: Levelized cost of solar production
+Units: $/kWh
+Definition: NPV_of_System_Cost / NPV_of_Solar_Product
+NodeLocation: 128,648,1
+NodeSize: 64,40
+ValueState: 2,1934,-2,767,851,,MIDM
+GraphSetup: Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2020.9949763417244,2031.1365003585815,0
+ReformVal: [Annual_Econ_Time,PV_Climate_Zone]
+NumberFormat: 2,F,4,2,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
+Att_ResultSliceState: [Area_Type,1,System_Types,1,PV_Sectors,1,PV_Climate_Zone,3,Annual_Econ_Time,1]
+
+Variable Annual_System_Cost_b
+Title: Annual System Cost by Component
+Definition: [Annual_Loan_Payments,Lev_Interconnect_Fee,- Ann_Interest_Benefit,- Annual_Deprec_Benef,Annual_O_M_Cost,0*Ann_Income_Tax_Incr]
+NodeLocation: 72,280,1
+NodeSize: 64,40
+ValueState: 2,563,126,920,744,1,MIDM
+NodeColor: 65535,1,1
+GraphSetup: {!40600|Att_WaterfallBar Graph_Primary_Valdim:1}~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+Att_Stacked_Lines Graph_Primary_Valdim:1~
+Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2022.0020577907562,2031.275512099266,0~
+Att_GraphValueRange Annual_System_Cost_b:1,,1,,,,,0,110K,0
+ReformVal: [Self,Debt_Equity_Rates]
+Att_ResultSliceState: [PV_Sectors,1,Annual_Econ_Time,11,PV_Climate_Zone,2,System_Types,1,Area_Type,1,Annual_Econ_Time,11,Self,1]
+Att_ColorRole: Null
+{!40600|Att_StackingIndex: Annual_System_Cost_b}
+{!40600|Att_ClusterIndex: Null}
+
+Variable NPV_of_System_Cost
+Title: NPV of System Cost
+Definition: PV(Nominal_Equity_Rate, Economic_Lifetime,-Annual_System_Cost)
+NodeLocation: 72,496,1
+NodeSize: 64,40
+
+Variable Va22
+NodeLocation: 456,152,1
+NodeSize: 64,40
+
+Variable NPV_of_Bill_Savings
+Title: NPV of Bill Savings
+Definition: PV(Nominal_Equity_Rate, Economic_Lifetime,-Ann_Lev_Bill_Savings)
+NodeLocation: 392,832,1
+NodeSize: 64,40
+
+Variable Levelized_Value_of_S
+Title: Levelized Value of Solar Production
+Units: $/kWh
+Definition: ZIDZ1(NPV_of_Bill_Savings, NPV_of_Solar_Product)
+NodeLocation: 208,840,1
+NodeSize: 64,40
+ValueState: 2,566,168,659,631,,MIDM
+GraphSetup: Att_GraphValueRange Levelized_Value_of_S:1,,0,,,,,0,0.12,0~
+Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2021.8430269956589,2032,0
+ReformVal: [Annual_Econ_Time,System_Types]
+NumberFormat: 2,F,4,3,0,0,4,1,$,0,"ABBREV",0,,,0,0,15,
+Att_ResultSliceState: [PV_Sectors,2,Area_Type,1,PV_Climate_Zone,3,System_Types,2,Annual_Econ_Time,1]
+
+Variable Value_vs_Cost
+Title: Value vs Cost
+Units: $/kWh
+Definition: [Levelized_cost_of_so,Levelized_Value_of_S]
+NodeLocation: 120,168,1
+NodeSize: 64,40
+ValueState: 2,516,43,892,743,1,MIDM
+GraphSetup: Att_GraphValueRange Value_vs_Cost:1,,1,,,,8,0,0.35000000000000003,0~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+Att_StackedBar Graph_Primary_Valdim:0~
+{!50007|Graph_BarOutline:0}~
+Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2020.0126904249191,2031.717280626297,0
+ReformVal: [Annual_Econ_Time,Equity_Test]
+NumberFormat: 2,F,4,2,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Equity_Test,Self]
+Att_ResultSliceState: [System_Types,1,PV_Sectors,1,PV_Climate_Zone,1,Area_Type,1,Self,-1,Equity_Test,-1,Annual_Econ_Time,11]
+{!40300|Att_SlicerPopupSize: 227,64}
+
+Variable Cost_to_Value_Ratio
+Title: Cost to Value Ratio
+Definition: ZIDZ1(Levelized_cost_of_so,Levelized_Value_of_S)
+NodeLocation: 304,720,1
+NodeSize: 64,40
+ValueState: 2,2786,188,902,645,,MIDM
+GraphSetup: Att_GraphValueRange Cost_to_Value_Ratio:1,,1,,,,,0,2.4693472385406494,0~
+Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2020.9468935728073,2032,0
+ReformVal: [Annual_Econ_Time,PV_Climate_Zone]
+Att_ResultSliceState: [PV_Sectors,1,System_Types,1,Area_Type,1,PV_Climate_Zone,1,Annual_Econ_Time,1]
+
+Close Old_Cost_Ratio_Calcs
+
 Module Monthly_Payback_Logi
 Title: Monthly Payback Logic
 Author: JamesMilford
 Date: Wed, Feb 6, 2019 6:05 PM
-NodeLocation: 688,208,1
+NodeLocation: 152,72,1
 NodeSize: 64,40
 DiagState: 2,71,112,1791,484,17,10
 
@@ -9848,13 +9974,6 @@ Show_description:20
 
 Close Monthly_Payback_Logi
 
-Alias Al1548956516
-Title: Monthly Simple Payback Time
-Definition: 1
-NodeLocation: 592,104,1
-NodeSize: 64,40
-Original: Mthly_Simple_Payback
-
 Variable Simple_Payback_Time1
 Title: Simple Payback Time
 Units: years
@@ -9865,7 +9984,7 @@ THEN 0~
 ELSE IF (numerator > 0) AND (FirstYr_BillSav_Time < 0)~
 THEN INF~
 ELSE Divide(Tot_Price_Aft_Incent - Monthly_Fees, FirstYr_BillSav_Time, False)
-NodeLocation: 848,208,1
+NodeLocation: 312,72,1
 NodeSize: 64,40
 ValueState: 2,401,72,1331,736,1,MIDM
 GraphSetup: Att_GraphIndexRange Time:1,,0,,,,,43107.55285656452,46752,0~
@@ -9875,113 +9994,11 @@ ReformVal: [Time,PV_Climate_Zone]
 Att__TotalsIndex: []
 Att_ResultSliceState: [Area_Type,1,PV_Sectors,1,System_Types,1,PV_Climate_Zone,3,Time,1]
 
-Text Te949545507
-Title: Change cost of electricity ratio calc
-NodeLocation: 848,320,-1
-NodeSize: 64,40
-
-Alias Al1047325219
-Title: Levelized Solar Production
-Definition: 1
-NodeLocation: 144,384,1
-NodeSize: 64,40
-Original: NPV_of_Solar_Product
-
-Variable Levelized_cost_of_so
-Title: Levelized cost of solar production
-Units: $/kWh
-Definition: NPV_of_System_Cost / NPV_of_Solar_Product
-NodeLocation: 128,648,1
-NodeSize: 64,40
-ValueState: 2,1934,-2,767,851,,MIDM
-GraphSetup: Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2020.9949763417244,2031.1365003585815,0
-ReformVal: [Annual_Econ_Time,PV_Climate_Zone]
-NumberFormat: 2,F,4,2,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
-Att_ResultSliceState: [Area_Type,1,System_Types,1,PV_Sectors,1,PV_Climate_Zone,3,Annual_Econ_Time,1]
-
-Variable Annual_System_Cost_b
-Title: Annual System Cost by Component
-Definition: [Annual_Loan_Payments,Lev_Interconnect_Fee,- Ann_Interest_Benefit,- Annual_Deprec_Benef,Annual_O_M_Cost,0*Ann_Income_Tax_Incr]
-NodeLocation: 72,280,1
-NodeSize: 64,40
-ValueState: 2,563,126,920,744,1,MIDM
-NodeColor: 65535,1,1
-GraphSetup: {!40600|Att_WaterfallBar Graph_Primary_Valdim:1}~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_Stacked_Lines Graph_Primary_Valdim:1~
-Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2022.0020577907562,2031.275512099266,0~
-Att_GraphValueRange Annual_System_Cost_b:1,,1,,,,,0,110K,0
-ReformVal: [Self,Debt_Equity_Rates]
-Att_ResultSliceState: [PV_Sectors,1,Annual_Econ_Time,11,PV_Climate_Zone,2,System_Types,1,Area_Type,1,Annual_Econ_Time,11,Self,1]
-Att_ColorRole: Null
-{!40600|Att_StackingIndex: Annual_System_Cost_b}
-{!40600|Att_ClusterIndex: Null}
-
-Variable NPV_of_System_Cost
-Title: NPV of System Cost
-Definition: PV(Nominal_Equity_Rate, Economic_Lifetime,-Annual_System_Cost)
-NodeLocation: 72,496,1
-NodeSize: 64,40
-
-Variable Va22
-NodeLocation: 456,152,1
-NodeSize: 64,40
-
-Variable NPV_of_Bill_Savings
-Title: NPV of Bill Savings
-Definition: PV(Nominal_Equity_Rate, Economic_Lifetime,-Ann_Lev_Bill_Savings)
-NodeLocation: 392,832,1
-NodeSize: 64,40
-
-Variable Levelized_Value_of_S
-Title: Levelized Value of Solar Production
-Units: $/kWh
-Definition: ZIDZ1(NPV_of_Bill_Savings, NPV_of_Solar_Product)
-NodeLocation: 208,840,1
-NodeSize: 64,40
-ValueState: 2,566,168,659,631,,MIDM
-GraphSetup: Att_GraphValueRange Levelized_Value_of_S:1,,0,,,,,0,0.12,0~
-Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2021.8430269956589,2032,0
-ReformVal: [Annual_Econ_Time,System_Types]
-NumberFormat: 2,F,4,3,0,0,4,1,$,0,"ABBREV",0,,,0,0,15,
-Att_ResultSliceState: [PV_Sectors,2,Area_Type,1,PV_Climate_Zone,3,System_Types,2,Annual_Econ_Time,1]
-
-Variable Value_vs_Cost
-Title: Value vs Cost
-Units: $/kWh
-Definition: [Levelized_cost_of_so,Levelized_Value_of_S]
-NodeLocation: 120,168,1
-NodeSize: 64,40
-ValueState: 2,516,43,892,743,1,MIDM
-GraphSetup: Att_GraphValueRange Value_vs_Cost:1,,1,,,,8,0,0.35000000000000003,0~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_StackedBar Graph_Primary_Valdim:0~
-{!50007|Graph_BarOutline:0}~
-Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2020.0126904249191,2031.717280626297,0
-ReformVal: [Annual_Econ_Time,Equity_Test]
-NumberFormat: 2,F,4,2,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Equity_Test,Self]
-Att_ResultSliceState: [System_Types,1,PV_Sectors,1,PV_Climate_Zone,1,Area_Type,1,Self,-1,Equity_Test,-1,Annual_Econ_Time,11]
-{!40300|Att_SlicerPopupSize: 227,64}
-
-Variable Cost_to_Value_Ratio
-Title: Cost to Value Ratio
-Definition: ZIDZ1(Levelized_cost_of_so,Levelized_Value_of_S)
-NodeLocation: 304,720,1
-NodeSize: 64,40
-ValueState: 2,2786,188,902,645,,MIDM
-GraphSetup: Att_GraphValueRange Cost_to_Value_Ratio:1,,1,,,,,0,2.4693472385406494,0~
-Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2020.9468935728073,2032,0
-ReformVal: [Annual_Econ_Time,PV_Climate_Zone]
-Att_ResultSliceState: [PV_Sectors,1,System_Types,1,Area_Type,1,PV_Climate_Zone,1,Annual_Econ_Time,1]
-
-Close Old_Cost_Ratio_Calcs
-
 Module Simple_LCOE_Calculat
 Title: Simple LCOE Calculator
 Author: CWelch
 Date: Fri, Mar 25, 2022 11:08 AM
-NodeLocation: 144,400,1
+NodeLocation: 152,432,1
 NodeSize: 64,40
 DiagState: 2,96,44,1195,595,17,10
 
@@ -10167,7 +10184,7 @@ Description: The ratio of post-system to pre-system total cost of electricity.~
 ~
 DOESN'T WORK ANYMORE WITH CHANGES TO SYSTEM SIZING CALCS. PLUS ECONOMICS AREN'T RIGHT.
 Definition: Divide(Annual_Cost_of_Elect[Pre_and_Post_System=Post_System_Label], Annual_Cost_of_Elect[Pre_and_Post_System=Pre_System_Label])
-NodeLocation: 304,144,1
+NodeLocation: 312,176,1
 NodeSize: 64,40
 ValueState: 2,264,190,1067,610,,MIDM
 NodeColor: 65535,1,1
@@ -10178,7 +10195,7 @@ Att_ResultSliceState: [PV_Climate_Zone,2,System_Types,1,Area_Type,1,PV_Sectors,1
 Index Cost_Ratio_Method
 Title: Cost Ratio Method
 Definition: MultiChoice(Self,2,returnList:0)
-NodeLocation: 712,64,1
+NodeLocation: 720,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo2025340451
 NodeColor: 65535,65531,1
@@ -10187,7 +10204,7 @@ NodeColor: 65535,65531,1
 FormNode Fo2025340451
 Title: Cost to Value Ratio Method
 Definition: 0
-NodeLocation: 644,120,1
+NodeLocation: 652,152,1
 NodeSize: 236,16
 NodeInfo: 1,,,,,,,226,,,,,,0
 Original: Cost_Ratio_Method
@@ -10195,7 +10212,7 @@ Original: Cost_Ratio_Method
 Variable Simple_LCOE_to_Value
 Title: Simple LCOE to Value Ratio
 Definition: ZIDZ1(Simple_LCOE_of_PV,Value_of_generation)
-NodeLocation: 304,400,1
+NodeLocation: 312,432,1
 NodeSize: 64,40
 ValueState: 2,266,34,999,759,,MIDM
 GraphSetup: Att_GraphIndexRange Annual_Econ_Time:1,,0,,,,10,2021.1102975606918,2032,0~
@@ -10207,7 +10224,7 @@ Module Manually_Input_PPA
 Title: Manually Input PPA
 Author: CWelch
 Date: Fri, Mar 25, 2022 1:32 PM
-NodeLocation: 144,272,1
+NodeLocation: 152,304,1
 NodeSize: 64,40
 DiagState: 2,588,24,944,604,17,10
 
@@ -10243,28 +10260,7 @@ Definition: Table(Annual_Econ_Time,All_System_Types)(~
 0.07,0,0.09,0,0,0,0,~
 0.07,0,0.09,0,0,0,0,~
 0.07,0,0.09,0,0,0,0,~
-0.07,0,0.09,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0)
+0.07,0,0.09,0,0,0,0)
 NodeLocation: 112,664,1
 NodeSize: 64,40
 DefnState: 2,334,471,1057,273,0,DFNM
@@ -10333,7 +10329,7 @@ Title: Simple LCOE vs Value of Solar
 Units: $/kWh
 Description: Comparison of the value of solar per the NY VDER calculator (inclusive of manually input community adders, environmental value, or LSRV) and a "simple" LCOE for solar (accounting for installed costs, tax credits (assume third party owned), and incentives.
 Definition: [Simple_LCOE_of_PV1,Value_of_generation1]
-NodeLocation: 304,496,1
+NodeLocation: 312,528,1
 NodeSize: 64,40
 WindState: 2,953,224,720,557
 ValueState: 2,28,43,876,713,0,MIDM
@@ -10354,7 +10350,7 @@ Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,1,PV_Sectors,1,Area_Type,1
 
 Text Te1891843619
 Title: Current modified approach for NYPA will not work for stand-alone storage, due to LCOE calculation methodology
-NodeLocation: 884,472,-1
+NodeLocation: 892,504,-1
 NodeSize: 124,80
 
 Variable Cost_of_Elect_Ratio2
@@ -10362,7 +10358,7 @@ Title: Cost of Electricity Ratio
 Units: post/pre ratio
 Description: Ratio of the cost of electricity (for a solar PV system or paired solar + storage system) to the value of delivered electricity. A ratio less than 1 means that the levelized cost of an installed system is expected to be lower than the first-year value of solar.
 Definition: Cost_of_Elect_Ratio[Annual_Econ_Time=Cost_Forecast_Year,@PV_Sectors=1] 
-NodeLocation: 648,272,1
+NodeLocation: 656,304,1
 NodeSize: 64,40
 WindState: 2,413,262,1025,450
 ValueState: 2,475,28,741,629,1,MIDM
@@ -10833,7 +10829,7 @@ ReformVal: [Pre_and_Post_System,Rate_Names_and_Start]
 Att_ResultSliceState: [PV_Sectors,1,Rate_Names_and_Start,1,PV_Climate_Zone,1]
 
 Index Rate_Names_and_Start
-Att_PrevIndexValue: ['GSD - Large Commercial Net Metering, Standard | 2002-01','GSD - Large Commercial Net Metering, TOU | 2002-01','GSD - Large Commercial NonNet Metering, Standard | 2018-03','GSD - Large Commercial NonNet Metering, TOU | 2018-03']
+Att_PrevIndexValue: ['GSD - Large Commercial Net Metering, Standard | 2018-02','GSD - Large Commercial Net Metering, TOU | 2018-02','GSD - Large Commercial NonNet Metering, Standard | 2018-03','GSD - Large Commercial NonNet Metering, TOU | 2018-03']
 Title: Rate Names and Start Dates
 Definition: VAR names:=MdArrayToTable(Selected_Cust_Rates, omitNull: True);~
 VAR lastCol:=Size(names.Col);~
@@ -11024,10 +11020,10 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Num_Incentive_Steps
 
 Index PV_Sectors
-Att_PrevIndexValue: ['Residential']
+Att_PrevIndexValue: ['Residential','NonResidential']
 Title: PV Sectors
 Description: The sectors selected for the PV analysis.
-Definition: MultiChoice(All_PV_Sectors,1,returnList:1)
+Definition: MultiChoice(All_PV_Sectors,returnList:1)
 NodeLocation: 1536,344,1
 NodeSize: 64,40
 WindState: 2,319,12,1255,632
@@ -11036,7 +11032,7 @@ NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 Att_GraphIndexRange: 1,,0,,,,,1,11,1
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 1468,353}
+{!40300|Att_SlicerPopupSize: 1483,353}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
@@ -11109,7 +11105,7 @@ DisplayOutputs: Variable Clipboard_NewConstr_
 {!40300|Att_SlicerPopupSize: 267,42}
 
 Index Annual_Econ_Time
-Att_PrevIndexValue: [2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,2040,2041,2042,2043,2044,2045,2046,2047,2048,2049,2050,2051,2052]
+Att_PrevIndexValue: [2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031]
 Title: Annual Economic Time
 Description: Starts one year prior to the minimum of PV or BESS simulation start years, so that annual economic calculations can be treated as middle-of-year values.
 Definition: (MIN([DatePart(BESS_Calibrat_Start, 'Y'), DatePart(PV_Calibration_Start, 'Y')])-1)..MAX([DatePart(BESS_Sim_End_Year, 'Y'), DatePart(PV_Sim_End_Year, 'Y')])
@@ -12010,7 +12006,7 @@ Definition: Subset(Storage_Systems <> Storage_Added_Label)
 NodeLocation: 1104,936,1
 NodeSize: 64,40
 WindState: 2,40,-1,910,825
-{!40300|Att_SlicerPopupSize: 478,110}
+{!40300|Att_SlicerPopupSize: 488,110}
 
 Variable System_with_PV
 Title: System with PV

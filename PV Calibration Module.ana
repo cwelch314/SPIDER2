@@ -1921,20 +1921,18 @@ Array(Act_vs_Sim, [actual ,Sim_Cumulative_PV])
 NodeLocation: 280,272,1
 NodeSize: 64,40
 WindState: 2,311,101,1049,435
-ValueState: 2,366,0,1298,776,1,MIDM
+ValueState: 2,324,49,1298,776,1,MIDM
 Aliases: FormNode Fo1573057129, FormNode Fo1535066206
-GraphSetup: Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,40095.56280273199,43436.42601156235,0~
+GraphSetup: Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,43018.43919342756,47919.765414237976,0~
 Att_ContLineStyle Graph_Primary_Valdim:5~
 Grid:0~
-Att_GraphValueRange Sim_vs_Act_PV_System:1,,1,,,,,0,22.052429169416428,0|1:1,,0,,,,,0,400,0|2:1,,0,,,,,0,400,0~
+Att_GraphValueRange Sim_vs_Act_PV_System:1,,1,,,,,0,72.0849372446537,0|1:1,,0,,,,,0,400,0|2:1,,0,,,,,0,400,0~
 Att_CatLineStyle Graph_Primary_Valdim:5~
 Att_GraphIndexRange PV_Spatial_ID:1,1
-ReformVal: [Time_Solar_PV,Act_vs_Sim]
+ReformVal: [Time_Solar_PV,ITC_Scenario]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [Price_Coefficient_Il,Tech_Coefficient_Ill]
-Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,1,Area_Type,1,Act_vs_Sim,2,Time_Solar_PV,1]
-Att_ColorRole: Act_vs_Sim
-Att_SymbolRole: Null
+Att__TotalsIndex: [Price_Coefficient_Il,Tech_Coefficient_Ill,Act_vs_Sim,PV_Sectors]
+Att_ResultSliceState: [PV_Spatial_ID,1,Area_Type,1,Act_vs_Sim,-1,ITC_Scenario,2,PV_Sectors,0,Time_Solar_PV,1]
 {!40200|Att_GraphSetupSlices: [3,1,Act_vs_Sim,2,2,Act_vs_Sim,1]}
 
 Variable Sim_vs_Act_PV_Rate
@@ -1953,15 +1951,15 @@ Array(Act_vs_Sim, [actual ,Sim_PV_Install_Rate])
 NodeLocation: 280,512,1
 NodeSize: 64,40
 WindState: 2,49,333,1170,556
-ValueState: 2,532,-2,1083,722,1,MIDM
+ValueState: 2,246,29,1083,722,1,MIDM
 Aliases: FormNode Fo1573057130, FormNode Fo1535066207
-GraphSetup: Grid:0~
+GraphSetup: Att_GraphIndexRange Time_Solar_PV:1,,0,,,,,41313.336607694626,43282.535479307175,0~
 SymbolSize:12~
-Att_GraphIndexRange Time_Solar_PV:1,,0,,,,,38882.80412340164,44219.85652923584,0
+Grid:0
 ReformVal: [Time_Solar_PV,Act_vs_Sim]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [PV_Spatial_ID]
-Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,0,Act_vs_Sim,2,Time_Solar_PV,1]
+Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,0,Area_Type,1,Act_vs_Sim,2,Time_Solar_PV,1]
 
 Variable Opt_Status_PV
 Title: Opt Status PV
@@ -3025,7 +3023,7 @@ Definition: Table(All_Spatial_ID,All_Sectors,All_PV_Dec_Handles)(~
 0,0,0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,0,0,~
 0.014398964236848763,0.314402522661461,0,-0.24016224113634263,0,-5,7,0,0,~
-0.08351606408290392,0.6,0,-0.3267443233852643,0,-5,7,0,0,~
+0.08600169518774138,0.6,0,-0.30257481835993255,0,-5,7,0,0,~
 0.01,0.5,0,-0.2,0,-5,7,0,0)
 NodeLocation: 296,72,1
 NodeSize: 64,40

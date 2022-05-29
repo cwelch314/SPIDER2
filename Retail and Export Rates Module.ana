@@ -1501,7 +1501,7 @@ Author: JamesMilford
 Date: Wed, Oct 31, 2018 10:11 AM
 NodeLocation: 824,1040,1
 NodeSize: 64,40
-DiagState: 2,267,46,1135,601,17,10
+DiagState: 2,267,46,1135,715,17,10
 NodeColor: 57311,57311,57311
 
 Index Rate_Names
@@ -1736,6 +1736,21 @@ Title: Periods Copy
 Definition: CopyIndex(Periods)
 NodeLocation: 976,360,1
 NodeSize: 64,40
+
+Decision Sell_Attribute_Label
+Title: Sell Attribute Label
+Definition: Choice(Data_Attribute,4,0)
+NodeLocation: 400,504,1
+NodeSize: 64,40
+Aliases: FormNode Clipboard_Fo15343549, FormNode Fo683074723
+
+FormNode Fo683074723
+Title: Period Label
+Definition: 0
+NodeLocation: 400,552,1
+NodeSize: 64,16
+NodeInfo: 1,0,0,0,0,0,0,86,0,,0,,,
+Original: Sell_Attribute_Label
 
 Close Rates_Auxiliary_Vari
 

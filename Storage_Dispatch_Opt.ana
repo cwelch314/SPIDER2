@@ -22,7 +22,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 416,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,0,27,1780,780,17,10
+DiagState: 2,0,33,1780,715,17,10
 
 Decision Stored_Grid_Elect1
 Title: Stored Grid Electricity
@@ -186,9 +186,9 @@ Definition: Dischg_Export_Loss2 + Applied_PV_Exported2
 NodeLocation: 1016,648,1
 NodeSize: 64,40
 WindState: 2,17,334,720,350
-ValueState: 2,146,53,1016,671,,MIDM
+ValueState: 2,78,134,1016,671,,MIDM
 ReformVal: [Opt_Hours,Null]
-Att_ResultSliceState: [Opt_Sectors,2,Rate_Vintage,2,PV_Climate_Zone,1,Opt_Storage_Systems,1,Seq_Opt_Number,1,Month,8,Opt_Hours,1]
+Att_ResultSliceState: [Opt_Sectors,2,Rate_Vintage,2,PV_Climate_Zone,1,Opt_Storage_Systems,1,Seq_Opt_Number,1,Month,8,Area_Type,1,Opt_Hours,1]
 Att_ColorRole: Null
 
 Variable Purchased_Electric2
@@ -1878,7 +1878,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 264,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,74,27,1649,727,17,10
+DiagState: 2,2017,18,1649,674,17,10
 
 Variable Lev_NCDmdPrice_Opt
 Title: Lev NC Dmd Price for Opt
@@ -1919,7 +1919,7 @@ NodeSize: 64,40
 WindState: 2,102,82,1602,709
 ValueState: 2,52,10,1721,843,0,MIDM
 ReformVal: [Opt_Hours,Null]
-Att_ResultSliceState: [PV_Climate_Zone,1,Seq_Opt_Number,1,Opt_Storage_Systems,1,Rate_Vintage,2,Opt_Sectors,2,Month,8,Opt_Hours,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,Seq_Opt_Number,1,Opt_Storage_Systems,1,Rate_Vintage,2,Opt_Sectors,2,Month,8,Area_Type,1,Buy_or_Sell_,2,Opt_Hours,1]
 Att_ColorRole: Null
 
 Variable StorageSyst_Net_Loa2
@@ -1968,7 +1968,7 @@ Units: $/month
 Description: The optimized total cost of purchased energy (excluding demand charges).~
 ~
 This is scaled to be $/month for consistency with demand charges, eg, [$/window] * [windows/month] = [$/month].
-Definition: Sum(Purchased_Electric2 * EnergyPrice_by_OptHr, Opt_Hours) * Mthly_Scaling_SeqOpt[Month=Opt_Month2, Seq_Opt_Number=Opt_Seq_Number]
+Definition: Sum(Purchased_Electric2 * EnergyPrice_by_OptHr[Buy_or_Sell_=Buy_Price_Label], Opt_Hours) * Mthly_Scaling_SeqOpt[Month=Opt_Month2, Seq_Opt_Number=Opt_Seq_Number]
 NodeLocation: 912,160,1
 NodeSize: 64,40
 WindState: 2,218,222,1194,695
@@ -1982,7 +1982,7 @@ Units: $/month
 Description: The optimized total value of exporting energy to the grid. ~
 ~
 This is scaled to be $/month for consistency with demand charges, eg, [$/window] * [windows/month] = [$/month].
-Definition: Sum(Total_Exported_Elec2 * EnergyPrice_by_OptHr, Opt_Hours) * Mthly_Scaling_SeqOpt[Month=Opt_Month2, Seq_Opt_Number=Opt_Seq_Number]
+Definition: Sum(Total_Exported_Elec2 * EnergyPrice_by_OptHr[Buy_or_Sell_=Sell_Price_Label], Opt_Hours) * Mthly_Scaling_SeqOpt[Month=Opt_Month2, Seq_Opt_Number=Opt_Seq_Number]
 NodeLocation: 912,64,1
 NodeSize: 64,40
 WindState: 2,3,37,1138,560
@@ -1997,7 +1997,7 @@ Description: The expected cost of electricity and demand charges less any export
 ~
 The objective for each atomic optimization has been scaled to $/month, so you cannot sum across sequential optimization numbers.
 Definition: Cost_of_Purch_Elect2 - Value_of_Export_Ele2 + Cost_of_On_Peak_Dmd2 + Cost_of_NonCoinc_Dm2 + Incurred_Variabilit1 + Incurr_SimultPenalty + Incur_Export_Penalty
-NodeLocation: 1136,264,1
+NodeLocation: 1152,200,1
 NodeSize: 64,40
 WindState: 2,604,166,1169,658
 ValueState: 2,510,52,1105,737,0,MIDM
@@ -2172,10 +2172,10 @@ Title: Levelized Utility Bill
 Units: $
 Description: The expected cost of electricity and demand charges less any export credits. This is levelized  on a per-period basis (eg, annually) over the system lifetime.
 Definition: VAR monthsPerWindow:=Divide(1, MthlyScale_ValidOpt, True);   {Need to be able to convert $/month back to $/window, so we can sum energy charges/credits across sequential optimization numbers}~
-VAR purchElect:=Sum((Purchased_Electric2 * EnergyPrice_by_OptHr)[Opt_Hours=Valid_Opt_Hours] * MthlyScale_ValidOpt, Valid_Opt_Hours, Seq_Opt_Number);~
-VAR exportElect:=Sum((Total_Exported_Elec2 * EnergyPrice_by_OptHr)[Opt_Hours=Valid_Opt_Hours] * MthlyScale_ValidOpt, Valid_Opt_Hours, Seq_Opt_Number);~
+VAR purchElect:=Sum((Purchased_Electric2 * EnergyPrice_by_OptHr[Buy_or_Sell_=Buy_Price_Label])[Opt_Hours=Valid_Opt_Hours] * MthlyScale_ValidOpt, Valid_Opt_Hours, Seq_Opt_Number);~
+VAR exportElect:=Sum((Total_Exported_Elec2 * EnergyPrice_by_OptHr[Buy_or_Sell_=Sell_Price_Label])[Opt_Hours=Valid_Opt_Hours] * MthlyScale_ValidOpt, Valid_Opt_Hours, Seq_Opt_Number);~
 purchElect - ExportElect + Max(Cost_of_On_Peak_Dmd2, Seq_Opt_Number) + Max(Cost_of_NonCoinc_Dm2, Seq_Opt_Number);
-NodeLocation: 1136,384,1
+NodeLocation: 1152,360,1
 NodeSize: 64,40
 ValueState: 2,382,233,1266,481,0,MIDM
 Aliases: FormNode Fo1558047121, FormNode Fo1571775093
@@ -2196,24 +2196,26 @@ NodeLocation: 448,504,1
 NodeSize: 64,40
 Original: Lev_Solar_Profile
 
-Variable Wtd_Energy_Price_Prd
-Title: Wtd Energy Price by Period
+Variable Wtd_Energy_Buy_Price
+Title: Wtd Energy Buy Price by Period
 Units: $/kWh
 Description: The weighted energy price by period. This is weighted by the amount of energy falling in each tier for the system prior to adding storage. Implicitly, this assumes that storage will not shift the monthly energy consumption enough to change the percentage of monthly consumption falling in each tier.
-Definition: Sum(Pct_Consump_by_Tier[System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems], Pre_and_Post_System=Map_Tier_Wts_PrePos2[All_Storage_Systems=Opt_Storage_Systems]] * Energy_Price[Pre_and_Post_System=Map_Tier_Wts_PrePos2[All_Storage_Systems=Opt_Storage_Systems]], Tiers)
+Definition: Sum(Pct_Consump_by_Tier[System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems], Pre_and_Post_System=Map_Tier_Wts_PrePos2[All_Storage_Systems=Opt_Storage_Systems]] * {OLD: Energy_Price}~
+Energy_Price_Buy_Se1[Pre_and_Post_System=Map_Tier_Wts_PrePos2[All_Storage_Systems=Opt_Storage_Systems]], Tiers)
 NodeLocation: 104,160,1
 NodeSize: 64,40
 WindState: 2,7,14,1502,537
-ValueState: 2,482,42,1183,791,0,MIDM
+ValueState: 2,480,263,1183,453,0,MIDM
 ReformVal: [Month,PV_Sectors]
-Att_ResultSliceState: [PV_Climate_Zone,2,Periods,1,PV_Operating_Year,1,Rate_Vintage,1,Opt_Storage_Systems,2,Area_Type,1,PV_Sectors,2,Month,5]
+NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att_ResultSliceState: [PV_Climate_Zone,1,Periods,1,Rate_Vintage,2,Opt_Storage_Systems,1,Area_Type,1,Buy_or_Sell_,1,PV_Sectors,2,Month,5]
 
 Variable Lev_Energy_Price_Prd
 Title: Lev Energy Price by Period
 Units: lev $/kWh
 Description: The energy prices by period levelized over the system lifetime.
-Definition: PMT(Nominal_Equity_Rate, Economic_Lifetime, -NPV(Nominal_Equity_Rate, Wtd_Energy_Price_Prd, PV_Operating_Year))
-NodeLocation: 448,160,1
+Definition: PMT(Nominal_Equity_Rate, Economic_Lifetime, -NPV(Nominal_Equity_Rate, Wtd_Energy_Buy_Price, PV_Operating_Year))
+NodeLocation: 384,208,1
 NodeSize: 64,40
 WindState: 2,102,82,1169,464
 ValueState: 2,64,51,1721,843,0,MIDM
@@ -2263,7 +2265,7 @@ Title: Wtd On-Peak Dmd Price by Period
 Units: $/kW
 Description: The on-peak demand prices by period weighted across tiers based on the amount of load falling in each tier. The load should be net of solar if the storage system is combined with solar.
 Definition: Sum(Pct_Demand_by_Tier[Demand_Data_Types=Demand_Rate_Label, System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems], Pre_and_Post_System=Map_Tier_Wts_PrePos2[All_Storage_Systems=Opt_Storage_Systems]] * On_Peak_Demand_Price[Pre_and_Post_System=Map_Tier_Wts_PrePos2[All_Storage_Systems=Opt_Storage_Systems]], Tiers);
-NodeLocation: 104,256,1
+NodeLocation: 176,256,1
 NodeSize: 64,40
 WindState: 2,20,192,1710,418
 ValueState: 2,28,11,896,749,0,MIDM
@@ -2602,19 +2604,22 @@ Original: Use_Levelized_Inputs
 Variable Arbitrage_Opportun
 Title: Arbitrage Opportunity
 Units: $/kWh
-Description: The value of the arbitrage opportunity between different time-of-use periods applicable to a given month and rate. This is the value (before roundtrip efficiency losses) of charging during "Periods Copy" and discharging during "Periods". Positive values indicate a benefit, while negative values indicate a cost.
+Description: The value of the arbitrage opportunity between different time-of-use periods applicable to a given month and rate. This is the value (before roundtrip efficiency losses) of charging during "Periods Copy" and discharging during "Periods". Positive values indicate a benefit, while negative values indicate a cost.~
+~
+I don't think this is quite right now that buy/sell prices have been disaggregated. But it may not have an impact since this is only used to assess penalties to avoid simultaneous charge/discharge.
 Definition: VAR valid_period_copy:=Valid_Periods[Periods=Periods_Copy];~
 VAR energy_price:=Applied_Energy_Price[PV_Sectors=Opt_Sector2, PV_Climate_Zone=Opt_Climate_Zone2, Rate_Vintage=Opt_Rate_Vintage2, Month=Opt_Month2, Opt_Storage_Systems=Opt_System2];~
 ~
 IF (Periods_Copy = Periods) OR (Valid_Periods = Null)~
 THEN Null~
-ELSE energy_price - energy_price[Periods=valid_period_copy]
+ELSE energy_price[Buy_or_Sell_=Sell_Price_Label] - energy_price[Periods=valid_period_copy,Buy_or_Sell_=Buy_price_label]
 NodeLocation: 448,64,1
 NodeSize: 64,40
 WindState: 2,9,37,720,350
-ValueState: 2,659,42,1163,760,0,MIDM
+ValueState: 2,464,205,1163,517,0,MIDM
+NodeColor: 65535,1,1
 ReformVal: [Periods,Periods_Copy]
-Att_ResultSliceState: [Area_Type,1,Periods_Copy,2,Periods,1]
+Att_ResultSliceState: [Area_Type,1,Opt_Sectors,2,Rate_Vintage,2,PV_Climate_Zone,1,Opt_Storage_Systems,1,Month,8,Seq_Opt_Number,1,Periods_Copy,2,Periods,1]
 
 Variable Valid_Periods
 Title: Valid Periods
@@ -2664,21 +2669,23 @@ Units: $/kWh
 Description: The energy price applied to the optimization, which is either levelized or non-levelized.
 Definition: IF Use_Levelized_Inputs~
 THEN Lev_Energy_Price_Prd~
-ELSE Wtd_Energy_Price_Prd[@PV_Operating_Year=1]
+ELSE Wtd_Energy_Buy_Price[@PV_Operating_Year=1]
 NodeLocation: 600,160,1
 NodeSize: 64,40
 WindState: 2,21,199,720,350
-ValueState: 2,246,135,1394,694,0,MIDM
-Att_ResultSliceState: [Rate_Vintage,1,PV_Climate_Zone,2,Opt_Storage_Systems,1,Area_Type,1,Month,3,Periods,1,PV_Sectors,1]
-
-Variable Va2
-Definition: PV_Sectors=Opt_Sector2
-NodeLocation: 1128,488,1
-NodeSize: 64,40
+ValueState: 2,2060,134,1394,694,0,MIDM
+Att_ResultSliceState: [Rate_Vintage,2,PV_Climate_Zone,1,Opt_Storage_Systems,1,Periods,1,PV_Sectors,1,Buy_or_Sell_,1,Area_Type,1,Month,3]
 
 Variable Va29
 NodeLocation: 1072,64,1
 NodeSize: 64,40
+
+Variable Wtd_Energy_Sell_Pric
+Title: Wtd Energy Sell Price by Period
+Definition: Sum(Pct_Consump_by_Tier[System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems], Pre_and_Post_System=Map_Tier_Wts_PrePos2[All_Storage_Systems=Opt_Storage_Systems]] * Energy_Price_Buy_Se1[Pre_and_Post_System=Map_Tier_Wts_PrePos2[All_Storage_Systems=Opt_Storage_Systems]], Tiers)
+NodeLocation: 104,56,1
+NodeSize: 64,40
+ValueState: 2,462,301,853,545,0,MIDM
 
 Close Storage_Optimizati10
 
@@ -2689,7 +2696,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,8,13,1823,715,17,10
+DiagState: 2,8,17,1823,715,17,10
 
 Decision Opt_Seq_Number
 Title: Opt Sequential Number
@@ -2722,7 +2729,7 @@ Title: Opt Sector
 Description: The sector for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.~
 ~
 Choice(Opt_Sectors,1,0)
-Definition: Choice(Opt_Sectors,1,1)
+Definition: Choice(Opt_Sectors,0,1)
 NodeLocation: 464,568,1
 NodeSize: 64,40
 WindState: 2,149,1,720,350
@@ -5898,7 +5905,7 @@ Definition: Divide(Days_per_Month, Days_in_Seq_Opt, True)
 NodeLocation: 1184,496,1
 NodeSize: 64,40
 WindState: 2,32,355,884,489
-ValueState: 2,451,268,906,623,0,MIDM
+ValueState: 2,593,351,906,424,0,MIDM
 
 Variable Days_in_Valid_SeqOpt
 Title: Days in Valid Seq Opt
