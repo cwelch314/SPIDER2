@@ -2003,7 +2003,7 @@ WindState: 2,604,166,1169,658
 ValueState: 2,510,52,1105,737,0,MIDM
 ReformVal: [PV_Climate_Zone,Opt_Sectors]
 Att__TotalsIndex: [Month,Area_Type,Opt_Storage_Systems]
-Att_ResultSliceState: [Rate_Vintage,1,Seq_Opt_Number,1,Opt_Storage_Systems,0,Area_Type,0,Month,0,Opt_Sectors,1,PV_Climate_Zone,2]
+Att_ResultSliceState: [Rate_Vintage,1,Seq_Opt_Number,1,Opt_Storage_Systems,0,Area_Type,0,Month,0,Buy_or_Sell_,1,Opt_Sectors,1,PV_Climate_Zone,2]
 
 Variable Opt_Net_Load
 Title: Opt Net Load
@@ -2641,11 +2641,12 @@ Units: $/kWh
 Description: The minimum non-zero arbitrage opportunity of charging during one period and discharging during another after accounting for storage roundtrip efficiency losses. We don't want any optimization penalties to be larger than this value or else the optimal dispatch might be distorted.
 Definition: IF Min_Arbitrage_Oppor1 > 0~
 THEN Min_Arbitrage_Oppor1~
-ELSE MIN(Applied_Energy_Price[Periods=Periods_for_Prof_Opt[Data_Types=Energy_Rate_Label], PV_Sectors=Opt_Sector2, PV_Climate_Zone=Opt_Climate_Zone2, Rate_Vintage=Opt_Rate_Vintage2, Month=Opt_Month2, Opt_Storage_Systems=Opt_System2], Opt_Hours)
+ELSE MIN(Applied_Energy_Price[Buy_or_Sell_=Sell_Price_Label, Periods=Periods_for_Prof_Opt[Data_Types=Energy_Rate_Label], PV_Sectors=Opt_Sector2, PV_Climate_Zone=Opt_Climate_Zone2, Rate_Vintage=Opt_Rate_Vintage2, Month=Opt_Month2, Opt_Storage_Systems=Opt_System2], Opt_Hours)
 NodeLocation: 760,64,1
 NodeSize: 64,40
 WindState: 2,12,34,1196,450
 ValueState: 2,787,4,613,612,0,MIDM
+NodeColor: 65535,1,1
 NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 Att_ResultSliceState: [Opt_Sectors,1,PV_Climate_Zone,1,Opt_Storage_Systems,1,Seq_Opt_Number,1,Periods,1,Month,1,Rate_Vintage,1]
 
@@ -2670,7 +2671,7 @@ Description: The energy price applied to the optimization, which is either level
 Definition: IF Use_Levelized_Inputs~
 THEN Lev_Energy_Price_Prd~
 ELSE Wtd_Energy_Buy_Price[@PV_Operating_Year=1]
-NodeLocation: 600,160,1
+NodeLocation: 568,160,1
 NodeSize: 64,40
 WindState: 2,21,199,720,350
 ValueState: 2,2060,134,1394,694,0,MIDM
@@ -3012,8 +3013,8 @@ Decision Select_Strg_Rate2
 Title: Selected Storage Rate Vintages
 Description: Select the rate vintages that will be evaluated in the storage optimization routines.
 Definition: Table(Opt_Sectors,Rate_Vintage)(~
-Checkbox(1),Checkbox(0),~
-Checkbox(1),Checkbox(0))
+Checkbox(1),Checkbox(1),~
+Checkbox(1),Checkbox(1))
 NodeLocation: 616,208,1
 NodeSize: 64,40
 DefnState: 2,805,159,470,667,0,DFNM
@@ -3376,7 +3377,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 2-Apr-2022 16:08:48.609000
+Definition: 29-May-2022 11:27:28.558000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3384,7 +3385,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 2-Apr-2022 16:10:42.704000
+Definition: 29-May-2022 11:28:41.432000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 WindState: 2,362,172,796,472
@@ -4408,7 +4409,7 @@ WindState: 2,323,77,720,350
 Decision Select_Strg_Sector2
 Title: Selected Storage Sectors
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,2,allowNone:0,returnList:1)
 NodeLocation: 128,288,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348264, Alias Al513733155
@@ -4482,7 +4483,7 @@ NodeSize: 72,40
 
 Variable Current_BESS_Sector
 Title: Current BESS Sector
-Definition: 30
+Definition: 1
 NodeLocation: 648,264,1
 NodeSize: 64,40
 Aliases: FormNode Fo631382307
@@ -4532,7 +4533,7 @@ MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimizat
 Decision Choose_Sectors_to_Op
 Title: Choose Sectors to Optimize
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,2,allowNone:0,returnList:1)
 NodeLocation: 464,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo989786659, Alias Al783884579, FormNode Fo431563043
@@ -4639,7 +4640,7 @@ Att_Stacked_Lines Graph_Primary_Valdim:0
 ReformVal: [Viewed_Dispatch_Tim2,Flow_Types1]
 NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Viewed_Dispatch_Tim2]
-Att_ResultSliceState: [Area_Type,1,Opt_Storage_Systems,1,Month,8,Rate_Names_and_Start,1,Flow_Types1,1,PV_Climate_Zone,1,Opt_Sectors,1,Viewed_Dispatch_Tim2,1]
+Att_ResultSliceState: [Area_Type,1,Opt_Storage_Systems,1,Month,8,Rate_Names_and_Start,4,PV_Climate_Zone,1,Opt_Sectors,2,Flow_Types1,1,Viewed_Dispatch_Tim2,1]
 
 Decision Dispatch_Start_Time2
 Title: Start Time for Dispatch
