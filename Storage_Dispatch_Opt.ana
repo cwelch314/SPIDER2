@@ -3378,7 +3378,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 29-May-2022 11:27:28.558000
+Definition: 30-May-2022 11:33:15.205000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3386,7 +3386,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 29-May-2022 11:28:41.432000
+Definition: 30-May-2022 11:34:30.807000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 WindState: 2,362,172,796,472
@@ -4534,7 +4534,7 @@ MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimizat
 Decision Choose_Sectors_to_Op
 Title: Choose Sectors to Optimize
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,2,allowNone:0,returnList:1)
 NodeLocation: 464,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo989786659, Alias Al783884579, FormNode Fo431563043
