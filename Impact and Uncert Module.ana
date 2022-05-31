@@ -10,7 +10,7 @@ Author: CoryWelch
 Date: Mon, Jul 9, 2018 1:00 PM
 DefaultSize: 64,40
 NodeSize: 80,56
-DiagState: 2,332,2,1267,870,17
+DiagState: 2,332,2,1267,762,17,10
 DiagramColor: 52428,52428,52428
 Pict: (000000000000002D003900046901000089504E470D0A1A0A0000000D49484452000000390000002D0806000000145FC308000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA864000000EE494441546843ED8FBBB1023110041506693C833C8900E705462688C210B5B535AC465F438CD1C6CDED5D75A79CF3F1A4E7ED92DFF81727A1C85350E42928B295BFFF94BFE16F77A2C85650902237A1C8561469B6DD28B215459A6D37DD91451ED173B712454620D1916D258A8C60E5D96D258A8C60E5D96D258A8C60E5A30D61EF66A1C80824357B9B85222358D1916D168A8C604547B65928D252243CE8A6672B1E087BD783222D5E0C898E6CC88375ABA1488B1743A2231BF260DD6AC01F150984BF29CFA31BF2281BC2DED55064B431372D1BF260B71A8A8C36E6A665431EEC56E3F3D191DCAF8F1F89CCE90506011C2C460ACD4A0000000049454E44AE426082)
 FontStyle: Arial Narrow,19
@@ -361,7 +361,7 @@ Variable Energy_Impacts_witho
 Title: Energy Impacts without Net
 Units: GWh/year
 Description: The annual energy impacts of DERs.
-Definition: Table(All_DER_Types)(-Annual_Solar_Product, Annual_EV_Consumpti1,-Annual_EE_Consumptio, -Annual_DR_Consumptio, -Annual_Battery_Consu)
+Definition: Table(All_DER_Types)(-Annual_Solar_Product,Annual_EV_Consumpti1,-Annual_EE_Consumptio,-Annual_DR_Consumptio,-Annual_Battery_Consu)
 NodeLocation: 272,528,1
 NodeSize: 64,40
 ValueState: 2,72,40,1413,786,1,MIDM
@@ -435,9 +435,10 @@ Variable Impact_by_DER
 Title: Impact by DER
 Units: MW
 Description: placeholder to create output graphics
-Definition: Table(DER)(PV_Impact,Cumul_EV_Impact[Time_vehicles=Time],Storage_Impact,EE_Impact,DR_Impact)
-NodeLocation: 216,128,1
+Definition: Table(DER)(PV_Impact,Null,Storage_Impact,Null,Null)
+NodeLocation: 264,88,1
 NodeSize: 56,32
+DefnState: 2,831,470,627,238,0,DFNM
 ValueState: 2,344,33,1117,743,1,PDFP
 NodeColor: 65535,52427,52427
 GraphSetup: Graph_FillTransparen:172~
@@ -454,13 +455,13 @@ Att_ColorRole: DER
 Chance EE_Impact
 Title: EE Impact
 Definition: Normal(-6400,600)
-NodeLocation: 216,232,1
+NodeLocation: 152,200,1
 NodeSize: 56,32
 
 Chance Storage_Impact
 Title: Storage Impact
 Definition: LogNormal(mean:2000,stddev:600) * -1
-NodeLocation: 216,320,1
+NodeLocation: 152,288,1
 NodeSize: 56,32
 
 Chance DR_Impact

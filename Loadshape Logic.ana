@@ -619,7 +619,7 @@ NodeLocation: 104,64,1
 NodeSize: 64,40
 WindState: 2,98,82,1318,570
 DefnState: 2,75,42,1702,798,0,DFNM
-ValueState: 2,716,246,814,558,1,MIDM
+ValueState: 2,727,147,694,599,0,MIDM
 Aliases: Alias Al1534527346, FormNode Fo1534308067
 GraphSetup: Att_GraphIndexRange Hours_8784:1,,1,,,,,2139.3866389989853,3781.65802359581,0~
 Att_ContLineStyle Graph_Primary_Valdim:1~
@@ -627,8 +627,9 @@ Att_AreaFill Graph_Primary_Valdim:0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_GraphValueRange Hourly_Profiles:1,,0,1,,,,405.0837829709053u,1,0
 ReformDef: [Hourly_Profile_Names,Hours_8784]
-ReformVal: [Hours_8784,Null]
-Att_ResultSliceState: [All_Hourly_Profile_N,4,Hours_8784,1]
+ReformVal: [Null,Hours_8784]
+Att__TotalsIndex: [Hours_8784]
+Att_ResultSliceState: [All_Hourly_Profile_N,1,Hours_8784,1]
 Att_ColorRole: Null
 
 Constant Saved_Daily_Profiles
@@ -4355,7 +4356,7 @@ Author: JamesMilford
 Date: Thu, Aug 16, 2018 5:26 AM
 NodeLocation: 480,696,1
 NodeSize: 64,40
-DiagState: 2,282,85,1118,500,17,10
+DiagState: 2,2646,163,1118,534,17,10
 AcpStyles: Show_Object:no
 
 Index Month
@@ -4364,7 +4365,7 @@ Title: Month
 Definition: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 NodeLocation: 248,544,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 1157,196}
+{!40300|Att_SlicerPopupSize: 1197,196}
 
 Index Time_of_Day
 Att_PrevIndexValue: ['12am-1am','1am-2am','2am-3am','3am-4am','4am-5am','5am-6am','6am-7am','7am-8am','8am-9am','9am-10am','10am-11am','11am-12pm','12pm-1pm','1pm-2pm','2pm-3pm','3pm-4pm','4pm-5pm','5pm-6pm','6pm-7pm','7pm-8pm','8pm-9pm','9pm-10pm','10pm-11pm','11pm-12am']
@@ -4431,6 +4432,7 @@ Title: Hours 8784
 Definition: 1..8784
 NodeLocation: 520,256,1
 NodeSize: 64,40
+DisplayOutputs: Variable Solar_Scaling_Factor
 {!40300|Att_SlicerPopupSize: 227,1001}
 
 Index Holiday_Name

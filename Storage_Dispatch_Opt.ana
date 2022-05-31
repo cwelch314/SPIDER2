@@ -4630,18 +4630,18 @@ Definition: Reindex_to_ProfileHr(Flows_by_Opt_Hour[Flow_Name2=Flow_Types1, Rate_
 NodeLocation: 416,64,1
 NodeSize: 64,40
 WindState: 2,5,19,972,489
-ValueState: 2,2129,103,1234,705,1,MIDM
+ValueState: 2,2096,15,1387,800,1,MIDM
 Aliases: Alias Al2033486115, FormNode Fo1557458712, FormNode Fo1571775089, FormNode Fo1228179747
-GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
-Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,0,,,,,1,72,1~
-Att_GraphValueRange Dispatch_Flows2:1,,1,1,,,,0,2000,0~
-Grid:0~
+GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_AreaFill Graph_Primary_Valdim:0~
-Att_Stacked_Lines Graph_Primary_Valdim:0
+Grid:0~
+Att_GraphValueRange Dispatch_Flows2:1,,1,1,,,,0,2000,0~
+Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,1,,,,,49,77,1~
+Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [Viewed_Dispatch_Tim2,Flow_Types1]
 NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Viewed_Dispatch_Tim2]
-Att_ResultSliceState: [Area_Type,1,Opt_Storage_Systems,1,Month,8,Rate_Names_and_Start,4,PV_Climate_Zone,1,Opt_Sectors,2,Flow_Types1,1,Viewed_Dispatch_Tim2,1]
+Att_ResultSliceState: [Area_Type,1,Opt_Storage_Systems,1,Rate_Names_and_Start,6,PV_Climate_Zone,1,Opt_Sectors,1,Flow_Types1,7,Month,8,Viewed_Dispatch_Tim2,1]
 
 Decision Dispatch_Start_Time2
 Title: Start Time for Dispatch
@@ -4758,7 +4758,7 @@ Att_ResultSliceState: [Opt_Storage_Systems,1,PV_Climate_Zone,1,Rate_Vintage,1,Ar
 Decision Flows_to_View1
 Title: Flows to View
 Description: Select the storage dispatch energy flows you wish to view.
-Definition: Table(Flow_Name2)(Checkbox(0),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0))
+Definition: Table(Flow_Name2)(Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0))
 NodeLocation: 112,584,1
 NodeSize: 64,40
 DefnState: 2,630,216,416,514,0,DFNM
@@ -4779,7 +4779,7 @@ Title: Flow Types
 Definition: Subset(Flows_to_View1)
 NodeLocation: 248,488,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 277,140}
+{!40300|Att_SlicerPopupSize: 297,140}
 
 Variable Num_Full_Discharges1
 Title: Number of Full Discharges
