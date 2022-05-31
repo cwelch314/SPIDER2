@@ -2792,7 +2792,7 @@ Title: PV Sim Start Year
 Description: The year in which you want the adoption simulation to start. The simulation will then use the appropriate starting point for instalaltions at this point in time. In some cases, depending on the data, you may not want to start the simulation as early as the stock data are available. Typically for PV, you will want to start the PV simulation exactly one period (e.g., month) after the latest reliable data are available regarding historical installations. That said, the latest month in the interconnection databases are typically unreliable due to previous applications that have not yet come through. So, it is typically wise to ignore the last month (or even two, depending on the time delays) of interconnection data. ~
 ~
 During calibration, this time is set to an earlier period to "back cast" adoption and compare it with actual adoption for purposes of estimating diffusion coefficients.
-Definition: Choice(PV_Sim_Strt_Yr_Opt,240,0)
+Definition: Choice(PV_Sim_Strt_Yr_Opt,13,0)
 NodeLocation: 96,272,1
 NodeSize: 64,40
 ValueState: 2,795,362,320,151,,MIDM
@@ -2813,7 +2813,7 @@ ValueState: 2,586,141,258,345,0,MIDM
 Decision PV_Sim_End_Year
 Title: PV Sim End Year
 Description: The final year of the vehicle simulated forecast.
-Definition: Choice(PV_Sim_End_Yr_Option,612,0)
+Definition: Choice(PV_Sim_End_Yr_Option,600,0)
 NodeLocation: 248,272,1
 NodeSize: 64,40
 WindState: 2,102,82,1083,701
@@ -7030,7 +7030,7 @@ Definition: ['Low','Medium','High']
 IndexVals: ['item 1']
 NodeLocation: 88,72,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 237,94}
+{!40300|Att_SlicerPopupSize: 242,94}
 
 Decision Selected_ITC_Scen
 Title: ITC Scenario
@@ -11525,7 +11525,7 @@ NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 Att_GraphIndexRange: 1,,0,,,,,1,11,1
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 1508,353}
+{!40300|Att_SlicerPopupSize: 1513,353}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
