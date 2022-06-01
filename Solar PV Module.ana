@@ -3233,14 +3233,14 @@ Title: Last PV Period b4 Forecast Delta
 Definition: Choice(Time,240,0)
 NodeLocation: 1064,144,1
 NodeSize: 64,40
-Aliases: FormNode Fo1646482595, FormNode Clipboard_Fo16464825, FormNode Fo1590080675
+Aliases: FormNode Fo1646482595, FormNode Fo1590080675
 
 Decision Last_Period_of_Forec
 Title: Last Period of Forecast Delta
 Definition: Choice(Time,600,0)
 NodeLocation: 1208,144,1
 NodeSize: 64,40
-Aliases: FormNode Fo304305315, FormNode Clipboard_Fo30430531, FormNode Fo1053209763
+Aliases: FormNode Fo304305315, FormNode Fo1053209763
 
 Index Forecast_Period
 Title: Forecast Period
@@ -3274,7 +3274,7 @@ Definition: Datepart(Forecast_Period[@Forecast_Period=1],'Y')..Datepart(Forecast
 NodeLocation: 1352,144,1
 NodeSize: 64,40
 ValueState: 2,1025,121,226,634,0,MIDM
-{!40300|Att_SlicerPopupSize: 227,448}
+{!40300|Att_SlicerPopupSize: 237,448}
 
 Variable Delta_MW_DC_PV_Impac
 Title: Delta MW-DC PV Impact by Forecast Yr
@@ -3693,7 +3693,7 @@ WindState: 2,-7,7,1503,350
 ValueState: 2,906,197,737,684,0,MIDM
 NodeColor: 65535,1,1
 ReformVal: [PV_Climate_Zone,PV_Sectors]
-DisplayInputs: Object Function, Object Variable, Object Index, Function Divide, Variable PV_DC_System_Size_fo, Variable PV_Production_per_kW, Index Hours_8784
+DisplayInputs: Object Object, Object Function, Object Variable, Object Index, Function Divide, Variable PV_DC_System_Size_fo, Variable PV_Production_per_kW, Index Hours_8784
 Att__TotalsIndex: []
 Att_ResultSliceState: [Area_Type,1,PV_Sectors,1,PV_Climate_Zone,1]
 
@@ -7047,7 +7047,7 @@ NodeSize: 64,40
 Decision Selected_ITC_Scen
 Title: ITC Scenario
 Description: Select which ITC scenario you want to model. "Baseline" captures currently planned ITC phase-out for solar PV.
-Definition: Choice(ITC_Scenario,1,Not ACP_Version)
+Definition: Choice(ITC_Scenario,0,Not ACP_Version)
 IndexVals: ['item 1']
 NodeLocation: 240,72,1
 NodeSize: 64,40
@@ -9428,7 +9428,7 @@ Definition: ['Low','Medium','High']
 IndexVals: ['item 1']
 NodeLocation: 784,232,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 227,70}
+{!40300|Att_SlicerPopupSize: 237,70}
 
 Decision Base_Yr_of_Cost_Decl
 Title: Base Yr of Cost Decline
@@ -9497,7 +9497,7 @@ Att_ResultSliceState: [All_Equipment_Types,1,PV_Climate_Zone,4,Area_Type,3,Stati
 Decision Select_DER_Cost_Scen
 Title: DER Cost Scenario
 Description: Select the DER cost scenario to apply.
-Definition: Choice(DER_Cost_Scenario,2,Not ACP_Version)
+Definition: Choice(DER_Cost_Scenario,0,Not ACP_Version)
 IndexVals: ['item 1']
 NodeLocation: 264,232,1
 NodeSize: 64,40
@@ -10470,13 +10470,13 @@ THEN INF~
 ELSE Divide(Tot_Price_Aft_Incent - Monthly_Fees, FirstYr_BillSav_Time, False)
 NodeLocation: 312,72,1
 NodeSize: 64,40
-ValueState: 2,2308,109,1074,711,1,MIDM
+ValueState: 2,418,28,1074,711,1,MIDM
 GraphSetup: ShowKey:2~
 Att_GraphValueRange Simple_Payback_Time1:1,,1,,,,,0,11.629531234502792,0~
-Att_GraphIndexRange Time:1,,0,,,,,38727.97800274193,54493.08829897642,0
-ReformVal: [Time,System_Types]
+Att_GraphIndexRange Time:1,,0,,,,,40964.734043866396,49645.645975112915,0
+ReformVal: [Time,ITC_Scenario]
 Att__TotalsIndex: []
-Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,System_Types,1,PV_Sectors,2,Time,1]
+Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,PV_Sectors,1,System_Types,1,Time,1]
 
 Module Simple_LCOE_Calculat
 Title: Simple LCOE Calculator
@@ -11049,7 +11049,7 @@ NodeLocation: 1120,208,1
 NodeSize: 64,40
 WindState: 2,98,82,1467,427
 ValueState: 2,1050,395,603,278,0,MIDM
-Aliases: Alias Al565149219, Alias Al844149923
+Aliases: Alias Al844149923, Alias Al565149219
 ReformVal: [Time_Solar_PV,0]
 Att_ResultSliceState: [New_or_Retrofit,2,PV_Spatial_ID,1,PV_Sectors,1,Area_Type,1]
 
@@ -11322,7 +11322,7 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 256,288,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,119,81,1707,614,17,10
+DiagState: 2,2141,175,1707,614,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -11349,7 +11349,7 @@ NodeLocation: 384,1192,1
 NodeSize: 64,40
 WindState: 2,2146,81,1165,697
 ValueState: 2,908,442,659,261,0,MIDM
-{!40300|Att_SlicerPopupSize: 1452,522}
+{!40300|Att_SlicerPopupSize: 1462,522}
 
 Text Te1545165196
 Description: Currently chooses the rate name for the post-system, which doesn't tell you the pre-system if they are different.
@@ -11540,7 +11540,7 @@ NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 Att_GraphIndexRange: 1,,0,,,,,1,11,1
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 1573,353}
+{!40300|Att_SlicerPopupSize: 1583,353}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
@@ -12513,7 +12513,7 @@ Definition: Subset(Storage_Systems <> Storage_Added_Label)
 NodeLocation: 1104,936,1
 NodeSize: 64,40
 WindState: 2,40,-1,910,825
-{!40300|Att_SlicerPopupSize: 513,110}
+{!40300|Att_SlicerPopupSize: 518,110}
 
 Variable System_with_PV
 Title: System with PV
@@ -13594,7 +13594,7 @@ Date: Wed, Nov 7, 2018 1:59 PM
 NodeLocation: 264,240,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,376,46,1369,652,17,10
+DiagState: 2,2298,66,1369,652,17,10
 AcpStyles: FrameNode: FrameNode_1545066590
 
 Constant Power_Density

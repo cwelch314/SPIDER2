@@ -130,7 +130,7 @@ Author: Cory Welch
 Date: Fri, Jun 22, 2018 10:48 AM
 NodeLocation: 784,464,1
 NodeSize: 64,40
-DiagState: 2,893,312,844,452,17,10
+DiagState: 2,2158,184,844,452,17,10
 AcpStyles: Show_Object:no
 
 Index Housing_Fields
@@ -2407,7 +2407,7 @@ Title: Opt Sectors
 Definition: Subset(All_Sectors <> EV_Sect_Label)
 NodeLocation: 104,64,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 594,405}
+{!40300|Att_SlicerPopupSize: 619,405}
 
 Index All_EV_Sectors
 Title: All EV Sectors
@@ -3223,22 +3223,21 @@ Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,
 NodeLocation: 80,312,1
 NodeSize: 64,40
 DefnState: 2,518,2,1056,703,0,DFNM
-ValueState: 2,252,12,1031,809,0,MIDM
+ValueState: 2,510,62,854,707,1,MIDM
 Aliases: FormNode Fo1537569015
 NodeColor: 65535,39321,39321
 GraphSetup: Att_GraphValueRange Historical_PV_Capaci:1,,1,,,,5,-0.45334592461586,24.884825944900513,0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_AreaFill Graph_Primary_Valdim:1~
-Att_Stacked_Lines Graph_Primary_Valdim:1~
-Att_GraphIndexRange Interconnect_Date:1,0,1,,,,,39841.607442855835,42302.489927351475,0~
-Att_ContLineStyle Graph_Primary_Valdim:1
+Att_AreaFill Graph_Primary_Valdim:0~
+Att_Stacked_Lines Graph_Primary_Valdim:0~
+Att_GraphIndexRange Interconnect_Date:1,0,1,,,,,42660.6040507555,43100,0~
+Att_ContLineStyle Graph_Primary_Valdim:5
 ReformDef: [All_Sectors,Interconnect_Date]
-ReformVal: [Interconnect_Date,Null]
+ReformVal: [Interconnect_Date,All_Sectors]
 NumberFormat: 2,F,4,1,0,0,4,1,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [All_Spatial_ID,All_Sectors]
-Att_ResultSliceState: [All_Utilities,1,All_Spatial_ID,0,All_Sectors,0,Interconnect_Date,1]
+Att__TotalsIndex: [All_Spatial_ID]
+Att_ResultSliceState: [All_Utilities,1,All_Spatial_ID,0,All_Sectors,1,Interconnect_Date,1]
 Att_EditSliceState: [All_Utilities,1,Interconnect_Date,473,Area_Type,1,All_Sectors,1,All_Spatial_ID,2]
-Att_ColorRole: Null
 {!40600|Att_StackingIndex: All_Sectors}
 {!40600|Att_ClusterIndex: Null}
 
