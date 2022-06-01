@@ -583,7 +583,7 @@ Decision Mkt_Share_Fin_Year
 Title: Mkt Share Fin Year
 Units: date
 Description: The finish date for the assumed ramp up of market share over time
-Definition: Choice(Time_Solar_PV,337,0)
+Definition: Choice(Time_Solar_PV,338,0)
 NodeLocation: 256,256,1
 NodeSize: 64,40
 Aliases: FormNode Fo1535473810
@@ -2367,7 +2367,7 @@ Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 688,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,150,180,1588,592,17,10
+DiagState: 2,45,67,1588,520,17,10
 AcpStyles: FrameNode: FrameNode_1544919954
 
 Variable PV_Adoption_Forecast
@@ -2468,7 +2468,7 @@ Title: Cumul DC Capacity EOP
 Units: MW-DC
 Description: End of Period Cumulative Nameplate DC installed
 Definition: Sum(Cumul_DC_NR_EOP, New_or_Retrofit)
-NodeLocation: 1112,472,1
+NodeLocation: 1152,376,1
 NodeSize: 64,40
 ValueState: 2,2188,549,1130,246,0,MIDM
 Aliases: Alias Al1579797635, Alias Al1159982589
@@ -2525,10 +2525,12 @@ Definition: Cumul_CEC_MW_BOP_NR + Increm_CEC_MW_NR
 NodeLocation: 696,152,1
 NodeSize: 64,40
 WindState: 2,1851,281,720,350
-ValueState: 2,90,98,1130,800,1,MIDM
-ReformVal: [Time_Solar_PV,DER_Cost_Scenario]
-Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,135,New_or_Retrofit,2,PV_Cost_Scenario,3,Time_Solar_PV,1]
+ValueState: 2,472,353,1130,333,0,MIDM
+Aliases: Alias Al175322275
+GraphSetup: Att_GraphIndexRange Time_Solar_PV:1,,0,,,,,52862.197196006775,54593.02579498291,0
+ReformVal: [Time_Solar_PV,PV_Sectors]
+Att__TotalsIndex: [New_or_Retrofit,PV_Sectors]
+Att_ResultSliceState: [PV_Sectors,0,PV_Spatial_ID,1,New_or_Retrofit,0,Area_Type,1,Time_Solar_PV,1]
 
 Variable Cumul_DC_NR_EOP
 Title: Cumul DC Capacity EOP New/Ret
@@ -2728,13 +2730,13 @@ Title: Max PV Simulation Year
 Description: Must be in the form MM/DD/YYYY~
 ~
 Make more robust. Tie to Time.
-Definition: 1-Dec-2052
+Definition: 1-Dec-2051
 NodeLocation: 400,168,1
 NodeSize: 64,40
 NodeColor: 65535,1,1
 
 Index Time_Solar_PV
-Att_PrevIndexValue: [1-Dec-2021,1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023,1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030,1-Jan-2031,1-Feb-2031,1-Mar-2031,1-Apr-2031,1-May-2031,1-Jun-2031,1-Jul-2031,1-Aug-2031,1-Sep-2031,1-Oct-2031,1-Nov-2031,1-Dec-2031,1-Jan-2032,1-Feb-2032,1-Mar-2032,1-Apr-2032,1-May-2032,1-Jun-2032,1-Jul-2032,1-Aug-2032,1-Sep-2032,1-Oct-2032,1-Nov-2032,1-Dec-2032,1-Jan-2033,1-Feb-2033,1-Mar-2033,1-Apr-2033,1-May-2033,1-Jun-2033,1-Jul-2033,1-Aug-2033,1-Sep-2033,1-Oct-2033,1-Nov-2033,1-Dec-2033,1-Jan-2034,1-Feb-2034,1-Mar-2034,1-Apr-2034,1-May-2034,1-Jun-2034,1-Jul-2034,1-Aug-2034,1-Sep-2034,1-Oct-2034,1-Nov-2034,1-Dec-2034,1-Jan-2035,1-Feb-2035,1-Mar-2035,1-Apr-2035,1-May-2035,1-Jun-2035,1-Jul-2035,1-Aug-2035,1-Sep-2035,1-Oct-2035,1-Nov-2035,1-Dec-2035,1-Jan-2036,1-Feb-2036,1-Mar-2036,1-Apr-2036,1-May-2036,1-Jun-2036,1-Jul-2036,1-Aug-2036,1-Sep-2036,1-Oct-2036,1-Nov-2036,1-Dec-2036,1-Jan-2037,1-Feb-2037,1-Mar-2037,1-Apr-2037,1-May-2037,1-Jun-2037,1-Jul-2037,1-Aug-2037,1-Sep-2037,1-Oct-2037,1-Nov-2037,1-Dec-2037,1-Jan-2038,1-Feb-2038,1-Mar-2038,1-Apr-2038,1-May-2038,1-Jun-2038,1-Jul-2038,1-Aug-2038,1-Sep-2038,1-Oct-2038,1-Nov-2038,1-Dec-2038,1-Jan-2039,1-Feb-2039,1-Mar-2039,1-Apr-2039,1-May-2039,1-Jun-2039,1-Jul-2039,1-Aug-2039,1-Sep-2039,1-Oct-2039,1-Nov-2039,1-Dec-2039,1-Jan-2040,1-Feb-2040,1-Mar-2040,1-Apr-2040,1-May-2040,1-Jun-2040,1-Jul-2040,1-Aug-2040,1-Sep-2040,1-Oct-2040,1-Nov-2040,1-Dec-2040,1-Jan-2041,1-Feb-2041,1-Mar-2041,1-Apr-2041,1-May-2041,1-Jun-2041,1-Jul-2041,1-Aug-2041,1-Sep-2041,1-Oct-2041,1-Nov-2041,1-Dec-2041,1-Jan-2042,1-Feb-2042,1-Mar-2042,1-Apr-2042,1-May-2042,1-Jun-2042,1-Jul-2042,1-Aug-2042,1-Sep-2042,1-Oct-2042,1-Nov-2042,1-Dec-2042,1-Jan-2043,1-Feb-2043,1-Mar-2043,1-Apr-2043,1-May-2043,1-Jun-2043,1-Jul-2043,1-Aug-2043,1-Sep-2043,1-Oct-2043,1-Nov-2043,1-Dec-2043,1-Jan-2044,1-Feb-2044,1-Mar-2044,1-Apr-2044,1-May-2044,1-Jun-2044,1-Jul-2044,1-Aug-2044,1-Sep-2044,1-Oct-2044,1-Nov-2044,1-Dec-2044,1-Jan-2045,1-Feb-2045,1-Mar-2045,1-Apr-2045,1-May-2045,1-Jun-2045,1-Jul-2045,1-Aug-2045,1-Sep-2045,1-Oct-2045,1-Nov-2045,1-Dec-2045,1-Jan-2046,1-Feb-2046,1-Mar-2046,1-Apr-2046,1-May-2046,1-Jun-2046,1-Jul-2046,1-Aug-2046,1-Sep-2046,1-Oct-2046,1-Nov-2046,1-Dec-2046,1-Jan-2047,1-Feb-2047,1-Mar-2047,1-Apr-2047,1-May-2047,1-Jun-2047,1-Jul-2047,1-Aug-2047,1-Sep-2047,1-Oct-2047,1-Nov-2047,1-Dec-2047,1-Jan-2048,1-Feb-2048,1-Mar-2048,1-Apr-2048,1-May-2048,1-Jun-2048,1-Jul-2048,1-Aug-2048,1-Sep-2048,1-Oct-2048,1-Nov-2048,1-Dec-2048,1-Jan-2049,1-Feb-2049,1-Mar-2049,1-Apr-2049,1-May-2049,1-Jun-2049,1-Jul-2049,1-Aug-2049,1-Sep-2049,1-Oct-2049,1-Nov-2049,1-Dec-2049,1-Jan-2050,1-Feb-2050,1-Mar-2050,1-Apr-2050,1-May-2050,1-Jun-2050,1-Jul-2050,1-Aug-2050,1-Sep-2050,1-Oct-2050,1-Nov-2050,1-Dec-2050,1-Jan-2051,1-Feb-2051,1-Mar-2051,1-Apr-2051,1-May-2051,1-Jun-2051,1-Jul-2051,1-Aug-2051,1-Sep-2051,1-Oct-2051,1-Nov-2051,1-Dec-2051,1-Jan-2052,1-Feb-2052,1-Mar-2052,1-Apr-2052,1-May-2052,1-Jun-2052,1-Jul-2052,1-Aug-2052,1-Sep-2052,1-Oct-2052,1-Nov-2052,1-Dec-2052]
+Att_PrevIndexValue: [1-Nov-2021,1-Dec-2021,1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023,1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030,1-Jan-2031,1-Feb-2031,1-Mar-2031,1-Apr-2031,1-May-2031,1-Jun-2031,1-Jul-2031,1-Aug-2031,1-Sep-2031,1-Oct-2031,1-Nov-2031,1-Dec-2031,1-Jan-2032,1-Feb-2032,1-Mar-2032,1-Apr-2032,1-May-2032,1-Jun-2032,1-Jul-2032,1-Aug-2032,1-Sep-2032,1-Oct-2032,1-Nov-2032,1-Dec-2032,1-Jan-2033,1-Feb-2033,1-Mar-2033,1-Apr-2033,1-May-2033,1-Jun-2033,1-Jul-2033,1-Aug-2033,1-Sep-2033,1-Oct-2033,1-Nov-2033,1-Dec-2033,1-Jan-2034,1-Feb-2034,1-Mar-2034,1-Apr-2034,1-May-2034,1-Jun-2034,1-Jul-2034,1-Aug-2034,1-Sep-2034,1-Oct-2034,1-Nov-2034,1-Dec-2034,1-Jan-2035,1-Feb-2035,1-Mar-2035,1-Apr-2035,1-May-2035,1-Jun-2035,1-Jul-2035,1-Aug-2035,1-Sep-2035,1-Oct-2035,1-Nov-2035,1-Dec-2035,1-Jan-2036,1-Feb-2036,1-Mar-2036,1-Apr-2036,1-May-2036,1-Jun-2036,1-Jul-2036,1-Aug-2036,1-Sep-2036,1-Oct-2036,1-Nov-2036,1-Dec-2036,1-Jan-2037,1-Feb-2037,1-Mar-2037,1-Apr-2037,1-May-2037,1-Jun-2037,1-Jul-2037,1-Aug-2037,1-Sep-2037,1-Oct-2037,1-Nov-2037,1-Dec-2037,1-Jan-2038,1-Feb-2038,1-Mar-2038,1-Apr-2038,1-May-2038,1-Jun-2038,1-Jul-2038,1-Aug-2038,1-Sep-2038,1-Oct-2038,1-Nov-2038,1-Dec-2038,1-Jan-2039,1-Feb-2039,1-Mar-2039,1-Apr-2039,1-May-2039,1-Jun-2039,1-Jul-2039,1-Aug-2039,1-Sep-2039,1-Oct-2039,1-Nov-2039,1-Dec-2039,1-Jan-2040,1-Feb-2040,1-Mar-2040,1-Apr-2040,1-May-2040,1-Jun-2040,1-Jul-2040,1-Aug-2040,1-Sep-2040,1-Oct-2040,1-Nov-2040,1-Dec-2040,1-Jan-2041,1-Feb-2041,1-Mar-2041,1-Apr-2041,1-May-2041,1-Jun-2041,1-Jul-2041,1-Aug-2041,1-Sep-2041,1-Oct-2041,1-Nov-2041,1-Dec-2041,1-Jan-2042,1-Feb-2042,1-Mar-2042,1-Apr-2042,1-May-2042,1-Jun-2042,1-Jul-2042,1-Aug-2042,1-Sep-2042,1-Oct-2042,1-Nov-2042,1-Dec-2042,1-Jan-2043,1-Feb-2043,1-Mar-2043,1-Apr-2043,1-May-2043,1-Jun-2043,1-Jul-2043,1-Aug-2043,1-Sep-2043,1-Oct-2043,1-Nov-2043,1-Dec-2043,1-Jan-2044,1-Feb-2044,1-Mar-2044,1-Apr-2044,1-May-2044,1-Jun-2044,1-Jul-2044,1-Aug-2044,1-Sep-2044,1-Oct-2044,1-Nov-2044,1-Dec-2044,1-Jan-2045,1-Feb-2045,1-Mar-2045,1-Apr-2045,1-May-2045,1-Jun-2045,1-Jul-2045,1-Aug-2045,1-Sep-2045,1-Oct-2045,1-Nov-2045,1-Dec-2045,1-Jan-2046,1-Feb-2046,1-Mar-2046,1-Apr-2046,1-May-2046,1-Jun-2046,1-Jul-2046,1-Aug-2046,1-Sep-2046,1-Oct-2046,1-Nov-2046,1-Dec-2046,1-Jan-2047,1-Feb-2047,1-Mar-2047,1-Apr-2047,1-May-2047,1-Jun-2047,1-Jul-2047,1-Aug-2047,1-Sep-2047,1-Oct-2047,1-Nov-2047,1-Dec-2047,1-Jan-2048,1-Feb-2048,1-Mar-2048,1-Apr-2048,1-May-2048,1-Jun-2048,1-Jul-2048,1-Aug-2048,1-Sep-2048,1-Oct-2048,1-Nov-2048,1-Dec-2048,1-Jan-2049,1-Feb-2049,1-Mar-2049,1-Apr-2049,1-May-2049,1-Jun-2049,1-Jul-2049,1-Aug-2049,1-Sep-2049,1-Oct-2049,1-Nov-2049,1-Dec-2049,1-Jan-2050,1-Feb-2050,1-Mar-2050,1-Apr-2050,1-May-2050,1-Jun-2050,1-Jul-2050,1-Aug-2050,1-Sep-2050,1-Oct-2050,1-Nov-2050,1-Dec-2050,1-Jan-2051,1-Feb-2051,1-Mar-2051,1-Apr-2051,1-May-2051,1-Jun-2051,1-Jul-2051,1-Aug-2051,1-Sep-2051,1-Oct-2051,1-Nov-2051,1-Dec-2051]
 Title: Time-Solar PV
 Description: Ths is the time index used for simulating vehicle adoption. It is allowed to be different from other DERs, for instance, due to differences in the granularity of available historical data on adoption (e.g., solar PV data are monthly, whereas vehicle data are, at best, quarterly, or in some cases, annual)
 Definition: Sequence(PV_Sim_Start_Year, PV_Sim_End_Year,step: Timestep_Months[Timestep_Options=PV_Data_dT_Choice],dateUnit: 'M')
@@ -2792,7 +2794,7 @@ Title: PV Sim Start Year
 Description: The year in which you want the adoption simulation to start. The simulation will then use the appropriate starting point for instalaltions at this point in time. In some cases, depending on the data, you may not want to start the simulation as early as the stock data are available. Typically for PV, you will want to start the PV simulation exactly one period (e.g., month) after the latest reliable data are available regarding historical installations. That said, the latest month in the interconnection databases are typically unreliable due to previous applications that have not yet come through. So, it is typically wise to ignore the last month (or even two, depending on the time delays) of interconnection data. ~
 ~
 During calibration, this time is set to an earlier period to "back cast" adoption and compare it with actual adoption for purposes of estimating diffusion coefficients.
-Definition: Choice(PV_Sim_Strt_Yr_Opt,13,0)
+Definition: Choice(PV_Sim_Strt_Yr_Opt,239,0)
 NodeLocation: 96,272,1
 NodeSize: 64,40
 ValueState: 2,795,362,320,151,,MIDM
@@ -2813,7 +2815,7 @@ ValueState: 2,586,141,258,345,0,MIDM
 Decision PV_Sim_End_Year
 Title: PV Sim End Year
 Description: The final year of the vehicle simulated forecast.
-Definition: Choice(PV_Sim_End_Yr_Option,600,0)
+Definition: Choice(PV_Sim_End_Yr_Option,612,0)
 NodeLocation: 248,272,1
 NodeSize: 64,40
 WindState: 2,102,82,1083,701
@@ -2823,6 +2825,7 @@ NodeColor: 65535,65531,1
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
 
 Index PV_Sim_End_Yr_Option
+Att_PrevIndexValue: [1-Jan-2002,1-Feb-2002,1-Mar-2002,1-Apr-2002,1-May-2002,1-Jun-2002,1-Jul-2002,1-Aug-2002,1-Sep-2002,1-Oct-2002,1-Nov-2002,1-Dec-2002,1-Jan-2003,1-Feb-2003,1-Mar-2003,1-Apr-2003,1-May-2003,1-Jun-2003,1-Jul-2003,1-Aug-2003,1-Sep-2003,1-Oct-2003,1-Nov-2003,1-Dec-2003,1-Jan-2004,1-Feb-2004,1-Mar-2004,1-Apr-2004,1-May-2004,1-Jun-2004,1-Jul-2004,1-Aug-2004,1-Sep-2004,1-Oct-2004,1-Nov-2004,1-Dec-2004,1-Jan-2005,1-Feb-2005,1-Mar-2005,1-Apr-2005,1-May-2005,1-Jun-2005,1-Jul-2005,1-Aug-2005,1-Sep-2005,1-Oct-2005,1-Nov-2005,1-Dec-2005,1-Jan-2006,1-Feb-2006,1-Mar-2006,1-Apr-2006,1-May-2006,1-Jun-2006,1-Jul-2006,1-Aug-2006,1-Sep-2006,1-Oct-2006,1-Nov-2006,1-Dec-2006,1-Jan-2007,1-Feb-2007,1-Mar-2007,1-Apr-2007,1-May-2007,1-Jun-2007,1-Jul-2007,1-Aug-2007,1-Sep-2007,1-Oct-2007,1-Nov-2007,1-Dec-2007,1-Jan-2008,1-Feb-2008,1-Mar-2008,1-Apr-2008,1-May-2008,1-Jun-2008,1-Jul-2008,1-Aug-2008,1-Sep-2008,1-Oct-2008,1-Nov-2008,1-Dec-2008,1-Jan-2009,1-Feb-2009,1-Mar-2009,1-Apr-2009,1-May-2009,1-Jun-2009,1-Jul-2009,1-Aug-2009,1-Sep-2009,1-Oct-2009,1-Nov-2009,1-Dec-2009,1-Jan-2010,1-Feb-2010,1-Mar-2010,1-Apr-2010,1-May-2010,1-Jun-2010,1-Jul-2010,1-Aug-2010,1-Sep-2010,1-Oct-2010,1-Nov-2010,1-Dec-2010,1-Jan-2011,1-Feb-2011,1-Mar-2011,1-Apr-2011,1-May-2011,1-Jun-2011,1-Jul-2011,1-Aug-2011,1-Sep-2011,1-Oct-2011,1-Nov-2011,1-Dec-2011,1-Jan-2012,1-Feb-2012,1-Mar-2012,1-Apr-2012,1-May-2012,1-Jun-2012,1-Jul-2012,1-Aug-2012,1-Sep-2012,1-Oct-2012,1-Nov-2012,1-Dec-2012,1-Jan-2013,1-Feb-2013,1-Mar-2013,1-Apr-2013,1-May-2013,1-Jun-2013,1-Jul-2013,1-Aug-2013,1-Sep-2013,1-Oct-2013,1-Nov-2013,1-Dec-2013,1-Jan-2014,1-Feb-2014,1-Mar-2014,1-Apr-2014,1-May-2014,1-Jun-2014,1-Jul-2014,1-Aug-2014,1-Sep-2014,1-Oct-2014,1-Nov-2014,1-Dec-2014,1-Jan-2015,1-Feb-2015,1-Mar-2015,1-Apr-2015,1-May-2015,1-Jun-2015,1-Jul-2015,1-Aug-2015,1-Sep-2015,1-Oct-2015,1-Nov-2015,1-Dec-2015,1-Jan-2016,1-Feb-2016,1-Mar-2016,1-Apr-2016,1-May-2016,1-Jun-2016,1-Jul-2016,1-Aug-2016,1-Sep-2016,1-Oct-2016,1-Nov-2016,1-Dec-2016,1-Jan-2017,1-Feb-2017,1-Mar-2017,1-Apr-2017,1-May-2017,1-Jun-2017,1-Jul-2017,1-Aug-2017,1-Sep-2017,1-Oct-2017,1-Nov-2017,1-Dec-2017,1-Jan-2018,1-Feb-2018,1-Mar-2018,1-Apr-2018,1-May-2018,1-Jun-2018,1-Jul-2018,1-Aug-2018,1-Sep-2018,1-Oct-2018,1-Nov-2018,1-Dec-2018,1-Jan-2019,1-Feb-2019,1-Mar-2019,1-Apr-2019,1-May-2019,1-Jun-2019,1-Jul-2019,1-Aug-2019,1-Sep-2019,1-Oct-2019,1-Nov-2019,1-Dec-2019,1-Jan-2020,1-Feb-2020,1-Mar-2020,1-Apr-2020,1-May-2020,1-Jun-2020,1-Jul-2020,1-Aug-2020,1-Sep-2020,1-Oct-2020,1-Nov-2020,1-Dec-2020,1-Jan-2021,1-Feb-2021,1-Mar-2021,1-Apr-2021,1-May-2021,1-Jun-2021,1-Jul-2021,1-Aug-2021,1-Sep-2021,1-Oct-2021,1-Nov-2021,1-Dec-2021,1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023,1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030,1-Jan-2031,1-Feb-2031,1-Mar-2031,1-Apr-2031,1-May-2031,1-Jun-2031,1-Jul-2031,1-Aug-2031,1-Sep-2031,1-Oct-2031,1-Nov-2031,1-Dec-2031,1-Jan-2032,1-Feb-2032,1-Mar-2032,1-Apr-2032,1-May-2032,1-Jun-2032,1-Jul-2032,1-Aug-2032,1-Sep-2032,1-Oct-2032,1-Nov-2032,1-Dec-2032,1-Jan-2033,1-Feb-2033,1-Mar-2033,1-Apr-2033,1-May-2033,1-Jun-2033,1-Jul-2033,1-Aug-2033,1-Sep-2033,1-Oct-2033,1-Nov-2033,1-Dec-2033,1-Jan-2034,1-Feb-2034,1-Mar-2034,1-Apr-2034,1-May-2034,1-Jun-2034,1-Jul-2034,1-Aug-2034,1-Sep-2034,1-Oct-2034,1-Nov-2034,1-Dec-2034,1-Jan-2035,1-Feb-2035,1-Mar-2035,1-Apr-2035,1-May-2035,1-Jun-2035,1-Jul-2035,1-Aug-2035,1-Sep-2035,1-Oct-2035,1-Nov-2035,1-Dec-2035,1-Jan-2036,1-Feb-2036,1-Mar-2036,1-Apr-2036,1-May-2036,1-Jun-2036,1-Jul-2036,1-Aug-2036,1-Sep-2036,1-Oct-2036,1-Nov-2036,1-Dec-2036,1-Jan-2037,1-Feb-2037,1-Mar-2037,1-Apr-2037,1-May-2037,1-Jun-2037,1-Jul-2037,1-Aug-2037,1-Sep-2037,1-Oct-2037,1-Nov-2037,1-Dec-2037,1-Jan-2038,1-Feb-2038,1-Mar-2038,1-Apr-2038,1-May-2038,1-Jun-2038,1-Jul-2038,1-Aug-2038,1-Sep-2038,1-Oct-2038,1-Nov-2038,1-Dec-2038,1-Jan-2039,1-Feb-2039,1-Mar-2039,1-Apr-2039,1-May-2039,1-Jun-2039,1-Jul-2039,1-Aug-2039,1-Sep-2039,1-Oct-2039,1-Nov-2039,1-Dec-2039,1-Jan-2040,1-Feb-2040,1-Mar-2040,1-Apr-2040,1-May-2040,1-Jun-2040,1-Jul-2040,1-Aug-2040,1-Sep-2040,1-Oct-2040,1-Nov-2040,1-Dec-2040,1-Jan-2041,1-Feb-2041,1-Mar-2041,1-Apr-2041,1-May-2041,1-Jun-2041,1-Jul-2041,1-Aug-2041,1-Sep-2041,1-Oct-2041,1-Nov-2041,1-Dec-2041,1-Jan-2042,1-Feb-2042,1-Mar-2042,1-Apr-2042,1-May-2042,1-Jun-2042,1-Jul-2042,1-Aug-2042,1-Sep-2042,1-Oct-2042,1-Nov-2042,1-Dec-2042,1-Jan-2043,1-Feb-2043,1-Mar-2043,1-Apr-2043,1-May-2043,1-Jun-2043,1-Jul-2043,1-Aug-2043,1-Sep-2043,1-Oct-2043,1-Nov-2043,1-Dec-2043,1-Jan-2044,1-Feb-2044,1-Mar-2044,1-Apr-2044,1-May-2044,1-Jun-2044,1-Jul-2044,1-Aug-2044,1-Sep-2044,1-Oct-2044,1-Nov-2044,1-Dec-2044,1-Jan-2045,1-Feb-2045,1-Mar-2045,1-Apr-2045,1-May-2045,1-Jun-2045,1-Jul-2045,1-Aug-2045,1-Sep-2045,1-Oct-2045,1-Nov-2045,1-Dec-2045,1-Jan-2046,1-Feb-2046,1-Mar-2046,1-Apr-2046,1-May-2046,1-Jun-2046,1-Jul-2046,1-Aug-2046,1-Sep-2046,1-Oct-2046,1-Nov-2046,1-Dec-2046,1-Jan-2047,1-Feb-2047,1-Mar-2047,1-Apr-2047,1-May-2047,1-Jun-2047,1-Jul-2047,1-Aug-2047,1-Sep-2047,1-Oct-2047,1-Nov-2047,1-Dec-2047,1-Jan-2048,1-Feb-2048,1-Mar-2048,1-Apr-2048,1-May-2048,1-Jun-2048,1-Jul-2048,1-Aug-2048,1-Sep-2048,1-Oct-2048,1-Nov-2048,1-Dec-2048,1-Jan-2049,1-Feb-2049,1-Mar-2049,1-Apr-2049,1-May-2049,1-Jun-2049,1-Jul-2049,1-Aug-2049,1-Sep-2049,1-Oct-2049,1-Nov-2049,1-Dec-2049,1-Jan-2050,1-Feb-2050,1-Mar-2050,1-Apr-2050,1-May-2050,1-Jun-2050,1-Jul-2050,1-Aug-2050,1-Sep-2050,1-Oct-2050,1-Nov-2050,1-Dec-2050,1-Jan-2051,1-Feb-2051,1-Mar-2051,1-Apr-2051,1-May-2051,1-Jun-2051,1-Jul-2051,1-Aug-2051,1-Sep-2051,1-Oct-2051,1-Nov-2051,1-Dec-2051]
 Title: PV Sim End Yr Option
 Units: Year
 Description: The options permissible for when the vehicle simulation can be ended.
@@ -2921,7 +2924,7 @@ Date: Sun, Sep 2, 2018 8:12 PM
 NodeLocation: 400,288,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,36,14,1744,670,17,10
+DiagState: 2,1970,43,1789,721,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -2959,13 +2962,15 @@ Att_ColorRole: Null
 Variable Annual_Solar_Product
 Title: Annual Solar Production
 Units: GWh/year
-Definition: Sum(Solar_Hourly_Impact * Weeks_Per_Month, Day_and_Hour, Month) / 1000
+Definition: Sum(Solar_Hourly_Impact * Weeks_Per_Month, Profile_Hours, Month) / 1000
 NodeLocation: 896,152,1
 NodeSize: 64,40
-ValueState: 2,56,13,1319,833,1,MIDM
-ReformVal: [Start_of_Year,Spatial_IDs]
+ValueState: 2,254,29,1319,833,0,MIDM
+ReformVal: [All_Sectors,Impact_Year]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,3,Start_of_Year,1]
+Att__TotalsIndex: []
+Att_ResultSliceState: [Spatial_ID,1,All_Sectors,0,Area_Type,1,Impact_Year,1]
+Att_ColorRole: Null
 
 Index Start_of_Year
 Title: Start of Year
@@ -2984,7 +2989,7 @@ NodeSize: 64,40
 Aliases: FormNode Fo1535749286
 
 Index Output_Start_Time
-Att_PrevIndexValue: [1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Dec-2021,1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023,1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030,1-Jan-2031,1-Feb-2031,1-Mar-2031,1-Apr-2031,1-May-2031,1-Jun-2031,1-Jul-2031,1-Aug-2031,1-Sep-2031,1-Oct-2031,1-Nov-2031,1-Dec-2031,1-Jan-2032,1-Feb-2032,1-Mar-2032,1-Apr-2032,1-May-2032,1-Jun-2032,1-Jul-2032,1-Aug-2032,1-Sep-2032,1-Oct-2032,1-Nov-2032,1-Dec-2032,1-Jan-2033,1-Feb-2033,1-Mar-2033,1-Apr-2033,1-May-2033,1-Jun-2033,1-Jul-2033,1-Aug-2033,1-Sep-2033,1-Oct-2033,1-Nov-2033,1-Dec-2033,1-Jan-2034,1-Feb-2034,1-Mar-2034,1-Apr-2034,1-May-2034,1-Jun-2034,1-Jul-2034,1-Aug-2034,1-Sep-2034,1-Oct-2034,1-Nov-2034,1-Dec-2034,1-Jan-2035,1-Feb-2035,1-Mar-2035,1-Apr-2035,1-May-2035,1-Jun-2035,1-Jul-2035,1-Aug-2035,1-Sep-2035,1-Oct-2035,1-Nov-2035,1-Dec-2035,1-Jan-2036,1-Feb-2036,1-Mar-2036,1-Apr-2036,1-May-2036,1-Jun-2036,1-Jul-2036,1-Aug-2036,1-Sep-2036,1-Oct-2036,1-Nov-2036,1-Dec-2036,1-Jan-2037,1-Feb-2037,1-Mar-2037,1-Apr-2037,1-May-2037,1-Jun-2037,1-Jul-2037,1-Aug-2037,1-Sep-2037,1-Oct-2037,1-Nov-2037,1-Dec-2037,1-Jan-2038,1-Feb-2038,1-Mar-2038,1-Apr-2038,1-May-2038,1-Jun-2038,1-Jul-2038,1-Aug-2038,1-Sep-2038,1-Oct-2038,1-Nov-2038,1-Dec-2038,1-Jan-2039,1-Feb-2039,1-Mar-2039,1-Apr-2039,1-May-2039,1-Jun-2039,1-Jul-2039,1-Aug-2039,1-Sep-2039,1-Oct-2039,1-Nov-2039,1-Dec-2039,1-Jan-2040,1-Feb-2040,1-Mar-2040,1-Apr-2040,1-May-2040,1-Jun-2040,1-Jul-2040,1-Aug-2040,1-Sep-2040,1-Oct-2040,1-Nov-2040,1-Dec-2040,1-Jan-2041,1-Feb-2041,1-Mar-2041,1-Apr-2041,1-May-2041,1-Jun-2041,1-Jul-2041,1-Aug-2041,1-Sep-2041,1-Oct-2041,1-Nov-2041,1-Dec-2041,1-Jan-2042,1-Feb-2042,1-Mar-2042,1-Apr-2042,1-May-2042,1-Jun-2042,1-Jul-2042,1-Aug-2042,1-Sep-2042,1-Oct-2042,1-Nov-2042,1-Dec-2042,1-Jan-2043,1-Feb-2043,1-Mar-2043,1-Apr-2043,1-May-2043,1-Jun-2043,1-Jul-2043,1-Aug-2043,1-Sep-2043,1-Oct-2043,1-Nov-2043,1-Dec-2043,1-Jan-2044,1-Feb-2044,1-Mar-2044,1-Apr-2044,1-May-2044,1-Jun-2044,1-Jul-2044,1-Aug-2044,1-Sep-2044,1-Oct-2044,1-Nov-2044,1-Dec-2044,1-Jan-2045,1-Feb-2045,1-Mar-2045,1-Apr-2045,1-May-2045,1-Jun-2045,1-Jul-2045,1-Aug-2045,1-Sep-2045,1-Oct-2045,1-Nov-2045,1-Dec-2045,1-Jan-2046,1-Feb-2046,1-Mar-2046,1-Apr-2046,1-May-2046,1-Jun-2046,1-Jul-2046,1-Aug-2046,1-Sep-2046,1-Oct-2046,1-Nov-2046,1-Dec-2046,1-Jan-2047,1-Feb-2047,1-Mar-2047,1-Apr-2047,1-May-2047,1-Jun-2047,1-Jul-2047,1-Aug-2047,1-Sep-2047,1-Oct-2047,1-Nov-2047,1-Dec-2047,1-Jan-2048,1-Feb-2048,1-Mar-2048,1-Apr-2048,1-May-2048,1-Jun-2048,1-Jul-2048,1-Aug-2048,1-Sep-2048,1-Oct-2048,1-Nov-2048,1-Dec-2048,1-Jan-2049,1-Feb-2049,1-Mar-2049,1-Apr-2049,1-May-2049,1-Jun-2049,1-Jul-2049,1-Aug-2049,1-Sep-2049,1-Oct-2049,1-Nov-2049,1-Dec-2049,1-Jan-2050,1-Feb-2050,1-Mar-2050,1-Apr-2050,1-May-2050,1-Jun-2050,1-Jul-2050,1-Aug-2050,1-Sep-2050,1-Oct-2050,1-Nov-2050,1-Dec-2050,1-Jan-2051,1-Feb-2051,1-Mar-2051,1-Apr-2051,1-May-2051,1-Jun-2051,1-Jul-2051,1-Aug-2051,1-Sep-2051,1-Oct-2051,1-Nov-2051,1-Dec-2051,1-Jan-2052,1-Feb-2052,1-Mar-2052,1-Apr-2052,1-May-2052,1-Jun-2052,1-Jul-2052,1-Aug-2052,1-Sep-2052,1-Oct-2052,1-Nov-2052,1-Dec-2052]
+Att_PrevIndexValue: [1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Nov-2021,1-Dec-2021,1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023,1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030,1-Jan-2031,1-Feb-2031,1-Mar-2031,1-Apr-2031,1-May-2031,1-Jun-2031,1-Jul-2031,1-Aug-2031,1-Sep-2031,1-Oct-2031,1-Nov-2031,1-Dec-2031,1-Jan-2032,1-Feb-2032,1-Mar-2032,1-Apr-2032,1-May-2032,1-Jun-2032,1-Jul-2032,1-Aug-2032,1-Sep-2032,1-Oct-2032,1-Nov-2032,1-Dec-2032,1-Jan-2033,1-Feb-2033,1-Mar-2033,1-Apr-2033,1-May-2033,1-Jun-2033,1-Jul-2033,1-Aug-2033,1-Sep-2033,1-Oct-2033,1-Nov-2033,1-Dec-2033,1-Jan-2034,1-Feb-2034,1-Mar-2034,1-Apr-2034,1-May-2034,1-Jun-2034,1-Jul-2034,1-Aug-2034,1-Sep-2034,1-Oct-2034,1-Nov-2034,1-Dec-2034,1-Jan-2035,1-Feb-2035,1-Mar-2035,1-Apr-2035,1-May-2035,1-Jun-2035,1-Jul-2035,1-Aug-2035,1-Sep-2035,1-Oct-2035,1-Nov-2035,1-Dec-2035,1-Jan-2036,1-Feb-2036,1-Mar-2036,1-Apr-2036,1-May-2036,1-Jun-2036,1-Jul-2036,1-Aug-2036,1-Sep-2036,1-Oct-2036,1-Nov-2036,1-Dec-2036,1-Jan-2037,1-Feb-2037,1-Mar-2037,1-Apr-2037,1-May-2037,1-Jun-2037,1-Jul-2037,1-Aug-2037,1-Sep-2037,1-Oct-2037,1-Nov-2037,1-Dec-2037,1-Jan-2038,1-Feb-2038,1-Mar-2038,1-Apr-2038,1-May-2038,1-Jun-2038,1-Jul-2038,1-Aug-2038,1-Sep-2038,1-Oct-2038,1-Nov-2038,1-Dec-2038,1-Jan-2039,1-Feb-2039,1-Mar-2039,1-Apr-2039,1-May-2039,1-Jun-2039,1-Jul-2039,1-Aug-2039,1-Sep-2039,1-Oct-2039,1-Nov-2039,1-Dec-2039,1-Jan-2040,1-Feb-2040,1-Mar-2040,1-Apr-2040,1-May-2040,1-Jun-2040,1-Jul-2040,1-Aug-2040,1-Sep-2040,1-Oct-2040,1-Nov-2040,1-Dec-2040,1-Jan-2041,1-Feb-2041,1-Mar-2041,1-Apr-2041,1-May-2041,1-Jun-2041,1-Jul-2041,1-Aug-2041,1-Sep-2041,1-Oct-2041,1-Nov-2041,1-Dec-2041,1-Jan-2042,1-Feb-2042,1-Mar-2042,1-Apr-2042,1-May-2042,1-Jun-2042,1-Jul-2042,1-Aug-2042,1-Sep-2042,1-Oct-2042,1-Nov-2042,1-Dec-2042,1-Jan-2043,1-Feb-2043,1-Mar-2043,1-Apr-2043,1-May-2043,1-Jun-2043,1-Jul-2043,1-Aug-2043,1-Sep-2043,1-Oct-2043,1-Nov-2043,1-Dec-2043,1-Jan-2044,1-Feb-2044,1-Mar-2044,1-Apr-2044,1-May-2044,1-Jun-2044,1-Jul-2044,1-Aug-2044,1-Sep-2044,1-Oct-2044,1-Nov-2044,1-Dec-2044,1-Jan-2045,1-Feb-2045,1-Mar-2045,1-Apr-2045,1-May-2045,1-Jun-2045,1-Jul-2045,1-Aug-2045,1-Sep-2045,1-Oct-2045,1-Nov-2045,1-Dec-2045,1-Jan-2046,1-Feb-2046,1-Mar-2046,1-Apr-2046,1-May-2046,1-Jun-2046,1-Jul-2046,1-Aug-2046,1-Sep-2046,1-Oct-2046,1-Nov-2046,1-Dec-2046,1-Jan-2047,1-Feb-2047,1-Mar-2047,1-Apr-2047,1-May-2047,1-Jun-2047,1-Jul-2047,1-Aug-2047,1-Sep-2047,1-Oct-2047,1-Nov-2047,1-Dec-2047,1-Jan-2048,1-Feb-2048,1-Mar-2048,1-Apr-2048,1-May-2048,1-Jun-2048,1-Jul-2048,1-Aug-2048,1-Sep-2048,1-Oct-2048,1-Nov-2048,1-Dec-2048,1-Jan-2049,1-Feb-2049,1-Mar-2049,1-Apr-2049,1-May-2049,1-Jun-2049,1-Jul-2049,1-Aug-2049,1-Sep-2049,1-Oct-2049,1-Nov-2049,1-Dec-2049,1-Jan-2050,1-Feb-2050,1-Mar-2050,1-Apr-2050,1-May-2050,1-Jun-2050,1-Jul-2050,1-Aug-2050,1-Sep-2050,1-Oct-2050,1-Nov-2050,1-Dec-2050,1-Jan-2051,1-Feb-2051,1-Mar-2051,1-Apr-2051,1-May-2051,1-Jun-2051,1-Jul-2051,1-Aug-2051,1-Sep-2051,1-Oct-2051,1-Nov-2051,1-Dec-2051,1-Jan-2052,1-Jul-2052]
 Title: Output Start Time
 Definition: INDEX both:=Concat(Time_Vehicles, Time_Solar_PV);~
 INDEX uniqTime:=Unique(both);~
@@ -3004,7 +3009,7 @@ Original: Start_Time_for_Outpu
 Decision End_Time_for_Output
 Title: End Time for Output
 Description: Select the end time for which results will be displayed.
-Definition: Choice(Output_End_Time,37,0)
+Definition: Choice(Output_End_Time,38,0)
 NodeLocation: 1248,576,1
 NodeSize: 64,40
 Aliases: FormNode Fo1535749361
@@ -3018,7 +3023,7 @@ NodeInfo: 1,0,0,0,0,0,0,128,0,,0,,,
 Original: End_Time_for_Output
 
 Index Output_End_Time
-Att_PrevIndexValue: [1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Dec-2021,1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023,1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030,1-Jan-2031,1-Feb-2031,1-Mar-2031,1-Apr-2031,1-May-2031,1-Jun-2031,1-Jul-2031,1-Aug-2031,1-Sep-2031,1-Oct-2031,1-Nov-2031,1-Dec-2031,1-Jan-2032,1-Feb-2032,1-Mar-2032,1-Apr-2032,1-May-2032,1-Jun-2032,1-Jul-2032,1-Aug-2032,1-Sep-2032,1-Oct-2032,1-Nov-2032,1-Dec-2032,1-Jan-2033,1-Feb-2033,1-Mar-2033,1-Apr-2033,1-May-2033,1-Jun-2033,1-Jul-2033,1-Aug-2033,1-Sep-2033,1-Oct-2033,1-Nov-2033,1-Dec-2033,1-Jan-2034,1-Feb-2034,1-Mar-2034,1-Apr-2034,1-May-2034,1-Jun-2034,1-Jul-2034,1-Aug-2034,1-Sep-2034,1-Oct-2034,1-Nov-2034,1-Dec-2034,1-Jan-2035,1-Feb-2035,1-Mar-2035,1-Apr-2035,1-May-2035,1-Jun-2035,1-Jul-2035,1-Aug-2035,1-Sep-2035,1-Oct-2035,1-Nov-2035,1-Dec-2035,1-Jan-2036,1-Feb-2036,1-Mar-2036,1-Apr-2036,1-May-2036,1-Jun-2036,1-Jul-2036,1-Aug-2036,1-Sep-2036,1-Oct-2036,1-Nov-2036,1-Dec-2036,1-Jan-2037,1-Feb-2037,1-Mar-2037,1-Apr-2037,1-May-2037,1-Jun-2037,1-Jul-2037,1-Aug-2037,1-Sep-2037,1-Oct-2037,1-Nov-2037,1-Dec-2037,1-Jan-2038,1-Feb-2038,1-Mar-2038,1-Apr-2038,1-May-2038,1-Jun-2038,1-Jul-2038,1-Aug-2038,1-Sep-2038,1-Oct-2038,1-Nov-2038,1-Dec-2038,1-Jan-2039,1-Feb-2039,1-Mar-2039,1-Apr-2039,1-May-2039,1-Jun-2039,1-Jul-2039,1-Aug-2039,1-Sep-2039,1-Oct-2039,1-Nov-2039,1-Dec-2039,1-Jan-2040,1-Feb-2040,1-Mar-2040,1-Apr-2040,1-May-2040,1-Jun-2040,1-Jul-2040,1-Aug-2040,1-Sep-2040,1-Oct-2040,1-Nov-2040,1-Dec-2040,1-Jan-2041,1-Feb-2041,1-Mar-2041,1-Apr-2041,1-May-2041,1-Jun-2041,1-Jul-2041,1-Aug-2041,1-Sep-2041,1-Oct-2041,1-Nov-2041,1-Dec-2041,1-Jan-2042,1-Feb-2042,1-Mar-2042,1-Apr-2042,1-May-2042,1-Jun-2042,1-Jul-2042,1-Aug-2042,1-Sep-2042,1-Oct-2042,1-Nov-2042,1-Dec-2042,1-Jan-2043,1-Feb-2043,1-Mar-2043,1-Apr-2043,1-May-2043,1-Jun-2043,1-Jul-2043,1-Aug-2043,1-Sep-2043,1-Oct-2043,1-Nov-2043,1-Dec-2043,1-Jan-2044,1-Feb-2044,1-Mar-2044,1-Apr-2044,1-May-2044,1-Jun-2044,1-Jul-2044,1-Aug-2044,1-Sep-2044,1-Oct-2044,1-Nov-2044,1-Dec-2044,1-Jan-2045,1-Feb-2045,1-Mar-2045,1-Apr-2045,1-May-2045,1-Jun-2045,1-Jul-2045,1-Aug-2045,1-Sep-2045,1-Oct-2045,1-Nov-2045,1-Dec-2045,1-Jan-2046,1-Feb-2046,1-Mar-2046,1-Apr-2046,1-May-2046,1-Jun-2046,1-Jul-2046,1-Aug-2046,1-Sep-2046,1-Oct-2046,1-Nov-2046,1-Dec-2046,1-Jan-2047,1-Feb-2047,1-Mar-2047,1-Apr-2047,1-May-2047,1-Jun-2047,1-Jul-2047,1-Aug-2047,1-Sep-2047,1-Oct-2047,1-Nov-2047,1-Dec-2047,1-Jan-2048,1-Feb-2048,1-Mar-2048,1-Apr-2048,1-May-2048,1-Jun-2048,1-Jul-2048,1-Aug-2048,1-Sep-2048,1-Oct-2048,1-Nov-2048,1-Dec-2048,1-Jan-2049,1-Feb-2049,1-Mar-2049,1-Apr-2049,1-May-2049,1-Jun-2049,1-Jul-2049,1-Aug-2049,1-Sep-2049,1-Oct-2049,1-Nov-2049,1-Dec-2049,1-Jan-2050,1-Feb-2050,1-Mar-2050,1-Apr-2050,1-May-2050,1-Jun-2050,1-Jul-2050,1-Aug-2050,1-Sep-2050,1-Oct-2050,1-Nov-2050,1-Dec-2050,1-Jan-2051,1-Feb-2051,1-Mar-2051,1-Apr-2051,1-May-2051,1-Jun-2051,1-Jul-2051,1-Aug-2051,1-Sep-2051,1-Oct-2051,1-Nov-2051,1-Dec-2051,1-Jan-2052,1-Feb-2052,1-Mar-2052,1-Apr-2052,1-May-2052,1-Jun-2052,1-Jul-2052,1-Aug-2052,1-Sep-2052,1-Oct-2052,1-Nov-2052,1-Dec-2052]
+Att_PrevIndexValue: [1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Nov-2021,1-Dec-2021,1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023,1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030,1-Jan-2031,1-Feb-2031,1-Mar-2031,1-Apr-2031,1-May-2031,1-Jun-2031,1-Jul-2031,1-Aug-2031,1-Sep-2031,1-Oct-2031,1-Nov-2031,1-Dec-2031,1-Jan-2032,1-Feb-2032,1-Mar-2032,1-Apr-2032,1-May-2032,1-Jun-2032,1-Jul-2032,1-Aug-2032,1-Sep-2032,1-Oct-2032,1-Nov-2032,1-Dec-2032,1-Jan-2033,1-Feb-2033,1-Mar-2033,1-Apr-2033,1-May-2033,1-Jun-2033,1-Jul-2033,1-Aug-2033,1-Sep-2033,1-Oct-2033,1-Nov-2033,1-Dec-2033,1-Jan-2034,1-Feb-2034,1-Mar-2034,1-Apr-2034,1-May-2034,1-Jun-2034,1-Jul-2034,1-Aug-2034,1-Sep-2034,1-Oct-2034,1-Nov-2034,1-Dec-2034,1-Jan-2035,1-Feb-2035,1-Mar-2035,1-Apr-2035,1-May-2035,1-Jun-2035,1-Jul-2035,1-Aug-2035,1-Sep-2035,1-Oct-2035,1-Nov-2035,1-Dec-2035,1-Jan-2036,1-Feb-2036,1-Mar-2036,1-Apr-2036,1-May-2036,1-Jun-2036,1-Jul-2036,1-Aug-2036,1-Sep-2036,1-Oct-2036,1-Nov-2036,1-Dec-2036,1-Jan-2037,1-Feb-2037,1-Mar-2037,1-Apr-2037,1-May-2037,1-Jun-2037,1-Jul-2037,1-Aug-2037,1-Sep-2037,1-Oct-2037,1-Nov-2037,1-Dec-2037,1-Jan-2038,1-Feb-2038,1-Mar-2038,1-Apr-2038,1-May-2038,1-Jun-2038,1-Jul-2038,1-Aug-2038,1-Sep-2038,1-Oct-2038,1-Nov-2038,1-Dec-2038,1-Jan-2039,1-Feb-2039,1-Mar-2039,1-Apr-2039,1-May-2039,1-Jun-2039,1-Jul-2039,1-Aug-2039,1-Sep-2039,1-Oct-2039,1-Nov-2039,1-Dec-2039,1-Jan-2040,1-Feb-2040,1-Mar-2040,1-Apr-2040,1-May-2040,1-Jun-2040,1-Jul-2040,1-Aug-2040,1-Sep-2040,1-Oct-2040,1-Nov-2040,1-Dec-2040,1-Jan-2041,1-Feb-2041,1-Mar-2041,1-Apr-2041,1-May-2041,1-Jun-2041,1-Jul-2041,1-Aug-2041,1-Sep-2041,1-Oct-2041,1-Nov-2041,1-Dec-2041,1-Jan-2042,1-Feb-2042,1-Mar-2042,1-Apr-2042,1-May-2042,1-Jun-2042,1-Jul-2042,1-Aug-2042,1-Sep-2042,1-Oct-2042,1-Nov-2042,1-Dec-2042,1-Jan-2043,1-Feb-2043,1-Mar-2043,1-Apr-2043,1-May-2043,1-Jun-2043,1-Jul-2043,1-Aug-2043,1-Sep-2043,1-Oct-2043,1-Nov-2043,1-Dec-2043,1-Jan-2044,1-Feb-2044,1-Mar-2044,1-Apr-2044,1-May-2044,1-Jun-2044,1-Jul-2044,1-Aug-2044,1-Sep-2044,1-Oct-2044,1-Nov-2044,1-Dec-2044,1-Jan-2045,1-Feb-2045,1-Mar-2045,1-Apr-2045,1-May-2045,1-Jun-2045,1-Jul-2045,1-Aug-2045,1-Sep-2045,1-Oct-2045,1-Nov-2045,1-Dec-2045,1-Jan-2046,1-Feb-2046,1-Mar-2046,1-Apr-2046,1-May-2046,1-Jun-2046,1-Jul-2046,1-Aug-2046,1-Sep-2046,1-Oct-2046,1-Nov-2046,1-Dec-2046,1-Jan-2047,1-Feb-2047,1-Mar-2047,1-Apr-2047,1-May-2047,1-Jun-2047,1-Jul-2047,1-Aug-2047,1-Sep-2047,1-Oct-2047,1-Nov-2047,1-Dec-2047,1-Jan-2048,1-Feb-2048,1-Mar-2048,1-Apr-2048,1-May-2048,1-Jun-2048,1-Jul-2048,1-Aug-2048,1-Sep-2048,1-Oct-2048,1-Nov-2048,1-Dec-2048,1-Jan-2049,1-Feb-2049,1-Mar-2049,1-Apr-2049,1-May-2049,1-Jun-2049,1-Jul-2049,1-Aug-2049,1-Sep-2049,1-Oct-2049,1-Nov-2049,1-Dec-2049,1-Jan-2050,1-Feb-2050,1-Mar-2050,1-Apr-2050,1-May-2050,1-Jun-2050,1-Jul-2050,1-Aug-2050,1-Sep-2050,1-Oct-2050,1-Nov-2050,1-Dec-2050,1-Jan-2051,1-Feb-2051,1-Mar-2051,1-Apr-2051,1-May-2051,1-Jun-2051,1-Jul-2051,1-Aug-2051,1-Sep-2051,1-Oct-2051,1-Nov-2051,1-Dec-2051,1-Jan-2052,1-Jul-2052]
 Title: Output End Time
 Definition: Subset(Output_Start_Time>=Start_Time_for_Outpu)
 NodeLocation: 296,464,1
@@ -3034,7 +3039,7 @@ NodeLocation: 440,464,1
 NodeSize: 64,40
 WindState: 2,98,82,1283,700
 ValueState: 2,764,18,270,680,0,MIDM
-{!40300|Att_SlicerPopupSize: 302,196}
+{!40300|Att_SlicerPopupSize: 307,196}
 
 Index Spatial_IDs
 Att_PrevIndexValue: [91.901K,91.902K,91.906K,91.91K,91.911K,91.913K,91.914K,91.915K,91.916K,91.917K,91.931K,91.932K,91.934K,91.935K,91.941K,91.942K,91.945K,91.948K,91.95K,91.962K,91.963K,91.977K,91.978K,91.98K,92.003K,92.004K,92.007K,92.008K,92.009K,92.01K,92.011K,92.014K,92.019K,92.02K,92.021K,92.024K,92.025K,92.026K,92.027K,92.028K,92.029K,92.036K,92.037K,92.04K,92.054K,92.055K,92.056K,92.057K,92.058K,92.059K,92.06K,92.061K,92.064K,92.065K,92.066K,92.067K,92.068K,92.069K,92.07K,92.071K,92.072K,92.075K,92.078K,92.081K,92.082K,92.083K,92.084K,92.085K,92.086K,92.091K,92.092K,92.093K,92.096K,92.101K,92.102K,92.103K,92.104K,92.105K,92.106K,92.107K,92.108K,92.109K,92.11K,92.111K,92.112K,92.113K,92.114K,92.115K,92.116K,92.117K,92.118K,92.119K,92.12K,92.121K,92.122K,92.123K,92.124K,92.126K,92.127K,92.128K,92.129K,92.13K,92.131K,92.132K,92.136K,92.139K,92.145K,92.152K,92.154K,92.158K,92.161K,92.173K,92.179K,92.182K,92.199K,92.536K,92.624K,92.629K,92.651K,92.653K,92.656K,92.672K,92.673K,92.674K,92.675K,92.676K,92.677K,92.679K,92.688K,92.69K,92.691K,92.692K,92.693K,92.694K,92.697K]
@@ -3187,20 +3192,22 @@ NodeSize: 64,40
 ValueState: 2,1296,-11,476,835,0,MIDM
 ReformVal: [PV_Sectors,Hours_8784]
 NumberFormat: 2,F,2,8,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [Hours_8784]
 
-Variable Solar_Hourly_Impact1
-Title: Solar Hourly Impact
+Variable Solar_Hourly_Impact_
+Title: Solar Hourly Impact Delta
 Units: MWh
 Definition: local x:=Delta_MW_DC_PV_Impac * PV_Production_per_kW[PV_Climate_Zone=Climate_Zone_Map] * Normalized_Solar_Pro[Hours_8784=A8760];~
 x[Area_Type=Area_Type_for_Optimi]
 NodeLocation: 1064,360,1
 NodeSize: 64,40
-ValueState: 2,2379,37,1204,796,0,MIDM
+ValueState: 2,2732,157,589,748,0,MIDM
 Aliases: FormNode Fo1495487651
-ReformVal: [Forecast_Year1,Hours_8784]
+ReformVal: [PV_Sectors,Forecast_Year1]
 NumberFormat: 2,F,2,3,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [A8760]
-Att_ResultSliceState: [PV_Sectors,2,PV_Spatial_ID,1,PV_Climate_Zone,1,A8760,1,Forecast_Year1,1]
+Att__TotalsIndex: [PV_Sectors,A8760]
+Att_ResultSliceState: [PV_Spatial_ID,1,PV_Climate_Zone,1,A8760,0,Forecast_Year1,1,PV_Sectors,0]
+{!50000|Att_ColumnWidths: [,PV_Sectors,\([,139,137])]}
 
 FormNode Fo2042975395
 Title: Area Type for Optimization
@@ -3226,14 +3233,14 @@ Title: Last PV Period b4 Forecast Delta
 Definition: Choice(Time,240,0)
 NodeLocation: 1064,144,1
 NodeSize: 64,40
-Aliases: FormNode Fo1646482595
+Aliases: FormNode Fo1646482595, FormNode Clipboard_Fo16464825, FormNode Fo1590080675
 
 Decision Last_Period_of_Forec
 Title: Last Period of Forecast Delta
 Definition: Choice(Time,600,0)
 NodeLocation: 1208,144,1
 NodeSize: 64,40
-Aliases: FormNode Fo304305315
+Aliases: FormNode Fo304305315, FormNode Clipboard_Fo30430531, FormNode Fo1053209763
 
 Index Forecast_Period
 Title: Forecast Period
@@ -3248,7 +3255,7 @@ Title: Delta MW-DC Impact fm PV
 Definition: (Cumul_DC_Capacity_EO - Cumul_DC_Capacity_EO[Time_Solar_PV=Last_PV_Period_b4_Fo])[Time_Solar_PV=Forecast_Period]
 NodeLocation: 888,248,1
 NodeSize: 64,40
-ValueState: 2,928,0,489,691,0,MIDM
+ValueState: 2,1995,92,489,691,0,MIDM
 ReformVal: [PV_Sectors,Forecast_Period]
 Att__TotalsIndex: [PV_Sectors]
 
@@ -3257,7 +3264,8 @@ Title: PV Time at End of Forecast Yr
 Definition: MakeDate(Forecast_Year1,12,1)
 NodeLocation: 1208,248,1
 NodeSize: 64,40
-ValueState: 2,1566,409,262,423,0,MIDM
+ValueState: 2,1566,99,238,667,0,MIDM
+Aliases: Alias Al1896002723
 
 Index Forecast_Year1
 Title: Forecast Year
@@ -3265,13 +3273,14 @@ Definition: Datepart(Forecast_Period[@Forecast_Period=1],'Y')..Datepart(Forecast
 NodeLocation: 1352,144,1
 NodeSize: 64,40
 ValueState: 2,1025,121,226,634,0,MIDM
+{!40300|Att_SlicerPopupSize: 227,448}
 
 Variable Delta_MW_DC_PV_Impac
 Title: Delta MW-DC PV Impact by Forecast Yr
 Definition: Delta_MW_DC_Impact_f[Forecast_Period=PV_Time_at_End_of_Fo]
 NodeLocation: 1064,248,1
 NodeSize: 64,40
-ValueState: 2,438,265,1095,540,1,MIDM
+ValueState: 2,1954,47,985,586,1,MIDM
 GraphSetup: Att_GraphIndexRange Forecast_Year1:1,,1,,,,,2021.7528445087373,2040.1110556721687,0
 ReformVal: [Forecast_Year1,PV_Sectors]
 Att__TotalsIndex: [PV_Sectors]
@@ -3281,6 +3290,7 @@ Title: 8760
 Definition: 1..8760
 NodeLocation: 1208,360,1
 NodeSize: 64,40
+{!40300|Att_SlicerPopupSize: 227,1001}
 
 FormNode Fo1646482595
 Title: Last PV Period b4 Forecast Delta
@@ -3301,9 +3311,9 @@ Original: Last_Period_of_Forec
 FormNode Fo1495487651
 Title: Solar Hourly Impact
 Definition: 1
-NodeLocation: 1152,448,1
-NodeSize: 152,16
-Original: Solar_Hourly_Impact1
+NodeLocation: 1172,448,1
+NodeSize: 172,16
+Original: Solar_Hourly_Impact_
 
 Close PV_Impacts
 
@@ -3682,7 +3692,7 @@ WindState: 2,-7,7,1503,350
 ValueState: 2,906,197,737,684,0,MIDM
 NodeColor: 65535,1,1
 ReformVal: [PV_Climate_Zone,PV_Sectors]
-DisplayInputs: Function Divide, Variable PV_DC_System_Size_fo, Variable PV_Production_per_kW, Index Hours_8784
+DisplayInputs: Object Function, Object Variable, Object Index, Function Divide, Variable PV_DC_System_Size_fo, Variable PV_Production_per_kW, Index Hours_8784
 Att__TotalsIndex: []
 Att_ResultSliceState: [Area_Type,1,PV_Sectors,1,PV_Climate_Zone,1]
 
@@ -3800,7 +3810,7 @@ Att_ResultSliceState: [System_Types,2,Area_Type,2,PV_Sectors,1,PV_Climate_Zone,1
 
 Text Te1761380643
 Title: Already levelized. Fix
-NodeLocation: 728,208,-1
+NodeLocation: 696,72,-1
 NodeSize: 64,40
 
 Variable Va28
@@ -3820,7 +3830,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,0,65,1734,589,17,10
+DiagState: 2,56,36,1734,589,17,10
 Aliases: Alias Al1579800542
 AcpStyles: FrameNode: Load_Frame
 
@@ -4019,11 +4029,12 @@ NodeLocation: 1216,136,1
 NodeSize: 64,40
 ValueState: 2,2066,18,1535,841,1,MIDM
 Aliases: FormNode Fo1582589389
-GraphSetup: Att_GraphValueRange PrePost_Load_Solar:1,,1,,,,,0,4073.3012557029724,0~
-ShowKey:2
+GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
+ShowKey:2~
+Att_GraphValueRange PrePost_Load_Solar:1,,1,,,,,0,4073.3012557029724,0
 ReformVal: [Profile_Hours,Pre_and_Post_System]
 Att__TotalsIndex: []
-Att_ResultSliceState: [Rate_Names_and_Start,1,Month,4,PV_Climate_Zone,1,PV_Sectors,2,System_Types,2,Pre_and_Post_System,2,Profile_Hours,1]
+Att_ResultSliceState: [Rate_Names_and_Start,6,Month,8,PV_Climate_Zone,1,PV_Sectors,1,System_Types,2,Area_Type,1,Pre_and_Post_System,2,Profile_Hours,1]
 
 Module Profile_Creation
 Title: Profile Creation
@@ -4818,10 +4829,10 @@ Units: kW
 Definition: Max(Applied_Load_Profile,Profile_Hours,Month)
 NodeLocation: 976,448,1
 NodeSize: 64,40
-ValueState: 2,277,186,732,658,0,MIDM
+ValueState: 2,876,333,545,330,0,MIDM
 Aliases: Alias Al1968755747
 ReformVal: [PV_Climate_Zone,PV_Sectors]
-NumberFormat: 2,F,4,4,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+NumberFormat: 2,F,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 
 Close Customer_Load
 
@@ -5568,7 +5579,7 @@ ValueState: 2,21,412,1577,444,0,MIDM
 NumberFormat: 2,G,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Rate_Vintage]
 Att_ResultSliceState: [PV_Climate_Zone,3,Pre_and_Post_System,2,PV_Sectors,1,Time,1]
-{!50000|Att_ColumnWidths: [,Annual_Econ_Time,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
+{!50000|Att_ColumnWidths: [,Annual_Econ_Time,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
 
 Variable Rate_Escalate_byVint
 Title: Rate Escalation by Vintage
@@ -10458,13 +10469,13 @@ THEN INF~
 ELSE Divide(Tot_Price_Aft_Incent - Monthly_Fees, FirstYr_BillSav_Time, False)
 NodeLocation: 312,72,1
 NodeSize: 64,40
-ValueState: 2,401,72,1169,783,1,MIDM
+ValueState: 2,2308,109,1074,711,1,MIDM
 GraphSetup: ShowKey:2~
-Att_GraphValueRange Simple_Payback_Time1:1,,1,,,,,0,10.157816112041473,0~
-Att_GraphIndexRange Time:1,,0,,,,,43107.55285656452,46752,0
+Att_GraphValueRange Simple_Payback_Time1:1,,1,,,,,0,11.629531234502792,0~
+Att_GraphIndexRange Time:1,,0,,,,,40562.58584359288,54567.861154317856,0
 ReformVal: [Time,System_Types]
 Att__TotalsIndex: []
-Att_ResultSliceState: [Area_Type,1,PV_Sectors,2,PV_Climate_Zone,1,System_Types,2,Time,1]
+Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,PV_Sectors,2,System_Types,2,Time,1]
 
 Module Simple_LCOE_Calculat
 Title: Simple LCOE Calculator
@@ -10752,7 +10763,6 @@ Definition: Table(Annual_Econ_Time,All_System_Types)(~
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0)
 NodeLocation: 112,664,1
 NodeSize: 64,40
@@ -10890,7 +10900,7 @@ Date: Wed, Oct 10, 2018 9:00 AM
 NodeLocation: 544,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,99,53,1554,702,17,10
+DiagState: 2,2256,87,1554,648,17,10
 Aliases: Alias Al1548967120
 AcpStyles: FrameNode: FrameNode_1544919879
 
@@ -10948,7 +10958,7 @@ NodeLocation: 560,176,1
 NodeSize: 64,40
 WindState: 2,5,42,875,350
 DefnState: 2,883,249,416,303,,DFNM
-ValueState: 2,1183,66,617,712,0,MIDM
+ValueState: 2,1018,129,617,374,0,MIDM
 NodeColor: 19661,48336,65535
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
@@ -11037,10 +11047,10 @@ Definition: Historical_based_PV_
 NodeLocation: 1120,208,1
 NodeSize: 64,40
 WindState: 2,98,82,1467,427
-ValueState: 2,160,20,1228,743,0,MIDM
-Aliases: Alias Al565149219
+ValueState: 2,1050,395,603,278,0,MIDM
+Aliases: Alias Al565149219, Alias Al844149923
 ReformVal: [Time_Solar_PV,0]
-Att_ResultSliceState: [New_or_Retrofit,2,Area_Type,1,PV_Spatial_ID,1,PV_Sectors,1]
+Att_ResultSliceState: [New_or_Retrofit,2,PV_Spatial_ID,1,PV_Sectors,1,Area_Type,1]
 
 Alias Al1542828348
 Title: Forecast AC System Size by Zip
@@ -11092,15 +11102,16 @@ Variable Storage_Max_Power
 Title: Storage Max Power
 Units: kW-AC/system
 Description: The max charge/discharge rate of the battery system.
-Definition: Fraction_of_Peak_for[All_System_Types=System_Types] * ~
+Definition: Fraction_of_Peak_for[All_System_Types=System_Types,All_PV_Sectors=PV_Sectors] * ~
 Peak_basis_for_stora
 NodeLocation: 288,272,1
 NodeSize: 64,40
 WindState: 2,12,-11,720,350
 ValueState: 2,829,257,760,294,0,MIDM
+Aliases: Alias Al1969009827
 NodeColor: 65535,1,1
 ReformVal: [PV_Climate_Zone,PV_Sectors]
-NumberFormat: 2,F,4,4,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att_ResultSliceState: [System_Types,2,Area_Type,1,PV_Sectors,1,PV_Climate_Zone,1]
 
 Variable Hours_of_Storage
@@ -11222,8 +11233,8 @@ Title: Hours of Storage at Peak Output
 Units: hrs
 Description: The number of hours of energy storage at the rated max power of the storage system
 Definition: Table(All_PV_Sectors,All_System_Types)(~
-0,0,3.5,3.5,3.5,3.5,3.5,~
-0,0,3.5,3.5,3.5,3.5,3.5)
+0,0,2,2,2,2,2,~
+0,0,2,2,2,2,2)
 NodeLocation: 448,80,1
 NodeSize: 64,40
 WindState: 2,195,92,720,522
@@ -11247,16 +11258,19 @@ Description: The fraction of the peak basis (either customer load, in AC, kW DC 
 ~
 So units for this fraction are kW-AC storage / kW DC solar (for paired systems) or kW-AC storage / kW-AC peak load for stand-alone systems. ~
 ~
-0.66 {median value from NY DER installations https://der.nyserda.ny.gov/search/ through about 2021}~
+0.66 {median value from NY DER installations https://der.nyserda.ny.gov/search/ through about 2021} and is used for NonResidential. Residential uses JEA average for historical installations.~
 ~
 <a href="https://resourceinnovation.sharepoint.com/:x:/r/sites/611140_NYPAProduct/Shared%20Documents/General/Modeling%20Files/DER/Raw%20Data%20Sets/DER%20Facilities%20in%20NY.xlsx?d=w43c8a0b32638488db1c66ff424c780e8&csf=1&web=1&e=QZg12t">https://resourceinnovation.sharepoint.com/:x:/r/sites/611140_NYPAProduct/Shared%20Documents/General/Modeling%20Files/DER/Raw%20Data%20Sets/DER%20Facilities%20in%20NY.xlsx?d=w43c8a0b32638488db1c66ff424c780e8&csf=1&web=1&e=QZg12t</a>
-Definition: Table(All_System_Types)(0,0,0.66,0.66,0.66,0.66,0.66)
+Definition: Table(All_PV_Sectors,All_System_Types)(~
+0,0,0.74,0.74,0.74,0.74,0.74,~
+0,0,0.66,0.66,0.66,0.66,0.66)
 NodeLocation: 584,80,1
 NodeSize: 64,40
 WindState: 2,547,109,720,350
-DefnState: 2,1133,196,416,303,0,DFNM
+DefnState: 2,1133,196,599,336,0,DFNM
 Aliases: Alias Al568492323
 NodeColor: 65535,1,1
+ReformDef: [All_PV_Sectors,All_System_Types]
 TableCellDefault: 1
 
 Variable Peak_basis_for_stora
@@ -11307,7 +11321,7 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 256,288,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,40,155,1707,614,17,10
+DiagState: 2,119,81,1707,614,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -11334,7 +11348,7 @@ NodeLocation: 384,1192,1
 NodeSize: 64,40
 WindState: 2,2146,81,1165,697
 ValueState: 2,908,442,659,261,0,MIDM
-{!40300|Att_SlicerPopupSize: 1367,522}
+{!40300|Att_SlicerPopupSize: 1432,522}
 
 Text Te1545165196
 Description: Currently chooses the rate name for the post-system, which doesn't tell you the pre-system if they are different.
@@ -11525,7 +11539,7 @@ NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 Att_GraphIndexRange: 1,,0,,,,,1,11,1
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 1513,353}
+{!40300|Att_SlicerPopupSize: 1573,353}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
@@ -11597,7 +11611,7 @@ DisplayOutputs: Variable Clipboard_NewConstr_
 {!40300|Att_SlicerPopupSize: 267,42}
 
 Index Annual_Econ_Time
-Att_PrevIndexValue: [2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,2040,2041,2042,2043,2044,2045,2046,2047,2048,2049,2050,2051,2052]
+Att_PrevIndexValue: [2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,2040,2041,2042,2043,2044,2045,2046,2047,2048,2049,2050,2051]
 Title: Annual Economic Time
 Description: Starts one year prior to the minimum of PV or BESS simulation start years, so that annual economic calculations can be treated as middle-of-year values.
 Definition: (MIN([DatePart(BESS_Calibrat_Start, 'Y'), DatePart(PV_Calibration_Start, 'Y')])-1)..MAX([DatePart(BESS_Sim_End_Year, 'Y'), DatePart(PV_Sim_End_Year, 'Y')])
@@ -11834,7 +11848,7 @@ NodeLocation: 240,256,1
 NodeSize: 64,40
 WindState: 2,102,21,1089,879
 ValueState: 2,992,329,416,303,0,MIDM
-{!40300|Att_SlicerPopupSize: 1012,112}
+{!40300|Att_SlicerPopupSize: 1062,112}
 
 Index New_or_Retrofit
 Att_PrevIndexValue: ['NewConstr','Retrofit']
@@ -11843,7 +11857,7 @@ Definition: ['NewConstr','Retrofit']
 NodeLocation: 528,64,1
 NodeSize: 64,40
 WindState: 2,340,206,720,350
-{!40300|Att_SlicerPopupSize: 262,56}
+{!40300|Att_SlicerPopupSize: 267,56}
 
 Index System_Configuration
 Title: System Configuration
@@ -12498,7 +12512,7 @@ Definition: Subset(Storage_Systems <> Storage_Added_Label)
 NodeLocation: 1104,936,1
 NodeSize: 64,40
 WindState: 2,40,-1,910,825
-{!40300|Att_SlicerPopupSize: 493,110}
+{!40300|Att_SlicerPopupSize: 513,110}
 
 Variable System_with_PV
 Title: System with PV
@@ -12619,7 +12633,7 @@ NodeLocation: 240,800,1
 NodeSize: 64,40
 WindState: 2,2,228,720,350
 Att_GraphIndexRange: 1,,,,,,10
-{!40300|Att_SlicerPopupSize: 397,116}
+{!40300|Att_SlicerPopupSize: 417,116}
 
 Index Bill_Components1
 Title: Bill Components
@@ -13317,9 +13331,9 @@ NodeLocation: 440,264,1
 NodeSize: 64,40
 ValueState: 2,385,270,1271,401,0,MIDM
 Aliases: Alias Al263822787
-ReformVal: [Area_Type,PV_Spatial_ID]
+ReformVal: [PV_Sectors,PV_Spatial_ID]
 Att__TotalsIndex: [PV_Spatial_ID]
-Att_ResultSliceState: [PV_Sectors,2,PV_Spatial_ID,0]
+Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,0,Area_Type,1]
 Att_ColorRole: Null
 
 Text FrameNode_1545066262
@@ -13447,12 +13461,12 @@ ValueState: 2,270,24,1251,794,1,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_StackedBar Graph_Primary_Valdim:1~
 {!50007|Graph_BarOutline:1}
-ReformDef: [Spatial_ID,All_PV_Sectors]
+ReformDef: [Building_Stock_Year,All_PV_Sectors]
 ReformVal: [All_PV_Sectors,Spatial_ID]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Spatial_ID]
 Att_ResultSliceState: [Roof_Dummy,1,Area_Type,1,Spatial_ID,0,All_PV_Sectors,1]
-Att_EditSliceState: [Roof_Dummy,1,Area_Type,3,All_PV_Sectors,1,Spatial_ID,1]
+Att_EditSliceState: [Area_Type,1,Spatial_ID,1,All_PV_Sectors,1,Building_Stock_Year,1]
 {!40600|Att_StackingIndex: Area_Type}
 {!40600|Att_ClusterIndex: Spatial_ID}
 {!50000|Att_ColumnWidths: [,All_Sectors,\([,,])]}
@@ -13504,7 +13518,7 @@ NodeSize Facility_Level_Area_: 64,40
 Alias Al1460632099
 Title: Eligible Bldgs for Retrofit
 Definition: 1
-NodeLocation: 600,264,1
+NodeLocation: 600,184,1
 NodeSize: 64,40
 NodeColor: 65535,65535,65535
 Original: Eligible_PV_Stock_fo
@@ -13560,6 +13574,16 @@ NodeLocation: 440,384,1
 NodeSize: 64,40
 Original: Applied_Building_Stk
 
+Variable Total_PV_stock_per_B
+Title: Total PV stock per Building
+Units: m2/building
+Definition: IF PV_Stock_Basis_by_Se[All_Sectors=All_PV_Sectors] = Buildings_Label~
+THEN 1 ELSE~
+ZIDZ(Total_PV_Area[Building_Stock_Year=Year_of_Consump_Data],Building_Stock[All_Sectors=All_PV_Sectors,All_Spatial_ID=Spatial_ID,Building_Stock_Year=Year_of_Consump_Data])
+NodeLocation: 624,80,1
+NodeSize: 64,40
+ValueState: 2,779,370,600,282,0,MIDM
+
 Close Roofspace_Per_Buildi
 
 Module Power_and_Module_Den
@@ -13569,7 +13593,7 @@ Date: Wed, Nov 7, 2018 1:59 PM
 NodeLocation: 264,240,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,197,108,1369,652,17,10
+DiagState: 2,376,46,1369,652,17,10
 AcpStyles: FrameNode: FrameNode_1545066590
 
 Constant Power_Density
@@ -13657,12 +13681,12 @@ ELSE DC_Watts_per_m2_usab * kW_per_W * AC_to_DC_Ratio_by_PV
 NodeLocation: 568,336,1
 NodeSize: 64,40
 WindState: 2,39,303,720,350
-ValueState: 2,160,19,1246,680,1,MIDM
+ValueState: 2,340,59,1246,680,0,MIDM
 Aliases: Alias Al1542831105
 GraphSetup: Att_GraphIndexRange PV_Spatial_ID:1,1~
 Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [PV_Spatial_ID,Time_Solar_PV]
-Att_ResultSliceState: [PV_Sectors,2,Time_Solar_PV,1,PV_Spatial_ID,1]
+Att_ResultSliceState: [PV_Sectors,1,Area_Type,1,PV_Spatial_ID,1]
 
 Text FrameNode_1545066590
 NodeLocation: 1056,336,-20

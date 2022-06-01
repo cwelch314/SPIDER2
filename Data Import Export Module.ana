@@ -82,7 +82,7 @@ WindState: 2,1982,24,1579,830
 ValueState: 2,847,306,416,303,0,MIDM
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 Att_GraphIndexRange: 1,,,,,,10
-{!40300|Att_SlicerPopupSize: 712,126}
+{!40300|Att_SlicerPopupSize: 717,126}
 
 Index Selected_Utilities
 Att_PrevIndexValue: ['JEA']
@@ -130,7 +130,7 @@ Author: Cory Welch
 Date: Fri, Jun 22, 2018 10:48 AM
 NodeLocation: 784,464,1
 NodeSize: 64,40
-DiagState: 2,893,312,844,491,17,10
+DiagState: 2,893,312,844,452,17,10
 AcpStyles: Show_Object:no
 
 Index Housing_Fields
@@ -207,7 +207,8 @@ Description: Maps building years to their corresponding Time index dates and ass
 Definition: MakeDate(Building_Stock_Year,12, 1)
 NodeLocation: 240,280,1
 NodeSize: 64,40
-ValueState: 2,200,59,474,673,,MIDM
+ValueState: 2,365,68,407,807,0,MIDM
+Aliases: Alias Al998290595
 
 Alias Al1535645646
 Title: Building_Stock
@@ -231,7 +232,7 @@ Definition: MakeDate(Building_Stock_Year,12,31)
 NodeLocation: 240,368,1
 NodeSize: 64,40
 WindState: 2,916,345,1009,499
-ValueState: 2,606,5,510,698,0,MIDM
+ValueState: 2,1239,163,510,698,0,MIDM
 
 Close Bldg_Stock_Data
 
@@ -937,7 +938,7 @@ Author: JamesMilford
 Date: Mon, Sep 30, 2019 3:19 PM
 NodeLocation: 784,368,1
 NodeSize: 64,40
-DiagState: 2,14,61,1618,620,17,10
+DiagState: 2,2048,69,1618,620,17,10
 
 Alias Al1534527254
 Title: Loadshape Start Date
@@ -1116,6 +1117,7 @@ Units: kWh
 Definition: IF Use_facility_level_d THEN Consumption_by_Sect1 ELSE Consumption_by_Secto
 NodeLocation: 256,208,1
 NodeSize: 64,40
+Aliases: Alias Al785331363
 
 Variable Load_Factor
 Title: Load Factor
@@ -1124,6 +1126,35 @@ NodeLocation: 440,272,1
 NodeSize: 64,40
 ValueState: 2,258,5,1266,883,0,MIDM
 Aliases: Alias Al2026490659
+
+Constant Consumption3
+Title: Consumption
+Units: kWh/yr
+Definition: Table(Spatial_ID,All_PV_Sectors,Building_Stock_Year)(~
+Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,5512823211.164346,5648414995.078586,5743146977.759811,5822418781.509895,5892183634.537129,5952022252.427325,6003166729.95698,6050253600.84617,6095342294.310242,6137637807.165381,6179630381.783506,6219483383.1645975,6257800432.891172,6294950423.021384,6331770650.599582,6369174354.415283,6405798486.275688,6442231502.702917,6478839411.307094,6516164416.368237,6554460695.818756,6592682312.323372,6631471770.5525055,6670168959.453831,6708920517.883323,6747714323.04603,6784190774.376945,6820864408.255607,6857736290.601418,6894807493.095871,6932079093.213701,6969552174.254202,~
+Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,6487478242.418919,6629142818.525058,6642351801.360767,6659836900.5004835,6676630474.147226,6694022454.152487,6709528104.834335,6724983542.415122,6743595674.309273,6759234503.894365,6774964554.259997,6791780329.00044,6812132953.192607,6829985163.353805,6848585212.505648,6867823499.046642,6887679921.830993,6910828419.30542,6931524730.450676,6952676274.21443,6974167964.324888,6996467316.167081,7019847458.819155,7043751550.859137,7068303659.410516,7093204398.306946,7118704323.245336,7144797215.238813,7171542939.381087,7199141317.189705,7227929137.967329,7258709878.379524)
+NodeLocation: 96,520,1
+NodeSize: 64,40
+DefnState: 2,867,183,360,531,0,DFNM
+ValueState: 2,2469,245,1007,361,0,MIDM
+NodeColor: 65535,1,1
+ReformDef: [All_PV_Sectors,Building_Stock_Year]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [All_PV_Sectors]
+
+Variable Consumption_by_Time
+Title: Consumption by Time
+Definition: LinearInterp(BuildingYr_EOP_Map, Consumption3, Equal_Prd_Time_Map, Building_Stock_Year)
+NodeLocation: 256,520,1
+NodeSize: 64,40
+ValueState: 2,36,42,1036,646,0,MIDM
+GraphSetup: Att_GraphIndexRange Time:1,,0,,,,,43104.47078233212,55629.856105685234,0
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+Att__TotalsIndex: [All_PV_Sectors]
+
+Variable Va50
+NodeLocation: 408,520,1
+NodeSize: 64,40
 
 Close Loadshape_Input_Data
 
@@ -2376,7 +2407,7 @@ Title: Opt Sectors
 Definition: Subset(All_Sectors <> EV_Sect_Label)
 NodeLocation: 104,64,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 569,405}
+{!40300|Att_SlicerPopupSize: 594,405}
 
 Index All_EV_Sectors
 Title: All EV Sectors
@@ -3070,7 +3101,7 @@ Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 920,328,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1135,35,2443,711,17,10
+DiagState: 2,988,91,2443,711,17,10
 
 Variable PV_AC_SystSize_Econ
 Title: PV AC System Size for Economics
@@ -3757,8 +3788,8 @@ Definition: PV_DC_Sys_Size_for_E~
 /*MAX([MIN([PV_DC_System_Size_f3,System_Size_Constrai[Min_Max=Maximum_Label]]),System_Size_Constrai[Min_Max=Minimum_Label]])
 NodeLocation: 1960,200,1
 NodeSize: 64,40
-ValueState: 2,647,138,777,681,0,MIDM
-Aliases: Alias Al1571850383
+ValueState: 2,2585,114,777,681,0,MIDM
+Aliases: Alias Al1571850383, Alias Al2146219171
 NodeColor: 65535,1,1
 ReformVal: [Area_Type,PV_Sectors]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,

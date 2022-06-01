@@ -23,7 +23,7 @@ Author: JamesMilford
 Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 736,792,1
 NodeSize: 64,40
-DiagState: 2,85,32,1671,656,17,10
+DiagState: 2,1895,143,1671,656,17,10
 
 Variable Cumulative_Data_Plus
 Title: Cumulative Data Plus
@@ -477,20 +477,21 @@ NodeLocation: 888,128,1
 NodeSize: 64,40
 WindState: 2,102,82,1261,505
 ValueState: 2,418,84,1076,702,1,MIDM
+Aliases: Alias Al1924347043
 NodeColor: 65535,1,1
 GraphSetup: {!50000|Graph_SortBySpread:0}~
 Att_ContLineStyle Graph_Primary_Valdim:1~
-Att_GraphIndexRange Output_Periods:1,0,1,,,,10,43085.050593853,46068.832760095596,0~
-Att_GraphValueRange PV_Cumul_Adoption:1,,1,,,0,,0,49.18505623936653,0~
+Att_GraphIndexRange Output_Periods:1,0,1,,,,10,38689.09658820927,49713.1483220458,0~
+Att_GraphValueRange PV_Cumul_Adoption:1,,0,,,0,,0,57.923200726509094,0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Graph_FillTransparen:0~
 {!50007|Graph_BarOutline:0}
-ReformVal: [Output_Periods,ITC_Scenario]
+ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,1,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [PV_Sectors,Act_vs_Sim]
-Att_ResultSliceState: [Area_Type,1,Spatial_ID,1,Act_vs_Sim,-1,ITC_Scenario,3,PV_Sectors,0,Output_Periods,167]
+Att__TotalsIndex: [Act_vs_Sim]
+Att_ResultSliceState: [Area_Type,1,Spatial_ID,1,PV_Sectors,2,Act_vs_Sim,-1,Output_Periods,167]
 {!40600|Att_StackingIndex: PV_Sectors}
 {!40600|Att_ClusterIndex: Null}
 
