@@ -2698,7 +2698,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,8,17,1823,715,17,10
+DiagState: 2,1985,51,1823,715,17,10
 
 Decision Opt_Seq_Number
 Title: Opt Sequential Number
@@ -2854,6 +2854,7 @@ OnClick: FOR J:=@All_Strg_Decisions2 DO (~
 );
 
 Index All_Strg_Decisions2
+Att_PrevIndexValue: [Stored_Grid_Elect1,Discharge_ReduceLoa1,Total_Discharge4,PV_to_Reduce_Load2,Stored_PV_Elect1,On_Peak_Dmd2,Non_Coinc_Demand2,Pos_Charge_Delta1,Neg_Charge_Delta1,Ending_Charge_Level,Charging_Start1,Initial_Charge_Leve2,Allow_Charging2]
 Title: All Storage Decisions
 Definition: [Stored_Grid_Elect1,Discharge_ReduceLoa1,Total_Discharge4,PV_to_Reduce_Load2,Stored_PV_Elect1,On_Peak_Dmd2,Non_Coinc_Demand2,Pos_Charge_Delta1,Neg_Charge_Delta1,Ending_Charge_Level,Charging_Start1,Initial_Charge_Leve2,Allow_Charging2]
 NodeLocation: 256,656,1
@@ -2863,6 +2864,7 @@ Aliases: Alias New1552348283
 MetaOnly: 1
 
 Index All_Strg_Constraint2
+Att_PrevIndexValue: [Storage_Charge_Rate1,Storage_DishargeRat1,Storage_Energy_Cap2,SOC_Limit_on_Dischr1,Constr_BatteryExpor2,DischLoadRed_LTE_Tot,DischLoadRed_LTELoad,Pos_GridElecMeetLoad,PV_LoadRed_LTE_Solar,PV_LoadRed_LTE_Load,Min_Stored_PV2,Pos_Exported_PV,Load_Balance2,PV_Balance2,Max_Non_Coinc_Deman2,Max_On_Peak_Demand2,Force_Positive_Delt1,Force_Negative_Delt1,Value_of_End_Charge,Find_Charge_Start1,Same_Starting_Charg1,Int_Strg_Charge_Rate,Int_Strg_Dischg_Rate,Continuous_Charge1]
 Title: All Storage Constraints
 Definition: [Storage_Charge_Rate1,Storage_DishargeRat1,Storage_Energy_Cap2,SOC_Limit_on_Dischr1,Constr_BatteryExpor2,DischLoadRed_LTE_Tot,DischLoadRed_LTELoad,Pos_GridElecMeetLoad,PV_LoadRed_LTE_Solar,PV_LoadRed_LTE_Load,Min_Stored_PV2,Pos_Exported_PV,Load_Balance2,PV_Balance2,Max_Non_Coinc_Deman2,Max_On_Peak_Demand2,Force_Positive_Delt1,Force_Negative_Delt1,Value_of_End_Charge,Find_Charge_Start1,Same_Starting_Charg1,Int_Strg_Charge_Rate,Int_Strg_Dischg_Rate,Continuous_Charge1]
 NodeLocation: 256,744,1
@@ -2874,7 +2876,7 @@ MetaOnly: 1
 Index Storage_Decisions2
 Title: Storage Decisions
 Description: The decision variables included in the storage optimization.
-Definition: MultiChoice(All_Strg_Decisions2,1,2,3,4,5,6,7,8,9,10,allowNone:0,returnList:1)
+Definition: MultiChoice(All_Strg_Decisions2,1,2,3,4,5,6,7,8,9,10,12,allowNone:0,returnList:1)
 NodeLocation: 256,96,1
 NodeSize: 64,40
 WindState: 2,102,82,1161,814
@@ -2895,7 +2897,7 @@ Original: Storage_Decisions2
 Index Storage_Constraints2
 Title: Storage Constraints
 Description: The constraints included in the storage optimization.
-Definition: MultiChoice(All_Strg_Constraint2,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,allowNone:0,returnList:1)
+Definition: MultiChoice(All_Strg_Constraint2,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,allowNone:0,returnList:1)
 NodeLocation: 256,200,1
 NodeSize: 64,40
 WindState: 2,102,82,1029,742
@@ -3049,8 +3051,8 @@ Decision Select_Strg_System2
 Title: Selected Storage Systems
 Description: Select the storage systems that will be evaluated in the storage optimization routines. Note that only the storage system subset selected in Select_System_Types will actually be evaluated.
 Definition: Table(Opt_Storage_Systems,Opt_Sectors)(~
-Checkbox(0),Checkbox(0),~
-Checkbox(1),Checkbox(1))
+Checkbox(1),Checkbox(1),~
+Checkbox(0),Checkbox(0))
 NodeLocation: 464,208,1
 NodeSize: 64,40
 WindState: 2,30,73,720,350
@@ -3377,7 +3379,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 31-May-2022 10:15:26.364000
+Definition: 31-May-2022 19:35:48.659000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3385,7 +3387,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 31-May-2022 10:16:23.755000
+Definition: 31-May-2022 19:37:16.283000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 WindState: 2,362,172,796,472
@@ -4409,7 +4411,7 @@ WindState: 2,323,77,720,350
 Decision Select_Strg_Sector2
 Title: Selected Storage Sectors
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,2,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
 NodeLocation: 128,288,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348264, Alias Al513733155
@@ -4483,7 +4485,7 @@ NodeSize: 72,40
 
 Variable Current_BESS_Sector
 Title: Current BESS Sector
-Definition: 2
+Definition: 1
 NodeLocation: 648,264,1
 NodeSize: 64,40
 Aliases: FormNode Fo631382307
@@ -4533,7 +4535,7 @@ MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimizat
 Decision Choose_Sectors_to_Op
 Title: Choose Sectors to Optimize
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
 NodeLocation: 464,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo989786659, Alias Al783884579, FormNode Fo431563043
