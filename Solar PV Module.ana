@@ -7047,7 +7047,7 @@ NodeSize: 64,40
 Decision Selected_ITC_Scen
 Title: ITC Scenario
 Description: Select which ITC scenario you want to model. "Baseline" captures currently planned ITC phase-out for solar PV.
-Definition: Choice(ITC_Scenario,0,Not ACP_Version)
+Definition: Choice(ITC_Scenario,1,Not ACP_Version)
 IndexVals: ['item 1']
 NodeLocation: 240,72,1
 NodeSize: 64,40
@@ -9497,7 +9497,7 @@ Att_ResultSliceState: [All_Equipment_Types,1,PV_Climate_Zone,4,Area_Type,3,Stati
 Decision Select_DER_Cost_Scen
 Title: DER Cost Scenario
 Description: Select the DER cost scenario to apply.
-Definition: Choice(DER_Cost_Scenario,0,Not ACP_Version)
+Definition: Choice(DER_Cost_Scenario,2,Not ACP_Version)
 IndexVals: ['item 1']
 NodeLocation: 264,232,1
 NodeSize: 64,40
