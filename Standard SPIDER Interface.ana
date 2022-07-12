@@ -11,7 +11,7 @@ Date: Thu, Mar 31, 2022 9:18 AM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,0,0,,,,,,,,,0
-DiagState: 2,180,5,1406,731,17,10,
+DiagState: 2,180,5,1406,869,17,10,
 WindState: 2,466,159,720,350
 NodeColor: 65535,65535,65535
 FontStyle: Arial,16
@@ -779,7 +779,7 @@ NodeSize: 64,40
 Decision PV_Economics
 Title: PV Economics
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Econ_Titles1,5,0)
+Definition: Choice(PV_Econ_Titles1,6,0)
 NodeLocation: 608,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -803,7 +803,7 @@ Original: PV_Input
 Decision PV_Input
 Title: PV Input
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Input_Titles,7,0)
+Definition: Choice(PV_Input_Titles,6,0)
 NodeLocation: 1288,440,1
 NodeSize: 64,40
 WindState: 2,99,257,720,646
@@ -1143,7 +1143,7 @@ Original: Storage_Dispatch_Out
 Decision BESS_Impact1
 Title: BESS Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Dispatch_Tit,1,0)
+Definition: Choice(Storage_Dispatch_Tit,2,0)
 NodeLocation: 608,1160,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -12436,7 +12436,7 @@ Original: Percent_of_Load_from
 FormNode Fo29422755
 Title: Total Load Delta fm PV
 Definition: 1
-NodeLocation: 384,788,1
+NodeLocation: 384,844,1
 NodeSize: 248,20
 NodeInfo: 1,,,,,,1,80,,,,,,0
 NodeColor: 30583,48316,7967
@@ -12446,7 +12446,7 @@ Original: Total_Load_Delta_fm1
 FormNode Fo1103164579
 Title: Total Load Delta from Storage
 Definition: 1
-NodeLocation: 384,828,1
+NodeLocation: 384,884,1
 NodeSize: 248,20
 NodeInfo: 1,,,,,,1,80
 NodeColor: 30583,48316,7967
@@ -12456,7 +12456,7 @@ Original: Total_Load_Delta_fr1
 FormNode Fo1640035491
 Title: PV & Storage Impact
 Definition: 1
-NodeLocation: 384,868,1
+NodeLocation: 384,924,1
 NodeSize: 248,20
 NodeInfo: 1,,,,,,1,80
 NodeColor: 30583,48316,7967
@@ -12466,7 +12466,7 @@ Original: PV_Storage_Impact
 FormNode Fo424735907
 Title: 8760 or 8784
 Definition: 0
-NodeLocation: 260,696,1
+NodeLocation: 260,752,1
 NodeSize: 124,24
 NodeInfo: 1,,,,,,,88,,,,,,0,,,,
 Original: A8760_or_8784
@@ -12474,7 +12474,7 @@ Original: A8760_or_8784
 FormNode Fo867234979
 Title: First Day of Hourly
 Definition: 0
-NodeLocation: 508,696,1
+NodeLocation: 508,752,1
 NodeSize: 124,24
 NodeInfo: 1,,,,,,,88,,,,,,0,,,,
 Original: First_Day_of_8760
@@ -12482,10 +12482,36 @@ Original: First_Day_of_8760
 FormNode Fo151581859
 Title: Total or New
 Definition: 0
-NodeLocation: 384,744,1
+NodeLocation: 384,800,1
 NodeSize: 248,24
 NodeInfo: 1,,,,,,,88,,,,,,0
 Original: Cumulative_or_New
+
+FormNode Fo1327815075
+Title: Percent of Load from PV
+Definition: 1
+NodeLocation: 384,692,1
+NodeSize: 248,20
+NodeInfo: 1,,,,,,,80,,,,,,,,,,
+NodeColor: 30583,48316,7967
+Original: Percent_of_Load_fro1
+
+FormNode Fo530766243
+Title: Percent of Bldgs Adopting Storage
+Definition: 1
+NodeLocation: 384,964,1
+NodeSize: 248,20
+NodeInfo: 1,,,,,,,80,,,,,,,,,,
+NodeColor: 30583,48316,7967
+Original: Percent_of_Bldgs_Ado
+
+FormNode Fo801823139
+Title: BESS Adoption EOP
+Definition: 1
+NodeLocation: 768,688,1
+NodeSize: 152,16
+NodeColor: 65535,65535,65535
+Original: BESS_Adoption_EOP
 
 Close Standard_SPIDER_Inte
 

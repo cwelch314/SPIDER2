@@ -394,6 +394,7 @@ NodeLocation: 288,528,1
 NodeSize: 64,40
 WindState: 2,38,103,984,451
 ValueState: 2,442,187,1034,630,1,MIDM
+GraphSetup: Att_GraphValueRange Payback_Accept_Curve:1,,1,,,,10,0,0.021246256306767464,0
 ReformVal: [Payback_Intervals,PV_Payback_Coeff]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_GraphValueRange: 1,,,,,,10
@@ -6975,16 +6976,19 @@ NodeLocation: 168,176,1
 NodeSize: 64,40
 WindState: 2,457,241,918,488
 DefnState: 2,1075,4,595,673,0,DFNM
-ValueState: 2,230,83,1254,594,1,MIDM
+ValueState: 2,230,83,1498,714,1,MIDM
 Aliases: Alias Al1550189910, FormNode Fo1550189910, FormNode Fo1545167107, FormNode Fo1545084105, FormNode Fo1567092849, FormNode Fo1548967851, FormNode Fo1484087587, FormNode Fo343242019
 NodeColor: 65535,1,1
-GraphSetup: Att_GraphIndexRange Static_PV_Time:1,1,,,,,10
+GraphSetup: {!50000|Graph_SortBySpread:0}~
+Att_GraphIndexRange Static_PV_Time:1,1,,,,,10
 ReformDef: [ITC_Scenario,Static_PV_Time]
 ReformVal: [Static_PV_Time,ITC_Scenario]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [All_Sectors,3,ITC_Scenario,1,Static_PV_Time,1]
+Att_ResultSliceState: [All_Sectors,1,ITC_Scenario,1,ITC_Scenario,1,Static_PV_Time,1]
 Att_EditSliceState: [All_Sectors,2,Static_PV_Time,1,ITC_Scenario,1]
+Att_ColorRole: Null
+{!40600|Att_ClusterIndex: Null}
 {!50000|Att_ColumnWidths: [,Static_PV_Time,\([,,,,,,,63,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
 
 Variable ITC_Fraction
@@ -9483,16 +9487,18 @@ ELSE Base_Installed_Cost_ * Base_Cost_Multiplier
 NodeLocation: 416,120,1
 NodeSize: 64,40
 WindState: 2,334,175,1264,521
-ValueState: 2,556,99,1052,721,1,MIDM
+ValueState: 2,557,73,681,721,1,MIDM
 Aliases: FormNode Fo1205326115, FormNode Fo1544635738, FormNode Fo1548968037
-GraphSetup: Att_ContLineStyle Graph_Primary_Valdim:5~
+GraphSetup: Graph_AxisLabelFont:,20,0~
+Att_ContLineStyle Graph_Primary_Valdim:5~
 Att_GraphValueRange Equipment_Cost_Resul:1,,1,,,,10,0,647.1657007932663,0~
-Att_GraphIndexRange Static_PV_Time:1,,1,,,,,2020.1879722625017,2035,0
-ReformVal: [Static_PV_Time,Area_Type]
+Att_GraphIndexRange Static_PV_Time:1,,0,,,,,2022.0341443270445,2050,0~
+{!50400|Att_AxisOrKeyTitle All_PV_Sectors:""}
+ReformVal: [Static_PV_Time,All_PV_Sectors]
 NumberFormat: 2,F,4,2,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [BaseYr_Strg_Costs,Base_Yr_of_Cost_Decl]
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [All_Equipment_Types,1,PV_Climate_Zone,4,Area_Type,3,Static_PV_Time,1]
+Att_ResultSliceState: [All_Equipment_Types,2,Area_Type,3,All_PV_Sectors,1,Static_PV_Time,1]
 
 Decision Select_DER_Cost_Scen
 Title: DER Cost Scenario
@@ -10470,13 +10476,14 @@ THEN INF~
 ELSE Divide(Tot_Price_Aft_Incent - Monthly_Fees, FirstYr_BillSav_Time, False)
 NodeLocation: 312,72,1
 NodeSize: 64,40
-ValueState: 2,418,28,1074,711,1,MIDM
-GraphSetup: ShowKey:2~
+ValueState: 2,418,28,688,685,1,MIDM
+GraphSetup: {!50400|Att_AxisOrKeyTitle Time:""}~
 Att_GraphValueRange Simple_Payback_Time1:1,,1,,,,,0,11.629531234502792,0~
-Att_GraphIndexRange Time:1,,0,,,,,40964.734043866396,49645.645975112915,0
-ReformVal: [Time,ITC_Scenario]
+Att_GraphIndexRange Time:1,,0,,,,,38765.90292611718,53312.13750207424,0~
+Graph_AxisLabelFont:,20,0
+ReformVal: [Time,PV_Sectors]
 Att__TotalsIndex: []
-Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,PV_Sectors,1,System_Types,1,Time,1]
+Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,System_Types,2,PV_Sectors,2,Time,1]
 
 Module Simple_LCOE_Calculat
 Title: Simple LCOE Calculator
@@ -11349,7 +11356,7 @@ NodeLocation: 384,1192,1
 NodeSize: 64,40
 WindState: 2,2146,81,1165,697
 ValueState: 2,908,442,659,261,0,MIDM
-{!40300|Att_SlicerPopupSize: 1462,522}
+{!40300|Att_SlicerPopupSize: 1472,522}
 
 Text Te1545165196
 Description: Currently chooses the rate name for the post-system, which doesn't tell you the pre-system if they are different.
@@ -11540,7 +11547,7 @@ NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 Att_GraphIndexRange: 1,,0,,,,,1,11,1
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 1583,353}
+{!40300|Att_SlicerPopupSize: 1593,353}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
@@ -11849,7 +11856,7 @@ NodeLocation: 240,256,1
 NodeSize: 64,40
 WindState: 2,102,21,1089,879
 ValueState: 2,992,329,416,303,0,MIDM
-{!40300|Att_SlicerPopupSize: 1072,112}
+{!40300|Att_SlicerPopupSize: 1087,112}
 
 Index New_or_Retrofit
 Att_PrevIndexValue: ['NewConstr','Retrofit']

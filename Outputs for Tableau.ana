@@ -476,22 +476,24 @@ Definition: PV_Sequent_Outputs[Sequential_Outputs=Seq_Cumul_MW_Label, All_Sector
 NodeLocation: 888,128,1
 NodeSize: 64,40
 WindState: 2,102,82,1261,505
-ValueState: 2,315,5,1161,770,1,MIDM
+ValueState: 2,315,5,622,612,1,MIDM
 Aliases: Alias Al1924347043
 NodeColor: 65535,1,1
-GraphSetup: {!50007|Graph_BarOutline:0}~
+GraphSetup: {!50400|Att_AxisOrKeyTitle Output_Periods:""}~
+{!50007|Graph_BarOutline:0}~
 Graph_FillTransparen:0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
-Att_GraphValueRange PV_Cumul_Adoption:1,,1,,,0,,0,57.923200726509094,0~
-Att_GraphIndexRange Output_Periods:1,0,0,,,,10,41157.34961414337,54383.91441786289,0~
-Att_ContLineStyle Graph_Primary_Valdim:1~
-{!50000|Graph_SortBySpread:0}
-ReformVal: [Output_Periods,ITC_Scenario]
+Att_GraphValueRange PV_Cumul_Adoption:1,,1,,,0,,0,124.77967888116837,0~
+Att_GraphIndexRange Output_Periods:1,0,0,,,,10,38717,53283.356330394745,0~
+Att_ContLineStyle Graph_Primary_Valdim:5~
+{!50000|Graph_SortBySpread:0}~
+Graph_AxisLabelFont:,20,0
+ReformVal: [Output_Periods,PV_Sectors]
 NumberFormat: 2,F,4,1,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Act_vs_Sim,PV_Sectors,DER_Cost_Scenario]
-Att_ResultSliceState: [Area_Type,1,Spatial_ID,1,PV_Sectors,0,Act_vs_Sim,-1,DER_Cost_Scenario,-1,ITC_Scenario,1,Output_Periods,167]
+Att__TotalsIndex: [Act_vs_Sim,DER_Cost_Scenario]
+Att_ResultSliceState: [Area_Type,1,Spatial_ID,1,PV_Sectors,1,Act_vs_Sim,-1,Output_Periods,167]
 Att_SymbolRole: PV_Sectors
 {!40600|Att_StackingIndex: PV_Sectors}
 {!40600|Att_ClusterIndex: Null}
@@ -528,7 +530,7 @@ Flip:0
 ReformVal: [Output_Periods,Act_vs_Sim]
 Att__TotalsIndex: [Act_vs_Sim,Spatial_ID]
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [PV_Sectors,1,Spatial_ID,0,Act_vs_Sim,0,Output_Periods,1]
+Att_ResultSliceState: [PV_Sectors,1,Spatial_ID,0,Area_Type,1,Act_vs_Sim,0,Output_Periods,1]
 
 Variable Cumulative_EV_Stock
 Title: Cumulative EV Stock
