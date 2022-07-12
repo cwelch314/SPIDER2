@@ -6979,15 +6979,16 @@ DefnState: 2,1075,4,595,673,0,DFNM
 ValueState: 2,230,83,1498,714,1,MIDM
 Aliases: Alias Al1550189910, FormNode Fo1550189910, FormNode Fo1545167107, FormNode Fo1545084105, FormNode Fo1567092849, FormNode Fo1548967851, FormNode Fo1484087587, FormNode Fo343242019
 NodeColor: 65535,1,1
-GraphSetup: {!50000|Graph_SortBySpread:0}~
-Att_GraphIndexRange Static_PV_Time:1,1,,,,,10
+GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
+Att_GraphIndexRange Static_PV_Time:1,1,,,,,10~
+{!50000|Graph_SortBySpread:0}
 ReformDef: [ITC_Scenario,Static_PV_Time]
-ReformVal: [Static_PV_Time,ITC_Scenario]
+ReformVal: [Static_PV_Time,All_Sectors]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_GraphValueRange: 1,,,,,,10
 Att_ResultSliceState: [All_Sectors,1,ITC_Scenario,1,ITC_Scenario,1,Static_PV_Time,1]
 Att_EditSliceState: [All_Sectors,2,Static_PV_Time,1,ITC_Scenario,1]
-Att_ColorRole: Null
+{!40600|Att_StackingIndex: All_Sectors}
 {!40600|Att_ClusterIndex: Null}
 {!50000|Att_ColumnWidths: [,Static_PV_Time,\([,,,,,,,63,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
 
