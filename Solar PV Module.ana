@@ -6953,7 +6953,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 280,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,202,48,1397,668,17,10
+DiagState: 2,2131,92,1397,668,17,10
 AcpStyles: FrameNode: FrameNode_1544920201
 
 Constant Invest_Tax_Credit
@@ -7196,7 +7196,7 @@ Date: Wed, Feb 6, 2019 6:05 PM
 NodeLocation: 96,488,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,100,22,1703,742,17,10
+DiagState: 2,2040,-14,1703,742,17,10
 AcpStyles: Framenode: Taxable_Incent_Frame
 
 Constant kWh_Incen_Dur_Derate
@@ -7878,7 +7878,7 @@ Aliases: FormNode Fo1580669552
 Decision Storage_Incentive_Sc
 Title: Storage Incentive Scenario
 Description: Select which storage incentive scenario you wish to model
-Definition: Choice(BESS_Incentive_Scen,2,Not ACP_Version)
+Definition: Choice(BESS_Incentive_Scen,0,Not ACP_Version)
 IndexVals: ['item 1']
 NodeLocation: 1296,256,1
 NodeSize: 64,40
@@ -8042,13 +8042,13 @@ Title: Base Yr PV Incent
 Units: $/W-DC
 Definition: Table(PV_Incentive_Scen,PV_Climate_Zone)(~
 0,~
-0,~
+Test_PV_Incentive_W_,~
 0)
 NodeLocation: 480,1168,1
 NodeSize: 64,40
 DefnState: 2,1022,494,575,195,0,DFNM
 ValueState: 2,1379,177,416,303,0,MIDM
-Aliases: FormNode Fo657308451
+Aliases: FormNode Fo657308451, FormNode Fo706663843
 NodeColor: 65535,1,1
 ReformDef: [Minimum_System_Size,PV_Climate_Zone]
 NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
@@ -8128,7 +8128,8 @@ Definition: Table(Static_PV_Time,PV_Incentive_Scen)(~
 0,0,0)
 NodeLocation: 328,1168,1
 NodeSize: 64,40
-DefnState: 2,2373,128,483,591,0,DFNM
+DefnState: 2,2586,79,403,735,0,DFNM
+ValueState: 2,274,200,779,536,,MIDM
 Aliases: FormNode Fo388872995
 NodeColor: 65535,1,1
 ReformDef: [PV_Incentive_Scen,Static_PV_Time]
@@ -8226,24 +8227,24 @@ Definition: Table(All_PV_Sectors,BESS_Incentive_Scen,PV_Climate_Zone,Static_PV_T
 0,0,4000,4000,4000,0,0,~
 0,0,4000,4000,4000,0,0,~
 0,0,2000,2000,2000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,1000,1000,1000,0,0,~
-0,0,1000,1000,1000,0,0,~
-0,0,1000,1000,1000,0,0,~
-0,0,1000,1000,1000,0,0,~
-0,0,1000,1000,1000,0,0,~
-0,0,1000,1000,1000,0,0,~
-0,0,1000,1000,1000,0,0,~
-0,0,1000,1000,1000,0,0,~
-0,0,1000,1000,1000,0,0,~
-0,0,1000,1000,1000,0,0,~
+0,0,500,2000,2000,0,0,~
+0,0,500,2000,2000,0,0,~
+0,0,500,2000,2000,0,0,~
+0,0,500,2000,2000,0,0,~
+0,0,500,2000,2000,0,0,~
+0,0,500,2000,2000,0,0,~
+0,0,500,2000,2000,0,0,~
+0,0,500,2000,2000,0,0,~
+0,0,500,1000,1000,0,0,~
+0,0,500,1000,1000,0,0,~
+0,0,500,1000,1000,0,0,~
+0,0,500,1000,1000,0,0,~
+0,0,500,1000,1000,0,0,~
+0,0,500,1000,1000,0,0,~
+0,0,500,1000,1000,0,0,~
+0,0,500,1000,1000,0,0,~
+0,0,500,1000,1000,0,0,~
+0,0,500,1000,1000,0,0,~
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
@@ -8379,24 +8380,24 @@ Definition: Table(All_PV_Sectors,BESS_Incentive_Scen,PV_Climate_Zone,Static_PV_T
 0,0,4000,4000,4000,0,0,~
 0,0,4000,4000,4000,0,0,~
 0,0,2000,2000,2000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,1000,1000,1000,0,0,~
-0,0,1000,1000,1000,0,0,~
-0,0,1000,1000,1000,0,0,~
-0,0,1000,1000,1000,0,0,~
-0,0,1000,1000,1000,0,0,~
-0,0,1000,1000,1000,0,0,~
-0,0,1000,1000,1000,0,0,~
-0,0,1000,1000,1000,0,0,~
-0,0,1000,1000,1000,0,0,~
-0,0,1000,1000,1000,0,0,~
+0,0,500,2000,2000,0,0,~
+0,0,500,2000,2000,0,0,~
+0,0,500,2000,2000,0,0,~
+0,0,500,2000,2000,0,0,~
+0,0,500,2000,2000,0,0,~
+0,0,500,2000,2000,0,0,~
+0,0,500,2000,2000,0,0,~
+0,0,500,2000,2000,0,0,~
+0,0,500,1000,1000,0,0,~
+0,0,500,1000,1000,0,0,~
+0,0,500,1000,1000,0,0,~
+0,0,500,1000,1000,0,0,~
+0,0,500,1000,1000,0,0,~
+0,0,500,1000,1000,0,0,~
+0,0,500,1000,1000,0,0,~
+0,0,500,1000,1000,0,0,~
+0,0,500,1000,1000,0,0,~
+0,0,500,1000,1000,0,0,~
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
@@ -8520,7 +8521,7 @@ GraphSetup: Graph_SymbolKey:1
 ReformDef: [BESS_Incentive_Scen,Static_PV_Time]
 ReformVal: [Static_PV_Time,Static_PV_Time]
 Att_ResultSliceState: [PV_Climate_Zone,1,All_System_Types1,3,All_PV_Sectors,1,Static_PV_Time,1,BESS_Incentive_Scen,1]
-Att_EditSliceState: [All_PV_Sectors,2,PV_Climate_Zone,1,BESS_Incentive_Scen,2,Static_PV_Time,1,All_System_Types1,3]
+Att_EditSliceState: [All_PV_Sectors,2,PV_Climate_Zone,1,All_System_Types1,3,Static_PV_Time,1,BESS_Incentive_Scen,2]
 Att_ColorRole: BESS_Incentive_Scen
 Att_SymbolRole: All_System_Types1
 
@@ -8532,6 +8533,21 @@ NodeSize: 64,40
 ValueState: 2,2126,100,1204,654,1,MIDM
 ReformVal: [Time,Storage_Systems]
 Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Storage_Systems,2,Time,1]
+
+FormNode Fo706663843
+Title: Base Yr PV Incent
+Definition: 0
+NodeLocation: 404,1456,1
+NodeSize: 156,16
+NodeColor: 65535,1,1
+Original: Base_Yr_PV_Incent
+
+Variable Test_PV_Incentive_W_
+Title: Test PV Incentive $/W-DC
+Definition: [0,0.5,1,1.25,1.5]
+NodeLocation: 664,1472,1
+NodeSize: 64,40
+{!40300|Att_SlicerPopupSize: 232,112}
 
 Close Taxable_Incents
 
@@ -9499,7 +9515,7 @@ ReformVal: [Static_PV_Time,All_PV_Sectors]
 NumberFormat: 2,F,4,2,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [BaseYr_Strg_Costs,Base_Yr_of_Cost_Decl]
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [All_Equipment_Types,2,Area_Type,3,All_PV_Sectors,1,Static_PV_Time,1]
+Att_ResultSliceState: [All_Equipment_Types,1,Area_Type,3,All_PV_Sectors,1,Static_PV_Time,1]
 
 Decision Select_DER_Cost_Scen
 Title: DER Cost Scenario
@@ -10482,9 +10498,9 @@ GraphSetup: {!50400|Att_AxisOrKeyTitle Time:""}~
 Att_GraphValueRange Simple_Payback_Time1:1,,1,,,,,0,11.629531234502792,0~
 Att_GraphIndexRange Time:1,,0,,,,,38765.90292611718,53312.13750207424,0~
 Graph_AxisLabelFont:,20,0
-ReformVal: [Time,PV_Sectors]
+ReformVal: [Time,Base_Yr_PV_Incent]
 Att__TotalsIndex: []
-Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,System_Types,2,PV_Sectors,2,Time,1]
+Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,System_Types,1,PV_Sectors,2,Test_PV_Incentive_W_,1,Time,1]
 
 Module Simple_LCOE_Calculat
 Title: Simple LCOE Calculator
@@ -11765,7 +11781,7 @@ Title: All Equipment Types
 Definition: ['Solar PV','Battery Storage']
 NodeLocation: 1104,64,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 267,28}
+{!40300|Att_SlicerPopupSize: 272,28}
 
 Index Equipment_Types
 Title: Equipment Types
@@ -11857,7 +11873,7 @@ NodeLocation: 240,256,1
 NodeSize: 64,40
 WindState: 2,102,21,1089,879
 ValueState: 2,992,329,416,303,0,MIDM
-{!40300|Att_SlicerPopupSize: 1087,112}
+{!40300|Att_SlicerPopupSize: 1092,112}
 
 Index New_or_Retrofit
 Att_PrevIndexValue: ['NewConstr','Retrofit']
@@ -12521,7 +12537,7 @@ Definition: Subset(Storage_Systems <> Storage_Added_Label)
 NodeLocation: 1104,936,1
 NodeSize: 64,40
 WindState: 2,40,-1,910,825
-{!40300|Att_SlicerPopupSize: 518,110}
+{!40300|Att_SlicerPopupSize: 523,110}
 
 Variable System_with_PV
 Title: System with PV
