@@ -2748,7 +2748,7 @@ ValueState: 2,859,158,300,585,0,MIDM
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"SHORT",0,,,0,0,15
 DisplayOutputs: Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 347,742}
+{!40300|Att_SlicerPopupSize: 352,742}
 
 Constant PV_Stock_Start_Year
 Title: PV Stock Start Year
@@ -3208,7 +3208,7 @@ ReformVal: [PV_Sectors,Forecast_Year1]
 NumberFormat: 2,F,2,3,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [PV_Sectors,A8760]
 Att_ResultSliceState: [PV_Spatial_ID,1,PV_Climate_Zone,1,A8760,0,Forecast_Year1,1,PV_Sectors,0]
-{!50000|Att_ColumnWidths: [,PV_Sectors,\([,139,137])]}
+{!50000|Att_ColumnWidths: [,PV_Sectors,\([,137])]}
 
 FormNode Fo2042975395
 Title: Area Type for Optimization
@@ -5581,7 +5581,7 @@ ValueState: 2,21,412,1577,444,0,MIDM
 NumberFormat: 2,G,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Rate_Vintage]
 Att_ResultSliceState: [PV_Climate_Zone,3,Pre_and_Post_System,2,PV_Sectors,1,Time,1]
-{!50000|Att_ColumnWidths: [,Annual_Econ_Time,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
+{!50000|Att_ColumnWidths: [,Annual_Econ_Time,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
 
 Variable Rate_Escalate_byVint
 Title: Rate Escalation by Vintage
@@ -6953,7 +6953,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 280,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,2131,92,1397,668,17,10
+DiagState: 2,643,116,1397,668,17,10
 AcpStyles: FrameNode: FrameNode_1544920201
 
 Constant Invest_Tax_Credit
@@ -6964,11 +6964,11 @@ Description: Investment tax credit expressed as a percentage of the upfront capi
 This input assumes the system owner is a taxable entity. For the current NYPA analysis, we assume third party ownership for government/non-profit entities. 
 Definition: Table(All_Sectors,ITC_Scenario,Static_PV_Time)(~
 0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.22,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.22,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
 0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.22,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,~
 0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.22,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
-0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.22,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
+0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.26,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
@@ -6987,7 +6987,7 @@ ReformVal: [Static_PV_Time,All_Sectors]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_GraphValueRange: 1,,,,,,10
 Att_ResultSliceState: [All_Sectors,1,ITC_Scenario,1,ITC_Scenario,1,Static_PV_Time,1]
-Att_EditSliceState: [All_Sectors,2,Static_PV_Time,1,ITC_Scenario,1]
+Att_EditSliceState: [All_Sectors,1,Static_PV_Time,1,ITC_Scenario,1]
 {!40600|Att_StackingIndex: All_Sectors}
 {!40600|Att_ClusterIndex: Null}
 {!50000|Att_ColumnWidths: [,Static_PV_Time,\([,,,,,,,63,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
@@ -7001,10 +7001,10 @@ Definition: VAR ITC:=Invest_Tax_Credit[Static_PV_Time=Annual_Econ_Time,ITC_Scena
 Val_by_Install_Event(ITC, 1, Annual_Econ_Time)
 NodeLocation: 368,176,1
 NodeSize: 64,40
-ValueState: 2,299,45,1193,716,0,MIDM
+ValueState: 2,611,47,1193,716,0,MIDM
 ReformVal: [PV_Sectors,Annual_Econ_Time]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [Equipment_Types,1,Installation_Event,1,Annual_Econ_Time,1,PV_Sectors,9]
+Att_ResultSliceState: [Equipment_Types,1,Installation_Event,1,ITC_Scenario,2,Annual_Econ_Time,1,PV_Sectors,9]
 
 Variable Per_Unit_Federal_ITC
 Title: Per-Unit Federal ITC
@@ -7052,7 +7052,7 @@ NodeSize: 64,40
 Decision Selected_ITC_Scen
 Title: ITC Scenario
 Description: Select which ITC scenario you want to model. "Baseline" captures currently planned ITC phase-out for solar PV.
-Definition: Choice(ITC_Scenario,1,Not ACP_Version)
+Definition: Choice(ITC_Scenario,2,Not ACP_Version)
 IndexVals: ['item 1']
 NodeLocation: 240,72,1
 NodeSize: 64,40
@@ -7196,7 +7196,7 @@ Date: Wed, Feb 6, 2019 6:05 PM
 NodeLocation: 96,488,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,2040,-14,1703,742,17,10
+DiagState: 2,122,20,1703,637,17,10
 AcpStyles: Framenode: Taxable_Incent_Frame
 
 Constant kWh_Incen_Dur_Derate
@@ -7878,7 +7878,7 @@ Aliases: FormNode Fo1580669552
 Decision Storage_Incentive_Sc
 Title: Storage Incentive Scenario
 Description: Select which storage incentive scenario you wish to model
-Definition: Choice(BESS_Incentive_Scen,0,Not ACP_Version)
+Definition: Choice(BESS_Incentive_Scen,2,Not ACP_Version)
 IndexVals: ['item 1']
 NodeLocation: 1296,256,1
 NodeSize: 64,40
@@ -8082,37 +8082,37 @@ Definition: Table(Static_PV_Time,PV_Incentive_Scen)(~
 0,0,0,~
 0,0,0,~
 0,0,0,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-1,1,1,~
-0.9,1,1,~
-0.8,0.9,1,~
-0.7,0.8,0.9,~
-0.6,0.7,0.8,~
-0.5,0.6,0.7,~
-0.4,0.5,0.6,~
-0.3,0.4,0.5,~
-0.2,0.3,0.4,~
-0.1,0.2,0.3,~
-0,0.1,0.2,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,0,~
+0,0,1,~
+0,0,1,~
+0,0,1,~
+0,0,1,~
+0,0,1,~
+0,0,1,~
+0,0,1,~
+0,0,1,~
+0,0,0.9,~
+0,0,0.8,~
+0,0,0.7,~
+0,0,0.6,~
+0,0,0.5,~
+0,0,0.4,~
+0,0,0.3,~
+0,0,0.2,~
 0,0,0.1,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
 0,0,0,~
 0,0,0,~
 0,0,0,~
@@ -8128,7 +8128,7 @@ Definition: Table(Static_PV_Time,PV_Incentive_Scen)(~
 0,0,0)
 NodeLocation: 328,1168,1
 NodeSize: 64,40
-DefnState: 2,2586,79,403,735,0,DFNM
+DefnState: 2,2533,-2,527,827,0,DFNM
 ValueState: 2,274,200,779,536,,MIDM
 Aliases: FormNode Fo388872995
 NodeColor: 65535,1,1
@@ -8544,10 +8544,20 @@ Original: Base_Yr_PV_Incent
 
 Variable Test_PV_Incentive_W_
 Title: Test PV Incentive $/W-DC
-Definition: 0
+Definition: 0.35
 NodeLocation: 664,1472,1
 NodeSize: 64,40
 {!40300|Att_SlicerPopupSize: 232,112}
+
+FormNode Fo2126574755
+Title: Percent of Load from PV
+Definition: 1
+NodeLocation: 608,1412,1
+NodeSize: 248,20
+NodeInfo: 1,,,,,,1,80,,,,,,0,,,,
+NodeColor: 30583,48316,7967
+NodeFont: Arial,16
+Original: Percent_of_Load_from
 
 Close Taxable_Incents
 
@@ -8586,7 +8596,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 432,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,2113,33,1621,624,17,10
+DiagState: 2,1739,64,1621,624,17,10
 AcpStyles: FrameNode: FrameNode_1544920240
 
 Decision Taxed_as_Commercial
@@ -9515,7 +9525,7 @@ ReformVal: [Static_PV_Time,All_PV_Sectors]
 NumberFormat: 2,F,4,2,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [BaseYr_Strg_Costs,Base_Yr_of_Cost_Decl]
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [All_Equipment_Types,1,Area_Type,3,All_PV_Sectors,1,Static_PV_Time,1]
+Att_ResultSliceState: [All_Equipment_Types,1,Area_Type,1,All_PV_Sectors,1,Static_PV_Time,1]
 
 Decision Select_DER_Cost_Scen
 Title: DER Cost Scenario
@@ -10493,14 +10503,14 @@ THEN INF~
 ELSE Divide(Tot_Price_Aft_Incent - Monthly_Fees, FirstYr_BillSav_Time, False)
 NodeLocation: 312,72,1
 NodeSize: 64,40
-ValueState: 2,418,28,688,685,1,MIDM
-GraphSetup: {!50400|Att_AxisOrKeyTitle Time:""}~
+ValueState: 2,418,28,1002,713,1,MIDM
+GraphSetup: Graph_AxisLabelFont:,20,0~
+Att_GraphIndexRange Time:1,,0,,,,,40425.42128884792,46530.02151185274,0~
 Att_GraphValueRange Simple_Payback_Time1:1,,1,,,,,0,11.629531234502792,0~
-Att_GraphIndexRange Time:1,,0,,,,,38765.90292611718,53312.13750207424,0~
-Graph_AxisLabelFont:,20,0
-ReformVal: [Time,Base_Yr_PV_Incent]
+{!50400|Att_AxisOrKeyTitle Time:""}
+ReformVal: [Time,ITC_Scenario]
 Att__TotalsIndex: []
-Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,System_Types,1,PV_Sectors,2,Test_PV_Incentive_W_,1,Time,1]
+Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,System_Types,1,PV_Sectors,1,Test_PV_Incentive_W_,1,ITC_Scenario,3,Time,1]
 
 Module Simple_LCOE_Calculat
 Title: Simple LCOE Calculator
@@ -10769,6 +10779,7 @@ Definition: Table(Annual_Econ_Time,All_System_Types)(~
 0.07,0,0.09,0,0,0,0,~
 0.07,0,0.09,0,0,0,0,~
 0.07,0,0.09,0,0,0,0,~
+0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
@@ -11552,10 +11563,10 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Num_Incentive_Steps
 
 Index PV_Sectors
-Att_PrevIndexValue: ['Residential','NonResidential']
+Att_PrevIndexValue: ['Residential']
 Title: PV Sectors
 Description: The sectors selected for the PV analysis.
-Definition: MultiChoice(All_PV_Sectors,1,2,returnList:1)
+Definition: MultiChoice(All_PV_Sectors,1,returnList:1)
 NodeLocation: 1536,344,1
 NodeSize: 64,40
 WindState: 2,319,12,1255,632
@@ -11636,7 +11647,7 @@ DisplayOutputs: Variable Clipboard_NewConstr_
 {!40300|Att_SlicerPopupSize: 267,42}
 
 Index Annual_Econ_Time
-Att_PrevIndexValue: [2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,2040,2041,2042,2043,2044,2045,2046,2047,2048,2049,2050,2051]
+Att_PrevIndexValue: [2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,2040,2041,2042,2043,2044,2045,2046,2047,2048,2049,2050,2051,2052]
 Title: Annual Economic Time
 Description: Starts one year prior to the minimum of PV or BESS simulation start years, so that annual economic calculations can be treated as middle-of-year values.
 Definition: (MIN([DatePart(BESS_Calibrat_Start, 'Y'), DatePart(PV_Calibration_Start, 'Y')])-1)..MAX([DatePart(BESS_Sim_End_Year, 'Y'), DatePart(PV_Sim_End_Year, 'Y')])
@@ -13532,7 +13543,7 @@ Definition: ['Roof','Parking','Land']
 NodeLocation: 104,384,1
 NodeSize: 64,40
 WindState: 2,408,-14,824,781
-{!40300|Att_SlicerPopupSize: 967,80}
+{!40300|Att_SlicerPopupSize: 972,80}
 
 Include 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
 
