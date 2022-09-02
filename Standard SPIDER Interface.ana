@@ -11,7 +11,7 @@ Date: Thu, Mar 31, 2022 9:18 AM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,0,0,,,,,,,,,0
-DiagState: 2,227,16,1406,722,17,10,
+DiagState: 2,1968,1,1687,754,17,10,
 WindState: 2,466,159,720,350
 NodeColor: 65535,65535,65535
 FontStyle: Arial,16
@@ -646,7 +646,7 @@ ELSE Show_ACP_Window1(PV_Impact_Out,PV_Impact_Titles,PV_Impact1, 'Result')
 Decision PV_Impact1
 Title: PV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Impact_Titles,1,0)
+Definition: Choice(PV_Impact_Titles,2,0)
 NodeLocation: 616,440,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -852,7 +852,7 @@ NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
 Decision Inputs_only_for_view
 Title: Inputs only for viewing purposes (no editing)?
 Description: Check this box if you want to view the inputs as a graphical output result (or output table which is not editable), as opposed to an input table, which is editable.
-Definition: Checkbox(1)
+Definition: Checkbox(0)
 NodeLocation: 1464,168,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552866073, FormNode Fo612315645
@@ -1143,7 +1143,7 @@ Original: Storage_Dispatch_Out
 Decision BESS_Impact1
 Title: BESS Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Dispatch_Tit,2,0)
+Definition: Choice(Storage_Dispatch_Tit,1,0)
 NodeLocation: 608,1160,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -12146,6 +12146,16 @@ NodeLocation Solar_PV: 800,232,1
 NodeSize Solar_PV: 72,56
 
 
+FormNode Fo2126574755
+Title: Percent of Load from PV
+Definition: 1
+NodeLocation: 384,1044,1
+NodeSize: 248,20
+NodeInfo: 1,,,,,,1,80,,,,,,0,,,,
+NodeColor: 30583,48316,7967
+NodeFont: Arial,16
+Original: Percent_of_Load_from
+
 Include 0,LinkModule Electric_Rates1,2,2,0,0,Retail and Export Rates Module.ana
 
 NodeLocation Electric_Rates1: 968,232,1
@@ -12503,6 +12513,77 @@ NodeSize: 248,20
 NodeInfo: 1,,,,,,,80,,,,,,,,,,
 NodeColor: 30583,48316,7967
 Original: BESS_Adoption_EOP
+
+FormNode Fo1608852579
+Title: Total PV Incentives by Year
+Definition: 1
+NodeLocation: 844,732,1
+NodeSize: 172,20
+Original: Total_PV_Incentives_
+
+FormNode Fo135603299
+Title: Base Yr PV Incent
+Definition: 0
+NodeLocation: 844,772,1
+NodeSize: 172,20
+NodeColor: 65535,1,1
+Original: Base_Yr_PV_Incent
+
+FormNode Fo1008018531
+Title: PV Incentive Scenario
+Definition: 0
+NodeLocation: 844,812,1
+NodeSize: 172,20
+NodeInfo: 1,,,,,,,102,,,,,,0
+Original: PV_Incent_Scenario
+
+FormNode Fo773137507
+Title: ITC Scenario
+Definition: 0
+NodeLocation: 844,852,1
+NodeSize: 172,20
+NodeInfo: 1,,,,,,,102,,,,,,0
+Original: Selected_ITC_Scen
+
+Text Te2026710115
+Title: JEA Scenario Map: ~
+
+Description: Baseline: ~
+PV Incentive Scenario = Medium,~
+ITC Scenario = Medium~
+~
+High Case (Sierra Club)~
+PV Incentive Scenario = High~
+ITC Scenario = High 
+NodeLocation: 1248,792,-1
+NodeSize: 184,88
+
+Variable Va52
+NodeLocation: 1168,944,1
+NodeSize: 64,40
+
+FormNode Fo1476338787
+Title: Annual Storage Incentives
+Definition: 1
+NodeLocation: 844,692,1
+NodeSize: 172,20
+Original: Annual_Storage_Incen
+
+Variable JEA_Scenario
+Title: JEA Scenario
+Definition: Choice(Self,0,1)
+NodeLocation: 1336,944,1
+NodeSize: 64,40
+Aliases: FormNode Fo471901283
+{!40300|DomainExpr: Discrete('Base Case','High PV Case')}
+
+FormNode Fo471901283
+Title: JEA Scenario
+Definition: 0
+NodeLocation: 844,892,1
+NodeSize: 172,20
+NodeInfo: 1,,,,,,,148,,,,,,0
+Original: JEA_Scenario
 
 Close Standard_SPIDER_Inte
 
