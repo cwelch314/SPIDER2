@@ -1,5 +1,5 @@
 { Analytica Model NYPA_EE_Details, encoding="UTF-8" }
-SoftwareVersion 6.1.0
+SoftwareVersion 6.2.0
 
 {!-60000|Attribute AcpStyles}
 
@@ -1724,7 +1724,7 @@ Author: CWelch
 Date: Fri, Nov 5, 2021 2:30 PM
 NodeLocation: 1536,400,1
 NodeSize: 64,32
-DiagState: 2,1932,28,1822,721,17,10
+DiagState: 2,85,9,1785,749,17,10
 
 Variable Consumption_TBtu
 Title: Consumption TBtu
@@ -1896,7 +1896,8 @@ Description: Cumulative achievable potential at the "year for detailed output" s
 Definition: sum(Potential_by_Measure[Measures_Included=Sorted_Measures],Savings_Fuel_Type,Spatial_ID) * (Measure_Category=Measure_Category1[Measure=Sorted_Measures])
 NodeLocation: 888,136,1
 NodeSize: 64,32
-ValueState: 2,17,22,793,845,1,MIDM
+WindState: 2,98,82,720,350
+ValueState: 2,12,75,1195,802,1,MIDM
 Aliases: FormNode Fo310081827, Alias Al818065571, FormNode Fo542331683
 GraphSetup: Flip:8~
 Att_GraphIndexRange Measure_Category:1,,1,,,,,4,5,1~
