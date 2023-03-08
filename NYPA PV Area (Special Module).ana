@@ -20,6 +20,7 @@ Title: Facility Parameter
 Definition: ['county_name','parcel_addr','citytown_name','Parcel area (m2)','Geographic Region','Facility Type','Facility Floor Area (m2)','Finalized Bldg Footprints (m2)']
 NodeLocation: 144,96,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 
 Index Facility_Identifier
 Att_PrevIndexValue: ['F1','F2','F3','F4','F5','F6','F7','F8','F9','F10','F11','F12','F13','F14','F15','F16','F17']
@@ -27,6 +28,7 @@ Title: Facility Identifier
 Definition: ['F1','F2','F3','F4','F5','F6','F7','F8','F9','F10','F11','F12','F13','F14','F15','F16','F17']
 NodeLocation: 304,96,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 
 Variable Facility_Data_Filter
 Title: Facility Data Filtered
@@ -88,6 +90,7 @@ ValueState: 2,67,36,1567,763,0,MIDM
 Aliases: Alias Al1512235299, FormNode Fo610073123
 ReformDef: [Facility_Parameter,Facility_Identifier]
 ReformVal: [Facility_Parameter,Facility_Identifier]
+DisplayOutputs: Decision Excel_Import_Setting
 Att__TotalsIndex: [Facility_Identifier]
 {!40700|Att_CellFormat: CellSpan(Facility_Identifier,CellNumberFormat('Fixed Point',0,0,1,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:0),18,header:0)}
 
@@ -337,6 +340,7 @@ Definition: ['Minimum','Maximum']
 IndexVals: ['item 1']
 NodeLocation: 656,56,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 
 Constant Ratio_of_Parking_Ar1
 Title: Ratio of Parking Area to Floor Area
@@ -349,6 +353,7 @@ ValueState: 2,427,112,388,438,0,MIDM
 Aliases: FormNode Fo878508579
 ReformDef: [Spatial_ID,All_PV_Sectors]
 NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+DisplayOutputs: Decision Excel_Import_Setting
 {!40700|Att_CellFormat: CellFormats(CellSpan(All_PV_Sectors,CellFill(0xffff0000),11,header:0),CellSpan(Spatial_ID,CellSpan(All_PV_Sectors,CellFill(0xffff0000),3,header:0),1,header:0))}
 
 Alias Al1916336675
@@ -407,6 +412,7 @@ DefnState: 2,700,85,900,689,0,DFNM
 ValueState: 2,131,88,1014,765,0,MIDM
 ReformDef: [Spatial_ID,All_PV_Sectors]
 ReformVal: [Spatial_ID,All_PV_Sectors]
+DisplayOutputs: Decision Excel_Import_Setting
 Att__TotalsIndex: [All_PV_Sectors]
 Att_EditSliceState: [Roof_Dummy,1,All_PV_Sectors,1,Spatial_ID,1]
 
@@ -518,6 +524,7 @@ GraphSetup: Att_GraphValueRange Total_PV_kW_DC_poten:1,,1,,,,,0,369091.078639030
 Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [Area_Type,Design_Parking_Area]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+DisplayOutputs: Variable Avg_PVkW_facil_by_CZ
 Att__TotalsIndex: [PV_Sectors,Area_Type]
 Att_ResultSliceState: [Spatial_ID,1,PV_Sectors,0,Area_Type,1]
 {!40600|Att_StackingIndex: Area_Type}
@@ -1065,7 +1072,7 @@ NodeLocation: 576,1160,1
 NodeSize: 64,40
 ValueState: 2,2995,131,767,669,0,MIDM
 ReformVal: [Spatial_ID,All_PV_Sectors]
-DisplayOutputs: Variable Average_PV_kW_Inclu1
+DisplayOutputs: Variable Avg_PVkW_facil_by_CZ, Variable Average_PV_kW_Inclu1
 
 Module System_Size_Constrai
 Title: System Size Constraints
@@ -1105,6 +1112,7 @@ ValueState: 2,12,346,821,420,0,MIDM
 NodeColor: 65535,1,1
 ReformDef: [Area_Type,Spatial_ID]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+DisplayOutputs: Decision Excel_Import_Setting
 Att_EditSliceState: [Min_Max,2,Spatial_ID,1,Area_Type,1]
 {!40700|Att_CellFormat: CellFormats(CellAlignment('Center'),CellSpan(Min_Max,CellFormats(CellNumberFormat('Fixed Point',0,0,1,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:4,zeroes_:0),CellEntry(0,0,0,0,1)),1,header:0),CellSpan(Min_Max,CellFormats(CellNumberFormat('Fixed Point',0,0,1,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:4,zeroes_:0),CellFill(0xffc0c0c0)),1,header:0))}
 
@@ -1142,6 +1150,7 @@ ValueState: 2,544,196,917,694,0,MIDM
 Aliases: Alias Al145341219, Alias Al1967504163
 ReformVal: [PV_Climate_Zone,PV_Sectors]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+DisplayInputs: Index Spatial_ID, Index All_PV_Sectors, Index PV_Sectors, Index PV_Spatial_ID, Index PV_Climate_Zone, Variable Climate_Zone_Map, Variable Total_PV_kW_DC_poten, Variable System_Counts_Includ
 Att_ResultSliceState: [Area_Type,3,PV_Sectors,1,PV_Climate_Zone,1]
 
 Variable Technical_PV_Potent1

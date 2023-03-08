@@ -300,6 +300,7 @@ ValueState: 2,2029,186,592,304,,MIDM
 Aliases: Alias Al1568908468, FormNode Fo1568908468, FormNode Fo1535644418, FormNode Fo1535066214
 ReformDef: [Upper_Lower,All_PV_Decisions]
 ReformVal: [0,0]
+DisplayOutputs: Decision Excel_Import_Setting
 
 Variable PV_AdEff_Lwr_Bnd
 Title: PV AdEff Lwr Bnd
@@ -796,7 +797,7 @@ Definition: 1..Max_PV_Calib_Stages
 NodeLocation: 568,176,1
 NodeSize: 64,40
 ValueState: 2,792,295,416,303,,MIDM
-DisplayOutputs: Object Function, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
+DisplayOutputs: Object Function, Decision Excel_Import_Setting, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 
 Constant PV_Decisions_by_Stg
 Title: PV Decision Variables by Stage
@@ -815,7 +816,7 @@ DefnState: 2,793,4,658,291,0,DFNM
 ValueState: 2,12,362,870,303,0,MIDM
 Aliases: Alias Al1568908167, FormNode Fo1568908167, FormNode Fo9, FormNode Fo1535066242
 ReformDef: [PV_Calibration_Stage,All_PV_Decisions]
-DisplayOutputs: Object Function, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
+DisplayOutputs: Object Function, Decision Excel_Import_Setting, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 TableCellDefault: checkbox(0)
 
 FormNode Fo1535066242
@@ -843,7 +844,7 @@ ValueState: 2,902,161,889,579,0,MIDM
 Aliases: Alias Al1568908168, FormNode Fo1568908168, FormNode Fo1535660189, FormNode Fo1535066243
 ReformDef: [PV_Calibration_Stage,0]
 ReformVal: [PV_Calibration_Stage,Time_PV_Calibration]
-DisplayOutputs: Object Function, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
+DisplayOutputs: Object Function, Decision Excel_Import_Setting, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 TableCellDefault: Checkbox(1)
 
 FormNode Fo1535066243
@@ -895,7 +896,7 @@ Definition: Sequence(PV_Calibration_Start, PV_Calibration_End,step: Timestep_Mon
 NodeLocation: 704,176,1
 NodeSize: 64,40
 ValueState: 2,76,132,334,354,,MIDM
-DisplayOutputs: Object Function, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
+DisplayOutputs: Object Function, Decision Excel_Import_Setting, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 
 Constant PV_OptSettings_byStg
 Title: PV Opt Settings by Stage
@@ -912,7 +913,7 @@ WindState: 2,202,371,720,541
 DefnState: 2,1073,130,556,180,0,DFNM
 ValueState: 2,484,490,416,303,0,MIDM
 Aliases: Alias Al1568908171, FormNode Fo1568908171, FormNode Fo1535602755, FormNode Fo1535066246
-DisplayOutputs: Object Function, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
+DisplayOutputs: Object Function, Decision Excel_Import_Setting, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 TableCellDefault: PV_OptSettingDefault
 
 FormNode Fo1535066246
@@ -1017,7 +1018,7 @@ NodeLocation: 840,64,1
 NodeSize: 64,40
 WindState: 2,480,227,720,505
 ValueState: 2,2404,182,416,303,0,MIDM
-DisplayOutputs: Object Function, Function OG_Multi_Stage_Calib
+DisplayOutputs: Object Function, Decision Excel_Import_Setting, Function OG_Multi_Stage_Calib
 MetaOnly: 1
 
 Alias Al1542407785
@@ -1654,7 +1655,7 @@ NodeLocation: 976,64,1
 NodeSize: 64,40
 WindState: 2,246,-2,924,825
 ValueState: 2,1439,98,416,303,0,MIDM
-DisplayOutputs: Object Function, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
+DisplayOutputs: Object Function, Decision Excel_Import_Setting, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 
 Index Infeas_Spat_ID_PV
 Title: Infeasible Spatial IDs
@@ -1984,6 +1985,7 @@ WindState: 2,379,220,720,350
 DefnState: 2,789,495,596,188,0,DFNM
 Aliases: FormNode Fo1535066203
 DisplayInputs: Object Object, Object Function, Function Multi_Stage_Calibrat
+DisplayOutputs: Decision Excel_Import_Setting
 {!40700|Att_CellFormat: CellSpan(Opt_Settings_PV,CellAlignment('Center'),2,header:0)}
 
 FormNode Fo1535066203
@@ -2062,6 +2064,7 @@ Aliases: Alias Al1568908291, FormNode Fo1568908292, FormNode Fo1535641289, FormN
 NodeColor: 65535,65531,1
 ReformDef: [PV_Calibration_Stage,All_Sectors]
 NumberFormat: 2,F,4,7,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+DisplayOutputs: Decision Excel_Import_Setting
 TableCellDefault: 0.9
 {!50000|Att_ColumnWidths: [,PV_Calibration_Stage,\([,,,64])]}
 
@@ -2278,6 +2281,7 @@ Definition: ['PV Slope','PV Final Cumulative']
 NodeLocation: 808,112,1
 NodeSize: 64,40
 ValueState: 2,2020,154,658,303,,MIDM
+DisplayOutputs: Decision Excel_Import_Setting
 
 Index Selected_PV_Constrai
 Title: Selected PV Constraints
@@ -2337,6 +2341,7 @@ DefnState: 2,16,19,532,220,0,DFNM
 ValueState: 2,276,282,416,303,0,MIDM
 Aliases: Alias Al1568908395, FormNode Fo1568908394, FormNode Fo1542219554, FormNode Fo1542207817
 ReformDef: [PV_Calibration_Stage,All_PV_Constraints]
+DisplayOutputs: Decision Excel_Import_Setting
 TableCellDefault: checkbox(1)
 
 Decision Handles_of_PV_Constr
@@ -2360,6 +2365,7 @@ Title: Tolerance Input
 Definition: ['Slope Tolerance %','Final Cumulative %']
 NodeLocation: 1080,112,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 
 Constant PV_Tolerance_by_Stag
 Title: PV Tolerance by Stage
@@ -2376,6 +2382,7 @@ DefnState: 2,272,154,680,188,0,DFNM
 Aliases: Alias Al1568908396, FormNode Fo1568908395, FormNode Fo1542404245, FormNode Fo1542733351
 ReformDef: [PV_Calibration_Stage,Tolerance_Input]
 NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+DisplayOutputs: Decision Excel_Import_Setting
 TableCellDefault: Default_PV_Tolerance
 
 Constant Default_PV_Tolerance
@@ -2624,7 +2631,7 @@ NodeLocation: 128,72,1
 NodeSize: 64,40
 WindState: 2,36,8,1180,547
 DefnState: 2,992,310,295,412,0,DFNM
-Aliases: Alias Al2, FormNode Fo1535066222, FormNode Fo842592547, FormNode Fo175469859
+Aliases: Alias Al2, FormNode Fo1535066222
 {!40300|DomainExpr: Continuous(PV_AdEff_Lwr_Bnd, PV_AdEff_Upr_Bnd)}
 TableCellDefault: Default_PVAdEff
 {!40300|OptInitialGuess: 0.001}
@@ -2638,7 +2645,7 @@ NodeLocation: 128,264,1
 NodeSize: 64,40
 WindState: 2,5,426,720,350
 DefnState: 2,1002,261,455,530,0,DFNM
-Aliases: Alias Al4, FormNode Fo1535066223, FormNode Fo1446572323, FormNode Fo1249211683
+Aliases: Alias Al4, FormNode Fo1535066223
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 {!40300|DomainExpr: Continuous(PV_StartWOM_Lwr_Bnd,PV_StartWOM_Upr_Bnd)}
 TableCellDefault: Default_PV_WOM
@@ -2819,7 +2826,7 @@ ValueState: 2,221,72,1159,702,0,MIDM
 Aliases: Alias Al1568908501, FormNode Fo1568908567
 ReformDef: [All_Sectors,All_Spatial_ID]
 ReformVal: [Undefined,All_Spatial_ID]
-DisplayOutputs: Object Function, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
+DisplayOutputs: Object Function, Decision Excel_Import_Setting, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
 TableCellDefault: 'Not Yet Solved.'
 {!40700|CellFormatExpression: IF Self<>Self[@All_Spatial_ID=1] THEN CellFont(color: 'Red')}
 
@@ -2846,7 +2853,7 @@ Definition: -5
 NodeLocation: 128,456,1
 NodeSize: 64,40
 WindState: 2,2094,188,720,350
-Aliases: Alias Al1539126683, FormNode Fo1539127221, FormNode Fo1439994147, FormNode Fo813004067
+Aliases: Alias Al1539126683, FormNode Fo1539127221
 {!40300|DomainExpr: Continuous(PV_PriceCoef_Lwr_Bnd,PV_PriceCoef_Upr_Bnd)}
 
 Decision Logit_Spatial_Coeff
@@ -2893,7 +2900,7 @@ Definition: 7
 NodeLocation: 128,552,1
 NodeSize: 64,40
 WindState: 2,57,96,720,350
-Aliases: Alias Al1539126687, FormNode Fo1539127223, FormNode Fo903123235, FormNode Fo1886745891
+Aliases: Alias Al1539126687, FormNode Fo1539127223
 {!40300|DomainExpr: Continuous(PVLogTechCoef_Lwr_Bn,PVLogTechCoef_Upr_Bn)}
 {!40300|Att_SlicerPopupSize: 227,1001}
 
@@ -3034,7 +3041,7 @@ Aliases: Alias Al1568908502, FormNode Fo1568908568, FormNode Fo1543522440
 ReformDef: [All_PV_Dec_Handles,All_Sectors]
 ReformVal: [All_PV_Dec_Handles,All_Spatial_ID]
 NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
-DisplayOutputs: Object Function, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
+DisplayOutputs: Object Function, Decision Excel_Import_Setting, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
 TableCellDefault: Null
 Att_ResultSliceState: [All_Sectors,1,All_Spatial_ID,1,All_PV_Dec_Handles,1]
 Att_EditSliceState: [All_Spatial_ID,3,All_Sectors,1,All_PV_Dec_Handles,1]

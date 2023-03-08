@@ -81,7 +81,7 @@ NodeLocation: 248,64,1
 NodeSize: 64,40
 WindState: 2,1982,24,1579,830
 ValueState: 2,847,306,416,303,0,MIDM
-DisplayOutputs: Object Function, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
+DisplayOutputs: Object Function, Decision Excel_Import_Setting, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Variable Total_PV_stock_per_B, Variable Percent_of_Buildings, Variable Percent_of_Bldgs_Ado
 Att_GraphIndexRange: 1,,,,,,10
 {!40300|Att_SlicerPopupSize: 717,126}
 
@@ -123,6 +123,7 @@ Title: All Utilities
 Definition: ['JEA']
 NodeLocation: 528,64,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 {!40300|Att_SlicerPopupSize: 292,70}
 
 Module Bldg_Stock_Data
@@ -186,7 +187,7 @@ Definition: Bldg_Stock_Start_Yea..Bldg_Stock_End_Year
 NodeLocation: 240,192,1
 NodeSize: 64,40
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-DisplayOutputs: Variable Total_Facility_Count
+DisplayOutputs: Decision Excel_Import_Setting, Variable Total_Facility_Count, Variable Total_PV_stock_per_B
 {!40300|Att_SlicerPopupSize: 257,546}
 
 Constant Bldg_Stock_Start_Yea
@@ -253,6 +254,7 @@ NodeLocation: 344,376,1
 NodeSize: 64,40
 WindState: 2,0,0,720,350
 ValueState: 2,989,365,416,303,,MIDM
+DisplayOutputs: Decision Excel_Import_Setting
 
 Constant Single_Cell_Inputs
 Title: Single Cell Inputs
@@ -261,6 +263,7 @@ NodeLocation: 488,376,1
 NodeSize: 64,40
 DefnState: 2,814,354,416,303,0,DFNM
 Aliases: FormNode Fo1550095424
+DisplayOutputs: Decision Excel_Import_Setting
 
 FormNode Fo1550095424
 Title: Single Cell Inputs
@@ -279,6 +282,7 @@ NodeLocation: 344,272,1
 NodeSize: 64,40
 WindState: 2,784,99,871,795
 ValueState: 2,196,202,355,381,,MIDM
+DisplayOutputs: Decision Excel_Import_Setting
 
 Constant StructSingCell_Input
 Title: Structural Single Cell Inputs
@@ -287,6 +291,7 @@ NodeLocation: 488,272,1
 NodeSize: 64,40
 DefnState: 2,260,266,594,509,0,DFNM
 Aliases: FormNode Fo1550721449
+DisplayOutputs: Decision Excel_Import_Setting
 
 FormNode Fo1550721449
 Title: Single Cell Inputs
@@ -970,6 +975,7 @@ Aliases: FormNode Fo1550169065, Alias Al779659811, FormNode Fo696953379
 NodeColor: 65535,1,1
 ReformDef: [Hourly_Profile_Names,Hourly_Profile_Rows]
 ReformVal: [Hourly_Profile_Names,Hourly_Profile_Rows]
+DisplayOutputs: Decision Excel_Import_Setting
 Att_ColorRole: Null
 
 FormNode Fo1550169065
@@ -995,6 +1001,7 @@ GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9
 ReformDef: [Spatial_ID,All_PV_Sectors]
 ReformVal: [Spatial_ID,All_PV_Sectors]
 NumberFormat: 2,F,5,0,1,0,5,0,$,0,"ABBREV",0,,,0,0,15,
+DisplayOutputs: Decision Excel_Import_Setting
 Att__TotalsIndex: [All_Sectors,All_Spatial_ID,All_PV_Sectors,Spatial_ID]
 Att_ResultSliceState: [All_Spatial_ID,0,Building_Stock_Year,1,All_Spatial_ID,0,All_Sectors,1]
 Att_EditSliceState: [All_Sectors,3,All_Spatial_ID,1,Building_Stock_Year,1]
@@ -1030,6 +1037,7 @@ DefnState: 2,493,48,755,826,0,DFNM
 ValueState: 2,286,121,1219,681,0,MIDM
 ReformDef: [All_Sectors,Hourly_Profile_Rows]
 ReformVal: [All_Sectors,Hourly_Profile_Rows]
+DisplayOutputs: Decision Excel_Import_Setting
 Att__TotalsIndex: [Hourly_Profile_Rows]
 {!40700|Att_CellFormat: CellSpan(Hourly_Profile_Rows,CellNumberFormat('Fixed Point',7,1,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:7),2,8785,header:0)}
 
@@ -1151,6 +1159,7 @@ NodeSize: 64,40
 ValueState: 2,36,42,1036,646,0,MIDM
 GraphSetup: Att_GraphIndexRange Time:1,,0,,,,,43104.47078233212,55629.856105685234,0
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+DisplayOutputs: Variable Percent_of_Load_from, Variable Percent_of_Load_fro1
 Att__TotalsIndex: [All_PV_Sectors]
 
 Variable Va50
@@ -2573,6 +2582,7 @@ NodeSize: 64,40
 WindState: 2,488,172,1052,572
 ValueState: 2,1058,13,565,658,0,MIDM
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"SHORT",0,,,0,0,15
+DisplayOutputs: Decision Excel_Import_Setting
 {!40300|Att_SlicerPopupSize: 287,1001}
 
 Constant Intercon_Strt_Yr
@@ -3188,6 +3198,7 @@ Att_AreaFill Graph_Primary_Valdim:0
 ReformDef: [All_Spatial_ID,Interconnect_Date]
 ReformVal: [All_Spatial_ID,Interconnect_Date]
 NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+DisplayOutputs: Decision Excel_Import_Setting
 Att__TotalsIndex: [All_Utilities,All_Spatial_ID]
 Att_GraphValueRange: 1,,,,,,10
 Att_ResultSliceState: [All_Utilities,0,Interconnect_Date,473,All_Sectors,1,All_Spatial_ID,49]
@@ -3206,6 +3217,7 @@ NodeSize: 64,40
 WindState: 2,102,82,980,350
 ValueState: 2,209,361,845,369,0,MIDM
 ReformVal: [Interconnect_Date,PV_Sectors]
+DisplayOutputs: Variable Monthly_average_syst
 Att__TotalsIndex: [Interconnect_Date,PV_Sectors]
 
 Constant Historical_PV_Capaci
@@ -3237,6 +3249,7 @@ Att_ContLineStyle Graph_Primary_Valdim:5
 ReformDef: [All_Sectors,Interconnect_Date]
 ReformVal: [Interconnect_Date,All_Sectors]
 NumberFormat: 2,F,4,1,0,0,4,1,$,0,"ABBREV",0,,,0,0,15
+DisplayOutputs: Decision Excel_Import_Setting
 Att__TotalsIndex: [All_Spatial_ID]
 Att_ResultSliceState: [All_Utilities,1,All_Spatial_ID,0,All_Sectors,1,Interconnect_Date,1]
 Att_EditSliceState: [All_Utilities,1,All_Spatial_ID,3,Interconnect_Date,473,All_Sectors,1]
@@ -3274,6 +3287,7 @@ IF x=null THEN 0 ELSE x
 NodeLocation: 232,312,1
 NodeSize: 64,40
 ValueState: 2,332,161,855,586,0,MIDM
+DisplayOutputs: Variable Monthly_average_syst
 
 Variable Cap_Installs_withAgg
 Title: All Capacity Installs w/Agg
@@ -3770,6 +3784,7 @@ Aliases: FormNode Fo267971107, Alias Al2147194403
 NodeColor: 65535,1,1
 ReformDef: [Solar_Scaling_Param,All_Sectors]
 ReformVal: [Solar_Scaling_Param,All_Sectors]
+DisplayOutputs: Decision Excel_Import_Setting
 
 FormNode Fo267971107
 Title: Scale Load by % Covered by Solar
@@ -3968,6 +3983,7 @@ NodeSize: 64,40
 ValueState: 2,2283,199,961,648,,MIDM
 GraphSetup: Att_GraphIndexRange Interconnect_Date:1,,0,,,,,40101.02500528097,43100,0~
 Att_GraphValueRange Monthly_average_syst:1,,0,,,,,0,10.793829709291458,0
+DisplayInputs: Variable Aggregate_System_Ins, Variable Agg_CapacityInstalls
 
 Close Formatted_Installati
 

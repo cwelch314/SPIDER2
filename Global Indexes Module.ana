@@ -158,7 +158,7 @@ NodeSize: 64,40
 WindState: 2,412,69,902,569
 ValueState: 2,1275,23,429,412,0,MIDM
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
-DisplayOutputs: Object Function, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
+DisplayOutputs: Object Function, Decision Excel_Import_Setting, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Variable Total_PV_stock_per_B, Variable Percent_of_Buildings, Variable Percent_of_Bldgs_Ado
 {!40300|Att_SlicerPopupSize: 678,784}
 
 Index Spatial_ID_of_Utilit
@@ -639,6 +639,7 @@ WindState: 2,0,-8,720,840
 DefnState: 2,634,94,653,373,0,DFNM
 ValueState: 2,1036,202,416,303,0,MIDM
 Aliases: Alias Al1550775285, FormNode Fo1550775287
+DisplayOutputs: Decision Excel_Import_Setting
 TableCellDefault: Checkbox(0)
 
 Variable Time_EOP_Map
@@ -694,7 +695,7 @@ NodeLocation: 384,64,1
 NodeSize: 64,40
 WindState: 2,828,21,720,720
 ValueState: 2,32,55,450,292,0,MIDM
-DisplayOutputs: Variable PV_Tech_Potential_Pe
+DisplayOutputs: Decision Excel_Import_Setting, Variable PV_Tech_Potential_Pe, Variable Avg_PVkW_facil_by_CZ, Variable Total_PV_stock_per_B, Variable Percent_of_Load_from, Variable Percent_of_Load_fro1
 {!50400|Att_AxisOrKeyTitle: ""}
 {!40300|Att_SlicerPopupSize: 592,243}
 {!40600|Att_ColorSequence: [0xff0f6689,0xff0f6689]}

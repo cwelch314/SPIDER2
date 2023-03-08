@@ -185,6 +185,7 @@ Aliases: Alias Al1, FormNode Fo6, FormNode Fo1541552777, FormNode Fo1544631509
 NodeColor: 65535,65531,1
 ReformDef: [Static_PV_Time,All_Sectors]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+DisplayOutputs: Decision Excel_Import_Setting
 Att_EditSliceState: [New_Construction_Com,3,PV_Sectors,1,Static_PV_Time,1]
 {!40700|Att_CellFormat: Undefined}
 
@@ -235,6 +236,7 @@ Definition: ['Low','Medium','High']
 NodeLocation: 104,192,1
 NodeSize: 64,40
 Aliases: FormNode Fo1544641445
+DisplayOutputs: Decision Excel_Import_Setting
 
 Decision Sel_NC_Suitable_Scen
 Title: NewConst Applic Scenario
@@ -2097,6 +2099,7 @@ ValueState: 2,309,106,885,732,,MIDM
 NodeColor: 65535,1,1
 ReformDef: [Spatial_ID,All_PV_Sectors]
 NumberFormat: 2,F,3,4,0,0,3,0,$,0,"ABBREV",0,,,0,0,15,
+DisplayOutputs: Decision Excel_Import_Setting
 TableCellDefault: 0
 Att_EditSliceState: [Area_Type,1,All_PV_Sectors,1,Spatial_ID,1]
 
@@ -2107,7 +2110,7 @@ Definition: ['Residential','NonResidential']
 NodeLocation: 944,304,1
 NodeSize: 64,40
 ValueState: 2,510,101,448,662,0,MIDM
-DisplayOutputs: Variable Technical_PV_Potent1, Variable Average_PV_kW_Inclu1
+DisplayOutputs: Decision Excel_Import_Setting, Variable Avg_PVkW_facil_by_CZ, Variable Technical_PV_Potent1, Variable Average_PV_kW_Inclu1, Variable Total_PV_stock_per_B, Variable Percent_of_Load_from, Variable Percent_of_Load_fro1
 {!40300|Att_SlicerPopupSize: 347,434}
 
 Variable Initial_PV_Adopters_
@@ -2745,7 +2748,7 @@ NodeSize: 64,40
 WindState: 2,289,23,1168,700
 ValueState: 2,859,158,300,585,0,MIDM
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"SHORT",0,,,0,0,15
-DisplayOutputs: Object Function, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
+DisplayOutputs: Object Function, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib, Variable Percent_of_Load_from, Variable Percent_of_Load_fro1
 {!50400|Att_AxisOrKeyTitle: ""}
 {!40300|Att_SlicerPopupSize: 352,742}
 
@@ -3266,6 +3269,7 @@ NodeLocation: 1208,248,1
 NodeSize: 64,40
 ValueState: 2,1535,88,238,667,0,MIDM
 Aliases: Alias Al1740514403, Alias Al1896002723
+DisplayOutputs: Variable Percent_of_Buildings, Variable Percent_of_Bldgs_Ado
 
 Index Forecast_Year1
 Att_PrevIndexValue: [2022,2023,2024,2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,2040,2041,2042,2043,2044,2045,2046,2047,2048,2049,2050,2051]
@@ -3580,6 +3584,7 @@ DefnState: 2,290,96,1062,651,0,DFNM
 ValueState: 2,371,101,1138,698,0,MIDM
 ReformDef: [PV_Climate_Zone,All_Sectors]
 ReformVal: [PV_Climate_Zone,All_Sectors]
+DisplayOutputs: Decision Excel_Import_Setting
 TableCellDefault: Choice(Static_Profile_Names,2,0)
 
 Constant PV_Capacity_Factor
@@ -3600,6 +3605,7 @@ Aliases: Alias Al1550179326, FormNode Fo1550179326, Alias Al1012103715
 ReformDef: [Area_Type,All_PV_Sectors]
 ReformVal: [All_Sectors,PV_Climate_Zone]
 NumberFormat: 2,%,4,2,0,0,4,1,$,0,"ABBREV",0,,,0,0,15,
+DisplayOutputs: Decision Excel_Import_Setting
 Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,All_PV_Sectors,1]
 Att_EditSliceState: [PV_Climate_Zone,4,All_PV_Sectors,1,Area_Type,2]
 
@@ -6841,6 +6847,7 @@ Aliases: Alias Al1550187543, FormNode Fo1550187544, FormNode Fo1545167068, FormN
 NodeColor: 65535,1,1
 ReformDef: [Debt_or_Equity,All_PV_Sectors]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+DisplayOutputs: Decision Excel_Import_Setting
 
 Variable Monthly_Loan_Factor
 Title: Monthly Loan Factor
@@ -6992,6 +6999,7 @@ Att_GraphIndexRange Static_PV_Time:1,1,,,,,10~
 ReformDef: [All_Sectors,Static_PV_Time]
 ReformVal: [All_Sectors,Static_PV_Time]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+DisplayOutputs: Decision Excel_Import_Setting
 Att_GraphValueRange: 1,,,,,,10
 Att_ResultSliceState: [ITC_Scenario,2,Static_PV_Time,1,All_Sectors,1]
 Att_EditSliceState: [ITC_Scenario,3,Static_PV_Time,1,All_Sectors,1]
@@ -7054,6 +7062,7 @@ Definition: ['Low','Medium','High']
 IndexVals: ['item 1']
 NodeLocation: 88,72,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 {!40300|Att_SlicerPopupSize: 242,94}
 
 Decision Selected_ITC_Scen
@@ -7230,6 +7239,7 @@ DefnState: 2,657,376,776,266,0,DFNM
 ValueState: 2,324,330,871,305,0,MIDM
 Aliases: Alias Al1550726183, FormNode Fo1550726184, FormNode Fo1548707006
 ReformDef: [Incent_Durat_Inputs,Incent_Duration_Step]
+DisplayOutputs: Decision Excel_Import_Setting
 {!40700|Att_CellFormat: CellSpan(Incent_Durat_Inputs,CellNumberFormat('Percentage',2,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0),2,header:0)}
 
 FormNode Fo1548707006
@@ -7277,6 +7287,7 @@ DefnState: 2,302,104,776,379,0,DFNM
 ValueState: 2,27,546,877,303,0,MIDM
 Aliases: Alias Al1550726186, FormNode Fo1550726187, FormNode Fo1548708354
 ReformDef: [Incent_MWhCap_Inputs,Incent_Capacity_Step]
+DisplayOutputs: Decision Excel_Import_Setting
 {!40700|Att_CellFormat: CellSpan(Incent_MWhCap_Inputs,CellNumberFormat('Percentage',2,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0),2,header:0)}
 
 FormNode Fo1548708354
@@ -7365,6 +7376,7 @@ Aliases: Alias Al1568695724, FormNode Fo1568695724, FormNode Fo1548723041
 NodeColor: 65535,1,1
 ReformDef: [PV_Climate_Zone,All_Sectors]
 ReformVal: [Incentive_Steps,All_Sectors]
+DisplayOutputs: Decision Excel_Import_Setting
 Att_ResultSliceState: [ITC_Applied,1,BESS_Incentive_Scen,3,All_Sectors,2,Incentive_Steps,1]
 Att_EditSliceState: [ITC_Applied,1,Incentive_Steps,8,All_Sectors,1,PV_Climate_Zone,4]
 {!50000|Att_ColumnWidths: [,Incentive_Steps,\([61,,,66])]}
@@ -7394,6 +7406,7 @@ ValueState: 2,591,315,941,389,0,MIDM
 Aliases: Alias Al1568695821, FormNode Fo1568695821, FormNode Fo1548796240
 NodeColor: 65535,1,1
 ReformDef: [All_Sectors,Incentive_Steps]
+DisplayOutputs: Decision Excel_Import_Setting
 TableCellDefault: Choice(Incentive_Start_Time,1,0)
 
 FormNode Fo1548796240
@@ -7779,6 +7792,7 @@ Flip:0
 ReformDef: [PV_Climate_Zone,Static_PV_Time]
 ReformVal: [Static_PV_Time,PV_Incentive_Scen]
 NumberFormat: 2,F,4,0,1,1,4,0,$,0,"ABBREV",0,,,0,0,15,
+DisplayOutputs: Decision Excel_Import_Setting
 TableCellDefault: 0
 Att_ResultSliceState: [PV_Climate_Zone,3,PV_Incentive_Scen,2,Static_PV_Time,1]
 Att_EditSliceState: [PV_Incentive_Scen,2,Static_PV_Time,1,PV_Climate_Zone,4]
@@ -7793,6 +7807,7 @@ NodeLocation: 128,880,1
 NodeSize: 64,40
 WindState: 2,683,293,875,511
 Aliases: FormNode Fo1580649327
+DisplayOutputs: Decision Excel_Import_Setting
 
 Decision PV_Incent_Scenario
 Title:  PV Incentive Scenario
@@ -8695,6 +8710,7 @@ DefnState: 2,248,57,940,522,0,DFNM
 Aliases: Alias Al1568695862, FormNode Fo1568695862, FormNode Fo1545167165
 ReformDef: [All_Sectors,PV_Operating_Year]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+DisplayOutputs: Decision Excel_Import_Setting
 {!40700|Att_CellFormat: Undefined}
 
 Constant Tax_Rates
@@ -8770,6 +8786,7 @@ ValueState: 2,196,202,416,303,0,MIDM
 Aliases: Alias Al1568695868, FormNode Fo1568695868, FormNode Fo1545167166
 ReformDef: [Tax_Entity,Static_PV_Time]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+DisplayOutputs: Decision Excel_Import_Setting
 
 Constant Bonus_Deprec_Sched
 Title: Bonus Depreciation Schedule
@@ -8784,6 +8801,7 @@ ValueState: 2,168,170,421,498,,MIDM
 Aliases: Alias Al1568695863, FormNode Fo1568695863, FormNode Fo1545167167
 ReformVal: [Static_PV_Time,Undefined]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+DisplayOutputs: Decision Excel_Import_Setting
 
 Variable MACRS_Schedules
 Title: MACRS Schedules
@@ -9213,6 +9231,7 @@ GraphSetup: Att_GraphIndexRange Static_PV_Time:1,,0,,,,10,2020.9325099736452,203
 ReformDef: [PV_Climate_Zone,Static_PV_Time]
 ReformVal: [Static_PV_Time,Area_Type]
 NumberFormat: 2,F,4,0,1,1,4,0,$,0,"ABBREV",0,,,0,0,15,
+DisplayOutputs: Decision Excel_Import_Setting
 Att__TotalsIndex: []
 Att_ResultSliceState: [All_Equipment_Types,1,New_or_Retrofit,2,All_Sectors,1,Area_Type,1,Static_PV_Time,1]
 Att_EditSliceState: [All_Equipment_Types,1,Static_PV_Time,13,All_PV_Sectors,1]
@@ -9232,6 +9251,7 @@ Aliases: Alias Al1568696042, FormNode Fo1568696044, FormNode Fo1568696024, FormN
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9
 ReformDef: [0,Static_PV_Time]
 ReformVal: [0,Static_PV_Time]
+DisplayOutputs: Decision Excel_Import_Setting
 Att_ResultSliceState: [All_Equipment_Types,2,Sectors,1,Static_PV_Time,1]
 Att_EditSliceState: [All_Equipment_Types,1,Static_PV_Time,1,Sectors,1]
 {!40300|Att_SlicerPopupSize: 227,64}
@@ -9367,6 +9387,7 @@ Att_CatLineStyle Graph_Primary_Valdim:9
 ReformDef: [All_Sectors,Static_PV_Time]
 ReformVal: [All_Equipment_Types,All_Sectors]
 NumberFormat: 2,F,2,2,1,1,2,1,$,0,"ABBREV",0,,,0,0,15
+DisplayOutputs: Decision Excel_Import_Setting
 
 Variable O_M_Rate
 Title: O&M Rate
@@ -9519,6 +9540,7 @@ WindState: 2,285,574,720,350
 DefnState: 2,488,161,416,632,,DFNM
 ValueState: 2,196,202,416,303,0,MIDM
 Aliases: Alias Al1568696122, FormNode Fo1568696122, FormNode Fo1544633537
+DisplayOutputs: Decision Excel_Import_Setting
 TableCellDefault: 0
 
 Index DER_Cost_Scenario
@@ -9528,7 +9550,7 @@ Definition: ['Low','Medium','High']
 IndexVals: ['item 1']
 NodeLocation: 784,232,1
 NodeSize: 64,40
-DisplayOutputs: Decision Select_DER_Cost_Scen
+DisplayOutputs: Decision Excel_Import_Setting, Decision Select_DER_Cost_Scen
 {!40300|Att_SlicerPopupSize: 237,70}
 
 Decision Base_Yr_of_Cost_Decl
@@ -9571,6 +9593,7 @@ Aliases: Alias Al1568696043, FormNode Fo1568696042, FormNode Fo1544633538, FormN
 NodeColor: 65535,1,1
 ReformDef: [All_Equipment_Types,DER_Cost_Scenario]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+DisplayOutputs: Decision Excel_Import_Setting
 Att_EditSliceState: [All_PV_Sectors,2,DER_Cost_Scenario,1,All_Equipment_Types,2]
 
 Variable Equipment_Cost_Resul
@@ -11030,6 +11053,7 @@ GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9
 ReformDef: [Battery_Specs,All_Sectors]
 ReformVal: [All_Sectors,Battery_Specs]
+DisplayOutputs: Decision Excel_Import_Setting
 Att_GraphValueRange: 1,,,,,,10
 Att_ResultSliceState: [Battery_Specs,1,Battery_Specs,3,All_Sectors,1]
 Att_ColorRole: Null
@@ -11123,6 +11147,7 @@ ValueState: 2,416,209,685,592,,MIDM
 Aliases: Alias Al1550183210, FormNode Fo1550183210, FormNode Fo1542305980, FormNode Fo1544638294
 ReformDef: [NewConstr_Code_Param,All_Sectors]
 NumberFormat: 2,F,2,2,0,0,2,1,$,0,"ABBREV",0,,,0,0,15,
+DisplayOutputs: Decision Excel_Import_Setting
 TableCellDefault: NewConstrCode_Defaul
 Att_EditSliceState: [PV_Climate_Zone,4,All_Sectors,1,NewConstr_Code_Param,3]
 
@@ -11215,6 +11240,7 @@ Aliases: Alias Al1969009827, Alias Al1807426659
 NodeColor: 65535,1,1
 ReformVal: [PV_Climate_Zone,PV_Sectors]
 NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+DisplayOutputs: Variable Storage_Systems_Inst
 Att_ResultSliceState: [System_Types,2,Area_Type,1,PV_Sectors,1,PV_Climate_Zone,1]
 
 Variable Hours_of_Storage
@@ -11307,6 +11333,7 @@ Title: NewConstr Code Parameter
 Definition: ['Code Compliance Date','Forced System Size (kW DC), if applicable']
 NodeLocation: 1200,472,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 {!40300|Att_SlicerPopupSize: 267,48}
 
 Decision CodeCompDate_Label
@@ -11509,6 +11536,7 @@ Title: Incentive Duration Step
 Definition: 1..Num_Incent_Dur_Steps
 NodeLocation: 1840,376,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 
 FormNode Fo1548706815
 Title: Number of Incentive Duration Steps
@@ -11524,6 +11552,7 @@ Title: Incentive Duration Inputs
 Definition: ['Storage Duration Lower Bound (hours)','Incentive Rate (Pct. of Base)']
 NodeLocation: 1840,928,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 
 Function AvgRate_Across_Brack(binLowLimit, binValue, lookupVal; binIndex: Index)
 Title: Avg Rate Across Brackets
@@ -11572,6 +11601,7 @@ Title: Incentive Capacity Step
 Definition: 1..Num_Incent_Cap_Steps
 NodeLocation: 1840,576,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 
 FormNode Fo1548708353
 Title: Number of Incentive Duration Steps
@@ -11588,6 +11618,7 @@ Definition: ['Storage Capacity Lower Bound (MWh)','Incentive Rate (Pct. of Base)
 IndexVals: ['item 1']
 NodeLocation: 1840,840,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 
 Index Incentive_Steps
 Att_PrevIndexValue: [1,2,3,4,5,6,7,8]
@@ -11596,6 +11627,7 @@ Definition: 1..Num_Incentive_Steps
 NodeLocation: 1832,176,1
 NodeSize: 64,40
 WindState: 2,11,94,875,306
+DisplayOutputs: Decision Excel_Import_Setting
 
 Index ITC_Applied
 Att_PrevIndexValue: ['Yes','No']
@@ -11603,6 +11635,7 @@ Title: ITC Applied
 Definition: ['Yes','No']
 NodeLocation: 1840,664,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 {!40300|Att_SlicerPopupSize: 227,48}
 
 Index Incentive_Start_Time
@@ -11639,7 +11672,7 @@ NodeSize: 64,40
 WindState: 2,319,12,1255,632
 Aliases: FormNode Fo1535066238, FormNode Fo1539140368, FormNode Fo1247325693
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-DisplayOutputs: Object Function, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Variable Technical_PV_Potent1, Variable Average_PV_kW_Inclu1
+DisplayOutputs: Object Function, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Variable Avg_PVkW_facil_by_CZ, Variable Technical_PV_Potent1, Variable Average_PV_kW_Inclu1, Variable Percent_of_Buildings, Variable Percent_of_Load_from, Variable Percent_of_Load_fro1, Variable Percent_of_Bldgs_Ado, Variable Storage_Systems_Inst
 Att_GraphIndexRange: 1,,0,,,,,1,11,1
 {!50400|Att_AxisOrKeyTitle: ""}
 {!40300|Att_SlicerPopupSize: 1613,353}
@@ -11663,7 +11696,7 @@ WindState: 2,46,71,816,730
 DefnState: 2,857,228,346,508,,DFNM
 ValueState: 2,2185,301,416,303,,MIDM
 Aliases: FormNode Fo1535655040, FormNode Fo1542091914
-DisplayOutputs: Object Function, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
+DisplayOutputs: Object Function, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function MultiStage_CalibrPV0, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi, Variable Avg_PVkW_facil_by_CZ, Variable Percent_of_Buildings, Variable Percent_of_Load_from, Variable Percent_of_Load_fro1, Variable Percent_of_Bldgs_Ado
 {!50400|Att_AxisOrKeyTitle: ""}
 {!40300|Att_SlicerPopupSize: 1360,784}
 
@@ -11785,6 +11818,7 @@ NodeLocation: 960,64,1
 NodeSize: 64,40
 WindState: 2,707,203,665,594
 ValueState: 2,491,274,416,303,,MIDM
+DisplayOutputs: Decision Excel_Import_Setting, Variable Avg_PVkW_facil_by_CZ, Variable Storage_Systems_Inst
 {!50400|Att_AxisOrKeyTitle: ""}
 {!40300|Att_SlicerPopupSize: 892,84}
 
@@ -11797,6 +11831,7 @@ WindState: 2,2679,167,720,350
 DefnState: 2,2409,378,590,258,0,DFNM
 ValueState: 2,1103,362,565,291,0,MIDM
 Aliases: Alias Al1551412556, FormNode Fo1551412556, Alias Al1159025699, FormNode Fo1540240591, Alias Al1428421155
+DisplayOutputs: Decision Excel_Import_Setting
 
 Variable Climate_Zone_Map
 Title: Climate Zone Map
@@ -11804,6 +11839,7 @@ Definition: All_Spatial_ID_to_CZ[All_Spatial_ID=PV_Spatial_ID]
 NodeLocation: 960,264,1
 NodeSize: 64,40
 ValueState: 2,2835,428,590,205,0,MIDM
+DisplayOutputs: Variable Avg_PVkW_facil_by_CZ
 
 Index All_Technologies
 Att_PrevIndexValue: ['Solar PV','Solar PV + Storage']
@@ -11820,6 +11856,7 @@ NodeLocation: 384,272,1
 NodeSize: 64,40
 WindState: 2,98,82,1097,834
 ValueState: 2,372,378,425,504,,MIDM
+DisplayOutputs: Decision Excel_Import_Setting
 Att_GraphIndexRange: 1,,,,,,10
 {!50400|Att_AxisOrKeyTitle: ""}
 {!40300|Att_SlicerPopupSize: 227,378}
@@ -11842,6 +11879,7 @@ Title: Tax Entity
 Definition: ['State','Federal']
 NodeLocation: 1248,64,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 
 Index PV_Operating_Year
 Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
@@ -11851,6 +11889,7 @@ NodeLocation: 384,896,1
 NodeSize: 64,40
 WindState: 2,219,71,1086,715
 ValueState: 2,632,289,416,303,,MIDM
+DisplayOutputs: Decision Excel_Import_Setting
 {!40300|Att_SlicerPopupSize: 282,294}
 
 Index All_Equipment_Types
@@ -11859,6 +11898,7 @@ Title: All Equipment Types
 Definition: ['Solar PV','Battery Storage']
 NodeLocation: 1104,64,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 {!40300|Att_SlicerPopupSize: 272,28}
 
 Index Equipment_Types
@@ -11951,6 +11991,7 @@ NodeLocation: 240,256,1
 NodeSize: 64,40
 WindState: 2,102,21,1089,879
 ValueState: 2,992,329,416,303,0,MIDM
+DisplayOutputs: Variable Storage_Systems_Inst
 {!40300|Att_SlicerPopupSize: 1122,112}
 
 Index New_or_Retrofit
@@ -11974,6 +12015,7 @@ Title: Battery Specs
 Definition: ['Roundtrip Efficiency (%)','Minimum Charge Level (%)','Maximum Charge Level (%)']
 NodeLocation: 816,64,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 {!40300|Att_SlicerPopupSize: 227,70}
 
 Decision Energy_kWh_Label
@@ -12326,6 +12368,7 @@ Title: Buildings Label
 Definition: Choice(Stock_Basis_Types,1,0)
 NodeLocation: 1248,552,1
 NodeSize: 64,40
+DisplayOutputs: Variable Total_PV_stock_per_B
 TableCellDefault: Choice(Stock_Basis_Types,1,0)
 
 Index Roof_Type
@@ -12888,6 +12931,7 @@ Title: Debt or Equity
 Definition: ['Debt','Equity']
 NodeLocation: 96,936,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 
 Decision Debt_Label
 Title: Debt Label
@@ -13108,6 +13152,7 @@ WindState: 2,2773,308,720,350
 DefnState: 2,584,166,516,667,0,DFNM
 ValueState: 2,2246,141,443,692,0,MIDM
 Aliases: Alias Al1568696874, FormNode Fo1568696942, FormNode Fo168015043
+DisplayOutputs: Decision Excel_Import_Setting, Variable Total_PV_stock_per_B
 TableCellDefault: Choice(Stock_Basis_Types,1,0)
 
 Module Lidar_Regression
@@ -13422,6 +13467,7 @@ Definition: SubTable(StructSingCell_Input[StructSingCell_Names=Consump_Year_Labe
 NodeLocation: 280,384,1
 NodeSize: 64,40
 NodeColor: 65535,65531,1
+DisplayOutputs: Variable Total_PV_stock_per_B
 
 Variable Usable_PV_stock_to_b
 Title: Usable PV stock to building stock
@@ -13567,6 +13613,7 @@ Att_StackedBar Graph_Primary_Valdim:1~
 ReformDef: [Building_Stock_Year,All_PV_Sectors]
 ReformVal: [All_PV_Sectors,Spatial_ID]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+DisplayOutputs: Decision Excel_Import_Setting, Variable Total_PV_stock_per_B
 Att__TotalsIndex: [Spatial_ID]
 Att_ResultSliceState: [Roof_Dummy,1,Area_Type,1,Spatial_ID,0,All_PV_Sectors,1]
 Att_EditSliceState: [Area_Type,1,Spatial_ID,1,All_PV_Sectors,1,Building_Stock_Year,1]
@@ -13602,6 +13649,7 @@ Description: Only used to facilitate importing total roof area as a vector rathe
 Definition: ['dummy']
 NodeLocation: 104,504,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 
 Index Area_Type
 Att_PrevIndexValue: ['Roof','Parking','Land']
@@ -13610,7 +13658,7 @@ Definition: ['Roof','Parking','Land']
 NodeLocation: 104,384,1
 NodeSize: 64,40
 WindState: 2,408,-14,824,781
-DisplayOutputs: Variable PV_Tech_Potential_Pe
+DisplayOutputs: Decision Excel_Import_Setting, Variable PV_Tech_Potential_Pe
 {!40300|Att_SlicerPopupSize: 972,80}
 
 Include 0,LinkModule Facility_Level_Area_,2,2,0,0,NYPA PV Area (Special Module).ana
@@ -13687,6 +13735,7 @@ ZIDZ(Total_PV_Area[Building_Stock_Year=Year_of_Consump_Data],Building_Stock[All_
 NodeLocation: 624,80,1
 NodeSize: 64,40
 ValueState: 2,779,370,600,282,0,MIDM
+DisplayInputs: Index All_Spatial_ID, Index Spatial_ID, Index All_Sectors, Index Building_Stock_Year, Index All_PV_Sectors, Decision Buildings_Label, Decision PV_Stock_Basis_by_Se, Decision Year_of_Consump_Data, Constant Total_PV_Area, Constant Building_Stock
 
 Close Roofspace_Per_Buildi
 
@@ -13717,6 +13766,7 @@ WindState: 2,621,249,720,350
 DefnState: 2,888,179,498,655,0,DFNM
 Aliases: Alias Al1568696777, FormNode Fo1568696778, Alias Al1916336675, FormNode Fo1952250403, FormNode Fo1541457042
 ReformDef: [Area_Type,All_PV_Sectors]
+DisplayOutputs: Decision Excel_Import_Setting
 
 Constant Module_to_Area_Ratio
 Title: Module to Area Ratio
@@ -13737,6 +13787,7 @@ DefnState: 2,631,78,500,660,0,DFNM
 ValueState: 2,327,216,416,303,,MIDM
 Aliases: Alias Al1568696778, FormNode Fo1568696779, Alias Al2123069987, FormNode Fo1683814947, FormNode Fo1541457043
 ReformDef: [Area_Type,All_PV_Sectors]
+DisplayOutputs: Decision Excel_Import_Setting
 
 Variable DC_Watts_per_m2_usab
 Title: DC Watts per m2 usable installation area
@@ -13813,6 +13864,7 @@ DefnState: 2,671,126,503,654,0,DFNM
 Aliases: Alias Al25917987, FormNode Fo341637667, FormNode Fo120842787
 ReformDef: [Area_Type,All_PV_Sectors]
 NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
+DisplayOutputs: Decision Excel_Import_Setting
 {!40700|Att_CellFormat: CellAlignment('Center')}
 {!50000|Att_ColumnWidths: [,Area_Type,\([,,64])]}
 
@@ -13856,6 +13908,7 @@ Aliases: Alias Al1568696273, FormNode Fo1568696273, Alias Al1541540869, FormNode
 NodeColor: 65535,52427,52427
 ReformDef: [NC_Suitability_Scens,All_Sectors]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+DisplayOutputs: Decision Excel_Import_Setting
 
 Text Te1541540991
 Title: Technical and Eligible Potential
@@ -13916,6 +13969,7 @@ WindState: 2,196,231,720,350
 DefnState: 2,723,103,757,693,0,DFNM
 ValueState: 2,1150,86,547,651,,MIDM
 ReformDef: [PV_Climate_Zone,All_PV_Sectors]
+DisplayOutputs: Decision Excel_Import_Setting
 
 Variable DC_to_AC_Ratio_by_PV
 Title: DC to AC Ratio by PVSpID

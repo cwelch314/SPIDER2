@@ -96,18 +96,21 @@ NodeLocation: 88,360,1
 NodeSize: 64,40
 WindState: 2,1976,100,720,350
 ValueState: 2,104,106,406,324,0,MIDM
+DisplayOutputs: Decision Excel_Import_Setting
 
 Variable Variable_Identifier
 Title: Variable Identifier
 Definition: Null
 NodeLocation: 240,360,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 
 Index Index_Identifier
 Title: Index Identifier
 Definition: []
 NodeLocation: 240,448,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 
 Decision Import_Param_Default
 Title: Import Param Default
@@ -265,6 +268,7 @@ DefnState: 2,1921,6,1801,836,0,DFNM
 ValueState: 2,-66,109,1540,509,0,MIDM
 Aliases: FormNode New1771965635, FormNode New1859766563, FormNode New1675217187, FormNode New194800931
 ReformDef: [Excel_Import_Params,Imported_Dataset_Num]
+DisplayInputs: Index All_Spatial_ID, Variable All_Agg_Spatial_IDs, Index Spatial_ID, Index All_Sectors, Index All_Utilities, Index Building_Stock_Year, Index SingCell_Input_Names, Constant Single_Cell_Inputs, Index StructSingCell_Names, Constant StructSingCell_Input, Constant Hourly_Profile_Data, Constant Consumption_by_Secto, Constant Load_Profiles, Index Excel_Import_Params, Variable Variable_Identifier, Index Index_Identifier, Index Imported_Dataset_Num, Index Import_Data_Types, Decision Path_to_Global_Data1, Decision Select_Model_for_Dat, Index Interconnect_Date, Constant Historical_PV_Instal, Constant Historical_PV_Capaci, Constant Scale_PV_Size_by_Cov, Constant NewConstr_Mkt_Share, Index NC_Suitability_Scens, Constant PV_Init_Adop_Fractio, Index All_PV_Sectors, Constant PV_Dec_Var_Bounds, Index PV_Calibration_Stage, Constant PV_Decisions_by_Stg, Constant PV_Dates_Incl_by_Stg, Index Time_PV_Calibration, Constant PV_OptSettings_byStg, Index All_PV_Dec_Handles, Index All_PV_Decisions, Decision Opt_Settings_PV, Constant R2_Threshold1, Index All_PV_Constraints, Decision PV_Constraints_by_St, Index Tolerance_Input, Constant PV_Tolerance_by_Stag, Constant Stored_Opt_Status_PV, Constant Stored_PV_Dec_Vars, Decision Solar_Profile_Map, Constant PV_Capacity_Factor, Constant Debt_Equity_Rates, Constant Invest_Tax_Credit, Index ITC_Scenario, Constant kWh_Incen_Dur_Derate, Constant kWh_Incent_DerateCap, Constant Strg_kWh_Base_Rate, Decision Incentive_Step_Start, Constant PV_kW_DC_Incentive, Index PV_Incentive_Scen, Constant MACRS_Schedule, Constant Tax_Rates, Constant Bonus_Deprec_Sched, Constant Base_Installed_Cost_, Constant Equipment_Lifetime, Constant O_M_Cost, Constant Interconnect_Fee, Index DER_Cost_Scenario, Constant DER_Cost_Change_Rate, Constant Battery_Storage_Spec, Constant NewConstr_Code_Sys_S, Index NewConstr_Code_Param, Index Incent_Duration_Step, Index Incent_Durat_Inputs, Index Incent_Capacity_Step, Index Incent_MWhCap_Inputs, Index Incentive_Steps, Index ITC_Applied, Index PV_Climate_Zone, Constant All_Spatial_ID_to_CZ, Index Static_PV_Time, Index Tax_Entity, Index PV_Operating_Year, Index All_Equipment_Types, Index Battery_Specs, Index Debt_or_Equity, Decision PV_Stock_Basis_by_Se, Constant Total_PV_Area, Index Roof_Dummy, Index Area_Type, Index Facility_Parameter, Index Facility_Identifier, Constant Facility_Data1, Index Min_Max, Constant Ratio_of_Parking_Ar1, Constant EUI, Constant System_Size_Constra2, Constant Power_Density, Constant Module_to_Area_Ratio, Constant PV_suitability, Constant PV_New_Construction_, Constant DC_to_AC_Ratio, Constant Dates_of_Holidays, Index Hourly_Profile_Names, Index Holiday_Name, Index Holiday_Years, Index Hourly_Profile_Rows, Constant Building_Stock, Constant Hist_Veh_Growth_Rate, Constant Vehicle_Stock_Data, Constant Vehicle_Stock_Multip, Index Vehicle_Stock_DataYr, Constant Impact_per_EV, Index EV_Mkt_Share_Scen, Constant EV_Mkt_Share_Mult, Index EV_Adopt_Data_Types, Constant EV_Map_Increm_Cumul, Index Fuel_Types, Index Vehicle_Input_Years, Index All_Vehicle_Techs, Index Veh_Incentive_Type, Constant Fuel_Prices, Constant MPG, Constant VMT, Constant Fuel_Mix, Constant Vehicle_Price, Constant Vehicle_Incents, Index EV_Incent_Scenario, Constant Vehicle_Range, Constant Vehicle_Maint_Cost, Constant Vehicle_Tech_Pref, Constant Vehicle_Type_Map, Constant EV_Dec_Var_Bounds, Index Upper_Lower, Index EV_Calibration_Stage, Constant EV_Decisions_by_Stg, Constant EV_Dates_Incl_by_Stg, Index Time_EV_Calibration, Constant EV_OptSettings_byStg, Decision Opt_Settings_EVs, Constant R2_Threshold, Index All_EV_Dec_Handles, Index All_EV_Decisions, Constant Stored_Opt_Status_EV, Constant Stored_EV_Dec_Vars, Constant SGIP_Data, Index SGIP_Data_Rows, Index SGIP_Data_Columns
 TableCellDefault: Import_Param_Default
 Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),2,Imported_Dataset_Num,1,Excel_Import_Params,1]
 {!40700|Att_CellFormat: CellFormats(CellSpan(Imported_Dataset_Num,CellFill(0xffff0000),1,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellNumberFormat('Fixed Point',7,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:7),79,header:0),6,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellNumberFormat('Fixed Point',5,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:5),18,header:0),6,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffffff),1,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellFill(0xffff0000),1,header:0),3,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellFill(0xffffffff),1,header:0),3,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellFill(0xffff0000),87,header:0),4,header:0))}
@@ -286,6 +290,7 @@ Title: Imported Dataset Number
 Definition: 1..Number_of_Datasets
 NodeLocation: 240,184,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 
 Index Selected_Import_Data
 Title: Selected Import Datasets
@@ -448,6 +453,7 @@ Title: Import Data Types
 Definition: ['Any','Number','Text','Date']
 NodeLocation: 688,696,1
 NodeSize: 64,40
+DisplayOutputs: Decision Excel_Import_Setting
 
 Decision Data_Type_Label
 Title: Data Type Label
@@ -1681,6 +1687,7 @@ WindState: 2,98,82,720,547
 DefnState: 2,318,269,1279,164,0,DFNM
 ValueState: 2,500,506,969,193,,MIDM
 Aliases: FormNode New1842989347, FormNode New1345964323, FormNode New809093411
+DisplayOutputs: Decision Excel_Import_Setting
 TableCellDefault: 'C:\Documents\Filename.xlsx'
 
 Decision Dataset_to_View1
@@ -2061,6 +2068,7 @@ NodeLocation: 584,368,1
 NodeSize: 64,40
 Aliases: FormNode Fo1385416995
 {!40300|DomainExpr: Model_for_Data_Impo1}
+DisplayOutputs: Decision Excel_Import_Setting
 
 Variable Raw_Imp_Dat_LIbXl
 Title: Raw Imp Dat LIbXl
