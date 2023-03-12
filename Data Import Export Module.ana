@@ -44,7 +44,7 @@ NodeLocation: 104,152,1
 NodeSize: 64,40
 DefnState: 2,248,250,964,440,,DFNM
 Aliases: FormNode Fo1534914693
-DisplayOutputs: Object Variable
+DisplayOutputs: Object Object, Object Variable
 TableCellDefault: Choice(Static_Profile_Names,1,0)
 
 FormNode Fo1534914693
@@ -81,7 +81,7 @@ NodeLocation: 248,64,1
 NodeSize: 64,40
 WindState: 2,1982,24,1579,830
 ValueState: 2,847,306,416,303,0,MIDM
-DisplayOutputs: Object Function, Decision Excel_Import_Setting, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Variable Total_PV_stock_per_B, Variable Percent_of_Buildings, Variable Percent_of_Bldgs_Ado
+DisplayOutputs: Object Object, Object Function, Object Variable, Object Decision, Decision Excel_Import_Setting, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 Att_GraphIndexRange: 1,,,,,,10
 {!40300|Att_SlicerPopupSize: 717,126}
 
@@ -123,7 +123,7 @@ Title: All Utilities
 Definition: ['JEA']
 NodeLocation: 528,64,1
 NodeSize: 64,40
-DisplayOutputs: Decision Excel_Import_Setting
+DisplayOutputs: Object Object, Object Decision, Decision Excel_Import_Setting
 {!40300|Att_SlicerPopupSize: 292,70}
 
 Module Bldg_Stock_Data
@@ -187,7 +187,7 @@ Definition: Bldg_Stock_Start_Yea..Bldg_Stock_End_Year
 NodeLocation: 240,192,1
 NodeSize: 64,40
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-DisplayOutputs: Decision Excel_Import_Setting, Variable Total_Facility_Count, Variable Total_PV_stock_per_B
+DisplayOutputs: Object Object, Object Variable, Object Decision, Decision Excel_Import_Setting
 {!40300|Att_SlicerPopupSize: 257,546}
 
 Constant Bldg_Stock_Start_Yea
@@ -254,7 +254,7 @@ NodeLocation: 344,376,1
 NodeSize: 64,40
 WindState: 2,0,0,720,350
 ValueState: 2,989,365,416,303,,MIDM
-DisplayOutputs: Decision Excel_Import_Setting
+DisplayOutputs: Object Object, Object Decision, Decision Excel_Import_Setting
 
 Constant Single_Cell_Inputs
 Title: Single Cell Inputs
@@ -263,7 +263,7 @@ NodeLocation: 488,376,1
 NodeSize: 64,40
 DefnState: 2,814,354,416,303,0,DFNM
 Aliases: FormNode Fo1550095424
-DisplayOutputs: Decision Excel_Import_Setting
+DisplayOutputs: Object Object, Object Decision, Decision Excel_Import_Setting
 
 FormNode Fo1550095424
 Title: Single Cell Inputs
@@ -282,7 +282,7 @@ NodeLocation: 344,272,1
 NodeSize: 64,40
 WindState: 2,784,99,871,795
 ValueState: 2,196,202,355,381,,MIDM
-DisplayOutputs: Decision Excel_Import_Setting
+DisplayOutputs: Object Object, Object Decision, Decision Excel_Import_Setting
 
 Constant StructSingCell_Input
 Title: Structural Single Cell Inputs
@@ -291,7 +291,7 @@ NodeLocation: 488,272,1
 NodeSize: 64,40
 DefnState: 2,260,266,594,509,0,DFNM
 Aliases: FormNode Fo1550721449
-DisplayOutputs: Decision Excel_Import_Setting
+DisplayOutputs: Object Object, Object Decision, Decision Excel_Import_Setting
 
 FormNode Fo1550721449
 Title: Single Cell Inputs
@@ -945,7 +945,7 @@ Author: JamesMilford
 Date: Mon, Sep 30, 2019 3:19 PM
 NodeLocation: 784,368,1
 NodeSize: 64,40
-DiagState: 2,2048,69,1618,620,17,10
+DiagState: 2,12,69,1618,620,17,10
 
 Alias Al1534527254
 Title: Loadshape Start Date
@@ -975,7 +975,7 @@ Aliases: FormNode Fo1550169065, Alias Al779659811, FormNode Fo696953379
 NodeColor: 65535,1,1
 ReformDef: [Hourly_Profile_Names,Hourly_Profile_Rows]
 ReformVal: [Hourly_Profile_Names,Hourly_Profile_Rows]
-DisplayOutputs: Decision Excel_Import_Setting
+DisplayOutputs: Object Object, Object Decision, Decision Excel_Import_Setting
 Att_ColorRole: Null
 
 FormNode Fo1550169065
@@ -1001,7 +1001,7 @@ GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:9
 ReformDef: [Spatial_ID,All_PV_Sectors]
 ReformVal: [Spatial_ID,All_PV_Sectors]
 NumberFormat: 2,F,5,0,1,0,5,0,$,0,"ABBREV",0,,,0,0,15,
-DisplayOutputs: Decision Excel_Import_Setting
+DisplayOutputs: Object Object, Object Decision, Decision Excel_Import_Setting
 Att__TotalsIndex: [All_Sectors,All_Spatial_ID,All_PV_Sectors,Spatial_ID]
 Att_ResultSliceState: [All_Spatial_ID,0,Building_Stock_Year,1,All_Spatial_ID,0,All_Sectors,1]
 Att_EditSliceState: [All_Sectors,3,All_Spatial_ID,1,Building_Stock_Year,1]
@@ -1037,7 +1037,7 @@ DefnState: 2,493,48,755,826,0,DFNM
 ValueState: 2,286,121,1219,681,0,MIDM
 ReformDef: [All_Sectors,Hourly_Profile_Rows]
 ReformVal: [All_Sectors,Hourly_Profile_Rows]
-DisplayOutputs: Decision Excel_Import_Setting
+DisplayOutputs: Object Object, Object Decision, Decision Excel_Import_Setting
 Att__TotalsIndex: [Hourly_Profile_Rows]
 {!40700|Att_CellFormat: CellSpan(Hourly_Profile_Rows,CellNumberFormat('Fixed Point',7,1,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:7),2,8785,header:0)}
 
@@ -1124,7 +1124,7 @@ Original: Consumption_by_Sect1
 Variable Consumption_by_Sect2
 Title: Consumption by Sector
 Units: kWh
-Definition: IF Use_facility_level_d THEN Consumption_by_Sect1 ELSE Consumption_by_Secto
+Definition: Consumption_by_Secto
 NodeLocation: 256,208,1
 NodeSize: 64,40
 Aliases: Alias Al785331363
@@ -1159,7 +1159,7 @@ NodeSize: 64,40
 ValueState: 2,36,42,1036,646,0,MIDM
 GraphSetup: Att_GraphIndexRange Time:1,,0,,,,,43104.47078233212,55629.856105685234,0
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-DisplayOutputs: Variable Percent_of_Load_from, Variable Percent_of_Load_fro1
+DisplayOutputs: Object Object, Object Variable
 Att__TotalsIndex: [All_PV_Sectors]
 
 Variable Va50
@@ -1174,7 +1174,7 @@ Author: JamesMilford
 Date: Mon, Sep 30, 2019 3:19 PM
 NodeLocation: 928,464,1
 NodeSize: 64,40
-DiagState: 2,-64,35,1689,758,17,10
+DiagState: 2,180,2,973,758,17,10
 
 Decision Degradation_Label
 Title: Degradation Label
@@ -2556,7 +2556,7 @@ Author: JamesMilford
 Date: Fri, Feb 8, 2019 8:50 PM
 NodeLocation: 320,288,1
 NodeSize: 80,56
-DiagState: 2,1956,75,1403,850,17,10
+DiagState: 2,120,3,1403,850,17,10
 Aliases: Alias Al1538428922
 NodeColor: 65535,65535,65535
 ReformVal: [Hour1,System_Type1]
@@ -2582,7 +2582,7 @@ NodeSize: 64,40
 WindState: 2,488,172,1052,572
 ValueState: 2,1058,13,565,658,0,MIDM
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"SHORT",0,,,0,0,15
-DisplayOutputs: Decision Excel_Import_Setting
+DisplayOutputs: Object Object, Object Decision, Decision Excel_Import_Setting
 {!40300|Att_SlicerPopupSize: 287,1001}
 
 Constant Intercon_Strt_Yr
@@ -3198,7 +3198,7 @@ Att_AreaFill Graph_Primary_Valdim:0
 ReformDef: [All_Spatial_ID,Interconnect_Date]
 ReformVal: [All_Spatial_ID,Interconnect_Date]
 NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-DisplayOutputs: Decision Excel_Import_Setting
+DisplayOutputs: Object Object, Object Decision, Decision Excel_Import_Setting
 Att__TotalsIndex: [All_Utilities,All_Spatial_ID]
 Att_GraphValueRange: 1,,,,,,10
 Att_ResultSliceState: [All_Utilities,0,Interconnect_Date,473,All_Sectors,1,All_Spatial_ID,49]
@@ -3217,7 +3217,7 @@ NodeSize: 64,40
 WindState: 2,102,82,980,350
 ValueState: 2,209,361,845,369,0,MIDM
 ReformVal: [Interconnect_Date,PV_Sectors]
-DisplayOutputs: Variable Monthly_average_syst
+DisplayOutputs: Object Object, Object Variable
 Att__TotalsIndex: [Interconnect_Date,PV_Sectors]
 
 Constant Historical_PV_Capaci
@@ -3249,7 +3249,7 @@ Att_ContLineStyle Graph_Primary_Valdim:5
 ReformDef: [All_Sectors,Interconnect_Date]
 ReformVal: [Interconnect_Date,All_Sectors]
 NumberFormat: 2,F,4,1,0,0,4,1,$,0,"ABBREV",0,,,0,0,15
-DisplayOutputs: Decision Excel_Import_Setting
+DisplayOutputs: Object Object, Object Decision, Decision Excel_Import_Setting
 Att__TotalsIndex: [All_Spatial_ID]
 Att_ResultSliceState: [All_Utilities,1,All_Spatial_ID,0,All_Sectors,1,Interconnect_Date,1]
 Att_EditSliceState: [All_Utilities,1,All_Spatial_ID,3,Interconnect_Date,473,All_Sectors,1]
@@ -3287,7 +3287,7 @@ IF x=null THEN 0 ELSE x
 NodeLocation: 232,312,1
 NodeSize: 64,40
 ValueState: 2,332,161,855,586,0,MIDM
-DisplayOutputs: Variable Monthly_average_syst
+DisplayOutputs: Object Object, Object Variable
 
 Variable Cap_Installs_withAgg
 Title: All Capacity Installs w/Agg
@@ -3780,11 +3780,11 @@ NodeLocation: 2216,104,1
 NodeSize: 64,40
 DefnState: 2,946,341,508,296,0,DFNM
 ValueState: 2,480,266,706,524,0,MIDM
-Aliases: FormNode Fo267971107, Alias Al2147194403
+Aliases: FormNode Fo267971107
 NodeColor: 65535,1,1
 ReformDef: [Solar_Scaling_Param,All_Sectors]
 ReformVal: [Solar_Scaling_Param,All_Sectors]
-DisplayOutputs: Decision Excel_Import_Setting
+DisplayOutputs: Object Object, Object Decision, Decision Excel_Import_Setting
 
 FormNode Fo267971107
 Title: Scale Load by % Covered by Solar
@@ -3809,7 +3809,7 @@ Aliases: Alias Al1571850383, Alias Al2146219171
 NodeColor: 65535,1,1
 ReformVal: [Area_Type,PV_Sectors]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-DisplayOutputs: Object Variable, Variable Solar_Scaling_Factor
+DisplayOutputs: Object Object, Object Variable, Variable Solar_Scaling_Factor
 Att_ResultSliceState: [PV_Climate_Zone,2,PV_Sizing_Method,1,PV_Sectors,1,Area_Type,3]
 
 Variable Spatial_ID_to_CZ_Map
@@ -3818,7 +3818,6 @@ Definition: All_Spatial_ID_to_CZ[All_Spatial_ID=Spatial_ID]
 NodeLocation: 1776,664,1
 NodeSize: 64,40
 ValueState: 2,970,315,651,462,0,MIDM
-Aliases: Alias Al843597347
 
 Variable Total_Customer_Load_
 Title: Total Customer Load by CZ
@@ -3857,7 +3856,7 @@ Original: Applied_Building_Stk
 Variable Average_PV_kW_DC_bui
 Title: Average PV kW DC/building at full load
 Units: kW-DC/system
-Definition: ZIDZ1(Average_load_per_bui , PV_Production_per_kW)
+Definition: ZIDZ(Average_load_per_bui , PV_Production_per_kW)
 NodeLocation: 2072,472,1
 NodeSize: 64,40
 ValueState: 2,395,101,896,644,,MIDM
@@ -3983,7 +3982,7 @@ NodeSize: 64,40
 ValueState: 2,2283,199,961,648,,MIDM
 GraphSetup: Att_GraphIndexRange Interconnect_Date:1,,0,,,,,40101.02500528097,43100,0~
 Att_GraphValueRange Monthly_average_syst:1,,0,,,,,0,10.793829709291458,0
-DisplayInputs: Variable Aggregate_System_Ins, Variable Agg_CapacityInstalls
+DisplayInputs: Object Object, Object Variable
 
 Close Formatted_Installati
 
@@ -4807,7 +4806,7 @@ NodeLocation: 276,96,1
 NodeSize: 236,20
 NodeInfo: 1,,,,,,0,254,,,,,,0
 NodeColor: 49344,49344,49344
-Original: PV_Path
+Original: PV_Interconnect_CSV_
 
 FormNode Fo1537568729
 Title: Interconnect Tab Name
@@ -4946,13 +4945,13 @@ Author: JamesMilford
 Date: Mon, Sep 24, 2018 11:54 AM
 NodeLocation: 688,640,1
 NodeSize: 64,40
-DiagState: 2,275,16,1288,541,17,10
+DiagState: 2,217,56,1288,541,17,10
 
 Decision Interconnect_Tab_Nam
 Title: Interconnect Tab Name
 Description: The name of the tab on the worksheet of PV Interconnect Data
 Definition: 'Solar'
-NodeLocation: 752,96,1
+NodeLocation: 1176,216,1
 NodeSize: 64,40
 Aliases: FormNode Fo1537568729, FormNode Fo1534882593, Alias Al1533754985, FormNode Fo1533760894
 
@@ -4969,7 +4968,7 @@ Definition: Table(db_Fields,db_Records)(~
 NodeLocation: 632,320,1
 NodeSize: 56,32
 WindState: 2,7,318,720,350
-DefnState: 2,661,2,862,505,0,DFNM
+DefnState: 2,816,5,866,869,0,DFNM
 ValueState: 2,285,111,1257,765,0,MIDM
 Aliases: FormNode Fo1537569013, FormNode Fo1533508800
 ReformDef: [db_Fields,db_Records]
@@ -5011,7 +5010,7 @@ Decision Driver_Info1
 Title: Driver Info
 Description: The driver that will be used to read an .xlsx file as a database.
 Definition:  "Driver=Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb); ReadOnly=0;DBQ="
-NodeLocation: 408,192,1
+NodeLocation: 1168,56,1
 NodeSize: 64,40
 ValueState: 2,152,154,1039,303,,MIDM
 Aliases: FormNode Fo1538495810
@@ -5022,12 +5021,12 @@ Definition: 0
 NodeLocation: 404,40,1
 NodeSize: 92,16
 NodeInfo: 1,0,0,0,0,0,0,150,0,,0,,,0
-Original: PV_Path
+Original: PV_Interconnect_CSV_
 
 FormNode Fo1534882593
 Title: USUDRB Tab Name
 Definition: 0
-NodeLocation: 756,40,1
+NodeLocation: 1180,160,1
 NodeSize: 92,16
 NodeInfo: 1,0,0,0,0,0,0,142,0,,0,,,0
 Original: Interconnect_Tab_Nam
@@ -5035,7 +5034,7 @@ Original: Interconnect_Tab_Nam
 Variable Raw_PV_Intercon_Data
 Title: Raw PV Interconnect Data
 Description: The comprehensive interconnect database that has been imported. Before saving this data, relevant columns can be selected using the Select Interconnect Fields user input.
-Definition: Create_ODBC_Table(Driver_Info1,  PV_Path, SQL_String1, Interconnect_Tab_Nam)
+Definition: ParseCSV(Read_Interconnect_CS,separator:',',firstLineIsHeader:True)/*Create_ODBC_Table(Driver_Info1, PV_Path, SQL_String1, Interconnect_Tab_Nam )
 NodeLocation: 584,192,1
 NodeSize: 64,40
 WindState: 2,102,82,931,455
@@ -5049,8 +5048,8 @@ NodeLocation: 584,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo1538495811
 
-Decision PV_Path
-Title: PV Path
+Decision PV_Interconnect_CSV_
+Title: PV Interconnect CSV Path
 Description: The path and filename of the PV interconnection data.
 Definition: 'C:\Users\cwelch\Documents\Repos\Nexant\SPIDER\JEA Specific\Interconnect Data_Model Inputs.xlsx'
 NodeLocation: 408,96,1
@@ -5149,7 +5148,7 @@ OnClick: (Interconnect_Sectors:=CopyIndex(Infer_Interconn_Sect));
 FormNode Fo1538495810
 Title: Driver Info
 Definition: 0
-NodeLocation: 408,248,1
+NodeLocation: 1168,112,1
 NodeSize: 56,16
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Driver_Info1
@@ -5172,6 +5171,12 @@ Definition: SpreadsheetRange( Va44, sheet:'Solar'  )
 NodeLocation: 1056,400,1
 NodeSize: 64,40
 ValueState: 2,2624,135,899,444,0,MIDM
+
+Variable Read_Interconnect_CS
+Title: Read Interconnect CSV
+Definition: ReadTextFile(PV_Interconnect_CSV_)
+NodeLocation: 408,192,1
+NodeSize: 64,40
 
 Close Interconnect_Import_
 
@@ -5915,7 +5920,7 @@ NodeLocation: 736,328,1
 NodeSize: 64,40
 WindState: 2,316,-1,962,672
 NumberFormat: 2,F,4,8,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-DisplayOutputs: Object Variable
+DisplayOutputs: Object Object, Object Variable
 
 Function Export_to_Excel2()
 Title: Export to Excel

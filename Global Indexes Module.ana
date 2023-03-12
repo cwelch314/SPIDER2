@@ -25,7 +25,7 @@ NodeLocation: 104,152,1
 NodeSize: 56,40
 WindState: 2,102,83,1156,563
 ValueState: 2,632,66,558,303,0,MIDM
-DisplayOutputs: Object Alias
+DisplayOutputs: Object Object, Object Alias
 
 Variable Simulation_Start_Yr
 Title: Simulation Start Year
@@ -158,7 +158,7 @@ NodeSize: 64,40
 WindState: 2,412,69,902,569
 ValueState: 2,1275,23,429,412,0,MIDM
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"MMM-yyyy",0,,,0,0,15
-DisplayOutputs: Object Function, Decision Excel_Import_Setting, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Variable Total_PV_stock_per_B, Variable Percent_of_Buildings, Variable Percent_of_Bldgs_Ado
+DisplayOutputs: Object Object, Object Function, Object Variable, Object Decision, Decision Excel_Import_Setting, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 {!40300|Att_SlicerPopupSize: 678,784}
 
 Index Spatial_ID_of_Utilit
@@ -387,7 +387,7 @@ NodeLocation: 232,368,1
 NodeSize: 64,40
 WindState: 2,542,374,720,350
 Aliases: FormNode Fo1535656789
-DisplayOutputs: Object Function, Function MultiStage_CalibrPV0
+DisplayOutputs: Object Object, Object Function, Function MultiStage_CalibrPV0
 
 FormNode Fo1535656789
 Title: dT
@@ -556,7 +556,7 @@ ValueState: 2,109,328,1299,218,,MIDM
 
 Function Create_ODBC_Table1(connectionStr, path; sqlStr; tabName: Text )
 Title: Create ODBC Table
-Definition: VAR newConnectStr:=Driver_Info1 & PV_Path;~
+Definition: VAR newConnectStr:=Driver_Info1 & PV_Interconnect_CSV_;~
 VAR newSQLstr:=SQL_String1 & Interconnect_Tab_Nam & "$]";~
 INDEX rows:=DBQuery(newConnectStr, newSQLstr);~
 INDEX cols:=DBLabels(rows);~
@@ -639,7 +639,7 @@ WindState: 2,0,-8,720,840
 DefnState: 2,634,94,653,373,0,DFNM
 ValueState: 2,1036,202,416,303,0,MIDM
 Aliases: Alias Al1550775285, FormNode Fo1550775287
-DisplayOutputs: Decision Excel_Import_Setting
+DisplayOutputs: Object Object, Object Decision, Decision Excel_Import_Setting
 TableCellDefault: Checkbox(0)
 
 Variable Time_EOP_Map
@@ -695,7 +695,7 @@ NodeLocation: 384,64,1
 NodeSize: 64,40
 WindState: 2,828,21,720,720
 ValueState: 2,32,55,450,292,0,MIDM
-DisplayOutputs: Decision Excel_Import_Setting, Variable PV_Tech_Potential_Pe, Variable Avg_PVkW_facil_by_CZ, Variable Total_PV_stock_per_B, Variable Percent_of_Load_from, Variable Percent_of_Load_fro1
+DisplayOutputs: Object Object, Object Variable, Object Decision, Decision Excel_Import_Setting
 {!50400|Att_AxisOrKeyTitle: ""}
 {!40300|Att_SlicerPopupSize: 592,243}
 {!40600|Att_ColorSequence: [0xff0f6689,0xff0f6689]}
@@ -739,7 +739,7 @@ ELSE (~
 NodeLocation: 248,152,1
 NodeSize: 64,40
 WindState: 2,110,74,1618,776
-DisplayOutputs: Object Function, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
+DisplayOutputs: Object Object, Object Function, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 
 Function Check_SpatID_Sel_PV()
 Title: Check Spatial ID Selection
@@ -765,7 +765,7 @@ ELSE Null
 NodeLocation: 248,64,1
 NodeSize: 64,40
 WindState: 2,118,70,951,499
-DisplayOutputs: Object Function, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
+DisplayOutputs: Object Object, Object Function, Function MultiStage_CalibrPV0, Function OG_Multi_Stage_Calib
 
 Function Sequential_Opt(stage: Atom; select_decis, decis_handles, all_spatial_id, der_spatial_id, all_sectors: Index; all_index: Optional Index; ag_stage1, aggreg_level; der_sectors, stored_decis, stored_status, decis_switch: Variable; der_index: Optional Variable; optDef_handle: Handle)
 Title: Sequential Optimization
@@ -826,7 +826,7 @@ For i:=remaining_IDs DO (	~
 NodeLocation: 384,152,1
 NodeSize: 64,40
 WindState: 2,302,11,1405,828
-DisplayOutputs: Object Function, Function OG_Multi_Stage_Calib
+DisplayOutputs: Object Object, Object Function, Function OG_Multi_Stage_Calib
 
 Function Multi_Stage_Calibrat(select_stages, all_stages, all_spatial_id, nonAg_id, failed_id, calib_time, sim_time, select_decis, all_decis, decis_handles, all_sectors: Index; all_index: Optional Index; ag_stage1, trace_flag, calib_start, calib_end, dates_by_stage, decis_by_stage, setting_by_stage, aggreg_level; der_spatial_id, der_sectors, curr_stage, sim_start, sim_end, decis_switch, dates_in_opt, decis_in_opt, stored_decis, setting_in_opt, stored_status: Variable; der_index: Optional Variable; optDef_handle: Handle)
 Title: Multi-Stage Calibration
@@ -893,7 +893,7 @@ For i:=stage DO (~
 NodeLocation: 384,64,1
 NodeSize: 64,40
 WindState: 2,144,5,1689,846
-DisplayOutputs: Object Decision, Decision Dates_Incl_in_PV_Opt, Decision Opt_Settings_PV, Decision Opt_Settings_BESS
+DisplayOutputs: Object Object, Object Decision, Decision Dates_Incl_in_PV_Opt, Decision Opt_Settings_PV, Decision Opt_Settings_BESS
 
 Function Set_Starting_Coeff(all_sectors, all_spatial_id, der_spatial_id: Index; all_index: Optional Index; aggreg_level; der_sectors, stored_decis, stored_status: Variable; der_index: Optional Variable)
 Title: Set Starting Coeff
@@ -932,7 +932,7 @@ ELSE (~
 NodeLocation: 520,64,1
 NodeSize: 64,40
 WindState: 2,173,64,1520,764
-DisplayOutputs: Object Function, Function OG_Multi_Stage_Calib
+DisplayOutputs: Object Object, Object Function, Function OG_Multi_Stage_Calib
 
 Decision Infeasible_Label
 Title: Infeasible Label
@@ -983,7 +983,7 @@ Definition: ['Actual','Simulated']
 IndexVals: ['item 1']
 NodeLocation: 112,256,1
 NodeSize: 64,40
-DisplayOutputs: Object Variable, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
+DisplayOutputs: Object Object, Object Variable, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
 {!40300|Att_SlicerPopupSize: 297,56}
 
 Decision Actual_Label
@@ -993,7 +993,7 @@ Definition: Choice(Act_vs_Sim,1,0)
 NodeLocation: 112,448,1
 NodeSize: 64,40
 Aliases: FormNode Fo1535941782
-DisplayOutputs: Object Variable, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
+DisplayOutputs: Object Object, Object Variable, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
 
 FormNode Fo1535941782
 Title: Optimization Method
@@ -1010,7 +1010,7 @@ Definition: Choice(Act_vs_Sim,2,0)
 NodeLocation: 112,344,1
 NodeSize: 64,40
 Aliases: FormNode Fo1535941833
-DisplayOutputs: Object Variable, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
+DisplayOutputs: Object Object, Object Variable, Variable Sim_vs_Act_Vehicle_2, Variable Sim_vs_Act1, Variable Sim_vs_Act_Vehicle_3, Variable Sim_vs_Act_PV_Insta1
 
 FormNode Fo1535941833
 Title: Optimization Method
