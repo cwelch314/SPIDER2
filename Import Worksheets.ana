@@ -42,7 +42,7 @@ Author: JamesMilford
 Date: Fri, Dec 21, 2018 10:51 AM
 NodeLocation: 664,320,1
 NodeSize: 72,40
-DiagState: 2,39,12,1823,829,17,10
+DiagState: 2,-27,64,1823,829,17,10
 NodeColor: 65535,65535,65535
 
 Module Excel_Import_Logic
@@ -96,21 +96,21 @@ NodeLocation: 88,360,1
 NodeSize: 64,40
 WindState: 2,1976,100,720,350
 ValueState: 2,104,106,406,324,0,MIDM
-DisplayOutputs: Object Decision
+DisplayOutputs: Object Object, Object Decision
 
 Variable Variable_Identifier
 Title: Variable Identifier
 Definition: Null
 NodeLocation: 240,360,1
 NodeSize: 64,40
-DisplayOutputs: Object Decision
+DisplayOutputs: Object Object, Object Decision
 
 Index Index_Identifier
 Title: Index Identifier
 Definition: []
 NodeLocation: 240,448,1
 NodeSize: 64,40
-DisplayOutputs: Object Decision
+DisplayOutputs: Object Object, Object Decision
 
 Decision Import_Param_Default
 Title: Import Param Default
@@ -290,7 +290,7 @@ Definition: 1..Number_of_Datasets
 NodeLocation: 240,184,1
 NodeSize: 64,40
 ValueState: 2,212,218,409,303,,MIDM
-DisplayOutputs: Object Decision
+DisplayOutputs: Object Object, Object Decision
 
 Index Selected_Import_Data
 Title: Selected Import Datasets
@@ -453,7 +453,7 @@ Title: Import Data Types
 Definition: ['Any','Number','Text','Date']
 NodeLocation: 688,696,1
 NodeSize: 64,40
-DisplayOutputs: Object Decision
+DisplayOutputs: Object Object, Object Decision
 
 Decision Data_Type_Label
 Title: Data Type Label
@@ -558,7 +558,7 @@ Title: Max Imported Indexes
 Description: WARNING: Reducing this number may result in a loss of data.~
 ~
 The maximum number of sequential index columns that can be imported from Excel. This determines the size of the Categorial Index Import Settings table. When reducing this number, ensure that it will not result in discarding previously defined index column configurations.
-Definition: 24
+Definition: 25
 NodeLocation: 864,168,1
 NodeSize: 64,40
 WindState: 2,11,69,855,404
@@ -572,7 +572,7 @@ NodeLocation: 872,264,1
 NodeSize: 64,40
 
 Index Categ_Index_Params
-Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Column 1 Index','Column 2 Index','Column 3 Index','Column 4 Index','Column 5 Index','Column 6 Index','Column 7 Index','Column 8 Index','Column 9 Index','Column 10 Index','Column 11 Index','Column 12 Index','Column 13 Index','Column 14 Index','Column 15 Index','Column 16 Index','Column 17 Index','Column 18 Index','Column 19 Index','Column 20 Index','Column 21 Index','Column 22 Index','Column 23 Index','Column 24 Index']
+Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Column 1 Index','Column 2 Index','Column 3 Index','Column 4 Index','Column 5 Index','Column 6 Index','Column 7 Index','Column 8 Index','Column 9 Index','Column 10 Index','Column 11 Index','Column 12 Index','Column 13 Index','Column 14 Index','Column 15 Index','Column 16 Index','Column 17 Index','Column 18 Index','Column 19 Index','Column 20 Index','Column 21 Index','Column 22 Index','Column 23 Index','Column 24 Index','Column 25 Index']
 Title: Categorical Index Parameters
 Definition: Concat(Cat_Index_Fix_Params, Import_Index_Cols)
 NodeLocation: 872,464,1
@@ -580,7 +580,7 @@ NodeSize: 64,40
 
 Decision Categ_Index_Default
 Title: Categorical Index Default
-Definition: Table(Categ_Index_Params)(Checkbox(0),Path_to_Global_Data1,'SheetName','A5',Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier))
+Definition: Table(Categ_Index_Params)(Checkbox(0),Path_to_Global_Data1,'SheetName','A5',Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier))
 NodeLocation: 872,552,1
 NodeSize: 64,40
 WindState: 2,102,82,720,350
@@ -641,12 +641,12 @@ Column 2 Index: 			Handle(Land_Type)~
 Column 3 Index: 			Handle(Years)~
 Column 4-N Index:		Null
 Definition: DetermTable(Select_Model_for_Dat,Categ_Index_Tabs,Categ_Index_Params)(~
-Checkbox(1),Path_to_Global_Data1,'Categorical_Indexes','A5',Handle(Hourly_Profile_Names),Handle(Holiday_Years),Handle(ITC_Scenario),Handle(EV_Mkt_Share_Scen),Handle(EV_AdEff_Scenario),Handle(EV_WOM_Scen),Handle(Fuel_Types),Handle(All_Vehicle_Techs),Handle(Gasoline_Price_Scens),Handle(EV_Incent_Scenario),Handle(Vehicle_Price_Scens),Handle(Vehicle_Range_Scens),Handle(Elect_Price_Scens),Handle(BldgGrowthRate_Scens),Handle(BESS_Incentive_Scen),Handle(Storage_Cost_Scen),Handle(PV_Incentive_Scen),Handle(DER_Cost_Scenario),Handle(NC_Suitability_Scens),Handle(All_PV_Sectors),Handle(Facility_Identifier),Handle(Spatial_ID),Handle(All_Utilities),Handle(PV_Climate_Zone),~
-Checkbox(0),Path_to_Global_Data1,'Struct_Categ_Indexes','A5',Handle(SGIP_Data_Columns),Handle(Battery_Specs),Handle(All_System_Types),Handle(Debt_or_Equity),Handle(Incent_Durat_Inputs),Handle(Incent_MWhCap_Inputs),Handle(Timestep_Options),Handle(StructSingCell_Names),Handle(Vehicle_Types),Handle(SingCell_Input_Names),Handle(Hourly_Profile_Rows),Handle(Holiday_Name),Handle(Delta_Outputs),Handle(EV_Adopt_Data_Types),Handle(Sequential_Outputs),Handle(Veh_Incentive_Type),Null,Null,Null,Null,Null,Null,Null,Null)
+Checkbox(1),Path_to_Global_Data1,'Categorical_Indexes','A5',Handle(Hourly_Profile_Names),Handle(Holiday_Years),Handle(ITC_Scenario),Handle(EV_Mkt_Share_Scen),Handle(EV_AdEff_Scenario),Handle(EV_WOM_Scen),Handle(Fuel_Types),Handle(All_Vehicle_Techs),Handle(Gasoline_Price_Scens),Handle(EV_Incent_Scenario),Handle(Vehicle_Price_Scens),Handle(Vehicle_Range_Scens),Handle(Elect_Price_Scens),Handle(BldgGrowthRate_Scens),Handle(BESS_Incentive_Scen),Handle(Storage_Cost_Scen),Handle(PV_Incentive_Scen),Handle(DER_Cost_Scenario),Handle(NC_Suitability_Scens),Handle(All_PV_Sectors),'Handle(Facility_Identifier)',Handle(Spatial_ID),Handle(All_Utilities),Handle(PV_Climate_Zone),Handle(Loadshape_Name),~
+Checkbox(0),Path_to_Global_Data1,'Struct_Categ_Indexes','A5',Handle(SGIP_Data_Columns),Handle(Battery_Specs),Handle(All_System_Types),Handle(Debt_or_Equity),Handle(Incent_Durat_Inputs),Handle(Incent_MWhCap_Inputs),Handle(Timestep_Options),Handle(StructSingCell_Names),Handle(Vehicle_Types),Handle(SingCell_Input_Names),Handle(Hourly_Profile_Rows),Handle(Holiday_Name),Handle(Delta_Outputs),Handle(EV_Adopt_Data_Types),Handle(Sequential_Outputs),Handle(Veh_Incentive_Type),Null,Null,Null,Null,Null,Null,Null,Null,Null)
 NodeLocation: 872,664,1
 NodeSize: 64,40
-WindState: 2,102,82,1528,740
-DefnState: 2,916,113,763,607,0,DFNM
+WindState: 2,102,82,1686,703
+DefnState: 2,774,49,833,717,0,DFNM
 ValueState: 2,769,178,771,486,0,MIDM
 Aliases: FormNode New433703203, FormNode New467257635, FormNode New1268542755
 ReformDef: [Categ_Index_Tabs,Categ_Index_Params]
@@ -1207,6 +1207,7 @@ Title: Categorical Indexes to Import
 Definition: Subtable(CatInd_ImportSetting[Categ_Index_Params=Categ_Table_Param])/*MultiTable(Data_Selection_Optio)(Categ_Index_Tab_Opt1&"",CatIndex_Select_Sub1)
 NodeLocation: 872,896,1
 NodeSize: 64,40
+WindState: 2,98,82,720,458
 DefnState: 2,680,392,638,222,0,DFNM
 Aliases: FormNode Fo1920846115, FormNode Fo494782755
 ReformDef: [Categ_Table_Param,Categ_Index_Tabs]
@@ -1688,7 +1689,7 @@ WindState: 2,98,82,720,547
 DefnState: 2,318,269,1279,164,0,DFNM
 ValueState: 2,500,506,969,193,,MIDM
 Aliases: FormNode New1842989347, FormNode New1345964323, FormNode New809093411
-DisplayOutputs: Object Decision
+DisplayOutputs: Object Object, Object Decision
 TableCellDefault: 'C:\Documents\Filename.xlsx'
 
 Decision Dataset_to_View1
@@ -2069,7 +2070,7 @@ NodeLocation: 584,368,1
 NodeSize: 64,40
 Aliases: FormNode Fo1385416995
 {!40300|DomainExpr: Model_for_Data_Impo1}
-DisplayOutputs: Object Decision
+DisplayOutputs: Object Object, Object Decision
 
 Variable Raw_Imp_Dat_LIbXl
 Title: Raw Imp Dat LIbXl
