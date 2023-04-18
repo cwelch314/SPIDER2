@@ -11,7 +11,7 @@ Date: Wed, May 1, 2019 11:53 AM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
-DiagState: 2,962,283,720,254,17,10
+DiagState: 2,811,253,720,254,17,10
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule Storage_Dispatch_Opt,2,2,0,0,Storage_Dispatch_Opt.ana
 
@@ -22,7 +22,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 416,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,0,33,1775,715,17,10
+DiagState: 2,60,58,1775,683,17,10
 
 Decision Stored_Grid_Elect1
 Title: Stored Grid Electricity
@@ -346,7 +346,7 @@ THEN Stored_Grid_Elect1~
 ELSE Saved_Stored_Grid2[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2]
 NodeLocation: 704,128,1
 NodeSize: 64,40
-ValueState: 2,40,42,1194,745,1,MIDM
+ValueState: 2,339,100,1194,745,1,MIDM
 ReformVal: [Day_and_Hour,Month]
 {!40300|DomainExpr: Continuous()}
 Att_ResultSliceState: [All_Sectors,2,Rate_Vintage,3,PV_Climate_Zone,1,All_Storage_Systems,1,Month,1,Day_and_Hour,1]
@@ -1369,7 +1369,7 @@ Author: CWelch
 Date: Thu, Feb 24, 2022 10:13 AM
 NodeLocation: 496,656,1
 NodeSize: 64,40
-DiagState: 2,2181,43,1237,712,17,10
+DiagState: 2,367,85,1237,712,17,10
 
 Include 0,LinkModule Saved_Stored_Grid_El,2,2,0,0,Saved Storage Data\Saved Stored Grid Elec.ana
 
@@ -2698,7 +2698,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1985,51,1823,715,17,10
+DiagState: 2,15,48,1837,764,17,10
 
 Decision Opt_Seq_Number
 Title: Opt Sequential Number
@@ -2792,7 +2792,7 @@ ELSE DefineOptimization(~
 NodeLocation: 968,216,1
 NodeSize: 64,40
 WindState: 2,-33,94,1540,840
-ValueState: 2,683,432,711,252,0,MIDM
+ValueState: 2,719,538,1167,321,0,MIDM
 ReformVal: [Month,Opt_Sectors]
 {!40300|Att_DerefReformVal: [Undefined,Sys_LocalIndex('Item')]}
 Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Opt_Storage_Systems,1,Area_Type,3,Seq_Opt_Number,1,Opt_Sectors,1,Month,1]
@@ -2854,7 +2854,6 @@ OnClick: FOR J:=@All_Strg_Decisions2 DO (~
 );
 
 Index All_Strg_Decisions2
-Att_PrevIndexValue: [Stored_Grid_Elect1,Discharge_ReduceLoa1,Total_Discharge4,PV_to_Reduce_Load2,Stored_PV_Elect1,On_Peak_Dmd2,Non_Coinc_Demand2,Pos_Charge_Delta1,Neg_Charge_Delta1,Ending_Charge_Level,Charging_Start1,Initial_Charge_Leve2,Allow_Charging2]
 Title: All Storage Decisions
 Definition: [Stored_Grid_Elect1,Discharge_ReduceLoa1,Total_Discharge4,PV_to_Reduce_Load2,Stored_PV_Elect1,On_Peak_Dmd2,Non_Coinc_Demand2,Pos_Charge_Delta1,Neg_Charge_Delta1,Ending_Charge_Level,Charging_Start1,Initial_Charge_Leve2,Allow_Charging2]
 NodeLocation: 256,656,1
@@ -2864,7 +2863,6 @@ Aliases: Alias New1552348283
 MetaOnly: 1
 
 Index All_Strg_Constraint2
-Att_PrevIndexValue: [Storage_Charge_Rate1,Storage_DishargeRat1,Storage_Energy_Cap2,SOC_Limit_on_Dischr1,Constr_BatteryExpor2,DischLoadRed_LTE_Tot,DischLoadRed_LTELoad,Pos_GridElecMeetLoad,PV_LoadRed_LTE_Solar,PV_LoadRed_LTE_Load,Min_Stored_PV2,Pos_Exported_PV,Load_Balance2,PV_Balance2,Max_Non_Coinc_Deman2,Max_On_Peak_Demand2,Force_Positive_Delt1,Force_Negative_Delt1,Value_of_End_Charge,Find_Charge_Start1,Same_Starting_Charg1,Int_Strg_Charge_Rate,Int_Strg_Dischg_Rate,Continuous_Charge1]
 Title: All Storage Constraints
 Definition: [Storage_Charge_Rate1,Storage_DishargeRat1,Storage_Energy_Cap2,SOC_Limit_on_Dischr1,Constr_BatteryExpor2,DischLoadRed_LTE_Tot,DischLoadRed_LTELoad,Pos_GridElecMeetLoad,PV_LoadRed_LTE_Solar,PV_LoadRed_LTE_Load,Min_Stored_PV2,Pos_Exported_PV,Load_Balance2,PV_Balance2,Max_Non_Coinc_Deman2,Max_On_Peak_Demand2,Force_Positive_Delt1,Force_Negative_Delt1,Value_of_End_Charge,Find_Charge_Start1,Same_Starting_Charg1,Int_Strg_Charge_Rate,Int_Strg_Dischg_Rate,Continuous_Charge1]
 NodeLocation: 256,744,1
@@ -4147,7 +4145,7 @@ ELSE numbers
 NodeLocation: 464,328,1
 NodeSize: 64,40
 WindState: 2,214,388,720,350
-ValueState: 2,150,291,1632,221,0,MIDM
+ValueState: 2,277,217,1275,546,0,MIDM
 ReformVal: [Self,Storage_Opt_Scenari2]
 
 Index Storage_Filter_Index
@@ -4155,6 +4153,7 @@ Title: Storage Filter Indexes
 Definition: ListOfHandles(Seq_Opt_Number, Opt_Sectors, Opt_Storage_Systems, PV_Climate_Zone, Rate_Vintage, Month)
 NodeLocation: 616,424,1
 NodeSize: 64,40
+ValueState: 2,1118,282,767,390,0,MIDM
 
 Variable Binary_Scenario_Map
 Title: Binary Scenario Map
@@ -4405,7 +4404,7 @@ Date: Fri, Mar 11, 2022 9:14 AM
 NodeLocation: 1752,288,1
 NodeSize: 64,40
 NodeInfo: 1,0
-DiagState: 2,2150,89,1212,512,17,10
+DiagState: 2,12,89,1212,512,17,10
 WindState: 2,323,77,720,350
 
 Decision Select_Strg_Sector2
@@ -4535,7 +4534,7 @@ MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimizat
 Decision Choose_Sectors_to_Op
 Title: Choose Sectors to Optimize
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,allowNone:0,returnList:1)
 NodeLocation: 464,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo989786659, Alias Al783884579, FormNode Fo431563043
@@ -4631,7 +4630,7 @@ Definition: Reindex_to_ProfileHr(Flows_by_Opt_Hour[Flow_Name2=Flow_Types1, Rate_
 NodeLocation: 416,64,1
 NodeSize: 64,40
 WindState: 2,5,19,972,489
-ValueState: 2,146,60,815,752,1,MIDM
+ValueState: 2,338,63,815,752,1,MIDM
 Aliases: FormNode Fo1557458712, FormNode Fo1571775089, FormNode Fo1228179747
 GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_AreaFill Graph_Primary_Valdim:0~
