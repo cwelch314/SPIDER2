@@ -33,7 +33,7 @@ Author: Cory Welch
 Date: Mon, Dec 25, 2017 9:38 AM
 NodeLocation: 136,288,1
 NodeSize: 80,56
-DiagState: 2,208,65,1340,583,23,10,
+DiagState: 2,260,114,1555,568,23,10,
 NodeColor: 65535,65535,65535
 Pict: (000000000000003C003D0004AB04000089504E470D0A1A0A0000000D494844520000003D0000003C0806000000D53EB24C000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA86400000430494441546843ED9A4D48545118866D67D0C2A5AD74578B7E17154584418BC08D1591ED0C0A8416498B70556DC2450B4D02CBA0A84C932CFB03212A8B30178296F48325D80FA14920266542CCE97C87796FE75EDF99EE8C33676E75170F8CEFF7DDF39D77CEEFC529524AFD7750115C1B69A9DDD25932B5F6729172CDC6F6C5DF2BBBCBC7C667DE95B1BE2D042A820DEDC5B3AC432ED97377F5B3B99FB3C5AC7FD9424580C2871F55759F797EECB84B6CE3F54FAA3B58FFB2858A00456F8D5EA861F17C629B168E3DADB9C0F2B2818A00050B697AF79D95C3F89C2BE35404285648D3D7DFB41E38F8607B0FFE6E1EAA6F60F9994045804285342DB56523B38DCB9A67CF84858AC02ECCE2F924585B8C57DF5D33047D21C6A90882855DC26A7F9D9B2AC985712A0256D815A96AE7C2381541AAC22E4857FBCBF7F152B9AD212753E35404E90AE79B3FD5FE3433566E1B6F7BD558C7F21854047F2A9C4FC2D40E1A0FDB4F2A824C1BCB25616B8B71FBA5284C5FA908326928D7A0B65C4606267A2BD271E3EDB9FD9BAE2E99C133F7DF77ED626D022A02345248D359D1B628C1DA04540468A410A6E5CDCA672413DAA409DEAE404580460A613A1B64AAA3CFC1980D15416C9AC4A3466C9AC40115416C9AC4A3466C9AC40115416C9AC4A3466C9AC40115416C9AC4A3466C9AC40115416C9AC4D5F487F244FFC9E3EADBE7529FFEF3477162A0B95E4DBE58E3D33589C1D63A75675FF7BC67D29018E9AE5637F7F6A8AE9DBDEAF1D146699FE5B931AD3B92682A55892BDB867C7A4F6D87D12F6D7EEDD33589D365B326F6F26AB8D9A34D9A7C9BCECA7E96EBC4B48CA6D791D19E2AA3EB11843133A2C167901FC6B49E295EFEF9756306FC3D7CB13698EF66A4651A9F5B356E3A81D1B646864E6F743A8CE9BE130D26B765D994FA315D62B4E4EC625FA8B38D4CD6B46D24DD289B7C2B97C57DE8364C5BF70E79FFA29519659E274BC79969DF743EBB6212A6D8280B8867645A36315B7F78A4C56C94B6A671675AC0943E95349C6294854C4C7B7B867CA9B2EBEBD382E501B7A6E5F8C1AE2CA6538CB2908969338BF47AF69E91B665AAA738EEDC9AB67659D5B4F4F74E4EF00C84312D48DBF6AE2DC87AC6C666E1D67472ED7904CF6D0B2F27ACE924265F5F4EBCE7E55214C87167DA1EE5B6ADC35EA7528CB6170F635ADA963CFB06868B0FB9A0B8336D8DB29A185C3FEFDC0E80DC50A6D1B6751191CF462BD891658F7272C7965D161A1B6D2F5F5F3CD4C7BE0A1FC1752A4793E4DBA39A1C697642B8318DA9269DD05F80D1EC5B1A9982C8A7E8E77CB918558DD4F2DDC3E508B3720537A6A513FAA832A366E932758D2E6F45966EC04B0A233865E50BD4CB645E9EDECDD99B96BB359D6F64CADBFB864CEB489CD31121364DE2808A20364DE25123364DE2808A20364DE25123364DE2808A000D84F9015B1490DF87E6CCF4DF48D08B0D15C1827EC0564076DC5E3EEFB5D3868AFF36AAE817D3052E280C9B5B310000000049454E44AE426082)
 
@@ -85,39 +85,26 @@ DisplayOutputs: Object Object, Object Function, Object Variable, Object Decision
 Att_GraphIndexRange: 1,,,,,,10
 {!40300|Att_SlicerPopupSize: 717,126}
 
-Index Selected_Utilities
+Index Selected_Utility
 Att_PrevIndexValue: ['JEA']
-Title: Selected Utilities
+Title: Selected Utility
 Description: This index is calculated based on which utilities are included in the dataset provided.~
 ~
 Old:subset(Select_Utility)
-Definition: subset(Select_Utility)
+Definition: MultiChoice(All_Utilities,returnList:False )
 NodeLocation: 664,64,1
 NodeSize: 64,40
 WindState: 2,1148,8,720,531
-ValueState: 2,1273,65,407,310,0,MIDM
+ValueState: 2,1269,160,458,209,0,MIDM
+Aliases: FormNode Fo139099667
 {!40300|Att_SlicerPopupSize: 367,70}
 
 Text Te1524758379
 Title: Insert fraction of housing stock for overlapping utility ZIP codes
-NodeLocation: 1212,80,-1
+NodeLocation: 1228,232,-1
 NodeSize: 84,64
 NodeInfo: 1,1,1
 NodeColor: 65535,65535,65535
-
-Constant Spatial_ID_Applicabl
-Title: Spatial_ID_Applicable
-Definition: Table(All_Spatial_ID,All_Utilities)(~
-1,~
-'Missing',~
-0)
-NodeLocation: 1000,64,1
-NodeSize: 96,40
-ValueState: 2,815,4,352,708,,MIDM
-Aliases: FormNode Fo1529597917
-ReformDef: [All_Utilities,All_Spatial_ID]
-ReformVal: [Selected_Utilities,All_Spatial_ID]
-Att__TotalsIndex: [Selected_Utilities,All_Spatial_ID]
 
 Index All_Utilities
 Att_PrevIndexValue: ['JEA']
@@ -2545,6 +2532,14 @@ NodeInfo: 1,,,,,,,0,,,,,,0
 
 Close Old_data_nodes_for_d
 
+FormNode Fo139099667
+Title: Selected Utilities
+Definition: 0
+NodeLocation: 920,56,1
+NodeSize: 136,16
+NodeInfo: 1,,,,,,,120,,,,,,0
+Original: Selected_Utility
+
 Close Data
 
 Text Te1514147845
@@ -2794,7 +2789,7 @@ Graph_KeyFont:,20,0~
 {!50000|Graph_SortBySpread:0}
 ReformVal: [Interconnect_Date,All_Sectors]
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"M/yyyy",0,,,0,0,15
-Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utilities,All_Spatial_ID,All_Sectors,Interconnect_Date]
+Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utility,All_Spatial_ID,All_Sectors,Interconnect_Date]
 Att_ResultSliceState: [All_Spatial_ID,0,All_Utilities,1,Interconnect_Date,0,All_Sectors,1]
 {!40600|Att_StackingIndex: All_Sectors}
 {!40600|Att_ClusterIndex: Null}
@@ -3123,7 +3118,7 @@ Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 920,328,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,46,28,1739,733,17,10
+DiagState: 2,70,22,1786,709,17,10
 
 Variable PV_AC_SystSize_Econ
 Title: PV AC System Size for Economics
@@ -3152,7 +3147,7 @@ GraphSetup: Att_GraphIndexRange Interconnect_Date:1,,1,,,,,36.525K,41.639K,0~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_Stacked_Lines Graph_Primary_Valdim:0
 ReformVal: [Interconnect_Date,Null]
-Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utilities,PV_Sectors,PV_Spatial_ID]
+Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utility,PV_Sectors,PV_Spatial_ID]
 Att_ResultSliceState: [PV_Spatial_ID,0,PV_Sectors,0,Interconnect_Date,1]
 Att_ColorRole: Null
 {!40600|Att_StackingIndex: PV_Sectors}
@@ -3175,12 +3170,12 @@ Att_GraphIndexRange Interconnect_Date:1,0,1,,,,,40.908K,42.369K,0~
 SymbolSize:10
 ReformVal: [PV_Spatial_ID,PV_Sectors]
 NumberFormat: 2,F,7,4,0,0,7,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utilities]
+Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utility]
 Att_ResultSliceState: [Area_Type,1,Interconnect_Date,473,PV_Sectors,11,PV_Spatial_ID,1]
 Att_ColorRole: Null
-{!40600|Att_StackingIndex: Selected_Utilities}
+{!40600|Att_StackingIndex: Selected_Utility}
 {!40600|Att_ClusterIndex: Null}
-{!50000|Att_ColumnWidths: [,Selected_Utilities,\([65,65])]}
+{!50000|Att_ColumnWidths: [,Selected_Utility,\([65,65])]}
 
 Constant Historical_PV_Instal
 Title: Historical PV Installations
@@ -3199,7 +3194,7 @@ Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,
 NodeLocation: 80,160,1
 NodeSize: 64,40
 DefnState: 2,449,17,1066,745,0,DFNM
-ValueState: 2,98,1,972,813,0,MIDM
+ValueState: 2,1069,67,617,803,0,MIDM
 Aliases: FormNode Fo1537569014
 NodeColor: 65535,39321,39321
 GraphSetup: Att_GraphIndexRange Interconnect_Date:1,,0,,,,,41905.27270960808,42369,0~
@@ -3220,12 +3215,12 @@ Att_ColorRole: Null
 Variable Aggregate_System_Ins
 Title: Aggregate System Installs
 Units: systems/period
-Definition: local x:=sum(Historical_PV_Instal[All_Sectors=PV_Sectors, All_Utilities=Selected_Utilities], All_Spatial_ID, Selected_Utilities);~
+Definition: local x:=sum(Historical_PV_Instal[All_Sectors=PV_Sectors, All_Utilities=Selected_Utility], All_Spatial_ID{, Selected_Utility});~
 IF x=null THEN 0 ELSE x
 NodeLocation: 232,96,1
 NodeSize: 64,40
 WindState: 2,102,82,980,350
-ValueState: 2,209,361,845,369,0,MIDM
+ValueState: 2,681,270,845,369,0,MIDM
 ReformVal: [Interconnect_Date,PV_Sectors]
 DisplayOutputs: Object Object, Object Variable
 Att__TotalsIndex: [Interconnect_Date,PV_Sectors]
@@ -3282,17 +3277,17 @@ Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_GraphValueRange Capacity_Installs:1,,1,,,,,0,7000,0
 ReformVal: [Interconnect_Date,PV_Sectors]
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utilities,PV_Spatial_ID,Interconnect_Date,PV_Sectors]
+Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utility,PV_Spatial_ID,Interconnect_Date,PV_Sectors]
 Att_ResultSliceState: [PV_Sectors,0,PV_Spatial_ID,0,PV_Sectors,0,Interconnect_Date,1]
 Att_ColorRole: Null
-{!40600|Att_StackingIndex: Selected_Utilities}
+{!40600|Att_StackingIndex: Selected_Utility}
 {!40600|Att_ClusterIndex: Null}
-{!50000|Att_ColumnWidths: [,Selected_Utilities,[65,65]]}
+{!50000|Att_ColumnWidths: [,Selected_Utility,[65,65]]}
 
 Variable Agg_CapacityInstalls
 Title: Aggregate Capacity Installs
 Units: MW-AC/period
-Definition: local x:=sum(Historical_PV_Capaci[All_Sectors=PV_Sectors, All_Utilities=Selected_Utilities], All_Spatial_ID, Selected_Utilities);~
+Definition: local x:=sum(Historical_PV_Capaci[All_Sectors=PV_Sectors, All_Utilities=Selected_Utility], All_Spatial_ID{, Selected_Utility});~
 IF x=null THEN 0 ELSE x
 NodeLocation: 232,312,1
 NodeSize: 64,40
@@ -3304,7 +3299,7 @@ Title: All Capacity Installs w/Agg
 Units: MW-AC/period
 Definition: local x:=IF All_Spatial_ID=Aggregation_2_Label~
 THEN Agg_CapacityInstalls ~
-ELSE Sum(Historical_PV_Capaci[All_Sectors=PV_Sectors, All_Utilities=Selected_Utilities], Selected_Utilities);   {Sums all installations across all spatial IDs and assigns it to the first element of the All spatial ID index, which is null}~
+ELSE Sum(Historical_PV_Capaci[All_Sectors=PV_Sectors, All_Utilities=Selected_Utility], Selected_Utility);   {Sums all installations across all spatial IDs and assigns it to the first element of the All spatial ID index, which is null}~
 IF x=null THEN 0 ELSE x
 NodeLocation: 232,408,1
 NodeSize: 64,40
@@ -3321,7 +3316,7 @@ Title: All Installs w/Agg
 Units: MW-AC/period
 Definition: local x:=IF All_Spatial_ID=Aggregation_2_Label~
 THEN Aggregate_System_Ins ~
-ELSE Sum(Historical_PV_Instal[All_Sectors=PV_Sectors, All_Utilities=Selected_Utilities], Selected_Utilities);   {Sums all installations across all spatial IDs and assigns it to the first element of the All spatial ID index, which is null}~
+ELSE Sum(Historical_PV_Instal[All_Sectors=PV_Sectors, All_Utilities=Selected_Utility], Selected_Utility);   {Sums all installations across all spatial IDs and assigns it to the first element of the All spatial ID index, which is null}~
 IF x=null THEN 0 ELSE x
 NodeLocation: 384,96,1
 NodeSize: 64,40
@@ -3344,7 +3339,7 @@ Att_AreaFill Graph_Primary_Valdim:0~
 Att_GraphIndexRange Interconnect_Date:1,,1,,,,,36.525K,41.639K,0~
 Att_GraphValueRange Cumul_Syst_Installs:1,,1,,,,,0,105.67412674427032,0
 ReformVal: [Interconnect_Date,Null]
-Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utilities]
+Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utility]
 Att_ResultSliceState: [PV_Spatial_ID,1,PV_Sectors,1,Interconnect_Date,1]
 Att_ColorRole: Null
 
@@ -3989,10 +3984,11 @@ Units: kW-AC
 Definition: ZIDZ(Agg_CapacityInstalls,Aggregate_System_Ins) * 1000
 NodeLocation: 232,200,1
 NodeSize: 64,40
-ValueState: 2,2283,199,961,648,,MIDM
-GraphSetup: Att_GraphIndexRange Interconnect_Date:1,,0,,,,,40101.02500528097,43100,0~
-Att_GraphValueRange Monthly_average_syst:1,,0,,,,,0,10.793829709291458,0
+ValueState: 2,2130,120,1373,653,,MIDM
+GraphSetup: Att_GraphValueRange Monthly_average_syst:1,,1,,,,,0,10.793829709291458,0~
+Att_GraphIndexRange Interconnect_Date:1,,0,,,,,40101.02500528097,43100,0
 DisplayInputs: Object Object, Object Variable
+Att_ResultSliceState: [Selected_Utility,1,PV_Sectors,1,Interconnect_Date,1]
 
 Close Formatted_Installati
 
@@ -4075,7 +4071,7 @@ Grid:0~
 {!40000|Graph_KeyFont:,20,0}
 ReformVal: [Interconnect_Date,All_Spatial_ID]
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"M/yyyy",0,,,0,0,15
-Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utilities]
+Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utility]
 Att_ResultSliceState: [All_Utilities,1,All_Sectors,2,All_Spatial_ID,3,Interconnect_Date,1]
 {!40600|Att_StackingIndex: All_Spatial_ID}
 {!40600|Att_ClusterIndex: Null}
@@ -4122,7 +4118,7 @@ Grid:0~
 {!40000|Graph_KeyFont:,20,0}
 ReformVal: [All_Sectors,Interconnect_Date]
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"M/yyyy",0,,,0,0,15
-Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utilities,Interconnect_Date,All_Spatial_ID]
+Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utility,Interconnect_Date,All_Spatial_ID]
 Att_ResultSliceState: [All_Spatial_ID,0,All_Utilities,1,Interconnect_Date,1,All_Sectors,1]
 {!40600|Att_StackingIndex: All_Sectors}
 {!40600|Att_ClusterIndex: All_Sectors}
@@ -4189,7 +4185,7 @@ Grid:0~
 {!40000|Graph_KeyFont:,20,0}
 ReformVal: [All_Spatial_ID,Interconnect_Date]
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"M/yyyy",0,,,0,0,15
-Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utilities]
+Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utility]
 Att_ResultSliceState: [All_Spatial_ID,3,All_Utilities,1,Interconnect_Date,1,All_Sectors,1]
 {!40600|Att_StackingIndex: All_Sectors}
 {!40600|Att_ClusterIndex: All_Sectors}
@@ -4218,7 +4214,7 @@ Grid:0~
 {!40000|Graph_KeyFont:,20,0}
 ReformVal: [All_Spatial_ID,Interconnect_Date]
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"M/yyyy",0,,,0,0,15
-Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utilities]
+Att__TotalsIndex: [Stored_ID_Interconn,Selected_Utility]
 Att_ResultSliceState: [All_Spatial_ID,3,All_Utilities,1,Interconnect_Date,1,All_Sectors,1]
 {!40600|Att_StackingIndex: All_Sectors}
 {!40600|Att_ClusterIndex: All_Sectors}

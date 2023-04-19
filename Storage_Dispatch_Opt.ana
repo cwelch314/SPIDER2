@@ -22,7 +22,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 416,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,60,58,1775,683,17,10
+DiagState: 2,53,33,1775,683,17,10
 
 Decision Stored_Grid_Elect1
 Title: Stored Grid Electricity
@@ -2001,10 +2001,10 @@ Definition: Cost_of_Purch_Elect2 - Value_of_Export_Ele2 + Cost_of_On_Peak_Dmd2 +
 NodeLocation: 1152,200,1
 NodeSize: 64,40
 WindState: 2,604,166,1169,658
-ValueState: 2,510,52,1105,737,0,MIDM
+ValueState: 2,515,244,1105,418,0,MIDM
 ReformVal: [PV_Climate_Zone,Opt_Sectors]
-Att__TotalsIndex: [Month,Area_Type,Opt_Storage_Systems]
-Att_ResultSliceState: [Rate_Vintage,1,Seq_Opt_Number,1,Opt_Storage_Systems,0,Area_Type,0,Month,0,Buy_or_Sell_,1,Opt_Sectors,1,PV_Climate_Zone,2]
+Att__TotalsIndex: [Area_Type]
+Att_ResultSliceState: [Rate_Vintage,1,Seq_Opt_Number,1,Opt_Storage_Systems,2,Area_Type,0,Month,5,All_Utilities,1,Opt_Sectors,1,PV_Climate_Zone,2]
 
 Variable Opt_Net_Load
 Title: Opt Net Load
@@ -2698,7 +2698,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,15,48,1837,764,17,10
+DiagState: 2,31,7,1837,598,17,10
 
 Decision Opt_Seq_Number
 Title: Opt Sequential Number
@@ -2854,6 +2854,7 @@ OnClick: FOR J:=@All_Strg_Decisions2 DO (~
 );
 
 Index All_Strg_Decisions2
+Att_PrevIndexValue: [Stored_Grid_Elect1,Discharge_ReduceLoa1,Total_Discharge4,PV_to_Reduce_Load2,Stored_PV_Elect1,On_Peak_Dmd2,Non_Coinc_Demand2,Pos_Charge_Delta1,Neg_Charge_Delta1,Ending_Charge_Level,Charging_Start1,Initial_Charge_Leve2,Allow_Charging2]
 Title: All Storage Decisions
 Definition: [Stored_Grid_Elect1,Discharge_ReduceLoa1,Total_Discharge4,PV_to_Reduce_Load2,Stored_PV_Elect1,On_Peak_Dmd2,Non_Coinc_Demand2,Pos_Charge_Delta1,Neg_Charge_Delta1,Ending_Charge_Level,Charging_Start1,Initial_Charge_Leve2,Allow_Charging2]
 NodeLocation: 256,656,1
@@ -4131,7 +4132,7 @@ Saved_Linked_List:=Null;  {Once the saved linked list solutions have been saved 
 
 NodeLocation: 1728,384,1
 NodeSize: 64,40
-WindState: 2,129,159,1553,763
+WindState: 2,134,107,1553,763
 
 Variable Scenario_Map
 Title: Scenario Map
@@ -4171,7 +4172,8 @@ map~
 NodeLocation: 616,328,1
 NodeSize: 64,40
 WindState: 2,49,191,720,350
-ValueState: 2,63,222,863,680,0,MIDM
+ValueState: 2,81,124,1380,645,0,MIDM
+ReformVal: [Month,Storage_Opt_Scenari2]
 Att_ResultSliceState: [All_Sectors,1,PV_Climate_Zone,1,All_Storage_Systems,1,Month,1,Seq_Opt_Number,1,Storage_Opt_Scenari2,1,Rate_Vintage,1]
 
 Button Clear_Linked_List

@@ -3616,13 +3616,13 @@ Description: The annual energy produced per kW-DC of installed solar.
 Definition: PV_Capacity_Factor[All_PV_Sectors=PV_Sectors] * Hours_per_Year
 NodeLocation: 416,336,1
 NodeSize: 64,40
-ValueState: 2,2658,214,555,238,0,MIDM
+ValueState: 2,2782,370,569,198,0,MIDM
 Aliases: Alias Al1534084643, Alias Al1911116963
 ReformVal: [Null,PV_Sectors]
 NumberFormat: 2,F,2,1,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 DisplayOutputs: Object Object, Object Variable, Variable Solar_Scaling_Factor
 Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Climate_Zone,2,PV_Sectors,1,Area_Type,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,Area_Type,1,PV_Sectors,1]
 
 Variable Per_kW_SolarProfie
 Title: Per-kW Solar Profile
@@ -3895,7 +3895,7 @@ NodeLocation: 1056,192,1
 NodeSize: 64,40
 WindState: 2,546,219,720,350
 DefnState: 2,1094,392,416,303,0,DFNM
-ValueState: 2,2236,60,1343,742,1,MIDM
+ValueState: 2,284,59,1343,742,1,MIDM
 Aliases: FormNode Fo1534438380, Alias Al733264035, FormNode Fo1572476391
 NodeColor: 19661,48336,65535
 GraphSetup: Graph_AxisLabelFont:,14,0~
@@ -3906,7 +3906,7 @@ Att_GraphValueRange PrePost_Load_by_OpYr:1,,1,,,,10,0,421.10850512981415,0
 ReformVal: [Profile_Hours,Pre_and_Post_System]
 Att__TotalsIndex: []
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [PV_Climate_Zone,1,Month,12,System_Types,1,Rate_Vintage,1,PV_Sectors,1,Area_Type,1,Pre_and_Post_System,1,Profile_Hours,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,Month,12,System_Types,1,Rate_Vintage,1,PV_Sectors,1,Area_Type,2,Pre_and_Post_System,1,Profile_Hours,1]
 
 Variable Scaled_Annual_Load
 Title: Scaled Annual Load
@@ -4114,7 +4114,7 @@ Description: Handles to the solar profiles for each profile granularity
 Definition: Table(Profile_Granularity)(Handle(Monthly_Solar),Handle(Weekly_Solar),Handle(Day_Type_Solar))
 NodeLocation: 408,464,1
 NodeSize: 64,40
-ValueState: 2,2320,179,416,303,,MIDM
+ValueState: 2,2320,179,416,303,0,MIDM
 Aliases: Alias Al1571851253
 NodeColor: 19661,48336,65535
 
@@ -4678,7 +4678,7 @@ Author: JamesMilford
 Date: Fri, Oct 25, 2019 8:28 AM
 NodeLocation: 88,344,1
 NodeSize: 64,40
-DiagState: 2,98,73,1363,625,17,10
+DiagState: 2,259,104,1363,625,17,10
 AcpStyles: Frame_Node: Scaling_Frame
 
 Variable Normalized_Load_Shap
@@ -11450,7 +11450,7 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 256,288,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,1758,86,1707,614,17,10
+DiagState: 2,1997,7,1707,631,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -11518,7 +11518,7 @@ Subset(sorted <> None_Label)
 NodeLocation: 384,1280,1
 NodeSize: 64,40
 WindState: 2,14,58,1165,697
-ValueState: 2,536,157,988,684,0,MIDM
+ValueState: 2,776,322,988,298,0,MIDM
 {!40300|Att_SlicerPopupSize: 807,308}
 
 Constant Num_Incent_Dur_Steps
@@ -11991,7 +11991,7 @@ NodeSize: 64,40
 WindState: 2,102,21,1089,879
 ValueState: 2,992,329,416,303,0,MIDM
 DisplayOutputs: Object Object, Object Variable
-{!40300|Att_SlicerPopupSize: 1122,112}
+{!40300|Att_SlicerPopupSize: 1127,112}
 
 Index New_or_Retrofit
 Att_PrevIndexValue: ['NewConstr','Retrofit']
