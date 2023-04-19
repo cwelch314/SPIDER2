@@ -3120,7 +3120,7 @@ Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 920,328,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,70,22,1786,709,17,10
+DiagState: 2,70,22,1786,652,17,10
 
 Variable PV_AC_SystSize_Econ
 Title: PV AC System Size for Economics
@@ -3217,7 +3217,7 @@ Att_ColorRole: Null
 Variable Aggregate_System_Ins
 Title: Aggregate System Installs
 Units: systems/period
-Definition: local x:=sum(Historical_PV_Instal[All_Sectors=PV_Sectors, All_Utilities=Selected_Utility], All_Spatial_ID{, Selected_Utility});~
+Definition: local x:=sum(Historical_PV_Instal[All_Sectors=PV_Sectors, All_Utilities=Selected_Utility], All_Spatial_ID);~
 IF x=null THEN 0 ELSE x
 NodeLocation: 232,96,1
 NodeSize: 64,40
@@ -3301,7 +3301,7 @@ Title: All Capacity Installs w/Agg
 Units: MW-AC/period
 Definition: local x:=IF All_Spatial_ID=Aggregation_2_Label~
 THEN Agg_CapacityInstalls ~
-ELSE Sum(Historical_PV_Capaci[All_Sectors=PV_Sectors, All_Utilities=Selected_Utility], Selected_Utility);   {Sums all installations across all spatial IDs and assigns it to the first element of the All spatial ID index, which is null}~
+ELSE Historical_PV_Capaci[All_Sectors=PV_Sectors, All_Utilities=Selected_Utility];   {Sums all installations across all spatial IDs and assigns it to the first element of the All spatial ID index, which is null}~
 IF x=null THEN 0 ELSE x
 NodeLocation: 232,408,1
 NodeSize: 64,40
@@ -3318,7 +3318,7 @@ Title: All Installs w/Agg
 Units: MW-AC/period
 Definition: local x:=IF All_Spatial_ID=Aggregation_2_Label~
 THEN Aggregate_System_Ins ~
-ELSE Sum(Historical_PV_Instal[All_Sectors=PV_Sectors, All_Utilities=Selected_Utility], Selected_Utility);   {Sums all installations across all spatial IDs and assigns it to the first element of the All spatial ID index, which is null}~
+ELSE Historical_PV_Instal[All_Sectors=PV_Sectors, All_Utilities=Selected_Utility];   {Sums all installations across all spatial IDs and assigns it to the first element of the All spatial ID index, which is null}~
 IF x=null THEN 0 ELSE x
 NodeLocation: 384,96,1
 NodeSize: 64,40
@@ -3816,7 +3816,7 @@ Aliases: Alias Al1571850383, Alias Al2146219171
 NodeColor: 65535,1,1
 ReformVal: [Area_Type,PV_Sectors]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-DisplayOutputs: Object Object, Object Variable, Variable Solar_Scaling_Factor
+DisplayOutputs: Object Object, Object Variable
 Att_ResultSliceState: [PV_Climate_Zone,2,PV_Sizing_Method,1,PV_Sectors,1,Area_Type,3]
 
 Variable Spatial_ID_to_CZ_Map
