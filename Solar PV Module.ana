@@ -4678,7 +4678,7 @@ Author: JamesMilford
 Date: Fri, Oct 25, 2019 8:28 AM
 NodeLocation: 88,344,1
 NodeSize: 64,40
-DiagState: 2,259,104,1363,625,17,10
+DiagState: 2,190,11,1363,625,17,10
 AcpStyles: Frame_Node: Scaling_Frame
 
 Variable Normalized_Load_Shap
@@ -4705,7 +4705,7 @@ Definition: local x:=Sum(Weekly_Nrml_Loadshap * Weekly_Day_Counts[Static_Profile
 IF x=null THEN 1 ELSE x {to avoid errors if no sector data}
 NodeLocation: 424,192,1
 NodeSize: 64,40
-ValueState: 2,477,78,899,705,0,MIDM
+ValueState: 2,503,254,899,384,0,MIDM
 ReformVal: [PV_Climate_Zone,PV_Sectors]
 NumberFormat: 2,F,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 {!40700|Att_CellFormat: Undefined}

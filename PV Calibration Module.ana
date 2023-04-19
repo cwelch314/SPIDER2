@@ -1212,7 +1212,7 @@ Button Run_Single_Optimizat
 Title: Run Single Optimization
 NodeLocation: 112,152,1
 NodeSize: 64,40
-WindState: 2,12,349,1352,535
+WindState: 2,214,245,1352,535
 OnClick: Sequential_Opt(PV_Current_Stage, Selected_PV_Decision,  All_PV_Dec_Handles, All_Spatial_ID, PV_Spatial_ID, All_Sectors, Ag_Level_for_PV_Coef, PV_Sectors, Stored_PV_Dec_Vars, Stored_Opt_Status_PV, Use_PV_Decision_Var, Handle(Optimization_PV));
 
 Button Set_Starting_Coeff1
@@ -2780,7 +2780,7 @@ IF isnull(self) THEN CellFont(color: 'Red') ELSE~
 Definition: Concat(Stored_PV_Dec_Vars, Stored_Opt_Status_PV, All_PV_Dec_Handles, Opt_Status_Label, PV_Stored_Decisions)
 NodeLocation: 608,224,1
 NodeSize: 64,40
-WindState: 2,239,96,1095,616
+WindState: 2,283,157,1095,616
 DefnState: 2,101,37,1466,747,0,DFNM
 ValueState: 2,119,374,1720,309,0,MIDM
 Aliases: FormNode Fo4, FormNode Fo1535066247
@@ -3034,8 +3034,8 @@ Definition: Table(All_Spatial_ID,All_Sectors,All_PV_Dec_Handles)(~
 0.01,0.5,0,-0.2,0,-5,7,0,0)
 NodeLocation: 296,72,1
 NodeSize: 64,40
-WindState: 2,293,145,720,350
-DefnState: 2,197,202,1659,328,0,DFNM
+WindState: 2,293,145,720,550
+DefnState: 2,152,249,1659,328,0,DFNM
 ValueState: 2,223,6,1355,891,0,MIDM
 Aliases: Alias Al1568908502, FormNode Fo1568908568, FormNode Fo1543522440
 ReformDef: [All_PV_Dec_Handles,All_Sectors]
