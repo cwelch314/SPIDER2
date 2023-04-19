@@ -2699,7 +2699,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,31,7,1837,578,17,10
+DiagState: 2,1931,11,1837,722,17,10
 
 Decision Opt_Seq_Number
 Title: Opt Sequential Number
@@ -3035,7 +3035,7 @@ Original: Select_Strg_Rate2
 Decision Select_Strg_Month2
 Title: Selected Storage Months
 Description: Select the months that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Month,1,allowNone:0,returnList:1)
+Definition: MultiChoice(Month,2,allowNone:0,returnList:1)
 NodeLocation: 616,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348267
@@ -3278,14 +3278,15 @@ Title: Save Status and Objective
 Description: This saves the status and objective of the current storage optimization.
 Definition: VAR savedStatusCopy:=Saved_Strg_OptStatu2;   {Make a copy of the values of the saved status}~
 VAR savedObjCopy:=Saved_Strg_Objectiv2;   {Make a copy of the values of the saved status}~
-savedStatusCopy[Opt_Sectors=Opt_Sector2, Opt_Storage_Systems=Opt_System2, PV_Climate_Zone=Opt_Climate_Zone2, Rate_Vintage=Opt_Rate_Vintage2, Month=Opt_Month2, Seq_Opt_Number=Opt_Seq_Number] := Storage_Opt_Status2;   {Update the new status}   ~
-savedObjCopy[Opt_Sectors=Opt_Sector2, Opt_Storage_Systems=Opt_System2, PV_Climate_Zone=Opt_Climate_Zone2, Rate_Vintage=Opt_Rate_Vintage2, Month=Opt_Month2, Seq_Opt_Number=Opt_Seq_Number] := Storage_Objective2;   {Update the new status}   ~
+savedStatusCopy[Opt_Sectors=Opt_Sector2, Opt_Storage_Systems=Opt_System2, PV_Climate_Zone=Opt_Climate_Zone2, Rate_Vintage=Opt_Rate_Vintage2, Month=Opt_Month2, Seq_Opt_Number=Opt_Seq_Number, All_Utilities=Selected_Utility] := Storage_Opt_Status2;   {Update the new status}   ~
+savedObjCopy[Opt_Sectors=Opt_Sector2, Opt_Storage_Systems=Opt_System2, PV_Climate_Zone=Opt_Climate_Zone2, Rate_Vintage=Opt_Rate_Vintage2, Month=Opt_Month2, Seq_Opt_Number=Opt_Seq_Number, All_Utilities=Selected_Utility] := Storage_Objective2;   {Update the new status}   ~
 ~
 Saved_Strg_OptStatu2:= savedStatusCopy;   {Store the status results}~
 Saved_Strg_Objectiv2:= savedObjCopy;   {Store the objective results}
 NodeLocation: 1856,384,1
 NodeSize: 64,40
 WindState: 2,19,199,1311,548
+NodeColor: 65535,52427,52427
 
 Button Clear_Strg_StatusOb2
 Title: Clear Storage Status and Objective
@@ -3380,7 +3381,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 19-Apr-2023 09:56:14.080000
+Definition: 19-Apr-2023 10:44:21.342000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3388,7 +3389,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 19-Apr-2023 09:56:23.271000
+Definition: 19-Apr-2023 10:44:35.014000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 WindState: 2,362,172,796,472
@@ -3440,12 +3441,13 @@ Description: This saves the start or end time of the current storage optimizatio
 ~
 [step]: indicates which timestamp will be saved (1 = opt start; 2 = opt end; 3 = save end) 
 Definition: VAR stampCopy:=Saved_Opt_Date1;   {Make a copy of the values of the saved timestamps}~
-stampCopy[Opt_Sectors=Opt_Sector2, Opt_Storage_Systems=Opt_System2, PV_Climate_Zone=Opt_Climate_Zone2, Rate_Vintage=Opt_Rate_Vintage2, Month=Opt_Month2, Seq_Opt_Number=Opt_Seq_Number, @Start_End_Time1=step] := Today(withTime: True);   {Update the new timestamp}~
+stampCopy[Opt_Sectors=Opt_Sector2, Opt_Storage_Systems=Opt_System2, PV_Climate_Zone=Opt_Climate_Zone2, Rate_Vintage=Opt_Rate_Vintage2, Month=Opt_Month2, Seq_Opt_Number=Opt_Seq_Number, @Start_End_Time1=step, All_Utilities=Selected_Utility] := Today(withTime: True);   {Update the new timestamp}~
 ~
 Saved_Opt_Date1:= stampCopy;   {Save the timestamps}
 NodeLocation: 1472,576,1
 NodeSize: 64,40
 WindState: 2,-1,4,1794,645
+NodeColor: 65535,52427,52427
 
 Index Start_End_Time1
 Att_PrevIndexValue: ['Start Opt','End Opt','End Save']
@@ -4079,7 +4081,7 @@ Saved_Linked_List:=LL_Push(Saved_Linked_List, solution);   {Appends the current 
 NodeLocation: 1600,384,1
 NodeSize: 64,40
 WindState: 2,130,8,1567,879
-NodeColor: 65535,1,1
+NodeColor: 65535,52427,52427
 
 Variable Extract_Link_Results
 Title: Extract Linked Results
@@ -4170,14 +4172,15 @@ FOR J:=@Storage_Filter_Index DO (~
    VAR filterElements:=Scenario_Map[Storage_Filter_Index=indHandle];   {The map column for the current filtered index}~
    map:= map AND (ind = filterElements);~
 );~
-map~
+map * (All_Utilities=Selected_Utility) {ensures we don't overwrite any decision variables saved to another utility, since this will be zero if the All_Utility element is not the currently selected utility}~
 
 NodeLocation: 616,328,1
 NodeSize: 64,40
 WindState: 2,49,191,720,350
 ValueState: 2,81,124,1380,645,0,MIDM
+NodeColor: 65535,52427,52427
 ReformVal: [Month,Storage_Opt_Scenari2]
-Att_ResultSliceState: [All_Sectors,1,PV_Climate_Zone,1,All_Storage_Systems,1,Month,1,Seq_Opt_Number,1,Storage_Opt_Scenari2,1,Rate_Vintage,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,Seq_Opt_Number,1,Rate_Vintage,1,All_Utilities,1,Opt_Sectors,2,Opt_Storage_Systems,1,Storage_Opt_Scenari2,1,Month,1]
 
 Button Clear_Linked_List
 Title: Clear Linked List
@@ -4415,7 +4418,7 @@ WindState: 2,323,77,720,350
 Decision Select_Strg_Sector2
 Title: Selected Storage Sectors
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,2,allowNone:0,returnList:1)
 NodeLocation: 128,288,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348264, Alias Al513733155
@@ -4539,7 +4542,7 @@ MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimizat
 Decision Choose_Sectors_to_Op
 Title: Choose Sectors to Optimize
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,2,allowNone:0,returnList:1)
 NodeLocation: 464,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo989786659, Alias Al783884579, FormNode Fo431563043
@@ -4552,6 +4555,14 @@ NodeSize: 76,16
 NodeInfo: 1,,,0,,,,118,,,,,,0
 Original: Choose_Sectors_to_Op
 
+FormNode Fo575799571
+Title: Selected Utility
+Definition: 0
+NodeLocation: 704,56,1
+NodeSize: 128,16
+NodeInfo: 1,,,,,,,119,,,,,,0
+Original: Selected_Utility
+
 Close Storage_Optimizati11
 
 Module Storage_Opt_Diagnos2
@@ -4561,7 +4572,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 264,160,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,2256,112,961,633,17,10
+DiagState: 2,2108,69,1294,622,17,10
 
 Variable Tot_Elect_Meet_Load2
 Title: Total Electricity Meeting Load
@@ -4635,7 +4646,7 @@ Definition: Reindex_to_ProfileHr(Flows_by_Opt_Hour[Flow_Name2=Flow_Types1, Rate_
 NodeLocation: 416,64,1
 NodeSize: 64,40
 WindState: 2,5,19,972,489
-ValueState: 2,733,91,815,752,1,MIDM
+ValueState: 2,544,105,815,661,1,MIDM
 Aliases: FormNode Fo1557458712, FormNode Fo1571775089, FormNode Fo1228179747
 GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_AreaFill Graph_Primary_Valdim:0~

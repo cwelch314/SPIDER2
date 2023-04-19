@@ -207,7 +207,7 @@ Title: Select Utility
 Description: Select which utilities you want to include in the model simulation.~
 ~
 Old: Table(All_Utilities)(Checkbox(1))
-Definition: Table(All_Utilities)(Checkbox(1))
+Definition: Table(All_Utilities)(Checkbox(1),Checkbox(1))
 NodeLocation: 368,712,1
 NodeSize: 56,32
 DefnState: 2,1215,270,232,190,,DFNM
@@ -1111,9 +1111,9 @@ NodeSize: 64,40
 Constant Spatial_ID_Applicabl
 Title: Spatial_ID_Applicable
 Definition: Table(All_Spatial_ID,All_Utilities)(~
-1,~
-'Missing',~
-0)
+1,0,~
+'Missing',0,~
+0,0)
 NodeLocation: 664,760,1
 NodeSize: 96,40
 DefnState: 2,641,497,419,216,0,DFNM
