@@ -91,7 +91,7 @@ Units: kWh/customer
 Description: The total amount of energy discharged from the battery.
 Definition: IF Include_Total_Disch~
 THEN Total_Discharge4~
-ELSE Saved_Tot_Discharge[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2]
+ELSE Saved_Tot_Discharge[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2,All_Utilities=Selected_Utility]
 NodeLocation: 704,752,1
 NodeSize: 64,40
 WindState: 2,383,8,720,350
@@ -318,9 +318,10 @@ Definition: Table(All_Strg_Decisions2)(Handle(Saved_Stored_Grid2),Handle(Saved_D
 NodeLocation: 496,1648,1
 NodeSize: 64,40
 WindState: 2,2,66,1902,775
-DefnState: 2,24,111,788,481,0,DFNM
+DefnState: 2,2486,182,788,481,0,DFNM
 Aliases: FormNode New1552348276
 NodeColor: 19661,48336,65535
+{!40700|Att_CellFormat: CellSpan(All_Strg_Decisions2,CellFill(0xff80ff00),1,header:0)}
 
 Index All_Saved_Strg_Deci2
 Title: All Saved Storage Decisions
@@ -343,7 +344,7 @@ Units: kW-hr/customer
 Description: The decision variable for the amount of grid electricity that will be stored.
 Definition: IF Include_Stored_Grid2~
 THEN Stored_Grid_Elect1~
-ELSE Saved_Stored_Grid2[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2]
+ELSE Saved_Stored_Grid2[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2,All_Utilities=Selected_Utility]
 NodeLocation: 704,128,1
 NodeSize: 64,40
 ValueState: 2,339,100,1194,745,1,MIDM
@@ -357,7 +358,7 @@ Units: kW-hr/customer
 Description: The decision variable for the amount of electricity discharged from the battery to reduce load.
 Definition: IF IncludeDischgRedLoa1~
 THEN Discharge_ReduceLoa1~
-ELSE Saved_Dischg_RedLoa2[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2]
+ELSE Saved_Dischg_RedLoa2[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2,All_Utilities=Selected_Utility]
 NodeLocation: 704,856,1
 NodeSize: 64,40
 WindState: 2,249,294,720,350
@@ -383,7 +384,7 @@ Units: kW-hr/customer
 Description: The decision variable for the amount of PV to be stored in the battery.
 Definition: IF Include_Stored_PV2~
 THEN Stored_PV_Elect1~
-ELSE Saved_Stored_PV2[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2]
+ELSE Saved_Stored_PV2[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2,All_Utilities=Selected_Utility]
 NodeLocation: 704,232,1
 NodeSize: 64,40
 ValueState: 2,102,70,1033,723,,MIDM
@@ -409,7 +410,7 @@ Units: kW-hr/customer
 Description: The decision variable for the amount of PV used to reduce load.
 Definition: IF Include_PV_Red_Load2~
 THEN PV_to_Reduce_Load2~
-ELSE Saved_PV_RedLoad2[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2]
+ELSE Saved_PV_RedLoad2[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2,All_Utilities=Selected_Utility]
 NodeLocation: 704,336,1
 NodeSize: 64,40
 WindState: 2,296,224,720,350
@@ -425,7 +426,7 @@ Units: kW
 Description: The decision variable used to identify the maximum on-peak load.
 Definition: IF Include_On_Peak_Dmd2~
 THEN On_Peak_Dmd2~
-ELSE Saved_OnPeak_Dmd2[Opt_Sectors=Opt_Sector2, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2, Seq_Opt_Number=Opt_Seq_Number]
+ELSE Saved_OnPeak_Dmd2[Opt_Sectors=Opt_Sector2, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2, Seq_Opt_Number=Opt_Seq_Number,All_Utilities=Selected_Utility]
 NodeLocation: 704,960,1
 NodeSize: 64,40
 ValueState: 2,325,155,782,606,0,MIDM
@@ -453,7 +454,7 @@ Units: kW
 Description: The decision variable used to identify the maximum non-coincident load.
 Definition: IF Include_NonCoinc_Dm2~
 THEN Non_Coinc_Demand2~
-ELSE Saved_NonCoinc_Dmd2[Opt_Sectors=Opt_Sector2, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2, Seq_Opt_Number=Opt_Seq_Number]
+ELSE Saved_NonCoinc_Dmd2[Opt_Sectors=Opt_Sector2, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2, Seq_Opt_Number=Opt_Seq_Number,All_Utilities=Selected_Utility]
 NodeLocation: 704,1064,1
 NodeSize: 64,40
 ValueState: 2,170,192,810,625,,MIDM
@@ -594,7 +595,7 @@ Units: kW-hr/customer
 Description: The decision variable used to identify the negative changes in charge rates.
 Definition: IF Incl_Neg_ChargeDelt1~
 THEN Neg_Charge_Delta1~
-ELSE Saved_Neg_Chrg_Delt1[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2]
+ELSE Saved_Neg_Chrg_Delt1[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2,All_Utilities=Selected_Utility]
 NodeLocation: 704,1272,1
 NodeSize: 64,40
 ValueState: 2,347,211,653,678,1,MIDM
@@ -605,7 +606,7 @@ Units: kW-hr/customer
 Description: The decision variable used to identify the positive changes in charge rates.
 Definition: IF Incl_Pos_ChargeDelt1~
 THEN Pos_Charge_Delta1~
-ELSE Saved_Pos_Chrg_Delt1[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2]
+ELSE Saved_Pos_Chrg_Delt1[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2,All_Utilities=Selected_Utility]
 NodeLocation: 704,1168,1
 NodeSize: 64,40
 ValueState: 2,347,211,1341,677,0,MIDM
@@ -937,7 +938,7 @@ Units: boolean
 Description: The decision variable indicating the hours in which charging is allowed. This ensures that charging and discharging cannot occur simultaneously during a given hour.
 Definition: IF Include_Allow_Chargi~
 THEN Allow_Charging2~
-ELSE Saved_Allow_Charging[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2]
+ELSE Saved_Allow_Charging[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2,All_Utilities=Selected_Utility]
 NodeLocation: 704,1520,14
 NodeSize: 64,40
 ValueState: 2,40,42,1194,745,1,MIDM
@@ -967,7 +968,7 @@ Units: kW-hr/customer
 Description: This is one when charging changes state from 0 kW to something greater than 0 kW. For all other hours, the optimization should push its value to zero to minimize penalties contributing to the objective function. Though this is actually a continous decision variable, it should respond like a binary decision variable.
 Definition: IF Include_Charging_Sta~
 THEN Charging_Start1~
-ELSE Saved_Charging_Start[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2]
+ELSE Saved_Charging_Start[Opt_Sectors=Opt_Sector2, Seq_Opt_Number=Opt_Seq_Number, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2,All_Utilities=Selected_Utility]
 NodeLocation: 704,1376,1
 NodeSize: 64,40
 WindState: 2,424,3,720,350
@@ -1030,7 +1031,7 @@ Units: kWh
 Description: The applied amount of energy initially stored in the battery for all but the first sequential optimization. This is based on the previous sequential optimization's ending state of charge.
 Definition: IF Opt_Seq_Number = 1~
 THEN Null~
-ELSE Saved_Ending_Charge[Opt_Sectors=Opt_Sector2, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2, Seq_Opt_Number=Opt_Seq_Number-1]   {Use the saved ending charge from the previous sequential opt}
+ELSE Saved_Ending_Charge[Opt_Sectors=Opt_Sector2, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2, Seq_Opt_Number=Opt_Seq_Number-1,All_Utilities=Selected_Utility]   {Use the saved ending charge from the previous sequential opt}
 NodeLocation: 704,440,1
 NodeSize: 64,40
 WindState: 2,317,274,1145,350
@@ -1053,7 +1054,7 @@ Units: kWh
 Description: The applied amount of energy initially stored in the battery. This is endogenous in the sense that it is found by the storage optimization.
 Definition: IF Include_Init_Charge1~
 THEN Initial_Charge_Leve2~
-ELSE Saved_Initial_Charg1[Opt_Sectors=Opt_Sector2, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2];
+ELSE Saved_Initial_Charg1[Opt_Sectors=Opt_Sector2, Opt_Storage_Systems=Opt_System2, Rate_Vintage=Opt_Rate_Vintage2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2,All_Utilities=Selected_Utility];
 NodeLocation: 704,544,1
 NodeSize: 64,40
 WindState: 2,695,23,1145,350
@@ -2698,7 +2699,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,31,7,1837,598,17,10
+DiagState: 2,31,7,1837,578,17,10
 
 Decision Opt_Seq_Number
 Title: Opt Sequential Number
@@ -2864,6 +2865,7 @@ Aliases: Alias New1552348283
 MetaOnly: 1
 
 Index All_Strg_Constraint2
+Att_PrevIndexValue: [Storage_Charge_Rate1,Storage_DishargeRat1,Storage_Energy_Cap2,SOC_Limit_on_Dischr1,Constr_BatteryExpor2,DischLoadRed_LTE_Tot,DischLoadRed_LTELoad,Pos_GridElecMeetLoad,PV_LoadRed_LTE_Solar,PV_LoadRed_LTE_Load,Min_Stored_PV2,Pos_Exported_PV,Load_Balance2,PV_Balance2,Max_Non_Coinc_Deman2,Max_On_Peak_Demand2,Force_Positive_Delt1,Force_Negative_Delt1,Value_of_End_Charge,Find_Charge_Start1,Same_Starting_Charg1,Int_Strg_Charge_Rate,Int_Strg_Dischg_Rate,Continuous_Charge1]
 Title: All Storage Constraints
 Definition: [Storage_Charge_Rate1,Storage_DishargeRat1,Storage_Energy_Cap2,SOC_Limit_on_Dischr1,Constr_BatteryExpor2,DischLoadRed_LTE_Tot,DischLoadRed_LTELoad,Pos_GridElecMeetLoad,PV_LoadRed_LTE_Solar,PV_LoadRed_LTE_Load,Min_Stored_PV2,Pos_Exported_PV,Load_Balance2,PV_Balance2,Max_Non_Coinc_Deman2,Max_On_Peak_Demand2,Force_Positive_Delt1,Force_Negative_Delt1,Value_of_End_Charge,Find_Charge_Start1,Same_Starting_Charg1,Int_Strg_Charge_Rate,Int_Strg_Dischg_Rate,Continuous_Charge1]
 NodeLocation: 256,744,1
@@ -3033,7 +3035,7 @@ Original: Select_Strg_Rate2
 Decision Select_Strg_Month2
 Title: Selected Storage Months
 Description: Select the months that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Month,allowNone:0,returnList:1)
+Definition: MultiChoice(Month,1,allowNone:0,returnList:1)
 NodeLocation: 616,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348267
@@ -3378,7 +3380,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 31-May-2022 19:35:48.659000
+Definition: 19-Apr-2023 09:56:14.080000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3386,7 +3388,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 31-May-2022 19:37:16.283000
+Definition: 19-Apr-2023 09:56:23.271000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 WindState: 2,362,172,796,472
@@ -4068,7 +4070,7 @@ Definition: VAR solution:=array(Storage_Decisions2, Null);   {Initialize an arra
 FOR J:=@Storage_Decisions2 DO (   {For each decision variable}~
    MetaVar varHandle:=Slice(Storage_Decisions2, J);   {The handle to the current decision variable being saved}~
    LocalAlias decisVar:=varHandle;   {A local alias to the decision variable being saved}~
-   solution[Storage_Decisions2=varHandle]:=IF Total_Optimized_Cos2 = Null   {If the objective is null because a specific sequential optimization is not applicable}~
+   solution[Storage_Decisions2=varHandle,All_Utilities=Selected_Utility{TEST CODE}]:=IF Total_Optimized_Cos2 = Null   {If the objective is null because a specific sequential optimization is not applicable}~
       THEN Null   {Then return null}~
       ELSE Round(OptSolution(Storage_Opt_Def2, decisVar),Saved_DV_Rounding_De);   {Else find the solution to the optimization for the Jth decision}~
    Null;   {Return a null to prevent excessive indexing}~
@@ -4077,6 +4079,7 @@ Saved_Linked_List:=LL_Push(Saved_Linked_List, solution);   {Appends the current 
 NodeLocation: 1600,384,1
 NodeSize: 64,40
 WindState: 2,130,8,1567,879
+NodeColor: 65535,1,1
 
 Variable Extract_Link_Results
 Title: Extract Linked Results
@@ -4536,7 +4539,7 @@ MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimizat
 Decision Choose_Sectors_to_Op
 Title: Choose Sectors to Optimize
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
 NodeLocation: 464,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo989786659, Alias Al783884579, FormNode Fo431563043
@@ -4586,7 +4589,7 @@ Description: All dispatch flows by the nine-day optimization horizon.
 Definition: Table(Flow_Name2)(StorageSyst_Net_Loa2,Opt_Solar_Output,Opt_Customer_Load,App_Grid_MeetLoad2,Applied_Stored_Grid1,Dischg_RedLoad_Loss1,Dischg_Export_Loss2,Applied_PV_RedLoad2,Applied_PV_Exported2,Applied_Stored_PV2,Total_Discharge_Los2,Total_Charge2,Purchased_Electric2,Total_Exported_Elec2,Total_Change_in_Loa2)
 NodeLocation: 272,64,1
 NodeSize: 64,40
-WindState: 2,1615,238,720,350
+WindState: 2,2457,255,720,350
 DefnState: 2,3223,410,416,490,0,DFNM
 ValueState: 2,200,12,1457,751,1,MIDM
 Aliases: FormNode Fo1557443244, FormNode Fo1582234728
@@ -4594,7 +4597,7 @@ NodeColor: 19661,48336,65535
 GraphSetup: Att_GraphValueRange Flows_by_Opt_Hour:1,,1,,,,,-843.6260223388672,2734.088897705078,0~
 Att_GraphIndexRange Opt_Hours:1,,0,,,,,0,26.280438154935837,0
 ReformVal: [Opt_Hours,Flow_Name2]
-Att_ResultSliceState: [Seq_Opt_Number,1,Opt_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,3,Opt_Storage_Systems,1,Month,1,Area_Type,1,Flow_Name2,13,Opt_Hours,1]
+Att_ResultSliceState: [Seq_Opt_Number,1,Opt_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,1,Opt_Storage_Systems,1,Month,1,Area_Type,1,Flow_Name2,13,Opt_Hours,1]
 
 Index Flow_Name2
 Att_PrevIndexValue: ['Net Load','Total Solar Output','Gross Load','Grid Electricity to Meet Load','Stored Grid Electricity','Discharge to Reduce Load','Discharge Exported to Grid','PV to Reduce Load','PV Exported to Grid','Stored PV','Total Discharge','Total Charge','Total Purchased Electricity','Total Exported Electricity','Total Change in Load']
@@ -4632,7 +4635,7 @@ Definition: Reindex_to_ProfileHr(Flows_by_Opt_Hour[Flow_Name2=Flow_Types1, Rate_
 NodeLocation: 416,64,1
 NodeSize: 64,40
 WindState: 2,5,19,972,489
-ValueState: 2,338,63,815,752,1,MIDM
+ValueState: 2,733,91,815,752,1,MIDM
 Aliases: FormNode Fo1557458712, FormNode Fo1571775089, FormNode Fo1228179747
 GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_AreaFill Graph_Primary_Valdim:0~

@@ -18,7 +18,7 @@ Constant Saved_Stored_Grid2
 Title: Saved Stored Grid Elect
 Units: kW-hr/customer
 Description: The decision variable for the amount of grid electricity that will be stored.
-Definition: Table(Opt_Sectors,Rate_Vintage,PV_Climate_Zone,Opt_Storage_Systems,Area_Type,Month,Seq_Opt_Number,Opt_Hours)(~
+Definition: Table(All_Utilities,Opt_Sectors,Rate_Vintage,PV_Climate_Zone,Opt_Storage_Systems,Area_Type,Month,Seq_Opt_Number,Opt_Hours)(~
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
@@ -318,7 +318,7 @@ ReformDef: [Month,Day_and_Hour]
 ReformVal: [Day_and_Hour,Month]
 NumberFormat: 2,F,2,5,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att_ResultSliceState: [All_Sectors,2,Rate_Vintage,3,PV_Climate_Zone,1,All_Storage_Systems,1,Month,1,Day_and_Hour,1]
-Att_EditSliceState: [PV_Climate_Zone,1,Rate_Vintage,2,Opt_Sectors,1,Opt_Storage_Systems,1,Seq_Opt_Number,1,Area_Type,2,Opt_Hours,1,Month,1]
+Att_EditSliceState: [PV_Climate_Zone,1,Rate_Vintage,2,Opt_Sectors,1,Opt_Storage_Systems,1,Seq_Opt_Number,1,Area_Type,2,All_Utilities,1,Opt_Hours,1,Month,1]
 {!50000|Att_ColumnWidths: [,Month,\([,,,,,,,,,62])]}
 
 Close Saved_Stored_Grid_El

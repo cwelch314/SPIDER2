@@ -1,5 +1,5 @@
 { Analytica Model Saved_Ending_Charge1, encoding="UTF-8" }
-SoftwareVersion 6.1.0
+SoftwareVersion 6.3.0
 
 {!-60000|Attribute AcpStyles}
 
@@ -17,7 +17,7 @@ Constant Saved_Ending_Charge
 Title: Saved Ending Charge
 Units: kWh
 Description: The decision variable for the amount of energy intially stored in the battery.
-Definition: Table(Opt_Sectors,Rate_Vintage,PV_Climate_Zone,Opt_Storage_Systems,Area_Type,Month,Seq_Opt_Number)(~
+Definition: Table(All_Utilities,Opt_Sectors,Rate_Vintage,PV_Climate_Zone,Opt_Storage_Systems,Area_Type,Month,Seq_Opt_Number)(~
 0,~
 0,~
 0,~
@@ -308,13 +308,13 @@ Definition: Table(Opt_Sectors,Rate_Vintage,PV_Climate_Zone,Opt_Storage_Systems,A
 0)
 NodeLocation: 112,64,1
 NodeSize: 64,40
-DefnState: 2,139,-2,1062,571,0,DFNM
+DefnState: 2,408,232,1062,403,0,DFNM
 ValueState: 2,31,18,945,717,0,MIDM
 Aliases: FormNode New1557420629, Alias Al597636131
 ReformDef: [Month,Seq_Opt_Number]
 ReformVal: [Seq_Opt_Number,Month]
 Att_ResultSliceState: [Rate_Vintage,4,PV_Climate_Zone,1,Opt_Sectors,1,Opt_Storage_Systems,2,Month,1,Seq_Opt_Number,1]
-Att_EditSliceState: [PV_Climate_Zone,1,Rate_Vintage,5,Opt_Sectors,1,Opt_Storage_Systems,1,Seq_Opt_Number,1,Month,1]
+Att_EditSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Opt_Sectors,1,Opt_Storage_Systems,1,All_Utilities,1,Area_Type,1,Seq_Opt_Number,1,Month,1]
 {!50000|Att_ColumnWidths: [,Month,[,,64]]}
 
 Close Saved_Ending_Charge1
