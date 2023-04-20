@@ -814,11 +814,11 @@ For i:=remaining_IDs DO (	~
       solution := IgnoreWarnings(OptSolution(IF (stage=1 AND NOT ag_stage1) THEN optDefn ELSE optDefn[der_spatial_id=i], x));~
       IF IsNotSpecified(all_index)   {If optimization is only over spatial ID and sector indices}~
       THEN (~
-         status[all_spatial_id=i, all_sectors=Slice(der_sectors,1)] := OptStatusText(IF (stage=1 AND NOT ag_stage1) THEN optDefn ELSE optDefn[der_spatial_id=i]);~
-         IF solution <> null THEN temp_stored_coeff[decis_handles=x, all_spatial_id=i, all_sectors=Slice(der_sectors,1)] := solution )~
+         status[all_spatial_id=i, all_sectors=Slice(der_sectors,1), All_Utilities=Selected_Utility] := OptStatusText(IF (stage=1 AND NOT ag_stage1) THEN optDefn ELSE optDefn[der_spatial_id=i]);~
+         IF solution <> null THEN temp_stored_coeff[decis_handles=x, all_spatial_id=i, all_sectors=Slice(der_sectors,1), All_Utilities=Selected_Utility] := solution )~
       ELSE (  {Else if there's a third optimization index}~
-         status[all_spatial_id=i, all_sectors=Slice(der_sectors,1), all_index=Slice(der_index,1)] := OptStatusText(IF (stage=1 AND NOT ag_stage1) THEN optDefn ELSE optDefn[der_spatial_id=i]);~
-         IF solution <> null THEN temp_stored_coeff[decis_handles=x, all_spatial_id=i, all_sectors=Slice(der_sectors,1), all_index=Slice(der_index,1)] := solution )~
+         status[all_spatial_id=i, all_sectors=Slice(der_sectors,1), all_index=Slice(der_index,1), All_Utilities=Selected_Utility] := OptStatusText(IF (stage=1 AND NOT ag_stage1) THEN optDefn ELSE optDefn[der_spatial_id=i]);~
+         IF solution <> null THEN temp_stored_coeff[decis_handles=x, all_spatial_id=i, all_sectors=Slice(der_sectors,1), all_index=Slice(der_index,1), All_Utilities=Selected_Utility] := solution )~
    );~
    (stored_decis:=temp_stored_coeff); {assigns the new solution for each spatial ID to ensure solutions are captured in the event of an abort}~
    (stored_status := status); ~

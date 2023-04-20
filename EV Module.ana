@@ -6361,7 +6361,7 @@ Date: Sun, Aug 5, 2018 8:27 AM
 NodeLocation: 176,112,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,180,53,1357,551,17
+DiagState: 2,180,53,1357,551,17,10
 
 Variable Qty_Fail_Spat_ID_EV
 Title: Qty of Failed Spatial IDs
@@ -6598,7 +6598,7 @@ Original: Stages_to_Calib_EV
 
 Index Infeas_Spat_ID_EV
 Title: Infeasible Spatial IDs
-Definition: var x:=(Stored_Opt_Status_EV[All_Sectors=EV_Sectors, All_Spatial_ID=Spatial_ID] = Infeasible_Label);~
+Definition: var x:=(Stored_Opt_Status_EV[All_Sectors=EV_Sectors, All_Spatial_ID=Spatial_ID, All_Utilities=Selected_Utility] = Infeasible_Label);~
 subset(x[@EV_Sectors=1])
 NodeLocation: 936,176,1
 NodeSize: 64,40
