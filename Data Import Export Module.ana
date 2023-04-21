@@ -3120,7 +3120,7 @@ Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 920,328,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,70,22,1786,652,17,10
+DiagState: 2,49,46,1786,652,17,10
 
 Variable PV_AC_SystSize_Econ
 Title: PV AC System Size for Economics
@@ -3195,20 +3195,21 @@ Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 NodeLocation: 80,160,1
 NodeSize: 64,40
-DefnState: 2,449,17,1066,745,0,DFNM
-ValueState: 2,1069,67,617,803,0,MIDM
+WindState: 2,1945,39,720,350
+DefnState: 2,450,23,1066,745,0,DFNM
+ValueState: 2,751,87,617,803,0,MIDM
 Aliases: FormNode Fo1537569014
 NodeColor: 65535,39321,39321
 GraphSetup: Att_GraphIndexRange Interconnect_Date:1,,0,,,,,41905.27270960808,42369,0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_AreaFill Graph_Primary_Valdim:0
 ReformDef: [All_Sectors,Interconnect_Date]
-ReformVal: [All_Spatial_ID,Interconnect_Date]
+ReformVal: [All_Sectors,Interconnect_Date]
 NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 DisplayOutputs: Object Object, Object Decision
-Att__TotalsIndex: [All_Utilities,All_Spatial_ID]
+Att__TotalsIndex: []
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [All_Utilities,0,Interconnect_Date,473,All_Sectors,1,All_Spatial_ID,49]
+Att_ResultSliceState: [All_Utilities,1,All_Spatial_ID,1,Interconnect_Date,473,All_Sectors,1]
 Att_EditSliceState: [All_Utilities,1,All_Spatial_ID,3,Interconnect_Date,473,All_Sectors,1]
 Att_ColorRole: Null
 {!40600|Att_StackingIndex: All_Sectors}
@@ -3244,7 +3245,7 @@ Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,
 NodeLocation: 80,312,1
 NodeSize: 64,40
 DefnState: 2,518,2,1054,703,0,DFNM
-ValueState: 2,190,30,816,672,1,MIDM
+ValueState: 2,140,86,585,795,0,MIDM
 Aliases: FormNode Fo1537569015
 NodeColor: 65535,39321,39321
 GraphSetup: Att_GraphValueRange Historical_PV_Capaci:1,,1,,,,5,-0.45334592461586,24.884825944900513,0~
@@ -3254,11 +3255,11 @@ Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_GraphIndexRange Interconnect_Date:1,0,1,,,,,42660.6040507555,43100,0~
 Att_ContLineStyle Graph_Primary_Valdim:5
 ReformDef: [All_Sectors,Interconnect_Date]
-ReformVal: [Interconnect_Date,All_Sectors]
+ReformVal: [All_Sectors,Interconnect_Date]
 NumberFormat: 2,F,4,1,0,0,4,1,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Object Object, Object Decision
-Att__TotalsIndex: [All_Spatial_ID]
-Att_ResultSliceState: [All_Utilities,1,All_Spatial_ID,0,All_Sectors,1,Interconnect_Date,1]
+Att__TotalsIndex: []
+Att_ResultSliceState: [All_Utilities,1,All_Spatial_ID,3,Interconnect_Date,1,All_Sectors,1]
 Att_EditSliceState: [All_Utilities,1,All_Spatial_ID,3,Interconnect_Date,473,All_Sectors,1]
 {!40600|Att_StackingIndex: All_Sectors}
 {!40600|Att_ClusterIndex: Null}
