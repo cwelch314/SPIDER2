@@ -3096,7 +3096,7 @@ Att_ResultSliceState: [Data_Type,2,Rate_Names,2,Day_and_Hour,1,Month,1]
 Decision Rate_Name_Peak_Prd
 Title: Rate Name for Peak Period
 Description: Select the rate name that describes the peak period.
-Definition: Choice(Rate_Names,6,0)
+Definition: Choice(Rate_Names,3,0)
 NodeLocation: 272,256,1
 NodeSize: 64,40
 Aliases: FormNode Fo1542261445
@@ -3891,7 +3891,7 @@ Definition: Applied_Load_Profile - Levelized_Applied_So
 NodeLocation: 736,240,1
 NodeSize: 64,40
 WindState: 2,139,2,1190,503
-ValueState: 2,191,102,1487,691,1,MIDM
+ValueState: 2,191,102,1487,691,0,MIDM
 GraphSetup: Graph_AxisTitleFont:Arial,18,1~
 Graph_KeyFont:,18,0~
 Graph_KeyTitleFont:,18,1~
@@ -3899,7 +3899,7 @@ Graph_AxisLabelFont:,14,0~
 Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [Profile_Hours,Month]
 Att__TotalsIndex: [Day_and_Hour]
-Att_ResultSliceState: [PV_Sectors,22,PV_Climate_Zone,2,PV_Operating_Year,1,Area_Type,3,Month,1,Profile_Hours,1]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Area_Type,2,Month,1,Profile_Hours,1]
 
 Objective PrePost_Load_by_OpYr
 Title: Pre/Post Load by OpYr
@@ -3910,7 +3910,7 @@ NodeLocation: 1056,192,1
 NodeSize: 64,40
 WindState: 2,546,219,720,350
 DefnState: 2,1094,392,416,303,0,DFNM
-ValueState: 2,284,59,1343,742,1,MIDM
+ValueState: 2,284,59,1343,742,0,MIDM
 Aliases: FormNode Fo1534438380, Alias Al733264035, FormNode Fo1572476391
 NodeColor: 19661,48336,65535
 GraphSetup: Graph_AxisLabelFont:,14,0~
@@ -3918,10 +3918,10 @@ Att_CatLineStyle Graph_Primary_Valdim:5~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_GraphValueRange PrePost_Load_by_OpYr:1,,1,,,,10,0,421.10850512981415,0
-ReformVal: [Profile_Hours,Pre_and_Post_System]
-Att__TotalsIndex: []
+ReformVal: [Profile_Hours,Month]
+Att__TotalsIndex: [Profile_Hours,Month]
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [PV_Climate_Zone,1,Month,12,System_Types,1,Rate_Vintage,1,PV_Sectors,1,Area_Type,2,Pre_and_Post_System,1,Profile_Hours,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,1,Rate_Vintage,1,PV_Sectors,1,Area_Type,1,Pre_and_Post_System,2,Month,12,Profile_Hours,1]
 
 Variable Scaled_Annual_Load
 Title: Scaled Annual Load
@@ -4021,7 +4021,7 @@ Definition: PrePost_Load_by_OpYr[Rate_Vintage=RateVint_by_RateName, Pre_and_Post
 NodeLocation: 1216,240,1
 NodeSize: 64,40
 WindState: 2,394,15,1122,599
-ValueState: 2,217,108,1179,665,1,MIDM
+ValueState: 2,217,108,1179,665,0,MIDM
 NodeColor: 19661,48336,65535
 GraphSetup: Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_AreaFill Graph_Primary_Valdim:0~
@@ -4031,9 +4031,9 @@ Graph_AxisTitleFont:Arial,18,1~
 Graph_KeyTitleFont:,18,1~
 Graph_KeyFont:,18,0~
 ShowKey:1
-ReformVal: [Profile_Hours,System_Type]
+ReformVal: [Month,System_Type]
 Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Month,7,Rate_Names_and_Start,4,PV_Operating_Year,1,System_Type,1,Profile_Hours,1]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Rate_Names_and_Start,3,Area_Type,1,Profile_Hours,36,System_Type,1,Month,7]
 
 Variable Pre_System_Load
 Title: Pre System Load
@@ -4045,10 +4045,11 @@ ELSE Applied_Load_Profile
 NodeLocation: 896,240,1
 NodeSize: 64,40
 WindState: 2,17,317,720,350
-ValueState: 2,198,21,924,575,,MIDM
+ValueState: 2,198,21,1430,555,0,MIDM
 Aliases: Alias Al1571847186
-ReformVal: [Profile_Hours,System_Types]
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,PV_Operating_Year,1,Month,1,System_Types,1,Profile_Hours,1]
+ReformVal: [Month,System_Types]
+Att__TotalsIndex: [Profile_Hours]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Profile_Hours,0,System_Types,1,Month,1]
 
 Variable PrePost_Load_Solar
 Title: Pre and Post Customer Load
@@ -4171,7 +4172,7 @@ CopyIndex(hours)
 NodeLocation: 416,328,1
 NodeSize: 64,40
 ValueState: 2,558,319,591,533,0,MIDM
-{!40300|Att_SlicerPopupSize: 227,1001}
+{!40300|Att_SlicerPopupSize: 232,1001}
 
 Variable DayType_Day_Counts
 Title: Day Type Day Counts
@@ -4873,7 +4874,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,249,128,1554,632,17,10
+DiagState: 2,186,109,1554,632,17,10
 Aliases: Alias Al1548967138
 AcpStyles: FrameNode: FrameNode_1544919985
 
@@ -5250,7 +5251,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 256,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,15,10,1649,772,17,10
+DiagState: 2,90,28,1649,733,17,10
 Aliases: Alias Al1548967139
 AcpStyles: FrameNode: FrameNode_1544920029
 
@@ -5325,7 +5326,7 @@ Aliases: Alias Al144060707
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:6
 ReformVal: [Rate_Vintage,Allow_Rate_Inflation]
 NumberFormat: 2,F,4,3,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att_ResultSliceState: [Pre_and_Post_System,2,Tiers,1,Periods,1,PV_Climate_Zone,1,PV_Sectors,1,Rate_Vintage,1]
+Att_ResultSliceState: [Pre_and_Post_System,2,Tiers,1,PV_Climate_Zone,1,PV_Sectors,2,Periods,1,Rate_Vintage,1]
 
 Variable Non_Coinc_Dmd_Price
 Title: Non-Coincident Demand Price
@@ -5472,37 +5473,31 @@ Select the rate tariffs for each system type. For each rate tariff, specify the 
 ~
 
 Definition: Table(Rate_Vintage,PV_Climate_Zone,Pre_and_Post_System,All_Sectors,Rate_Setting)(~
+Choice(Rate_Names_with_None,97,0),Choice(PV_Sim_Strt_Yr_Opt,209,0),Checkbox(1),~
+Choice(Rate_Names_with_None,53,0),Choice(PV_Sim_Strt_Yr_Opt,209,0),Checkbox(1),~
 Choice(Rate_Names_with_None,7,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1),~
-Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1),~
-Choice(Rate_Names_with_None,7,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1),~
-Choice(Rate_Names_with_None,7,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1),~
-Choice(Rate_Names_with_None,4,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1),~
-Choice(Rate_Names_with_None,7,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1),~
-Choice(Rate_Names_with_None,8,0),Choice(PV_Sim_Strt_Yr_Opt,196,0),Checkbox(1),~
-Choice(Rate_Names_with_None,5,0),Choice(PV_Sim_Strt_Yr_Opt,196,0),Checkbox(1),~
-Choice(Rate_Names_with_None,8,0),Choice(PV_Sim_Strt_Yr_Opt,196,0),Checkbox(1),~
-Choice(Rate_Names_with_None,8,0),Choice(PV_Sim_Strt_Yr_Opt,196,0),Checkbox(1),~
-Choice(Rate_Names_with_None,6,0),Choice(PV_Sim_Strt_Yr_Opt,196,0),Checkbox(1),~
-Choice(Rate_Names_with_None,8,0),Choice(PV_Sim_Strt_Yr_Opt,196,0),Checkbox(1))
+Choice(Rate_Names_with_None,81,0),Choice(PV_Sim_Strt_Yr_Opt,209,0),Checkbox(1),~
+Choice(Rate_Names_with_None,53,0),Choice(PV_Sim_Strt_Yr_Opt,209,0),Checkbox(1),~
+Choice(Rate_Names_with_None,7,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1))
 NodeLocation: 96,216,1
 NodeSize: 64,40
 WindState: 2,108,40,1402,650
-DefnState: 2,814,334,876,255,0,DFNM
+DefnState: 2,401,280,1081,274,0,DFNM
 ValueState: 2,302,51,935,658,0,MIDM
 Aliases: FormNode Fo1547766909, FormNode Fo1547828216
 NodeColor: 65535,65531,1
-ReformDef: [Rate_Setting,Rate_Vintage]
+ReformDef: [Rate_Setting,Pre_and_Post_System]
 ReformVal: [Pre_and_Post_System,Rate_Vintage]
 TableCellDefault: Rate_Setting_Default
 Att_ResultSliceState: [All_Sectors,1,PV_Climate_Zone,1,Rate_Setting,2,Rate_Vintage,1,Pre_and_Post_System,1]
-Att_EditSliceState: [PV_Climate_Zone,1,All_Sectors,1,Pre_and_Post_System,2,Rate_Vintage,1,Rate_Setting,2]
-{!50000|Att_ColumnWidths: [,Rate_Vintage,\([,343])]}
+Att_EditSliceState: [PV_Climate_Zone,1,All_Sectors,2,Rate_Vintage,1,Pre_and_Post_System,2,Rate_Setting,2]
+{!50000|Att_ColumnWidths: [,Rate_Vintage,\([])]}
 
 Decision Num_of_Rate_Vintages
 Title: Number of Rate Vintages
 Units: vintages
 Description: Warning: If you reduce the number of vintages you may lose existing data! Specify the maximum number of retail rate vintages that could be considered in the simulation. A vintage refers to a rate schedule used during a specific date range. If rates have been changing over time, then it may be useful to capture these different vintages and apply them to the appropriate date ranges.
-Definition: 2
+Definition: 1
 NodeLocation: 96,104,1
 NodeSize: 64,40
 WindState: 2,345,180,1277,486
@@ -5513,10 +5508,10 @@ Decision Allow_Rate_Inflation
 Title: Allow Rate Inflation
 Units: boolean
 Description: Allows all cost components of retail rates to escalate over the system's economic horizon.
-Definition: Checkbox(1)
+Definition: Checkbox(0)
 NodeLocation: 384,816,1
 NodeSize: 64,40
-Aliases: FormNode Fo929231395
+Aliases: FormNode Fo929231395, FormNode Clipboard_Fo92923139, FormNode Fo1785176339
 NodeColor: 65535,65531,1
 {!40300|Att_SlicerPopupSize: 227,64}
 
@@ -5595,7 +5590,7 @@ NodeSize: 64,40
 ValueState: 2,137,63,1505,572,0,MIDM
 NumberFormat: 2,F,6,2,0,0,6,1,$,0,"ABBREV",0,,,0,0,15
 Att_ResultSliceState: [PV_Sectors,1,Pre_and_Post_System,2,PV_Climate_Zone,1,Rate_Vintage,1]
-{!50000|Att_ColumnWidths: [,Rate_Vintage,\([62,])]}
+{!50000|Att_ColumnWidths: [,Rate_Vintage,\([62])]}
 
 Variable Sorted_Rate_Vintage
 Title: Sorted Rate Vintage by Time
@@ -5770,12 +5765,6 @@ Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0),~
 Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0),~
 Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0),~
 Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0),~
 Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0))
 NodeLocation: 96,464,1
 NodeSize: 64,40
@@ -5814,12 +5803,6 @@ Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0),~
 Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0),~
 Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0),~
 Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0),~
 Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0))
 NodeLocation: 96,576,1
 NodeSize: 64,40
@@ -5853,12 +5836,6 @@ Attribute options:~
 "adj" - typically used to define an adjustment charge (or credit if negative). Often this is additive with the 'rate' charge.~
 "sell" - typically used to define a compensation rate for energy exported to the grid when the export rate is different from some combination of the "rate" or "adj" attributes (ie, full net-metering)
 Definition: Table(Rate_Vintage,PV_Climate_Zone,Pre_and_Post_System,All_Sectors,Rate_Attribute_Setti)(~
-Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(1),~
-Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(0),~
-Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(0),~
 Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(1),~
 Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(1),~
 Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(1),~
@@ -5868,12 +5845,12 @@ Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(1))
 NodeLocation: 408,312,1
 NodeSize: 64,40
 WindState: 2,358,80,1224,565
-DefnState: 2,2224,399,932,245,0,DFNM
+DefnState: 2,2224,399,1083,246,0,DFNM
 Aliases: FormNode Fo1547766195, Alias Al1547767161, FormNode Fo1547767167, FormNode Fo1547828220
 NodeColor: 65535,65531,1
-ReformDef: [Rate_Attribute_Setti,Rate_Vintage]
+ReformDef: [Rate_Attribute_Setti,Pre_and_Post_System]
 TableCellDefault: Energy_DefaultAttrib
-Att_EditSliceState: [All_Sectors,3,Pre_and_Post_System,2,PV_Climate_Zone,1,Rate_Vintage,2,Rate_Attribute_Setti,1]
+Att_EditSliceState: [All_Sectors,2,PV_Climate_Zone,1,Rate_Vintage,1,Pre_and_Post_System,2,Rate_Attribute_Setti,1]
 
 Module Rate_Attribute_Mappi
 Title: Rate Attribute Mapping
@@ -5890,6 +5867,7 @@ Description: Default data attribute assignments for non-coincident demand rates.
 Definition: Table(Rate_Attribute_Setti)(Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0))
 NodeLocation: 96,200,1
 NodeSize: 64,40
+WindState: 2,1803,82,720,350
 DefnState: 2,107,348,416,303,,DFNM
 
 Variable NonCoincDmd_DataType
@@ -5960,6 +5938,7 @@ Description: Default data attribute assignments for energy rates.
 Definition: Table(Rate_Attribute_Setti)(Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(1))
 NodeLocation: 96,424,1
 NodeSize: 64,40
+WindState: 2,1803,82,720,350
 DefnState: 2,107,348,416,303,,DFNM
 
 FormNode Fo1547766195
@@ -5986,9 +5965,11 @@ Description: The rate attributes considered for energy rates. If more than one a
 Definition: Energy_Rate_Attribs[All_Sectors=PV_Sectors, Rate_Attribute_Setti=Map_Setting_toAttrib]
 NodeLocation: 552,424,1
 NodeSize: 64,40
-ValueState: 2,840,324,608,296,0,MIDM
+WindState: 2,2308,78,720,740
+ValueState: 2,1098,433,608,296,0,MIDM
 Aliases: Alias Al387627171
-Att_ResultSliceState: [Pre_and_Post_System,2,PV_Climate_Zone,1,Rate_Vintage,1,PV_Sectors,2,Data_Attribute,3]
+ReformVal: [Data_Attribute,Pre_and_Post_System]
+Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,PV_Sectors,2,Pre_and_Post_System,2,Data_Attribute,3]
 
 Alias Al1547766712
 Title: Non-Coinc Demand Rate Attributes
@@ -6052,15 +6033,6 @@ NodeLocation: 416,268,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Energy_Rate_Attribs
-
-Text Te1572017969
-Description: This doesn't yet account for differences in export price vs retail price. Thus, it will require revision if net metering is not permitted. If you allow exporting of energy from the battery, it will always export at the retail rate. The "sell" attribute in the rate database would account for this, but it's not in the model. The worry is about the impact of tiering, especially when combined with a solar system.
-NodeLocation: 1228,128,2
-NodeSize: 364,48
-NodeInfo: 1,,,,,,1
-NodeColor: 57311,57311,57311
-NodeFont: Arial Narrow,19
-AcpStyles: Show_Object:no
 
 FormNode Fo929231395
 Title: Allow Rate Inflation
@@ -6185,7 +6157,7 @@ Author: CWelch
 Date: Thu, May 26, 2022 4:01 PM
 NodeLocation: 256,104,1
 NodeSize: 64,40
-DiagState: 2,44,17,1581,545,17,10
+DiagState: 2,1927,-1,1581,545,17,10
 
 Variable Energy_Cost_by_Tier_
 Title: Energy Cost by Tier,Pd,BuySell
@@ -6194,13 +6166,13 @@ Description: The volumetric energy cost by tier and period.
 Definition: Consumption_by_Tier_ * Energy_Price_Buy_Se1
 NodeLocation: 672,168,1
 NodeSize: 72,40
-ValueState: 2,1016,257,534,521,0,MIDM
+ValueState: 2,1067,304,453,395,0,MIDM
 GraphSetup: Graph_SymbolKey:1~
 Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [Pre_and_Post_System,Buy_or_Sell_]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Buy_or_Sell_]
-Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,1,System_Types,1,Pre_and_Post_System,1,Tiers,1,Month,8,Area_Type,1,Buy_or_Sell_,1,Periods,1,PV_Climate_Zone,1]
+Att__TotalsIndex: [Buy_or_Sell_,Periods,Month,Tiers]
+Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,1,System_Types,1,Tiers,0,Month,0,Area_Type,1,Periods,0,PV_Climate_Zone,1,Buy_or_Sell_,1,Pre_and_Post_System,1]
 Att_ColorRole: Periods
 Att_SymbolRole: Tiers
 {!40600|Att_StackingIndex: Tiers}
@@ -6288,10 +6260,10 @@ buy;~
 Replace_X_with_Y(price,null,0) * OpYr_Inflate_Factor
 NodeLocation: 672,288,1
 NodeSize: 64,40
-ValueState: 2,415,344,540,325,0,MIDM
-ReformVal: [Rate_Vintage,PV_Sectors]
+ValueState: 2,2996,491,526,276,0,MIDM
+ReformVal: [Buy_or_Sell_,Periods]
 NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att_ResultSliceState: [PV_Climate_Zone,1,Periods,1,Tiers,1,Pre_and_Post_System,1,Buy_or_Sell_,2,PV_Sectors,1,Rate_Vintage,2]
+Att_ResultSliceState: [PV_Climate_Zone,1,Tiers,1,PV_Sectors,2,Rate_Vintage,1,Pre_and_Post_System,2,Periods,1,Buy_or_Sell_,2]
 
 Alias Al1960622243
 Title: Data by Tier & Period
@@ -6318,12 +6290,13 @@ Title: Consumption by Tier,Pd,BuySell
 Definition: Aggregate(PrePost_Load_BuySell * Load_Monthly_Mults, Periods_by_ProfileHr[Data_Types=Energy_Rate_Label], Profile_Hours, Periods) * Pct_Consump_by_Tier
 NodeLocation: 464,104,1
 NodeSize: 72,40
-ValueState: 2,358,83,1038,687,,MIDM
+ValueState: 2,274,45,1125,832,,MIDM
 GraphSetup: {!50000|Graph_SortBySpread:0}~
 Att_StackedBar Graph_Primary_Valdim:0~
 {!50007|Graph_BarOutline:1}
 ReformVal: [Month,Buy_or_Sell_]
-Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,2,PV_Climate_Zone,1,System_Types,1,Pre_and_Post_System,1,Periods,1,Tiers,1,Area_Type,1,Buy_or_Sell_,1,Month,1]
+Att__TotalsIndex: [Periods,Tiers]
+Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,1,PV_Climate_Zone,1,System_Types,1,Pre_and_Post_System,2,Periods,0,Tiers,0,Area_Type,1,Buy_or_Sell_,1,Month,1]
 {!40600|Att_StackingIndex: Buy_or_Sell_}
 {!40600|Att_ClusterIndex: Null}
 
@@ -6332,12 +6305,12 @@ Title: Energy Cost by Tier, Pd accting for sell attr
 Definition: sum(Energy_Cost_by_Tier_,Buy_or_Sell_)
 NodeLocation: 848,168,1
 NodeSize: 72,40
-ValueState: 2,339,32,1222,724,0,MIDM
+ValueState: 2,370,147,1222,724,0,MIDM
 GraphSetup: {!50000|Graph_SortBySpread:0}~
 Att_StackedBar Graph_Primary_Valdim:0
 ReformVal: [Month,Pre_and_Post_System]
-Att__TotalsIndex: [Periods,Month]
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,System_Types,1,Area_Type,1,Periods,0,Tiers,1,Rate_Vintage,1,Pre_and_Post_System,2,Month,1]
+Att__TotalsIndex: [Month,Periods,Tiers]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,System_Types,1,Area_Type,1,Periods,0,Tiers,0,Rate_Vintage,1,Pre_and_Post_System,2,Month,1]
 {!40600|Att_StackingIndex: Pre_and_Post_System}
 {!40600|Att_ClusterIndex: Rate_Vintage}
 
@@ -6353,7 +6326,7 @@ Title: Any non net-metering?
 Definition: Incl_Energy_Attribs[Data_Attribute='sell']=1
 NodeLocation: 872,376,1
 NodeSize: 64,40
-ValueState: 2,541,402,1109,275,0,MIDM
+ValueState: 2,860,527,816,236,0,MIDM
 NodeColor: 65535,1,1
 Att_ResultSliceState: [PV_Climate_Zone,1,Pre_and_Post_System,2,Rate_Vintage,1,PV_Sectors,1]
 
@@ -6399,6 +6372,18 @@ NodeLocation: 1096,232,1
 NodeSize: 48,16
 NodeInfo: 1,,,0
 Original: Buy_Price_Label
+
+Text Te40345875
+NodeLocation: 1504,128,-1
+NodeSize: 64,40
+
+FormNode Fo1785176339
+Title: Allow Rate Inflation
+Definition: 0
+NodeLocation: 996,440,1
+NodeSize: 180,16
+NodeInfo: 1,,,,,,,80,,,,,,0
+Original: Allow_Rate_Inflation
 
 Close Non_Net_Metering_Ene
 
@@ -6624,7 +6609,7 @@ ELSE FirstYr_Bill_by_Vint[Rate_Vintage=RateVint_by_RateName, System_Types=SystTy
 NodeLocation: 544,296,1
 NodeSize: 64,40
 WindState: 2,26,31,897,461
-ValueState: 2,405,85,1205,753,1,MIDM
+ValueState: 2,299,85,1205,753,1,MIDM
 Aliases: FormNode Fo1582589317
 GraphSetup: Grid:0~
 Graph_KeyFont:,16,0~
@@ -6637,7 +6622,7 @@ ReformVal: [System_Comparison,Bill_Components]
 NumberFormat: 2,F,2,0,1,1,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Bill_Components,Month]
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Rate_Names_and_Start,4,System_Type,2,Bill_Components,1,System_Comparison,3]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Rate_Names_and_Start,3,System_Type,2,Bill_Components,1,System_Comparison,3]
 {!40600|Att_StackingIndex: Bill_Components}
 {!40600|Att_ClusterIndex: Bill_Components}
 {!40700|Att_CellFormat: Undefined}
@@ -6660,23 +6645,8 @@ Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,4,0),Choice(Bill_Components_None,9,0),~
 Choice(Bill_Components_None,9,0),Choice(Bill_Components_None,9,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
@@ -11434,7 +11404,7 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 256,288,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,1997,7,1707,631,17,10
+DiagState: 2,1984,14,1707,631,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -11461,7 +11431,7 @@ NodeLocation: 384,1192,1
 NodeSize: 64,40
 WindState: 2,2146,81,1165,697
 ValueState: 2,908,442,659,261,0,MIDM
-{!40300|Att_SlicerPopupSize: 1492,522}
+{!40300|Att_SlicerPopupSize: 1517,522}
 
 Text Te1545165196
 Description: Currently chooses the rate name for the post-system, which doesn't tell you the pre-system if they are different.
@@ -11658,7 +11628,7 @@ NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Object Object, Object Function, Object Variable, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 Att_GraphIndexRange: 1,,0,,,,,1,11,1
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 1613,353}
+{!40300|Att_SlicerPopupSize: 1618,353}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
@@ -11751,7 +11721,7 @@ WindState: 2,101,420,720,350
 ValueState: 2,12,148,416,504,0,MIDM
 
 Index Rate_Vintage
-Att_PrevIndexValue: [1,2]
+Att_PrevIndexValue: [1]
 Title: Rate Vintage
 Definition: 1..Num_of_Rate_Vintages
 NodeLocation: 384,1016,1
@@ -11760,7 +11730,7 @@ WindState: 2,98,82,1059,632
 {!40300|Att_SlicerPopupSize: 377,140}
 
 Index Rate_Names_with_None
-Att_PrevIndexValue: ['None','AL-TOU Secondary (0-500 KW) | 2019-01','GSD - Large Commercial Net Metering, Standard | 2018-02','GSD - Large Commercial Net Metering, TOU | 2018-02','GSD - Large Commercial NonNet Metering, Standard | 2018-03','GSD - Large Commercial NonNet Metering, TOU | 2018-03','Residential Net Metering | 2018-02','Residential Non-Net Metering | 2018-03']
+Att_PrevIndexValue: ['None','1 Residential Service | 2012-01','1 Residential Service | 2016-01','10 (Small Construction Service) | 2015-10','10 (Small Construction Service) | 2016-11','10 (Small Construction Service) | 2017-05','10 (Small Construction Service) | 2019-05','11 (Irrigation Service) | 2015-10','11 (Irrigation Service) | 2016-11','11 (Irrigation Service) | 2017-05','11 (Irrigation Service) | 2019-05','12 (Church Service) | 2015-10','12 (Church Service) | 2016-11','12 (Church Service) | 2017-05','12 (Church Service) | 2019-05','14 (Farm Service) | 2015-10','14 (Farm Service) | 2016-11','14 (Farm Service) | 2017-05','14 (Farm Service) | 2019-05','16 (General Service Time-Of-Use) | 2015-10','16 (General Service Time-Of-Use) | 2016-11','16 (General Service Time-Of-Use) | 2017-05','16 (General Service Time-Of-Use) | 2019-05','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2014-01','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2016-01','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2017-01','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2017-09','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2019-04','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2019-06','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2021-07','1S Residential Service (Demand Time-of-Use) | 2014-01','1S Residential Service (Demand Time-of-Use) | 2016-01','1S Residential Service (Demand Time-of-Use) | 2017-01','1S Residential Service (Demand Time-of-Use) | 2017-09','1S Residential Service (Demand Time-of-Use) | 2019-04','1S Residential Service (Demand Time-of-Use) | 2019-06','1S Residential Service (Demand Time-of-Use) | 2021-07','1T Residential Service (Energy Time-of-Use) | 2012-01','1W Residential Service (Time Controlled Storage Water Heating) | 2014-01','1W Residential Service (Time Controlled Storage Water Heating) | 2016-01','1W Residential Service (Time Controlled Storage Water Heating) | 2017-01','1W Residential Service (Time Controlled Storage Water Heating) | 2017-09','1W Residential Service (Time Controlled Storage Water Heating) | 2019-04','1W Residential Service (Time Controlled Storage Water Heating) | 2019-06','1W Residential Service (Time Controlled Storage Water Heating) | 2021-07','2 (Low Use Residential Service) | 2015-10','2 (Low Use Residential Service) | 2016-11','2 (Low Use Residential Service) | 2017-05','2 (Low Use Residential Service) | 2019-05','20 (Medium General Service) | 2015-10','20 (Medium General Service) | 2016-11','20 (Medium General Service) | 2017-05','20 (Medium General Service) | 2019-05','21 (General Service Time-Of-Use Demand) | 2015-10','21 (General Service Time-Of-Use Demand) | 2016-11','21 (General Service Time-Of-Use Demand) | 2017-05','21 (General Service Time-Of-Use Demand) | 2019-05','22 (School Service) | 2015-10','22 (School Service) | 2016-11','22 (School Service) | 2017-05','22 (School Service) | 2019-05','23 (Industrial Power Service) | 2015-10','23 (Industrial Power Service) | 2016-11','23 (Industrial Power Service) | 2017-05','23 (Industrial Power Service) | 2019-05','24 (Large General Service Time-Of-Use) | 2016-11','24 (Large General Service Time-Of-Use) | 2017-05','24 (Large General Service Time-Of-Use) | 2019-05','28 (Small General Service Time-of-Use Demand) | 2015-10','28 (Small General Service Time-of-Use Demand) | 2016-11','28 (Small General Service Time-of-Use Demand) | 2017-05','28 (Small General Service Time-of-Use Demand) | 2019-05','3 (Municipal  Power Service) | 2015-10','3 (Municipal  Power Service) | 2016-11','3 (Municipal  Power Service) | 2017-05','3 (Municipal  Power Service) | 2019-05','5 (Residential Service Time-Of-Use) | 2014-05','5 (Residential Service Time-Of-Use) | 2015-10','5 (Residential Service Time-Of-Use) | 2016-11','5 (Residential Service Time-Of-Use) | 2017-05','5 (Residential Service Time-Of-Use) | 2019-05','5C Church and Synagogue Service | 2017-09','5P Church and Synagogue TOU Service | 2017-09','6 (Residential Service Energy Conservation Rate) | 2015-10','6 (Residential Service Energy Conservation Rate) | 2016-11','6 (Residential Service Energy Conservation Rate) | 2017-05','6 (Residential Service Energy Conservation Rate) | 2019-05','7 (Residential Service Time-Of-Use Demand) | 2014-05','7 (Residential Service Time-Of-Use Demand) | 2015-10','7 (Residential Service Time-Of-Use Demand) | 2016-11','7 (Residential Service Time-Of-Use Demand) | 2017-05','7 (Residential Service Time-Of-Use Demand) | 2019-05','8 (Residential Service) | 2014-05','8 (Residential Service) | 2015-10','8 (Residential Service) | 2016-11','8 (Residential Service) | 2017-05','8 (Residential Service) | 2019-05','9 (General Service) | 2014-05','9 (General Service) | 2015-10','9 (General Service) | 2016-11','9 (General Service) | 2017-05','9 (General Service) | 2019-05','Basic Residential Rate Schedule 1 | 2016-01','Basic Residential Rate Schedule 1 | 2017-01','Basic Residential Rate Schedule 1 | 2019-01','Church Service | 2014-05','Cotton Gin Schedule 5C | 2014-01','Cotton Gin Schedule 5C | 2015-01','Cotton Gin Service Schedule 5C | 2016-01','County, Municipal, or Housing Authority All-Electric Building Service Schedule 42 | 2016-01','County, Municipal, or Housing Authority All-Electric Building Service Schedule 42 | 2017-01','County, Municipal, or Housing Authority All-Electric Schedule 42 | 2014-01','County, Municipal, or Housing Authority All-Electric Schedule 42 | 2015-01','County, Municipal, or Housing Authority Schedule 30 | 2014-01','County, Municipal, or Housing Authority Schedule 30 | 2015-01','County, Municipal, or Housing Authority Service Schedule 30 | 2016-01','County, Municipal, or Housing Authority Service Schedule 30 | 2017-01','Dual Fuel Residential Schedule 1DF | 2014-01','Dual Fuel Residential Schedule 1DF | 2015-01','Dual Fuel Service Residential Schedule 1DF | 2016-01','Dual Fuel Service Residential Schedule 1DF | 2017-01','Electric Heating Schedule 7 | 2014-01','Electric Heating Schedule 7 | 2015-01','Electric Heating Schedule 7 | 2016-01','Electric Heating Schedule 7 | 2017-01','Energy TOU Residential Service Schedule 1T | 2016-01','Energy TOU Residential Service Schedule 1T | 2017-01','Energy TOU Residential Service Schedule 1T | 2019-01','EV Residential Electric Vehicle Charging (Experimental) | 2014-01','EV Residential Electric Vehicle Charging (Experimental) | 2016-01','EV Residential Electric Vehicle Charging (Experimental) | 2017-01','EV Residential Electric Vehicle Charging (Experimental) | 2017-09','EV Residential Electric Vehicle Charging (Experimental) | 2019-04','EV Residential Electric Vehicle Charging (Experimental) | 2019-06','EV Residential Electric Vehicle Charging (Experimental) | 2021-07','Experimental Program- General Service Time-of-Use | 2014-05','Farm Service | 2014-05','General Service Time-Of-Use | 0','General Service Time-Of-Use | 2014-05','GS-1 (Small General Service Single Phase Service) | 2012-01','GS-1 (Small General Service Single Phase Service) | 2016-01','GS-1 (Small General Service Single Phase Service) | 2017-01','GS-1 (Small General Service Single Phase Service) | 2017-09','GS-1 (Small General Service Single Phase Service) | 2019-04','GS-1 (Small General Service Single Phase Service) | 2019-06','GS-1 (Small General Service Single Phase Service) | 2021-07','GS-1 (Small General Service Three Phase Service) | 2012-01','GS-1 (Small General Service Three Phase Service) | 2016-01','GS-1 (Small General Service Three Phase Service) | 2017-01','GS-1 (Small General Service Three Phase Service) | 2017-09','GS-1 (Small General Service Three Phase Service) | 2019-04','GS-1 (Small General Service Three Phase Service) | 2019-06','GS-1 (Small General Service Three Phase Service) | 2021-07','GS-2 Demand | 2014-01','GS-2 Demand | 2016-01','GS-2 Demand | 2017-01','GS-2 Demand | 2017-09','GS-2 Demand | 2019-04','GS-2 Demand | 2019-06','GS-2 Demand | 2021-07','GS-2 Non-Demand | 2012-01','GS-2 Non-Demand | 2016-01','GS-2 Non-Demand | 2017-01','GS-2 Non-Demand | 2017-09','GS-2 Non-Demand | 2019-04','GS-2 Non-Demand | 2019-06','GS-2 Non-Demand | 2021-07','GS-2T Time-of-Use | 2014-01','GS-2T Time-of-Use | 2016-01','GS-2T Time-of-Use | 2017-01','GS-2T Time-of-Use | 2017-09','GS-2T Time-of-Use | 2019-04','GS-2T Time-of-Use | 2019-06','GS-2T Time-of-Use | 2021-07','GS-3 (Large General Service Secondary Voltage) | 2014-01','GS-3 (Large General Service Secondary Voltage) | 2016-01','GS-3 (Large General Service Secondary Voltage) | 2017-01','GS-3 (Large General Service Secondary Voltage) | 2017-09','GS-3 (Large General Service Secondary Voltage) | 2019-04','GS-3 (Large General Service Secondary Voltage) | 2019-06','GS-3 (Large General Service Secondary Voltage) | 2019-07','GS-4 (Large General Service Primary Voltage) | 0','GS-4 (Large General Service Primary Voltage) | 0','GS-4 (Large General Service Primary Voltage) | 2014-01','GS-4 (Large General Service Primary Voltage) | 2016-01','GS-4 (Large General Service Primary Voltage) | 2017-01','GS-4 (Large General Service Primary Voltage) | 2017-09','GS-4 (Large General Service Primary Voltage) | 2019-04','GS-4 (Large General Service Primary Voltage) | 2019-06','GS-4 (Large General Service Primary Voltage) | 2021-07','GS-4 (Large General Service Transmission Voltage) | 2017-09','GS-4 (Large General Service Transmission Voltage) | 2019-04','GS-4 (Large General Service Transmission Voltage) | 2019-06','GS-4 (Large General Service Transmission Voltage) | 2021-07','Industrial Power Service | 2014-05','Irrigation Service | 2014-05','Large General (Primary) Schedule 10 | 2014-01','Large General (Primary) Schedule 10 | 2015-01','Large General (Primary) Schedule 6P | 2014-01','Large General (Primary) Schedule 6P | 2015-01','Large General (Secondary) Schedule 10 | 2014-01','Large General (Secondary) Schedule 10 | 2015-01','Large General (Secondary) Schedule 6P | 2014-01','Large General (Secondary) Schedule 6P | 2015-01','Large General Curtailable (Primary) Schedule 6C | 2014-01','Large General Curtailable (Primary) Schedule 6C | 2015-01','Large General Curtailable (Secondary) Schedule 6C | 2014-01','Large General Curtailable (Secondary) Schedule 6C | 2015-01','Large General Service (Primary) Schedule 10 | 2016-01','Large General Service (Primary) Schedule 10 | 2017-01','Large General Service (Primary) Schedule 6P | 2016-01','Large General Service (Primary) Schedule 6P | 2017-01','Large General Service (Primary) Schedule 6P | 2019-01','Large General Service (Secondary) Schedule 10 | 2016-01','Large General Service (Secondary) Schedule 10 | 2017-01','Large General Service (Secondary) Schedule 6P | 2016-01','Large General Service (Secondary) Schedule 6P | 2017-01','Large General Service (Secondary) Schedule 6P | 2019-01','Large General Service Time-Of-Use | 2014-05','Large General Service, Industrial (Primary) Schedule 6L | 2019-01','Large General Service, Industrial (Secondary) Schedule 6L | 2019-01','Low Use Residential Service | 2014-05','Medium General Service | 2014-05','PR-1 (Small Power Production, Cogeneration) | 2014-05','PR-1 (Small Power Production, Cogeneration) | 2015-10','PR-1 (Small Power Production, Cogeneration) Non-Solar | 2018-05','PR-1 (Small Power Production, Cogeneration) Solar | 2018-05','Rate 22: School Service | 2014-05','Rate 3: Municipal  Power Service | 2014-05','Residential Energy TOU Schedule 1T | 2014-01','Residential Energy TOU Schedule 1T | 2015-01','Residential Energy TOU Schedule 1T | 2016-01','Residential Energy TOU Schedule 1T | 2017-01','Residential Energy TOU Schedule 1T | 2017-09','Residential Energy TOU Schedule 1T | 2019-04','Residential Energy TOU Schedule 1T | 2019-06','Residential Energy TOU Schedule 1T | 2021-07','Residential Schedule 1 | 2014-01','Residential Schedule 1 | 2015-01','Residential Schedule 1 | 2016-01','Residential Schedule 1 | 2017-01','Residential Schedule 1 | 2017-09','Residential Schedule 1 | 2019-06','Residential Schedule 1 | 2021-07','Residential Service Energy Conservation Rate | 2014-05','Residential TOU Schedule 1P | 2014-01','Residential TOU Schedule 1P, Closed Rate | 2015-01','Small Construction Service | 2014-05','Small General Schedule 5 | 2014-01','Small General Schedule 5 | 2015-01','Small General Service Schedule 5 | 2016-01','Small General Service Schedule 5 | 2017-01','Small General Service Schedule 5 | 2019-01','Small General Service Time-of-Use Demand | 2014-05','Small General Service TOU (All Other Service) Schedule 5P | 2016-01','Small General Service TOU (All Other Service) Schedule 5P | 2017-01','Small General Service TOU (All Other Service) Schedule 5P | 2019-01','Small General Service TOU (Single Phase) Schedule 5P | 2016-01','Small General Service TOU (Single Phase) Schedule 5P | 2017-01','Small General Service TOU (Single Phase) Schedule 5P | 2019-01','Small General TOU (All Other Service) Schedule 5P | 2014-01','Small General TOU (All Other Service) Schedule 5P | 2015-01','Small General TOU (Single Phase < 200 amps) Schedule 5P | 2014-01','Small General TOU (Single Phase) Schedule 5P | 2015-01','SUPPLEMENTARY AND STANDBY SERVICE | 2014-05','TOU Residential Service Schedule 1P | 2016-01','TOU Residential Service Schedule 1P | 2017-01','TOU Residential Service Schedule 1P | 2019-01']
 Title: Rate Names with None
 Definition: Concat(None_Label, Rate_Names)
 NodeLocation: 384,1104,1
@@ -11975,7 +11945,7 @@ NodeSize: 64,40
 WindState: 2,102,21,1089,879
 ValueState: 2,992,329,416,303,0,MIDM
 DisplayOutputs: Object Object, Object Variable
-{!40300|Att_SlicerPopupSize: 1127,112}
+{!40300|Att_SlicerPopupSize: 1137,112}
 
 Index New_or_Retrofit
 Att_PrevIndexValue: ['NewConstr','Retrofit']
@@ -12762,7 +12732,7 @@ NodeLocation: 240,800,1
 NodeSize: 64,40
 WindState: 2,2,228,720,350
 Att_GraphIndexRange: 1,,,,,,10
-{!40300|Att_SlicerPopupSize: 417,116}
+{!40300|Att_SlicerPopupSize: 427,116}
 
 Index Bill_Components1
 Title: Bill Components
