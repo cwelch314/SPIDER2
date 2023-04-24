@@ -3035,7 +3035,7 @@ Original: Select_Strg_Rate2
 Decision Select_Strg_Month2
 Title: Selected Storage Months
 Description: Select the months that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Month,2,allowNone:0,returnList:1)
+Definition: MultiChoice(Month,allowNone:0,returnList:1)
 NodeLocation: 616,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348267
@@ -3381,7 +3381,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 19-Apr-2023 10:44:21.342000
+Definition: 24-Apr-2023 10:38:34.298000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3389,7 +3389,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 19-Apr-2023 10:44:35.014000
+Definition: 24-Apr-2023 10:39:20.493000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 WindState: 2,362,172,796,472
@@ -4418,7 +4418,7 @@ WindState: 2,323,77,720,350
 Decision Select_Strg_Sector2
 Title: Selected Storage Sectors
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,2,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
 NodeLocation: 128,288,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348264, Alias Al513733155
@@ -4542,7 +4542,7 @@ MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimizat
 Decision Choose_Sectors_to_Op
 Title: Choose Sectors to Optimize
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,2,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
 NodeLocation: 464,96,1
 NodeSize: 64,40
 Aliases: FormNode Fo989786659, Alias Al783884579, FormNode Fo431563043

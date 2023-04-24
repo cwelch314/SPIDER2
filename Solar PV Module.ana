@@ -3899,7 +3899,7 @@ Graph_AxisLabelFont:,14,0~
 Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [Profile_Hours,Month]
 Att__TotalsIndex: [Day_and_Hour]
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Area_Type,2,Month,1,Profile_Hours,1]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Area_Type,1,Month,1,Profile_Hours,1]
 
 Objective PrePost_Load_by_OpYr
 Title: Pre/Post Load by OpYr
@@ -3910,7 +3910,7 @@ NodeLocation: 1056,192,1
 NodeSize: 64,40
 WindState: 2,546,219,720,350
 DefnState: 2,1094,392,416,303,0,DFNM
-ValueState: 2,284,59,1343,742,0,MIDM
+ValueState: 2,90,67,1695,643,1,MIDM
 Aliases: FormNode Fo1534438380, Alias Al733264035, FormNode Fo1572476391
 NodeColor: 19661,48336,65535
 GraphSetup: Graph_AxisLabelFont:,14,0~
@@ -3918,10 +3918,10 @@ Att_CatLineStyle Graph_Primary_Valdim:5~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_GraphValueRange PrePost_Load_by_OpYr:1,,1,,,,10,0,421.10850512981415,0
-ReformVal: [Profile_Hours,Month]
-Att__TotalsIndex: [Profile_Hours,Month]
+ReformVal: [Profile_Hours,Pre_and_Post_System]
+Att__TotalsIndex: [Profile_Hours]
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,1,Rate_Vintage,1,PV_Sectors,1,Area_Type,1,Pre_and_Post_System,2,Month,12,Profile_Hours,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,1,Rate_Vintage,1,PV_Sectors,1,Area_Type,1,Pre_and_Post_System,1,Month,12,Profile_Hours,1]
 
 Variable Scaled_Annual_Load
 Title: Scaled Annual Load
@@ -4009,7 +4009,7 @@ Definition: IF Decouple_Rates2 THEN Load_Net_of_Solar ELSE Load_Net_of_Storage
 NodeLocation: 896,136,1
 NodeSize: 64,40
 WindState: 2,18,322,1163,505
-ValueState: 2,369,29,1118,870,0,MIDM
+ValueState: 2,200,45,1319,769,0,MIDM
 ReformVal: [Profile_Hours,System_Types]
 Att_ResultSliceState: [PV_Sectors,22,PV_Climate_Zone,2,Month,1,Area_Type,1,PV_Operating_Year,1,Profile_Hours,1]
 
@@ -4033,7 +4033,7 @@ Graph_KeyFont:,18,0~
 ShowKey:1
 ReformVal: [Month,System_Type]
 Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Rate_Names_and_Start,3,Area_Type,1,Profile_Hours,36,System_Type,1,Month,7]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Rate_Names_and_Start,2,Area_Type,1,Profile_Hours,44,System_Type,1,Month,7]
 
 Variable Pre_System_Load
 Title: Pre System Load
@@ -5161,7 +5161,7 @@ Aliases: Alias Al380942499
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
 {!40600|Att_WaterfallBar Graph_Primary_Valdim:0}
 ReformVal: [Month,Periods]
-Att_ResultSliceState: [PV_Sectors,22,Rate_Vintage,1,PV_Climate_Zone,1,System_Types,3,Pre_and_Post_System,1,PV_Operating_Year,1,Area_Type,1,Periods,1,Month,1]
+Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,1,System_Types,3,Pre_and_Post_System,1,Area_Type,1,Periods,1,Month,1]
 
 Variable Max_Dmd_by_TOU_Prd
 Title: Max Demand by TOU Period
@@ -5251,7 +5251,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 256,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,90,28,1649,733,17,10
+DiagState: 2,114,23,1649,733,17,10
 Aliases: Alias Al1548967139
 AcpStyles: FrameNode: FrameNode_1544920029
 
@@ -5263,14 +5263,14 @@ Definition: IF Any_non_net_metering THEN Energy_Cost_w_Sell ELSE Energy_Cost_Tie
 /*Consum_by_Tier_Prd * Energy_Price
 NodeLocation: 408,200,1
 NodeSize: 64,40
-ValueState: 2,415,282,1051,358,0,MIDM
+ValueState: 2,644,196,1051,518,0,MIDM
 GraphSetup: Graph_SymbolKey:1~
 Att_CatLineStyle Graph_Primary_Valdim:5
-ReformVal: [Rate_Vintage,Pre_and_Post_System]
+ReformVal: [Month,Periods]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Month]
-Att_ResultSliceState: [PV_Sectors,1,System_Types,1,Tiers,1,Area_Type,1,Periods,1,PV_Climate_Zone,1,Month,0,Pre_and_Post_System,1,Rate_Vintage,2]
-Att_ColorRole: Periods
+Att__TotalsIndex: [Month,Tiers,Periods]
+Att_ResultSliceState: [Tiers,0,PV_Sectors,1,System_Types,1,Area_Type,1,PV_Climate_Zone,1,Pre_and_Post_System,2,Rate_Vintage,1,Periods,1,Month,0]
+Att_ColorRole: Pre_and_Post_System
 Att_SymbolRole: Tiers
 {!40600|Att_StackingIndex: Tiers}
 {!40600|Att_ClusterIndex: Null}
@@ -5309,7 +5309,7 @@ WindState: 2,184,82,859,463
 DefnState: 2,36,149,1304,440,0,DFNM
 ValueState: 2,278,273,1426,367,0,MIDM
 ReformVal: [PV_Climate_Zone,Rate_Vintage]
-Att_ResultSliceState: [PV_Sectors,11,Pre_and_Post_System,2,Rate_Vintage,1,PV_Climate_Zone,1]
+Att_ResultSliceState: [PV_Sectors,1,Pre_and_Post_System,2,Rate_Vintage,1,PV_Climate_Zone,1]
 Att_EditSliceState: [Pre_and_Post_System,2,All_Sectors,1,PV_Climate_Zone,1]
 
 Variable Energy_Price
@@ -5473,12 +5473,12 @@ Select the rate tariffs for each system type. For each rate tariff, specify the 
 ~
 
 Definition: Table(Rate_Vintage,PV_Climate_Zone,Pre_and_Post_System,All_Sectors,Rate_Setting)(~
-Choice(Rate_Names_with_None,97,0),Choice(PV_Sim_Strt_Yr_Opt,209,0),Checkbox(1),~
+Choice(Rate_Names_with_None,97,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1),~
 Choice(Rate_Names_with_None,53,0),Choice(PV_Sim_Strt_Yr_Opt,209,0),Checkbox(1),~
-Choice(Rate_Names_with_None,7,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1),~
-Choice(Rate_Names_with_None,81,0),Choice(PV_Sim_Strt_Yr_Opt,209,0),Checkbox(1),~
+Choice(Rate_Names_with_None,97,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1),~
+Choice(Rate_Names_with_None,81,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1),~
 Choice(Rate_Names_with_None,53,0),Choice(PV_Sim_Strt_Yr_Opt,209,0),Checkbox(1),~
-Choice(Rate_Names_with_None,7,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1))
+Choice(Rate_Names_with_None,81,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1))
 NodeLocation: 96,216,1
 NodeSize: 64,40
 WindState: 2,108,40,1402,650
@@ -5490,7 +5490,7 @@ ReformDef: [Rate_Setting,Pre_and_Post_System]
 ReformVal: [Pre_and_Post_System,Rate_Vintage]
 TableCellDefault: Rate_Setting_Default
 Att_ResultSliceState: [All_Sectors,1,PV_Climate_Zone,1,Rate_Setting,2,Rate_Vintage,1,Pre_and_Post_System,1]
-Att_EditSliceState: [PV_Climate_Zone,1,All_Sectors,2,Rate_Vintage,1,Pre_and_Post_System,2,Rate_Setting,2]
+Att_EditSliceState: [PV_Climate_Zone,1,All_Sectors,1,Rate_Vintage,1,Pre_and_Post_System,2,Rate_Setting,2]
 {!50000|Att_ColumnWidths: [,Rate_Vintage,\([])]}
 
 Decision Num_of_Rate_Vintages
@@ -5511,7 +5511,7 @@ Description: Allows all cost components of retail rates to escalate over the sys
 Definition: Checkbox(0)
 NodeLocation: 384,816,1
 NodeSize: 64,40
-Aliases: FormNode Fo929231395, FormNode Clipboard_Fo92923139, FormNode Fo1785176339
+Aliases: FormNode Fo929231395, FormNode Fo1785176339
 NodeColor: 65535,65531,1
 {!40300|Att_SlicerPopupSize: 227,64}
 
@@ -6394,13 +6394,13 @@ Description: The volumetric energy cost by tier and period.
 Definition: Consum_by_Tier_Prd * Energy_Price 
 NodeLocation: 256,200,1
 NodeSize: 64,40
-ValueState: 2,784,449,1050,385,0,MIDM
+ValueState: 2,532,119,1050,385,0,MIDM
 GraphSetup: Graph_SymbolKey:1~
 Att_CatLineStyle Graph_Primary_Valdim:5
-ReformVal: [Month,Pre_and_Post_System]
+ReformVal: [Month,Periods]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,1,System_Types,1,Tiers,1,Area_Type,1,Periods,1,PV_Climate_Zone,1,Allow_Rate_Inflation,1,Pre_and_Post_System,1,Month,8]
+Att__TotalsIndex: [Periods,Month]
+Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,1,System_Types,1,Tiers,1,Area_Type,1,PV_Climate_Zone,1,Pre_and_Post_System,2,Periods,0,Month,8]
 Att_ColorRole: Periods
 Att_SymbolRole: Tiers
 {!40600|Att_StackingIndex: Tiers}
@@ -6609,7 +6609,7 @@ ELSE FirstYr_Bill_by_Vint[Rate_Vintage=RateVint_by_RateName, System_Types=SystTy
 NodeLocation: 544,296,1
 NodeSize: 64,40
 WindState: 2,26,31,897,461
-ValueState: 2,299,85,1205,753,1,MIDM
+ValueState: 2,299,85,1205,753,0,MIDM
 Aliases: FormNode Fo1582589317
 GraphSetup: Grid:0~
 Graph_KeyFont:,16,0~
@@ -6622,7 +6622,7 @@ ReformVal: [System_Comparison,Bill_Components]
 NumberFormat: 2,F,2,0,1,1,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Bill_Components,Month]
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Rate_Names_and_Start,3,System_Type,2,Bill_Components,1,System_Comparison,3]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Rate_Names_and_Start,1,System_Type,2,Bill_Components,1,System_Comparison,3]
 {!40600|Att_StackingIndex: Bill_Components}
 {!40600|Att_ClusterIndex: Bill_Components}
 {!40700|Att_CellFormat: Undefined}
@@ -11404,7 +11404,7 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 256,288,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,1984,14,1707,631,17,10
+DiagState: 2,12,14,1707,545,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -11414,12 +11414,12 @@ Description: The rate vintage corresponding to the post-system rate name and dat
 Definition: SubIndex(Selected_Cust_Rates[Pre_and_Post_System=Post_System_Label], Rate_Names_and_Start, Rate_Vintage)
 NodeLocation: 384,1464,1
 NodeSize: 64,40
-ValueState: 2,258,118,1151,580,0,MIDM
+ValueState: 2,708,313,1151,380,0,MIDM
 ReformVal: [Pre_and_Post_System,Rate_Names_and_Start]
 Att_ResultSliceState: [PV_Sectors,1,Rate_Names_and_Start,1,PV_Climate_Zone,1]
 
 Index Rate_Names_and_Start
-Att_PrevIndexValue: ['GSD - Large Commercial Net Metering, Standard | 2018-02','GSD - Large Commercial Net Metering, TOU | 2018-02','GSD - Large Commercial NonNet Metering, Standard | 2018-03','GSD - Large Commercial NonNet Metering, TOU | 2018-03','Residential Net Metering | 2018-02','Residential Non-Net Metering | 2018-03']
+Att_PrevIndexValue: ['20 (Medium General Service) | 2019-05','5 (Residential Service Time-Of-Use) | 2019-05','8 (Residential Service) | 2019-05']
 Title: Rate Names and Start Dates
 Definition: VAR names:=MdArrayToTable(Selected_Cust_Rates, omitNull: True);~
 VAR lastCol:=Size(names.Col);~
@@ -11431,7 +11431,7 @@ NodeLocation: 384,1192,1
 NodeSize: 64,40
 WindState: 2,2146,81,1165,697
 ValueState: 2,908,442,659,261,0,MIDM
-{!40300|Att_SlicerPopupSize: 1517,522}
+{!40300|Att_SlicerPopupSize: 1537,522}
 
 Text Te1545165196
 Description: Currently chooses the rate name for the post-system, which doesn't tell you the pre-system if they are different.
@@ -12732,7 +12732,7 @@ NodeLocation: 240,800,1
 NodeSize: 64,40
 WindState: 2,2,228,720,350
 Att_GraphIndexRange: 1,,,,,,10
-{!40300|Att_SlicerPopupSize: 427,116}
+{!40300|Att_SlicerPopupSize: 437,116}
 
 Index Bill_Components1
 Title: Bill Components
@@ -12746,6 +12746,7 @@ Description: Assigns the pre- or post-system results to each system type.
 Definition: Table(System_Type)(Choice(Pre_and_Post_System,1,0),Choice(Pre_and_Post_System,2,0),Choice(Pre_and_Post_System,2,0),Choice(Pre_and_Post_System,2,0),Choice(Pre_and_Post_System,1,0))
 NodeLocation: 240,976,1
 NodeSize: 64,40
+DefnState: 2,1088,275,416,303,0,DFNM
 Aliases: FormNode Fo1546900065
 TableCellDefault: Choice(Pre_and_Post_System,1,0)
 
@@ -12763,7 +12764,7 @@ Description: Assigns an element of the system types index each system type.
 Definition: Table(System_Type)(Choice(All_System_Types,1,0),Choice(All_System_Types,1,0),Choice(All_System_Types,3,0),Choice(All_System_Types,6,0),Choice(All_System_Types,5,0))
 NodeLocation: 240,1088,1
 NodeSize: 64,40
-DefnState: 2,260,266,540,303,0,DFNM
+DefnState: 2,1144,278,540,303,0,DFNM
 ValueState: 2,409,206,769,587,0,MIDM
 Aliases: FormNode Fo1546900097
 TableCellDefault: Choice(All_System_Types,1,0)
