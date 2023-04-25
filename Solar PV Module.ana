@@ -1,5 +1,5 @@
 { Analytica Model Solar_PV, encoding="UTF-8" }
-SoftwareVersion 6.3.0
+SoftwareVersion 6.3.5
 
 {!-60000|Attribute AcpStyles}
 Attribute UnoptimizedDef
@@ -5302,7 +5302,7 @@ Att_ResultSliceState: [PV_Sectors,7,PV_Climate_Zone,1,PV_Operating_Year,1,System
 Variable Selected_Cust_Rates
 Title: Selected Customer Rates
 Description: The rate tariffs selected for each sector and climate zone.
-Definition: Select_Customer_Rate[All_Sectors=PV_Sectors, Rate_Setting=Name_Setting_Label]
+Definition: Select_Customer_Rate[All_Sectors=PV_Sectors, Rate_Setting=Name_Setting_Label,All_Utilities=Selected_Utility]
 NodeLocation: 96,312,1
 NodeSize: 64,40
 WindState: 2,184,82,859,463
@@ -5472,7 +5472,7 @@ Description: NOTE: CHANGING THIS RATE WILL NOT AUTOMATICALLY UPDATE THE HOURLY S
 Select the rate tariffs for each system type. For each rate tariff, specify the start date when the rate became effective (the date you select does not have to match the date included in the rate name). If you wish to apply rate escalation to any of the rates, you can do so by checking the box. Escalation will use the start date as the base year for inflation (ie, inflation factors are 1.0 in the base year). Generally, the first and last rates (on a chronological basis) will apply (de)escalation to fill in the missing years on the outer edges of the simulation horizon. For example, say you have two rate vintages, where the first rate starts in 1/1/2019 and the second rate starts in 1/1/2020. If you choose to apply escalation to each of these rates, any simulated time period prior to 1/1/2019 will apply de-escalation rates (eg, if the escalation rate is 2%, then the rates applied to 1/1/2018 will include a de-escalation multiplier of 1/[1+2%]). Moreover, any simulated time period after 1/1/2020 will apply escalation rates (eg, if the escalation rate is 2%, then the rates applied to 1/1/2021 will include an escalation multiplier of [1+2%]). Rates in the middle of the chronological order may not require escalation if it is known with certainty that the rates were constant from the start date until the subsequent rate's start date.~
 ~
 
-Definition: Table(Rate_Vintage,PV_Climate_Zone,Pre_and_Post_System,All_Sectors,Rate_Setting)(~
+Definition: Table(All_Utilities,Rate_Vintage,PV_Climate_Zone,Pre_and_Post_System,All_Sectors,Rate_Setting)(~
 Choice(Rate_Names_with_None,97,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1),~
 Choice(Rate_Names_with_None,53,0),Choice(PV_Sim_Strt_Yr_Opt,209,0),Checkbox(1),~
 Choice(Rate_Names_with_None,97,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1),~
@@ -5482,7 +5482,7 @@ Choice(Rate_Names_with_None,81,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1))
 NodeLocation: 96,216,1
 NodeSize: 64,40
 WindState: 2,108,40,1402,650
-DefnState: 2,401,280,1081,274,0,DFNM
+DefnState: 2,656,240,1081,274,0,DFNM
 ValueState: 2,302,51,935,658,0,MIDM
 Aliases: FormNode Fo1547766909, FormNode Fo1547828216
 NodeColor: 65535,65531,1
@@ -5540,7 +5540,7 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 944,704,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,137,100,1524,507,17,10
+DiagState: 2,274,139,1524,430,17,10
 AcpStyles: FrameNode: FrameNode_1545067302
 
 Decision Rate_Setting_Default
@@ -5555,7 +5555,7 @@ Title: Rate Start Dates
 Description: The start date when a particular rate vintage became effective.
 Definition: IF Selected_Cust_Rates = None_Label~
 THEN Null~
-ELSE Select_Customer_Rate[All_Sectors=PV_Sectors, Rate_Setting=Rate_Date_Label]
+ELSE Select_Customer_Rate[All_Sectors=PV_Sectors, Rate_Setting=Rate_Date_Label,All_Utilities=Selected_Utility]
 NodeLocation: 200,176,1
 NodeSize: 64,40
 ValueState: 2,184,186,952,554,0,MIDM
@@ -5612,7 +5612,7 @@ Units: dmnls
 Description: An escalation factor applied to each rate vintage. The base year for inflation is the start date of the rate vintage. This is to estimate rates outside of the range of historic data. A different escalation factor is applied to account for inflation within the lifetime of an installed system. Generally, escalation is only applied to the first and last rate vintages when ordered chronologically.
 Definition: VAR equivEscalateRate:=(1+Applied_RateEscalate)^(1/Timesteps_Per_Year)-1;   {The compounding monthly equivalent of the annual escalation rate}~
 ~
-IF Select_Customer_Rate[All_Sectors=PV_Sectors, Rate_Setting=Rate_Escalate_Label]~
+IF Select_Customer_Rate[All_Sectors=PV_Sectors, Rate_Setting=Rate_Escalate_Label,All_Utilities=Selected_Utility]~
 THEN Rate_adjustment * (1 + equivEscalateRate)^((Time_Fractional_Year - Decimal_Start_Year[Rate_Vintage=Sorted_Vintages])*Timesteps_Per_Year)~
 ELSE 1;~
 
@@ -11404,7 +11404,7 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 256,288,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,12,14,1707,545,17,10
+DiagState: 2,6,12,1707,545,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
