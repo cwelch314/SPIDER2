@@ -479,17 +479,17 @@ WindState: 2,102,82,1261,505
 ValueState: 2,355,63,1028,643,1,MIDM
 Aliases: Alias Al1924347043
 NodeColor: 65535,1,1
-GraphSetup: {!50400|Att_AxisOrKeyTitle Output_Periods:""}~
-{!50007|Graph_BarOutline:0}~
-Graph_FillTransparen:0~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_AreaFill Graph_Primary_Valdim:0~
-Att_Stacked_Lines Graph_Primary_Valdim:0~
-Att_GraphValueRange PV_Cumul_Adoption:1,,0,,,0,,0,199.2013156414032,0~
-Att_GraphIndexRange Output_Periods:1,0,1,,,,10,38717,53283.356330394745,0~
-Att_ContLineStyle Graph_Primary_Valdim:5~
+GraphSetup: Graph_AxisLabelFont:,20,0~
 {!50000|Graph_SortBySpread:0}~
-Graph_AxisLabelFont:,20,0
+Att_ContLineStyle Graph_Primary_Valdim:5~
+Att_GraphIndexRange Output_Periods:1,0,1,,,,10,38717,53283.356330394745,0~
+Att_GraphValueRange PV_Cumul_Adoption:1,,1,,,0,,0,199.2013156414032,0~
+Att_Stacked_Lines Graph_Primary_Valdim:0~
+Att_AreaFill Graph_Primary_Valdim:0~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+Graph_FillTransparen:0~
+{!50007|Graph_BarOutline:0}~
+{!50400|Att_AxisOrKeyTitle Output_Periods:""}
 ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,1,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Act_vs_Sim,DER_Cost_Scenario]

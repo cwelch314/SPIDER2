@@ -31,7 +31,7 @@ Author: coryw
 Date: Sun, Aug 5, 2018 9:08 AM
 NodeLocation: 464,184,1
 NodeSize: 72,64
-DiagState: 2,325,1,1301,817,17,10
+DiagState: 2,325,1,1301,785,17,10
 Pict: (000000000000002D003A00042505000089504E470D0A1A0A0000000D494844520000003A0000002D0806000000FF68780B000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA864000004AA494441546843ED994B48545118C7AD2804292CCA5C444A0B7355B6905A8449B810DC589BC645658BC06891D54608B24D480F7A8831663483AFCC34A6EC316294454E6246A25993144CD943CB48B3870FF49EEEFFD077B9733D9A3373EFDCABB5F83BC3DC73CF3DBFFB3FE7FBCE778C608CFD138A90CEC432487B61B6E93FE84CD087EFBE78C7B382BCBD77D3DDBB1B521BA1FC47D9CEC191FE686DDB19097AAFDB9509A875E5114CA42FBF7A00E477CF8C026DED6D4CB5DD4C6A23A0F5972287E020C0718D24BA774680C2A1BC87B62A024CAB8DEDA978713A77646C2852D45E24CB835E7FEDCC4EA98EEE27078BDBF38F040248B22C28020AA625B98880235A7BD3952541114DB7D4257A010837E1AAA85D20B21CE8CBAF6D493455010B6851BB40652950401124A6AA281F062BCB8022C064B8E27D80448E0C26E04C25CB80229AD274D5D349922540114D913A00DAD1D7BC41D42654590294D2083E45D7F590E9A088B28084A3A1E4C9BFC974D003F7335D003DF924F7B4E8FAA4FAF929567A732F5D6A3E7184B973AA58EDD64645F2356D7B5341B1190FC84DC03D2DC9952AD3DA68DC22B16FDD1372AFA9A05489A0A6145D27C139B8A686E163BE96E586A3D2F3CBD9EC9D2755D1D8F084D4641A28B9894A449833E5C172F71CC93E05AE286E8803BF76678A60A69269A0E426CA2DED35A9CB65F303C4F78ED21C36FC2DE8FC6A0A288A63A19B00C1742440AC45B8A7BA375899024A91D66F6DCA904A90B1AFEEE70EAAEE09556107F57C70A703D22FD2623D566734F3B1C8D354941E4255D84177B837344F70F3C62E970229480D7A28ACA0B4714795A2AC4DCFD1023E0679BAB2AFAF12B5F788E41BF026D6FBAA6CE80F1B0D3AEA24897272D840290041745287FC47CFE7B952730F841782E90E2840D0E67F2A898AF5B080C2012AA83160FEBBEC1EF2227FBE26F0A04CABE9B2E7A0F8D6424098110868E80BEDE8989324CACB8683E2ED52418D234BFE3B82CF9F08CB1E1C56F6B868AB3E102321E716B6E515C0D9606B5543413128DA18C01DE54DD376AE6CA317D0F81DEEA8A725A629DCD2AB08370C540D894F3E606CDB1AF639F933B19DFBDC9904172912437054B4C6429521A04248EC7AE4128A20117C301569ED627A1B75BA00E90EAA86C4E039A45C514817D6F4F067C99F701269815C4460E1ED04FDE9255D4191BFD4901F07BA562B7912CF901D1D1DEC8EA380833529DAD41B21DD40914228BA02B6CF5BB5D3AF0291EB469CB8531B4062EA8AFA3242BA80626DD15A3B787BA367B47E4F25F53B5EB1B9FD6ECBA163F42F0608DFF162447D19A5904191DFB843E573D88D2BC9CF257BC200072C5A39DC5497D1482F00829B7AFC1F2518050D4A6921A56C2E3B5E12C57ED8577DA7BEDA1D89BD19A5F3381C8476D89B8AFA0997020645C041C4DC5E1635E22859C8060B6325EAC35BB494ED762CE0705883475B72ECE19EA29369DAA06F3F3F49AEB9B3CD75F5FCE2B1F785CBF83DA4D6734BD8FE8B911C103B1A4C4FA3D345A09A003ADAD7B9F665C7B95C5FD3A1532F6E65D53D76267CF215C58CABC1A0BEC2185653BC88D99CF3F9F60E69625A4796264901C5C0D5205A0D9F5DCE9DAB70AEE82FB8B9C983BD294EF244958215A580CE5AE1D402A0F8236C305BC44159C46F6FC836BBF705ED2A0000000049454E44AE426082)
 AcpStyles: FrameNode: PVAdoption_Frame
 
@@ -423,7 +423,7 @@ Description: The simple payback time by spatial ID.
 Definition: Mthly_Simple_Payback[PV_Climate_Zone=Climate_Zone_Map, Time=Time_Solar_PV]
 NodeLocation: 288,296,1
 NodeSize: 64,40
-ValueState: 2,740,64,980,679,1,MIDM
+ValueState: 2,606,67,980,679,1,MIDM
 GraphSetup: Att_GraphValueRange Payback_Time:1,,1,,,,,0,19.501038789749146,0~
 Att_GraphIndexRange Time_Solar_PV:1,,0,,,,,38851.640651240945,54762.737165629864,0
 ReformVal: [Time_Solar_PV,PV_Sectors]
@@ -1954,7 +1954,7 @@ Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,42964.540197104216,43251.46899577975,
 ReformVal: [Time_Solar_PV,PV_Spatial_ID]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Sectors,2,Area_Type,1,PV_Spatial_ID,3,Time_Solar_PV,1]
+Att_ResultSliceState: [PV_Sectors,1,Area_Type,1,All_Utilities,1,PV_Spatial_ID,3,Time_Solar_PV,1]
 
 Variable NC_and_Retro_Install
 Title: New Constr + Retrofit Installs
@@ -2050,7 +2050,7 @@ Author: CWelch
 Date: Sun, Jan 9, 2022 3:29 PM
 NodeLocation: 632,208,1
 NodeSize: 72,56
-DiagState: 2,12,8,1263,618,17,10
+DiagState: 2,316,47,1263,618,17,10
 
 Variable Initial_PV_Adopters1
 Title: Initial PV Adopters
@@ -2062,7 +2062,7 @@ NodeLocation: 560,160,1
 NodeSize: 72,40
 NodeInfo: 1,1,1,1,1,1,0,0,0,0,,0,1,0
 WindState: 2,249,104,1523,637
-ValueState: 2,397,104,936,670,0,MIDM
+ValueState: 2,517,300,936,351,0,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:4~
 Att_GraphIndexRange PV_Spatial_ID:1,1
 ReformVal: [PV_Spatial_ID,PV_Sectors]
@@ -2164,7 +2164,7 @@ NodeLocation: 312,160,1
 NodeSize: 72,40
 NodeInfo: 1,1,1,1,1,1,0,0,0,0,,0,1,0
 WindState: 2,249,104,1523,637
-ValueState: 2,1116,308,690,672,1,MIDM
+ValueState: 2,860,185,690,672,1,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:4~
 Att_GraphIndexRange PV_Spatial_ID:1,1
 ReformVal: [PV_Sectors,PV_Spatial_ID]
@@ -2797,7 +2797,7 @@ Title: PV Sim Start Year
 Description: The year in which you want the adoption simulation to start. The simulation will then use the appropriate starting point for instalaltions at this point in time. In some cases, depending on the data, you may not want to start the simulation as early as the stock data are available. Typically for PV, you will want to start the PV simulation exactly one period (e.g., month) after the latest reliable data are available regarding historical installations. That said, the latest month in the interconnection databases are typically unreliable due to previous applications that have not yet come through. So, it is typically wise to ignore the last month (or even two, depending on the time delays) of interconnection data. ~
 ~
 During calibration, this time is set to an earlier period to "back cast" adoption and compare it with actual adoption for purposes of estimating diffusion coefficients.
-Definition: Choice(PV_Sim_Strt_Yr_Opt,253,0)
+Definition: Choice(PV_Sim_Strt_Yr_Opt,181,0)
 NodeLocation: 96,272,1
 NodeSize: 64,40
 ValueState: 2,795,362,320,151,,MIDM
@@ -2818,7 +2818,7 @@ ValueState: 2,586,141,258,345,0,MIDM
 Decision PV_Sim_End_Year
 Title: PV Sim End Year
 Description: The final year of the vehicle simulated forecast.
-Definition: Choice(PV_Sim_End_Yr_Option,396,0)
+Definition: Choice(PV_Sim_End_Yr_Option,252,0)
 NodeLocation: 248,272,1
 NodeSize: 64,40
 WindState: 2,102,82,1083,701
@@ -3210,7 +3210,7 @@ ReformVal: [PV_Sectors,Forecast_Year1]
 NumberFormat: 2,F,2,3,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [PV_Sectors,A8760]
 Att_ResultSliceState: [PV_Spatial_ID,1,PV_Climate_Zone,1,A8760,0,Forecast_Year1,1,PV_Sectors,0]
-{!50000|Att_ColumnWidths: [,PV_Sectors,\([,,137])]}
+{!50000|Att_ColumnWidths: [,PV_Sectors,\([,137])]}
 
 FormNode Fo2042975395
 Title: Area Type for Optimization
@@ -3942,7 +3942,7 @@ Att_GraphValueRange PrePost_Load_by_OpYr:1,,1,,,,10,0,421.10850512981415,0
 ReformVal: [Profile_Hours,Pre_and_Post_System]
 Att__TotalsIndex: [Profile_Hours]
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,1,Rate_Vintage,1,PV_Sectors,1,Area_Type,1,Pre_and_Post_System,1,Month,12,Profile_Hours,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,1,Rate_Vintage,1,PV_Sectors,2,Area_Type,1,Month,8,All_Utilities,1,Pre_and_Post_System,1,Profile_Hours,1]
 
 Variable Scaled_Annual_Load
 Title: Scaled Annual Load
@@ -4895,7 +4895,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,186,109,1554,632,17,10
+DiagState: 2,87,76,1554,575,17,10
 Aliases: Alias Al1548967138
 AcpStyles: FrameNode: FrameNode_1544919985
 
@@ -5065,8 +5065,8 @@ NodeSize: 64,40
 WindState: 2,66,72,1283,492
 ValueState: 2,448,45,1135,629,0,MIDM
 ReformVal: [Month,Tiers]
-Att__TotalsIndex: [Demand_Data_Types]
-Att_ResultSliceState: [PV_Sectors,4,Rate_Vintage,1,PV_Climate_Zone,3,Pre_and_Post_System,1,Demand_Data_Types,0,System_Types,1,Area_Type,1,Tiers,1,PV_Operating_Year,1]
+Att__TotalsIndex: []
+Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,1,Pre_and_Post_System,1,Demand_Data_Types,2,System_Types,1,Area_Type,1,All_Utilities,1,Periods,1,Tiers,1,Month,1]
 
 Variable Half_Annual_Max_Dmd
 Title: Half Annual Max Demand
@@ -5109,7 +5109,7 @@ NodeSize: 64,40
 WindState: 2,335,135,916,507
 ValueState: 2,154,136,1341,699,0,MIDM
 ReformVal: [Month,Pre_and_Post_System]
-Att_ResultSliceState: [PV_Sectors,22,Tiers,1,PV_Climate_Zone,1,Rate_Vintage,1,System_Types,1,Area_Type,2,PV_Operating_Year,1,Periods,1,Pre_and_Post_System,1,Month,1]
+Att_ResultSliceState: [PV_Sectors,1,Tiers,1,PV_Climate_Zone,1,Rate_Vintage,1,System_Types,1,Area_Type,1,Periods,2,All_Utilities,1,Pre_and_Post_System,1,Month,1]
 
 Text Te1534952533
 Title: Energy Consumption
@@ -5197,8 +5197,8 @@ WindState: 2,102,82,1015,350
 ValueState: 2,265,77,1294,669,0,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [Month,Periods]
-Att__TotalsIndex: [Demand_Data_Types]
-Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Pre_and_Post_System,2,System_Types,4,Demand_Data_Types,0,Area_Type,1,PV_Sectors,2,PV_Operating_Year,1]
+Att__TotalsIndex: []
+Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Pre_and_Post_System,2,System_Types,1,Demand_Data_Types,2,Area_Type,1,PV_Sectors,2,All_Utilities,1,Periods,1,Month,1]
 
 Text Te1571966012
 Description: Not sure if this should be indexed by Periods. It doesnt matter for current rates, since there's only one tier.
@@ -5244,7 +5244,7 @@ Att_ResultSliceState: [Rate_Vintage,1,Pre_and_Post_System,1,Tiers,1,Demand_Data_
 Decision Include_demand_charg
 Title: Include demand charges?
 Description: If demand charges need not be accounted for in the analysis, unchecking this box will speed model run time considerably.
-Definition: Checkbox(0)
+Definition: Checkbox(1)
 NodeLocation: 880,648,1
 NodeSize: 64,40
 Aliases: FormNode Fo606900515
@@ -5447,9 +5447,12 @@ Units: $/month
 Definition: Replace_X_with_Y(Fixed_Charges[Rate_Names=Selected_Cust_Rates], Null, 0) * OpYr_Inflate_Factor
 NodeLocation: 768,704,1
 NodeSize: 64,40
-ValueState: 2,176,135,1542,620,,MIDM
+ValueState: 2,176,135,1542,620,1,MIDM
 Aliases: Alias Al1989554467
+GraphSetup: Att_StackedBar Graph_Primary_Valdim:0
+ReformVal: [Pre_and_Post_System,PV_Sectors]
 Att_ResultSliceState: [PV_Sectors,2,Pre_and_Post_System,1,PV_Climate_Zone,1,Rate_Vintage,1,PV_Operating_Year,1]
+{!40600|Att_ClusterIndex: PV_Sectors}
 
 Variable Monthly_Minimum
 Title: Monthly Minimum
@@ -5463,7 +5466,7 @@ ValueState: 2,229,37,1130,666,1,MIDM
 Aliases: Alias Al345387299
 ReformVal: [Month,PV_Operating_Year]
 Att__TotalsIndex: [Day_of_Week]
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Pre_and_Post_System,2,Rate_Vintage,4,Month,1,PV_Operating_Year,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,Pre_and_Post_System,1,Rate_Vintage,1,PV_Sectors,1,Month,1]
 
 Text Te1534994142
 Title: Energy Costs
@@ -5494,11 +5497,11 @@ Select the rate tariffs for each system type. For each rate tariff, specify the 
 ~
 
 Definition: Table(All_Utilities,Rate_Vintage,PV_Climate_Zone,Pre_and_Post_System,All_Sectors,Rate_Setting)(~
+Choice(Rate_Names_with_None,97,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
+Choice(Rate_Names_with_None,97,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
 Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
+Choice(Rate_Names_with_None,97,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
+Choice(Rate_Names_with_None,97,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
 Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
 Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
 Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
@@ -5533,7 +5536,7 @@ Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1))
 NodeLocation: 96,216,1
 NodeSize: 64,40
 WindState: 2,108,40,1402,650
-DefnState: 2,656,240,1081,274,0,DFNM
+DefnState: 2,489,192,1081,274,0,DFNM
 ValueState: 2,302,51,935,658,0,MIDM
 Aliases: FormNode Fo1547766909, FormNode Fo1547828216
 NodeColor: 65535,65531,1
@@ -5541,7 +5544,7 @@ ReformDef: [Rate_Setting,Pre_and_Post_System]
 ReformVal: [Pre_and_Post_System,Rate_Vintage]
 TableCellDefault: Rate_Setting_Default
 Att_ResultSliceState: [All_Sectors,1,PV_Climate_Zone,1,Rate_Setting,2,Rate_Vintage,1,Pre_and_Post_System,1]
-Att_EditSliceState: [PV_Climate_Zone,1,All_Sectors,1,Rate_Vintage,1,Pre_and_Post_System,2,Rate_Setting,2]
+Att_EditSliceState: [PV_Climate_Zone,1,All_Sectors,2,Rate_Vintage,1,All_Utilities,1,Pre_and_Post_System,2,Rate_Setting,2]
 {!50000|Att_ColumnWidths: [,Rate_Vintage,\([])]}
 
 Decision Num_of_Rate_Vintages
@@ -5858,12 +5861,12 @@ Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0))
 NodeLocation: 96,576,1
 NodeSize: 64,40
 WindState: 2,126,248,1003,603
-DefnState: 2,194,175,1081,431,0,DFNM
+DefnState: 2,331,295,1081,431,0,DFNM
 Aliases: FormNode Fo1547765306, Alias Al1547766713, FormNode Fo1547766740, FormNode Fo1547828219
 NodeColor: 65535,65531,1
 ReformDef: [Rate_Attribute_Setti,PV_Climate_Zone]
 TableCellDefault: On_Peak_Dmd_Default
-Att_EditSliceState: [All_Sectors,18,Rate_Vintage,1,Pre_and_Post_System,1,PV_Climate_Zone,1,Rate_Attribute_Setti,1]
+Att_EditSliceState: [All_Sectors,1,Rate_Vintage,1,Pre_and_Post_System,1,PV_Climate_Zone,1,Rate_Attribute_Setti,1]
 
 FormNode Fo1547765306
 Title: Non-Coinc Demand Rate Attributes
@@ -6445,7 +6448,7 @@ Description: The volumetric energy cost by tier and period.
 Definition: Consum_by_Tier_Prd * Energy_Price 
 NodeLocation: 256,200,1
 NodeSize: 64,40
-ValueState: 2,532,119,1050,385,0,MIDM
+ValueState: 2,522,152,1050,385,0,MIDM
 GraphSetup: Graph_SymbolKey:1~
 Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [Month,Periods]
@@ -6457,6 +6460,12 @@ Att_SymbolRole: Tiers
 {!40600|Att_StackingIndex: Tiers}
 {!40600|Att_ClusterIndex: Null}
 
+Text Te230344979
+Title: Need to factor in net metering rules that don't allow negative charges for the year for a particular TOU period (e.g., for excess solar generation in that period)
+NodeLocation: 960,92,-1
+NodeSize: 280,44
+NodeColor: 65535,1,1
+
 Close Energy_and_Demand_Co
 
 Module Utility_Bills_and_Bi
@@ -6466,7 +6475,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 400,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,337,346,1549,650,17,10
+DiagState: 2,153,34,1549,650,17,10
 Aliases: Alias Al1548967140
 AcpStyles: FrameNode: FrameNode_1544920081
 
@@ -6660,7 +6669,7 @@ ELSE FirstYr_Bill_by_Vint[Rate_Vintage=RateVint_by_RateName, System_Types=SystTy
 NodeLocation: 544,296,1
 NodeSize: 64,40
 WindState: 2,26,31,897,461
-ValueState: 2,299,85,1205,753,0,MIDM
+ValueState: 2,419,62,1286,724,1,MIDM
 Aliases: FormNode Fo1582589317
 GraphSetup: Grid:0~
 Graph_KeyFont:,16,0~
@@ -6673,7 +6682,7 @@ ReformVal: [System_Comparison,Bill_Components]
 NumberFormat: 2,F,2,0,1,1,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Bill_Components,Month]
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Rate_Names_and_Start,1,System_Type,2,Bill_Components,1,System_Comparison,3]
+Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Rate_Names_and_Start,1,System_Type,2,All_Utilities,1,Area_Type,1,Month,0,Bill_Components,1,System_Comparison,3]
 {!40600|Att_StackingIndex: Bill_Components}
 {!40600|Att_ClusterIndex: Bill_Components}
 {!40700|Att_CellFormat: Undefined}
@@ -6682,22 +6691,22 @@ Decision Map_Component_to_Prd
 Title: Map Component to Period
 Description: Maps the TOU billing components' names to each TOU period.
 Definition: Table(All_Sectors,Rate_Vintage,All_Periods,Pre_and_Post_System)(~
+Choice(Bill_Components_None,9,0),Choice(Bill_Components_None,9,0),~
 Choice(Bill_Components_None,4,0),Choice(Bill_Components_None,4,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,4,0),Choice(Bill_Components_None,9,0),~
 Choice(Bill_Components_None,9,0),Choice(Bill_Components_None,9,0),~
+Choice(Bill_Components_None,4,0),Choice(Bill_Components_None,4,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,9,0),Choice(Bill_Components_None,9,0),~
+Choice(Bill_Components_None,4,0),Choice(Bill_Components_None,4,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
@@ -6706,9 +6715,9 @@ Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0))
 NodeLocation: 88,184,1
 NodeSize: 64,40
 WindState: 2,841,241,720,490
-DefnState: 2,683,388,1128,291,0,DFNM
+DefnState: 2,857,279,678,316,0,DFNM
 ValueState: 2,194,195,975,518,0,MIDM
-Aliases: FormNode Fo1574745288
+Aliases: FormNode Fo1574745288, FormNode Fo50776339
 NodeColor: 65535,65531,1
 ReformDef: [All_Sectors,All_Periods]
 ReformVal: [All_Periods,Rate_Vintage]
@@ -6734,7 +6743,7 @@ Description: Maps bill components to TOU periods.
 Definition: SubIndex(Map_Component_to_Prd[All_Sectors=PV_Sectors, All_Periods=Periods], Bill_Components, Periods)
 NodeLocation: 88,296,1
 NodeSize: 64,40
-ValueState: 2,131,495,1169,435,0,MIDM
+ValueState: 2,138,490,1169,435,0,MIDM
 ReformVal: [Pre_and_Post_System,Bill_Components]
 Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,2,Bill_Components,1,Pre_and_Post_System,1]
 
@@ -6768,15 +6777,15 @@ Description: The first-year utility bill
 Definition: Annual_Utility_Bill / OpYr_Inflate_Factor/*Annual_Utility_Bill[@PV_Operating_Year=1]
 NodeLocation: 544,184,1
 NodeSize: 64,40
-ValueState: 2,581,228,949,578,,MIDM
+ValueState: 2,551,210,949,578,,MIDM
 NodeColor: 65535,39321,39321
 GraphSetup: Att_ForceCategorical Graph_Primary_Valdim:1~
 Att_StackedBar Graph_Primary_Valdim:0~
 {!50007|Graph_BarOutline:0}~
 {!50000|Graph_SortBySpread:0}
-ReformVal: [Rate_Vintage,Allow_Rate_Inflation]
+ReformVal: [Rate_Vintage,Pre_and_Post_System]
 Att_ResultSliceState: [Pre_and_Post_System,1,System_Types,1,PV_Climate_Zone,1,PV_Sectors,1,Area_Type,1,Allow_Rate_Inflation,1,Rate_Vintage,1]
-{!40600|Att_ClusterIndex: Rate_Vintage}
+{!40600|Att_ClusterIndex: Pre_and_Post_System}
 
 Alias Al1380248099
 Title: First-Year Annual Solar
@@ -10471,7 +10480,7 @@ THEN IF PositionInIndex(Pre_and_Post_System, System_Comparison, Pre_and_Post_Sys
    THEN CostOf_ElectCompare[System_Types=SystType_for_System, System_Comparison=Pre_System_Label]~
    ELSE Null~
 ELSE CostOf_ElectCompare[System_Types=SystType_for_System]
-NodeLocation: 752,632,1
+NodeLocation: 1048,576,1
 NodeSize: 64,40
 ValueState: 2,338,38,1121,762,1,MIDM
 Aliases: FormNode Fo1539221825, FormNode Fo1572476396, FormNode Fo1567051466
@@ -10485,7 +10494,7 @@ Att_GraphValueRange CostOf_Elect_Compare:1,,1,,,,,-12.375155463814735,15896.6941
 ReformVal: [System_Comparison,Cost_Component]
 NumberFormat: 2,I,4,0,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Bill_Components,Month,Cost_Component]
-Att_ResultSliceState: [System_Type,2,PV_Sectors,1,Annual_Econ_Time,12,PV_Climate_Zone,3,Area_Type,1,Cost_Component,1,System_Comparison,1]
+Att_ResultSliceState: [System_Type,2,PV_Sectors,2,Annual_Econ_Time,12,PV_Climate_Zone,1,Area_Type,1,All_Utilities,1,All_PV_Sectors,1,Cost_Component,1,System_Comparison,1]
 {!40600|Att_StackingIndex: Cost_Component}
 {!40600|Att_ClusterIndex: Cost_Component}
 
@@ -11698,7 +11707,7 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 256,288,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,6,12,1707,545,17,10
+DiagState: 2,978,88,1707,545,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -11725,7 +11734,7 @@ NodeLocation: 384,1192,1
 NodeSize: 64,40
 WindState: 2,2146,81,1165,697
 ValueState: 2,908,442,659,261,0,MIDM
-{!40300|Att_SlicerPopupSize: 1537,522}
+{!40300|Att_SlicerPopupSize: 1542,522}
 
 Text Te1545165196
 Description: Currently chooses the rate name for the post-system, which doesn't tell you the pre-system if they are different.
@@ -11910,10 +11919,10 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Num_Incentive_Steps
 
 Index PV_Sectors
-Att_PrevIndexValue: ['Residential','NonResidential']
+Att_PrevIndexValue: ['Residential']
 Title: PV Sectors
 Description: The sectors selected for the PV analysis.
-Definition: MultiChoice(All_PV_Sectors,returnList:1)
+Definition: MultiChoice(All_PV_Sectors,1,returnList:1)
 NodeLocation: 1536,344,1
 NodeSize: 64,40
 WindState: 2,319,12,1255,632
@@ -11922,7 +11931,7 @@ NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Object Object, Object Function, Object Variable, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 Att_GraphIndexRange: 1,,0,,,,,1,11,1
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 1618,353}
+{!40300|Att_SlicerPopupSize: 1623,353}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
@@ -12036,18 +12045,18 @@ Title: Map Charges to Sector
 Units: boolean
 Description: Flag the bill components that are relevant to each sector.
 Definition: Table(All_Sectors,Bill_Components)(~
-Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),~
-Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),~
-Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
+Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
+Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
+Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
 NodeLocation: 96,704,1
 NodeSize: 64,40
-DefnState: 2,201,229,1187,482,0,DFNM
+DefnState: 2,486,158,1187,482,0,DFNM
 ValueState: 2,148,154,715,524,0,MIDM
-Aliases: FormNode Fo1534997100
+Aliases: FormNode Fo1534997100, FormNode Fo1657194771
 NodeColor: 65535,65531,1
 ReformDef: [All_Sectors,Bill_Components]
 ReformVal: [All_Sectors,Bill_Components]
-TableCellDefault: Checkbox(0)
+TableCellDefault: Checkbox(1)
 
 FormNode Fo1534997100
 Title: Map Charges to Sector
@@ -12189,16 +12198,17 @@ Title: Map Costs to Sector
 Units: boolean
 Description: Flags the costs that are relevant to each sector.
 Definition: Table(All_Sectors,Cost_Component)(~
-Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),~
-Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),~
+Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
+Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
 Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
 NodeLocation: 96,464,1
 NodeSize: 64,40
-DefnState: 2,117,166,1289,680,0,DFNM
-Aliases: FormNode Fo1538686227
+WindState: 2,98,82,720,419
+DefnState: 2,257,350,1289,349,0,DFNM
+Aliases: FormNode Fo1538686227, FormNode Fo315017491
 NodeColor: 65535,65531,1
 ReformDef: [Cost_Component,All_Sectors]
-TableCellDefault: Checkbox(0)
+TableCellDefault: Checkbox(1)
 
 FormNode Fo1538686227
 Title: Map Costs to Sector
@@ -13026,7 +13036,7 @@ NodeLocation: 240,800,1
 NodeSize: 64,40
 WindState: 2,2,228,720,350
 Att_GraphIndexRange: 1,,,,,,10
-{!40300|Att_SlicerPopupSize: 437,116}
+{!40300|Att_SlicerPopupSize: 442,116}
 
 Index Bill_Components1
 Title: Bill Components
