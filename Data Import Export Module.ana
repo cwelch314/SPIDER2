@@ -1103,18 +1103,15 @@ ValueState: 2,281,142,1086,669,0,MIDM
 ReformVal: [Loadshape_Name,Hourly_Profile_Rows]
 Att__TotalsIndex: [Hourly_Profile_Rows]
 
-Constant Loadshape_Map
-Title: Loadshape Map
+Variable Loadshape_Map_of_Uti
+Title: Loadshape Map of Utility
 Description: Select the customer load profile associated with each sector.~
 ~
 Old: Table(All_Sectors)(Choice(Static_Profile_Names,5,0),Choice(Static_Profile_Names,7,0),Choice(Static_Profile_Names,5,0))
-Definition: Table(All_Sectors,All_Utilities)(~
-'DEF Res Load Shape (kWh/hour)','FPL Res Load Shape (kWh/hour)','FPUC Res Load Shape (kWh/hour)','JEA Res Load Shape (kWh/hour)','OUC Res Load Shape (kWh/hour)','TECO Res Load Shape (kWh/hour)',~
-'DEF NonRes Load Shape (kWh/hour)','FPL NonRes Load Shape (kWh/hour)','FPUC NonRes Load Shape (kWh/hour)','JEA NonRes Load Shape (kWh/hour)','OUC NonRes Load Shape (kWh/hour)','TECO NonRes Load Shape (kWh/hour)',~
-'N/A','N/A','N/A','N/A','N/A','N/A')
+Definition: Loadshape_Map1[All_Utilities=Selected_Utility]
 NodeLocation: 888,56,1
 NodeSize: 64,40
-DefnState: 2,593,396,928,210,0,DFNM
+DefnState: 2,599,401,928,210,0,DFNM
 ValueState: 2,888,263,838,328,0,MIDM
 Aliases: Alias Al1841032387
 ReformDef: [All_Sectors,All_Utilities]
@@ -1184,6 +1181,23 @@ Index In2
 Definition: ['Residential Normalized Load Shape (kWh/kW)','NonResidential Normalized Load Shape (kWh/kW)','EV Combined Normalized Load Shape (kWh/kW)']
 NodeLocation: 1208,64,1
 NodeSize: 64,40
+
+Constant Loadshape_Map1
+Title: Loadshape Map
+Description: Select the customer load profile associated with each sector.~
+~
+Old: Table(All_Sectors)(Choice(Static_Profile_Names,5,0),Choice(Static_Profile_Names,7,0),Choice(Static_Profile_Names,5,0))
+Definition: Table(All_Sectors,All_Utilities)(~
+'DEF Res Load Shape (kWh/hour)','FPL Res Load Shape (kWh/hour)','FPUC Res Load Shape (kWh/hour)','JEA Res Load Shape (kWh/hour)','OUC Res Load Shape (kWh/hour)','TECO Res Load Shape (kWh/hour)',~
+'DEF NonRes Load Shape (kWh/hour)','FPL NonRes Load Shape (kWh/hour)','FPUC NonRes Load Shape (kWh/hour)','JEA NonRes Load Shape (kWh/hour)','OUC NonRes Load Shape (kWh/hour)','TECO NonRes Load Shape (kWh/hour)',~
+'N/A','N/A','N/A','N/A','N/A','N/A')
+NodeLocation: 896,176,1
+NodeSize: 64,40
+DefnState: 2,599,401,928,210,0,DFNM
+ValueState: 2,888,263,838,328,0,MIDM
+ReformDef: [All_Sectors,All_Utilities]
+ReformVal: [All_Sectors,All_Utilities]
+TableCellDefault: Choice(Static_Profile_Names,1,0)
 
 Close Loadshape_Input_Data
 
@@ -3138,7 +3152,7 @@ Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 920,328,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,58,60,1786,652,17,10
+DiagState: 2,-126,99,1786,652,17,10
 
 Variable PV_AC_SystSize_Econ
 Title: PV AC System Size for Economics
