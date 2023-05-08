@@ -3152,7 +3152,7 @@ Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 920,328,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-126,99,1786,652,17,10
+DiagState: 2,1920,10,1786,736,17,10
 
 Variable PV_AC_SystSize_Econ
 Title: PV AC System Size for Economics
@@ -6936,7 +6936,7 @@ Variable PV_DC_System_Size_f1
 Title: PV DC System Size for Econ, Proportional
 Units: kW-DC/system
 Definition: PV_kW_DC_at_of_load_ 
-NodeLocation: 1992,336,1
+NodeLocation: 1976,336,1
 NodeSize: 64,40
 ValueState: 2,443,207,848,589,0,MIDM
 
@@ -6956,7 +6956,7 @@ Title: PV DC System Size for Economics, Unconstr
 Units: kW-DC/system
 Description: The solar PV DC system sized used for PV economics.
 Definition: IF Use_Hist_PV_Intercon THEN PV_DC_System_Size_f2 ELSE PV_DC_System_Size_f1
-NodeLocation: 1800,336,1
+NodeLocation: 1776,328,1
 NodeSize: 64,48
 ValueState: 2,451,46,885,745,1,MIDM
 ReformVal: [PV_Climate_Zone,PV_Sectors]

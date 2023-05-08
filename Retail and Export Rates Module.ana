@@ -4357,7 +4357,7 @@ Original: Energy_TOU_Rates
 Decision Select_Existing_Rate
 Title: Select an Existing Rate
 Description: Select an existing rate to view, use to populate a new rate, or delete.
-Definition: Choice(Rate_Names,96,0)
+Definition: Choice(Rate_Names,173,0)
 NodeLocation: 120,64,1
 NodeSize: 64,40
 Aliases: FormNode Fo1547663079, FormNode Fo1547664907, FormNode Fo1547572499, Alias Al1547708329, FormNode Fo1547708334, FormNode Fo1567060121, FormNode Fo1567060134
@@ -4873,7 +4873,7 @@ Definition: Sum(Rate_Data_TOU_Sched[Rate_Names=Select_Existing_Rate, All_Data_Ty
 NodeLocation: 280,296,1
 NodeSize: 64,40
 WindState: 2,98,82,1526,709
-ValueState: 2,482,33,1091,752,1,MIDM
+ValueState: 2,819,72,961,725,1,MIDM
 Aliases: FormNode Fo1547666968, FormNode Fo1567060136
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
 Graph_KeyFont:,18,0~
@@ -4883,7 +4883,7 @@ Att_GraphValueRange View_Existing_Rates:1,,,1~
 Graph_AxisLabelFont:,16,0
 ReformVal: [Day_Type_and_Hour,Month]
 Att__TotalsIndex: []
-Att_ResultSliceState: [All_Tiers,1,Rate_Component,3,Buy_or_Sell_,1,Month,5,Day_Type_and_Hour,1]
+Att_ResultSliceState: [All_Tiers,1,Rate_Component,2,Buy_or_Sell_,2,Month,5,Day_Type_and_Hour,1]
 
 Decision Rate_and_Adj_Attribs
 Title: Rate & Adj Attributes
