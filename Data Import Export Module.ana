@@ -83,7 +83,7 @@ WindState: 2,1982,24,1579,830
 ValueState: 2,847,306,416,303,0,MIDM
 DisplayOutputs: Object Object, Object Function, Object Variable, Object Decision, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 Att_GraphIndexRange: 1,,,,,,10
-{!40300|Att_SlicerPopupSize: 717,126}
+{!40300|Att_SlicerPopupSize: 722,126}
 
 Index Selected_Utility
 Title: Selected Utility
@@ -112,7 +112,7 @@ Definition: ['DEF','FPL','FPUC','JEA','OUC','TECO']
 NodeLocation: 528,64,1
 NodeSize: 64,40
 DisplayOutputs: Object Object, Object Decision
-{!40300|Att_SlicerPopupSize: 292,70}
+{!40300|Att_SlicerPopupSize: 311,129}
 
 Module Bldg_Stock_Data
 Title: Bldg Stock Data 
@@ -1177,7 +1177,8 @@ Variable Va50
 NodeLocation: 408,520,1
 NodeSize: 64,40
 
-Index In2
+Index Loadshape_Scenario
+Title: Loadshape Scenario
 Definition: ['Residential Normalized Load Shape (kWh/kW)','NonResidential Normalized Load Shape (kWh/kW)','EV Combined Normalized Load Shape (kWh/kW)']
 NodeLocation: 1208,64,1
 NodeSize: 64,40
@@ -1191,9 +1192,9 @@ Definition: Table(All_Sectors,All_Utilities)(~
 'DEF Res Load Shape (kWh/hour)','FPL Res Load Shape (kWh/hour)','FPUC Res Load Shape (kWh/hour)','JEA Res Load Shape (kWh/hour)','OUC Res Load Shape (kWh/hour)','TECO Res Load Shape (kWh/hour)',~
 'DEF NonRes Load Shape (kWh/hour)','FPL NonRes Load Shape (kWh/hour)','FPUC NonRes Load Shape (kWh/hour)','JEA NonRes Load Shape (kWh/hour)','OUC NonRes Load Shape (kWh/hour)','TECO NonRes Load Shape (kWh/hour)',~
 'N/A','N/A','N/A','N/A','N/A','N/A')
-NodeLocation: 896,176,1
+NodeLocation: 888,152,1
 NodeSize: 64,40
-DefnState: 2,599,401,928,210,0,DFNM
+DefnState: 2,585,337,789,217,0,DFNM
 ValueState: 2,888,263,838,328,0,MIDM
 ReformDef: [All_Sectors,All_Utilities]
 ReformVal: [All_Sectors,All_Utilities]
@@ -2450,7 +2451,7 @@ Title: Opt Sectors
 Definition: Subset(All_Sectors <> EV_Sect_Label)
 NodeLocation: 104,64,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 629,405}
+{!40300|Att_SlicerPopupSize: 634,405}
 
 Index All_EV_Sectors
 Title: All EV Sectors

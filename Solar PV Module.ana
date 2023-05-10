@@ -1764,7 +1764,7 @@ NodeLocation: 152,88,1
 NodeSize: 64,40
 WindState: 2,32,380,1355,538
 ValueState: 2,453,45,1019,706,1,MIDM
-Aliases: Alias Al1460632099, Alias Al555204899, Alias Al1752410387
+Aliases: Alias Al1460632099, Alias Al1752410387, Alias Al555204899
 NodeColor: 65535,65535,65535
 GraphSetup: Att_GraphValueRange Eligible_PV_Stock_fo:1,,1,1,,,,0,700K,0
 ReformVal: [Time_Solar_PV,PV_Sectors]
@@ -4903,7 +4903,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,87,76,1554,575,17,10
+DiagState: 2,140,8,1554,575,17,10
 Aliases: Alias Al1548967138
 NodeColor: 65535,65535,65535
 AcpStyles: FrameNode: FrameNode_1544919985
@@ -4953,7 +4953,7 @@ Aliases: Alias Al1907669155
 NodeColor: 57311,57311,57311
 ReformVal: [Tiers,Month]
 Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Sectors,2,Pre_and_Post_System,1,PV_Climate_Zone,1,Rate_Vintage,4,Month,1,Tiers,1]
+Att_ResultSliceState: [PV_Sectors,1,Pre_and_Post_System,1,PV_Climate_Zone,1,Rate_Vintage,1,Rate_Shape_Scenario,1,Month,1,Tiers,1]
 AcpStyles: Show_Object:no
 
 Variable Mthly_Consump_Tier
@@ -5506,55 +5506,127 @@ Description: NOTE: CHANGING THIS RATE WILL NOT AUTOMATICALLY UPDATE THE HOURLY S
 Select the rate tariffs for each system type. For each rate tariff, specify the start date when the rate became effective (the date you select does not have to match the date included in the rate name). If you wish to apply rate escalation to any of the rates, you can do so by checking the box. Escalation will use the start date as the base year for inflation (ie, inflation factors are 1.0 in the base year). Generally, the first and last rates (on a chronological basis) will apply (de)escalation to fill in the missing years on the outer edges of the simulation horizon. For example, say you have two rate vintages, where the first rate starts in 1/1/2019 and the second rate starts in 1/1/2020. If you choose to apply escalation to each of these rates, any simulated time period prior to 1/1/2019 will apply de-escalation rates (eg, if the escalation rate is 2%, then the rates applied to 1/1/2018 will include a de-escalation multiplier of 1/[1+2%]). Moreover, any simulated time period after 1/1/2020 will apply escalation rates (eg, if the escalation rate is 2%, then the rates applied to 1/1/2021 will include an escalation multiplier of [1+2%]). Rates in the middle of the chronological order may not require escalation if it is known with certainty that the rates were constant from the start date until the subsequent rate's start date.~
 ~
 
-Definition: Table(All_Utilities,Rate_Vintage,PV_Climate_Zone,Pre_and_Post_System,All_Sectors,Rate_Setting)(~
-Choice(Rate_Names_with_None,97,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,97,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,97,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,97,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,97,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1),~
-Choice(Rate_Names_with_None,53,0),Choice(PV_Sim_Strt_Yr_Opt,209,0),Checkbox(1),~
-Choice(Rate_Names_with_None,97,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1),~
-Choice(Rate_Names_with_None,81,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1),~
-Choice(Rate_Names_with_None,53,0),Choice(PV_Sim_Strt_Yr_Opt,209,0),Checkbox(1),~
-Choice(Rate_Names_with_None,81,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1))
+Definition: Table(All_Utilities,Rate_Vintage,PV_Climate_Zone,Pre_and_Post_System,All_Sectors,Rate_Setting,Rate_Shape_Scenario)(~
+Choice(Rate_Names_with_None,97,0),Choice(Rate_Names_with_None,97,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,97,0),Choice(Rate_Names_with_None,97,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,81,0),Choice(Rate_Names_with_None,97,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,81,0),Choice(Rate_Names_with_None,97,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,97,0),Choice(Rate_Names_with_None,97,0),~
+Choice(PV_Sim_Strt_Yr_Opt,195,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,53,0),Choice(Rate_Names_with_None,53,0),~
+Choice(PV_Sim_Strt_Yr_Opt,209,0),Choice(PV_Sim_Strt_Yr_Opt,209,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,97,0),Choice(Rate_Names_with_None,97,0),~
+Choice(PV_Sim_Strt_Yr_Opt,195,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,81,0),Choice(Rate_Names_with_None,81,0),~
+Choice(PV_Sim_Strt_Yr_Opt,195,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,53,0),Choice(Rate_Names_with_None,53,0),~
+Choice(PV_Sim_Strt_Yr_Opt,209,0),Choice(PV_Sim_Strt_Yr_Opt,209,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,81,0),Choice(Rate_Names_with_None,81,0),~
+Choice(PV_Sim_Strt_Yr_Opt,195,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),Checkbox(1))
 NodeLocation: 96,216,1
 NodeSize: 64,40
 WindState: 2,108,40,1402,650
-DefnState: 2,489,192,1081,274,0,DFNM
+DefnState: 2,562,267,846,335,0,DFNM
 ValueState: 2,302,51,935,658,0,MIDM
 Aliases: FormNode Fo1547766909, FormNode Fo1547828216
 NodeColor: 65535,65531,1
-ReformDef: [Rate_Setting,Pre_and_Post_System]
+ReformDef: [Pre_and_Post_System,All_Utilities]
 ReformVal: [Pre_and_Post_System,Rate_Vintage]
 TableCellDefault: Rate_Setting_Default
 Att_ResultSliceState: [All_Sectors,1,PV_Climate_Zone,1,Rate_Setting,2,Rate_Vintage,1,Pre_and_Post_System,1]
-Att_EditSliceState: [PV_Climate_Zone,1,All_Sectors,2,Rate_Vintage,1,All_Utilities,1,Pre_and_Post_System,2,Rate_Setting,2]
+Att_EditSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Rate_Shape_Scenario,1,Rate_Setting,1,All_Sectors,2,All_Utilities,1,Pre_and_Post_System,2]
 {!50000|Att_ColumnWidths: [,Rate_Vintage,\([])]}
 
 Decision Num_of_Rate_Vintages
@@ -6298,7 +6370,7 @@ Title: Buy or Sell?
 Definition: ['Buy','Sell']
 NodeLocation: 1248,72,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 227,48}
+{!40300|Att_SlicerPopupSize: 232,48}
 
 Alias Al737458339
 Title: Energy Rate Attributes
@@ -6726,7 +6798,7 @@ Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0))
 NodeLocation: 88,184,1
 NodeSize: 64,40
 WindState: 2,841,241,720,490
-DefnState: 2,857,279,678,316,0,DFNM
+DefnState: 2,1015,293,678,316,0,DFNM
 ValueState: 2,194,195,975,518,0,MIDM
 Aliases: FormNode Fo1574745288, FormNode Fo50776339
 NodeColor: 65535,65531,1
@@ -10494,19 +10566,20 @@ THEN IF PositionInIndex(Pre_and_Post_System, System_Comparison, Pre_and_Post_Sys
 ELSE CostOf_ElectCompare[System_Types=SystType_for_System]
 NodeLocation: 1048,576,1
 NodeSize: 64,40
-ValueState: 2,338,38,1121,762,1,MIDM
+ValueState: 2,424,13,1121,762,1,MIDM
 Aliases: FormNode Fo1539221825, FormNode Fo1572476396, FormNode Fo1567051466
-GraphSetup: Grid:0~
-Att_GraphIndexRange Annual_Econ_Time:1,0,0,,,,,2018.734813734889,2030,0~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-{!40600|Att_WaterfallBar Graph_Primary_Valdim:1}~
-Graph_HLabelRotation:0~
+GraphSetup: {!50000|Graph_SortBySpread:0}~
+Att_GraphValueRange CostOf_Elect_Compare:1,,1,,,,,-12.375155463814735,15896.69418334961,0~
 Att_StackedBar Graph_Primary_Valdim:1~
-Att_GraphValueRange CostOf_Elect_Compare:1,,1,,,,,-12.375155463814735,15896.69418334961,0
-ReformVal: [System_Comparison,Cost_Component]
+Graph_HLabelRotation:0~
+{!40600|Att_WaterfallBar Graph_Primary_Valdim:1}~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+Att_GraphIndexRange Annual_Econ_Time:1,0,0,,,,,2018.734813734889,2030,0~
+Grid:0
+ReformVal: [Rate_Shape_Scenario,Cost_Component]
 NumberFormat: 2,I,4,0,1,1,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Bill_Components,Month,Cost_Component]
-Att_ResultSliceState: [System_Type,2,PV_Sectors,2,Annual_Econ_Time,12,PV_Climate_Zone,1,Area_Type,1,All_Utilities,1,All_PV_Sectors,1,Cost_Component,1,System_Comparison,1]
+Att_ResultSliceState: [System_Type,2,PV_Sectors,2,Annual_Econ_Time,12,PV_Climate_Zone,1,Area_Type,1,All_PV_Sectors,1,System_Comparison,2,Cost_Component,1,Rate_Shape_Scenario,2]
 {!40600|Att_StackingIndex: Cost_Component}
 {!40600|Att_ClusterIndex: Cost_Component}
 
@@ -11559,6 +11632,8 @@ Original: System_with_PV
 
 Module Old3
 Title: Old
+Author: CWelch
+Date: Thu, May 4, 2023 10:19 AM
 NodeLocation: 736,368,1
 NodeSize: 64,40
 
@@ -11678,7 +11753,7 @@ ReformVal: [Pre_and_Post_System,Rate_Names_and_Start]
 Att_ResultSliceState: [PV_Sectors,1,Rate_Names_and_Start,1,PV_Climate_Zone,1]
 
 Index Rate_Names_and_Start
-Att_PrevIndexValue: ['8 (Residential Service) | 2019-05']
+Att_PrevIndexValue: ['5 (Residential Service Time-Of-Use) | 2019-05','8 (Residential Service) | 2019-05']
 Title: Rate Names and Start Dates
 Definition: VAR names:=MdArrayToTable(Selected_Cust_Rates, omitNull: True);~
 VAR lastCol:=Size(names.Col);~
@@ -11690,7 +11765,7 @@ NodeLocation: 384,1192,1
 NodeSize: 64,40
 WindState: 2,2146,81,1165,697
 ValueState: 2,908,442,659,261,0,MIDM
-{!40300|Att_SlicerPopupSize: 1542,522}
+{!40300|Att_SlicerPopupSize: 1557,522}
 
 Text Te1545165196
 Description: Currently chooses the rate name for the post-system, which doesn't tell you the pre-system if they are different.
@@ -11887,7 +11962,7 @@ NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Object Object, Object Function, Object Variable, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 Att_GraphIndexRange: 1,,0,,,,,1,11,1
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 1638,353}
+{!40300|Att_SlicerPopupSize: 1643,353}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
@@ -12032,7 +12107,7 @@ WindState: 2,707,203,665,594
 ValueState: 2,491,274,416,303,,MIDM
 DisplayOutputs: Object Object, Object Variable, Object Decision
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 897,84}
+{!40300|Att_SlicerPopupSize: 907,84}
 
 Constant All_Spatial_ID_to_CZ
 Title: All Spatial ID to CZ Map
@@ -12436,7 +12511,7 @@ Title: Rate Setting
 Definition: ['Rate Name','Rate Start Date','Allow Rate Escalation']
 NodeLocation: 816,704,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 297,48}
+{!40300|Att_SlicerPopupSize: 342,48}
 
 Decision Name_Setting_Label
 Title: Name Setting Label
@@ -12871,7 +12946,7 @@ Definition: Subset(Storage_Systems <> Storage_Added_Label)
 NodeLocation: 1104,936,1
 NodeSize: 64,40
 WindState: 2,40,-1,910,825
-{!40300|Att_SlicerPopupSize: 523,110}
+{!40300|Att_SlicerPopupSize: 528,110}
 
 Variable System_with_PV
 Title: System with PV
@@ -14217,7 +14292,7 @@ NodeSize: 64,40
 WindState: 2,408,-14,824,781
 NodeColor: 65535,1,1
 DisplayOutputs: Object Object, Object Variable, Object Decision
-{!40300|Att_SlicerPopupSize: 972,80}
+{!40300|Att_SlicerPopupSize: 977,80}
 
 Alias Al1460632099
 Title: Eligible Bldgs for Retrofit
