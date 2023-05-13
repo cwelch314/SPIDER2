@@ -1,5 +1,5 @@
 { Analytica Model Data_Import__Export, encoding="UTF-8" }
-SoftwareVersion 6.3.5
+SoftwareVersion 6.3.6
 
 {!-60000|Attribute AcpStyles}
 
@@ -933,7 +933,7 @@ Author: JamesMilford
 Date: Mon, Sep 30, 2019 3:19 PM
 NodeLocation: 784,368,1
 NodeSize: 64,40
-DiagState: 2,58,0,1618,620,17,10
+DiagState: 2,121,21,1618,620,17,10
 
 Alias Al1534527254
 Title: Loadshape Start Date
@@ -1179,9 +1179,10 @@ NodeSize: 64,40
 
 Index Loadshape_Scenario
 Title: Loadshape Scenario
-Definition: ['Residential Normalized Load Shape (kWh/kW)','NonResidential Normalized Load Shape (kWh/kW)','EV Combined Normalized Load Shape (kWh/kW)']
-NodeLocation: 1208,64,1
+Definition: ['Reference Case','Scenario A','Scenario B']
+NodeLocation: 1160,48,1
 NodeSize: 64,40
+WindState: 2,578,305,720,350
 
 Constant Loadshape_Map1
 Title: Loadshape Map

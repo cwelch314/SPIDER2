@@ -1,5 +1,5 @@
 { Analytica Model Solar_PV, encoding="UTF-8" }
-SoftwareVersion 6.3.5
+SoftwareVersion 6.3.6
 
 {!-60000|Attribute AcpStyles}
 Attribute UnoptimizedDef
@@ -1764,7 +1764,7 @@ NodeLocation: 152,88,1
 NodeSize: 64,40
 WindState: 2,32,380,1355,538
 ValueState: 2,453,45,1019,706,1,MIDM
-Aliases: Alias Al1460632099, Alias Al1752410387, Alias Al555204899
+Aliases: Alias Al1460632099, Alias Al555204899
 NodeColor: 65535,65535,65535
 GraphSetup: Att_GraphValueRange Eligible_PV_Stock_fo:1,,1,1,,,,0,700K,0
 ReformVal: [Time_Solar_PV,PV_Sectors]
@@ -3629,7 +3629,7 @@ Definition: PV_Capacity_Factor[All_PV_Sectors=PV_Sectors,All_Utilities=Selected_
 NodeLocation: 416,336,1
 NodeSize: 64,40
 ValueState: 2,2295,194,569,198,0,MIDM
-Aliases: Alias Al1534084643, Alias Al1911116963, Alias Al1775675667
+Aliases: Alias Al1534084643, Alias Al1911116963
 ReformVal: [Null,PV_Sectors]
 NumberFormat: 2,F,2,1,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 DisplayOutputs: Object Object, Object Variable
@@ -4903,7 +4903,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,140,8,1554,575,17,10
+DiagState: 2,72,23,1554,607,17,10
 Aliases: Alias Al1548967138
 NodeColor: 65535,65535,65535
 AcpStyles: FrameNode: FrameNode_1544919985
@@ -4942,18 +4942,18 @@ IF max_energy <> max_energy[@Day_and_Hour=1]   {If the maximum energy is not the
 THEN MsgBox("The 'max' attribute used to define the tiers of time-of-use rates changes by hour of day, and the current model logic does not accomodate this level of granularity. Please ensure that the 'max' attribute is properly specified, or modify the logic in Max_Energy_for_Tiers.", 0, "Error: Granularity of Max Attribute in Retail Rates")~
 ELSE Null;~
 ~
-Replace_X_with_Y(max_energy[@Day_and_Hour=1] * Avg_Days_per_Month, Null, 10^48);~
+Replace_X_with_Y(max_energy[@Day_and_Hour=1] * {Avg_Days_per_Month: OLD} 1, Null, 10^48);~
 ~
 
 NodeLocation: 344,264,1
 NodeSize: 64,40
 WindState: 2,265,349,1178,470
-ValueState: 2,259,164,1416,638,0,MIDM
+ValueState: 2,931,233,764,544,0,MIDM
 Aliases: Alias Al1907669155
 NodeColor: 57311,57311,57311
-ReformVal: [Tiers,Month]
+ReformVal: [Pre_and_Post_System,Month]
 Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Sectors,1,Pre_and_Post_System,1,PV_Climate_Zone,1,Rate_Vintage,1,Rate_Shape_Scenario,1,Month,1,Tiers,1]
+Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Rate_Vintage,1,Rate_Shape_Scenario,1,Tiers,1,System_Types,1,Area_Type,1,Rate_Names,159,Month,1,Pre_and_Post_System,1]
 AcpStyles: Show_Object:no
 
 Variable Mthly_Consump_Tier
@@ -4975,7 +4975,7 @@ increm~
 NodeLocation: 448,168,1
 NodeSize: 64,40
 WindState: 2,102,82,1052,482
-ValueState: 2,76,187,1153,674,0,MIDM
+ValueState: 2,217,275,1067,447,0,MIDM
 Aliases: Alias Al162838691
 ReformVal: [Month,PV_Sectors]
 Att__TotalsIndex: [Month]
@@ -5203,7 +5203,7 @@ ELSE 0
 NodeLocation: 200,504,1
 NodeSize: 64,40
 WindState: 2,102,82,1015,350
-ValueState: 2,265,77,1294,669,0,MIDM
+ValueState: 2,398,175,1294,669,0,MIDM
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [Month,Periods]
 Att__TotalsIndex: []
@@ -5268,9 +5268,74 @@ Original: Include_demand_charg
 
 Variable Va24
 Definition: PrePost_Load_by_OpYr * Load_Monthly_Mults
-NodeLocation: 784,328,1
+NodeLocation: 760,344,1
 NodeSize: 64,40
 ValueState: 2,503,63,1138,788,,MIDM
+
+Variable Energy_Units_Convers
+Title: Energy Units Conversion Table
+Units: various
+Definition: Table(Max_Attribute_Units)(1,Monthly_Peak_Demand,Avg_Days_per_Month)
+NodeLocation: 912,88,1
+NodeSize: 64,40
+DefnState: 2,1340,383,416,303,0,DFNM
+ValueState: 2,1380,151,478,497,0,MIDM
+ReformVal: [Max_Attribute_Units,Month]
+Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,1,PV_Climate_Zone,1,System_Types,1,Pre_and_Post_System,1,Area_Type,1,Rate_Shape_Scenario,1,Month,1,Max_Attribute_Units,1]
+
+Index In2
+NodeLocation: 1264,72,1
+NodeSize: 64,40
+
+Index Max_Attribute_Units
+Att_PrevIndexValue: ['kWh','kWh/kW','kWh/day']
+Title: Max Attribute Units
+Definition: ['kWh','kWh/kW','kWh/day']
+NodeLocation: 1128,72,1
+NodeSize: 64,40
+
+Variable Monthly_Peak_Demand
+Title: Monthly Peak Demand
+Units: kW
+Description: Maximum Peak Demand over all hours over the entire month. This is only used for calculating tiering of energy charges if the tier "max" attribute has units of "kWh/kW," which then requires multiplying the input max attribute by the peak kW to get that actual kWh threshold for the energy tier. 
+Definition: local x:=Replace_X_with_Y(Aggregate(PrePost_Load_by_OpYr, Periods_by_ProfileHr[Data_Types=Energy_Rate_Label], Profile_Hours, Periods, 'Max'), Null, 0);~
+MAX(x,Periods)
+NodeLocation: 912,200,1
+NodeSize: 64,40
+ValueState: 2,725,223,471,524,0,MIDM
+GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5
+ReformVal: [Pre_and_Post_System,Month]
+Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,1,PV_Climate_Zone,1,Area_Type,1,Rate_Shape_Scenario,1,System_Types,3,Pre_and_Post_System,1,Month,1]
+
+Constant Units_of_Max_Energy_
+Title: Units of "Max" Energy Attribute for Tier
+Definition: Table(Rate_Names)(Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,2,0),Choice(Max_Attribute_Units,2,0),Choice(Max_Attribute_Units,2,0),Choice(Max_Attribute_Units,2,0),Choice(Max_Attribute_Units,2,0),Choice(Max_Attribute_Units,2,0),Choice(Max_Attribute_Units,2,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0))
+NodeLocation: 1088,200,1
+NodeSize: 64,56
+DefnState: 2,638,22,882,865,0,DFNM
+Aliases: FormNode Fo775011603, FormNode Clipboard_Fo77501160, FormNode Fo825343251
+NodeColor: 65535,65531,1
+TableCellDefault: Choice(Max_Attribute_Units,1,0)
+
+FormNode Fo775011603
+Title: Units of "Max" Energy Attribute for Tier
+Definition: 0
+NodeLocation: 1284,224,1
+NodeSize: 188,16
+NodeColor: 65535,65531,1
+Original: Units_of_Max_Energy_
+
+Variable Energy_Units_Conver1
+Title: Energy Units Conversion
+Units: various
+Description: A multiplier of the "max" attribute for energy price tiers that ensures that the kWh calculated for each tier for purpose of bucketing energy into the tiers is correct.
+Definition: Energy_Units_Convers[Max_Attribute_Units=Units_of_Max_Energy_]
+NodeLocation: 1064,336,1
+NodeSize: 64,40
+WindState: 2,492,168,972,271
+ValueState: 2,385,20,1333,804,0,MIDM
+ReformVal: [Month,Rate_Names]
+Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,1,PV_Climate_Zone,1,System_Types,1,Pre_and_Post_System,2,Area_Type,1,Rate_Shape_Scenario,1,Rate_Names,1,Month,1]
 
 Close Energy_and_Demand
 
@@ -5507,126 +5572,126 @@ Select the rate tariffs for each system type. For each rate tariff, specify the 
 ~
 
 Definition: Table(All_Utilities,Rate_Vintage,PV_Climate_Zone,Pre_and_Post_System,All_Sectors,Rate_Setting,Rate_Shape_Scenario)(~
-Choice(Rate_Names_with_None,97,0),Choice(Rate_Names_with_None,97,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,97,0),Choice(Rate_Names_with_None,97,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,81,0),Choice(Rate_Names_with_None,97,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,81,0),Choice(Rate_Names_with_None,97,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,97,0),Choice(Rate_Names_with_None,97,0),~
-Choice(PV_Sim_Strt_Yr_Opt,195,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,53,0),Choice(Rate_Names_with_None,53,0),~
-Choice(PV_Sim_Strt_Yr_Opt,209,0),Choice(PV_Sim_Strt_Yr_Opt,209,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,97,0),Choice(Rate_Names_with_None,97,0),~
-Choice(PV_Sim_Strt_Yr_Opt,195,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,81,0),Choice(Rate_Names_with_None,81,0),~
-Choice(PV_Sim_Strt_Yr_Opt,195,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,53,0),Choice(Rate_Names_with_None,53,0),~
-Choice(PV_Sim_Strt_Yr_Opt,209,0),Choice(PV_Sim_Strt_Yr_Opt,209,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,81,0),Choice(Rate_Names_with_None,81,0),~
-Choice(PV_Sim_Strt_Yr_Opt,195,0),Choice(PV_Sim_Strt_Yr_Opt,195,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1),~
-Choice(Rate_Names_with_None,1,0),Choice(Rate_Names_with_None,1,0),~
-Choice(PV_Sim_Strt_Yr_Opt,85,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),~
-Checkbox(1),Checkbox(1))
+Choice(Rate_Names_with_None,97,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,97,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,81,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,81,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,97,0),~
+Choice(PV_Sim_Strt_Yr_Opt,195,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,53,0),~
+Choice(PV_Sim_Strt_Yr_Opt,209,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,97,0),~
+Choice(PV_Sim_Strt_Yr_Opt,195,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,81,0),~
+Choice(PV_Sim_Strt_Yr_Opt,195,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,53,0),~
+Choice(PV_Sim_Strt_Yr_Opt,209,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,81,0),~
+Choice(PV_Sim_Strt_Yr_Opt,195,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1))
 NodeLocation: 96,216,1
 NodeSize: 64,40
 WindState: 2,108,40,1402,650
-DefnState: 2,562,267,846,335,0,DFNM
+DefnState: 2,532,302,961,296,0,DFNM
 ValueState: 2,302,51,935,658,0,MIDM
 Aliases: FormNode Fo1547766909, FormNode Fo1547828216
 NodeColor: 65535,65531,1
-ReformDef: [Pre_and_Post_System,All_Utilities]
+ReformDef: [Pre_and_Post_System,All_Sectors]
 ReformVal: [Pre_and_Post_System,Rate_Vintage]
 TableCellDefault: Rate_Setting_Default
 Att_ResultSliceState: [All_Sectors,1,PV_Climate_Zone,1,Rate_Setting,2,Rate_Vintage,1,Pre_and_Post_System,1]
-Att_EditSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Rate_Shape_Scenario,1,Rate_Setting,1,All_Sectors,2,All_Utilities,1,Pre_and_Post_System,2]
+Att_EditSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Rate_Setting,1,All_Utilities,1,Rate_Shape_Scenario,1,All_Sectors,1,Pre_and_Post_System,2]
 {!50000|Att_ColumnWidths: [,Rate_Vintage,\([])]}
 
 Decision Num_of_Rate_Vintages
@@ -6943,7 +7008,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 400,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,474,182,981,315,17,10
+DiagState: 2,379,166,981,315,17,10
 Aliases: Alias Al1548967117
 NodeColor: 65535,65535,65535
 
@@ -11962,7 +12027,7 @@ NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Object Object, Object Function, Object Variable, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 Att_GraphIndexRange: 1,,0,,,,,1,11,1
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 1643,353}
+{!40300|Att_SlicerPopupSize: 1648,353}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
@@ -12064,7 +12129,7 @@ WindState: 2,98,82,1059,632
 {!40300|Att_SlicerPopupSize: 377,140}
 
 Index Rate_Names_with_None
-Att_PrevIndexValue: ['None','1 Residential Service | 2012-01','1 Residential Service | 2016-01','10 (Small Construction Service) | 2015-10','10 (Small Construction Service) | 2016-11','10 (Small Construction Service) | 2017-05','10 (Small Construction Service) | 2019-05','11 (Irrigation Service) | 2015-10','11 (Irrigation Service) | 2016-11','11 (Irrigation Service) | 2017-05','11 (Irrigation Service) | 2019-05','12 (Church Service) | 2015-10','12 (Church Service) | 2016-11','12 (Church Service) | 2017-05','12 (Church Service) | 2019-05','14 (Farm Service) | 2015-10','14 (Farm Service) | 2016-11','14 (Farm Service) | 2017-05','14 (Farm Service) | 2019-05','16 (General Service Time-Of-Use) | 2015-10','16 (General Service Time-Of-Use) | 2016-11','16 (General Service Time-Of-Use) | 2017-05','16 (General Service Time-Of-Use) | 2019-05','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2014-01','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2016-01','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2017-01','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2017-09','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2019-04','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2019-06','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2021-07','1S Residential Service (Demand Time-of-Use) | 2014-01','1S Residential Service (Demand Time-of-Use) | 2016-01','1S Residential Service (Demand Time-of-Use) | 2017-01','1S Residential Service (Demand Time-of-Use) | 2017-09','1S Residential Service (Demand Time-of-Use) | 2019-04','1S Residential Service (Demand Time-of-Use) | 2019-06','1S Residential Service (Demand Time-of-Use) | 2021-07','1T Residential Service (Energy Time-of-Use) | 2012-01','1W Residential Service (Time Controlled Storage Water Heating) | 2014-01','1W Residential Service (Time Controlled Storage Water Heating) | 2016-01','1W Residential Service (Time Controlled Storage Water Heating) | 2017-01','1W Residential Service (Time Controlled Storage Water Heating) | 2017-09','1W Residential Service (Time Controlled Storage Water Heating) | 2019-04','1W Residential Service (Time Controlled Storage Water Heating) | 2019-06','1W Residential Service (Time Controlled Storage Water Heating) | 2021-07','2 (Low Use Residential Service) | 2015-10','2 (Low Use Residential Service) | 2016-11','2 (Low Use Residential Service) | 2017-05','2 (Low Use Residential Service) | 2019-05','20 (Medium General Service) | 2015-10','20 (Medium General Service) | 2016-11','20 (Medium General Service) | 2017-05','20 (Medium General Service) | 2019-05','21 (General Service Time-Of-Use Demand) | 2015-10','21 (General Service Time-Of-Use Demand) | 2016-11','21 (General Service Time-Of-Use Demand) | 2017-05','21 (General Service Time-Of-Use Demand) | 2019-05','22 (School Service) | 2015-10','22 (School Service) | 2016-11','22 (School Service) | 2017-05','22 (School Service) | 2019-05','23 (Industrial Power Service) | 2015-10','23 (Industrial Power Service) | 2016-11','23 (Industrial Power Service) | 2017-05','23 (Industrial Power Service) | 2019-05','24 (Large General Service Time-Of-Use) | 2016-11','24 (Large General Service Time-Of-Use) | 2017-05','24 (Large General Service Time-Of-Use) | 2019-05','28 (Small General Service Time-of-Use Demand) | 2015-10','28 (Small General Service Time-of-Use Demand) | 2016-11','28 (Small General Service Time-of-Use Demand) | 2017-05','28 (Small General Service Time-of-Use Demand) | 2019-05','3 (Municipal  Power Service) | 2015-10','3 (Municipal  Power Service) | 2016-11','3 (Municipal  Power Service) | 2017-05','3 (Municipal  Power Service) | 2019-05','5 (Residential Service Time-Of-Use) | 2014-05','5 (Residential Service Time-Of-Use) | 2015-10','5 (Residential Service Time-Of-Use) | 2016-11','5 (Residential Service Time-Of-Use) | 2017-05','5 (Residential Service Time-Of-Use) | 2019-05','5C Church and Synagogue Service | 2017-09','5P Church and Synagogue TOU Service | 2017-09','6 (Residential Service Energy Conservation Rate) | 2015-10','6 (Residential Service Energy Conservation Rate) | 2016-11','6 (Residential Service Energy Conservation Rate) | 2017-05','6 (Residential Service Energy Conservation Rate) | 2019-05','7 (Residential Service Time-Of-Use Demand) | 2014-05','7 (Residential Service Time-Of-Use Demand) | 2015-10','7 (Residential Service Time-Of-Use Demand) | 2016-11','7 (Residential Service Time-Of-Use Demand) | 2017-05','7 (Residential Service Time-Of-Use Demand) | 2019-05','8 (Residential Service) | 2014-05','8 (Residential Service) | 2015-10','8 (Residential Service) | 2016-11','8 (Residential Service) | 2017-05','8 (Residential Service) | 2019-05','9 (General Service) | 2014-05','9 (General Service) | 2015-10','9 (General Service) | 2016-11','9 (General Service) | 2017-05','9 (General Service) | 2019-05','Basic Residential Rate Schedule 1 | 2016-01','Basic Residential Rate Schedule 1 | 2017-01','Basic Residential Rate Schedule 1 | 2019-01','Church Service | 2014-05','Cotton Gin Schedule 5C | 2014-01','Cotton Gin Schedule 5C | 2015-01','Cotton Gin Service Schedule 5C | 2016-01','County, Municipal, or Housing Authority All-Electric Building Service Schedule 42 | 2016-01','County, Municipal, or Housing Authority All-Electric Building Service Schedule 42 | 2017-01','County, Municipal, or Housing Authority All-Electric Schedule 42 | 2014-01','County, Municipal, or Housing Authority All-Electric Schedule 42 | 2015-01','County, Municipal, or Housing Authority Schedule 30 | 2014-01','County, Municipal, or Housing Authority Schedule 30 | 2015-01','County, Municipal, or Housing Authority Service Schedule 30 | 2016-01','County, Municipal, or Housing Authority Service Schedule 30 | 2017-01','Dual Fuel Residential Schedule 1DF | 2014-01','Dual Fuel Residential Schedule 1DF | 2015-01','Dual Fuel Service Residential Schedule 1DF | 2016-01','Dual Fuel Service Residential Schedule 1DF | 2017-01','Electric Heating Schedule 7 | 2014-01','Electric Heating Schedule 7 | 2015-01','Electric Heating Schedule 7 | 2016-01','Electric Heating Schedule 7 | 2017-01','Energy TOU Residential Service Schedule 1T | 2016-01','Energy TOU Residential Service Schedule 1T | 2017-01','Energy TOU Residential Service Schedule 1T | 2019-01','EV Residential Electric Vehicle Charging (Experimental) | 2014-01','EV Residential Electric Vehicle Charging (Experimental) | 2016-01','EV Residential Electric Vehicle Charging (Experimental) | 2017-01','EV Residential Electric Vehicle Charging (Experimental) | 2017-09','EV Residential Electric Vehicle Charging (Experimental) | 2019-04','EV Residential Electric Vehicle Charging (Experimental) | 2019-06','EV Residential Electric Vehicle Charging (Experimental) | 2021-07','Experimental Program- General Service Time-of-Use | 2014-05','Farm Service | 2014-05','General Service Time-Of-Use | 0','General Service Time-Of-Use | 2014-05','GS-1 (Small General Service Single Phase Service) | 2012-01','GS-1 (Small General Service Single Phase Service) | 2016-01','GS-1 (Small General Service Single Phase Service) | 2017-01','GS-1 (Small General Service Single Phase Service) | 2017-09','GS-1 (Small General Service Single Phase Service) | 2019-04','GS-1 (Small General Service Single Phase Service) | 2019-06','GS-1 (Small General Service Single Phase Service) | 2021-07','GS-1 (Small General Service Three Phase Service) | 2012-01','GS-1 (Small General Service Three Phase Service) | 2016-01','GS-1 (Small General Service Three Phase Service) | 2017-01','GS-1 (Small General Service Three Phase Service) | 2017-09','GS-1 (Small General Service Three Phase Service) | 2019-04','GS-1 (Small General Service Three Phase Service) | 2019-06','GS-1 (Small General Service Three Phase Service) | 2021-07','GS-2 Demand | 2014-01','GS-2 Demand | 2016-01','GS-2 Demand | 2017-01','GS-2 Demand | 2017-09','GS-2 Demand | 2019-04','GS-2 Demand | 2019-06','GS-2 Demand | 2021-07','GS-2 Non-Demand | 2012-01','GS-2 Non-Demand | 2016-01','GS-2 Non-Demand | 2017-01','GS-2 Non-Demand | 2017-09','GS-2 Non-Demand | 2019-04','GS-2 Non-Demand | 2019-06','GS-2 Non-Demand | 2021-07','GS-2T Time-of-Use | 2014-01','GS-2T Time-of-Use | 2016-01','GS-2T Time-of-Use | 2017-01','GS-2T Time-of-Use | 2017-09','GS-2T Time-of-Use | 2019-04','GS-2T Time-of-Use | 2019-06','GS-2T Time-of-Use | 2021-07','GS-3 (Large General Service Secondary Voltage) | 2014-01','GS-3 (Large General Service Secondary Voltage) | 2016-01','GS-3 (Large General Service Secondary Voltage) | 2017-01','GS-3 (Large General Service Secondary Voltage) | 2017-09','GS-3 (Large General Service Secondary Voltage) | 2019-04','GS-3 (Large General Service Secondary Voltage) | 2019-06','GS-3 (Large General Service Secondary Voltage) | 2019-07','GS-4 (Large General Service Primary Voltage) | 0','GS-4 (Large General Service Primary Voltage) | 0','GS-4 (Large General Service Primary Voltage) | 2014-01','GS-4 (Large General Service Primary Voltage) | 2016-01','GS-4 (Large General Service Primary Voltage) | 2017-01','GS-4 (Large General Service Primary Voltage) | 2017-09','GS-4 (Large General Service Primary Voltage) | 2019-04','GS-4 (Large General Service Primary Voltage) | 2019-06','GS-4 (Large General Service Primary Voltage) | 2021-07','GS-4 (Large General Service Transmission Voltage) | 2017-09','GS-4 (Large General Service Transmission Voltage) | 2019-04','GS-4 (Large General Service Transmission Voltage) | 2019-06','GS-4 (Large General Service Transmission Voltage) | 2021-07','Industrial Power Service | 2014-05','Irrigation Service | 2014-05','Large General (Primary) Schedule 10 | 2014-01','Large General (Primary) Schedule 10 | 2015-01','Large General (Primary) Schedule 6P | 2014-01','Large General (Primary) Schedule 6P | 2015-01','Large General (Secondary) Schedule 10 | 2014-01','Large General (Secondary) Schedule 10 | 2015-01','Large General (Secondary) Schedule 6P | 2014-01','Large General (Secondary) Schedule 6P | 2015-01','Large General Curtailable (Primary) Schedule 6C | 2014-01','Large General Curtailable (Primary) Schedule 6C | 2015-01','Large General Curtailable (Secondary) Schedule 6C | 2014-01','Large General Curtailable (Secondary) Schedule 6C | 2015-01','Large General Service (Primary) Schedule 10 | 2016-01','Large General Service (Primary) Schedule 10 | 2017-01','Large General Service (Primary) Schedule 6P | 2016-01','Large General Service (Primary) Schedule 6P | 2017-01','Large General Service (Primary) Schedule 6P | 2019-01','Large General Service (Secondary) Schedule 10 | 2016-01','Large General Service (Secondary) Schedule 10 | 2017-01','Large General Service (Secondary) Schedule 6P | 2016-01','Large General Service (Secondary) Schedule 6P | 2017-01','Large General Service (Secondary) Schedule 6P | 2019-01','Large General Service Time-Of-Use | 2014-05','Large General Service, Industrial (Primary) Schedule 6L | 2019-01','Large General Service, Industrial (Secondary) Schedule 6L | 2019-01','Low Use Residential Service | 2014-05','Medium General Service | 2014-05','PR-1 (Small Power Production, Cogeneration) | 2014-05','PR-1 (Small Power Production, Cogeneration) | 2015-10','PR-1 (Small Power Production, Cogeneration) Non-Solar | 2018-05','PR-1 (Small Power Production, Cogeneration) Solar | 2018-05','Rate 22: School Service | 2014-05','Rate 3: Municipal  Power Service | 2014-05','Residential Energy TOU Schedule 1T | 2014-01','Residential Energy TOU Schedule 1T | 2015-01','Residential Energy TOU Schedule 1T | 2016-01','Residential Energy TOU Schedule 1T | 2017-01','Residential Energy TOU Schedule 1T | 2017-09','Residential Energy TOU Schedule 1T | 2019-04','Residential Energy TOU Schedule 1T | 2019-06','Residential Energy TOU Schedule 1T | 2021-07','Residential Schedule 1 | 2014-01','Residential Schedule 1 | 2015-01','Residential Schedule 1 | 2016-01','Residential Schedule 1 | 2017-01','Residential Schedule 1 | 2017-09','Residential Schedule 1 | 2019-06','Residential Schedule 1 | 2021-07','Residential Service Energy Conservation Rate | 2014-05','Residential TOU Schedule 1P | 2014-01','Residential TOU Schedule 1P, Closed Rate | 2015-01','Small Construction Service | 2014-05','Small General Schedule 5 | 2014-01','Small General Schedule 5 | 2015-01','Small General Service Schedule 5 | 2016-01','Small General Service Schedule 5 | 2017-01','Small General Service Schedule 5 | 2019-01','Small General Service Time-of-Use Demand | 2014-05','Small General Service TOU (All Other Service) Schedule 5P | 2016-01','Small General Service TOU (All Other Service) Schedule 5P | 2017-01','Small General Service TOU (All Other Service) Schedule 5P | 2019-01','Small General Service TOU (Single Phase) Schedule 5P | 2016-01','Small General Service TOU (Single Phase) Schedule 5P | 2017-01','Small General Service TOU (Single Phase) Schedule 5P | 2019-01','Small General TOU (All Other Service) Schedule 5P | 2014-01','Small General TOU (All Other Service) Schedule 5P | 2015-01','Small General TOU (Single Phase < 200 amps) Schedule 5P | 2014-01','Small General TOU (Single Phase) Schedule 5P | 2015-01','SUPPLEMENTARY AND STANDBY SERVICE | 2014-05','TOU Residential Service Schedule 1P | 2016-01','TOU Residential Service Schedule 1P | 2017-01','TOU Residential Service Schedule 1P | 2019-01']
+Att_PrevIndexValue: ['None','1 Residential Service | 2012-01','1 Residential Service | 2016-01','10 (Small Construction Service) | 2015-10','10 (Small Construction Service) | 2016-11','10 (Small Construction Service) | 2017-05','10 (Small Construction Service) | 2019-05','11 (Irrigation Service) | 2015-10','11 (Irrigation Service) | 2016-11','11 (Irrigation Service) | 2017-05','11 (Irrigation Service) | 2019-05','12 (Church Service) | 2015-10','12 (Church Service) | 2016-11','12 (Church Service) | 2017-05','12 (Church Service) | 2019-05','14 (Farm Service) | 2015-10','14 (Farm Service) | 2016-11','14 (Farm Service) | 2017-05','14 (Farm Service) | 2019-05','16 (General Service Time-Of-Use) | 2015-10','16 (General Service Time-Of-Use) | 2016-11','16 (General Service Time-Of-Use) | 2017-05','16 (General Service Time-Of-Use) | 2019-05','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2014-01','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2016-01','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2017-01','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2017-09','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2019-04','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2019-06','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2021-07','1S Residential Service (Demand Time-of-Use) | 2014-01','1S Residential Service (Demand Time-of-Use) | 2016-01','1S Residential Service (Demand Time-of-Use) | 2017-01','1S Residential Service (Demand Time-of-Use) | 2017-09','1S Residential Service (Demand Time-of-Use) | 2019-04','1S Residential Service (Demand Time-of-Use) | 2019-06','1S Residential Service (Demand Time-of-Use) | 2021-07','1T Residential Service (Energy Time-of-Use) | 2012-01','1W Residential Service (Time Controlled Storage Water Heating) | 2014-01','1W Residential Service (Time Controlled Storage Water Heating) | 2016-01','1W Residential Service (Time Controlled Storage Water Heating) | 2017-01','1W Residential Service (Time Controlled Storage Water Heating) | 2017-09','1W Residential Service (Time Controlled Storage Water Heating) | 2019-04','1W Residential Service (Time Controlled Storage Water Heating) | 2019-06','1W Residential Service (Time Controlled Storage Water Heating) | 2021-07','2 (Low Use Residential Service) | 2015-10','2 (Low Use Residential Service) | 2016-11','2 (Low Use Residential Service) | 2017-05','2 (Low Use Residential Service) | 2019-05','20 (Medium General Service) | 2015-10','20 (Medium General Service) | 2016-11','20 (Medium General Service) | 2017-05','20 (Medium General Service) | 2019-05','21 (General Service Time-Of-Use Demand) | 2015-10','21 (General Service Time-Of-Use Demand) | 2016-11','21 (General Service Time-Of-Use Demand) | 2017-05','21 (General Service Time-Of-Use Demand) | 2019-05','22 (School Service) | 2015-10','22 (School Service) | 2016-11','22 (School Service) | 2017-05','22 (School Service) | 2019-05','23 (Industrial Power Service) | 2015-10','23 (Industrial Power Service) | 2016-11','23 (Industrial Power Service) | 2017-05','23 (Industrial Power Service) | 2019-05','24 (Large General Service Time-Of-Use) | 2016-11','24 (Large General Service Time-Of-Use) | 2017-05','24 (Large General Service Time-Of-Use) | 2019-05','28 (Small General Service Time-of-Use Demand) | 2015-10','28 (Small General Service Time-of-Use Demand) | 2016-11','28 (Small General Service Time-of-Use Demand) | 2017-05','28 (Small General Service Time-of-Use Demand) | 2019-05','3 (Municipal  Power Service) | 2015-10','3 (Municipal  Power Service) | 2016-11','3 (Municipal  Power Service) | 2017-05','3 (Municipal  Power Service) | 2019-05','5 (Residential Service Time-Of-Use) | 2014-05','5 (Residential Service Time-Of-Use) | 2015-10','5 (Residential Service Time-Of-Use) | 2016-11','5 (Residential Service Time-Of-Use) | 2017-05','5 (Residential Service Time-Of-Use) | 2019-05','5C Church and Synagogue Service | 2017-09','5P Church and Synagogue TOU Service | 2017-09','6 (Residential Service Energy Conservation Rate) | 2015-10','6 (Residential Service Energy Conservation Rate) | 2016-11','6 (Residential Service Energy Conservation Rate) | 2017-05','6 (Residential Service Energy Conservation Rate) | 2019-05','7 (Residential Service Time-Of-Use Demand) | 2014-05','7 (Residential Service Time-Of-Use Demand) | 2015-10','7 (Residential Service Time-Of-Use Demand) | 2016-11','7 (Residential Service Time-Of-Use Demand) | 2017-05','7 (Residential Service Time-Of-Use Demand) | 2019-05','8 (Residential Service) | 2014-05','8 (Residential Service) | 2015-10','8 (Residential Service) | 2016-11','8 (Residential Service) | 2017-05','8 (Residential Service) | 2019-05','9 (General Service) | 2014-05','9 (General Service) | 2015-10','9 (General Service) | 2016-11','9 (General Service) | 2017-05','9 (General Service) | 2019-05','Basic Residential Rate Schedule 1 | 2016-01','Basic Residential Rate Schedule 1 | 2017-01','Basic Residential Rate Schedule 1 | 2019-01','Church Service | 2014-05','Cotton Gin Schedule 5C | 2014-01','Cotton Gin Schedule 5C | 2015-01','Cotton Gin Service Schedule 5C | 2016-01','County, Municipal, or Housing Authority All-Electric Building Service Schedule 42 | 2016-01','County, Municipal, or Housing Authority All-Electric Building Service Schedule 42 | 2017-01','County, Municipal, or Housing Authority All-Electric Schedule 42 | 2014-01','County, Municipal, or Housing Authority All-Electric Schedule 42 | 2015-01','County, Municipal, or Housing Authority Schedule 30 | 2014-01','County, Municipal, or Housing Authority Schedule 30 | 2015-01','County, Municipal, or Housing Authority Service Schedule 30 | 2016-01','County, Municipal, or Housing Authority Service Schedule 30 | 2017-01','Dual Fuel Residential Schedule 1DF | 2014-01','Dual Fuel Residential Schedule 1DF | 2015-01','Dual Fuel Service Residential Schedule 1DF | 2016-01','Dual Fuel Service Residential Schedule 1DF | 2017-01','Electric Heating Schedule 7 | 2014-01','Electric Heating Schedule 7 | 2015-01','Electric Heating Schedule 7 | 2016-01','Electric Heating Schedule 7 | 2017-01','Energy TOU Residential Service Schedule 1T | 2016-01','Energy TOU Residential Service Schedule 1T | 2017-01','Energy TOU Residential Service Schedule 1T | 2019-01','EV Residential Electric Vehicle Charging (Experimental) | 2014-01','EV Residential Electric Vehicle Charging (Experimental) | 2016-01','EV Residential Electric Vehicle Charging (Experimental) | 2017-01','EV Residential Electric Vehicle Charging (Experimental) | 2017-09','EV Residential Electric Vehicle Charging (Experimental) | 2019-04','EV Residential Electric Vehicle Charging (Experimental) | 2019-06','EV Residential Electric Vehicle Charging (Experimental) | 2021-07','Experimental Program- General Service Time-of-Use | 2014-05','Farm Service | 2014-05','General Service Time-Of-Use | 2014-05','General Service Time-Of-Use | 2014-05','GS-1 (Small General Service Single Phase Service) | 2012-01','GS-1 (Small General Service Single Phase Service) | 2016-01','GS-1 (Small General Service Single Phase Service) | 2017-01','GS-1 (Small General Service Single Phase Service) | 2017-09','GS-1 (Small General Service Single Phase Service) | 2019-04','GS-1 (Small General Service Single Phase Service) | 2019-06','GS-1 (Small General Service Single Phase Service) | 2021-07','GS-1 (Small General Service Three Phase Service) | 2012-01','GS-1 (Small General Service Three Phase Service) | 2016-01','GS-1 (Small General Service Three Phase Service) | 2017-01','GS-1 (Small General Service Three Phase Service) | 2017-09','GS-1 (Small General Service Three Phase Service) | 2019-04','GS-1 (Small General Service Three Phase Service) | 2019-06','GS-1 (Small General Service Three Phase Service) | 2021-07','GS-2 Demand | 2014-01','GS-2 Demand | 2016-01','GS-2 Demand | 2017-01','GS-2 Demand | 2017-09','GS-2 Demand | 2019-04','GS-2 Demand | 2019-06','GS-2 Demand | 2021-07','GS-2 Non-Demand | 2012-01','GS-2 Non-Demand | 2016-01','GS-2 Non-Demand | 2017-01','GS-2 Non-Demand | 2017-09','GS-2 Non-Demand | 2019-04','GS-2 Non-Demand | 2019-06','GS-2 Non-Demand | 2021-07','GS-2T Time-of-Use | 2014-01','GS-2T Time-of-Use | 2016-01','GS-2T Time-of-Use | 2017-01','GS-2T Time-of-Use | 2017-09','GS-2T Time-of-Use | 2019-04','GS-2T Time-of-Use | 2019-06','GS-2T Time-of-Use | 2021-07','GS-3 (Large General Service Secondary Voltage) | 2014-01','GS-3 (Large General Service Secondary Voltage) | 2016-01','GS-3 (Large General Service Secondary Voltage) | 2017-01','GS-3 (Large General Service Secondary Voltage) | 2017-09','GS-3 (Large General Service Secondary Voltage) | 2019-04','GS-3 (Large General Service Secondary Voltage) | 2019-06','GS-3 (Large General Service Secondary Voltage) | 2019-07','GS-4 (Large General Service Primary Voltage) | 2014-01','GS-4 (Large General Service Primary Voltage) | 2016-01','GS-4 (Large General Service Primary Voltage) | 2017-01','GS-4 (Large General Service Primary Voltage) | 2017-09','GS-4 (Large General Service Primary Voltage) | 2019-04','GS-4 (Large General Service Primary Voltage) | 2019-06','GS-4 (Large General Service Primary Voltage) | 2019-06','GS-4 (Large General Service Primary Voltage) | 2021-07','GS-4 (Large General Service Primary Voltage) | 2021-07','GS-4 (Large General Service Transmission Voltage) | 2017-09','GS-4 (Large General Service Transmission Voltage) | 2019-04','GS-4 (Large General Service Transmission Voltage) | 2019-06','GS-4 (Large General Service Transmission Voltage) | 2021-07','Industrial Power Service | 2014-05','Irrigation Service | 2014-05','Large General (Primary) Schedule 10 | 2014-01','Large General (Primary) Schedule 10 | 2015-01','Large General (Primary) Schedule 6P | 2014-01','Large General (Primary) Schedule 6P | 2015-01','Large General (Secondary) Schedule 10 | 2014-01','Large General (Secondary) Schedule 10 | 2015-01','Large General (Secondary) Schedule 6P | 2014-01','Large General (Secondary) Schedule 6P | 2015-01','Large General Curtailable (Primary) Schedule 6C | 2014-01','Large General Curtailable (Primary) Schedule 6C | 2015-01','Large General Curtailable (Secondary) Schedule 6C | 2014-01','Large General Curtailable (Secondary) Schedule 6C | 2015-01','Large General Service (Primary) Schedule 10 | 2016-01','Large General Service (Primary) Schedule 10 | 2017-01','Large General Service (Primary) Schedule 6P | 2016-01','Large General Service (Primary) Schedule 6P | 2017-01','Large General Service (Primary) Schedule 6P | 2019-01','Large General Service (Secondary) Schedule 10 | 2016-01','Large General Service (Secondary) Schedule 10 | 2017-01','Large General Service (Secondary) Schedule 6P | 2016-01','Large General Service (Secondary) Schedule 6P | 2017-01','Large General Service (Secondary) Schedule 6P | 2019-01','Large General Service Time-Of-Use | 2014-05','Large General Service, Industrial (Primary) Schedule 6L | 2019-01','Large General Service, Industrial (Secondary) Schedule 6L | 2019-01','Low Use Residential Service | 2014-05','Medium General Service | 2014-05','PR-1 (Small Power Production, Cogeneration) | 2014-05','PR-1 (Small Power Production, Cogeneration) | 2015-10','PR-1 (Small Power Production, Cogeneration) Non-Solar | 2018-05','PR-1 (Small Power Production, Cogeneration) Solar | 2018-05','Rate 22: School Service | 2014-05','Rate 3: Municipal  Power Service | 2014-05','Residential Energy TOU Schedule 1T | 2014-01','Residential Energy TOU Schedule 1T | 2015-01','Residential Energy TOU Schedule 1T | 2016-01','Residential Energy TOU Schedule 1T | 2017-01','Residential Energy TOU Schedule 1T | 2017-09','Residential Energy TOU Schedule 1T | 2019-04','Residential Energy TOU Schedule 1T | 2019-06','Residential Energy TOU Schedule 1T | 2021-07','Residential Schedule 1 | 2014-01','Residential Schedule 1 | 2015-01','Residential Schedule 1 | 2016-01','Residential Schedule 1 | 2017-01','Residential Schedule 1 | 2017-09','Residential Schedule 1 | 2019-06','Residential Schedule 1 | 2021-07','Residential Service Energy Conservation Rate | 2014-05','Residential TOU Schedule 1P | 2014-01','Residential TOU Schedule 1P, Closed Rate | 2015-01','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider | 2023-01 | Null-Null','Small Construction Service | 2014-05','Small General Schedule 5 | 2014-01','Small General Schedule 5 | 2015-01','Small General Service Schedule 5 | 2016-01','Small General Service Schedule 5 | 2017-01','Small General Service Schedule 5 | 2019-01','Small General Service Time-of-Use Demand | 2014-05','Small General Service TOU (All Other Service) Schedule 5P | 2016-01','Small General Service TOU (All Other Service) Schedule 5P | 2017-01','Small General Service TOU (All Other Service) Schedule 5P | 2019-01','Small General Service TOU (Single Phase) Schedule 5P | 2016-01','Small General Service TOU (Single Phase) Schedule 5P | 2017-01','Small General Service TOU (Single Phase) Schedule 5P | 2019-01','Small General TOU (All Other Service) Schedule 5P | 2014-01','Small General TOU (All Other Service) Schedule 5P | 2015-01','Small General TOU (Single Phase < 200 amps) Schedule 5P | 2014-01','Small General TOU (Single Phase) Schedule 5P | 2015-01','SUPPLEMENTARY AND STANDBY SERVICE | 2014-05','TOU Residential Service Schedule 1P | 2016-01','TOU Residential Service Schedule 1P | 2017-01','TOU Residential Service Schedule 1P | 2019-01']
 Title: Rate Names with None
 Definition: Concat(None_Label, Rate_Names)
 NodeLocation: 384,1104,1
@@ -12280,7 +12345,7 @@ NodeSize: 64,40
 WindState: 2,102,21,1089,879
 ValueState: 2,992,329,416,303,0,MIDM
 DisplayOutputs: Object Object, Object Variable
-{!40300|Att_SlicerPopupSize: 1142,112}
+{!40300|Att_SlicerPopupSize: 1147,112}
 
 Index New_or_Retrofit
 Att_PrevIndexValue: ['NewConstr','Retrofit']
@@ -14386,7 +14451,6 @@ NodeLocation: 320,112,1
 NodeSize: 64,40
 WindState: 2,102,82,925,287
 ValueState: 2,1034,89,504,644,0,MIDM
-Aliases: Alias Al97954067
 ReformVal: [Area_Type,PV_Sectors]
 
 FormNode Fo1541457042
@@ -14493,7 +14557,6 @@ Definition: PV_Production_per_kW {kWh / kW-DC}~
 NodeLocation: 616,480,1
 NodeSize: 64,40
 ValueState: 2,343,320,436,184,,MIDM
-Aliases: Alias Al1303619859
 
 Close Power_and_Module_Den
 
