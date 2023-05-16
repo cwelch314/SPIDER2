@@ -267,7 +267,7 @@ Checkbox(1),Path_to_Global_Data1,'Demand_TOU_Periods','A7',Choice(Import_Data_Ty
 Checkbox(1),Path_to_Global_Data1,'Demand_TOU_Rates','A7',Choice(Import_Data_Types,1,0),Null,Handle(Dmd_TOU_Rates_fm_Tem),Handle(Rate_Period_Import_1),Handle(Rate_Names_fm_Templa),Handle(Rate_Tiers_Import_Na),Handle(Demand_Rate_Attribut),Null,Null,~
 Checkbox(1),Path_to_Global_Data1,'Energy_Periods','A7',Choice(Import_Data_Types,1,0),Null,Handle(Energy_Periods_fm_Te),Handle(Month),Handle(Rate_Names_fm_Templa),Handle(Weekday_or_Weekend),Handle(Time_of_Day),Null,Null,~
 Checkbox(1),Path_to_Global_Data1,'Energy_Rates','A7',Choice(Import_Data_Types,1,0),Null,Handle(Energy_Rates_fm_Temp),Handle(Rate_Period_Import_1),Handle(Rate_Names_fm_Templa),Handle(Rate_Tiers_Import_Na),Handle(Energy_Rate_Attribut),Null,Null,~
-Checkbox(0),Path_to_Global_Data1,'Energy_Flat_Fees','A7',Choice(Import_Data_Types,1,0),Null,Handle(Flat_Rate_Fees_fm_Te),Handle(Flat_Fee_Type),Handle(Rate_Names_fm_Templa),Null,Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data1,'Energy_Flat_Fees','A7',Choice(Import_Data_Types,1,0),Null,Handle(Flat_Rate_Fees_fm_Te),Handle(Flat_Fee_Type),Handle(Rate_Names_fm_Templa),Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Rate_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Rate_Map_fm_Template),Handle(Pre_and_Post_System),Handle(PV_Climate_Zone),Handle(Rate_Vintage),Handle(All_Sectors),Handle(All_Utilities),Handle(Rate_Setting),~
 Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
 Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
@@ -497,7 +497,6 @@ NodeSize: 64,40
 ValueState: 2,17,98,416,303,0,MIDM
 
 Index Expected_Cols
-Att_PrevIndexValue: [Rate_Names_fm_Templa,Rate_Tiers_Import_Na,Energy_Rate_Attribut,'period0','period1','period2','period3','period4','period5','period6','period7','period8','period9','period10','period11']
 Title: Expected Cols
 Definition: Concat(Active_FactCol_Ind, Import_Value_Cols)~
 /* got rid of warning capability below to facilitate LibXl import. Might fix later.~
@@ -609,7 +608,7 @@ NodeSize: 64,40
 
 Decision Last_Import_Time
 Title: Last Import Time
-Definition: 13-May-2023 14:37:53.674000
+Definition: 15-May-2023 17:37:38.704000
 NodeLocation: 544,848,1
 NodeSize: 64,40
 Aliases: FormNode New1910098211, FormNode New2017052963
@@ -1652,7 +1651,6 @@ NodeSize: 64,40
 ValueState: 2,72,135,1502,667,0,MIDM
 Aliases: FormNode New802801955, FormNode New674875683
 ReformVal: [Expected_Cols,Populated_Rows]
-{!40700|Att_CellFormat: CellSpan(Expected_Cols,CellNumberFormat('Fixed Point',4,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:4,showZeroImPart:0),4,15,header:0)}
 
 Button Import_Data_Tabs1
 Title: Import Data Tabs
@@ -1779,7 +1777,7 @@ WindState: 2,18,191,720,350
 
 Variable Import_Reset1
 Title: Import Reset
-Definition: 1
+Definition: 0
 NodeLocation: 144,128,1
 NodeSize: 64,40
 
@@ -1803,7 +1801,7 @@ TableCellDefault: 'C:\Documents\Filename.xlsx'
 Decision Dataset_to_View1
 Title: Dataset to View
 Description: Select the tab name of the dataset you wish to view in greater detail.
-Definition: Choice(Tab_Names,6,0)
+Definition: Choice(Tab_Names,7,0)
 NodeLocation: 112,520,1
 NodeSize: 64,40
 WindState: 2,7,277,720,350

@@ -3100,7 +3100,7 @@ Att_ResultSliceState: [Data_Type,2,Rate_Names,2,Day_and_Hour,1,Month,1]
 Decision Rate_Name_Peak_Prd
 Title: Rate Name for Peak Period
 Description: Select the rate name that describes the peak period.
-Definition: Choice(Rate_Names,3,0)
+Definition: Choice(Rate_Names,8,0)
 NodeLocation: 272,256,1
 NodeSize: 64,40
 Aliases: FormNode Fo1542261445
@@ -5309,7 +5309,7 @@ Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,1,PV_Climate_Zone,1,Area_Type,1
 
 Constant Units_of_Max_Energy_
 Title: Units of "Max" Energy Attribute for Tier
-Definition: Table(Rate_Names)(Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0))
+Definition: Table(Rate_Names)(Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0))
 NodeLocation: 1088,200,1
 NodeSize: 64,56
 DefnState: 2,2407,16,877,865,0,DFNM
@@ -5572,19 +5572,19 @@ Select the rate tariffs for each system type. For each rate tariff, specify the 
 ~
 
 Definition: Table(All_Utilities,Rate_Vintage,PV_Climate_Zone,Pre_and_Post_System,All_Sectors,Rate_Setting,Rate_Shape_Scenario)(~
-Choice(Rate_Names_with_None,97,0),~
+Choice(Rate_Names_with_None,13,0),~
 Choice(PV_Sim_Strt_Yr_Opt,85,0),~
 Checkbox(1),~
-Choice(Rate_Names_with_None,97,0),~
+Choice(Rate_Names_with_None,15,0),~
 Choice(PV_Sim_Strt_Yr_Opt,85,0),~
 Checkbox(1),~
 Choice(Rate_Names_with_None,1,0),~
 Choice(PV_Sim_Strt_Yr_Opt,85,0),~
 Checkbox(1),~
-Choice(Rate_Names_with_None,81,0),~
+Choice(Rate_Names_with_None,14,0),~
 Choice(PV_Sim_Strt_Yr_Opt,85,0),~
 Checkbox(1),~
-Choice(Rate_Names_with_None,81,0),~
+Choice(Rate_Names_with_None,16,0),~
 Choice(PV_Sim_Strt_Yr_Opt,85,0),~
 Checkbox(1),~
 Choice(Rate_Names_with_None,1,0),~
@@ -5683,7 +5683,7 @@ Checkbox(1))
 NodeLocation: 96,216,1
 NodeSize: 64,40
 WindState: 2,2033,110,1402,650
-DefnState: 2,2269,324,904,287,0,DFNM
+DefnState: 2,2145,291,1433,324,0,DFNM
 ValueState: 2,302,51,935,658,0,MIDM
 Aliases: FormNode Fo1547766909, FormNode Fo1547828216
 NodeColor: 65535,65531,1
@@ -11818,7 +11818,7 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 256,288,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,102,49,1707,545,17,10
+DiagState: 2,97,20,1707,642,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -11833,7 +11833,7 @@ ReformVal: [Pre_and_Post_System,Rate_Names_and_Start]
 Att_ResultSliceState: [PV_Sectors,1,Rate_Names_and_Start,1,PV_Climate_Zone,1]
 
 Index Rate_Names_and_Start
-Att_PrevIndexValue: ['5 (Residential Service Time-Of-Use) | 2019-05','8 (Residential Service) | 2019-05']
+Att_PrevIndexValue: ['VA -GS3(Industrial Service) + Net Metering T&C | 2022-01']
 Title: Rate Names and Start Dates
 Definition: VAR names:=MdArrayToTable(Selected_Cust_Rates, omitNull: True);~
 VAR lastCol:=Size(names.Col);~
@@ -11845,7 +11845,7 @@ NodeLocation: 384,1192,1
 NodeSize: 64,40
 WindState: 2,2146,81,1165,697
 ValueState: 2,908,442,659,261,0,MIDM
-{!40300|Att_SlicerPopupSize: 1557,522}
+{!40300|Att_SlicerPopupSize: 1572,522}
 
 Text Te1545165196
 Description: Currently chooses the rate name for the post-system, which doesn't tell you the pre-system if they are different.
@@ -12144,7 +12144,7 @@ WindState: 2,98,82,1059,632
 {!40300|Att_SlicerPopupSize: 377,140}
 
 Index Rate_Names_with_None
-Att_PrevIndexValue: ['None','1 Residential Service | 2012-01','1 Residential Service | 2016-01','10 (Small Construction Service) | 2015-10','10 (Small Construction Service) | 2016-11','10 (Small Construction Service) | 2017-05','10 (Small Construction Service) | 2019-05','11 (Irrigation Service) | 2015-10','11 (Irrigation Service) | 2016-11','11 (Irrigation Service) | 2017-05','11 (Irrigation Service) | 2019-05','12 (Church Service) | 2015-10','12 (Church Service) | 2016-11','12 (Church Service) | 2017-05','12 (Church Service) | 2019-05','14 (Farm Service) | 2015-10','14 (Farm Service) | 2016-11','14 (Farm Service) | 2017-05','14 (Farm Service) | 2019-05','16 (General Service Time-Of-Use) | 2015-10','16 (General Service Time-Of-Use) | 2016-11','16 (General Service Time-Of-Use) | 2017-05','16 (General Service Time-Of-Use) | 2019-05','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2014-01','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2016-01','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2017-01','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2017-09','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2019-04','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2019-06','1EV Residential Service with Electric Vehicle Charging (Experimental) | 2021-07','1S Residential Service (Demand Time-of-Use) | 2014-01','1S Residential Service (Demand Time-of-Use) | 2016-01','1S Residential Service (Demand Time-of-Use) | 2017-01','1S Residential Service (Demand Time-of-Use) | 2017-09','1S Residential Service (Demand Time-of-Use) | 2019-04','1S Residential Service (Demand Time-of-Use) | 2019-06','1S Residential Service (Demand Time-of-Use) | 2021-07','1T Residential Service (Energy Time-of-Use) | 2012-01','1W Residential Service (Time Controlled Storage Water Heating) | 2014-01','1W Residential Service (Time Controlled Storage Water Heating) | 2016-01','1W Residential Service (Time Controlled Storage Water Heating) | 2017-01','1W Residential Service (Time Controlled Storage Water Heating) | 2017-09','1W Residential Service (Time Controlled Storage Water Heating) | 2019-04','1W Residential Service (Time Controlled Storage Water Heating) | 2019-06','1W Residential Service (Time Controlled Storage Water Heating) | 2021-07','2 (Low Use Residential Service) | 2015-10','2 (Low Use Residential Service) | 2016-11','2 (Low Use Residential Service) | 2017-05','2 (Low Use Residential Service) | 2019-05','20 (Medium General Service) | 2015-10','20 (Medium General Service) | 2016-11','20 (Medium General Service) | 2017-05','20 (Medium General Service) | 2019-05','21 (General Service Time-Of-Use Demand) | 2015-10','21 (General Service Time-Of-Use Demand) | 2016-11','21 (General Service Time-Of-Use Demand) | 2017-05','21 (General Service Time-Of-Use Demand) | 2019-05','22 (School Service) | 2015-10','22 (School Service) | 2016-11','22 (School Service) | 2017-05','22 (School Service) | 2019-05','23 (Industrial Power Service) | 2015-10','23 (Industrial Power Service) | 2016-11','23 (Industrial Power Service) | 2017-05','23 (Industrial Power Service) | 2019-05','24 (Large General Service Time-Of-Use) | 2016-11','24 (Large General Service Time-Of-Use) | 2017-05','24 (Large General Service Time-Of-Use) | 2019-05','28 (Small General Service Time-of-Use Demand) | 2015-10','28 (Small General Service Time-of-Use Demand) | 2016-11','28 (Small General Service Time-of-Use Demand) | 2017-05','28 (Small General Service Time-of-Use Demand) | 2019-05','3 (Municipal  Power Service) | 2015-10','3 (Municipal  Power Service) | 2016-11','3 (Municipal  Power Service) | 2017-05','3 (Municipal  Power Service) | 2019-05','5 (Residential Service Time-Of-Use) | 2014-05','5 (Residential Service Time-Of-Use) | 2015-10','5 (Residential Service Time-Of-Use) | 2016-11','5 (Residential Service Time-Of-Use) | 2017-05','5 (Residential Service Time-Of-Use) | 2019-05','5C Church and Synagogue Service | 2017-09','5P Church and Synagogue TOU Service | 2017-09','6 (Residential Service Energy Conservation Rate) | 2015-10','6 (Residential Service Energy Conservation Rate) | 2016-11','6 (Residential Service Energy Conservation Rate) | 2017-05','6 (Residential Service Energy Conservation Rate) | 2019-05','7 (Residential Service Time-Of-Use Demand) | 2014-05','7 (Residential Service Time-Of-Use Demand) | 2015-10','7 (Residential Service Time-Of-Use Demand) | 2016-11','7 (Residential Service Time-Of-Use Demand) | 2017-05','7 (Residential Service Time-Of-Use Demand) | 2019-05','8 (Residential Service) | 2014-05','8 (Residential Service) | 2015-10','8 (Residential Service) | 2016-11','8 (Residential Service) | 2017-05','8 (Residential Service) | 2019-05','9 (General Service) | 2014-05','9 (General Service) | 2015-10','9 (General Service) | 2016-11','9 (General Service) | 2017-05','9 (General Service) | 2019-05','Basic Residential Rate Schedule 1 | 2016-01','Basic Residential Rate Schedule 1 | 2017-01','Basic Residential Rate Schedule 1 | 2019-01','Church Service | 2014-05','Cotton Gin Schedule 5C | 2014-01','Cotton Gin Schedule 5C | 2015-01','Cotton Gin Service Schedule 5C | 2016-01','County, Municipal, or Housing Authority All-Electric Building Service Schedule 42 | 2016-01','County, Municipal, or Housing Authority All-Electric Building Service Schedule 42 | 2017-01','County, Municipal, or Housing Authority All-Electric Schedule 42 | 2014-01','County, Municipal, or Housing Authority All-Electric Schedule 42 | 2015-01','County, Municipal, or Housing Authority Schedule 30 | 2014-01','County, Municipal, or Housing Authority Schedule 30 | 2015-01','County, Municipal, or Housing Authority Service Schedule 30 | 2016-01','County, Municipal, or Housing Authority Service Schedule 30 | 2017-01','Dual Fuel Residential Schedule 1DF | 2014-01','Dual Fuel Residential Schedule 1DF | 2015-01','Dual Fuel Service Residential Schedule 1DF | 2016-01','Dual Fuel Service Residential Schedule 1DF | 2017-01','Electric Heating Schedule 7 | 2014-01','Electric Heating Schedule 7 | 2015-01','Electric Heating Schedule 7 | 2016-01','Electric Heating Schedule 7 | 2017-01','Energy TOU Residential Service Schedule 1T | 2016-01','Energy TOU Residential Service Schedule 1T | 2017-01','Energy TOU Residential Service Schedule 1T | 2019-01','EV Residential Electric Vehicle Charging (Experimental) | 2014-01','EV Residential Electric Vehicle Charging (Experimental) | 2016-01','EV Residential Electric Vehicle Charging (Experimental) | 2017-01','EV Residential Electric Vehicle Charging (Experimental) | 2017-09','EV Residential Electric Vehicle Charging (Experimental) | 2019-04','EV Residential Electric Vehicle Charging (Experimental) | 2019-06','EV Residential Electric Vehicle Charging (Experimental) | 2021-07','Experimental Program- General Service Time-of-Use | 2014-05','Farm Service | 2014-05','General Service Time-Of-Use | 2014-05','General Service Time-Of-Use | 2014-05','GS-1 (Small General Service Single Phase Service) | 2012-01','GS-1 (Small General Service Single Phase Service) | 2016-01','GS-1 (Small General Service Single Phase Service) | 2017-01','GS-1 (Small General Service Single Phase Service) | 2017-09','GS-1 (Small General Service Single Phase Service) | 2019-04','GS-1 (Small General Service Single Phase Service) | 2019-06','GS-1 (Small General Service Single Phase Service) | 2021-07','GS-1 (Small General Service Three Phase Service) | 2012-01','GS-1 (Small General Service Three Phase Service) | 2016-01','GS-1 (Small General Service Three Phase Service) | 2017-01','GS-1 (Small General Service Three Phase Service) | 2017-09','GS-1 (Small General Service Three Phase Service) | 2019-04','GS-1 (Small General Service Three Phase Service) | 2019-06','GS-1 (Small General Service Three Phase Service) | 2021-07','GS-2 Demand | 2014-01','GS-2 Demand | 2016-01','GS-2 Demand | 2017-01','GS-2 Demand | 2017-09','GS-2 Demand | 2019-04','GS-2 Demand | 2019-06','GS-2 Demand | 2021-07','GS-2 Non-Demand | 2012-01','GS-2 Non-Demand | 2016-01','GS-2 Non-Demand | 2017-01','GS-2 Non-Demand | 2017-09','GS-2 Non-Demand | 2019-04','GS-2 Non-Demand | 2019-06','GS-2 Non-Demand | 2021-07','GS-2T Time-of-Use | 2014-01','GS-2T Time-of-Use | 2016-01','GS-2T Time-of-Use | 2017-01','GS-2T Time-of-Use | 2017-09','GS-2T Time-of-Use | 2019-04','GS-2T Time-of-Use | 2019-06','GS-2T Time-of-Use | 2021-07','GS-3 (Large General Service Secondary Voltage) | 2014-01','GS-3 (Large General Service Secondary Voltage) | 2016-01','GS-3 (Large General Service Secondary Voltage) | 2017-01','GS-3 (Large General Service Secondary Voltage) | 2017-09','GS-3 (Large General Service Secondary Voltage) | 2019-04','GS-3 (Large General Service Secondary Voltage) | 2019-06','GS-3 (Large General Service Secondary Voltage) | 2019-07','GS-4 (Large General Service Primary Voltage) | 2014-01','GS-4 (Large General Service Primary Voltage) | 2016-01','GS-4 (Large General Service Primary Voltage) | 2017-01','GS-4 (Large General Service Primary Voltage) | 2017-09','GS-4 (Large General Service Primary Voltage) | 2019-04','GS-4 (Large General Service Primary Voltage) | 2019-06','GS-4 (Large General Service Primary Voltage) | 2019-06','GS-4 (Large General Service Primary Voltage) | 2021-07','GS-4 (Large General Service Primary Voltage) | 2021-07','GS-4 (Large General Service Transmission Voltage) | 2017-09','GS-4 (Large General Service Transmission Voltage) | 2019-04','GS-4 (Large General Service Transmission Voltage) | 2019-06','GS-4 (Large General Service Transmission Voltage) | 2021-07','Industrial Power Service | 2014-05','Irrigation Service | 2014-05','Large General (Primary) Schedule 10 | 2014-01','Large General (Primary) Schedule 10 | 2015-01','Large General (Primary) Schedule 6P | 2014-01','Large General (Primary) Schedule 6P | 2015-01','Large General (Secondary) Schedule 10 | 2014-01','Large General (Secondary) Schedule 10 | 2015-01','Large General (Secondary) Schedule 6P | 2014-01','Large General (Secondary) Schedule 6P | 2015-01','Large General Curtailable (Primary) Schedule 6C | 2014-01','Large General Curtailable (Primary) Schedule 6C | 2015-01','Large General Curtailable (Secondary) Schedule 6C | 2014-01','Large General Curtailable (Secondary) Schedule 6C | 2015-01','Large General Service (Primary) Schedule 10 | 2016-01','Large General Service (Primary) Schedule 10 | 2017-01','Large General Service (Primary) Schedule 6P | 2016-01','Large General Service (Primary) Schedule 6P | 2017-01','Large General Service (Primary) Schedule 6P | 2019-01','Large General Service (Secondary) Schedule 10 | 2016-01','Large General Service (Secondary) Schedule 10 | 2017-01','Large General Service (Secondary) Schedule 6P | 2016-01','Large General Service (Secondary) Schedule 6P | 2017-01','Large General Service (Secondary) Schedule 6P | 2019-01','Large General Service Time-Of-Use | 2014-05','Large General Service, Industrial (Primary) Schedule 6L | 2019-01','Large General Service, Industrial (Secondary) Schedule 6L | 2019-01','Low Use Residential Service | 2014-05','Medium General Service | 2014-05','PR-1 (Small Power Production, Cogeneration) | 2014-05','PR-1 (Small Power Production, Cogeneration) | 2015-10','PR-1 (Small Power Production, Cogeneration) Non-Solar | 2018-05','PR-1 (Small Power Production, Cogeneration) Solar | 2018-05','Rate 22: School Service | 2014-05','Rate 3: Municipal  Power Service | 2014-05','Residential Energy TOU Schedule 1T | 2014-01','Residential Energy TOU Schedule 1T | 2015-01','Residential Energy TOU Schedule 1T | 2016-01','Residential Energy TOU Schedule 1T | 2017-01','Residential Energy TOU Schedule 1T | 2017-09','Residential Energy TOU Schedule 1T | 2019-04','Residential Energy TOU Schedule 1T | 2019-06','Residential Energy TOU Schedule 1T | 2021-07','Residential Schedule 1 | 2014-01','Residential Schedule 1 | 2015-01','Residential Schedule 1 | 2016-01','Residential Schedule 1 | 2017-01','Residential Schedule 1 | 2017-09','Residential Schedule 1 | 2019-06','Residential Schedule 1 | 2021-07','Residential Service Energy Conservation Rate | 2014-05','Residential TOU Schedule 1P | 2014-01','Residential TOU Schedule 1P, Closed Rate | 2015-01','SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider | 2023-01 | 0','SC -20 (Industrial Service) + Rate PR-Standard Offer | 2023-01 | 2019-01','SC -20 (Industrial Service) + Rate PR-Standard Offer | 2023-01 test | 2019-01','SC -20 (Industrial Service) + Rate PR-Standard Offer | 2023-01 test2 | 2019-01','SC -20 (Industrial Service) + Rate PR-Standard Offer | 2023-01 test3 | 2019-01','Small Construction Service | 2014-05','Small General Schedule 5 | 2014-01','Small General Schedule 5 | 2015-01','Small General Service Schedule 5 | 2016-01','Small General Service Schedule 5 | 2017-01','Small General Service Schedule 5 | 2019-01','Small General Service Time-of-Use Demand | 2014-05','Small General Service TOU (All Other Service) Schedule 5P | 2016-01','Small General Service TOU (All Other Service) Schedule 5P | 2017-01','Small General Service TOU (All Other Service) Schedule 5P | 2019-01','Small General Service TOU (Single Phase) Schedule 5P | 2016-01','Small General Service TOU (Single Phase) Schedule 5P | 2017-01','Small General Service TOU (Single Phase) Schedule 5P | 2019-01','Small General TOU (All Other Service) Schedule 5P | 2014-01','Small General TOU (All Other Service) Schedule 5P | 2015-01','Small General TOU (Single Phase < 200 amps) Schedule 5P | 2014-01','Small General TOU (Single Phase) Schedule 5P | 2015-01','SUPPLEMENTARY AND STANDBY SERVICE | 2014-05','TOU Residential Service Schedule 1P | 2016-01','TOU Residential Service Schedule 1P | 2017-01','TOU Residential Service Schedule 1P | 2019-01']
+Att_PrevIndexValue: ['None','1 Residential Service | 2012-01','1 Residential Service | 2016-01','NC -1 (Residential Service) | 2019-11','NC -5 (Commercial Service) | 2019-11','NC -6L (Industrial Service) | 2019-11','SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider | 2023-01','SC -20 (Industrial Service) | 2023-01','SC -20 (Industrial Service) + Rate PR-Standard Offer | 2023-01','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider | 2023-01','SC -8 (Residential Service) | 2023-01','SC -9 (Commercial Service) | 2023-01','VA -1 (Residential Service) | 2022-01','VA -1 (Residential Service) + Net Metering T&C | 2022-01','VA -GS2(Commercial Service Demand) | 2022-01','VA -GS2(Commercial Service Non-Demand) + Net Metering T&C | 2022-01','VA -GS3(Industrial Service) | 2022-01','VA -GS3(Industrial Service) + Net Metering T&C | 2022-01']
 Title: Rate Names with None
 Definition: Concat(None_Label, Rate_Names)
 NodeLocation: 384,1104,1
@@ -12591,7 +12591,7 @@ Title: Rate Setting
 Definition: ['Rate Name','Rate Start Date','Allow Rate Escalation']
 NodeLocation: 816,704,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 342,48}
+{!40300|Att_SlicerPopupSize: 347,48}
 
 Decision Name_Setting_Label
 Title: Name Setting Label
