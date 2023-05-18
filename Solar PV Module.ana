@@ -176,6 +176,7 @@ Description: The percentage of newly constructed residential buildings that are 
 Definition: Table(All_Sectors,Static_PV_Time)(~
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 NodeLocation: 440,520,1
 NodeSize: 64,40
@@ -302,7 +303,7 @@ Units: boolean
 Description: NEED TO IMPORT~
 ~
 Determines whether new construction market share for PV is forced (e.g., to meet a new construction code) or whether it is determined instead by the automated long run market share calculations.
-Definition: Table(All_Sectors)(0,0,0)
+Definition: Table(All_Sectors)(0,1,1,0)
 NodeLocation: 664,520,1
 NodeSize: 64,40
 DefnState: 2,484,490,378,414,0,DFNM
@@ -358,7 +359,7 @@ Original: PV_LongRun_Mkt_Share
 Decision Market_Share_Method
 Title: Market Share Method
 Description: Select the price metric used in the long-run market share model.
-Definition: Table(All_Sectors)(Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,1,1))
+Definition: Table(All_Sectors)(Choice(Market_Share_Metric,2,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1),Choice(Market_Share_Metric,1,1))
 NodeLocation: 656,168,1
 NodeSize: 64,40
 DefnState: 2,936,73,520,805,0,DFNM
@@ -1088,11 +1089,11 @@ Description: The peak impact associated with each event.~
 ~
 SDGE Notes: ITC events are proportional to the expected decline in the ITC. Commercial response to ITC is about 1/3 of the residential response because of the ITC's reduced impact on the NPV of the system and bill savings.
 Definition: Table(All_Event_Names,All_Sectors)(~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0,~
-0,0,0)
+0,0,0,0,~
+0,0,0,0,~
+0,0,0,0,~
+0,0,0,0,~
+0,0,0,0)
 NodeLocation: 704,480,1
 NodeSize: 64,40
 WindState: 2,66,28,852,442
@@ -1124,11 +1125,11 @@ Title: Event Applicability
 Units: boolean
 Description: Specify which events are applicable to each sector.
 Definition: Table(All_Event_Names,All_Sectors)(~
-Checkbox(0),Checkbox(0),Checkbox(0),~
-Checkbox(0),Checkbox(0),Checkbox(0),~
-Checkbox(0),Checkbox(0),Checkbox(0),~
-Checkbox(0),Checkbox(0),Checkbox(0),~
-Checkbox(0),Checkbox(0),Checkbox(0))
+Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),~
+Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),~
+Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),~
+Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),~
+Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0))
 NodeLocation: 1080,192,1
 NodeSize: 64,40
 DefnState: 2,372,378,949,305,0,DFNM
@@ -2091,6 +2092,7 @@ Units: fraction
 Description: Initial fraction of technical potential for PV that have already adopted PV at the beginning of the forecast simulation.
 Definition: Table(Spatial_ID,All_PV_Sectors,Area_Type)(~
 0,~
+0,~
 0)
 NodeLocation: 112,472,1
 NodeSize: 64,40
@@ -2105,9 +2107,9 @@ TableCellDefault: 0
 Att_EditSliceState: [Area_Type,1,All_PV_Sectors,1,Spatial_ID,1]
 
 Index All_PV_Sectors
-Att_PrevIndexValue: ['Residential','NonResidential']
+Att_PrevIndexValue: ['Residential','Commercial','Industrial']
 Title: All PV Sectors
-Definition: ['Residential','NonResidential']
+Definition: ['Residential','Commercial','Industrial']
 NodeLocation: 944,304,1
 NodeSize: 64,40
 ValueState: 2,510,101,448,662,0,MIDM
@@ -3214,7 +3216,7 @@ ReformVal: [PV_Sectors,Forecast_Year1]
 NumberFormat: 2,F,2,3,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [PV_Sectors,A8760]
 Att_ResultSliceState: [PV_Spatial_ID,1,PV_Climate_Zone,1,A8760,0,Forecast_Year1,1,PV_Sectors,0]
-{!50000|Att_ColumnWidths: [,PV_Sectors,\([,,137])]}
+{!50000|Att_ColumnWidths: [,PV_Sectors,\([,,,137])]}
 
 FormNode Fo2042975395
 Title: Area Type for Optimization
@@ -3597,17 +3599,23 @@ Description: The PV capacity factor, which is the ratio of kWh-AC/yr to the (kW-
 kWhA/yr / kWDC*8760
 Definition: Table(All_Utilities,All_PV_Sectors,PV_Climate_Zone,Area_Type)(~
 0.16697365499666653,~
-0.16069700219827113,~
+0,~
+0,~
 0.17312506430462332,~
-0.16798398504034268,~
+0,~
+0,~
 0.17690694484013694,~
-0.17400984000468014,~
+0,~
+0,~
 0.1585581032898062,~
-0.1516764471036107,~
+0,~
+0,~
 0.16672922965260228,~
-0.15966465805011412,~
+0,~
+0,~
 0.17690694484013694,~
-0.17400984000468014)
+0,~
+0)
 NodeLocation: 256,336,1
 NodeSize: 64,40
 WindState: 2,433,146,866,441
@@ -3751,17 +3759,23 @@ Title: Solar Profile Map
 Description: The hourly solar profiles names for each sector and climate zone.
 Definition: Table(All_Utilities,All_PV_Sectors,PV_Climate_Zone)(~
 'Solar_DEF_Res (W-hr/system)',~
-'Solar_DEF_NonRes (W-hr/system)',~
+0,~
+0,~
 'Solar_FPL_Res (W-hr/system)',~
-'Solar_FPL_NonRes (W-hr/system)',~
+0,~
+0,~
 'Solar_FPUC_Res (W-hr/system)',~
-'Solar_FPUC_NonRes (W-hr/system)',~
+0,~
+0,~
 'Solar_JEA_Res (W-hr/system)',~
-'Solar_JEA_NonRes (W-hr/system)',~
+0,~
+0,~
 'Solar_OUC_Res (W-hr/system)',~
-'Solar_OUC_NonRes (W-hr/system)',~
+0,~
+0,~
 'Solar_TECO_Res (W-hr/system)',~
-'Solar_TECO_NonRes (W-hr/system)')
+0,~
+0)
 NodeLocation: 104,464,1
 NodeSize: 64,40
 WindState: 2,98,82,720,458
@@ -5575,7 +5589,10 @@ Definition: Table(All_Utilities,Rate_Vintage,PV_Climate_Zone,Pre_and_Post_System
 Choice(Rate_Names_with_None,13,0),~
 Choice(PV_Sim_Strt_Yr_Opt,85,0),~
 Checkbox(1),~
-Choice(Rate_Names_with_None,15,0),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
 Choice(PV_Sim_Strt_Yr_Opt,85,0),~
 Checkbox(1),~
 Choice(Rate_Names_with_None,1,0),~
@@ -5584,7 +5601,22 @@ Checkbox(1),~
 Choice(Rate_Names_with_None,14,0),~
 Choice(PV_Sim_Strt_Yr_Opt,85,0),~
 Checkbox(1),~
-Choice(Rate_Names_with_None,16,0),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
 Choice(PV_Sim_Strt_Yr_Opt,85,0),~
 Checkbox(1),~
 Choice(Rate_Names_with_None,1,0),~
@@ -5629,8 +5661,11 @@ Checkbox(1),~
 Choice(Rate_Names_with_None,97,0),~
 Choice(PV_Sim_Strt_Yr_Opt,195,0),~
 Checkbox(1),~
-Choice(Rate_Names_with_None,53,0),~
-Choice(PV_Sim_Strt_Yr_Opt,209,0),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
 Checkbox(1),~
 Choice(Rate_Names_with_None,97,0),~
 Choice(PV_Sim_Strt_Yr_Opt,195,0),~
@@ -5638,11 +5673,26 @@ Checkbox(1),~
 Choice(Rate_Names_with_None,81,0),~
 Choice(PV_Sim_Strt_Yr_Opt,195,0),~
 Checkbox(1),~
-Choice(Rate_Names_with_None,53,0),~
-Choice(PV_Sim_Strt_Yr_Opt,209,0),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
 Checkbox(1),~
 Choice(Rate_Names_with_None,81,0),~
 Choice(PV_Sim_Strt_Yr_Opt,195,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
+Checkbox(1),~
+Choice(Rate_Names_with_None,1,0),~
+Choice(PV_Sim_Strt_Yr_Opt,85,0),~
 Checkbox(1),~
 Choice(Rate_Names_with_None,1,0),~
 Choice(PV_Sim_Strt_Yr_Opt,85,0),~
@@ -5966,6 +6016,8 @@ Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0),~
 Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0),~
 Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0),~
 Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0),~
+Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0),~
+Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0),~
 Choice(All_Data_Types,1,0),Checkbox(1),Checkbox(1),Checkbox(0))
 NodeLocation: 96,464,1
 NodeSize: 64,40
@@ -6004,6 +6056,8 @@ Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0),~
 Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0),~
 Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0),~
 Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0),~
+Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0),~
+Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0),~
 Choice(All_Data_Types,2,0),Checkbox(1),Checkbox(1),Checkbox(0))
 NodeLocation: 96,576,1
 NodeSize: 64,40
@@ -6037,6 +6091,8 @@ Attribute options:~
 "adj" - typically used to define an adjustment charge (or credit if negative). Often this is additive with the 'rate' charge.~
 "sell" - typically used to define a compensation rate for energy exported to the grid when the export rate is different from some combination of the "rate" or "adj" attributes (ie, full net-metering)
 Definition: Table(Rate_Vintage,PV_Climate_Zone,Pre_and_Post_System,All_Sectors,Rate_Attribute_Setti)(~
+Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(1),~
+Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(1),~
 Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(1),~
 Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(1),~
 Choice(All_Data_Types,3,0),Checkbox(1),Checkbox(1),Checkbox(1),~
@@ -6851,8 +6907,20 @@ Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
-Choice(Bill_Components_None,9,0),Choice(Bill_Components_None,9,0),~
-Choice(Bill_Components_None,4,0),Choice(Bill_Components_None,4,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
+Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
 Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0),~
@@ -7045,7 +7113,8 @@ Description: The interest rates for debt and equity financing.~
 The cost of equity financing is the consumer discount rate in the case of a residential customer. Note that the residential opportunity cost may be lower than a residential customer's implied discount rate, but implied discount rates are premised on having to make an upfront investment, which is not the case for a 100% debt-financed investment.
 Definition: Table(All_PV_Sectors,Debt_or_Equity)(~
 0.089,0.089,~
-0.089,0.089)
+0,0,~
+0,0)
 NodeLocation: 112,64,1
 NodeSize: 64,40
 WindState: 2,496,161,720,350
@@ -7188,9 +7257,12 @@ Definition: Table(All_PV_Sectors,ITC_Scenario,Static_PV_Time)(~
 0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.22,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.22,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.22,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-0,0,0,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.26,0.26,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0,0,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 NodeLocation: 168,176,1
 NodeSize: 64,40
 WindState: 2,457,241,918,488
@@ -7319,7 +7391,7 @@ Description: The minimum amount of energy stored in batteries that must come fro
 ~
 Source:~
 https://www.energysage.com/solar/solar-energy-storage/energy-storage-tax-credits-incentives/
-Definition: Table(All_Sectors)(0,0,0)
+Definition: Table(All_Sectors)(0,0,0,0)
 NodeLocation: 88,360,1
 NodeSize: 64,40
 DefnState: 2,1202,87,389,705,0,DFNM
@@ -7556,6 +7628,22 @@ Definition: Table(All_Sectors,Incentive_Steps,ITC_Applied,PV_Climate_Zone)(~
 0,~
 0,~
 0,~
+0,~
+0,~
+0,~
+0,~
+0,~
+0,~
+0,~
+0,~
+0,~
+0,~
+0,~
+0,~
+0,~
+0,~
+0,~
+0,~
 Null,~
 Null,~
 Null,~
@@ -7600,6 +7688,7 @@ Description: The month that a given incentive step first became active. The last
 ~
 Source: Received dates in the SGIP database. Residential step 5 closed on 5/1/2018 until further funding becomes available (https://www.selfgenca.com/home/about/).
 Definition: Table(All_Sectors,Incentive_Steps)(~
+Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),~
 Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),~
 Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),Choice(Incentive_Start_Time,1,0),~
 Choice(Incentive_Start_Time,186,0),Choice(Incentive_Start_Time,187,0),Choice(Incentive_Start_Time,199,0),Choice(Incentive_Start_Time,218,0),Choice(Incentive_Start_Time,230,0),Choice(Incentive_Start_Time,260,0),Choice(Incentive_Start_Time,290,0),Choice(Incentive_Start_Time,1,0))
@@ -8274,7 +8363,10 @@ Definition: Table(All_PV_Sectors,PV_Incentive_Scen,PV_Climate_Zone)(~
 0.35,~
 0,~
 0,~
-0.35)
+0,~
+0,~
+0,~
+0)
 NodeLocation: 480,1168,1
 NodeSize: 64,40
 WindState: 2,98,82,720,350
@@ -8601,31 +8693,6 @@ Definition: Table(All_PV_Sectors,BESS_Incentive_Scen,PV_Climate_Zone,Static_PV_T
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
-0,0,4000,4000,4000,0,0,~
-0,0,4000,4000,4000,0,0,~
-0,0,4000,4000,4000,0,0,~
-0,0,4000,4000,4000,0,0,~
-0,0,4000,4000,4000,0,0,~
-0,0,4000,4000,4000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,500,2000,500,0,0,~
-0,0,500,2000,500,0,0,~
-0,0,500,2000,500,0,0,~
-0,0,500,2000,500,0,0,~
-0,0,500,2000,500,0,0,~
-0,0,500,2000,500,0,0,~
-0,0,500,2000,500,0,0,~
-0,0,500,2000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,500,1000,500,0,0,~
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
@@ -8652,43 +8719,6 @@ Definition: Table(All_PV_Sectors,BESS_Incentive_Scen,PV_Climate_Zone,Static_PV_T
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
-0,0,4000,4000,4000,0,0,~
-0,0,4000,4000,4000,0,0,~
-0,0,4000,4000,4000,0,0,~
-0,0,4000,4000,4000,0,0,~
-0,0,4000,4000,4000,0,0,~
-0,0,4000,4000,4000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,500,2000,500,0,0,~
-0,0,500,2000,500,0,0,~
-0,0,500,2000,500,0,0,~
-0,0,500,2000,500,0,0,~
-0,0,500,2000,500,0,0,~
-0,0,500,2000,500,0,0,~
-0,0,500,2000,500,0,0,~
-0,0,500,2000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,500,1000,500,0,0,~
-0,0,0,1000,0,0,0,~
-0,0,0,1000,0,0,0,~
-0,0,0,1000,0,0,0,~
-0,0,0,1000,0,0,0,~
-0,0,0,1000,0,0,0,~
-0,0,0,1000,0,0,0,~
-0,0,0,1000,0,0,0,~
-0,0,0,1000,0,0,0,~
-0,0,0,1000,0,0,0,~
-0,0,0,1000,0,0,0,~
-0,0,0,1000,0,0,0,~
-0,0,0,1000,0,0,0,~
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
@@ -8703,43 +8733,258 @@ Definition: Table(All_PV_Sectors,BESS_Incentive_Scen,PV_Climate_Zone,Static_PV_T
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0,~
-0,0,4000,4000,4000,0,0,~
-0,0,4000,4000,4000,0,0,~
-0,0,4000,4000,4000,0,0,~
-0,0,4000,4000,4000,0,0,~
-0,0,4000,4000,4000,0,0,~
-0,0,4000,4000,4000,0,0,~
-0,0,2000,2000,2000,0,0,~
-0,0,500,2000,2000,0,0,~
-0,0,500,2000,2000,0,0,~
-0,0,500,2000,2000,0,0,~
-0,0,500,2000,2000,0,0,~
-0,0,500,2000,2000,0,0,~
-0,0,500,2000,2000,0,0,~
-0,0,500,2000,2000,0,0,~
-0,0,500,2000,2000,0,0,~
-0,0,500,2000,1000,0,0,~
-0,0,500,2000,1000,0,0,~
-0,0,500,2000,1000,0,0,~
-0,0,500,2000,1000,0,0,~
-0,0,500,2000,1000,0,0,~
-0,0,500,2000,1000,0,0,~
-0,0,500,2000,1000,0,0,~
-0,0,500,2000,1000,0,0,~
-0,0,500,2000,1000,0,0,~
-0,0,500,2000,1000,0,0,~
-0,0,0,2000,1000,0,0,~
-0,0,0,2000,1000,0,0,~
-0,0,0,2000,1000,0,0,~
-0,0,0,2000,1000,0,0,~
-0,0,0,2000,1000,0,0,~
-0,0,0,2000,1000,0,0,~
-0,0,0,2000,1000,0,0,~
-0,0,0,2000,1000,0,0,~
-0,0,0,2000,1000,0,0,~
-0,0,0,2000,1000,0,0,~
-0,0,0,2000,1000,0,0,~
-0,0,0,2000,1000,0,0)
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0)
 NodeLocation: 1192,376,1
 NodeSize: 64,40
 DefnState: 2,427,-17,1054,905,0,DFNM
@@ -8887,7 +9132,7 @@ Decision Taxed_as_Commercial
 Title: Taxed as Commercial
 Units: boolean
 Description: Flags sectors that will be exposed to commercial tax treatment.
-Definition: Table(All_Sectors)(Checkbox(0),Checkbox(1),Checkbox(1))
+Definition: Table(All_Sectors)(Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1))
 NodeLocation: 400,408,1
 NodeSize: 64,40
 DefnState: 2,1143,109,364,668,0,DFNM
@@ -8901,7 +9146,8 @@ Units: fraction
 Description: MACRS depreciation schedules for each sector.
 Definition: Table(All_PV_Sectors,PV_Operating_Year)(~
 0.2,0.32,0.192,0.1152,0.1152,0.0576,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
-0.2,0.32,0.192,0.1152,0.1152,0.0576,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 NodeLocation: 96,80,1
 NodeSize: 64,40
 WindState: 2,477,329,720,350
@@ -9623,57 +9869,108 @@ Definition: Table(All_PV_Sectors,Static_PV_Time,All_Equipment_Types)(~
 781.467,516.6572,~
 770.4923,508.1877,~
 759.6718,499.8569,~
-5570,1476.3521,~
-5570,1384.2113,~
-5570,1297.821,~
-5570,1216.8225,~
-5570,1140.8792,~
-5570,1069.6757,~
-5570,1002.916,~
-5570,940.3228,~
-5570,881.6362,~
-5180,826.6123,~
-3570,775.0225,~
-2900,726.6524,~
-2890,681.3012,~
-2400,638.7804,~
-2290,598.9134,~
-1940,561.5345,~
-1880,526.4885,~
-1760,493.6298,~
-1720,462.8218,~
-1677.411,433.9712,~
-1592.393,405.0557,~
-1507.374,377.9183,~
-1422.356,352.1915,~
-1337.338,327.5802,~
-1252.319,315.298,~
-1167.301,304.3908,~
-1082.282,295.046,~
-997.264,286.1275,~
-912.245,278.041,~
-901.65,274.5655,~
-891.054,271.09,~
-880.458,267.6145,~
-869.862,264.139,~
-859.266,260.6635,~
-848.67,257.188,~
-838.074,253.7125,~
-827.478,250.237,~
-816.882,246.7615,~
-806.286,243.286,~
-795.69,239.8102,~
-785.094,236.3348,~
-774.498,232.8593,~
-763.902,229.3837,~
-753.307,225.9083,~
-742.711,222.4327,~
-732.115,218.9572,~
-721.519,215.4818,~
-710.923,212.0062,~
-700.327,208.5308,~
-689.8889,205.1122,~
-679.6064,201.7497)
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0)
 NodeLocation: 120,120,1
 NodeSize: 64,40
 WindState: 2,399,105,1016,618
@@ -9779,57 +10076,108 @@ Definition: Table(All_PV_Sectors,Static_PV_Time,All_Equipment_Types)(~
 11.405,12.9165,~
 11.3049,12.7048,~
 11.2057,12.4965,~
-60.9788,39.0557,~
-60.9788,39.0557,~
-60.9788,39.0557,~
-60.9788,39.0557,~
-60.9788,39.0557,~
-60.9788,39.0557,~
-60.9788,39.0557,~
-60.9788,39.0557,~
-60.9788,39.0557,~
-56.7092,36.3211,~
-39.0834,25.0321,~
-31.7484,20.3342,~
-31.6389,20.2641,~
-26.2745,16.8283,~
-25.0703,16.057,~
-21.2386,13.6029,~
-20.5817,13.1822,~
-19.268,12.3407,~
-18.55,11.5705,~
-17.854,10.8492,~
-17.159,10.1265,~
-16.463,9.448,~
-15.768,8.8048,~
-15.072,8.1895,~
-14.376,7.8825,~
-13.681,7.6098,~
-12.985,7.3762,~
-12.29,7.1532,~
-11.594,6.951,~
-11.507,6.8643,~
-11.421,6.7773,~
-11.334,6.6902,~
-11.247,6.6035,~
-11.16,6.5165,~
-11.074,6.4298,~
-10.987,6.3427,~
-10.9,6.256,~
-10.814,6.169,~
-10.727,6.0823,~
-10.64,5.9953,~
-10.554,5.9082,~
-10.467,5.8215,~
-10.38,5.7345,~
-10.293,5.6478,~
-10.207,5.5607,~
-10.12,5.474,~
-10.033,5.387,~
-9.947,5.3003,~
-9.86,5.2133,~
-9.7738,5.1277,~
-9.6883,5.0435)
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0)
 NodeLocation: 120,664,1
 NodeSize: 64,40
 WindState: 2,444,494,720,350
@@ -10035,9 +10383,12 @@ Definition: Table(All_PV_Sectors,DER_Cost_Scenario,All_Equipment_Types)(~
 -0.058,-0.058,~
 -0.042,-0.042,~
 -0.029,-0.029,~
--0.058,-0.058,~
--0.042,-0.042,~
--0.029,-0.029)
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0,~
+0,0)
 NodeLocation: 120,232,1
 NodeSize: 64,40
 WindState: 2,1067,27,720,495
@@ -10213,7 +10564,8 @@ Description: Forecast rate of change in installed storage system prices. ~
 Sign convention is such that a negative value is a cost decline.
 Definition: Table(All_PV_Sectors,DER_Cost_Scenario)(~
 -0.06,-0.05,-0.04,~
--0.06,-0.05,-0.04)
+0,0,0,~
+0,0,0)
 NodeLocation: 1120,464,1
 NodeSize: 64,40
 WindState: 2,326,534,720,350
@@ -10222,7 +10574,7 @@ Aliases: Alias Al1568696044, FormNode Fo1568696043, FormNode Fo1548961184, FormN
 NodeColor: 65535,1,1
 ReformDef: [DER_Cost_Scenario,All_PV_Sectors]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-{!50000|Att_ColumnWidths: [,All_Sectors,\([,,])]}
+{!50000|Att_ColumnWidths: [,All_Sectors,\([,,,])]}
 
 Decision Select_StrgCost_Scen
 Title: Storage Cost Scenario
@@ -11481,7 +11833,8 @@ Note: Tesla Powerpack specs 210kWh, 50kW, 88% (2hr system) or 89% (4hr system)~
 Page 16 of SDGE's "Behind the Meter Battery Energy Storage System M&V" report (Aug 2019) states that controllers are configured to only allow the battery charge level to range between 5%-95% of the rated energy capacity.
 Definition: Table(All_Sectors,Battery_Specs)(~
 0.9,0.05,0.95,~
-0.9,0.05,0.95,~
+0,0,0,~
+0,0,0,~
 Null,Null,Null)
 NodeLocation: 136,176,1
 NodeSize: 64,40
@@ -11650,7 +12003,8 @@ Units: hrs
 Description: The number of hours of energy storage at the rated max power of the storage system
 Definition: Table(All_PV_Sectors,All_System_Types)(~
 0,0,3,3,3,3,3,~
-0,0,3,3,3,3,3)
+2,2,2,2,2,2,2,~
+2,2,2,2,2,2,2)
 NodeLocation: 448,80,1
 NodeSize: 64,40
 WindState: 2,195,92,720,522
@@ -11679,7 +12033,8 @@ So units for this fraction are kW-AC storage / kW DC solar (for paired systems) 
 <a href="https://resourceinnovation.sharepoint.com/:x:/r/sites/611140_NYPAProduct/Shared%20Documents/General/Modeling%20Files/DER/Raw%20Data%20Sets/DER%20Facilities%20in%20NY.xlsx?d=w43c8a0b32638488db1c66ff424c780e8&csf=1&web=1&e=QZg12t">https://resourceinnovation.sharepoint.com/:x:/r/sites/611140_NYPAProduct/Shared%20Documents/General/Modeling%20Files/DER/Raw%20Data%20Sets/DER%20Facilities%20in%20NY.xlsx?d=w43c8a0b32638488db1c66ff424c780e8&csf=1&web=1&e=QZg12t</a>
 Definition: Table(All_PV_Sectors,All_System_Types)(~
 0,0,0.74,0.74,0.74,0.74,0.74,~
-0,0,0.66,0.66,0.66,0.66,0.66)
+1,1,1,1,1,1,1,~
+1,1,1,1,1,1,1)
 NodeLocation: 584,80,1
 NodeSize: 64,40
 WindState: 2,547,109,720,350
@@ -11833,7 +12188,7 @@ ReformVal: [Pre_and_Post_System,Rate_Names_and_Start]
 Att_ResultSliceState: [PV_Sectors,1,Rate_Names_and_Start,1,PV_Climate_Zone,1]
 
 Index Rate_Names_and_Start
-Att_PrevIndexValue: ['VA -GS3(Industrial Service) + Net Metering T&C | 2022-01']
+Att_PrevIndexValue: ['VA -1 (Residential Service) | 2022-01','VA -1 (Residential Service) + Net Metering T&C | 2022-01']
 Title: Rate Names and Start Dates
 Definition: VAR names:=MdArrayToTable(Selected_Cust_Rates, omitNull: True);~
 VAR lastCol:=Size(names.Col);~
@@ -12030,7 +12385,7 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Num_Incentive_Steps
 
 Index PV_Sectors
-Att_PrevIndexValue: ['Residential','NonResidential']
+Att_PrevIndexValue: ['Residential','Commercial','Industrial']
 Title: PV Sectors
 Description: The sectors selected for the PV analysis.
 Definition: MultiChoice(All_PV_Sectors,returnList:1)
@@ -12158,6 +12513,7 @@ Description: Flag the bill components that are relevant to each sector.
 Definition: Table(All_Sectors,Bill_Components)(~
 Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
 Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
+Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
 Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
 NodeLocation: 96,704,1
 NodeSize: 64,40
@@ -12178,9 +12534,9 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Map_Charges_to_Sect
 
 Index PV_Climate_Zone
-Att_PrevIndexValue: ['Utility Specific Zone']
+Att_PrevIndexValue: ['Whole State']
 Title: PV Climate Zone
-Definition: ['Utility Specific Zone']
+Definition: ['Whole State']
 NodeLocation: 960,64,1
 NodeSize: 64,40
 WindState: 2,707,203,665,594
@@ -12309,6 +12665,7 @@ Title: Map Costs to Sector
 Units: boolean
 Description: Flags the costs that are relevant to each sector.
 Definition: Table(All_Sectors,Cost_Component)(~
+Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
 Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
 Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),~
 Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
@@ -13507,6 +13864,8 @@ Definition: Table(All_Sectors,NewConstr_Code_Param,PV_Climate_Zone)(~
 1-Jan-2055,~
 0,~
 1-Jan-2055,~
+0,~
+1-Jan-2055,~
 0)
 NodeLocation: 368,88,1
 NodeSize: 64,40
@@ -13533,7 +13892,7 @@ Original: NewConstr_Code_Sys_S
 Constant PV_Stock_Basis_by_Se
 Title: PV Stock Basis by Sector
 Description: Select the units basis used for each PV sector. Selecting "buildings" will use Lidar suitability specific to buildings, while selecting "m2 of roofspace" will use Lidar suitability specific to roofspace.
-Definition: Table(All_Sectors)(Choice(Stock_Basis_Types,2,0),Choice(Stock_Basis_Types,2,0),'N/A')
+Definition: Table(All_Sectors)(Choice(Stock_Basis_Types,2,0),Choice(Stock_Basis_Types,1,0),Choice(Stock_Basis_Types,1,0),'N/A')
 NodeLocation: 176,88,1
 NodeSize: 64,40
 WindState: 2,2773,308,720,350
@@ -13918,401 +14277,599 @@ Description: m2 of PV area by area type. not relevant for any sectors where buil
 Prior to model changes, this came from the m2_of_Eligible node for the SDGE forecast (to facilitate reproducibility).
 Definition: Table(Spatial_ID,All_Utilities,Building_Stock_Year,All_PV_Sectors,Area_Type)(~
 192537061.48235342,~
-38300802.79081974,~
+0,~
+0,~
 192957881.82649815,~
-37874640.36235051,~
+0,~
+0,~
 193379621.940378,~
-37453219.725233026,~
+0,~
+0,~
 193802283.83429596,~
-37036488.11886777,~
+0,~
+0,~
 194225869.5229487,~
-36624393.36970779,~
+0,~
+0,~
 194650381.0254365,~
-36216883.884726755,~
+0,~
+0,~
 195485183.01689744,~
-36061619.97483027,~
+0,~
+0,~
 194444243.75281975,~
-34809706.95633434,~
+0,~
+0,~
 195812331.50256208,~
-34764612.922101825,~
+0,~
+0,~
 195945619.2154844,~
-34782246.88090233,~
+0,~
+0,~
 196786896.72336262,~
-34246349.495164394,~
+0,~
+0,~
 200762459.08379614,~
-34285821.31390247,~
+0,~
+0,~
 202866867.01281995,~
-34542033.126738526,~
+0,~
+0,~
 205679264.73679966,~
-35305530.125565395,~
+0,~
+0,~
 208291326.17161977,~
-35254580.97520487,~
+0,~
+0,~
 212243144.9718566,~
-34705404.55152565,~
+0,~
+0,~
 215463635.13671693,~
-35351857.2528364,~
+0,~
+0,~
 219373902.70660955,~
-35252256.620798595,~
+0,~
+0,~
 223311421.40809155,~
-33705782.28305867,~
+0,~
+0,~
 227650961.753813,~
-34562534.59463653,~
+0,~
+0,~
 232026522.15960553,~
-35946632.91492127,~
+0,~
+0,~
 237326462.53396475,~
-34813327.66032837,~
+0,~
+0,~
 242133319.3144665,~
-35021006.06894219,~
+0,~
+0,~
 246862200.08477688,~
-35277021.92814432,~
+0,~
+0,~
 251683896.5904016,~
-35442590.242020905,~
+0,~
+0,~
 256590314.43581903,~
-35704995.60832791,~
+0,~
+0,~
 261601015.0768731,~
-35939807.900253214,~
+0,~
+0,~
 266678629.38757238,~
-36207830.17998125,~
+0,~
+0,~
 271750172.90163046,~
-36507457.90596813,~
+0,~
+0,~
 276733622.4110951,~
-36897139.16007694,~
+0,~
+0,~
 281611709.87218696,~
-37005351.86195827,~
+0,~
+0,~
 286355969.99398834,~
-37567923.99986077,~
+0,~
+0,~
 290920669.44180226,~
-37953241.17953982,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
+0,~
+0,~
 46663680.78185751,~
-14543149.699520731,~
+0,~
+0,~
 47009851.15356932,~
-14416207.065159494,~
+0,~
+0,~
 47358589.559440516,~
-14290372.473605456,~
+0,~
+0,~
 47709915.05020446,~
-14165636.253097283,~
+0,~
+0,~
 48063846.81792068,~
-14041988.816295441,~
+0,~
+0,~
 48420404.197023265,~
-13919420.659545304,~
+0,~
+0,~
 49289877.18263506,~
-14537339.686456982,~
+0,~
+0,~
 49358544.63797663,~
-13981503.745385908,~
+0,~
+0,~
 49660600.49752431,~
-13578094.568536835,~
+0,~
+0,~
 49787412.69402937,~
-13790759.559564203,~
+0,~
+0,~
 50243262.06848744,~
-13322442.215097444,~
+0,~
+0,~
 50903764.74304995,~
-13122609.589073896,~
+0,~
+0,~
 51803861.525051795,~
-13383159.171078783,~
+0,~
+0,~
 52778022.02607628,~
-13704856.85919238,~
+0,~
+0,~
 53745032.477723345,~
-13738423.496872244,~
+0,~
+0,~
 54610997.89194245,~
-13694378.76549755,~
+0,~
+0,~
 55590959.37642408,~
-13762782.32137191,~
+0,~
+0,~
 56772876.02916961,~
-13778373.956843786,~
+0,~
+0,~
 57952499.26985069,~
-13282340.436081782,~
+0,~
+0,~
 59616437.17590746,~
-13083594.399866914,~
+0,~
+0,~
 61015688.34840794,~
-13606359.116661891,~
+0,~
+0,~
 61905667.136007786,~
-13594309.906375196,~
+0,~
+0,~
 62775679.74798769,~
-13633479.237056488,~
+0,~
+0,~
 63651088.62364866,~
-13668387.612244055,~
+0,~
+0,~
 64536345.680527575,~
-13712793.29952123,~
+0,~
+0,~
 65429562.22633606,~
-13757249.793888247,~
+0,~
+0,~
 66317517.41505551,~
-13799927.173223317,~
+0,~
+0,~
 67184562.08201084,~
-13840617.689951595,~
+0,~
+0,~
 68019903.69983989,~
-13879138.035963967,~
+0,~
+0,~
 68815312.96642904,~
-13916539.081438921,~
+0,~
+0,~
 69565798.33787334,~
-13954964.13404379,~
+0,~
+0,~
 70193113.99079728,~
-13955115.99971821,~
+0,~
+0,~
 70797495.5230767,~
-13955270.125380103,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
+0,~
+0,~
 Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null,~
-Null)
+0,~
+0)
 NodeLocation: 104,160,1
 NodeSize: 64,40
 WindState: 2,410,157,1194,571
@@ -14330,7 +14887,7 @@ Att_ResultSliceState: [Area_Type,1,Spatial_ID,1,All_PV_Sectors,2,Building_Stock_
 Att_EditSliceState: [Area_Type,1,Spatial_ID,1,All_PV_Sectors,1,Building_Stock_Year,1]
 {!40600|Att_StackingIndex: Area_Type}
 {!40600|Att_ClusterIndex: Spatial_ID}
-{!50000|Att_ColumnWidths: [,All_Sectors,\([,,])]}
+{!50000|Att_ColumnWidths: [,All_Sectors,\([,,,])]}
 
 Alias Al416789699
 Title: Building Stock
@@ -14426,7 +14983,8 @@ W DC (nameplate) / m2 of solar panel module~
 
 Definition: Table(All_PV_Sectors,Area_Type)(~
 200,~
-200)
+0,~
+0)
 NodeLocation: 144,104,1
 NodeSize: 64,40
 WindState: 2,621,249,720,350
@@ -14446,7 +15004,8 @@ See ~
 See https://eta-publications.lbl.gov/sites/default/files/land_requirements_for_utility-scale_pv.pdf for ground cover for ground mount fixed tilt coverage ratios (0.4 - 0.5)
 Definition: Table(All_PV_Sectors,Area_Type)(~
 0.7,~
-0.7)
+0,~
+0)
 NodeLocation: 152,240,1
 NodeSize: 64,40
 WindState: 2,693,459,720,350
@@ -14524,17 +15083,23 @@ Units: %
 Description: m2 of usable area divided by m2 of input total PV area (when m2 is the PV building stock basis)
 Definition: Table(All_Utilities,All_PV_Sectors,Area_Type)(~
 0.36715297255115825,~
-0.5853760270401568,~
+0,~
+0,~
 0.47541048367944505,~
-0.5840366245167818,~
+0,~
+0,~
 0.22621137508182904,~
-0.5408754294934459,~
+0,~
+0,~
 0.3374049861951353,~
-0.6356377776110661,~
+0,~
+0,~
 0.4091351783570637,~
-0.5768542740773173,~
+0,~
+0,~
 0.3719508578858707,~
-0.5731089690354707)
+0,~
+0)
 NodeLocation: 152,376,1
 NodeSize: 64,40
 DefnState: 2,671,126,503,654,0,DFNM
@@ -14596,9 +15161,9 @@ Title: PV New Construction Suitability
 Units: fraction
 Description: Residential new construction PV applicability assumption (i.e., the percentage of new construction homes that would use solar PV to help meet Title 24 requirements, since other options exist).
 Definition: Table(NC_Suitability_Scens,All_PV_Sectors)(~
-1,1,~
-1,1,~
-1,1)
+1,0,0,~
+1,0,0,~
+1,0,0)
 NodeLocation: 592,384,1
 NodeSize: 64,40
 WindState: 2,465,549,720,350
@@ -14676,7 +15241,8 @@ Units: kW DC / kW AC
 Description: The DC to AC ratio used to translate the AC values stored from historical interconnection data (or manually input data) into DC values (for calculating system costs, etc.). This value should be consistent with the definition of AC per whatever data source is imported (accounting for the same losses, etc.). For instance, the CEC includes only certain losses in its estimates, whereas some calcs of AC may include additional losses.
 Definition: Table(All_PV_Sectors,PV_Climate_Zone)(~
 1.1764705882352942,~
-1.1764705882352942)
+0,~
+0)
 NodeLocation: 112,64,1
 NodeSize: 64,40
 WindState: 2,196,231,720,350

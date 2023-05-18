@@ -2058,6 +2058,7 @@ Description: Input the minimum desired value of the R-squared metric indicating 
 Definition: Table(All_Sectors,PV_Calibration_Stage)(~
 0.9,0.9,0.9,0.9,0.9,~
 0.9,0.9,0.9,0.9,0.9,~
+0.9,0.9,0.9,0.9,0.9,~
 0.9,0.9,0.9,0.9,0.9)
 NodeLocation: 736,80,1
 NodeSize: 64,40
@@ -2207,7 +2208,7 @@ Units: periods
 Description: Specify the number of periods for which PV installations will be averaged. This average will be used in the slope constraint.~
 ~
 SubTable(StructSingCell_Input[StructSingCell_Names=PV_Avg_Period_Label])
-Definition: Table(All_PV_Sectors)(12,12)
+Definition: Table(All_PV_Sectors)(12,12,12)
 NodeLocation: 88,192,1
 NodeSize: 64,40
 WindState: 2,0,264,720,499
@@ -2820,12 +2821,15 @@ Description: Stores the status of the optimization (e.g., whether an optimal sol
 Definition: Table(All_Spatial_ID,All_Sectors,All_Utilities)(~
 'Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.',~
 'Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.',~
+'Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.',~
 'Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Time out status. Returned when the maximum allowed time has been exceeded. Indicates an early exit of the algorithm.','Not Yet Solved.','Not Yet Solved.',~
+'Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.',~
 'Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.',~
 'Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.',~
 'Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Probable global optimum reached. Returned when MSL (Bayesian) global optimality test has been satisfied.','Not Yet Solved.','Not Yet Solved.',~
 'The Solver has converged to the current solution.','Not Yet Solved.','Not Yet Solved.','The Solver has converged to the current solution.','Not Yet Solved.','Not Yet Solved.',~
-'The Solver has converged to the current solution.','Not Yet Solved.','Not Yet Solved.','Optimal solution has been found.','Not Yet Solved.','Not Yet Solved.',~
+'Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.',~
+'Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.',~
 'Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.','Not Yet Solved.')
 NodeLocation: 608,456,1
 NodeSize: 64,40
@@ -3038,6 +3042,18 @@ Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 0,0,0,0,0,0,0,0,0,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
@@ -3050,18 +3066,18 @@ Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 0,0,0,0,0,0,0,0,0,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 0,0,0,0,0,0,0,0,0,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 0,0,0,0,0,0,0,0,0,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,~
@@ -3074,12 +3090,18 @@ Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 0.013392347234639316,0.3233472414921848,0,-0.3,0,-5,7,0,0,~
 0.013392347234639316,0.3233472414921848,Null,-0.3,Null,Null,Null,Null,0,~
 0.013392347234639316,0.3233472414921848,Null,-0.3,Null,Null,Null,Null,0,~
-0.00099960261098412,0.19078196169322947,Null,-0.4702543883726933,Null,Null,Null,Null,0,~
-0.08600169518774138,0.6,Null,-0.3,Null,Null,Null,Null,0,~
-0.08600169518774138,0.6,Null,-0.3,Null,Null,Null,Null,0,~
-0.08600169518774138,0.6,0,-0.3,0,-5,7,0,0,~
-0.08600169518774138,0.6,Null,-0.3,Null,Null,Null,Null,0,~
-0.08600169518774138,0.6,Null,-0.3,Null,Null,Null,Null,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
+0,0,0,0,0,0,0,0,0,~
 Null,Null,Null,-0.3,Null,Null,Null,Null,0,~
 Null,Null,Null,-0.3,Null,Null,Null,Null,0,~
 Null,Null,Null,-0.3,Null,Null,Null,Null,0,~
