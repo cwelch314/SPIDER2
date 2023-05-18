@@ -42,7 +42,7 @@ Author: JamesMilford
 Date: Fri, Dec 21, 2018 10:51 AM
 NodeLocation: 664,320,1
 NodeSize: 72,40
-DiagState: 2,-49,156,1823,829,17,10
+DiagState: 2,54,-3,1823,829,17,10
 NodeColor: 65535,65535,65535
 
 Module Excel_Import_Logic
@@ -59,7 +59,7 @@ Author: JamesMilford
 Date: Sun, Dec 16, 2018 8:07 AM
 NodeLocation: 216,184,1
 NodeSize: 64,40
-DiagState: 2,-170,225,1859,536,17,10
+DiagState: 2,-22,62,1859,536,17,10
 
 Index Import_Fixed_Params
 Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
@@ -364,12 +364,12 @@ Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),
 NodeLocation: 88,552,1
 NodeSize: 64,40
 WindState: 2,64,77,1746,780
-DefnState: 2,-550,204,2341,500,0,DFNM
+DefnState: 2,-667,218,2341,500,0,DFNM
 ValueState: 2,-66,109,1540,509,0,MIDM
 Aliases: FormNode New1771965635, FormNode New1859766563, FormNode New1675217187, FormNode New194800931
 ReformDef: [Excel_Import_Params,Imported_Dataset_Num]
 TableCellDefault: Import_Param_Default
-Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),2,Imported_Dataset_Num,1,Excel_Import_Params,1]
+Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),1,Imported_Dataset_Num,1,Excel_Import_Params,1]
 {!40700|Att_CellFormat: CellFormats(CellSpan(Imported_Dataset_Num,CellFill(0xffff0000),1,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellNumberFormat('Fixed Point',7,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:7),79,header:0),6,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellNumberFormat('Fixed Point',5,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:5),18,header:0),6,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffffff),1,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellFill(0xffff0000),1,header:0),3,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellFill(0xffffffff),1,header:0),3,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellFill(0xffff0000),87,header:0),4,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellFill(0xffffffff),87,header:0),4,header:0))}
 {!50000|Att_ColumnWidths: [,Imported_Dataset_Num,\([,258,223])]}
 
@@ -615,7 +615,7 @@ Aliases: FormNode New1910098211, FormNode New2017052963
 NumberFormat: 3,F,4,4,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 
 Index Tab_Names
-Att_PrevIndexValue: ['Demand_Flat_Periods','Demand_Flat_Rates','Demand_TOU_Periods','Demand_TOU_Rates','Energy_Periods','Energy_Rates','Energy_Flat_Fees','Rate_Map','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName','SheetName']
+Att_PrevIndexValue: ['SGIP_Data','Single_Cell_Inputs','Hourly_Profiles','Holiday_Dates','SheetName','PV_CapFactor','PV_NewConstr_Size','Battery_Specs','SheetName','DC_to_AC_Ratio','Finance_Rates','Fed_ITC','Strg_Duration_Incent','Vehicle_Stock_Data','Struct_Single_Cell_Inputs','Hist_Vehicle_Growth','EV_MktShare_Mults','Building_Stock','Aggreg_Spatial_ID','EV_Map_Increm_to_Cumul','Climate_Zone_Map','Fuel_Prices','MPG','VMT','Fuel_Mix','Vehicle_Price','Vehicle_Range','Maint_Costs','Veh_Type_Map','Vehicle_Tech_Pref','Veh_Incentives','Veh_DecisionVars','Veh_OptStatus','Veh_R2Thresh','Veh_CalibDates','Veh_CalibDecisions','Veh_OptSetting','Veh_DecisBounds','Veh_Stock_Mults','Equip_Prices','DER_PriceChangeRate','Equip_Lifetime','OM_Cost','Interconn_Fee','Historical_PV_Installs','Historical_PV_Capacity_Installs','Battery Installs','SheetName','SheetName','NewConstr_Suitability','SheetName','SheetName','SheetName','SheetName','Stock_Basis','PV_Power_Density','SheetName','PV_Module_to_Area','PV_CalibDecis','PV_Constraints','PV_CalibDates','PV_R2Thresh','PV_CalibToler','PV_OptSetting','PV_DecisBounds','PV_DecisionVars','PV_OptStatus','Strg_Cap_Derate','Strg_Incent_BaseRate','SheetName','SheetName','Incent_StartMonth','MACRS','Tax_Rates','Bonus_Deprec','NewConstr_Share','Vehicle_Impact','PV_Scale_Load','Consumption_by_Sector','Load_Profiles','Solar_Profile_Map','PV_Init_Adop_Fraction','Total_PV_Area','EUI','Facility_Data','Park_To_GFA_Ratio','PV_Suitability','System_Size_Constraints','NYPA Market Fraction','PV Incentives','SheetName','SheetName','SheetName','SheetName','Load_Profile_Map','SheetName','SheetName','SheetName','SheetName','SheetName']
 Title: Tab Names
 Definition: CopyIndex(Tab_Names_by_Number)
 NodeLocation: 240,872,1
@@ -695,14 +695,14 @@ Title: Number of Categorical Index Tabs
 Description: WARNING: Reducing this number may result in a loss of data.~
 ~
 The number of categorical index tabs whose import configuration can be specified. This determines the size of the Categorical Index Import Settings table. When reducing this number, ensure that it will not result in discarding previously defined index tab configurations.
-Definition: 2
+Definition: 1
 NodeLocation: 1016,80,1
 NodeSize: 64,40
 WindState: 2,42,72,720,350
 Aliases: FormNode New1775880483, FormNode New1809434915
 
 Index Categ_Index_Tabs
-Att_PrevIndexValue: [1,2]
+Att_PrevIndexValue: [1]
 Title: Categorical Index Tabs
 Definition: 1..Num_Categ_Index_Tabs
 NodeLocation: 1016,184,1
@@ -744,9 +744,7 @@ Column 3 Index: 			Handle(Years)~
 Column 4-N Index:		Null
 Definition: DetermTable(Select_Model_for_Dat,Categ_Index_Tabs,Categ_Index_Params)(~
 Checkbox(1),Path_to_Global_Data1,'Categorical_Indexes','A5',Handle(Hourly_Profile_Names),Handle(Holiday_Years),Handle(ITC_Scenario),Handle(EV_Mkt_Share_Scen),Handle(EV_AdEff_Scenario),Handle(EV_WOM_Scen),Handle(Fuel_Types),Handle(All_Vehicle_Techs),Handle(Gasoline_Price_Scens),Handle(EV_Incent_Scenario),Handle(Vehicle_Price_Scens),Handle(Vehicle_Range_Scens),Handle(Elect_Price_Scens),Handle(BldgGrowthRate_Scens),Handle(BESS_Incentive_Scen),Handle(Storage_Cost_Scen),Handle(PV_Incentive_Scen),Handle(DER_Cost_Scenario),Handle(NC_Suitability_Scens),Handle(All_PV_Sectors),'Handle(Facility_Identifier)',Handle(Spatial_ID),Handle(All_Utilities),Handle(PV_Climate_Zone),Handle(Loadshape_Name),~
-Checkbox(0),Path_to_Global_Data1,'Struct_Categ_Indexes','A5',Handle(SGIP_Data_Columns),Handle(Battery_Specs),Handle(All_System_Types),Handle(Debt_or_Equity),Handle(Incent_Durat_Inputs),Handle(Incent_MWhCap_Inputs),Handle(Timestep_Options),Handle(StructSingCell_Names),Handle(Vehicle_Types),Handle(SingCell_Input_Names),Handle(Hourly_Profile_Rows),Handle(Holiday_Name),Handle(Delta_Outputs),Handle(EV_Adopt_Data_Types),Handle(Sequential_Outputs),Handle(Veh_Incentive_Type),Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Checkbox(1),Path_to_Global_Data1,'RateNames','A7',Handle(Rate_Number_Dummy),Handle(Rate_Names_fm_Templa),Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Checkbox(0),Path_to_Global_Data1,'SheetName','A5',Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+Checkbox(1),Path_to_Global_Data1,'RateNames','A7',Handle(Rate_Number_Dummy),Handle(Rate_Names_fm_Templa),Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
 NodeLocation: 872,664,1
 NodeSize: 64,40
 WindState: 2,102,82,1686,703
@@ -757,11 +755,11 @@ ReformDef: [Categ_Index_Tabs,Categ_Index_Params]
 ReformVal: [Categ_Index_Tabs,Categ_Index_Params]
 TableCellDefault: Categ_Index_Default
 Att_ResultSliceState: [Model_for_Data_Impo1,1,Categ_Index_Params,1,Categ_Index_Tabs,1]
-Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),2,Categ_Index_Params,1,Categ_Index_Tabs,1]
-{!40700|Att_CellFormat: CellFormats(CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xff80ff80),5,17,header:0),1,header:0),CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xffff0000),14,header:0),2,header:0),CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xffff0000),14,16,header:0),2,header:0),CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xffffffff),14,20,header:0),2,header:0),CellSpan(Categ_Index_Params,CellFill(0xffffffff),5,17,header:0))}
+Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),1,Categ_Index_Params,1,Categ_Index_Tabs,1]
+{!40700|Att_CellFormat: CellFormats(CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xff80ff80),5,17,header:0),1,header:0),CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xffff0000),14,header:0),2,header:0))}
 
 Index Cat_Index_Tab_Names
-Att_PrevIndexValue: ['RateNames','SheetName']
+Att_PrevIndexValue: ['Categorical_Indexes']
 Title: Categ Index Tab Names
 Definition: CopyIndex(Categ_Index_Tab_Opt1)
 NodeLocation: 1016,784,1
@@ -933,15 +931,16 @@ Checkbox(0),Path_to_Global_Data1,'SheetName','A5',Handle(Variable_Identifier),Ha
 NodeLocation: 1192,664,1
 NodeSize: 64,40
 WindState: 2,26,10,1042,708
-DefnState: 2,2426,99,659,746,0,DFNM
-ValueState: 2,386,352,939,334,,MIDM
+DefnState: 2,576,26,659,746,0,DFNM
+ValueState: 2,873,163,808,620,0,MIDM
 Aliases: FormNode New1440336163, FormNode New2077870371, FormNode New731671843
 ReformDef: [Seq_Index_Tabs1,Seq_Index_Params1]
+ReformVal: [Seq_Index_Tabs1,Seq_Index_Params1]
 TableCellDefault: Seq_Index_Default1
 Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),1,Seq_Index_Params1,1,Seq_Index_Tabs1,1]
 
 Index Seq_Index_Tab_Names1
-Att_PrevIndexValue: ['SheetName','SheetName']
+Att_PrevIndexValue: ['Sequence_Index_Inputs','Struct_Seq_Index_Inputs']
 Title: Sequence Index Tab Names
 Definition: CopyIndex(Seq_Index_Tab_Opt1)
 NodeLocation: 1336,784,1
@@ -998,7 +997,7 @@ Aliases: FormNode New232376611
 Decision Import_Categor_Inde1
 Title: Import Categorial Indexes?
 Description: Check this box to import categorical indexes prior to importing data tabs.
-Definition: Checkbox(0)
+Definition: Checkbox(1)
 NodeLocation: 1520,80,1
 NodeSize: 64,40
 Aliases: FormNode New1306118435, FormNode New540657955, FormNode New70895907
@@ -1006,7 +1005,7 @@ Aliases: FormNode New1306118435, FormNode New540657955, FormNode New70895907
 Decision Import_Sequent_Inde1
 Title: Import Sequential Indexes?
 Description: Check this box to import sequential indexes prior to importing data tabs.
-Definition: Checkbox(0)
+Definition: Checkbox(1)
 NodeLocation: 1664,80,1
 NodeSize: 64,40
 Aliases: FormNode New769247523, FormNode New1614399779, FormNode New1144637731
@@ -1291,7 +1290,7 @@ WindState: 2,564,138,720,520
 DefnState: 2,926,9,681,913,0,DFNM
 Aliases: FormNode Fo1584253219, FormNode Fo1320012067
 ReformDef: [SubTab_Index,Imported_Dataset_Num]
-Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),2,Imported_Dataset_Num,1,SubTab_Index,1]
+Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),1,Imported_Dataset_Num,1,SubTab_Index,1]
 {!40700|Att_CellFormat: CellFormats(CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),21,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),18,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),10,12,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),8,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),6,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),2,4,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),40,44,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),74,75,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),83,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),79,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),80,81,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),56,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),58,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),55,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),50,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),87,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),73,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),95,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffff80),45,47,header:0))}
 {!50000|Att_ColumnWidths: [,SubTab_Index,\([,278])]}
 
@@ -1314,10 +1313,11 @@ Definition: Subtable(CatInd_ImportSetting[Categ_Index_Params=Categ_Table_Param])
 NodeLocation: 872,896,1
 NodeSize: 64,40
 WindState: 2,98,82,720,458
-DefnState: 2,680,392,638,222,0,DFNM
+DefnState: 2,726,355,679,200,0,DFNM
 Aliases: FormNode Fo1920846115, FormNode Fo494782755
-ReformDef: [Categ_Table_Param,Categ_Index_Tabs]
-Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),2,Categ_Index_Tabs,1,Categ_Table_Param,1]
+ReformDef: [Categ_Table_Param,Sys_LocalIndex('DomainIndex')]
+Att_EditSliceState: [Categ_Table_Param,2,Sys_LocalIndex('DomainIndex'),1,Categ_Index_Tabs,1]
+{!50000|Att_ColumnWidths: [,Categ_Table_Param,\([,225])]}
 
 FormNode Fo1920846115
 Title: Categorical Indexes to Import
@@ -2171,7 +2171,7 @@ Aliases: FormNode Fo1124452643
 Decision Select_Model_for_Dat
 Title: Select Model for Data Import
 Description: Choice(Model_for_Data_Impo1,1,0)
-Definition: Choice(Model_for_Data_Impo1,2,0)
+Definition: Choice(Model_for_Data_Impo1,1,0)
 NodeLocation: 584,368,1
 NodeSize: 64,40
 Aliases: FormNode Fo1385416995
@@ -2953,15 +2953,15 @@ OnClick: FOR J:=@Stored_Vars_Selected DO (~
 
 Text Te702138659
 Title: Import Data from Spreadsheets
-NodeLocation: 400,192,-1
-NodeSize: 376,176
+NodeLocation: 452,192,-1
+NodeSize: 428,176
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 NodeColor: 65535,65535,65535
 
 Text Te1775880483
 Title: Inspect Imported Data
-NodeLocation: 400,504,-1
-NodeSize: 376,128
+NodeLocation: 452,504,-1
+NodeSize: 428,128
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 NodeColor: 65535,65535,65535
 
@@ -3076,9 +3076,9 @@ Original: Data_to_Import1
 FormNode Fo1385416995
 Title: Model for Data Import
 Definition: 0
-NodeLocation: 524,128,1
-NodeSize: 212,24
-NodeInfo: 1,,,,,,,167,,,,,,0
+NodeLocation: 580,128,1
+NodeSize: 268,24
+NodeInfo: 1,,,,,,,280,,,,,,0
 Original: Select_Model_for_Dat
 
 FormNode New194800931
