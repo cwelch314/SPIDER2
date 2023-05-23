@@ -112,7 +112,7 @@ Definition: ['Dominion VA - Regulated','Dominion VA - Unregulated','Dominion NC 
 NodeLocation: 528,64,1
 NodeSize: 64,40
 DisplayOutputs: Object Object, Object Decision
-{!40300|Att_SlicerPopupSize: 336,129}
+{!40300|Att_SlicerPopupSize: 351,129}
 
 Module Bldg_Stock_Data
 Title: Bldg Stock Data 
@@ -1063,7 +1063,7 @@ NodeSize: 64,40
 ValueState: 2,553,405,416,303,0,MIDM
 
 Index All_Hourly_Profile_N
-Att_PrevIndexValue: ['Solar_DEF_Res (W-hr/system)','Solar_DEF_NonRes (W-hr/system)','Solar_FPL_Res (W-hr/system)','Solar_FPL_NonRes (W-hr/system)','Solar_FPUC_Res (W-hr/system)','Solar_FPUC_NonRes (W-hr/system)','Solar_JEA_Res (W-hr/system)','Solar_JEA_NonRes (W-hr/system)','Solar_OUC_Res (W-hr/system)','Solar_OUC_NonRes (W-hr/system)','Solar_TECO_Res (W-hr/system)','Solar_TECO_NonRes (W-hr/system)','DEF Res Load Shape (kWh/hour)','DEF NonRes Load Shape (kWh/hour)','FPL Res Load Shape (kWh/hour)','FPL NonRes Load Shape (kWh/hour)','FPUC Res Load Shape (kWh/hour)','FPUC NonRes Load Shape (kWh/hour)','JEA Res Load Shape (kWh/hour)','JEA NonRes Load Shape (kWh/hour)','OUC Res Load Shape (kWh/hour)','OUC NonRes Load Shape (kWh/hour)','TECO Res Load Shape (kWh/hour)','TECO NonRes Load Shape (kWh/hour)']
+Att_PrevIndexValue: ['NC Res (W-hr/system)','SC Res (W-hr/system)','VA Res (W-hr/system)','NC Non-Res (W-hr/system)','SC Non-Res (W-hr/system)','VA Non-Res (W-hr/system)','NC Residential Load Shape (kWh/hour)','NC Commercial Load Shape (kWh/hour)','NC Industrial Load Shape (kWh/hour)','SC Residential Load Shape (kWh/hour)','SC Commercial Load Shape (kWh/hour)','SC Industrial Load Shape (kWh/hour)','VA Residential Load Shape (kWh/hour)','VA Commercial Load Shape (kWh/hour)','VA Industrial Load Shape (kWh/hour)']
 Title: All Hourly Profile Names
 Definition: concat(Hourly_Profile_Names,Loadshape_Name)
 NodeLocation: 584,72,1
@@ -2438,12 +2438,12 @@ Original: All_Agg_Spatial_IDs
 Close Structural_Input_Dat
 
 Index Opt_Sectors
-Att_PrevIndexValue: ['Residential','NonResidential']
+Att_PrevIndexValue: ['Residential','Commercial','Industrial']
 Title: Opt Sectors
 Definition: Subset(All_Sectors <> EV_Sect_Label)
 NodeLocation: 104,64,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 634,405}
+{!40300|Att_SlicerPopupSize: 679,405}
 
 Index All_EV_Sectors
 Title: All EV Sectors
@@ -3145,7 +3145,7 @@ Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 920,328,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1920,10,1786,736,17,10
+DiagState: 2,1764,18,1786,695,17,10
 
 Variable PV_AC_SystSize_Econ
 Title: PV AC System Size for Economics
@@ -6851,16 +6851,18 @@ Constant Scale_PV_Size_by_Cov
 Title: Scale PV Size by % Covered by Solar
 Units: dmnl
 Description: This is for economic calculations only and recognizes that historical installed system sizes may be sized at greater than (or perhaps even lower than) might make sense based on average customer load. One reason for this, especially in the residential sector, is that larger homes may tend to install PV sooner, meaning that early on the adoption curve the actual system size may generate more kWh than an AVERAGE home.
-Definition: Table(All_PV_Sectors)(1,0,0)
+Definition: Table(All_PV_Sectors)(1,1,1)
 NodeLocation: 2216,104,1
 NodeSize: 64,40
+WindState: 2,98,82,720,567
 DefnState: 2,946,341,508,296,0,DFNM
 ValueState: 2,480,266,706,524,0,MIDM
 Aliases: FormNode Fo267971107
-NodeColor: 65535,1,1
+NodeColor: 65535,65532,19661
 ReformDef: [Solar_Scaling_Param,All_Sectors]
 ReformVal: [Solar_Scaling_Param,All_Sectors]
 DisplayOutputs: Object Object, Object Decision
+TableCellDefault: 1
 
 FormNode Fo267971107
 Title: Scale Load by % Covered by Solar
@@ -6880,6 +6882,7 @@ Definition: PV_DC_Sys_Size_for_E~
 /*MAX([MIN([PV_DC_System_Size_f3,System_Size_Constrai[Min_Max=Maximum_Label]]),System_Size_Constrai[Min_Max=Minimum_Label]])
 NodeLocation: 1960,200,1
 NodeSize: 64,40
+WindState: 2,719,148,720,350
 ValueState: 2,2585,114,777,681,0,MIDM
 Aliases: Alias Al1571850383, Alias Al2146219171
 NodeColor: 65535,1,1

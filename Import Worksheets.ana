@@ -268,7 +268,7 @@ Checkbox(0),Path_to_Global_Data1,'Demand_TOU_Rates','A7',Choice(Import_Data_Type
 Checkbox(0),Path_to_Global_Data1,'Energy_Periods','A7',Choice(Import_Data_Types,1,0),Null,Handle(Energy_Periods_fm_Te),Handle(Month),Handle(Rate_Names_fm_Templa),Handle(Weekday_or_Weekend),Handle(Time_of_Day),Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Energy_Rates','A7',Choice(Import_Data_Types,1,0),Null,Handle(Energy_Rates_fm_Temp),Handle(Rate_Period_Import_1),Handle(Rate_Names_fm_Templa),Handle(Rate_Tiers_Import_Na),Handle(Energy_Rate_Attribut),Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Energy_Flat_Fees','A7',Choice(Import_Data_Types,1,0),Null,Handle(Flat_Rate_Fees_fm_Te),Handle(Flat_Fee_Type),Handle(Rate_Names_fm_Templa),Null,Null,Null,Null,~
-Checkbox(1),Path_to_Global_Data1,'Rate_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Select_Customer_Rate),Handle(Pre_and_Post_System),Handle(PV_Climate_Zone),Handle(Rate_Vintage),Handle(All_Sectors),Handle(All_Utilities),Handle(Rate_Setting),~
+Checkbox(1),Path_to_Global_Data1,'Rate_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Electric_Rate_Map),Handle(Pre_and_Post_System),Handle(PV_Climate_Zone),Handle(Rate_Vintage),Handle(All_Sectors),Handle(All_Utilities),Handle(Rate_Setting),~
 Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
 Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
 Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,~
@@ -608,7 +608,7 @@ NodeSize: 64,40
 
 Decision Last_Import_Time
 Title: Last Import Time
-Definition: 20-May-2023 13:55:19.439000
+Definition: 23-May-2023 14:27:28.857000
 NodeLocation: 544,848,1
 NodeSize: 64,40
 Aliases: FormNode New1910098211, FormNode New2017052963
@@ -744,7 +744,7 @@ Column 3 Index: 			Handle(Years)~
 Column 4-N Index:		Null
 Definition: DetermTable(Select_Model_for_Dat,Categ_Index_Tabs,Categ_Index_Params)(~
 Checkbox(1),Path_to_Global_Data1,'Categorical_Indexes','A5',Handle(Hourly_Profile_Names),Handle(Holiday_Years),Handle(ITC_Scenario),Handle(EV_Mkt_Share_Scen),Handle(EV_AdEff_Scenario),Handle(EV_WOM_Scen),Handle(Fuel_Types),Handle(All_Vehicle_Techs),Handle(Gasoline_Price_Scens),Handle(EV_Incent_Scenario),Handle(Vehicle_Price_Scens),Handle(Vehicle_Range_Scens),Handle(Elect_Price_Scens),Handle(BldgGrowthRate_Scens),Handle(BESS_Incentive_Scen),Handle(Storage_Cost_Scen),Handle(PV_Incentive_Scen),Handle(DER_Cost_Scenario),Handle(NC_Suitability_Scens),Handle(All_PV_Sectors),'Handle(Facility_Identifier)',Handle(Spatial_ID),Handle(All_Utilities),Handle(PV_Climate_Zone),Handle(Loadshape_Name),~
-Checkbox(1),Path_to_Global_Data1,'RateNames','A7',Handle(Rate_Number_Dummy),Handle(Rate_Names_fm_Templa),Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
+Checkbox(1),Path_to_Global_Data1,'Categorical_Indexes','A7',Handle(Rate_Vintage),Handle(Rate_Names_fm_Templa),Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null)
 NodeLocation: 872,664,1
 NodeSize: 64,40
 WindState: 2,102,82,1686,703
@@ -755,11 +755,11 @@ ReformDef: [Categ_Index_Tabs,Categ_Index_Params]
 ReformVal: [Categ_Index_Tabs,Categ_Index_Params]
 TableCellDefault: Categ_Index_Default
 Att_ResultSliceState: [Model_for_Data_Impo1,1,Categ_Index_Params,1,Categ_Index_Tabs,1]
-Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),1,Categ_Index_Params,1,Categ_Index_Tabs,1]
+Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),2,Categ_Index_Params,1,Categ_Index_Tabs,1]
 {!40700|Att_CellFormat: CellFormats(CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xff80ff80),5,17,header:0),1,header:0),CellSpan(Categ_Index_Tabs,CellSpan(Categ_Index_Params,CellFill(0xffff0000),14,header:0),2,header:0))}
 
 Index Cat_Index_Tab_Names
-Att_PrevIndexValue: ['RateNames']
+Att_PrevIndexValue: ['Categorical_Indexes']
 Title: Categ Index Tab Names
 Definition: CopyIndex(Categ_Index_Tab_Opt1)
 NodeLocation: 1016,784,1
@@ -1777,7 +1777,7 @@ WindState: 2,18,191,720,350
 
 Variable Import_Reset1
 Title: Import Reset
-Definition: 0
+Definition: 1
 NodeLocation: 144,128,1
 NodeSize: 64,40
 
@@ -1881,7 +1881,7 @@ ELSE FOR K:=@Index_Titles DO (~
 
 NodeLocation: 272,208,1
 NodeSize: 64,40
-ValueState: 2,739,374,742,177,0,MIDM
+ValueState: 2,764,423,881,193,0,MIDM
 ReformVal: [Sys_LocalIndex('Index_Names'),Sys_LocalIndex('Number_Missing')]
 NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 
@@ -2938,7 +2938,7 @@ Aliases: FormNode Fo331166483
 GraphSetup: Att_GraphIndexRange Hourly_Profile_Rows:1,,0,,,,,4460.858134031296,4540.844650268555,0
 ReformVal: [All_Utilities,Building_Stock_Year]
 Att__TotalsIndex: [Interconnect_Date]
-Att_ResultSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Pre_and_Post_System,1,Rate_Setting,2,All_Sectors,1,All_Utilities,1]
+Att_ResultSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Pre_and_Post_System,1,Rate_Setting,1,All_Sectors,1,All_Utilities,1]
 
 FormNode Fo331166483
 Title: View Data Imported Multi-D
