@@ -3900,7 +3900,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,62,44,1734,589,17,10
+DiagState: 2,-32,49,1734,589,17,10
 Aliases: Alias Al1579800542
 NodeColor: 65535,65535,65535
 AcpStyles: FrameNode: Load_Frame
@@ -3932,7 +3932,7 @@ Definition: Applied_Load_Profile - Levelized_Applied_So
 NodeLocation: 736,240,1
 NodeSize: 64,40
 WindState: 2,139,2,1190,503
-ValueState: 2,155,293,1487,515,0,MIDM
+ValueState: 2,220,248,1487,515,0,MIDM
 GraphSetup: Graph_AxisTitleFont:Arial,18,1~
 Graph_KeyFont:,18,0~
 Graph_KeyTitleFont:,18,1~
@@ -3940,7 +3940,7 @@ Graph_AxisLabelFont:,14,0~
 Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [Profile_Hours,Month]
 Att__TotalsIndex: [Day_and_Hour]
-Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Area_Type,1,Month,1,Profile_Hours,1]
+Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Area_Type,1,Month,1,Profile_Hours,1]
 
 Objective PrePost_Load_by_OpYr
 Title: Pre/Post Load by OpYr
@@ -3951,8 +3951,8 @@ NodeLocation: 1056,192,1
 NodeSize: 64,40
 WindState: 2,546,219,720,350
 DefnState: 2,1094,392,416,303,0,DFNM
-ValueState: 2,90,67,1695,643,1,MIDM
-Aliases: FormNode Fo1534438380, Alias Al733264035, FormNode Fo1572476391
+ValueState: 2,10,63,1695,643,1,MIDM
+Aliases: FormNode Fo1534438380, Alias Al733264035, FormNode Fo1572476391, FormNode Fo620575507
 NodeColor: 19661,48336,65535
 GraphSetup: Graph_AxisLabelFont:,14,0~
 Att_CatLineStyle Graph_Primary_Valdim:5~
@@ -4046,7 +4046,7 @@ Units: kW-hr/customer
 Description: The net customer load after solar and/or storage.~
 ~
 !!Note: the storage optimization will actually change the definition of this variable to completely break the linkage to Load_Net_of_Storage with the effect being identical to the definition shown below!!
-Definition: Load_Net_of_Solar
+Definition: IF Decouple_Rates2 THEN Load_Net_of_Solar ELSE Load_Net_of_Storage
 NodeLocation: 896,136,1
 NodeSize: 64,40
 WindState: 2,18,322,1163,505
@@ -4917,7 +4917,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,72,23,1554,607,17,10
+DiagState: 2,-1,163,1662,579,17,10
 Aliases: Alias Al1548967138
 NodeColor: 65535,65535,65535
 AcpStyles: FrameNode: FrameNode_1544919985
@@ -4959,15 +4959,15 @@ ELSE Null;~
 Replace_X_with_Y(max_energy[@Day_and_Hour=1] * {Avg_Days_per_Month: OLD} 1, Null, 10^48);~
 ~
 
-NodeLocation: 344,264,1
+NodeLocation: 944,408,1
 NodeSize: 64,40
 WindState: 2,265,349,1178,470
-ValueState: 2,931,233,764,544,0,MIDM
+ValueState: 2,1211,231,536,448,0,MIDM
 Aliases: Alias Al1907669155
-NodeColor: 57311,57311,57311
+NodeColor: 65535,1,1
 ReformVal: [Pre_and_Post_System,Month]
 Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Rate_Vintage,1,Rate_Shape_Scenario,1,Tiers,1,System_Types,1,Area_Type,1,Rate_Names,159,Month,1,Pre_and_Post_System,1]
+Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Rate_Vintage,1,Tiers,1,Month,1,Pre_and_Post_System,1]
 AcpStyles: Show_Object:no
 
 Variable Mthly_Consump_Tier
@@ -4989,11 +4989,11 @@ increm~
 NodeLocation: 448,168,1
 NodeSize: 64,40
 WindState: 2,102,82,1052,482
-ValueState: 2,217,275,1067,447,0,MIDM
+ValueState: 2,473,174,1144,328,0,MIDM
 Aliases: Alias Al162838691
-ReformVal: [Month,PV_Sectors]
-Att__TotalsIndex: [Month]
-Att_ResultSliceState: [Pre_and_Post_System,1,PV_Climate_Zone,1,Rate_Vintage,1,System_Types,1,Tiers,1,Area_Type,1,PV_Sectors,1,Month,1]
+ReformVal: [Month,Tiers]
+Att__TotalsIndex: [Month,Tiers]
+Att_ResultSliceState: [Pre_and_Post_System,1,PV_Climate_Zone,1,Rate_Vintage,1,System_Types,3,Area_Type,1,PV_Sectors,2,Tiers,1,Month,1]
 
 Variable Pct_Consump_by_Tier
 Title: Pct Consumption by Tier
@@ -5002,10 +5002,10 @@ Description: The percentage of total consumption falling in each tier.
 Definition: Divide(1, Sum(Mthly_Consump_Tier, Tiers), True) * Mthly_Consump_Tier
 NodeLocation: 600,168,1
 NodeSize: 64,40
-ValueState: 2,483,266,971,424,0,MIDM
+ValueState: 2,2584,491,971,371,0,MIDM
 Aliases: Alias Al1236580515
 ReformVal: [Month,Tiers]
-Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,1,Pre_and_Post_System,2,System_Types,2,Area_Type,1,Tiers,1,Month,1]
+Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,1,PV_Climate_Zone,1,Pre_and_Post_System,2,System_Types,3,Area_Type,1,Tiers,1,Month,1]
 
 Variable Consum_by_Tier_Prd
 Title: Consumption by Tier & Period
@@ -5282,7 +5282,7 @@ Original: Include_demand_charg
 
 Variable Va24
 Definition: PrePost_Load_by_OpYr * Load_Monthly_Mults
-NodeLocation: 760,344,1
+NodeLocation: 1296,424,1
 NodeSize: 64,40
 ValueState: 2,503,63,1138,788,,MIDM
 
@@ -5323,7 +5323,7 @@ Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,1,PV_Climate_Zone,1,Area_Type,1
 
 Constant Units_of_Max_Energy_
 Title: Units of "Max" Energy Attribute for Tier
-Definition: Table(Rate_Names)(Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,2,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0))
+Definition: Table(Rate_Names)(Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,2,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0),Choice(Max_Attribute_Units,1,0))
 NodeLocation: 1088,200,1
 NodeSize: 64,56
 DefnState: 2,583,182,930,541,0,DFNM
@@ -5334,7 +5334,7 @@ TableCellDefault: Choice(Max_Attribute_Units,1,0)
 FormNode Fo775011603
 Title: Units of "Max" Energy Attribute for Tier
 Definition: 0
-NodeLocation: 1284,224,1
+NodeLocation: 1340,152,1
 NodeSize: 188,16
 NodeColor: 65535,65531,1
 Original: Units_of_Max_Energy_
@@ -5344,12 +5344,18 @@ Title: Energy Units Conversion
 Units: various
 Description: A multiplier of the "max" attribute for energy price tiers that ensures that the kWh calculated for each tier for purpose of bucketing energy into the tiers is correct.
 Definition: Energy_Units_Convers[Max_Attribute_Units=Units_of_Max_Energy_]
-NodeLocation: 1064,336,1
+NodeLocation: 1080,320,1
 NodeSize: 64,40
 WindState: 2,492,168,972,271
 ValueState: 2,385,20,1333,804,0,MIDM
+NodeColor: 65535,1,1
 ReformVal: [Month,Rate_Names]
 Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,1,PV_Climate_Zone,1,System_Types,1,Pre_and_Post_System,2,Area_Type,1,Rate_Shape_Scenario,1,Rate_Names,1,Month,1]
+
+Text Te1934187283
+Title: Still need to incorporate this
+NodeLocation: 1232,312,-1
+NodeSize: 64,40
 
 Close Energy_and_Demand
 
@@ -5610,8 +5616,8 @@ Choice(Rate_Names_with_None,12,0),1-May-2023,1,~
 Choice(Rate_Names_with_None,7,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,17,0),1-Jan-2022,1,~
 Choice(Rate_Names_with_None,18,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,19,0),1-Jan-2022,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,6,0),1-Jan-2022,1,~
@@ -5637,7 +5643,7 @@ Null,Null,Null)
 NodeLocation: 96,216,1
 NodeSize: 64,40
 WindState: 2,2043,162,1402,650
-DefnState: 2,512,425,1149,292,0,DFNM
+DefnState: 2,799,374,873,266,0,DFNM
 ValueState: 2,302,51,935,658,0,MIDM
 Aliases: FormNode Fo1547766909, FormNode Fo1547828216
 NodeColor: 65535,65531,1
@@ -5645,7 +5651,7 @@ ReformDef: [Pre_and_Post_System,All_Sectors]
 ReformVal: [Pre_and_Post_System,Rate_Vintage]
 TableCellDefault: Rate_Setting_Default
 Att_ResultSliceState: [All_Sectors,1,PV_Climate_Zone,1,Rate_Setting,2,Rate_Vintage,1,Pre_and_Post_System,1]
-Att_EditSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Rate_Setting,1,All_Utilities,1,All_Sectors,1,Pre_and_Post_System,2]
+Att_EditSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Rate_Setting,1,All_Utilities,3,All_Sectors,1,Pre_and_Post_System,2]
 {!50000|Att_ColumnWidths: [,Rate_Vintage,\([])]}
 
 Decision Allow_Rate_Inflation
@@ -6299,7 +6305,7 @@ Author: CWelch
 Date: Thu, May 26, 2022 4:01 PM
 NodeLocation: 256,104,1
 NodeSize: 64,40
-DiagState: 2,41,56,1581,545,17,10
+DiagState: 2,18,46,1581,545,17,10
 
 Variable Energy_Cost_by_Tier_
 Title: Energy Cost by Tier,Pd,BuySell
@@ -6402,7 +6408,7 @@ buy;~
 Replace_X_with_Y(price,null,0) * OpYr_Inflate_Factor
 NodeLocation: 672,288,1
 NodeSize: 64,40
-ValueState: 2,528,188,604,284,0,MIDM
+ValueState: 2,469,232,604,284,0,MIDM
 ReformVal: [Buy_or_Sell_,Periods]
 NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att_ResultSliceState: [PV_Climate_Zone,1,Tiers,1,PV_Sectors,2,Rate_Vintage,1,Pre_and_Post_System,2,Periods,1,Buy_or_Sell_,2]
@@ -6831,14 +6837,14 @@ Choice(Bill_Components_None,1,0),Choice(Bill_Components_None,1,0))
 NodeLocation: 88,184,1
 NodeSize: 64,40
 WindState: 2,841,241,720,490
-DefnState: 2,1091,316,678,468,0,DFNM
+DefnState: 2,1063,329,647,416,0,DFNM
 ValueState: 2,194,195,975,518,0,MIDM
 Aliases: FormNode Fo1574745288, FormNode Fo50776339
 NodeColor: 65535,65531,1
 ReformDef: [All_Sectors,All_Periods]
 ReformVal: [All_Periods,Rate_Vintage]
 TableCellDefault: Choice(Bill_Components_None,1,0)
-Att_EditSliceState: [Rate_Vintage,1,Pre_and_Post_System,1,All_Periods,1,All_Sectors,29]
+Att_EditSliceState: [Rate_Vintage,1,Pre_and_Post_System,2,All_Periods,1,All_Sectors,29]
 
 Variable Energy_Costs_by_Comp
 Title: Energy Costs by Component
@@ -11287,14 +11293,14 @@ THEN INF~
 ELSE Divide(Tot_Price_Aft_Incent - Monthly_Fees, FirstYr_BillSav_Time, False)
 NodeLocation: 312,72,1
 NodeSize: 64,40
-ValueState: 2,434,104,1104,666,1,MIDM
-GraphSetup: {!50400|Att_AxisOrKeyTitle Time:""}~
+ValueState: 2,324,50,1220,727,1,MIDM
+GraphSetup: Graph_AxisLabelFont:,20,0~
+Att_GraphIndexRange Time:1,,1,,,,,43113.50615680218,48213,0~
 Att_GraphValueRange Simple_Payback_Time1:1,,1,,,,,0,11.629531234502792,0~
-Att_GraphIndexRange Time:1,,0,,,,,42649.27217160165,47983.60028320551,0~
-Graph_AxisLabelFont:,20,0
-ReformVal: [Time,System_Types]
+{!50400|Att_AxisOrKeyTitle Time:""}
+ReformVal: [Time,All_Utilities]
 Att__TotalsIndex: []
-Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,PV_Sectors,1,System_Types,1,Time,1]
+Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,System_Types,2,PV_Sectors,2,Time,1]
 
 Module Simple_LCOE_Calculat
 Title: Simple LCOE Calculator
@@ -11703,7 +11709,7 @@ Date: Wed, Oct 10, 2018 9:00 AM
 NodeLocation: 544,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,104,31,1554,648,17,10
+DiagState: 2,196,66,1554,648,17,10
 Aliases: Alias Al1548967120
 NodeColor: 65535,65535,65535
 AcpStyles: FrameNode: FrameNode_1544919879
@@ -11764,14 +11770,14 @@ NodeLocation: 560,176,1
 NodeSize: 64,40
 WindState: 2,5,42,875,350
 DefnState: 2,883,249,416,303,,DFNM
-ValueState: 2,1224,374,617,284,0,MIDM
+ValueState: 2,931,298,593,335,0,MIDM
 NodeColor: 19661,48336,65535
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_GraphValueRange Equipment_Sizes:1,,1,,,,,0,5068.057179450989,0
-ReformVal: [Equipment_Types,PV_Sectors]
+ReformVal: [PV_Sectors,All_Utilities]
 Att__TotalsIndex: []
-Att_ResultSliceState: [System_Types,1,Area_Type,1,PV_Climate_Zone,1,PV_Sectors,2,Equipment_Types,1]
+Att_ResultSliceState: [System_Types,2,Area_Type,1,PV_Climate_Zone,1,Equipment_Types,2,All_Utilities,1,PV_Sectors,2]
 Att_ColorRole: Null
 {!40600|Att_ClusterIndex: Null}
 {!50000|Att_ColumnWidths: [,All_Equipment_Types,\([179])]}
@@ -11784,7 +11790,7 @@ Definition: PV_DC_System_Size_fo * Equip_Install_Map[All_Equipment_Types=Solar_P
 NodeLocation: 288,504,1
 NodeSize: 64,40
 WindState: 2,102,82,1085,492
-ValueState: 2,385,149,1019,616,0,MIDM
+ValueState: 2,669,402,1019,362,0,MIDM
 ReformVal: [PV_Sectors,System_Types]
 Att_ResultSliceState: [System_Types,2,Area_Type,1,PV_Climate_Zone,1,PV_Sectors,1]
 
@@ -11889,8 +11895,8 @@ Units: hrs
 Description: The number of hours of energy storage at the rated max power of the storage system
 Definition: Table(All_PV_Sectors,All_System_Types)(~
 0,0,3,3,3,3,3,~
-2,2,2,2,2,2,2,~
-2,2,2,2,2,2,2)
+0,0,3,3,3,3,3,~
+0,0,3,3,3,3,3)
 NodeLocation: 448,80,1
 NodeSize: 64,40
 WindState: 2,195,92,720,522
@@ -11919,13 +11925,13 @@ So units for this fraction are kW-AC storage / kW DC solar (for paired systems) 
 ~
 <a href="https://resourceinnovation.sharepoint.com/:x:/r/sites/611140_NYPAProduct/Shared%20Documents/General/Modeling%20Files/DER/Raw%20Data%20Sets/DER%20Facilities%20in%20NY.xlsx?d=w43c8a0b32638488db1c66ff424c780e8&csf=1&web=1&e=QZg12t">https://resourceinnovation.sharepoint.com/:x:/r/sites/611140_NYPAProduct/Shared%20Documents/General/Modeling%20Files/DER/Raw%20Data%20Sets/DER%20Facilities%20in%20NY.xlsx?d=w43c8a0b32638488db1c66ff424c780e8&csf=1&web=1&e=QZg12t</a>
 Definition: Table(All_PV_Sectors,All_System_Types)(~
-0,0,0.74,0.74,0.74,0.74,0.74,~
+0,0,1,1,1,1,1,~
 1,1,1,1,1,1,1,~
 1,1,1,1,1,1,1)
 NodeLocation: 584,80,1
 NodeSize: 64,40
 WindState: 2,547,109,720,350
-DefnState: 2,1133,196,599,336,0,DFNM
+DefnState: 2,1160,241,599,336,0,DFNM
 ValueState: 2,375,378,1524,214,0,MIDM
 Aliases: Alias Al568492323
 NodeColor: 65535,1,1
@@ -11942,7 +11948,7 @@ Definition: IF System_with_PV THEN PV_DC_Size_by_System ELSE Peak_Load
 NodeLocation: 288,392,1
 NodeSize: 64,40
 WindState: 2,882,140,720,350
-ValueState: 2,578,521,1033,230,0,MIDM
+ValueState: 2,818,383,1033,230,0,MIDM
 ReformVal: [PV_Sectors,System_Types]
 
 Alias Al1442611491
@@ -12076,7 +12082,7 @@ ReformVal: [Pre_and_Post_System,Rate_Names_and_Start]
 Att_ResultSliceState: [PV_Sectors,1,Rate_Names_and_Start,1,PV_Climate_Zone,1]
 
 Index Rate_Names_and_Start
-Att_PrevIndexValue: ['VA -1 (Residential Service) | 2022-01','VA -1 (Residential Service) + Net Metering T&C | 2022-01','VA -GS2(Commercial Service Demand) | 2022-01','VA -GS2(Commercial Service Demand) | 2022-01 TEST','VA -GS3(Industrial Service) | 2022-01','VA -GS3(Industrial Service) + Net Metering T&C | 2022-01']
+Att_PrevIndexValue: ['NC -1 (Residential Service) | 2019-11','NC -5 (Commercial Service) | 2019-11','NC -6L (Industrial Service) | 2019-11']
 Title: Rate Names and Start Dates
 Definition: VAR names:=MdArrayToTable(Selected_Cust_Rates, omitNull: True);~
 VAR lastCol:=Size(names.Col);~
@@ -12088,7 +12094,7 @@ NodeLocation: 384,1192,1
 NodeSize: 64,40
 WindState: 2,2146,81,1165,697
 ValueState: 2,908,442,659,261,0,MIDM
-{!40300|Att_SlicerPopupSize: 1727,522}
+{!40300|Att_SlicerPopupSize: 1777,522}
 
 Text Te1545165196
 Description: Currently chooses the rate name for the post-system, which doesn't tell you the pre-system if they are different.
@@ -12387,7 +12393,7 @@ WindState: 2,98,82,1059,632
 {!40300|Att_SlicerPopupSize: 377,140}
 
 Index Rate_Names_with_None
-Att_PrevIndexValue: ['None','1 Residential Service | 2012-01','1 Residential Service | 2016-01','NC -1 (Residential Service) | 2019-11','NC -5 (Commercial Service) | 2019-11','NC -6L (Industrial Service) | 2019-11','SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -20 (Industrial Service) | 2023-05','SC -20 (Industrial Service) + Rate PR-Standard Offer | 2023-05','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -8 (Residential Service) | 2023-05','SC -9 (Commercial Service) | 2023-05','VA -1 (Residential Service) | 2022-01','VA -1 (Residential Service) + Net Metering T&C | 2022-01','VA -GS2(Commercial Service Demand) | 2022-01','VA -GS2(Commercial Service Non-Demand) + Net Metering T&C | 2022-01','VA -GS3(Industrial Service) | 2022-01','VA -GS3(Industrial Service) + Net Metering T&C | 2022-01']
+Att_PrevIndexValue: ['None','1 Residential Service | 2012-01','1 Residential Service | 2016-01','NC -1 (Residential Service) | 2019-11','NC -5 (Commercial Service) | 2019-11','NC -6L (Industrial Service) | 2019-11','SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -20 (Industrial Service) | 2023-05','SC -20 (Industrial Service) + Rate PR-Standard Offer | 2023-05','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -8 (Residential Service) | 2023-05','SC -9 (Commercial Service) | 2023-05','VA -1 (Residential Service) | 2022-01','VA -1 (Residential Service) + Net Metering T&C | 2022-01','VA -GS2(Commercial Service Demand) | 2022-01','VA -GS2(Commercial Service Demand) | 2022-01 TEST','VA -GS2(Commercial Service Non-Demand) + Net Metering T&C | 2022-01','VA -GS3(Industrial Service) | 2022-01','VA -GS3(Industrial Service) + Net Metering T&C | 2022-01']
 Title: Rate Names with None
 Definition: Concat(None_Label, Rate_Names)
 NodeLocation: 384,1104,1
@@ -12606,7 +12612,7 @@ NodeSize: 64,40
 WindState: 2,102,21,1089,879
 ValueState: 2,992,329,416,303,0,MIDM
 DisplayOutputs: Object Object, Object Variable
-{!40300|Att_SlicerPopupSize: 1172,112}
+{!40300|Att_SlicerPopupSize: 1182,112}
 
 Index New_or_Retrofit
 Att_PrevIndexValue: ['NewConstr','Retrofit']
@@ -13272,7 +13278,7 @@ Definition: Subset(Storage_Systems <> Storage_Added_Label)
 NodeLocation: 1104,936,1
 NodeSize: 64,40
 WindState: 2,40,-1,910,825
-{!40300|Att_SlicerPopupSize: 593,110}
+{!40300|Att_SlicerPopupSize: 633,110}
 
 Variable System_with_PV
 Title: System with PV

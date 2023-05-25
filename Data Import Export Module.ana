@@ -90,7 +90,7 @@ Title: Selected Utility
 Description: This index is calculated based on which utilities are included in the dataset provided.~
 ~
 Old:subset(Select_Utility)
-Definition: Choice(All_Utilities,1,0)
+Definition: Choice(All_Utilities,1,1)
 NodeLocation: 664,64,1
 NodeSize: 64,40
 WindState: 2,1148,8,720,531
@@ -112,7 +112,7 @@ Definition: ['Dominion VA - Regulated','Dominion VA - Unregulated','Dominion NC 
 NodeLocation: 528,64,1
 NodeSize: 64,40
 DisplayOutputs: Object Object, Object Decision
-{!40300|Att_SlicerPopupSize: 351,129}
+{!40300|Att_SlicerPopupSize: 361,129}
 
 Module Bldg_Stock_Data
 Title: Bldg Stock Data 
@@ -2443,7 +2443,7 @@ Title: Opt Sectors
 Definition: Subset(All_Sectors <> EV_Sect_Label)
 NodeLocation: 104,64,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 679,405}
+{!40300|Att_SlicerPopupSize: 699,405}
 
 Index All_EV_Sectors
 Title: All EV Sectors

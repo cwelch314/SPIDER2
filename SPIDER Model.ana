@@ -143,7 +143,7 @@ Author: CWelch
 Date: Tue, Apr 20, 2021 10:09 AM
 DefaultSize: 64,32
 NodeInfo: 1,,,,,,,,,,,0
-DiagState: 2,280,41,1149,803,17,10,
+DiagState: 2,319,24,1149,757,17,10,
 FontStyle: Arial,15
 FileInfo: 0,Model Nexant_Model_Templat,2,2,0,0,C:\Users\cwelch\Documents\Repos\Nexant\SPIDER\SPIDER Model.ana
 {!50000|DefaultFontColor: 0,0,0}
@@ -920,7 +920,7 @@ NodeSize: 64,40
 Decision PV_Economics
 Title: PV Economics
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Econ_Titles1,2,0)
+Definition: Choice(PV_Econ_Titles1,5,0)
 NodeLocation: 608,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1234,6 +1234,7 @@ THEN Null~
 ELSE Show_ACP_Window1(Storage_Input1,Storage_Input_Titles,BESS_Input,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
 
 Index Storage_Input_Titles
+Att_PrevIndexValue: ['Start Time for Dispatch','End Time for Dispatch','Flows to View','Battery Storage Specs','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (percent)','Allowed ITC Percent by Year (fraction)','Storage kWh Incent Base Rate ($/kWh)','Incentive Step Start Month','kWh Incent Derate for Duration','kWh Incent Derate for Capacity']
 Title: Storage Input Titles
 Definition: Create_Titles_List(Storage_Input1)~
 
@@ -1700,6 +1701,7 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_Storage_Input
 
 Index All_Storage_Input
+Att_PrevIndexValue: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View1,Battery_Storage_Spec,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Year,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap]
 Title: All Storage Input
 Definition: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View1,Battery_Storage_Spec,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Year,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap]
 NodeLocation: 1120,912,1
@@ -12421,7 +12423,7 @@ Title: Output End Period
 Definition: 0
 NodeLocation: 332,180,1
 NodeSize: 244,20
-NodeInfo: 1,0,0,1,0,0,1,150,0,,0,,,
+NodeInfo: 1,,,,,,1,150
 NodeFont: Arial,16
 Original: Output_End_Period
 
@@ -13109,9 +13111,10 @@ NodeSize: 172,64
 FormNode Fo852166931
 Title: Selected Utilities
 Definition: 0
-NodeLocation: 448,128,1
-NodeSize: 136,16
-NodeInfo: 1,,,,,,,120,,,,,,0
+NodeLocation: 332,116,1
+NodeSize: 244,20
+NodeInfo: 1,,,,,,1,328,,,,,,0
+NodeFont: Arial,16
 Original: Selected_Utility
 
 Close Nexant_Model_Templat
