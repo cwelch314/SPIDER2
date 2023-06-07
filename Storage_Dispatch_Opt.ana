@@ -12,6 +12,7 @@ DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
 DiagState: 2,529,240,720,254,17,10
+NodeColor: 65535,65535,65535
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule Storage_Dispatch_Opt,2,2,0,0,Storage_Dispatch_Opt.ana
 
@@ -133,7 +134,8 @@ Description: The sum of decision variables representing solar reducing load, sol
 Definition: Applied_PV_RedLoad2 + Applied_Stored_PV2 + Applied_PV_Exported2
 NodeLocation: 864,336,1
 NodeSize: 64,40
-ValueState: 2,4,42,1203,721,,MIDM
+ValueState: 2,400,82,1203,721,,MIDM
+Att_ResultSliceState: [Opt_Sectors,1,Utility_Options_for_,1,Rate_Vintage,1,PV_Climate_Zone,1,Opt_Storage_Systems,2,Area_Type,1,Seq_Opt_Number,1,Month,1,Opt_Hours,1]
 
 Decision Initial_Charge_Leve2
 Title: Initial Charge Level
@@ -1884,7 +1886,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 264,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1988,20,1661,710,17,10
+DiagState: 2,1970,14,1661,710,17,10
 
 Variable Lev_NCDmdPrice_Opt
 Title: Lev NC Dmd Price for Opt
@@ -1957,13 +1959,13 @@ Title: Opt Solar Output
 Units: kW-hr/customer
 Description: The solar output levelized over the system lifetime for each optimization window.
 Definition: VAR solar:=IF Use_Levelized_Inputs~
-   THEN Lev_Solar_Profile~
-   ELSE Levelized_Applied_So[@PV_Operating_Year=1];~
+   THEN Average_Solar_Profil~
+   ELSE Average_Applied_Sola[@PV_Operating_Year=1];~
 solar[PV_Sectors=Opt_Sector2, PV_Climate_Zone=Opt_Climate_Zone2, Month=Opt_Month2, Profile_Hours=Opt_Hours_for_SeqOpt[Seq_Opt_Number=Opt_Seq_Number, Month=Opt_Month2]] * System_with_PV[System_Types=Opt_System2]
 NodeLocation: 600,504,1
 NodeSize: 64,40
 WindState: 2,40,319,1540,500
-ValueState: 2,492,167,1103,690,1,MIDM
+ValueState: 2,414,109,1103,690,1,MIDM
 ReformVal: [Opt_Hours,Null]
 Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,Storage_Systems,1,Month,1,Seq_Opt_Number,1,Opt_Hours,1]
 Att_ColorRole: Null
@@ -2200,7 +2202,7 @@ Title: Levelized Solar Profile
 Definition: 1
 NodeLocation: 448,504,1
 NodeSize: 64,40
-Original: Lev_Solar_Profile
+Original: Average_Solar_Profil
 
 Variable Wtd_Energy_Buy_Price
 Title: Wtd Energy Buy Price by Period
@@ -2751,7 +2753,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,64,-16,1769,608,17,10
+DiagState: 2,64,0,1769,821,17,10
 
 Decision Opt_Seq_Number
 Title: Opt Sequential Number
@@ -2784,7 +2786,7 @@ Title: Opt Sector
 Description: The sector for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.~
 ~
 Choice(Opt_Sectors,1,0)
-Definition: Choice(Opt_Sectors,0,1)
+Definition: Choice(Opt_Sectors,1,1)
 NodeLocation: 464,640,1
 NodeSize: 64,40
 WindState: 2,149,1,720,350
@@ -3431,7 +3433,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 24-May-2023 18:29:25.947000
+Definition: 1-Jun-2023 14:44:45.905000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3439,7 +3441,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 24-May-2023 18:30:18.341000
+Definition: 1-Jun-2023 14:46:35.845000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 WindState: 2,362,172,796,472
@@ -4470,7 +4472,7 @@ WindState: 2,323,77,720,350
 Decision Select_Strg_Sector2
 Title: Selected Storage Sectors
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,2,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
 NodeLocation: 128,288,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348264, Alias Al513733155
@@ -4594,7 +4596,7 @@ MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimizat
 Decision Choose_Sectors_to_Op
 Title: Choose Sectors to Optimize
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,2,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
 NodeLocation: 464,168,1
 NodeSize: 64,40
 Aliases: FormNode Fo989786659, Alias Al783884579, FormNode Fo431563043
@@ -4699,18 +4701,18 @@ Definition: Reindex_to_ProfileHr(Flows_by_Opt_Hour[Flow_Name2=Flow_Types1, Rate_
 NodeLocation: 416,64,1
 NodeSize: 64,40
 WindState: 2,471,217,972,489
-ValueState: 2,422,85,1302,729,1,MIDM
+ValueState: 2,315,34,1196,747,1,MIDM
 Aliases: FormNode Fo1557458712, FormNode Fo1571775089, FormNode Fo1228179747
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
-Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,1,,,,,50,98,1~
+Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,1,,,,,22,91,1~
 Att_GraphValueRange Dispatch_Flows2:1,,1,,,,,-4.216403961181641,26.341934204101563,0~
 Grid:0~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_Stacked_Lines Graph_Primary_Valdim:0
 ReformVal: [Viewed_Dispatch_Tim2,Flow_Types1]
 NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
-Att__TotalsIndex: [Viewed_Dispatch_Tim2,Rate_Names_and_Start,Month]
-Att_ResultSliceState: [Area_Type,1,Rate_Names_and_Start,0,Opt_Sectors,2,PV_Climate_Zone,1,Opt_Storage_Systems,1,Month,0,Flow_Types1,1,Viewed_Dispatch_Tim2,1]
+Att__TotalsIndex: [Viewed_Dispatch_Tim2,Rate_Names_and_Start]
+Att_ResultSliceState: [Area_Type,1,Rate_Names_and_Start,0,Opt_Sectors,2,PV_Climate_Zone,1,Opt_Storage_Systems,1,Month,8,Utility_Options_for_,1,Flow_Types1,1,Viewed_Dispatch_Tim2,1]
 
 Decision Dispatch_Start_Time2
 Title: Start Time for Dispatch
@@ -4827,7 +4829,7 @@ Att_ResultSliceState: [Opt_Storage_Systems,1,PV_Climate_Zone,1,Rate_Vintage,1,Ar
 Decision Flows_to_View1
 Title: Flows to View
 Description: Select the storage dispatch energy flows you wish to view.
-Definition: Table(Flow_Name2)(Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0))
+Definition: Table(Flow_Name2)(Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(0),Checkbox(0),Checkbox(0))
 NodeLocation: 112,584,1
 NodeSize: 64,40
 DefnState: 2,630,216,416,514,0,DFNM

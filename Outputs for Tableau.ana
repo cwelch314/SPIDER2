@@ -476,7 +476,7 @@ Definition: PV_Sequent_Outputs[Sequential_Outputs=Seq_Cumul_MW_Label, All_Sector
 NodeLocation: 888,128,1
 NodeSize: 64,40
 WindState: 2,102,82,1261,505
-ValueState: 2,284,20,1242,702,1,MIDM
+ValueState: 2,318,26,1045,743,1,MIDM
 Aliases: Alias Al1924347043
 NodeColor: 65535,1,1
 GraphSetup: {!50400|Att_AxisOrKeyTitle Output_Periods:""}~
@@ -485,15 +485,15 @@ Graph_FillTransparen:0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
-Att_GraphValueRange PV_Cumul_Adoption:1,,1,,,0,,0,557.7000975608826,0~
-Att_GraphIndexRange Output_Periods:1,0,1,,,,10,43036.39341032505,44146.764119923115,0~
+Att_GraphValueRange PV_Cumul_Adoption:1,,1,,,0,,0,361.79402470588684,0~
+Att_GraphIndexRange Output_Periods:1,0,1,,,,10,40124.72673766315,43577.97060996294,0~
 Att_ContLineStyle Graph_Primary_Valdim:5~
 {!50000|Graph_SortBySpread:0}~
 Graph_AxisLabelFont:,20,0
-ReformVal: [Output_Periods,Act_vs_Sim]
+ReformVal: [Output_Periods,Utility_Options_for_]
 NumberFormat: 2,F,4,1,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Act_vs_Sim,DER_Cost_Scenario]
-Att_ResultSliceState: [Area_Type,1,Spatial_ID,1,PV_Sectors,1,Act_vs_Sim,-1,Output_Periods,167]
+Att__TotalsIndex: [Act_vs_Sim,PV_Sectors]
+Att_ResultSliceState: [Area_Type,1,Spatial_ID,1,PV_Sectors,0,Utility_Options_for_,1,Act_vs_Sim,-1,Output_Periods,167]
 {!40600|Att_StackingIndex: PV_Sectors}
 {!40600|Att_ClusterIndex: Null}
 
@@ -522,13 +522,13 @@ Definition: PV_Sequent_Outputs[Sequential_Outputs=Seq_Increm_MW_Label, All_Secto
 NodeLocation: 888,224,1
 NodeSize: 64,40
 WindState: 2,102,82,1095,453
-ValueState: 2,523,63,1158,796,1,MIDM
+ValueState: 2,535,138,1182,674,1,MIDM
 GraphSetup: Att_GraphIndexRange Output_Periods:1,,0,,,,10,42037.273801356554,49906.71940380335,0~
 Att_GraphValueRange PV_Increm_Adoption:1,,1,,,,10,1.038821429014206,3.2670102417469025,0
 ReformVal: [Output_Periods,Act_vs_Sim]
 Att__TotalsIndex: [Act_vs_Sim]
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [PV_Sectors,1,Spatial_ID,1,Area_Type,1,Act_vs_Sim,0,Output_Periods,1]
+Att_ResultSliceState: [PV_Sectors,1,Spatial_ID,1,Area_Type,1,Utility_Options_for_,3,Act_vs_Sim,0,Output_Periods,1]
 
 Variable Cumulative_EV_Stock
 Title: Cumulative EV Stock
