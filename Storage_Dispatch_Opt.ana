@@ -24,6 +24,7 @@ NodeLocation: 416,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,28,46,1822,740,17,10
+NodeColor: 65535,65535,65535
 
 Decision Stored_Grid_Elect1
 Title: Stored Grid Electricity
@@ -98,6 +99,7 @@ NodeLocation: 704,752,1
 NodeSize: 64,40
 WindState: 2,383,8,720,350
 ValueState: 2,72,74,753,627,,MIDM
+DisplayOutputs: Variable Num_Full_Discharges1
 
 Variable Total_Charge2
 Title: Total Charge
@@ -1503,6 +1505,7 @@ NodeLocation: 568,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,2254,28,1207,663,17,10
+NodeColor: 65535,65535,65535
 
 Constraint Force_Positive_Delt1
 Title: Force Positive Delta
@@ -1887,6 +1890,7 @@ NodeLocation: 264,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,1970,14,1661,710,17,10
+NodeColor: 65535,65535,65535
 
 Variable Lev_NCDmdPrice_Opt
 Title: Lev NC Dmd Price for Opt
@@ -2753,7 +2757,8 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1870,25,1769,821,17,10
+DiagState: 2,2020,10,1769,821,17,10
+NodeColor: 65535,65535,65535
 
 Decision Opt_Seq_Number
 Title: Opt Sequential Number
@@ -2763,6 +2768,7 @@ NodeLocation: 768,640,1
 NodeSize: 64,40
 WindState: 2,59,318,720,350
 Aliases: FormNode Fo1552491016, FormNode Fo1571352059
+DisplayOutputs: Variable Num_Full_Discharges1
 
 FormNode Fo1552491016
 Title: Active Opt Number
@@ -2791,6 +2797,7 @@ NodeLocation: 464,640,1
 NodeSize: 64,40
 WindState: 2,149,1,720,350
 Aliases: FormNode Fo1206201853, FormNode Fo1552348256, FormNode Fo895004157
+DisplayOutputs: Variable Num_Full_Discharges1
 
 Decision Opt_Climate_Zone2
 Title: Opt Climate Zone
@@ -3030,6 +3037,7 @@ NodeLocation: 464,864,1
 NodeSize: 64,40
 WindState: 2,137,521,720,350
 Aliases: FormNode Fo1552348263
+DisplayOutputs: Variable Num_Full_Discharges1
 
 FormNode Fo1552348263
 Title: Opt Climate Zone
@@ -3433,7 +3441,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 8-Jun-2023 10:00:03.257000
+Definition: 8-Jun-2023 12:54:22.580000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3441,7 +3449,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 8-Jun-2023 10:01:33.129000
+Definition: 8-Jun-2023 12:55:33.139000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 WindState: 2,362,172,796,472
@@ -4627,6 +4635,7 @@ NodeLocation: 264,160,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 DiagState: 2,304,47,1294,622,17,10
+NodeColor: 65535,65535,65535
 
 Variable Tot_Elect_Meet_Load2
 Title: Total Electricity Meeting Load
@@ -4862,6 +4871,7 @@ NodeSize: 64,40
 WindState: 2,102,82,1188,409
 ValueState: 2,424,46,1053,792,0,MIDM
 ReformVal: [Month,Rate_Vintage]
+DisplayInputs: Function Divide, Index Profile_Hours, Variable Monthly_Mults_SeqOpt, Variable Storage_Capacity, Index PV_Sectors, Index System_Types, Index Month, Variable Applied_Tot_Dischrg, Decision Opt_Seq_Number, Decision Opt_Sector2, Decision Opt_System2, Index Seq_Opt_Number, Function Reindex_to_ProfileHr
 Att__TotalsIndex: [Month]
 Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Storage_Systems,1,Rate_Vintage,1,Month,1]
 
@@ -4923,6 +4933,7 @@ Date: Wed, May 15, 2019 1:43 PM
 NodeLocation: 416,160,1
 NodeSize: 64,40
 DiagState: 2,191,47,1422,703,17,10
+NodeColor: 65535,65535,65535
 
 Module Weekly_Opt_Windows
 Title: Weekly Opt Window
@@ -5725,6 +5736,7 @@ NodeLocation: 248,376,1
 NodeSize: 64,40
 WindState: 2,58,531,1071,354
 ValueState: 2,228,234,488,688,0,MIDM
+DisplayOutputs: Variable Num_Full_Discharges1
 {!40300|Att_SlicerPopupSize: 262,64}
 
 Index Valid_Opt_Hours
@@ -5762,6 +5774,7 @@ Sum(mapped_data, Seq_Opt_Number)
 NodeLocation: 408,88,1
 NodeSize: 64,40
 WindState: 2,-21,336,1002,449
+DisplayOutputs: Variable Num_Full_Discharges1
 
 Function Reindex_to_Valid_Hrs(data)
 Title: Reindex to Valid Hours

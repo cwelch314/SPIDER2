@@ -354,7 +354,7 @@ NodeColor: 49344,49344,49344
 Original: Excel_Import_Setting
 
 Index All_Nodes_to_Review
-Att_PrevIndexValue: [Opt_Sectors,Pct_Error_Range,Abs_Error_Range1,Infeas_Spat_ID_PV,EV_Sectors,Infeas_Spat_ID_EV,Result_Range,Valid_Rows1,Storage_Opt_Scenari1,All_BESS_Types,Abs_Error_Range2,Pct_Error_Range1,Abs_Error_Range3,Storage_Opt_Scenario,Infeas_Spat_ID_BESS]
+Att_PrevIndexValue: [Opt_Sectors,Pct_Error_Range,Abs_Error_Range1,Infeas_Spat_ID_PV,EV_Sectors,Infeas_Spat_ID_EV,Result_Range,Valid_Rows1,Undefined,All_BESS_Types,Abs_Error_Range2,Pct_Error_Range1,Abs_Error_Range3,Undefined,Infeas_Spat_ID_BESS]
 Title: All Nodes to Review
 Definition: #SetDifference(\Intersection,\Already_Imported)
 NodeLocation: 456,928,1
@@ -1204,7 +1204,7 @@ Original: Storag_Input_Button
 Decision BESS_Input
 Title: BESS Input
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Input_Titles,3,0)
+Definition: Choice(Storage_Input_Titles,1,0)
 NodeLocation: 1296,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1234,7 +1234,7 @@ THEN Null~
 ELSE Show_ACP_Window1(Storage_Input1,Storage_Input_Titles,BESS_Input,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
 
 Index Storage_Input_Titles
-Att_PrevIndexValue: ['Start Time for Dispatch','End Time for Dispatch','Flows to View','Battery Storage Specs','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (percent)','Allowed ITC Percent by Year (fraction)','Storage kWh Incent Base Rate ($/kWh)','Incentive Step Start Month','kWh Incent Derate for Duration','kWh Incent Derate for Capacity']
+Att_PrevIndexValue: ['Flows to View','Battery Storage Specs','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (percent)','Allowed ITC Percent by Year (fraction)','Storage kWh Incent Base Rate ($/kWh)','Incentive Step Start Month','kWh Incent Derate for Duration','kWh Incent Derate for Capacity']
 Title: Storage Input Titles
 Definition: Create_Titles_List(Storage_Input1)~
 
@@ -1701,9 +1701,9 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_Storage_Input
 
 Index All_Storage_Input
-Att_PrevIndexValue: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View1,Battery_Storage_Spec,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Year,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap]
+Att_PrevIndexValue: [Flows_to_View1,Battery_Storage_Spec,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Year,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap]
 Title: All Storage Input
-Definition: [Dispatch_Start_Time,Dispatch_End_Time,Flows_to_View1,Battery_Storage_Spec,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Year,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap]
+Definition: [Flows_to_View1,Battery_Storage_Spec,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Allowed_ITC_Pct_Year,Strg_kWh_Base_Rate,Incentive_Step_Start,kWh_Incen_Dur_Derate,kWh_Incent_DerateCap]
 NodeLocation: 1120,912,1
 NodeSize: 64,40
 WindState: 2,-28,182,720,350

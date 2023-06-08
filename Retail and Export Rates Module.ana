@@ -1672,6 +1672,7 @@ Att_StackedBar Graph_Primary_Valdim:0~
 Att_GraphIndexRange Day_Type_and_Hour:1,,1,,,,,9,18,1
 ReformVal: [Tiers,Day_Type_and_Hour]
 NumberFormat: 2,F,4,2,0,0,4,1,$,0,"ABBREV",0,,,0,0,14
+DisplayOutputs: Variable Electric_Rates2
 Att__TotalsIndex: []
 Att_ResultSliceState: [Rate_Component,1,Month,8,Rate_Names_and_Start,4,Day_Type_and_Hour,1,Tiers,2]
 {!40700|CellFormatExpression: CellFill(IF RatesOnlyTransp[Rate_Names=Rate_to_View, All_Data_Types=Data_Type_to_View] < 0 THEN 'Green' ELSE 'Red', .2+.6*Abs(RatesOnlyTransp[Rate_Names=Rate_to_View, All_Data_Types=Data_Type_to_View] ))}
@@ -1708,7 +1709,7 @@ Att_ResultSliceState: [Data_Type,3,Weekday_or_Weekend,2,Tiers,2,Rate_Names,34,Ti
 Decision DataType_by_RateType
 Title: Data Type for Rate Type
 Description: The data type for each rate component.
-Definition: Table(Rate_Component)(Choice(All_Data_Types,3,0),Choice(All_Data_Types,2,0),Choice(All_Data_Types,1,0))
+Definition: Choice(All_Data_Types,3,0)
 NodeLocation: 432,400,1
 NodeSize: 64,40
 WindState: 2,157,9,720,350
@@ -1728,7 +1729,7 @@ Decision Rate_Compon_Scaling
 Title: Rate Component Scaling
 Units: scalar
 Description: Scaling to convert imported rates into the units displayed for the Rate Component index.
-Definition: Table(Rate_Component)(100,1,1)
+Definition: 100
 NodeLocation: 576,400,1
 NodeSize: 64,40
 Aliases: FormNode Fo1546448678
@@ -1806,6 +1807,7 @@ Att_GraphIndexRange Day_Type_and_Hour:1,,1,,,,,1,28,1~
 Flip:0
 ReformVal: [Day_Type_and_Hour,Rate_Names_and_Start]
 NumberFormat: 2,F,4,3,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
+DisplayInputs: Variable Electric_Rates, Index Tiers
 Att_ResultSliceState: [Month,8,Rate_Names_and_Start,1,Day_Type_and_Hour,1]
 
 Close Rate_Values_by_Perio
@@ -2165,6 +2167,7 @@ Definition: Subset(Active_Tiers)
 NodeLocation: 976,184,1
 NodeSize: 64,40
 WindState: 2,297,6,1230,840
+DisplayOutputs: Variable Electric_Rates2
 {!40300|Att_SlicerPopupSize: 326,104}
 
 Index Data_Attribute
@@ -4035,7 +4038,6 @@ NodeLocation: 760,408,1
 NodeSize: 64,40
 WindState: 2,2127,81,1010,591
 ValueState: 2,312,108,416,509,0,MIDM
-Aliases: Alias Al433323283
 NodeColor: 65535,1,1
 
 Decision Basic_Service_Fees1

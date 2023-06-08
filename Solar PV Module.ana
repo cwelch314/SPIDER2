@@ -1765,7 +1765,7 @@ NodeLocation: 152,88,1
 NodeSize: 64,40
 WindState: 2,32,380,1355,538
 ValueState: 2,453,45,1019,706,1,MIDM
-Aliases: Alias Al1460632099, Alias Al1752410387, Alias Al555204899
+Aliases: Alias Al1460632099, Alias Al555204899
 NodeColor: 65535,65535,65535
 GraphSetup: Att_GraphValueRange Eligible_PV_Stock_fo:1,,1,1,,,,0,700K,0
 ReformVal: [Time_Solar_PV,PV_Sectors]
@@ -3529,7 +3529,7 @@ Definition: Scaled_Hourly_Solar[Hours_8784=Monthly_Profile_Map]
 NodeLocation: 416,128,1
 NodeSize: 64,40
 ValueState: 2,128,29,1375,781,,MIDM
-Aliases: Alias Al1571850056, Alias Al1320845459
+Aliases: Alias Al1571850056
 GraphSetup: Att_GraphValueRange Monthly_Solar:1,,1,,,,,-0.29800040274858475,5.434707164764404,0~
 Att_GraphIndexRange Month_Day_and_Hour:1,,1,,,,,143,306,1
 ReformVal: [Month_Day_and_Hour,Month]
@@ -3642,7 +3642,7 @@ Definition: PV_Capacity_Factor[All_PV_Sectors=PV_Sectors,All_Utilities=Selected_
 NodeLocation: 416,336,1
 NodeSize: 64,40
 ValueState: 2,2295,194,1146,265,0,MIDM
-Aliases: Alias Al1534084643, Alias Al1911116963, Alias Al1775675667
+Aliases: Alias Al1534084643, Alias Al1911116963
 ReformVal: [All_Utilities,PV_Sectors]
 NumberFormat: 2,F,2,1,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 DisplayOutputs: Object Object, Object Variable
@@ -4221,6 +4221,7 @@ CopyIndex(hours)
 NodeLocation: 416,328,1
 NodeSize: 64,40
 ValueState: 2,558,319,591,533,0,MIDM
+DisplayOutputs: Variable Num_Full_Discharges1
 {!40300|Att_SlicerPopupSize: 232,1001}
 
 Variable DayType_Day_Counts
@@ -4250,7 +4251,6 @@ Definition: Applied_Monthly_Mult[Static_Profile_Names=Loadshape_Map_of_Uti[All_S
 NodeLocation: 712,776,1
 NodeSize: 64,40
 ValueState: 2,157,246,1438,451,0,MIDM
-Aliases: Alias Al1765941395
 ReformVal: [Profile_Hours,Month]
 Att_ResultSliceState: [PV_Sectors,30,Month,1,Profile_Hours,1]
 
@@ -4271,6 +4271,7 @@ NodeLocation: 864,776,1
 NodeSize: 64,40
 WindState: 2,90,421,1074,502
 ValueState: 2,245,206,1410,539,0,MIDM
+DisplayOutputs: Variable Num_Full_Discharges1
 Att_ResultSliceState: [Seq_Opt_Number,1,Month,1,Opt_Hours,1]
 
 Module Profile_Time_Maps
@@ -5461,7 +5462,6 @@ NodeSize: 64,40
 WindState: 2,184,82,859,463
 DefnState: 2,36,149,1304,440,0,DFNM
 ValueState: 2,278,273,1426,367,0,MIDM
-Aliases: Alias Al1981086483
 ReformVal: [PV_Climate_Zone,Rate_Vintage]
 Att_ResultSliceState: [PV_Sectors,2,Pre_and_Post_System,2,Rate_Vintage,1,PV_Climate_Zone,1]
 Att_EditSliceState: [Pre_and_Post_System,2,All_Sectors,1,PV_Climate_Zone,1]
@@ -5667,7 +5667,7 @@ Null,Null,Null,~
 Null,Null,Null)
 NodeLocation: 96,216,1
 NodeSize: 64,40
-WindState: 2,2043,162,1402,650
+WindState: 2,2261,109,1402,650
 DefnState: 2,215,163,1530,308,0,DFNM
 ValueState: 2,302,51,935,658,0,MIDM
 Aliases: FormNode Fo1547766909, FormNode Fo1547828216, FormNode Fo1780490387
@@ -6583,7 +6583,6 @@ NodeLocation: 80,176,1
 NodeSize: 64,40
 WindState: 2,49,30,720,350
 ValueState: 2,1108,436,636,285,0,MIDM
-Aliases: Alias Al198869139
 NodeColor: 65535,1,1
 ReformVal: [Pre_and_Post_System,PV_Sectors]
 Att__TotalsIndex: []
@@ -12466,6 +12465,7 @@ WindState: 2,336,-7,720,350
 ValueState: 2,670,169,804,696,0,MIDM
 ReformVal: [System_Types,PV_Sectors]
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
+DisplayOutputs: Variable Num_Full_Discharges1
 Att_ResultSliceState: [PV_Climate_Zone,3,PV_Sectors,1,System_Types,1]
 
 Variable Equipment_Sizes
@@ -12997,7 +12997,7 @@ NodeSize: 64,40
 WindState: 2,319,12,1255,632
 Aliases: FormNode Fo1535066238, FormNode Fo1539140368, FormNode Fo1247325693
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
-DisplayOutputs: Object Object, Object Function, Object Variable, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
+DisplayOutputs: Object Object, Object Function, Object Variable, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Variable Num_Full_Discharges1
 Att_GraphIndexRange: 1,,0,,,,,1,11,1
 {!50400|Att_AxisOrKeyTitle: ""}
 {!40300|Att_SlicerPopupSize: 1768,353}
@@ -13321,7 +13321,7 @@ NodeLocation: 240,256,1
 NodeSize: 64,40
 WindState: 2,102,21,1089,879
 ValueState: 2,992,329,416,303,0,MIDM
-DisplayOutputs: Object Object, Object Variable
+DisplayOutputs: Object Object, Object Variable, Variable Num_Full_Discharges1
 {!40300|Att_SlicerPopupSize: 1267,112}
 
 Index New_or_Retrofit
@@ -15947,7 +15947,6 @@ NodeLocation: 320,112,1
 NodeSize: 64,40
 WindState: 2,102,82,925,287
 ValueState: 2,1034,89,504,644,0,MIDM
-Aliases: Alias Al97954067
 ReformVal: [Area_Type,PV_Sectors]
 
 FormNode Fo1541457042
@@ -16060,7 +16059,6 @@ Definition: PV_Production_per_kW {kWh / kW-DC}~
 NodeLocation: 616,480,1
 NodeSize: 64,40
 ValueState: 2,343,320,436,184,,MIDM
-Aliases: Alias Al1303619859
 
 Close Power_and_Module_Den
 
