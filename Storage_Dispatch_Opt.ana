@@ -11,7 +11,7 @@ Date: Wed, May 1, 2019 11:53 AM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
-DiagState: 2,529,240,720,254,17,10
+DiagState: 2,517,240,720,254,17,10
 NodeColor: 65535,65535,65535
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule Storage_Dispatch_Opt,2,2,0,0,Storage_Dispatch_Opt.ana
@@ -2133,7 +2133,7 @@ Definition: Table(All_Storage_Systems)(Choice(All_System_Types,1,0),Choice(All_S
 NodeLocation: 104,416,1
 NodeSize: 64,40
 WindState: 2,419,215,720,680
-DefnState: 2,1210,315,565,248,0,DFNM
+DefnState: 2,1234,398,565,248,0,DFNM
 Aliases: FormNode Fo1552348254
 NodeColor: 65535,65531,1
 ReformDef: [0,Opt_Storage_Systems]
@@ -2213,12 +2213,12 @@ Energy_Price_Buy_Se1[Pre_and_Post_System=Map_Tier_Weights_to_[All_Storage_System
 NodeLocation: 104,160,1
 NodeSize: 64,40
 WindState: 2,7,14,1502,537
-ValueState: 2,1257,213,497,472,0,MIDM
+ValueState: 2,1279,239,497,472,0,MIDM
 NodeColor: 65535,39321,39321
 ReformVal: [Periods,Month]
 NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 NodeFontColor: 0,0,0
-Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Opt_Storage_Systems,2,Area_Type,1,Buy_or_Sell_,1,PV_Sectors,2,Month,5,Periods,2]
+Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Opt_Storage_Systems,1,Area_Type,1,Buy_or_Sell_,1,PV_Sectors,2,Month,5,Periods,2]
 
 Variable Lev_Energy_Price_Prd
 Title: Lev Energy Price by Period
@@ -2786,7 +2786,7 @@ Title: Opt Sector
 Description: The sector for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.~
 ~
 Choice(Opt_Sectors,1,0)
-Definition: Choice(Opt_Sectors,1,1)
+Definition: Choice(Opt_Sectors,0,1)
 NodeLocation: 464,640,1
 NodeSize: 64,40
 WindState: 2,149,1,720,350
@@ -3115,7 +3115,7 @@ Checkbox(1),Checkbox(1),Checkbox(1))
 NodeLocation: 464,280,1
 NodeSize: 64,40
 WindState: 2,30,73,720,350
-DefnState: 2,747,293,677,219,0,DFNM
+DefnState: 2,875,308,677,219,0,DFNM
 ValueState: 2,612,618,416,303,0,MIDM
 Aliases: FormNode Fo1552348268
 ReformDef: [Opt_Storage_Systems,Opt_Sectors]
@@ -4596,7 +4596,7 @@ MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimizat
 Decision Choose_Sectors_to_Op
 Title: Choose Sectors to Optimize
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,allowNone:0,returnList:1)
 NodeLocation: 464,168,1
 NodeSize: 64,40
 Aliases: FormNode Fo989786659, Alias Al783884579, FormNode Fo431563043

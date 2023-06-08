@@ -143,7 +143,7 @@ Author: CWelch
 Date: Tue, Apr 20, 2021 10:09 AM
 DefaultSize: 64,32
 NodeInfo: 1,,,,,,,,,,,0
-DiagState: 2,245,23,1149,755,17,10,
+DiagState: 2,308,49,1149,755,17,10,
 FontStyle: Arial,15
 FileInfo: 0,Model Nexant_Model_Templat,2,2,0,0,C:\Users\cwelch\Documents\Repos\Nexant\SPIDER\SPIDER Model.ana
 {!50000|DefaultFontColor: 0,0,0}
@@ -662,7 +662,7 @@ Date: Sun, Dec 16, 2018 8:10 AM
 NodeLocation: 112,392,1
 NodeSize: 80,56
 NodeInfo: 1,,,,,,1
-DiagState: 2,-88,50,1892,702,17,10
+DiagState: 2,-560,30,1892,702,17,10
 NodeFont: Arial Narrow,19
 AcpStyles: Show_object: no
 
@@ -787,7 +787,7 @@ ELSE Show_ACP_Window1(PV_Impact_Out,PV_Impact_Titles,PV_Impact1, 'Result')
 Decision PV_Impact1
 Title: PV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Impact_Titles,2,0)
+Definition: Choice(PV_Impact_Titles,1,0)
 NodeLocation: 616,440,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -944,7 +944,7 @@ Original: PV_Input
 Decision PV_Input
 Title: PV Input
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Input_Titles,1,0)
+Definition: Choice(PV_Input_Titles,12,0)
 NodeLocation: 1288,440,1
 NodeSize: 64,40
 WindState: 2,99,257,720,646
@@ -976,7 +976,7 @@ THEN Null~
 ELSE Show_ACP_Window1(PV_Input1,PV_Input_Titles,PV_Input, IF Inputs_only_for_view THEN 'Result' ELSE 'Definition' )
 
 Index PV_Input_Titles
-Att_PrevIndexValue: ['Historical PV Capacity Installations (MW-AC/period)','Historical PV Installations (systems/period)','PV kW-DC Incentive ($/kW-DC)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (percent)','Electric Rates  (cents/kWh or $/kW)','Hourly Profiles (various)','Saved Daily Profiles (various)','Per-kW Weekly Solar Profile (kW-hr/kW-DC)','Payback Acceptance Curve (market share)']
+Att_PrevIndexValue: ['Historical PV Capacity Installations (MW-AC/period)','Historical PV Installations (systems/period)','PV kW-DC Incentive ($/kW-DC)','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (percent)','Electric Rates  (cents/kWh or $/kW)','Hourly Profiles (various)','Saved Daily Profiles (various)','Per-kW Weekly Solar Profile (kW-hr/kW-DC)','Payback Acceptance Curve (market share)',' Normalized Load Shape (kW-hr/kW)','Normalized Load Profile (kWh)','Load Factor']
 Title: PV Input Titles
 Definition: Create_Titles_List(PV_Input1)~
 
@@ -993,7 +993,7 @@ NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
 Decision Inputs_only_for_view
 Title: Inputs only for viewing purposes (no editing)?
 Description: Check this box if you want to view the inputs as a graphical output result (or output table which is not editable), as opposed to an input table, which is editable.
-Definition: Checkbox(0)
+Definition: Checkbox(1)
 NodeLocation: 1464,168,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552866073, FormNode Fo612315645
@@ -1656,12 +1656,12 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_PV_Impact_Out
 
 Index All_PV_Input
-Att_PrevIndexValue: [Historical_PV_Capaci,Historical_PV_Instal,PV_kW_DC_Incentive,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Electric_Rates,Hourly_Profiles,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve]
+Att_PrevIndexValue: [Historical_PV_Capaci,Historical_PV_Instal,PV_kW_DC_Incentive,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Electric_Rates,Hourly_Profiles,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve,Normalized_Load_Shap,Normalized_Load_Prof,Load_Factor]
 Title: All PV Input
-Definition: [Historical_PV_Capaci,Historical_PV_Instal,PV_kW_DC_Incentive,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Electric_Rates,Hourly_Profiles,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve]
+Definition: [Historical_PV_Capaci,Historical_PV_Instal,PV_kW_DC_Incentive,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Electric_Rates,Hourly_Profiles,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve,Normalized_Load_Shap,Normalized_Load_Prof,Load_Factor]
 NodeLocation: 1120,432,1
 NodeSize: 64,40
-WindState: 2,9,352,720,350
+WindState: 2,718,187,720,350
 Aliases: FormNode Fo1557511154
 MetaOnly: 1
 
