@@ -143,7 +143,7 @@ Author: CWelch
 Date: Tue, Apr 20, 2021 10:09 AM
 DefaultSize: 64,32
 NodeInfo: 1,,,,,,,,,,,0
-DiagState: 2,308,49,1149,755,17,10,
+DiagState: 2,386,18,1052,785,17,10,
 FontStyle: Arial,15
 FileInfo: 0,Model Nexant_Model_Templat,2,2,0,0,C:\Users\cwelch\Documents\Repos\Nexant\SPIDER\SPIDER Model.ana
 {!50000|DefaultFontColor: 0,0,0}
@@ -163,7 +163,7 @@ show_as_tab: No
 Module Mo2
 Author: CWelch
 Date: Tue, Nov 16, 2021 12:28 PM
-NodeLocation: 80,1392,1
+NodeLocation: 80,1664,1
 NodeSize: 64,40
 DiagState: 2,52,-12,1774,761,17,10
 NodeColor: 65535,65535,65535
@@ -944,7 +944,7 @@ Original: PV_Input
 Decision PV_Input
 Title: PV Input
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Input_Titles,12,0)
+Definition: Choice(PV_Input_Titles,14,0)
 NodeLocation: 1288,440,1
 NodeSize: 64,40
 WindState: 2,99,257,720,646
@@ -10905,7 +10905,7 @@ ReformVal: [PV_Sectors,System_Types]
 
 Variable Per_System_Impacts
 Title: Per-System Impacts
-Definition: VAR savings:=PrePost_Load_by_OpYr[@PV_Operating_Year=1, Pre_and_Post_System=Pre_System_Label] - PrePost_Load_by_OpYr[@PV_Operating_Year=1, Pre_and_Post_System=Post_System_Label];~
+Definition: VAR savings:=Pre_Post_Load[@PV_Operating_Year=1, Pre_and_Post_System=Pre_System_Label] - Pre_Post_Load[@PV_Operating_Year=1, Pre_and_Post_System=Post_System_Label];~
 VAR savingsByYear:=savings[Rate_Vintage=MAX(@Rate_Vintage * (Selected_Cust_Rates[Pre_and_Post_System=Post_System_Label] <> None_Label), Rate_Vintage)];~
 Sum(savingsByYear[PV_Sectors=All_Sectors] * System_Type_Weights1, PV_Climate_Zone)~
 
@@ -12287,7 +12287,7 @@ NodeSize Solar_PV: 64,56
 FormNode Fo2126574755
 Title: Percent of Load from PV
 Definition: 1
-NodeLocation: 328,1252,1
+NodeLocation: 328,1524,1
 NodeSize: 248,20
 NodeInfo: 1,,,,,,1,80,,,,,,0,,,,
 NodeColor: 30583,48316,7967
@@ -12557,7 +12557,7 @@ NodeColor: 0,28784,52685
 FormNode Fo1052832931
 Title: Percent of Buildings Adopting PV
 Definition: 1
-NodeLocation: 328,860,1
+NodeLocation: 328,1132,1
 NodeSize: 248,20
 NodeInfo: 1,,,,,,1,80,,,,,,0,,,,
 NodeColor: 30583,48316,7967
@@ -12567,7 +12567,7 @@ Original: Percent_of_Buildings
 FormNode Fo29422755
 Title: Total Load Delta fm PV
 Definition: 1
-NodeLocation: 328,1052,1
+NodeLocation: 328,1324,1
 NodeSize: 248,20
 NodeInfo: 1,,,,,,1,80,,,,,,0
 NodeColor: 30583,48316,7967
@@ -12577,7 +12577,7 @@ Original: Total_Load_Delta_fm1
 FormNode Fo1103164579
 Title: Total Load Delta from Storage
 Definition: 1
-NodeLocation: 328,1092,1
+NodeLocation: 328,1364,1
 NodeSize: 248,20
 NodeInfo: 1,,,,,,1,80
 NodeColor: 30583,48316,7967
@@ -12587,7 +12587,7 @@ Original: Total_Load_Delta_fr1
 FormNode Fo1640035491
 Title: PV & Storage Impact
 Definition: 1
-NodeLocation: 328,1132,1
+NodeLocation: 328,1404,1
 NodeSize: 248,20
 NodeInfo: 1,,,,,,1,80
 NodeColor: 30583,48316,7967
@@ -12597,7 +12597,7 @@ Original: PV_Storage_Impact
 FormNode Fo424735907
 Title: 8760 or 8784
 Definition: 0
-NodeLocation: 204,960,1
+NodeLocation: 204,1232,1
 NodeSize: 124,24
 NodeInfo: 1,,,,,,,88,,,,,,0,,,,
 Original: A8760_or_8784
@@ -12605,7 +12605,7 @@ Original: A8760_or_8784
 FormNode Fo867234979
 Title: First Day of Hourly
 Definition: 0
-NodeLocation: 452,960,1
+NodeLocation: 452,1232,1
 NodeSize: 124,24
 NodeInfo: 1,,,,,,,88,,,,,,0,,,,
 Original: First_Day_of_8760
@@ -12613,7 +12613,7 @@ Original: First_Day_of_8760
 FormNode Fo151581859
 Title: Total or New
 Definition: 0
-NodeLocation: 328,1008,1
+NodeLocation: 328,1280,1
 NodeSize: 248,24
 NodeInfo: 1,,,,,,,88,,,,,,0
 Original: Cumulative_or_New
@@ -12621,7 +12621,7 @@ Original: Cumulative_or_New
 FormNode Fo1327815075
 Title: Percent of Load from PV
 Definition: 1
-NodeLocation: 328,900,1
+NodeLocation: 328,1172,1
 NodeSize: 248,20
 NodeInfo: 1,,,,,,,80,,,,,,,,,,
 NodeColor: 30583,48316,7967
@@ -12630,7 +12630,7 @@ Original: Percent_of_Load_fro1
 FormNode Fo530766243
 Title: Percent of Bldgs Adopting Storage
 Definition: 1
-NodeLocation: 328,1172,1
+NodeLocation: 328,1444,1
 NodeSize: 248,20
 NodeInfo: 1,,,,,,,80,,,,,,,,,,
 NodeColor: 30583,48316,7967
@@ -12639,7 +12639,7 @@ Original: Percent_of_Bldgs_Ado
 FormNode Fo801823139
 Title: BESS Adoption EOP
 Definition: 1
-NodeLocation: 328,1212,1
+NodeLocation: 328,1484,1
 NodeSize: 248,20
 NodeInfo: 1,,,,,,,80,,,,,,,,,,
 NodeColor: 30583,48316,7967
@@ -12648,14 +12648,14 @@ Original: BESS_Adoption_EOP
 FormNode Fo1608852579
 Title: Total PV Incentives by Year
 Definition: 1
-NodeLocation: 788,940,1
+NodeLocation: 788,1212,1
 NodeSize: 172,20
 Original: Total_PV_Incentives_
 
 FormNode Fo135603299
 Title: Base Yr PV Incent
 Definition: 0
-NodeLocation: 788,980,1
+NodeLocation: 788,1252,1
 NodeSize: 172,20
 NodeColor: 65535,1,1
 Original: Base_Yr_PV_Incent
@@ -12663,7 +12663,7 @@ Original: Base_Yr_PV_Incent
 FormNode Fo1008018531
 Title: PV Incentive Scenario
 Definition: 0
-NodeLocation: 788,1020,1
+NodeLocation: 788,1292,1
 NodeSize: 172,20
 NodeInfo: 1,,,,,,,102,,,,,,0
 Original: PV_Incent_Scenario
@@ -12671,7 +12671,7 @@ Original: PV_Incent_Scenario
 FormNode Fo773137507
 Title: ITC Scenario
 Definition: 0
-NodeLocation: 788,1060,1
+NodeLocation: 788,1332,1
 NodeSize: 172,20
 NodeInfo: 1,,,,,,,102,,,,,,0
 Original: Selected_ITC_Scen
@@ -12679,7 +12679,7 @@ Original: Selected_ITC_Scen
 FormNode Fo1476338787
 Title: Annual Storage Incentives
 Definition: 1
-NodeLocation: 788,900,1
+NodeLocation: 788,1172,1
 NodeSize: 172,20
 Original: Annual_Storage_Incen
 
@@ -13117,6 +13117,20 @@ NodeSize: 244,20
 NodeInfo: 1,,,,,,1,328,,,,,,0
 NodeFont: Arial,16
 Original: Selected_Utility
+
+FormNode Fo553631891
+Title: Loadshape Map
+Definition: 0
+NodeLocation: 268,728,1
+NodeSize: 188,16
+Original: Loadshape_Map1
+
+FormNode Fo1780490387
+Title: Select Customer Rate
+Definition: 0
+NodeLocation: 268,760,1
+NodeSize: 188,16
+Original: Select_Customer_Rate
 
 Close Nexant_Model_Templat
 

@@ -3374,7 +3374,7 @@ Definition: 1
 NodeLocation: 260,204,1
 NodeSize: 204,20
 NodeColor: 65278,37008,6168
-Original: PrePost_Load_by_OpYr
+Original: Pre_Post_Load
 
 Text Te1534438799
 Title: Solar PV Financial Results
@@ -3906,7 +3906,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,0,49,1734,589,17,10
+DiagState: 2,1732,112,1734,589,17,10
 Aliases: Alias Al1579800542
 NodeColor: 65535,65535,65535
 AcpStyles: FrameNode: Load_Frame
@@ -3948,8 +3948,8 @@ ReformVal: [Profile_Hours,Month]
 Att__TotalsIndex: [Day_and_Hour]
 Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Area_Type,1,Month,1,Profile_Hours,1]
 
-Objective PrePost_Load_by_OpYr
-Title: Pre/Post Load by OpYr
+Objective Pre_Post_Load
+Title: Pre/Post Load
 Units: kW-hr/customer
 Description: Customer load before and after installation of a system. The PV Operating Year index captures PV system degradation over the life of the system, consistent with the input for PV_degradation_rate.
 Definition: Table(Pre_and_Post_System)(Pre_System_Load,Net_Load)
@@ -3964,7 +3964,7 @@ GraphSetup: Graph_AxisLabelFont:,14,0~
 Att_CatLineStyle Graph_Primary_Valdim:5~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
-Att_GraphValueRange PrePost_Load_by_OpYr:1,,1,,,,10,0,421.10850512981415,0
+Att_GraphValueRange Pre_Post_Load:1,,1,,,,10,0,421.10850512981415,0
 ReformVal: [Profile_Hours,Pre_and_Post_System]
 Att__TotalsIndex: [Profile_Hours]
 Att_GraphValueRange: 1,,,,,,10
@@ -3992,7 +3992,7 @@ Variable Scaled_Ann_Net_Load
 Title: Scaled Annual Net Load
 Units: kWh/year-cust
 Description: The annual net consumption per customer per year of the system lifetime.
-Definition: Sum(PrePost_Load_by_OpYr * Load_Monthly_Mults, Profile_Hours, Month)
+Definition: Sum(Pre_Post_Load * Load_Monthly_Mults, Profile_Hours, Month)
 NodeLocation: 1056,344,1
 NodeSize: 64,40
 ValueState: 2,94,131,791,671,0,MIDM
@@ -4008,7 +4008,7 @@ Variable Avg_DailyLoad_by_Mth
 Title: Avg Daily Pre/Post Load by Month
 Units: kW-hr/customer
 Description: The average daily customer load within a given month and by weekday or weekend.
-Definition: VAR agProfile:=Aggregate(PrePost_Load_by_OpYr, Map_Prof_DayType_Hr, Profile_Hours, Day_Type_and_Hour, type: "Average");~
+Definition: VAR agProfile:=Aggregate(Pre_Post_Load, Map_Prof_DayType_Hr, Profile_Hours, Day_Type_and_Hour, type: "Average");~
 ~
 agProfile[Day_Type_and_Hour=DayType_and_Hour_Map]
 NodeLocation: 1056,88,1
@@ -4056,7 +4056,7 @@ Definition: IF Decouple_Rates2 THEN Load_Net_of_Solar ELSE Load_Net_of_Storage
 NodeLocation: 896,136,1
 NodeSize: 64,40
 WindState: 2,18,322,1163,505
-ValueState: 2,200,45,1319,769,0,MIDM
+ValueState: 2,2060,141,1497,651,1,MIDM
 ReformVal: [Profile_Hours,System_Types]
 Att_ResultSliceState: [PV_Sectors,22,PV_Climate_Zone,2,Month,1,Area_Type,1,PV_Operating_Year,1,Profile_Hours,1]
 
@@ -4064,7 +4064,7 @@ Variable PrePost_Load_Strg
 Title: Pre and Post Customer Load
 Units: kW-hr/customer
 Description: Customer load before and after installation of a system. The PV Operating Year index captures PV system degradation over the life of the system, consistent with the input for PV_degradation_rate.
-Definition: PrePost_Load_by_OpYr[Rate_Vintage=RateVint_by_RateName, Pre_and_Post_System=Pre_or_Post_by_Syst, System_Types=SystType_for_System]
+Definition: Pre_Post_Load[Rate_Vintage=RateVint_by_RateName, Pre_and_Post_System=Pre_or_Post_by_Syst, System_Types=SystType_for_System]
 NodeLocation: 1216,240,1
 NodeSize: 64,40
 WindState: 2,394,15,1122,599
@@ -4102,7 +4102,7 @@ Variable PrePost_Load_Solar
 Title: Pre and Post Customer Load
 Units: kW-hr/customer
 Description: Customer load before and after installation of a system in the first operating year (subsequent operating years account for degradation but are not shown in this particular output). Results shown here are for the rate vintage selected via the input "Rate Vintage for GUI," and is typically the latest rate.
-Definition: PrePost_Load_by_OpYr[PV_Operating_Year=1, Rate_Vintage=RateVint_by_RateName]
+Definition: Pre_Post_Load[Rate_Vintage=RateVint_by_RateName]
 NodeLocation: 1216,136,1
 NodeSize: 64,40
 ValueState: 2,2066,18,1535,841,1,MIDM
@@ -4121,7 +4121,7 @@ Date: Wed, May 1, 2019 11:53 AM
 NodeLocation: 576,344,1
 NodeSize: 64,40
 NodeInfo: 1,1,0,1,1,1,0,,0,,0,,,
-DiagState: 2,164,81,1612,650,17,10
+DiagState: 2,143,69,1612,650,17,10
 AcpStyles: FrameNode: Profile_Frame
 
 Alias Al1557428073
@@ -4249,7 +4249,8 @@ Description: Multipliers to adjust the modeled hours in the optimization window 
 Definition: Applied_Monthly_Mult[Static_Profile_Names=Loadshape_Map_of_Uti[All_Sectors=PV_Sectors]]
 NodeLocation: 712,776,1
 NodeSize: 64,40
-ValueState: 2,225,104,1438,668,0,MIDM
+ValueState: 2,157,246,1438,451,0,MIDM
+Aliases: Alias Al1765941395
 ReformVal: [Profile_Hours,Month]
 Att_ResultSliceState: [PV_Sectors,30,Month,1,Profile_Hours,1]
 
@@ -4914,6 +4915,21 @@ Aliases: Alias Al1968755747
 ReformVal: [PV_Climate_Zone,PV_Sectors]
 NumberFormat: 2,F,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 
+Variable kWh_mo_kW
+Title: kWh/mo/kW
+Definition: sum(Pre_Post_Load * Load_Monthly_Mults,Profile_Hours) / MAX(Pre_Post_Load,Profile_Hours)
+NodeLocation: 896,48,1
+NodeSize: 64,40
+ValueState: 2,861,105,955,715,,MIDM
+ReformVal: [Month,Pre_and_Post_System]
+Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,1,PV_Climate_Zone,1,System_Types,3,Area_Type,1,Pre_and_Post_System,2,Month,1]
+
+Alias Al1765941395
+Title: Load Monthly Mults
+NodeLocation: 592,48,1
+NodeSize: 64,40
+Original: Load_Monthly_Mults
+
 Close Customer_Load
 
 Module Energy_and_Demand
@@ -4941,7 +4957,7 @@ Variable Consumption_by_TOU
 Title: Consumption by TOU
 Units: kWh
 Description: The total energy consumption by time of use.
-Definition: VAR agProfile:=Aggregate(PrePost_Load_by_OpYr * Load_Monthly_Mults, Map_Prof_DayType_Hr, Profile_Hours, Day_Type_and_Hour, type: "Sum");~
+Definition: VAR agProfile:=Aggregate(Pre_Post_Load * Load_Monthly_Mults, Map_Prof_DayType_Hr, Profile_Hours, Day_Type_and_Hour, type: "Sum");~
 ~
 agProfile[Day_Type_and_Hour=DayType_and_Hour_Map]~
 
@@ -5188,7 +5204,7 @@ Variable Max_Demand_by_TOU
 Title: Max Demand by TOU
 Units: kW
 Description: The maximum demand by time of use.
-Definition: VAR agProfile:=Aggregate(PrePost_Load_by_OpYr, Map_Prof_DayType_Hr, Profile_Hours, Day_Type_and_Hour, type: "Max");~
+Definition: VAR agProfile:=Aggregate(Pre_Post_Load, Map_Prof_DayType_Hr, Profile_Hours, Day_Type_and_Hour, type: "Max");~
 ~
 agProfile[Day_Type_and_Hour=DayType_and_Hour_Map]
 NodeLocation: 120,608,1
@@ -5203,7 +5219,7 @@ Variable Consum_by_TOU_Prd
 Title: Consumption by TOU Period
 Units: kWh
 Description: The total energy consumption by TOU period.
-Definition: Aggregate(PrePost_Load_by_OpYr * Load_Monthly_Mults, Periods_by_ProfileHr[Data_Types=Energy_Rate_Label], Profile_Hours, Periods)
+Definition: Aggregate(Pre_Post_Load * Load_Monthly_Mults, Periods_by_ProfileHr[Data_Types=Energy_Rate_Label], Profile_Hours, Periods)
 NodeLocation: 280,72,1
 NodeSize: 64,40
 ValueState: 2,277,61,1207,664,0,MIDM
@@ -5218,7 +5234,7 @@ Title: Max Demand by TOU Period
 Units: kW
 Description: The maximum demand by TOU period.
 Definition: IF Include_demand_charg  THEN  {zeros out demand charges if they are not accounted for in the analysis}~
-Replace_X_with_Y(Aggregate(PrePost_Load_by_OpYr, Periods_by_ProfileHr[Data_Types=Demand_Data_Types], Profile_Hours, Periods, 'Max'), Null, 0)~
+Replace_X_with_Y(Aggregate(Pre_Post_Load, Periods_by_ProfileHr[Data_Types=Demand_Data_Types], Profile_Hours, Periods, 'Max'), Null, 0)~
 ELSE 0
 NodeLocation: 200,504,1
 NodeSize: 64,40
@@ -5326,7 +5342,7 @@ Variable Monthly_Peak_Demand
 Title: Monthly Peak Demand
 Units: kW
 Description: Maximum Peak Demand over all hours over the entire month. This is only used for calculating tiering of energy charges if the tier "max" attribute has units of "kWh/kW," which then requires multiplying the input max attribute by the peak kW to get that actual kWh threshold for the energy tier. 
-Definition: local x:=Replace_X_with_Y(Aggregate(PrePost_Load_by_OpYr, Periods_by_ProfileHr[Data_Types=Energy_Rate_Label], Profile_Hours, Periods, 'Max'), Null, 0);~
+Definition: local x:=Replace_X_with_Y(Aggregate(Pre_Post_Load, Periods_by_ProfileHr[Data_Types=Energy_Rate_Label], Profile_Hours, Periods, 'Max'), Null, 0);~
 MAX(x,Periods)
 NodeLocation: 912,200,1
 NodeSize: 64,40
@@ -5341,7 +5357,7 @@ Definition: Table(Rate_Names)(Choice(Max_Attribute_Units,1,0),Choice(Max_Attribu
 NodeLocation: 1088,200,1
 NodeSize: 64,56
 DefnState: 2,501,34,894,794,0,DFNM
-Aliases: FormNode Fo775011603, FormNode Fo825343251, FormNode Clipboard_Fo77501160, FormNode Fo407355539
+Aliases: FormNode Fo775011603, FormNode Fo825343251, FormNode Fo407355539
 NodeColor: 65535,65531,1
 TableCellDefault: Choice(Max_Attribute_Units,1,0)
 
@@ -5614,7 +5630,7 @@ Choice(Rate_Names_with_None,18,0),1-May-2023,1,~
 Choice(Rate_Names_with_None,13,0),1-Apr-2023,1,~
 Choice(Rate_Names_with_None,12,0),1-Apr-2023,1,~
 Choice(Rate_Names_with_None,28,0),1-Jan-2022,1,~
-Choice(Rate_Names_with_None,29,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,28,0),1-Jan-2022,1,~
 Choice(Rate_Names_with_None,34,0),23-Jan-2023,1,~
 Choice(Rate_Names_with_None,35,0),23-Jan-2023,1,~
 Choice(Rate_Names_with_None,10,0),1-Nov-2019,1,~
@@ -5652,9 +5668,9 @@ Null,Null,Null)
 NodeLocation: 96,216,1
 NodeSize: 64,40
 WindState: 2,2043,162,1402,650
-DefnState: 2,135,203,1648,331,0,DFNM
+DefnState: 2,215,163,1530,308,0,DFNM
 ValueState: 2,302,51,935,658,0,MIDM
-Aliases: FormNode Fo1547766909, FormNode Fo1547828216
+Aliases: FormNode Fo1547766909, FormNode Fo1547828216, FormNode Fo1780490387
 NodeColor: 65535,65531,1
 ReformDef: [Pre_and_Post_System,All_Sectors]
 ReformVal: [Pre_and_Post_System,Rate_Vintage]
@@ -6347,7 +6363,7 @@ Definition: 1
 NodeLocation: 88,64,1
 NodeSize: 64,40
 NodeColor: 19661,48336,65535
-Original: PrePost_Load_by_OpYr
+Original: Pre_Post_Load
 
 Index Buy_or_Sell_
 Title: Buy or Sell?
@@ -6395,8 +6411,8 @@ Original: Data_by_Tier_Period
 
 Variable PrePost_Load_BuySell
 Title: PrePost Load, BuySell
-Definition: IF Buy_or_Sell_=Sell_Price_Label THEN PrePost_Load_by_OpYr * (PrePost_Load_by_OpYr<0) ELSE~
-PrePost_Load_by_OpYr * (PrePost_Load_by_OpYr>=0)
+Definition: IF Buy_or_Sell_=Sell_Price_Label THEN Pre_Post_Load * (Pre_Post_Load<0) ELSE~
+Pre_Post_Load * (Pre_Post_Load>=0)
 NodeLocation: 248,64,1
 NodeSize: 64,40
 ValueState: 2,226,42,1234,766,0,MIDM
@@ -8932,8 +8948,9 @@ Definition: sum(Monthly_Solar,Month_Day_and_Hour,Month) * System_Has_Solar_Pro[A
 
 NodeLocation: 680,1144,1
 NodeSize: 64,40
-ValueState: 2,2322,109,1285,584,1,MIDM
+ValueState: 2,1033,59,852,723,1,MIDM
 Aliases: Alias Al2034073747
+GraphSetup: Att_GraphIndexRange Static_PV_Time:1,,0,,,,10,2007.4165800958872,2024.133097231388,0
 Att_ResultSliceState: [PV_Climate_Zone,1,Area_Type,1,Pre_and_Post_System,2,System_Types,1,PV_Sectors,1,Static_PV_Time,1]
 
 Alias Al1320845459
@@ -11780,17 +11797,17 @@ ELSE Divide(numerator, First_Year_Bill_Savi, False)
 NodeLocation: 928,168,1
 NodeSize: 64,40
 WindState: 2,332,171,1361,658
-ValueState: 2,391,57,1186,703,1,MIDM
+ValueState: 2,133,58,883,724,1,MIDM
 Aliases: Alias Al1548956516
 GraphSetup: ShowKey:2~
 Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,40.543K,42.369K,0~
-Att_GraphIndexRange Time:1,,0,,,,,42097.15426245332,46042.84128034115,0~
-Att_GraphValueRange Mthly_Simple_Payback:1,,1,,,,10,0,37.363200187683105,0
+Att_GraphIndexRange Time:1,,1,,,,,37284.21272812039,42428.708255678415,0~
+Att_GraphValueRange Mthly_Simple_Payback:1,,1,,,,10,0,18.89987215399742,0
 ReformVal: [Time,System_Types]
 DisplayOutputs: Object Object, Object Variable, Variable Payback_Time_by_ID1
 Att__TotalsIndex: [Self]
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,PV_Sectors,2,Utility_Options_for_,1,System_Types,1,Time,253]
+Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,PV_Sectors,1,System_Types,1,Time,253]
 {!40300|Att_SlicerPopupSize: 227,70}
 
 Variable Monthly_ITC_Fraction
@@ -12774,7 +12791,7 @@ ReformVal: [Pre_and_Post_System,Rate_Names_and_Start]
 Att_ResultSliceState: [PV_Sectors,1,Rate_Names_and_Start,1,PV_Climate_Zone,1]
 
 Index Rate_Names_and_Start
-Att_PrevIndexValue: ['SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -20 (Industrial Service) | 2023-05','SC -20 (Industrial Service) + Rate PR-Standard Offer | 2023-05','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider | 2023-05 For Storage Dispatch','SC -8 (Residential Service) | 2023-05','SC -9 (Commercial Service) | 2023-05']
+Att_PrevIndexValue: ['VA -1 (Residential Service) | 2022-01','VA -1 (Residential Service) + Net Metering T&C | 2022-01','VA -GS2(Commercial Service Demand) | 2022-01','VA -GS3(Industrial Service) | 2022-01','VA -GS3(Industrial Service) + Net Metering T&C | 2022-01']
 Title: Rate Names and Start Dates
 Definition: VAR names:=MdArrayToTable(Selected_Cust_Rates, omitNull: True);~
 VAR lastCol:=Size(names.Col);~
@@ -12786,7 +12803,7 @@ NodeLocation: 384,1192,1
 NodeSize: 64,40
 WindState: 2,2146,81,1165,697
 ValueState: 2,908,442,659,261,0,MIDM
-{!40300|Att_SlicerPopupSize: 1827,522}
+{!40300|Att_SlicerPopupSize: 1832,522}
 
 Text Te1545165196
 Description: Currently chooses the rate name for the post-system, which doesn't tell you the pre-system if they are different.
@@ -12983,7 +13000,7 @@ NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Object Object, Object Function, Object Variable, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi
 Att_GraphIndexRange: 1,,0,,,,,1,11,1
 {!50400|Att_AxisOrKeyTitle: ""}
-{!40300|Att_SlicerPopupSize: 1743,353}
+{!40300|Att_SlicerPopupSize: 1768,353}
 OnChange: Set_Optimization_Sec()
 
 FormNode Fo1539140368
@@ -13972,7 +13989,7 @@ Definition: Subset(Storage_Systems <> Storage_Added_Label)
 NodeLocation: 1104,936,1
 NodeSize: 64,40
 WindState: 2,40,-1,910,825
-{!40300|Att_SlicerPopupSize: 663,110}
+{!40300|Att_SlicerPopupSize: 678,110}
 
 Variable System_with_PV
 Title: System with PV
