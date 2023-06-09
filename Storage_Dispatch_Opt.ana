@@ -11,7 +11,7 @@ Date: Wed, May 1, 2019 11:53 AM
 DefaultSize: 64,40
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,0,0,,0,,,0
-DiagState: 2,822,200,720,254,17,10
+DiagState: 2,640,194,720,254,17,10
 NodeColor: 65535,65535,65535
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkModule Storage_Dispatch_Opt,2,2,0,0,Storage_Dispatch_Opt.ana
@@ -23,7 +23,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 416,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,28,46,1822,740,17,10
+DiagState: 2,35,7,1822,740,17,10
 NodeColor: 65535,65535,65535
 
 Decision Stored_Grid_Elect1
@@ -1174,8 +1174,8 @@ Definition: Total_Charge2 - Total_Discharge_Los2
 NodeLocation: 1168,536,1
 NodeSize: 64,40
 WindState: 2,35,16,720,350
-ValueState: 2,186,172,810,717,,MIDM
-Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,3,PV_Climate_Zone,1,Opt_Storage_Systems,1,Seq_Opt_Number,1,Month,1,Opt_Hours,1]
+ValueState: 2,370,156,1336,659,,MIDM
+Att_ResultSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Opt_Storage_Systems,2,Seq_Opt_Number,1,Opt_Sectors,1,Area_Type,1,Month,1,Opt_Hours,1]
 
 Variable Appl_Variab_Penalty
 Title: Applied Variability Penalty
@@ -1889,7 +1889,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 264,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1970,14,1661,710,17,10
+DiagState: 2,104,27,1661,723,17,10
 NodeColor: 65535,65535,65535
 
 Variable Lev_NCDmdPrice_Opt
@@ -2137,18 +2137,18 @@ Definition: Table(All_Storage_Systems)(Choice(All_System_Types,1,0),Choice(All_S
 NodeLocation: 104,416,1
 NodeSize: 64,40
 WindState: 2,419,215,720,680
-DefnState: 2,1234,398,565,248,0,DFNM
+DefnState: 2,1259,409,565,248,0,DFNM
 Aliases: FormNode Fo1552348254
 NodeColor: 65535,65531,1
 ReformDef: [0,Opt_Storage_Systems]
 TableCellDefault: Choice(All_System_Types,1,0)
 
-Decision Map_Tier_Weights_to1
+Decision Map_Tier_WeightsLoad
 Title: Map Tier Weights to Pre/Post for Load
 Description: Maps storage systems to a the appropriate pre or post condition for a similar non-storage system in order to estimate the weights by tier that determine average retail energy/demand rates.
 Definition: Table(All_Storage_Systems)(Choice(Pre_and_Post_System,2,0),Choice(Pre_and_Post_System,2,0),Choice(Pre_and_Post_System,2,0),Choice(Pre_and_Post_System,1,0),Choice(Pre_and_Post_System,1,0))
 NodeLocation: 104,504,1
-NodeSize: 64,40
+NodeSize: 104,40
 WindState: 2,326,439,720,499
 DefnState: 2,1026,300,472,249,0,DFNM
 Aliases: FormNode Fo1552348255
@@ -2170,7 +2170,7 @@ Definition: 0
 NodeLocation: 112,556,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
-Original: Map_Tier_Weights_to1
+Original: Map_Tier_WeightsLoad
 
 Text Te1552348258
 Description: When calculating levelized rates, the rates are escalated at the inflation rate, not the rate escalation scenario that is selected. This may not have a material impact on the optimized dispatch, since all rate components (eg, energy and demand) will be escalating similarly. However, higher escalation rates would lead to larger absolute deltas between rates (eg, deltas between different time of use periods and deltas between energy and demand rates) and could change the optimal dispatch strategy.
@@ -2212,17 +2212,17 @@ Variable Wtd_Energy_Buy_Price
 Title: Wtd Energy Buy Price by Period
 Units: $/kWh
 Description: The weighted energy price by period. This is weighted by the amount of energy falling in each tier for the system prior to adding storage. Implicitly, this assumes that storage will not shift the monthly energy consumption enough to change the percentage of monthly consumption falling in each tier.
-Definition: Sum(Pct_Consump_by_Tier[System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems], Pre_and_Post_System=Map_Tier_Weights_to1[All_Storage_Systems=Opt_Storage_Systems]] * {OLD: Energy_Price}~
-Energy_Price_Buy_Se1[Pre_and_Post_System=Map_Tier_Weights_to_[All_Storage_Systems=Opt_Storage_Systems]], Tiers)
-NodeLocation: 104,160,1
+Definition: Sum(Pct_Consump_by_Tier[System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems], Pre_and_Post_System=Map_Tier_WeightsLoad[All_Storage_Systems=Opt_Storage_Systems]] * {OLD: Energy_Price}~
+Energy_Price_Buy_Se1[Pre_and_Post_System=Map_Tier_WeightsPric[All_Storage_Systems=Opt_Storage_Systems],System_Types=Opt_Storage_Systems], Tiers)
+NodeLocation: 96,144,1
 NodeSize: 64,40
 WindState: 2,7,14,1502,537
-ValueState: 2,1279,239,497,472,0,MIDM
+ValueState: 2,2951,370,799,450,0,MIDM
 NodeColor: 65535,39321,39321
 ReformVal: [Periods,Month]
 NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 NodeFontColor: 0,0,0
-Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Opt_Storage_Systems,1,Area_Type,1,Buy_or_Sell_,1,PV_Sectors,2,Month,5,Periods,2]
+Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Opt_Storage_Systems,2,Area_Type,1,Buy_or_Sell_,2,PV_Sectors,2,Month,5,Periods,2]
 
 Variable Lev_Energy_Price_Prd
 Title: Lev Energy Price by Period
@@ -2239,7 +2239,7 @@ Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Opt_Storage_Systems,2,Pe
 Variable Periods_for_Prof_Opt
 Title: Periods for Profile Opt
 Description: The Profile Hours mapped to the corresponding rate period. This should only be used for the storage optimization since the system types and pre/post systems are specific to storage systems.
-Definition: Periods_by_ProfileHr[System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems], Pre_and_Post_System=Map_Tier_Weights_to_[All_Storage_Systems=Opt_Storage_Systems], Profile_Hours=Opt_Hours_for_SeqOpt[Seq_Opt_Number=Opt_Seq_Number]]
+Definition: Periods_by_ProfileHr[System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems], Pre_and_Post_System=Map_Tier_WeightsPric[All_Storage_Systems=Opt_Storage_Systems], Profile_Hours=Opt_Hours_for_SeqOpt[Seq_Opt_Number=Opt_Seq_Number]]
 NodeLocation: 312,456,1
 NodeSize: 64,40
 WindState: 2,55,333,1601,649
@@ -2253,7 +2253,7 @@ Variable Wtd_NC_Dmd_Price_Prd
 Title: Wtd Non-Coinc Dmd Price by Period
 Units: $/kW
 Description: The non-coincident demand prices by TOU period weighted across tiers based on the amount of load falling in each tier. The load should be net of solar if the storage system is combined with solar.
-Definition: Sum(Pct_Demand_by_Tier[Demand_Data_Types=Flat_Demand_Label, System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems], Pre_and_Post_System=Map_Tier_Weights_to1[All_Storage_Systems=Opt_Storage_Systems]] * Non_Coinc_Dmd_Price[Pre_and_Post_System=Map_Tier_Weights_to_[All_Storage_Systems=Opt_Storage_Systems]], Tiers);
+Definition: Sum(Pct_Demand_by_Tier[Demand_Data_Types=Flat_Demand_Label, System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems], Pre_and_Post_System=Map_Tier_WeightsLoad[All_Storage_Systems=Opt_Storage_Systems]] * Non_Coinc_Dmd_Price[Pre_and_Post_System=Map_Tier_WeightsPric[All_Storage_Systems=Opt_Storage_Systems], System_Types=Opt_Storage_Systems], Tiers);
 NodeLocation: 104,656,1
 NodeSize: 64,40
 WindState: 2,405,367,1498,833
@@ -2279,7 +2279,7 @@ Variable Wtd_OnPkDmdPrice_Prd
 Title: Wtd On-Peak Dmd Price by Period
 Units: $/kW
 Description: The on-peak demand prices by period weighted across tiers based on the amount of load falling in each tier. The load should be net of solar if the storage system is combined with solar.
-Definition: Sum(Pct_Demand_by_Tier[Demand_Data_Types=Demand_Rate_Label, System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems], Pre_and_Post_System=Map_Tier_Weights_to1[All_Storage_Systems=Opt_Storage_Systems]] * On_Peak_Demand_Price[Pre_and_Post_System=Map_Tier_Weights_to_[All_Storage_Systems=Opt_Storage_Systems]], Tiers) *test_include_demand;
+Definition: Sum(Pct_Demand_by_Tier[Demand_Data_Types=Demand_Rate_Label, System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems], Pre_and_Post_System=Map_Tier_WeightsLoad[All_Storage_Systems=Opt_Storage_Systems]] * On_Peak_Demand_Price[Pre_and_Post_System=Map_Tier_WeightsPric[All_Storage_Systems=Opt_Storage_Systems], System_Types=System_Types=Opt_Storage_Systems], Tiers) *test_include_demand;
 NodeLocation: 216,248,1
 NodeSize: 64,40
 WindState: 2,91,217,1710,418
@@ -2309,7 +2309,7 @@ Date: Wed, Oct 30, 2019 8:57 PM
 NodeLocation: 1136,656,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,80,163,1460,796,17,10
+DiagState: 2,230,59,1460,702,17,10
 
 Index Compare_Elements
 Title: Compare Elements
@@ -2400,7 +2400,7 @@ Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,4,PV_Climate_Zone,1,Storage_Sys
 
 Variable Bill_Energy_Rate
 Title: Bill Energy Rate
-Definition: Sum(Pct_Consump_by_Tier[Pre_and_Post_System=Map_Tier_Weights_to1[All_Storage_Systems=Opt_Storage_Systems], System_Types=Map_Tier_Wts_to_Str2] * Energy_Price[Pre_and_Post_System=Map_Tier_Weights_to1[All_Storage_Systems=Opt_Storage_Systems]], Tiers)[@PV_Operating_Year=1]
+Definition: Sum(Pct_Consump_by_Tier[Pre_and_Post_System=Map_Tier_WeightsLoad[All_Storage_Systems=Opt_Storage_Systems], System_Types=Map_Tier_Wts_to_Str2] * Energy_Price[Pre_and_Post_System=Map_Tier_WeightsLoad[All_Storage_Systems=Opt_Storage_Systems]], Tiers)[@PV_Operating_Year=1]
 NodeLocation: 256,384,1
 NodeSize: 64,40
 WindState: 2,98,82,1267,583
@@ -2423,7 +2423,7 @@ Att_SymbolRole: Periods
 
 Variable Bill_Peak_Rate
 Title: Bill Peak Rate
-Definition: Sum(Pct_Demand_by_Tier[Demand_Data_Types=Demand_Rate_Label, Pre_and_Post_System=Map_Tier_Weights_to1[All_Storage_Systems=Opt_Storage_Systems], System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems]] * On_Peak_Demand_Price[Pre_and_Post_System=Map_Tier_Weights_to1[All_Storage_Systems=Opt_Storage_Systems]], Tiers, Periods)[@PV_Operating_Year=1]
+Definition: Sum(Pct_Demand_by_Tier[Demand_Data_Types=Demand_Rate_Label, Pre_and_Post_System=Map_Tier_WeightsLoad[All_Storage_Systems=Opt_Storage_Systems], System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems]] * On_Peak_Demand_Price[Pre_and_Post_System=Map_Tier_WeightsLoad[All_Storage_Systems=Opt_Storage_Systems]], Tiers, Periods)[@PV_Operating_Year=1]
 NodeLocation: 256,472,1
 NodeSize: 64,40
 WindState: 2,98,82,1267,583
@@ -2446,7 +2446,7 @@ Att_SymbolRole: Periods
 
 Variable Bill_NC_Rate
 Title: Bill NC Rate
-Definition: Sum(Pct_Demand_by_Tier[Demand_Data_Types=Flat_Demand_Label, Pre_and_Post_System=Map_Tier_Weights_to1[All_Storage_Systems=Opt_Storage_Systems], System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems]] * Non_Coinc_Dmd_Price[Pre_and_Post_System=Map_Tier_Weights_to1[All_Storage_Systems=Opt_Storage_Systems]], Tiers, Periods)[@PV_Operating_Year=1]
+Definition: Sum(Pct_Demand_by_Tier[Demand_Data_Types=Flat_Demand_Label, Pre_and_Post_System=Map_Tier_WeightsLoad[All_Storage_Systems=Opt_Storage_Systems], System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems]] * Non_Coinc_Dmd_Price[Pre_and_Post_System=Map_Tier_WeightsLoad[All_Storage_Systems=Opt_Storage_Systems]], Tiers, Periods)[@PV_Operating_Year=1]
 NodeLocation: 256,560,1
 NodeSize: 64,40
 WindState: 2,98,82,1267,583
@@ -2692,23 +2692,16 @@ NodeSize: 64,40
 WindState: 2,21,199,720,350
 ValueState: 2,2210,485,1394,364,0,MIDM
 ReformVal: [Month,Periods]
-Att_ResultSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Opt_Storage_Systems,2,Buy_or_Sell_,2,Area_Type,1,PV_Sectors,2,Periods,1,Month,3]
+Att_ResultSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Opt_Storage_Systems,2,Buy_or_Sell_,1,Area_Type,1,PV_Sectors,2,Periods,1,Month,3]
 
-Variable Wtd_Energy_Sell_Pric
-Title: Wtd Energy Sell Price by Period
-Definition: Sum(Pct_Consump_by_Tier[System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems], Pre_and_Post_System=Map_Tier_Weights_to1[All_Storage_Systems=Opt_Storage_Systems]] * Energy_Price_Buy_Se1[Pre_and_Post_System=Map_Tier_Weights_to1[All_Storage_Systems=Opt_Storage_Systems]], Tiers)
-NodeLocation: 104,56,1
-NodeSize: 64,40
-ValueState: 2,462,301,853,545,0,MIDM
-
-Decision Map_Tier_Weights_to_
+Decision Map_Tier_WeightsPric
 Title: Map Tier Weights to Pre/Post for Prices
 Description: Maps storage systems to a the appropriate pre or post condition for a similar non-storage system in order to estimate the weights by tier that determine average retail energy/demand rates.
 Definition: Table(All_Storage_Systems)(Choice(Pre_and_Post_System,2,0),Choice(Pre_and_Post_System,2,0),Choice(Pre_and_Post_System,2,0),Choice(Pre_and_Post_System,2,0),Choice(Pre_and_Post_System,1,0))
 NodeLocation: 1112,512,1
-NodeSize: 72,48
+NodeSize: 96,48
 WindState: 2,326,439,720,499
-DefnState: 2,1026,300,472,249,0,DFNM
+DefnState: 2,1168,342,472,249,0,DFNM
 Aliases: FormNode Fo649935635
 NodeColor: 65535,65531,1
 ReformDef: [0,Opt_Storage_Systems]
@@ -2721,7 +2714,7 @@ NodeLocation: 1108,568,1
 NodeSize: 60,16
 NodeInfo: 1,,,0
 NodeColor: 65535,65531,1
-Original: Map_Tier_Weights_to_
+Original: Map_Tier_WeightsPric
 
 FormNode Fo620575507
 Title: Pre/Post Load by OpYr
@@ -2757,7 +2750,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,2020,10,1769,821,17,10
+DiagState: 2,1970,17,1769,744,17,10
 NodeColor: 65535,65535,65535
 
 Decision Opt_Seq_Number
@@ -3035,7 +3028,7 @@ Description: The storage system for the current storage optimization. This will 
 Definition: Choice(Opt_Storage_Systems,0,1)
 NodeLocation: 464,864,1
 NodeSize: 64,40
-WindState: 2,137,521,720,350
+WindState: 2,137,369,720,350
 Aliases: FormNode Fo1552348263
 DisplayOutputs: Variable Num_Full_Discharges1
 
@@ -3441,7 +3434,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 8-Jun-2023 12:54:22.580000
+Definition: 9-Jun-2023 11:58:17.873000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3449,7 +3442,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 8-Jun-2023 12:55:33.139000
+Definition: 9-Jun-2023 11:58:27.615000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 WindState: 2,362,172,796,472
@@ -3510,7 +3503,6 @@ WindState: 2,-1,4,1794,645
 NodeColor: 65535,52427,52427
 
 Index Start_End_Time1
-Att_PrevIndexValue: ['Start Opt','End Opt','End Save']
 Title: Start & End Time
 Definition: ['Start Opt','End Opt','End Save']
 NodeLocation: 1888,760,1
@@ -4625,6 +4617,13 @@ NodeSize: 228,16
 NodeInfo: 1,,,,,,,312,,,,,,0
 Original: Selected_Utility
 
+FormNode Fo63398035
+Title: Select Rate
+Definition: 0
+NodeLocation: 740,112,1
+NodeSize: 92,16
+Original: Select_Rate
+
 Close Storage_Optimizati11
 
 Module Storage_Opt_Diagnos2
@@ -4634,7 +4633,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 264,160,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,304,47,1294,622,17,10
+DiagState: 2,2371,70,1294,622,17,10
 NodeColor: 65535,65535,65535
 
 Variable Tot_Elect_Meet_Load2
@@ -4665,7 +4664,7 @@ NodeLocation: 272,64,1
 NodeSize: 64,40
 WindState: 2,2457,255,720,350
 DefnState: 2,3223,410,416,490,0,DFNM
-ValueState: 2,332,27,1187,754,1,MIDM
+ValueState: 2,405,70,1187,754,1,MIDM
 Aliases: FormNode Fo1557443244, FormNode Fo1582234728
 NodeColor: 19661,48336,65535
 GraphSetup: Att_GraphValueRange Flows_by_Opt_Hour:1,,1,,,,,-843.6260223388672,2734.088897705078,0~
@@ -4689,7 +4688,7 @@ Variable Pct_Stored_PV_Elect2
 Title: Pct of Stored Electricity from PV
 Units: fraction
 Description: The percentage of stored electricity that comes from PV.
-Definition: VAR pct:=Divide(Sum(Applied_Stored_PV2, Opt_Hours, Seq_Opt_Number), Sum(Total_Charge2, Opt_Hours, Seq_Opt_Number), True)[Rate_Vintage=RateVint_by_RateName];~
+Definition: VAR pct:=Divide(Sum(Applied_Stored_PV2, Opt_Hours, Seq_Opt_Number), Sum(Total_Charge2, Opt_Hours, Seq_Opt_Number), True)[Rate_Vintage=RateVint_by_RateName[System_Types=storage_systems,PV_Sectors=Opt_Sectors]];~
 ~
 IF Estim_Storage_Add_On AND (Storage_Systems=Storage_Added_Label)~
 THEN pct[Opt_Storage_Systems=PV_Strg_Retro_Label]~
@@ -4697,20 +4696,20 @@ ELSE pct[Opt_Storage_Systems=Storage_Systems]
 NodeLocation: 416,160,1
 NodeSize: 64,40
 WindState: 2,13,14,1254,350
-ValueState: 2,216,178,1270,636,0,MIDM
+ValueState: 2,390,405,1270,291,0,MIDM
 ReformVal: [Month,Storage_Systems]
 NumberFormat: 2,%,2,2,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [PV_Sectors,1,Rate_Names_and_Start,6,PV_Climate_Zone,1,Opt_Sectors,1,Storage_Systems,1,Month,1]
+Att_ResultSliceState: [Rate_Names_and_Start,5,PV_Climate_Zone,1,Opt_Sectors,2,Area_Type,1,Storage_Systems,1,Month,1]
 
 Variable Dispatch_Flows2
 Title: Dispatch Flows
 Units: kW-hr/customer
 Description: All dispatch flows for the selected time window.
-Definition: Reindex_to_ProfileHr(Flows_by_Opt_Hour[Flow_Name2=Flow_Types1, Rate_Vintage=RateVint_by_RateName[PV_Sectors=Opt_Sector2, PV_Climate_Zone=Opt_Climate_Zone2]])[Profile_Hours=Viewed_Dispatch_Tim2]
+Definition: Reindex_to_ProfileHr(Flows_by_Opt_Hour[Flow_Name2=Flow_Types1{, Rate_Vintage=RateVint_by_RateName[PV_Sectors=Opt_Sector2, PV_Climate_Zone=Opt_Climate_Zone2,System_Types=Opt_Storage_Systems]}])[Profile_Hours=Viewed_Dispatch_Tim2]
 NodeLocation: 416,64,1
 NodeSize: 64,40
 WindState: 2,471,217,972,489
-ValueState: 2,187,10,1322,767,1,MIDM
+ValueState: 2,188,62,1582,696,1,MIDM
 Aliases: FormNode Fo1557458712, FormNode Fo1571775089, FormNode Fo1228179747
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
 Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,1,,,,,22,91,1~
@@ -4721,7 +4720,7 @@ Att_Stacked_Lines Graph_Primary_Valdim:0
 ReformVal: [Viewed_Dispatch_Tim2,Flow_Types1]
 NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Viewed_Dispatch_Tim2,Rate_Names_and_Start]
-Att_ResultSliceState: [Area_Type,1,Rate_Names_and_Start,0,Opt_Sectors,2,PV_Climate_Zone,1,Opt_Storage_Systems,2,Month,1,Flow_Types1,1,Viewed_Dispatch_Tim2,1]
+Att_ResultSliceState: [Area_Type,1,Opt_Sectors,2,PV_Climate_Zone,1,Opt_Storage_Systems,1,Month,5,Rate_Vintage,1,Flow_Types1,1,Viewed_Dispatch_Tim2,1]
 
 Decision Dispatch_Start_Time2
 Title: Start Time for Dispatch
@@ -4774,7 +4773,7 @@ Definition: Table(Rate_Component2)(EnergyPrice_by_OptHr*100,On_Peak_Dmd_Periods2
 NodeLocation: 272,256,1
 NodeSize: 64,40
 WindState: 2,49,142,720,350
-DefnState: 2,7,370,629,303,0,DFNM
+DefnState: 2,1131,344,629,303,0,DFNM
 ValueState: 2,514,13,1120,822,,MIDM
 NodeColor: 19661,48336,65535
 ReformVal: [Ext_Day_and_Hour,Rate_Vintage]
@@ -4798,20 +4797,20 @@ ValueState: 2,121,109,1277,728,,MIDM
 Variable Rates_for_Dispatch2
 Title: Rates for Dispatch
 Description: The levelized rates used in the storage dispatch.
-Definition: Reindex_to_ProfileHr(Rates_Storage_Dispa2)[Profile_Hours=Viewed_Dispatch_Tim2, Rate_Vintage=RateVint_by_RateName, PV_Climate_Zone=ClimateZone_for_Rate, PV_Sectors=Sector_for_Rate_Name]
+Definition: Reindex_to_ProfileHr(Rates_Storage_Dispa2)[Profile_Hours=Viewed_Dispatch_Tim2, Rate_Vintage=RateVint_by_RateName[System_Types=Opt_Storage_Systems], PV_Climate_Zone=ClimateZone_for_Rate, PV_Sectors=Sector_for_Rate_Name]
 NodeLocation: 416,256,1
 NodeSize: 64,40
 WindState: 2,98,82,1362,538
 ValueState: 2,391,245,1281,645,0,MIDM
 Aliases: FormNode Fo1558046586, FormNode Fo1571775092
 ReformVal: [Viewed_Dispatch_Tim2,Rate_Component2]
-Att_ResultSliceState: [Rate_Names_and_Start,4,Month,2,Opt_Storage_Systems,2,Rate_Component2,1,Viewed_Dispatch_Tim2,1]
+Att_ResultSliceState: [Rate_Names_and_Start,4,Month,2,Opt_Storage_Systems,2,Opt_Sectors,1,Buy_or_Sell_,1,System_Types,1,Area_Type,1,Rate_Component2,1,Viewed_Dispatch_Tim2,1]
 
 Variable Battery_Charge_Disp2
 Title: Battery Charge for Dispatch
 Units: kWh
 Description: The battery's charge level during the viewed dispatch window.
-Definition: Reindex_to_ProfileHr(Battery_Charge_EOP)[Profile_Hours=Viewed_Dispatch_Tim2, Rate_Vintage=RateVint_by_RateName[PV_Sectors=Opt_Sector2, PV_Climate_Zone=Opt_Climate_Zone2]]
+Definition: Reindex_to_ProfileHr(Battery_Charge_EOP)[Profile_Hours=Viewed_Dispatch_Tim2, Rate_Vintage=RateVint_by_RateName[PV_Sectors=Opt_Sector2, PV_Climate_Zone=Opt_Climate_Zone2,System_Types=Opt_Storage_Systems]]
 NodeLocation: 416,448,1
 NodeSize: 64,40
 WindState: 2,0,440,1358,350
@@ -4879,13 +4878,13 @@ Variable Daily_Charge_Levels1
 Title: Daily Charge Levels
 Units: kWh
 Description: The battery charge levels for each day of the week.
-Definition: VAR charge:=Reindex_to_ProfileHr(Battery_Charge_EOP[Rate_Vintage=RateVint_by_RateName]) * ConsecDays_Profile;~
+Definition: VAR charge:=Reindex_to_ProfileHr(Battery_Charge_EOP[Rate_Vintage=RateVint_by_RateName[System_Types=Opt_Storage_Systems]]) * ConsecDays_Profile;~
 VAR map:=Mod(@Profile_Hours - 1, 24) + 1;   {Maps hour of day to the profile hours}~
 Aggregate(charge, TimeOfDay_ProfileHrs, Profile_Hours, Time_of_Day)
 NodeLocation: 560,448,1
 NodeSize: 64,40
 WindState: 2,29,14,1100,666
-ValueState: 2,508,13,1413,810,1,MIDM
+ValueState: 2,269,35,1413,810,1,MIDM
 ReformVal: [Time_of_Day,Days_in_Profile]
 Att_ResultSliceState: [Rate_Names_and_Start,16,PV_Sectors,1,PV_Climate_Zone,1,Seq_Opt_Number,2,Days_in_Opt_Window,1,Hour_of_Day,1]
 
@@ -5750,7 +5749,6 @@ NodeSize: 64,40
 ValueState: 2,52,58,693,471,0,MIDM
 
 Index Opt_Hours
-Att_PrevIndexValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216]
 Title: Opt Hours
 Definition: VAR start:=Max(App_Start_End_Pos[@Position_Type=1], Month);~
 VAR end:=Max(App_Start_End_Pos[@Position_Type=4], Month);~

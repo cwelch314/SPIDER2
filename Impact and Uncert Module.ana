@@ -49,13 +49,16 @@ Att_ResultSliceState: [Spatial_IDs,0,All_DER_Types,1,Start_of_Year,1]
 Variable Forecast_Load_Impact
 Title: Forecast Load Impacts
 Units: MW
-Description: Average weekly load profiles for the impacts of DERs.
+Description: Average weekly load profiles for the impacts of DERs.~
+~
+Check this is right after adding the system type dimension to electric rates
 Definition: Table(All_DER_Types)(-Solar_Hourly_Impact,EV_Hourly_Impact,Null,Null,BESS_Hourly_Impacts)
 NodeLocation: 416,616,1
 NodeSize: 64,40
 WindState: 2,102,82,1208,612
 DefnState: 2,499,91,751,411,0,DFNM
 ValueState: 2,256,84,1422,748,1,MIDM
+NodeColor: 65535,1,1
 GraphSetup: Att_GraphIndexRange Profile_Hours:1,,1,,,,,1,26,1~
 Graph_AxisLabelFont:,18,0~
 Att_StackedBar Graph_Primary_Valdim:1~
