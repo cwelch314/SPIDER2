@@ -99,7 +99,7 @@ NodeLocation: 704,752,1
 NodeSize: 64,40
 WindState: 2,383,8,720,350
 ValueState: 2,72,74,753,627,,MIDM
-DisplayOutputs: Variable Num_Full_Discharges1
+DisplayOutputs: Object Variable, Variable Num_Full_Discharges1
 
 Variable Total_Charge2
 Title: Total Charge
@@ -1889,7 +1889,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 264,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,104,27,1661,723,17,10
+DiagState: 2,294,121,1661,665,17,10
 NodeColor: 65535,65535,65535
 
 Variable Lev_NCDmdPrice_Opt
@@ -2222,7 +2222,7 @@ NodeColor: 65535,39321,39321
 ReformVal: [Periods,Month]
 NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 NodeFontColor: 0,0,0
-Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Opt_Storage_Systems,2,Area_Type,1,Buy_or_Sell_,2,PV_Sectors,2,Month,5,Periods,2]
+Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,Opt_Storage_Systems,1,Area_Type,1,Buy_or_Sell_,2,PV_Sectors,2,Month,5,Periods,2]
 
 Variable Lev_Energy_Price_Prd
 Title: Lev Energy Price by Period
@@ -2279,7 +2279,7 @@ Variable Wtd_OnPkDmdPrice_Prd
 Title: Wtd On-Peak Dmd Price by Period
 Units: $/kW
 Description: The on-peak demand prices by period weighted across tiers based on the amount of load falling in each tier. The load should be net of solar if the storage system is combined with solar.
-Definition: Sum(Pct_Demand_by_Tier[Demand_Data_Types=Demand_Rate_Label, System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems], Pre_and_Post_System=Map_Tier_WeightsLoad[All_Storage_Systems=Opt_Storage_Systems]] * On_Peak_Demand_Price[Pre_and_Post_System=Map_Tier_WeightsPric[All_Storage_Systems=Opt_Storage_Systems], System_Types=System_Types=Opt_Storage_Systems], Tiers) *test_include_demand;
+Definition: Sum(Pct_Demand_by_Tier[Demand_Data_Types=Demand_Rate_Label, System_Types=Map_Tier_Wts_to_Str2[All_Storage_Systems=Opt_Storage_Systems], Pre_and_Post_System=Map_Tier_WeightsLoad[All_Storage_Systems=Opt_Storage_Systems]] * On_Peak_Demand_Price[Pre_and_Post_System=Map_Tier_WeightsPric[All_Storage_Systems=Opt_Storage_Systems], System_Types=Opt_Storage_Systems], Tiers) *test_include_demand;
 NodeLocation: 216,248,1
 NodeSize: 64,40
 WindState: 2,91,217,1710,418
@@ -2750,7 +2750,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,1970,17,1769,744,17,10
+DiagState: 2,100,15,1769,728,17,10
 NodeColor: 65535,65535,65535
 
 Decision Opt_Seq_Number
@@ -2761,7 +2761,7 @@ NodeLocation: 768,640,1
 NodeSize: 64,40
 WindState: 2,59,318,720,350
 Aliases: FormNode Fo1552491016, FormNode Fo1571352059
-DisplayOutputs: Variable Num_Full_Discharges1
+DisplayOutputs: Object Variable, Variable Num_Full_Discharges1
 
 FormNode Fo1552491016
 Title: Active Opt Number
@@ -2790,7 +2790,7 @@ NodeLocation: 464,640,1
 NodeSize: 64,40
 WindState: 2,149,1,720,350
 Aliases: FormNode Fo1206201853, FormNode Fo1552348256, FormNode Fo895004157
-DisplayOutputs: Variable Num_Full_Discharges1
+DisplayOutputs: Object Variable, Variable Num_Full_Discharges1
 
 Decision Opt_Climate_Zone2
 Title: Opt Climate Zone
@@ -3030,7 +3030,7 @@ NodeLocation: 464,864,1
 NodeSize: 64,40
 WindState: 2,137,369,720,350
 Aliases: FormNode Fo1552348263
-DisplayOutputs: Variable Num_Full_Discharges1
+DisplayOutputs: Object Variable, Variable Num_Full_Discharges1
 
 FormNode Fo1552348263
 Title: Opt Climate Zone
@@ -3222,13 +3222,14 @@ Decouple_Rates2:= 1;   {Decouple the saved storage decisions from the rates modu
 Use_Storage_Decisio2:= 1;   {Connect logic to decision variables rather than stored decisions}~
 ~
 VAR cnt:=0;   {Initialize the scenario counter}~
-VAR maxCnt:=Size(Storage_Opt_Scenari2);   {Find total number of scenarios}~
+VAR numScen:=Size(Storage_Opt_Scenari2);~
+VAR maxCnt:=numScen*Number_of_bess_opt_s;   {Find total number of scenarios}~
 ~
 FOR J:=Storage_Opt_Scenari2 DO (   {For each storage optimization scenario representing a single atomic LP}~
    cnt:=cnt+1;~
    VAR currentOptNum:=Seq_Opt_Num_by_Scen[Storage_Opt_Scenari2=J];   {Update the current sequential opt number}~
    VAR nextOptNum:=Next_Seq_Opt_Number[Storage_Opt_Scenari2=J];   {Update the next sequential opt number}~
-   ShowProgressBar("Storage Dispatch Optimization Progress", "Optimizing storage dispatch for scenario: '" & J & ". Scenario " & cnt & " of " & maxCnt & "." & " Sector " & Current_BESS_Sector & " of " & Number_of_bess_opt_s, (cnt - 0.1)/maxCnt);~
+   ShowProgressBar("Storage Dispatch Optimization Progress", "Optimizing storage dispatch for scenario: '" & J & ". Scenario " & (cnt + (Current_BESS_Sector-1) * numScen) & " of " & maxCnt & "." & " Sector " & Current_BESS_Sector & " of " & Number_of_bess_opt_s, ((Current_BESS_Sector-1) * numScen + (cnt - 0.1))/maxCnt);~
    Set_Storage_Filters2(J, Storage_Opt_Filters2);   {Set the optimization filters to the current scenario}~
    Save_Opt_Timestamp1(1);   {Set the start time of the current optimization}~
    Save_Status_and_Obj2();   {Saves the status and objective of the current optimization scenario}~
@@ -3251,7 +3252,7 @@ Storage_Opt_End_Tim2:= Today(withTime: True);   {Set the end time of the entire 
 
 NodeLocation: 1472,384,1
 NodeSize: 64,40
-WindState: 2,144,21,1528,716
+WindState: 2,137,121,1589,724
 
 Function Save_Storage_Solns2()
 Title: Save Storage Solutions (old)
@@ -3434,7 +3435,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 9-Jun-2023 11:58:17.873000
+Definition: 9-Jun-2023 13:23:37.949000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3442,7 +3443,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 9-Jun-2023 11:58:27.615000
+Definition: 9-Jun-2023 13:24:37.621000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 WindState: 2,362,172,796,472
@@ -4472,7 +4473,7 @@ WindState: 2,323,77,720,350
 Decision Select_Strg_Sector2
 Title: Selected Storage Sectors
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,2,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,3,allowNone:0,returnList:1)
 NodeLocation: 128,288,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348264, Alias Al513733155
@@ -4546,7 +4547,7 @@ NodeSize: 72,40
 
 Variable Current_BESS_Sector
 Title: Current BESS Sector
-Definition: 1
+Definition: 3
 NodeLocation: 648,264,1
 NodeSize: 64,40
 Aliases: FormNode Fo631382307
@@ -4596,7 +4597,7 @@ MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimizat
 Decision Choose_Sectors_to_Op
 Title: Choose Sectors to Optimize
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,2,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,allowNone:0,returnList:1)
 NodeLocation: 464,168,1
 NodeSize: 64,40
 Aliases: FormNode Fo989786659, Alias Al783884579, FormNode Fo431563043
@@ -4709,7 +4710,7 @@ Definition: Reindex_to_ProfileHr(Flows_by_Opt_Hour[Flow_Name2=Flow_Types1{, Rate
 NodeLocation: 416,64,1
 NodeSize: 64,40
 WindState: 2,471,217,972,489
-ValueState: 2,188,62,1582,696,1,MIDM
+ValueState: 2,204,52,1582,696,1,MIDM
 Aliases: FormNode Fo1557458712, FormNode Fo1571775089, FormNode Fo1228179747
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
 Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,1,,,,,22,91,1~
@@ -4720,7 +4721,7 @@ Att_Stacked_Lines Graph_Primary_Valdim:0
 ReformVal: [Viewed_Dispatch_Tim2,Flow_Types1]
 NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Viewed_Dispatch_Tim2,Rate_Names_and_Start]
-Att_ResultSliceState: [Area_Type,1,Opt_Sectors,2,PV_Climate_Zone,1,Opt_Storage_Systems,1,Month,5,Rate_Vintage,1,Flow_Types1,1,Viewed_Dispatch_Tim2,1]
+Att_ResultSliceState: [Area_Type,1,Opt_Sectors,2,PV_Climate_Zone,1,Opt_Storage_Systems,1,Month,8,Rate_Vintage,1,Flow_Types1,1,Viewed_Dispatch_Tim2,1]
 
 Decision Dispatch_Start_Time2
 Title: Start Time for Dispatch
@@ -4870,7 +4871,7 @@ NodeSize: 64,40
 WindState: 2,102,82,1188,409
 ValueState: 2,424,46,1053,792,0,MIDM
 ReformVal: [Month,Rate_Vintage]
-DisplayInputs: Function Divide, Index Profile_Hours, Variable Monthly_Mults_SeqOpt, Variable Storage_Capacity, Index PV_Sectors, Index System_Types, Index Month, Variable Applied_Tot_Dischrg, Decision Opt_Seq_Number, Decision Opt_Sector2, Decision Opt_System2, Index Seq_Opt_Number, Function Reindex_to_ProfileHr
+DisplayInputs: Object Function, Object Variable, Object Decision, Object Index, Function Divide, Index Profile_Hours, Variable Monthly_Mults_SeqOpt, Variable Storage_Capacity, Index PV_Sectors, Index System_Types, Index Month, Variable Applied_Tot_Dischrg, Decision Opt_Seq_Number, Decision Opt_Sector2, Decision Opt_System2, Index Seq_Opt_Number, Function Reindex_to_ProfileHr
 Att__TotalsIndex: [Month]
 Att_ResultSliceState: [PV_Sectors,2,PV_Climate_Zone,1,Storage_Systems,1,Rate_Vintage,1,Month,1]
 
@@ -5735,7 +5736,7 @@ NodeLocation: 248,376,1
 NodeSize: 64,40
 WindState: 2,58,531,1071,354
 ValueState: 2,228,234,488,688,0,MIDM
-DisplayOutputs: Variable Num_Full_Discharges1
+DisplayOutputs: Object Variable, Variable Num_Full_Discharges1
 {!40300|Att_SlicerPopupSize: 262,64}
 
 Index Valid_Opt_Hours
@@ -5772,7 +5773,7 @@ Sum(mapped_data, Seq_Opt_Number)
 NodeLocation: 408,88,1
 NodeSize: 64,40
 WindState: 2,-21,336,1002,449
-DisplayOutputs: Variable Num_Full_Discharges1
+DisplayOutputs: Object Variable, Variable Num_Full_Discharges1
 
 Function Reindex_to_Valid_Hrs(data)
 Title: Reindex to Valid Hours

@@ -4183,7 +4183,7 @@ CopyIndex(hours)
 NodeLocation: 416,328,1
 NodeSize: 64,40
 ValueState: 2,558,319,591,533,0,MIDM
-DisplayOutputs: Variable Num_Full_Discharges1
+DisplayOutputs: Object Variable, Variable Num_Full_Discharges1
 {!40300|Att_SlicerPopupSize: 232,1001}
 
 Variable DayType_Day_Counts
@@ -4234,7 +4234,7 @@ NodeLocation: 864,776,1
 NodeSize: 64,40
 WindState: 2,90,421,1074,502
 ValueState: 2,245,206,1410,539,0,MIDM
-DisplayOutputs: Variable Num_Full_Discharges1
+DisplayOutputs: Object Variable, Variable Num_Full_Discharges1
 Att_ResultSliceState: [Seq_Opt_Number,1,Month,1,Opt_Hours,1]
 
 Module Profile_Time_Maps
@@ -5309,13 +5309,13 @@ Definition: IF Any_non_net_metering THEN Energy_Cost_w_Sell ELSE Energy_Cost_Tie
 /*Consum_by_Tier_Prd * Energy_Price
 NodeLocation: 408,200,1
 NodeSize: 64,40
-ValueState: 2,2421,232,1011,525,0,MIDM
+ValueState: 2,787,301,1011,525,0,MIDM
 GraphSetup: Graph_SymbolKey:1~
 Att_CatLineStyle Graph_Primary_Valdim:5
 ReformVal: [Utility_Options_for_,Periods]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Month,Tiers,Periods]
-Att_ResultSliceState: [Tiers,0,System_Types,2,Area_Type,1,PV_Climate_Zone,1,Pre_and_Post_System,2,Rate_Vintage,1,PV_Sectors,2,Periods,0,Month,0]
+Att_ResultSliceState: [Tiers,0,System_Types,1,Area_Type,1,PV_Climate_Zone,1,Pre_and_Post_System,2,Rate_Vintage,1,PV_Sectors,1,Periods,0,Month,0]
 Att_ColorRole: Pre_and_Post_System
 Att_SymbolRole: Tiers
 {!40600|Att_StackingIndex: Tiers}
@@ -5657,13 +5657,13 @@ Choice(Rate_Names_with_None,14,0),1-May-2023,1,~
 Choice(Rate_Names_with_None,21,0),1-May-2023,1,~
 Choice(Rate_Names_with_None,14,0),1-May-2023,1,~
 Choice(Rate_Names_with_None,21,0),1-May-2023,1,~
-Choice(Rate_Names_with_None,15,0),1-May-2023,1,~
-Choice(Rate_Names_with_None,21,0),1-May-2023,1,~
 Choice(Rate_Names_with_None,14,0),1-May-2023,1,~
 Choice(Rate_Names_with_None,21,0),1-May-2023,1,~
 Choice(Rate_Names_with_None,14,0),1-May-2023,1,~
 Choice(Rate_Names_with_None,21,0),1-May-2023,1,~
-Choice(Rate_Names_with_None,15,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,14,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,21,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,14,0),1-May-2023,1,~
 Choice(Rate_Names_with_None,21,0),1-May-2023,1,~
 Choice(Rate_Names_with_None,14,0),1-May-2023,1,~
 Choice(Rate_Names_with_None,24,0),1-Apr-2023,1,~
@@ -12595,7 +12595,7 @@ Date: Wed, Oct 10, 2018 9:00 AM
 NodeLocation: 544,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,196,66,1554,648,17,10
+DiagState: 2,183,81,1554,648,17,10
 Aliases: Alias Al1548967120
 NodeColor: 65535,65535,65535
 AcpStyles: FrameNode: FrameNode_1544919879
@@ -12643,7 +12643,7 @@ WindState: 2,336,-7,720,350
 ValueState: 2,670,169,804,696,0,MIDM
 ReformVal: [System_Types,PV_Sectors]
 NumberFormat: 2,F,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-DisplayOutputs: Variable Num_Full_Discharges1
+DisplayOutputs: Object Variable, Variable Num_Full_Discharges1
 Att_ResultSliceState: [PV_Climate_Zone,3,PV_Sectors,1,System_Types,1]
 
 Variable Equipment_Sizes
@@ -12817,7 +12817,7 @@ Definition: Table(All_PV_Sectors,All_System_Types)(~
 1,1,1,1,1,1,1)
 NodeLocation: 584,80,1
 NodeSize: 64,40
-WindState: 2,547,109,720,350
+WindState: 2,547,109,907,392
 DefnState: 2,1160,241,599,336,0,DFNM
 ValueState: 2,375,378,1524,214,0,MIDM
 Aliases: Alias Al568492323
@@ -12969,7 +12969,7 @@ ReformVal: [Pre_and_Post_System,Rate_Names_and_Start]
 Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,1,Rate_Names_and_Start,1,PV_Sectors,1]
 
 Index Rate_Names_and_Start
-Att_PrevIndexValue: ['SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider for storage dispatch | 2023-05','SC -20 (Industrial Service) | 2023-05','SC -20 (Industrial Service) + Rate PR-Standard Offer | 2023-05','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -8 (Residential Service) | 2023-05','SC -9 (Commercial Service) | 2023-05']
+Att_PrevIndexValue: ['SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider for storage dispatch | 2023-05','SC -20 (Industrial Service) | 2023-05','SC -20 (Industrial Service) + Rate PR-Standard Offer | 2023-05','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider for storage dispatch | 2023-05','SC -8 (Residential Service) | 2023-05','SC -9 (Commercial Service) | 2023-05']
 Title: Rate Names and Start Dates
 Definition: VAR names:=MdArrayToTable(Selected_Cust_Rates, omitNull: True);~
 VAR lastCol:=Size(names.Col);~

@@ -1672,7 +1672,7 @@ Att_StackedBar Graph_Primary_Valdim:0~
 Att_GraphIndexRange Day_Type_and_Hour:1,,1,,,,,9,18,1
 ReformVal: [Tiers,Day_Type_and_Hour]
 NumberFormat: 2,F,4,2,0,0,4,1,$,0,"ABBREV",0,,,0,0,14
-DisplayOutputs: Variable Electric_Rates2
+DisplayOutputs: Object Variable, Variable Electric_Rates2
 Att__TotalsIndex: []
 Att_ResultSliceState: [Rate_Component,1,Month,8,Rate_Names_and_Start,4,Day_Type_and_Hour,1,Tiers,2]
 {!40700|CellFormatExpression: CellFill(IF RatesOnlyTransp[Rate_Names=Rate_to_View, All_Data_Types=Data_Type_to_View] < 0 THEN 'Green' ELSE 'Red', .2+.6*Abs(RatesOnlyTransp[Rate_Names=Rate_to_View, All_Data_Types=Data_Type_to_View] ))}
@@ -1807,7 +1807,7 @@ Att_GraphIndexRange Day_Type_and_Hour:1,,1,,,,,1,28,1~
 Flip:0
 ReformVal: [Day_Type_and_Hour,Rate_Names_and_Start]
 NumberFormat: 2,F,4,3,0,1,4,1,$,0,"ABBREV",0,,,0,0,15,
-DisplayInputs: Variable Electric_Rates, Index Tiers
+DisplayInputs: Object Variable, Object Index, Variable Electric_Rates, Index Tiers
 Att_ResultSliceState: [Month,8,Rate_Names_and_Start,1,Day_Type_and_Hour,1]
 
 Close Rate_Values_by_Perio
@@ -2167,7 +2167,7 @@ Definition: Subset(Active_Tiers)
 NodeLocation: 976,184,1
 NodeSize: 64,40
 WindState: 2,297,6,1230,840
-DisplayOutputs: Variable Electric_Rates2
+DisplayOutputs: Object Variable, Variable Electric_Rates2
 {!40300|Att_SlicerPopupSize: 326,104}
 
 Index Data_Attribute
