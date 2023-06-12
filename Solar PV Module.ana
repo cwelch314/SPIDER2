@@ -2824,7 +2824,7 @@ Title: PV Sim Start Year
 Description: The year in which you want the adoption simulation to start. The simulation will then use the appropriate starting point for instalaltions at this point in time. In some cases, depending on the data, you may not want to start the simulation as early as the stock data are available. Typically for PV, you will want to start the PV simulation exactly one period (e.g., month) after the latest reliable data are available regarding historical installations. That said, the latest month in the interconnection databases are typically unreliable due to previous applications that have not yet come through. So, it is typically wise to ignore the last month (or even two, depending on the time delays) of interconnection data. ~
 ~
 During calibration, this time is set to an earlier period to "back cast" adoption and compare it with actual adoption for purposes of estimating diffusion coefficients.
-Definition: Choice(PV_Sim_Strt_Yr_Opt,255,0)
+Definition: Choice(PV_Sim_Strt_Yr_Opt,205,0)
 NodeLocation: 96,272,1
 NodeSize: 64,40
 ValueState: 2,795,362,320,151,,MIDM
@@ -2845,7 +2845,7 @@ ValueState: 2,586,141,258,345,0,MIDM
 Decision PV_Sim_End_Year
 Title: PV Sim End Year
 Description: The final year of the vehicle simulated forecast.
-Definition: Choice(PV_Sim_End_Yr_Option,396,0)
+Definition: Choice(PV_Sim_End_Yr_Option,254,0)
 NodeLocation: 248,272,1
 NodeSize: 64,40
 WindState: 2,102,82,1083,701
@@ -3237,7 +3237,7 @@ ReformVal: [PV_Sectors,Forecast_Year1]
 NumberFormat: 2,F,2,3,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [PV_Sectors,A8760]
 Att_ResultSliceState: [PV_Spatial_ID,1,PV_Climate_Zone,1,A8760,0,Forecast_Year1,1,PV_Sectors,0]
-{!50000|Att_ColumnWidths: [,PV_Sectors,\([,,,137])]}
+{!50000|Att_ColumnWidths: [,PV_Sectors,\([,,137])]}
 
 FormNode Fo2042975395
 Title: Area Type for Optimization
@@ -12668,7 +12668,7 @@ Date: Wed, Oct 10, 2018 9:00 AM
 NodeLocation: 544,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,183,81,1554,648,17,10
+DiagState: 2,331,50,1335,648,17,10
 Aliases: Alias Al1548967120
 NodeColor: 65535,65535,65535
 AcpStyles: FrameNode: FrameNode_1544919879
@@ -12730,14 +12730,14 @@ NodeLocation: 560,176,1
 NodeSize: 64,40
 WindState: 2,5,42,875,350
 DefnState: 2,883,249,416,303,,DFNM
-ValueState: 2,931,298,593,335,0,MIDM
+ValueState: 2,1170,304,593,335,0,MIDM
 NodeColor: 19661,48336,65535
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_GraphValueRange Equipment_Sizes:1,,1,,,,,0,5068.057179450989,0
 ReformVal: [PV_Sectors,All_Utilities]
 Att__TotalsIndex: []
-Att_ResultSliceState: [System_Types,2,Area_Type,1,PV_Climate_Zone,1,Equipment_Types,1,All_Utilities,1,PV_Sectors,2]
+Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,Equipment_Types,2,System_Types,2,PV_Sectors,2]
 Att_ColorRole: Null
 {!40600|Att_ClusterIndex: Null}
 {!50000|Att_ColumnWidths: [,All_Equipment_Types,\([179])]}
@@ -13042,7 +13042,7 @@ ReformVal: [Pre_and_Post_System,Rate_Names_and_Start]
 Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,1,Rate_Names_and_Start,1,PV_Sectors,1]
 
 Index Rate_Names_and_Start
-Att_PrevIndexValue: ['NC -6L (Industrial Service) | 2019-11']
+Att_PrevIndexValue: ['SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -8 (Residential Service) | 2023-05','SC -9 (Commercial Service) | 2023-05']
 Title: Rate Names and Start Dates
 Definition: VAR names:=MdArrayToTable(Selected_Cust_Rates, omitNull: True);~
 VAR lastCol:=Size(names.Col);~
@@ -13239,10 +13239,10 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Num_Incentive_Steps
 
 Index PV_Sectors
-Att_PrevIndexValue: ['Residential','Commercial','Industrial']
+Att_PrevIndexValue: ['Residential','Commercial']
 Title: PV Sectors
 Description: The sectors selected for the PV analysis.
-Definition: MultiChoice(All_PV_Sectors,returnList:1)
+Definition: MultiChoice(All_PV_Sectors,1,2,returnList:1)
 NodeLocation: 1536,344,1
 NodeSize: 64,40
 WindState: 2,319,12,1255,632
