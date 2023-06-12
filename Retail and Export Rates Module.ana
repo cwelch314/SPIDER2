@@ -2160,7 +2160,7 @@ NodeLocation: 976,272,1
 NodeSize: 64,40
 WindState: 2,29,67,1217,840
 ValueState: 2,548,427,416,430,0,MIDM
-{!40300|Att_SlicerPopupSize: 282,238}
+{!40300|Att_SlicerPopupSize: 292,238}
 
 Index Tiers
 Title: Tiers
@@ -2169,7 +2169,7 @@ NodeLocation: 976,184,1
 NodeSize: 64,40
 WindState: 2,297,6,1230,840
 DisplayOutputs: Object Object, Object Variable, Variable Electric_Rates2
-{!40300|Att_SlicerPopupSize: 346,104}
+{!40300|Att_SlicerPopupSize: 351,104}
 
 Index Data_Attribute
 Att_PrevIndexValue: ['rate','max','adj','sell']
@@ -4039,6 +4039,7 @@ NodeLocation: 760,408,1
 NodeSize: 64,40
 WindState: 2,2127,81,1010,591
 ValueState: 2,312,108,416,509,0,MIDM
+Aliases: Alias Al433323283
 NodeColor: 65535,1,1
 
 Decision Basic_Service_Fees1
@@ -26719,10 +26720,10 @@ Title: Select Rate
 Definition: subtable(Select_Customer_Rate[All_Utilities=Selected_Utility,All_System_Types=System_Types])
 NodeLocation: 512,1088,1
 NodeSize: 64,32
-DefnState: 2,157,230,1771,272,0,DFNM
+DefnState: 2,80,252,1771,272,0,DFNM
 Aliases: FormNode Fo493629587, FormNode Fo63398035, FormNode Fo185032851
 ReformDef: [Pre_and_Post_System,System_Types]
-Att_EditSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Rate_Setting,1,All_Sectors,1,System_Types,2,Pre_and_Post_System,2]
+Att_EditSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Rate_Setting,1,All_Sectors,2,System_Types,2,Pre_and_Post_System,2]
 
 FormNode Fo493629587
 Title: Select Rate

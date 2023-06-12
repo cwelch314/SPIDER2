@@ -2750,7 +2750,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,2001,2,1769,728,17,10
+DiagState: 2,2006,25,1769,728,17,10
 NodeColor: 65535,65535,65535
 
 Decision Opt_Seq_Number
@@ -3435,7 +3435,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 11-Jun-2023 12:12:03.765000
+Definition: 12-Jun-2023 12:15:51.991000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3443,7 +3443,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 11-Jun-2023 12:12:56.472000
+Definition: 12-Jun-2023 12:16:51.735000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 WindState: 2,362,172,796,472
@@ -4473,7 +4473,7 @@ WindState: 2,323,77,720,350
 Decision Select_Strg_Sector2
 Title: Selected Storage Sectors
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,3,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,2,allowNone:0,returnList:1)
 NodeLocation: 128,288,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552348264, Alias Al513733155
@@ -4547,7 +4547,7 @@ NodeSize: 72,40
 
 Variable Current_BESS_Sector
 Title: Current BESS Sector
-Definition: 3
+Definition: 1
 NodeLocation: 648,264,1
 NodeSize: 64,40
 Aliases: FormNode Fo631382307
@@ -4597,7 +4597,7 @@ MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimizat
 Decision Choose_Sectors_to_Op
 Title: Choose Sectors to Optimize
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,2,allowNone:0,returnList:1)
 NodeLocation: 464,168,1
 NodeSize: 64,40
 Aliases: FormNode Fo989786659, Alias Al783884579, FormNode Fo431563043
@@ -4710,7 +4710,7 @@ Definition: Reindex_to_ProfileHr(Flows_by_Opt_Hour[Flow_Name2=Flow_Types1{, Rate
 NodeLocation: 416,64,1
 NodeSize: 64,40
 WindState: 2,471,217,972,489
-ValueState: 2,2014,96,1582,696,1,MIDM
+ValueState: 2,319,8,1472,764,1,MIDM
 Aliases: FormNode Fo1557458712, FormNode Fo1571775089, FormNode Fo1228179747
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
 Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,1,,,,,22,91,1~
@@ -4721,7 +4721,7 @@ Att_Stacked_Lines Graph_Primary_Valdim:0
 ReformVal: [Viewed_Dispatch_Tim2,Flow_Types1]
 NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Viewed_Dispatch_Tim2,Rate_Names_and_Start]
-Att_ResultSliceState: [Area_Type,1,Opt_Sectors,1,PV_Climate_Zone,1,Opt_Storage_Systems,2,Month,9,Rate_Vintage,1,Flow_Types1,1,Viewed_Dispatch_Tim2,1]
+Att_ResultSliceState: [Area_Type,1,Opt_Sectors,2,PV_Climate_Zone,1,Opt_Storage_Systems,1,Month,11,Rate_Vintage,1,Flow_Types1,1,Viewed_Dispatch_Tim2,1]
 
 Decision Dispatch_Start_Time2
 Title: Start Time for Dispatch
