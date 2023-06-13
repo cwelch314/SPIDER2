@@ -23,7 +23,7 @@ Author: JamesMilford
 Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 736,792,1
 NodeSize: 64,40
-DiagState: 2,1895,143,1671,656,17,10
+DiagState: 2,2082,19,1671,801,17,10
 
 Variable Cumulative_Data_Plus
 Title: Cumulative Data Plus
@@ -479,22 +479,22 @@ WindState: 2,102,82,1261,505
 ValueState: 2,312,-5,1148,774,1,MIDM
 Aliases: Alias Al1924347043
 NodeColor: 65535,1,1
-GraphSetup: Graph_SymbolKey:1~
-{!50400|Att_AxisOrKeyTitle Output_Periods:""}~
-{!50007|Graph_BarOutline:0}~
-Graph_FillTransparen:0~
-Att_CatLineStyle Graph_Primary_Valdim:9~
-Att_AreaFill Graph_Primary_Valdim:0~
-Att_Stacked_Lines Graph_Primary_Valdim:0~
-Att_GraphValueRange PV_Cumul_Adoption:1,,1,,,0,,0,0.8224062919616699,0~
-Att_GraphIndexRange Output_Periods:1,0,1,,,,10,42600.27961727977,45996.92026382685,0~
-Att_ContLineStyle Graph_Primary_Valdim:5~
+GraphSetup: Graph_AxisLabelFont:,20,0~
 {!50000|Graph_SortBySpread:0}~
-Graph_AxisLabelFont:,20,0
+Att_ContLineStyle Graph_Primary_Valdim:5~
+Att_GraphIndexRange Output_Periods:1,0,0,,,,10,41468.0657055974,46796.65864664316,0~
+Att_GraphValueRange PV_Cumul_Adoption:1,,1,,,0,,0,0.8224062919616699,0~
+Att_Stacked_Lines Graph_Primary_Valdim:0~
+Att_AreaFill Graph_Primary_Valdim:0~
+Att_CatLineStyle Graph_Primary_Valdim:9~
+Graph_FillTransparen:0~
+{!50007|Graph_BarOutline:0}~
+{!50400|Att_AxisOrKeyTitle Output_Periods:""}~
+Graph_SymbolKey:1
 ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,1,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Act_vs_Sim,PV_Sectors]
-Att_ResultSliceState: [Area_Type,1,Spatial_ID,1,Utility_Options_for_,3,Act_vs_Sim,-1,Output_Periods,167]
+Att_ResultSliceState: [Area_Type,1,Spatial_ID,1,DER_Cost_Decline_Sc1,2,Act_vs_Sim,-1,Output_Periods,167]
 Att_ColorRole: Act_vs_Sim
 Att_SymbolRole: PV_Sectors
 {!40600|Att_StackingIndex: PV_Sectors}
@@ -741,10 +741,12 @@ Definition: BESS_Adoption_Data[BESS_Adopt_DataTypes=Map_Seq_Outputs[All_DER_Type
 NodeLocation: 872,984,1
 NodeSize: 64,40
 WindState: 2,1300,82,1463,748
-ValueState: 2,471,183,1343,761,1,MIDM
-ReformVal: [Output_Periods,Act_vs_Sim]
-Att__TotalsIndex: [Spatial_ID,All_Sectors]
-Att_ResultSliceState: [Sequential_Outputs,4,All_Sectors,0,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
+ValueState: 2,2153,22,1256,743,1,MIDM
+GraphSetup: Att_GraphValueRange BESS_Sequential_Outp:1,,1,,,,,6.766434013843536,115.99889770150185,0~
+Att_GraphIndexRange Output_Periods:1,,0,,,,10,42373.306136757135,46036.28749990463,0
+ReformVal: [Output_Periods,All_Sectors]
+Att__TotalsIndex: [Act_vs_Sim]
+Att_ResultSliceState: [All_Sectors,1,Spatial_ID,1,Area_Type,1,Sequential_Outputs,4,Act_vs_Sim,-1,Output_Periods,1]
 
 Alias Al1579093082
 Title: BESS Adoption Forecasts

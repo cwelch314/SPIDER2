@@ -143,7 +143,7 @@ Author: CWelch
 Date: Tue, Apr 20, 2021 10:09 AM
 DefaultSize: 64,32
 NodeInfo: 1,,,,,,,,,,,0
-DiagState: 2,410,3,1098,778,17,10,
+DiagState: 2,302,12,1098,778,17,10,
 FontStyle: Arial,15
 FileInfo: 0,Model Nexant_Model_Templat,2,2,0,0,C:\Users\cwelch\Documents\Repos\Nexant\SPIDER\SPIDER Model.ana
 {!50000|DefaultFontColor: 0,0,0}
@@ -790,7 +790,7 @@ ELSE Show_ACP_Window1(PV_Impact_Out,PV_Impact_Titles,PV_Impact1, 'Result')
 Decision PV_Impact1
 Title: PV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Impact_Titles,7,0)
+Definition: Choice(PV_Impact_Titles,1,0)
 NodeLocation: 616,440,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -996,7 +996,7 @@ NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
 Decision Inputs_only_for_view
 Title: Inputs only for viewing purposes (no editing)?
 Description: Check this box if you want to view the inputs as a graphical output result (or output table which is not editable), as opposed to an input table, which is editable.
-Definition: Checkbox(1)
+Definition: Checkbox(0)
 NodeLocation: 1464,168,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552866073, FormNode Fo612315645
@@ -1287,7 +1287,7 @@ Original: Storage_Dispatch_Out
 Decision BESS_Impact1
 Title: BESS Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Dispatch_Tit,2,0)
+Definition: Choice(Storage_Dispatch_Tit,7,0)
 NodeLocation: 608,1160,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1318,7 +1318,7 @@ THEN Null~
 ELSE Show_ACP_Window1(Storage_Dispatch_Out,Storage_Dispatch_Tit,BESS_Impact1, 'Result')
 
 Index Storage_Dispatch_Tit
-Att_PrevIndexValue: ['BESS Adoption EOP (MW)','Dispatch Flows (kW-hr/customer)','Rates for Dispatch','Battery Charge for Dispatch (kWh)','Pct of Stored Electricity from PV (fraction)','Initial BESS Adoption (MW)']
+Att_PrevIndexValue: ['BESS Adoption EOP (MW)','Dispatch Flows (kW-hr/customer)','Rates for Dispatch','Battery Charge for Dispatch (kWh)','Pct of Stored Electricity from PV (fraction)','Initial BESS Adoption (MW)','BESS Sequential Outputs','Paired BESS Share of Solar Installs']
 Title: Storage Dispatch Titles
 Definition: Create_Titles_List(Storage_Dispatch_Out)~
 
@@ -1410,7 +1410,7 @@ Definition: MultiTable(Storg_Scenario_Varia)(DER_Cost_Decline_Sce,Select_Rate_Es
 NodeLocation: 1272,72,1
 NodeSize: 64,40
 WindState: 2,2012,167,1033,562
-DefnState: 2,973,543,572,193,0,DFNM
+DefnState: 2,724,404,572,193,0,DFNM
 ValueState: 2,813,310,705,211,,MIDM
 Aliases: FormNode Fo1551839741
 {!50000|Att_ColumnWidths: [322]}
@@ -1722,9 +1722,9 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_Storage_Disp_Out
 
 Index All_Storage_Disp_Out
-Att_PrevIndexValue: [BESS_Adoption_EOP,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Pct_Stored_PV_Elect2,Init_BESS_Adoption]
+Att_PrevIndexValue: [BESS_Adoption_EOP,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Pct_Stored_PV_Elect2,Init_BESS_Adoption,BESS_Sequential_Outp,Paired_BESS_Share_of]
 Title: All Storage Dispatch Out
-Definition: [BESS_Adoption_EOP,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Pct_Stored_PV_Elect2,Init_BESS_Adoption]
+Definition: [BESS_Adoption_EOP,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Pct_Stored_PV_Elect2,Init_BESS_Adoption,BESS_Sequential_Outp,Paired_BESS_Share_of]
 NodeLocation: 432,1152,1
 NodeSize: 64,40
 WindState: 2,278,98,720,518
