@@ -334,7 +334,7 @@ IF IsNaN(quotient)~
 NodeLocation: 440,72,1
 NodeSize: 64,40
 WindState: 2,98,82,1059,637
-DisplayOutputs: Object Object, Object Variable, Variable Num_Full_Discharges1
+DisplayOutputs: Object Object, Object Variable, Variable Climate_Zone_Weights, Variable System_Type_Weights, Variable Num_Full_Discharges1
 
 Function Replace_X_with_Y(data, x, y)
 Title: Replace X with Y
@@ -348,6 +348,7 @@ THEN y~
 ELSE data
 NodeLocation: 584,72,1
 NodeSize: 64,40
+DisplayOutputs: Variable Climate_Zone_Weights, Variable System_Type_Weights
 
 Function Sum_Over_All(values)
 Title: Sum Over All
