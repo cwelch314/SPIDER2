@@ -4035,6 +4035,7 @@ NodeLocation: 760,408,1
 NodeSize: 64,40
 WindState: 2,2127,81,1010,591
 ValueState: 2,312,108,416,509,0,MIDM
+Aliases: Alias Al433323283
 NodeColor: 65535,1,1
 
 Decision Basic_Service_Fees1
@@ -4882,8 +4883,8 @@ Definition: Sum(Rate_Data_TOU_Sched[Rate_Names=Select_Existing_Rate, All_Data_Ty
 NodeLocation: 352,296,1
 NodeSize: 64,40
 WindState: 2,98,82,1526,709
-ValueState: 2,691,117,1040,712,1,MIDM
-Aliases: FormNode Fo1547666968, FormNode Fo1567060136, Alias Al1016842387
+ValueState: 2,2590,131,1040,712,1,MIDM
+Aliases: Alias Al1016842387, FormNode Fo1547666968, FormNode Fo1567060136
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
 Graph_KeyFont:,18,0~
 Graph_KeyTitleFont:,18,1~
@@ -26715,10 +26716,10 @@ Title: Select Rate
 Definition: subtable(Select_Customer_Rate[All_Utilities=Selected_Utility,All_System_Types=System_Types])
 NodeLocation: 512,1088,1
 NodeSize: 64,32
-DefnState: 2,2057,320,1189,288,0,DFNM
+DefnState: 2,2018,130,1189,288,0,DFNM
 Aliases: FormNode Fo493629587, FormNode Fo63398035, FormNode Fo185032851
 ReformDef: [Pre_and_Post_System,System_Types]
-Att_EditSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Rate_Setting,1,All_Sectors,2,Utility_Options_for_,2,System_Types,2,Pre_and_Post_System,2]
+Att_EditSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Rate_Setting,1,All_Sectors,2,Utility_Options_for_,3,System_Types,2,Pre_and_Post_System,2]
 
 FormNode Fo493629587
 Title: Select Rate
