@@ -428,12 +428,12 @@ Description: The simple payback time by spatial ID.
 Definition: Mthly_Simple_Payback[PV_Climate_Zone=Climate_Zone_Map, Time=Time_Solar_PV]
 NodeLocation: 288,296,1
 NodeSize: 64,40
-ValueState: 2,2113,22,1046,720,1,MIDM
+ValueState: 2,2324,58,1046,720,1,MIDM
 Aliases: Alias Al1125183635
 GraphSetup: Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,43301.135061979294,49162.151701927185,0~
-Att_GraphValueRange Payback_Time:1,,1,,,,,0,79.22313958406448,0
-ReformVal: [Time_Solar_PV,DER_Cost_Decline_Sc1]
-Att_ResultSliceState: [Area_Type,1,System_Types,1,PV_Spatial_ID,1,PV_Sectors,2,Utility_Options_for_,1,Time_Solar_PV,1]
+Att_GraphValueRange Payback_Time:1,,1,,,,,19.766775012016296,20.446451783180237,0
+ReformVal: [Time_Solar_PV,System_Types]
+Att_ResultSliceState: [Area_Type,1,PV_Spatial_ID,1,PV_Sectors,3,System_Types,1,Time_Solar_PV,1]
 
 Text Te1541771144
 Title: Eventually these weights should be specific to new vs retrofit construction
@@ -5912,7 +5912,7 @@ Null,Null,Null)
 NodeLocation: 96,216,1
 NodeSize: 64,40
 WindState: 2,2261,109,1402,650
-DefnState: 2,-20,213,1825,329,0,DFNM
+DefnState: 2,24,166,1825,329,0,DFNM
 ValueState: 2,302,51,935,658,0,MIDM
 Aliases: FormNode Fo1547766909, FormNode Fo1547828216
 NodeColor: 65535,65531,1
@@ -6012,7 +6012,7 @@ ValueState: 2,21,412,1577,444,0,MIDM
 NumberFormat: 2,G,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Rate_Vintage]
 Att_ResultSliceState: [PV_Climate_Zone,3,Pre_and_Post_System,2,PV_Sectors,1,Time,1]
-{!50000|Att_ColumnWidths: [,Annual_Econ_Time,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
+{!50000|Att_ColumnWidths: [,Annual_Econ_Time,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
 
 Variable Rate_Escalate_byVint
 Title: Rate Escalation by Vintage
@@ -6812,11 +6812,11 @@ Definition: Energy_Cost_Tier_Prd * Multiplier_of_Excess
 NodeLocation: 1208,136,1
 NodeSize: 64,56
 WindState: 2,2037,104,720,350
-ValueState: 2,789,91,1027,487,0,MIDM
-ReformVal: [Pre_and_Post_System,Month]
+ValueState: 2,1210,134,560,486,0,MIDM
+ReformVal: [Pre_and_Post_System,Periods]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,,0
-Att__TotalsIndex: [Month,Periods,Tiers]
-Att_ResultSliceState: [PV_Sectors,3,Rate_Vintage,1,PV_Climate_Zone,1,System_Types,3,Area_Type,1,Tiers,0,Periods,0,Month,1,Pre_and_Post_System,1]
+Att__TotalsIndex: [Periods,Tiers,Month]
+Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,1,System_Types,3,Area_Type,1,Tiers,0,Month,0,Periods,0,Pre_and_Post_System,1]
 
 Close Energy_and_Demand_Co
 
@@ -7092,13 +7092,13 @@ Title: Costs and Savings by Component
 Definition: Table(System_Comparison)(All_Annual_Costs_Cre[Pre_and_Post_System=Pre_System_Label],All_Annual_Costs_Cre[Pre_and_Post_System=Post_System_Label],Savings_by_Component)
 NodeLocation: 736,408,1
 NodeSize: 64,40
-ValueState: 2,384,29,1094,799,,MIDM
+ValueState: 2,497,25,1094,799,,MIDM
 GraphSetup: {!50000|Graph_SortBySpread:0}~
 {!40600|Att_WaterfallBar Graph_Primary_Valdim:1}~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 {!50007|Graph_BarOutline:1}
 ReformVal: [System_Comparison,All_Cost_Components]
-Att_ResultSliceState: [Time,253,Utility_Options_for_,1,PV_Sectors,1,PV_Climate_Zone,1,System_Types,2,Area_Type,1,All_Cost_Components,1,System_Comparison,1]
+Att_ResultSliceState: [Time,253,PV_Sectors,3,PV_Climate_Zone,1,System_Types,3,Area_Type,1,All_Cost_Components,1,System_Comparison,1]
 
 Index Savings
 Title: Savings
@@ -7285,7 +7285,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 280,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,2065,45,1362,706,17,10
+DiagState: 2,2065,45,1362,640,17,10
 AcpStyles: FrameNode: FrameNode_1544920201
 
 Constant Invest_Tax_Credit
@@ -9270,7 +9270,7 @@ NodeSize: 332,40
 Variable State_Tax_Credit_Fra
 Title: State Tax Credit Fraction
 Units: fraction
-Definition: VAR credit:=State_Tax_Credit[Static_PV_Time=Annual_Econ_Time,All_PV_Sectors=PV_Sectors,All_Utilities=Selected_Utility] ;~
+Definition: VAR credit:=State_Tax_Credit[Static_PV_Time=Annual_Econ_Time,All_PV_Sectors=PV_Sectors,All_Utilities=Selected_Utility,State_Tax_Credit_Sc1=State_Tax_Credit_Sce] ;~
 ~
 Val_by_Install_Event(credit, 1, Annual_Econ_Time) * Tax_Credit_Applicabi[All_Equipment_Types=Equipment_Types,State_vs_Federal='State',All_Utilities=Selected_Utility,Static_PV_Time=Annual_Econ_Time]
 NodeLocation: 336,672,1
@@ -9384,7 +9384,7 @@ ReformVal: [Pre_and_Post_System,All_System_Types]
 
 Decision State_Tax_Credit_Sce
 Title: State Tax Credit Scenario
-Definition: Choice(State_Tax_Credit_Sc1,0,1)
+Definition: Choice(State_Tax_Credit_Sc1,2,1)
 IndexVals: ['item 1']
 NodeLocation: 256,576,1
 NodeSize: 64,40
@@ -10144,7 +10144,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 584,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,2091,22,1373,710,17,10
+DiagState: 2,2099,40,1373,710,17,10
 AcpStyles: FrameNode: FrameNode_1544920267
 
 Constant Base_Installed_Cost_
@@ -11282,15 +11282,17 @@ Definition: Table(All_PV_Sectors,Static_PV_Time,All_Equipment_Types)(~
 NodeLocation: 120,664,1
 NodeSize: 64,40
 WindState: 2,444,494,720,350
-DefnState: 2,655,169,519,601,0,DFNM
+DefnState: 2,784,56,653,839,0,DFNM
 ValueState: 2,445,68,1054,636,,MIDM
 Aliases: Alias Al1568696050, FormNode Fo1568696050, FormNode Fo1544633536, FormNode Fo1567092851
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9
 ReformDef: [All_Sectors,Static_PV_Time]
-ReformVal: [All_Equipment_Types,All_Sectors]
+ReformVal: [Static_PV_Time,All_Equipment_Types]
 NumberFormat: 2,F,2,2,1,1,2,1,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Object Object, Object Decision
+Att_ResultSliceState: [All_PV_Sectors,3,All_Equipment_Types,1,Static_PV_Time,1]
+Att_EditSliceState: [All_Equipment_Types,2,Static_PV_Time,1,All_PV_Sectors,1]
 
 Variable O_M_Rate
 Title: O&M Rate
@@ -11306,7 +11308,7 @@ NodeSize: 64,40
 ValueState: 2,405,76,1314,581,0,MIDM
 ReformVal: [PV_Sectors,Annual_Econ_Time]
 NumberFormat: 2,F,2,2,1,1,2,1,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [Equipment_Types,1,Annual_Econ_Time,1,PV_Sectors,1]
+Att_ResultSliceState: [Equipment_Types,2,Annual_Econ_Time,1,PV_Sectors,1]
 
 Decision Base_Year_for_O_M_In
 Title: Base Year for O&M Inflation
@@ -11778,7 +11780,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 736,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,12,42,1204,640,17,10
+DiagState: 2,526,233,1204,640,17,10
 BalloonHelp: FrameNode: FrameNode_1544920329
 AcpStyles: FrameNode: FrameNode_1544920329
 
@@ -12668,35 +12670,6 @@ Definition: Table(Annual_Econ_Time,All_System_Types)(~
 0.07,0,0.09,0,0,0,0,~
 0.07,0,0.09,0,0,0,0,~
 0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
-0,0,0,0,0,0,0,~
 0,0,0,0,0,0,0)
 NodeLocation: 112,664,1
 NodeSize: 64,40
@@ -12830,7 +12803,7 @@ Date: Wed, Oct 10, 2018 9:00 AM
 NodeLocation: 544,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,327,54,1335,648,17,10
+DiagState: 2,237,60,1335,648,17,10
 Aliases: Alias Al1548967120
 NodeColor: 65535,65535,65535
 AcpStyles: FrameNode: FrameNode_1544919879
@@ -12892,14 +12865,14 @@ NodeLocation: 560,176,1
 NodeSize: 64,40
 WindState: 2,5,42,875,350
 DefnState: 2,883,249,416,303,,DFNM
-ValueState: 2,1250,342,593,335,0,MIDM
+ValueState: 2,3086,398,593,330,0,MIDM
 NodeColor: 19661,48336,65535
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_GraphValueRange Equipment_Sizes:1,,1,,,,,0,5068.057179450989,0
 ReformVal: [PV_Sectors,All_Utilities]
 Att__TotalsIndex: []
-Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,Equipment_Types,1,System_Types,1,Utility_Options_for_,1,PV_Sectors,2]
+Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,Equipment_Types,2,System_Types,1,PV_Sectors,2]
 Att_ColorRole: Null
 {!40600|Att_ClusterIndex: Null}
 {!50000|Att_ColumnWidths: [,All_Equipment_Types,\([179])]}
@@ -13202,7 +13175,7 @@ ReformVal: [Pre_and_Post_System,Rate_Names_and_Start]
 Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,1,Rate_Names_and_Start,1,PV_Sectors,1]
 
 Index Rate_Names_and_Start
-Att_PrevIndexValue: ['SC -20 (Industrial Service) | 2023-05','SC -20 (Industrial Service) + Rate PR-Standard Offer | 2023-05']
+Att_PrevIndexValue: ['NC -1 (Residential Service) | 2019-11','NC -5 (Commercial Service) | 2019-11','NC -6L (Industrial Service) | 2019-11']
 Title: Rate Names and Start Dates
 Definition: VAR names:=MdArrayToTable(Selected_Cust_Rates, omitNull: True);~
 VAR lastCol:=Size(names.Col);~
@@ -13214,7 +13187,7 @@ NodeLocation: 384,1192,1
 NodeSize: 64,40
 WindState: 2,2146,81,1165,697
 ValueState: 2,1113,264,629,421,0,MIDM
-{!40300|Att_SlicerPopupSize: 1862,522}
+{!40300|Att_SlicerPopupSize: 1882,522}
 
 Text Te1545165196
 Description: Currently chooses the rate name for the post-system, which doesn't tell you the pre-system if they are different.
@@ -13483,7 +13456,7 @@ DisplayOutputs: Object Object, Object Variable
 {!40300|Att_SlicerPopupSize: 267,42}
 
 Index Annual_Econ_Time
-Att_PrevIndexValue: [2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,2040,2041,2042,2043,2044,2045,2046,2047,2048,2049,2050,2051,2052]
+Att_PrevIndexValue: [2018,2019,2020,2021,2022,2023]
 Title: Annual Economic Time
 Description: Starts one year prior to the minimum of PV or BESS simulation start years, so that annual economic calculations can be treated as middle-of-year values.
 Definition: (MIN([DatePart(BESS_Calibrat_Start, 'Y'), DatePart(PV_Calibration_Start, 'Y')])-1)..MAX([DatePart(BESS_Sim_End_Year, 'Y'), DatePart(PV_Sim_End_Year, 'Y')])

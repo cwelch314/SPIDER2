@@ -1801,10 +1801,10 @@ $/kW for all demand rate structures
 Definition: Sum(Rate_Data_TOU_Sched[Rate_Names=Rate_Names_and_Start, All_Data_Types=DataType_by_RateType, Time_of_Day=Hour_for_Type_and_Hr, Weekday_or_Weekend=DayType_for_Type_Hr] * Rate_and_Adj_Attribs, Data_Attribute)
 NodeLocation: 952,200,1
 NodeSize: 64,40
-ValueState: 2,2086,14,1577,841,,MIDM
-ReformVal: [Day_Type_and_Hour,All_Tiers]
+ValueState: 2,2052,0,1678,826,,MIDM
+ReformVal: [Day_Type_and_Hour,Rate_Names_and_Start]
 NumberFormat: 2,F,4,3,0,1,4,0,$,0,"ABBREV",0,,,0,0,15,,0
-Att_ResultSliceState: [Buy_or_Sell_,1,All_Data_Types,3,Month,8,Rate_Names_and_Start,8,All_Tiers,2,Day_Type_and_Hour,1]
+Att_ResultSliceState: [Buy_or_Sell_,1,All_Data_Types,2,Month,8,All_Tiers,1,Rate_Names_and_Start,5,Day_Type_and_Hour,1]
 
 Close Rate_Values_by_Perio
 
@@ -3301,7 +3301,7 @@ OnChange: Check_Flat_Demand_Pe
 Decision Rate_Description
 Title: Rate Description
 Description: Provide a name and start date (required) and other supplemental information (optional) about the rate. Ensure that dates are entered in one of the following formats: 1/31/2019 (month/day/year) or 31-Jan-2019 (day-monthAbbreviation-year). If one of the optional input cells is not applicable, give it a value of Null (eg, type Null into the cell).
-Definition: Table(Rate_Info)('SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider | 2023-05',1-Jan-2019,Null,'Utility Name','Sector Name','www.websitename.com')
+Definition: Table(Rate_Info)('VA -GS2(Commercial Service Non-Demand) + Net Metering T&C | 2022-01',1-Jan-2019,Null,'Utility Name','Sector Name','www.websitename.com')
 NodeLocation: 120,176,1
 NodeSize: 64,40
 WindState: 2,767,38,943,350
@@ -3715,10 +3715,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3727,10 +3723,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3739,10 +3731,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3751,10 +3739,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3763,10 +3747,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3775,10 +3755,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3787,10 +3763,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3799,10 +3771,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3811,10 +3779,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3823,10 +3787,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3842,14 +3802,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3866,14 +3818,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3885,19 +3829,107 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
+1,1,~
 0,0,~
 0,0,~
 0,0,~
 0,0,~
 0,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3914,14 +3946,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
-2,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3931,10 +3955,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3943,10 +3963,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3955,10 +3971,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3967,10 +3979,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3979,10 +3987,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
 0,0,~
 0,0,~
 0,0,~
@@ -3991,10 +3995,6 @@ Definition: Table(Month,Time_of_Day,Weekday_or_Weekend)(~
 0,0,~
 0,0,~
 0,0,~
-1,0,~
-1,0,~
-1,0,~
-1,0,~
 0,0,~
 0,0)
 NodeLocation: 760,296,1
@@ -4042,7 +4042,7 @@ Decision Basic_Service_Fees1
 Title: Basic Service Fees
 Units: $/month
 Description: Specify the monthly basic service fees per meter.
-Definition: 25.65
+Definition: 19.89
 NodeLocation: 152,504,1
 NodeSize: 64,40
 WindState: 2,4,311,720,350
@@ -4052,7 +4052,7 @@ Decision Minimum_Charges1
 Title: Minimum Charges
 Units: $/month
 Description: Specify the monthly minimum utility bill charges.
-Definition: 33.56
+Definition: 19.89
 NodeLocation: 304,504,1
 NodeSize: 64,40
 WindState: 2,130,54,720,350
@@ -4267,9 +4267,8 @@ tier1	14.8			0.11			Null~
 tier2	Null				0.16			Null~
 
 Definition: Table(Energy_TOU_Tiers,Energy_TOU_Periods,Energy_Rate_Attribut)(~
-1000,0.10911,0.03148,Null,~
-1000,0.18544,0.03148,Null,~
-1000,0.23639,0.03148,Null,~
+Null,0.069948,0.074767,Null,~
+Null,0.076515,0.074767,Null,~
 Null,Null,Null,Null,~
 Null,Null,Null,Null,~
 Null,Null,Null,Null,~
@@ -4279,9 +4278,10 @@ Null,Null,Null,Null,~
 Null,Null,Null,Null,~
 Null,Null,Null,Null,~
 Null,Null,Null,Null,~
-Null,0.11378,0.03148,Null,~
-Null,0.18544,0.03148,Null,~
-Null,0.23639,0.03148,Null,~
+Null,Null,Null,Null,~
+Null,Null,Null,Null,~
+Null,Null,Null,Null,~
+Null,Null,Null,Null,~
 Null,Null,Null,Null,~
 Null,Null,Null,Null,~
 Null,Null,Null,Null,~
@@ -4357,7 +4357,7 @@ Original: Energy_TOU_Rates
 Decision Select_Existing_Rate
 Title: Select an Existing Rate
 Description: Select an existing rate to view, use to populate a new rate, or delete.
-Definition: Choice(Rate_Names,13,0)
+Definition: Choice(Rate_Names,29,0)
 NodeLocation: 120,64,1
 NodeSize: 64,40
 ValueState: 2,68,74,776,179,,MIDM
@@ -26716,10 +26716,10 @@ Title: Select Rate
 Definition: subtable(Select_Customer_Rate[All_Utilities=Selected_Utility,All_System_Types=System_Types])
 NodeLocation: 512,1088,1
 NodeSize: 64,32
-DefnState: 2,2018,130,1189,288,0,DFNM
+DefnState: 2,2018,130,1282,289,0,DFNM
 Aliases: FormNode Fo493629587, FormNode Fo63398035, FormNode Fo185032851
 ReformDef: [Pre_and_Post_System,System_Types]
-Att_EditSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Rate_Setting,1,All_Sectors,2,Utility_Options_for_,3,System_Types,2,Pre_and_Post_System,2]
+Att_EditSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Rate_Setting,1,All_Sectors,2,System_Types,2,Pre_and_Post_System,2]
 
 FormNode Fo493629587
 Title: Select Rate

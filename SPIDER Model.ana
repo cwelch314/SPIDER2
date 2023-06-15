@@ -143,7 +143,7 @@ Author: CWelch
 Date: Tue, Apr 20, 2021 10:09 AM
 DefaultSize: 64,32
 NodeInfo: 1,,,,,,,,,,,0
-DiagState: 2,503,42,1169,778,17,10,
+DiagState: 2,259,97,1132,763,17,10,
 FontStyle: Arial,15
 FileInfo: 0,Model Nexant_Model_Templat,2,2,0,0,C:\Users\cwelch\Documents\Repos\Nexant\SPIDER\SPIDER Model.ana
 {!50000|DefaultFontColor: 0,0,0}
@@ -664,7 +664,7 @@ Date: Sun, Dec 16, 2018 8:10 AM
 NodeLocation: 112,392,1
 NodeSize: 80,56
 NodeInfo: 1,,,,,,1
-DiagState: 2,2154,16,1500,626,17,10
+DiagState: 2,2020,16,1500,626,17,10
 NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,19
 AcpStyles: Show_object: no
@@ -765,7 +765,7 @@ Aliases: FormNode Fo1552872205
 MetaOnly: 1
 
 Index PV_Impact_Titles
-Att_PrevIndexValue: ['PV Cumulative Adoption (MW-AC)','PV Incremental Adoption (MW-AC/month)','Cumulative PV Delta (MW-AC)','PV Cumul Map (MW-AC) (MW-AC)','Share of Tech Potential','Percent of Buildings Adopting PV (%)','LRMS by PV Time (%)']
+Att_PrevIndexValue: ['PV Cumulative Adoption (MW-AC)','PV Incremental Adoption (MW-AC/month)','Share of Tech Potential','LRMS by PV Time (%)']
 Title: PV Impact Titles
 Definition: Create_Titles_List(PV_Impact_Out)~
 
@@ -913,7 +913,7 @@ Aliases: FormNode Fo1552872215
 MetaOnly: 1
 
 Index PV_Econ_Titles1
-Att_PrevIndexValue: ['Pre/Post Load (kW-hr/customer)','Cost of Electricity Ratio (post/pre ratio)','Payback Time (years)','Equipment Cost Result ($/kW-DC, $/kWh)','Measure Cost & Benefits ($/unit)','Measure B/C Ratio (ratio)','Program Summary','Energy Cost by Tier & Period, after Adj ($)','On-Peak Demand Cost ($)']
+Att_PrevIndexValue: ['Pre/Post Load (kW-hr/customer)','Payback Time (years)','Equipment Cost Result ($/kW-DC, $/kWh)','Energy Cost by Tier & Period, after Adj ($)','On-Peak Demand Cost ($)','Costs and Savings by Component']
 Title: PV Econ Titles
 Definition: Create_Titles_List(PV_Econ_Out1)~
 
@@ -923,7 +923,7 @@ NodeSize: 64,40
 Decision PV_Economics
 Title: PV Economics
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Econ_Titles1,3,0)
+Definition: Choice(PV_Econ_Titles1,2,0)
 NodeLocation: 608,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -947,7 +947,7 @@ Original: PV_Input
 Decision PV_Input
 Title: PV Input
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Input_Titles,11,0)
+Definition: Choice(PV_Input_Titles,7,0)
 NodeLocation: 1288,440,1
 NodeSize: 64,40
 WindState: 2,99,257,720,646
@@ -1207,7 +1207,7 @@ Original: Storag_Input_Button
 Decision BESS_Input
 Title: BESS Input
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Input_Titles,1,0)
+Definition: Choice(Storage_Input_Titles,4,0)
 NodeLocation: 1296,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1287,7 +1287,7 @@ Original: Storage_Dispatch_Out
 Decision BESS_Impact1
 Title: BESS Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Dispatch_Tit,7,0)
+Definition: Choice(Storage_Dispatch_Tit,1,0)
 NodeLocation: 608,1160,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1641,9 +1641,9 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_Output_Ident
 
 Index All_PV_Impact_Out
-Att_PrevIndexValue: [PV_Cumul_Adoption,PV_Increm_Adoption,Cumulative_PV_Delta,PV_Cumul_Map,Share_of_Tech_Potent,Percent_of_Buildings,LRMS_by_PV_Time]
+Att_PrevIndexValue: [PV_Cumul_Adoption,PV_Increm_Adoption,Share_of_Tech_Potent,LRMS_by_PV_Time]
 Title: All PV Impact Out
-Definition: [PV_Cumul_Adoption,PV_Increm_Adoption,Cumulative_PV_Delta,PV_Cumul_Map,Share_of_Tech_Potent,Percent_of_Buildings,LRMS_by_PV_Time]
+Definition: [PV_Cumul_Adoption,PV_Increm_Adoption,Share_of_Tech_Potent,LRMS_by_PV_Time]
 NodeLocation: 432,432,1
 NodeSize: 64,40
 WindState: 2,1011,283,720,559
@@ -1677,12 +1677,12 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_PV_Input
 
 Index All_PV_Econ_Out
-Att_PrevIndexValue: [Pre_Post_Load,Cost_of_Elect_Ratio,Payback_Time,Equipment_Cost_Resul,Measure_Cost_Benef,Measure_B_C_Ratio,Program_Summary,Energy_Cost_by_Tier1,On_Peak_Demand_Cost]
+Att_PrevIndexValue: [Pre_Post_Load,Payback_Time,Equipment_Cost_Resul,Energy_Cost_by_Tier1,On_Peak_Demand_Cost,Costs_and_Savings_by]
 Title: All PV Econ Out
-Definition: [Pre_Post_Load,Cost_of_Elect_Ratio,Payback_Time,Equipment_Cost_Resul,Measure_Cost_Benef,Measure_B_C_Ratio,Program_Summary,Energy_Cost_by_Tier1,On_Peak_Demand_Cost]
+Definition: [Pre_Post_Load,Payback_Time,Equipment_Cost_Resul,Energy_Cost_by_Tier1,On_Peak_Demand_Cost,Costs_and_Savings_by]
 NodeLocation: 432,912,1
 NodeSize: 64,40
-WindState: 2,13,50,720,350
+WindState: 2,153,100,720,350
 ValueState: 2,52,58,416,303,,MIDM
 Aliases: FormNode Fo1557511198
 MetaOnly: 1
