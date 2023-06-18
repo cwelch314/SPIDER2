@@ -1937,7 +1937,7 @@ Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,40874.39520511031,43530.00682541728,0
 ReformVal: [Time_Solar_PV,Act_vs_Sim]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Price_Coefficient_Il,Tech_Coefficient_Ill,Act_vs_Sim]
-Att_ResultSliceState: [PV_Spatial_ID,1,PV_Sectors,1,Area_Type,1,DER_Cost_Decline_Sc1,2,Act_vs_Sim,-1,Time_Solar_PV,1]
+Att_ResultSliceState: [PV_Spatial_ID,1,PV_Sectors,1,Area_Type,1,Act_vs_Sim,-1,Time_Solar_PV,1]
 {!40200|Att_GraphSetupSlices: [3,1,Act_vs_Sim,2,2,Act_vs_Sim,1]}
 
 Variable Sim_vs_Act_PV_Rate
@@ -3112,7 +3112,7 @@ Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 NodeLocation: 296,72,1
 NodeSize: 64,40
 WindState: 2,491,139,720,550
-DefnState: 2,263,296,1590,338,0,DFNM
+DefnState: 2,988,283,811,338,0,DFNM
 ValueState: 2,223,6,1355,891,0,MIDM
 Aliases: Alias Al1568908502, FormNode Fo1568908568, FormNode Fo1543522440
 ReformDef: [All_Sectors,All_PV_Dec_Handles]
@@ -3121,7 +3121,7 @@ NumberFormat: 2,F,2,3,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Object Object, Object Function, Object Decision, Function OG_Multi_Stage_Calib, Function OG_Sequential_Optimi
 TableCellDefault: 0
 Att_ResultSliceState: [All_Sectors,1,All_Spatial_ID,1,All_PV_Dec_Handles,1]
-Att_EditSliceState: [All_Spatial_ID,3,All_Utilities,4,All_PV_Dec_Handles,9,All_Sectors,1]
+Att_EditSliceState: [All_Spatial_ID,3,All_Utilities,1,All_PV_Dec_Handles,9,All_Sectors,1]
 {!40700|Att_CellFormat: CellFormats(CellSpan(All_Utilities,CellFill(0xffffff80),1,header:0),CellSpan(All_Utilities,CellFill(0xffffff80),3,header:0),CellSpan(All_Utilities,CellFill(0xffffff80),5,header:0))}
 {!50000|Att_ColumnWidths: [,All_PV_Dec_Handles,[,,93,,92],All_Spatial_ID,\([,,])]}
 

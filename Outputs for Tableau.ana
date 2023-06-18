@@ -23,7 +23,7 @@ Author: JamesMilford
 Date: Sun, Nov 18, 2018 11:53 PM
 NodeLocation: 736,792,1
 NodeSize: 64,40
-DiagState: 2,1968,36,1715,783,17,10
+DiagState: 2,1968,36,1715,725,17,10
 
 Variable Cumulative_Data_Plus
 Title: Cumulative Data Plus
@@ -476,27 +476,30 @@ Definition: PV_Sequent_Outputs[Sequential_Outputs=Seq_Cumul_MW_Label, All_Sector
 NodeLocation: 888,128,1
 NodeSize: 64,40
 WindState: 2,102,82,1261,505
-ValueState: 2,2345,49,1148,774,1,MIDM
+ValueState: 2,400,74,1186,742,1,MIDM
 Aliases: Alias Al1924347043
 NodeColor: 65535,1,1
 GraphSetup: Graph_AxisLabelFont:,20,0~
 {!50000|Graph_SortBySpread:0}~
-Att_ContLineStyle Graph_Primary_Valdim:5~
-Att_GraphIndexRange Output_Periods:1,0,1,,,,10,42907.28843975067,45650.169746756554,0~
-Att_GraphValueRange PV_Cumul_Adoption:1,,1,,,0,,0,508.35573077201843,0~
+Att_ContLineStyle Graph_Primary_Valdim:1~
+Att_GraphIndexRange Output_Periods:1,0,1,,,,10,45137.80681955814,46840.56685137749,0~
+Att_GraphValueRange PV_Cumul_Adoption:1,,1,,,0,,647.449791431427,1292.6592826843262,0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Graph_FillTransparen:0~
 {!50007|Graph_BarOutline:0}~
 {!50400|Att_AxisOrKeyTitle Output_Periods:""}~
-Graph_SymbolKey:1
-ReformVal: [Output_Periods,Act_vs_Sim]
+Graph_SymbolKey:1~
+{!60002|Graph_DashKey:1}~
+Graph_SymbolSizeKey:1
+ReformVal: [Output_Periods,Utility_Options_Domi]
 NumberFormat: 2,F,4,1,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [Act_vs_Sim,PV_Sectors]
-Att_ResultSliceState: [Area_Type,1,Spatial_ID,1,State_Tax_Credit_Sc1,2,Act_vs_Sim,-1,Output_Periods,167]
-Att_ColorRole: Act_vs_Sim
-Att_SymbolRole: PV_Sectors
+Att_ResultSliceState: [Area_Type,1,Spatial_ID,1,PV_Sectors,0,Utility_Options_Domi,2,Output_Periods,167]
+Att_SymbolRole: Act_vs_Sim
+Att_SymbolSizeRole: Null
+{!60002|Att_DashRole: Act_vs_Sim}
 {!40600|Att_StackingIndex: PV_Sectors}
 {!40600|Att_ClusterIndex: Null}
 
@@ -526,12 +529,12 @@ NodeLocation: 888,224,1
 NodeSize: 64,40
 WindState: 2,102,82,1095,453
 ValueState: 2,535,138,1182,674,1,MIDM
-GraphSetup: Att_GraphIndexRange Output_Periods:1,,0,,,,10,42037.273801356554,49906.71940380335,0~
-Att_GraphValueRange PV_Increm_Adoption:1,,1,,,,10,1.038821429014206,3.2670102417469025,0
+GraphSetup: Att_GraphValueRange PV_Increm_Adoption:1,,1,,,,10,1.038821429014206,3.2670102417469025,0~
+Att_GraphIndexRange Output_Periods:1,,1,,,,10,42037.273801356554,49906.71940380335,0
 ReformVal: [Output_Periods,Act_vs_Sim]
 Att__TotalsIndex: [Act_vs_Sim]
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [PV_Sectors,1,Spatial_ID,1,Area_Type,1,Utility_Options_for_,3,Act_vs_Sim,0,Output_Periods,1]
+Att_ResultSliceState: [Spatial_ID,1,Utility_Options_Domi,2,PV_Sectors,1,Area_Type,1,Act_vs_Sim,1,Output_Periods,1]
 
 Variable Cumulative_EV_Stock
 Title: Cumulative EV Stock
@@ -741,16 +744,18 @@ Definition: BESS_Adoption_Data[BESS_Adopt_DataTypes=Map_Seq_Outputs[All_DER_Type
 NodeLocation: 872,984,1
 NodeSize: 64,40
 WindState: 2,1300,82,1463,748
-ValueState: 2,2244,34,1256,743,1,MIDM
-GraphSetup: Att_GraphValueRange BESS_Sequential_Outp:1,,1,,,,,2.091196086257696,66.29322946071625,0~
-Att_GraphIndexRange Output_Periods:1,,1,,,,10,42262.546633303165,46170.781474232674,0~
+ValueState: 2,403,35,939,723,1,MIDM
+GraphSetup: {!60002|Graph_DashKey:1}~
+Att_ContLineStyle Graph_Primary_Valdim:1~
+Att_GraphValueRange BESS_Sequential_Outp:1,,1,,,,,0,0.7117148339748383,0~
+Att_GraphIndexRange Output_Periods:1,,1,,,,10,45882.3480861187,45933.79757273197,0~
 Graph_SymbolKey:1
-ReformVal: [Output_Periods,Act_vs_Sim]
+ReformVal: [Output_Periods,All_Sectors]
 Att__TotalsIndex: [Act_vs_Sim]
-Att_ResultSliceState: [Spatial_ID,1,Area_Type,1,Sequential_Outputs,4,Act_vs_Sim,-1,Output_Periods,1]
-Att_ColorRole: Act_vs_Sim
-Att_SymbolRole: Utility_Options_for_
+Att_ResultSliceState: [Spatial_ID,1,Area_Type,1,Sequential_Outputs,4,Utility_Options_Domi,2,All_Sectors,1,Output_Periods,1]
+Att_SymbolRole: All_Sectors
 Att_SymbolSizeRole: All_Sectors
+{!60002|Att_DashRole: Act_vs_Sim}
 
 Alias Al1579093082
 Title: BESS Adoption Forecasts
@@ -801,6 +806,21 @@ Text Te2108239395
 Title: Doesn't do historical correctly if not from interconnectd data
 NodeLocation: 796,60,-1
 NodeSize: 132,44
+
+Variable BESS_Cumulative_Impa
+Title: BESS Cumulative Impact
+Units: MW-AC
+Description: Cumulative adoption of battery energy storage systems (BESS), including both stand-alone and paired storage systems.
+Definition: BESS_Sequential_Outp[Sequential_Outputs='Cumulative MW-AC',Area_Type='Roof',Spatial_ID='All']
+NodeLocation: 1040,984,1
+NodeSize: 64,40
+ValueState: 2,487,41,931,683,,MIDM
+GraphSetup: Att_GraphValueRange BESS_Cumulative_Impa:1,,1,,,,,0,0.3867613263428211,0~
+{!60002|Graph_DashKey:1}~
+Att_ContLineStyle Graph_Primary_Valdim:1
+ReformVal: [Output_Periods,All_Sectors]
+Att_ResultSliceState: [Utility_Options_Domi,2,All_Sectors,1,Output_Periods,1]
+{!60002|Att_DashRole: Act_vs_Sim}
 
 Close Sequential_Historic_
 
@@ -14378,6 +14398,7 @@ WindState: 2,501,236,909,580
 ValueState: 2,955,360,416,303,,MIDM
 Aliases: FormNode Fo1542347299, Alias Al1550771681, FormNode Fo1550771685, FormNode Fo1545071279, FormNode Fo1686057469
 NumberFormat: 2,I,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
+AcpStyles: Show_Object:No
 
 Constant Output_dT_Choice
 Title: Output dT Choice
