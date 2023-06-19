@@ -58,7 +58,7 @@ Att__TotalsIndex: [EV_Spatial_ID,Vehicle_Vintage]
 Att_ResultSliceState: [Vehicle_Types,1,Vehicle_Vintage,0,EV_Sectors,1,EV_Spatial_ID,0,EV_Mkt_Share_Scen,2,EV_WOM_Scen,1,Time_Vehicles,1]
 {!40600|Att_StackingIndex: EV_LRMS_Scenario}
 {!40600|Att_ClusterIndex: Null}
-{!50000|Att_ColumnWidths: [,Time_Vehicles,\([91,91,91,93,91,91,91,91,91,91,91,91,91,91,91,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
+{!50000|Att_ColumnWidths: [,Time_Vehicles,\([91,91,91,91,91,91,91,91,,,,,,,,,,,,,,,,,])]}
 
 Variable Vehicle_Removals
 Title: Vehicle Removals
@@ -101,7 +101,7 @@ Date: Fri, Jun 22, 2018 10:48 AM
 NodeLocation: 824,488,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,55,86,1707,640,17,10
+DiagState: 2,55,86,1707,560,17,10
 AcpStyles: FrameNode: EVStockInitial_Frame
 
 Constant Final_EV_Hist_Period
@@ -2149,7 +2149,7 @@ VAR mults:=IF Apply_VehStock_Mults THEN Vehicle_Stock_Multip ELSE 1;~
 VAR periods:=IF NOT All_Agg_Spatial_IDs AND DMV_Periods_to_Excl~
    THEN Null~
    ELSE 1;~
-cleanData[All_Sectors=EV_Sectors, All_Vehicle_Techs=Vehicle_Techs] * mults * periods
+cleanData[All_Sectors=EV_Sectors, All_Vehicle_Techs=Vehicle_Techs,All_Utilities=Selected_Utility] * mults * periods
 NodeLocation: 296,176,1
 NodeSize: 64,40
 WindState: 2,325,163,1564,840
@@ -2378,7 +2378,7 @@ Att__TotalsIndex: [EV_Spatial_ID]
 Att_ResultSliceState: [EV_Sectors,1,Vehicle_Techs,2,EV_Spatial_ID,0,Time_Vehicles,1]
 {!40600|Att_StackingIndex: Long_Run_Market_Shar}
 {!40600|Att_ClusterIndex: Null}
-{!50000|Att_ColumnWidths: [,Time_Vehicles,\([,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
+{!50000|Att_ColumnWidths: [,Time_Vehicles,\([,,,,,,,,,,,,,,,,,,,,,,,,])]}
 
 Text Te1529426594
 NodeLocation: 472,208,-1
@@ -2555,7 +2555,7 @@ NodeSize: 176,40
 NodeColor: 65535,65535,65535
 
 Index Time_Vehicles
-Att_PrevIndexValue: [1-Jul-2010,1-Jan-2011,1-Jul-2011,1-Jan-2012,1-Jul-2012,1-Jan-2013,1-Jul-2013,1-Jan-2014,1-Jul-2014,1-Jan-2015,1-Jul-2015,1-Jan-2016,1-Jul-2016,1-Jan-2017,1-Jul-2017,1-Jan-2018,1-Jul-2018,1-Jan-2019,1-Jul-2019,1-Jan-2020,1-Jul-2020,1-Jan-2021,1-Jul-2021,1-Jan-2022,1-Jul-2022,1-Jan-2023,1-Jul-2023,1-Jan-2024,1-Jul-2024,1-Jan-2025,1-Jul-2025,1-Jan-2026,1-Jul-2026,1-Jan-2027,1-Jul-2027,1-Jan-2028,1-Jul-2028,1-Jan-2029,1-Jul-2029,1-Jan-2030,1-Jul-2030,1-Jan-2031,1-Jul-2031]
+Att_PrevIndexValue: [1-Jul-2010,1-Jul-2011,1-Jul-2012,1-Jul-2013,1-Jul-2014,1-Jul-2015,1-Jul-2016,1-Jul-2017,1-Jul-2018,1-Jul-2019,1-Jul-2020,1-Jul-2021,1-Jul-2022,1-Jul-2023,1-Jul-2024,1-Jul-2025,1-Jul-2026,1-Jul-2027,1-Jul-2028,1-Jul-2029,1-Jul-2030,1-Jul-2031,1-Jul-2032,1-Jul-2033,1-Jul-2034]
 Title: Time-Vehicles
 Units: Years
 Description: Ths is the time index used for simulating vehicle adoption. It is allowed to be different from other DERs, for instance, due to differences in the granularity of available historical data on adoption (e.g., solar PV data are monthly, whereas vehicle data are, at best, quarterly, or in some cases, annual)
@@ -2682,7 +2682,7 @@ Date: Fri, Jun 22, 2018 10:48 AM
 NodeLocation: 342,664,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,44,47,1025,683,17
+DiagState: 2,44,47,1025,683,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -2721,7 +2721,7 @@ ValueState: 2,460,162,923,511,0,MIDM
 
 Decision Time_for_Map_Output
 Title: Time for Map Output
-Definition: Choice(Time_Vehicles,41,0)
+Definition: Choice(Time_Vehicles,21,0)
 NodeLocation: 128,152,1
 NodeSize: 64,40
 Aliases: FormNode Fo1533741784
@@ -2846,7 +2846,7 @@ Variable Applied_Fuel_Prices
 Title: Applied Fuel Prices
 Units: $/GGE
 Description: The fuel prices applied in the model after applying sensitivity adjustments.
-Definition: Fuel_Prices * Fuel_Price_Multip
+Definition: Fuel_Prices[All_Utilities=Selected_Utility] * Fuel_Price_Multip
 NodeLocation: 616,344,1
 NodeSize: 64,40
 WindState: 2,745,63,720,350
@@ -2909,7 +2909,7 @@ Att__TotalsIndex: []
 Att_ResultSliceState: [EV_Sectors,1,Vehicle_Techs,1,EV_Spatial_ID,3,Time_Vehicles,1]
 {!40600|Att_StackingIndex: Vehicle_Techs}
 {!40600|Att_ClusterIndex: Null}
-{!50000|Att_ColumnWidths: [,Time_Vehicles,\([75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
+{!50000|Att_ColumnWidths: [,Time_Vehicles,\([75,75,75,75,75,75,75,75,,,,,,,,,,,,,,,,,])]}
 
 Variable Vehicle_Retirements
 Title: Vehicle Retirements
@@ -3217,7 +3217,7 @@ Att__TotalsIndex: []
 Att_ResultSliceState: [EV_Sectors,1,Vehicle_Techs,2,EV_Spatial_ID,3,Time_Vehicles,1]
 {!40600|Att_StackingIndex: Vehicle_Types}
 {!40600|Att_ClusterIndex: Null}
-{!50000|Att_ColumnWidths: [,Time_Vehicles,\([75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,,,,,,,,,,,,,,,,,,,,,,,,,,,,])]}
+{!50000|Att_ColumnWidths: [,Time_Vehicles,\([75,75,75,75,75,75,75,75,,,,,,,,,,,,,,,,,])]}
 
 Close Familiarity
 
@@ -4291,7 +4291,7 @@ Date: Mon, Mar 25, 2019 8:59 PM
 NodeLocation: 128,72,1
 NodeSize: 64,40
 NodeInfo: 1,0,1,1,1,1,0,,0,,0,,,
-DiagState: 2,89,34,1710,759,17
+DiagState: 2,89,34,1710,727,17,10
 AcpStyles: Framenode: VehFuelCost_Frame
 
 Constant Fuel_Prices
@@ -4514,7 +4514,7 @@ Variable Annual_Fuel_Consump
 Title: Annual Fuel Consumption
 Units: GGE/year-vehicle
 Description: The annual fuel consumption in gallons of gasoline equivalent per year.
-Definition: Divide(VMT, MPG[All_Vehicle_Techs=Vehicle_Techs], True) * Fuel_Mix[All_Vehicle_Techs=Vehicle_Techs]
+Definition: Divide(VMT[All_Utilities=Selected_Utility], MPG[All_Vehicle_Techs=Vehicle_Techs], True) * Fuel_Mix[All_Vehicle_Techs=Vehicle_Techs]
 NodeLocation: 320,456,1
 NodeSize: 64,40
 ValueState: 2,18,9,1338,591,1,MIDM
@@ -4734,7 +4734,7 @@ Variable Fuel_Prices_Aft_Mult
 Title: Fuel Prices After Multipliers
 Units: $/GGE
 Description: Fuel Prices after any scenario multipliers
-Definition: Fuel_Prices * Fuel_Price_Multip
+Definition: Fuel_Prices[All_Utilities=Selected_Utility] * Fuel_Price_Multip
 NodeLocation: 368,336,1
 NodeSize: 64,40
 ValueState: 2,386,218,869,552,,MIDM
@@ -4813,7 +4813,7 @@ Variable Fuel_Cost_per_Mile
 Title: Fuel Cost per Mile
 Units: $/mile
 Description: The fuel price per mile driven.
-Definition: Divide(Annuel_Fuel_Cost, VMT, True)
+Definition: Divide(Annuel_Fuel_Cost, VMT[All_Utilities=Selected_Utility], True)
 NodeLocation: 472,552,1
 NodeSize: 64,40
 ValueState: 2,393,111,1173,754,1,MIDM
@@ -6092,7 +6092,7 @@ Date: Mon, Mar 25, 2019 8:59 PM
 NodeLocation: 280,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,1,1,1,1,0,,0,,0,,,
-DiagState: 2,110,14,1542,730,17
+DiagState: 2,110,14,1542,630,17,10
 
 Variable Annual_Fuel_Consump1
 Title: Annual Fuel Consumption
@@ -6102,7 +6102,7 @@ Definition: VAR MPG_vals:=IF Vehicle_Techs = Baseline_Veh_Tech~
    THEN MPG[All_Vehicle_Techs=Baseline_Veh_Tech, Vehicle_Input_Years=Vehicle_Sensit_Yr]~
    ELSE MPG_Scale;~
 MPG_vals:=MPG[All_Vehicle_Techs=Vehicle_Techs, Vehicle_Input_Years=Vehicle_Sensit_Yr];~
-Divide(VMT[Vehicle_Input_Years=Vehicle_Sensit_Yr], MPG_vals, True) * Fuel_Mix[All_Vehicle_Techs=Vehicle_Techs, Vehicle_Input_Years=Vehicle_Sensit_Yr];
+Divide(VMT[Vehicle_Input_Years=Vehicle_Sensit_Yr,All_Utilities=Selected_Utility], MPG_vals, True) * Fuel_Mix[All_Vehicle_Techs=Vehicle_Techs, Vehicle_Input_Years=Vehicle_Sensit_Yr];
 NodeLocation: 256,280,1
 NodeSize: 64,40
 WindState: 2,98,82,1261,569
@@ -6113,7 +6113,7 @@ Variable Annuel_Fuel_Cost1
 Title: Annuel Fuel Cost
 Units: $/year-vehicle
 Description: The annual cost of transportation fuel.
-Definition: Sum(Annual_Fuel_Consump1 * Fuel_Prices[Gasoline_Price_Scens=Sel_Gasol_Price_Scen, Vehicle_Input_Years=Vehicle_Sensit_Yr], Fuel_Types)
+Definition: Sum(Annual_Fuel_Consump1 * Fuel_Prices[Gasoline_Price_Scens=Sel_Gasol_Price_Scen, Vehicle_Input_Years=Vehicle_Sensit_Yr,All_Utilities=Selected_Utility], Fuel_Types)
 NodeLocation: 408,280,1
 NodeSize: 64,40
 ValueState: 2,45,47,1110,607,0,MIDM
@@ -8807,7 +8807,7 @@ Title: Dates Included in Optimization
 Description: Select which historical dates you wish to include in the calculation of the cumulative delta between simulated and actual in the optimization of diffusion parameters. Any dates NOT checked will be ignored in the calculation of the objective function.~
 ~
  Change this to be indexed only by the calibration years
-Definition: Table(Time_Vehicles)(Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
+Definition: Table(Time_Vehicles)(Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(0),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1),Checkbox(1))
 NodeLocation: 408,272,1
 NodeSize: 64,40
 WindState: 2,442,8,821,354

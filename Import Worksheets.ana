@@ -161,106 +161,106 @@ Fact Column Index 1: 	Handle(States)~
 Fact Column Index 2: 	Handle(Land_Type)~
 Fact Column Index 3..N: 	Null
 Definition: DetermTable(Select_Model_for_Dat,Imported_Dataset_Num,Excel_Import_Params)(~
-Checkbox(0),Path_to_Global_Data1,'SGIP_Data','A7',Choice(Import_Data_Types,1,0),Null,Handle(SGIP_Data),Handle(SGIP_Data_Columns),Handle(SGIP_Data_Rows),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Single_Cell_Inputs','A7',Choice(Import_Data_Types,1,0),Null,Handle(Single_Cell_Inputs),Null,Handle(SingCell_Input_Names),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Hourly_Profiles','A7',Choice(Import_Data_Types,1,0),Null,Handle(Hourly_Profile_Data),Handle(Hourly_Profile_Names),Handle(Hourly_Profile_Rows),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Holiday_Dates','A7',Choice(Import_Data_Types,4,0),Null,Handle(Dates_of_Holidays),Handle(Holiday_Name),Handle(Holiday_Years),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'PV_CapFactor','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Capacity_Factor),Handle(Area_Type),Handle(All_Utilities),Handle(PV_Climate_Zone),Handle(All_PV_Sectors),Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'PV_NewConstr_Size','A7',Choice(Import_Data_Types,2,0),Null,Handle(NewConstr_Code_Sys_S),Handle(NewConstr_Code_Param),Handle(PV_Climate_Zone),Handle(All_Sectors),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Battery_Specs','A7',Choice(Import_Data_Types,2,0),Null,Handle(Battery_Storage_Spec),Handle(All_Sectors),Handle(Battery_Specs),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'DC_to_AC_Ratio','A7',Choice(Import_Data_Types,2,0),Null,Handle(DC_to_AC_Ratio),Handle(All_PV_Sectors),Handle(PV_Climate_Zone),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Finance_Rates','A7',Choice(Import_Data_Types,2,0),Null,Handle(Debt_Equity_Rates),Handle(All_PV_Sectors),Handle(Debt_or_Equity),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Fed_ITC','A7',Choice(Import_Data_Types,2,0),Null,Handle(Invest_Tax_Credit),Handle(All_PV_Sectors),Handle(ITC_Scenario),Handle(Static_PV_Time),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Strg_Duration_Incent','A7',Choice(Import_Data_Types,2,0),Null,Handle(kWh_Incen_Dur_Derate),Handle(Incent_Durat_Inputs),Handle(Incent_Duration_Step),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Vehicle_Stock_Data','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Data),Handle(Vehicle_Stock_DataYr),Handle(All_Utilities),Handle(All_Sectors),Handle(All_Spatial_ID),Handle(All_Vehicle_Techs),Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Struct_Single_Cell_Inputs','A7',Choice(Import_Data_Types,1,0),Null,Handle(StructSingCell_Input),Null,Handle(StructSingCell_Names),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Hist_Vehicle_Growth','A7',Choice(Import_Data_Types,2,0),Null,Handle(Hist_Veh_Growth_Rate),Null,Handle(All_Vehicle_Techs),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'EV_MktShare_Mults','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Mkt_Share_Mult),Null,Handle(EV_Mkt_Share_Scen),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Building_Stock','A7',Choice(Import_Data_Types,2,0),0.001,Handle(Building_Stock),Handle(Building_Stock_Year),Handle(All_Utilities),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Aggreg_Spatial_ID','A7',Choice(Import_Data_Types,2,0),Null,Handle(All_Agg_Spatial_IDs),Null,Handle(All_Spatial_ID),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'EV_Map_Increm_to_Cumul','A7',Choice(Import_Data_Types,1,0),Null,Handle(EV_Map_Increm_Cumul),Null,Handle(EV_Adopt_Data_Types),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Climate_Zone_Map','A7',Choice(Import_Data_Types,3,0),Null,Handle(All_Spatial_ID_to_CZ),Null,Handle(All_Spatial_ID),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Fuel_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Fuel_Prices),Handle(Vehicle_Input_Years),Handle(Fuel_Types),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'MPG','A7',Choice(Import_Data_Types,2,0),Null,Handle(MPG),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Handle(Fuel_Types),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'VMT','A7',Choice(Import_Data_Types,2,0),Null,Handle(VMT),Null,Handle(Vehicle_Input_Years),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Fuel_Mix','A7',Choice(Import_Data_Types,2,0),Null,Handle(Fuel_Mix),Handle(Vehicle_Input_Years),Handle(Fuel_Types),Handle(All_Vehicle_Techs),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Vehicle_Price','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Price),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Vehicle_Range','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Range),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Maint_Costs','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Maint_Cost),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Veh_Type_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Vehicle_Type_Map),Null,Handle(All_Vehicle_Techs),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Vehicle_Tech_Pref','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Tech_Pref),Null,Handle(All_Vehicle_Techs),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Veh_Incentives','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Incents),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Handle(Veh_Incentive_Type),Handle(EV_Incent_Scenario),Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Veh_DecisionVars','A7',Choice(Import_Data_Types,2,0),Null,Handle(Stored_EV_Dec_Vars),Handle(All_EV_Dec_Handles),Handle(All_Spatial_ID),Handle(All_Sectors),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Veh_OptStatus','A7',Choice(Import_Data_Types,3,0),Null,Handle(Stored_Opt_Status_EV),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Veh_R2Thresh','A7',Choice(Import_Data_Types,2,0),Null,Handle(R2_Threshold),Null,Handle(EV_Calibration_Stage),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Veh_CalibDates','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Dates_Incl_by_Stg),Handle(EV_Calibration_Stage),Handle(Time_EV_Calibration),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Veh_CalibDecisions','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Decisions_by_Stg),Handle(EV_Calibration_Stage),Handle(All_EV_Decisions),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Veh_OptSetting','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_OptSettings_byStg),Handle(EV_Calibration_Stage),Handle(Opt_Settings_EVs),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Veh_DecisBounds','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Dec_Var_Bounds),Handle(Upper_Lower),Handle(All_EV_Decisions),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Veh_Stock_Mults','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Multip),Null,Handle(All_Spatial_ID),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Equip_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Base_Installed_Cost_),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(All_Equipment_Types),Handle(Static_PV_Time),Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'DER_PriceChangeRate','A7',Choice(Import_Data_Types,2,0),Null,Handle(DER_Cost_Change_Rate),Handle(All_PV_Sectors),Handle(DER_Cost_Decline_Sc1),Handle(All_Equipment_Types),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Equip_Lifetime','A7',Choice(Import_Data_Types,2,0),Null,Handle(Equipment_Lifetime),Null,Handle(All_Equipment_Types),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'OM_Cost','A7',Choice(Import_Data_Types,2,0),Null,Handle(O_M_Cost),Handle(All_PV_Sectors),Handle(All_Equipment_Types),Handle(Static_PV_Time),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Interconn_Fee','A7',Choice(Import_Data_Types,2,0),Null,Handle(Interconnect_Fee),Null,Handle(Static_PV_Time),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Historical_PV_Installs','A8',Choice(Import_Data_Types,1,0),Null,Handle(Historical_PV_Instal),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(Spatial_ID),Handle(Interconnect_Date),Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Historical_PV_Capacity_Installs','A8',Choice(Import_Data_Types,1,0),Null,Handle(Historical_PV_Capaci),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(Spatial_ID),Handle(Interconnect_Date),Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Battery_Installs','A7',Choice(Import_Data_Types,1,0),Null,Handle(Storage_Install_Data),Handle(AESS_Data_Columns),Handle(AESS_Data_Rows),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'State_Tax_Credit','A7',Choice(Import_Data_Types,1,0),Null,Handle(State_Tax_Credit),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(Static_PV_Time),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'State_Tax_Credit_Max','A7',Choice(Import_Data_Types,1,0),Null,Handle(State_Tax_Credit_Max),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(Static_PV_Time),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'NewConstr_Suitability','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_New_Construction_),Handle(All_PV_Sectors),Handle(NC_Suitability_Scens),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Production_Credits','A7',Choice(Import_Data_Types,1,0),Null,Handle(Solar_Production_Cre),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(Static_PV_Time),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,Handle(Index_Identifier),~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,Handle(Index_Identifier),~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Stock_Basis','A7',Choice(Import_Data_Types,3,0),Null,Handle(PV_Stock_Basis_by_Se),Null,Handle(All_Sectors),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'PV_Power_Density','A7',Choice(Import_Data_Types,2,0),Null,Handle(Power_Density),Handle(Area_Type),Handle(All_PV_Sectors),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'PV_Module_to_Area','A7',Choice(Import_Data_Types,2,0),Null,Handle(Module_to_Area_Ratio),Handle(Area_Type),Handle(All_PV_Sectors),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'PV_CalibDecis','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Decisions_by_Stg),Handle(PV_Calibration_Stage),Handle(All_PV_Decisions),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'PV_Constraints','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Constraints_by_St),Handle(PV_Calibration_Stage),Handle(All_PV_Constraints),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'PV_CalibDates','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Dates_Incl_by_Stg),Handle(PV_Calibration_Stage),Handle(Time_PV_Calibration),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'PV_R2Thresh','A7',Choice(Import_Data_Types,2,0),Null,Handle(R2_Threshold1),Handle(PV_Calibration_Stage),Handle(All_Sectors),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'PV_CalibToler','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Tolerance_by_Stag),Handle(PV_Calibration_Stage),Handle(Tolerance_Input),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'PV_OptSetting','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_OptSettings_byStg),Handle(PV_Calibration_Stage),Handle(Opt_Settings_PV),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'PV_DecisBounds','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Dec_Var_Bounds),Handle(Upper_Lower),Handle(All_PV_Decisions),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'PV_DecisionVars','A7',Choice(Import_Data_Types,2,0),Null,Handle(Stored_PV_Dec_Vars),Handle(All_PV_Dec_Handles),Handle(All_Spatial_ID),Handle(All_Sectors),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'PV_OptStatus','A7',Choice(Import_Data_Types,3,0),Null,Handle(Stored_Opt_Status_PV),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Strg_Cap_Derate','A7',Choice(Import_Data_Types,2,0),Null,Handle(kWh_Incent_DerateCap),Handle(Incent_MWhCap_Inputs),Handle(Incent_Capacity_Step),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Strg_Incent_BaseRate','A7',Choice(Import_Data_Types,2,0),Null,Handle(Strg_kWh_Base_Rate),Handle(Incentive_Steps),Handle(ITC_Applied),Handle(All_Sectors),Handle(PV_Climate_Zone),Null,Null,Handle(Index_Identifier),~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,Handle(Index_Identifier),~
-Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Incent_StartMonth','A7',Choice(Import_Data_Types,1,0),Null,Handle(Incentive_Step_Start),Handle(Incentive_Steps),Handle(All_Sectors),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'MACRS','A7',Choice(Import_Data_Types,2,0),Null,Handle(MACRS_Schedule),Handle(All_PV_Sectors),Handle(PV_Operating_Year),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Tax_Rates','A7',Choice(Import_Data_Types,2,0),Null,Handle(Tax_Rates),Handle(Tax_Entity),Handle(All_Utilities),Handle(Static_PV_Time),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Bonus_Deprec','A7',Choice(Import_Data_Types,2,0),Null,Handle(Bonus_Deprec_Sched),Null,Handle(Static_PV_Time),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'NewConstr_Share','A7',Choice(Import_Data_Types,2,0),Null,Handle(NewConstr_Mkt_Share),Handle(Static_PV_Time),Handle(All_Sectors),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Vehicle_Impact','A7',Choice(Import_Data_Types,2,0),Null,Handle(Impact_per_EV),Null,Handle(All_Vehicle_Techs),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'PV_Scale_Load','A7',Choice(Import_Data_Types,1,0),Null,Handle(Scale_PV_Size_by_Cov),Null,Handle(All_PV_Sectors),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Consumption_by_Sector','A7',Choice(Import_Data_Types,2,0),0.001,Handle(Consumption_by_Secto),Null,Handle(All_Utilities),Handle(All_PV_Sectors),Handle(Spatial_ID),Null,Null,Handle(Index_Identifier),~
-Checkbox(1),Path_to_Global_Data1,'Load_Profiles','A7',Choice(Import_Data_Types,1,0),Null,Handle(Load_Profiles),Handle(Loadshape_Name),Handle(Hourly_Profile_Rows),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Solar_Profile_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Solar_Profile_Map1),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(PV_Climate_Zone),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'PV_Init_Adop_Fraction','A7',Choice(Import_Data_Types,1,0),Null,Handle(PV_Init_Adop_Fractio),Handle(All_PV_Sectors),Handle(Spatial_ID),Handle(Area_Type),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Total_PV_Area','A7',Choice(Import_Data_Types,1,0),Null,Handle(Total_PV_Area),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(Area_Type),Handle(Spatial_ID),Handle(Building_Stock_Year),Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'EUI','A7',Choice(Import_Data_Types,1,0),Null,'Handle(EUI)',Handle(Roof_Dummy),Handle(Spatial_ID),Handle(All_PV_Sectors),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Facility_Data','A1',Choice(Import_Data_Types,1,0),Null,'Handle(Facility_Data1)','Handle(Facility_Parameter)','Handle(Facility_Identifier)',Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Park_To_GFA_Ratio','A7',Choice(Import_Data_Types,1,0),Null,'Handle(Ratio_of_Parking_Ar1)',Handle(Spatial_ID),Handle(All_PV_Sectors),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'PV_Suitability','A7',Choice(Import_Data_Types,1,0),Null,Handle(PV_suitability),Handle(Area_Type),Handle(All_Utilities),Handle(All_PV_Sectors),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'System_Size_Constraints','A7',Choice(Import_Data_Types,1,0),Null,'Handle(System_Size_Constra2)','Handle(Min_Max)',Handle(Spatial_ID),Handle(Area_Type),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),'Custom_Input_Filenam','NYPA Market Fraction','A1',Choice(Import_Data_Types,1,0),Null,'Handle()',Handle(Spatial_ID),Handle(All_PV_Sectors),Handle(Area_Type),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),'Custom_Input_Filenam','PV Incentives','A1',Choice(Import_Data_Types,1,0),Null,Handle(PV_kW_DC_Incentive),Handle(PV_Climate_Zone),Handle(PV_Incentive_Scen),Handle(Static_PV_Time),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),'Custom_Input_Filenam','SheetName','A1',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),'Custom_Input_Filenam','SheetName','A1',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Handle(Index_Identifier),~
-Checkbox(0),'Custom_Input_Filenam','SheetName','A1',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Handle(Index_Identifier),~
-Checkbox(0),'Custom_Input_Filenam','SheetName','A1',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'Load_Profile_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Loadshape_Map1),Handle(All_Sectors),Handle(All_Utilities),Null,Null,Null,Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'SheetName','A1',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'SheetName','A1',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'SheetName','A1',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'SheetName','A1',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Handle(Index_Identifier),~
-Checkbox(0),Path_to_Global_Data1,'SheetName','A1',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Handle(Index_Identifier),~
+Checkbox(0),Path_to_Global_Data1,'SGIP_Data','A7',Choice(Import_Data_Types,1,0),Null,Handle(SGIP_Data),Handle(SGIP_Data_Columns),Handle(SGIP_Data_Rows),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Single_Cell_Inputs','A7',Choice(Import_Data_Types,1,0),Null,Handle(Single_Cell_Inputs),Null,Handle(SingCell_Input_Names),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Hourly_Profiles','A7',Choice(Import_Data_Types,1,0),Null,Handle(Hourly_Profile_Data),Handle(Hourly_Profile_Names),Handle(Hourly_Profile_Rows),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Holiday_Dates','A7',Choice(Import_Data_Types,4,0),Null,Handle(Dates_of_Holidays),Handle(Holiday_Name),Handle(Holiday_Years),Null,Null,Null,Null,Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'PV_CapFactor','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Capacity_Factor),Handle(Area_Type),Handle(All_Utilities),Handle(PV_Climate_Zone),Handle(All_PV_Sectors),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'PV_NewConstr_Size','A7',Choice(Import_Data_Types,2,0),Null,Handle(NewConstr_Code_Sys_S),Handle(NewConstr_Code_Param),Handle(PV_Climate_Zone),Handle(All_Sectors),Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Battery_Specs','A7',Choice(Import_Data_Types,2,0),Null,Handle(Battery_Storage_Spec),Handle(All_Sectors),Handle(Battery_Specs),Null,Null,Null,Null,Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'DC_to_AC_Ratio','A7',Choice(Import_Data_Types,2,0),Null,Handle(DC_to_AC_Ratio),Handle(All_PV_Sectors),Handle(PV_Climate_Zone),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Finance_Rates','A7',Choice(Import_Data_Types,2,0),Null,Handle(Debt_Equity_Rates),Handle(All_PV_Sectors),Handle(Debt_or_Equity),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Fed_ITC','A7',Choice(Import_Data_Types,2,0),Null,Handle(Invest_Tax_Credit),Handle(All_PV_Sectors),Handle(ITC_Scenario),Handle(Static_PV_Time),Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Strg_Duration_Incent','A7',Choice(Import_Data_Types,2,0),Null,Handle(kWh_Incen_Dur_Derate),Handle(Incent_Durat_Inputs),Handle(Incent_Duration_Step),Null,Null,Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data1,'Vehicle_Stock_Data','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Data),Handle(Vehicle_Stock_DataYr),Handle(All_Utilities),Handle(All_Sectors),Handle(All_Spatial_ID),Handle(All_Vehicle_Techs),Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Struct_Single_Cell_Inputs','A7',Choice(Import_Data_Types,1,0),Null,Handle(StructSingCell_Input),Null,Handle(StructSingCell_Names),Null,Null,Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data1,'Hist_Vehicle_Growth','A7',Choice(Import_Data_Types,2,0),Null,Handle(Hist_Veh_Growth_Rate),Null,Handle(All_Vehicle_Techs),Null,Null,Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data1,'EV_MktShare_Mults','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Mkt_Share_Mult),Null,Handle(EV_Mkt_Share_Scen),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Building_Stock','A7',Choice(Import_Data_Types,2,0),0.001,Handle(Building_Stock),Handle(Building_Stock_Year),Handle(All_Utilities),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Aggreg_Spatial_ID','A7',Choice(Import_Data_Types,2,0),Null,Handle(All_Agg_Spatial_IDs),Null,Handle(All_Spatial_ID),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'EV_Map_Increm_to_Cumul','A7',Choice(Import_Data_Types,1,0),Null,Handle(EV_Map_Increm_Cumul),Null,Handle(EV_Adopt_Data_Types),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Climate_Zone_Map','A7',Choice(Import_Data_Types,3,0),Null,Handle(All_Spatial_ID_to_CZ),Null,Handle(All_Spatial_ID),Null,Null,Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data1,'Fuel_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Fuel_Prices),Handle(Vehicle_Input_Years),Handle(All_Utilities),Handle(Fuel_Types),Null,Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data1,'MPG','A7',Choice(Import_Data_Types,2,0),Null,Handle(MPG),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Handle(Fuel_Types),Null,Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data1,'VMT','A7',Choice(Import_Data_Types,2,0),Null,Handle(VMT),Null,Handle(All_Utilities),Handle(Vehicle_Input_Years),Null,Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data1,'Fuel_Mix','A7',Choice(Import_Data_Types,2,0),Null,Handle(Fuel_Mix),Handle(Vehicle_Input_Years),Handle(Fuel_Types),Handle(All_Vehicle_Techs),Null,Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data1,'Vehicle_Price','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Price),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data1,'Vehicle_Range','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Range),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data1,'Maint_Costs','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Maint_Cost),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Veh_Type_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Vehicle_Type_Map),Null,Handle(All_Vehicle_Techs),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Vehicle_Tech_Pref','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Tech_Pref),Null,Handle(All_Vehicle_Techs),Null,Null,Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data1,'Veh_Incentives','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Incents),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Handle(Veh_Incentive_Type),Handle(EV_Incent_Scenario),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Veh_DecisionVars','A7',Choice(Import_Data_Types,2,0),Null,Handle(Stored_EV_Dec_Vars),Handle(All_EV_Dec_Handles),Handle(All_Spatial_ID),Handle(All_Sectors),Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Veh_OptStatus','A7',Choice(Import_Data_Types,3,0),Null,Handle(Stored_Opt_Status_EV),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Veh_R2Thresh','A7',Choice(Import_Data_Types,2,0),Null,Handle(R2_Threshold),Null,Handle(EV_Calibration_Stage),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Veh_CalibDates','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Dates_Incl_by_Stg),Handle(EV_Calibration_Stage),Handle(Time_EV_Calibration),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Veh_CalibDecisions','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Decisions_by_Stg),Handle(EV_Calibration_Stage),Handle(All_EV_Decisions),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Veh_OptSetting','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_OptSettings_byStg),Handle(EV_Calibration_Stage),Handle(Opt_Settings_EVs),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Veh_DecisBounds','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Dec_Var_Bounds),Handle(Upper_Lower),Handle(All_EV_Decisions),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Veh_Stock_Mults','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Multip),Null,Handle(All_Spatial_ID),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Equip_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Base_Installed_Cost_),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(All_Equipment_Types),Handle(Static_PV_Time),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'DER_PriceChangeRate','A7',Choice(Import_Data_Types,2,0),Null,Handle(DER_Cost_Change_Rate),Handle(All_PV_Sectors),Handle(DER_Cost_Decline_Sc1),Handle(All_Equipment_Types),Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Equip_Lifetime','A7',Choice(Import_Data_Types,2,0),Null,Handle(Equipment_Lifetime),Null,Handle(All_Equipment_Types),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'OM_Cost','A7',Choice(Import_Data_Types,2,0),Null,Handle(O_M_Cost),Handle(All_PV_Sectors),Handle(All_Equipment_Types),Handle(Static_PV_Time),Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Interconn_Fee','A7',Choice(Import_Data_Types,2,0),Null,Handle(Interconnect_Fee),Null,Handle(Static_PV_Time),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Historical_PV_Installs','A8',Choice(Import_Data_Types,1,0),Null,Handle(Historical_PV_Instal),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(Spatial_ID),Handle(Interconnect_Date),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Historical_PV_Capacity_Installs','A8',Choice(Import_Data_Types,1,0),Null,Handle(Historical_PV_Capaci),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(Spatial_ID),Handle(Interconnect_Date),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Battery_Installs','A7',Choice(Import_Data_Types,1,0),Null,Handle(Storage_Install_Data),Handle(AESS_Data_Columns),Handle(AESS_Data_Rows),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'State_Tax_Credit','A7',Choice(Import_Data_Types,1,0),Null,Handle(State_Tax_Credit),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(Static_PV_Time),Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'State_Tax_Credit_Max','A7',Choice(Import_Data_Types,1,0),Null,Handle(State_Tax_Credit_Max),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(Static_PV_Time),Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'NewConstr_Suitability','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_New_Construction_),Handle(All_PV_Sectors),Handle(NC_Suitability_Scens),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Production_Credits','A7',Choice(Import_Data_Types,1,0),Null,Handle(Solar_Production_Cre),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(Static_PV_Time),Null,Null,Null,Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Stock_Basis','A7',Choice(Import_Data_Types,3,0),Null,Handle(PV_Stock_Basis_by_Se),Null,Handle(All_Sectors),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'PV_Power_Density','A7',Choice(Import_Data_Types,2,0),Null,Handle(Power_Density),Handle(Area_Type),Handle(All_PV_Sectors),Null,Null,Null,Null,Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'PV_Module_to_Area','A7',Choice(Import_Data_Types,2,0),Null,Handle(Module_to_Area_Ratio),Handle(Area_Type),Handle(All_PV_Sectors),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'PV_CalibDecis','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Decisions_by_Stg),Handle(PV_Calibration_Stage),Handle(All_PV_Decisions),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'PV_Constraints','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Constraints_by_St),Handle(PV_Calibration_Stage),Handle(All_PV_Constraints),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'PV_CalibDates','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Dates_Incl_by_Stg),Handle(PV_Calibration_Stage),Handle(Time_PV_Calibration),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'PV_R2Thresh','A7',Choice(Import_Data_Types,2,0),Null,Handle(R2_Threshold1),Handle(PV_Calibration_Stage),Handle(All_Sectors),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'PV_CalibToler','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Tolerance_by_Stag),Handle(PV_Calibration_Stage),Handle(Tolerance_Input),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'PV_OptSetting','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_OptSettings_byStg),Handle(PV_Calibration_Stage),Handle(Opt_Settings_PV),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'PV_DecisBounds','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_Dec_Var_Bounds),Handle(Upper_Lower),Handle(All_PV_Decisions),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'PV_DecisionVars','A7',Choice(Import_Data_Types,2,0),Null,Handle(Stored_PV_Dec_Vars),Handle(All_PV_Dec_Handles),Handle(All_Spatial_ID),Handle(All_Sectors),Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'PV_OptStatus','A7',Choice(Import_Data_Types,3,0),Null,Handle(Stored_Opt_Status_PV),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Strg_Cap_Derate','A7',Choice(Import_Data_Types,2,0),Null,Handle(kWh_Incent_DerateCap),Handle(Incent_MWhCap_Inputs),Handle(Incent_Capacity_Step),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Strg_Incent_BaseRate','A7',Choice(Import_Data_Types,2,0),Null,Handle(Strg_kWh_Base_Rate),Handle(Incentive_Steps),Handle(ITC_Applied),Handle(All_Sectors),Handle(PV_Climate_Zone),Null,Null,Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,Null,~
+Checkbox(0),'C:\Documents\Filename.xlsx','SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Incent_StartMonth','A7',Choice(Import_Data_Types,1,0),Null,Handle(Incentive_Step_Start),Handle(Incentive_Steps),Handle(All_Sectors),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'MACRS','A7',Choice(Import_Data_Types,2,0),Null,Handle(MACRS_Schedule),Handle(All_PV_Sectors),Handle(PV_Operating_Year),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Tax_Rates','A7',Choice(Import_Data_Types,2,0),Null,Handle(Tax_Rates),Handle(Tax_Entity),Handle(All_Utilities),Handle(Static_PV_Time),Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Bonus_Deprec','A7',Choice(Import_Data_Types,2,0),Null,Handle(Bonus_Deprec_Sched),Null,Handle(Static_PV_Time),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'NewConstr_Share','A7',Choice(Import_Data_Types,2,0),Null,Handle(NewConstr_Mkt_Share),Handle(Static_PV_Time),Handle(All_Sectors),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Vehicle_Impact','A7',Choice(Import_Data_Types,2,0),Null,Handle(Impact_per_EV),Null,Handle(All_Vehicle_Techs),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'PV_Scale_Load','A7',Choice(Import_Data_Types,1,0),Null,Handle(Scale_PV_Size_by_Cov),Null,Handle(All_PV_Sectors),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Consumption_by_Sector','A7',Choice(Import_Data_Types,2,0),0.001,Handle(Consumption_by_Secto),Null,Handle(All_Utilities),Handle(All_PV_Sectors),Handle(Spatial_ID),Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data1,'Load_Profiles','A7',Choice(Import_Data_Types,1,0),Null,Handle(Load_Profiles),Handle(Loadshape_Name),Handle(Hourly_Profile_Rows),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Solar_Profile_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Solar_Profile_Map1),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(PV_Climate_Zone),Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'PV_Init_Adop_Fraction','A7',Choice(Import_Data_Types,1,0),Null,Handle(PV_Init_Adop_Fractio),Handle(All_PV_Sectors),Handle(Spatial_ID),Handle(Area_Type),Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Total_PV_Area','A7',Choice(Import_Data_Types,1,0),Null,Handle(Total_PV_Area),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(Area_Type),Handle(Spatial_ID),Handle(Building_Stock_Year),Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'EUI','A7',Choice(Import_Data_Types,1,0),Null,'Handle(EUI)',Handle(Roof_Dummy),Handle(Spatial_ID),Handle(All_PV_Sectors),Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Facility_Data','A1',Choice(Import_Data_Types,1,0),Null,'Handle(Facility_Data1)','Handle(Facility_Parameter)','Handle(Facility_Identifier)',Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Park_To_GFA_Ratio','A7',Choice(Import_Data_Types,1,0),Null,'Handle(Ratio_of_Parking_Ar1)',Handle(Spatial_ID),Handle(All_PV_Sectors),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'PV_Suitability','A7',Choice(Import_Data_Types,1,0),Null,Handle(PV_suitability),Handle(Area_Type),Handle(All_Utilities),Handle(All_PV_Sectors),Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'System_Size_Constraints','A7',Choice(Import_Data_Types,1,0),Null,'Handle(System_Size_Constra2)','Handle(Min_Max)',Handle(Spatial_ID),Handle(Area_Type),Null,Null,Null,Null,~
+Checkbox(0),'Custom_Input_Filenam','NYPA Market Fraction','A1',Choice(Import_Data_Types,1,0),Null,'Handle()',Handle(Spatial_ID),Handle(All_PV_Sectors),Handle(Area_Type),Null,Null,Null,Null,~
+Checkbox(0),'Custom_Input_Filenam','PV Incentives','A1',Choice(Import_Data_Types,1,0),Null,Handle(PV_kW_DC_Incentive),Handle(PV_Climate_Zone),Handle(PV_Incentive_Scen),Handle(Static_PV_Time),Null,Null,Null,Null,~
+Checkbox(0),'Custom_Input_Filenam','SheetName','A1',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,Null,Null,~
+Checkbox(0),'Custom_Input_Filenam','SheetName','A1',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,~
+Checkbox(0),'Custom_Input_Filenam','SheetName','A1',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,~
+Checkbox(0),'Custom_Input_Filenam','SheetName','A1',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Load_Profile_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Loadshape_Map1),Handle(All_Sectors),Handle(All_Utilities),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A1',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A1',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A1',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A1',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'SheetName','A1',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Demand_Flat_Periods','A7',Choice(Import_Data_Types,1,0),Null,Handle(Dmd_Flat_Periods_fm_),Handle(Month),Handle(Rate_Names_fm_Templa),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Demand_Flat_Rates','A7',Choice(Import_Data_Types,1,0),Null,Handle(Dmd_Flat_Rates_fm_Te),Handle(Rate_Period_Import_1),Handle(Rate_Names_fm_Templa),Handle(Rate_Tiers_Import_Na),Handle(Demand_Rate_Attribut),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Demand_TOU_Periods','A7',Choice(Import_Data_Types,1,0),Null,Handle(Dmd_TOU_Periods_fm_T),Handle(Month),Handle(Rate_Names_fm_Templa),Handle(Weekday_or_Weekend),Handle(Time_of_Day),Null,Null,Null,~
@@ -364,14 +364,14 @@ Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),
 NodeLocation: 88,552,1
 NodeSize: 64,40
 WindState: 2,64,77,1746,780
-DefnState: 2,2067,35,1672,825,0,DFNM
+DefnState: 2,2057,2,1672,825,0,DFNM
 ValueState: 2,-66,109,1540,509,0,MIDM
 Aliases: FormNode New1771965635, FormNode New1859766563, FormNode New1675217187, FormNode New194800931
 ReformDef: [Excel_Import_Params,Imported_Dataset_Num]
 TableCellDefault: Import_Param_Default
-Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),2,Imported_Dataset_Num,1,Excel_Import_Params,1]
+Att_EditSliceState: [Sys_LocalIndex('DomainIndex'),1,Imported_Dataset_Num,1,Excel_Import_Params,1]
 {!40700|Att_CellFormat: CellFormats(CellSpan(Imported_Dataset_Num,CellFill(0xffff0000),1,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellNumberFormat('Fixed Point',7,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:7),79,header:0),6,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellNumberFormat('Fixed Point',5,0,0,dateFormat:'ABBREV',fullPrecision:0,numbersAsDates:0,datesAsNumbers:0,digits_:2,zeroes_:5),18,header:0),6,header:0),CellSpan(Imported_Dataset_Num,CellFill(0xffffffff),1,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellFill(0xffff0000),1,header:0),3,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellFill(0xffffffff),1,header:0),3,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellFill(0xffff0000),87,header:0),4,header:0),CellSpan(Excel_Import_Params,CellSpan(Imported_Dataset_Num,CellFill(0xffffffff),87,header:0),4,header:0))}
-{!50000|Att_ColumnWidths: [,Imported_Dataset_Num,\([,258,223])]}
+{!50000|Att_ColumnWidths: [,Imported_Dataset_Num,[,258,223],Excel_Import_Params,\([248,248,248,248,248,248,248,248,248,248,248,248,248,248])]}
 
 Decision Number_of_Datasets
 Title: Number of Imported Datasets
@@ -997,7 +997,7 @@ Aliases: FormNode New232376611
 Decision Import_Categor_Inde1
 Title: Import Categorial Indexes?
 Description: Check this box to import categorical indexes prior to importing data tabs.
-Definition: Checkbox(1)
+Definition: Checkbox(0)
 NodeLocation: 1520,80,1
 NodeSize: 64,40
 Aliases: FormNode New1306118435, FormNode New540657955, FormNode New70895907
@@ -1005,7 +1005,7 @@ Aliases: FormNode New1306118435, FormNode New540657955, FormNode New70895907
 Decision Import_Sequent_Inde1
 Title: Import Sequential Indexes?
 Description: Check this box to import sequential indexes prior to importing data tabs.
-Definition: Checkbox(1)
+Definition: Checkbox(0)
 NodeLocation: 1664,80,1
 NodeSize: 64,40
 Aliases: FormNode New769247523, FormNode New1614399779, FormNode New1144637731
