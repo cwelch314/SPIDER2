@@ -151,7 +151,7 @@ Author: CWelch
 Date: Tue, Apr 20, 2021 10:09 AM
 DefaultSize: 64,32
 NodeInfo: 1,,,,,,,,,,,0
-DiagState: 2,212,-2,1647,761,17,10,
+DiagState: 2,114,24,1647,761,17,10,
 FontStyle: Arial,15
 FileInfo: 0,Model Nexant_Model_Templat,2,2,0,0,C:\Users\cwelch\Documents\Repos\Nexant\SPIDER\SPIDER Model.ana
 {!50000|DefaultFontColor: 0,0,0}
@@ -676,7 +676,7 @@ Date: Sun, Dec 16, 2018 8:10 AM
 NodeLocation: 112,392,1
 NodeSize: 80,56
 NodeInfo: 1,,,,,,1
-DiagState: 2,2020,16,1729,626,17,10
+DiagState: 2,2018,21,1729,626,17,10
 NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,19
 AcpStyles: Show_object: no
@@ -869,6 +869,7 @@ Aliases: FormNode Fo1552872202
 MetaOnly: 1
 
 Index EV_Impact_Titles
+Att_PrevIndexValue: ['EV Cumulative MW Impact (MW-AC)','Cumulative EV Delta (MW-AC)','Cumulative EV Stock (vehicles)','Cumul Vehicle Stock EOP- BEV/PHEV (vehicles)','Cumulative Vehicle Stock, EOP','Tech Share of Vehicle Stock (fraction)','Aggreg New Vehicle Sales (vehicles/year)','Tech Share of New Vehicle Sales (fraction)','EV Long-Run Market Share (market share)','Vehicle Cost Components ($/vehicle)','Vehicle Sticker Price ($/vehicle)','Miles of Range (miles)','Applied Fuel Prices ($/GGE)']
 Title: EV Impact Titles
 Definition: Create_Titles_List(EV_Impact_Out)~
 
@@ -878,7 +879,7 @@ NodeSize: 64,40
 Decision EV_Impact
 Title: EV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(Not_Applicable,1,0)/*Choice(EV_Impact_Titles,3,0)
+Definition: Choice(EV_Impact_Titles,8,0)
 NodeLocation: 608,680,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1075,7 +1076,7 @@ Original: EV_Input
 Decision EV_Input
 Title: EV Input
 Description: Choose which variable you wish to view.
-Definition: Choice(Not_Applicable,1,0)/*Choice(EV_Input_Titles,4,0)
+Definition: Choice(EV_Input_Titles,4,0)
 NodeLocation: 1296,680,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1106,6 +1107,7 @@ THEN Null~
 ELSE Show_ACP_Window1(EV_Input1,EV_Input_Titles,EV_Input,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
 
 Index EV_Input_Titles
+Att_PrevIndexValue: ['Vehicle Stock Data (vehicles)','Vehicle Price ($/vehicle)','Vehicle Price Adjustment by Scenario (fraction)','Vehicle Incentives ($/vehicle)','Vehicle Range (miles/refueling)','Vehicle Range Adjustment by Scenario (fraction)','VMT (miles/year-vehicle)','MPG (miles/GGE)','Fuel Mix (fraction)','Fuel Prices ($/GGE)','Electricity Price Adjustment by Scenario (fraction)','Gasoline Price Adjustment by Scenario (fraction)','Vehicle Maintenance Cost ($/year-vehicle)','Impact per EV (kW/vehicle)','Vehicle Average Lifetime (Years)','Num Vehicle Vintages (dmnl)']
 Title: EV Input Titles
 Definition: Create_Titles_List(EV_Input1)~
 
@@ -1600,9 +1602,9 @@ NodeSize: 372,124
 NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
 
 Index All_EV_Impact_Out
-Att_PrevIndexValue: [EV_Cumul_MW_Impact,Cumulative_EV_Delta,Cumulative_EV_Stock,Cumul_EV_Stock_byTec,Tech_Share_Veh_Stock,Aggreg_New_Veh_Sales,Share_New_Veh_Sales,EV_Long_Run_Mkt_Shr,Veh_Cost_Component,Vehicle_StickerPrice,Miles_of_Range,Applied_Fuel_Prices]
+Att_PrevIndexValue: [EV_Cumul_MW_Impact,Cumulative_EV_Delta,Cumulative_EV_Stock,Cumul_Vehicle_Stock_,Cumulative_Vehicle_S,Tech_Share_Veh_Stock,Aggreg_New_Veh_Sales,Share_New_Veh_Sales,EV_Long_Run_Mkt_Shr,Veh_Cost_Component,Vehicle_StickerPrice,Miles_of_Range,Applied_Fuel_Prices]
 Title: All EV Impact Out
-Definition: [EV_Cumul_MW_Impact,Cumulative_EV_Delta,Cumulative_EV_Stock,Cumul_EV_Stock_byTec,Tech_Share_Veh_Stock,Aggreg_New_Veh_Sales,Share_New_Veh_Sales,EV_Long_Run_Mkt_Shr,Veh_Cost_Component,Vehicle_StickerPrice,Miles_of_Range,Applied_Fuel_Prices]
+Definition: [EV_Cumul_MW_Impact,Cumulative_EV_Delta,Cumulative_EV_Stock,Cumul_Vehicle_Stock_,Cumulative_Vehicle_S,Tech_Share_Veh_Stock,Aggreg_New_Veh_Sales,Share_New_Veh_Sales,EV_Long_Run_Mkt_Shr,Veh_Cost_Component,Vehicle_StickerPrice,Miles_of_Range,Applied_Fuel_Prices]
 NodeLocation: 432,672,1
 NodeSize: 64,40
 Aliases: FormNode Fo1557510211
@@ -17150,7 +17152,7 @@ Aliases: Alias Al1198090051
 MetaOnly: 1
 
 Index ACP_User_output_and_
-Att_PrevIndexValue: [Nodes_to_change,Colored_nodes_to_fix,Uncolored_Nodes,Left_to_Review,Performance_profiles,EV_Cumul_MW_Impact,Cumulative_EV_Delta,Last_Import_Time,Raw_Imported_Data1,Format_Import_Data1,Check_Index_Errors1,Check_DataType_Erro1,Raw_Categ_Index_Dat1,Format_CategInd_Dat1,Raw_Seq_Index_Data1,Format_Seq_Ind_Data1,View_Data_Imported_M,Cumulative_Actual_In,Compare_Prior_Fcsts,Mkt_Share_Example,Failed_Spat_ID_PV,Sim_vs_Act_PV_System,Sim_vs_Act_PV_Rate,R_2_Applied,All_Stored_Coeffs_PV,Stored_Coeff_for_PV_,Installs_by_Type,Cumulative_PV_Instal,Solar_Hourly_Impact_,Pct_Load_Met_bySolar,Pre_Post_Load,Scaled_Ann_Net_Load,Total_PV_Incentives_,Base_Installed_Cost_,Equipment_Cost_Resul,Cost_of_Elect_Ratio,CostOf_Elect_Compare,Tot_Price_Aft_Incent,Simple_LCOE_of_PV1,PV_Stock_Basis_by_Se,Rate_Data_TOU_Sched,Stored_Filtered_USUR,Flat_Demand_Schedule,Rate_Name_to_Save,Demand_TOU_Sched,Energy_TOU_Schedule,View_Saved_Rates,View_Existing_Rates,Discrete_Rate,Compare9,Period_of_Rate,Saved_Daily_Profiles,Saved_Day_Counts,Bldg_Stock_by_Time,Vehicle_Stk_Share_Ac,Tech_Share_Veh_Stock,Share_New_Veh_Sales,Aggreg_New_Veh_Sales,Cumul_EV_Stock_byTec,PHEV_Market_Share,Vehicle_Stock_Share1,Market_Share1,EV_Mkt_Share,Tornado__EV_Mkt_Shar,Vehicle__Utility_,Logit_Attrib_Ratios1,Logit_Equiv_Cost1,Logit_Attrib_Utilit1,Veh_Tech_Mkt_Share1,Vehicle_Logit_MktSh1,Failed_Spat_ID_EV,Simulated_EV_Stock,Sim_vs_Act_EV_Stock,Sim_vs_Act_EV_Sales,Sim_vs_Act_EV_Stock_,R2_Stock_Delta,R2_Thresh_Failure_EV,EV_Decision_Values,All_Stored_Coefficie,Stored_Coeff_for_EV_,Percent_of_Buildings,Percent_of_Load_from,Total_Load_Delta_fm1,Total_Load_Delta_fr1,PV_Storage_Impact,Percent_of_Load_fro1,Percent_of_Bldgs_Ado,Lev_Utility_Bill,Current_BESS_Sector,Flows_by_Opt_Hour,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Building_Loads,BESS_Shr_ResHousing,Cumul_BESS_Adoption,PV_Generation,Compare_BESS_Potenti,LRMS_by_BESS_Time,Payback_Accept_Curv1,BESS_Payback_Time,Test_PairedMarket_Sh,Actual_Paired_Market,BESS_Adoption_EOP,paired_storage_marke,Failed_Spat_ID_BESS,Sim_vs_Act_BESS_Cap,Sim_vs_Act_BESS_Rate,R2_Applied_BESS,All_Stored_Coeffs_P1,Stored_Coef_for_BESS,Output_1,Output_2,Output_5,Output_4,Output_6]
+Att_PrevIndexValue: [Nodes_to_change,Colored_nodes_to_fix,Uncolored_Nodes,Left_to_Review,Performance_profiles,EV_Cumul_MW_Impact,Cumulative_EV_Delta,Last_Import_Time,Raw_Imported_Data1,Format_Import_Data1,Check_Index_Errors1,Check_DataType_Erro1,Raw_Categ_Index_Dat1,Format_CategInd_Dat1,Raw_Seq_Index_Data1,Format_Seq_Ind_Data1,View_Data_Imported_M,Cumulative_Actual_In,Compare_Prior_Fcsts,Mkt_Share_Example,Failed_Spat_ID_PV,Sim_vs_Act_PV_System,Sim_vs_Act_PV_Rate,R_2_Applied,All_Stored_Coeffs_PV,Stored_Coeff_for_PV_,Installs_by_Type,Cumulative_PV_Instal,Solar_Hourly_Impact_,Pct_Load_Met_bySolar,Pre_Post_Load,Scaled_Ann_Net_Load,Total_PV_Incentives_,Base_Installed_Cost_,Equipment_Cost_Resul,Cost_of_Elect_Ratio,CostOf_Elect_Compare,Tot_Price_Aft_Incent,Simple_LCOE_of_PV1,PV_Stock_Basis_by_Se,Rate_Data_TOU_Sched,Stored_Filtered_USUR,Flat_Demand_Schedule,Rate_Name_to_Save,Demand_TOU_Sched,Energy_TOU_Schedule,View_Saved_Rates,View_Existing_Rates,Discrete_Rate,Compare9,Period_of_Rate,Saved_Daily_Profiles,Saved_Day_Counts,Bldg_Stock_by_Time,Vehicle_Stk_Share_Ac,Tech_Share_Veh_Stock,Share_New_Veh_Sales,Aggreg_New_Veh_Sales,Cumul_Vehicle_Stock_,PHEV_Market_Share,Vehicle_Stock_Share1,Market_Share1,EV_Mkt_Share,Tornado__EV_Mkt_Shar,Vehicle__Utility_,Logit_Attrib_Ratios1,Logit_Equiv_Cost1,Logit_Attrib_Utilit1,Veh_Tech_Mkt_Share1,Vehicle_Logit_MktSh1,Failed_Spat_ID_EV,Simulated_EV_Stock,Sim_vs_Act_EV_Stock,Sim_vs_Act_EV_Sales,Sim_vs_Act_EV_Stock_,R2_Stock_Delta,R2_Thresh_Failure_EV,EV_Decision_Values,All_Stored_Coefficie,Stored_Coeff_for_EV_,Percent_of_Buildings,Percent_of_Load_from,Total_Load_Delta_fm1,Total_Load_Delta_fr1,PV_Storage_Impact,Percent_of_Load_fro1,Percent_of_Bldgs_Ado,Lev_Utility_Bill,Current_BESS_Sector,Flows_by_Opt_Hour,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Building_Loads,BESS_Shr_ResHousing,Cumul_BESS_Adoption,PV_Generation,Compare_BESS_Potenti,LRMS_by_BESS_Time,Payback_Accept_Curv1,BESS_Payback_Time,Test_PairedMarket_Sh,Actual_Paired_Market,BESS_Adoption_EOP,paired_storage_marke,Failed_Spat_ID_BESS,Sim_vs_Act_BESS_Cap,Sim_vs_Act_BESS_Rate,R2_Applied_BESS,All_Stored_Coeffs_P1,Stored_Coef_for_BESS,Output_1,Output_2,Output_5,Output_4,Output_6]
 Title: User output and Frame nodes
 Description: User output nodes and Frame nodes, excluding those in ACP_styles library.~
 
@@ -17448,7 +17450,7 @@ Show_graph_table_icon: Yes
 {!60005|Att_AttsToShow: Object Object, Object Attribute, Attribute AcpStyles}
 
 Index ACP_User_output_node
-Att_PrevIndexValue: [Nodes_to_change,Colored_nodes_to_fix,Uncolored_Nodes,Left_to_Review,Performance_profiles,EV_Cumul_MW_Impact,Cumulative_EV_Delta,Last_Import_Time,Raw_Imported_Data1,Format_Import_Data1,Check_Index_Errors1,Check_DataType_Erro1,Raw_Categ_Index_Dat1,Format_CategInd_Dat1,Raw_Seq_Index_Data1,Format_Seq_Ind_Data1,View_Data_Imported_M,Cumulative_Actual_In,Compare_Prior_Fcsts,Mkt_Share_Example,Failed_Spat_ID_PV,Sim_vs_Act_PV_System,Sim_vs_Act_PV_Rate,R_2_Applied,All_Stored_Coeffs_PV,Stored_Coeff_for_PV_,Installs_by_Type,Cumulative_PV_Instal,Solar_Hourly_Impact_,Pct_Load_Met_bySolar,Pre_Post_Load,Scaled_Ann_Net_Load,Total_PV_Incentives_,Base_Installed_Cost_,Equipment_Cost_Resul,Cost_of_Elect_Ratio,CostOf_Elect_Compare,Tot_Price_Aft_Incent,Simple_LCOE_of_PV1,PV_Stock_Basis_by_Se,Rate_Data_TOU_Sched,Stored_Filtered_USUR,Flat_Demand_Schedule,Rate_Name_to_Save,Demand_TOU_Sched,Energy_TOU_Schedule,View_Saved_Rates,View_Existing_Rates,Discrete_Rate,Compare9,Period_of_Rate,Saved_Daily_Profiles,Saved_Day_Counts,Bldg_Stock_by_Time,Vehicle_Stk_Share_Ac,Tech_Share_Veh_Stock,Share_New_Veh_Sales,Aggreg_New_Veh_Sales,Cumul_EV_Stock_byTec,PHEV_Market_Share,Vehicle_Stock_Share1,Market_Share1,EV_Mkt_Share,Tornado__EV_Mkt_Shar,Vehicle__Utility_,Logit_Attrib_Ratios1,Logit_Equiv_Cost1,Logit_Attrib_Utilit1,Veh_Tech_Mkt_Share1,Vehicle_Logit_MktSh1,Failed_Spat_ID_EV,Simulated_EV_Stock,Sim_vs_Act_EV_Stock,Sim_vs_Act_EV_Sales,Sim_vs_Act_EV_Stock_,R2_Stock_Delta,R2_Thresh_Failure_EV,EV_Decision_Values,All_Stored_Coefficie,Stored_Coeff_for_EV_,Percent_of_Buildings,Percent_of_Load_from,Total_Load_Delta_fm1,Total_Load_Delta_fr1,PV_Storage_Impact,Percent_of_Load_fro1,Percent_of_Bldgs_Ado,Lev_Utility_Bill,Current_BESS_Sector,Flows_by_Opt_Hour,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Building_Loads,BESS_Shr_ResHousing,Cumul_BESS_Adoption,PV_Generation,Compare_BESS_Potenti,LRMS_by_BESS_Time,Payback_Accept_Curv1,BESS_Payback_Time,Test_PairedMarket_Sh,Actual_Paired_Market,BESS_Adoption_EOP,paired_storage_marke,Failed_Spat_ID_BESS,Sim_vs_Act_BESS_Cap,Sim_vs_Act_BESS_Rate,R2_Applied_BESS,All_Stored_Coeffs_P1,Stored_Coef_for_BESS,Output_1,Output_2,Output_5,Output_4,Output_6]
+Att_PrevIndexValue: [Nodes_to_change,Colored_nodes_to_fix,Uncolored_Nodes,Left_to_Review,Performance_profiles,EV_Cumul_MW_Impact,Cumulative_EV_Delta,Last_Import_Time,Raw_Imported_Data1,Format_Import_Data1,Check_Index_Errors1,Check_DataType_Erro1,Raw_Categ_Index_Dat1,Format_CategInd_Dat1,Raw_Seq_Index_Data1,Format_Seq_Ind_Data1,View_Data_Imported_M,Cumulative_Actual_In,Compare_Prior_Fcsts,Mkt_Share_Example,Failed_Spat_ID_PV,Sim_vs_Act_PV_System,Sim_vs_Act_PV_Rate,R_2_Applied,All_Stored_Coeffs_PV,Stored_Coeff_for_PV_,Installs_by_Type,Cumulative_PV_Instal,Solar_Hourly_Impact_,Pct_Load_Met_bySolar,Pre_Post_Load,Scaled_Ann_Net_Load,Total_PV_Incentives_,Base_Installed_Cost_,Equipment_Cost_Resul,Cost_of_Elect_Ratio,CostOf_Elect_Compare,Tot_Price_Aft_Incent,Simple_LCOE_of_PV1,PV_Stock_Basis_by_Se,Rate_Data_TOU_Sched,Stored_Filtered_USUR,Flat_Demand_Schedule,Rate_Name_to_Save,Demand_TOU_Sched,Energy_TOU_Schedule,View_Saved_Rates,View_Existing_Rates,Discrete_Rate,Compare9,Period_of_Rate,Saved_Daily_Profiles,Saved_Day_Counts,Bldg_Stock_by_Time,Vehicle_Stk_Share_Ac,Tech_Share_Veh_Stock,Share_New_Veh_Sales,Aggreg_New_Veh_Sales,Cumul_Vehicle_Stock_,PHEV_Market_Share,Vehicle_Stock_Share1,Market_Share1,EV_Mkt_Share,Tornado__EV_Mkt_Shar,Vehicle__Utility_,Logit_Attrib_Ratios1,Logit_Equiv_Cost1,Logit_Attrib_Utilit1,Veh_Tech_Mkt_Share1,Vehicle_Logit_MktSh1,Failed_Spat_ID_EV,Simulated_EV_Stock,Sim_vs_Act_EV_Stock,Sim_vs_Act_EV_Sales,Sim_vs_Act_EV_Stock_,R2_Stock_Delta,R2_Thresh_Failure_EV,EV_Decision_Values,All_Stored_Coefficie,Stored_Coeff_for_EV_,Percent_of_Buildings,Percent_of_Load_from,Total_Load_Delta_fm1,Total_Load_Delta_fr1,PV_Storage_Impact,Percent_of_Load_fro1,Percent_of_Bldgs_Ado,Lev_Utility_Bill,Current_BESS_Sector,Flows_by_Opt_Hour,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Building_Loads,BESS_Shr_ResHousing,Cumul_BESS_Adoption,PV_Generation,Compare_BESS_Potenti,LRMS_by_BESS_Time,Payback_Accept_Curv1,BESS_Payback_Time,Test_PairedMarket_Sh,Actual_Paired_Market,BESS_Adoption_EOP,paired_storage_marke,Failed_Spat_ID_BESS,Sim_vs_Act_BESS_Cap,Sim_vs_Act_BESS_Rate,R2_Applied_BESS,All_Stored_Coeffs_P1,Stored_Coef_for_BESS,Output_1,Output_2,Output_5,Output_4,Output_6]
 Title: User output nodes
 Description: All variables that have user outputs (including tall nodes),~
 excluding those in the ACP_styles library.

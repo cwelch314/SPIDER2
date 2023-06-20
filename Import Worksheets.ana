@@ -11,7 +11,7 @@ Author: Max Henrion & Paul Sanford
 Date: Sun, Jul 27, 2014 2:56 PM
 DefaultSize: 64,40
 NodeSize: 80,56
-DiagState: 2,235,52,1244,678,17,10
+DiagState: 2,318,67,1244,678,17,10
 WindState: 2,355,67,533,321
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
@@ -42,7 +42,7 @@ Author: JamesMilford
 Date: Fri, Dec 21, 2018 10:51 AM
 NodeLocation: 664,320,1
 NodeSize: 72,40
-DiagState: 2,1924,55,1823,673,17,10
+DiagState: 2,1927,6,1816,766,17,10
 NodeColor: 65535,65535,65535
 
 Module Excel_Import_Logic
@@ -59,7 +59,7 @@ Author: JamesMilford
 Date: Sun, Dec 16, 2018 8:07 AM
 NodeLocation: 216,184,1
 NodeSize: 64,40
-DiagState: 2,1864,30,1859,536,17,10
+DiagState: 2,2052,30,1859,536,17,10
 
 Index Import_Fixed_Params
 Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
@@ -174,7 +174,7 @@ Checkbox(0),Path_to_Global_Data1,'DC_to_AC_Ratio','A7',Choice(Import_Data_Types,
 Checkbox(0),Path_to_Global_Data1,'Finance_Rates','A7',Choice(Import_Data_Types,2,0),Null,Handle(Debt_Equity_Rates),Handle(All_PV_Sectors),Handle(Debt_or_Equity),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Fed_ITC','A7',Choice(Import_Data_Types,2,0),Null,Handle(Invest_Tax_Credit),Handle(All_PV_Sectors),Handle(ITC_Scenario),Handle(Static_PV_Time),Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Strg_Duration_Incent','A7',Choice(Import_Data_Types,2,0),Null,Handle(kWh_Incen_Dur_Derate),Handle(Incent_Durat_Inputs),Handle(Incent_Duration_Step),Null,Null,Null,Null,Null,~
-Checkbox(1),Path_to_Global_Data1,'Vehicle_Stock_Data','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Data),Handle(Vehicle_Stock_DataYr),Handle(All_Utilities),Handle(All_Sectors),Handle(All_Spatial_ID),Handle(All_Vehicle_Techs),Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Vehicle_Stock_Data','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Data),Handle(Vehicle_Stock_DataYr),Handle(All_Utilities),Handle(All_Sectors),Handle(All_Spatial_ID),Handle(All_Vehicle_Techs),Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Struct_Single_Cell_Inputs','A7',Choice(Import_Data_Types,1,0),Null,Handle(StructSingCell_Input),Null,Handle(StructSingCell_Names),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Hist_Vehicle_Growth','A7',Choice(Import_Data_Types,2,0),Null,Handle(Hist_Veh_Growth_Rate),Null,Handle(All_Vehicle_Techs),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'EV_MktShare_Mults','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Mkt_Share_Mult),Null,Handle(EV_Mkt_Share_Scen),Null,Null,Null,Null,Null,~
@@ -191,7 +191,7 @@ Checkbox(0),Path_to_Global_Data1,'Vehicle_Range','A7',Choice(Import_Data_Types,2
 Checkbox(0),Path_to_Global_Data1,'Maint_Costs','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Maint_Cost),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Veh_Type_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Vehicle_Type_Map),Null,Handle(All_Vehicle_Techs),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Vehicle_Tech_Pref','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Tech_Pref),Null,Handle(All_Vehicle_Techs),Null,Null,Null,Null,Null,~
-Checkbox(0),Path_to_Global_Data1,'Veh_Incentives','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Incents),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Handle(Veh_Incentive_Type),Handle(EV_Incent_Scenario),Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data1,'Veh_Incentives','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Incents),Handle(Vehicle_Input_Years),Handle(All_Utilities),Handle(All_Vehicle_Techs),Handle(Veh_Incentive_Type),Handle(EV_Incent_Scenario),Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Veh_DecisionVars','A7',Choice(Import_Data_Types,2,0),Null,Handle(Stored_EV_Dec_Vars),Handle(All_EV_Dec_Handles),Handle(All_Spatial_ID),Handle(All_Sectors),Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Veh_OptStatus','A7',Choice(Import_Data_Types,3,0),Null,Handle(Stored_Opt_Status_EV),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Veh_R2Thresh','A7',Choice(Import_Data_Types,2,0),Null,Handle(R2_Threshold),Null,Handle(EV_Calibration_Stage),Null,Null,Null,Null,Null,~
@@ -608,7 +608,7 @@ NodeSize: 64,40
 
 Decision Last_Import_Time
 Title: Last Import Time
-Definition: 19-Jun-2023 14:48:55.331000
+Definition: 19-Jun-2023 16:12:15.773000
 NodeLocation: 544,848,1
 NodeSize: 64,40
 Aliases: FormNode New1910098211, FormNode New2017052963
@@ -1777,7 +1777,7 @@ WindState: 2,18,191,720,350
 
 Variable Import_Reset1
 Title: Import Reset
-Definition: 1
+Definition: 0
 NodeLocation: 144,128,1
 NodeSize: 64,40
 
@@ -1801,7 +1801,7 @@ TableCellDefault: 'C:\Documents\Filename.xlsx'
 Decision Dataset_to_View1
 Title: Dataset to View
 Description: Select the tab name of the dataset you wish to view in greater detail.
-Definition: Choice(Tab_Names,14,0)
+Definition: Choice(Tab_Names,31,0)
 NodeLocation: 112,520,1
 NodeSize: 64,40
 WindState: 2,7,277,720,350
@@ -2938,7 +2938,7 @@ Aliases: FormNode Fo331166483
 GraphSetup: Att_GraphIndexRange Hourly_Profile_Rows:1,,0,,,,,4460.858134031296,4540.844650268555,0
 ReformVal: [Vehicle_Stock_DataYr,All_Utilities]
 Att__TotalsIndex: [Interconnect_Date]
-Att_ResultSliceState: [All_Spatial_ID,3,All_Sectors,4,All_Vehicle_Techs,3,All_Utilities,5,Vehicle_Stock_DataYr,1]
+Att_ResultSliceState: [All_Vehicle_Techs,2,Veh_Incentive_Type,1,EV_Incent_Scenario,1,All_Utilities,5,Vehicle_Input_Years,1]
 
 FormNode Fo331166483
 Title: View Data Imported Multi-D

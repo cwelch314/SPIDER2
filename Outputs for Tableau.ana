@@ -302,7 +302,7 @@ WindState: 2,1300,82,1463,748
 ValueState: 2,86,9,1343,761,1,MIDM
 ReformVal: [Output_Periods,Act_vs_Sim]
 Att__TotalsIndex: [Spatial_ID]
-Att_ResultSliceState: [Sequential_Outputs,2,All_Sectors,3,Spatial_ID,0,All_Vehicle_Techs,3,Act_vs_Sim,1,Output_Periods,1]
+Att_ResultSliceState: [Sequential_Outputs,2,All_Sectors,4,Spatial_ID,0,Act_vs_Sim,1,Output_Periods,1]
 
 Index Sequential_Outputs
 Att_PrevIndexValue: ['Incremental Count','Cumulative Count','Incremental MW-AC','Cumulative MW-AC']
@@ -312,7 +312,7 @@ NodeLocation: 1064,88,1
 NodeSize: 64,40
 WindState: 2,837,82,720,350
 Aliases: FormNode Fo1543018175
-{!40300|Att_SlicerPopupSize: 297,84}
+{!40300|Att_SlicerPopupSize: 302,84}
 
 Decision Map_Seq_Outputs
 Title: Map Sequential Outputs
@@ -543,15 +543,15 @@ Description: Total electric vehicle stock (BEVs + PHEVs). Values are End of Peri
 Definition: EV_Sequent_Outputs[Sequential_Outputs=Seq_Cumul_Cnt_Label, All_Sectors=EV_Sectors]
 NodeLocation: 1024,624,1
 NodeSize: 64,40
-ValueState: 2,528,184,965,601,1,MIDM
+ValueState: 2,2006,37,1400,811,1,MIDM
 GraphSetup: Att_GraphValueRange Cumulative_EV_Stock:1,,1,,,,10,0,337.07015216350555,0~
-Att_GraphIndexRange Output_Periods:1,,1,,,,10,45884.044605612755,45935.10080528259,0~
+Att_GraphIndexRange Output_Periods:1,,1,,,,10,44053.03503167629,46781.23718738556,0~
 Graph_LineThickness:5
 ReformVal: [Output_Periods,Act_vs_Sim]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: []
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,1,All_Utilities,1,Act_vs_Sim,2,Output_Periods,1]
+Att_ResultSliceState: [EV_Sectors,1,Spatial_ID,1,Act_vs_Sim,2,Output_Periods,1]
 
 Decision Seq_Cumul_MW_Label
 Title: Seq Cumul MW Label
