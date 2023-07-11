@@ -476,14 +476,14 @@ Definition: PV_Sequent_Outputs[Sequential_Outputs=Seq_Cumul_MW_Label, All_Sector
 NodeLocation: 888,128,1
 NodeSize: 64,40
 WindState: 2,102,82,1261,505
-ValueState: 2,400,74,1186,742,1,MIDM
+ValueState: 2,350,80,1186,742,1,MIDM
 Aliases: Alias Al1924347043
 NodeColor: 65535,1,1
 GraphSetup: Graph_AxisLabelFont:,20,0~
 {!50000|Graph_SortBySpread:0}~
 Att_ContLineStyle Graph_Primary_Valdim:1~
-Att_GraphIndexRange Output_Periods:1,0,1,,,,10,45137.80681955814,46840.56685137749,0~
-Att_GraphValueRange PV_Cumul_Adoption:1,,1,,,0,,647.449791431427,1292.6592826843262,0~
+Att_GraphIndexRange Output_Periods:1,0,1,,,,10,44272.70754146576,47483,0~
+Att_GraphValueRange PV_Cumul_Adoption:1,,1,,,0,,0,25.25293529033661,0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_AreaFill Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
@@ -493,10 +493,10 @@ Graph_FillTransparen:0~
 Graph_SymbolKey:1~
 {!60002|Graph_DashKey:1}~
 Graph_SymbolSizeKey:1
-ReformVal: [Output_Periods,Utility_Options_Domi]
+ReformVal: [Output_Periods,DER_Cost_Decline_Sc1]
 NumberFormat: 2,F,4,1,1,0,4,0,$,0,"ABBREV",0,,,0,0,15,
-Att__TotalsIndex: [Act_vs_Sim,PV_Sectors]
-Att_ResultSliceState: [Area_Type,1,Spatial_ID,1,PV_Sectors,0,Utility_Options_Domi,2,Output_Periods,167]
+Att__TotalsIndex: [Act_vs_Sim]
+Att_ResultSliceState: [Area_Type,1,Spatial_ID,1,PV_Sectors,2,ITC_Scenario,3,Utility_Options_Domi,3,Output_Periods,167]
 Att_SymbolRole: Act_vs_Sim
 Att_SymbolSizeRole: Null
 {!60002|Att_DashRole: Act_vs_Sim}

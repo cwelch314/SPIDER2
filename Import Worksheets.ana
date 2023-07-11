@@ -191,7 +191,7 @@ Checkbox(0),Path_to_Global_Data1,'Vehicle_Range','A7',Choice(Import_Data_Types,2
 Checkbox(0),Path_to_Global_Data1,'Maint_Costs','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Maint_Cost),Handle(Vehicle_Input_Years),Handle(All_Vehicle_Techs),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Veh_Type_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Vehicle_Type_Map),Null,Handle(All_Vehicle_Techs),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Vehicle_Tech_Pref','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Tech_Pref),Null,Handle(All_Vehicle_Techs),Null,Null,Null,Null,Null,~
-Checkbox(1),Path_to_Global_Data1,'Veh_Incentives','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Incents),Handle(Vehicle_Input_Years),Handle(All_Utilities),Handle(All_Vehicle_Techs),Handle(Veh_Incentive_Type),Handle(EV_Incent_Scenario),Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Veh_Incentives','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Incents),Handle(Vehicle_Input_Years),Handle(All_Utilities),Handle(All_Vehicle_Techs),Handle(Veh_Incentive_Type),Handle(EV_Incent_Scenario),Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Veh_DecisionVars','A7',Choice(Import_Data_Types,2,0),Null,Handle(Stored_EV_Dec_Vars),Handle(All_EV_Dec_Handles),Handle(All_Spatial_ID),Handle(All_Sectors),Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Veh_OptStatus','A7',Choice(Import_Data_Types,3,0),Null,Handle(Stored_Opt_Status_EV),Handle(All_Sectors),Handle(All_Spatial_ID),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Veh_R2Thresh','A7',Choice(Import_Data_Types,2,0),Null,Handle(R2_Threshold),Null,Handle(EV_Calibration_Stage),Null,Null,Null,Null,Null,~
@@ -200,7 +200,7 @@ Checkbox(0),Path_to_Global_Data1,'Veh_CalibDecisions','A7',Choice(Import_Data_Ty
 Checkbox(0),Path_to_Global_Data1,'Veh_OptSetting','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_OptSettings_byStg),Handle(EV_Calibration_Stage),Handle(Opt_Settings_EVs),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Veh_DecisBounds','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Dec_Var_Bounds),Handle(Upper_Lower),Handle(All_EV_Decisions),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Veh_Stock_Mults','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Multip),Null,Handle(All_Spatial_ID),Null,Null,Null,Null,Null,~
-Checkbox(0),Path_to_Global_Data1,'Equip_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Base_Installed_Cost_),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(All_Equipment_Types),Handle(Static_PV_Time),Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data1,'Equip_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Base_Installed_Cost_),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(All_Equipment_Types),Handle(Static_PV_Time),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'DER_PriceChangeRate','A7',Choice(Import_Data_Types,2,0),Null,Handle(DER_Cost_Change_Rate),Handle(All_PV_Sectors),Handle(DER_Cost_Decline_Sc1),Handle(All_Equipment_Types),Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Equip_Lifetime','A7',Choice(Import_Data_Types,2,0),Null,Handle(Equipment_Lifetime),Null,Handle(All_Equipment_Types),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'OM_Cost','A7',Choice(Import_Data_Types,2,0),Null,Handle(O_M_Cost),Handle(All_PV_Sectors),Handle(All_Equipment_Types),Handle(Static_PV_Time),Null,Null,Null,Null,~
@@ -608,7 +608,7 @@ NodeSize: 64,40
 
 Decision Last_Import_Time
 Title: Last Import Time
-Definition: 26-Jun-2023 11:12:02.362000
+Definition: 10-Jul-2023 16:21:47.883000
 NodeLocation: 544,848,1
 NodeSize: 64,40
 Aliases: FormNode New1910098211, FormNode New2017052963
@@ -1777,7 +1777,7 @@ WindState: 2,18,191,720,350
 
 Variable Import_Reset1
 Title: Import Reset
-Definition: 0
+Definition: 1
 NodeLocation: 144,128,1
 NodeSize: 64,40
 
@@ -1801,7 +1801,7 @@ TableCellDefault: 'C:\Documents\Filename.xlsx'
 Decision Dataset_to_View1
 Title: Dataset to View
 Description: Select the tab name of the dataset you wish to view in greater detail.
-Definition: Choice(Tab_Names,31,0)
+Definition: Choice(Tab_Names,40,0)
 NodeLocation: 112,520,1
 NodeSize: 64,40
 WindState: 2,7,277,720,350
