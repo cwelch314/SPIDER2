@@ -59,7 +59,7 @@ Author: JamesMilford
 Date: Sun, Dec 16, 2018 8:07 AM
 NodeLocation: 216,184,1
 NodeSize: 64,40
-DiagState: 2,1713,65,1859,536,17,10
+DiagState: 2,11,93,1859,536,17,10
 
 Index Import_Fixed_Params
 Att_PrevIndexValue: ['Selected for Import','File Path','Tab Name','Data Start Cell','Data Type','Missing Data Default','Stored Location','Value Index']
@@ -200,14 +200,14 @@ Checkbox(0),Path_to_Global_Data1,'Veh_CalibDecisions','A7',Choice(Import_Data_Ty
 Checkbox(0),Path_to_Global_Data1,'Veh_OptSetting','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_OptSettings_byStg),Handle(EV_Calibration_Stage),Handle(Opt_Settings_EVs),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Veh_DecisBounds','A7',Choice(Import_Data_Types,2,0),Null,Handle(EV_Dec_Var_Bounds),Handle(Upper_Lower),Handle(All_EV_Decisions),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Veh_Stock_Mults','A7',Choice(Import_Data_Types,2,0),Null,Handle(Vehicle_Stock_Multip),Null,Handle(All_Spatial_ID),Null,Null,Null,Null,Null,~
-Checkbox(1),Path_to_Global_Data1,'Equip_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Base_Installed_Cost_),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(All_Equipment_Types),Handle(Static_PV_Time),Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Equip_Prices','A7',Choice(Import_Data_Types,2,0),Null,Handle(Base_Installed_Cost_),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(All_Equipment_Types),Handle(Static_PV_Time),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'DER_PriceChangeRate','A7',Choice(Import_Data_Types,2,0),Null,Handle(DER_Cost_Change_Rate),Handle(All_PV_Sectors),Handle(DER_Cost_Decline_Sc1),Handle(All_Equipment_Types),Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Equip_Lifetime','A7',Choice(Import_Data_Types,2,0),Null,Handle(Equipment_Lifetime),Null,Handle(All_Equipment_Types),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'OM_Cost','A7',Choice(Import_Data_Types,2,0),Null,Handle(O_M_Cost),Handle(All_PV_Sectors),Handle(All_Equipment_Types),Handle(Static_PV_Time),Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Interconn_Fee','A7',Choice(Import_Data_Types,2,0),Null,Handle(Interconnect_Fee),Null,Handle(Static_PV_Time),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Historical_PV_Installs','A8',Choice(Import_Data_Types,1,0),Null,Handle(Historical_PV_Instal),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(Spatial_ID),Handle(Interconnect_Date),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Historical_PV_Capacity_Installs','A8',Choice(Import_Data_Types,1,0),Null,Handle(Historical_PV_Capaci),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(Spatial_ID),Handle(Interconnect_Date),Null,Null,Null,~
-Checkbox(0),Path_to_Global_Data1,'Battery_Installs','A7',Choice(Import_Data_Types,1,0),Null,Handle(Storage_Install_Data),Handle(AESS_Data_Columns),Handle(AESS_Data_Rows),Null,Null,Null,Null,Null,~
+Checkbox(1),Path_to_Global_Data1,'Battery_Installs','A7',Choice(Import_Data_Types,1,0),Null,Handle(Storage_Install_Data),Handle(AESS_Data_Columns),Handle(AESS_Data_Rows),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'State_Tax_Credit','A7',Choice(Import_Data_Types,1,0),Null,Handle(State_Tax_Credit),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(Static_PV_Time),Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'State_Tax_Credit_Max','A7',Choice(Import_Data_Types,1,0),Null,Handle(State_Tax_Credit_Max),Handle(All_PV_Sectors),Handle(All_Utilities),Handle(Static_PV_Time),Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'NewConstr_Suitability','A7',Choice(Import_Data_Types,2,0),Null,Handle(PV_New_Construction_),Handle(All_PV_Sectors),Handle(NC_Suitability_Scens),Null,Null,Null,Null,Null,~
@@ -608,7 +608,7 @@ NodeSize: 64,40
 
 Decision Last_Import_Time
 Title: Last Import Time
-Definition: 10-Jul-2023 16:21:47.883000
+Definition: 15-Jul-2023 18:04:22.267000
 NodeLocation: 544,848,1
 NodeSize: 64,40
 Aliases: FormNode New1910098211, FormNode New2017052963
@@ -1801,7 +1801,7 @@ TableCellDefault: 'C:\Documents\Filename.xlsx'
 Decision Dataset_to_View1
 Title: Dataset to View
 Description: Select the tab name of the dataset you wish to view in greater detail.
-Definition: Choice(Tab_Names,40,0)
+Definition: Choice(Tab_Names,47,0)
 NodeLocation: 112,520,1
 NodeSize: 64,40
 WindState: 2,7,277,720,350
