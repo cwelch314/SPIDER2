@@ -4042,7 +4042,6 @@ NodeLocation: 760,408,1
 NodeSize: 64,40
 WindState: 2,2127,81,1010,591
 ValueState: 2,312,108,416,509,0,MIDM
-Aliases: Alias Al433323283
 NodeColor: 65535,1,1
 
 Decision Basic_Service_Fees1
@@ -4364,7 +4363,7 @@ Original: Energy_TOU_Rates
 Decision Select_Existing_Rate
 Title: Select an Existing Rate
 Description: Select an existing rate to view, use to populate a new rate, or delete.
-Definition: Choice(Rate_Names,32,0)
+Definition: Choice(Rate_Names,18,0)
 NodeLocation: 120,64,1
 NodeSize: 64,40
 ValueState: 2,68,74,776,179,,MIDM
@@ -4891,7 +4890,7 @@ NodeLocation: 352,296,1
 NodeSize: 64,40
 WindState: 2,98,82,1526,709
 ValueState: 2,391,37,1040,712,1,MIDM
-Aliases: Alias Al1016842387, FormNode Fo1547666968, FormNode Fo1567060136
+Aliases: FormNode Fo1547666968, FormNode Fo1567060136
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
 Graph_KeyFont:,18,0~
 Graph_KeyTitleFont:,18,1~
@@ -26723,10 +26722,10 @@ Title: Select Rate
 Definition: subtable(Select_Customer_Rate[All_Utilities=Selected_Utility,All_System_Types=System_Types])
 NodeLocation: 512,1088,1
 NodeSize: 64,32
-DefnState: 2,462,323,1282,289,0,DFNM
+DefnState: 2,245,275,1282,289,0,DFNM
 Aliases: FormNode Fo185032851, FormNode Fo493629587, FormNode Fo63398035
 ReformDef: [Pre_and_Post_System,System_Types]
-Att_EditSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Rate_Setting,1,All_Sectors,3,Selected_Utility,2,System_Types,2,Pre_and_Post_System,2]
+Att_EditSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Rate_Setting,1,All_Sectors,1,System_Types,2,Pre_and_Post_System,2]
 AcpStyles: Show_Object:No
 
 FormNode Fo493629587
