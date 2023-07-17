@@ -1801,10 +1801,10 @@ $/kW for all demand rate structures
 Definition: Sum(Rate_Data_TOU_Sched[Rate_Names=Rate_Names_and_Start, All_Data_Types=DataType_by_RateType, Time_of_Day=Hour_for_Type_and_Hr, Weekday_or_Weekend=DayType_for_Type_Hr,All_Data_Types=Rate_Structure] * Rate_and_Adj_Attribs, Data_Attribute)
 NodeLocation: 952,200,1
 NodeSize: 64,40
-ValueState: 2,61,1,1818,868,1,MIDM
+ValueState: 2,178,23,1537,850,1,MIDM
 ReformVal: [Day_Type_and_Hour,Rate_Names_and_Start]
 NumberFormat: 2,F,4,3,0,1,4,0,$,0,"ABBREV",0,,,0,0,15,,0
-Att_ResultSliceState: [Buy_or_Sell_,1,Month,8,All_Tiers,1,Rate_Structure,2,Rate_Names_and_Start,5,Day_Type_and_Hour,1]
+Att_ResultSliceState: [Buy_or_Sell_,2,Month,8,All_Tiers,1,Rate_Structure,2,Rate_Names_and_Start,5,Day_Type_and_Hour,1]
 
 Index Rate_Structure
 Title: Rate Structure
@@ -4042,6 +4042,7 @@ NodeLocation: 760,408,1
 NodeSize: 64,40
 WindState: 2,2127,81,1010,591
 ValueState: 2,312,108,416,509,0,MIDM
+Aliases: Alias Al433323283
 NodeColor: 65535,1,1
 
 Decision Basic_Service_Fees1
@@ -4890,7 +4891,7 @@ NodeLocation: 352,296,1
 NodeSize: 64,40
 WindState: 2,98,82,1526,709
 ValueState: 2,391,37,1040,712,1,MIDM
-Aliases: FormNode Fo1547666968, FormNode Fo1567060136
+Aliases: Alias Al1016842387, FormNode Fo1547666968, FormNode Fo1567060136
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
 Graph_KeyFont:,18,0~
 Graph_KeyTitleFont:,18,1~
@@ -26725,7 +26726,7 @@ NodeSize: 64,32
 DefnState: 2,245,275,1282,289,0,DFNM
 Aliases: FormNode Fo185032851, FormNode Fo493629587, FormNode Fo63398035
 ReformDef: [Pre_and_Post_System,System_Types]
-Att_EditSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Rate_Setting,1,All_Sectors,1,System_Types,2,Pre_and_Post_System,2]
+Att_EditSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Rate_Setting,1,All_Sectors,2,All_Utilities,6,System_Types,2,Pre_and_Post_System,2]
 AcpStyles: Show_Object:No
 
 FormNode Fo493629587
