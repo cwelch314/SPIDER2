@@ -3524,15 +3524,15 @@ NodeSize: 64,40
 DefnState: 2,67,71,1761,618,0,DFNM
 ValueState: 2,267,38,1261,772,1,MIDM
 Aliases: FormNode Fo1534307258, FormNode Fo1550099902
-GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:1~
-Att_AreaFill Graph_Primary_Valdim:0~
+GraphSetup: Att_GraphValueRange Saved_Daily_Profiles:1,,0,,,,,0,0.00039430821537971494,0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
-Att_GraphValueRange Saved_Daily_Profiles:1,,0,,,,,0,0.00037395983934402466,0
+Att_AreaFill Graph_Primary_Valdim:0~
+Att_CatLineStyle Graph_Primary_Valdim:1
 ReformDef: [Static_Profile_Names,Time_of_Day]
 ReformVal: [Time_of_Day,Static_Profile_Names]
 NumberFormat: 2,E,8,2,0,0,8,0,$,0,"ABBREV",0,,,0,0,15,
 TableCellDefault: 0
-Att_ResultSliceState: [All_Day_Types,10,Month,10,Static_Profile_Names,13,Time_of_Day,1]
+Att_ResultSliceState: [All_Day_Types,10,Month,8,Static_Profile_Names,13,Time_of_Day,1]
 Att_EditSliceState: [All_Day_Types,1,Month,7,Time_of_Day,1,Static_Profile_Names,1]
 {!40600|Att_ClusterIndex: All_Day_Types}
 
@@ -4370,7 +4370,7 @@ Definition: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','
 NodeLocation: 248,544,1
 NodeSize: 64,40
 DisplayOutputs: Object Object, Object Variable, Variable Num_Full_Discharges1
-{!40300|Att_SlicerPopupSize: 1372,196}
+{!40300|Att_SlicerPopupSize: 1377,196}
 
 Index Time_of_Day
 Att_PrevIndexValue: ['12am-1am','1am-2am','2am-3am','3am-4am','4am-5am','5am-6am','6am-7am','7am-8am','8am-9am','9am-10am','10am-11am','11am-12pm','12pm-1pm','1pm-2pm','2pm-3pm','3pm-4pm','4pm-5pm','5pm-6pm','6pm-7pm','7pm-8pm','8pm-9pm','9pm-10pm','10pm-11pm','11pm-12am']

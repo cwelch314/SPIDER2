@@ -2750,7 +2750,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,-4,62,1769,728,17,10
+DiagState: 2,33,2,1769,728,17,10
 NodeColor: 65535,65535,65535
 
 Decision Opt_Seq_Number
@@ -3435,7 +3435,7 @@ NodeColor: 65535,65535,65535
 Variable Strg_Opt_Start_Time2
 Title: Storage Opt Start Time
 Description: The timestamp for when the storage optimization began.
-Definition: 16-Jul-2023 12:27:46.431000
+Definition: 17-Jul-2023 18:45:01.343000
 NodeLocation: 1464,760,1
 NodeSize: 64,40
 NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
@@ -3443,7 +3443,7 @@ NumberFormat: 3,F,4,2,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 Variable Storage_Opt_End_Tim2
 Title: Storage Opt End Time
 Description: The timestamp for when the storage optimization ended.
-Definition: 16-Jul-2023 12:28:30.135000
+Definition: 17-Jul-2023 18:46:55.714000
 NodeLocation: 1608,760,1
 NodeSize: 64,40
 WindState: 2,362,172,796,472
@@ -4710,7 +4710,7 @@ Definition: Reindex_to_ProfileHr(Flows_by_Opt_Hour[Flow_Name2=Flow_Types1{, Rate
 NodeLocation: 416,64,1
 NodeSize: 64,40
 WindState: 2,471,217,972,489
-ValueState: 2,255,10,1343,849,1,MIDM
+ValueState: 2,172,26,1521,830,1,MIDM
 Aliases: FormNode Fo1557458712, FormNode Fo1571775089, FormNode Fo1228179747
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
 Att_GraphIndexRange Viewed_Dispatch_Tim2:1,,1,,,,,79,85,1~
@@ -4721,7 +4721,7 @@ Att_Stacked_Lines Graph_Primary_Valdim:0
 ReformVal: [Viewed_Dispatch_Tim2,Flow_Types1]
 NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
 Att__TotalsIndex: [Viewed_Dispatch_Tim2,Rate_Names_and_Start]
-Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,Opt_Storage_Systems,2,Month,8,Rate_Vintage,1,Opt_Sectors,2,Flow_Types1,1,Viewed_Dispatch_Tim2,1]
+Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,Opt_Storage_Systems,2,Month,8,Rate_Vintage,1,Opt_Sectors,3,Flow_Types1,1,Viewed_Dispatch_Tim2,1]
 
 Decision Dispatch_Start_Time2
 Title: Start Time for Dispatch

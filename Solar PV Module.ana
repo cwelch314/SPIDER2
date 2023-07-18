@@ -427,14 +427,14 @@ Description: The simple payback time by spatial ID.
 Definition: Mthly_Simple_Payback[PV_Climate_Zone=Climate_Zone_Map, Time=Time_Solar_PV]
 NodeLocation: 288,296,1
 NodeSize: 64,40
-ValueState: 2,310,64,1316,710,1,MIDM
+ValueState: 2,234,49,1316,710,1,MIDM
 GraphSetup: Graph_LineThickness:5~
 Att_ContLineStyle Graph_Primary_Valdim:1~
-Att_GraphValueRange Payback_Time:1,,1,,,,,0,97.99745008349419,0~
+Att_GraphValueRange Payback_Time:1,,1,,,,,0,50,0~
 Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,43301.135061979294,49162.151701927185,0
-ReformVal: [Time_Solar_PV,Selected_Utility]
+ReformVal: [Time_Solar_PV,All_Utilities]
 Att__TotalsIndex: []
-Att_ResultSliceState: [Area_Type,1,PV_Spatial_ID,1,PV_Sectors,1,System_Types,1,All_Utilities,1,Time_Solar_PV,1]
+Att_ResultSliceState: [Area_Type,1,PV_Spatial_ID,1,PV_Sectors,2,System_Types,1,All_Utilities,1,Time_Solar_PV,1]
 
 Text Te1541771144
 Title: Eventually these weights should be specific to new vs retrofit construction
@@ -5258,43 +5258,45 @@ Constant Max_Attributes_for_R
 Title: Max Attributes for Rate Names
 Definition: Table(Rate_Names,Max_Unit_Options)(~
 'kWh/month','kW',1,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
 'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',0,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',0,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kVA',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/kW','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/kW','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1,~
-'kWh/month','kW',1)
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0,~
+'kWh/kW','kVA',0)
 NodeLocation: 1088,200,1
 NodeSize: 64,56
 WindState: 2,2164,99,720,459
@@ -5464,9 +5466,10 @@ Description: The monthly cost associated with on-peak demand charges.
 Definition: Sum(OnPkDmd_Cost_TierPrd, Tiers, Periods)
 NodeLocation: 560,576,1
 NodeSize: 64,40
-ValueState: 2,154,132,1032,654,1,MIDM
-ReformVal: [Month,Pre_and_Post_System]
-Att_ResultSliceState: [PV_Sectors,3,Rate_Vintage,1,PV_Climate_Zone,1,System_Types,1,Area_Type,1,Pre_and_Post_System,2,Month,1]
+ValueState: 2,103,91,500,468,0,MIDM
+ReformVal: [Pre_and_Post_System,Month]
+Att__TotalsIndex: [Pre_and_Post_System,Month]
+Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,1,PV_Climate_Zone,1,System_Types,2,Area_Type,1,Month,1,Pre_and_Post_System,2]
 
 Variable NC_Dmd_Cost_Tier_Prd
 Title: Non-Coinc Demand Cost by Tier and Period
@@ -5555,32 +5558,32 @@ Select the rate tariffs for each system type. For each rate tariff, specify the 
 ~
 
 Definition: Table(All_Sectors,All_Utilities,Rate_Vintage,PV_Climate_Zone,All_System_Types,Pre_and_Post_System,Rate_Setting)(~
-Choice(Rate_Names_with_None,27,0),1-Jan-2022,1,~
 Choice(Rate_Names_with_None,28,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,29,0),1-Jan-2022,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,27,0),44562,1,~
 Choice(Rate_Names_with_None,28,0),44562,1,~
+Choice(Rate_Names_with_None,29,0),44562,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,27,0),44562,1,~
 Choice(Rate_Names_with_None,28,0),44562,1,~
+Choice(Rate_Names_with_None,29,0),44562,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,38,0),23-Jan-2023,1,~
-Choice(Rate_Names_with_None,39,0),23-Jan-2023,1,~
+Choice(Rate_Names_with_None,40,0),23-Jan-2023,1,~
+Choice(Rate_Names_with_None,41,0),23-Jan-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,38,0),44949,1,~
-Choice(Rate_Names_with_None,39,0),44949,1,~
+Choice(Rate_Names_with_None,40,0),44949,1,~
+Choice(Rate_Names_with_None,41,0),44949,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,38,0),44949,1,~
-Choice(Rate_Names_with_None,39,0),44949,1,~
+Choice(Rate_Names_with_None,40,0),44949,1,~
+Choice(Rate_Names_with_None,41,0),44949,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,9,0),1-Nov-2019,1,~
@@ -5626,7 +5629,7 @@ Choice(Rate_Names_with_None,19,0),45047,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,14,0),1-Apr-2023,1,~
-Choice(Rate_Names_with_None,13,0),1-Apr-2023,1,~
+Choice(Rate_Names_with_None,12,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,14,0),45017,1,~
@@ -5639,32 +5642,32 @@ Choice(Rate_Names_with_None,14,0),45017,1,~
 Choice(Rate_Names_with_None,12,0),45017,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,29,0),1-Jan-2022,1,~
 Choice(Rate_Names_with_None,31,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,32,0),1-Jan-2022,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,29,0),44562,1,~
+Choice(Rate_Names_with_None,31,0),44562,1,~
+Choice(Rate_Names_with_None,32,0),44562,1,~
+Null,Null,Null,~
+Null,Null,Null,~
+Null,Null,Null,~
+Null,Null,Null,~
+Choice(Rate_Names_with_None,31,0),44562,1,~
 Choice(Rate_Names_with_None,31,0),44562,1,~
 Null,Null,Null,~
 Null,Null,Null,~
+Choice(Rate_Names_with_None,38,0),23-Jan-2023,1,~
+Choice(Rate_Names_with_None,39,0),23-Jan-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,29,0),44562,1,~
-Choice(Rate_Names_with_None,29,0),44562,1,~
-Null,Null,Null,~
-Null,Null,Null,~
-Choice(Rate_Names_with_None,36,0),23-Jan-2023,1,~
-Choice(Rate_Names_with_None,37,0),23-Jan-2023,1,~
-Null,Null,Null,~
-Null,Null,Null,~
-Choice(Rate_Names_with_None,36,0),44949,1,~
-Choice(Rate_Names_with_None,37,0),44949,1,~
+Choice(Rate_Names_with_None,38,0),44949,1,~
+Choice(Rate_Names_with_None,39,0),44949,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,36,0),44949,1,~
-Choice(Rate_Names_with_None,37,0),44949,1,~
+Choice(Rate_Names_with_None,38,0),44949,1,~
+Choice(Rate_Names_with_None,30,0),44949,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,10,0),1-Nov-2019,1,~
@@ -5709,46 +5712,46 @@ Choice(Rate_Names_with_None,22,0),45047,1,~
 Choice(Rate_Names_with_None,15,0),45047,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,25,0),1-Apr-2023,1,~
+Choice(Rate_Names_with_None,26,0),1-Apr-2023,1,~
 Choice(Rate_Names_with_None,26,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,25,0),45017,1,~
+Choice(Rate_Names_with_None,26,0),45017,1,~
 Choice(Rate_Names_with_None,26,0),45017,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,25,0),45017,1,~
+Choice(Rate_Names_with_None,26,0),45017,1,~
 Choice(Rate_Names_with_None,26,0),45017,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,32,0),1-Jan-2022,1,~
 Choice(Rate_Names_with_None,33,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,34,0),1-Jan-2022,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,32,0),44562,1,~
 Choice(Rate_Names_with_None,33,0),44562,1,~
+Choice(Rate_Names_with_None,34,0),44562,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,32,0),44562,1,~
 Choice(Rate_Names_with_None,33,0),44562,1,~
+Choice(Rate_Names_with_None,34,0),44562,1,~
 Null,Null,Null,~
 Null,Null,Null,~
+Choice(Rate_Names_with_None,37,0),23-Jan-2023,1,~
 Choice(Rate_Names_with_None,35,0),23-Jan-2023,1,~
-Choice(Rate_Names_with_None,34,0),23-Jan-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
+Choice(Rate_Names_with_None,37,0),44949,1,~
 Choice(Rate_Names_with_None,35,0),44949,1,~
-Choice(Rate_Names_with_None,34,0),44949,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
+Choice(Rate_Names_with_None,37,0),44949,1,~
 Choice(Rate_Names_with_None,35,0),44949,1,~
-Choice(Rate_Names_with_None,34,0),44949,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,11,0),1-Nov-2019,1,~
@@ -5793,17 +5796,17 @@ Choice(Rate_Names_with_None,17,0),45047,1,~
 Choice(Rate_Names_with_None,18,0),45047,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,24,0),1-Apr-2023,1,~
+Choice(Rate_Names_with_None,23,0),1-Apr-2023,1,~
 Choice(Rate_Names_with_None,23,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,24,0),45017,1,~
+Choice(Rate_Names_with_None,23,0),45017,1,~
 Choice(Rate_Names_with_None,23,0),45017,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,24,0),45017,1,~
+Choice(Rate_Names_with_None,23,0),45017,1,~
 Choice(Rate_Names_with_None,23,0),45017,1,~
 Null,Null,Null,~
 Null,Null,Null,~
@@ -6818,11 +6821,11 @@ Definition: Energy_Cost_Tier_Prd * Multiplier_of_Excess
 NodeLocation: 1208,136,1
 NodeSize: 64,56
 WindState: 2,2037,104,720,350
-ValueState: 2,1209,139,544,535,0,MIDM
-ReformVal: [Pre_and_Post_System,Periods]
+ValueState: 2,1238,21,583,553,0,MIDM
+ReformVal: [Periods,Month]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,,0
-Att__TotalsIndex: [Periods,Tiers,Month]
-Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,1,System_Types,1,Area_Type,1,Tiers,0,Month,0,Utility_Options_Domi,3,Periods,0,Pre_and_Post_System,1]
+Att__TotalsIndex: [Month,Tiers,Periods]
+Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,1,PV_Climate_Zone,1,System_Types,1,Area_Type,1,Tiers,0,Pre_and_Post_System,1,Month,1,Periods,1]
 
 Close Energy_and_Demand_Co
 
@@ -7101,13 +7104,14 @@ Title: Costs and Savings by Component
 Definition: Table(System_Comparison)(All_Annual_Costs_Cre[Pre_and_Post_System=Pre_System_Label],All_Annual_Costs_Cre[Pre_and_Post_System=Post_System_Label],Savings_by_Component)
 NodeLocation: 736,408,1
 NodeSize: 64,40
-ValueState: 2,482,103,947,720,,MIDM
+ValueState: 2,481,194,1117,430,0,MIDM
 GraphSetup: {!50000|Graph_SortBySpread:0}~
 {!40600|Att_WaterfallBar Graph_Primary_Valdim:1}~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 {!50007|Graph_BarOutline:1}
 ReformVal: [System_Comparison,All_Cost_Components]
-Att_ResultSliceState: [Time,253,PV_Sectors,1,PV_Climate_Zone,1,System_Types,2,Area_Type,1,All_Utilities,1,All_Cost_Components,1,System_Comparison,1]
+Att__TotalsIndex: [All_Cost_Components]
+Att_ResultSliceState: [Time,253,PV_Sectors,2,PV_Climate_Zone,1,System_Types,3,Area_Type,1,All_Cost_Components,1,System_Comparison,1]
 
 Index Savings
 Title: Savings
@@ -13279,7 +13283,7 @@ Subset(sorted <> None_Label)
 NodeLocation: 384,1192,1
 NodeSize: 64,40
 WindState: 2,2146,81,1165,697
-ValueState: 2,1113,264,629,421,0,MIDM
+ValueState: 2,968,124,750,636,0,MIDM
 {!40300|Att_SlicerPopupSize: 1882,522}
 
 Text Te1545165196
@@ -13579,7 +13583,7 @@ WindState: 2,98,82,1059,632
 {!40300|Att_SlicerPopupSize: 377,140}
 
 Index Rate_Names_with_None
-Att_PrevIndexValue: ['None','1 Residential Service | 2012-01','NC - Large Power (Industrial Service) | 2023-05','NC - Large Power (Industrial Service) + Buy All Sell All| 2023-05','NC - RL (Residential Service) | 2023-05','NC - RL (Residential Service) + REBB Rider | 2023-05','NC - Small Power (Commercial Service) | 2023-05','NC - Small Power (Commercial Service) + REBB Rider | 2023-05','NC -1 (Residential Service) | 2019-11','NC -5 (Commercial Service) | 2019-11','NC -6L (Industrial Service) | 2019-11','SC  - R-STOU (Residential Service) +  RSC Rider | 2023-04','SC  - R-STOU (Residential Service) +  RSC Rider | 2023-04 Remove Sell Attribute','SC  - RES (Residential Service) | 2023-04','SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider for storage dispatch | 2023-05','SC -20 (Industrial Service) | 2023-05','SC -20 (Industrial Service) + Rate PR-Standard Offer | 2023-05','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider for storage dispatch | 2023-05','SC -8 (Residential Service) | 2023-05','SC -9 (Commercial Service) | 2023-05','SC -LGS - TOU (Industrial Service Time-Of-Use) + NRSC Rider | 2023-04','SC -LGS (Industrial Service) | 2023-04','SC -MGS (Commercial Service) | 2023-04','SC -MGS-TOU (Commercial Service Time of Use) + NRSC Rider | 2023-04','VA -1 (Residential Service) | 2022-01','VA -1 (Residential Service) + Net Metering T&C | 2022-01','VA -GS2(Commercial Service Demand) | 2022-01','VA -GS2(Commercial Service Demand) | 2022-01 $20/kW Demand Test','VA -GS2(Commercial Service Non-Demand) + Net Metering T&C | 2022-01','VA -GS3(Industrial Service) | 2022-01','VA -GS3(Industrial Service) + Net Metering T&C | 2022-01','VA -LGS - TOD (Industrial Service) + Net Metering Service Rider | 2023-01','VA -LGS (Industrial Service) | 2023-01','VA -MGS (Commercial Service) | 2023-01','VA -MGS (Commercial Service) + Net Metering Service Rider | 2023-01','VA -RS (Residential Service) | 2023-01','VA -RS-SD (Residential Service) + Net Metering Service Rider | 2023-01']
+Att_PrevIndexValue: ['None','1 Residential Service | 2012-01','NC - Large Power (Industrial Service) | 2023-05','NC - Large Power (Industrial Service) + Buy All Sell All| 2023-05','NC - RL (Residential Service) | 2023-05','NC - RL (Residential Service) + REBB Rider | 2023-05','NC - Small Power (Commercial Service) | 2023-05','NC - Small Power (Commercial Service) + REBB Rider | 2023-05','NC -1 (Residential Service) | 2019-11','NC -5 (Commercial Service) | 2019-11','NC -6L (Industrial Service) | 2019-11','SC  - R-STOU (Residential Service) +  RSC Rider | 2023-04','SC  - R-STOU (Residential Service) +  RSC Rider for storage dispatch | 2023-04','SC  - RES (Residential Service) | 2023-04','SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider for storage dispatch | 2023-05','SC -20 (Industrial Service) | 2023-05','SC -20 (Industrial Service) + Rate PR-Standard Offer | 2023-05','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider for storage dispatch | 2023-05','SC -8 (Residential Service) | 2023-05','SC -9 (Commercial Service) | 2023-05','SC -LGS - TOU (Industrial Service Time-Of-Use) + NRSC Rider | 2023-04','SC -LGS (Industrial Service) | 2023-04','SC -MGS (Commercial Service) | 2023-04','SC -MGS-TOU (Commercial Service Time of Use) + NRSC Rider | 2023-04','SC -MGS-TOU (Commercial Service Time of Use) + NRSC Rider for storage dispatch | 2023-04','VA -1 (Residential Service) | 2022-01','VA -1 (Residential Service) + Net Metering T&C | 2022-01','VA -GS TOD (Commercial Service Time-Of-Use) | 2023-01','VA -GS2(Commercial Service Demand) | 2022-01','VA -GS2(Commercial Service Non-Demand) + Net Metering T&C | 2022-01','VA -GS3(Industrial Service) | 2022-01','VA -GS3(Industrial Service) + Net Metering T&C | 2022-01','VA -LGS - TOD (Industrial Service) + Net Metering Service Rider | 2023-01','VA -LGS - TOD (Industrial Service) + Net Metering Service Rider | 2023-01 for storage dispatch','VA -LGS (Industrial Service) | 2023-01','VA -MGS (Commercial Service) | 2023-01','VA -MGS (Commercial Service) + Net Metering Service Rider | 2023-01','VA -RS (Residential Service) | 2023-01','VA -RS-SD (Residential Service) + Net Metering Service Rider | 2023-01']
 Title: Rate Names with None
 Definition: Concat(None_Label, Rate_Names)
 NodeLocation: 384,1104,1
