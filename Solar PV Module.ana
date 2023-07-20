@@ -427,14 +427,14 @@ Description: The simple payback time by spatial ID.
 Definition: Mthly_Simple_Payback[PV_Climate_Zone=Climate_Zone_Map, Time=Time_Solar_PV]
 NodeLocation: 288,296,1
 NodeSize: 64,40
-ValueState: 2,400,23,1123,773,1,MIDM
+ValueState: 2,411,58,1123,773,1,MIDM
 GraphSetup: Graph_LineThickness:5~
 Att_ContLineStyle Graph_Primary_Valdim:1~
-Att_GraphValueRange Payback_Time:1,,1,,,,,0,50,0~
+Att_GraphValueRange Payback_Time:1,,1,,,,,0,313.2386952638626,0~
 Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,43301.135061979294,49162.151701927185,0
-ReformVal: [Time_Solar_PV,Selected_Utility]
+ReformVal: [Time_Solar_PV,All_Utilities]
 Att__TotalsIndex: []
-Att_ResultSliceState: [Area_Type,1,PV_Spatial_ID,1,System_Types,2,PV_Sectors,2,DER_Cost_Decline_Sc1,1,Time_Solar_PV,1]
+Att_ResultSliceState: [Area_Type,1,PV_Spatial_ID,1,PV_Sectors,1,System_Types,1,All_Utilities,1,Time_Solar_PV,1]
 
 Text Te1541771144
 Title: Eventually these weights should be specific to new vs retrofit construction
@@ -6821,11 +6821,11 @@ Definition: Energy_Cost_Tier_Prd * Multiplier_of_Excess
 NodeLocation: 1208,136,1
 NodeSize: 64,56
 WindState: 2,2037,104,720,350
-ValueState: 2,254,58,1101,648,0,MIDM
-ReformVal: [Periods,Month]
+ValueState: 2,703,486,1101,648,0,MIDM
+ReformVal: [Periods,System_Types]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,,0
 Att__TotalsIndex: [Month,Tiers,Periods]
-Att_ResultSliceState: [PV_Sectors,2,Rate_Vintage,1,PV_Climate_Zone,1,System_Types,1,Area_Type,1,Tiers,0,Pre_and_Post_System,2,All_Utilities,5,Month,1,Periods,1]
+Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,1,Area_Type,1,Tiers,0,Month,0,Pre_and_Post_System,1,System_Types,2,Periods,0]
 
 Close Energy_and_Demand_Co
 
@@ -7104,7 +7104,7 @@ Title: Costs and Savings by Component
 Definition: Table(System_Comparison)(All_Annual_Costs_Cre[Pre_and_Post_System=Pre_System_Label],All_Annual_Costs_Cre[Pre_and_Post_System=Post_System_Label],Savings_by_Component)
 NodeLocation: 736,408,1
 NodeSize: 64,40
-ValueState: 2,481,194,1117,430,0,MIDM
+ValueState: 2,681,254,832,422,0,MIDM
 GraphSetup: {!50000|Graph_SortBySpread:0}~
 {!40600|Att_WaterfallBar Graph_Primary_Valdim:1}~
 Att_CatLineStyle Graph_Primary_Valdim:9~
@@ -11617,7 +11617,7 @@ Att_ResultSliceState: [All_Equipment_Types,1,All_PV_Sectors,3,Utility_Options_Do
 Decision DER_Cost_Decline_Sce
 Title: DER Cost Decline Scenario
 Description: Select the DER cost scenario to apply.
-Definition: Choice(DER_Cost_Decline_Sc1,0,1)
+Definition: Choice(DER_Cost_Decline_Sc1,2,1)
 IndexVals: ['item 1']
 NodeLocation: 264,232,1
 NodeSize: 64,40
@@ -13272,7 +13272,7 @@ ReformVal: [Pre_and_Post_System,Rate_Names_and_Start]
 Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,1,Rate_Names_and_Start,1,PV_Sectors,1]
 
 Index Rate_Names_and_Start
-Att_PrevIndexValue: ['SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -20 (Industrial Service) | 2023-05','SC -20 (Industrial Service) + Rate PR-Standard Offer | 2023-05','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -8 (Residential Service) | 2023-05','SC -9 (Commercial Service) | 2023-05']
+Att_PrevIndexValue: ['SC  - R-STOU (Residential Service) +  RSC Rider for storage dispatch | 2023-04','SC  - RES (Residential Service) | 2023-04','SC -LGS - TOU (Industrial Service Time-Of-Use) + NRSC Rider | 2023-04','SC -MGS-TOU (Commercial Service Time of Use) + NRSC Rider | 2023-04','SC -MGS-TOU (Commercial Service Time of Use) + NRSC Rider for storage dispatch | 2023-04']
 Title: Rate Names and Start Dates
 Definition: VAR names:=MdArrayToTable(Selected_Cust_Rates, omitNull: True);~
 VAR lastCol:=Size(names.Col);~
