@@ -816,12 +816,13 @@ IF (Not Show_Historical[All_Utilities=Selected_Utility]) AND Act_vs_Sim='Actual'
 NodeLocation: 1040,984,1
 NodeSize: 64,40
 ValueState: 2,371,72,1124,662,1,MIDM
-GraphSetup: Att_GraphValueRange BESS_Cumulative_Impa:1,,0,,,,,0,0.00604491826146841,0~
+GraphSetup: Att_ContLineStyle Graph_Primary_Valdim:1~
 {!60002|Graph_DashKey:1}~
-Att_ContLineStyle Graph_Primary_Valdim:1
-ReformVal: [Output_Periods,All_Sectors]
-Att__TotalsIndex: [All_Sectors]
-Att_ResultSliceState: [Selected_Utility,1,All_Sectors,1,Output_Periods,1]
+Att_GraphValueRange BESS_Cumulative_Impa:1,,1,,,,,0,0.00604491826146841,0~
+Att_GraphIndexRange Output_Periods:1,,1,,,,10,40.908K,47.483K,0
+ReformVal: [Output_Periods,DER_Cost_Decline_Sc1]
+Att__TotalsIndex: []
+Att_ResultSliceState: [All_Utilities,5,All_Sectors,1,Output_Periods,1]
 {!60002|Att_DashRole: Act_vs_Sim}
 
 Variable PV_Cumulative_Adopti
@@ -831,13 +832,13 @@ Description: Nameplate MW-AC from Solar PV, cumulative for all time. Excludes an
 Definition: IF (Not Show_Historical[All_Utilities=Selected_Utility]) AND Act_vs_Sim='Actual' THEN Null ELSE PV_Cumul_Adoption
 NodeLocation: 1056,56,1
 NodeSize: 64,40
-ValueState: 2,456,177,1178,742,,MIDM
+ValueState: 2,299,36,1310,807,,MIDM
 GraphSetup: Att_GraphValueRange PV_Cumulative_Adopti:1,,1,,,,,0,0.1665208861231804,0~
 Att_ContLineStyle Graph_Primary_Valdim:1~
 Graph_SymbolKey:1~
 {!60002|Graph_DashKey:1}
 ReformVal: [Output_Periods,Selected_Utility]
-Att_ResultSliceState: [Spatial_ID,1,Area_Type,1,PV_Sectors,2,Selected_Utility,1,Output_Periods,1]
+Att_ResultSliceState: [Spatial_ID,1,Area_Type,1,PV_Sectors,1,Act_vs_Sim,1,Output_Periods,1]
 Att_SymbolRole: PV_Sectors
 {!60002|Att_DashRole: Act_vs_Sim}
 

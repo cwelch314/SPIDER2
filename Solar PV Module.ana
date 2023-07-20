@@ -396,15 +396,15 @@ Definition: Exp(Applied_PV_Pybk_Coef * Payback_Intervals)
 NodeLocation: 288,528,1
 NodeSize: 64,40
 WindState: 2,38,103,984,451
-ValueState: 2,570,83,1034,630,1,MIDM
+ValueState: 2,467,31,1171,828,1,MIDM
 GraphSetup: Graph_SymbolKey:1~
 Att_GraphValueRange Payback_Accept_Curve:1,,1,,,,10,0,0.021246256306767464,0
 ReformVal: [Payback_Intervals,PV_Sectors]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [PV_Spatial_ID,1,Utility_Options_Domi,1,PV_Sectors,3,Payback_Intervals,1]
+Att_ResultSliceState: [PV_Spatial_ID,1,PV_Sectors,1,PV_Sectors,3,Payback_Intervals,1]
 Att_ColorRole: PV_Sectors
-Att_SymbolRole: Utility_Options_Domi
+Att_SymbolRole: All_Utilities
 
 Variable Payback_LRMS
 Title: Payback LRMS
@@ -427,14 +427,14 @@ Description: The simple payback time by spatial ID.
 Definition: Mthly_Simple_Payback[PV_Climate_Zone=Climate_Zone_Map, Time=Time_Solar_PV]
 NodeLocation: 288,296,1
 NodeSize: 64,40
-ValueState: 2,2130,4,1500,712,1,MIDM
+ValueState: 2,400,23,1123,773,1,MIDM
 GraphSetup: Graph_LineThickness:5~
 Att_ContLineStyle Graph_Primary_Valdim:1~
 Att_GraphValueRange Payback_Time:1,,1,,,,,0,50,0~
 Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,43301.135061979294,49162.151701927185,0
-ReformVal: [Time_Solar_PV,PV_Sectors]
+ReformVal: [Time_Solar_PV,Selected_Utility]
 Att__TotalsIndex: []
-Att_ResultSliceState: [Area_Type,1,PV_Spatial_ID,1,System_Types,1,All_Utilities,6,PV_Sectors,2,Time_Solar_PV,1]
+Att_ResultSliceState: [Area_Type,1,PV_Spatial_ID,1,System_Types,2,PV_Sectors,2,DER_Cost_Decline_Sc1,1,Time_Solar_PV,1]
 
 Text Te1541771144
 Title: Eventually these weights should be specific to new vs retrofit construction
@@ -1840,7 +1840,7 @@ NodeLocation: 336,312,1
 NodeSize: 64,40
 WindState: 2,125,0,1303,666
 ValueState: 2,48,40,1550,719,1,MIDM
-Aliases: Alias Al1535486018
+Aliases: Alias Al1535486018, Alias Al1402138771
 ReformVal: [Time_Solar_PV,Null]
 Att__TotalsIndex: [PV_Spatial_ID]
 Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,0,Rate_Escalation_Scen,1,Time_Solar_PV,1]
@@ -2774,7 +2774,7 @@ NodeSize: 64,40
 NodeColor: 65535,1,1
 
 Index Time_Solar_PV
-Att_PrevIndexValue: [1-Mar-2023,1-Apr-2023,1-May-2023,1-Jun-2023,1-Jul-2023,1-Aug-2023,1-Sep-2023,1-Oct-2023,1-Nov-2023,1-Dec-2023,1-Jan-2024,1-Feb-2024,1-Mar-2024,1-Apr-2024,1-May-2024,1-Jun-2024,1-Jul-2024,1-Aug-2024,1-Sep-2024,1-Oct-2024,1-Nov-2024,1-Dec-2024,1-Jan-2025,1-Feb-2025,1-Mar-2025,1-Apr-2025,1-May-2025,1-Jun-2025,1-Jul-2025,1-Aug-2025,1-Sep-2025,1-Oct-2025,1-Nov-2025,1-Dec-2025,1-Jan-2026,1-Feb-2026,1-Mar-2026,1-Apr-2026,1-May-2026,1-Jun-2026,1-Jul-2026,1-Aug-2026,1-Sep-2026,1-Oct-2026,1-Nov-2026,1-Dec-2026,1-Jan-2027,1-Feb-2027,1-Mar-2027,1-Apr-2027,1-May-2027,1-Jun-2027,1-Jul-2027,1-Aug-2027,1-Sep-2027,1-Oct-2027,1-Nov-2027,1-Dec-2027,1-Jan-2028,1-Feb-2028,1-Mar-2028,1-Apr-2028,1-May-2028,1-Jun-2028,1-Jul-2028,1-Aug-2028,1-Sep-2028,1-Oct-2028,1-Nov-2028,1-Dec-2028,1-Jan-2029,1-Feb-2029,1-Mar-2029,1-Apr-2029,1-May-2029,1-Jun-2029,1-Jul-2029,1-Aug-2029,1-Sep-2029,1-Oct-2029,1-Nov-2029,1-Dec-2029,1-Jan-2030,1-Feb-2030,1-Mar-2030,1-Apr-2030,1-May-2030,1-Jun-2030,1-Jul-2030,1-Aug-2030,1-Sep-2030,1-Oct-2030,1-Nov-2030,1-Dec-2030,1-Jan-2031,1-Feb-2031,1-Mar-2031,1-Apr-2031,1-May-2031,1-Jun-2031,1-Jul-2031,1-Aug-2031,1-Sep-2031,1-Oct-2031,1-Nov-2031,1-Dec-2031,1-Jan-2032,1-Feb-2032,1-Mar-2032,1-Apr-2032,1-May-2032,1-Jun-2032,1-Jul-2032,1-Aug-2032,1-Sep-2032,1-Oct-2032,1-Nov-2032,1-Dec-2032,1-Jan-2033,1-Feb-2033,1-Mar-2033,1-Apr-2033,1-May-2033,1-Jun-2033,1-Jul-2033,1-Aug-2033,1-Sep-2033,1-Oct-2033,1-Nov-2033,1-Dec-2033,1-Jan-2034,1-Feb-2034,1-Mar-2034,1-Apr-2034,1-May-2034,1-Jun-2034,1-Jul-2034,1-Aug-2034,1-Sep-2034,1-Oct-2034,1-Nov-2034,1-Dec-2034]
+Att_PrevIndexValue: [1-Jan-2019,1-Feb-2019,1-Mar-2019,1-Apr-2019,1-May-2019,1-Jun-2019,1-Jul-2019,1-Aug-2019,1-Sep-2019,1-Oct-2019,1-Nov-2019,1-Dec-2019,1-Jan-2020,1-Feb-2020,1-Mar-2020,1-Apr-2020,1-May-2020,1-Jun-2020,1-Jul-2020,1-Aug-2020,1-Sep-2020,1-Oct-2020,1-Nov-2020,1-Dec-2020,1-Jan-2021,1-Feb-2021,1-Mar-2021,1-Apr-2021,1-May-2021,1-Jun-2021,1-Jul-2021,1-Aug-2021,1-Sep-2021,1-Oct-2021,1-Nov-2021,1-Dec-2021,1-Jan-2022,1-Feb-2022,1-Mar-2022,1-Apr-2022,1-May-2022,1-Jun-2022,1-Jul-2022,1-Aug-2022,1-Sep-2022,1-Oct-2022,1-Nov-2022,1-Dec-2022,1-Jan-2023,1-Feb-2023]
 Title: Time-Solar PV
 Description: Ths is the time index used for simulating vehicle adoption. It is allowed to be different from other DERs, for instance, due to differences in the granularity of available historical data on adoption (e.g., solar PV data are monthly, whereas vehicle data are, at best, quarterly, or in some cases, annual)
 Definition: Sequence(PV_Sim_Start_Year, PV_Sim_End_Year,step: Timestep_Months[Timestep_Options=PV_Data_dT_Choice],dateUnit: 'M')
@@ -11617,7 +11617,7 @@ Att_ResultSliceState: [All_Equipment_Types,1,All_PV_Sectors,3,Utility_Options_Do
 Decision DER_Cost_Decline_Sce
 Title: DER Cost Decline Scenario
 Description: Select the DER cost scenario to apply.
-Definition: Choice(DER_Cost_Decline_Sc1,2,1)
+Definition: Choice(DER_Cost_Decline_Sc1,0,1)
 IndexVals: ['item 1']
 NodeLocation: 264,232,1
 NodeSize: 64,40
@@ -13272,7 +13272,7 @@ ReformVal: [Pre_and_Post_System,Rate_Names_and_Start]
 Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,1,Rate_Names_and_Start,1,PV_Sectors,1]
 
 Index Rate_Names_and_Start
-Att_PrevIndexValue: ['SC  - R-STOU (Residential Service) +  RSC Rider for storage dispatch | 2023-04','SC  - RES (Residential Service) | 2023-04','SC -LGS - TOU (Industrial Service Time-Of-Use) + NRSC Rider | 2023-04','SC -MGS-TOU (Commercial Service Time of Use) + NRSC Rider | 2023-04','SC -MGS-TOU (Commercial Service Time of Use) + NRSC Rider for storage dispatch | 2023-04']
+Att_PrevIndexValue: ['SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -20 (Industrial Service) | 2023-05','SC -20 (Industrial Service) + Rate PR-Standard Offer | 2023-05','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -8 (Residential Service) | 2023-05','SC -9 (Commercial Service) | 2023-05']
 Title: Rate Names and Start Dates
 Definition: VAR names:=MdArrayToTable(Selected_Cust_Rates, omitNull: True);~
 VAR lastCol:=Size(names.Col);~
