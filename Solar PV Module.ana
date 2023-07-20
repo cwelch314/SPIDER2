@@ -427,15 +427,15 @@ Description: The simple payback time by spatial ID.
 Definition: Mthly_Simple_Payback[PV_Climate_Zone=Climate_Zone_Map, Time=Time_Solar_PV]
 NodeLocation: 288,296,1
 NodeSize: 64,40
-ValueState: 2,334,19,1078,739,1,MIDM
+ValueState: 2,292,29,1078,739,1,MIDM
 Aliases: Alias Al1125183635
 GraphSetup: Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,43301.135061979294,49162.151701927185,0~
 Att_GraphValueRange Payback_Time:1,,1,1,,,,0.9788254392333329,50,0~
 Att_ContLineStyle Graph_Primary_Valdim:1~
 Graph_LineThickness:5
-ReformVal: [Time_Solar_PV,System_Types]
+ReformVal: [Time_Solar_PV,Selected_Utility]
 Att__TotalsIndex: []
-Att_ResultSliceState: [Area_Type,1,PV_Spatial_ID,1,PV_Sectors,2,Selected_Utility,4,System_Types,1,Time_Solar_PV,1]
+Att_ResultSliceState: [Area_Type,1,PV_Spatial_ID,1,PV_Sectors,3,System_Types,1,Selected_Utility,4,Time_Solar_PV,1]
 
 Text Te1541771144
 Title: Eventually these weights should be specific to new vs retrofit construction
@@ -6823,11 +6823,11 @@ Definition: Energy_Cost_Tier_Prd * Multiplier_of_Excess
 NodeLocation: 1208,136,1
 NodeSize: 64,56
 WindState: 2,2037,104,720,350
-ValueState: 2,703,486,1101,648,0,MIDM
-ReformVal: [Periods,System_Types]
+ValueState: 2,591,179,1260,519,0,MIDM
+ReformVal: [Pre_and_Post_System,System_Types]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,,0
 Att__TotalsIndex: [Month,Tiers,Periods]
-Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,1,Area_Type,1,Tiers,0,Month,0,Pre_and_Post_System,1,System_Types,2,Periods,0]
+Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,1,Area_Type,1,Tiers,0,Month,0,Selected_Utility,2,Periods,0,System_Types,2,Pre_and_Post_System,2]
 
 Close Energy_and_Demand_Co
 
@@ -7106,14 +7106,14 @@ Title: Costs and Savings by Component
 Definition: Table(System_Comparison)(All_Annual_Costs_Cre[Pre_and_Post_System=Pre_System_Label],All_Annual_Costs_Cre[Pre_and_Post_System=Post_System_Label],Savings_by_Component)
 NodeLocation: 736,408,1
 NodeSize: 64,40
-ValueState: 2,681,254,832,422,0,MIDM
+ValueState: 2,895,351,780,367,0,MIDM
 GraphSetup: {!50000|Graph_SortBySpread:0}~
 {!40600|Att_WaterfallBar Graph_Primary_Valdim:1}~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 {!50007|Graph_BarOutline:1}
-ReformVal: [System_Comparison,All_Cost_Components]
-Att__TotalsIndex: [All_Cost_Components]
-Att_ResultSliceState: [Time,253,PV_Sectors,2,PV_Climate_Zone,1,System_Types,3,Area_Type,1,All_Cost_Components,1,System_Comparison,1]
+ReformVal: [System_Types,Selected_Utility]
+Att__TotalsIndex: []
+Att_ResultSliceState: [Time,253,PV_Sectors,3,PV_Climate_Zone,1,Area_Type,1,All_Cost_Components,1,System_Comparison,1,Selected_Utility,2,System_Types,2]
 
 Index Savings
 Title: Savings
@@ -7301,7 +7301,7 @@ Date: Thu, Oct 4, 2018 8:27 AM
 NodeLocation: 280,96,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,232,14,1362,822,17,10
+DiagState: 2,292,5,1362,822,17,10
 NodeColor: 65535,65535,65535
 AcpStyles: FrameNode: FrameNode_1544920201
 
