@@ -832,15 +832,15 @@ Description: Nameplate MW-AC from Solar PV, cumulative for all time. Excludes an
 Definition: IF (Not Show_Historical[All_Utilities=Selected_Utility]) AND Act_vs_Sim='Actual' THEN Null ELSE PV_Cumul_Adoption
 NodeLocation: 1056,56,1
 NodeSize: 64,40
-ValueState: 2,299,36,1310,807,,MIDM
+ValueState: 2,270,5,1200,861,,MIDM
 GraphSetup: Att_GraphIndexRange Output_Periods:1,,0,,,,10,40.908K,47.483K,0~
 {!60002|Graph_DashKey:1}~
 Graph_SymbolKey:1~
 Att_ContLineStyle Graph_Primary_Valdim:1~
-Att_GraphValueRange PV_Cumulative_Adopti:1,,1,,,,,0,0.1665208861231804,0
-ReformVal: [Output_Periods,DER_Cost_Decline_Sc1]
-Att__TotalsIndex: [PV_Sectors]
-Att_ResultSliceState: [Spatial_ID,1,Area_Type,1,PV_Sectors,0,All_Utilities,5,DER_Cost_Decline_Sc1,2,Output_Periods,1]
+Att_GraphValueRange PV_Cumulative_Adopti:1,,1,,,,,41.86345972120762,74.83898550271988,0
+ReformVal: [Output_Periods,Selected_Utility]
+Att__TotalsIndex: []
+Att_ResultSliceState: [Spatial_ID,1,Area_Type,1,PV_Sectors,1,Selected_Utility,1,Output_Periods,1]
 Att_SymbolRole: PV_Sectors
 {!60002|Att_DashRole: Act_vs_Sim}
 

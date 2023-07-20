@@ -1802,7 +1802,7 @@ $/kW for all demand rate structures
 Definition: Sum(Rate_Data_TOU_Sched[Rate_Names=Rate_Names_and_Start, All_Data_Types=DataType_by_RateType, Time_of_Day=Hour_for_Type_and_Hr, Weekday_or_Weekend=DayType_for_Type_Hr,All_Data_Types=Rate_Structure] * Rate_and_Adj_Attribs, Data_Attribute)
 NodeLocation: 952,200,1
 NodeSize: 64,40
-ValueState: 2,82,40,1771,828,1,MIDM
+ValueState: 2,72,22,1771,828,1,MIDM
 ReformVal: [Day_Type_and_Hour,Rate_Names_and_Start]
 NumberFormat: 2,F,4,3,0,1,4,0,$,0,"ABBREV",0,,,0,0,15,,0
 Att_ResultSliceState: [Buy_or_Sell_,1,Month,8,All_Tiers,1,Rate_Structure,2,Rate_Names_and_Start,8,Day_Type_and_Hour,1]
@@ -4892,7 +4892,7 @@ NodeLocation: 352,296,1
 NodeSize: 64,40
 WindState: 2,98,82,1526,709
 ValueState: 2,257,21,1108,672,1,MIDM
-Aliases: FormNode Fo1547666968, FormNode Fo1567060136
+Aliases: Alias Al1016842387, FormNode Fo1547666968, FormNode Fo1567060136
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
 Graph_KeyFont:,18,0~
 Graph_KeyTitleFont:,18,1~
@@ -28468,10 +28468,10 @@ Title: Select Rate
 Definition: subtable(Select_Customer_Rate[All_Utilities=Selected_Utility,All_System_Types=System_Types])
 NodeLocation: 512,1088,1
 NodeSize: 64,32
-DefnState: 2,96,434,1715,269,0,DFNM
+DefnState: 2,159,572,1715,269,0,DFNM
 Aliases: FormNode Fo185032851, FormNode Fo493629587, FormNode Fo63398035
 ReformDef: [Pre_and_Post_System,System_Types]
-Att_EditSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Rate_Setting,1,All_Sectors,1,System_Types,2,Pre_and_Post_System,2]
+Att_EditSliceState: [Rate_Vintage,1,PV_Climate_Zone,1,Rate_Setting,1,All_Sectors,2,All_Utilities,2,System_Types,2,Pre_and_Post_System,2]
 AcpStyles: Show_Object:No
 
 FormNode Fo493629587
