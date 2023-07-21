@@ -428,14 +428,13 @@ Definition: Mthly_Simple_Payback[PV_Climate_Zone=Climate_Zone_Map, Time=Time_Sol
 NodeLocation: 288,296,1
 NodeSize: 64,40
 ValueState: 2,292,29,1078,739,1,MIDM
-Aliases: Alias Al1125183635
 GraphSetup: Att_GraphIndexRange Time_Solar_PV:1,,1,,,,,43301.135061979294,49162.151701927185,0~
 Att_GraphValueRange Payback_Time:1,,1,1,,,,0.9788254392333329,50,0~
 Att_ContLineStyle Graph_Primary_Valdim:1~
 Graph_LineThickness:5
-ReformVal: [Time_Solar_PV,Selected_Utility]
+ReformVal: [Time_Solar_PV,System_Types]
 Att__TotalsIndex: []
-Att_ResultSliceState: [Area_Type,1,PV_Spatial_ID,1,PV_Sectors,3,System_Types,1,Selected_Utility,4,Time_Solar_PV,1]
+Att_ResultSliceState: [Area_Type,1,PV_Spatial_ID,1,PV_Sectors,1,Selected_Utility,1,System_Types,1,Time_Solar_PV,1]
 
 Text Te1541771144
 Title: Eventually these weights should be specific to new vs retrofit construction
@@ -1783,7 +1782,7 @@ NodeLocation: 152,88,1
 NodeSize: 64,40
 WindState: 2,32,380,1355,538
 ValueState: 2,453,45,1019,706,1,MIDM
-Aliases: Alias Al1460632099, Alias Al1752410387
+Aliases: Alias Al1460632099
 NodeColor: 65535,65535,65535
 GraphSetup: Att_GraphValueRange Eligible_PV_Stock_fo:1,,1,1,,,,0,700K,0
 ReformVal: [Time_Solar_PV,PV_Sectors]
@@ -1841,7 +1840,7 @@ NodeLocation: 336,312,1
 NodeSize: 64,40
 WindState: 2,125,0,1303,666
 ValueState: 2,48,40,1550,719,1,MIDM
-Aliases: Alias Al1535486018, Alias Al1402138771
+Aliases: Alias Al1535486018
 ReformVal: [Time_Solar_PV,Null]
 Att__TotalsIndex: [PV_Spatial_ID]
 Att_ResultSliceState: [PV_Sectors,1,PV_Spatial_ID,0,Rate_Escalation_Scen,1,Time_Solar_PV,1]
@@ -2260,7 +2259,7 @@ NodeLocation: 800,336,1
 NodeSize: 64,40
 WindState: 2,2438,107,720,350
 ValueState: 2,584,65,1015,685,1,MIDM
-GraphSetup: Att_GraphValueRange Share_of_Tech_Potent:1,,1,,,,,0,0.10161819458007813,0
+GraphSetup: Att_GraphValueRange Share_of_Tech_Potent:1,,1,,,,,0.00101943701505661,0.0344672966003418,0
 ReformVal: [Time_Solar_PV,Selected_Utility]
 Att_ResultSliceState: [PV_Sectors,1,Area_Type,1,PV_Spatial_ID,1,Selected_Utility,1,Time_Solar_PV,1]
 
@@ -3538,7 +3537,7 @@ Definition: Scaled_Hourly_Solar[Hours_8784=Monthly_Profile_Map]
 NodeLocation: 416,128,1
 NodeSize: 64,40
 ValueState: 2,128,29,1375,781,,MIDM
-Aliases: Alias Al1571850056, Alias Al1320845459
+Aliases: Alias Al1571850056
 GraphSetup: Att_GraphValueRange Monthly_Solar:1,,1,,,,,-0.29800040274858475,5.434707164764404,0~
 Att_GraphIndexRange Month_Day_and_Hour:1,,1,,,,,143,306,1
 ReformVal: [Month_Day_and_Hour,Month]
@@ -3651,7 +3650,7 @@ Definition: PV_Capacity_Factor[All_PV_Sectors=PV_Sectors,All_Utilities=Selected_
 NodeLocation: 416,336,1
 NodeSize: 64,40
 ValueState: 2,2383,314,1146,265,0,MIDM
-Aliases: Alias Al1534084643, Alias Al1911116963, Alias Al1775675667
+Aliases: Alias Al1534084643, Alias Al1911116963
 ReformVal: [All_Utilities,PV_Sectors]
 NumberFormat: 2,F,2,1,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 DisplayOutputs: Object Object, Object Variable
@@ -3915,7 +3914,7 @@ Date: Tue, Aug 21, 2018 2:56 PM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,2009,232,1734,589,17,10
+DiagState: 2,1992,149,1734,589,17,10
 Aliases: Alias Al1579800542
 NodeColor: 65535,65535,65535
 AcpStyles: FrameNode: Load_Frame
@@ -3966,18 +3965,19 @@ NodeLocation: 1056,192,1
 NodeSize: 64,40
 WindState: 2,546,219,720,350
 DefnState: 2,1094,392,416,303,0,DFNM
-ValueState: 2,530,159,1241,655,1,MIDM
+ValueState: 2,476,140,1241,655,1,MIDM
 Aliases: FormNode Fo1534438380, Alias Al733264035, FormNode Fo620575507, FormNode Fo1572476391
 NodeColor: 19661,48336,65535
-GraphSetup: Graph_AxisLabelFont:,14,0~
-Att_CatLineStyle Graph_Primary_Valdim:5~
-Att_AreaFill Graph_Primary_Valdim:0~
+GraphSetup: Att_GraphIndexRange Profile_Hours:1,,0,,,,,44,108,1~
+Att_GraphValueRange Pre_Post_Load:1,,1,,,,10,0,421.10850512981415,0~
 Att_Stacked_Lines Graph_Primary_Valdim:0~
-Att_GraphValueRange Pre_Post_Load:1,,1,,,,10,0,421.10850512981415,0
+Att_AreaFill Graph_Primary_Valdim:0~
+Att_CatLineStyle Graph_Primary_Valdim:5~
+Graph_AxisLabelFont:,14,0
 ReformVal: [Profile_Hours,Pre_and_Post_System]
 Att__TotalsIndex: [Profile_Hours]
 Att_GraphValueRange: 1,,,,,,10
-Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,2,PV_Sectors,2,Area_Type,1,Month,8,Rate_Vintage,1,Pre_and_Post_System,1,Profile_Hours,1]
+Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,1,PV_Sectors,1,Area_Type,1,Month,8,Rate_Vintage,1,Selected_Utility,1,Pre_and_Post_System,1,Profile_Hours,1]
 
 Variable Scaled_Annual_Load
 Title: Scaled Annual Load
@@ -4222,7 +4222,6 @@ Definition: Applied_Monthly_Mult[Static_Profile_Names=Loadshape_Map_of_Uti[All_S
 NodeLocation: 712,776,1
 NodeSize: 64,40
 ValueState: 2,157,246,1438,451,0,MIDM
-Aliases: Alias Al1765941395
 ReformVal: [Profile_Hours,Month]
 Att_ResultSliceState: [PV_Sectors,30,Month,1,Profile_Hours,1]
 
@@ -4744,8 +4743,8 @@ Definition: local x:=Sum(Weekly_Nrml_Loadshap * Weekly_Day_Counts[Static_Profile
 IF x=null THEN 1 ELSE x {to avoid errors if no sector data}
 NodeLocation: 424,192,1
 NodeSize: 64,40
-ValueState: 2,503,254,899,384,0,MIDM
-ReformVal: [PV_Climate_Zone,PV_Sectors]
+ValueState: 2,344,298,1351,266,0,MIDM
+ReformVal: [Selected_Utility,PV_Sectors]
 NumberFormat: 2,F,4,2,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,
 {!40700|Att_CellFormat: Undefined}
 
@@ -5402,7 +5401,6 @@ NodeSize: 64,40
 WindState: 2,184,82,859,463
 DefnState: 2,36,149,1304,440,0,DFNM
 ValueState: 2,278,273,1426,367,0,MIDM
-Aliases: Alias Al1981086483
 ReformVal: [PV_Climate_Zone,Pre_and_Post_System]
 Att_ResultSliceState: [PV_Sectors,2,System_Types,2,Rate_Vintage,1,Pre_and_Post_System,2,PV_Climate_Zone,1]
 Att_EditSliceState: [Pre_and_Post_System,2,All_Sectors,1,PV_Climate_Zone,1]
@@ -6823,11 +6821,11 @@ Definition: Energy_Cost_Tier_Prd * Multiplier_of_Excess
 NodeLocation: 1208,136,1
 NodeSize: 64,56
 WindState: 2,2037,104,720,350
-ValueState: 2,591,179,1260,519,0,MIDM
-ReformVal: [Pre_and_Post_System,System_Types]
+ValueState: 2,402,244,1260,461,0,MIDM
+ReformVal: [Periods,System_Types]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,,0
 Att__TotalsIndex: [Month,Tiers,Periods]
-Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,1,Area_Type,1,Tiers,0,Month,0,Selected_Utility,2,Periods,0,System_Types,2,Pre_and_Post_System,2]
+Att_ResultSliceState: [PV_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,1,Area_Type,1,Tiers,0,Month,0,Pre_and_Post_System,2,Selected_Utility,2,System_Types,2,Periods,0]
 
 Close Energy_and_Demand_Co
 
@@ -7106,14 +7104,15 @@ Title: Costs and Savings by Component
 Definition: Table(System_Comparison)(All_Annual_Costs_Cre[Pre_and_Post_System=Pre_System_Label],All_Annual_Costs_Cre[Pre_and_Post_System=Post_System_Label],Savings_by_Component)
 NodeLocation: 736,408,1
 NodeSize: 64,40
-ValueState: 2,895,351,780,367,0,MIDM
+ValueState: 2,957,313,1002,469,0,MIDM
 GraphSetup: {!50000|Graph_SortBySpread:0}~
 {!40600|Att_WaterfallBar Graph_Primary_Valdim:1}~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 {!50007|Graph_BarOutline:1}
-ReformVal: [System_Types,Selected_Utility]
-Att__TotalsIndex: []
-Att_ResultSliceState: [Time,253,PV_Sectors,3,PV_Climate_Zone,1,Area_Type,1,All_Cost_Components,1,System_Comparison,1,Selected_Utility,2,System_Types,2]
+ReformVal: [System_Comparison,All_Cost_Components]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,,0
+Att__TotalsIndex: [All_Cost_Components]
+Att_ResultSliceState: [Time,253,PV_Sectors,1,PV_Climate_Zone,1,Area_Type,1,System_Types,1,All_Cost_Components,1,System_Comparison,1]
 
 Index Savings
 Title: Savings
@@ -9218,12 +9217,12 @@ Definition: Table(State_Tax_Credit_Sc1,All_Utilities,All_PV_Sectors,Static_PV_Ti
 0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25)
 NodeLocation: 160,672,1
 NodeSize: 64,40
-DefnState: 2,641,-1,806,889,0,DFNM
+DefnState: 2,425,-11,1333,889,0,DFNM
 ValueState: 2,291,149,1190,559,,MIDM
 ReformDef: [All_Utilities,Static_PV_Time]
 ReformVal: [Static_PV_Time,All_Utilities]
 Att_ResultSliceState: [All_PV_Sectors,2,State_Tax_Credit_Sc1,2,All_Utilities,5,Static_PV_Time,1]
-Att_EditSliceState: [State_Tax_Credit_Sc1,1,All_PV_Sectors,1,Static_PV_Time,1,All_Utilities,6]
+Att_EditSliceState: [State_Tax_Credit_Sc1,2,All_PV_Sectors,2,Static_PV_Time,1,All_Utilities,6]
 {!50000|Att_ColumnWidths: [,All_PV_Sectors,\([86])]}
 
 Constant Tax_Credit_Applicabi
@@ -9417,7 +9416,6 @@ Definition: sum(Monthly_Solar,Month_Day_and_Hour,Month) * System_Has_Solar_Pro[A
 NodeLocation: 680,1144,1
 NodeSize: 64,40
 ValueState: 2,1033,59,852,723,1,MIDM
-Aliases: Alias Al2034073747
 GraphSetup: Att_GraphIndexRange Static_PV_Time:1,,0,,,,10,2007.4165800958872,2024.133097231388,0
 Att_ResultSliceState: [PV_Climate_Zone,1,Area_Type,1,Pre_and_Post_System,2,System_Types,1,PV_Sectors,1,Static_PV_Time,1]
 
@@ -12381,9 +12379,9 @@ Val_by_Install_Event(price, Timesteps_Per_Year, Time)
 NodeLocation: 480,168,1
 NodeSize: 64,40
 ValueState: 2,814,101,1025,684,1,MIDM
-ReformVal: [Time_Solar_PV,Installation_Event]
+ReformVal: [Time,Selected_Utility]
 Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Sectors,1,Equipment_Types,2,System_Types,2,PV_Climate_Zone,1,Area_Type,1,Installation_Event,1,Time,1]
+Att_ResultSliceState: [PV_Sectors,1,Equipment_Types,1,System_Types,1,PV_Climate_Zone,1,Area_Type,1,Installation_Event,1,Selected_Utility,1,Time,1]
 
 Variable Monthly_ITC_Amount
 Title: Monthly ITC Amount
@@ -12421,6 +12419,7 @@ ValueState: 2,258,22,1371,805,,MIDM
 Aliases: FormNode Fo619863549
 GraphSetup: Att_GraphIndexRange Time:1,,0,,,,,39537.3416184783,49668.12498682737,0~
 Att_GraphValueRange Tot_Price_Aft_Incent:1,,1,,,,,0,50K,0
+ReformVal: [Time,Selected_Utility]
 Att_ResultSliceState: [PV_Sectors,1,PV_Climate_Zone,1,System_Types,1,Area_Type,1,All_Utilities,1,Time,1]
 
 Variable Monthly_Fees
@@ -12965,14 +12964,14 @@ NodeLocation: 560,176,1
 NodeSize: 64,40
 WindState: 2,5,42,875,350
 DefnState: 2,883,249,416,303,,DFNM
-ValueState: 2,3086,398,593,330,0,MIDM
+ValueState: 2,2619,341,650,272,0,MIDM
 NodeColor: 19661,48336,65535
 GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9~
 Att_GraphValueRange Equipment_Sizes:1,,1,,,,,0,5068.057179450989,0
-ReformVal: [PV_Sectors,All_Utilities]
+ReformVal: [Selected_Utility,System_Types]
 Att__TotalsIndex: []
-Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,Equipment_Types,2,System_Types,1,PV_Sectors,2]
+Att_ResultSliceState: [Area_Type,1,PV_Climate_Zone,1,Equipment_Types,1,PV_Sectors,1,System_Types,1,Selected_Utility,1]
 Att_ColorRole: Null
 {!40600|Att_ClusterIndex: Null}
 {!50000|Att_ColumnWidths: [,All_Equipment_Types,\([179])]}
@@ -13260,7 +13259,7 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 256,288,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,2006,24,1818,684,17,10
+DiagState: 2,1910,30,1818,684,17,10
 NodeColor: 57311,57311,57311
 AcpStyles: Show_Object:no
 
@@ -13478,14 +13477,15 @@ Description: The sectors selected for the PV analysis.
 Definition: MultiChoice(All_PV_Sectors,returnList:1)
 NodeLocation: 1536,344,1
 NodeSize: 64,40
-WindState: 2,319,12,1255,632
-Aliases: FormNode Fo1535066238, FormNode Fo1539140368, FormNode Fo1247325693
+WindState: 2,393,46,1255,632
+Aliases: FormNode Fo1535066238, FormNode Fo1539140368, FormNode Fo1247325693, FormNode Fo1607585427
 NumberFormat: 2,F,4,6,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Object Object, Object Function, Object Variable, Function Sequential_Opt_PV0, Function Aggregate_Optimizati, Function Set_Start_Coeff_PV0, Function Sequential_Opt_PV2, Function OG_Sequential_Optimi, Variable Num_Full_Discharges1
 Att_GraphIndexRange: 1,,0,,,,,1,11,1
 {!50400|Att_AxisOrKeyTitle: ""}
 {!40300|Att_SlicerPopupSize: 1904,353}
-OnChange: Set_Optimization_Sec()
+OnChange: Set_Optimization_Sec();~
+(BESS_Sectors:=PV_Sectors)
 
 FormNode Fo1539140368
 Title: PV Sectors
@@ -14022,7 +14022,6 @@ Definition: Concat(Pre_and_Post_System, Cost_Savings_Label)
 NodeLocation: 672,296,1
 NodeSize: 64,40
 WindState: 2,657,349,1080,557
-Aliases: Alias Al1756244115
 {!40300|Att_SlicerPopupSize: 242,70}
 
 Decision Cost_Savings_Label
@@ -14420,7 +14419,6 @@ NodeLocation: 384,368,1
 NodeSize: 64,40
 WindState: 2,101,420,720,350
 ValueState: 2,1257,140,416,504,0,MIDM
-Aliases: Alias Al606093459
 
 Variable EOY_Date_StaticPV_Yr
 Title: EOY Date for Static PV Year
@@ -16432,7 +16430,6 @@ NodeLocation: 320,112,1
 NodeSize: 64,40
 WindState: 2,102,82,925,287
 ValueState: 2,1034,89,504,644,0,MIDM
-Aliases: Alias Al97954067
 ReformVal: [Area_Type,PV_Sectors]
 
 FormNode Fo1541457042
@@ -16548,7 +16545,6 @@ Definition: PV_Production_per_kW {kWh / kW-DC}~
 NodeLocation: 616,480,1
 NodeSize: 64,40
 ValueState: 2,343,320,436,184,,MIDM
-Aliases: Alias Al1303619859
 
 Close Power_and_Module_Den
 
