@@ -1,5 +1,5 @@
 { Analytica Model GUI_Dropdowns1, encoding="UTF-8" }
-SoftwareVersion 6.1.0
+SoftwareVersion 6.3.6
 
 {!-60000|Attribute AcpStyles}
 
@@ -10,7 +10,7 @@ Author: CWelch
 Date: Wed, Mar 30, 2022 11:53 AM
 DefaultSize: 64,40
 NodeSize: 64,40
-DiagState: 2,446,86,962,523,17
+DiagState: 2,446,86,1005,523,17,10
 DiagramColor: 52428,52428,52428
 FontStyle: Arial Narrow,19
 FileInfo: 0,LinkLibrary GUI_Dropdowns1,2,2,0,0,GUI Dropdowns.ana
@@ -22,10 +22,10 @@ nodeSelected: variable containing a dropdown of nodeTitles~
 nodeTitles: an index containing the list of titles for each of the nodes in the nodeList~
 inOrOut: 'Result' if you want to show output, 'Definition' if you want to show input
 Definition: MetaVar varHandle:=Slice(nodeList, PositionInIndex(nodeTitles, nodeSelected , nodeTitles));~
-ShowWindow(varHandle, Type  )
+ShowWindow(varHandle, Type     )
 NodeLocation: 784,80,1
 NodeSize: 64,40
-WindState: 2,507,168,994,350
+WindState: 2,648,286,994,350
 
 Function Create_Titles_List(nodeList: variable)
 Title: Create Titles List
@@ -120,6 +120,22 @@ Title: Output3
 Definition: 3
 NodeLocation: 416,312,1
 NodeSize: 64,40
+
+Decision Output_Type1
+Title: Output Type
+Definition: Choice(Self,3,0)
+NodeLocation: 784,280,1
+NodeSize: 64,40
+Aliases: FormNode Fo1738148243
+{!40300|DomainExpr: Discrete('Graph','Result','Definition','Object','Diagram','OnDiagram',type:'text')}
+
+FormNode Fo1738148243
+Title: Output Type
+Definition: 0
+NodeLocation: 724,360,1
+NodeSize: 124,16
+NodeInfo: 1,,,,,,,128,,,,,,0
+Original: Output_Type1
 
 Close GUI_Dropdowns1
 

@@ -10,7 +10,7 @@ NodeSize Time: 48,24
 NodeInfo Time: 1,1,1,1,1,1,0,0,0,0,,0,1,0
 WindState Time: 2,102,82,1116,840
 NumberFormat Time: 2,F,4,4,0,0,4,0,$,0,"YYYY-MMM",0,,,0,0,15,,0
-{!40300|Att_SlicerPopupSize Time: 297,1001}
+{!40300|Att_SlicerPopupSize Time: 302,1001}
 Aliases Time: Alias Al1515102194
 SampleSize := 100
 NodeLocation SampleSize: 240,64,1
@@ -150,7 +150,7 @@ Author: CWelch
 Date: Tue, Apr 20, 2021 10:09 AM
 DefaultSize: 64,32
 NodeInfo: 1,,,,,,,,,,,0
-DiagState: 2,421,58,1143,719,17,10,
+DiagState: 2,62,13,1634,747,17,10,
 FontStyle: Arial,15
 FileInfo: 0,Model Nexant_Model_Templat,2,2,0,0,C:\Users\cwelch\Documents\Repos\Nexant\SPIDER\SPIDER Model.ana
 {!50000|DefaultFontColor: 0,0,0}
@@ -161,7 +161,7 @@ Use_top_diagram_size: No~
 Node_drop_shadow: No~
 Bevel_node_border: No~
 Show_title: Yes~
-Show_uncertainty_view: Yes~
+Show_uncertainty_view: No~
 Show_graph_table_icon: Yes~
 Show_description: 20~
 Show_index_menus: Yes~
@@ -169,21 +169,23 @@ Tab_color: Node~
 auto_zoom_diagrams: No~
 hide_save_button: No~
 FrameNode: MainFrameNode
+{!40300|ProactivelyEvaluate: 4}
 
 Module Model_Details1
 Title: Model Details
 Author: Cory Welch
 Date: Mon, Aug 18, 2014 9:09 PM
-NodeLocation: 752,144,7
+NodeLocation: 768,144,7
 NodeSize: 64,56
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,0,,
-DiagState: 2,32,16,1565,804,17,10
+DiagState: 2,2171,0,1565,804,17,10
 WindState: 2,102,82,859,323
 NodeColor: 65535,65535,65535
 DiagramColor: 65535,65535,65535
 Pict: (000000000000004400430004E904000089504E470D0A1A0A0000000D4948445200000043000000440806000000DACF88CB000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA8640000046E49444154785EED9C5D48145114C77DF42DE9458330218C208C208282081F228A08A408B427E9412BFB5032311F4488B2224BF333524C2A242B2B29B54F8B0AF1A32489C2404529B430D430CDDDD56DFFE2598EC399DD6DD771C6ED3EFC68397366EED9DFDC7BE7BACC2DC4E9742A6611839E98B0D943EFB47E8ACFA97D95BB33AFBA293C256F6249D239A715403D99B79E5FBAF9B6337170742C42AADF1362508FD6EE6F1B3764977F960AB11A91A9F9C30F3BBEC449DF430F312851F1B2E380D4E8D6B3D79B7147AC80545FDACDC7A5D2F79110835AD02378037B0A6A1A5E77F5C54AB966D3D9FF7D1D860AAF17C35ACAD52206399823F8D02879D6962AE5590D0C119ACF56A5170DF8328788410E262312811E21E55895DCBA3739543B3E4B391C31C8E15DAE6F6824CA7D6CF25798A33DEF92BD31B179F2C67AA7D9D81E2574385ACE944E8F0FB97B007A352652D4BEAFA4F69EBB761DC4200713242E868B520C0DDAEEEFEA958A329D9AD8E1E9D1DED5542B4DAC182A14D3430C7268DCE1A214C31DA0C66D77B70DD89F2635998DAD6ECF67AAC9FEE2887B381FBC565F89FA01C5F410831CBA109741BD02229C8EC9509E6F26903223A47AD304C50C97E1BE03AEC679AED9389A732AA9368A29194A869231072583618E0CD7B31C0DE271C673CDC6FEE664F582CBC0739C1A45018E0F57724CC7B51AC623557B930C973135D81E4B32AC88A3BB2E916A355C0698EA6F8AC3A24B2AC62C500F17011644C66241C96028190C4364ECC84817C7A9D549CE3E3853BF92E142C9601822C3A8398317AE3D361F2CAA0954C96028198CA095E16BA31C2583A16430940C46D0C8A063DED09EC7F12643BA9E1EDA738192C15032186ACE6028190C2583A164304C93E10F8B5286FA71C78592C150321874213567B85032184A0643C960F82203EF65EF2DBCFD68CE1BC4B3E0C5761484B775B5C74050C9C0975D9359DA879C98ACB2DEAE8121F7DBB94F3FF66CA7D795F5DE3BF72683DAF705EDB9604165EC2EA8690C4FB9E0DE8D149D5E340841D8D6406F17E35FBD6D0E412503DD3FBEB8F641C4E1BC71CA5D7E347F943E43047A88742E082A19444A557D059700961DB938865E22E513DE64048A2932C096D355EF281F44A5160C9537BD3F24E51241270343051324E52E4D3EEFA0CF5169977F163D694B93CE03412563E4F79F30DA9302369FAAECB8DDF22921FA44F100C556A4160C67DE7A9E2F9DEF4D065DC317B4E7820595C11B430EE4208EB962E5F1C21F742CF2982C24A8646088ECBF5A578D61A25D586111B63AA3F82BCEF75746A0CCAB0C747B5C28E66459AF74DC1BE8296BB3CA7AFC1D268182BD693337836D2BD3430C72B8591A02F389D132B0370DB57B7A00106290837DAC2403FBDFA59C4030520656BD543B76614A391C31C8C1B8A76535C0EE6729CF5F8C9281BAA957006F8B3F2006B5F07DF01073B1A13953CAF307236460B733FD81087CEDD16250822FAA088CC340C16FAB8474FC5FE11200267EBD9F0FB488413DD023F890B13A98FCFF65D217839EC0EF15F86F18F8AAD34A602900099EFE52D6430CFE9F3843FE0235B0BF5BFAC672D20000000049454E44AE426082)
 NodeFont: Arial,16
 AcpStyles: Show_Object:No
+{!40300|ProactivelyEvaluate: 4}
 
 Module Mo2
 Author: CWelch
@@ -240,7 +242,7 @@ NodeSize: 64,40
 NodeColor: 65535,1,1
 
 Variable Nodes_to_change
-Att_PrevIndexValue: [Nodecolor_for_change,Nodecolor_To_check,Color_for_adding_to_,PV_Cumul_Adoption,Hourly_Profile_Data,Need_to_document_all,Consumption3,Atomic_Import1,Install_Date_Parsed,Forecast_AC_System_S,Scale_PV_Size_by_Cov,PV_DC_System_Size_fo,R2_Fit1,Bill_Savings___Energ,Bill_Savings___Deman,Cost_Elect_Ratio_ID,PV_Init_Adop_Fractio,Max_PV_Simulation_Ye,First_Year_Annual_So,Solar_Scaling_Factor,Average_Solar_Profil,NPV_of_Solar_Product,Undefined,Any_non_net_metering,Debt_Equity_Rates,Invest_Tax_Credit,Strg_kWh_Base_Rate,Incentive_Step_Start,Strg_kW_Base_Rate,Min_Cost_Share_Pct,kW_Incent_Derate_Cap,FinalYr_of_kW_Incent,PV_kW_DC_Incentive,Storage_Incentive_Sc,Te1735257597,Storage_KWh_Incentiv,Incentive_PV_kW_Adde,Minimum_System_Size,PV_Incent_Adder,Base_Yr_PV_Incent,Installation_Type_Ad,Incentive_Phase_out_,Incent_Size_Mult,Storage_Flat_Incenti,Taxed_as_Commercial,Assume_Third_Party_O,Base_Installed_Cost_,DER_Cost_Change_Rate,Storage_Cost_Scen,BaseYr_Strg_Costs,Strg_Cost_Chg_Rate,Select_StrgCost_Scen,Undefined,Annual_System_Cost_b,Original_Monthly_Pa1,Simple_LCOE_Discount,Cost_of_Electricity_,Estimated_PPA_Rates,PPA_Multiplier,Storage_Max_Power,Undefined,Hours_of_Storage_at_,Fraction_of_Peak_for,System_ConstructType,Hourly_Profile_Names,Static_Profile_Names,EV_Sectors,Total_Charge2,Te1345227043,Arbitrage_Opportun,ArbitrageForPenalty,BESS_Adoption_Fcst,Increm_MW_Capacity,Increm_MWh_Capacity,Initial_MWh_Capacity,Cumul_MW_Capacity,Cumul_MWh_Capacity,Increm_Systems1,Cumulative_Systems1,Cumul_MW_Cap_byType,Cumul_MWh_Capacity_E,Increm_MW_Cap_byType,Increm_MWh_Capacity_,Increm_Systems_Type,Cumul_MWh_Capacity_B,Cumul_Systems_byType,BESS_Adopt_by_Type,Initial_Systems,CumulSyst_BOP_byType,Select_System_Types1,SolarPaired_Tech_Pot,BESS_Tech_Potential,HistCumulPV_BldgUnit,BESS_Tech_Suitabilit,Adapted_2018_Foreca1,Number_of_Storage_Da,Storage_Install_Data,Fcast_BESS_kW_Size,Applied_BESS_kW_Size,BESS_Cumul_Capacity,Undefined,Undefined,Undefined,Cumul_BESS_Adoption,Filtered_Start_Date1,Rate_Names_and_Date1,BESS_Installs,PV_Mkt_Share_Uncert1,Backcst_Payback_Time,Init_BESS_Adoption,Te1577944465,paired_storage_marke,Undefined]
+Att_PrevIndexValue: [Nodecolor_for_change,Nodecolor_To_check,Color_for_adding_to_,PV_Cumul_Adoption,Hourly_Profile_Data,Need_to_document_all,Consumption3,Atomic_Import1,Install_Date_Parsed,Forecast_AC_System_S,Scale_PV_Size_by_Cov,PV_DC_System_Size_fo,R2_Fit1,Bill_Savings___Energ,Bill_Savings___Deman,Cost_Elect_Ratio_ID,PV_Init_Adop_Fractio,Max_PV_Simulation_Ye,First_Year_Annual_So,Solar_Scaling_Factor,Average_Solar_Profil,NPV_of_Solar_Product,Undefined,Any_non_net_metering,Debt_Equity_Rates,Invest_Tax_Credit,Strg_kWh_Base_Rate,Incentive_Step_Start,Strg_kW_Base_Rate,Min_Cost_Share_Pct,kW_Incent_Derate_Cap,FinalYr_of_kW_Incent,PV_kW_DC_Incentive,Storage_Incentive_Sc,Te1735257597,Storage_KWh_Incentiv,Undefined,Undefined,Undefined,Undefined,Undefined,PV_Incentive,Undefined,Storage_Flat_Incenti,Taxed_as_Commercial,Assume_Third_Party_O,Base_Installed_Cost_,DER_Cost_Change_Rate,Storage_Cost_Scen,BaseYr_Strg_Costs,Strg_Cost_Chg_Rate,Select_StrgCost_Scen,Undefined,Annual_System_Cost_b,Original_Monthly_Pa1,Simple_LCOE_Discount,Cost_of_Electricity_,Estimated_PPA_Rates,PPA_Multiplier,Storage_Max_Power,Undefined,Hours_of_Storage_at_,Fraction_of_Peak_for,System_ConstructType,Hourly_Profile_Names,Static_Profile_Names,EV_Sectors,Total_Charge2,Te1345227043,Arbitrage_Opportun,ArbitrageForPenalty,BESS_Adoption_Fcst,Increm_MW_Capacity,Increm_MWh_Capacity,Initial_MWh_Capacity,Cumul_MW_Capacity,Cumul_MWh_Capacity,Increm_Systems1,Cumulative_Systems1,Cumul_MW_Cap_byType,Cumul_MWh_Capacity_E,Increm_MW_Cap_byType,Increm_MWh_Capacity_,Increm_Systems_Type,Cumul_MWh_Capacity_B,Cumul_Systems_byType,BESS_Adopt_by_Type,Initial_Systems,CumulSyst_BOP_byType,Select_System_Types1,SolarPaired_Tech_Pot,BESS_Tech_Potential,HistCumulPV_BldgUnit,BESS_Tech_Suitabilit,Adapted_2018_Foreca1,Number_of_Storage_Da,Storage_Install_Data,Fcast_BESS_kW_Size,Applied_BESS_kW_Size,BESS_Cumul_Capacity,Undefined,Undefined,Undefined,Cumul_BESS_Adoption,Filtered_Start_Date1,Rate_Names_and_Date1,BESS_Installs,PV_Mkt_Share_Uncert1,Backcst_Payback_Time,Init_BESS_Adoption,Te1577944465,paired_storage_marke,Undefined]
 Title: Nodes to change
 Definition: update_nodes_to_chan;~
 #FindObjects(Color,attribute:'NodeColor')
@@ -675,7 +677,7 @@ Date: Sun, Dec 16, 2018 8:10 AM
 NodeLocation: 112,392,1
 NodeSize: 80,56
 NodeInfo: 1,,,,,,1
-DiagState: 2,63,91,1729,626,17,10
+DiagState: 2,2071,17,1569,598,17,10
 NodeColor: 65535,65535,65535
 NodeFont: Arial Narrow,19
 AcpStyles: Show_object: no
@@ -784,14 +786,14 @@ NodeLocation: 160,432,1
 NodeSize: 64,40
 WindState: 2,98,82,720,443
 
-Button PV_Econ_Output_But
+Button PV_Impa_Output_But
 Title: Result
 Description: Press this button to view the output of the selected variable on the left.
 NodeLocation: 608,312,1
 NodeSize: 64,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 WindState: 2,2424,68,720,350
-Aliases: Alias Al1552872555, Alias Al612315645
+Aliases: Alias Al1552872555
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF PV_Impact1 = Hidden_Dropdown~
@@ -806,7 +808,7 @@ NodeLocation: 616,440,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
 Aliases: FormNode Fo1552851929, FormNode Fo343880189
-OnChange: PV_Econ_Output_But
+OnChange: PV_Impa_Output_But
 
 Text Te1552851929
 Title: PV Impact Output
@@ -852,7 +854,7 @@ NodeLocation: 584,552,1
 NodeSize: 40,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 WindState: 2,2424,68,720,350
-Aliases: Alias Al1552872556, Alias Al1686057469
+Aliases: Alias Al1552872556
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF EV_Impact = Hidden_Dropdown~
@@ -906,7 +908,7 @@ NodeLocation: 584,792,2
 NodeSize: 40,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 WindState: 2,2424,68,720,350
-Aliases: Alias Al1552872557, Alias Al343880189
+Aliases: Alias Al1552872557
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF PV_Economics = Hidden_Dropdown~
@@ -934,7 +936,7 @@ NodeSize: 64,40
 Decision PV_Economics
 Title: PV Economics
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Econ_Titles1,2,0)
+Definition: Choice(PV_Econ_Titles1,1,0)
 NodeLocation: 608,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -953,44 +955,44 @@ Definition: 0
 NodeLocation: 988,368,1
 NodeSize: 244,16
 NodeInfo: 1,,,,,,0,310,,,,,,0
-Original: PV_Input
+Original: PV_Other
 
-Decision PV_Input
-Title: PV Input
+Decision PV_Other
+Title: PV Other
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Input_Titles,11,0)
+Definition: Choice(PV_Input_Titles,1,0)
 NodeLocation: 1288,440,1
 NodeSize: 64,40
 WindState: 2,2341,163,720,646
 ValueState: 2,525,428,523,240,,MIDM
 Aliases: FormNode Fo1552865477, FormNode Fo209662461
-OnChange: PV_Input_Button
+OnChange: PV_Other_but
 
 Index PV_Input1
 Title: PV Input
-Definition: MultiChoice(All_PV_Input, allowNone: False, returnList: True)
+Definition: MultiChoice(All_PV_Input,5,11,12,16,17,23,allowNone:0,returnList:1)
 NodeLocation: 984,432,1
 NodeSize: 64,40
 WindState: 2,2234,82,720,350
 Aliases: FormNode Fo1552872151
 MetaOnly: 1
 
-Button PV_Input_Button
+Button PV_Other_but
 Title: Result
 Description: Press this button to view the output of the selected variable on the left.
 NodeLocation: 1264,320,2
 NodeSize: 40,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 WindState: 2,-6,300,720,350
-Aliases: Alias Al1552866520, Alias Al1417622013
+Aliases: Alias Al1552866520
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
-OnClick: IF PV_Input = Hidden_Dropdown~
+OnClick: IF PV_Other = Hidden_Dropdown~
 THEN Null~
-ELSE Show_ACP_Window1(PV_Input1,PV_Input_Titles,PV_Input, IF Inputs_only_for_view THEN 'Result' ELSE 'Definition' )
+ELSE Show_ACP_Window1(PV_Input1,PV_Input_Titles,PV_Other, IF Inputs_only_for_view THEN 'Result' ELSE 'Definition'  )
 
 Index PV_Input_Titles
-Att_PrevIndexValue: ['Historical PV Capacity Installations (MW-AC/period)','Historical PV Installations (systems/period)','Base Installed Cost Input ($/kW-DC, $/kWh)','DER Cost Change Rate (%/year)','Equipment Cost Result ($/kW-DC, $/kWh)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Equipment Lifetime (years)','Investment Tax Credit (percent)','State Tax Credit  (Fraction)','State Tax Credit Max ($/system)','View all Rates ($/kWh or $/kW)','Hourly Profiles (various)','Saved Daily Profiles (various)','Per-kW Weekly Solar Profile (kW-hr/kW-DC)','Payback Acceptance Curve (market share)',' Normalized Load Shape (kW-hr/kW)','Normalized Load Profile (kWh)','Load Factor','Solar Production Credit','Tax Credit Applicability','PV suitability (%)','PV Capacity Factor (%)','PV Production per kW DC ((kWh/year)/kW-DC)','Total PV Area (m2)','Building Stock (bldg units)','Consumption by Sector (kWh)','Retail Rate Escalation (fract/year)']
+Att_PrevIndexValue: ['Equipment Cost Result ($/kW-DC, $/kWh)','View all Rates ($/kWh or $/kW)','Hourly Profiles (various)',' Normalized Load Shape (kW-hr/kW)','Normalized Load Profile (kWh)','PV Production per kW DC ((kWh/year)/kW-DC)']
 Title: PV Input Titles
 Definition: Create_Titles_List(PV_Input1)~
 
@@ -999,7 +1001,7 @@ NodeSize: 64,40
 WindState: 2,98,82,720,350
 
 Text Te1552865477
-Title: PV Input
+Title: PV Other
 NodeLocation: 1048,384,-1
 NodeSize: 336,112
 NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
@@ -1028,26 +1030,26 @@ NodeSize: 40,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
-Original: PV_Input_Button
+Original: PV_Other_but
 
 Variable PV_Scenario_Selector
 Title: PV Scenario Selector
 Description: Select which scenario you wish to run for each scenario variable. ~
 ~
 CAUTION: Selecting "All" for more than one scenario variable may result in exceeding server memory, resulting in an error.
-Definition: MultiTable(PV_Scenario_Variable)(DER_Cost_Decline_Sce,Select_Rate_Escalate,Selected_ITC_Scen,State_Tax_Credit_Sce,Select_Production_Cr)
+Definition: MultiTable(PV_Scenario_Variable)(DER_Cost_Decline_Sce,Select_Rate_Escalate,Selected_ITC_Scen,State_Tax_Credit_Sce,Select_Production_Cr,PV_Incent_Scenario)
 NodeLocation: 960,72,1
 NodeSize: 64,40
 WindState: 2,237,158,1472,616
-DefnState: 2,870,307,737,277,0,DFNM
+DefnState: 2,926,380,715,232,0,DFNM
 Aliases: FormNode Fo1283404285
 ReformDef: [Undefined,PV_Scenario_Variable]
 {!50000|Att_ColumnWidths: [464]}
 
 Index PV_Scenario_Variable
-Att_PrevIndexValue: ['DER Cost Decline','Elec Rate Escalation','ITC Phase-out','State Tax Credit Scenario','Production Credit Scenario']
+Att_PrevIndexValue: ['DER Cost Decline','Elec Rate Escalation','ITC Phase-out','State Tax Credit Scenario','Production Credit Scenario','PV Incentive Scenario']
 Title: PV Scenario Variables
-Definition: ['DER Cost Decline','Elec Rate Escalation','ITC Phase-out','State Tax Credit Scenario','Production Credit Scenario']
+Definition: ['DER Cost Decline','Elec Rate Escalation','ITC Phase-out','State Tax Credit Scenario','Production Credit Scenario','PV Incentive Scenario']
 IndexVals: ['item 1']
 NodeLocation: 960,176,1
 NodeSize: 64,40
@@ -1057,7 +1059,7 @@ Aliases: FormNode Fo1552873761
 Alias Al1552872113
 Title: Result
 Definition: 1
-NodeLocation: 1272,600,2
+NodeLocation: 1272,840,2
 NodeSize: 40,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 NodeColor: 65278,37008,6168
@@ -1067,7 +1069,7 @@ Original: EV_Input_Button1
 FormNode Fo1552872113
 Title: Select Output
 Definition: 0
-NodeLocation: 996,600,1
+NodeLocation: 996,840,1
 NodeSize: 244,16
 NodeInfo: 1,,,,,,0,310,,,,,,0
 Original: EV_Input
@@ -1075,8 +1077,8 @@ Original: EV_Input
 Decision EV_Input
 Title: EV Input
 Description: Choose which variable you wish to view.
-Definition: Choice(EV_Input_Titles,4,0)
-NodeLocation: 1296,680,1
+Definition: Choice(EV_Input_Titles,2,0)
+NodeLocation: 1296,920,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
 Aliases: FormNode Fo1552872113, FormNode Fo746533373
@@ -1085,7 +1087,7 @@ OnChange: EV_Input_Button1
 Index EV_Input1
 Title: EV Input
 Definition: MultiChoice(All_EV_Input,allowNone:0,returnList:1)
-NodeLocation: 984,672,1
+NodeLocation: 984,912,1
 NodeSize: 64,40
 WindState: 2,13,219,745,472
 Aliases: FormNode Fo1552872198
@@ -1094,29 +1096,29 @@ MetaOnly: 1
 Button EV_Input_Button1
 Title: Result
 Description: Press this button to view the output of the selected variable on the left.
-NodeLocation: 1272,552,2
+NodeLocation: 1272,792,2
 NodeSize: 40,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 WindState: 2,2424,68,720,350
-Aliases: Alias Al1552872113, Alias Al880751101
+Aliases: Alias Al1552872113
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF EV_Input = Hidden_Dropdown~
 THEN Null~
-ELSE Show_ACP_Window1(EV_Input1,EV_Input_Titles,EV_Input,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
+ELSE Show_ACP_Window1(EV_Input1,EV_Input_Titles,EV_Input,  'Definition')
 
 Index EV_Input_Titles
-Att_PrevIndexValue: ['Vehicle Stock Data, Clean (vehicles)','Vehicle Price ($/vehicle)','Vehicle Price Adjustment by Scenario (fraction)','Vehicle Incentives ($/vehicle)','Vehicle Range (miles/refueling)','VMT (miles/year-vehicle)','MPG (miles/GGE)','Fuel Prices ($/GGE)','Electricity Price Adjustment by Scenario (fraction)','Gasoline Price Adjustment by Scenario (fraction)','Vehicle Maintenance Cost ($/year-vehicle)','Vehicle Average Lifetime (Years)']
+Att_PrevIndexValue: ['Vehicle Stock Data (vehicles)','Vehicle Price ($/vehicle)','Vehicle Price Adjustment by Scenario (fraction)','Vehicle Incentives ($/vehicle)','Vehicle Range (miles/refueling)','VMT (miles/year-vehicle)','MPG (miles/GGE)','Fuel Prices ($/GGE)','Electricity Price Adjustment by Scenario (fraction)','Gasoline Price Adjustment by Scenario (fraction)','Vehicle Maintenance Cost ($/year-vehicle)','Vehicle Average Lifetime (Years)']
 Title: EV Input Titles
 Definition: Create_Titles_List(EV_Input1)~
 
-NodeLocation: 848,672,1
+NodeLocation: 848,912,1
 NodeSize: 64,40
 ValueState: 2,452,263,416,498,,MIDM
 
 Text Te1552872113
 Title: EV Input
-NodeLocation: 1048,624,-1
+NodeLocation: 1048,864,-1
 NodeSize: 336,112
 NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
 
@@ -1131,7 +1133,7 @@ Original: PV_Input1
 FormNode Fo1552872198
 Title: PV Input
 Definition: 0
-NodeLocation: 980,712,1
+NodeLocation: 980,952,1
 NodeSize: 76,16
 NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,0
 Original: EV_Input1
@@ -1176,7 +1178,7 @@ NodeSize: 64,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
-Original: PV_Econ_Output_But
+Original: PV_Impa_Output_But
 
 Alias Al1552872556
 Title: Result
@@ -1201,7 +1203,7 @@ Original: PV_Econ_Output_But1
 FormNode Fo1552872727
 Title: PV Input
 Definition: 0
-NodeLocation: 980,952,4
+NodeLocation: 980,1432,4
 NodeSize: 76,16
 NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,0
 Original: Storage_Input1
@@ -1209,7 +1211,7 @@ Original: Storage_Input1
 Alias Al1552872727
 Title: Result
 Definition: 1
-NodeLocation: 1272,840,2
+NodeLocation: 1272,1320,2
 NodeSize: 40,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 NodeColor: 65278,37008,6168
@@ -1219,8 +1221,8 @@ Original: Storag_Input_Button
 Decision BESS_Input
 Title: BESS Input
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Input_Titles,8,0)
-NodeLocation: 1296,920,1
+Definition: Choice(Storage_Input_Titles,6,0)
+NodeLocation: 1296,1400,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
 Aliases: FormNode Fo1552872728, FormNode Fo1820275197
@@ -1228,8 +1230,8 @@ OnChange: Storag_Input_Button
 
 Index Storage_Input1
 Title: Storage Input
-Definition: MultiChoice(All_Storage_Input,allowNone:0,returnList:1)
-NodeLocation: 984,912,1
+Definition: MultiChoice(All_Storage_Input,1,2,3,4,5,allowNone:0,returnList:1)
+NodeLocation: 984,1392,1
 NodeSize: 64,40
 Aliases: FormNode Fo1552872727
 MetaOnly: 1
@@ -1237,36 +1239,36 @@ MetaOnly: 1
 Button Storag_Input_Button
 Title: Result
 Description: Press this button to view the output of the selected variable on the left.
-NodeLocation: 1272,792,2
+NodeLocation: 1272,1272,2
 NodeSize: 40,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 WindState: 2,2424,68,720,350
-Aliases: Alias Al1552872727, Alias Al1954492925
+Aliases: Alias Al1552872727
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF BESS_Input = Hidden_Dropdown~
 THEN Null~
-ELSE Show_ACP_Window1(Storage_Input1,Storage_Input_Titles,BESS_Input,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
+ELSE Show_ACP_Window1(Storage_Input1,Storage_Input_Titles,BESS_Input,  'Definition')
 
 Index Storage_Input_Titles
-Att_PrevIndexValue: ['Flows to View','Battery Storage Specs','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (percent)','Base Installed Cost Input ($/kW-DC, $/kWh)','DER Cost Change Rate (%/year)','Equipment Cost Result ($/kW-DC, $/kWh)']
+Att_PrevIndexValue: ['Flows to View','Battery Storage Specs','Equipment Lifetime (years)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Investment Tax Credit (Fraction)']
 Title: Storage Input Titles
 Definition: Create_Titles_List(Storage_Input1)~
 
-NodeLocation: 848,912,1
+NodeLocation: 848,1392,1
 NodeSize: 64,40
 
 FormNode Fo1552872728
 Title: Select Output
 Definition: 0
-NodeLocation: 996,840,1
+NodeLocation: 996,1320,1
 NodeSize: 244,16
 NodeInfo: 1,,,,,,0,310,,,,,,0
 Original: BESS_Input
 
 Text Te1552872727
 Title: Storage Input
-NodeLocation: 1048,864,-1
+NodeLocation: 1048,1344,-1
 NodeSize: 336,112
 NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
 
@@ -1299,7 +1301,7 @@ Original: Storage_Dispatch_Out
 Decision BESS_Impact1
 Title: BESS Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Dispatch_Tit,1,0)
+Definition: Choice(Storage_Dispatch_Tit,3,0)
 NodeLocation: 608,1160,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1322,7 +1324,7 @@ NodeLocation: 584,1032,2
 NodeSize: 40,16
 NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
 WindState: 2,2424,68,720,350
-Aliases: Alias Al1552872981, Alias Al209662461
+Aliases: Alias Al1552872981
 NodeColor: 65278,37008,6168
 NodeFont: Arial,16
 OnClick: IF BESS_Impact1 = Hidden_Dropdown~
@@ -1493,10 +1495,10 @@ NodeSize: 64,40
 ValueState: 2,580,352,416,537,0,MIDM
 
 Index Dropdown_Vars
-Att_PrevIndexValue: [PV_Impact1,PV_Input,EV_Impact,EV_Input,PV_Economics,BESS_Input,BESS_Impact1]
+Att_PrevIndexValue: [PV_Impact1,PV_Other,EV_Impact,EV_Input,PV_Economics,BESS_Input,BESS_Impact1]
 Title: Dropdown Vars
 Description: Populate this list with all dropdown menus included on the main GUI.
-Definition: [PV_Impact1,PV_Input,EV_Impact,EV_Input,PV_Economics,BESS_Input,BESS_Impact1]
+Definition: [PV_Impact1,PV_Other,EV_Impact,EV_Input,PV_Economics,BESS_Input,BESS_Impact1]
 NodeLocation: 1632,496,1
 NodeSize: 64,40
 Aliases: FormNode Fo1556512901
@@ -1619,10 +1621,10 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_EV_Impact_Out
 
 Index All_EV_Input
-Att_PrevIndexValue: [Veh_Stock_Data_Clean,Vehicle_Price,VehPrice_Adj_byScen,Vehicle_Incents,Vehicle_Range,VMT,MPG,Fuel_Prices,Elec_PriceAdj_byScen,Gas_Price_Adj_byScen,Vehicle_Maint_Cost,Vehicle_Average_Life]
+Att_PrevIndexValue: [Vehicle_Stock_Data,Vehicle_Price,VehPrice_Adj_byScen,Vehicle_Incents,Vehicle_Range,VMT,MPG,Fuel_Prices,Elec_PriceAdj_byScen,Gas_Price_Adj_byScen,Vehicle_Maint_Cost,Vehicle_Average_Life]
 Title: All EV Input
-Definition: [Veh_Stock_Data_Clean,Vehicle_Price,VehPrice_Adj_byScen,Vehicle_Incents,Vehicle_Range,VMT,MPG,Fuel_Prices,Elec_PriceAdj_byScen,Gas_Price_Adj_byScen,Vehicle_Maint_Cost,Vehicle_Average_Life]
-NodeLocation: 1120,672,1
+Definition: [Vehicle_Stock_Data,Vehicle_Price,VehPrice_Adj_byScen,Vehicle_Incents,Vehicle_Range,VMT,MPG,Fuel_Prices,Elec_PriceAdj_byScen,Gas_Price_Adj_byScen,Vehicle_Maint_Cost,Vehicle_Average_Life]
+NodeLocation: 1120,912,1
 NodeSize: 64,40
 WindState: 2,294,214,745,472
 Aliases: FormNode Fo1557510954
@@ -1631,7 +1633,7 @@ MetaOnly: 1
 FormNode Fo1557510954
 Title: PV Input
 Definition: 0
-NodeLocation: 1120,712,1
+NodeLocation: 1120,952,1
 NodeSize: 56,16
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_EV_Input
@@ -1672,12 +1674,12 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_PV_Impact_Out
 
 Index All_PV_Input
-Att_PrevIndexValue: [Historical_PV_Capaci,Historical_PV_Instal,Base_Installed_Cost_,DER_Cost_Change_Rate,Equipment_Cost_Resul,O_M_Cost,Equipment_Lifetime,Invest_Tax_Credit,State_Tax_Credit,State_Tax_Credit_Max,View_all_Rates,Hourly_Profiles,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve,Normalized_Load_Shap,Normalized_Load_Prof,Load_Factor,Solar_Production_Cre,Tax_Credit_Applicabi,PV_suitability,PV_Capacity_Factor,PV_Production_per_kW,Total_PV_Area,Building_Stock,Consumption_by_Secto,Retail_Rate_Escalate]
+Att_PrevIndexValue: [Historical_PV_Capaci,Historical_PV_Instal,Base_Year_Installed_,DER_Cost_Change_Rate,Equipment_Cost_Resul,O_M_Cost,Equipment_Lifetime,Invest_Tax_Credit,State_Tax_Credit,State_Tax_Credit_Max,View_all_Rates,Hourly_Profiles,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve,Normalized_Load_Shap,Normalized_Load_Prof,Load_Factor,Solar_Production_Cre,Tax_Credit_Applicabi,PV_suitability,PV_Capacity_Factor,PV_Production_per_kW,Total_PV_Area,Building_Stock,Consumption_by_Secto,Retail_Rate_Escalate]
 Title: All PV Input
-Definition: [Historical_PV_Capaci,Historical_PV_Instal,Base_Installed_Cost_,DER_Cost_Change_Rate,Equipment_Cost_Resul,O_M_Cost,Equipment_Lifetime,Invest_Tax_Credit,State_Tax_Credit,State_Tax_Credit_Max,View_all_Rates,Hourly_Profiles,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve,Normalized_Load_Shap,Normalized_Load_Prof,Load_Factor,Solar_Production_Cre,Tax_Credit_Applicabi,PV_suitability,PV_Capacity_Factor,PV_Production_per_kW,Total_PV_Area,Building_Stock,Consumption_by_Secto,Retail_Rate_Escalate]
+Definition: [Historical_PV_Capaci,Historical_PV_Instal,Base_Year_Installed_,DER_Cost_Change_Rate,Equipment_Cost_Resul,O_M_Cost,Equipment_Lifetime,Invest_Tax_Credit,State_Tax_Credit,State_Tax_Credit_Max,View_all_Rates,Hourly_Profiles,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve,Normalized_Load_Shap,Normalized_Load_Prof,Load_Factor,Solar_Production_Cre,Tax_Credit_Applicabi,PV_suitability,PV_Capacity_Factor,PV_Production_per_kW,Total_PV_Area,Building_Stock,Consumption_by_Secto,Retail_Rate_Escalate]
 NodeLocation: 1120,432,1
 NodeSize: 64,40
-WindState: 2,2743,67,611,638
+WindState: 2,2355,26,1090,856
 Aliases: FormNode Fo1557511154
 MetaOnly: 1
 
@@ -1711,16 +1713,16 @@ Original: All_PV_Econ_Out
 FormNode Fo1557511241
 Title: PV Input
 Definition: 0
-NodeLocation: 1120,952,4
+NodeLocation: 1120,1432,4
 NodeSize: 56,16
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: All_Storage_Input
 
 Index All_Storage_Input
-Att_PrevIndexValue: [Flows_to_View1,Battery_Storage_Spec,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Base_Installed_Cost_,DER_Cost_Change_Rate,Equipment_Cost_Resul]
+Att_PrevIndexValue: [Flows_to_View1,Battery_Storage_Spec,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Base_Year_Installed_,DER_Cost_Change_Rate]
 Title: All Storage Input
-Definition: [Flows_to_View1,Battery_Storage_Spec,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Base_Installed_Cost_,DER_Cost_Change_Rate,Equipment_Cost_Resul]
-NodeLocation: 1120,912,1
+Definition: [Flows_to_View1,Battery_Storage_Spec,Equipment_Lifetime,O_M_Cost,Invest_Tax_Credit,Base_Year_Installed_,DER_Cost_Change_Rate]
+NodeLocation: 1120,1392,1
 NodeSize: 64,40
 WindState: 2,-28,182,720,350
 Aliases: FormNode Fo1557511241
@@ -1767,6 +1769,190 @@ Description: For more info, please contact <a href="https://www.lumidyneconsulti
 NodeLocation: 2004,1016,3
 NodeSize: 356,24
 NodeInfo: 1,0,0,1,0,1,0,,0,,0,,,
+
+FormNode Fo479719827
+Title: Select Output
+Definition: 0
+NodeLocation: 988,608,1
+NodeSize: 244,16
+NodeInfo: 1,,,,,,0,310,,,,,,0
+Original: PV_Input2
+
+Decision PV_Input2
+Title: PV Input
+Description: Choose which variable you wish to view.
+Definition: Choice(PV_Input_Titles1,16,0)
+NodeLocation: 1288,680,1
+NodeSize: 64,40
+WindState: 2,2341,163,720,646
+ValueState: 2,525,428,523,240,,MIDM
+Aliases: FormNode Fo479719827, FormNode Fo1932528019
+OnChange: PV_Input_Button1
+
+Index PV_Input3
+Title: PV Input
+Definition: MultiChoice(All_PV_Input1,3,4,6,7,8,9,10,11,20,21,22,23,25,26,27,28,allowNone:0,returnList:1)
+NodeLocation: 984,672,1
+NodeSize: 64,40
+WindState: 2,2234,82,720,350
+Aliases: FormNode Fo1553461651
+MetaOnly: 1
+
+Button PV_Input_Button1
+Title: Result
+Description: Press this button to view the output of the selected variable on the left.
+NodeLocation: 1264,560,2
+NodeSize: 40,16
+NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
+WindState: 2,-6,300,720,350
+Aliases: Alias Al479719827
+NodeColor: 65278,37008,6168
+NodeFont: Arial,16
+OnClick: IF PV_Input2 = Hidden_Dropdown~
+THEN Null ~
+ELSE Show_ACP_Window1(PV_Input3,PV_Input_Titles1,PV_Input2, Output_Type1  )
+
+Index PV_Input_Titles1
+Att_PrevIndexValue: ['Base Year Installed Cost ($/kW-DC, $/kWh)','DER Cost Change Rate (%/year)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Equipment Lifetime (years)','PV Incentive ($/kW-DC)','Investment Tax Credit (Fraction)','State Tax Credit  (Fraction)','State Tax Credit Max ($/system)','Solar Production Credit ($/kWh)','Tax Credit Applicability','PV suitability (%)','PV Capacity Factor (%)','Total PV Area (m2)','Building Stock (bldg units)','Consumption by Sector (kWh)','Retail Rate Escalation (fract/year)']
+Title: PV Input Titles
+Definition: Create_Titles_List(PV_Input3)~
+
+NodeLocation: 848,672,1
+NodeSize: 64,40
+WindState: 2,98,82,720,350
+
+Text Te479719827
+Title: PV Editable Input
+NodeLocation: 1048,624,-1
+NodeSize: 336,112
+NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
+
+Alias Al479719827
+Title: Result
+Definition: 1
+NodeLocation: 1264,608,2
+NodeSize: 40,16
+NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
+NodeColor: 65278,37008,6168
+NodeFont: Arial,16
+Original: PV_Input_Button1
+
+FormNode Fo1553461651
+Title: PV Input
+Definition: 0
+NodeLocation: 1004,704,1
+NodeSize: 76,16
+NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
+Original: PV_Input3
+
+Index All_PV_Input1
+Att_PrevIndexValue: [Historical_PV_Capaci,Historical_PV_Instal,Base_Year_Installed_,DER_Cost_Change_Rate,Equipment_Cost_Resul,O_M_Cost,Equipment_Lifetime,PV_Incentive1,Invest_Tax_Credit,State_Tax_Credit,State_Tax_Credit_Max,View_all_Rates,Hourly_Profiles,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve,Normalized_Load_Shap,Normalized_Load_Prof,Load_Factor,Solar_Production_Cre,Tax_Credit_Applicabi,PV_suitability,PV_Capacity_Factor,PV_Production_per_kW,Total_PV_Area,Building_Stock,Consumption_by_Secto,Retail_Rate_Escalate]
+Title: All PV Input
+Definition: [Historical_PV_Capaci,Historical_PV_Instal,Base_Year_Installed_,DER_Cost_Change_Rate,Equipment_Cost_Resul,O_M_Cost,Equipment_Lifetime,PV_Incentive1,Invest_Tax_Credit,State_Tax_Credit,State_Tax_Credit_Max,View_all_Rates,Hourly_Profiles,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve,Normalized_Load_Shap,Normalized_Load_Prof,Load_Factor,Solar_Production_Cre,Tax_Credit_Applicabi,PV_suitability,PV_Capacity_Factor,PV_Production_per_kW,Total_PV_Area,Building_Stock,Consumption_by_Secto,Retail_Rate_Escalate]
+NodeLocation: 1120,672,1
+NodeSize: 64,40
+WindState: 2,2444,-6,1090,856
+Aliases: FormNode Fo1016590739
+MetaOnly: 1
+
+FormNode Fo1016590739
+Title: PV Input
+Definition: 0
+NodeLocation: 1120,704,1
+NodeSize: 56,16
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: All_PV_Input1
+
+Alias Al1169754515
+Title: Result
+Definition: 1
+NodeLocation: 1272,1080,2
+NodeSize: 40,16
+NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
+NodeColor: 65278,37008,6168
+NodeFont: Arial,16
+Original: EV_Input_Button2
+
+FormNode Fo1169754515
+Title: Select Output
+Definition: 0
+NodeLocation: 996,1080,1
+NodeSize: 244,16
+NodeInfo: 1,,,,,,0,310,,,,,,0
+Original: EV_Other
+
+Decision EV_Other
+Title: EV Other
+Description: Choose which variable you wish to view.
+Definition: Choice(EV_Input_Titles1,4,0)
+NodeLocation: 1296,1160,1
+NodeSize: 64,40
+WindState: 2,102,82,720,646
+Aliases: FormNode Clipboard_Fo15528721, FormNode Fo1169754515
+OnChange: EV_Input_Button2
+
+Index EV_Input3
+Title: EV Input
+Definition: MultiChoice(All_EV_Input1,1,allowNone:0,returnList:1)
+NodeLocation: 984,1152,1
+NodeSize: 64,40
+WindState: 2,13,219,745,472
+Aliases: FormNode Clipboard_2042169747, FormNode Fo632883603
+MetaOnly: 1
+
+Button EV_Input_Button2
+Title: Result
+Description: Press this button to view the output of the selected variable on the left.
+NodeLocation: 1272,1032,2
+NodeSize: 40,16
+NodeInfo: 1,0,0,1,1,1,1,,1,,0,,,
+WindState: 2,2424,68,720,350
+Aliases: Alias Clipboard_Al15528721, Alias Al1169754515
+NodeColor: 65278,37008,6168
+NodeFont: Arial,16
+OnClick: IF EV_Other = Hidden_Dropdown~
+THEN Null~
+ELSE Show_ACP_Window1(EV_Input3,EV_Input_Titles1,EV_Other,  IF Inputs_only_for_view THEN 'Result' ELSE 'Definition')
+
+Index EV_Input_Titles1
+Att_PrevIndexValue: ['Vehicle Stock Data (vehicles)']
+Title: EV Input Titles
+Definition: Create_Titles_List(EV_Input3)~
+
+NodeLocation: 848,1152,1
+NodeSize: 64,40
+ValueState: 2,452,263,416,498,,MIDM
+
+Text Te1169754515
+Title: EV Other
+NodeLocation: 1048,1104,-1
+NodeSize: 336,112
+NodeInfo: 1,0,0,1,1,0,0,,0,,0,,,
+
+FormNode Fo632883603
+Title: PV Input
+Definition: 0
+NodeLocation: 980,1192,1
+NodeSize: 76,16
+NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,0
+Original: EV_Input3
+
+Index All_EV_Input1
+Title: All EV Input
+Definition: [Vehicle_Stock_Data,Vehicle_Price,VehPrice_Adj_byScen,Vehicle_Incents,Vehicle_Range,VMT,MPG,Fuel_Prices,Elec_PriceAdj_byScen,Gas_Price_Adj_byScen,Vehicle_Maint_Cost,Vehicle_Average_Life]
+NodeLocation: 1120,1152,1
+NodeSize: 64,40
+WindState: 2,294,214,745,472
+Aliases: FormNode Clipboard_Fo15575109, FormNode Fo1706625427
+MetaOnly: 1
+
+FormNode Fo1706625427
+Title: PV Input
+Definition: 0
+NodeLocation: 1120,1192,1
+NodeSize: 56,16
+NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
+Original: All_EV_Input1
 
 Close GUI_Definitions
 
@@ -12410,14 +12596,6 @@ NodeLocation: 868,756,1
 NodeSize: 172,20
 Original: Total_PV_Incentives_
 
-FormNode Fo135603299
-Title: Base Yr PV Incent
-Definition: 0
-NodeLocation: 868,716,1
-NodeSize: 172,20
-NodeColor: 65535,1,1
-Original: Base_Yr_PV_Incent
-
 FormNode Fo1008018531
 Title: PV Incentive Scenario
 Definition: 0
@@ -12876,7 +13054,7 @@ DefaultSize: 48,24
 NodeLocation: 832,400,1
 NodeSize: 72,24
 NodeInfo: 1,0,0,,,,,,,,,0
-DiagState: 2,2169,-12,1463,727,17,10,4
+DiagState: 2,2169,0,1463,727,17,10,4
 WindState: 2,121,149,681,532
 DiagramColor: 55705,55705,55705
 FontStyle: Century Gothic,15
@@ -13590,7 +13768,7 @@ Variable ACP_Reset_attribs
 Title: Reset_attribs
 Description: Set_attrib() changes this variable, which is an input to Get_attrib(), so that any call to Set_attrib() will cause any variables that use Get_attrib() to be invalidated and recomputed when necessary. This also applies to Set_attrib_field() and Get_attrib_field().~
 This helps restore dependency maintenance (flow architecture), which otherwise does not work for attributes other than Definition and Check which are part of the standard flow architecture.
-Definition: 0
+Definition: 1
 NodeLocation: 656,40,1
 NodeSize: 64,24
 WindState: 2,655,372,720,350
@@ -15934,7 +16112,7 @@ Variable ACP_style_reset
 Title: ACP_style_reset
 Description: To reset ACP_style_get() after any ACP_style_set() call,~
 and to reset
-Definition: 0
+Definition: 1
 NodeLocation: 104,544,1
 NodeSize: 80,20
 
@@ -16014,7 +16192,7 @@ Description: Check to show the uncertainty view menu in result views to let user
 ~
 This sets the default style, also shown in the Preview to the right.~
 You can override these defaults for selected nodes using the options below.
-Definition: Checkbox(1)
+Definition: Checkbox(0)
 NodeLocation: 872,64,1
 NodeSize: 80,20
 WindState: 2,768,62,746,729
@@ -16398,7 +16576,7 @@ Description: Select default Autocalc behavior -- i.e. so that user output variab
 	Mid and prob values | Automatically calculate the Mid and probabilistic value of output variables when you view Diagram (or ACP dashboard) containing them.~
 This sets the default for Autocalc in the dashboards (top modules).~
 You can override these defaults for selected modules or nodes using the options below.
-Definition: Choice(ACP_Autocalc_optio1,1,0)
+Definition: Choice(ACP_Autocalc_optio1,2,0)
 NodeLocation: 768,40,1
 NodeSize: 88,24
 WindState: 2,148,81,720,589
@@ -17152,7 +17330,7 @@ Aliases: Alias Al1198090051
 MetaOnly: 1
 
 Index ACP_User_output_and_
-Att_PrevIndexValue: [Nodes_to_change,Colored_nodes_to_fix,Uncolored_Nodes,Left_to_Review,Performance_profiles,EV_Cumul_MW_Impact,Cumulative_EV_Delta,Last_Import_Time,Raw_Imported_Data1,Format_Import_Data1,Check_Index_Errors1,Check_DataType_Erro1,Raw_Categ_Index_Dat1,Format_CategInd_Dat1,Raw_Seq_Index_Data1,Format_Seq_Ind_Data1,View_Data_Imported_M,Cumulative_Actual_In,Compare_Prior_Fcsts,Mkt_Share_Example,Failed_Spat_ID_PV,Sim_vs_Act_PV_System,Sim_vs_Act_PV_Rate,R_2_Applied,All_Stored_Coeffs_PV,Stored_Coeff_for_PV_,Installs_by_Type,Cumulative_PV_Instal,Solar_Hourly_Impact_,Pct_Load_Met_bySolar,Pre_Post_Load,Scaled_Ann_Net_Load,Total_PV_Incentives_,Base_Installed_Cost_,Equipment_Cost_Resul,Cost_of_Elect_Ratio,CostOf_Elect_Compare,Tot_Price_Aft_Incent,Simple_LCOE_of_PV1,PV_Stock_Basis_by_Se,Rate_Data_TOU_Sched,Stored_Filtered_USUR,Flat_Demand_Schedule,Rate_Name_to_Save,Demand_TOU_Sched,Energy_TOU_Schedule,View_Saved_Rates,View_Existing_Rates,Discrete_Rate,Compare9,Period_of_Rate,Saved_Daily_Profiles,Saved_Day_Counts,Bldg_Stock_by_Time,Vehicle_Stk_Share_Ac,Tech_Share_of_Vehicl,Tech_Share_of_New_Ve,Aggreg_New_Veh_Sales,Cumul_Vehicle_Stock_,PHEV_Market_Share,Vehicle_Stock_Share1,Market_Share1,EV_Mkt_Share,Tornado__EV_Mkt_Shar,Vehicle__Utility_,Logit_Attrib_Ratios1,Logit_Equiv_Cost1,Logit_Attrib_Utilit1,Veh_Tech_Mkt_Share1,Vehicle_Logit_MktSh1,Failed_Spat_ID_EV,Simulated_EV_Stock,Sim_vs_Act_EV_Stock,Sim_vs_Act_EV_Sales,Sim_vs_Act_EV_Stock_,R2_Stock_Delta,R2_Thresh_Failure_EV,EV_Decision_Values,All_Stored_Coefficie,Stored_Coeff_for_EV_,Percent_of_Buildings,Percent_of_Load_from,Total_Load_Delta_fm1,Total_Load_Delta_fr1,PV_Storage_Impact,Percent_of_Load_fro1,Percent_of_Bldgs_Ado,Lev_Utility_Bill,Current_BESS_Sector,Flows_by_Opt_Hour,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Building_Loads,BESS_Shr_ResHousing,Cumul_BESS_Adoption,PV_Generation,Compare_BESS_Potenti,LRMS_by_BESS_Time,Payback_Accept_Curv1,BESS_Payback_Time,Test_PairedMarket_Sh,Actual_Paired_Market,BESS_Adoption_EOP,paired_storage_marke,Failed_Spat_ID_BESS,Sim_vs_Act_BESS_Cap,Sim_vs_Act_BESS_Rate,R2_Applied_BESS,All_Stored_Coeffs_P1,Stored_Coef_for_BESS,Output_1,Output_2,Output_5,Output_4,Output_6]
+Att_PrevIndexValue: [Nodes_to_change,Colored_nodes_to_fix,Uncolored_Nodes,Left_to_Review,Performance_profiles,EV_Cumul_MW_Impact,Cumulative_EV_Delta,Last_Import_Time,Raw_Imported_Data1,Format_Import_Data1,Check_Index_Errors1,Check_DataType_Erro1,Raw_Categ_Index_Dat1,Format_CategInd_Dat1,Raw_Seq_Index_Data1,Format_Seq_Ind_Data1,View_Data_Imported_M,Cumulative_Actual_In,Compare_Prior_Fcsts,Output_1,Output_2,Output_5,Output_4,Output_6,Mkt_Share_Example,Failed_Spat_ID_PV,Sim_vs_Act_PV_System,Sim_vs_Act_PV_Rate,R_2_Applied,All_Stored_Coeffs_PV,Stored_Coeff_for_PV_,Installs_by_Type,Cumulative_PV_Instal,Solar_Hourly_Impact_,Pct_Load_Met_bySolar,Pre_Post_Load,Scaled_Ann_Net_Load,Total_PV_Incentives_,Base_Installed_Cost_,Equipment_Cost_Resul,Cost_of_Elect_Ratio,CostOf_Elect_Compare,Tot_Price_Aft_Incent,Simple_LCOE_of_PV1,PV_Stock_Basis_by_Se,Rate_Data_TOU_Sched,Stored_Filtered_USUR,Flat_Demand_Schedule,Rate_Name_to_Save,Demand_TOU_Sched,Energy_TOU_Schedule,View_Saved_Rates,View_Existing_Rates,Discrete_Rate,Compare9,Period_of_Rate,Saved_Daily_Profiles,Saved_Day_Counts,Bldg_Stock_by_Time,Vehicle_Stk_Share_Ac,Tech_Share_of_Vehicl,Tech_Share_of_New_Ve,Aggreg_New_Veh_Sales,Cumul_Vehicle_Stock_,PHEV_Market_Share,Vehicle_Stock_Share1,Market_Share1,EV_Mkt_Share,Tornado__EV_Mkt_Shar,Vehicle__Utility_,Logit_Attrib_Ratios1,Logit_Equiv_Cost1,Logit_Attrib_Utilit1,Veh_Tech_Mkt_Share1,Vehicle_Logit_MktSh1,Failed_Spat_ID_EV,Simulated_EV_Stock,Sim_vs_Act_EV_Stock,Sim_vs_Act_EV_Sales,Sim_vs_Act_EV_Stock_,R2_Stock_Delta,R2_Thresh_Failure_EV,EV_Decision_Values,All_Stored_Coefficie,Stored_Coeff_for_EV_,Percent_of_Buildings,Percent_of_Load_from,Total_Load_Delta_fm1,Total_Load_Delta_fr1,PV_Storage_Impact,Percent_of_Load_fro1,Percent_of_Bldgs_Ado,Lev_Utility_Bill,Current_BESS_Sector,Flows_by_Opt_Hour,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Building_Loads,BESS_Shr_ResHousing,Cumul_BESS_Adoption,PV_Generation,Compare_BESS_Potenti,LRMS_by_BESS_Time,Payback_Accept_Curv1,BESS_Payback_Time,Test_PairedMarket_Sh,Actual_Paired_Market,BESS_Adoption_EOP,paired_storage_marke,Failed_Spat_ID_BESS,Sim_vs_Act_BESS_Cap,Sim_vs_Act_BESS_Rate,R2_Applied_BESS,All_Stored_Coeffs_P1,Stored_Coef_for_BESS]
 Title: User output and Frame nodes
 Description: User output nodes and Frame nodes, excluding those in ACP_styles library.~
 
@@ -17183,7 +17361,7 @@ Show_Description: 20
 Decision ACP_Objects_w_non_de
 Title: Objects w nondefault styles
 Description: Select any objects for which you want to specify non-default result table or graph styles. You can then select their styles from "Set result styles by node" just below.
-Definition: MultiChoice(ACP_User_output_and_,allowNone:1,returnList:1)
+Definition: MultiChoice(ACP_User_output_and_,,allowNone:1,returnList:1)
 NodeLocation: 488,96,1
 NodeSize: 72,24
 WindState: 2,373,311,720,350
@@ -17450,7 +17628,7 @@ Show_graph_table_icon: Yes
 {!60005|Att_AttsToShow: Object Object, Object Attribute, Attribute AcpStyles}
 
 Index ACP_User_output_node
-Att_PrevIndexValue: [Nodes_to_change,Colored_nodes_to_fix,Uncolored_Nodes,Left_to_Review,Performance_profiles,EV_Cumul_MW_Impact,Cumulative_EV_Delta,Last_Import_Time,Raw_Imported_Data1,Format_Import_Data1,Check_Index_Errors1,Check_DataType_Erro1,Raw_Categ_Index_Dat1,Format_CategInd_Dat1,Raw_Seq_Index_Data1,Format_Seq_Ind_Data1,View_Data_Imported_M,Cumulative_Actual_In,Compare_Prior_Fcsts,Mkt_Share_Example,Failed_Spat_ID_PV,Sim_vs_Act_PV_System,Sim_vs_Act_PV_Rate,R_2_Applied,All_Stored_Coeffs_PV,Stored_Coeff_for_PV_,Installs_by_Type,Cumulative_PV_Instal,Solar_Hourly_Impact_,Pct_Load_Met_bySolar,Pre_Post_Load,Scaled_Ann_Net_Load,Total_PV_Incentives_,Base_Installed_Cost_,Equipment_Cost_Resul,Cost_of_Elect_Ratio,CostOf_Elect_Compare,Tot_Price_Aft_Incent,Simple_LCOE_of_PV1,PV_Stock_Basis_by_Se,Rate_Data_TOU_Sched,Stored_Filtered_USUR,Flat_Demand_Schedule,Rate_Name_to_Save,Demand_TOU_Sched,Energy_TOU_Schedule,View_Saved_Rates,View_Existing_Rates,Discrete_Rate,Compare9,Period_of_Rate,Saved_Daily_Profiles,Saved_Day_Counts,Bldg_Stock_by_Time,Vehicle_Stk_Share_Ac,Tech_Share_of_Vehicl,Tech_Share_of_New_Ve,Aggreg_New_Veh_Sales,Cumul_Vehicle_Stock_,PHEV_Market_Share,Vehicle_Stock_Share1,Market_Share1,EV_Mkt_Share,Tornado__EV_Mkt_Shar,Vehicle__Utility_,Logit_Attrib_Ratios1,Logit_Equiv_Cost1,Logit_Attrib_Utilit1,Veh_Tech_Mkt_Share1,Vehicle_Logit_MktSh1,Failed_Spat_ID_EV,Simulated_EV_Stock,Sim_vs_Act_EV_Stock,Sim_vs_Act_EV_Sales,Sim_vs_Act_EV_Stock_,R2_Stock_Delta,R2_Thresh_Failure_EV,EV_Decision_Values,All_Stored_Coefficie,Stored_Coeff_for_EV_,Percent_of_Buildings,Percent_of_Load_from,Total_Load_Delta_fm1,Total_Load_Delta_fr1,PV_Storage_Impact,Percent_of_Load_fro1,Percent_of_Bldgs_Ado,Lev_Utility_Bill,Current_BESS_Sector,Flows_by_Opt_Hour,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Building_Loads,BESS_Shr_ResHousing,Cumul_BESS_Adoption,PV_Generation,Compare_BESS_Potenti,LRMS_by_BESS_Time,Payback_Accept_Curv1,BESS_Payback_Time,Test_PairedMarket_Sh,Actual_Paired_Market,BESS_Adoption_EOP,paired_storage_marke,Failed_Spat_ID_BESS,Sim_vs_Act_BESS_Cap,Sim_vs_Act_BESS_Rate,R2_Applied_BESS,All_Stored_Coeffs_P1,Stored_Coef_for_BESS,Output_1,Output_2,Output_5,Output_4,Output_6]
+Att_PrevIndexValue: [Nodes_to_change,Colored_nodes_to_fix,Uncolored_Nodes,Left_to_Review,Performance_profiles,EV_Cumul_MW_Impact,Cumulative_EV_Delta,Last_Import_Time,Raw_Imported_Data1,Format_Import_Data1,Check_Index_Errors1,Check_DataType_Erro1,Raw_Categ_Index_Dat1,Format_CategInd_Dat1,Raw_Seq_Index_Data1,Format_Seq_Ind_Data1,View_Data_Imported_M,Cumulative_Actual_In,Compare_Prior_Fcsts,Output_1,Output_2,Output_5,Output_4,Output_6,Mkt_Share_Example,Failed_Spat_ID_PV,Sim_vs_Act_PV_System,Sim_vs_Act_PV_Rate,R_2_Applied,All_Stored_Coeffs_PV,Stored_Coeff_for_PV_,Installs_by_Type,Cumulative_PV_Instal,Solar_Hourly_Impact_,Pct_Load_Met_bySolar,Pre_Post_Load,Scaled_Ann_Net_Load,Total_PV_Incentives_,Base_Installed_Cost_,Equipment_Cost_Resul,Cost_of_Elect_Ratio,CostOf_Elect_Compare,Tot_Price_Aft_Incent,Simple_LCOE_of_PV1,PV_Stock_Basis_by_Se,Rate_Data_TOU_Sched,Stored_Filtered_USUR,Flat_Demand_Schedule,Rate_Name_to_Save,Demand_TOU_Sched,Energy_TOU_Schedule,View_Saved_Rates,View_Existing_Rates,Discrete_Rate,Compare9,Period_of_Rate,Saved_Daily_Profiles,Saved_Day_Counts,Bldg_Stock_by_Time,Vehicle_Stk_Share_Ac,Tech_Share_of_Vehicl,Tech_Share_of_New_Ve,Aggreg_New_Veh_Sales,Cumul_Vehicle_Stock_,PHEV_Market_Share,Vehicle_Stock_Share1,Market_Share1,EV_Mkt_Share,Tornado__EV_Mkt_Shar,Vehicle__Utility_,Logit_Attrib_Ratios1,Logit_Equiv_Cost1,Logit_Attrib_Utilit1,Veh_Tech_Mkt_Share1,Vehicle_Logit_MktSh1,Failed_Spat_ID_EV,Simulated_EV_Stock,Sim_vs_Act_EV_Stock,Sim_vs_Act_EV_Sales,Sim_vs_Act_EV_Stock_,R2_Stock_Delta,R2_Thresh_Failure_EV,EV_Decision_Values,All_Stored_Coefficie,Stored_Coeff_for_EV_,Percent_of_Buildings,Percent_of_Load_from,Total_Load_Delta_fm1,Total_Load_Delta_fr1,PV_Storage_Impact,Percent_of_Load_fro1,Percent_of_Bldgs_Ado,Lev_Utility_Bill,Current_BESS_Sector,Flows_by_Opt_Hour,Dispatch_Flows2,Rates_for_Dispatch2,Battery_Charge_Disp2,Building_Loads,BESS_Shr_ResHousing,Cumul_BESS_Adoption,PV_Generation,Compare_BESS_Potenti,LRMS_by_BESS_Time,Payback_Accept_Curv1,BESS_Payback_Time,Test_PairedMarket_Sh,Actual_Paired_Market,BESS_Adoption_EOP,paired_storage_marke,Failed_Spat_ID_BESS,Sim_vs_Act_BESS_Cap,Sim_vs_Act_BESS_Rate,R2_Applied_BESS,All_Stored_Coeffs_P1,Stored_Coef_for_BESS]
 Title: User output nodes
 Description: All variables that have user outputs (including tall nodes),~
 excluding those in the ACP_styles library.
@@ -18801,7 +18979,7 @@ Title: Example value
 Definition: 1
 NodeLocation: 136,204,1
 NodeSize: 128,20
-NodeInfo: 1,,,,,,,184,,,,1,,,,,,
+NodeInfo: 1,,,,,,,184,,,,0,,,,,,
 Original: ACP_Preview_styles
 
 FormNode ACP_New563313539
@@ -18832,7 +19010,7 @@ Title: Example value
 Definition: 1
 NodeLocation: 476,240,1
 NodeSize: 196,200
-NodeInfo: 1,,,,1,1,,,,,,1
+NodeInfo: 1,,,,1,1,,,,,,0
 NodeColor: 62258,62258,62258
 Original: ACP_Preview_styles
 
@@ -19433,7 +19611,7 @@ Description: Click to see the ACP Styles set for this model.
 NodeLocation: 1312,24,-19
 NodeSize: 112,16
 WindState: 2,217,316,720,350
-NodeColor: 0xfff3f3f3
+NodeColor: 0xffbfbfbf
 OnClick: ACP_Set_att(Nodecolor, Handle(ACP_styles_for_this_), '62258,62258,62258');~
 ACP_Set_att(Nodecolor, ListOfHandles(ACP_Preview_result, ACP_styles_Intro), '49151,49151,49151');~
 Description OF ACP_see_model_styles := ACPStyles OF (ACP_Top_model);~
@@ -19460,7 +19638,7 @@ hide_save_button: No~
 FrameNode: MainFrameNode
 NodeLocation: 1144,272,17
 NodeSize: 304,236
-NodeInfo: 1,,,,1,1,,,,,,0
+NodeInfo: 1,,,,1,1,,,,,,1
 WindState: 2,76,132,721,523
 NodeColor: 62258,62258,62258
 
@@ -19472,7 +19650,7 @@ Date: Wed, Jul 7, 2021 11:39 PM
 NodeLocation: 728,280,-22
 NodeSize: 88,24
 NodeInfo: 1,0,0
-DiagState: 2,0,1,1341,511,23,10,
+DiagState: 2,194,10,1341,612,23,10,
 AcpStyles: show_as_tab: No
 {!40300|ProactivelyEvaluate: 4}
 
@@ -19771,7 +19949,7 @@ Title: Example value
 Definition: 1
 NodeLocation: 1144,270,1
 NodeSize: 304,234
-NodeInfo: 1,,,,1,1,,,,,,1
+NodeInfo: 1,,,,1,1,,,,,,0
 WindState: 2,98,82,720,350
 NodeColor: 62258,62258,62258
 Original: ACP_Preview_styles
@@ -19823,7 +20001,7 @@ Description: Click to see the ACP Styles set for this model.
 NodeLocation: 1088,24,-18
 NodeSize: 112,16
 WindState: 2,271,188,720,350
-NodeColor: 0xffbfbfbf
+NodeColor: 0xfff3f3f3
 OnClick: ACP_Set_att(Nodecolor, Handle(ACP_Preview_result), '62258,62258,62258');~
 ACP_Set_att(Nodecolor, ListOfHandles(ACP_styles_Intro, ACP_styles_for_this_), '49151,49151,49151');~
 ACP_Show_node(Handle(ACP_Preview_styles),what:'UserOutputs');~
@@ -19861,43 +20039,43 @@ Close Model_Details1
 
 Include 0,LinkModule Solar_PV,2,2,0,0,Solar PV Module.ana
 
-NodeLocation Solar_PV: 752,288,1
+NodeLocation Solar_PV: 768,288,1
 NodeSize Solar_PV: 64,56
 
 
 Include 0,LinkModule Electric_Rates1,2,2,0,0,Retail and Export Rates Module.ana
 
-NodeLocation Electric_Rates1: 920,288,1
+NodeLocation Electric_Rates1: 936,288,1
 NodeSize Electric_Rates1: 64,56
 
 
 Include 0,LinkModule Loadshapes,2,2,0,0,Loadshape Logic.ana
 
-NodeLocation Loadshapes: 920,432,1
+NodeLocation Loadshapes: 936,432,1
 NodeSize Loadshapes: 64,56
 
 
 Include 0,LinkModule Building_Stocks,2,2,0,0,Building Stocks Module.ana
 
-NodeLocation Building_Stocks: 920,144,1
+NodeLocation Building_Stocks: 936,144,1
 NodeSize Building_Stocks: 64,56
 
 
 Include 0,LinkModule Electric_Vehicles,2,2,0,0,EV Module.ana
 
-NodeLocation Electric_Vehicles: 752,432,1
+NodeLocation Electric_Vehicles: 768,432,1
 NodeSize Electric_Vehicles: 64,56
 
 
 Include 0,LinkModule Energy_Storage,2,2,0,0,Energy Storage Module.ana
 
-NodeLocation Energy_Storage: 752,576,1
+NodeLocation Energy_Storage: 768,576,1
 NodeSize Energy_Storage: 64,56
 
 
 Text Te1552674989
-NodeLocation: 836,356,-22
-NodeSize: 172,340
+NodeLocation: 852,372,-22
+NodeSize: 172,356
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 AcpStyles: Show_Object:no
 {!60005|Att_AttsToShow: Object Object, Object Attribute, Attribute AcpStyles}
@@ -19905,96 +20083,26 @@ AcpStyles: Show_Object:no
 Alias Al377403133
 Title: Data Import/ Export
 Definition: 1
-NodeLocation: 920,576,12
+NodeLocation: 936,576,12
 NodeSize: 64,56
 NodeColor: 65535,65535,65535
 Pict: (000000100008004C00430004C805000089504E470D0A1A0A0000000D494844520000004B0000004C0806000000254B4A52000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA8640000054D49444154785EED9B4F685C5518C5BB7467777625AEC48D208850A18B2C440A2274A9AEC44555DC28B8483712108C2E6205C52A2A11B4444BAD12FC43091AC59660290C96A254A8A142A860D02AB53593998C73425E39EFCE39997B67DEE4E5A56FF183E4DCEFCFFD0E33F3EEE4E5EDEA743A359148B14623C53269FF367F6075EEE07CEBE2ECE36ABD4CA45826CDCF1E5E5CF9F0DECECAB1B1BFD47A9948B14CD68DDA205C2B1B2996496D5602B55909D46625509B95406D5602B55909D46625509B95406D5602B55909D46625509B95406D5602B5590954DEACB9F3BFEE1FFFF8EBC30FBCFCC1C2AD075FE90CC29DCFBF71F9E8E9737DFFFA196B16F674DF0BEFFEAC7AC570DB3353D71F9A9A999F38F1DDE4998B4B7B558F1029665C6FAEDEF2DCD1934754B341C006551F26D6ACBB0FBDB5A87A0C0A4CC3BCAA578614339E7EFFCB69557850504FF56162CD7AF5AB8571D56318FAED4F8A002F732E94F2721D8658B38605AFA2EF2F5C1A7BE29DD9199EF3F8999F1E51F1408A805F5593B3A72654CC28D82AB3187C1E67B33EF6E6894F550C9022D8F7E274232B7069F9CA1D2A6614946116E6CB66BDFDD9D7EC5D2529822C19B08EFB7A376E5725B27AEAD0CCDAB5E53D5C2F84E3C33566EDEFC5BB707F91E363C1FEC3FB926E5E468AC025373F79F0B2DA402CADF3D3E35C2F8463C335A6B53031CDB1C9CCDC9FBB32BB79192902972C1B4702A3D7FEBC700FD70BE1F8708D692F9DDE8F1BB11C9F0AD773F33252042ED9352B8AB2EABB7919290297EC9A154559F5DDBC8C14814B76CD8AA2ACFA6E5E468AC025BB664551567D372F2345E0925D33C9CA3FBB5B3FBE3D81E3865C1724D5EF820B46EBECD4E1B5AB4B51674157DFCDCB4811B864D74CD1FAE1A523592C4C53312129F5D7AF881BB13873A9981057DFCDCB4811B864D74CC1668118C3383E5C63D68DEA9E95B2D8CA9B85B74678DAEF6718C7866B19EDDFCF8EB151386FF53BBF65B8FA6E5E468AC025BB660E69D826A7788E0BD7004CC91D46138C02AEBE9B97912270C9AED96648C3CCFF8C724CB886EF83C318055C7D372F2345E0925DB37EC41AC6EBACF7E40F601470F5DDBC8C14814B76CD6288318CD732AD27AFFB7985CFAD6C3D05551FB87919290297EC9AC5D2F356EAC286B1BE1E7F6D794F8F51DD2B61169F4A583FC3CDCB4811B864D72C859E0FE92EEDC593EB7FCE650D87DAE6178F366E68431A0572F54977F33252042ED9354BA5C7B00D23B87ED14601AECFBA9B97912270C9AED92028C3B83EEB451805B82EEB6E5E468AC025BB6683A2DE924DFA19A47CB7EC07D765DDCDCB4811B864D76C18946119EE3C36285C9B75372F2345E0925DB3615186156D14E0FAACBB7919290297EC9A1541FB8F737B9B1FEDBB8ADACDB927BF5131C3E2F6EFE665A4085CB26B5615DCFEDDBC8C14814B76CDAA82DBBF9B97912270C9AE595570FB77F33252042ED935AB0A6EFF6E5E468AC025BB6655C1EDDFCDCB4811B864D7AC2AB8FDBB7919290297EC9A5505B77F372F2345E092B959D5E1B9DCBC8C14814BB65F762B08CFE5E665A4085C72ABF1FAA46A5C35709B8EE772F332520431C93B899879A5086292771231F34A11C424EF2462E6CDFDF279E3970345FF33FE66A057CC5317603BEC2DB7213C32A2124749CC5317603BEC2DB72195B015F01E1C2A6F2BE03DD80DB13E0AB8572A61ADA271BDA28246015EE2DC2F85B056D1B85E5141A300CF0271BF58F0949AAA5724DC8FF5A8A09B0DE7432E88DF1AFD9EBDDBC9449985273BB3203CCFC76B370BEF7DDB782AF300672D5ECB058EE281C72A8347EBD89F9C5978EB0DF31CF44E02AFAA2BFFFEB79BFDC999056018AE54659C98B70378DE1057DCD02890FBA56673A458A3E8ECFA1F3436EF38348528640000000049454E44AE426082)
 NodeFont: Arial,16
 Original: Data_Import__Export
 
-Alias Al612315645
-Title: Result
-Definition: 1
-NodeLocation: 603,320,25
-NodeSize: 35,13
-NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-NodeColor: 63993,42148,13107
-NodeFont: Arial,16
-Original: PV_Econ_Output_But
-
-Alias Al1686057469
-Title: Result
-Definition: 1
-NodeLocation: 603,496,22
-NodeSize: 35,13
-NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-NodeColor: 63993,42148,13107
-NodeFont: Arial,16
-Original: EV_Imp_Output_But1
-
-Alias Al343880189
-Title: Result
-Definition: 1
-NodeLocation: 603,360,23
-NodeSize: 35,13
-NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-NodeColor: 63993,42148,13107
-NodeFont: Arial,16
-Original: PV_Econ_Output_But1
-
-Alias Al1417622013
-Title: Result
-Definition: 1
-NodeLocation: 603,280,24
-NodeSize: 35,13
-NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-NodeColor: 63993,42148,13107
-NodeFont: Arial,16
-Original: PV_Input_Button
-
-Alias Al880751101
-Title: Result
-Definition: 1
-NodeLocation: 603,456,2
-NodeSize: 35,13
-NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-NodeColor: 63993,42148,13107
-NodeFont: Arial,16
-Original: EV_Input_Button1
-
-Alias Al1954492925
-Title: Result
-Definition: 1
-NodeLocation: 603,592,2
-NodeSize: 35,13
-NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-NodeColor: 63993,42148,13107
-NodeFont: Arial,16
-Original: Storag_Input_Button
-
-Alias Al209662461
-Title: Result
-Definition: 1
-NodeLocation: 603,632,2
-NodeSize: 35,13
-NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
-NodeColor: 63993,42148,13107
-NodeFont: Arial,16
-Original: Storage_Disptch_But2
-
 FormNode Fo343880189
 Title: Select Output
 Definition: 0
-NodeLocation: 324,320,1
+NodeLocation: 340,320,1
 NodeSize: 236,16
-NodeInfo: 1,0,0,1,0,0,1,310,0,,0,,,
+NodeInfo: 1,,,,,,1,310,,,,,,,,,,
 NodeFont: Arial,16
 Original: PV_Impact1
 
 FormNode Fo1417622013
 Title: Va2
 Definition: 0
-NodeLocation: 324,536,1
+NodeLocation: 340,568,1
 NodeSize: 236,16
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
 NodeColor: 53199,53199,53199
@@ -20004,7 +20112,7 @@ Original: EV_Scenario_Selector
 FormNode Fo880751101
 Title: Select Output
 Definition: 0
-NodeLocation: 324,496,1
+NodeLocation: 340,528,1
 NodeSize: 236,16
 NodeInfo: 1,0,0,1,0,0,1,310,0,,0,,,
 NodeFont: Arial,16
@@ -20013,25 +20121,25 @@ Original: EV_Impact
 FormNode Fo1954492925
 Title: Select Output
 Definition: 0
-NodeLocation: 324,360,1
+NodeLocation: 340,360,1
 NodeSize: 236,16
-NodeInfo: 1,0,0,1,0,0,1,310,0,,0,,,
+NodeInfo: 1,0,0,1,0,0,1,310,0,,0,,,,,,,
 NodeFont: Arial,16
 Original: PV_Economics
 
 FormNode Fo209662461
 Title: Select Output
 Definition: 0
-NodeLocation: 324,280,1
+NodeLocation: 340,400,1
 NodeSize: 236,16
-NodeInfo: 1,0,0,1,0,0,1,310,0,,0,,,0
+NodeInfo: 1,0,0,1,0,0,1,310,0,,0,,,0,,,,
 NodeFont: Arial,16
-Original: PV_Input
+Original: PV_Other
 
 FormNode Fo1283404285
 Title: PV Scenario Selector
 Definition: 0
-NodeLocation: 324,400,1
+NodeLocation: 340,440,1
 NodeSize: 236,16
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
 NodeColor: 53199,53199,53199
@@ -20041,7 +20149,7 @@ Original: PV_Scenario_Selector
 FormNode Fo746533373
 Title: Select Output
 Definition: 0
-NodeLocation: 324,456,1
+NodeLocation: 340,488,1
 NodeSize: 236,16
 NodeInfo: 1,0,0,1,0,0,1,310,0,,0,,,
 NodeFont: Arial,16
@@ -20050,7 +20158,7 @@ Original: EV_Input
 FormNode Fo1820275197
 Title: Select Output
 Definition: 0
-NodeLocation: 324,592,1
+NodeLocation: 340,624,1
 NodeSize: 236,16
 NodeInfo: 1,,,,,,1,310
 NodeFont: Arial,16
@@ -20059,7 +20167,7 @@ Original: BESS_Input
 FormNode Fo478097917
 Title: Select Output
 Definition: 0
-NodeLocation: 324,632,1
+NodeLocation: 340,664,1
 NodeSize: 236,16
 NodeInfo: 1,0,0,1,0,0,1,310,0,,0,,,
 NodeFont: Arial,16
@@ -20068,7 +20176,7 @@ Original: BESS_Impact1
 FormNode Fo1551839741
 Title: Storage Scenario Selector
 Definition: 0
-NodeLocation: 324,672,27
+NodeLocation: 340,704,27
 NodeSize: 236,16
 NodeInfo: 1,0,0,1,0,0,1,,0,,0,,,
 NodeColor: 53199,53199,53199
@@ -20076,83 +20184,156 @@ NodeFont: Arial,16
 Original: BESS_Scenario_Select
 
 Picture Pi612315645
-NodeLocation: 64,608,34
+NodeLocation: 80,640,34
 NodeSize: 64,32
 Pict: (00000000000D0015003300047D03000089504E470D0A1A0A0000000D494844520000004000000023080600000024090C2A000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA86400000302494441546843E5993D68144114C7AF4C67CA94292D03360A16690C1611C42A76A9D209019BD859885F20168262754D4240084A403C9118448F20091C3992C841F4482018316822D178B77BB7CE7FE02D7393B797DBD9D9B93D2C7EC7EDCC9BD97DFFF97A33930B82E0BF864D7489FF6966924B77059BE88AE69FBD81DAECB9A3C0AFF571F92EC89D9AB817A4C54CB13CCEBD94F0571E3CAC4D9F099A07D5D37A1E579F09EF2B5BC37ADD2A5D13004EA3F521406377E5D84772F599D0B1008F179627616C93DD83C301EEA5C07B77FD399C07FEE7F9634271F575CADCF2C6586C014E32B449F34765889C9702ACE5A7383B53B6F6F607332D80F76662118ED7E746BE4A01C45CC0D9999269011ADB8B97C979747DFCF73EDC98E56C4DC9B400F597574BB2D5C5FA8FC94F0A207A04676B4A6605A016AFBFB854C5DADF3CDC190C9F197B535401DA8189DF9D00C2611AF31806948667190CE9F609C8A400E8F2B2B5C51050D34351768A176D45844775AF0FCE8142797314BE11EA125958DD1C752340ED577F8BA34A1ECD092A18129817BCB7D75EF9AB4F6FEA6592A0CF0F4E04A09017C10F97279D2D8C2FE94210881BF472A6381780363C711C41984C3D23ED25327501FC8FB79FC475248C1485701090B331C5A900A68E60ECA39CED0811381580363C711C512345DBAD0F9C09D0F85E3E2B5BFFD9F0CF388EA89122979F14670270CB5B0B4218BD4CA3FA7A0C7968FDB44E899C0840DDF8245A9C542245EE7CC0164EE7802810E8C051EC05282D2A528C8BEA607BEE764F003A0F088FC2D44891F60986F48600222690CE8A318FE73052B4B02D5605E08EF9E64B952BE76FE54B17EE4F17CBDBDF86BA2200398C6E6F1229B6431FE39C8D4A770458CB4F49014A8FEE84ADCFEC134CE80D01E86084964A448ACA8498849E10808EC2089B216F4F08202F454800669F40DF94945802A405773B24273E6A7DE64E80ABC7848E04801157D81651D763703E2AE4C53799B2B0FE65044B1DFEEFFFFEDBAFD7AD237FF44A6C12753D866830AD0D4F1CD84417E0A0844B770D9BE88234F6FAF10972FF007080BCC4E0EC12B30000000049454E44AE426082)
 
 Picture Pi1686057469
-NodeLocation: 64,204,33
+NodeLocation: 80,204,33
 NodeSize: 64,44
 Pict: (0000000000100027003700049F03000089504E470D0A1A0A0000000D49484452000000470000004908060000006FBA3B6F000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA8640000032449444154785EED9C4D48146118C73D764BE89074880ED12D083A091D3C442D7409BA75C99322421478B05B11591A9B0596DDB6A86549A848440D090F66121D04F3D4A1280813028D3E365D6BE2A9FECB30FB9FD759E7E37D179EC30F9CFFBCF33CCFFC58E7E3B0DBE4799E12020D957FD09031B5F836B7FFDCED77DB3BFA3D1BECED195A2EBE787D8ACD96163464ECEB195A624367494B77FEC7FBCFAB7BD87C694043061B36733AFB3DF9F4662588860C0C28C3B1FD69E29783193E7DF9D6C2D626090D192EC8D9D175B582BF0F5D2CCCAF7EFFD9CCD627050D1918CAA69CB6BEBBAF769FB9BE82EDB405D19081816CCA39962F4D2F7C583EE017245979BDB28D1D17171A32308C6D39B22D8F153BBBF365E4276E8C4CA42188860C0CE2821C616CFECD71E4C2C95B8F1EFB8F49021A3230842B7284E2EC423BF6095D77C60BFEFD71A1210303B82447B83CFAFC3CF60B678B4F87836BB60A0D1968EE9A1C212848B6D9BA7AA121038D5D9423C82706EB842404D19081A6AECA11E49A83B5C2B589B95EB62E2A3464A0A1CB7204B9AD63BD20176DB62E0A3464A099EB72E4792729413464A091EB720411246B719CB015413464A0894D39F2DA20271D85A303C5995DA707BFFE7D93FFFF367FE9C9CC05563F0C1A326CCAF1BF2AC4A1B973E037AB1F060D196860434EF0361D87606D133464A0B80D3971917F33951382CA31E0849C5F1F6773EB0F8F2CADDD3FE8658DF4DD582CD0276227E4D81253A5D45A66733921870E9C31C19904A7E454A63A367D9245BD7A0766483F951382CA31A0720CA81C032AC74043C999BE99AB9E7816483F951382CA31D05072F49A4350392AA7161457390414573904148F2247EF560495A3726A4171BDE610505CE510505CE510505CE510505CE510505CE510503C8A1CBD9513548ECAA905C5F59A43407195434071954340719543407195434071954340F12872D646DA5664601372FB056C7F3D483FF7E5945ACB55419608CE24382167E365DF301B382B2A93ED736C2E27E4B88ACA31A0720CA81C032AC780CA3190991CF96298346B24FC3F0C123C2F13346424F56D39DB04CFCB040D19BD0F9E0DB2668DC4E12BF7E8436218345404AFE90F80564B0324B476020000000049454E44AE426082)
 
 Picture Pi343880189
-NodeLocation: 64,480,31
+NodeLocation: 80,512,31
 NodeSize: 64,40
 Pict: (00000000000A0028003100042506000089504E470D0A1A0A0000000D494844520000003B0000003C0806000000D820C20B000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA864000005AA494441546843E59A5D685C4514C7FBE85B7CB34FE293F858D042033EE4A9085608F4C18F072962E33746F42182948860A812A25452A4299B8ADBB455B3B26A93E047524D29D5EA62288616C262216D35A531A51AB37B77D7F95FF6AC7327FFBB3B3B77761BD2871FC9FEEF9C33E7DC33776676EE6EA9542AB70D546C15A5A5B91DC1F9545FF0EB87FD42293FF558F99F6B5B597BDF50D137C17CBAB7F0F923F9B58FEFAFC451FCBA67BAB478FA2166EF0B2A7A63EDC69D48625D62937BCE402F6477CF9BD70A5F3D9E2B5D9AEEA6FE1242455F144FBD9A9124C2CA21097503F436E59B8BF7040BD93D66E2F80C5D6F9B142AFA0049D4129D7D7D8CB531C1CD40D52349ABE11F5CFCF4D94AB07607B369062AFA0055918091386B1347E9EAB9AE75C3FF44D77270F6ED83E173ED9838157DA0276B5EB385265DA55671621707157D802545024BBAB49457F2F761465F37C4D573CDDAC741451F2041090A8146AEAB6188E1286B2D9E69545008720706A023C9889D025ACDAF6A675EAF07157D219508971324A78233AB5317F59C9A3E8373834372BDD91143455F14D58452481B09E88C75AE86D5FCEEA509A9322621BDC2BABFB0AACA06B6C199FE947ECD062A26215C3771F75555CCE40A9FEDBC8220317935FD1CABA12F6B31FCB8CC03547401C3141532135C4B3F502AA8BFC5C927CF323B2B54A2BA6FD7CD06159B011DB36D1F269DE0B7F42BF2194394D937C44C540D73DACE022ADA1026696CEEC3B54F7DAB9121865958AE95AF5FD866FA688891289E6368B4AD0554AC074D3266F38E09266C4366D5861889A20F735FDD2C548C035593CE01EE74BD6F28988CA41DBB1E07BEF7EA8F06924E9A28A0621CA86A2D49B595636D74E4E658EF7454356BA3A14AB8C42418BA3A54F40566E85AD00D66508C90C844A7D6D366F7BE8DA0A24F2233A9AA1292C2A80851FFA392E61C8091C3B68A49A1A257705AA1255C8F569E52002AB682F05B8BAA18763F91045555B126DBCC0149A1E266858A9B152ADA32FCCD4FBDF7BEF6C1958E9EFD9576D077FCDBA1D542B17D3B28E1CBDCC56E1650ABC10D66F1D840451B1E7C2B9543E7A8EC4076B6BFD56CDF37322FFDB956978A8DF8716171878F3BDD0CFA4872ED938A8D7862783C93F42EBBA08F26977EA9588FB94B7F6C4B7A875D495A5D2AD623E9DD4D4A92FEA918878FE726294962A0621CB7BAAA826B1C5464BC78E4E461B9A31D3DEF54FFDE7A9E3E943DCAE26550D104EB5CC733BCB38D40FAF49CD569231575C24449071B0D9B84A928E889E239F9EBEF7F139F03F9E4EACACDADF2FCDA244C45B0D1131510979EF0E1995CEC510E155B9928CE95F025DEE7F912E2DBFDFE89098919F1B376EB845657545E4CE12FBBEE0A96A04609473E4C65DECDFC39DA193917A2E0E4EF7CAA4FB7B545F7635EB3012382BD343359F9687B6566FCCD49DD36E268E948679919521C2BA3FB30AFD96093A8704325ACDB461D551B2D1DDDB98CE78AA19FEDEAB6B6C85B82F0F09B5C6F84F41D1ED491F8C0B5E3BB2EB318A9A3994FDE98D1751D792B603A6A17D277BDB782B353C3232CC6482369705B25BB70ECD17CEDB5BF81FEAB35DD56C03791BB7BDF5B9659D185BB5E185C8D5B3EA46F0C57161FC867F6FECC628C38C20C268D6CD06D0504CA1270C1F40D6A4B9725BA6DC4D1B1A16E6AC0085F236AB682048AA31B54A759E4C8272E59BC3D60F130260EEC5226FFDB461C4927E854D79B417CD87E1331819DF830AFD912E723D2481A3C377A32F5C385DFBB5C101F3E9265FE6DE81F3F35203E74DF918EA4810FF67F31BB4FF76DCBC8F42FCF337FAEE8BE231D3D75283BC60C5C50B3F2CBBA6F5B46BFCFED65FE5C7878702CF2F38648473A36B39E6903A4A3564D50AE71012A0231C4B62EB28E55B77B714E25501F98BE816B5C808A400CCD97C4F85CCFA9AF47C11C82826B5C808A400CF1C61C8E04FD875CA64D3B481217158118D6C3B469072C0E13D346A02268B453C1DE94D9B59A247151717352D9F21FAB9334C976A26A7F0000000049454E44AE426082)
 
 Picture Pi1417622013
-NodeLocation: 64,304,32
+NodeLocation: 80,304,32
 NodeSize: 64,40
 Pict: (000000000009002A00330004A105000089504E470D0A1A0A0000000D494844520000003C0000003C08060000003AFCD972000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA86400000526494441546843ED99416C5455148659B2938DD1156165DC9068829105312E8869C206E306591062405116A2715117608D2114428325A61050AA682580C5D01810048A562481C4C6464158B481448AB1326D693B2D05C6FE93FCE4CC9DFFBD77DFEB7BD34E9DC5379DF9EF79EFDD73EFB9E7DCFB3AAF5028FCAF90E25C468A6991FFE5AB4D63A7776F536D338514D3E2CE87CFE7FFDDFCECD457DD3E1348312DE06CCDE119468A60F266CFD29123F587266FFDF98C6AF701D70FED5B7351B5F9F020F7D7A291631FB4DEBB7EA14EB527418A000FC2ECDCD9FA426E3A4E27E5617E7841AE69451FFA30D4B2AA5BD924418A0033CCA4830763B4955D16C05938C92531DEF3FD2A659704291284129DF6094D0CD2D8B9BD0D77BF7EF7DBE103EB3B2DD0C77F3DBE16CEA86B2DA32776EE7AE4ECD435CA262952B4149D9E0AEBA07AFAE0EEC093E8606EFBF27E76320A0C48D8BACC5F3ABA01039DB6B3408A3E3C9C9C988F596304100C0E66143900ED1828FCB6214A860F6E3C59E9FC20C528B09E5D078AD9B4F7F28BCA9EE03AECBE988CC8D84F07EA957D1648310C86383B8BF04C92D0E0A4BD4FA5B6A0520C02E1673B89D95276BEB8915209A7A5A84072B2A198D66600591B6B1CF744B4289B3491A2821B11802CAA6CA6C3FD7FFA9E567ADA48D105A14C67E1B8B2A916A4E8825083B32841086D65532D48D18235C65A3BDB0EF34990A205BB1D8673A5D6599648D182231E9C1D6C7EF9AA6AAF36A468A964C9A804C50F1CBFB8A1C05F5B76587B473BB6EEA1A6D8D6F173C363AF6F2F548277DA4EEDC9DF9B9CAFFA1145F1C3DDDB2249D1806D38085073F9AEFBFA4AD5B1527608CDE10DA105D072E672A25D5EF1C39E3F01D62D0DB0768B5A48FD5DF6516B373AF1D47B9FF463A6150BDF6ECEC166C996FD57553BA8DBD1D645871ADA7F6C5436AF341F3989F6859B3ECEDD1E1A895D22A568895AC3186976F29B4B57E49B891B03838B681336333652F05DD9209431B0B0A93F7C7697B209438A16CE3ED636CEC0B6CD3E1CB36CDB2C6D177AD6D291AE6B37028F9083A3E30B6817E60C07F9898D4DF9B8B32C45CBC495732B19EA788563DBECEC8639F2E6E7275AD9C1A864C3E5B1A2E950A76A07B8C7E2F7F7F6C1EEB5FD1D8F969F0F52B4F0ED2166D89E7B31B270000F5DDD722CB464B173614E10CCACCFE0D8F0EFB9F9B7F75B1329FAC08ECD06A206DC22C528908438BBB385A024E722C52830A2EAA13309D67E547E00520C03EB850FF129FECB1BBFBCC80EA976459C2417B73F520C83B38B7214D519B433F4E3D4CCCFCE776FA01361D99FC4E9931483F8E1F7DE3A7604B555D958D059DAFBAE311077D66CC588B2976210AC91BEE189AD203B8E4D85B209025B475CE79B815935A2B69C5254D830C34C2B1B1786DA735B3E8D7D96E6B57040B5BBC0499F2DA7145DB02E78B36A00E17DAD7F40BE9D2913143634AB85A0A55026B8D8841027D3DA7D76D0688761333CCA94B251E0C4C6E7AA2D67C90F0593011E1E960C5CE2AE4105F6DEB807F6E2AA3D0826579C9DDDB6921F2E18218E32C25AD9041137CB2AEC52C27656D928C2CED525862E9C259F826E895B4783B075DCA7EE5BD877B7849618596CA7B186F0705F1ADA3B1B79ED175DBFAD53363E9CFDA3F7A5C7DFDA3981FBBCDAD27E5CD9046173084A2AFD2A739470841211F4326EBDD02A80DD0794394A98ACA6458CB7905962935799A359C20E20FB2221599891817B5D9A48312BE8101C74DBA0D51CCE00296645CD6143CDE18C906256D41C36D41CCE082966051D527B73BE9A9D930E47E15E972652CC0A3B8B41F8FCC36D3A4871EE5298F71FE8237293758D89650000000049454E44AE426082)
 
 Text Te612315645
-NodeLocation: 344,424,-1
-NodeSize: 312,272
+NodeLocation: 360,440,-1
+NodeSize: 312,288
 NodeInfo: 1,0,0,1,1,1,1,,0,,0,,,
 WindState: 2,102,83,476,224
 NodeFont: Arial,24
 
 Text Te1686057469
-NodeLocation: 520,356,-23
-NodeSize: 496,348
+NodeLocation: 536,372,-23
+NodeSize: 496,364
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 NodeColor: 0,28784,52685
 AcpStyles: Show_Object:No
 {!60005|Att_AttsToShow: Object Object, Object Attribute, Attribute AcpStyles}
 
 Text Te642449683
-NodeLocation: 344,80,-1
+NodeLocation: 360,80,-1
 NodeSize: 312,64
 
 FormNode Fo852166931
 Title: Selected Utilities
 Definition: 0
-NodeLocation: 324,188,1
+NodeLocation: 340,188,1
 NodeSize: 236,20
 NodeInfo: 1,,,,,,1,312
 NodeFont: Arial,16
 Original: Selected_Utility
 
 Text Te733124755
-NodeLocation: 344,356,-24
-NodeSize: 320,348
+NodeLocation: 360,372,-24
+NodeSize: 320,364
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
 NodeColor: 0,28784,52685
 
 Picture Pi2129827987
-NodeLocation: 500,80,35
+NodeLocation: 516,80,35
 NodeSize: 148,40
 Pict: (000000000032004501360004D16C000089504E470D0A1A0A0000000D494844520000016800000060080600000030C1E80C000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA86400006C5649444154785EED5D07581547D7363D6A8AA8E9BD378D5151533526D118BFC424A6F7C418E955EC0D0B4AEFBD83281D050545145104157B4345915EA4F70EF39F772E7B5DAE4B1513FDBD3CCFABB03B6DA7BC73E6CC99330318634A28A184124ADC80907C783D915D5AF974725ACEFB014927FFB4D97E60C1A2D0DDD68B42E2AF82FD8E8373430E9EF939E942CE070515D58F49A5F55FA0B5A6ECA1E6CC23139B8E45FFDAB06F837EED162BEBBA282BEBDA48C266C2262BEB9A707AB6C3777E7DD2E6598DE70F4F6A2DBBFC84545A4A28A184125D41F2617F22BFBCFAF13D67B33E328ED8B3EE53F380C4914BDC339E35B02B1D32C7ACED414D6B3644CF890DD175BC0A0F6A58B161EA16CDCFE8DB958D5AE29E3EC33A70A77974F2D28317F3DE29AAAA7D582AAFEB81B6DAF2E12D39C7DF6DD8EDBCAAC64F2DBEC6FEAB0B956B2797552C1DD752BB549531E3098CAD202C252C262C20CC9BC06A745559B1FA5856A23FB9AC6CE18C4B65ABFFD85FBDD1CAAAF1D4FEA9AD15258F4AE5A584124A282186E4C36B45534BCB5DB1A72E4E5F1A9660F1C60297AC07D52C38E10ED1B261438894F1FB83EAF44CCD9C3D38C74C1A78873088A7897836B27873CCD9B8159EA92B37ED5D9B783E7B9254FEFD81E6EC23131B121CD6D579FE70A272CD58D6B05695B5AC1BC79AD68C63F5C6AAAC7A992AAB5CACCACA168C6565F3C6B2D2B944C606045D8236FDAD45CF35555985862AAB521BC76AE68C6315B35459D16F6359B1E15717AAFD2D6D1A8E254D636D6DB749E5AF84124A2821F9B0AF686A69BD2BECD0D91FBEB409DE314CC3A279888EBD8C5441B65D91714FC1D3B1E0248FB49FD4B7ABFCD57573D8AE3319535B5BDB6E972A53AF4064D99A9E30A321725E689DFDA40A66379E355B12B9123957AD1ECB2A578E65152B08CBC6B2F225844544C29D1074B1268124E8A23963D9E5BF097F11FEA0BF7F2752FF4D95D5FD3E8115FEFC7663E92AADD8BA5D517FB2A6867B25CBA484124ADCB2907CD8176C3B71F1F3CFAD83E287695A350FD1B623E9D7529A64FB1390AE29AF47746CEA7E71D91CB1FF42EE7B5265EB095AF34FBEDD14BD30A4D9E9DD06E6389E355913299B8E6555EB88984982AE5C75ED045D48045D481274C1CF841FE9DD8FAAACE6C7F1ACE8DB71ADA58B66EFAD3FB46FBA54D9945042895B13920F7B834B45E52F68FAC6780FD7B46A820A83AB25A4C8F47A822683215AB62451DB57AC8848302DA9AE1B2E555629B4D5963EDC94E4B0AEC1756215731ECF1A6C5559B5E558566D4EE42C26E87E90A015093AFFFBB12CEF1B7A36539595CF1CC7F2BF506D2BB358E6DF9C79F10DA9B2DE4838975FF2DADE735993734B2B9F927AAFC48D81F305A5AF269CCDFC3847D94E3725241FF614B0B218B5C4FDE2BF26317707A85388A83F5CEB9F129F9AF1895499C568CE4D99DC18F6E77EE6318E353991346B43C46C45F897093AEF6BC20C7AF70549ED5F4E6005BF7F9E51B32BE667A9325F4F84A6A4FEA4EE1BE3A3E3BFCD5D80A65F8CD7E2D078CB82F2EAC78570EB934EFEF5FA62F7ECA768421CBDCCF302564FE2741451DFD47CEFE18CFCF1B6B107E6EBADDFEEAAEDBFCD03300E4F58177DE2E28CD29ABA6152F1BA42594DDDD0B8D319D38C2312D609E969FB6DF330D9BC77D5B613E99FF76692165059D7F0E0AED48CA9269B135769FBC5C8D24439290FE4D55D394958793EEEF4A569BB4E5F9A2A60E7E94B9F26A5E57C803A908A030BA51DA72F7D268EB3EB8CECFF9A86A6C18AE11B9B5BEE768B3FACADE613ED2B6E272DBF6D9EFA01B12EA5D5B232B6B5B1DB1CE3520C462CF5CC7A52CFAE7282B1D7E983E979EF28A6A788AC92CA6736249FFA635E609C3DBE1DEDBF2068A76DC8C1D49F73CBAA9E948AD31550DE33B9C5235CE38FE808F589349786C65B441E4D9B595455F3AF6DF8DF8C907CD81D6A1B9B0761700DD3B46C86E42A4996FF15D4CCB9DAE3297DBB0AC7B843062DADAD77487D43F3898D7A8DDE1F9532CFF1ACDE712CABB1235C2B41EB8F21721ECD4A3447B3628D3157087A366156F7049DFBF95896339DD2993E8EE54E1DD75AEE6A63D15A53F38054F9AF0774D76F77E35634D890E59BB904AACB27746D2A53F38BB9549F5658FACAF386F645C2FE820A859FBCD6FFA0400C8AD84352F6B70E6131C3352D9B1ED4A0950E367CB1598CD516E26B58B5AAAEF03A0B32A9AE6FBC5F2A0D319A5B5AEFF44D3C3E7BFC4AEF332A1A96AD5CCD457D5000FF5BDDA26DEC72AF73F6B1078CAA1B1AEF934A478CCAFA8607BCF71C53FBC0C4EFC8504DCB16C972AA5BB4BEB5C4EDE2DAA87DC685153592563856DB0E2C1AAA63D7AAA266CE3154DDBC65989675CB288A07F352A9384107CEFC3A54D75114C7A265A886650BE2A2AE15C3D735350FC41E0FB77E12B713BE9DFA3E11ECB308979A57FCC6A3DA56B55C78429D507B7D62BA3E19F115D30440BE0B8377DA3C6BE850825530DFE711BE1F79A859B0178D1C0B8D23F6AE836596541A8A3874297FC2AF6E91E10F695A36F034DBD313EA14ED3462916BA6C5D6E425E535F52A5269DCEA907CD8158AAA6A1FFAC76BEBFA07D1396E04A9B9335007009684EEB6AC120FFC96C67B9AF75B5BB6788C6B6B755765B544CEB50ED748D04644CCBA6FB0129D3709F4BBD66856F4CF0856347B649F083AFB537A3F5595157F328E152F9F17DE525EF690B80DAE17208171E245BB0AAA2AAAC3E70D1D8ACEE617BF8E309B8F9CFB869EB7096D3F84DEBF34CF293FB3A48213831876B1078D9E3674280749F081893E038B9EF6CD5E108B8C58410236EC27A7F0CD24A9776AF30E725E1CBCCB0A79CA0919EA2D35B33619CCA95C942ECA0652A1F773BCB6FA7726BD02592515CFCCB40F8941581979D0FF888B74C49BD2C273AA9F8FD6F91F3C7831F72A6914E4AD62E0222B174893C7B561AF2F74C9EA8CA0FDF79D98A562E8DE9E3EC614CA8F8D750B76BEA0E455C5F020D8AF6D83B70FD175907D276F272A27FD0EB3D46C9280118E24F94F791DCBDBD1923DAC69D5505A537FD5449A72296FC27BAB7D8F0FD1969541A857D9F71384FAC63BFAFE0F4DFC0F9DC82E7C4B311D31FCF79D9CF5E27C97CB3C4DC4451B8BEA549C26EAF42BDBE0D8CCE2F2E7A4D2BA9521F9B0336096FDDC3A78D7102D9A9551C90219DEA8C000A14EF0B7D7D60D0D4D2DF730D67247D3DE356ECC6F3C6B06393B11395F2B41CF1FCDCAF447B00AF3EF585DB4336B3C99C01A8EC6B16ABFE524514F6297FF789D085AB5D7049DFD09FDFD31A5FFF17856B2D020AAA5B2F2BA4B18585A9B47EF5F6ABF2365EE9FEE91C19C906860BF30D7E1B240D0E997CB5E7C659E53DE101D22087AA74292DC3776A13162E9B78DB1DB6CB71F9CC7C913691090863A2DCBC353527F883D79717AE491F333978727988E5EEA9EC6275384A581FAAB4B441896C5425A62E070131FE4084F694E36F14B81347DF172D94B28D7D9BC92D7230E9DFD1E92220F43E5C3FF2041A9F40A2A6A1E9B6E159430445B4676E82BAF2F70CED6F5DFE61EB8FFF46FB127D3A743ED8389EBADA56E171ED44439A94F69DBB3B7967A5C3C9A59A02A4E2FFAF88519A8370D9F689F49267E87380911462E76BDD41941275FC879FF37B7CD616ADE5BFD66DA056F93499BB2C94F4A828609EBA64367BF33DB9ABCCC81DAE937974D61BCAF539CE11A164D024123EE93BAB695C2843B44CF91CDB40BD9DED08C7170253DA89E70CE00DFC42735FABE2966EB939C771ED2433BE19BA09A9A6EB93101122FFF7E9A1C2699F81FEEEC00995FE289BFB9B140FBA4FCB4817DF91CEFADFE41FB4FFF1A7B2A7DFA9663695F996E4D5A3E718DEF1179DBD34A6CA67DE8B6CABAC67F6DC5783340F2A114724AAB9E9A6A16908825EF4D41CE02A843DDAF61C3FEF6DC1A50B6C7D49DF98C668D44CE752E44CCD74AD00BC7B032C391AC66E352D656554CD5D4F1A7E9FC6156B2E80B56F8FB1B7D22E8EC8FE8EF0FC7B2D20FC7B3CB467A5B5B2BCA7BAD57ED2BC252527F9491B055078206220E9FFDFEED553EA79ED0B3AD9A6E1998702CB360AC38EEBEB4EC898FE9DAD5F2C14703749AF986BD4732F2C789C308C0A4FFB747D4061019971CE97F9FBDC7E72886C30440FD6F1F271C924E7F71898828AF955E16E324EA103D6799B4A669CB6862F0510C4313F6BD7F794405CA245119E9CFF288DA78A1B0EC65C5B000CA09A2E6E489899F080D07AFA0EE930AEFB6EBB00E571751BA5D11B418A8C7178D1C2F73A992FAAE14412B22E8C0E95FF19DC8871374A98CA001B4E1BB6BFC4F3CA16B53F59965E09E63598563C471A1AA18BFC2F334BE6508D5E9B3868EA5AEF147B49B5B5BEF148703F0CC3266FFA287B4AC65EA0AAA3793A8C4956D0A76FCC7B30A47A3BFC85645D60C9239D45CE23002B08F60B87187139F4841D2540EEB6D07164885BD5521F95011B58D4D837E768AD8C467594502BCD1F18F297BE01F7376EFE2F5CCC87E096BF118CD9A5CDF62B5FD40D06586AFB12AA73F595B432D5593F44FE3F1047659ED6D22E7517D22E82C22E8AC0FC6B29249E359F10283A8D6AAEB2F4903D08D7646D0407649C5D34733F3552B6AEB87889F6320E3D4275659209A092B7D4E6749A83FC4809EF8338B0D7BF8129A04808FD6FA1F50D4695F282C7D193A601E8606FF812E4C2A2DA29397C84EA83AF0F4F0B76298CD47CE7F3344C352261192E43CCB2372A3143189D1DAD676FBC2A05D367CE201511301418D2315D679678A7E6F09FA507ADE04AAEBA2DE107440F2A93F3B236820B7ACF2C9A319F9AA8A93591B6BBB0D1B815C474DDF02BD77E8C1D49FC461144113F377C3B5AC9B642B531B36698DEF61C576D2F28BF11426D157E63BE71DCFBA3C5AFC5E11383B41ABA670DEAE549F6F2C72C9C4CA462AECAD08C9876260B9899D776113E22A02BCD1317B1D7B609E3B1B6812C1EE5C19CACC2CD458ABDB48D6E832E6DA087AD16856BE60346B480EA16AEAFAA7DC528315FEF44A9F093A93083AE7FDB1AC18246D6EE2CA9A9BEFA26425DBABBF80257E5704DD1912CF674D1A464481C13654C3AA05BA48A9708A883A7AFEEBE13AB64D208B619AD6CDBBCE644C11BF87B9D89B447448178339F8C0995FC4EFC528AAAC791892D987661B0F417570B9B2F611C5305FDB86C4F22538019B943D2150A0B6A169F0C7A6EBF7F372D09818BFDC23556A73D3292EC5A0B7049D929EF7766F091A16355D11746780792C246BB42FF4C4861B629DA4C289F1A9D986442E1953D986685A31A8A7F2CAAAE47E66607AF9829153114F93BEC17A7BCFA4E1239905E39E31B02BE3EA309A3061452215EE5684E44331B0BB4D1527DF14BAA90072367062834D37B1FBD686B1BB8D83D9D0A53E6CB3CDB78CB98E6475CED740D00BDE6415C61FB0E64B47A89ABAFEA9DE68C10A7F7D8315FE3EA6CF049D49049DFB812ABB3C79424B6578B016252BD95EFD85BE12F4B2B0DD660289D2F2F90C36F6A4C22902266EEFADF639C62529CAD771478A81F83D2440486C3289CF8248CF2DC37DF711AD924EAC4700A429F5FC6C5EF1EB4FEADA54724220AC084F582715AE33604CF0F14075F3B0A665C3F69317FFA718E6462768F7F8A35A3222B5664FEBD996437A970A27C637F6A131681BC451D17766DAFEDB3C21010BEFBD128EA9CB361AADD988852E9939653DB7BD86BA886F1A92E46D1010EB2C15E65684E4430147B30AC6BE60E478995B6C2892DF8D0E90337594C1EB22D8608B28769F4928BB6FE54676FB92403666B915BBE43891B5B98C62357D25E885A3E8F7F758F3858354555DFF54AD5FC70A7FB97682CE20144E1CC772A64EAC6C387DAADB01752DE80B414305F0BD63F8162C7141185F5A07C561F30E44D31D90FE0CEBA09D7C90929446AB363745FD26362F1F8404C7C991C89596DAA397795CD0F2DBE61579F4FC4C488555F5DD6F3205249DFA13E66C201298A2F5D6A74B4671C5F38F513C94031386F5B6FD0B15C3DCE804CD3717E9FBA18A9A66B1716F4B6B9BA439AA18D0617F621690FCDA62CFDC6F1CC263B0392BBC435BE9ACDFEE8E3A451B4E5EEB9F7232BBF02DC5769602D2F9D63E341A9BB050A3A21F88F3BD9521F9108091FC0CEBC0382EB12892DF8D8E7F4C39EE5FB1810DB6DDCE069B6D9613F47D4BFDD980F9EB99FA2A4356E7348635388EE91B412F1ECDCAE78D64F5F13E545D9DFFB435D4B1B2D5BFB1C29F5FBD261507085A00F4D105DA7376B3A6C60E3BF2FD89BE1034CC1931803140D10E307D93B5095463DDA1BDED40369AB60C1B788AA401696D41D04E1B150DAB3699B445031AFF1329802C9FD4B3A984B5C19AA87DAB92D2B23F10C715C32C3A792936A610EF45FAB6E2AADA5E993156D4360C7967A5F7499E3F91F092D0784BC530373A41BFBBCAE7046F27CA4BC76F9B87541829343437DF0393CAD6D6D60EBE6FA0BFFF9FE5C678DE16BCEDCD7BD1F6802C2C26774C18E2B46F65483E04DCE28F680DD5B26DBDA92C3604FCBD963D30D7850DB68F6583AD633A10F4FD4BFDD8BD0B7DD8FD46EE6CB3C5D78C398F64757DDD249CFB3AABB0FC96B51467539549FFD4EDD8C02EFF359A5DFEF3AD7E23E89C0F5459E1A4716D5511C19A948564FB5D2BFA4AD053CC029204821636937A0A6EE6D54E7A7F79445E45D002228F9CFB66A67DD8F687B4ACB8499ADCD616D21B110E36079F36702887947822EB6A7B5DB3AD49ED046DC35E99E798DFC84D303B86E90A6535F543DF5BE5739C1334110ACC0715C3DCF004BDB29DA069256214B8C3412A4C6F2023E8403941CB26DAABDBB833C8DB5ECF997D6AB121512A8F5B11920FF3CAAB9F186FEC7D06928C9CF46E16407A56B7E0A43CC871171B6C157D15413FB0D08BDD3ED79B4D5DBC9C95388C674D0EA3FB44D0B0832E357C835539FCC99AB34E53D55DF969AD2A23725ECF8A34DF21721ED567333B2982068A268E6379DF7D71A9392FF779CA4EB21DAF057D2168D8B0F20D34224CB40174D0061B629D0D36EC7086895A4F019545CC898B5F48E521A0AEB169E0C99CCBA32C63F62FFECA2638F6CDC56E9770128F5B6E40FD81C14ECBE597E73BE7C7A7667638F66F1E9DBC44206848D030F712BFEF0E088F6FE3044D24BC346CB78562981B9FA0BDE5040DCB0BA930BD0108FA73ABC05D9CA0A92C383D092B11A9F6ED0C3046D0F2DFE6E9BFEFC4DF5279DC8A907CB86ECBBE1537A56A0320E9F9FEC53E6C906B021BECB04392A0EF27821E4C12F43DFAAECC67ED0F8C39BED967822E5B308695E9BDC1CA967EC8AA0396B1DA6817561366C1CACDFF60C5FF8C62457FBF29F3C5D1CF040D944E1AC72A7C3C9649B5E1B5A22F040D8B9F2F6D82E2B80E9A06EA37F6213152E1AE07A0EBC62195A5A1BB2DF8E117100524782ACB14D3802448BD4258BFC413B371741B657C54DBBA76CFB94C493BDDCE70A9A8EC852774ADABAEE8A00FF48B0E1A47A37B6B07DD5782C6C93DE8F3517E927C774B85E90DA083FEDB73CB06BE8AA134B1E9D7DCD2D2A30D62253AC7550F4AABEB87BD36CF291703F32AF2BBD101E9993AEB20EB6836C83D910DB6EF9CA0EF37726377E8B9B189F397B372FBF1ACC19EA4E83E113401BE38F447B162F59759D1ACE759F15F2FB2A2D9AFB362B531579C255D0782CE9FA8CA72BE9A96DB525CD423DF08BD415F081AC021113EF069A0BE64E45090D707073B9D2135AFE88DB83319D360132DF55E404671C573503B703B672AFF23DA5675F0192EBC3F997D79143F6547D22395B3CD78D39EB5E2F8DD0104CFC999D27E58CBAABE3B2B8E3717BBA6E79455756BD1708A5604CF1BDA17FF1B048D03217C939040AB8C82D3B94523A5C2F5066EF147B4B954CEF703EC2A714A522A9C123DC7550F9C761ED2A78ECD89EE2A02EC031EC0665D0FF1C03FD269008367AF6377FF69C2EEFC6335BBE72F1376DF6C2263C570B34C887C3DD940CF249904DD0D410FD477A625AA1D8B58FB2549D1233941D7F4669370E168C68F7A1B8D66A586A359893E4187A00567490435F8E41873DD083AFB03554ED29541011D4CD2FA037D25E88473991FF1CB1A281EB0362AD1582A5C6FB1EF7CF6A4D717B9E5A868DBB58E58E49675E062EEBB52E104E018F22BF31CF34040E8CBC1074ECBEDA6616D82D38D5C474A18B5D8ED624F1D0041CFFEF13AFFFD3C2E4D446397B99F93BA820D8E9AF86119AA8357E73BE5E6955FB1179602561FAB36ED3119A661D90C82437FBE9E047D22FBF25BC3352D1BF94443A40A2F7352E17A83E359856368C26A778C64CBE0714F2A9C123D47873F6084CFED11FB51BD711F11EBE0BFD7B141DD006140D28AF141F020E647B5ACE08D8BFDE91EC926AEF1E5EFEE26A296933AE212069B45B281BE296C90CBEE6E091A36D203B45CD95F8B74598DDD18566F3BA66704BD740C49CFA358F9FC5144CE04C3515C822ED125681134489A562340C531FBADBE11F414C2C75D1334C02D3AE6FC71A0AD9F2D3A7010444CD0698525DD920500C744D3DA6D5A11F71943C7B298E317BAD4278B5153DF78DFB1CCC2B162074720546DBF6D9E43749DE46A8B25127A5F314A6BEA868E22C9956F42A999B541FD217EBFE9F0B9EFF8D172900991ADA65F8C77435373B775B86AF3DE352A5A36ED27106D244F29021B934FFD3E44D38A9F1F805F8ADD5DB8BFC569BCB91BE31C650EC82CF837A24FA71795BD28155E0C1CEA1013745E79CF562C9810FE70DB1C8CBA447E0F69DB343AC61D32940A2B054CD8A7738ADE143FAB6F6C1EF88B734484707C7EB8B67523FCA788C37485C6E6E6BBE11BA4AE93E3F3B7223AFC01C7DE8FE9DAD60833F8B54020DB591E518C1A9ED96C3FD0251CE252D834F38D5C52164BD277FCBE9AFDCF6A233B989ECB2AEA1A58534B0B2BABA96771A72FB1F757FB72699A87473C928607BA27B2815EC93D26E87B751CD90B7A6BD9498BC9ACCD6E54F704BD6424ABB29EC11A12D7B3863DBEAC3E81B09B104FD8E9CBEA8038422CFE5FCFAA832C5891F64476F98F5E5A71F490A0F3488ACE9BF27E4DFDC164F912BE3FA048D0529ED53AC39EB359931FD2B26E445C6C423DA5675B61BDFDE082AEA45448BC5147CFCF7C7F8DDF31D8C48A091AFA4DDDF5DBDC7979A84F402A368EE85C2D015FC8B04D86EB504C142FCD732C385750F29A380C48E07B87B02D5C180129525975FDB7BB77762C1D65C7C5C7C3B4AC49C22572A6785DB9593D7C297FFCB3FAB6A54817E585CF124535074C5931E6B823221D593940B202418BED8C3B832241F74495220004FBFA42D76C6E4541AB661CF75E18126F037B72A9F000EAC761E721437838F44A38AAAEF81E3EA79F9FEB582C9B6C640779D66D495A91D3850E1EBEBBE34EA74FFBDA2E349684AFC38AEE036E6574F8C3246ADF4AE8CD0472BC168068F1FFE6C3E728E99EFD2C0B4BE0842B903BC8F96BDB6076B9B2A63D44C79F8CA2725A627A9084BD86085AB63938D02F45A6E2E82141DFAF6BCF6ED7B067DEABBE63AD44D0B552046D7285A0CB17BCC26A7CD02F7BF6D39297CE4A8C3E6385BF8EB82E040D547C388195B93AF44A8F2A85D094D41F750376B8CF0F8CB3FBDC2A301E831E64F18896551D495B214681718E384082E5B1547C3170A84445D3866FC471A2A6FF613BBC3C22C1D467EFF17FE0CD6ED3E1B3DFE254DEC2905D36B02A405E2A73DDD98F4EE1918A7EBC711065B88E5D13D71B1391BDBDD2FB94454CF21238C887FE14A7D64EE6148DA2FEF6AD866F8C0FB7C1A63C41A40B8377D988D312905650F2CAE825EE17B803300825147ECC328F34903F3CAFE1F879E8C1333FAD894C5C85B2F38D47587F50F8D717B96777E567A2BAA1E93EBE1A85848A314175F0EE2A9FE3A65BF62DB78B3D380F1BF1988854D4CD5B30E69ED0B3AB8217BCD717B864F3FAA2387FB947069164ED3477E30EC7F476D2842DB8FBEEA35A3A013B3C602531DD626302B72346DDA999B7C2E1D3DCC03827838058176C3A2A964B115147D3BE7ECAC0A1829374BBBA032A19A3C09D8EBE89C7FF411DD0EAE33BE469B06187CBC845AE197C52A3BAA055C8B75269C29BDD7092C865244DF54A698F5EEA7E617EF02E7B9FBDC7E6C0652DDAD39B7E873B60EE7D902619153D67EE87A5B6A1F1AA8B0A6E55C87FA96968BCEF73EBA05DC206C5B54220E8B083A9947CCF7E1687C4CB091A6A8F27746D1875B2F6B7D23FBE8927D8FD94D7FD7FAFE544DC5B827E8008FA2E4D3B366B8116ABB519C3EAADC7744FD0DE70B6D6B39FE6ACF3AC64EEB40E045DF80B11F44FFD47D04593C6B1028D5989ADD555D7247968F846FB8020B9EE148310921CA4450C5C925E87E8D3737A179A72E647A9F86240EA75DF7D44F31903FB32A425D3F7126162F94BFF736282591C9E63330D61E0558DF2812E5631BDC69696BB416EC29D97B2B0F6DC0AE3B505CE39AACB3DCFBE3ADF39979BDAD1731E86C866B66754406747BE816399856320DD72550885E7FF435207E15119B9740AD33D94136A1B7AFFE1BA8043C969DD6F80C127F3C3DA36F532F7BC9072F1FDF4AD62505E2FCF77CADF72F4FC5750ED90645A2C3B2D09550EE56BE0CAF3DC7B2EFB43A409C7659F596CDCA362E471A59D28AC0CD44E282B7C52531DF8ED3BD92373B5E8636933C6AFF04A95D5597B3B216FFA7FA8BA45338DE336EEFC0A69A36EE9FF67F46DCB12CF67F132492160DFC93FB9747E559AF43BB511AF5BDEF6ED69A23D29ACD1C63847C54330B732E4BF6039C59DA760C65320DBBE4020E8D03E12F4ED243DD3D28FD132B0FDADF44F4E69157B4CCB920DFAC78C93F240BF43BD26E87B88A047EB2E6797AD26B006EBD1FD4CD0E7AE3B41C34747EED489558D97D27BB491D719E607EDB423A9B90D83520A2AEA162D00FCF94AC59702DC8CFE4ED2F71B8BDDB2B8537C3E20097292A2DF69603EA9675BF9A9F98644DC82535DDFF92D2824757FF7954DF08EE70C1D4A38A1EA3B73BF102A4464F81F7F43F21FBFD2E70CCCDF70F24D2A1D31B0A436DB9AB40CB7B4C889515C3EFA1FAA1A38558274DD9BEBB4D6EF3BF1D7E8659E6990D2E54484FF298FA74972FD9B245E589520ECB1ACC2B150C7D01894B7014D8EAD8FEB58571FB898C73745E1B01F171B40CA16B78D182A1A962DF02BDD95432945C0EBDD82E05DB66356789D97137D877AA03A20A27D6DA16B0E5653F16732A674773C1C9B9CD83B80EF6CBEF2407A0A69A22E1ED3B1A9F9C43460BFF9D6A4A5521BAEB732E4BF6C3D9EF62527679AE915C9B62F10083A3CE52C25DFB31F31410FF86D15FBC1319CB5B6B5B5BF95FE29ADAE638F1341DFABE748C4BC8F0DF43DD86B821EA869CB1ED75CC70EACFB8435DBBCD50382566BCFBDFB9FBE10744E2F093A8B7079D278569B98F02565D9A1817B03A80AB0A48D3E9E36430A5B8FA57D0974E6A8BD2B9CC92D1A01896E79C41E33784EC3F21C4B771CF280D3A3BDE7B23E547426DF19A063861507D25B11BEC75448CF2830CE61ED96A495B82BB32FE67DB800179B8950F5212DA469B86187D39AC87DABB1E92738C3EF2D60378DD5C4BCA09DBC8CF81FBE95E1F94F1C0E0EA17087212640719DC38C4FB0E3062962232DF2C8B999E2B6110371B031DB973AC82CAE780EF567B2E54A1DA09D8C37ED59E7B7EFC4DF8A1B833DC1C5C2D2973059ACDAB4D70469096DB52068972D4CF3707F280C14A4E2DEEA90FF0209E27A1074C4A19EEBA0C5047DE71F6BE06F9691B4D2FE56FAE74C5E117B58CD8CDD4BA43BD0FB409F087A302DB55434CC998FF137ACCD66D44D49D070A254EEE5D62F266D4A28A1C48D01F92F9ABE31DEB2CD89FE216861A3EF3B8730B672D35E4EBE0B837731921A283BE91F3141C33C6F08C5DF7234ADFDADF4CFE2D07836F0F7956CD0AA2036D0FF101BE8D37B82BE9F966EF7A859B3C58BFE62CCF6CDAE097AC99BACCA623AABDB6ECFEAA26D585D94056B48F067ACB1BEBD441D7FFE4D822E5EB5743D65D9A181955042899B17F25FA0FFE33BB92292ED0FDCF5E71A36E0D7956CC02F849F8C99454C326527FD232668C485FDF3F8159EEC7856617B888E3F2107536161C0061141838407061C21822629BA9704FD809635BB7D8E1DFB6B9E2611F4C82E09BA62852AAB58F2162B9BFB322B337899956A3ECB2AD67EC1DA6ACADB4BD5F1A7C704FD2511F4177D236800045DA8357B0F6BEBE8A253092594B879C1FFC1418009C65EA7F92EB502C1F61740BA388C62BFA373FFC98A040DDCF5C76A5CE4C99CE20EB12319F9EC6C5E314B4ACBC6C927F690A6251B38CB84871B6CB5950D5C7FB8CF043DE01F3B36D3508FB5D88C62B55D1234417CD47BEE485669F5036BABAD68FF8A8E3FFF2641E77C37E3D2BF71DB8A124A28F1EF80FF535859F3A8709D90408CFD8DBE12343070D65AAE931EA661814313FCFD5DF437D213FC6F0CB689B92682BE638E2DFB446F1E2BB69CC01AAC46B36A8B7E24682322E8DF3A21E86F25087A5ADF083AFB9BFF65B17E7250535851F3284E8105EE3FFD6B6FBDBD29A14467405F0A3F74F607F42DF175594A4883FF935E54F602AE9BBF51091A788000BD34C8FA7EB11F8E7E24E8C97AF35981C5DB372D41C371526B65C53593294E9241E5C54DA334ACDA66DA856E93BAD74F09257A039CC6FCD6212C7AA896750B0C12706AF05271F9757197FBFF05FC9F8CE2F2E7DE58E89275231374A7E84782FE8808BAF0262568EED9EEF34F8A9AB2327AE433A32BC0140AF6BADCAA0736B13A0ECC73CFD5C77A9550A237B08D3D308FDB53CBFB95BDE46D344A5C01FF8724A6E76F7409BA53F42341CB24E8776E1C8216BCD94DBC9A9015C125E899D3B3DBEA6A3B3DE4D153E0A8B5783F020749E607C5D9498555E2D6021C4A451D4D9B89A3DA52EFBB827EC076174CF6F27E4504FDB373F826A9B04AC8C0FFC1C928F824B89509FA7622E8A9FA46ACD4723CABBF4909BABF74D096D1C98BF9C9370E7B069F1A31277AEE914E89FF9F708F3FA23569ADFFE187F51C1A7080472A4C57083E78E617599F920147FE91A65458256490FF22BFA34C8A04FB01D795A091B6D51622E8BE9BD9C18AE387B93ADCCCAE06561C372141E77E3F23BD3FAC38E0F318479A27AF0B48996A199484937EADAD6D4AFF08B738E0284945CF89E1C8FEE2905D565261BA025C9C3AC4A5184EB1084CFED834E0C09AC8C4953D3D3D7AAB42FECB67161BF6F497A324295C37820666AD61834D23AEC90E1A2A8E39F334F841956E097A79FF11747E3F12F4653DB59DFD69077DB9B2E691CEDC692A71EB61EC52F7F35C88D3B0EA13410B28A9AA1DDEDB9BD46F55C87F81AB43EE4E518A00FB01D797A04D887C03659EECFA40D038493848CD8AAD5EF2FB959384371141671140D025EB567A51961D1A580925FA0BAACB3CCE0904ADDCDCFB7720FFC56147CA5C9855419F2B4982D788EB4AD0B82876910F1BE8BDBF4FBE380669DAB2611AE62C60E54CD62AF8E2B80909BA3228A0C7376228A1446F316EB9C75981A09785C59B4B8551A27F21FF05EE033939DF8C043D1BB7A938F08B62FBE20F5AF06677D46CF2156F76371941171041D71F39D4ABDBA915B1E354FA676BA2F6AD82337901F0EC66177BD0A8B32569FAE5F217574526AE518C03B7A1E2032E5095441C3EF7FD6CAF2D0170B6FFF62A9F53EFACF43A899BA0E17DAD3BD795B85075D5E64413713E70A40F6F68F0652E84ABA86D18124EF9FCEEBA39F4ED953E3C9FF756F91C87137FDCDAD1DCDADAEB4D5478A3F3493CF1CFCF4E119BDE31F63AC9CB4F697FB4CEFF808EFF36F7E8E317671455D648BAC9ACAE6FBCDF7BEFF1398AF52A606DD43EE3B55BF6194BDDB1987036F3237C23C248C55D1DB96F4DF4898B3314E30107D373DF31DD9AB4FC5B87D0E8B7577A51796575FEA189DF21FD805897E8E3176654D4D677EA271B48BA90F3C1CACD896B4DB7242D477ECF19D89770214EDD02D7CF25E3BA2F71791016713A4B471C76ED962463C4EFC96DE738E98CF64739700B8EACFE65F89F5560FC8A883DEB12CF657D28BE85470A5B8E5DF86AE5E6BD1DCA4175B8DA6BCFB10E26A4D925954FBBC41FD1FDDC2A68D7DBAB7C79BD7DBC6EFD7ECAC714E51087ED0EE8D74969D91F2C0BDB6DFE8575E0CE09C6DEA7716AFB6D63AF5333ED42B6A16D8F64148CC3450C52F1E5BFC03521AE36E2368A5224788DB8AE048DF06A666C90E3AE3E1134FC418FD35BC6CA6DC6B1069BD1371D41E3DA2BD84037E764757B455257D00B887555811F60A8BA3400EA0BDAB6B8B2AA3C35AFF80DA9387085C9FD30531C38A4E70EB7B4EDD8F386F645592515DC3D272C40B0E1C8C39004263867E7D218F63DA8CFCDDD10EB0472554C5F4040D2A93FE1F399A7C1CB67C5D318B1D02543D09383E83FB5D8283B6043E596F95F6ECF077E668858E09A14A4A998BE14E0FED3242A71E52B0B9CF3A0FEE38EE7E5FE9CDBD3E6DF6DC5DE5BED773CE8C0E95F15D3C82BAB7E62DC72CF5415F83E16EA470E214D5B66B5EDC042C5B8CBC213CC783EA8231E9EDAA33D2EF255317061B33DB70488E3E004A8DEFAEDAEC3352C9BB8437C9451286F7B99B92A53CD827D6E1312DFD5E5BBB8F057C5D0FD4A9D8B8537F8CD6E7F2E0061A52E09EE908E5007E807EA66AD49695713BA186905A5AFC091DB23DAD675B236686F5701BC0FD1F339666D3FBB6CDE04B7B552E900B8A146C550D687E4F548ED82F6C17B90240916FAA396BAA777A83BDE87E86FCAEB69438772DC08A498B614328ACB9FC7EDF2C335AD1AD1FF783AEDFEC5B95F6CDE16364C45DDA2F52F8FA840A9DBEAE5BF60F6F9C1293C8A7FB098FCAE11B81905A48B6BA9EEFC7D35B3D9BE9FB293FE991FB8933B564258C4C1C941A9342541247D9FE9A6BEDDA8A261CF0C17CFE197C6D60937AA7445D0CB46B3B2052358D9BC91AC54EF1556693E9308BA136749996759B1FE47ACE0C79759C12F238998DFEC77822EFD703CBB3C5F6F4B5B43639712447730DCB8C389B7BFB0920234ADD8F3731D8A3ABBD51B5237B76DED10C79A8D58E492817B0C6DB61F9CFFB0AE6D03BFFD0324496DF590A66523AEA4E20345B8098406022424A93C808DC9A77F975D1A7B251FC49F60EC791A9B9936DB0FCC7F44CFBE5E960FFAB039F26990E543F9F2DB61281F7A07C9492A0F31CEE4168F20E96C371F44ED440A82C4BD7FB8D8E2316DEB1A157E238C8C9C90878A8655ABC1865867F10480D37390E0799920FCA01CFC8A2A737E4515FF7E220ADBED29F3C4F90324ED99F0090CB7BB20ACFCDBF12D449034D8410042784C285FDB866CC7739E178519A66ED18CF2028FEBD85483C884B2A0CE5F99EF94BF2F2D67A2385F01E6D1C94B87E8395FC9B3C3981395A51D088B385DA7D30EFAE687B42C1BF65FC87D4F31BC809DA7D33F1DB5C43D5DD60644A6ED7D1357B0E17B709B0ECA226B1B7AAF63C79ED4B7AFF44A38067FC057A5F70FADDED03FC4E540DA93D7FAA7E0A280599E511B9107EF43D4A6A873DCA9C8C3F17690F5399A2CEA6905D2A5EF75DC0DF9B159C07E4EF014077DE8612DAB7AD5E51E67A79805248D5CEC7AE9111D9A74508F680B6AB34926FE8714EFA1EC902849B74648B063435C1B9ED4B3652FCF738244C59E35B0639E0947292BE99FB591FB78F8E7E7DAB3978C1CD9A3DA56FC566FA974AF0291F9FD0B3C7AAD83BE4F9724680D3B16BE86EADB7E14ABB52672EE8AA0978F61152B27B08A75535985C91422EC49ACCA750E6BABAB6CFF8A8E3FCDB91758A9F18FAC486B222BD29BCA8A343EEA5782867AA38C08BAC2CF6B3165D7A13D7B0B2CC55CE38FEAF8269E988D812F93DC2CF9A5B19D11342E0375DE7558CF97A40ADC4C3D54C3A2191225EEB5FB8696707CE092C4407D201FB76BE092D3C4F3D993820E9CF9F537D74D61C3342D9B858E8FDB4470684A2A1FDCCE41F9E8E30EC3A5B45CC400459C31CB3CCEEBF86DF3001941927F7D915B360DC4F528CFFE0B39EF05EE3FFDDB77F6A1D1C280C4407ECEC0AE24B70B67F6B890609289DF21D9694A2A3F0D5ADC55881BBDA176C060C6E5A970EE8F3B1A9F357428950D4292CA68C06BFB467B0A4B5638A28F387CEE3B2CA30D02629D87AA5BB67052A641F9AB4B443849637370DF9FD43D8F872EE54D708B3FAAEDBBF7C43FDFDA85C670D2A5F6A071548A49C66DF751ED84B3591F09E19DE20E1970B242FA54EF5F5805EEDA75E6D2549417C82BAF7E02CEF867D804C5F1B450EF34DE710F60794DBD8A386FE05856C158A79D870D68CC6A78EC3EAA4963B2907F23A53FC33A6827CA8EE7021016713A4B07E1A15E198E099AD27958CBB2BE3382461F7979BE4B0127E7F6FA829AC169E7217DA819F03DB808183E3D7E728AD8840B6FB9744EED407DAAC97FDFC9BF14D3DC7D36F363A10FE146739023CA013F443F388645A9E04A376AEB7756FA9C9C1F18678FF6451F728C4B31986A1EB04F56AF1487FAC514D3F5495DDDD6C34FE3F28B806952D7B26ED2F3DFEE7692DA18D7AFA14F60323D5750FADAD7B6C1DB799DA22C34319847277598E03A248A0EF1342D6751684912EC0504E9D77C6B3277178ABB05297D56D8C905B0F8A1C1CE5228CCE18C7CEEB96EB66714BBE38FD557A52D89D96B6970D87062C666614F09FA2E6D27F696C14A9666F5016BB57F8BD57443D0E58B5E67D52EBFB096DC54D6927D9AB5649D642D0517585B6B4BFB5774FC696BACE36A8EA68B275973462A6B3818C70A7F2582FE7E74BF1074FEC4712CEBD30FCB1B4E9D7887B2EBD09ED70238B4E19231F585AE085A8C3D445EB4B46EE4831F1DAE5DF221B2F7399E5D2879C12AEFC8201590274D08526A0245A0A3BF68E47819690FC5DD8690ACE8F739DE5BFCA55431204B1DFF6D1EBC5F43DAA38116B4FF8C643E080BB5819C18280EAEECCA2C96BEED1BC0C436DED8FB0C97768940876A5AB7AE972088EA86C6FB203D71F50B1109EE16540C2305D80ABFBFDAE7185FCA1339406F2F15EE0FD7CDA15C42A4F1803A5D14B2CB5A2A1CBE111703733516B5958A86656B580FEE991CBFDC3355A8EBE561BBCDA4C274074C18908031F97746D025D5B5C3DF5BE57D9C0B8BEDE4BC2222611DEA4F31AC0022EABF5E9AE75C887A055183C7C0675261014C16F2499B4F540E5CFA86CE5FCAB4B4A2AE61084899B7018104CEE26399574F46006EDE7946DF8E266D1B364CCBBA65457882A9543800D6304334A94E315EA80C180FE2F71D0237B7B4DEF9AD7D5834EF9C8A04D84B0837AA441D394F49F7EDC73822815F7DA59876A7A03CEF5B13CAA5E89E12F46D5AAE4C77A93A6B71788BD5D98EE99EA017BCDCAB5BBD157F5A4B0ADB09FA2D96FFC3B51374F1A4F1AC505F73475B3FBB1985E4D95B8286BA434ED0448443D52D5AACB7ED5F884D1EA9F00008F5E579CEF9826E7275E4DED552E1C44849CF7B9BCA5484F0C88B96BA750E3B520CBB3A4C030750AFCC77CC93AD0AACD892106933B1B853E9D3481A6B4618901C6EDEEE6EF3098004FCC662B74CA88440626397799CC3EA42311C2DBFD579DA04AC1EB059A7184611587580A8400C8FEBDA5677A6B7C5E0E67A7ACA1F44BDBC0B6280EAE595794E799850B0C2C185BC52E1C4109BD9F5D50E1AFB11DD11B4F5B6030BE49336E5B53C7C77A7DF2146E8C1D49F1ED6B6AE479F0087FDE814BE592A1C80CD653939531EB8753CF664FA74A9B002C20EA5FE3044DDA20D7506BD7167C244F2859CF7B97A8DEA0A7B3199C5E5CF498503FCF79D98C5F5F1EDF769BAEC3AA22B7EDF213010987CFA3759C169E69222C11EA22F97C62AFED0ECD23B82FEDB84DD3FCF8D0D744F64835CF7744BD0F7E8BBB247F5ACD84E336A178737598DEDD81E1074EF2E8D55FC69C9CFEC3782CEFE80E27DA0CA6AB66DFD8D92BEAA2DAF05D74AD020135C022A154E8CBAC6A6819F9A05EC13A4ED959BF65E75A3B7220482461EC8CB2DFEB0B65438454C5EEB97C2F3A178EA3E5B7D14DF37B5B4DC85F30032C9CD923D4752122DA77B7C079FCF9E63735434ADDAF8A02782C1F25B310C2C5B462F71E36E150412C1093BC570021A9A5AEE21493B81932E911A96E652E180B379C5AF634219B5CCF3D28F8EE1915D11434B5BDB1D7FBA4705F174E97B75D76F77930A27C6BF41D05001A82EF33CCBEB87F29A68E277B83787A5D4BCB7FAF1B884A7F5EDCAD157A4C2C9099AC2411AEE2C9C1879E5554F620F425889E18E46A970D878A5708D28C3137AF6D5588D4A8503A0EEB0DE7E60819A7FAC3FAC9F14BFB5436000371CBFBBD2FB04129724C11EE23F21E8767DF5608B2D6C90FBDE6E09FA0E3D37F6CDA2F9ACCE612CABB723E9F92623E8CB13C7B1BC3F7F3CDE5A5DDDA5B9545F704D044D1206E2F594DCA02316F2829E572A8C1857089AA42C6A6F6CC8488553046E8E16085AC337DA5BF17D2EA5F3F23CC77C9403AA046DFF6D9E6DBD3899595051F3D8F8E51E67502E10F4DF9E511BA4CC075D761DD6E5444793C063BA3635FBD2B22537E980D853E9D31FD5B5AD4399488A6E831E552A9C0048FB20EAEECC1681C521F15682558A864FCC55139622FE0D82DE959A394520419AEC5A1DE20EF5CAB61F1B9E8280893E05533EA9700241A33F4C5CE37B442A8C22A89F3D7D85A0CDD9FAA4ABD55800FCEB63CF05FD0C75F5CA42D77CF8B7915A517507C9873023113A7F5FF19FA838001C5A21291A2A8E410E719D12F420237736C4C089459BD30AD36914ABB12372EE1141DF182A8E2C42D1A471AC7AEBE65994AC643B5E0BFA83A0BBD2018A81CDC46B21686C204A8553C4C7EBD61FE88AA0613B0CD2E4AB4722226C342A86E90E3097E26654F42DE357789EA96968BA4A6F8A4DC8F12BBC5241E2280FF4E38A6100A886FE728F0C4418E8ADB1A1D49BDBAF21AD43B5937EB9EC45001B9B6253C6559BF6980CD176E0040D5336715C29FC1B046DBDEDC0426105063DF2F1ACC231E2F7DD018EDF50EFA87FF429D8BF4B4DB2628286958DE27B296497563ED3138206564726AE1EA2457DADFD5B506734F917C0532436770F5ECC7BA7AB8D6A01920FB1C328DBC5A60C1409B08750DC24C4C65F6FD0EB4DC20E3065F7AD0D67839C764A12F40344D0030C7DD84FCBE7B15AA7B1ACD17174CF095A7193B01DCD59EDC86C47C615345D92E1AA4DC26B20E89249E359DE3FBF1FE80F07FD52B815093AF8C0995FF880223CAC6959BFF3F4A54F15C37407945F20B1A7F46C2BCA6AEA25DB079B517CB390C2C1AA0426898A6168DC8C7E42CFB60AFAF947F4ECEAA28EA67DAD18460A71A7D33F5D14126F3DCD62C35E58D3C03AE6452387C2110B5D32A75B6E4CC0CAC06DD761ED5F5D3685A30E6F24825E1E966086F6C17BB84086E32EF1FBEE8015C44F4E119BF9E44765FDDA3624566A73F17A1374557DC303461BE31C866A5AB5F0B2501BF2BA0659F37E6BCE7060657EF02EBBCD47CE7DD3999AEBAA0702B61C3DFFF5435AD6ED3BF25224D8330866762FCE75E8398C1C7B6F6627064D0E0FE839B0C1B631DC0DA92241DFB5C08F3DB9C081EDB7A1F1E7FC26ABB52762EE0941AF821DB48299DD6AC2CA29ACDC98B06C0A2B5B42583C85952E24CC9FC24A8C08065358B1FE94ABCDECFA48D0D03BE74D7EBBA9263EEE3BA9B6EB0FDCD2044DEFF1CD24288C570CD31D9C771ED21336F49ED6B32BEF8CA061EF0AF2C4E0C58035894C5CA918065618788732E3D462779B95D524ADCF0BDC69FFB8AE5D0D97E2B1F1D4AE4FE7AB0290043D5731F2A0772EF2F1722311B49A4FB41FBE17F53772A14B86F85D4F50DFDC722FF4EF3282B661B09A29ADB95A877DBD091AC00A0893FC2F2E9B223059F37E816FA33AE4123E7D23FAFD304DABE6E99681BBB141AD9846873F14A1E51BEDC53BB4407C7D807050E5DE5EA2D7075514417141C6836DB67520E8414BD7B3DBE6AF67CB4DD419731DC9EA9CC6F48EA08D150EAACC25188C6425FA049D91AC588BA0319215CD21CC1EC92ECF22FC319215FE36F2EA832A7D24E852929E4B4C5674AB33BC16DC8A04BDE9F0B96F39991186AA5BF4C8C242113007E3BEB4E95B9ED1B72BEB8CA00122602B415A1CB5D8353DBFA2FA71E11DF4952FCD7528E0044EF5E997787CB638AE22EA1A9B06A9796FF5E579A35ED4ADF8018C798171F6FEFB4ECEC2E4035202E9FFEC1CB1E98335BE471FC3410F90D40D44D0B071E77542DFFDDA7CE79C8ABA865EEDAFD4523D60A3941334570B856C17BB0210F06F10B48096D6D63B4EE714BD69BF2365EE2FCE1111EFAEF2398171827AE7123584026D7BF694BE7D0549D3DF8AE376484811306CC7C917999D9E0409DEC880E44D33D67DAB83D9608B2819411B6F64B72D0964D357AE62C5CE6FB366D7B7B88AA3538236EB84A0C547BD1710E611691A110CC7B2123D82CE58226A82C65856A446983D96887A2C2BFC53E1A8B740D0333B21685C7935B9234143EF9CFFE357179AF3F33AB5CBED0FDC8A048DF2A20C7C8389C2B9C71FED953379E83AFF748F0CC6B760104F58E179BA2BDBDDD4FCE2371ED3B6AAE1039ECA04FF25C23BCB98FD8B68F0B6816826AEF13902E9581C5711A107CFFC4461DB840906271AA1AA940A0BC05A608ED7567FE8496F248286B924AF7FAA8FC7B5ADABBBDA4095020EB0BC49931DCA8876300A8C73900AF76F12B422B00781B182C346B0F746DBF3B250DD8E59E67E1E7A7421EC5591151177EAD2347E961C855224C11B1D90C075EC889CC3D8FD6BC3D8ED2B42D9732B5CD941075A49B8BDC9EA9C899C6F22828643A4DC8FDE69A84D4CE8F298697FE05624686CDABCBEC8250B0310A4F5BBEBE690DE58716416573CC78F26735B683B869393DD5D74C00FD05099303827AFF53B58DFD43C9024BEC124E11E913DB7E996087090E51797880821FC17D6413B6B1B9B074985156345F86E53C18AE3462168D8100B270D096D665B939689DF77873DE7322783ECF8444579B8EE3AAC2315EE7A13F4818B39EF461E4DFB26B3A4F3034E405155CDC3061B76380FD3B269864009EC4ECDFC44787F550429E078252F143E5A91046F74401F6DE0C4EE36D9C4545607B250DB1F18F318C9EA5DC7F40F412F24CCBFFE049DFB812A11B42AAB0CF05920D546FD8D5B91A0E1E90EDEE9F8D29306CAD3860E65BD91E0F8010B948906AF8AA6756BE491EEEFED3B92913FEE1903FB32D952D78225A4667EBCE558DA579CA0880C71E025BFBC4AAEFA90021CE08F5BE199CAE3E83A419FBD4A2A9C228C2312D6F595A09784EEEA933FE8EE081A93D3DB2BBC4E73FD2C4D36F87E38801287E90C984C7F740C8BE471297DF89039995324E97DEE7A1234C6CE233AB675481BAE083A733426A0A4AA8EDACF2B152A19AC1E361D3E2B57735C15B833CC0FDC610FD3A307D56E3292FEC794DD4F651E68E8C6AC6DD518F319C51ADC889C5DC7DE90049DFBBFAB093A67922AD73B973ADA9AB7F5C39D833DC1AD48D0004EE93D65605FC1C98ED2C726535165ADA42B5131E0AEF75903FB52419F881B8AAAEB3B576F08C046D26CCFA800C441DC4FCD0212A7F1DB8DB0DB6FCDAC6392AFF272A708A82BE07A939799EAD12020D6452A9C18E7F28B5F83EB51BE71D843821EB3D43D4D20E8A5A1F116526180AE4E8E7647D080D79E636A3C1FA83A282F1C3E69E8C1694EF80319AA69DD226B033B1E4F2A1C70BD081ADF0EBF1D32875550D5D874505D49A1ACA64145EE6B9BCA1E75F4BCDC5AE7AAC09DA1B1A5E56EB9B73388E28A447883029549D24C8B6D6CCA5C762E54ADCD6F4243ABF738567B931074DE47AAACFCA309AC64D5B2F5AD0D0D03A5DAE67A804B71BA8E7C30BE64E458505859DDAD148313540F695A3508042DE53E510A3FE116F1F6BC2C62F677EBF4E97C7EC9AB70DC2310747175CFAE4F9A66BE31911321119FFE865867A93080D1C61D0E202D6EF940797C651B127B224BDA9708CCA3A0FF7D79BE733E2F0FFA9BBA452B4D565D1E1B1603E4FEB016D51B56A834F039715019472D764BEF4E7A06E05B6316ECAF31F9501AAF2E70CE4BEEE43838A44CB8651DBBDCF39CCCDC8BC6089189212DB3A5C28B011FC6906A01F86156F4AD7D34237F6CD4B1B4AF6BEA3BD7976345022F74A8AB47B4ADEA5273AF962EB1B13ACD62E35EDE06E01A3EA1C6F8C0965B31AC2C7CDD504BEA37DCBB1DF53D70D41B8B5C333B0B0FE094A78CA0EDD9A4357E87A5C228A2A6B1E93E31416F52D8D00340D0306F94F71F0A870947319C18D631FB17A2CFE03BE1F1EE746ED148E1DD5581BB425D63F340CCCE6820EC128B89F086047D30969A5631FB1709DFD07C2658ABD9F7DD0646242D2768871B93A00BA6A8B2CB1F8F63259626AED7E3B4A022B61E4FFBD27873A2E98A8804D3EF1CC2B672673AD4C91ED5B6AA853E7545C41E7AB7C754BC6483F46A1C99C4E3FCE1B63904FE37642463C1E6786FF597C5493015DBF9E2941BA40F211EBC890979C1113C9EE11D1CDA08717060C13832998747BADC02018446ED0C3DEE8A4D7B4D217D67899C1A4137EB99704CC378F33E1EEFD5F9CE7920500C7A5C1620CB27D914AB05210E804D9ACFAD0377090481010FE74CDA940FBCD2ED3D973D399608D86ADBFE853878A0A26646838BD245DAD4E7A44CE6BA425B1BA3A5394D52ED842910746F1C12851C4CFD99132ECA4B75F9E662B74B90120F5FCA1F9F535AF9D4A9DCA23771000D9B983CFD76098FE747E57E67A5B7AC3EA8AEE06342EA24E21F6E91217CEC533BC14915CCC7702AD271E7218339DED1EB9F35722E859502BE471C0F4EB48CA3646DC73D18AA5B34A3ED86695834C33115EF23D47E621F23E8636357789DE3CB7EDE06366CD412B774F817417BED3D97359924CD99665B93974DB32432A7FAC2776092C2C9BD1D27D33F139701C0916BA11C5FC2A35FFBB7BF482B44FEED54069C3C2C1059D3D004F98449E4BE95289FC186581799DB5759BD7D631F1223EB4349A6F08B2EC481473A2EC8A23F50B829E61B936C630FCEC3A5023838849386F073BDE9F0B9EFD09787C1F70BF62D68F5A31BB0DD4DF08408C80BDF53A0D39BD3470CD7B2E10EC1F947DE8040053DA66353E3B1FB8886E237349D0AD66AF2FDB09C798F6775D742D08BFB40D0BFF78CA08BA78D638553C7B7967B389AB0D6966E8FEDF60720A5A8CC756743F41C79FD0947E7F980A6CE233874094D49957B3E83299ACA3C2F591C4870E236208283BD2DDE6D397AFE2B210E2D57EF81EA4088C789B63D2F90149EE1DDFBAB7D8F0971402E2AF37D64F970E9842601793E54360357EE949FC853EEB0BDB2AEF181F1C65E67548C3CAFE433A73D1F0C66E443697E69131C27C411809DF6DFDDA34240B8A80BAED76C276CF878784CC7BA863BB9A16FE68710E8DDE3BA36D5181B30AB524CAF3BC05E960B3DF82E2AE7B3067625E945E59D4A808A80F0C44F1DB6AB8A38281D900F4CF85E99EF9487BF550CDDF824025334DCB6C2898DEA5E5E1F461EB46208DE813652CC0324244C00BC0EB11A413EBC6E1C28AEA7E4A4B26AD35E139505BEB2B6E37D44683BF42BF411EA57D47E8ABE5B8ED1A4FCFE1ABF6382E9206F03CA73089124DA40704824B4CF83F46EC462B7CCED27AE90A5183F3B856F5659D0DE87D0BF791964D65EFCDBA96EE0A3FA4866C138210EB7ECA17641F978DDF238EDFD0EF9221EF555BDF5DBE4BE4CE04FE477D74DA1BC4E5176F41B2A3F4E468E58E8920955110EE170691CDF833034117DEF18B1A5B8BAAEC36A50FE4B6F01BBCA5716B8E6F10A170D96FF1C34BBA14CD8D0E8ACA18096ECE4A94DC1DF9D615EE359A3B3EA0D43D0F99F53FA5F8C67453F4ECBAF8DDDF28754D9AF17A087E4374E80F0A480C30F84B09454B9F397981317BFE0071FA4C203BA4EFC7F2CAB8538500B7C6ABE21B1AB787837D1E48A8F04F8A85699E72D1996030EE1490A811F61210E081ABA593EE948C521204D9C3613E28881723AEF3AACF7E1BAF58778BF0299F00187B8C2C0B2E78200086FD7998CA952E9F4043831F73FCBC0DD906C9136498ABD76E7595A533F1466654FE8D955F132A27C480F0EE889044112B8F9053A5148690B8377DAA818D12429AE8FB96E6CA65DC8F6CE4EB6E162848774EC1A79789026488AD789231BB5CCEB12F62114E3ACA6950D9F5C45F97400FA15B51F49AF57A9B7206D9264BB76F432CF0BB2BC24DA807E7F75A16B2EAC21A05B574C43C0AF2E11112AF33BEF43B8A1E6511DEB5A5C4125C439944E048DB6A7F249C501D0570D02B677D0FBA3FEB0DAFACC2A680FFC53F3B09818F8B7527BB48F25947FBCB177AA29AD0470FA509C06D0E18FDEE27856C198AFEDC3B63FA881D90D4B9FFF90A821E571D58B25F7978BA5845499C568ABCC7BAE3176615083A32A632E244D83A4FF2382CE27822EFD6A1C2BFE4295952DD3D9D69896DA2B1F04FD01581484A49CFD0593AF240ECA8025B310076E2B430E9D930E0F1C4CE5FF239C10077A3A2C51BB8A8777BBCF5E313782095BC8A1F3926139281F9A387E14DF9D0812026976F54D4833A91B4B0DDCD81273FCC2176BA21257E13280DF5C3787E198B4DE861DAEB86C39F17CD6A4BE48CD8AA095C94F8FE8DAD5BF60E474B9335FC33D01FC53DBEF3864F48FD7D6F528E79F6E91C14BC3765BC05DA6D8FF03D4468A6D80BA4ABE90F341571B7DBB53333E591ABEC70269035A7EDBBC6802FDA733724CCD2B1ED175DB01A9BF9CCB2FE9945C2F1496BDBC71FFA9DF9787EF31C37D93BFBBC9807D313F9ABC4F66175E75E181220E5ECC7DB7AB7284A4A4FE02B589F870117E87E37EA11F4B017588BA14E72500B7EB608F01AAA0B981718EE83B2837D4814B42775BE202858C4E2EA900241FF60638B9E3B8F3B0C1EB0B5DB2B995075F464A10E8F50496129437960EFEFB4EFC0DBFD6526595446BF35DCDA9517FD4057C779AB98D672D0EE3FA9FA0FF2182FEBB73822EF996F2FC96A4E6BFA6E7D484FB1BB5FD8B9B814AF40ED0CD423AC2A6B9D4FB6B01D2CE29A9781AEA95AE08B2A7E065A5728A759AFD89C69656AA87D6BB1575CED71BBCFEDB21F5FE468650EE9EB689E4C3BE00B31F1C86C37D22D7EF4037D5AE4CBF2E40DAD0FD515E2F18395E368ED8B336BB0FEEFC04B4D5143FD6B4DF756583E7F46CE6309E35DB8C63B516AA9D1274C5351274D1CFAAACF4274AFFC77144CC9F1455B8993934675DECD25E52092594B8B520F9F05A80A5D9C2905D36AF2E70CEE5CA77E888A0C0EF0FF507D418D07B519A2AEA96ADA3496236DD9ABCBC2736BA3D456B59E6CBCDFBDD8C6B3DBEBC4804DDC66C88ACCD49C25DA37ACD047DF92F8AF7D73856F7E77856FC8B2A2B54FB34BFC6DFC6B22923ADC74EE1955042895B07920FFB0358A6B9ED3EA2FD9373F866AEFE68DFE9E5BA6AA841200183B4BB02DF3186FA8248B9DD2C68CC528F34EC56431F555E5BDFE935FDD78AB6FA8AA1CD2737CFAA0B9F1B51EBF2E5C5BAB5AA8C594C602D6BC7B1FA55AAAC661911369174C522C20222EB7984B944D6FA045D226B6D5556A6A9CA2A08351AE35893E60456357B1C2B31FC5F56B985DED6DAED813A2D2585DDFA83554209256E5D483EEC6FC0F01A769ACB23F698C2E89FBB5984ED2811AE8CA809206D3971CB304CC3A269E422D98DBB6BB724196F3A7CF6BB9E6CFEF5375A4B49AA3EB3E3FBA604E7D5B54146E155B65F5EA858F17643F51222E9C58485AAAC6A3E619E2A2B3720E81220456B8E6F295DFAE5C50A1BADD8BA08C7B5F5FBB6FCDE9C736184541E4A28A184128A907C783D0173A29CB2CAA77070014E41E0E231E2D0B9EFE08ACF79E7613D38AFC6335C5D83936879E5554FD43535DF309B666DCD0DF7B656153DDE5A92F55273E6B1F79B4EEDFCA6F164DCB7F509EBE7D6C7FBCD6B3CB6E3FB86A371DF369F4D9EDA5298F16A6B45D1E36D0DB5DD1EF955420925945084E443259450420925FE7B483E544209259450E2BF87E443259450420925FE7B483E544209259450E2BF87E443259450420925FE7B483E544209256E3C54D535DC5FD3D03418C05D87758D4D92D64D384A8CCB027838FAFF663C12AD840C920F955042891B0B1147CF7FFDBE6550E244F30D7B800FCC37EEFDD02A6877DCD90CB94329A0A8AAF6A1DFBCB6FA7F6019B877A20585B3D8B8D72FF9D4EFE2304ADC3C907CA884124ADC38C02D2873FCB7BB0DD0736603B46CAFC0C08DE906EDB413874DCD2F79ED0E35F396013AF66C80B61D4790C83DAC123717241F2AA18412370E9A5A5AEE9A6A131C3B40DD8A0DF8C7F40A34ADD93BEBFC93CB6B1BE42E0FA24FA64F1FA041E1E69811CCD91D6A662D206D717ADCDD6B5AF607363B0FE9AF8E39B0D43A2EC5607F7ADEDBE2F72919F9E312D372DE4FBA98FBEEFEF4DCB7AB1A1AEF17A77128235F75DF859CF700C485CA4578575C553B3CE4F0B9EF4C629217CFF6DFE601891E1389E9B6FD0B420F9FFBF65271C57308772CFBF25B7E49A77EF74F3EFD5BE0C1D41F21FDC36D6B604AEA8FFA21F136BF796FF55F1091607A3CE7B2FCE2D7D55B9396FEE6B3CDFF4F9F689FCEF0BB4FB4DFB2CD89AB70898110EF6685E443259450E2C6017CCE3C3ECF316F80BA6547822602BE4BD3AA09642A845DB52569998CC889A029FCF38B5CD30B2AAFDC8A7D203D6FC234BB906D430D1D4A0768DAB001BA4E44F436EC2123A7A2C5117B4C409090D83FB60EDA396CAE53C9307DDB928716B81579269EF85B4823F4F0D96F1F35722A1866605FF2E05CA78A1FDD230341EA88EBB1F7F8EC3756789EBE43DDE28A140F699FFF6ECFEED4B46A360CDE6985743402629DF9644278629E53EE9613173E475AB7A95BB60DD07190C5D573642F2C76BB9876B9EC255C48F0E47CA79C01FA2E9426D2ED047A2E0C13DAFF07DDBBE443259450E2C6C1814BF913EED1B06818A066D191A0010D6BB636FACA9D9B7FF9447BCB256D22DE6F9C23C204DFD59B8EA67DF5D87CE77C4E980803C2479A90B6491A07515AEF48E13750EB07EFB4E10489304496DFBA6E0AC5F3DCB2AA275E5CEA7E4120DE815A567509E7B326D534340E9EE5BBD50B9306277EA4DB4EBE7CB24079900F2F6F322FEF545B5A158088298FFB75ACAB40EC0334A96C1446FE7D8843F92C0C4F580789FE5E0D8B7A9EBE90A600E487B2F2F23AB2A59BF7AE461E373B241F2AA18412370EFC934FFD76FB1CB3564E7E026901F89D08F023ABC05D42D837577A9F909122BD238975C9A63D6BF0FC546EF188870D1D2E0FD02272E34469C586EADB96F267425A44BA6356FB1CC1251C505DF0FC00750BF6CC02E7CC7305A5AF7CED1C11C1091271E87FCBD8837391BE4E609C3D276D10A51AC5A1FFC7AEF63D0C4976A0A6459DBCCC945EFCB9ACC9B854639C895F8A8C6C296F009304112F5F2D0865E2CF6DD874BBD0E84DC7D2BEC28AE0F9C5AEE9F76A5AD6CBC298B1DBE698B541B27E7599C7D95796BA9F7B66B17B263655853AB99921F9F07AE168D6E5D14B22F7ADC15246EAD6E0FF12E894763B0FE9AE894E5E525C5D375C2A4C6710BE6BEBC98BFFBBD1BE4B89FE45596D838AD58E1443E86DCB6AEB55A4C208C092FC786ED1A81CD135537DC1DC90784B2E19829088F81E9DEB50F0C85CFB4219795AB2870DED2F230FE8A2F13B0FDB4EB88205C74CE7F0F001DA249DE239BD87AE36A3A4E2D9B305A5AFBEB8D8ED028F437864AE432174D6D029BFB19C24DA76B2BFED1FD3B691C65E27B9E48A7210D17F66171283B4A13F961133A4717376BB9A79AB49F4FEC5253575C34EE6168D7C50D7A64220EEC15A563550B9A41596BDF4C43CC75C79596912B857DBA6DE29FEA8667669D5535F388445C9C99BFE0799C36C30AFBCFAF1F8B39993F9F7531CA47BB7BA45E3F653E99F1654D43C0A40CAFFB7D41BB9E5D54F1CCF2D1E857249BDBF56483E147024AB708CEDAEC37AD84C40A7E4883B64E89B7CF28F4BC5E55CD1DF1B40BF3460A13F1BBBC6F770594D43979DFBDFC6C14BF9E3F90CAEE7C47A3BFBCABECB8FBDB9D2EB447155EFC85D899B0B1B53527F1274AA51272E7C21154680DB9E6373106EB65F8C87D4FB9EE233BBD0189E27C88A96FFB3FDB6797C66171CC3098C48EF4E758B666CBE61D30DAA024E7A445CF83D25A360DCA18C0255AE1386644BF1DF370F48AC6F6ABE57487F8289FF014EC4146FA89E6DA9A0D39EE3BFCD8DAB20902F27D1F64982C6C9E3468E79E70B4B5F0669BEBECCE38C4CFA9591A97A40ACFC02D59D67333F96C753B762A357F91CC5754FBBCF657DC8D5159CD46569EA05EDB415E2ADDC92B45C9E37BD834E5C78B7E77CF6C43BB5AC9B65695A3048CFFF95C74BB5F5DB5D0718B874287B7F42F2A180555B939681B006E83A723D1407FFDD9EBDB4CC336DD3B12B57E9F7042187CF7E37C5217C87FDAEC33AD7EB9EB4BEE27255EDC37F786FF5FDC66573D8C55EFA9CDE7C2CEDCB698E9BB6417FD7D07CF575F5D703D8F19EEE101EFDA563D8E61BC91DEBFF778094BEC5A5A5DE5BFD84CD376C9A4D778F8EDE70E0CCCFE2B0EE7B8EFF0329F65A08BAA4BA6E18575B808C414844B2D8B0D30B8AB39591363DA33C0C827759471EBB3083AB4238115BB1D7967BA4E696573DA1BD31CE81EB75119FFEB7DB7958177AE9CC92CA67A0DBBD47D3AA814BE32415434ACE2FAF7A0C79071C38FD0B36F5F83B1149DFA365DD10755C36396D3C48131624594E9696ECD945AE1962E1CD22F6A0917CD392BEE1678FA80D78EEBE97EA06E59F43696A60156077591C0F8407150D8F47DF02DDBAF0CE26EE903EDF0C4479E81D24F99EF0C9BCB078F3CF1DC2B69C2F287D59EA7D5FC0095ADF85E907EFB2917A7FAD907C2880572E3528663DE7DD4735BC124FCC72DA7D44F363EBC09D206B2CB54EE45CEE705D13961787330BC6E2397C3F8BDF815412CE664CCA28AE78167F43AD80595F20C433F9C5AF63F616371476B08F66158E3E965DF856456DC383C273013041C2A081B48FB4AAEA1B3AE42940C80B652BACAC79040D0AF31DE8D58430C87FFFC5DCB79B5B6597CE62F982BCF137AEF0471EF8BBB2AEE3F5E85089EC399739111D1E7F0B79A5B7DFD69B5658FA12F23D575022CF4B11F866483A27738A46E2EFACD2CAA7919F625E00081912089F2CA9831EC92A1883BA15CA0D40C7979A5FFC1AF245FD88E30348FF7046FED886E6967B303921AF53B94523C4178062F98BF6B870B9EC45715C31B24A281DCAE378F6E55138B5267E57592FAB3361C97926AFF875FC2EAB9F4279FDA4E615BFA69807FA88AC4CC523C4E652670B4A5E4DB9943F0E6988C36797553D8534156FD746DF425B88CDC0DA18BB0DED783CBB709478290C4B04D415FA81F00C40BD9ECE2D7A03F50362C3B7A27F439D853EAEB521D671C07C5FF68FFF36F7FCF2EAC704D5072C1A40247A8171B6282FE2E09B0A2B6A1E11A7DF1550FF72B505499B83B4AC6A13CE674FC2640055828C586DD974BB90E8659BF7AE823E9693253D9B6CB9311EFDE79565EEE7B8840C7D6DBBAA62F42AEFA332D503C54778A09DE861C581BC610EF7CC7CA74C4EEE20430A3350C7B6CE2AF6A0A150BE1FDC238384B441A89A1B629D847700A47DF9A62509765021E2B96148BC958C8065243BD325225C8803E9FE0BC7B028198153BA5446DB9D87F4F00E65D308D8EE2C97D8A96C46A1BB2D84B85280D084BEC6EB81D20C3A98FA03384051B011C6E9E9BCE2373ABB78BAB8BA7638DA1F7D0A63C7306497158458D49B385C4671F9B3480BFD0C6A17E139C65DD2859C7791BF383C00D50EDA5BAC62ED1040119CA0E983BE7591EDE00AC0B266FC5ABF8330D131DF7E601E9EA1524DB71D58F09AB14F2A7442F76B5B574DB20E4ED872FCC2E7423CCC7C0FCE75AE98B37EBB1BFEC64762A9F4F252B7F37FF844FBAAE8DB96DD31C7ACE5A5A51E69D87C083E74F6FB774C0392B1213058DBBA0627A7624EA57F26A4177B2663EA34FBB06D8F1A3916204F74DEC9D6C1F1DB4F5FFA540803406531C52E74C7202DEBDABBD4CC9B2091FCE6B5C57F98BE5DC94796B20D167CD3C756813B871B3A145F2C2AE313C6A2F084B508F3BBD756BFF7CD3624228F819A5675936D42E2B79EB8F83F217D48CE8ADFF5989143FEEBCB3DCEE804EEB07F6C9E53FE5DEA164D8FCF77CE838911F212E26697563EA5BD7187C3738BDD2FDDA966DEFC80AE4DE577AE9B4246187B9E1AAA67571A97DAF1A418107C28F5FBE717BBA56370DE36C7B4EDC5A51E17F01D480BEF13CE654D9AE1141E0933289419F9C31655981801DDC038BB07F5ED2BB0E983FAB85BC3A25145CFB60C120EF608FEF1DBE68EBA8044F6EC62B70CA390788BEA862639C961429817B6DBFCA5651E69F83659DD87C46F3C78E627214C5C6AE6270FEADA568028BE740CDFAC62E850864D2B4C284FCE73CA41FD40521A36CFA5043A47C401D16A6DD8E1F8FC12F7F47B342C1B501F536C4377C49CBCC8DB7D417882E9405DFB3A9FA4937F0AF940F7FAA1C5C6DD301DC33E80F01C83121B476FADF23E26D6178388911FF2DD7B21E70379F8E2F2E79F5BE47A094B66B1ED70727AEE3B8F2F70CDFBDE7573706165ED231058B099867E323F6CB719375923F21C6E605FFCBAB1F719A3D0784E18106840ACEFAC5B9F3CD53628F67E1D9B2AD4F3D87501873D138FCBCDD6BA02C6C0EDEA16322226A203598338734AAB9E7C50870816C44D7869895BDADBEBFCF7DFA6662E2768EDC01D0E088BCD401E0E8406E077902E8815E489FF6922F9C872E32E3171404A1E3AD7897F1B8F4704FE9DEBE6106112479D62C38E932595EF760DCB56FFFDA77F13E20313D6FAC9D4275C12B66650C5E0F9D74EA2CD464ADF262E455F88031283F4CFCBD62EBD0B631A9335DA5AFE3DF49DE2BE2005D87CA31FC0E204719E5EE892F5A6B1D7096115807E32CB37C6EBF1794E79E087217AB6E5339C2222210489D3F1DE77E2AFF1A60107076B59D70CD4B4ACFBC43A286EDC1ADF144C34206A84C104FCBD7B64F0B30B5D3230F6C05D6FADF13B06C116EFBDF69D9885F604A78A850C4C1638218A310852179ECB33978240D0A84CC525C4EF5E5BFC061879327450FCBD2822612DA4EA21FA76E59024BE720ADF84861BAC6353835D5B8459B565DF32E86BBE71DD1486BF532E158CBB57C3B29E2F57A8913E30DFB077FC5AFF83BCF350C3411AC0209D6213BC03BBB798A95E5CE276E1E26519812E8F4C5C893C10E773FBB02D7C1383CA30DCC0AE38ED72E94B0803C3FD7BB56CEAD1B946187B9D4238D85CE2BB90EF98D5BE47104EBE29429D4690747537C6D9F1B25058E8E63EB50DD9FED47CE7EC01FACEECA9052ED982A4BF322A7179A7DF451D09E543E5F38E4E93DACAA87DCB799E24717EE548F5A4EFCAEED6B46C9C6C19180F32E39D96CA8BEF17138E802D272E7E3E61ADFF013E288840DF350D48FAC93D6A63455DC38307D2F3273C62E454887C5E5DEE71F6539BE0ED8F1939E6A3EE3E300BD82B2CCBFFF289F1E6128CB62D7B7A8173D687961B77834C21E50CD2B6AEC5E040DDBC6BBA3E89979BEA755DCCFE85885BDFD472EF8F6E9B03B1B4C3C489C981EFC8533DDDA961D58C4D238443D9795C4E0496EC89C5EEB966DBF7CFC7C1066C16F136A0F67B74B167C15FBED1DEE8A49F586D8C43BA985CB073FFD62A9F63C8FB013DDB4A0C983D69391351467C172461E4B3EB6CE6477CC0D28A02AA073C0330A0F0DDEAEBAFE84405F06532E5830D38E19963FC112DD43BFAC0DA1899291800932DB4390657594D9DCA4306F645583DA29F9844272FC68047FE189493AD82E24DB6262F463C903024567C272630F4E3D7977B9EC1F7E0B4DFAEB3591F0979740698A45D9134ADB9DA02130CDE4DB10EDAC1EB96FA0B88E02E75F3264E681C66CC65CF3175E86B91376F07A401E07735109C19AFD7E716B95C5AB239710D265D21DFD83397A6F2EF42FF17E2D1774052AF699409189024659B75B2F61DAE6F577CE052DE04218DF4E28AE787EBDB16F3B6213CA0635589032E5875C83726D1D7E9FFD8D397A60AF13081DFA369D9C0A57B024C0C8555362690217A36E5FC1BE83BA15B07010B71A580FD258C2B4CF61853A357FB1CFDD436783BFA133672DF5DE79F84539A10F4FE671FBA153C817E337CAE63310EEA208DF5FB4FFF7ABBA6752BFAC7E8D5DE4741CEDC92844F6EB67282863088B2BDBCD4E33C8480774D29EDF636DA762A7D1A56E50FCD75284218B48D50C6CDC7D3BE44DAE009317177F810450804FD835B6490F8391AEFA985AED9185C2187CE7E8765EE402DEBBA47E63A1662992084E3120475AEA93641B1F81B031C8308CB22FC8D253D3ACF5DDA364DD08BE119A44BCC2E083754DFAE746F9A4CC20119729226E28154213C4363E27701C80BC428EC5EF3BFA9F235037638094B707444E8A230E840747806827E6BA5F7317416412560184CCB17DE203E4705A93ABDA8ECF9E717B9A4832420C9E21906A9E2770DD6B6AAB94BDBB609AB0A3C035644251A63708E37F13B084960FBE9F44F515648AAC22406841F3D3FF37E3DBB2A2C61C52B0631A0474323A3F30A520FD43D339D23C2D1B97EF288DA282CEB2121F0898F08C96CDB81F978C6979ED4361F9807EC15E2479DB8F80508166D0EBD259E017C194771D179400E58B960E03E3EDF294FE8C058EE2F08DB6D8A7A90996A350FDA7126630A3A26F498B07AC02A0BD21708FA3E6DEB6AF49FBFFD623CA10A01D9BAEE39A686FA7966A14BE6899C22AE3A830A82E7AFEBC04048D0A94222BD53C3B2194B5184818E97930495FBB9852E9772CBAA9FC0732E24D0E0C000C5DF6240A5F2808E75254CBA8495C107661BF60A13322633D467757DD37D2F2E76BDA0A26F57565ED730049BC08883491E8727108F0B1E543F4B36EDE5266D02B88A83480412B6208DA17F63E2C1776235200EAF08D4F55FBE349162A2E7046DC53E7708DD22BCC7EA954BA102810A2052BB5BDDBC1113D78E3397A6C837E3A86F3F35DF291B930FFAA54BC23175D83083A4C4F9627373A8A17DA9402C9CF079BA160C24075512C2A17DF9A624D2A6B030C53B5F582657A7F1F12E9070FBE4021501C8961330D2A5B2428883EA4A8817793C6DC6008D76E99AE2633529AC80300160A5C9C99BDA1C930B2C4284B89DA1A1A9E51E081B1068F69CCF9213E3DA98FD8BD07658450AE954D6373CC0CD09893760ED82F1C1350634E6E786ECB214ECCA0F67168E857083F1261034269FE48BB9EF08E9038803AED1D918678FBF3503629DF0B7D6C61D8E4218DE57A94F28FA4D91FF22059982DF9241F49FE118168944A6DB8744739D18758C49161B125020248A467AC8D0A108331000028454868185190FE9811C14890C958D0E2FD6D338C51FD1C447C33A42780660F90DFF03C2920652BD6FF2E93FBE76D914F1B963D896198EE1912F2C71BF88B2200C2A1A69DFA169DD82DD6C715AF167B3266320AAAEF13D84BF3B25686A3C41721430DB970881C80D03107F4B1134BEEB1143FBC2ACD28AA78578300F8244F5C262D78B90645D138890A87ED4FCB7B90A6104BC63BA3E199DBE33824667C27782A08BAAEBB8E4830D25AE67A3E750B388C3F3BAA74E81030718F8DCB7034D3E8EF147B58430D045BFB2D4ED1C54166252C3B15D1C205035F13D04BDDBAAAD4448D4990C827776D0BB419F0FE912D23174C718FC82242ED6F781A091878A9E4D99583F8E0E3C60AE3B5B16B97795F00CC004739B9A591BD40315F50D0FCAEADB89E1E830265DF43B58D07C6CB571278800E5851E0FFA524C1628B3383D007A65A82CD007B07C86EE1F1309242D2C5BEFD5B2AA870E31E942EEBB686B0C54C4433F5524E8355B939670828E90D91C0B90E9A06DD82F1E9101E2E74EBB8F6A62B02BEA2D15515653AFC257305C8A959115FAA4F07EFFA5BCB7EFD5B6AE9713A8000A8755242614F473080B9C44A92D9E5AE09C2D081B8A409FF9C5332A4016968815FF134972120659226D1AF7283FC2C79ECE98CA27DAF6F050070AFD06267C6FACF03A2D2BBB2CDE7BA601FBDA58DB6DFC383AD2E7C46DC546ADF43E2E56AD70410693038F67CDBE740ADF2C6CBE6383F4B639ED6A1CEA9358BD89556F9DA1B1B9F5EEF7CC02F681A0F79EBF22717FE514B16980812BB3D97145C50240CD80FA7A77DDFA24102E84C5A17A36A5301D1487833A0E5CA51FB453BE49889523B8EA73C7F02D985047AEF43E897E2658B720EDBB342C9B1E32B42FAAA86B7C108206DA1136DC8A93A5FC17297082C64CD5DE38F838BE04A4C1090374C1F68F9B135127C172176A06CC940024CF4FECC3E284A5BF69CCFE058A4406C24258616302708E3FA28101085589F00CF8DB37C6130301BBCB90C43437EC70C2874367041D13968F581AA32C20680C42E8E6D03914890E69E03BC699F8A6E0EFAE08DA76E761BE4121407BC30E070C5AAC10F07767040DD502360B8478D0C9A20E5F5EEA7E1E04027D1D1A17939F100680D408FD2CCAD21941830C313040D020563C0341236DB499A2FF05E8C9911724036CA471132A92CC047584101F8486A59B387E60CAD91F5187902240767C00D1F72F08DFDD4102842DEE93F31C73A09FC3F29713340D50E429569181A0F9C46CE498279EC0A08B1F60E8CEE06F41780640B70E5D3B505A5B3714648A0E8E3D035804A16C8B22F6AC45BA18D83FB86D0E0279A37D21B98BD31223E0C0995FD07F70E47871448209FA36DA047D077141B8EAEBB7BB20FDC8E31766200E24F8CE24E8E59B13578AD3971134D2DFEE2C7E0EC915042D265B2960621A666057221025FEC78A55780F69140206488C9399002296112B3C4F210CEA4EB6C9D84E781A967C25B4FDD4A54FCF1596BE02425D7FE0CCAF5879611CF1B440F8D4F7EE50B76C8195C7D24D7B56CBF3A0FA15EC9FF7A5E5BC27B771C606A48665DB2C9F682F1C720131752817D5EDE7F6A15B30CEB151282768AADBAF9D374588CDFEB0E7232768AA3F6C7E0AEF4084F2B8D407E1EB4378D715B0621524683141F395348D0BD784A36AE2F05861219F716BFC52F65DC87D0FBA61A86B140D1F64ABBB2B12B473C2510DAC9CEFD6B06C042781DB9E5CE09C831501FA19C260B589139EE86310D2B02F03697D4564A2B1386DA0C31F8AE0044D158806C5120D030095854A0399C1681FE14048776958343DBAC0A5402CDE439722DE9DE7924627042D8401B8044D1FAD58F9FC182B0D046C34A0A22025A0A1D02184305CCAA6F209BE03FEF48EF6415AB0BDC6920C930A6638E8677124B45B1507E507FB6F217D802F517A40D0D0538A2D52903F3A08260D9021AC0206EBD9D7DCA169D562129DB4181B3A7886CD463E40D4CC5A3A23685858A0138B256834FC34DBE06D280B262F212CF2E2BA6D92145644EEE39D009B222068B16918543FD850439A823509C04DA9DA091ABBDB38D13540DB81613210B72F76DA6FD3B2697B6D99472AD41698900482165B4B0804AD583FD671870CD05638F28B8D22E139081B031C12BCA0FF7CCF74FD3E48C8C30C1D4A302124A7E7F17E87CD9F2106F6E5C3E63A963C3CD7E1320E4A08E92802521B96E5D8BC842F0A1CD228ADA91B0A4B0C10CFD30B5DB3EED1B16D40BF1024272982368E4A5C3160AE07C3AA449CBE40D0980CC5CF0509BA3B82868E526EC2D60EC595D1FCD0DD665C68128810A07E81D5811086ABBDA8FDE4EF39C199739DABB079C709BCFDE007C23EA8EF50E19270541DF1D19FEFD3B52549192A095A29D32AE97255CDC358BD40FDD381889136C8B53D0F5E6E3CA7F1F28D4B0417D47EF5DCB25E4EC0F41C93805056F493112BBC4E89095ABCEC97A930DBD51F546EC5D56D670041CB36512DDAB092159E432D853D20E894314EF00C2B4C3E31D33842DDA12F42CA4759CCB6CB548400C6EBCB4B48202282877A0F0221D241DB62BF4208C7FB35F18840D00026FC7B75EDEB1F9DE754F0E402971C1848285A32011DFE50040A0396C726A1F00C24F0B97DC81664084B080C5848B35C22A35900BABA1FDDA30221FD42AF334CDFBE040E5A10970F348A073B52FC8DCD3454F44B4BDDD284F401875D87B55169D0BF899FF39995242C78BB4243F24D416A60D82282B4A157BD5DDDB2151D4D9811D38B2A9EE7CB44AA447430744A6E8A84C6A74E80CD2D8403418F58EE790A9D53D824847914F2C344259401804A024422A83824BF8BD2C704029DB5100F4B427C2FF466906CD011566FD9B7F40E0DAB16D433AC00B00AC120B84BCB9A66618BC6CE083ABFA2E6313E33D3E0FCC66553D86CFFED1ED841DE999AF9F1201DDB5A3CC72A0775C2EB893A1B2C14D0A910FF0FEF685F4C50D8FC10D2044143DF77FB1CD3D613D957CC27B9A449F50CA282FE0D93E344F38D7BF0CD2F2E75BBF0A7F7561F4847C2E01676E461E98249009B2562824EBE98F78E54FDE455543F3ECAD8F3385431207F947DBA7D68341FEC44203E49A7E4BBF5F63B659233BE0B7A74E88BF15CD8E790B5874C9D23C49182C68658677C1B544D58A109CF7FF52212419FA17611EB8A73CA2A9F7C78AEFD6590B930914318409ED85C555B1FEB8AC9111221DF83A1F87FFB46CBD3051CE28F68236DF42FF17345D8ED3AACCBC90FDF4FFF6362C82CA9E0A69C026089800D664E68ED040A2211EF7D4068BA4FDBA61ACF79BF074070088BFF01E441EFA1E6F9C83A789758CA2CA9A9E72B2B5EAFA8732A8B6095C04F396282405A3CED2B69215DBE7109E2A7305007200EF7B981F7784EFD032B70212FD4EF7D3AB2FD097C135461E8D3788755272CBE787EF40E165F3D3D54867EC0A57A03177EE8452768A73D6CB1318E2050603C6372C77E86CC8CD89E9B1462BF0DF1F94A0DF9D2B77DE3BC290C6726B8E326D43BB5312C77B03285351A7810FD36FCC8F9993064B85FD7A60A71C51335D43210321017FD4FD04F2BE2AA07626079889D4BCCC6E201063B515831A03102F69FFE05CFA02F83E9D623F39C0B650D6FCE30EB620921ECC0F2652735CC2F9E5BB84EEE7046C1586C608C5AE57D5C481BE0BA596A38F1892400A65FF8201006FE06798D5CE573F276358B567404E87631D3DDF68F599B20DD022014E3A87D2BA6DA86C6BE6D1AB01FCB247E52893A9B588286EE119B4F820508974E283F451507BEF3364D9B36DFA4537FE06FA9EF821E161B08D0C509F170AA0AD21ED417E28186DDDDEFDD36074F305D7FE033FBB018949D0F082225586C08E114818EFDD4628FEC01732C18481E560878BEF1C0999F46ADF63DCE27226A8B3BD52D9B3FB60ADA29DE3586B477BBA64D6B50CA59B9AF601034543E0FE8D8544292179EC39F30F4F8706D292CF1308961C5F0809E5D256F6FC22B2BBCCF59C71D3410D455F82E940BA659E2FE83095BAA7E805379C523B097709F2E110A24304AF7D5155E67410862B2453C10D69D9AD6CDD85C149E43BF072101C7867D9365EDD315B03284F9D5406D6BEEF447780E09E76E1DFB464C22E2151A2611586B3CB7D0F5D2852299C473B9B2F6619846DEA36DD380018BEF82050304098C1FACB884F880EB9EE36A58690816509D0136C5D8B48525D3ED1A56AD339D37858B6DC201AC02A0CE403D63E503D3AE3B34AC5B14AD7F30669E5FEA998E71C5C9115233C816A44304818DEA6976C1DBA0CE92BAA9052BE7679679653EBBD035E3A9456ED9734365D62FF915D58F4145C74919044E6961E31FFA66AC3CA1C385AA045EF7B0D284D40D010513014E400ED1B52D179B92A20DA04E800A0BDF846F83AA07EF8E66178E7E7ABE7316EA04403D8BFB6977405B730B0DF457FA7E618F0B860630DDBB7D8E792BDE6173FECDD53E278253644600026051F3CC12F74C1E9FFAE6B38B5C32A066433905D34AE893B1F786F2C364EF11238742AC4AA13684BDBC383D6E35449314C20A2B40455CF5400C0C82A8E3695F6059A52889C0E83EE4D0B9EF14AD285061909CB01100FD564BDB15DF14A8E8CDC7CE7F29F8778559183668E0A54A0803C01616A7F3845D7A01483BE2C8B9AF31488467D07B222F0C285890408501A942F07F00D281A48B032FF85BF80EE10410A434FC8D95012C12A24F5E9C2ED8299FCD2F7915F9299208F4B3C8032633F85BEABB30F3A2438837C7B04C86140DB3200C021019D41E8205872005A21C430C1DCB1FD0B5AD84542CC497025411188C7167323E11DBFA5EAEAC79189207CA89830D6282045097685B0C30E119C2206F9449BCF18230B0678724263E0C03E0D00826114C96821DB600483C5B4F5CF81F4853DC7FD01652F523006D81DD7AF423F40FC57401D41DFA17DA4BAC176C6C69BD3BF142CEFBF806F1F3CE80D51FC2822484FA07F0FD98604018E2B243078F7203B054119EA3CFC06A02F58DCD45A40B7508EAF84C7E4987832F5832471E4B9B011DB0F8B922900EFA36EA00F5AF381E04A01EF01EE15066D49BD0DFC580A50474A4B3FCB67961B31FAA86459BF6AEC50407B593627831D0A7715807DF82D595B0120340BA384DE99E78F21FAC26D01721F0E01DFA1ECA83FE81CD49F47BF477B41BB0272D7BA2A0B602D0D6F88E9893E99F211E88ABA149B64188FE8D3A96C54D9F0E8143ACBBEE0970980CFD156988BF01E940F58177C843ECA2550C0826F81600F185B10195A31006E5C4D8032761FC1655D73E043342B41FF211F885AFB06842435B488D03E0AA07FFDF001D2BA4604855B04241A7E4B328550C6635B174F46F030D89430F906AB0D9034B01D899723B645AE66349A438312AA1C4B502931BF68730114ABD57E2FA01E6C4634CFC8FFCE21115001B74AC3C14573B62483EFCFF0448FA7FFA6CF5797A814B160819CBC07B352CEB275A05EF11EF88FF1780340635054EE0C11411E583CE0D9B0650C360C34A2A9E124A28717302FB59C3E73917DFA966DEFCE442D79C75D1C95D6E724A3EFCFF88828AEA47B1EB0E437AD810F77669743D81A535D428281BCCE7E0AF422A9C124A287173032BE2AC928AA7A16EEA7E9CB301FF07CEE48CE8A0B956EB0000000049454E44AE426082)
 {!60005|Att_AttsToShow: Object Object, Object Attribute, Attribute AcpStyles}
 
 Text MainFrameNode
-NodeLocation: 1184,356,-25
+NodeLocation: 1200,356,-25
 NodeSize: 512,348
 NodeInfo: 1,,,0,0
 
 Picture Pi584161427
-NodeLocation: 188,80,36
+NodeLocation: 204,80,36
 NodeSize: 148,56
 Pict: (000000000024006301500004BF52000089504E470D0A1A0A0000000D49484452000001740000007B080600000064427B32000000017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048597300000EC300000EC301C76FA8640000524449444154785EED9D077455C7D5B6FFE44B6F805BDCE2C4765CE3B8C425B6E3C42DB11D3B718B13F76E030221D14D33CD5421843A4580E8BDF7DE7BAFA27721841042A8F7FBEFE748238F8EE65E15848DF0B0D6BBC49D3375CF9E77F6EC9973E6FF793C1E0B0B0B0B8BCB00C6400B0B0B0B8BDA0763A08585858545ED8331D0C2C2C2C2A2F6C118686161616151FB600CB4B0B0B0B0A87D30065A58585858D43E18032D2C2C2C2C6A1F8C811616161616B50FC6C00B456E7EC18FF7269CB97BED81134FCCDCB2FFB5699BF7BEB17AFFF1BF6D3F96F8404A46D615A6341616161616170663607570262DF3EA891BF6BCFDDE80A9931FEB1ABBE3B6969189D737E9975EA77E90A74E833E9E6BFDFB66DEDC2C3CF9C18E83F7BDD26FFCC2D0F91B5AEF3979E60FA6BC4C38939E7975F0DC75ED3E1B326B14F87CE8AC91DEF0E9E099A30347CE1FD863FACA2E518B36365DB0F3F08BFB13CFDE91919DFB0B53DE1561CBD1530F351BBDA0FF3F7A8D5CF3748F111B9EEE3172C373BD47AD6E356E71F8D663A71E34A5D191959BF7B321CBB736FC64F08C3115D5BDF8F9CC911D272FED1D3473F5972173D7B699B269CFFFB61E3DF560525AE635A6FCAB83BC82C21F8E5BBBEB3DCA445EEE7A54151FC5CC183F60F1A60053590AE9D9B9BFECBF7853E0C73133C6562407F0D990994E5FB79FB4343868D6EA2FC7AF8F7BF7E0E994DB72C46030E5EF0D9922FF6ED3567C451D4DE5B8F1C9E099639A8E9A3F20F17CC6B52A8FE57B8F3ED364E4FC18FA9038B4A1F5F8C5E16BC468D1CB72E35872EAEFBACD58F515F18BF39E31867C56EC3DF6B429BE85C585C01858558C5ABDF3E3C7BA0EDF59C72FC453B771A8A09FA78E5F5F4F9D86C10E993BE0FF1256B751BF9238A19E1B0242D33E9741BB3B3EE98FA67C1584087EF156D4E4E9F502224BF3AF1094D32844CA2CC6754D42325EE8337605037B6F42F2DDA6724C282C2AFAFEBF43C62DFEBAECAF51AF597FCF7FC226CC35A5D311347B4D87BA4D224AD2B9EAE90D52770547AE0D7A173DD269C8EECF62E78C8E5CB4B1D9A9D4F4EB4C6555162357EDF8A4B82FC2CA975D1D48FB6E0CE89776E4CCB95B4CE581F613970457A90F15941C04BF090C4D7D3574C282AFA6ADE8B6E568E243A672DCD87C24E1E12BFDFAE4D76D126ECEDF0D7FA95F9330CFA40D716F913E392DEBAA873B0D8EAB1718E58A17EEB9B15944DACAFDC79F749709CE66645DF9D76EC3B6D40DA0EFBF4E473E0F768CD97B3E2BA78E299D854575610CAC2C50D80F064E9FA848BA4E03B1C6EBF7AE3C84E451EEBF751BB63923C7BBF5BCE3C4E9FB6E0C0C3DEF90B3291FAF6075500229CB2112FF30CF2D2D22933B4F59DE333533BBAEA93C1DF905853F782E68F42A87505CF94362AF858E9F6F4AA7A02604473EAEF4BE812C4BE0B4A14F31B13131481BEE693BE0E857D35776F345A0BE507FC8AC9155AF930F887CAF691C9C8D6BCD545E765EC14F9E92D50D84664C5F214AE4403F4AFB21C9DF348B486D3E7A6174725AE655A6321596ED39FAAC635034C4B828C9C754867A463C9175CCB2CD8D48BF3BFECC3DB7340F3FE31829AE34F4C78703A64D749709862CDBEA475D8BFB514B27F9DCDA3C3C695FC299BB4CE92C2CAA0B6360659092917DC52BFDC62DC4EA710680AEB055810CB42B1A0615EC14D2369503D61D3AF9F835FE21D9CEA034E55125C8E0C2E29581F6AF90B14B8E9E49BDD954A60284FECFE031CBCD841E5EA1854EFAE7FB8C5E694A5F6D08E9D475DA10EEB9A7FDA063E3D7ED7ED754B62F7C3868FA84EA93AB01D237BF6E1C9CE58DD03373F37EFE44B7615B6B540EACF8A40F9EE93972FD9E9367BCAEBA70995DD52838CFB1D0C5F880ACCB93BAC854C24B8D13B1D2676CDEF73AE9E34E9EF9C3EF5B449C2E43E82ABDB4FBA6A661E74E9C3D7F93BBDC1782E8F792499355AA4A2BF9DCDE32F2D4FE53C977BAD358585C088C8195C197939606D583CCDDD6878290BC33409C65A658C6CA050229EB83C92182BED9EB0FC53F662A07AC3F74F2B15FFB8764792574068B1F169802965845938C0C60B1AE9EE93962FDD9F4AC2B4DE5829A20746FE98B21B2A0BE3AA83B322A473AE5E11094A4F962DCA2D0AAEC117C1C33639C4F4277D7A92248FBAE6AD4277783977E84D01DF7833739D0D6327D5802A71F7DCB016BFDE99E23369C49CFBADA5476464EDE2FD84BE93079599FAE5357746F35765138AE1BA7DEE4217FAFF30FC9081C356FE057D35676EB387959EFDEB3D77C89D1427A37A1D76D10547483B33F24691DDDEBEB895DBEAD815EE6E6A3090FB36F54DC862087F471FB38692CA15B5C2418032BC20621D86B2158DD62D10051A0BC8F7519BAE38381D32636193137E6F5B009F3FED461D0FE1B03C3CE3B242F1690338845E121F40D874F3E6A2A0BF826F42027FD4D4D43CFDD18D0EFBC5889D9F51A04153AF560690EE1954BA300A9877B9A8F5E106D2A175C6C42871C58A1506705472E12DF990899341D39FB2035910B9353C3D8D9C370F198EAE1464584AED7A752681452F4E74E83777B3BC5E49BD0833C57F9F5C983F46E08E897066E0CA42FFB66210B6510944FF73590D317E317879ACA7683CDD9FBDA0D3C545A1708B655648258D9BF31C52F43E8521FEA8A9BA56EFDDE454EFD64A5F46EF494A97A9AEED3577625BCB8DF823C1F487C74544D0096D02D2E068C811541ACC1B0BA0191A583490703EFA9EE2336CEDF79E845FD340244939357F093DD2793EEE9337B4DFB7F048D5E5357141B22221DA738F43274F82274483B78CEDA760712CFDECEA99935074EFC75C6967DAF4FDEB8E7CD0E1397043FD265E86E67E07AB3D825CF6B1AF7CDD97CE4D4C3A6B22F2AA18BACFEFAD5B02D73B71FF837C73BC1EC6D075E19BB76D707910B3736EF357355A7B7A3A74CBBAD55E429D21BF35090F641D03D258DA91E6E782574E913FCF3B3B6EE7F15A87A55048EA6EE3999ECF5D4922F426703F28DB089730E9C4EB97D57FCE97B419CE8C9BA83F18F4F581FF76EE729CB7AFEB9CBD05D0EA933D9B9D23B907AFFB66968CAA1D3E77E6F2A5FC7A973E9D7FFB1ED8023A57591B4C8786F42B2D1A7ED26F42B1B06E5736AE9EE2FA28F3B93A984DFDA3C22E9D0E994DB88CF8AE0C96EC33639AE1B29430C997DFD176F0A60156009DDE262C218E80B2C431FE93438CEF1431A06D53DED061EADCCA04ACBCAF9D5B875BBDFFB5BB7E15BFEDE6BE45A5F1B943E095D2604C8DB940E70F4ACCBD4E53DEAFA0517952EB1CBE511EE69143B3BD694FE62123AE9DF8C9C34D3944E0747F5A2166E6806D13A24EC83D4AEF2EF973F6FC7A1974CF9E8F046E884FDA56BEC36539A0B814F420F88F0D41F3273A4299D42626AFAB52DC72E8C94F48E55ECCEC30993F6C7AED856DF945EC785123A60A3953AD387E48161316AF58E8F89BF6ADFF127EBF905CB4A4B2659096F103B6B38F1AF68D8A7C012BAC5C58431D017F68912D66B885BA03C3942AE5F8C5F54A965AF02567C72BAEF530A1511BA58B4EF9BD2E9F01F3E6788B7653B24F67897A13B4CBEF48B4DE815A5D7C1C6DB4783A68FAFD338CC2BA94320CF078D5E999B5FF023531E0ABE081D579929CD85A02242FF3466C618533A1DACF27887C1546F271FD18566A3E6F737A5D571C1842E7FB71C4D7868F8AAED9FAA5503757A3B6AF274E2B71ABB30DCB1CE1DF20EF64CDBB2EF3F2BF71E7BAAD8456309DDE2E2C118E80B2B44311DA574133A8A2E0364C092CD4D4CE92E043541E858B9F8664D7910C62699E9A4CDA544E880178238BBEF909A89D49D4D4A2191CD7BDF30A557A88D840EA66EDAF35FA70F0D6D479EECD998D2E9A80942E72DE853A919D7DF14187ACE0917DCD13AFA24AE43E4E7C856EA794B8BF033AC3E97EC3EF20F4BE816171BC6405F98BD6DFF2BC5846E1850621DF69EB5FA4B53BA0B414D103AD6DDABFDC62F309118ED6173D274E4EE522374C00B290E396205BAF274F2957E783574FC82ECBCFC9F98D283DA4AE8874EA7FCBED475E1CEC73FDCF356D424C74AF6859A20F4E57B8F3DC33391F37C65A55FDBB86FD68BC163965DDF045F399BA5611E5654C45BB0F3E08B96D02D2E368C81BEC05B71C5846E1850A2D87FE93A741B2F1C99D256173541E8A0F1F0B9437833D29D87938F7FA867C1AE43FF74A7B914091DCCDF71E8A5ABFCFBE5992656ACF46BFD4332599598D282DA4AE8C793CFFF96B619754108FDCDA849334CE974D404A12F8D3BF2779EB1390A7197D6C31917F449F1E99CE12BB77F463C36BE2DA15B5C6C18037D61EFA9E4BBAEF40BCEF3BAC12884F06EFFA953132FF0D5741D3545E87EB1B3638D562D834CF2E67B1DEE34972AA1E37A79B1CFE8E5CEF14F57BEC5A413EC99BC31CEEB66716D25F495FB4F884121ED334C64E453D1E62AA809425F1277E41F3CDB77EAEC9DBF6B1E7EF66BDD2CAE177993E65052F101014BE816DF048C81BEC019DE27BB0F2F3E92553290CA40141E8BE5AFDD876F99BA69EF7F211E533E55414D107A7E61E10F5E091967DE50937C592E9B8E2E5EAA840EC2E6AF6F55BCD1EB2637E903096F31664194291DA8AD84DE7DFA8AAECE2720CA113A7A17EA0999BBAE8D299D8E9A24F4C222CFF7FF133E610E7DA9D787F1F166E4E4D2D58225748B6F02C6C08AD07DC6CA2E6E0576C3210BB1125F0A1EB36CCAC63DFF632230E55519D404A1A766E6D4BDA74DFFA3CEA074E5E10CB05691090712536E77A7BB94099D2FF65DD32838C7281799545F081ABDC2940EF822F4C7BB0EDD6E4A7321A80942E7235B37B7884CF6D687BC5806F99AD2EAA84942074CACCE31DED24946FECA6F4EC1A83896D02DBE0918032B02EE94873B0EDE6322843210E5752C79219C677B8D5A17B3744BA37399D9F54C79FA424D10FAE8D53B3EAAE7D7B77840B9F3F00F978967ECD2ECDCFC9FBAD35DCA849E743EE39A3B64227288C69DB7C8FD89AEB15BBD1D5FF44AE822E39B9B8727B71CB3201260E5FB42B3B18BFA0F5BB9FDB3228FE77BA672142A22F40643668D30A55358B0F3D03F1FED1ABBD39BCE214B3E47614AEB46424AFA0DB7B5884C248DA35362D9DF18189AEA6D32D8159FF4C71B0342CF13CF91B5A45BB8EBF00BEA392FB4F1F6689D125D47F67C79F26872EAEF549C995BF6BD56A7A1A4657521F9FC3630EC1C7706A8E716163501636065803BC5199C7C7FC330C0CA00378C2839602218BC7CAB5F65BE74A870A184EE4C409D86EC29764F944D5FBC540FF7F0FD0E53DA4B99D08B8A8ABEC74B40C6BCA5AD0F778CD9939C9E653CE3EF8DD01D30114BDD2A85C068DEB4CD3E999276A3A91C059F842E7AF17CEF51ABE66C3FF0327E7FC0AA6ED0D22D8D5B8F5D18FEEFBE6397381FD732A475D2CB6AE4BE0E830EB1616A2ADB8DB4EC9C5FBD1C326ED14DCD2353AF6F12927E43D3F0B4677A8E58E72D3D1F707BAAFBF08D37348D48BB3E2034FD8E2FFA27B8DD730D63E70CBBA94594E4D72FFDA696D1A9CD46CFEFAF4F727C37FDEE2FA24F5C1F184679E94F771FB1C1F4412F0B8B0B8131B03228282CFABFAE539777E7AB7F95FEACAD43EC42224236CFF41EBD9ECF0398F276C337A1477AA66DDEF71F533AC0313748B38E37F2923CAFF3EF9BB9F170C29F4DE92F7542E7989C99D0433CBC9A4EFB4D697D127A5520F2C33AF5263F055F84EEA0C495E1061393534F43DF3BFA2432BCFFCBC107D11153B9DEC04A71E3E1937FE63CF9BA83F17FA9E8F2108C02E2F269894349E565CA2D5DC860CDFE137F957C1F357D0EFA70D2B95B49BF66FFF1BFEA97675858D4148C8155C1C0259BFCAF6F1A9EE11CDD2AF5215604ACE230CF558DFBE6F59DB3A62DA467CA5BC127A18B75D769F2B25EBC5AAD83256E8BD10BA2704910C7F16BBAD23AE965B91F3872DE4053B9E0522674F046F8C439C6958790217E5F6F9787D424A15FEDD72777DDA1F8C74DE5285448E800FD71C3144FE0F4A9D4FFB9A0D1AB7D7D7AD9C2E2BB04636055B12CEEE8B3CFF719EB5C02E18B3CCB010B4C06A5FFF0B983730BBCBFAAEE8BD0EBD4EF55924FB14BA72C84B0B0F4CAA52906A722EE6D3FE888AFF3DA973AA1F3154B13A1535EB1857EB67A163AB2AE0C4ACADE762CF14FA672142A45E8958190FC35FE2139AF854D9C3F6ACDCE8FAAB327636171B9C218581D64E5E6FD74C8F26D0D1FEB3A6C074459BC4C2EBF01590E420A906FCCD2E2DB614CF04DE80A4C223A4C71BE062B849B9A859FE31B1BA632152E65422F2AF27C8FBB4DCD84DECFF350C798BDDE5C09BE089D6FF5F0F20EE013B6BE70B57F48EE8B7DC62C4FCFCEF1798AA9522E17E7B305025F96B95FB0E7BE0E31877995DE548E85C57719C6C00B019745F376DC7341A3565FE1175C5029578C90CFEDADA28DC70641E508BD9260026912E179B8F3D03DFAD1336FB894099DCF193CDA79C84E63DE32493EDE65E8F6CCDCFC9F99D27A2374F2BABFFDC083F8832BC28643271F5D7F30FEF1CAF8832B2274EE4CBDB2619F7CBEADEEACB802229CBA98E2D287B7B4EA7FC697116061F15D8431B0260091F16D6F4E13382761BC0DCE1270D2A4C9887931A6BC2E88D04BCEFD3A9B6B32B970CAC02F76F6B0E3C9A9953A117129133AA7246E55E7A3DD794B5B9FE93162BDB70B2FBC12BA847DE39FCF95C9E79F41A357CCDB71F0A5995BF7BF16B56863338E4C3A4763BD1904920F9F441EBE62DBE7A6F22C2CBE8B3006D624F83CEEE40D716F3ED061D0016770BA076609382D7347ABA893A64FD8FA24F4CF7B1593B558DD106431E4FFDCD02E561E64704B8B88338F741A12D769EA8A5E3B4E9CBEDF9DBF2F5CCA843E77DB817F5FE9179C6F726D4192EF444F2D738B8E0E5F84FE6DBC296A3A879E989A715DA3E173639D340652A7AE37378F48E6320C775A0B8BEF228C8117037B1292EF7EBC6BEC7688C63D301D0859F3D6E30AC3F7547C12BA58A75CC61B3062EEA086B1B38637183A6B04D65DCF99AB3B07CD5AFD25679A29BBBA9F20B89409BDCBD4653DCC936490738B4EE8BC75AD4DE9C0A546E8DEDE14E5930DCEC6AF17638095DDBBFDA74CF1B612B1B0F82EC11878B1B03B3EE99E3FB41D70DC78F2A4C4CA34DD3EE48BD0B1C627ACDFFD8E3B4D4DE15225F47319D9F51EEE181367DA1075AC5901FE6D535A505B081DF026E6EDADA34F19DD76A237ECD5A8CFD95A587C97610CBC98C0922EB6D25D4B687CDD42425C4BE74E5311A18F5FB7FB5D779A9AC2A54AE8A3D7ECFC102BDC74A207F7D51FDB0D38C206B5292DA84D840EB857D4DBEA0EEBFD93989995FAB89785C5E50C63E0C544A729CB7A150F6A171189A575A55F9FFC39DB0EBCEC4E5311A157F6F3B9D5C1A548E809E7D26EB8B7DDC0C3A63C55BEBE5E9602B58DD0F7279EBDE3A6A661E78C9F9A90B0DF340D3F6F5F30B2F8AEC318E80BBC6E9E5F50E0F3CD4E5F783B6AF234A33F54C89A57F0390AE74E6309FD6BA464645DF14EF4D4695EF72284DC6E080C4DDB7A34F141537A85DA46E880490A9FB93BBD934793304FFB894B824DE92C2CBE2B3006FA021B6DAF474E993771FDEEB7212B531C6F387AE6DCCD777DD13FBE6E23830FDDAFAFE70F6DFA1F4BC9CCBEC29DCE127A31E2E2CFDCF3AF90714BBC92B9803C1B0D9B1D6B4AAFA33612BAF3B960FF7E39C6533DA23F77B68A8A4F4CB5DF48B1F8EEC218E80D9C38F85BB7619BEB351BE0103067CC676F3BF07265BE757EE67CC635FF8B9C3CCB971FB4F1F039434D692F5B4217225337C57B435A56CEAFF8CC2A5F83BCAD5574A2233FC3113E078DFA796E6E1191BCFBE4990A8FF1F9227488D794E642501384CE49A5E77A8F5AE5ED96263688A3176D6C6A4A6B61F15D8031D01BF86EC6239D06C73944A0BE752E03896F9DF79DB3B6EDE2DD479EE353A3EAFB1A7CA18E4B09062CD9D4E4B1AEB13B8A4F2918C888930AFEFD0A16ED3A54FA8D691D972DA14BD8435FC6ECE5820437BA4C5DDEC37FF89C214FF718BEE1EA46C1B98ECC4DA78314FC423CD73409CD99B6C9F76DFF0A5E09DD2FD8735BCBC853A63AF9C4828DAD7C7D3DB326081D0C5CB2D9DFC9C330A9715FEC5322AFCC9CBC9F9BD25A585CEE30067A03973F9712BA1A485846F21BDFE6D58DFAE4DEF545F48907BF8CD9F7C457B15BEF6D37E0F06F9B86A5382FFE988ED7958001FDE1C06913580198CABD5C099D97A26853DD80C8F290762153279DE362F062950B885355EBD41BA13B1F3B63B236D5C90758B5F12DF09DC7CD1B933545E8A752D3AFE7B61FE3E6A8E862BD462145BCA16C4A6B6171B9C318E80DD979F93FF90B2F079996BC00722A2117AC7767F062551AAC2905ACAA073A0C3CC0B7A24D6582CB96D02F144CA6FE619E5B5A46250F5AB2C9DF54BE377827F46A8263A7D23FDEFAA2A6081D341FBD201AD9BBF371F212BDFB5FE4A499A6741616973B8C81BEF0F1A0E9E3EA0646FA24E94A01329281FCC0973107B61C3DF590A92C85DA4EE8CFF719BDB2E6085DE42E16BB33618A05FF8FDEA3D7ACF3F10291377C3868FA841A2774E9533E696B2AAF26099DEFDD5FDDB86FAE69731403E286807E69DB8F253E604A6B617139C318E80BFB4E25DFF96CAF91EBB00C7D6ED07903CB79D28A15FF56F4D4E9E4672A4707D7775DD588016C207459EE8F5A6D26919A0084FC8F203E516B26F457FB8D5F604AA7505858F4FD57FA8D5FE8C8CA95BED270563E7CAF265C6417EA1159E4BDDC6FFC22BE6A59DDEF81F39904E3F1D1EAC2B1D0FB7825746EF079ACEBD01D46398A8180CBCD94CE84BCFC821FFDA3D7C83566998AA12072EA356B7547535A0B8BCB19C6C08A9092917D45E8FC0DAD9FEC316A93433625045D7C1D5D5F87804A81AF53C29CE710880CFCE7FA8C5D3D74C5B606058585FF67CADF8D9D2792EEE5DBDC8EBF167FBD9082CA8FB0A99B2BB711581D50C7FF844F9C53AF697449D9251032A9D77CA0E7AD0A4EA980E8451B039DBA9610728570AC6F898F0F5DD25CEBDF37EBCF9D86EC7E336ACA4CCE5A73CD99B7CB9F2B8BA99BF6FC974BB38B7DF5AEF2AB03FAA64150D106594D99CAE38A36BEDD5EAF69FF7272ACDB7C8073C989299D37309961D997EA9ED209C99B7EF960C0B489A674161697338C8195456A664E5D4EB6F499BDB6C3BFFA8E5D7267EBA878BE6C786360BFF39CCC60E9CBDB7D6C62BD143C666997A92B7A2CDA75F8F9ACBCF2B7EBFB0256F2AC2DFB5E6D3B7169BF8F064D1F8F0BE4FD01D326351FB3307AD88AAD9F9FCFCAA9634A5753E036F89EB3D6746E3C7CEE9057C326CC7F3574FC02BFD839B1BD67ADE9B8F754F25DA6343A20DF09EB76BF13B66043ABF0F9EB5B5684B0F9EB5A3109CCDCB2FF352E4EE6EE4B4E0C99F2AE2EB81C63F6B6FDAF842DAC5C9D2A026DC3F5E56D631B70AB51B719ABBF6A183B7BF8BF43C62D7E2362D26CFF11F30607CF59DBEE9876437E65909D9BF7D3414B36376E3E6641F4FB03A64E4227DE089F389B89A1EBF455DD371D4E78C494CEC2E2728631B03AE06B77D979053FE11BDD3B8E27DE0FD16F3D7AEAC1BD09C9779F49CBBCA626BF86F76D7E598F9BDCF5DBDC2DAA879AEE43FBB5450B8B1A24740B0B0B0B8B6F17C6400B0B0B0B8BDA0763A08585858545ED8331D0C2C2C2C2A2F6C118686161616151FB600CB4B0B0B0B0A87D30065A58585858D43E18032D2C2C2C2C6A1F8C811616161616B50FC6400B0B0B0B8BDA0763A08585858545ED8331D0C2C2C2C2A2F6C118686161616151FB600CB4B0B0B0B0A87D30065A58585858D43E18032D2C2C2C2C6A1F8C811616161616B50FC6400B0B0B0B8BDA0763A08585858545ED8331D0A22C9293937FB369D3A657CE9E3D7BA3E9B9C5771B454545F68E598B0B426262E22D5BB66C7969EBD6AD2F9E3F7FFE6A539CCAC0185819EC3F75F68EA57147FF3E67FBC19717ED3EFCFC91A473B798E27DDBD8BB77EF132B57AEFCF042843473E6CC569F7CF249C1ECD9B39B9B9E2B9CCFCAA9B3E9F0C947B8A51FEC8E4FFA239766A765E5FCCA14DFA262646767FF62D5AA55EFC884FAB210E7257311744A4ACA75F3E6CDF38F888818D3B973E795A1A1A19366CD9AD5323535F55A537C5F28282CFABFDD2793EE597730FEF153A919D799E2589821C6D64D32BE3F3A72E4C803A6E7973A0A0B0BBFBF60C182460D1A3448FEE0830F3C1F7FFCB1A777EFDEB34D712B0363A02F9C4849FB4DE0A8F903EF6A3330BEAE5F5F4FBDC0684FDD46FD3CF7768839D269F2B25E7905853F34A5BB58282828F8414E4ECECF4D833D2323A3AEBFBFFF3181473AFD7DF7F3CA62CA94291D3EFDF453CFB469D3DA999E838C9CDC5F7C3870DA84EB9B4664FCDABF6FD6358DFB66DFDC2C3CF9FEF6030F3EDD73E4862623E6C5AC3F14FF9829EDA50651B2FF8348BF2902CDCBCBFB09303DDBBC79F3BF3FFBEC33CF3BEFBCE3494F4FBFC214E79BC6B163C7EE6BDBB6EDB68F3EFAC823C86CD4A8D1C977DF7DB790C1D8B163C775555DC92D8B3BFAEC2D2D2292AE0E0CCFFD2466FAD8BC82821F99E25516AAFFF86B7A5E9BC0EA87F12DE3DCC82BB1B1B1110101019E5EBD7ACD353DBFD471E8D0A107456F72C460CC98316346EB65CB967D3A77EEDC407956AD559F31D01BCE6566D77BB5DFB8057503233D75FDC33C7584D0AFF30FC9A8D328C453B7F9404F9D067D3CDB8F277EA333E5A449933AB569D366FBAE5DBB9E713FCBCDCDFDE9F0E1C343BB77EFBE4C66F03FB99F571642E46D19AC22F02F4CCFC181C494DB6F691E7EA64E63914BC360473E75032204222BD024C273738BC8E489EBE3DE36A5BF94B068D1A28622D39D6BD6AC79D3F4BC2671EEDCB96B7BF6EC39AF4F9F3E334C847DE2C4893F74EBD66D715454D40821FD1FBB9F7FD3C080080B0B9BC0043F78F0E0016291FF1AC2397EFCF81FDBB56BB75906A64F3D3161FCBAB877194B7503A33C7FEF35724D566EDECF4CF12A0BE9BF06F4DFEAD5AB2F795DAB083B77EE7C56E4BA4D8CAA2F4DCFA58D6FF5E8D16305AB25D3F34B1D8C350C96418306C5989E5715C6406F18BD7AE747759B848B451EE2B9BFC3A0833336EF7B7DFBB1C40756EE3BFE54CBB10B231FE934386EE789D3F799D25E2C8484844C856C6559FEAEE939B8501F6765081D17D4DD5F449FA82B84FE9BC0D0D4112BB77F3A73EBBED77ACF5ADDF1DEB6030E3B035648FE8E5691274FA6A45DD2BE789904C320ACE9D3A7578998AA83A4A4A49B3FFCF0C32C59722641EEA638971220F0860D1B9EA6CE4C36FA3391571BF44406E7603DBC224CD9B8F77F75EAF796493FDCF352F098A5D979F93F35C5AB2C468C18D1AFA215656DC1F2E5CB3F64928C888818677A0E705B98C26B03264C98F0152BBD3973E634353DAF2A8C81DE103872DE402C4D5C2C3D66ACEAE27E7EFA7CC6AF75970BCBE8949494EB45E03F28F9FDE303070EFC196BB9226B8B74FBF7EF7F6CDFBE7D8F272424DCEE7E9E9F9FFF23E2886537F3FDF7DFF72C58B0A0317E72C2E45969DE595959BF4C4B4BBB0ACB4A4F0F70293028F1B3CBD2E76106AB3B0EA8AC85EE10BA7FB8E7D6E6E149C792537FA79EADDA77FCC91B0343CF3B2B1921F6316B767DA8A755888F8FBF6BCF9E3D7F3D73E6CC4DA6E740DA72B56EC90A095E27F5FF8B10636979DEC0C42665DC4D1926B7004B7491C1353131318384B03CE3C78FEFC66F897B8358A1A556A3C8F4573AF98A0CEFA10E999999755518A03DC8F6E0C1838FE073D69F012C5BEA22E4730EB785F4C143E44B99FA242CEDBD52F2AEA3A7D5812ED02EEA70EAD4A9DF9BE200DC10C84BFD4607E9F763C78EDD5B59EBBF84D013453E39B44D7F2696FB7888B464C95C269D2FF822F48C8C8C7AA2D7D7A8DFC898712163E20E15A640FF3106583994F45F7753FFE9203E630C1F34E3D5144781152FEE2669F75F299FBE62BC2153DD254299D49BFF9327F53D7AF4E87D7A1CFAFEF0E1C30F224379763FE3543D53C0650AD1E15BEED7AFDF647488F2745D204FFA84BAE96975900FBA05F798F450019E40D7D46FE48E4E9D3E7DBACAFB83C846CA7B14AE53B2D081CE1267C0800143E92B3C0DC80D5C88ABCC18E80DF587CE1A016161A1BF133D655A61053E56ACE6A64D9B1E61D0EED8B1E31FAD5BB7DEF9DE7BEF7904F92D5BB6DCB378F1E2CFDD69185C919191633FFFFCF3D477DF7D97B81E1924E942DCB379A6E2D1D1C491E7796FBFFDB6478492294B9714C2962C59F2998A171D1D3D9C3AE82E17842933FF476DDBB6DD8AEF933228CBDFDF3F7EDCB8713DDC83BBAA848EEB850D51F5AC403AE885A0512B1D374CE3504FBFB9EBCAE4836BE38B2FBED82E8A9B8BAF58DA91161C1C3C0342D4E30921FD920D3851EE499CBC8178EBD7AF7F8EBA376EDC3891810CD9EA694AF0BD152B56BCD7AA55AB5D32F9E55106720A0D0D9D9C9898584A80D443C253202B642AF5C946A6623DA74E9E3CB9A38A376AD4A8E0E6CD9BEF8304468F1E1D24165416932AB263E2947CDEFAF2CB2F374858BE92ADD42F41E2F651034FFEFE8CC958F24F97FA14090A259FF3B4A759B36607A45EB7114F08FA36E9BF037DFBF69DA60C0305FA49FAA495C43F884E5196E491DEB163C7B59C16D0E3022C56C9EB30130C7B2AD2DFC7A99BF46DA6C8753503DE9DC60D8C0074AA64993C8830DACCE487A5850F5D066595561ABE085DCA1AD1BE7DFB8D900A835E26BED3D41939891E4CD127FFB56BD7FE97FE937E2BD77F13274EECACE201D19F1BFBF7EF3F4C26A764E2A213229B436218F9D11E3D2E93ABC8EB5DD19FDDD2C66C299FFD82F4264D9A1C917E8D9732CE897E7D405C261CE9FBB56C16E386FAEAABAF96D22FA25359C201CF41DC52972E4AF625FA51287C108735AECA44B70203030F4B3959D44FE2E531F1D316264E457AD44BD21E153E68A6D22A4098AC96A4AC93B40F203FE19731AC0CF5B8A28F3FE9D9B3E77C7CF1C874D8B061E1229BB3D4D1CFCFEF0CB21262AE700F87894BF47A169B9CA4A5EED28EE323478E0CD1899DB6D2877A5FD17792EEB4CE73558531D01B42E7AD6F8D3FB84E8320C75FFE4ED4E4696B0FC6FFC51417CC9F3FDF5F2AEA6C584012EDDAB5DB8AE2CBE09C0A014858FEB265CB3E56F1996DBB77EFBE50D214E0339D3A756A7BD0A3478F05583E6DDAB4D9CA2C4A5C944366B761A25447E9A82E5DBAAC183870E060091B1E1717F7147150C4AE5DBB2E67A08915526A4D61314000424AFBC78E1DDB9332A8174B699677FC5671C185123AAB96A77B8C58EF4C860D833DA3D7ECFC483D9B376F5E1364248A96C8F28B894ADA3E526483221CD12D4E144206D0715184E4162D5AEC913A6530C3B33124832A1519C9FF2345D9CB4CB43367CE6C49194C58420A9D67CF9EDD4C06DC58CA8098152940740C00062ECA28FDB5A944A623366CD8F0BACA4FD28EE679A74E9D56F3B75BB76E4B7AF7EE3D9F534058EB22EF0CEA3E66CC98DEC8B26400C7533FAC46F2605265108684844C93BAE5D0169960264AF94371F928AB148B90FE95096F07FAA1EA407AEA4ABFC8803BC50064D2090A0A9A455B253C4708EE7F2A3EC01581DE516FC9B350746D319310EDA4DF0302020E63CDEA694C10CBF24FD20FA7D0694E405126F5400EBE5608DEE08BD0851097888C0BF0CF53676424136A1FA9EB512615C606D62E71A5FF1ED6FB4F2682D2FE5BBF7EFD7F549EF4B71857BBE87F4EE7A07322BB2F652C1D67AC88BEB7517181C8F14D9169117D4ADC850B17FA49BD9629D98B61112363EA71E2323E651C9D62C5856E4919D9B845198758E31871F401BFE92FF463C89021FDA9AF9491BF73E7CEBF930F060BFD25E37A15CFA4EC4342AAB1D29EE15287402656E2511F21428F8CE35EAABE800990BD35FA552698F58C2DE248D836C264FCECD52D6F31967ECE9892676925864F0E93297B7042B267903513B97BB2D3B17BF7EE2731AC902B9C47FBD04BE48AEE13A65617C842DA12CB4456D2571BE93B8C344EEEB8F3AE2C8C81DE7038E9DCAD0F74883980DB0542C7DABC21303CFDBD81D327AFDE77FC6FEEF88B162DAACFE002D2B04896BCEA190301E54178CAAA44589CC594415C4A868074D229EBE8886DDBB6FD537F161E1E3E0E05710F5E00A1A3F058014AE10002DBB871E3AB2CC5F4F85875E42516DF7EBDE32ED4E53265E39EFF5DD5A86F1EAEAA6B1AF5CDDE7234E121C219FC42CE67A5C34F6089AAF800CB172542A9690761583F101B7591017D040256F1390D22F261963FABBB5FB0F24599D2B062DD6E999289C0B1ACF5702C6994D2DB314DE592415658BD90ABE087FC65498C6CDD1B9CA2EC4F4BFC422C3A7D794C9DA8B3C8E0184B673D0DC0CA1385CFEFD0A1C3069DD0E96FF44706E80E9D4419E84C58D44F647450775730799346F22B92893440F531CB6CF2E71947C8547C5F10997557BA2D724F4756BACB823CC5B0F89B5EBE37F8227459A94DA7BFA56E19F4B10A472E42A689908194F3A40A074CA4B49F63947A38C0B21D3A7468146349C8B48C8F5DF2BC075D91FE4816D2FF6D49FCEFCBAA630D7D2763E8511597F6C9D88D13E24E807CF5708811590AD2D561056443D9A2B30F41DAE88A4A0330A8206626203D1C0B1C190B990FD7C315C4686C8C7C206C1546BFCA243604DD16928CD1F58D3184FB8667E8B1B2F47149C131E425724DC0ABA0D260208A5C32E459867BD5AC00470929AF47AE22F7166AC201E827C62CCF30E0F4748C6FFA0A7DD4C3AB0B63A02F6C3E92F0F0533D476D64F30F4257273AAE69129AD373C6CA4E7A5C76DB111016B9129C0224CE0C2E8A52249DFEB4FECC042C3B6639B79B46087D3CC462DAD1F746E8BE80C521247B06BFA00AAB12A18B4CAEF3EF9BD97ADCA2F03EB3D7B40F183977D0CDCD2392EBFA8578EA05467A3E1B3C63B4DA67800C51621389B06C47816406DF8DF54018CA2832DB2B032547561CE55646282403491F78283ACAABAF84142053192CB95872FA00130BB02F4AC6A4ABC7576020D017DE069937606531C8F589253131F156089D25B8C93AF646E86265AFA28EFACA414174ED07B85D90853C2FB54CB1D0A83784A7C70732089BD3175864EE676EE09AC2750399423658596E3FA958B10D19C0DE64A8C317A163FDD30EE5D2D0811B803AEBAE0AA0266493BEA2D7925F166E2CF7333078F0E0FE9487DB8CDF183DD28EF3AC0CDD715945538E8CDF675518845E629917499D8D7B4526E047272FDAAB874B1EEF2363B18E47EAE10A2642C78D286DC865B2C1C0D0E303FCE9D2A60C191729B8650883D0DBB66DBB59CA2AC43DEC4E038FD09FF2CC5941B82186E8BF78CECA4337061564627A8FF6E18ED2C3598D12CE6A550FAF2E8C8115811765A2176F0EFC4BB7E1DB15A93BA738C4021DBA7C6B03154F11BA2E6C1D42C6F8CA8D275458BA61796091A3CCF85B69383E3E3D1E47C82074531E9521F413274EDC8DC52056E56B10AB2C1793F063E956475508BD8E10372E29C75F2E2B997A4DFB3BC716D9107D3574FC82F894B4D27C1531CAEA250C9FBE906E29445171C5640B7294E50AA1B37A9034E74C7E5A190CB3512A596994AE62222323471186DFDB5D064A24A45420CFCFEB8484BF0F594B7B5BAB301D62450D411E4296AF999E2BB071C660C7629789B87E89DB2555B7A859992842D765AE602274218D2B84604E48BFE77B7391481B82A51FCB9C1E80C8A93772D0E3028EBFC944CE2435CCFD4CC7D2A54B3F469F70CFB14AE02510E4DBBD7BF745D44BC5139DEF2A71CA596426F8227459A6CFA13C21A1D2D59802AB38771B017D4DFF71EA460F07429C0F901F563424A3EB031303ED410E92B62DF1B16E719F88DCD2DDAB0DDC9CD23785B8A0541884CEEA913EF5B53A29B1D61F863C993C30D818C7B4578F479D2074993C46E9E10A264217CE78814909FFBD1E5781D5A4B43F8EF2D44925081D97AEC826570C8E32FE75C09E0086D1BA75EBFEEB7E06580D2137646F7A8E11C3586392D1570CB864E82B6FABE1AAC21858599C49CBBC3A7CC1FA9637350D3BE758EAA290CFF51EB55A9DA355846EB28800CB21145227692C772C29B1208E40663258D210047E543A803CF53CAA4BE8F8B02040E9A454E9FC4C4106651017B210A2283D05525542AFD720A8F0F72D224FDFD93A3AFEE91EC3377C3278E6D8B16B767D90A50D54149A490A652DD9946263D0D9B80184C9A0388F6F4D91AD46E8A96A49AC4306E31CC865D3A64DCED21C022CD99370F22B29474791B4FF3C3E65E58705952174068CEE97D5C140C5372E0A9EE2962D932556B98A5B1D423F79F2E49D52EF732C8DD59E8A1B6C20A25BB84654982274B70E01488501899FD4FD4C81D35652D714C9235BB939B000F1D14A382BD1696AB04ADF4E472F954FD8172A43E8A2AFA52E00057CE9D4595601655C2BBE089D3EA32F44A645067D60C5912313D1598854A5C15585DC5869B34782EF99C984307CFC3A41294217D9B3CA2D671D03F296FEDC2475CC627C4B99D9944D9D456E33DC71D1DFAA10BA4CBA9F92971833A3F5B83AD893205FE51252842E7D968B7EB9E3637C42E8DECEF63366A887B71519639876628CA93D2B704911BA42F4A28D4DEBFAF52DE2F4CBDD6DFA1F3F7EF6BC536145E86E1FAD02D623162A4B587EE3671322984C1A2C1EB11A3E86782100C81F126129ABE7C1265155099DA36A42206C6AE5B13CC58264771A5705D6880C92A4EA123A3EF49B9B85256F3D7AEAC19CFC821FF35AB7293EE0B40A048C15471BB1161438860799E9565F65097DF3E6CDFFE2377E3CB561277D511FCBD85406F9EAF928BF5E45842ED6CA1BEE67E42793F13151DE42C927149708CB69ACB8C0C0C0C352BFF33AA14392325052AA42E8583B421849D2AE346F56203E59085D1F28BE089D815A11A10BB97CC4A01699CED4C38500EE602F8867E823BE6E915F0E56B0C8D6EB714B850B25747CB67AB8908BE33233113A8709182F4C42C81E1DD07542E47D0F7AC2D8516918BFD2DFB9901D7591FE70C8970D4BE2EBF92B42977A25CB64576EF5C44A8DF2A5BF4F32116DDFBEFD79EA21AB05097EBFDC6BEFAC1CAA4AE8C205EF503FF61FF4B83A38554679EA444965095DB9A2DC40DFE032F769220556D9E8311BC6FA5EE2B746E81093EE2ED0317FC7C197EA35EC53889BE1AFDD866D49CDCA71084211BAC92F29B3FACF5AB76EBD03E560D381302C3B3A0F61BBFD50EC869397DBE5521D1F3AF561200861959B4DF12D8AB5957C2184CE29977D09C9C6CD131D427821D44388A29C7FD484AA123AE02823D6A3B7A5A2098A104C9B6AC017A1A3D8B4C9A4D8F42BD6BA4EE8F27F36869321745DE60A2642E72F72A0DFF58D611D3298A7210B652C800B2574265EE2607DBB9F41829CFCA04E526E86E85C917E7CD6176A9AD0351F7AB909997A929F4C403BDCCF4C20BE8CC95C4E9840BC184E185ABCC1A95BE60ABE089D7EE3A830639CB3EFFA33994CE8E7722E17DCAD25845E691F3A8619ED67FF295F7B2745010B1983005D547B65174AE8F4357D413CD3730E0520774E54E9E1DF1AA127A7675EF570C7C1711FC5CC1C3F75D3DEFF1E3D937A73426ADAF5ABF61D7BF21FBD46AD51AF2E378C9D5DEA83C42AA4B2B2344E726F34E07FE4199B7C6AD9CC091788424878BE1E17C5C13D41C7B92D74C89934A69739BC11BA5A19B84FC6A064427EE765164DBC5042D78F2D7A8358AFAFA2AC9C2240A14C71745487D05140E48C3FD17DB2C01BB09C90A9377FA02F42675F00C567D0EBE1BC0720832859EA97AA133A7DCF269AE4970979E8698089D00175A0AD108D1E1FC8E0794AF2CB6745A06F8A5D28A1634DA24BA21FC9A689845588E49F4EBD245EA1B7C1EF464D133ABFE91F0C063D1CB0C12EA4B2519E177A7399E91063EB6F948F8EB28A15C2AEA7BBE7DCF045E8E82F1BE3A2F379B21A2B73348FF14B9D4587CB6C8A2273889E15BB1EAE6022745507D1FB22D1C3721BB3C44547D92F513A75A184CE4B52F23C5DDA9DE27E9F819532276BD00BB791F4AD117A4A46F615BF6D1A9652CFF9664B90E7F69691A7EE1202BBB671DF2C3646D9F8BBBB4DFF137C354EA581D05106419174A2736617DF239B8FD2F0B37420675A557C06B4342E47E2E62E5DBAF4139680F8B8202A2C1FC8CF4DE8CC8C9033D61F93C6C68D1B5F6786E619848E2290563F150231D3399D3B775E85F0597649BEC2370D92102E6E179DD039DE45679896B00ABCFA7F47ABA804364291D3AE13A72B7C39808EEED9B3E75CEADFAD5BB7451C9BC43D01F9F1B95E51A289BA95C5809015C441A94B9A89D065F0CF232FE54307286CD7AE5D97122ECFE76EDBB6ED79CE76A3806C6A8686864E714F866CAA2207B19A4F883C5F91DFFFD24F320C183020964124136239AB5F06983FB21502DE88CC912DE48E4CE93F563F3AA11716167E1FD2A27EAC26F6ECD9F3249B756AD397F4EFBCF34E212771744217DDB847EA90493D21777CD594276D0910C2E5D5FC729B9F42E8BC04554E8700CB745C34DE2C410091616CD03E561458ECE8331308FD2413D37EC8076240DF45EF0AA5CC3E6A59EF0D9337EE7DD339061C10E1792168D40A9DD0F9CE0DFA2B7229772C9895147576FBD0214164CD1151FA98FED37DF984211F197F998C49DE6864E2E4A81EDF4CC1785213216E502639E2E373973419D257A9E806ED9495D857D257A56E2FC89423A8D2CF92455942673CA283F4352E54E4821EB2212A722B840FDCA75C4E9F3E7D33650A8714D06F22EB679888D4A939E9037FFA5448BA9B9E4E38C6217ADA88412613E25FE82B7CDDC846EA188FBB49C587D0E110A9478189D079998995AE371F3A6D13636620BAC164826B090351FAE2052603EAC8CB6BEED350BC3742BBDD937275610C3421BFB0F007110BD6B7E00353751AF77394CFF9E89490F9157EC105FF8B9A3A8B238D7A1A2C2184C7808304500A84CC5F09CF65E34A1FA400B2970642EAC4CB6642108B620B9B30FC9F19598F8F85C75120953782D3E32842D72D74D2A038A4511B410C44A9E760367950D8AA12FAC1C494DB1C0B3D20CAF1A1EF3979A6CC773EBC01BFB174F838DA467DD4E665898CF299D8545C65E1483BD3BD10BA3358740B1DE07316E29EAC264569B3B321C6FF25AF1C51D277F4F828371B7C3C47D95052917FE9C6B62F424761D91B2829A754B69002C42DBFB3754207D45788E92C6DA6FE0C6059DE3BAFB643346FBDF596F3928C5B5738CD20A4B283B200ED230F21F433BADC14D0216F84CE40AD88D001CB75FCE4B489B2347D66259A8805868F14D294BE3A8A052D93DB7A535E0AD336ED7BC33919151859CE4257846EB2D0859C9C933C6E422FE9BFA9D449EBBF3E7A1C360EA5BECEC487EE49198E7F9CDF1817DA1BC7DF1B3A746824CF424242A6B022E6FD05F6BA24FD29DADFA54B97E5A29BCE5E81F4FF154C7652E63937A1030C96962D5BEEA11CC853F2E594559A4C7C3D4556497C88CD9D469EF5A27CDA02A932A9620CF14C113AAE3E3D0DAB7A99645B493DCE2BFD0094CBDBBCB877F5F8C8ACC405EC8DD0C751B6AF5517FB39C8AA44EF1D7D547F455E53F5179914B0D069D7B7B6297A3829E5D691AB777CD261D2D23E5F4E5E16D47FD1A640BE55925F50F6B56C00A1D3E1BC9DC86F51F2D7512CC27D592D081B2B9A01481A948B0E62D6132BBECC0B3840047935675E99E9B110C54A28DD4864134894F7332C073D0DF9715411A2E2889610BEF3695B2C0676D675F7042B05667C7D467783096FE1AEC32FC42CDDDA78EEF603FFCA73914F459001FB04726199CC1B666285BC8175A2C741897173E0C74401F567002B4E64D4400652B9EF556009F35CC8CC0F2B854F0263E998260600290961BF2916585721A95632F1944E70C84AEADAD0B4890984787F2424FD32A7236432EC40DB08879C215AB1FACAF95E7157885237230DDF3E571698D4E39762E17F2256E64B5841EE74D2F757619162696220D0A77A5D755086B4BF91C9B5C3048EECB0AADCCFDC4096E809B2C42DC5448F25861EEAF1908FB4A905FDA587BB919A995397AF700E5EBECD6FC3A1938F16157DFDE9542C6B59857E6E3ACD23E478AFF4839F89800CFD57AEAFD02FF48CF1C9B8A43D32F6FEACFBC6595D4138B27A1AA8A7059CE166A285B4186784D16FB8329920F57C7460FDD3A7AC302813DF3CE14C82C8D11D1FBD67F5CAEA81BA0A77947E00103EA04F7107E96914443677D046E40069E2CB96B153CE65846EB12A66EC0BDF94FBAE0CAB7E5F3AAFE3D0A1430FB2C90B1FB1E7C70A484D406EC083E46BE2B5EAC018585380A020747C97A6E71616169736387F8D652A44EB10B61B25ABAE4A1DCFB4B8F83006D6142CA15B58D46E60D9E2B2E1C355AC4A70AD60C16251E25EC29D80EF5973D1587C8B3006D614D86CF3F3F3E34DC808D3730B0B8B4B1B1CEB63BF09E266EF85CD6D7CE462A8A5E3D7EED4A9D37A36F14D692DBE7918036B0A7C3361D2A4493DBC2DD72C2C2C2E7DE0FF650CE3131E3468D090E8E8E811BC6CC40B79393939463FB9C5B70363A08585858545ED8331D0C2C2C2C2A2F6C118686161616151FB600CB4B0B0B0B0A87D30065A58585858D43E18032D2C2C2C2C6A1F8C811616161616B50FC6C0EF12F886031F99E23B0FEE2FA1D556F0361FDFAFE00B73A6E716161697278C81BEB0E5E8A98786ADDCFEF9C8553B3E19BE72FB6713D6C7BDB32CEEE8B36B0F9C7822393DCB781D98021FD81933664CB8E953A0DF04A4FC7F523E9FD154610505053FE07265DE84E345283D7E6D05EDE30B741D3A7458677A0E3272F27E3E7DF3DEFFA8BED43162D5F64F47ADDEF1F1F1E4F3C60F777D57804EC7AED8565FE9FAE48D7BDE5CBEE7D8339B8F9C7A243B2FBFF4867F0B8B4B05C6406F38999276E39F3B0DDECDCD445C68C1C5C775FC823D57F9F5C9BBD63F24F39E76838E351E316FC88153679DAFA7E9E06D333E65DBAC59330FDF00763FAF0CF84A5B7C7CFC5D797979E56E21A90825E52FA4FCA1438746AB7008BD73E7CE2BF9E425DFAAD0D3D4342EA4FE55C1AE5DBB9EE61B3A5C4A607A0E86ADD8F679BD462145C57DC805DF215F83CF233709F7749FBEA2AB29ED77017B1392EFBAB375D4C93A5C828E7C4426DC9B7B75A3E0DC1B9B869D7FB8E3E03D910B3634CFCCCDF37AD98385C5370D63A037EC387EFAFE9B0243CFD56924CADD20C8C32D2B0EF8387FC92DF7FCBDB3CDC093314BB73472A7DFB061C3ABC3860D1B50994F94BA01F1F23D666E4291F4CEA76EAB0A2E6B2829BFD41541BEDC5E7EB109DD55FF2AB7BF2A28B9B187EF6CAC323D079DA72CEB59D75FC84AFAAE4C5F3AFD29BF85D87BCC5C65BC1FF1BB806571479EBDCA2F388F4BBF91C9D57EC1B95734EC53E05C86EE1FEEDC03C09D00CD46CDEF6F4A6F61F16DC018E80DBB4E24DDFBFB1611A7216DAE599BB07EF7BBEB0FC63FBE62EFB1A78367AF69775FBB01879CCB2F8090FEB095DB3E37E5535D6071F241A0B8B8B81A73D97C53840EB4FA97BA7C2E062A43E8DDA7AFECAAACF177A2A74CC5BDB07AFFF1BFF16DFB55FB8B71FA7CC6AF4D69BF0B58B9F7D853D7C9AA135D7FE8CB98BD3B45F7B9B464EE8E03FF7A237CE29C3A0DC58811F95DD3B86FF6E6A3A7CA5C966061F16DC118E80DA5842ECBF1BB5A47C5C7A7A495B948E05872EAEF5EEC3B6E19D60B4BD53FB6E97F343EE57CE907E1B97840ACD327DC170180B367CF5ECFE504DC36C407F2F50FC9CBB31BB85E8ECF7442BC73E6CC69CA250B5C99A56E4A61735308F94FC78F1F772ECEE0B614AE20E3720175E105F9B8CBD709FDE4C99377E19AE123F80B172E6CB87DFBF6E7DD1763002EBF28B9BAEE3EE2BB9FF3D17A79FE9872ADB8EBCF450EAAFE595959656E85276FBE5EC7C5025C902B79F9BC9B943B22B9CD66F1E2C59FCB44F11497E272DF65A5095D08EB8B718BC24C7174702900F545AEFC4E4B4BBB924B2CB8A80059B8E3EB4046D22FF7F0D1FF254B967C4AFB90BB3B1E9F65A52DDC90CE6F64C405085C48ACC7E7C211FA95CF33B32FC3E62FFB32FCE56207E4CDA4999494E4F5F20EDA427F9B9E835242175D7FACF3909D69D9B9A59F874D4CCDB896EB171DF93509F38C5FB7EB3D3D2DE0728743870E3DCC1589D4D55759F439F5E5220B2E63612F47DA6BBC20057D47B7D00FAEEA13593EA85FC6A280EEB1924517B990C3FD9C9B8390AF9E16F92317257F2E6650F257178E00A9C3AFE8276E3D4247D505152670F90637622107F444EAE575EF814B2AC88F5BCB182FF493299E85771803BD4127F43B5B459D3C783AA5DC2D1B2BF61E7DFADA80D04CC7EF2860E34D3DE306A24F3FFD341F65D4D388C2BF13101070A2E4CA26E7FAB9CF3EFB2C5511C5D0A143A32028C890ABD3B8FE0B4B1770428538104EEBD6AD77B66FDF7EC3B66DDBFED9B46953AE6A73AE8092F29CBB25B9CA8AF2211555B62274C9339F1B7CD4D55D5C55457D249F2310BB8A0F5052A9DF592EB8769F8C21BFB66DDB6E91B2F3D42D24BEEA2F65965EE32683F37E75733C71F84B9CC8C8C8D1EA76721DAC28A4BD9BA92F20BE90F81AEEB7E4377B03EE340A5525744844F2CFE7DBF6C8A951A346894A4E52C7A241F2CFF44D6C6E070A0E0E9EAEDA0BA8679F3E7D6673E3BF1E17DFBFE4993F71E2C42E4CDAC8802BE9B8EA0C92A68FB9FE4CD217882C8B9067898CF2256E21F1B9CE6ECB962DFFA25E22CBC52662641292FE2B183C78B05777894EE88F761EB22B292DB3F4DE4CF0C457B15B1DB78B3C1FB776D7FBFA336EB7E19A33E4A3FA91BFDCFAE3BE79885B837AF4E8E15C9328C8A34DD47D82EB8E4C80CBB259B36607894BDE80FF77EFDE7D89FBC61E0C814F3EF9E47CAB56AD76B9FB05B2275CCAC99349AFF4562C2615E43F7EFCF8AFB89B55937FA2BA3D8B83056298EC54E55357410E3709E9642DFD75634444C468F250FD4E7CE993E56E2385748C11895348FBE94FC60B179B5B52AF1A8C81DE5019422FF278BEF75CEF51AB948F71E0E2CD4DD4B3112346F44341B0445418E42861E9FEFEFE09DCD787F5C66739F906B3BA1B932BE9648037E782643A9C7BF8B0CEB8164E5961743C4ACA44208ACC25B6C72106BEC5AE5C1C5C7945F9A455E543C0DC232A4A5920249CC98DFF5256B375EBD6FD97BB3151582EB4E6FA3495060B51C2331B376E7C42BFEE0E60F1B468D1620F0A49DB08C362D6EB0F295107AECB5357C071CF2693078ACFA749B19458298486864EE0C40A138DBE1A60C0C824788C490BDFBC586BEF721981D4F50C8388C1C35D8F2ABE1B5FBB5C423D9F0F99398ABE2C45D2B9DBCE65669799A8C4227B82C98832211E21E919D25F6F4E9F3E9D0BB7CF51478E7EEA6958DD705934B2907E88A41F009741536F21BDB5D26FA5D77D8955F677E423A47540FE1609E9CF9A32654A4726112C53FE4FFF71833AD6257B117CCA953E6212659522847935166683060DCE880CF2B8524DAF1396A6E8D64CEAEBEDC25FA013BA90F7B6424DF633B7EC7FEDFA26FD32980CAF93BFDB8F253EA09E7179B54C76A72127AE4CA31F6917179D53F7FEFDFBC7AAB880B6201FAEDE43CF5965889E86714DA01E0F7D444705B95C9BC87DAA58E8E44B5BC4B838A09333C681D421AF49932647D42A564126C69F493F1E4647F4FB5DB9901DF997E86991C8693632E77A3AC6176D9336643089A0C3AC8ED063AEA193FE4C57FACEEA4426A985F431F7CFAA7E977E0CA2AD324EE3B8BE4E95CB3820AEE8F80CDACFCA462694A6A263D34C868C85771803BDA132840E1A0F9F33449D94683F71495F150EA1D2712CD554184AC91557A3468D2A7389AD095DBB765D86C2D1E9EE67289C28D646F28768394DE28E43193C67E0AB30089D8B6919142D5BB68CD3EF0DC5BAE3B66F212C2ED90D52E1C491F8E7B9DDDB44E8AC14182C4AC115B4FA3B776C2A40D443860C89A66EF3E6CD2B9D0001F9B56BD76E33442F83E22915CE9DABD4991BDAF56533759376EC26AFCA107A9DFA251BA26C8496807EA30FA55EA5775B227399280A18CC108AFE4C0675434895CBBAE57769B8BA5C5BC8AA970A5360C26670CBA4504AAA2584524438AB12973BE05742940942D4A77599132E13E85EAC78E52A004C1AE8D5E4C9933BA930C045BD229B2C88CED77B07A5842E7A7C5BCBC8C46ED3567C153C674DBBCF07CF1CF59BC0D0540E0640E89D262F2B6D1BFAC20DEFD41FD7819E1FA40A518AFCF2D5F15809AB2BF249E3D2083DAE1BB808590D8A8C8B445EFFD39F419E5CE88D8E72BFA90AC76297F85952E60113A1CBA4B91F9D421E2A9C15924CDA8EFC690796BC7A868E3216E84F262A150E70D5701FA8724FE25E210F59B40DD6E301089E3CC4C00954614CB0E8EBE5726CF8DB8431D01B2A4BE86DC62FEEA796F37EB1B34B2D1213A1CBF2F845C23A77EEBC9A65B50A7783C1AD8E1732F0DDCF21F4366DDA6C15452AC417EF7E0EBC113A440B5199F265F98EE2CB32731B0396B0EA10BAABFECFEA69B052857CCE42567AB8022B0606019711AB30B17C375086586A65DC4140C9B4323E7487D021F286C1A5A81B18E5F960C0B489064277485B0F07EC77600D527F2181D20B0F90838417405C7A7CC0E5DFD491A5B60A43FE9421E4B5DFED9A602586EC98DCF4702056EA6CD2E99BDA58B0D2A745DCE4AE5F56CC8449B9ACF25498098AD09D534022937ACD0709063A931D72BBB54544D2A0259B1BEB97A363754A997942A2FBF5BC14264C98F015FDC804C86F5C0D81818158CA05AC4ADDF115B8BC18C2E6D8ADE9392B00DA2A72DBA77CDDD52574C25821195C43B7888C0BC5424FADC86AC6404237254DA9F5AF8031C33359794E546103070E1C42FB58A5301EF5F816558331D01B2A4BE89081F22FB61CB3B0F4CCB989D051360624CB5151BEC3D3A64D6B6BDA64C15A5084C8268DFB39842E4BB99D28B110CC4DEEE7C01BA1AB4D513690F4F84094F26651C02C21DC64E58BAC0EA1BBEA5FE6425DDA2BF173EAD7AF9F82651913133350072F3EC9332C9E18E23320455687648015992641C8170BA9529BA282D7C326CC9BB669EF1BD3361763FCFADDEFEE8A4F2A230B45E8F4951E0EB0D0A4BC0C06BBB292C5FABD42564AF1D2AE3C19B043F11FEB6DE29D042C68599A2F50F9D0AF100A2E2415A680352D32481224E36E52E190A858DBC7643249D237D2214B5C70E4C7866949F8F798BCE91BDAA3E29A506AA18B7C6E08E897F672C8B8459C3D77263CBF10CF7D1D620EAF3F145FE6F82CEE42FA179FB3ACB8FAEBED05181C52CF322B1636003126902D7272EB0698356B560B086FF8F0E1A1EE67000B5EF43E139D54445C1D42C7C5E74DFE18093C43B7DDCF7488FEFF588C9F1DC4C587EEEE77E5EEE280804A834B5264769AB1D9B367CF85AC6EDC75B6A81C8C81DE501942CFCB2FF8D15FBAC66E2B26F4084FC4820D2DD43313A10306BF906D5F7C8F10BB200D3FB26E595585D0DD9B6D0A1511BAE9D8222F03499A74807F963045E858573541E8584632A0F3254D2EEE22088A3D00052C5621F58DB8A788CF6921190009420439D44FCF0B54E9D8A2ACA2DA4D585CC65F6B8222741970F3DCCF187C8AD0557D44467F6012943A1648BFC64B3BCAB449647750DAB459F7BB2B4267135585E960531B326082E324143E7C21E815E80CFB3312A7CCCA61F2E4C95FF28C7D147E976C14660AB16E1152F3F94290EE43E765BA53A919D7A564645FD17EE29260089D535CB7B78A4A389878B6740C70EA8749567430DBDD5E80052D75DFE0B6C6D9B49795071BE9A51BC6A23B77A8E7B8B878E6767528D016645FA2FB8E55AC081DE2AE2AA19BE42F6DFB37CFB0BEDDCF7494ECED1C41577025892E1FD56520FD7E4856975B64B552E6A535F644D833A10CDA8A9F9D4D603D8E45C530067A4365089DD7A3AF6E1296CB8B2957360ACEE78CBA7AE68DD01550AE3973E634C5DA22DED4A9533BA86710220405219A5C23174AE86CF8E91B9F0A90B228591E4A8AD54798227414D44DE8B8238430B699085DAB7F9909894D56092FC29AC2FDC200C5EAD5F02B06A18A8FB50AE99397DA54D5C166615508BDC59805A56E0F6FA82CA1ABE538967AC3860D4F4B7F6462394BBBDC6DFA257DA6E7E38BD0B1FC0897092F01FF37F180949B29FD1A6CB2E85871497FE794C8F517B85B207821C652BDF2069DD01FEB327427644E784E7EC18F9FED39621D72035F4E5A56BAB7C2E9160859C87913BA4299AE36FF4A37527448FFFE14F71E2B17262DF683A44D8EAB6AE6CC99ADB1D04B26AD7269C542BF06BD670255322D21F44C08D42D1B91E50FD9B8477E952574D129A7FFD99F713FD341F9E48D6E725495F6BA64F04BA94FB9D3500AE82EAB1BE4287D97E9DED4B6F00D63A037E8847E57ABA8F893E7D2CB2CF77931E5912E43E378A988B7E95E081AB52247FBE6454584AEC019545146E7E482F2D7E2BFE618138A82E2B9D3A048D52574E543A75C3D3E60F9475DB04CD818224CACD0EBD884A32C06931E1F8217A2E724481942D7EBEF2674145C88E61C84E86BA34E07A441BDD88C723FE32827ED6445E07EA6A0137A9BF18B8C4B791D552574C0E0274D424242A9B5E90BBE089D3E67929C3871626764095940D86EB2D2515858F8835EBD7ACD454EEBD6AD7B83BA4BFE05A689DB0D9DD0DDC71687AED8DAC059810AFED8B6FF9153E7D29D55097A21ED75562452C77267C32B03266EAC7526644E7B10C687D62074D1D3254A0775603DA36FAC5CD4732651F665440FD2DC4687F4D1AFA58E09F44D65099DFCD830A58F75D7960952CFA5D49F49C0F4BC3260F2C23D25465D7BD3730B338C81DE504AE8A2C8ECF4F79AB9BA131F2DEA31636597F7FB4F9DF49BA661A90E99CBF31B0242D3C53A2F3D9501DC840E59B34414522CB301C36065F0962868E9323A2A2A6A248AC20B437A7C7021848E5584E5C6325477BB3010D4929EA3555A9A1FE203842884F04BCF20432E9C38A0EE58FC3AA103557F69FF277A388370E0C08183B1CCA8A3DE66057CA394AB7E8F1F3FBE1BF582B0B0FE5538C7C3387A493B2B75CA45F0CF3E63960F59BEB5E1E0655BFCF86443CCD2AD822D8DF72424979EF8A90EA173C2843AD26E5C517A1A409BD4AA07F822746E9DE719FE598EB70A59382FCDC84AE05AF7A4AA836375F40713A0FCCDABC865A0E08BD071BFDCFD45F4F162C325CC3374F936E7182C13089B7DF423EE1E155F07FE6E744EFDDFA4ABBC518C6E89957D3FBF9392927E274642BCC8385FD737203A7A2567BB4BC655A95E21572C65DABE7AF5EAB754380603C711C95F8C8BC2CA123A7556FE6F19C7A5A769006E1656D34ADFD917A03EB850F495A582F4FB952A1C0B9E746A2252407E10FAAC59B35AEAE116BE610CF406BEE5726340BF3494DCB1EE4AAC14E71B2E4DFB17FF1505BFB7FDE023B3B7EE7FC59D7ED8B061610C7021D4FA2A8CA35062C9ED9765652B5E584129795906E26333484F8F3B86F4F894F1BD723E9673BE3C632927E17BB190D40B3D6E0C1F3EDC3907CF5BA02A0C4565008935735E8830499E9FC77F4FD99D3A755A4D7C96BF0C1C3D2FEA8BD20AD2D9E4E2B74C40EB257E3A9B810C8C13274E94122250F5E71481AABF10B0B361C7C6A8A43B499E32A066A837669948A2A3A3470504041CD5376D6520DECCE61BF1D958243F990CFA8ADC32C95F06723EF551F1DDE83C6579CF7A011142E84CC0C5C4F435C23DF5A43FFD87CF2D3D76869CB1024D8428245157E49ECF64AAFBF421DAD6AD5BEF8204847496F1B20A7E6FDE3E64B34CE47D4A5F15F17F0888B3D52A4C01B294492F06BD200EF2658201F4416464E4D878C35155EA23C4709ABA4362FA4B65BEC0B75CF8764BDDA6519E073A0C3A70FA7C6699CF20048E9C3790F72CD0F9C7BB0EDDCED72B09E76D6569573265896E4FA0ADF4236D97DF13311A1489323131110E1D3A349AB74989C73975D2E22E139D2E754DF0B2186D17122E8A8989190469722C5456B15B912F13899B3C712DF14CE9343ADAA143874DF29BA3928E858E41A5E2B372F4267F2093FA13B252C8A07E21212193D139C9B73B930D2BCF23478E38E7F1198BD41F5DE734167A4F5B19F73206C3D17335C9200B5C97A2F3B338EEC8E92721F38E524E5AFDFAF5CFA949CDA27230067A03DFF6782978ECD23FB48F398E85C2EBCF77B68E8A07F7751874E845B1F4C2166C6C753C39D5F8CA3556A57452A6286FE9ABD29038A75B18700C5214430660328AA25BA4008B062B41142A0F45452185049EE319CA2C04B616EB547FC142071B3194AF9F11E698172F1609A9AFE6CD54AC17941AA2947272B148DD96366045C0CB156AF052775EB040E94569C35048F7691D53FDF5B750216CCA97B2B39087222CA973AA58B9A3F4010E2059263F8953447DA50E459C671762BB13BFB12F6B74D286B8B7EF691F73ECEE36FD8FDFDD26FAB8EAC76244C7DFD56E507C8F195F7F9C4B64F388D4399D97ADF47C000398CD5C062624AE3FC3BA14B21D833C541FD32619EC191087106EA9DB8EF648787A4444C4183D0F804F5EDAB3843A707C134B95378E274D9A24DCD16935EDC7456772C1A83775D9A433ED3998B0E970C2237FF8A2FFF1EB9A4765BE143C6699F2A12BF019E9DFB78A3A7D5D4058E6ADCDC393769F4CBA473DC3974E5DA5CC1CBD1F4557CE72D243F9D19393936F628545BF110FDD17DDE3A5AD99F4A1CA0FB0C21142FC4CFAF520FDAD748ED3211CF773EB06101DFD2593858CA7B3B49F3298E4D980E43495F4C979FA47C5C745E24DFE0ABCECC724425D913979CA24759055B73E5ED103296310A4ACF7BBD4239BC95D8C2E676CB0BA640F04838A7147BE4056623BD7AD5BF7BACACFA2723006FA026F10C6A7A4FD864FE92A9C387BFEA6B31959E5BE79E206BE375C026E6B1772E4757D06287F65D0198F1D02141BD2C4D2630345774F0821DEC71128D3F21E50BE2C2B9F7297CF1B70BA25C03137F2C7FDC206921ED70D1493498941A2EAC220A16EBA3B4181BA317054FD654229B3D46482C1D2C42F0A69B10CD6DD186E3091910F6F3DEA6DE0FF6CB6EA7175F0E663C2B9B41BF47ED4C13778F44FC34242C8DD74A49476531EF2A2FEEEE700D70267C3994CB1C44DC42A6D71BE17637243E0AEC3E2D357570AC894238110865AF1E890340D482B13CB28F7336F403E71F167EE59B9EFD8537CA3C814676FC299BBD9F4DF7A34F1C19CBC82327D0DB9217F4EB4703A09BD9749C9E81AE2B8236E44DE065556AE3788EED643CEC4254FF7046A027B18E8A8FA9406C0324667F5B1227DFC33E4EF6D85ABC07895BC1EC5EA663CF1DB140F605CD1DFF43BFDAFAF0874A00FE830B262FCF9CAD3C23B8C811616971AC4E2754E7FE0CB773F63526403562CBB22594D9571BB30D9B0198DF5B776EDDA37F5671616971B8C811616971A70976165B3198D75CAC639E02D4A36A2217B5E2B97B865369439F6868B027FBD58B765DC261616971B8C811616971AD8788D8D8D8DFCFCF3CF1D9FACF2B5E266C147CCCB4326C2C6572C64EE616FC1FDCCC2E2728331D0C2E252051BD4F883393D02C4427FD997CF17BFFFC68D1BDFD04FDF58585CAE30065A58585858D43E18032D2C2C2C2C6A1F8C811616161616B50FC6400B0B0B0B8BDA06CFFFFBFFF5C255073FEE71950000000049454E44AE426082)
 
 FormNode Fo1607585427
 Title: Sectors Selected
 Definition: 0
-NodeLocation: 324,228,1
+NodeLocation: 340,228,1
 NodeSize: 236,20
 NodeInfo: 1,,,,,,1,312
 NodeFont: Arial,16
 Original: PV_Sectors
+
+FormNode Fo1932528019
+Title: Select Output
+Definition: 0
+NodeLocation: 340,280,1
+NodeSize: 236,16
+NodeInfo: 1,,,,,,1,310
+NodeFont: Arial,16
+Original: PV_Input2
+
+Button Result3
+Title: Result
+NodeLocation: 627,280,1
+NodeSize: 35,13
+NodeInfo: 1,,,,,,,,0
+NodeColor: 63993,42148,13107
+OnClick: PV_Input_Button1
+
+Button Result4
+Title: Result
+NodeLocation: 627,320,1
+NodeSize: 35,13
+NodeInfo: 1,,,,,,,,0
+NodeColor: 63993,42148,13107
+OnClick: PV_Impa_Output_But
+
+Button Result5
+Title: Result
+NodeLocation: 627,360,1
+NodeSize: 35,13
+NodeInfo: 1,,,,,,,,0
+NodeColor: 63993,42148,13107
+OnClick: PV_Econ_Output_But1
+
+Button Result6
+Title: Result
+NodeLocation: 627,400,1
+NodeSize: 35,13
+NodeInfo: 1,,,,,,,,0
+NodeColor: 63993,42148,13107
+OnClick: PV_Other_but
+
+Button Result7
+Title: Result
+NodeLocation: 627,488,1
+NodeSize: 35,13
+NodeInfo: 1,,,,,,,,0
+NodeColor: 63993,42148,13107
+OnClick: EV_Input_Button1
+
+Button Result8
+Title: Result
+NodeLocation: 627,528,1
+NodeSize: 35,13
+NodeInfo: 1,,,,,,,,0
+NodeColor: 63993,42148,13107
+OnClick: EV_Imp_Output_But1
+
+Button Result9
+Title: Result
+NodeLocation: 627,624,1
+NodeSize: 35,13
+NodeInfo: 1,,,,,,,,0
+NodeColor: 63993,42148,13107
+OnClick: Storag_Input_Button
+
+Button Result10
+Title: Result
+NodeLocation: 627,664,1
+NodeSize: 35,13
+NodeInfo: 1,,,,,,,,0
+NodeColor: 63993,42148,13107
+OnClick: BESS_Impact1
 
 Close Nexant_Model_Templat
 

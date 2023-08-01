@@ -19,6 +19,7 @@ NodeFont: Arial,16
 FileInfo: 0,LinkModule Building_Stocks,2,2,0,0,Building Stocks Module.ana
 AcpStyles: FrameNode: FrameNode_2~
 Show_Object:No
+{!40300|ProactivelyEvaluate: 4}
 
 Constant Std_Demolition_Rate
 Title: Standard Demolition Rate
@@ -124,12 +125,12 @@ Definition: Table(All_Spatial_ID,All_Sectors,All_Utilities,Building_Stock_Year)(
 NodeLocation: 104,144,1
 NodeSize: 64,40
 WindState: 2,924,94,815,666
-DefnState: 2,867,39,675,786,0,DFNM
+DefnState: 2,867,39,554,806,0,DFNM
 ValueState: 2,268,186,1418,399,0,MIDM
 Aliases: Alias Al1535645646, FormNode Fo1550726481, Alias Al1550726590, FormNode Fo1550726591, FormNode Fo1529597916, Alias Al416789699
 ReformDef: [All_Sectors,Building_Stock_Year]
 ReformVal: [All_Utilities,All_Sectors]
-NumberFormat: 2,F,4,2,1,0,4,1,$,0,"ABBREV",0,,,0,0,15,
+NumberFormat: 2,F,2,0,1,0,2,1,$,0,"ABBREV",0,,,0,0,15,,0
 DisplayOutputs: Object Object, Object Variable, Object Decision
 Att__TotalsIndex: []
 Att_ResultSliceState: [Building_Stock_Year,22,All_Spatial_ID,3,All_Sectors,1,All_Utilities,1]

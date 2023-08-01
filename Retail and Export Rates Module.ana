@@ -19,6 +19,7 @@ NodeFont: Arial,16
 FileInfo: 0,LinkModule Electric_Rates1,2,2,0,0,Retail and Export Rates Module.ana
 AcpStyles: Show_Object:no~
 FrameNode: RatesFrameNode
+{!40300|ProactivelyEvaluate: 4}
 
 Module Find_Periods_Tiers
 Title: Find Periods & Tiers
@@ -1802,7 +1803,9 @@ $/kW for all demand rate structures
 Definition: Sum(Rate_Data_TOU_Sched[Rate_Names=Rate_Names_and_Start, All_Data_Types=DataType_by_RateType, Time_of_Day=Hour_for_Type_and_Hr, Weekday_or_Weekend=DayType_for_Type_Hr,All_Data_Types=Rate_Structure] * Rate_and_Adj_Attribs, Data_Attribute)
 NodeLocation: 952,200,1
 NodeSize: 64,40
-ValueState: 2,441,27,1364,815,1,MIDM
+ValueState: 2,147,-19,1364,815,1,MIDM
+GraphSetup: Graph_KeyFont:,11,0~
+ShowKey:2
 ReformVal: [Day_Type_and_Hour,Rate_Names_and_Start]
 NumberFormat: 2,F,4,3,0,1,4,0,$,0,"ABBREV",0,,,0,0,15,,0
 Att_ResultSliceState: [Buy_or_Sell_,1,Month,8,All_Tiers,1,Rate_Structure,2,Rate_Names_and_Start,8,Day_Type_and_Hour,1]
@@ -4043,6 +4046,7 @@ NodeLocation: 760,408,1
 NodeSize: 64,40
 WindState: 2,2127,81,1010,591
 ValueState: 2,312,108,416,509,0,MIDM
+Aliases: Alias Al433323283
 NodeColor: 65535,1,1
 
 Decision Basic_Service_Fees1
@@ -4891,7 +4895,7 @@ NodeLocation: 352,296,1
 NodeSize: 64,40
 WindState: 2,98,82,1526,709
 ValueState: 2,257,21,1108,672,1,MIDM
-Aliases: FormNode Fo1547666968, FormNode Fo1567060136
+Aliases: Alias Al1016842387, FormNode Fo1547666968, FormNode Fo1567060136
 GraphSetup: Att_CatLineStyle Graph_Primary_Valdim:5~
 Graph_KeyFont:,18,0~
 Graph_KeyTitleFont:,18,1~

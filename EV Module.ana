@@ -24,6 +24,7 @@ NodeFont: Arial,16
 FileInfo: 0,LinkModule Electric_Vehicles,2,2,0,0,EV Module.ana
 AcpStyles: FrameNode: EV_FrameNode~
 Show_Object:No
+{!40300|ProactivelyEvaluate: 4}
 
 Module EV_Adoption_Logic
 Title: EV Adoption Logic
@@ -2105,8 +2106,8 @@ Null,Null,Null)
 NodeLocation: 120,176,1
 NodeSize: 64,40
 WindState: 2,2,86,720,577
-DefnState: 2,1995,95,1760,402,0,DFNM
-ValueState: 2,54,19,1386,674,1,MIDM
+DefnState: 2,1934,228,1760,265,0,DFNM
+ValueState: 2,54,19,1386,674,0,MIDM
 Aliases: Alias Al1550726324, FormNode Fo1550726404, FormNode Fo1529597918, FormNode Fo1556556407, FormNode Fo1530138520
 GraphSetup: Att_GraphValueRange Vehicle_Stock_Data:1,,1,,,,,-1260.533258318901,2194.302976131439,0~
 Att_GraphIndexRange Vehicle_Stock_DataYr:1,,1,,,,,41454.53956979513,41460.59535318613,0~
@@ -2114,7 +2115,7 @@ Att_Stacked_Lines Graph_Primary_Valdim:0~
 Att_AreaFill Graph_Primary_Valdim:0~
 Graph_ColorSeq:[32639,32639,32639,65278,37008,6168,12593,41891,0,0,0,0,34952,29298,56540,29298,53713,56540,56540,29298,55769,53456,44975,25186,65535,0,0,0,0,65535,65535,46003,65535,0,65535,65535,0,32896,0,65535,42405,0,0,0,35723,42405,10794,10794,65535,49344,52171,65535,65535,0,0,65535,0,32896,0,0,28784,32896,37008,0,32896,32896,32896,0,32896,37008,61166,37008,0,0,0]
 ReformDef: [Vehicle_Stock_DataYr,All_Vehicle_Techs]
-ReformVal: [Vehicle_Stock_DataYr,Null]
+ReformVal: [Vehicle_Stock_DataYr,All_Vehicle_Techs]
 NumberFormat: 2,F,4,0,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
 DisplayOutputs: Object Object, Object Decision
 Att__TotalsIndex: []
@@ -2310,6 +2311,17 @@ NodeSize: 64,40
 DefnState: 2,658,179,539,679,0,DFNM
 TableCellDefault: Checkbox(0)
 
+Constant Vehicle_Stock_Data1
+Title: Vehicle Stock Data
+Units: vehicles
+Definition: subtable(Vehicle_Stock_Data[All_Sectors='EV Combined'])
+NodeLocation: 672,64,1
+NodeSize: 64,40
+DefnState: 2,2079,365,1216,258,0,DFNM
+ValueState: 2,2395,538,975,303,0,MIDM
+ReformVal: [All_Vehicle_Techs,All_Utilities]
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,,0
+
 Close EV_Stock_Initializat
 
 Variable Total_Vehicle_Retire
@@ -2446,12 +2458,13 @@ ValueState: 2,348,201,1158,687,0,MIDM
 Index Vehicle_Stock_DataYr
 Att_PrevIndexValue: [1-Jan-2010,1-Jan-2011,1-Jan-2012,1-Jan-2013,1-Jan-2014,1-Jan-2015,1-Jan-2016,1-Jan-2017,1-Jan-2018,1-Jan-2019,1-Jan-2020,1-Jan-2021,1-Jan-2022,1-Jan-2023,1-Jan-2024,1-Jan-2025,1-Jan-2026,1-Jan-2027,1-Jan-2028,1-Jan-2029,1-Jan-2030,1-Jan-2031,1-Jan-2032,1-Jan-2033,1-Jan-2034,1-Jan-2035]
 Title: Vehicle Stock Data Year
+Description: Vehicle count at the end of the time period
 Definition: Sequence(Vehicle_Stk_Start_Yr, Vehicle_Stock_End_Yr, step:Timestep_Months[Timestep_Options=Vehicle_dT_Choice], dateUnit: 'M')
 NodeLocation: 96,64,1
 NodeSize: 64,40
 WindState: 2,440,88,1016,669
 ValueState: 2,212,11,1000,827,0,MIDM
-NumberFormat: 2,F,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
+NumberFormat: 2,F,4,4,0,0,4,0,$,0,"YYYY",0,,,0,0,15,,0
 DisplayOutputs: Object Object, Object Decision
 
 Constant Vehicle_Stk_Start_Yr
@@ -4337,13 +4350,14 @@ Definition: Table(All_Utilities,Fuel_Types,Vehicle_Input_Years)(~
 2.787,3.535,3.618,3.532,3.401,2.42,2.206,2.455,2.671,2.488,2.093,2.915,3.743,3.8740049999999995,4.009595174999999,4.149931006124999,4.295178591339373,4.445509842036251,4.601102686507519,4.762141280535282,4.928816225354017,5.101324793241407,5.279871161004856,5.464666651640025,5.655929984447425,5.853887533903085)
 NodeLocation: 216,336,1
 NodeSize: 64,40
-DefnState: 2,244,250,1584,326,0,DFNM
-ValueState: 2,348,2,1524,736,0,MIDM
+DefnState: 2,101,355,1728,244,0,DFNM
+ValueState: 2,180,444,1524,232,0,MIDM
 Aliases: Alias Al1553483944, FormNode Fo1553483944, FormNode Fo1553481172
-ReformDef: [Vehicle_Input_Years,Fuel_Types]
-ReformVal: [Vehicle_Input_Years,Fuel_Types]
+ReformDef: [Vehicle_Input_Years,All_Utilities]
+ReformVal: [Vehicle_Input_Years,All_Utilities]
 DisplayOutputs: Object Object, Object Decision
-Att_ResultSliceState: [Fuel_Price_Scen,2,Fuel_Types,1,Vehicle_Input_Years,1]
+Att_ResultSliceState: [Fuel_Types,2,All_Utilities,1,Vehicle_Input_Years,1]
+Att_EditSliceState: [Fuel_Types,1,All_Utilities,1,Vehicle_Input_Years,1]
 {!50000|Att_ColumnWidths: [,Vehicle_Input_Years,\([,64,,,,,,,,,,,,,,,,,,,,,,,,])]}
 
 FormNode Fo1553481172
@@ -4906,12 +4920,12 @@ Definition: Table(Vehicle_Input_Years,All_Vehicle_Techs)(~
 NodeLocation: 120,232,1
 NodeSize: 64,40
 DefnState: 2,23,330,1497,328,0,DFNM
-ValueState: 2,322,33,1115,787,1,MIDM
+ValueState: 2,204,202,1115,238,0,MIDM
 Aliases: Alias Al1553483948, FormNode Fo1553483948, FormNode Fo1553481599
 GraphSetup: Att_GraphIndexRange Vehicle_Input_Years:1,,,,,,20~
 Att_GraphValueRange Vehicle_Price:1,,,,,,20
 ReformDef: [Vehicle_Input_Years,All_Vehicle_Techs]
-NumberFormat: 2,F,4,2,1,0,4,0,$,0,"ABBREV",0,,,0,0,15
+NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,,0
 DisplayOutputs: Object Object, Object Decision
 
 FormNode Fo1553481599
@@ -6439,7 +6453,7 @@ NodeLocation: 120,344,1
 NodeSize: 64,40
 WindState: 2,444,4,720,350
 DefnState: 2,62,207,1590,436,0,DFNM
-ValueState: 2,168,79,1438,689,1,MIDM
+ValueState: 2,111,353,1438,306,0,MIDM
 Aliases: Alias Al1554253795, FormNode Fo1554253795, FormNode Fo1554146281, FormNode Fo1556310672
 GraphSetup: Att_GraphIndexRange Vehicle_Input_Years:1,,,,,,20
 ReformDef: [Vehicle_Input_Years,EV_Incent_Scenario]
@@ -6631,7 +6645,7 @@ Definition: Table(Vehicle_Input_Years,All_Vehicle_Techs)(~
 NodeLocation: 96,208,1
 NodeSize: 64,40
 DefnState: 2,143,197,1258,529,0,DFNM
-ValueState: 2,324,68,911,565,0,MIDM
+ValueState: 2,779,168,469,565,0,MIDM
 Aliases: Alias Al1553483949, FormNode Fo1553483949, FormNode Fo1553481679
 ReformDef: [All_Vehicle_Techs,Vehicle_Input_Years]
 ReformVal: [All_Vehicle_Techs,Vehicle_Input_Years]
@@ -6681,6 +6695,7 @@ NodeSize: 64,40
 DefnState: 2,2035,366,1120,235,0,DFNM
 ValueState: 2,244,250,796,664,0,MIDM
 Aliases: Alias Al1553483950, FormNode Fo1553483950, FormNode Fo1553481724
+NumberFormat: 2,F,2,0,0,0,2,0,$,0,"ABBREV",0,,,0,0,15,,0
 DisplayOutputs: Object Object, Object Decision
 
 FormNode Fo1553481724
