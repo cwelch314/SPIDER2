@@ -2821,11 +2821,11 @@ NodeSize: 64,56
 NodeInfo: 1,0,1,1,1,1,0,,0,,0,,,
 ValueState: 2,2220,53,1184,769,1,MIDM
 Aliases: FormNode Fo1544977997
-GraphSetup: Att_ContLineStyle Graph_Primary_Valdim:5~
-Att_GraphValueRange Tech_Share_of_New_Ve:1,,0,,,,5,0,0.6680812358856202,0~
-Att_Stacked_Lines Graph_Primary_Valdim:0~
+GraphSetup: Att_GraphIndexRange Time_Vehicles:1,,1,,,,10,42679.66501879692,47117.427386820316,0~
 Att_AreaFill Graph_Primary_Valdim:0~
-Att_GraphIndexRange Time_Vehicles:1,,1,,,,10,42679.66501879692,47117.427386820316,0
+Att_Stacked_Lines Graph_Primary_Valdim:0~
+Att_GraphValueRange Tech_Share_of_New_Ve:1,,1,,,,5,0,0.6680812358856202,0~
+Att_ContLineStyle Graph_Primary_Valdim:5
 ReformVal: [Time_Vehicles,Utility_Options_Domi]
 NumberFormat: 2,%,4,4,0,0,4,0,$,0,"ABBREV",0,,,0,0,15
 Att_ResultSliceState: [EV_Sectors,1,Vehicle_Types,1,EV_Incent_Scenario,2,Utility_Options_Domi,1,Time_Vehicles,1]
@@ -4111,7 +4111,7 @@ NodeLocation: 568,80,1
 NodeSize: 64,40
 WindState: 2,68,6,720,679
 DisplayOutputs: Object Object, Object Decision
-{!40300|Att_SlicerPopupSize: 262,80}
+{!40300|Att_SlicerPopupSize: 267,80}
 
 Constant Veh_Input_Start_Yr
 Title: Vehicle Input Start Year
@@ -6452,17 +6452,17 @@ Definition: Table(All_Utilities,Vehicle_Input_Years,All_Vehicle_Techs,Veh_Incent
 NodeLocation: 120,344,1
 NodeSize: 64,40
 WindState: 2,444,4,720,350
-DefnState: 2,62,207,1590,436,0,DFNM
+DefnState: 2,691,129,467,653,0,DFNM
 ValueState: 2,111,353,1438,306,0,MIDM
 Aliases: Alias Al1554253795, FormNode Fo1554253795, FormNode Fo1554146281, FormNode Fo1556310672
 GraphSetup: Att_GraphIndexRange Vehicle_Input_Years:1,,,,,,20
-ReformDef: [Vehicle_Input_Years,EV_Incent_Scenario]
+ReformDef: [EV_Incent_Scenario,Vehicle_Input_Years]
 ReformVal: [Vehicle_Input_Years,EV_Incent_Scenario]
 DisplayOutputs: Object Object, Object Decision
 Att__TotalsIndex: []
 TableCellDefault: 0
 Att_ResultSliceState: [All_Vehicle_Techs,3,All_Utilities,5,Veh_Incentive_Type,1,EV_Incent_Scenario,3,Vehicle_Input_Years,1]
-Att_EditSliceState: [Veh_Incentive_Type,3,All_Vehicle_Techs,2,All_Utilities,5,EV_Incent_Scenario,2,Vehicle_Input_Years,1]
+Att_EditSliceState: [Veh_Incentive_Type,1,All_Vehicle_Techs,3,All_Utilities,5,Vehicle_Input_Years,1,EV_Incent_Scenario,2]
 {!50000|Att_ColumnWidths: [,Veh_Incentive_Type,\([,,]),Vehicle_Input_Years,\([,,,,,,,,,,61,,,,,,,,,,,,,,,])]}
 
 Index EV_Incent_Scenario
