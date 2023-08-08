@@ -3300,7 +3300,7 @@ Date: Mon, Jul 9, 2018 1:00 PM
 NodeLocation: 640,576,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,150,12,1721,756,17
+DiagState: 2,60,37,1721,756,17,10
 AcpStyles: FrameNode: EVAdoption1544921631
 
 Constant Impact_per_EV
@@ -3590,6 +3590,12 @@ NodeLocation: 140,120,1
 NodeSize: 60,16
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Impact_per_EV
+
+Variable kWh_year_new_EV
+Title: kWh/year/new EV
+Definition: VMT[All_Utilities=Selected_Utility] {miles} / MPG[Fuel_Types='Electricity'] {miles/GGE} * kWh_GGE {kWh/GGE}
+NodeLocation: 144,640,1
+NodeSize: 64,40
 
 Close EV_Impact1
 
@@ -4328,7 +4334,7 @@ Date: Mon, Mar 25, 2019 8:59 PM
 NodeLocation: 128,72,1
 NodeSize: 64,40
 NodeInfo: 1,0,1,1,1,1,0,,0,,0,,,
-DiagState: 2,89,34,1710,727,17,10
+DiagState: 2,2030,-1,1710,727,17,10
 AcpStyles: Framenode: VehFuelCost_Frame
 
 Constant Fuel_Prices
@@ -4874,6 +4880,12 @@ NodeLocation: 472,552,1
 NodeSize: 64,40
 ValueState: 2,393,111,1173,754,1,MIDM
 
+Constant kWh_GGE
+Title: kWh/GGE
+Definition: 33.41
+NodeLocation: 88,800,1
+NodeSize: 64,40
+
 Close Vehicle_Fuel_Cost
 
 Module Vehicle_Capital_Cost
@@ -5043,7 +5055,7 @@ Show_description:20
 Constant Vehicle_Incents
 Title: Vehicle Incentives
 Units: $/vehicle
-Description: EV incentives by source (eg, federal, state, utility).
+Description: EV incentives by source (eg, federal, state, utility). Federal incentive inputs are via tax credit.
 Definition: Table(All_Utilities,Vehicle_Input_Years,All_Vehicle_Techs,Veh_Incentive_Type,EV_Incent_Scenario)(~
 0,0,0,~
 0,0,0,~
