@@ -832,18 +832,18 @@ Description: Nameplate MW-AC from Solar PV, cumulative for all time. Excludes an
 Definition: IF (Not Show_Historical[All_Utilities=Selected_Utility]) AND Act_vs_Sim='Actual' THEN Null ELSE PV_Cumul_Adoption
 NodeLocation: 1056,56,1
 NodeSize: 64,40
-ValueState: 2,344,17,1109,799,1,MIDM
-GraphSetup: Graph_LineThickness:5~
-Graph_KeyFont:,12,0~
-Att_GraphIndexRange Output_Periods:1,,1,,,,10,42394.34461797774,45389.70990496874,0~
-{!60002|Graph_DashKey:1}~
-Graph_SymbolKey:1~
+ValueState: 2,425,91,1131,704,1,MIDM
+GraphSetup: ShowKey:2~
+Att_GraphValueRange PV_Cumulative_Adopti:1,,1,,,,,0,2.384866625070572,0~
 Att_ContLineStyle Graph_Primary_Valdim:1~
-Att_GraphValueRange PV_Cumulative_Adopti:1,,1,,,,,49.99712482094765,409.0098440647125,0~
-ShowKey:2
-ReformVal: [Output_Periods,PV_Sectors]
-Att__TotalsIndex: [PV_Sectors]
-Att_ResultSliceState: [Spatial_ID,1,Area_Type,1,Selected_Utility,3,PV_Sectors,0,Output_Periods,156]
+Graph_SymbolKey:1~
+{!60002|Graph_DashKey:1}~
+Att_GraphIndexRange Output_Periods:1,,1,,,,10,41302.254000112414,43595.43365108967,0~
+Graph_KeyFont:,12,0~
+Graph_LineThickness:5
+ReformVal: [Output_Periods,Select_Customer_Rate]
+Att__TotalsIndex: []
+Att_ResultSliceState: [Spatial_ID,1,Area_Type,1,PV_Sectors,2,Select_Customer_Rate,1,Output_Periods,156]
 Att_SymbolRole: PV_Sectors
 {!60002|Att_DashRole: Act_vs_Sim}
 
