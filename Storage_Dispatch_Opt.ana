@@ -2750,7 +2750,7 @@ Date: Mon, Dec 31, 2018 11:53 AM
 NodeLocation: 112,64,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,90,96,1769,728,17,10
+DiagState: 2,16,18,1769,728,17,10
 NodeColor: 65535,65535,65535
 
 Decision Opt_Seq_Number
@@ -2785,7 +2785,7 @@ Title: Opt Sector
 Description: The sector for the current storage optimization. This will be automatically changed by the optimization scripts as it loops through each of the storage optimization scenarios. When running an optimization, only a single element should be selected.~
 ~
 Choice(Opt_Sectors,1,0)
-Definition: Choice(Opt_Sectors,1,1)
+Definition: Choice(Opt_Sectors,0,1)
 NodeLocation: 464,640,1
 NodeSize: 64,40
 WindState: 2,149,1,720,350
@@ -4597,7 +4597,7 @@ MsgBox("Storage dispatch optimization complete.", 0, "Storage Dispatch Optimizat
 Decision Choose_Sectors_to_Op
 Title: Choose Sectors to Optimize
 Description: Select the sectors that will be evaluated in the storage optimization routines.
-Definition: MultiChoice(Opt_Sectors,1,allowNone:0,returnList:1)
+Definition: MultiChoice(Opt_Sectors,allowNone:0,returnList:1)
 NodeLocation: 464,168,1
 NodeSize: 64,40
 Aliases: FormNode Fo989786659, Alias Al783884579, FormNode Fo431563043

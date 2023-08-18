@@ -268,8 +268,8 @@ Checkbox(0),Path_to_Global_Data1,'Demand_TOU_Rates','A7',Choice(Import_Data_Type
 Checkbox(0),Path_to_Global_Data1,'Energy_Periods','A7',Choice(Import_Data_Types,1,0),Null,Handle(Energy_Periods_fm_Te),Handle(Month),Handle(Rate_Names_fm_Templa),Handle(Weekday_or_Weekend),Handle(Time_of_Day),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Energy_Rates','A7',Choice(Import_Data_Types,1,0),Null,Handle(Energy_Rates_fm_Temp),Handle(Rate_Period_Import_1),Handle(Rate_Names_fm_Templa),Handle(Rate_Tiers_Import_Na),Handle(Energy_Rate_Attribut),Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'Energy_Flat_Fees','A7',Choice(Import_Data_Types,1,0),Null,Handle(Flat_Rate_Fees_fm_Te),Handle(Flat_Fee_Type),Handle(Rate_Names_fm_Templa),Null,Null,Null,Null,Null,~
-Checkbox(1),Path_to_Global_Data1,'Rate_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Electric_Rate_Map),Handle(Pre_and_Post_System),Handle(All_System_Types),Handle(PV_Climate_Zone),Handle(Rate_Vintage),Handle(All_Sectors),Handle(All_Utilities),Handle(Rate_Setting),~
-Checkbox(0),Path_to_Global_Data1,'Max_Units','A7',Choice(Import_Data_Types,1,0),Null,Handle(Max_Units),Handle(Max_Unit_Options),Handle(Rate_Names_fm_Templa),Null,Null,Null,Null,Null,~
+Checkbox(0),Path_to_Global_Data1,'Rate_Map','A7',Choice(Import_Data_Types,1,0),Null,Handle(Electric_Rate_Map),Handle(Pre_and_Post_System),Handle(All_System_Types),Handle(PV_Climate_Zone),Handle(Rate_Vintage),Handle(All_Sectors),Handle(All_Utilities),Handle(Rate_Setting),~
+Checkbox(1),Path_to_Global_Data1,'Max_Units','A7',Choice(Import_Data_Types,1,0),Null,Handle(Max_Units),Handle(Max_Unit_Options),Handle(Rate_Names_fm_Templa),Null,Null,Null,Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,~
 Checkbox(0),Path_to_Global_Data1,'SheetName','A7',Choice(Import_Data_Types,1,0),Null,Handle(Variable_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Handle(Index_Identifier),Null,Null,~
@@ -608,7 +608,7 @@ NodeSize: 64,40
 
 Decision Last_Import_Time
 Title: Last Import Time
-Definition: 18-Aug-2023 11:55:04.095000
+Definition: 18-Aug-2023 14:19:54.746000
 NodeLocation: 544,848,1
 NodeSize: 64,40
 Aliases: FormNode New1910098211, FormNode New2017052963
@@ -997,7 +997,7 @@ Aliases: FormNode New232376611
 Decision Import_Categor_Inde1
 Title: Import Categorial Indexes?
 Description: Check this box to import categorical indexes prior to importing data tabs.
-Definition: Checkbox(0)
+Definition: Checkbox(1)
 NodeLocation: 1520,80,1
 NodeSize: 64,40
 Aliases: FormNode New1306118435, FormNode New540657955, FormNode New70895907
