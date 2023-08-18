@@ -2399,7 +2399,7 @@ Constant Peak_Load1
 Title: Peak Load
 Definition: Table(All_Utilities,Building_Stock_Year)(~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,16998,17266,17348,18019,18341,18715,19133,19622,20129,20752,21415,22235,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
-Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
+Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,9686.918734418849,9839.648127337088,9886.378762483715,10268.772130573787,10452.275356393464,10665.412643525635,10903.624905614532,11182.299059110874,11471.231156907694,11826.270006863157,12204.10428859746,12671.41064006372,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
 Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,Null,~
@@ -2414,8 +2414,10 @@ Title: PV MWAC as Fraction of Prior year Peak Load
 Definition: ZIDZ(Total_PV_MW_AC,Peak_Load1[All_Utilities=Selected_Utility,Building_Stock_Year=Year_1])
 NodeLocation: 288,552,1
 NodeSize: 64,56
-ValueState: 2,274,15,1031,705,,MIDM
-GraphSetup: Att_GraphValueRange PV_MWAC_as_Fraction_:1,,1,,,,,0.056003542542457575,0.06687315702438354,0
+ValueState: 2,436,10,1031,705,1,MIDM
+GraphSetup: Graph_AxisLabelFont:,19,0~
+Att_GraphValueRange PV_MWAC_as_Fraction_:1,,1,,,,,0.056003542542457575,0.06687315702438354,0
+NumberFormat: 2,%,4,1,0,0,4,0,$,0,"ABBREV",0,,,0,0,15,,0
 
 Alias Al2121274771
 Title: Simulated Cumulative PV EOP
@@ -5467,7 +5469,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 256,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,156,19,1649,631,17,10
+DiagState: 2,2020,-1,1649,631,17,10
 Aliases: Alias Al1548967139
 NodeColor: 65535,65535,65535
 AcpStyles: FrameNode: FrameNode_1544920029
@@ -5515,7 +5517,7 @@ WindState: 2,184,82,859,463
 DefnState: 2,36,149,1304,440,0,DFNM
 ValueState: 2,278,273,1426,367,0,MIDM
 ReformVal: [PV_Climate_Zone,Pre_and_Post_System]
-Att_ResultSliceState: [PV_Sectors,2,System_Types,2,Rate_Vintage,1,Pre_and_Post_System,2,PV_Climate_Zone,1]
+Att_ResultSliceState: [PV_Sectors,2,System_Types,1,Rate_Vintage,2,Pre_and_Post_System,2,PV_Climate_Zone,1]
 Att_EditSliceState: [Pre_and_Post_System,2,All_Sectors,1,PV_Climate_Zone,1]
 
 Variable Energy_Price
@@ -5680,504 +5682,504 @@ Choice(Rate_Names_with_None,28,0),1-Jan-2022,1,~
 Choice(Rate_Names_with_None,29,0),1-Jan-2022,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,28,0),44562,1,~
-Choice(Rate_Names_with_None,29,0),44562,1,~
+Choice(Rate_Names_with_None,28,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,29,0),1-Jan-2022,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,28,0),44562,1,~
-Choice(Rate_Names_with_None,29,0),44562,1,~
+Choice(Rate_Names_with_None,28,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,29,0),1-Jan-2022,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,28,0),Choice(PV_Sim_Strt_Yr_Opt,241,0),Checkbox(1),~
-Choice(Rate_Names_with_None,30,0),Choice(PV_Sim_Strt_Yr_Opt,322,0),Checkbox(1),~
+Choice(Rate_Names_with_None,28,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,30,0),VA_Nem_Exp_Date,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,28,0),44562,Checkbox(1),~
-Choice(Rate_Names_with_None,29,0),44562,Checkbox(1),~
-Null,Null,Null,~
-Null,Null,Null,~
-Null,Null,Null,~
-Null,Null,Null,~
-Choice(Rate_Names_with_None,28,0),44562,Checkbox(1),~
-Choice(Rate_Names_with_None,29,0),44562,Checkbox(1),~
-Null,Null,Null,~
-Null,Null,Null,~
-Choice(Rate_Names_with_None,41,0),23-Jan-2023,1,~
-Choice(Rate_Names_with_None,42,0),23-Jan-2023,1,~
-Null,Null,Null,~
-Null,Null,Null,~
-Choice(Rate_Names_with_None,41,0),44949,1,~
-Choice(Rate_Names_with_None,42,0),44949,1,~
+Choice(Rate_Names_with_None,28,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,30,0),VA_Nem_Exp_Date,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,41,0),44949,1,~
-Choice(Rate_Names_with_None,42,0),44949,1,~
+Choice(Rate_Names_with_None,28,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,30,0),VA_Nem_Exp_Date,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,41,0),23-Jan-2023,Checkbox(1),~
-Choice(Rate_Names_with_None,42,0),23-Jan-2023,Checkbox(1),~
+Choice(Rate_Names_with_None,41,0),1-Jan-2023,1,~
+Choice(Rate_Names_with_None,42,0),1-Jan-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,41,0),44949,Checkbox(1),~
-Choice(Rate_Names_with_None,42,0),44949,Checkbox(1),~
+Choice(Rate_Names_with_None,41,0),1-Jan-2023,1,~
+Choice(Rate_Names_with_None,42,0),1-Jan-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,41,0),44949,Checkbox(1),~
-Choice(Rate_Names_with_None,42,0),44949,Checkbox(1),~
+Choice(Rate_Names_with_None,41,0),1-Jan-2023,1,~
+Choice(Rate_Names_with_None,42,0),1-Jan-2023,1,~
+Null,Null,Null,~
+Null,Null,Null,~
+Choice(Rate_Names_with_None,41,0),1-Jan-2023,1,~
+Choice(Rate_Names_with_None,42,0),VA_Nem_Exp_Date,1,~
+Null,Null,Null,~
+Null,Null,Null,~
+Choice(Rate_Names_with_None,41,0),1-Jan-2023,1,~
+Choice(Rate_Names_with_None,42,0),VA_Nem_Exp_Date,1,~
+Null,Null,Null,~
+Null,Null,Null,~
+Null,Null,Null,~
+Null,Null,Null,~
+Choice(Rate_Names_with_None,41,0),1-Jan-2023,1,~
+Choice(Rate_Names_with_None,42,0),VA_Nem_Exp_Date,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,9,0),1-Nov-2019,1,~
 Choice(Rate_Names_with_None,9,0),1-Nov-2019,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,9,0),43770,1,~
-Choice(Rate_Names_with_None,9,0),43770,1,~
+Choice(Rate_Names_with_None,9,0),1-Nov-2019,1,~
+Choice(Rate_Names_with_None,9,0),1-Nov-2019,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,9,0),43770,1,~
-Choice(Rate_Names_with_None,9,0),43770,1,~
+Choice(Rate_Names_with_None,9,0),1-Nov-2019,1,~
+Choice(Rate_Names_with_None,9,0),1-Nov-2019,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,9,0),Choice(PV_Sim_Strt_Yr_Opt,215,0),Checkbox(1),~
-Choice(Rate_Names_with_None,9,0),Choice(PV_Sim_Strt_Yr_Opt,215,0),Checkbox(1),~
+Choice(Rate_Names_with_None,9,0),1-Nov-2019,1,~
+Choice(Rate_Names_with_None,9,0),1-Nov-2019,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,9,0),43770,Checkbox(1),~
-Choice(Rate_Names_with_None,9,0),43770,Checkbox(1),~
+Choice(Rate_Names_with_None,9,0),1-Nov-2019,1,~
+Choice(Rate_Names_with_None,9,0),1-Nov-2019,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,9,0),43770,Checkbox(1),~
-Choice(Rate_Names_with_None,9,0),43770,Checkbox(1),~
+Choice(Rate_Names_with_None,9,0),1-Nov-2019,1,~
+Choice(Rate_Names_with_None,9,0),1-Nov-2019,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,5,0),1-May-2023,1,~
 Choice(Rate_Names_with_None,6,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,5,0),45047,1,~
-Choice(Rate_Names_with_None,6,0),45047,1,~
+Choice(Rate_Names_with_None,5,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,6,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,5,0),45047,1,~
-Choice(Rate_Names_with_None,6,0),45047,1,~
+Choice(Rate_Names_with_None,5,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,6,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,5,0),Choice(PV_Sim_Strt_Yr_Opt,257,0),Checkbox(1),~
-Choice(Rate_Names_with_None,6,0),Choice(PV_Sim_Strt_Yr_Opt,257,0),Checkbox(1),~
+Choice(Rate_Names_with_None,5,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,6,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,5,0),45047,Checkbox(1),~
-Choice(Rate_Names_with_None,6,0),45047,Checkbox(1),~
+Choice(Rate_Names_with_None,5,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,6,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,5,0),45047,Checkbox(1),~
-Choice(Rate_Names_with_None,6,0),45047,Checkbox(1),~
+Choice(Rate_Names_with_None,5,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,6,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,21,0),1-May-2023,1,~
 Choice(Rate_Names_with_None,19,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,21,0),45047,1,~
-Choice(Rate_Names_with_None,19,0),45047,1,~
+Choice(Rate_Names_with_None,21,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,19,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,21,0),45047,1,~
-Choice(Rate_Names_with_None,19,0),45047,1,~
+Choice(Rate_Names_with_None,21,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,19,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,21,0),Choice(PV_Sim_Strt_Yr_Opt,257,0),Checkbox(1),~
-Choice(Rate_Names_with_None,19,0),Choice(PV_Sim_Strt_Yr_Opt,257,0),Checkbox(1),~
+Choice(Rate_Names_with_None,21,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,19,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,21,0),45047,Checkbox(1),~
-Choice(Rate_Names_with_None,19,0),45047,Checkbox(1),~
+Choice(Rate_Names_with_None,21,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,19,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,21,0),45047,Checkbox(1),~
-Choice(Rate_Names_with_None,19,0),45047,Checkbox(1),~
+Choice(Rate_Names_with_None,21,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,19,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,14,0),1-Apr-2023,1,~
 Choice(Rate_Names_with_None,12,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,14,0),45017,1,~
-Choice(Rate_Names_with_None,12,0),45017,1,~
+Choice(Rate_Names_with_None,14,0),1-Apr-2023,1,~
+Choice(Rate_Names_with_None,12,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,14,0),45017,1,~
-Choice(Rate_Names_with_None,12,0),45017,1,~
+Choice(Rate_Names_with_None,14,0),1-Apr-2023,1,~
+Choice(Rate_Names_with_None,12,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,14,0),Choice(PV_Sim_Strt_Yr_Opt,256,0),Checkbox(1),~
-Choice(Rate_Names_with_None,12,0),Choice(PV_Sim_Strt_Yr_Opt,256,0),Checkbox(1),~
+Choice(Rate_Names_with_None,14,0),1-Apr-2023,1,~
+Choice(Rate_Names_with_None,12,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,14,0),45017,Checkbox(1),~
-Choice(Rate_Names_with_None,12,0),45017,Checkbox(1),~
+Choice(Rate_Names_with_None,14,0),1-Apr-2023,1,~
+Choice(Rate_Names_with_None,12,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,14,0),45017,Checkbox(1),~
-Choice(Rate_Names_with_None,12,0),45017,Checkbox(1),~
+Choice(Rate_Names_with_None,14,0),1-Apr-2023,1,~
+Choice(Rate_Names_with_None,12,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,32,0),1-Jan-2022,1,~
 Choice(Rate_Names_with_None,33,0),1-Jan-2022,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,32,0),44562,1,~
-Choice(Rate_Names_with_None,33,0),44562,1,~
+Choice(Rate_Names_with_None,32,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,33,0),1-Jan-2022,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,32,0),44562,1,~
-Choice(Rate_Names_with_None,32,0),44562,1,~
+Choice(Rate_Names_with_None,32,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,32,0),1-Jan-2022,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,32,0),Choice(PV_Sim_Strt_Yr_Opt,241,0),Checkbox(1),~
-Choice(Rate_Names_with_None,34,0),Choice(PV_Sim_Strt_Yr_Opt,322,0),Checkbox(1),~
+Choice(Rate_Names_with_None,32,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,34,0),VA_Nem_Exp_Date,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,32,0),44562,Checkbox(1),~
-Choice(Rate_Names_with_None,33,0),44562,Checkbox(1),~
-Null,Null,Null,~
-Null,Null,Null,~
-Null,Null,Null,~
-Null,Null,Null,~
-Choice(Rate_Names_with_None,32,0),44562,Checkbox(1),~
-Choice(Rate_Names_with_None,32,0),44562,Checkbox(1),~
-Null,Null,Null,~
-Null,Null,Null,~
-Choice(Rate_Names_with_None,39,0),23-Jan-2023,1,~
-Choice(Rate_Names_with_None,40,0),23-Jan-2023,1,~
-Null,Null,Null,~
-Null,Null,Null,~
-Choice(Rate_Names_with_None,39,0),44949,1,~
-Choice(Rate_Names_with_None,40,0),44949,1,~
+Choice(Rate_Names_with_None,32,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,34,0),VA_Nem_Exp_Date,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,39,0),44949,1,~
-Choice(Rate_Names_with_None,31,0),44949,1,~
+Choice(Rate_Names_with_None,32,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,34,0),VA_Nem_Exp_Date,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,39,0),23-Jan-2023,Checkbox(1),~
-Choice(Rate_Names_with_None,40,0),23-Jan-2023,Checkbox(1),~
+Choice(Rate_Names_with_None,39,0),1-Jan-2023,1,~
+Choice(Rate_Names_with_None,40,0),1-Jan-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,39,0),44949,Checkbox(1),~
-Choice(Rate_Names_with_None,40,0),44949,Checkbox(1),~
+Choice(Rate_Names_with_None,39,0),1-Jan-2023,1,~
+Choice(Rate_Names_with_None,40,0),1-Jan-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,39,0),44949,Checkbox(1),~
-Choice(Rate_Names_with_None,31,0),44949,Checkbox(1),~
+Choice(Rate_Names_with_None,39,0),1-Jan-2023,1,~
+Choice(Rate_Names_with_None,31,0),1-Jan-2023,1,~
+Null,Null,Null,~
+Null,Null,Null,~
+Choice(Rate_Names_with_None,39,0),1-Jan-2023,1,~
+Choice(Rate_Names_with_None,40,0),VA_Nem_Exp_Date,1,~
+Null,Null,Null,~
+Null,Null,Null,~
+Choice(Rate_Names_with_None,39,0),1-Jan-2023,1,~
+Choice(Rate_Names_with_None,40,0),VA_Nem_Exp_Date,1,~
+Null,Null,Null,~
+Null,Null,Null,~
+Null,Null,Null,~
+Null,Null,Null,~
+Choice(Rate_Names_with_None,39,0),1-Jan-2023,1,~
+Choice(Rate_Names_with_None,31,0),VA_Nem_Exp_Date,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,10,0),1-Nov-2019,1,~
 Choice(Rate_Names_with_None,10,0),1-Nov-2019,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,10,0),43770,1,~
-Choice(Rate_Names_with_None,10,0),43770,1,~
+Choice(Rate_Names_with_None,10,0),1-Nov-2019,1,~
+Choice(Rate_Names_with_None,10,0),1-Nov-2019,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,10,0),43770,1,~
-Choice(Rate_Names_with_None,10,0),43770,1,~
+Choice(Rate_Names_with_None,10,0),1-Nov-2019,1,~
+Choice(Rate_Names_with_None,10,0),1-Nov-2019,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,10,0),Choice(PV_Sim_Strt_Yr_Opt,215,0),Checkbox(1),~
-Choice(Rate_Names_with_None,10,0),Choice(PV_Sim_Strt_Yr_Opt,215,0),Checkbox(1),~
+Choice(Rate_Names_with_None,10,0),1-Nov-2019,1,~
+Choice(Rate_Names_with_None,10,0),1-Nov-2019,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,10,0),43770,Checkbox(1),~
-Choice(Rate_Names_with_None,10,0),43770,Checkbox(1),~
+Choice(Rate_Names_with_None,10,0),1-Nov-2019,1,~
+Choice(Rate_Names_with_None,10,0),1-Nov-2019,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,10,0),43770,Checkbox(1),~
-Choice(Rate_Names_with_None,10,0),43770,Checkbox(1),~
+Choice(Rate_Names_with_None,10,0),1-Nov-2019,1,~
+Choice(Rate_Names_with_None,10,0),1-Nov-2019,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,7,0),1-May-2023,1,~
 Choice(Rate_Names_with_None,8,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,7,0),45047,1,~
-Choice(Rate_Names_with_None,8,0),45047,1,~
+Choice(Rate_Names_with_None,7,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,8,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,7,0),45047,1,~
-Choice(Rate_Names_with_None,8,0),45047,1,~
+Choice(Rate_Names_with_None,7,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,8,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,7,0),Choice(PV_Sim_Strt_Yr_Opt,257,0),Checkbox(1),~
-Choice(Rate_Names_with_None,8,0),Choice(PV_Sim_Strt_Yr_Opt,257,0),Checkbox(1),~
+Choice(Rate_Names_with_None,7,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,8,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,7,0),45047,Checkbox(1),~
-Choice(Rate_Names_with_None,8,0),45047,Checkbox(1),~
+Choice(Rate_Names_with_None,7,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,8,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,7,0),45047,Checkbox(1),~
-Choice(Rate_Names_with_None,8,0),45047,Checkbox(1),~
+Choice(Rate_Names_with_None,7,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,8,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,22,0),1-May-2023,1,~
 Choice(Rate_Names_with_None,15,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,22,0),45047,1,~
-Choice(Rate_Names_with_None,15,0),45047,1,~
+Choice(Rate_Names_with_None,22,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,15,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,22,0),45047,1,~
-Choice(Rate_Names_with_None,15,0),45047,1,~
+Choice(Rate_Names_with_None,22,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,15,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,22,0),Choice(PV_Sim_Strt_Yr_Opt,257,0),Checkbox(1),~
-Choice(Rate_Names_with_None,15,0),Choice(PV_Sim_Strt_Yr_Opt,257,0),Checkbox(1),~
+Choice(Rate_Names_with_None,22,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,15,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,22,0),45047,Checkbox(1),~
-Choice(Rate_Names_with_None,15,0),45047,Checkbox(1),~
+Choice(Rate_Names_with_None,22,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,15,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,22,0),45047,Checkbox(1),~
-Choice(Rate_Names_with_None,15,0),45047,Checkbox(1),~
+Choice(Rate_Names_with_None,22,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,15,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,26,0),1-Apr-2023,1,~
 Choice(Rate_Names_with_None,26,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,26,0),45017,1,~
-Choice(Rate_Names_with_None,26,0),45017,1,~
+Choice(Rate_Names_with_None,26,0),1-Apr-2023,1,~
+Choice(Rate_Names_with_None,26,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,26,0),45017,1,~
-Choice(Rate_Names_with_None,26,0),45017,1,~
+Choice(Rate_Names_with_None,26,0),1-Apr-2023,1,~
+Choice(Rate_Names_with_None,26,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,26,0),Choice(PV_Sim_Strt_Yr_Opt,256,0),Checkbox(1),~
-Choice(Rate_Names_with_None,26,0),Choice(PV_Sim_Strt_Yr_Opt,256,0),Checkbox(1),~
+Choice(Rate_Names_with_None,26,0),1-Apr-2023,1,~
+Choice(Rate_Names_with_None,26,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,26,0),45017,Checkbox(1),~
-Choice(Rate_Names_with_None,26,0),45017,Checkbox(1),~
+Choice(Rate_Names_with_None,26,0),1-Apr-2023,1,~
+Choice(Rate_Names_with_None,26,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,26,0),45017,Checkbox(1),~
-Choice(Rate_Names_with_None,26,0),45017,Checkbox(1),~
+Choice(Rate_Names_with_None,26,0),1-Apr-2023,1,~
+Choice(Rate_Names_with_None,26,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,35,0),1-Jan-2022,1,~
 Choice(Rate_Names_with_None,36,0),1-Jan-2022,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,35,0),44562,1,~
-Choice(Rate_Names_with_None,36,0),44562,1,~
+Choice(Rate_Names_with_None,35,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,36,0),1-Jan-2022,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,35,0),44562,1,~
-Choice(Rate_Names_with_None,36,0),44562,1,~
+Choice(Rate_Names_with_None,35,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,36,0),1-Jan-2022,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,35,0),Choice(PV_Sim_Strt_Yr_Opt,241,0),Checkbox(1),~
-Choice(Rate_Names_with_None,36,0),Choice(PV_Sim_Strt_Yr_Opt,241,0),Checkbox(1),~
+Choice(Rate_Names_with_None,35,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,36,0),1-Jan-2022,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,35,0),44562,Checkbox(1),~
-Choice(Rate_Names_with_None,36,0),44562,Checkbox(1),~
-Null,Null,Null,~
-Null,Null,Null,~
-Null,Null,Null,~
-Null,Null,Null,~
-Choice(Rate_Names_with_None,35,0),44562,Checkbox(1),~
-Choice(Rate_Names_with_None,36,0),44562,Checkbox(1),~
-Null,Null,Null,~
-Null,Null,Null,~
-Choice(Rate_Names_with_None,38,0),23-Jan-2023,1,~
-Choice(Rate_Names_with_None,37,0),23-Jan-2023,1,~
-Null,Null,Null,~
-Null,Null,Null,~
-Choice(Rate_Names_with_None,38,0),44949,1,~
-Choice(Rate_Names_with_None,37,0),44949,1,~
+Choice(Rate_Names_with_None,35,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,36,0),1-Jan-2022,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,38,0),44949,1,~
-Choice(Rate_Names_with_None,37,0),44949,1,~
+Choice(Rate_Names_with_None,35,0),1-Jan-2022,1,~
+Choice(Rate_Names_with_None,36,0),1-Jan-2022,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,38,0),23-Jan-2023,Checkbox(1),~
-Choice(Rate_Names_with_None,37,0),23-Jan-2023,Checkbox(1),~
+Choice(Rate_Names_with_None,38,0),1-Jan-2023,1,~
+Choice(Rate_Names_with_None,37,0),1-Jan-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,38,0),44949,Checkbox(1),~
-Choice(Rate_Names_with_None,37,0),44949,Checkbox(1),~
+Choice(Rate_Names_with_None,38,0),1-Jan-2023,1,~
+Choice(Rate_Names_with_None,37,0),1-Jan-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,38,0),44949,Checkbox(1),~
-Choice(Rate_Names_with_None,37,0),44949,Checkbox(1),~
+Choice(Rate_Names_with_None,38,0),1-Jan-2023,1,~
+Choice(Rate_Names_with_None,37,0),1-Jan-2023,1,~
+Null,Null,Null,~
+Null,Null,Null,~
+Choice(Rate_Names_with_None,38,0),1-Jan-2023,1,~
+Choice(Rate_Names_with_None,37,0),1-Jan-2022,1,~
+Null,Null,Null,~
+Null,Null,Null,~
+Choice(Rate_Names_with_None,38,0),1-Jan-2023,1,~
+Choice(Rate_Names_with_None,37,0),1-Jan-2023,1,~
+Null,Null,Null,~
+Null,Null,Null,~
+Null,Null,Null,~
+Null,Null,Null,~
+Choice(Rate_Names_with_None,38,0),1-Jan-2023,1,~
+Choice(Rate_Names_with_None,37,0),1-Jan-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,11,0),1-Nov-2019,1,~
 Choice(Rate_Names_with_None,11,0),1-Nov-2019,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,11,0),43770,1,~
-Choice(Rate_Names_with_None,11,0),43770,1,~
+Choice(Rate_Names_with_None,11,0),1-Nov-2019,1,~
+Choice(Rate_Names_with_None,11,0),1-Nov-2019,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,11,0),43770,1,~
-Choice(Rate_Names_with_None,11,0),43770,1,~
+Choice(Rate_Names_with_None,11,0),1-Nov-2019,1,~
+Choice(Rate_Names_with_None,11,0),1-Nov-2019,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,11,0),Choice(PV_Sim_Strt_Yr_Opt,215,0),Checkbox(1),~
-Choice(Rate_Names_with_None,11,0),Choice(PV_Sim_Strt_Yr_Opt,215,0),Checkbox(1),~
+Choice(Rate_Names_with_None,11,0),1-Nov-2019,1,~
+Choice(Rate_Names_with_None,11,0),1-Nov-2019,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,11,0),43770,Checkbox(1),~
-Choice(Rate_Names_with_None,11,0),43770,Checkbox(1),~
+Choice(Rate_Names_with_None,11,0),1-Nov-2019,1,~
+Choice(Rate_Names_with_None,11,0),1-Nov-2019,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,11,0),43770,Checkbox(1),~
-Choice(Rate_Names_with_None,11,0),43770,Checkbox(1),~
+Choice(Rate_Names_with_None,11,0),1-Nov-2019,1,~
+Choice(Rate_Names_with_None,11,0),1-Nov-2019,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,3,0),1-May-2023,1,~
 Choice(Rate_Names_with_None,4,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,3,0),45047,1,~
-Choice(Rate_Names_with_None,4,0),45047,1,~
+Choice(Rate_Names_with_None,3,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,4,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,3,0),45047,1,~
-Choice(Rate_Names_with_None,4,0),45047,1,~
+Choice(Rate_Names_with_None,3,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,4,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,3,0),Choice(PV_Sim_Strt_Yr_Opt,257,0),Checkbox(1),~
-Choice(Rate_Names_with_None,4,0),Choice(PV_Sim_Strt_Yr_Opt,257,0),Checkbox(1),~
+Choice(Rate_Names_with_None,3,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,4,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,3,0),45047,Checkbox(1),~
-Choice(Rate_Names_with_None,4,0),45047,Checkbox(1),~
+Choice(Rate_Names_with_None,3,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,4,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,3,0),45047,Checkbox(1),~
-Choice(Rate_Names_with_None,4,0),45047,Checkbox(1),~
+Choice(Rate_Names_with_None,3,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,4,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,17,0),1-May-2023,1,~
 Choice(Rate_Names_with_None,18,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,17,0),45047,1,~
-Choice(Rate_Names_with_None,18,0),45047,1,~
+Choice(Rate_Names_with_None,17,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,18,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,17,0),45047,1,~
-Choice(Rate_Names_with_None,18,0),45047,1,~
+Choice(Rate_Names_with_None,17,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,18,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,17,0),Choice(PV_Sim_Strt_Yr_Opt,257,0),Checkbox(1),~
-Choice(Rate_Names_with_None,18,0),Choice(PV_Sim_Strt_Yr_Opt,257,0),Checkbox(1),~
+Choice(Rate_Names_with_None,17,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,18,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,17,0),45047,Checkbox(1),~
-Choice(Rate_Names_with_None,18,0),45047,Checkbox(1),~
+Choice(Rate_Names_with_None,17,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,18,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,17,0),45047,Checkbox(1),~
-Choice(Rate_Names_with_None,18,0),45047,Checkbox(1),~
+Choice(Rate_Names_with_None,17,0),1-May-2023,1,~
+Choice(Rate_Names_with_None,18,0),1-May-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Choice(Rate_Names_with_None,23,0),1-Apr-2023,1,~
 Choice(Rate_Names_with_None,23,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,23,0),45017,1,~
-Choice(Rate_Names_with_None,23,0),45017,1,~
+Choice(Rate_Names_with_None,23,0),1-Apr-2023,1,~
+Choice(Rate_Names_with_None,23,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,23,0),45017,1,~
-Choice(Rate_Names_with_None,23,0),45017,1,~
+Choice(Rate_Names_with_None,23,0),1-Apr-2023,1,~
+Choice(Rate_Names_with_None,23,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,23,0),Choice(PV_Sim_Strt_Yr_Opt,256,0),Checkbox(1),~
-Choice(Rate_Names_with_None,23,0),Choice(PV_Sim_Strt_Yr_Opt,256,0),Checkbox(1),~
+Choice(Rate_Names_with_None,23,0),1-Apr-2023,1,~
+Choice(Rate_Names_with_None,23,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,23,0),45017,Checkbox(1),~
-Choice(Rate_Names_with_None,23,0),45017,Checkbox(1),~
+Choice(Rate_Names_with_None,23,0),1-Apr-2023,1,~
+Choice(Rate_Names_with_None,23,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
-Choice(Rate_Names_with_None,23,0),45017,Checkbox(1),~
-Choice(Rate_Names_with_None,23,0),45017,Checkbox(1),~
+Choice(Rate_Names_with_None,23,0),1-Apr-2023,1,~
+Choice(Rate_Names_with_None,23,0),1-Apr-2023,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
@@ -6351,15 +6353,15 @@ Null,Null,Null)
 NodeLocation: 96,216,1
 NodeSize: 64,40
 WindState: 2,2261,109,1402,650
-DefnState: 2,151,334,1739,304,0,DFNM
-ValueState: 2,302,51,935,658,0,MIDM
+DefnState: 2,208,187,1450,329,0,DFNM
+ValueState: 2,508,240,1319,328,0,MIDM
 Aliases: FormNode Fo1547766909, FormNode Fo1547828216
 NodeColor: 65535,65531,1
-ReformDef: [All_Utilities,All_Sectors]
-ReformVal: [Pre_and_Post_System,Rate_Vintage]
+ReformDef: [Pre_and_Post_System,All_Sectors]
+ReformVal: [Pre_and_Post_System,All_Utilities]
 TableCellDefault: Rate_Setting_Default
-Att_ResultSliceState: [All_Sectors,1,PV_Climate_Zone,1,Rate_Setting,2,Rate_Vintage,1,Pre_and_Post_System,1]
-Att_EditSliceState: [PV_Climate_Zone,1,Rate_Vintage,2,Rate_Setting,2,Pre_and_Post_System,2,All_System_Types,1,All_Sectors,1,All_Utilities,1]
+Att_ResultSliceState: [All_Sectors,1,PV_Climate_Zone,1,Rate_Setting,2,All_System_Types,3,Rate_Vintage,2,All_Utilities,1,Pre_and_Post_System,1]
+Att_EditSliceState: [PV_Climate_Zone,1,Rate_Vintage,2,Rate_Setting,1,All_System_Types,1,All_Utilities,2,All_Sectors,1,Pre_and_Post_System,2]
 {!50000|Att_ColumnWidths: [,Rate_Vintage,\([,]),Pre_and_Post_System,\([,897])]}
 
 Decision Allow_Rate_Inflation
@@ -6387,13 +6389,13 @@ Date: Wed, Oct 24, 2018 4:58 PM
 NodeLocation: 944,704,1
 NodeSize: 64,40
 NodeInfo: 1,0,0,1,1,1,0,,0,,0,,,
-DiagState: 2,160,35,1524,512,17,10
+DiagState: 2,55,3,1800,742,17,10
 AcpStyles: FrameNode: FrameNode_1545067302
 
 Decision Rate_Setting_Default
 Title: Rate Setting Default
 Definition: Table(Rate_Setting)(Choice(Rate_Names_with_None,1,0),Choice(PV_Sim_Strt_Yr_Opt,85,0),Checkbox(1))
-NodeLocation: 72,376,1
+NodeLocation: 88,496,1
 NodeSize: 64,40
 DefnState: 2,912,355,553,345,0,DFNM
 
@@ -6403,20 +6405,20 @@ Description: The start date when a particular rate vintage became effective.
 Definition: IF Selected_Cust_Rates = None_Label~
 THEN Null~
 ELSE Select_Customer_Rate[All_Sectors=PV_Sectors, Rate_Setting=Rate_Date_Label,All_Utilities=Selected_Utility,All_System_Types=System_Types]
-NodeLocation: 200,176,1
+NodeLocation: 160,160,1
 NodeSize: 64,40
-ValueState: 2,184,186,952,554,0,MIDM
-Att_ResultSliceState: [Pre_and_Post_System,1,PV_Climate_Zone,1,Rate_Vintage,1,System_Types,1,PV_Sectors,1]
+ValueState: 2,714,450,861,330,0,MIDM
+Att_ResultSliceState: [Pre_and_Post_System,2,PV_Climate_Zone,1,Rate_Vintage,2,Selected_Utility,1,System_Types,1,PV_Sectors,1]
 
 Variable Sorted_Vintages
 Title: Sorted Vintages
 Units: vintage #
 Description: The rate vintages sorted in chronological order.
 Definition: SortIndex(Rate_Start_Dates, Rate_Vintage)
-NodeLocation: 360,152,1
+NodeLocation: 328,160,1
 NodeSize: 64,40
-ValueState: 2,112,187,765,387,0,MIDM
-Att_ResultSliceState: [Pre_and_Post_System,2,PV_Climate_Zone,1,Rate_Vintage,1,System_Types,1,PV_Sectors,2]
+ValueState: 2,962,127,765,363,0,MIDM
+Att_ResultSliceState: [Pre_and_Post_System,2,PV_Climate_Zone,1,Rate_Vintage,2,Selected_Utility,1,System_Types,1,PV_Sectors,2]
 
 Variable Sorted_Start_Dates
 Title: Sorted Start Dates
@@ -6432,11 +6434,11 @@ Title: Decimal Start Year
 Units: year
 Description: The start date when a particular rate vintage became effective. These are sorted in chronological order along the Rate Vintage index and are converted to decimal form (eg, June 2018 converts to 2018.5).
 Definition: LinearInterp(BOY_Date_StaticPV_Yr, Static_PV_Time, Sorted_Start_Dates, Static_PV_Time)
-NodeLocation: 72,280,1
+NodeLocation: 72,288,1
 NodeSize: 64,40
-ValueState: 2,249,293,1505,357,0,MIDM
+ValueState: 2,309,359,1505,357,0,MIDM
 NumberFormat: 2,F,6,2,0,0,6,1,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [Pre_and_Post_System,2,PV_Climate_Zone,1,Rate_Vintage,1,System_Types,1,PV_Sectors,1]
+Att_ResultSliceState: [Pre_and_Post_System,1,PV_Climate_Zone,1,Rate_Vintage,1,Selected_Utility,1,System_Types,1,PV_Sectors,1]
 {!50000|Att_ColumnWidths: [,Rate_Vintage,\([62,])]}
 
 Variable Sorted_Rate_Vintage
@@ -6459,17 +6461,19 @@ Units: dmnls
 Description: An escalation factor applied to each rate vintage. The base year for inflation is the start date of the rate vintage. This is to estimate rates outside of the range of historic data. A different escalation factor is applied to account for inflation within the lifetime of an installed system. Generally, escalation is only applied to the first and last rate vintages when ordered chronologically.
 Definition: VAR equivEscalateRate:=(1+Applied_RateEscalate)^(1/Timesteps_Per_Year)-1;   {The compounding monthly equivalent of the annual escalation rate}~
 ~
-IF Select_Customer_Rate[All_Sectors=PV_Sectors, Rate_Setting=Rate_Escalate_Label,All_Utilities=Selected_Utility,All_System_Types=System_Types]~
-THEN Rate_adjustment * (1 + equivEscalateRate)^((Time_Fractional_Year - Decimal_Start_Year[Rate_Vintage=Sorted_Vintages])*Timesteps_Per_Year)~
+local x:=IF Select_Customer_Rate[All_Sectors=PV_Sectors, Rate_Setting=Rate_Escalate_Label,All_Utilities=Selected_Utility,All_System_Types=System_Types]~
+THEN (1 + equivEscalateRate)^((Time_Fractional_Year - Decimal_Start_Year[Rate_Vintage=Sorted_Vintages])*Timesteps_Per_Year)~
 ELSE 1;~
+IF Start_Inflation_from AND Rate_Vintage<>1 THEN x[Rate_Vintage=1] ELSE x~
 
-NodeLocation: 560,280,1
+NodeLocation: 440,288,1
 NodeSize: 64,40
 WindState: 2,240,134,1116,635
-ValueState: 2,211,259,1408,312,0,MIDM
+ValueState: 2,793,390,813,314,0,MIDM
+NodeColor: 65535,1,1
 ReformVal: [Pre_and_Post_System,System_Types]
 NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
-Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,2,PV_Sectors,1,Time,321,System_Types,1,Pre_and_Post_System,2]
+Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,PV_Sectors,3,Time,307,Selected_Utility,1,System_Types,1,Pre_and_Post_System,2]
 
 Variable Vint_to_Prd_AllocEsc
 Title: Vintage to Period Allocations and Escalation
@@ -6486,7 +6490,7 @@ WindState: 2,164,23,1526,625
 ValueState: 2,358,383,1309,269,0,MIDM
 ReformVal: [Pre_and_Post_System,System_Types]
 Att__TotalsIndex: []
-Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,2,PV_Sectors,3,Time,250,System_Types,3,Pre_and_Post_System,2]
+Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,2,PV_Sectors,1,Time,338,Selected_Utility,1,System_Types,3,Pre_and_Post_System,2]
 
 Variable Rate_Vintage_by_Time
 Title: Rate Vintage by Time
@@ -6496,49 +6500,52 @@ Definition: Sorted_Vintages[Rate_Vintage=Sorted_Rate_Vintage]
 NodeLocation: 560,56,1
 NodeSize: 64,40
 WindState: 2,669,28,970,350
-ValueState: 2,78,278,1471,403,0,MIDM
+ValueState: 2,73,397,1471,292,0,MIDM
 Att_ResultSliceState: [Pre_and_Post_System,2,PV_Climate_Zone,1,System_Types,1,PV_Sectors,1,Time,1]
 
 Text FrameNode_1545067302
-NodeLocation: 1008,320,-20
+NodeLocation: 1208,320,-20
 NodeSize: 360,304
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 NodeColor: 65535,65535,65535
 AcpStyles: Show_index_menus: yes~
 Show_description:20
 
-Constant Rate_adjustment
-Title: Rate adjustment (manual correction)
-Description: For JEA we obtained rates in 2022 and are assuming rates at the end of March 2018 (when net metering changed) are lower due to 2.1% assumed inflation from April 2018 to beginning of 2022.
-Definition: 1
-NodeLocation: 376,384,1
-NodeSize: 80,40
-Aliases: FormNode Fo2109940899
-NodeColor: 65535,65531,1
-
-Variable Vint_to_Prd_AllocEs1
-Title: Vintage to Period Allocations and Escalation
+Variable Rate_Escalate_byVin1
+Title: Rate Escalation by Vintage
 Units: dmnls
-Description: Multipliers to map rate vintages to time periods and to account for rate escalation.
-Definition: VAR finalStartYear:=Max(Decimal_Start_Year, Rate_Vintage);~
+Description: An escalation factor applied to each rate vintage. The base year for inflation is the start date of the rate vintage. This is to estimate rates outside of the range of historic data. A different escalation factor is applied to account for inflation within the lifetime of an installed system. Generally, escalation is only applied to the first and last rate vintages when ordered chronologically.
+Definition: VAR equivEscalateRate:=(1+Applied_RateEscalate)^(1/Timesteps_Per_Year)-1;   {The compounding monthly equivalent of the annual escalation rate}~
 ~
-IF 1{Time_Fractional_Year  > (finalStartYear + 11/Timesteps_Per_Year)}   {Holds the last vintage flat for 1 year before escalating}~
-THEN Rate_Escalate_byVint * (Rate_Vintage_by_Time=Rate_Vintage)~
-ELSE MIN([1, Rate_Escalate_byVint * (Rate_Vintage_by_Time=Rate_Vintage)])
-NodeLocation: 568,392,1
-NodeSize: 64,40
-WindState: 2,164,23,1526,625
-ValueState: 2,353,47,1309,801,1,MIDM
-Att__TotalsIndex: []
-Att_ResultSliceState: [Pre_and_Post_System,2,PV_Climate_Zone,1,Rate_Vintage,1,PV_Sectors,1,System_Types,3,Utility_Options_Domi,1,Time,1]
+IF Select_Customer_Rate[All_Sectors=PV_Sectors, Rate_Setting=Rate_Escalate_Label,All_Utilities=Selected_Utility,All_System_Types=System_Types]~
+THEN (1 + equivEscalateRate)^((Time_Fractional_Year - Decimal_Start_Year)*Timesteps_Per_Year)~
+ELSE 1;~
 
-Variable Compare2
-Definition: [Vint_to_Prd_AllocEsc,Vint_to_Prd_AllocEs1]
-NodeLocation: 568,480
+NodeLocation: 368,408,1
 NodeSize: 64,40
-ValueState: 2,323,9,1092,751,,MIDM
-ReformVal: [Time,Self]
-Att_ResultSliceState: [Utility_Options_Domi,3,PV_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,1,System_Types,2,Pre_and_Post_System,1,Self,1,Time,1]
+WindState: 2,240,134,1116,635
+ValueState: 2,823,338,813,314,0,MIDM
+ReformVal: [Pre_and_Post_System,System_Types]
+NumberFormat: 2,F,2,4,0,0,2,0,$,0,"ABBREV",0,,,0,0,15
+Att_ResultSliceState: [PV_Climate_Zone,1,Rate_Vintage,1,PV_Sectors,2,Time,322,Selected_Utility,1,System_Types,1,Pre_and_Post_System,2]
+
+Decision Start_Inflation_from
+Title: Start Inflation from Vintage 1 start date
+Description: Check this box if future vintages (e.g., due to NEM expiring or something) should use the date of the first vintage for purposes of calculating inflation (as sometimes the structure changes in the future, but the actual future rate is not known and therefore cannot be input without assumed inflation).~
+~
+This is quick workaround to address a NEM structure change for one engagement. May want to make this more robust in the future.
+Definition: Checkbox(1)
+NodeLocation: 584,400,1
+NodeSize: 64,40
+Aliases: FormNode Fo118144403
+NodeColor: 65535,1,1
+
+FormNode Fo118144403
+Title: Start Inflation from Vintage 1 start date
+Definition: 0
+NodeLocation: 680,296,1
+NodeSize: 160,16
+Original: Start_Inflation_from
 
 Close Rate_Vintage_Mapping
 
@@ -7321,7 +7328,7 @@ Date: Thu, Aug 23, 2018 5:16 PM
 NodeLocation: 400,152,1
 NodeSize: 64,40
 NodeInfo: 1,0,0
-DiagState: 2,91,26,1708,722,17,10
+DiagState: 2,93,202,1708,722,17,10
 Aliases: Alias Al1548967140
 NodeColor: 65535,65535,65535
 AcpStyles: FrameNode: FrameNode_1544920081
@@ -7337,7 +7344,7 @@ GraphSetup: Att_StackedBar Graph_Primary_Valdim:0~
 Att_CatLineStyle Graph_Primary_Valdim:9
 ReformVal: [System_Types,Pre_and_Post_System]
 NumberFormat: 2,F,2,0,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
-Att_ResultSliceState: [Selected_Utility,1,Utility_Bill_Compone,1,PV_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,1,Area_Type,1,Pre_and_Post_System,1,System_Types,1]
+Att_ResultSliceState: [Utility_Bill_Compone,1,PV_Sectors,1,Rate_Vintage,2,PV_Climate_Zone,1,Area_Type,1,Pre_and_Post_System,1,System_Types,1]
 {!40600|Att_StackingIndex: PV_Climate_Zone}
 {!40600|Att_ClusterIndex: System_Types}
 
@@ -10018,7 +10025,6 @@ Definition: sum(Monthly_Solar,Month_Day_and_Hour,Month) * System_Has_Solar_Pro[A
 NodeLocation: 680,1144,1
 NodeSize: 64,40
 ValueState: 2,1033,59,852,723,1,MIDM
-Aliases: Alias Al2034073747
 GraphSetup: Att_GraphIndexRange Static_PV_Time:1,,0,,,,10,2007.4165800958872,2024.133097231388,0
 Att_ResultSliceState: [PV_Climate_Zone,1,Area_Type,1,Pre_and_Post_System,2,System_Types,1,PV_Sectors,1,Static_PV_Time,1]
 
@@ -14206,7 +14212,7 @@ WindState: 2,98,82,1059,632
 {!40300|Att_SlicerPopupSize: 377,140}
 
 Index Rate_Names_with_None
-Att_PrevIndexValue: ['None','1 Residential Service | 2012-01','NC - Large Power (Industrial Service) | 2023-05','NC - Large Power (Industrial Service) + Buy All Sell All| 2023-05','NC - RL (Residential Service) | 2023-05','NC - RL (Residential Service) + REBB Rider | 2023-05','NC - Small Power (Commercial Service) | 2023-05','NC - Small Power (Commercial Service) + REBB Rider | 2023-05','NC -1 (Residential Service) | 2019-11','NC -5 (Commercial Service) | 2019-11','NC -6L (Industrial Service) | 2019-11','SC  - R-STOU (Residential Service) +  RSC Rider | 2023-04','SC  - R-STOU (Residential Service) +  RSC Rider for storage dispatch | 2023-04','SC  - RES (Residential Service) | 2023-04','SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider for storage dispatch | 2023-05','SC -20 (Industrial Service) | 2023-05','SC -20 (Industrial Service) + Rate PR-Standard Offer | 2023-05','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider for storage dispatch | 2023-05','SC -8 (Residential Service) | 2023-05','SC -9 (Commercial Service) | 2023-05','SC -LGS - TOU (Industrial Service Time-Of-Use) + NRSC Rider | 2023-04','SC -LGS (Industrial Service) | 2023-04','SC -MGS (Commercial Service) | 2023-04','SC -MGS-TOU (Commercial Service Time of Use) + NRSC Rider | 2023-04','SC -MGS-TOU (Commercial Service Time of Use) + NRSC Rider for storage dispatch | 2023-04','VA -1 (Residential Service) | 2022-01','VA -1 (Residential Service) + Net Metering T&C | 2022-01','VA -1 (Residential Service) + Without Net Metering T&C | 2022-01','VA -GS TOD (Commercial Service Time-Of-Use) | 2023-01','VA -GS2(Commercial Service Demand) | 2022-01','VA -GS2(Commercial Service Non-Demand) + Net Metering T&C | 2022-01','VA -GS2(Commercial Service Non-Demand) Without Net Metering T&C | 2022-01','VA -GS3(Industrial Service) | 2022-01','VA -GS3(Industrial Service) + Net Metering T&C | 2022-01','VA -LGS - TOD (Industrial Service) + Net Metering Service Rider | 2023-01','VA -LGS (Industrial Service) | 2023-01','VA -MGS (Commercial Service) | 2023-01','VA -MGS (Commercial Service) + Net Metering Service Rider | 2023-01','VA -RS (Residential Service) | 2023-01','VA -RS-SD (Residential Service) + Net Metering Service Rider | 2023-01']
+Att_PrevIndexValue: ['None','1 Residential Service | 2012-01','NC - Large Power (Industrial Service) | 2023-05','NC - Large Power (Industrial Service) + Buy All Sell All| 2023-05','NC - RL (Residential Service) | 2023-05','NC - RL (Residential Service) + REBB Rider | 2023-05','NC - Small Power (Commercial Service) | 2023-05','NC - Small Power (Commercial Service) + REBB Rider | 2023-05','NC -1 (Residential Service) | 2019-11','NC -5 (Commercial Service) | 2019-11','NC -6L (Industrial Service) | 2019-11','SC  - R-STOU (Residential Service) +  RSC Rider | 2023-04','SC  - R-STOU (Residential Service) +  RSC Rider for storage dispatch | 2023-04','SC  - RES (Residential Service) | 2023-04','SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -16 (Commercial Service Time-Of-Use) + Solar Choice Rider for storage dispatch | 2023-05','SC -20 (Industrial Service) | 2023-05','SC -20 (Industrial Service) + Rate PR-Standard Offer | 2023-05','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider for storage dispatch | 2023-05','SC -8 (Residential Service) | 2023-05','SC -9 (Commercial Service) | 2023-05','SC -LGS - TOU (Industrial Service Time-Of-Use) + NRSC Rider | 2023-04','SC -LGS (Industrial Service) | 2023-04','SC -MGS (Commercial Service) | 2023-04','SC -MGS-TOU (Commercial Service Time of Use) + NRSC Rider | 2023-04','SC -MGS-TOU (Commercial Service Time of Use) + NRSC Rider for storage dispatch | 2023-04','VA -1 (Residential Service) | 2022-01','VA -1 (Residential Service) + Net Metering T&C | 2022-01','VA -1 (Residential Service) + Without Net Metering T&C | 2022-01','VA -GS TOD (Commercial Service Time-Of-Use) | 2023-01','VA -GS2(Commercial Service Demand) | 2022-01','VA -GS2(Commercial Service Non-Demand) + Net Metering T&C | 2022-01','VA -GS2(Commercial Service Non-Demand) + Without Net Metering| 2022-01','VA -GS3(Industrial Service) | 2022-01','VA -GS3(Industrial Service) + Net Metering T&C | 2022-01','VA -LGS - TOD (Industrial Service) + Net Metering Service Rider | 2023-01','VA -LGS (Industrial Service) | 2023-01','VA -MGS (Commercial Service) | 2023-01','VA -MGS (Commercial Service) + Net Metering Service Rider | 2023-01','VA -RS (Residential Service) | 2023-01','VA -RS-SD (Residential Service) + Net Metering Service Rider | 2023-01']
 Title: Rate Names with None
 Definition: Concat(None_Label, Rate_Names)
 NodeLocation: 384,1104,1
@@ -14403,7 +14409,7 @@ NodeLocation: 240,64,1
 NodeSize: 64,40
 WindState: 2,98,82,720,799
 ValueState: 2,832,177,416,303,0,MIDM
-{!40300|Att_SlicerPopupSize: 262,112}
+{!40300|Att_SlicerPopupSize: 267,112}
 
 Decision Select_System_Types
 Title: Select System Types
@@ -14642,7 +14648,6 @@ Definition: Concat(Pre_and_Post_System, Cost_Savings_Label)
 NodeLocation: 672,296,1
 NodeSize: 64,40
 WindState: 2,657,349,1080,557
-Aliases: Alias Al1756244115
 {!40300|Att_SlicerPopupSize: 242,70}
 
 Decision Cost_Savings_Label
@@ -14658,7 +14663,7 @@ Title: Rate Setting
 Definition: ['Rate Name','Rate Start Date','Allow Rate Escalation']
 NodeLocation: 816,704,1
 NodeSize: 64,40
-{!40300|Att_SlicerPopupSize: 352,48}
+{!40300|Att_SlicerPopupSize: 362,48}
 
 Decision Name_Setting_Label
 Title: Name Setting Label
@@ -15040,7 +15045,6 @@ NodeLocation: 384,368,1
 NodeSize: 64,40
 WindState: 2,101,420,720,350
 ValueState: 2,1257,140,416,504,0,MIDM
-Aliases: Alias Al606093459
 
 Variable EOY_Date_StaticPV_Yr
 Title: EOY Date for Static PV Year
