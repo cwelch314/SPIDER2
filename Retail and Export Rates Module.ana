@@ -1803,7 +1803,7 @@ $/kW for all demand rate structures
 Definition: Sum(Rate_Data_TOU_Sched[Rate_Names=Rate_Names_and_Start, All_Data_Types=DataType_by_RateType, Time_of_Day=Hour_for_Type_and_Hr, Weekday_or_Weekend=DayType_for_Type_Hr,All_Data_Types=Rate_Structure] * Rate_and_Adj_Attribs, Data_Attribute)
 NodeLocation: 952,200,1
 NodeSize: 64,40
-ValueState: 2,147,-19,1364,815,1,MIDM
+ValueState: 2,252,26,1364,815,1,MIDM
 GraphSetup: Graph_KeyFont:,11,0~
 ShowKey:2
 ReformVal: [Day_Type_and_Hour,Rate_Names_and_Start]
@@ -4046,6 +4046,7 @@ NodeLocation: 760,408,1
 NodeSize: 64,40
 WindState: 2,2127,81,1010,591
 ValueState: 2,312,108,416,509,0,MIDM
+Aliases: Alias Al433323283
 NodeColor: 65535,1,1
 
 Decision Basic_Service_Fees1
@@ -29196,7 +29197,7 @@ Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 'VA -1 (Residential Service) | 2022-01',1-Jan-2022,1,~
-'VA -1 (Residential Service) + Without Net Metering T&C | 2022-01',1-Oct-2028,1,~
+'VA -1 (Residential Service) + Without Net Metering T&C | 2022-01',VA_Nem_Exp_Date,1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
@@ -29364,7 +29365,7 @@ Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
 'VA -GS2(Commercial Service Demand) | 2022-01',1-Jan-2022,1,~
-'VA -GS2(Commercial Service Non-Demand) + Without Net Metering| 2022-01',1-Jan-2022,1,~
+'VA -GS2(Commercial Service Non-Demand) + Without Net Metering| 2022-01','VA_Nem_Exp_Date',1,~
 Null,Null,Null,~
 Null,Null,Null,~
 Null,Null,Null,~
@@ -29852,8 +29853,9 @@ Null,Null,Null)
 NodeLocation: 528,416,1
 NodeSize: 64,40
 DefnState: 2,39,219,1715,342,0,DFNM
-ValueState: 2,19,196,1727,426,0,MIDM
-Att_ResultSliceState: [All_Sectors,1,Rate_Vintage,1,PV_Climate_Zone,1,Pre_and_Post_System,2,Rate_Setting,2,All_Utilities,1,All_System_Types,1]
+ValueState: 2,122,163,1727,426,0,MIDM
+Att_ResultSliceState: [All_Sectors,1,Rate_Vintage,2,PV_Climate_Zone,1,Pre_and_Post_System,2,Rate_Setting,2,All_Utilities,1,All_System_Types,1]
+Att_EditSliceState: [All_Sectors,1,Rate_Vintage,2,PV_Climate_Zone,1,Pre_and_Post_System,2,Rate_Setting,2,All_Utilities,1,All_System_Types,1]
 
 FormNode Fo407355539
 Title: Units of "Max" Energy Attribute for Tier
@@ -29982,7 +29984,7 @@ OnClick: local x:=Select_Customer_Rate;~
 
 Constant Select_NEM_expiratio
 Title: Select NEM expiration date
-Definition: Table(VA_Utilities)(Choice(NEM_Expiration_Date_,68,142),Choice(NEM_Expiration_Date_,59,0))
+Definition: Table(VA_Utilities)(Choice(NEM_Expiration_Date_,143,142),Choice(NEM_Expiration_Date_,59,0))
 NodeLocation: 1008,1208,1
 NodeSize: 64,40
 DefnState: 2,490,168,874,205,0,DFNM

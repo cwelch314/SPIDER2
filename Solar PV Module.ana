@@ -3309,7 +3309,7 @@ ReformVal: [PV_Sectors,Forecast_Year1]
 NumberFormat: 2,F,2,3,1,0,2,0,$,0,"ABBREV",0,,,0,0,15,
 Att__TotalsIndex: [PV_Sectors,A8760]
 Att_ResultSliceState: [PV_Spatial_ID,1,PV_Climate_Zone,1,A8760,0,Forecast_Year1,1,PV_Sectors,0]
-{!50000|Att_ColumnWidths: [,PV_Sectors,\([,,,137])]}
+{!50000|Att_ColumnWidths: [,PV_Sectors,\([,137])]}
 
 FormNode Fo2042975395
 Title: Area Type for Optimization
@@ -13900,7 +13900,7 @@ ReformVal: [Pre_and_Post_System,Rate_Names_and_Start]
 Att_ResultSliceState: [PV_Climate_Zone,1,System_Types,1,Rate_Names_and_Start,1,PV_Sectors,1]
 
 Index Rate_Names_and_Start
-Att_PrevIndexValue: ['SC -5 (Residential Service Time-Of-Use) + Solar Choice Rider | 2023-05','SC -8 (Residential Service) | 2023-05']
+Att_PrevIndexValue: ['VA -1 (Residential Service) | 2022-01','VA -1 (Residential Service) + Net Metering T&C | 2022-01','VA -1 (Residential Service) + Without Net Metering T&C | 2022-01','VA -GS2(Commercial Service Demand) | 2022-01','VA -GS2(Commercial Service Non-Demand) + Net Metering T&C | 2022-01','VA -GS2(Commercial Service Non-Demand) + Without Net Metering| 2022-01','VA -GS3(Industrial Service) | 2022-01','VA -GS3(Industrial Service) + Net Metering T&C | 2022-01']
 Title: Rate Names and Start Dates
 Definition: VAR names:=MdArrayToTable(Selected_Cust_Rates, omitNull: True);~
 VAR lastCol:=Size(names.Col);~
@@ -14097,10 +14097,10 @@ NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Num_Incentive_Steps
 
 Index PV_Sectors
-Att_PrevIndexValue: ['Residential','Commercial','Industrial']
+Att_PrevIndexValue: ['Residential']
 Title: PV Sectors
 Description: The sectors selected for the PV analysis.
-Definition: MultiChoice(All_PV_Sectors,returnList:1)
+Definition: MultiChoice(All_PV_Sectors,1,returnList:1)
 NodeLocation: 1536,344,1
 NodeSize: 64,40
 WindState: 2,393,46,1255,632
