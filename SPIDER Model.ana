@@ -150,7 +150,7 @@ Author: CWelch
 Date: Tue, Apr 20, 2021 10:09 AM
 DefaultSize: 64,32
 NodeInfo: 1,,,,,,,,,,,0
-DiagState: 2,187,1,1163,769,17,10,
+DiagState: 2,162,15,1152,828,17,10,
 FontStyle: Arial,15
 FileInfo: 0,Model Nexant_Model_Templat,2,2,0,0,C:\Users\cwelch\Documents\Repos\Nexant\SPIDER\SPIDER Model.ana
 {!50000|DefaultFontColor: 0,0,0}
@@ -802,7 +802,7 @@ ELSE Show_ACP_Window1(PV_Impact_Out,PV_Impact_Titles,PV_Impact1, 'Result')
 Decision PV_Impact1
 Title: PV Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Impact_Titles,5,0)
+Definition: Choice(PV_Impact_Titles,1,0)
 NodeLocation: 616,440,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1300,7 +1300,7 @@ Original: Storage_Dispatch_Out
 Decision BESS_Impact1
 Title: BESS Impact
 Description: Choose which variable you wish to view.
-Definition: Choice(Storage_Dispatch_Tit,1,0)
+Definition: Choice(Storage_Dispatch_Tit,3,0)
 NodeLocation: 608,1160,1
 NodeSize: 64,40
 WindState: 2,102,82,720,646
@@ -1780,7 +1780,7 @@ Original: PV_Input2
 Decision PV_Input2
 Title: PV Input
 Description: Choose which variable you wish to view.
-Definition: Choice(PV_Input_Titles1,5,0)
+Definition: Choice(PV_Input_Titles1,18,0)
 NodeLocation: 1288,680,1
 NodeSize: 64,40
 WindState: 2,2341,163,720,646
@@ -1790,7 +1790,7 @@ OnChange: PV_Input_Button1
 
 Index PV_Input3
 Title: PV Input
-Definition: MultiChoice(All_PV_Input1,3,4,6,7,8,9,10,11,20,21,22,23,25,26,27,28,allowNone:0,returnList:1)
+Definition: MultiChoice(All_PV_Input1,3,4,6,7,8,9,10,11,20,21,22,23,25,26,27,28,29,30,allowNone:0,returnList:1)
 NodeLocation: 984,672,1
 NodeSize: 64,40
 WindState: 2,2234,82,720,350
@@ -1812,7 +1812,7 @@ THEN Null ~
 ELSE Show_Edit_Table_ACP(PV_Input3,PV_Input_Titles1,PV_Input2)
 
 Index PV_Input_Titles1
-Att_PrevIndexValue: ['Base Year Installed Cost ($/kW-DC, $/kWh)','DER Cost Change Rate (1/year)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Equipment Lifetime (years)','PV Incentive ($/kW-DC)','Investment Tax Credit (Fraction)','State Tax Credit  (Fraction)','State Tax Credit Max ($/system)','Solar Production Credit ($/kWh)','Tax Credit Applicability','PV suitability (fraction)','PV Capacity Factor (kWhA/yr / kWDC*8760)','Total PV Area (m2)','Building Stock (bldg units)','Consumption (kWh/yr)','Retail Rate Escalation (fract/year)']
+Att_PrevIndexValue: ['Base Year Installed Cost ($/kW-DC, $/kWh)','DER Cost Change Rate (1/year)','O&M Cost ($/yr-kW-DC, $/yr-kWh)','Equipment Lifetime (years)','PV Incentive ($/kW-DC)','Investment Tax Credit (Fraction)','State Tax Credit  (Fraction)','State Tax Credit Max ($/system)','Solar Production Credit ($/kWh)','Tax Credit Applicability','PV suitability (fraction)','PV Capacity Factor (kWhA/yr / kWDC*8760)','Total PV Area (m2)','Building Stock (bldg units)','Consumption (kWh/yr)','Retail Rate Escalation (fract/year)','Peak Load (MW-AC)','Select VA NEM expiration date']
 Title: PV Input Titles
 Definition: Create_Titles_List(PV_Input3)~
 
@@ -1846,9 +1846,9 @@ NodeInfo: 1,0,0,0,0,0,0,102,0,,0,,,
 Original: PV_Input3
 
 Index All_PV_Input1
-Att_PrevIndexValue: [Historical_PV_Capaci,Historical_PV_Instal,Base_Year_Installed_,DER_Cost_Change_Rate,Equipment_Cost_Resul,O_M_Cost,Equipment_Lifetime,PV_Incentive1,Invest_Tax_Credit,State_Tax_Credit,State_Tax_Credit_Max,View_all_Rates,Hourly_Profiles,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve,Normalized_Load_Shap,Normalized_Load_Prof,Load_Factor,Solar_Production_Cre,Tax_Credit_Applicabi,PV_suitability,PV_Capacity_Factor,PV_Production_per_kW,Total_PV_Area,Building_Stock,Consumption3,Retail_Rate_Escalate]
+Att_PrevIndexValue: [Historical_PV_Capaci,Historical_PV_Instal,Base_Year_Installed_,DER_Cost_Change_Rate,Equipment_Cost_Resul,O_M_Cost,Equipment_Lifetime,PV_Incentive1,Invest_Tax_Credit,State_Tax_Credit,State_Tax_Credit_Max,View_all_Rates,Hourly_Profiles,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve,Normalized_Load_Shap,Normalized_Load_Prof,Load_Factor,Solar_Production_Cre,Tax_Credit_Applicabi,PV_suitability,PV_Capacity_Factor,PV_Production_per_kW,Total_PV_Area,Building_Stock,Consumption3,Retail_Rate_Escalate,Peak_Load1,Select_VA_NEM_expira]
 Title: All PV Input
-Definition: [Historical_PV_Capaci,Historical_PV_Instal,Base_Year_Installed_,DER_Cost_Change_Rate,Equipment_Cost_Resul,O_M_Cost,Equipment_Lifetime,PV_Incentive1,Invest_Tax_Credit,State_Tax_Credit,State_Tax_Credit_Max,View_all_Rates,Hourly_Profiles,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve,Normalized_Load_Shap,Normalized_Load_Prof,Load_Factor,Solar_Production_Cre,Tax_Credit_Applicabi,PV_suitability,PV_Capacity_Factor,PV_Production_per_kW,Total_PV_Area,Building_Stock,Consumption3,Retail_Rate_Escalate]
+Definition: [Historical_PV_Capaci,Historical_PV_Instal,Base_Year_Installed_,DER_Cost_Change_Rate,Equipment_Cost_Resul,O_M_Cost,Equipment_Lifetime,PV_Incentive1,Invest_Tax_Credit,State_Tax_Credit,State_Tax_Credit_Max,View_all_Rates,Hourly_Profiles,Saved_Daily_Profiles,PerKW_Week_SolarProf,Payback_Accept_Curve,Normalized_Load_Shap,Normalized_Load_Prof,Load_Factor,Solar_Production_Cre,Tax_Credit_Applicabi,PV_suitability,PV_Capacity_Factor,PV_Production_per_kW,Total_PV_Area,Building_Stock,Consumption3,Retail_Rate_Escalate,Peak_Load1,Select_VA_NEM_expira]
 NodeLocation: 1120,672,1
 NodeSize: 64,40
 WindState: 2,2444,-6,1090,856
@@ -20335,14 +20335,6 @@ NodeSize: 35,13
 NodeInfo: 1,,,,,,,,0
 NodeColor: 63993,42148,13107
 OnClick: Storage_Disptch_But2
-
-FormNode Fo1869806995
-Title: Select NEM expiration date
-Definition: 0
-NodeLocation: 340,776,1
-NodeSize: 236,16
-NodeColor: 53199,53199,53199
-Original: Select_VA_NEM_expira
 
 Close Nexant_Model_Templat
 
