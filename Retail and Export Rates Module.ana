@@ -32303,7 +32303,7 @@ OnClick: local x:=Select_Customer_Rate;~
 Constant Select_VA_NEM_expira
 Title: Select VA NEM expiration date
 Description: Select the date assumed for Net Energy Metering (NEM) to expire in Virginia. This is a manual input and not directly connected to the current legislative cap of 6% of prior year peak demand for IOUs and 2% for cooperatives. Thus, one should update this value consistent with the output for PV MWAC as fraction of prior year peak load. For unregulated VA, a weighted average of IOUs and non-IOUs suggest about a 3.5% value, on average, is when net metering would no longer be required for new behind-the-meter PV installations, though that value could be different depending on the mix of PV installations across the various service territories. See <a href="https://law.lis.virginia.gov/admincode/title20/agency5/chapter315/section40/">https://law.lis.virginia.gov/admincode/title20/agency5/chapter315/section40/</a>
-Definition: Table(VA_Utilities)(Choice(NEM_Expiration_Date_,68,142),Choice(NEM_Expiration_Date_,21,0))
+Definition: Table(VA_Utilities)(Choice(NEM_Expiration_Date_,68,142),Choice(NEM_Expiration_Date_,27,0))
 NodeLocation: 1008,1208,1
 NodeSize: 64,40
 WindState: 2,866,378,720,350
