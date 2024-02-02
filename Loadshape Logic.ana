@@ -1,5 +1,5 @@
 { Analytica Model Loadshapes, encoding="UTF-8" }
-SoftwareVersion 6.3.6
+SoftwareVersion 6.4.3
 
 {!-60000|Attribute AcpStyles}
 
@@ -28,7 +28,7 @@ Author: JamesMilford
 Date: Fri, Aug 10, 2018 2:24 PM
 NodeLocation: 328,584,1
 NodeSize: 64,40
-DiagState: 2,2079,32,1255,603,17,10
+DiagState: 2,12,32,1255,603,17,10
 
 Variable Hrly_Prof_Start_Date
 Title: Hourly Profile Start Date
@@ -80,11 +80,11 @@ IF size(notSpecified) > 0~
 THEN MsgBox("The start dates for the following load shape profiles have not been properly specified: " & joinNames & ".", 1, "Load Shape Start Date Error")~
 ELSE Null;~
 ~
-DateAdd(Hrly_Prof_Start_Date[All_Hourly_Profile_Names=Selected_Profiles], Hours_8784 - 1, 'h')
+DateAdd(Hrly_Prof_Start_Date[All_Hourly_Profile_N    =Selected_Profiles], A8784_1, 'h' )
 NodeLocation: 272,216,1
 NodeSize: 64,40
 WindState: 2,283,225,1088,424
-ValueState: 2,277,8,884,746,0,MIDM
+ValueState: 2,277,8,1194,776,0,MIDM
 ReformVal: [Hourly_Profile_Names,Hours_8784]
 NumberFormat: 3,D,4,4,0,0,4,0,$,0,"d-MMM-yyyy h:mm:ss tt",0,"DATETIME",,0,0,15
 {!40700|Att_CellFormat: Undefined}
@@ -119,7 +119,7 @@ Definition: Sum((DatePart(Date_By_8784, 'MMM') = 'Feb') AND (DatePart(Date_By_87
 
 NodeLocation: 272,576,1
 NodeSize: 64,40
-ValueState: 2,27,34,454,591,,MIDM
+ValueState: 2,27,34,835,591,0,MIDM
 ReformVal: [Hourly_Profile_Names,Hours_8784]
 
 Variable Nulls_for_NonLeapYr
@@ -283,6 +283,13 @@ NodeLocation: 192,516,1
 NodeSize: 56,12
 NodeInfo: 1,0,0,0,0,0,0,,0,,0,,,
 Original: Holiday_Years
+
+Variable A8784_1
+Title: 8784 - 1
+Definition: (Hours_8784 - 1)
+NodeLocation: 104,328,1
+NodeSize: 64,40
+ValueState: 2,276,282,416,303,0,MIDM
 
 Close Loadshape_Mappings
 
